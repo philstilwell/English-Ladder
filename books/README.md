@@ -9,11 +9,17 @@ tables of explicitly authored material. It does not generate teaching prose.
 
 Each unit contains 24 defined terms with natural collocations, 16 phrases,
 six language notes, three briefing questions, four language questions, a
-coherent 20-turn dialogue of 350-520 words with ten numbered cloze gaps, and
+coherent 20-turn dialogue of 220-520 words with ten numbered cloze gaps, and
 a four-turn transfer cloze with a separate situation. Every question and gap
 has an explanation. Cloze answers use one shuffled bank and identical blanks.
 
-Each complete book is 102 pages, including an illustrated cover, linked
+Each book also has three separately authored scenarios in `books/additional/`,
+each with a 20-turn conversation, six gaps, a four-turn transfer and explained
+answers. `books.supplements` parses and validates these authored scenes.
+The expanded edition has eleven extended conversations and eleven transfers,
+a 37.5% increase over the original eight of each.
+
+Each complete book is 114 pages, including an illustrated cover, linked
 contents, professional communication notes, explained keys, quick phrases,
 linked vocabulary index, sources, and the author's copyright. Fonts are
 embedded. No teacher guide, open-ended writing task, or sea-green background
@@ -26,6 +32,13 @@ footer; the PDF audit checks its presence, position, link, and corner clearance
 on every page.
 
 Build: `python3 build_industry_books.py ai-development`
+
+Build all: `python3 build_leadership_book.py`, then
+`python3 build_industry_books.py --all`.
+
+Audit the rebuilt masters: `python3 audit_work_books.py`.
+Audit current public copies: `python3 audit_work_books.py --published`.
+The field-specific editorial record is `books/AUDIT-2026-10.md`.
 
 Final books are in `output/pdf/`. Existing website downloads are not changed
 by this workflow. Incomplete sources must never be represented as completed

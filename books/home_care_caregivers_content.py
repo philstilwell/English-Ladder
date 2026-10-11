@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=36,
     tagline='Listen carefully. Explain clearly. Follow through.',
     audience='For home care workers, personal care assistants, support workers, and caregiving teams.',
-    map_intro='Eight conversations connect the care plan with everyday communication: clarify a visit, respect a choice, report a change, route a medicine question, discuss meals, protect privacy, hand over accurately, and explain a delay.',
+    map_intro='Eight lessons connect the care plan with everyday communication. Three additional conversations cover shopping money, accessible communication, and a visit with no answer at the door.',
     notes_title='The person comes before the task.',
     notes_intro='Caregiving English needs warmth and precision together. Speak directly to the person, explain what you can do, and distinguish an observation from an interpretation. Clear limits should come with a useful next step, not an abrupt dismissal.',
     field_notes=[
@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='NICE. Home Care: Delivering Personal Care and Practical Support (NG21).',
              url='https://www.nice.org.uk/guidance/ng21/chapter/recommendations',
-             note='England-focused guidance informs person-centered communication, continuity, records, and late-visit terminology. All teaching cases and dialogue language are original.', checked='1 October 2026'),
+             note='England-focused background on person-centered support and missed visits; indexed recommendations consulted. Cases and wording are original, not universal care procedures.', checked='10 October 2026'),
         dict(title='NICE. Managing Medicines for Adults Receiving Social Care in the Community (NG67).',
              url='https://www.nice.org.uk/guidance/ng67/chapter/Recommendations',
-             note='Background on assigned responsibilities and referral of clinical medicine questions. The fictional reminder-only role is not a universal caregiver scope.', checked='1 October 2026'),
+             note='Background on assigned responsibilities, recording medicines support, and qualified advice. The fictional reminder-only role is not a universal caregiver scope.', checked='10 October 2026'),
         dict(title='Care Quality Commission. Regulation 11: Need for Consent.',
              url='https://www.cqc.org.uk/guidance-regulation/providers/regulations-service-providers-and-managers/health-social-care-act/regulation-11',
-             note='England regulatory context for ongoing consent and understandable communication. Local legal requirements and authorized processes govern actual practice.', checked='1 October 2026'),
+             note='England regulatory context for ongoing consent and understandable communication. Local legal requirements and authorized processes govern actual practice.', checked='10 October 2026'),
         dict(title='NHS. When to Call 999.',
              url='https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-call-999/',
-             note='UK emergency-service context. The book uses local emergency routes rather than applying one country-specific telephone number everywhere.', checked='1 October 2026'),
+             note='UK emergency-service context. The book uses local emergency routes rather than applying one country-specific telephone number everywhere.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -95,7 +95,7 @@ Do not have authorization | Describes a specific boundary, not a personal unwill
 Has actually been booked | Separates a completed arrangement from an earlier request.
 While we clarify that | Connects ongoing agreed support with the unresolved issue.
 Still unconfirmed | Preserves uncertainty rather than implying that transport cannot be arranged.''',
-    d='''Which statement is both helpful and accurate? | Transport is not in my assignment; I can call the coordinator to check it now. | My arrival proves transport is included. | Your appointment must be wrong. | I will drive you before asking anyone. | The first response identifies the boundary and supplies an appropriate immediate clarification route.
+    d='''Which statement is both helpful and accurate? | Transport is not in my assignment; I can call the coordinator to check it now. | My arrival proves transport is included. | Your appointment must be wrong. | I will drive you before asking anyone. | The correct response identifies the boundary and supplies an appropriate immediate clarification route.
 Which record would overstate progress? | Transport confirmed, when only a message has been sent | Transport requested; coordinator contacted | Appointment reported for 10:00 | No transport authorization available to Maya | Sending a request does not establish that a provider accepted or confirmed transport.
 What does a read-back help establish? | Shared understanding of the appointment and transport status | Automatic permission to drive | A guarantee of arrival time | Clinical suitability for all transport types | Repeating key details checks communication but does not supply missing service authorization.
 Which question is most useful? | Who will confirm the arrangement and contact Mr. Ellis? | Can we assume any relative will drive? | Can the transport request be omitted from the record? | Does breakfast support include every possible errand? | Identifying the responsible contact makes the unresolved arrangement actionable without inventing a provider.''',
@@ -109,16 +109,17 @@ Mr. Ellis | All right. Please explain that the appointment is at ten. I would ra
 Maya | Of course. We can give a clear [[read-back::A read-back checks shared understanding of the time and unresolved arrangement without creating a booking.]] of the details together: appointment at ten, visit from nine to eleven, and no confirmed transport information in my assignment.
 Mr. Ellis | Does that mean nobody has booked a car? There might be something in the office records that neither of us can see.
 Maya | Exactly. The [[booking confirmation::Booking confirmation would establish an accepted reservation; the current absence of information does not prove no booking exists.]] may be elsewhere. I will ask what is actually arranged rather than tell you that nothing exists when I have not checked.
-Mr. Ellis | I also need enough time to get to the entrance. Please make sure they do not confuse the appointment time with the pickup time.
+Mr. Ellis | Ten is when I need to be at the appointment, not when a car should collect me. Please make that clear when we call.
 Maya | I will explain that distinction to the [[care coordinator::The care coordinator is the available role responsible for clarifying relevant arrangements, not a presumed transport provider.]]. The appointment time and pickup time are separate, and any access arrangements need to be confirmed through the proper process.
 Mr. Ellis | What happens to breakfast while we are sorting this out? I have not eaten yet, and I still want the agreed help.
 Maya | Breakfast remains part of my [[scope of duties::The scope of duties includes breakfast support while the separate transport request remains unresolved.]]. We can continue that support with your agreement while the office checks the transport, without marking the additional request as settled.
-Mr. Ellis | When the coordinator answers, please let me hear exactly what is confirmed. I do not want another message that only says someone is dealing with it.
+Mr. Ellis | Please keep me on the call. Last time, I heard someone was dealing with it but never got a pickup time or a driver's name.
 Maya | We will ask for the responsible person and the [[contact route::The contact route identifies how the responsible person will communicate a confirmed response or further update.]] for the response. If an arrangement changes, we need the actual details, not just an assurance that the request was passed on.
 Mr. Ellis | Thank you. I can explain what I was told last week, and you can explain what is on your assignment this morning.
 Maya | That will help us report the [[service discrepancy::The service discrepancy is the difference between expected transport and the available assignment, not an established finding of fault.]] fairly. I will keep your account separate from what the current record says, so the coordinator can reconcile them.
 Mr. Ellis | Please put the outcome in the notes as well. The next person should not have to start the same conversation from the beginning.
 Maya | I will update the [[visit record::The visit record should preserve the request, contacts, and actual outcome without converting pending work into completion.]] with the request, contact, and confirmed response. Until we have that response, I will describe transport as unconfirmed rather than booked.''',
+    rehearsal=('Read Mr. Ellis and Maya aloud, then swap roles. Acknowledge the appointment before explaining the transport limit.', 'Correct the ten gaps. Read back nine-to-eleven visit, ten-o-clock appointment, and unconfirmed transport as separate facts.', 'Repeat the coordinator call and breakfast offer without blaming the client or promising a private lift.'),
     transfer_title='Clarify a different unassigned errand',
     transfer_setup='A 14:00-15:00 visit includes household support. The client expects a parcel pickup, which is not assigned. The coordinator can clarify it; no pickup has been booked.',
     transfer='''Caregiver: "This visit ends at ___." | 15:00 | The stated one-hour visit runs from 14:00 to 15:00.
@@ -186,14 +187,14 @@ Ask again | Requests permission to reoffer rather than announcing repeated press
 Your preference first | Keeps the person central even when a visitor or relative is present.
 Help offered and your response | Supports factual recording instead of a judgment about personality.''',
     d='''Which record is most accurate? | Clothes support offered; Ms. Hale requested a ten-minute pause and agreed to a later offer. | Client was difficult and wasted ten minutes. | All future clothes support permanently refused. | Consent assumed because the task was listed. | The factual record preserves the specific offer, response, and timing without a judgmental or exaggerated conclusion.
-Which reply avoids pressure? | I will pause; would you like me to ask again in ten minutes? | You must agree because I have a checklist. | I will begin quietly so you do not notice. | Your visitor will decide whether your refusal counts. | The reply respects the current choice and seeks agreement about a later offer.
+Which reply avoids pressure? | I will pause; would you like me to ask again in ten minutes? | I will begin after ten minutes because you have agreed to the pause. | I will prepare the clothes during your quiet time so we can catch up. | I will ask your niece to persuade you before my visit ends. | Permission to ask again is not permission to begin later, continue during the pause, or use a relative to pressure the person.
 What does refusal alone establish here? | The offered help is not wanted at this moment. | An inability to make any decision | A clinical diagnosis | Permission to use force | The refusal concerns this offer and time, not a diagnosis or global decision-making ability.
 Which timing statement is correct? | Twenty scheduled minutes remain after the agreed ten-minute pause. | The pause automatically adds ten minutes to the visit. | No support may be offered again. | Thirty minutes remain after the pause. | The pause uses ten of the thirty remaining minutes and does not automatically extend the visit.''',
     dialogue='''Ms. Hale | Please leave the clothes for now, Imani. My visitor is coming later, but I would like ten quiet minutes before we do anything else.
 Imani | Of course. I will respect that [[preference::The preference concerns a quiet pause before clothing support, not a refusal of every service.]] and will not start arranging them. Would you like me to ask again after ten minutes, or would you prefer not to discuss clothes today?
 Ms. Hale | Ask me again after the pause. I might just need help finding the blue cardigan, but I want to sit quietly first.
 Imani | We can agree on that [[reoffer::A reoffer is a later invitation to accept help, not an assumption that the person will agree.]]. There are thirty minutes left in my visit, so twenty will remain afterward. I want you to know the timing without feeling rushed.
-Ms. Hale | I know you have a list to finish. I sometimes feel I should say yes because otherwise the notes will make me sound uncooperative.
+Ms. Hale | I know you have a list. But when I say not now, will the notes say I was being difficult? That worries me.
 Imani | I can use [[neutral wording::Neutral wording reports the offer and response without turning a personal choice into criticism.]] in the record. I will describe what I offered and what you requested, rather than give you a negative label for making a choice.
 Ms. Hale | That would help. I still want to choose my own clothes. Having someone here should not mean everything gets decided for me.
 Imani | Your [[independence::Independence includes directing the support and choosing clothes, not necessarily completing every movement without help.]] matters. I can help with an agreed part of the task, such as finding the cardigan, without taking over decisions you want to make yourself.
@@ -203,12 +204,13 @@ Ms. Hale | My niece sometimes says I should accept whatever help is offered. She
 Imani | I will. Your answer to this offer is the relevant [[verbal agreement::Verbal agreement expresses the person's response to the specific offer; a relative's general opinion is not a substitute.]] we are discussing. I will not treat another person's opinion as permission to ignore what you have just said.
 Ms. Hale | And if I agree later but then want you to stop, can I say so? Some days I change my mind halfway through.
 Imani | Yes. You can [[withdraw consent::Withdrawing consent changes the earlier agreement; the worker must follow the actual consent process rather than rely on an old yes.]]. Tell me if you no longer want the help, and I will respond to that rather than assume an earlier yes lasts regardless of what you say.
-Ms. Hale | Thank you. I only need a little time, not a debate about whether my reasons are good enough for everyone else.
+Ms. Hale | Thank you. A quiet ten minutes is all I am asking for. I do not want to spend it explaining why I need it.
 Imani | I will allow that [[processing time::Processing time allows the person space to respond and choose without repeated prompts or pressure.]]. A quiet pause can be part of respectful communication. There is no need to repeat the same question every minute while you are deciding.
 Ms. Hale | After the ten minutes, I think finding the cardigan will be enough. I can decide about the rest when you ask me.
 Imani | That would be [[partial support::Partial support covers only the agreed part of the task, such as finding one garment.]]. We can confirm it then, and I will be honest about the remaining visit time rather than promise an extension that has not been authorized.
 Ms. Hale | Good. Let us take the quiet time now, and then you can check with me again before touching the clothes.
 Imani | We have an [[agreed pause::The agreed pause is ten minutes with permission to ask again afterward, not permission to begin the task automatically.]] of ten minutes. I will wait in the sitting room, ask again afterward, and record the support you actually choose and receive.''',
+    rehearsal=('Read Ms. Hale and Imani aloud, then swap roles. Make the quiet pause sound like an accepted choice, not a negotiation to overcome.', 'Correct the ten gaps. State thirty minutes left, ten minutes requested, and twenty remaining without implying an automatic extension.', 'Repeat the later offer of cardigan support, asking again before touching the clothes and keeping the record neutral.'),
     transfer_title='Respond to a request for a shorter pause',
     transfer_setup='There are twenty-five minutes left. The client requests five quiet minutes and agrees to a later offer of help with a coat. No immediate safety concern is supplied.',
     transfer='''Caregiver: "We will pause for ___ minutes." | five | The client requested a five-minute pause before another offer.
@@ -287,7 +289,7 @@ Luis | No. I know when we had the conversation, but I cannot say when she first 
 Jo | Then the [[onset::Onset means when the change began; the time the worker noticed it does not automatically establish that.]] is not established. Keep nine twenty as the observation time, rather than enter it as the start of the symptom.
 Luis | She does not usually pause like that when we talk during my visits. I have not watched her continuously outside those visits, though.
 Jo | That is a useful, bounded [[baseline::The baseline is Luis's usual observation during visits, not a claim about every moment outside them.]]. Describe what is unusual in your experience without implying that you know her behavior throughout the whole day or night.
-Luis | I was tempted to write that she must be coming down with something. It would be shorter, but I do not actually know the cause.
+Luis | I nearly wrote coming down with something. Let me correct that: she reported tiredness and I noticed the pauses. I do not know the cause.
 Jo | Please do not substitute a [[diagnosis::A diagnosis is a clinical conclusion; Luis's observations do not establish a specific cause of the change.]] for the observations. The report should preserve the tiredness, pauses, timing, and uncertainty so the appropriate professional can assess the concern.
 Luis | I also have no temperature, pulse, or other measurements to report. Taking those measurements is not part of what I have done this morning.
 Jo | Record those as [[unmeasured::Unmeasured describes missing measurements and must not be translated into normal or reassuring results.]], not normal. A blank measurement field cannot support reassurance, and you should not invent a reading to make the record look complete.
@@ -295,10 +297,11 @@ Luis | I understand. If the situation becomes urgent while I am trying to reach 
 Jo | Correct. Use the local [[urgent pathway::The urgent pathway addresses concerns requiring prompt action and is not replaced by a pending routine message.]] when required, including emergency services where appropriate. Routine reporting and urgent response serve different needs; an earlier message does not remove that distinction.
 Luis | Can you confirm that you have received this report? I also need the next instructions through our care procedure so I know what to record.
 Jo | I have received it. We must distinguish that from a completed [[clinical assessment::Clinical assessment is the relevant professional evaluation, not merely acknowledgment that the report arrived.]]. I will address the next steps through our clinical process; do not describe this call as an assessment outcome.
-Luis | When you give the instructions, I will repeat the important details. I would rather check an unclear word than act on what I think I heard.
+Luis | Please give me the next steps one at a time. I will repeat them back; if I miss a word, I want to check it now.
 Jo | That [[read-back confirmation::Read-back confirmation checks whether the instructions were understood accurately before they are recorded or acted upon.]] is helpful. Ask immediately if a direction, responsibility, or timing is unclear, and keep any action within the responsibilities you are authorized to perform.
 Luis | My record will include her words, the two pauses, nine twenty, what I do not know, and this contact. It will not say that a cause has been confirmed.
 Jo | Good. Make a [[contemporaneous note::A contemporaneous note preserves the actual observation and communication near the event, including limits and instructions received.]] and record the actual instructions and response, not an expected outcome. Continue to use the appropriate local route if the concern changes.''',
+    rehearsal=('Read Luis and Jo aloud, then swap roles. Keep the client\'s tiredness report separate from the two observed pauses.', 'Correct the ten gaps. Distinguish nine twenty as observation time from an unknown onset and unmeasured signs from normal results.', 'Repeat the request for instructions and read-back. Preserve the urgent route without turning receipt of the report into clinical clearance.'),
     transfer_title='Keep a second observation separate from its cause',
     transfer_setup='At 14:10, a client says, "My usual shoes feel tighter today." The caregiver notices the client trying twice to fasten them. No cause or measurements are established; the local reporting route applies.',
     transfer='''Caregiver: "The observation time is ___." | 14:10 | The supplied time concerns when the caregiver noticed the event.
@@ -331,7 +334,7 @@ duplicate dose | An additional dose taken or given when the relevant dose has al
 dosing interval | The time between doses under the prescribed schedule. | clarify the dosing interval
 dispensing label | The pharmacy label identifying the medicine and directions. | refer to the dispensing label
 medication list | A record of medicines whose accuracy and currency require confirmation. | verify the medication list
-MAR | Medication administration record; a record used for actual medicine administration under local arrangements. | distinguish a MAR from a reminder note
+MAR | Medication administration record; may record different types of medicines support under the service's process. | record the actual support on the MAR
 PRN | From pro re nata; medicine prescribed for use when needed under specified directions. | clarify PRN directions
 contraindication | A reason a particular treatment may be inappropriate in a given situation. | refer a contraindication question
 interaction | An effect arising from combining medicines or other relevant substances. | ask about an interaction
@@ -342,7 +345,7 @@ clinical question | A question requiring relevant professional assessment or adv
 delegated task | A task formally assigned under the applicable authority and competence arrangements. | clarify a delegated task
 out-of-hours contact | The designated advice or response route outside ordinary service hours. | use the out-of-hours contact''',
     precision='Reminding, administering, and recommending a dose are different actions. The fictional role permits only the first. Recognizing a label or medicine name does not supply clinical authority, and another worker may have a different authorized role.',
-    precision_extra='Missed, declined, and already taken describe different events. Attribute the client report and check facts through the approved process. Do not record administration that you did not perform or witness, or treat a request for advice as a confirmed medication error.',
+    precision_extra='Missed, declined, and already taken describe different events. A MAR may record reminders and other medicines support as well as administration. Use the correct status under the service\'s process; do not record medicine given when you only made a call or gave a reminder.',
     phrases='''Acknowledge the question | I understand you want to know what to do about the missed dose.
 State the role | My assignment permits reminders, not dose advice.
 Separate the actions | A reminder is different from administering the medicine.
@@ -379,16 +382,17 @@ Mr. Ahmed | I read somewhere that people sometimes take the next dose as usual. 
 Rosa | I cannot turn that into a rule for your [[missed dose::A missed dose requires advice appropriate to the actual medicine and circumstances, which are not established here.]]. The right response depends on the medicine and circumstances, and those have not been established in our conversation.
 Mr. Ahmed | All right. The care plan has the number we normally use. I would like help making the call because I sometimes lose track of the question.
 Rosa | I can help you reach that contact and explain the question clearly. The [[prescriber::The prescriber is an authorized clinical source; the actual advice route in this plan begins with the named nurse contact.]] or another appropriate medicines professional may need to advise through the agreed route.
-Mr. Ahmed | Please say that I am asking about a missed dose, not that I deliberately refused treatment. Those are not the same thing.
+Mr. Ahmed | Please say I missed it. I did not decide against taking it, and I do not want the nurse to hear that I refused.
 Rosa | I will preserve that distinction in the [[medication discrepancy::The medication discrepancy concerns the reported missed dose and relevant records, not an assumed deliberate refusal.]] report if the process requires one. I will describe what you told me without adding a motive or an administration event I did not observe.
 Mr. Ahmed | If the nurse tells us something I do not understand, can you ask them to repeat it while I am still on the line?
 Rosa | Yes. We can ask about the [[dosing interval::The dosing interval is the time between doses; unclear professional directions should be clarified rather than guessed.]] or any other unclear wording, and repeat the instructions back. Clarifying professional advice is different from making up the advice ourselves.
-Mr. Ahmed | And if they do not answer? I do not want to sit here all day with the question still unresolved.
+Mr. Ahmed | What if nobody answers? Can we check the backup contact now rather than wait without a plan?
 Rosa | We should use the approved [[out-of-hours contact::The out-of-hours contact is one possible designated alternative; the actual plan determines which backup route applies.]] or other backup route when applicable. If there is an urgent or emergency concern, we must follow that route without waiting for a routine callback.
 Mr. Ahmed | Please do not mark medicine taken just because we discussed it or tried to call.
 Rosa | I will not. [[Administration::Administration is the actual giving or application of medicine under the appropriate role, not discussion or a telephone attempt.]] has not happened through me. My note will describe the reported missed dose, the contact attempt, and any actual response, according to the recording procedure.
 Mr. Ahmed | Thank you for explaining the difference. Let us contact the nurse now, with the question and the medicine information ready for them.
 Rosa | We will follow the plan and clarify any [[follow-up instruction::A follow-up instruction must come from the appropriate professional and be understood accurately before it is recorded or followed.]] we receive. Until qualified advice is obtained, I will not give you a guessed answer about doubling or replacing the dose.''',
+    rehearsal=('Read Mr. Ahmed and Rosa aloud, then swap roles. State the reminder-only assignment and offer help contacting the named nurse.', 'Correct the ten gaps. Preserve the missed-dose question without recommending doubling, skipping, or any other dose change.', 'Repeat the backup-contact and recording exchanges. A call, a reminder, and actual medicine administration must retain their different statuses.'),
     transfer_title='Route a question about a changed label',
     transfer_setup='A reminder-only worker notices that the client reports different directions on a new dispensing label. The worker has not verified the difference. The plan names the supplying pharmacy as the advice contact.',
     transfer='''Worker: "You are reporting a possible medication ___." | discrepancy | The reported difference between directions requires clarification, not an assumed corrected dose.
@@ -401,12 +405,12 @@ BOOK['units'].append(unit(
     title='Meals, preferences, and unresolved restrictions',
     scene='Offer a choice without guessing about restrictions',
     skill='Acknowledge a food preference, explain an unresolved restriction, and offer an approved alternative without pressure.',
-    brief='Caregiver Daniel is supporting Ms. Park with breakfast. Her actual plan lists two approved options, labeled A and B in this teaching case. She dislikes A and asks for food C, which is not listed. Daniel does not know whether C meets the documented restrictions. B is available, and the coordinator can clarify C through the appropriate process. The exercise does not specify ingredients or clinical dietary requirements. Daniel must not guess that C is suitable, pressure Ms. Park to eat A or B, or invent an ingredient substitution.',
+    brief='Ms. Park declines plain oatmeal and asks caregiver Daniel for filled dumplings. Her fictional plan approves specified plain oatmeal and yogurt with berries; the yogurt meal is available. The dumpling product and preparation have not been checked against her documented dietary restrictions. The coordinator can arrange that clarification. These approvals apply only to this supplied plan, not to other people or products. Daniel must respect her preference without guessing suitability, changing ingredients, or recording food as eaten merely because he offered it.',
     cast='Ms. Park | Client\nDaniel | Caregiver',
     culture=('Food is personal, not merely a task', 'Preferences can involve taste, culture, routine, religion, and comfort. Ask the person rather than infer a preference from a name or background. Explain an unresolved restriction without presenting the person as troublesome or treating the approved alternative as compulsory.'),
-    a='''Which option is approved and available besides A? | B | C | Every requested food | No alternative | The brief explicitly states that B is an approved option and is available.
-What is known about C? | It is requested but its suitability is unconfirmed. | It is definitely prohibited for every client. | It meets all documented restrictions. | It can be substituted without checking. | C is unlisted and Daniel lacks the information needed to confirm suitability.
-What must Daniel avoid? | Guessing suitability or pressuring the client to eat | Acknowledging the preference | Asking the coordinator to clarify | Offering available option B | The scenario requires respect for choice and clarification rather than an invented dietary decision.''',
+    a='''Which alternative is approved and available in this plan? | Yogurt with berries | Filled dumplings | Any similar product | No alternative | The supplied plan approves the specified yogurt meal, which is available; that is not a general dietary recommendation.
+What is known about the dumplings? | They are requested but their suitability is unconfirmed. | They have been checked against all restrictions. | Their filling alone determines suitability. | A family comment replaces the plan check. | The actual product and preparation still need checking against the documented requirements.
+What must Daniel avoid? | Guessing suitability or pressuring the client to eat | Acknowledging the preference | Asking the coordinator to clarify | Offering the approved yogurt meal | Respecting choice does not require an invented dietary decision or pressure to accept an alternative.''',
     vocabulary='''meal support | Agreed assistance with preparing, serving, or managing a meal. | provide meal support
 approved option | A choice confirmed within the relevant plan or process. | offer an approved option
 dietary restriction | A documented limit on particular foods, ingredients, or intake. | verify a dietary restriction
@@ -432,15 +436,15 @@ intake record | A record of relevant food or fluid consumed under the care plan.
 suitability | Whether an option meets the person's applicable needs and restrictions. | confirm suitability
 nutrition professional | An appropriately qualified professional advising on nutritional needs. | consult a nutrition professional''',
     precision='Dislike, allergy, intolerance, and swallowing difficulty are not interchangeable. Use the actual recorded information and the person\'s words. Recognizing these terms does not authorize a caregiver to diagnose a problem or change a clinically directed restriction.',
-    precision_extra='An unlisted food is not automatically forbidden forever, but it is not confirmed suitable in this scenario. The worker can seek clarification and offer B without forcing acceptance. No generic ingredient swap is supplied or authorized by the exercise.',
-    phrases='''Acknowledge the preference | I understand that you do not want option A today.
-Offer the known alternative | Option B is available and is included in your plan.
-Keep the offer voluntary | Would you like B while we clarify your other request?
-Name the uncertainty | I cannot yet confirm whether C meets the recorded restrictions.
+    precision_extra='The dumplings are not automatically forbidden forever, but their suitability is unconfirmed. The specified yogurt meal may be offered without pressure. This is one fictional plan: neither a food name nor a generic ingredient swap establishes safety for another person.',
+    phrases='''Acknowledge the preference | I understand that you do not want oatmeal today.
+Offer the known alternative | The yogurt with berries is available and included in your plan.
+Keep the offer voluntary | Would you like the yogurt meal while we check your other request?
+Name the uncertainty | I cannot yet confirm whether these dumplings meet the recorded restrictions.
 Avoid a diagnosis | I will not guess why a restriction is in the plan.
-Explain the check | We need the relevant details checked before treating C as suitable.
+Explain the check | We need this product and preparation checked against your plan.
 Ask the coordinator | Can you clarify this request through the appropriate process?
-Separate two facts | C is not listed; that does not tell us that it is permanently prohibited.
+Separate two facts | The dumplings are unlisted; that does not mean they are permanently prohibited.
 Respect a refusal | I will not pressure you to choose an option you do not want.
 Avoid an improvised substitute | I cannot assume a different ingredient solves the problem.
 Clarify the full preparation | Does the confirmation cover how the food is prepared as well?
@@ -448,26 +452,26 @@ Keep terms distinct | A preference is different from an allergy or a prescribed 
 Check the record | I will use the current plan, not an older menu I remember.
 Report a change | I will report a relevant change in appetite through the agreed route.
 Record actual intake | I will record what was actually eaten, not what was offered.
-Close the request accurately | C remains unconfirmed until the appropriate clarification is received.''',
+Close the request accurately | The dumpling request remains unconfirmed until the appropriate clarification is received.''',
     notes='''Do not want today | Describes the current preference without making it permanent.
-Would you like | Offers B without turning availability into an obligation.
+Would you like | Offers the specified yogurt meal without making it an obligation.
 Cannot yet confirm | Identifies a knowledge gap, not a universal prohibition.
 Relevant details | Leaves clinical interpretation to the appropriately qualified person.
 What was actually eaten | Distinguishes intake from preparation, serving, and an offer.
 Until clarification | States the unresolved status without promising a favorable answer.''',
-    d='''Which offer is appropriate? | B is available and approved; would you like it while we clarify C? | You must eat B because I offered it. | C looks harmless, so no check is needed. | Disliking A proves a food allergy. | The first offer combines a confirmed alternative with choice and an appropriate clarification step.
-Which record would be inaccurate? | Ate B, when B was only offered | Declined A today | Requested C; suitability unconfirmed | B available under the plan | An offer does not establish consumption and must not be recorded as intake.
-Which statement correctly describes C? | Unlisted and not yet confirmed suitable | Automatically prohibited for life | Confirmed suitable because requested | Approved if one ingredient is removed without advice | The supplied information establishes uncertainty, not a permanent ban or an approved substitution.
+    d='''Which offer is appropriate? | Your approved yogurt meal is available; would you like it while we check the dumplings? | I will prepare the yogurt first and record that you agreed. | We can approve the dumplings by checking their name alone. | Yesterday's oatmeal choice means you want it today too. | The appropriate offer respects today's preference, gives an approved alternative, and leaves the unverified food for the proper check.
+Which record would be inaccurate? | Ate the yogurt meal, when it was only offered | Declined oatmeal today | Requested dumplings; suitability unconfirmed | Yogurt meal available under the plan | An offer does not establish consumption and must not be recorded as intake.
+Which statement correctly describes these dumplings? | Unlisted and not yet confirmed suitable | Approved because a relative recognized the brand | Confirmed suitable because requested | Approved if one ingredient is removed without advice | Neither a familiar brand, a request, nor an improvised alteration supplies the missing product and preparation assessment.
 Which distinction matters? | Preference, allergy, intolerance, and clinical restriction have different meanings. | Every dislike is an allergy. | Every texture change is a personal preference. | A familiar recipe overrides the current plan. | Accurate terminology prevents a preference or unsupported assumption from replacing the actual documented requirements.''',
-    dialogue='''Ms. Park | I do not want option A this morning, Daniel. I had it yesterday and would much rather have the food marked C on my shopping list.
-Daniel | I understand your [[food preference::The food preference is Ms. Park's stated choice, not evidence of an allergy or a clinical restriction.]]. Option B is available and listed in your plan, but I need clarification before I can confirm whether C meets the recorded restrictions.
-Ms. Park | Nobody said C was banned. Are you telling me that I can never have it?
-Daniel | No. I am saying its [[suitability::Suitability remains unconfirmed; the absence of C from the plan does not establish a permanent prohibition.]] is unconfirmed in the information I have. That is different from a permanent prohibition. We can ask the coordinator to clarify the request through the appropriate process.
+    dialogue='''Ms. Park | No oatmeal today, please, Daniel. I had it yesterday. Could we have the filled dumplings on my shopping list instead?
+Daniel | I hear your [[food preference::The food preference is Ms. Park's stated choice, not evidence of an allergy or a clinical restriction.]]. The yogurt with berries is available under your plan. These dumplings still need checking against the recorded restrictions.
+Ms. Park | Nobody said dumplings were banned. Are you telling me I can never have them?
+Daniel | No. Their [[suitability::Suitability remains unconfirmed; absence from the plan does not establish a permanent prohibition.]] is not confirmed yet. We can ask the coordinator to arrange the check. That is different from saying never.
 Ms. Park | Could you simply change one ingredient? People often make a small change to a recipe when someone has a dietary requirement.
 Daniel | A [[substitution::A substitution changes the food or ingredient but does not automatically satisfy an unknown restriction.]] might not address the actual restriction. I do not have enough information to choose one safely, and I should not invent an adjustment just because it sounds reasonable.
 Ms. Park | I appreciate that explanation. I mainly want something different today, not an argument about whether I am being sensible about breakfast.
-Daniel | I hear that. The current [[meal plan::The meal plan identifies A and B as approved options; it does not remove the person's right to express a different preference.]] gives us A and B as approved options, and B is here. Would you like B while the other request is checked, or would you prefer to discuss the choice further?
-Ms. Park | Please ask about C first. I might choose B afterward, but I do not want it prepared just because it is easier for the schedule.
+Daniel | Your [[meal plan::The supplied plan approves specified oatmeal and yogurt with berries; it does not remove the person's right to express another preference.]] includes the oatmeal and yogurt with berries. Would you like the yogurt while we check, or would you rather wait for the response?
+Ms. Park | Please ask about the dumplings first. I might choose yogurt afterward, but please do not prepare it just to keep to the schedule.
 Daniel | I will not turn an [[approved option::An approved option may be offered, but its status does not compel the client to accept or consume it.]] into a compulsory meal. I can explain what is available and seek clarification without making the decision on your behalf.
 Ms. Park | My relative said the label looked fine. Does that count as confirmation, or do we need someone to check it against my actual plan?
 Daniel | The relevant [[label verification::Label verification must address the actual requirements through the proper process; a general reassurance is not equivalent.]] needs to match the actual requirements. A general comment that a label looks fine does not tell us which restrictions were checked or by whom.
@@ -475,16 +479,17 @@ Ms. Park | Does preparation matter too? A package might not answer every questio
 Daniel | Yes, the [[preparation method::The preparation method can affect whether the final food meets requirements; package information alone may be incomplete.]] may be relevant. I will make sure the request describes the food accurately rather than ask for approval of one ingredient while leaving the finished meal unclear.
 Ms. Park | Please do not write that I have no appetite. I am hungry; I just do not want the first option you offered.
 Daniel | I will keep [[appetite::Appetite concerns desire to eat; rejecting one option does not by itself establish loss of appetite.]] separate from a preference about a particular food. Your words are clear: you are hungry and are asking about an alternative, not reporting that you do not want any food.
-Ms. Park | And if I later choose B, the notes should say what I actually ate. Sometimes an offered meal gets recorded as if it was finished.
+Ms. Park | If I choose the yogurt later, please record what I actually eat. An offered meal is not a finished meal.
 Daniel | The [[intake record::The intake record concerns actual consumption under the plan, not a meal that was merely offered or prepared.]] should distinguish offered, served, and consumed according to our process. I will not record a full meal as eaten just because it was available or placed in front of you.
-Ms. Park | Let us ask the coordinator what needs checking for C. We can decide about B after the response.
+Ms. Park | Let us ask about the dumplings. We can decide about yogurt after the response.
 Daniel | I will explain the request and the unresolved [[dietary restriction::The dietary restriction must be understood and applied through the appropriate process rather than guessed from the request.]] question. We will preserve your choice and use the actual response, without claiming that an unconfirmed alternative has already been approved.''',
-    transfer_title='Offer an approved alternative while checking a request',
-    transfer_setup='Lunch options L and M are approved. The client declines L and requests N, which is unlisted. M is available. No confirmation about N or consumption of M has been recorded.',
-    transfer='''Worker: "The available approved alternative is ___." | M | The brief identifies M as both approved and available.
-Client: "My requested unlisted option is ___." | N | The request concerns N, while L and M are the approved options.
-Worker: "Its suitability is currently ___." | unconfirmed | No relevant confirmation about N has been recorded.
-Worker: "Offering M does not establish ___." | consumption | The brief contains no evidence that the client ate the offered alternative.''',
+    rehearsal=('Read Ms. Park and Daniel aloud, then swap roles. Acknowledge the request for different food before explaining the needed check.', 'Correct the ten gaps. Keep the approved yogurt meal specific to this plan; do not infer that dumplings are safe, permanently forbidden, or fixed by an ingredient swap.', 'Repeat the closing request and intake-record exchange, distinguishing food offered, served, and actually eaten.'),
+    transfer_title='Check a different lunch request',
+    transfer_setup='A fictional plan approves specified soup and pasta dishes. The client declines soup and requests an unlisted curry. Pasta is available. The curry has not been checked against the plan; no pasta consumption is recorded. These are case facts, not general dietary approvals.',
+    transfer='''Worker: "The available approved alternative is ___." | pasta | This fictional plan identifies the specified pasta dish as approved and available, not every pasta product.
+Client: "My requested unlisted dish is ___." | curry | The person requests curry, while the two stated approved dishes are soup and pasta.
+Worker: "Its suitability is currently ___." | unconfirmed | The brief supplies no completed check of this curry against the person's actual plan.
+Worker: "Offering pasta does not establish ___." | consumption | No eating has been recorded, so an offer cannot be reported as actual food intake.''',
 ))
 
 BOOK['units'].append(unit(
@@ -555,11 +560,11 @@ June | I am her niece. I know her full name and address, and I have spoken to pe
 Nadia | Thank you for explaining. That is a [[claimed relationship::A claimed relationship is the caller's account; knowing personal details does not independently verify identity or permission.]] I can pass on, but I cannot use those details alone to establish identity and permission to receive information.
 June | Are you saying you do not believe me? I am only asking a family question, not trying to get hold of a whole medical file.
 Nadia | No accusation is intended. [[Confidentiality::Confidentiality protects personal information even when the request sounds ordinary or comes from a possible relative.]] applies to a short update as well as a large record. The coordinator can handle your request through the approved process.
-June | Could you at least say whether breakfast was finished? That seems like a small enough detail, and it would reassure me.
+June | I am not asking for the whole record. Just whether she finished breakfast. Surely you can tell me that much?
 Nadia | It would still be a [[disclosure::A disclosure includes a small visit detail; its limited size does not remove the need for an appropriate basis.]]. I cannot share one private detail as a shortcut around the checks. I can explain the contact route without discussing the person's day.
 June | I thought my number was already on the list. Can you look it up and tell me whether the office has made a mistake?
 Nadia | I cannot access the [[contact record::The contact record is unavailable, so Nadia cannot confirm either existing permission or an error in the record.]] at this moment. That does not mean permission never existed or that anyone made an error; it means I cannot verify it now.
-June | Then I would like the office to check. I do not want this conversation recorded as if you have decided that I am not family.
+June | Please ask the office to check. I would hate the note to say I am not her niece just because you cannot see the contact list.
 Nadia | I will record your stated name and request, with the [[verification status::Verification status remains incomplete; recording that fact does not deny the claimed family relationship.]] unconfirmed. I will not label the relationship false simply because the checks are not available during this call.
 June | What does the office need to establish besides who I am? If I really am the niece, is that not enough?
 Nadia | They also need the relevant [[permission to receive information::Permission to receive information is separate from identity and must cover the particular disclosure being requested.]]. A family relationship and authority to receive particular information are not identical. Any verified permission may also have a defined scope.
@@ -569,6 +574,7 @@ June | I would prefer a clear next step, then. Can I contact the coordinator thr
 Nadia | Use the office's verified published details and its [[secure channel::A secure channel is the approved route for the relevant information, not any channel suggested during an unverified call.]] for the request. The coordinator can explain the checks and the appropriate response without my disclosing visit information here.
 June | All right. Please pass on that I asked for an update and would like the relevant permissions checked, not ignored.
 Nadia | I can route that request through the approved [[referral route::The referral route gives the request an appropriate next step while preserving confidentiality until verification is complete.]]. I am not ruling out legitimate family communication; I am keeping this call within what I can verify and share.''',
+    rehearsal=('Read June and Nadia aloud, then swap roles. Keep a calm tone while withholding private visit details on the unverified call.', 'Correct the ten gaps. Distinguish the claimed relationship, identity check, and scope of permission without accusing June of dishonesty.', 'Repeat the published-office contact route and factual message taking without requesting extra documents on an improvised channel.'),
     transfer_title='Respond to an unverified caller claiming to be a son',
     transfer_setup='An unknown caller claims to be a client\'s son and asks for visit notes. The worker cannot access the authorization record. The privacy coordinator handles verified requests through the approved office route.',
     transfer='''Worker: "The caller describes himself as the client's ___." | son | Son is the claimed relationship, not a verified authorization finding.
@@ -647,11 +653,11 @@ Erin | Exactly. I do not want two people arranging different cars or each assumi
 Mateo | Let us keep any [[responsibility transfer::Responsibility transfer requires an explicit appropriate reassignment, not an inference from forwarding or reading a message.]] explicit. Unless the actual assignment changes through the proper process, the booking remains with Dev and I use the designated route for updates.
 Erin | I will record the time of this status as eleven. If a confirmation arrives later, it should not make the earlier note look inaccurate.
 Mateo | A clear [[timestamp::The timestamp identifies when the recorded pending status applied and helps distinguish it from later developments.]] will help. The note can accurately show that transport was pending at eleven even if a later entry records a confirmed arrangement.
-Erin | I also need to replace tomorrow with the actual appointment date in the record. Someone might read the note after midnight or during a later shift.
+Erin | I wrote tomorrow in my first note. I will add the actual date before saving it; that wording will be unclear if someone reads it another day.
 Mateo | Yes, include the [[appointment date::The appointment date removes the changing reference of tomorrow when the record is read later.]] and ten o'clock time. My fifteen-hundred start is a separate fact; neither the start nor the appointment time tells us the pickup time.
 Erin | There is no pickup time to report yet. I should not copy ten into that field just to avoid leaving something blank.
 Mateo | Correct. A [[status update::A status update should report confirmed new information; an empty pickup field must not be filled by copying a different time.]] needs actual information from the appropriate source. Until then, an explicit unconfirmed status is better than a plausible but invented time.
-Erin | For the completed tasks, I can report what I actually did. I should not use all needs met as a shortcut for breakfast and laundry.
+Erin | I will list breakfast support and laundry, not all needs met. That broader phrase would make the transport question sound settled too.
 Mateo | Specific [[completion evidence::Completion evidence supports the particular finished tasks and does not establish that every need or unresolved arrangement is resolved.]] is more useful. List the two completed tasks accurately and keep the transport query separate, rather than make a broad statement the record cannot support.
 Erin | If Dev sends a booking confirmation, the person receiving it should add the details using the required process, including the source and time.
 Mateo | That preserves [[source attribution::Source attribution identifies who supplied the new information so another worker can understand and verify the update.]]. It also lets the next worker distinguish a coordinator confirmation from a client's expectation or a message that only says the request was sent.
@@ -659,6 +665,7 @@ Erin | Can you repeat the important points so I know I have not left the respons
 Mateo | For [[closed-loop communication::Closed-loop communication checks understanding by repeating the relevant facts and allowing correction instead of assuming a message was understood.]]: breakfast and laundry are complete; transport for tomorrow at ten is pending with Dev; I start at fifteen hundred and use the approved update route.
 Erin | That is correct. I will put the same facts in the approved record and identify the designated escalation contact if the unresolved issue needs further attention.
 Mateo | Then we can confirm [[acceptance of handoff::Acceptance of handoff acknowledges receipt and understanding of the relevant information, not completion of the pending transport arrangement.]]. I understand the completed support, open query, owner, and contact route. We have handed over the information without falsely closing the transport request.''',
+    rehearsal=('Read Erin and Mateo aloud, then swap roles. Separate the eleven-o-clock status, fifteen-hundred start, and next-day appointment.', 'Correct the ten gaps. Keep Dev responsible for transport without making a second booking or inventing a pickup time.', 'Repeat the closed-loop handoff and dated-update instruction. Accepting the information does not complete the outstanding arrangement.'),
     transfer_title='Separate a service query from a completed task',
     transfer_setup='At 12:00, meal support is complete. An equipment-delivery query for Friday at 14:00 is pending with coordinator Ana. The incoming worker starts at 16:00 and has not been assigned the delivery arrangement.',
     transfer='''Outgoing worker: "The completed task is ___." | meal support | The brief confirms meal support, not the equipment delivery arrangement.
@@ -739,16 +746,17 @@ Mr. Reed | Is someone else coming instead? The last message I received said the 
 Hana | Owen in [[dispatch::Dispatch is the named team coordinating the delayed visit and checking the appropriate alternative arrangement.]] is checking an approved backup arrangement. It is not confirmed yet. Looking for cover and having someone assigned are different stages, and I will not blur them.
 Mr. Reed | Please do not tell me to call my daughter as if she is automatically available. She has work, and nobody has asked her about today.
 Hana | I will not assume she can provide [[backup cover::Backup cover needs an appropriate verified arrangement; a relative cannot be treated as available or assigned without confirmation.]]. The office needs to follow the approved contingency process, with the actual arrangements and responsibilities established rather than transferred to your family by assumption.
-Mr. Reed | When will I hear something definite? Even if the answer is that they are still checking, I do not want to be left waiting without news.
+Mr. Reed | I can cope with an honest still checking. What I cannot cope with is no news. When will someone actually call me?
 Hana | Dispatch has made an [[update commitment::The update commitment is to contact the client by nine ten, not to guarantee arrival or confirmed cover by then.]] for nine ten. That is the next communication time, not a promise that the visit or a backup will arrive by nine ten.
 Mr. Reed | So I should receive an update by then even if they do not yet have a confirmed replacement. That distinction was not clear to me before.
 Hana | Correct. A [[revised estimate::A revised estimate may report new timing, but it must remain qualified unless an actual commitment is confirmed.]] or an honest pending status is more useful than silence. The update should explain what is known, what remains open, and what action is continuing.
-Mr. Reed | I want the complaint recorded too. My concern is not that one journey ran late; it is that I cannot plan around uncertain support.
+Mr. Reed | Please record my complaint as well. This keeps upsetting my breakfast arrangements. It is the uncertainty about support, not just one late journey.
 Hana | I will pass that [[complaint::The complaint concerns unreliable support and communication, and should be recorded without reducing it to a travel inconvenience.]] through the service process, including the effect you have described. Recording dissatisfaction does not replace the immediate work to address today's delayed support.
 Mr. Reed | And if a more urgent problem comes up before nine ten? I do not want the scheduled callback to become a reason nobody responds.
 Hana | An urgent [[welfare concern::A welfare concern requiring urgent action must use the appropriate response route instead of waiting for a routine update.]] needs the appropriate local response without waiting for that callback. The communication timetable must not override the service's urgent or emergency procedure.
 Mr. Reed | Please record the original nine o'clock expectation, arrival estimate, unconfirmed backup, and next contact.
 Hana | I will record those facts and support the agreed [[follow-through::Follow-through means carrying out the actual promised contact and actions, while preserving their status and avoiding unsupported assurances.]]. The visit is delayed, cover is unconfirmed, Owen is coordinating the response, and dispatch will update you by nine ten.''',
+    rehearsal=('Read Mr. Reed and Hana aloud, then swap roles. Apologize for the missed nine-o-clock support before explaining the estimate.', 'Correct the ten gaps. Separate arrival at nine thirty to nine forty-five from the update due by nine ten.', 'Repeat the unconfirmed-cover and complaint handoff. Keep urgent welfare action available without assuming a relative can replace the visit.'),
     transfer_title='Keep a later visit estimate separate from its update',
     transfer_setup='At 13:40, a 14:00 visit is delayed. Arrival is estimated between 14:20 and 14:35. Dispatcher Tia is checking approved cover and will update the client by 13:55; cover is not confirmed.',
     transfer='''Worker: "The original scheduled start was ___." | 14:00 | The brief identifies 14:00 as the planned start before the delay.

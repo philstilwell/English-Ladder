@@ -21,16 +21,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Bookkeeping, Accounting, and Auditing Clerks.',
              url='https://www.bls.gov/ooh/office-and-administrative-support/bookkeeping-accounting-and-auditing-clerks.htm',
-             note='Occupational context for financial records, posting, accuracy checks, and reconciliation. No source examples or statistical forecasts are reproduced.', checked='1 October 2026'),
+             note='Occupational context for financial records, posting, accuracy checks, and reconciliation. No source examples or statistical forecasts are reproduced.', checked='10 October 2026'),
         dict(title='US Department of Labor. Fact Sheet 21: Recordkeeping.',
              url='https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping',
-             note='Background on accurate time and pay records. The fictional cutoff is an internal review time, not a legal pay rule.', checked='1 October 2026'),
+             note='Background on accurate time and pay records. The fictional cutoff is an internal review time, not a legal pay rule.', checked='10 October 2026'),
         dict(title='OpenStax. Financial Accounting, section 8.6: Bank Reconciliation.',
              url='https://openstax.org/books/principles-financial-accounting/pages/8-6-define-the-purpose-of-a-bank-reconciliation-and-prepare-a-bank-reconciliation-and-its-associated-journal-entries',
-             note='Terminology reference for timing differences and reconciliation. The book uses original figures and dialogues, not the source exercises or diagrams.', checked='1 October 2026'),
+             note='Terminology reference for timing differences and reconciliation. The book uses original figures and dialogues, not the source exercises or diagrams.', checked='10 October 2026'),
         dict(title='OpenStax. Financial Accounting, section 4.1: Adjusting Entries.',
              url='https://openstax.org/books/principles-financial-accounting/pages/4-1-explain-the-concepts-and-guidelines-affecting-adjusting-entries',
-             note='Background for accounting periods and adjustment terminology. The fictional close item remains subject to accountant review, with no posting instruction.', checked='1 October 2026'),
+             note='Background for accounting periods and adjustment terminology. The fictional close item remains subject to accountant review, with no posting instruction.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -97,26 +97,27 @@ Do not yet fully agree | Keeps the matching exception visible without declaring 
 Which request moves the query forward? | Please locate any receiving record for the remaining two lamps | Please change R9 to twelve without evidence | Please mark the invoice paid now | Please accuse Alder of intentional overbilling | The missing evidence concerns receipt of the remaining two lamps.
 What does may relate to another delivery mean? | It is a possible explanation requiring support | The delivery is confirmed | The supplier has admitted an error | Payment has been approved | May marks a hypothesis rather than an established receiving fact.
 Which reference belongs to the receiving record? | R9 | A184 | P61 | An invented second reference | R9 is explicitly the receiving record, while A184 and P61 identify other documents.''',
-    dialogue='''Mina | Joel, I have a query on Alder invoice A184 for desk lamps. The invoice and order agree, but the receiving support does not cover the full quantity.
+    dialogue='''Mina | Joel, could you check Alder A184? The invoice and order both say twelve lamps, but the receipt support doesn't cover all twelve.
 Joel | Let us walk through the [[document chain::Document chain links invoice A184, order P61, and receiving record R9 so the precise mismatch is visible.]]. Which purchase order and receiving record are you comparing, and what does each document actually show?
-Mina | Purchase order P61 lists twelve lamps, and A184 bills twelve. Receiving record R9 lists ten. That leaves two without support in the record I have.
+Mina | It's order P61 and receiving record R9. P61 and A184 show twelve; R9 shows ten.
 Joel | Then we have a [[matching exception::Matching exception arises because the invoice and order show twelve while the receiving record shows ten.]], not a complete match. The invoice agreeing with the order does not establish that all twelve are documented as received.
-Mina | The remaining two may have arrived in another delivery. I cannot find a second receiving record, so I have kept that as a possibility rather than a fact.
+Mina | Could the other two have come separately? I haven't found another receiving record, so I can't confirm that.
 Joel | That is the right distinction. A [[partial delivery::Partial delivery is a possible context for the difference, but a later receipt still needs evidence.]] could explain the first record, but we need evidence before saying the rest arrived separately.
-Mina | Could you check with the relevant receiving contact and locate any additional record? Please keep the references together so the question is not detached from this invoice.
+Mina | Please check with receiving and keep A184, P61, and R9 together in the query.
 Joel | I will request the missing [[supporting document::Supporting document would provide evidence for any additional receipt rather than relying on an assumed delivery.]], if one exists, and use A184, P61, and R9 in the inquiry. I will not invent a second receipt reference.
-Mina | Good. I do not want someone to change the ten to twelve just because the purchase order says twelve. That would conceal the discrepancy rather than resolve it.
+Mina | Someone suggested changing R9 to twelve because it would match the order. That would hide the gap.
 Joel | Agreed. The [[received quantity::Received quantity documented in R9 is ten and must not be overwritten to force agreement with the other records.]] in R9 should remain ten unless the appropriate evidence and correction process establish something different. The query must preserve what we currently know.
-Mina | Is it fair to say Alder has overbilled us? A colleague asked whether the two-lamp difference proves the supplier charged for goods we never received.
+Mina | Does this prove an overcharge? I need to answer a colleague without accusing the supplier on incomplete evidence.
 Joel | We should not assert [[overbilling::Overbilling is not established by an unresolved receiving-record gap when another delivery remains possible.]] from this alone. We have a gap in the available receipt evidence, and another delivery remains possible. That is different from proving an improper charge.
-Mina | Then I will describe two lamps as unsupported by the available receiving record, not as definitely undelivered. That wording should help avoid an accusation.
+Mina | Then I'll say two unsupported by the available record, not definitely undelivered.
 Joel | Yes. The [[quantity variance::Quantity variance is two lamps between the billed and ordered twelve and the documented receipt of ten.]] is precise, while the cause remains open. It gives the receiving team a concrete question to investigate without deciding the outcome for them.
-Mina | I also need the payment position kept separate. This conversation is about obtaining support, not treating the invoice as already approved.
+Mina | And this isn't a payment approval. We're asking for receiving evidence, not releasing an invoice.
 Joel | Understood. We have not established [[approval evidence::Approval evidence is absent from the supplied facts, so the matching inquiry must not be described as payment authorization.]] for payment in this exchange. Locating a document and completing the relevant approval process are not interchangeable statements.
-Mina | Could your reply say whether the second record was found, rather than just handled? That word can hide whether the query is actually resolved.
+Mina | Please say whether you found the missing record. Handled wouldn't tell me whether the exception is resolved.
 Joel | I will report the actual [[query status::Query status should say whether the missing receipt support was found, not merely that someone handled the request.]]. If support is still missing, the reply will say so and retain the two-lamp difference against the same document references.
-Mina | Thank you. My summary is twelve billed and ordered, ten documented in R9, two requiring support, with a second delivery possible but unconfirmed.
+Mina | I'll leave twelve billed and ordered, ten documented, two requiring support, possible second delivery unconfirmed.
 Joel | That captures the [[unmatched balance::Unmatched balance is the two-lamp portion not supported by the available receiving record, not a confirmed debt or loss.]] in quantity terms. I will follow up on the evidence and keep any later conclusion tied to the records that support it.''',
+    rehearsal=["Complete the invoice-matching dialogue.","Read the three references and quantities aloud: A184 twelve, P61 twelve, R9 ten. Then read the request for evidence of the remaining two.","Complete the transfer, check the explained key, and reread the query without claiming either overbilling or a complete match."],
     transfer_title='Name the three records and the unresolved difference',
     transfer_setup='Complete the matching query without assuming a second receipt or payment approval.',
     transfer='''Clerk: "The supplier invoice is ___." | A184 | A184 identifies the Alder invoice billing twelve desk lamps.
@@ -150,14 +151,14 @@ invoice-level balance | Unsettled amount associated with one particular invoice.
 account-level position | Combined position across the specified customer-account items. | explain the account-level position
 net difference | Result after offsetting the stated amounts for comparison. | calculate the net difference
 payer identity | Identification of the person or entity sending money. | verify payer identity
-payment narrative | Text accompanying a payment or receipt. | check the payment narrative
+aging bucket | Group of outstanding balances classified within a specified age interval and date basis. | reconcile the aging buckets
 matching amount | Figure equal to another amount but not necessarily linked to it. | distinguish a matching amount
 allocation query | Request to establish where a receipt should be applied. | raise an allocation query
 statement of account | Summary of relevant customer transactions and balances. | clarify the statement of account
 credit balance | Account position representing an amount in the customer's favor under the relevant records. | verify a credit balance
 overdue | Past the applicable due date, when that date is established. | avoid assuming overdue status
 unapplied cash | Received funds awaiting application to the relevant items. | identify unapplied cash
-customer confirmation | Information verified with the relevant customer contact. | obtain customer confirmation
+days past due | Days elapsed after the applicable due date, measured at the specified aging date. | calculate days past due
 allocation instruction | Direction identifying the intended application of a receipt. | record the allocation instruction
 collection message | Communication seeking or discussing payment of amounts due. | correct a misleading collection message''',
     precision='Invoices 410 and 411 total $1,000. The identified $600 receipt leaves a $400 net difference across those stated items. Do not call the full $1,000 unpaid without acknowledging the receipt, and do not claim invoice 411 is the confirmed remaining debt.',
@@ -188,26 +189,27 @@ From the amount alone | Limits what a matching figure establishes.''',
 What does the $400 net difference establish? | The arithmetic across the stated invoices and receipt | That invoice 411 alone is the confirmed unpaid item | That no receipt exists | That the payment should be refunded | The difference is account-level arithmetic and does not resolve invoice-specific application.
 Which request is appropriate? | Please confirm the intended invoice reference or remittance details | Please pay another $600 because the receipt has no reference | Please accept that 410 is closed automatically | Please invent a new due date | The missing information concerns allocation, not whether the money arrived.
 Why is a matching amount insufficient here? | The receipt has no invoice reference and allocation remains pending | Equal figures can never relate to the same transaction | Invoice 410 does not exist | Pine's identity is unknown | The known facts explicitly leave application unresolved despite the equal amounts.''',
-    dialogue='''Luis | Our team received a message saying both invoices are still open. We sent six hundred dollars, so I want to check that the payment has not disappeared.
-Ava | It has not disappeared. We have identified the [[cash receipt::Cash receipt confirms six hundred dollars from Pine, even though its invoice application is unresolved.]] as Pine's. The issue is that it contains no invoice reference, so its application is still unresolved.
-Luis | Thank you. That is different from saying we have paid nothing. Which invoices are you comparing against the receipt?
-Ava | Invoice 410 is six hundred dollars and invoice 411 is four hundred. Both remain [[open invoice::Open invoice describes an unsettled ledger item while the identified receipt awaits allocation.]] items in the ledger pending allocation, rather than because no money was received.
-Luis | The receipt is the same amount as 410. Would it not be simplest to mark that invoice paid and leave 411 as the balance?
-Ava | It is a [[matching amount::Matching amount is a clue, but the missing reference prevents it from proving the intended invoice application.]], but the reference is missing. I need confirmation of the intended application instead of treating the equal figures as an instruction from your team.
-Luis | I can ask for the payment details. What specifically should I request so they do not just send another screenshot showing the amount?
-Ava | Please request the [[remittance advice::Remittance advice can identify the invoice or invoices Pine intended the payment to settle.]] or a clear invoice reference for this receipt. We need to know which invoice or invoices the six hundred dollars was intended to settle.
-Luis | Before I do that, can we agree on the overall arithmetic? The invoices total one thousand, and the receipt is six hundred.
-Ava | Yes. Across those stated items, the [[net difference::Net difference is four hundred dollars after comparing the thousand-dollar invoice total with the six-hundred-dollar receipt.]] is four hundred dollars. That calculation acknowledges the money received, but it does not establish which invoice is settled.
-Luis | So four hundred is the overall difference, not necessarily a confirmed statement that invoice 411 is the one left unpaid.
-Ava | Correct. An [[invoice-level balance::Invoice-level balance depends on the actual allocation, which cannot be inferred from the overall four-hundred-dollar difference.]] depends on the allocation. We should not name 411 as the confirmed remaining debt merely because its amount happens to be four hundred.
-Luis | Please make that clear in any follow-up message. Otherwise, our accounts team may think you want another six hundred while the first payment is sitting there.
-Ava | I will describe this as an [[allocation query::Allocation query asks where the existing receipt belongs, rather than demanding a second payment.]], not a request for a duplicate payment. The receipt remains identified as Pine's while we obtain the missing reference.
-Luis | Is there any overdue issue in the information you have given me? I do not see a due date in this conversation.
-Ava | We have not established [[overdue::Overdue requires an applicable due date, which has not been supplied in this case.]] status here. I should not introduce that claim. The specific problem we are addressing is the missing allocation detail, not a newly stated payment deadline.
-Luis | Then I will ask our team to confirm the intended application. Please keep both invoice numbers and the receipt amount in the request.
-Ava | I will. The [[customer account::Customer account groups Pine's two invoices and identified receipt while preserving their separate allocation states.]] summary will show 410 at six hundred, 411 at four hundred, and the identified six-hundred-dollar receipt awaiting application.
-Luis | That gives us a precise question to answer. Once our team confirms the reference, we can stop treating the matching amount as a guess.
-Ava | Exactly. We need the [[allocation instruction::Allocation instruction identifies the intended application and is the missing information needed for the next review.]] before the relevant invoice records can be reviewed for settlement. Until then, the receipt is acknowledged and the application remains pending.''',
+    dialogue='''Luis | Your message says both invoices are open, but we sent six hundred dollars. Has that payment been missed?
+Ava | We've identified Pine's [[cash receipt::Cash receipt confirms six hundred dollars from Pine, even though its invoice application is unresolved.]]. The money isn't missing; the receipt lacks an invoice reference, so its application is unresolved.
+Luis | Thank you. Which two invoices are on the message? I need to explain this to our accounts team.
+Ava | Invoice 410 is $600 and 411 is $400. Each is still an [[open invoice::Open invoice describes an unsettled ledger item while the identified receipt awaits allocation.]] in the ledger while the receipt awaits allocation.
+Luis | Six hundred is exactly the amount of 410. Why not close that one and leave 411 outstanding?
+Ava | It's a [[matching amount::Matching amount is a clue, but the missing reference prevents it from proving the intended invoice application.]], but that doesn't confirm your intended application. We still need the reference rather than guessing from the figure.
+Luis | What should I ask our team for? Another screenshot of the payment probably wouldn't answer your question.
+Ava | Please ask for the [[remittance advice::Remittance advice can identify the invoice or invoices Pine intended the payment to settle.]] or the intended invoice reference. It should say which invoice or invoices the payment was meant to settle.
+Luis | Before I go back to them, the overall figures are a thousand in invoices and six hundred received. Is that right?
+Ava | Yes. The [[net difference::Net difference is four hundred dollars after comparing the thousand-dollar invoice total with the six-hundred-dollar receipt.]] across these stated items is $400. That acknowledges the receipt without deciding which invoice it settles.
+Luis | So the remaining four hundred doesn't itself prove that 411 is the unpaid invoice. The allocation could affect the individual balances.
+Ava | Correct. An [[invoice-level balance::Invoice-level balance depends on the actual allocation, which cannot be inferred from the overall four-hundred-dollar difference.]] depends on the actual application. We can't derive that application from the account-level difference alone.
+Luis | Please say that in the next message. Otherwise someone may think you're asking us to send the same six hundred again.
+Ava | I'll make it an [[allocation query::Allocation query asks where the existing receipt belongs, rather than demanding a second payment.]], not a duplicate payment request. We'll acknowledge the receipt and ask only for the missing application detail.
+Luis | Are you also saying anything is overdue? I haven't seen a due date in the information we've discussed.
+Ava | We haven't established [[overdue::Overdue requires an applicable due date, which has not been supplied in this case.]] status here. I won't add a deadline or collection claim that the supplied information doesn't support.
+Luis | Keep both invoice numbers and the receipt amount together in the request, please. That will help our team identify the right payment.
+Ava | The [[customer account::Customer account groups Pine's two invoices and identified receipt while preserving their separate allocation states.]] summary will show 410 at $600, 411 at $400, and Pine's identified $600 receipt awaiting application.
+Luis | I'll ask for the intended reference. Then you'll have something firmer than an amount that happens to match.
+Ava | Exactly. The missing [[allocation instruction::Allocation instruction identifies the intended application and is the missing information needed for the next review.]] will support the next settlement review. For now, the receipt is acknowledged and both invoice applications remain unresolved.''',
+    rehearsal=["Complete the customer-receipt dialogue.","Read the receipt acknowledgment and allocation request aloud. Keep $1,000 invoiced, $600 received, and $400 net difference separate from individual invoice settlement.","Complete the transfer and check the key. Repeat the readback without asking for the same payment again."],
     transfer_title='Acknowledge the receipt and query its application',
     transfer_setup='Complete the customer-account readback. Keep the net calculation separate from invoice settlement.',
     transfer='''Clerk: "The identified receipt is ___ dollars." | 600 | Six hundred dollars has been identified as Pine's receipt, not as a missing payment.
@@ -277,27 +279,28 @@ Not complete yet | Keeps the broader review state explicit.''',
     d='''Which explanation has the correct direction? | The June 30 ledger includes $300 that appears at the bank July 1 | The bank includes an extra $300 that the ledger lacks | Both records have identical cutoff activity | The deposit proves a $600 loss | The earlier ledger entry is consistent with the bank being lower at the June cutoff.
 Why should the deposit not simply be entered again? | It is already recorded in the cash ledger | The bank never recorded it | Every timing difference requires duplicate posting | The ledger has no cash account | The ledger already contains the deposit, so timing alone does not justify recording it again.
 Which completion statement is accurate? | The timing item is supported, but other checks remain open | The whole reconciliation is signed off | No further checks are possible | Every difference is necessarily the same deposit | The brief leaves other checks incomplete despite the matching deposit evidence.
-Which evidence should be kept together? | June 30 ledger entry and July 1 bank activity | An invented supplier invoice | A new duplicate deposit | Only an undated verbal explanation | Both dated records support the explanation of the cutoff timing difference.''',
-    dialogue='''Omar | The June reconciliation summary says the bank is three hundred dollars below the ledger. Have you found something that explains the difference, or is it still unexplained?
-Nia | I have identified a likely [[timing difference::Timing difference is supported by the deposit appearing in the June 30 ledger and July 1 bank activity.]]. A three-hundred-dollar deposit is recorded in the ledger on June thirty and appears in bank activity on July first.
-Omar | Let me check the direction. The ledger has the deposit at the June cutoff, while the bank does not show it until the following day.
-Nia | Correct. At the [[reconciliation cutoff::Reconciliation cutoff is June 30, so the July 1 bank entry belongs to subsequent activity.]] of June thirty, that sequence is consistent with the bank being three hundred lower. We should not reverse the direction in the summary.
-Omar | Would you call that a deposit in transit at the comparison date? I want to use the proper term without implying the bank lost the money.
-Nia | Yes, the dated evidence supports a [[deposit in transit::Deposit in transit describes the deposit recorded in the books but not yet in the bank record at the cutoff.]] explanation at that point. The July first bank appearance is relevant evidence, not evidence of a lost deposit.
-Omar | Since the amount matches the entire stated difference, can I tell the manager the reconciliation is now complete and ready for sign-off?
-Nia | Not yet. The [[review status::Review status remains incomplete because other reconciliation checks have not been finished.]] still includes unfinished checks. Finding an item that matches the amount does not establish that every other transaction and reconciling item has been reviewed.
-Omar | That is an important distinction. The manager needs to know that we have a supported explanation without hearing a broader completion claim.
-Nia | Exactly. We can say the [[reconciling item::Reconciling item is the identified deposit timing difference, not proof that the entire review is complete.]] is supported by the two dated records. We should also say that the remaining checks are open, rather than hiding that qualification.
-Omar | Does this mean we need to add another three hundred to the ledger to make it agree with the bank? Someone suggested an adjustment.
-Nia | The [[cash ledger::Cash ledger already includes the June 30 deposit, so timing alone does not justify entering the same deposit again.]] already contains the deposit. We should not enter it again merely because the bank recorded it later; that would confuse timing with an unrecorded receipt.
-Omar | So identifying a difference is not automatically a direction to post an entry. We need to distinguish the nature of the item first.
-Nia | Correct. A [[ledger adjustment::Ledger adjustment is a separate posting decision and is not automatically required by this timing evidence.]] is not established by these facts alone. We are explaining an existing deposit across a cutoff, not authorizing a duplicate entry or any other unreviewed posting.
-Omar | What should the supporting file include so another reviewer can follow the explanation without relying on our conversation?
-Nia | Keep the June thirty ledger entry with the July first [[bank activity::Bank activity on July 1 is the subsequent record supporting the deposit's later bank appearance.]]. The dates, amount, and connection between the records should remain visible in the reconciliation evidence.
-Omar | I will write that the bank is lower by three hundred at June thirty, with a matching deposit appearing the next day, while other checks remain incomplete.
-Nia | That preserves the [[direction of difference::Direction of difference is bank below ledger by three hundred dollars, not the reverse.]] and the limit of the conclusion. It is more accurate than simply writing balanced and leaving the unfinished review invisible.
-Omar | Then I will avoid saying the reconciliation has been approved. We have a documented timing explanation to carry into the remaining work.
-Nia | Agreed. [[Reconciliation sign-off::Reconciliation sign-off has not been established while other required checks remain unfinished.]] is still outstanding. The deposit evidence is useful progress, but the complete review must not be claimed before it is actually finished.''',
+Which evidence supports this cutoff explanation? | The June 30 ledger deposit linked to its July 1 bank appearance | The July 1 bank balance without the June cutoff record | A second $300 ledger deposit entered to match the bank | An undated note saying the totals look equal | The two linked dated records explain when the same deposit appears on each side; neither a duplicate posting nor an undated balance claim supplies that evidence.''',
+    dialogue='''Omar | The June summary has the bank three hundred below the ledger. Have you found an explanation, or are we still looking for the missing amount?
+Nia | There's evidence of a [[timing difference::Timing difference is supported by the deposit appearing in the June 30 ledger and July 1 bank activity.]]. A $300 deposit is in the ledger on June 30 and appears in bank activity on July 1.
+Omar | So at the June cutoff the ledger includes it, but the bank doesn't show it until the next day.
+Nia | Right. Our [[reconciliation cutoff::Reconciliation cutoff is June 30, so the July 1 bank entry belongs to subsequent activity.]] is June 30. The sequence fits the bank being lower by $300, not higher.
+Omar | Is deposit in transit the right wording? I don't want the manager to read missing deposit as money the bank has lost.
+Nia | Yes, the dated records support a [[deposit in transit::Deposit in transit describes the deposit recorded in the books but not yet in the bank record at the cutoff.]] at that comparison date. Its appearance on July 1 supports the timing explanation.
+Omar | It matches the entire difference. Can I mark the reconciliation complete now?
+Nia | Not yet. The [[review status::Review status remains incomplete because other reconciliation checks have not been finished.]] still includes unfinished checks. One matching amount doesn't show that we've reviewed every other transaction.
+Omar | Then the update should say we've found supporting evidence, while leaving the rest of the review open.
+Nia | Exactly. The [[reconciling item::Reconciling item is the identified deposit timing difference, not proof that the entire review is complete.]] is supported by the two dated records. Keep that progress separate from a claim that all checks are finished.
+Omar | Someone suggested adding another three hundred to the ledger so the records agree. Would that be the adjustment?
+Nia | No. The [[cash ledger::Cash ledger already includes the June 30 deposit, so timing alone does not justify entering the same deposit again.]] already includes this deposit. Recording it again merely because the bank shows it later would duplicate the same receipt.
+Omar | So we first distinguish a timing item from an unrecorded transaction. Not every difference calls for another entry.
+Nia | Correct. These facts don't establish a [[ledger adjustment::Ledger adjustment is a separate posting decision and is not automatically required by this timing evidence.]]. We are explaining the existing deposit, not authorizing a duplicate posting.
+Omar | What should stay with the reconciliation so another reviewer can verify the explanation?
+Nia | Keep the June 30 ledger entry and July 1 [[bank activity::Bank activity on July 1 is the subsequent record supporting the deposit's later bank appearance.]] together, with the amount and their connection visible.
+Omar | I'll write bank lower by $300 at June 30, matching deposit in the bank the next day, other checks unfinished.
+Nia | That preserves the [[direction of difference::Direction of difference is bank below ledger by three hundred dollars, not the reverse.]] and the review limit. It doesn't hide unfinished work behind the word balanced.
+Omar | And I won't say approved. The evidence is progress, but the remaining checks still have to be completed.
+Nia | Agreed. [[Reconciliation sign-off::Reconciliation sign-off has not been established while other required checks remain unfinished.]] is outstanding. Keep the supported timing explanation in the working file for the rest of the review.''',
+    rehearsal=["Complete the reconciliation dialogue.","Read the cutoff explanation aloud: June 30 ledger, July 1 bank, bank $300 lower at June 30. Then read why a second ledger deposit is not justified.","Complete the transfer and check the key. Retain the unfinished review status in the corrected summary."],
     transfer_title='Explain the cutoff difference precisely',
     transfer_setup='Complete the reconciliation summary using the supplied direction, amount, dates, and review status.',
     transfer='''Bookkeeper: "At June 30, the bank is $300 ___ than the ledger." | lower | Lower preserves the stated direction of the difference at the cutoff.
@@ -369,26 +372,27 @@ Just to clear | Identifies administrative pressure that does not establish a fac
 What should Hana be asked to do? | Review the work log and report the supported finding | Select the earlier time automatically | Enter the later time without review | Treat the internal cutoff as a pay-rights decision | The supplied next step is evidence review by the supervisor.
 Which statement about 14:00 is correct? | It is the fictional internal approval cutoff | It establishes the actual Tuesday finish | It proves the employee's pay entitlement | It is the scheduled Tuesday clock-out | The deadline concerns today's review process, not Tuesday's actual work time.
 What should accompany an authorized correction? | The evidence and review trail | An erased history of the earlier gap | A guessed finish time | An unrelated supplier approval | A traceable correction retains the basis and status of the change.''',
-    dialogue='''Dev | Hana, Tuesday's timecard for Eli is missing the clock-out. I have two different finish times in the supporting information and need your review before the internal cutoff.
+    dialogue='''Dev | Could you review Eli's missing Tuesday clock-out? The roster and recollection don't agree, and we need the evidence checked before today's internal cutoff.
 Hana | Please give me the [[source attribution::Source attribution keeps the roster's 17:00 and Eli's recollection of 17:30 attached to their distinct origins.]] for each time. I want to know what the roster says and what Eli reported before drawing any conclusion about the actual finish.
-Dev | The roster shows seventeen hundred. Eli recalls finishing at seventeen thirty. The timecard itself does not contain an end entry to settle the difference.
+Dev | The roster says 17:00. Eli recalls 17:30, but the timecard has no end entry.
 Hana | Then the [[actual finish::Actual finish is unconfirmed because the available schedule and recollection have not yet been verified against the work evidence.]] is still unconfirmed. We should not select seventeen hundred simply because it was scheduled, or seventeen thirty simply because it was recalled.
-Dev | I can keep both sources in the exception note. There is a work log available, and you can review it before fourteen hundred today.
+Dev | There's a work log available. Can you review it before 14:00 today?
 Hana | Yes. I will review the [[work log::Work log is the available evidence Hana can examine before the internal approval cutoff.]] and report what it supports. Please keep the missing clock-out and both reported times visible while that review is pending.
-Dev | The queue is under pressure because of the approval cutoff. Someone may ask me to enter the roster time now and tidy the record later.
+Dev | I'm being asked to clear the queue. Entering the roster time now and checking later would make an assumption look verified.
 Hana | Do not treat a [[scheduled finish::Scheduled finish is the roster's planned 17:00 time, not verified evidence of when Eli actually stopped work.]] as verified actual time merely to clear the queue. The deadline does not create evidence that the missing entry currently lacks.
-Dev | I agree. I also want the message to Eli to sound neutral. A missing clock-out could be read as an accusation if we phrase it badly.
+Dev | Please keep the request neutral. A missed clock-out doesn't mean Eli did no work.
 Hana | Call it a [[time exception::Time exception describes the missing or inconsistent record without accusing Eli or proving that no work occurred.]] requiring review. We are checking a record gap; we have not established dishonesty, absence, or a confirmed finish time.
-Dev | Should I say that the later time has been approved once you begin looking at the log, or wait until you report the actual outcome?
+Dev | Once you begin checking, can I say 17:30 is approved, or do I need the actual result?
 Hana | Wait for the [[review outcome::Review outcome is the finding from examining the evidence, not the fact that Hana has started looking.]]. Starting a check is not approval of a particular time. If the evidence remains inconclusive, that unresolved status must be reported accurately.
-Dev | That is clear. The internal cutoff is fourteen hundred today, but it should not be presented as a rule that settles what Eli is entitled to be paid.
+Dev | And the 14:00 cutoff is today's internal review deadline, not a rule deciding Eli's entitlement to pay.
 Hana | Correct. The [[internal cutoff::Internal cutoff is the organization's fictional review deadline and does not determine employee pay rights.]] defines this processing window. It does not establish the actual hours worked or replace the applicable payroll and employment requirements.
-Dev | When an authorized correction is available, I need enough detail for the next colleague to understand why the record changed.
+Dev | When there's an authorized correction, the next colleague will need to see why the entry changed.
 Hana | Preserve the [[audit trail::Audit trail records the evidence, review, and authorized change rather than hiding the original missing entry.]]. The supporting information and approval status should remain traceable through the actual workplace process, not be replaced by an unexplained number.
-Dev | Then my current handoff will say: Tuesday clock-out missing; roster seventeen hundred; Eli recalls seventeen thirty; work-log review pending before fourteen hundred.
+Dev | I'll hand over Tuesday clock-out missing, roster 17:00, Eli recalls 17:30, log review pending before 14:00.
 Hana | That is an accurate [[payroll handoff::Payroll handoff carries the record gap, source-specific times, pending evidence review, and internal deadline together.]]. Add that actual finish remains unconfirmed, so the next person does not mistake the two candidate times for a completed decision.
-Dev | I will do that. I will not invent a finish entry, mark the review complete, or quietly remove the exception from the queue.
+Dev | I'll keep the exception visible and the actual finish unconfirmed until the review supplies a supported result.
 Hana | Thank you. Keep the [[approval status::Approval status remains unresolved until the relevant review and authorization establish any correction.]] explicit. I will review the available log and report the supported result or remaining uncertainty before the stated internal cutoff.''',
+    rehearsal=["Complete the time-exception dialogue.","Read the attributed times aloud: roster 17:00, Eli recalls 17:30, actual finish unconfirmed. Keep today's 14:00 internal review deadline separate.","Complete the transfer and check the key. Repeat the evidence request without selecting an unsupported finish time."],
     transfer_title='Request the time review without selecting a result',
     transfer_setup='Complete the time-exception summary using the distinct sources and the actual review deadline.',
     transfer='''Assistant: "The missing entry is Tuesday's ___." | clock-out | Clock-out is the absent end-of-work entry on the timecard.
@@ -421,8 +425,8 @@ payroll register | Record summarizing payroll details for the relevant run. | ch
 pay run | Particular cycle of payroll calculation and processing. | identify the pay run
 preview comparison | Review of differences between preliminary calculations. | prepare a preview comparison
 gross-to-net | Relationship between gross pay, deductions, and the resulting net amount. | explain gross-to-net movement
-unchanged amount | Figure that stays the same between compared records. | identify the unchanged amount
-net decrease | Reduction in the amount remaining after deductions. | explain the net decrease
+regular rate of pay | Overtime calculation rate including required pay components, not just base pay. | verify the regular rate
+nondiscretionary bonus | Bonus that does not meet the applicable discretionary-bonus exclusion criteria. | review a nondiscretionary bonus
 deduction authority | Valid basis or approval required for a deduction under applicable rules. | verify deduction authority
 payroll query | Request for clarification about a pay record or calculation. | raise a payroll query
 withholding | Amount retained from pay under the relevant applicable basis. | distinguish withholding from gross pay
@@ -457,28 +461,29 @@ Still pending | Preserves the unresolved supporting-record status.
 Preview, not final | Limits what can be claimed about a future payment.''',
     d='''Which calculation matches preview B? | $1,200 minus $250 equals $950 | $1,200 minus $200 equals $950 | $1,150 minus $250 equals $1,000 | $950 plus $50 equals $1,200 | Preview B retains the twelve-hundred-dollar gross and subtracts two hundred fifty.
 Which explanation is accurate? | Net falls because deductions rise, while gross remains unchanged | Gross salary was definitely reduced | The new deduction is definitely insurance | The preview proves a refund has been approved | The supplied arithmetic establishes the movement but not the new line's purpose or authority.
-What should be requested next? | The supporting record for the new $50 line | An invented tax percentage | Automatic approval because the subtraction works | A public discussion of Morgan's personal payroll data | The unresolved issue is the missing support for the new deduction.
+Which reply addresses Morgan's unresolved question? | I will verify the new $50 line's purpose and authority from its supporting record | I have checked that $1,200 minus $250 is $950, so the line needs no review | I will describe the $50 as insurance because that is a common deduction | I will confirm a $50 refund before the line is reviewed | Morgan needs the basis for the new deduction, not only another subtraction; its purpose, authority, and any correction remain unestablished.
 Which statement overclaims? | The new line is authorized because it appears in the preview | The line is fifty dollars | The supporting record is pending | Both gross figures are twelve hundred | Appearance in a preliminary calculation does not establish the deduction's valid basis.''',
-    dialogue='''Morgan | Preview B shows nine hundred fifty instead of a thousand. Has my salary been cut? I need to understand the difference before I make assumptions.
-Leila | Let us start with [[gross pay::Gross pay remains twelve hundred dollars in both previews, so the supplied figures do not show a gross-pay cut.]]. Both previews show twelve hundred dollars before deductions. The change is in the deduction total, not the gross figure shown here.
-Morgan | That helps. Could you walk me through A first, then B? I find it easier when the amounts are explained in the same order.
-Leila | In A, the [[deduction total::Deduction total is two hundred dollars in A and two hundred fifty in B.]] is two hundred dollars, leaving one thousand net. In B, deductions total two hundred fifty, leaving nine hundred fifty.
-Morgan | So the extra fifty in deductions explains the fifty-dollar decrease in the amount left over. The twelve hundred at the start has not changed.
-Leila | Correct. The [[gross-to-net::Gross-to-net explanation connects unchanged gross pay, increased deductions, and the resulting lower net amount.]] arithmetic is consistent with that movement. It explains the difference between the previews, but we still need to address the basis of the new line.
-Morgan | What is the new line for? Is it tax, insurance, or something I elected? I do not want to guess from the amount.
-Leila | There is a new fifty-dollar [[deduction line::Deduction line is visible in preview B, but its purpose and supporting basis have not been supplied.]], but its supporting record is pending. I cannot identify its purpose as tax, insurance, or a voluntary election from the information available.
-Morgan | Does appearing in the preview mean someone has already checked and approved it? That is what I would normally assume when I see a figure there.
-Leila | The [[payroll preview::Payroll preview is a preliminary calculation and does not by itself prove approval of every line.]] shows the calculation, not proof of every approval. We need the supporting record before describing this line as properly authorized under the relevant process.
-Morgan | Please make that the specific query. I am not disputing that twelve hundred minus two hundred fifty is nine hundred fifty; I am asking why the fifty is there.
-Leila | Understood. The [[payroll query::Payroll query concerns the basis of the new fifty-dollar deduction, not the subtraction itself.]] will focus on the new line and its missing support. Correct arithmetic and a supported deduction are separate questions.
-Morgan | Could you tell the reviewer that distinction? I would not want a reply that only repeats the subtraction without answering my actual concern.
-Leila | I will request the [[supporting record::Supporting record is the missing evidence needed to explain the new deduction's basis and status.]] and ask for the line's basis to be clarified. I will keep that request separate from the numerical comparison we have already explained.
-Morgan | Until that happens, should I understand nine hundred fifty as the final amount I will receive, or is that also not established here?
-Leila | We are not confirming [[final payroll::Final payroll has not been established by comparing these preliminary records with unresolved supporting documentation.]] in this conversation. These are previews, and I should not promise a final payment, a correction, or a refund from the facts we currently have.
-Morgan | All right. Please keep this in the proper payroll channel. I want it reviewed, but I do not want my pay details passed around unnecessarily.
-Leila | Of course. The [[correction status::Correction status is not yet a completed change or refund; the current action is a private supporting-record query.]] will be reported through the appropriate private process. At present, the support is pending and no correction has been established.
-Morgan | My understanding is unchanged gross pay, fifty more deducted, fifty less net, and an unresolved question about the new deduction. Is that accurate?
-Leila | Yes. That is the accurate [[variance explanation::Variance explanation states the numerical movement while retaining the unresolved basis of the new deduction.]]. I will carry the specific supporting-record question forward without turning the preview into a claim of approval or a guaranteed final outcome.''',
+    dialogue='''Morgan | My preview has dropped from a thousand to nine hundred fifty. Has somebody reduced my salary?
+Leila | The [[gross pay::Gross pay remains twelve hundred dollars in both previews, so the supplied figures do not show a gross-pay cut.]] shown hasn't changed: it's $1,200 in both previews. Let's compare the deductions next.
+Morgan | Could you take me through A and B in the same order? I want to see where the fifty appears.
+Leila | A's [[deduction total::Deduction total is two hundred dollars in A and two hundred fifty in B.]] is $200, leaving $1,000 net. B subtracts $250 from the same gross, leaving $950.
+Morgan | So the extra fifty deducted explains the fifty less left over. It isn't a fifty-dollar change to the twelve hundred.
+Leila | That's the [[gross-to-net::Gross-to-net explanation connects unchanged gross pay, increased deductions, and the resulting lower net amount.]] movement. The subtraction agrees, but we still need to check the basis of the new line.
+Morgan | What is it for? I can't tell whether it's tax, insurance, or something I chose.
+Leila | The new $50 [[deduction line::Deduction line is visible in preview B, but its purpose and supporting basis have not been supplied.]] is visible, but its supporting record is pending. I can't identify its purpose from the information here.
+Morgan | I assumed anything appearing on a preview had already been checked and approved. Is that not established?
+Leila | Not by this [[payroll preview::Payroll preview is a preliminary calculation and does not by itself prove approval of every line.]] alone. It shows a calculation, not proof of the authority behind every line.
+Morgan | Please ask about that specific fifty. I'm not disputing twelve hundred minus two hundred fifty; I need to know why the new charge is there.
+Leila | Understood. The [[payroll query::Payroll query concerns the basis of the new fifty-dollar deduction, not the subtraction itself.]] will focus on the new line's basis, not simply repeat the subtraction you've already checked.
+Morgan | Could the reviewer see that distinction? Otherwise I may get the same numerical explanation without an answer to my concern.
+Leila | I'll request the [[supporting record::Supporting record is the missing evidence needed to explain the new deduction's basis and status.]] and clarification of the line's purpose and authority. Those are the unresolved questions.
+Morgan | Should I treat nine hundred fifty as my final payment, or is that still not confirmed?
+Leila | We aren't confirming [[final payroll::Final payroll has not been established by comparing these preliminary records with unresolved supporting documentation.]] here. With these preliminary records and missing support, I can't promise that amount, a correction, or a refund.
+Morgan | Please handle my records through the appropriate payroll contact. I don't want this sent to people who aren't reviewing it.
+Leila | Of course. I'll report the [[correction status::Correction status is not yet a completed change or refund; the current action is a private supporting-record query.]] through the appropriate private process. Currently support is pending, with no completed change established.
+Morgan | Then the summary is same gross, fifty more deducted, fifty less net, and the reason for that new deduction still needs checking.
+Leila | Yes. That's the [[variance explanation::Variance explanation states the numerical movement while retaining the unresolved basis of the new deduction.]] the records support. I'll carry the specific evidence question forward without treating the preview as final approval.''',
+    rehearsal=["Complete the payroll-preview dialogue.","Read A and B in the same order: gross, deductions, net. Then read Morgan's question about the new $50 line and Leila's evidence request.","Complete the transfer and check the key. Keep correct subtraction separate from authorization and final payment."],
     transfer_title='Explain the preview without endorsing the deduction',
     transfer_setup='Complete the gross-to-net readback. Preserve the unchanged gross figure and the pending support.',
     transfer='''Assistant: "Gross pay remains ___ dollars." | 1200 | Twelve hundred is unchanged in both payroll previews.
@@ -550,26 +555,27 @@ Are you asking about ...? | Clarifies which control stage the other person means
 What would overstate the meaning of 15:00? | Payments are guaranteed to be sent at 15:00 | The approver returns at 15:00 | Review depends on the relevant process | Release is not yet confirmed | Return time does not guarantee an approval or payment-release outcome.
 Which count belongs to the proposed batch? | Seven | Eight | Fifteen | Twenty-two | The proposal excludes V22 and therefore contains the seven other invoices.
 What information is still needed for V22? | The receiving document | An invented payment receipt | Proof the other seven were canceled | A new supplier name | V22 is explicitly awaiting evidence of receipt before the exception can be resolved.''',
-    dialogue='''Imani | A supplier is asking whether the payment run is approved. I see eight invoices in the original set. Can I say all eight are ready to go?
+    dialogue='''Imani | A supplier asked whether the run is approved. There were eight invoices originally; are all eight ready to go?
 Ben | No. Seven have [[recorded approval::Recorded approval applies to seven invoices, not all eight in the original payment set.]]. Invoice V22 is still awaiting a receiving document, and it is excluded from the proposed batch.
-Imani | Then there are seven in the proposal, not eight. I should not assume the original list and the proposed payment group contain exactly the same items.
+Imani | Then the proposed batch has seven, not eight. V22 stays outside it.
 Ben | Correct. The [[batch membership::Batch membership is seven items because V22 has been excluded from the proposal.]] has changed. Keep V22 visible as an exception, but do not count it among the seven proposed payment items.
-Imani | Are those seven already released? The phrase ready to go can mean several things, and I do not want the supplier to hear paid.
+Imani | Have those seven been released, or are we only talking about invoice approval?
 Ben | The [[release status::Release status remains unreleased even though the seven included invoices have recorded approval.]] is not released. Approval of the seven invoices does not mean the batch itself has passed the release stage or that payment has been sent.
-Imani | Thank you. What exactly is missing for V22? I want to record the dependency rather than simply write held without an explanation.
+Imani | What receiving document is missing for V22? I need a reason, not just held.
 Ben | It is awaiting [[receiving evidence::Receiving evidence is the missing document for V22 and explains its exclusion from the proposed batch.]], specifically the receiving document. That requirement remains open; the invoice has not become approved because the other seven are.
-Imani | I heard the approver is back at three. May I give that as the time the payments will be released, or is it only their availability?
+Imani | The approver is back at three. Is that a release time I can give the supplier?
 Ben | It is the [[return time::Return time is 15:00 for the approver, not a guaranteed batch-release or payment time.]], fifteen hundred. It tells us when the approver returns, not what the review outcome will be or when any payment will reach a supplier.
-Imani | Then I can say the proposal is awaiting the next stage, with the approver returning at fifteen hundred, but I should not promise a release then.
+Imani | I'll keep 15:00 as the approver's return, with no promised release time.
 Ben | Exactly. Preserve the [[control stage::Control stage distinguishes the unreleased proposal from invoice approval and later payment execution.]]. A useful update names where the process stands instead of using approved as a shorthand for every later step.
-Imani | Could you give me a short status readback for the team? I want everyone answering calls to use the same distinctions.
+Imani | Could you read back the status for the team, so we don't use approved to mean several different things?
 Ben | Seven invoices have approval; V22 is an [[excluded item::Excluded item identifies V22 as outside the proposed seven-item batch while its receiving document is pending.]] pending its receiving document. The seven-item proposal is not released. The approver returns at fifteen hundred, with no release time guaranteed.
-Imani | That is clear. Does excluding V22 mean it has been canceled or rejected permanently? Someone might read an omission that way.
+Imani | Does excluded mean canceled? I don't want someone telling V22's supplier the invoice has been rejected permanently.
 Ben | No. It remains an [[exception item::Exception item keeps V22 active for follow-up without treating exclusion as cancellation or permanent rejection.]] needing its supporting document. Its absence from this proposal is not a cancellation decision or a statement that the supplier has no valid invoice.
-Imani | I will keep that in the handoff. We have an approved-item count, a proposed-batch count, an excluded invoice, and an unreleased batch.
+Imani | I'll retain seven approved, seven proposed, V22 excluded, and the batch unreleased.
 Ben | Yes. The [[approval trail::Approval trail records the actual permissions without substituting them for uncompleted release or payment stages.]] should show the actual permissions while the release status remains separate. Nobody should infer payment confirmation merely from the existence of item approvals.
-Imani | Then my supplier update will describe the relevant current stage and avoid saying the money has gone. I will not give a guaranteed payment time.
+Imani | The supplier update will name the stage we actually know, without saying the money has gone.
 Ben | Good. A [[supplier update::Supplier update should report the supported process stage without promising that payment has been sent or will arrive at a set time.]] can be specific without overpromising. The next review and any later release must be confirmed through the actual process before we report them as complete.''',
+    rehearsal=["Complete the payment-batch dialogue.","Read the full status aloud: eight original invoices, seven approved, V22 excluded, seven proposed, batch unreleased, approver back at 15:00.","Complete the transfer and check the key. Repeat the supplier update without promising release or receipt of funds."],
     transfer_title='Read back approval, exclusion, and release',
     transfer_setup='Complete the payment-status handoff without turning approval into payment confirmation.',
     transfer='''Preparer: "The number of approved invoices is ___." | seven | Seven invoices have recorded approval in the original eight-item set.
@@ -609,8 +615,8 @@ general ledger | Main accounting record containing account balances and entries.
 follow-up owner | Person responsible for pursuing the next response or action. | name the follow-up owner
 handover time | Time responsibility passes to the next person. | confirm the handover time
 close status | Current completion stage of the period-end process. | report close status
-completion ratio | Number of completed items compared with the total. | state the completion ratio
-review dependency | Decision or evidence required before an item can be closed. | preserve the review dependency
+carrying amount | Amount at which an asset or liability is recorded after relevant recognized adjustments. | reconcile the carrying amount
+recognition schedule | Record allocating an amount to accounting periods under the specified treatment. | review the recognition schedule
 cutoff evidence | Dates and service information relevant to the period question. | retain cutoff evidence''',
     precision='The invoice amount is $240, its date is July 2, and its description refers to June service. Those are distinct facts. The accountant must review the posting period; the assistant should not choose July solely from the invoice date.',
     precision_extra='Nine of ten checklist items are complete, so the close is not fully finished. Alex takes follow-up ownership at noon, but no adjusting entry has been approved. Follow-up responsibility does not establish authority to decide or post the entry.',
@@ -640,26 +646,27 @@ Nine complete, one open | Prevents a high completion count from becoming a claim
 What does nine of ten complete mean? | One checklist item remains open | All accounting decisions are final | The final item can be ignored | Nine invoices have been paid | The completion count leaves one required checklist item unfinished.
 Which responsibility changes at noon? | Alex takes over follow-up | Alex automatically becomes the posting approver | The supplier changes the invoice date | The entry is automatically posted | The brief assigns follow-up ownership rather than authority for an accounting decision.
 Which statement is unsupported? | The adjusting entry has already been approved | The invoice is $240 | The description refers to June | The document is dated July 2 | No adjusting entry has been approved in the supplied close status.''',
-    dialogue='''Hana | Alex, before you take over at noon, I need to hand off the remaining June-close item. Nine checks are complete, but the maintenance invoice still needs review.
+    dialogue='''Hana | Alex, you're taking over at noon. Nine June-close checks are complete; the maintenance invoice is the one still awaiting review.
 Alex | Please give me the [[close status::Close status is nine of ten checklist items complete, not a fully finished June close.]] first, then the invoice details and the decision we are waiting for. I do not want the one open item hidden behind the completed count.
-Hana | The invoice is for two hundred forty dollars and is dated July second. Its description says the maintenance service was provided in June.
+Hana | It's $240, dated July 2, but the description says June service.
 Alex | Then we need to distinguish the [[invoice date::Invoice date is July 2, separate from the June service period described on the document.]] from the service period. The printed July date should not make us overlook the fact that the description relates to June.
-Hana | Exactly. The accountant needs to review which posting period is appropriate. I have not treated either month as a decision I can make from this handoff alone.
+Hana | The accountant needs to decide the posting period. I haven't treated the July date as an automatic answer.
 Alex | I will retain that [[cutoff question::Cutoff question concerns the appropriate posting period for a July-dated invoice describing June service.]] as unresolved. The amount, document date, and service description give the reviewer the facts without our substituting an assumed answer.
-Hana | There is also no approved adjusting entry. Someone looking only at the follow-up list might assume the entry is ready because the amount is known.
+Hana | There isn't an approved adjusting entry either. Knowing the amount doesn't mean the entry is ready.
 Alex | I will make the [[posting approval::Posting approval has not been given for an adjusting entry, even though the invoice amount is known.]] status explicit. Knowing the amount does not establish that the period treatment or any proposed entry has been approved.
-Hana | Thank you. At noon you take over chasing the review, but I do not mean that you take over the accountant's decision-making authority.
+Hana | At noon you're taking over the follow-up, not the accountant's authority to approve the treatment.
 Alex | Understood. I become the [[follow-up owner::Follow-up owner is Alex from noon, responsible for pursuing the review rather than approving the accounting entry.]], not the accounting approver. I will pursue the response and preserve the decision with its actual reviewer and approval status.
-Hana | Please keep the invoice description with the date in your message. A short note saying July invoice could send the review in the wrong direction.
+Hana | Please retain June service beside July 2. A note saying only July invoice would lose the issue.
 Alex | I will retain the [[cutoff evidence::Cutoff evidence includes the July 2 document date and June service description needed for the accountant's review.]] together: two hundred forty dollars, July second invoice date, June service. None of those details should disappear in the summary.
-Hana | The checklist should still show one item open after the handoff. Transferring it to you does not complete it.
+Hana | Leave one item open after the handoff. Changing its owner doesn't complete it.
 Alex | Correct. The [[open item::Open item remains incomplete after ownership transfers because the accountant's review is still pending.]] stays visible. A change of owner is not a completed review, and nine out of ten must not become ten out of ten just because the handoff is done.
-Hana | When the accountant responds, please make clear whether the response gives a period decision, an entry approval, or only a request for further information.
+Hana | When the accountant responds, distinguish a period decision, an entry approval, and a request for more evidence.
 Alex | I will preserve those distinctions in the [[accountant review::Accountant review must be reported according to its actual outcome, not assumed to include posting approval.]] result. A request for more evidence is not approval, and a period discussion should not be silently expanded into permission to post.
-Hana | Good. There is no need to invent an adjustment now. The useful action is to carry the specific question and supporting record to the reviewer.
+Hana | For now, no adjustment is authorized by this handoff. We just need the actual question and support reviewed.
 Alex | Agreed. An [[adjusting entry::Adjusting entry is a possible accounting action requiring the relevant review and approval, not something authorized by this handoff.]] has not been approved, so the handoff should not describe one as ready or already recorded. I will keep that limit attached to the item.
-Hana | Then the final readback is nine complete, one open, two hundred forty for June service on a July second invoice, accountant review pending, and you following up at noon.
+Hana | Readback: nine complete, one open; $240 July 2 invoice for June service; accountant review pending; you follow up from noon.
 Alex | That is accurate. The [[handover time::Handover time is noon, when follow-up responsibility passes to Alex without completing or approving the open item.]] changes who pursues the response, not the unresolved accounting status. I will take the follow-up with all those facts intact.''',
+    rehearsal=["Complete the period-close handoff.","Read $240, July 2 invoice date, June service, accountant review pending, and Alex taking follow-up at noon. Then read the unapproved-entry status.","Complete the transfer and check the key. Keep nine complete and one open even after the handoff."],
     transfer_title='Hand over the period question without closing it',
     transfer_setup='Complete the close handoff with the amount, service period, review owner, and open status preserved.',
     transfer='''Bookkeeper: "The maintenance invoice is for ___ dollars." | 240 | Two hundred forty is the stated amount of the invoice awaiting period review.
@@ -731,26 +738,27 @@ Keep ... linked | Preserves traceability between the issue and its correction.''
 What does twice $180 establish here? | The duplicate tracker rows sum to $360 | The supplier received $360 | The bank refunded $180 | A final ledger balance is $360 | The calculation concerns two working-record entries, not proven payment or ledger events.
 Which action preserves the trail? | Link the explicit correction to the original message and supporting records | Erase every trace of the earlier claim | Invent a refund receipt | Mark the ledger correction posted without evidence | A traceable correction retains the connection between the error, evidence, and authorized amendment.
 Which status remains uncompleted? | Ledger correction posting | Controller confirmation of the duplicate | Identification of J14 | Recognition that the file was imported twice | The supplied facts confirm the duplicate but explicitly leave ledger correction unposted.''',
-    dialogue='''Rosa | Ellis, I need to correct the update I sent about J14. I wrote that a duplicate payment had been recovered, but the evidence does not support that statement.
-Ellis | Thank you for raising it. Let us start with the [[verified finding::Verified finding is one duplicate J14 entry in tracker version 3, not a recovered payment.]]. I confirmed one duplicate entry in tracker version three because the same file was imported twice.
-Rosa | The invoice is one hundred eighty dollars, and it appears twice in the tracker. I let the repeated rows turn into a claim about repeated payments.
-Ellis | Those are different things. A [[duplicate entry::Duplicate entry is a repeated record of J14 and does not prove a second actual payment.]] does not establish a duplicate payment. We need to correct that distinction explicitly, not just change the row count.
-Rosa | Two entries at one hundred eighty would make three hundred sixty in the tracker. But that does not show three hundred sixty leaving the bank.
-Ellis | Correct. That is a [[working total::Working total is the sum of the duplicate tracker rows, not a verified cash or ledger balance.]], not evidence of cash movement. The extra displayed one hundred eighty must not be described as a confirmed loss or recovered amount.
-Rosa | There is also no posted ledger correction. I should not say the accounts are fixed just because the tracker issue has been identified.
-Ellis | Exactly. A [[posted correction::Posted correction would be an actual ledger change, and none has occurred in the supplied status.]] has not occurred. Confirmation of the duplicate, approval of a change, and posting that change are separate stages.
-Rosa | I will send a correction to the people who received my earlier message. What should I say first so the original recovery claim does not remain the headline?
-Ellis | Make a direct [[retraction::Retraction explicitly withdraws the unsupported claim that a duplicate payment was recovered.]]: the statement that a duplicate payment had been recovered was unsupported and is withdrawn. Then give the verified tracker finding and current posting status.
-Rosa | I can say one duplicate J14 entry is confirmed in version three, caused by importing the same file twice. No duplicate payment has been established.
-Ellis | Yes. Also avoid implying any [[payment recovery::Payment recovery would require evidence that money was returned, which is not established here.]]. We do not have evidence of a duplicate payment, so we certainly cannot report its recovery as an accomplished event.
-Rosa | Should I remove the old message from the record? I am concerned that someone may read it later without noticing the correction.
-Ellis | Preserve the [[correction trail::Correction trail links the original false statement, explicit correction, and evidence rather than silently erasing history.]] through the appropriate records process. Link the correction clearly to the earlier message so readers can see which claim was wrong and what replaces it.
-Rosa | And the original file and import information should remain available for the authorized review, rather than disappearing when someone tidies the tracker.
-Ellis | Correct. The [[import log::Import log can support the confirmed repeated file import and should remain connected to the review.]] and source reference help explain how the duplication arose. Any record amendment should follow the relevant approval process rather than an undocumented cleanup.
-Rosa | I will separate the message correction from any later system change. Sending the clarification does not mean I have permission to alter the ledger.
-Ellis | Exactly. [[Change authorization::Change authorization is required for the actual amendment and is not created by correcting a message.]] must be established for the specific action. The communication correction repairs the claim; it does not itself approve or post an accounting entry.
-Rosa | Then the final status is one confirmed duplicate tracker entry, no established duplicate payment or recovery, and no ledger correction posted. I will keep J14 and version three attached.
-Ellis | That is the accurate [[status correction::Status correction replaces the unsupported recovery claim with the verified duplicate-entry finding and unresolved ledger status.]]. Report those facts, retain the supporting trail, and describe any later resolution only when the corresponding evidence actually exists.''',
+    dialogue='''Rosa | Ellis, my J14 update said a duplicate payment had been recovered. I need to withdraw that: the evidence only establishes a repeated tracker entry.
+Ellis | That's right. The [[verified finding::Verified finding is one duplicate J14 entry in tracker version 3, not a recovered payment.]] is one duplicate J14 entry in tracker version 3 because the same file was imported twice.
+Rosa | It's a $180 invoice showing twice. I jumped from two rows to two payments, which wasn't justified.
+Ellis | A [[duplicate entry::Duplicate entry is a repeated record of J14 and does not prove a second actual payment.]] isn't proof of another payment. The correction needs to address that cash claim, not merely change the number of rows.
+Rosa | The two rows sum to $360 in the tracker. That doesn't show $360 leaving the bank.
+Ellis | Correct. It's a [[working total::Working total is the sum of the duplicate tracker rows, not a verified cash or ledger balance.]] from the duplicated rows, not a verified bank or ledger balance. The extra $180 displayed isn't an established cash loss.
+Rosa | No ledger change has been posted either. I shouldn't say the accounts are fixed because you've identified the import problem.
+Ellis | Exactly. A [[posted correction::Posted correction would be an actual ledger change, and none has occurred in the supplied status.]] hasn't occurred. Confirming the issue, authorizing a change, and posting it are different stages.
+Rosa | I'll send the same recipients a correction. How do I make sure the recovery claim doesn't remain the headline?
+Ellis | Lead with a direct [[retraction::Retraction explicitly withdraws the unsupported claim that a duplicate payment was recovered.]]: the statement that a duplicate payment was recovered was unsupported and is withdrawn. Then state the verified finding.
+Rosa | One duplicate J14 entry in version 3, same source file imported twice, and no duplicate payment established.
+Ellis | Yes. Don't imply a [[payment recovery::Payment recovery would require evidence that money was returned, which is not established here.]] either. Without evidence of a duplicate payment, we can't report recovered funds as an accomplished result.
+Rosa | Should I remove the original message so nobody relies on it later?
+Ellis | Preserve the [[correction trail::Correction trail links the original false statement, explicit correction, and evidence rather than silently erasing history.]] through the actual records process. Link the explicit correction to the earlier message so readers can see what replaces the false claim.
+Rosa | The source file and import information should remain available too, rather than disappearing during a tracker cleanup.
+Ellis | Correct. The [[import log::Import log can support the confirmed repeated file import and should remain connected to the review.]] helps support how the duplication happened. Keep it connected to the review and any authorized amendment.
+Rosa | Sending this correction doesn't give me permission to alter the ledger, so I'll keep those actions separate.
+Ellis | Yes. [[Change authorization::Change authorization is required for the actual amendment and is not created by correcting a message.]] must cover the specific amendment. A corrected message doesn't approve or post an accounting entry.
+Rosa | My final wording will say one confirmed tracker duplicate, no established duplicate payment or recovery, and no ledger correction posted.
+Ellis | That's the accurate [[status correction::Status correction replaces the unsupported recovery claim with the verified duplicate-entry finding and unresolved ledger status.]]. Retain J14, version 3, and the supporting record, then report later resolution only when its evidence exists.''',
+    rehearsal=["Complete the tracker-correction dialogue.","Read Rosa's retraction and the replacement finding aloud. Distinguish two $180 tracker rows from actual payments or recovered funds.","Complete the transfer and check the key. Repeat the status with no posted ledger correction and the original references retained."],
     transfer_title='Retract the unsupported recovery claim',
     transfer_setup='Complete the corrected status message. Distinguish the tracker, invoice amount, and unproven payment claim.',
     transfer='''Bookkeeper: "The invoice reference is ___." | J14 | J14 identifies the invoice duplicated in tracker version 3.

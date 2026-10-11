@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Carpenters.',
              url='https://www.bls.gov/ooh/construction-and-extraction/carpenters.htm',
-             note='Occupational context for reading plans, discussing measurements and materials, installation work, and client communication. No employment forecasts or credential requirements are reproduced.', checked='1 October 2026'),
+             note='Occupational context for reading plans, discussing measurements and materials, installation work, and client communication. No employment forecasts or credential requirements are reproduced.', checked='10 October 2026'),
         dict(title='Architectural Woodwork Institute. AWI 100: Manufacturer / Supplier Responsibility.',
              url='https://awinet.org/standards/submittals/requirements-category/manufacturer-supplier-responsibility/',
-             note='Context for shop drawings, material samples, explicit change requests, and coordinated review. Fictional drawing conflicts and review times are not requirements stated by this source.', checked='1 October 2026'),
+             note='Context for shop drawings, material samples, explicit change requests, and coordinated review. Fictional drawing conflicts and review times are not requirements stated by this source.', checked='10 October 2026'),
         dict(title='Andersen Windows and Doors. Window and Door Glossary.',
              url='https://www.andersenwindows.com/support/window-door-glossary',
-             note='Background terminology for openings, frames, trim, and door components. No product-specific dimensions, installation allowances, or compliance claims are transferred to the cases.', checked='1 October 2026'),
+             note='Background terminology for openings, frames, trim, and door components. No product-specific dimensions, installation allowances, or compliance claims are transferred to the cases.', checked='10 October 2026'),
         dict(title='Occupational Safety and Health Administration. Woodworking: Hazards and Solutions.',
              url='https://www.osha.gov/woodworking/hazards-solutions',
-             note='Context for respecting trained roles and actual safety controls. The book provides no machine-operation, chemical-use, or concealed-condition assessment procedure.', checked='1 October 2026'),
+             note='Context for respecting trained roles and actual safety controls. The book provides no machine-operation, chemical-use, or concealed-condition assessment procedure.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -53,7 +53,7 @@ finished opening | Opening measured at the specified completed surfaces. | ident
 clear passage | Unobstructed usable space through an opening under the stated conditions. | confirm the clear passage
 door leaf | Moving panel of a door. | distinguish the door leaf
 door frame | Surrounding assembly supporting and locating the door. | identify the door frame
-jamb | Vertical side member of an opening or frame. | refer to the jamb
+jamb | Frame member; side jambs and the head jamb identify different positions. | identify the side jamb
 head | Upper horizontal member or part of an opening. | identify the frame head
 threshold | Lower part at the base of a doorway. | refer to the threshold
 casing | Trim around a door or window opening. | identify the casing
@@ -75,36 +75,37 @@ dimension reference | Point, surface, or condition a measurement describes. | es
     precision_extra='Ask what the measurement runs between and what stage of construction it describes. A clarification can resolve the drawing meaning; it does not by itself establish a code-compliance finding. Do not calculate a usable width from an invented frame thickness.',
     phrases='''Locate the note | The hall drawing labels the door opening as 900 millimeters.\nClarify the assumption | Are you reading that as the clear passage width?\nName the ambiguity | The note does not say rough or finished opening.\nExplain the distinction | The opening reference and the usable passage are not necessarily the same.\nAsk about the reference | What surfaces does this dimension run between?\nKeep the number intact | I am not changing the figure of 900 millimeters.\nAvoid inventing an allowance | We do not have a confirmed frame allowance here.\nPreserve the order status | No door has been ordered.\nRefer the interpretation | Priya can clarify the measurement reference.\nAvoid a usable-width promise | I cannot confirm 900 millimeters of clear passage from this note.\nDistinguish product size | We should not treat this as the order size yet.\nAsk for explicit wording | Could the clarification identify the opening type?\nPreserve the client need | I will explain that your question concerns usable passage.\nAvoid a compliance claim | This conversation does not establish compliance.\nRead back the query | Does 900 refer to the rough opening, finished opening, or another reference?\nClose with the next step | I will request clarification before presenting the dimension as a confirmed usable width.''',
     notes='''Labels versus establishes | A drawing label states a number but may not establish its precise reference.\nClear | Describes unobstructed space, not merely a named opening size.\nRun between | Natural phrasing for the endpoints of a dimension.\nNot necessarily | Rejects an unsupported equivalence without asserting a specific alternative.\nNo order yet | Prevents the clarification discussion from sounding like a change to a placed order.\nReference | Names what the number actually measures, rather than questioning arithmetic.''',
-    d='''Which question targets the missing information? | Does 900 millimeters refer to the rough opening, finished opening, or another reference? | Why is 900 always the clear passage? | Which door has already been delivered? | How can we omit the frame? | The question asks what the stated dimension describes without assuming an interpretation.
+    d='''Which question targets the missing information? | Does 900 millimeters refer to the rough opening, finished opening, or another reference? | Can we subtract an assumed frame width from 900? | Does 900 refer to the door leaf already selected? | Can we call 900 the usable width until someone objects? | The question asks what the stated dimension describes without assuming an interpretation.
 Which reassurance is unsupported? | You will definitely have 900 millimeters of usable passage. | The note gives a 900-millimeter figure. | No door is ordered. | Priya can clarify the reference. | The note does not establish usable passage, so the reassurance exceeds the evidence.
 What should remain unchanged in the query? | The stated 900-millimeter figure and the uncertainty about its reference | A guessed frame deduction | A fabricated confirmed order size | A claim that the drawing means finished opening | The query preserves the actual figure while asking for its unresolved meaning.
 Which distinction matters for ordering? | An unclear opening note is not a confirmed door order size. | All opening and door dimensions are identical. | Client interpretation automatically authorizes an order. | A precise number removes every need for clarification. | The dimension reference must be clarified before it can support an appropriate product specification.''',
-    dialogue='''Hana | The hall drawing says the door opening is 900 millimeters. That should give us 900 millimeters to walk through, should it not?
-Ellis | I see why you read it that way, but the [[dimension reference::Dimension reference identifies what the 900-millimeter figure measures, which the current note does not make clear.]] is unclear. The note does not say whether it describes a rough opening, a finished opening, or something else.
-Hana | I was thinking about the space available when the door is open. I am not asking for the width of the door panel itself.
-Ellis | Your question is about [[clear passage::Clear passage is the usable unobstructed space Hana wants to understand, not automatically the dimension on the drawing.]]. That is an important distinction. I cannot confirm that usable width from this note without knowing the reference behind the figure.
-Hana | What does rough opening mean in ordinary language? I have heard the term, but I do not want to assume it means a rough estimate.
-Ellis | A [[rough opening::Rough opening refers to the structural opening before the assembly and relevant finishes, not an approximate estimate of usable width.]] is the structural opening before the door assembly and relevant finishes. Rough describes the construction stage here, not an approximate guess at the measurement.
-Hana | That helps. So the frame and the completed surfaces can matter to what the figure means, but we do not yet know which surfaces the note uses.
-Ellis | Exactly. We need to identify the [[reference face::Reference face names a surface used for measurement; the drawing note does not identify those surfaces clearly.]] or faces the dimension runs between. I should not invent that information or quietly subtract an allowance.
-Hana | Has a door already been ordered using this number? If it has, I would like the office to know that my question concerns the usable space.
-Ellis | No door has been ordered. We do not have a confirmed [[order size::Order size is not established by the ambiguous note, and no door has been ordered in this case.]] from this conversation, so I am not describing a change to an existing purchase.
-Hana | Good. Who can tell us what the designer intended? I would rather get the wording clarified than have us choose whichever interpretation sounds most likely.
-Ellis | Priya can provide [[designer clarification::Designer clarification is the appropriate route for resolving the intended measurement reference without a guessed interpretation.]]. I will send the note and explain that your concern is the usable passage through the hall doorway.
-Hana | Please keep the original number in the question. I do not want someone to think I asked to change it before we understand what it describes.
-Ellis | I will preserve the [[opening dimension::Opening dimension remains the stated 900 millimeters; the query concerns its meaning rather than a requested numerical change.]] of 900 millimeters exactly as written. The query will ask what it measures, not propose a different number.
-Hana | Would it be sensible to ask whether the number comes from the frame dimensions? I do not want to leave that possible interpretation hidden.
-Ellis | We can ask for an explicit reference, including whether the [[door frame::Door frame is a distinct component whose dimensions must not be silently equated with usable passage or the ambiguous opening note.]] is part of it. We should not decide the answer ourselves or assume a particular frame thickness.
-Hana | And we should not tell anyone the opening meets a requirement just because there is a clear number on the drawing. That would need its own checking.
-Ellis | Correct. Clarifying the [[drawing note::Drawing note needs an explanation of its measurement reference; the clarification conversation is not a compliance assessment.]] is not a compliance assessment. We are resolving the language and reference before relying on it as a usable-width statement.
-Hana | Please ask Priya to say whether it is rough opening, finished opening, or another reference, and to address my question about the passage when the door is open.
-Ellis | I will include all of that. The [[actual dimension::Actual dimension of the usable passage is not verified; the next step is clarification, not a width guarantee or product order.]] of the usable passage remains unverified here. I will not promise 900 millimeters of clear space or place an order on that assumption.''',
+    dialogue='''Hana | Before we order the hall door, can I check this 900-millimeter note? I'm expecting that much space to walk through with the door open.
+Ellis | The [[dimension reference::Dimension reference identifies what the 900-millimeter figure measures, which the current note does not make clear.]] is missing. It says door opening, but doesn't identify a rough opening, finished opening, or another measurement. I can't promise the walking space from that.
+Hana | Right, I'm interested in the gap I can actually use, not the width of the door leaf. Have I been reading the wrong measurement?
+Ellis | You're asking about [[clear passage::Clear passage is the usable unobstructed space Hana wants to understand, not automatically the dimension on the drawing.]]. It's a different question from the door's size, and the note doesn't establish that usable width.
+Hana | When you say rough, do you mean the measurement isn't accurate? I'd prefer an exact figure before we choose anything.
+Ellis | No, [[rough opening::Rough opening refers to the structural opening before the assembly and relevant finishes, not an approximate estimate of usable width.]] describes the structural opening before the assembly and relevant finishes. Rough names a construction stage here, not a rough guess.
+Hana | I see. So which surfaces does this particular arrow measure between? The drawing isn't clear enough for me to tell.
+Ellis | That's the missing [[reference face::Reference face names a surface used for measurement; the drawing note does not identify those surfaces clearly.]] information. We need the surfaces identified; subtracting a guessed allowance could give you a very misleading answer.
+Hana | Has anyone already bought a door against that number? I'd rather raise it now than discover it doesn't give us the passage we need.
+Ellis | No door is ordered, and the [[order size::Order size is not established by the ambiguous note, and no door has been ordered in this case.]] isn't confirmed. We're clarifying the drawing before purchasing, not changing an existing order.
+Hana | Can Priya settle the meaning? She prepared the design, and I'd like her to understand why I'm asking about the space.
+Ellis | I'll request [[designer clarification::Designer clarification is the appropriate route for resolving the intended measurement reference without a guessed interpretation.]] from Priya and include your question about walking through the doorway. She needs both the note and the practical concern.
+Hana | Please don't change 900 to a different number in the message. I'm asking what it means, not instructing her to redesign it.
+Ellis | Agreed. I'll quote the [[opening dimension::Opening dimension remains the stated 900 millimeters; the query concerns its meaning rather than a requested numerical change.]] of 900 millimeters exactly and ask which construction stage and measurement surfaces it refers to.
+Hana | Would the frame take some of that space? I'm not asking you to work it out now, but I don't want it overlooked.
+Ellis | The [[door frame::Door frame is a distinct component whose dimensions must not be silently equated with usable passage or the ambiguous opening note.]] is a separate component to consider. Its dimensions aren't supplied here, so I won't invent a thickness or a resulting clear width.
+Hana | And we're not confirming that the doorway meets a particular access requirement today? I don't want to pass that on as settled.
+Ellis | Correct. Resolving the [[drawing note::Drawing note needs an explanation of its measurement reference; the clarification conversation is not a compliance assessment.]] isn't a compliance assessment. We'll keep that distinction clear when we pass the question to Priya.
+Hana | Then the message is: what does 900 measure, and what usable passage will this arrangement give? No order until the reference is resolved.
+Ellis | Yes. The [[actual dimension::Actual dimension of the usable passage is not verified; the next step is clarification, not a width guarantee or product order.]] of that passage remains unverified. I'll send the query with the original note, without promising a width or a product size.''',
     transfer_title='Clarify before naming the usable width',
     transfer_setup='Complete the exchange about the hall drawing. Keep the given number, missing reference, unverified passage, and designer referral distinct.',
     transfer='''Client: "The drawing says ___ millimeters." | 900 | The stated figure is 900 millimeters, although its reference is unclear.
 Carpenter: "The note does not identify rough or ___ opening." | finished | Finished is the alternative opening reference the note does not clarify.
 Client: "My concern is the clear ___." | passage | Passage identifies the usable space Hana wants to understand.
 Carpenter: "I will ask the ___ to clarify the reference." | designer | The designer can clarify the intended reference without the carpenter inventing it.''',
+    rehearsal=["Read turns 1-10, stressing opening, passage, and ordered when each distinction changes the meaning.","Switch roles for turns 11-20; quote 900 exactly and keep Priya's clarification separate from a width guarantee.","Complete and check the four-line exchange. Read it aloud without subtracting an invented frame allowance."],
 ))
 
 BOOK['units'].append(unit(
@@ -149,25 +150,25 @@ installation date | Scheduled day for fitting work at the site. | confirm the in
 Which attribute does not distinguish the samples? | The requested profile, which both match | Solid versus veneered construction | Pronounced versus more uniform appearance | Ten versus four quoted days | Both samples meet the requested profile, so it is their shared attribute.
 Which statement overgeneralizes? | Veneered trim always arrives in four days. | B is quoted at four days. | A is quoted at ten days. | Neither sample is selected. | The four-day quote belongs to sample B, not every veneered product.
 How should Mei record Oliver's interest in A? | A is under discussion; no selection has been made. | A has been purchased and installed. | Both samples are rejected. | B is approved because it is quicker. | Interest or discussion alone does not establish selection, purchase, or installation.''',
-    dialogue='''Oliver | I like the shape of both pieces. Is there a practical difference between these two oak samples, or is it mainly the way the surface looks?
+    dialogue='''Oliver | Both shapes look right for the study. Before I choose, what is actually different between these samples apart from the price, which I haven't seen?
 Mei | There is a difference in [[material construction::Material construction distinguishes solid oak in A from oak veneer over a supporting material in B.]]. Sample A is solid oak, while sample B is oak-veneered trim. Both match the profile you requested for the study.
-Oliver | The pattern on A seems stronger. That could work with the room, although B looks calmer when I hold it beside the wall color.
+Oliver | A's grain stands out much more against this wall color. B looks quieter. Is that just what we're seeing in these particular pieces?
 Mei | A has [[pronounced grain::Pronounced grain describes the stronger visible pattern on sample A without making a quality or durability claim.]], and B has a more uniform appearance. Those are the visual differences stated for these samples, not a ranking of quality.
-Oliver | When you say veneered, do you mean that the oak is the visible surface over another material? I want to describe it correctly when we discuss the choice.
+Oliver | So B has real oak on the surface, over something else? What is underneath it, or don't we have that specification here?
 Mei | Yes, [[oak veneer::Oak veneer is the thin oak surface layer over a supporting material; it is not the same construction as solid oak.]] refers to that surface layer. I do not have a specification for the supporting material here, so I should not name a core that is not listed.
-Oliver | What about timing? I remember one option was quicker, but I cannot remember which quote belonged to which sample or whether those were installation dates.
+Oliver | Remind me which one has the shorter lead time. I don't want to mistake a supplier quote for the day you'll fit it.
 Mei | The [[quoted lead time::Quoted lead time is ten days for A and four for B; these figures do not establish installation appointments.]] is ten days for A and four days for B. Those are supply quotes, not confirmed installation appointments.
-Oliver | Then B has the shorter quote by six days. That matters to me, but it does not automatically make it the right choice if I prefer A's appearance.
+Oliver | That makes B six days quicker on the quote. I still prefer A's grain, so I'm not ready to choose on timing alone.
 Mei | Exactly. Your [[visual preference::Visual preference concerns the appearance Oliver favors and remains one consideration alongside the stated timing and construction.]] and the timing are separate considerations. We can compare them without deciding that one sample is better in every respect.
-Oliver | Are the edges shaped differently? I do not want a quicker option if it changes the profile I asked for around the study.
+Oliver | And I wouldn't lose this edge shape by choosing B? The study trim needs the profile we've already discussed.
 Mei | Both match the requested [[profile::Profile is the cross-sectional shape, which both samples match; it is not a difference between these options.]]. The known differences here are construction, grain appearance, and quoted lead time, not the shape you specified.
-Oliver | Is B less expensive? I know that might seem likely to some people, but I would rather compare an actual figure than make an assumption.
+Oliver | Do we have prices or durability information yet? I don't want to assume veneered automatically means cheaper or less hard-wearing.
 Mei | We do not have a price comparison. I also cannot support a [[performance claim::Performance claim would assert durability or function not supplied by the sample comparison; material names alone do not establish it.]] about which lasts longer from the information on these two samples.
-Oliver | I am leaning toward the stronger grain, but I have not decided. Please do not take that comment as permission to order A before I confirm.
+Oliver | I'm leaning toward A, but please don't order it on that basis. I still need the missing details before I approve anything.
 Mei | I will keep the [[selection status::Selection status remains undecided; Oliver's favorable comment about A is not approval or an order instruction.]] open. We can note your interest in A without recording it as an approved sample or a placed order.
-Oliver | Good. I want to compare the finish details and prices when those are available, rather than use the lead-time difference to stand in for everything else.
+Oliver | Can you keep the finish details and prices as outstanding questions? They matter to the decision as well as the grain and lead time.
 Mei | We can keep those as separate questions before [[sample approval::Sample approval has not been given; the missing comparisons and Oliver's final choice remain unresolved.]]. Nothing in this discussion establishes a finish specification, a price, or a guarantee about future product performance.
-Oliver | For now, the summary is solid oak and stronger grain with ten days for A; oak veneer and a more uniform look with four days for B.
+Oliver | Let me read that back: A, solid oak, stronger grain, ten days; B, veneered, more uniform, four days. Neither has an installation booking.
 Mei | Correct, and neither quote is an [[installation date::Installation date is not supplied by either lead-time quote, and no sample selection or fitting appointment is confirmed.]]. Both match the profile, no sample is selected, and the other details remain to be confirmed before a decision.''',
     transfer_title='Compare without choosing for the client',
     transfer_setup='Complete the sample comparison. Use the stated construction, appearance, lead time, and decision status; do not add prices or durability claims.',
@@ -175,6 +176,7 @@ Mei | Correct, and neither quote is an [[installation date::Installation date is
 Client: "B has the more ___ appearance." | uniform | Uniform describes B relative to the pronounced grain of A.
 Carpenter: "B has a quoted ___-day lead time." | four | Four days is B's quoted supply interval, not an installation date.
 Client: "Neither sample is ___ yet." | selected | No selection has been made despite discussion of both samples.''',
+    rehearsal=["Read turns 1-10 with a partner, stressing A, B, ten days, and four days.","Switch roles for turns 11-20; separate matching profile from price, performance, and approval.","Complete and check the short exchange. Read the corrected comparison without turning a supply quote into an installation date."],
 ))
 
 BOOK['units'].append(unit(
@@ -209,42 +211,43 @@ fabrication release | Authorization or controlled issue allowing production to p
 review deadline | Time by which a review is due. | state the review deadline
 unresolved detail | Information point not yet clarified. | flag an unresolved detail
 cross-reference | Link between related drawing views or documents. | check the cross-reference
-millimeter difference | Difference expressed in the specified metric unit. | state the millimeter difference
-document status | Current issue, approval, or review state of a document. | preserve the document status''',
+kerf | Width of material removed by a cut, distinct from blade plate thickness. | allow for the kerf
+cut list | List of required parts, quantities, and finished dimensions. | review the cut list''',
     precision='The difference is five millimeters, but calculating that difference does not identify the correct reveal. Both C4 and S2 are revision B and refer to the same panel. Neither sheet is established as superseded or authoritative over the other.',
     precision_extra='14:00 is the fabrication-release review time. It is not an instruction to choose a dimension, a confirmed designer-response time, or evidence that fabrication is released. Refer both values and the precise location through the actual project clarification process.',
     phrases='''Flag the issue | I found a conflict at the cabinet end panel.\nCite the first view | Elevation C4 revision B shows a 20-millimeter reveal.\nCite the second view | Section S2 revision B shows 15 millimeters.\nConfirm the shared location | Both dimensions refer to the same end panel.\nCheck the issue labels | Both sheets are marked revision B.\nState the difference | The values differ by five millimeters.\nReject a revision shortcut | We cannot identify a newer sheet from those labels alone.\nName the missing answer | The designer has not clarified which dimension applies.\nRequest a decision | Please confirm the applicable reveal dimension.\nPreserve the review time | The fabrication-release review is due at 14:00.\nAvoid a response promise | That review time is not a guaranteed designer-response time.\nKeep production status separate | The conflict discussion does not authorize fabrication.\nKeep both references | I will include C4 and S2 in the query.\nAvoid averaging | I will not use the midpoint as an invented solution.\nAsk for an explicit response | The reply needs to identify the dimension for this panel.\nClose with the current status | The detail remains unresolved pending clarification.''',
     notes='''At the same panel | Establishes that the two values conflict rather than describe separate locations.\nRevision B | A shared issue label, not proof that the content agrees.\nApplies | Asks which dimension governs the specific detail.\nDue for review | Describes a planned decision point without implying approval.\nPending clarification | Keeps the question open until a response resolves it.\nFive-millimeter difference | Correct arithmetic that does not answer which value is intended.''',
-    d='''Which query is complete? | At the same end panel, C4 rev B shows 20 mm and S2 rev B shows 15 mm; please clarify for the 14:00 release review. | Please fix the cabinet sometime. | Use 20 because it is larger. | Both sheets agree because they are revision B. | The complete query includes location, both references, conflicting values, and the review time.
+    d='''Which query is complete? | At the same end panel, C4 rev B shows 20 mm and S2 rev B shows 15 mm; please clarify for the 14:00 release review. | Please confirm 20 mm on C4 without mentioning S2. | Use 15 mm because the section must take precedence. | Release at 17.5 mm as a compromise between the views. | The complete query includes location, both references, conflicting values, and the review time.
 Which proposed shortcut is unsupported? | Average the values and fabricate a 17.5-millimeter reveal. | Ask the designer to clarify. | Preserve both revision labels. | Flag the unresolved detail for review. | No authority is given to invent a midpoint or release fabrication from conflicting dimensions.
 What do the revision labels establish? | Both sheets are marked B, not which dimension is correct | C4 is definitely newer | S2 is superseded | The reveal is automatically 20 | The shared letter does not identify precedence or resolve the inconsistent detail.
 Which status is accurate at the end? | The reveal remains unresolved and fabrication is not authorized by this conversation. | The designer has approved 15. | The review deadline authorizes 20. | Installation is complete. | No designer clarification or fabrication authorization is supplied during the exchange.''',
-    dialogue='''Arun | Before the release review, I need to flag the end panel on the cabinet drawings. The two views give different reveal dimensions at the same location.
-Lena | Which references are involved? I need the [[sheet number::Sheet number locates each drawing precisely for the designer's review of the conflict.]] and revision for each view, not just the two measurements, so the query is easy to follow.
-Arun | Elevation C4 revision B shows 20 millimeters. Section S2 revision B shows 15 millimeters. I have checked that both refer to this same end panel.
-Lena | Then the [[dimension discrepancy::Dimension discrepancy is 20 versus 15 millimeters at the same end panel, not two unrelated measurements.]] is five millimeters at one detail. Has the designer already responded anywhere, or is the applicable value still unconfirmed?
-Arun | The designer has not clarified it. I do not want to choose 20 because the elevation is easier to read or 15 because it uses less space.
-Lena | Agreed. We need a [[clarification response::Clarification response must resolve the intended dimension; convenience or drawing readability does not establish the correct value.]] that identifies which dimension applies. Neither of those reasons is a design decision we can substitute for the missing answer.
-Arun | Both sheets say B. Someone asked whether the section might be older, but I cannot support that from the labels we have in front of us.
-Lena | We should not call either a [[superseded drawing::Superseded drawing would mean an earlier issue had been replaced; the shared B labels do not establish that status.]] on that basis. The shared revision letter does not tell us that one view overrides the other.
-Arun | The fabrication-release review is due at 14:00. Please include that, because the unresolved panel detail will matter when the team checks readiness.
-Lena | I will state the [[review deadline::Review deadline is 14:00 for the fabrication-release review, not an agreed designer-response time or automatic production permission.]] precisely. It explains the coordination need, but it does not guarantee a designer response by then or authorize us to guess.
-Arun | Could the query quote both values in the same sentence? If only one appears in the subject line, the other might get lost when it is forwarded.
-Lena | Yes. I will describe the [[drawing conflict::Drawing conflict keeps both incompatible values and their references visible in the handoff.]] as C4 revision B, 20 millimeters, versus S2 revision B, 15 millimeters, at the same end panel.
-Arun | Good. And please ask for the reveal specifically. We are not asking the designer to recheck every cabinet dimension before answering this one point.
-Lena | I will ask for the [[applicable dimension::Applicable dimension concerns the reveal at this end panel, not every cabinet measurement.]] for the reveal at that panel. The request can be specific without pretending the rest of the drawings have been verified.
-Arun | What should the review record say if the answer has not arrived? I do not want an empty note to look as though the discrepancy disappeared.
-Lena | It should preserve the [[unresolved detail::Unresolved detail keeps the unanswered reveal question visible instead of allowing silence to imply that it has been settled.]]. The absence of a reply does not resolve it, and the record should not say either dimension has been approved.
-Arun | There was also a suggestion to split the difference. That would produce a number, but it would not tell us what the designer intended.
-Lena | Correct. A midpoint is not [[design intent::Design intent requires clarification; averaging the conflicting values invents a result instead of establishing it.]]. We should not turn 17.5 millimeters into an invented solution simply because it lies between the two drawing values.
-Arun | Please send the precise query and carry the unresolved status into the 14:00 review. I will not describe this conversation as permission to fabricate the panel.
-Lena | I will keep [[fabrication release::Fabrication release is not granted here; the reveal still requires designer clarification.]] separate from the query. Both references, the shared revision, the conflicting reveal, and the review time will remain explicit in the handoff.''',
+    dialogue='''Arun | Lena, can we stop on the end-panel detail before the release review? The elevation and section give different reveals at the same panel.
+Lena | Give me each [[sheet number::Sheet number locates each drawing precisely for the designer's review of the conflict.]] and revision, please. I want the designer to find the conflict without having to guess which cabinet we're discussing.
+Arun | Elevation C4, revision B: twenty millimeters. Section S2, also revision B: fifteen. I've checked that they point to this same end panel.
+Lena | That's a five-millimeter [[dimension discrepancy::Dimension discrepancy is 20 versus 15 millimeters at the same end panel, not two unrelated measurements.]]. Has the designer answered it in a separate message, or are we still waiting for the intended reveal?
+Arun | Still waiting. The workshop has asked which figure to use. I can't choose twenty just because the elevation is the clearer view.
+Lena | Nor can we choose fifteen for convenience. We need a [[clarification response::Clarification response must resolve the intended dimension; convenience or drawing readability does not establish the correct value.]] identifying the intended value and the detail it applies to.
+Arun | Someone thought S2 might be the old sheet. Both labels say B, though, and I haven't found anything establishing that either has been replaced.
+Lena | Then don't mark it a [[superseded drawing::Superseded drawing would mean an earlier issue had been replaced; the shared B labels do not establish that status.]]. Matching revision letters don't resolve a conflict or tell us that the elevation takes precedence.
+Arun | The fabrication-release review is at fourteen hundred. Can the query say that, so the designer understands the timing without reading the whole schedule?
+Lena | I'll include the [[review deadline::Review deadline is 14:00 for the fabrication-release review, not an agreed designer-response time or automatic production permission.]]. It's the review time, not a promised response time, and it doesn't give us permission to pick a dimension.
+Arun | Put both values in the actual question, please. If the message just says end-panel query, it may come back asking for the missing numbers.
+Lena | I'll state the [[drawing conflict::Drawing conflict keeps both incompatible values and their references visible in the handoff.]] in one sentence: C4 rev B shows twenty, S2 rev B shows fifteen, at the same end panel.
+Arun | And ask specifically for the reveal. I don't want this turned into a request to recheck every dimension in the cabinet package.
+Lena | Agreed. The [[applicable dimension::Applicable dimension concerns the reveal at this end panel, not every cabinet measurement.]] is the reveal at this location. A precise query doesn't imply we've verified the rest of the package.
+Arun | If the answer hasn't arrived by the review, what goes in the record? Leaving the box empty could make it look resolved.
+Lena | Record an [[unresolved detail::Unresolved detail keeps the unanswered reveal question visible instead of allowing silence to imply that it has been settled.]], with the query reference. No reply is not approval of either figure, and the conflicting values must remain visible.
+Arun | The other suggestion was seventeen and a half, splitting the difference. That would keep everyone moving, but it's not on either drawing.
+Lena | Averaging isn't [[design intent::Design intent requires clarification; averaging the conflicting values invents a result instead of establishing it.]]. Seventeen and a half would be a third, invented dimension, not a resolution of the two we were given.
+Arun | Understood. I'll bring both sheets to the fourteen-hundred review and keep the reveal outstanding. Can you send the specific question now?
+Lena | Yes. The query doesn't grant [[fabrication release::Fabrication release is not granted here; the reveal still requires designer clarification.]]. I'll preserve both references, values, and the unresolved status so the release decision isn't based on an assumption.''',
     transfer_title='Refer the conflicting detail',
     transfer_setup='Complete the drawing query using both references and values. Keep the shared revision and the unresolved status intact.',
     transfer='''Carpenter: "Elevation ___ revision B shows 20 millimeters." | C4 | C4 is the elevation reference carrying the 20-millimeter reveal.
 Coordinator: "Section S2 revision B shows ___ millimeters." | 15 | Fifteen millimeters is the conflicting value on section S2.
 Carpenter: "Both refer to the same end ___." | panel | The shared panel location is why the values conflict.
 Coordinator: "The designer has not yet ___ the applicable dimension." | clarified | No clarification has resolved the conflict or authorized a dimension.''',
+    rehearsal=["Read turns 1-10; pronounce both sheet references, revision letters, and millimeter values distinctly.","Switch roles for turns 11-20. Stress unresolved and keep the 14:00 review distinct from release.","Check the short exchange, then read it without replacing the conflict with an average or assumed drawing precedence."],
 ))
 
 BOOK['units'].append(unit(
@@ -289,32 +292,33 @@ referral route | Process for passing a concern to the appropriate person. | expl
 Which answer to Theo is unsupported? | The joists are definitely sound because we cannot see damage. | The joists are not visible. | Structural condition has not been assessed. | Sam can arrange an assessment. | Inability to see the joists cannot establish that they are structurally sound.
 Which location should the referral include? | Beside the laundry doorway | An invented roof leak location | Every wall in the house | A joist already exposed elsewhere | The supplied location helps the assessor identify the actual observed area.
 What remains unknown? | The cause, concealed structural condition, and any required repair | Whether staining is visible | Whether Theo asked about rot | Whether the joists are concealed | No assessment has established the cause, structural condition, or appropriate repair.''',
-    dialogue='''Theo | This dark patch beside the laundry doorway worries me. Does it mean the joists underneath are rotten, or can you tell from what is exposed?
-Nia | I can see [[dark staining::Dark staining is the observed discoloration on the exposed subfloor, not a confirmed finding of decay in concealed joists.]] on the subfloor. I cannot confirm rot in the joists because they are not visible and I have not assessed structural condition.
-Theo | I thought the boards we can see might be the structural members themselves. Are we talking about two different parts of the floor?
-Nia | Yes. The exposed [[subfloor::Subfloor is the visible supporting floor layer in this case, distinct from the concealed joists about which Theo asks.]] and the joists beneath it are different parts. Seeing a mark on this surface does not establish the condition of the concealed members.
-Theo | So the mark is real, but my explanation for it is only a possibility. I would prefer the report to say that clearly.
-Nia | I will record the [[site observation::Site observation preserves the visible staining and its location without turning the client's proposed explanation into a diagnosis.]] and your question separately. The note can say where the staining is without claiming that a particular cause has been found.
-Theo | Could it be from water coming into the laundry area? I am trying to understand the next question, not asking you to guess a repair.
-Nia | The [[moisture source::Moisture source has not been established; the question about water does not prove where it came from or what it affected.]] has not been established. I should not name a leak or another source from this appearance alone.
-Theo | Who can assess it properly? I do not want the concern lost because we cannot see the joists during this conversation.
-Nia | Sam, the project lead, can arrange a [[qualified assessor::Qualified assessor is the appropriate person to examine the relevant concern; no completed assessment or finding exists yet.]] to review the concern. I will include the location and the fact that the joists are not visible.
-Theo | Does arranging that assessment mean we already know the floor needs replacing? I am concerned about both the disruption and the cost.
-Nia | No [[repair proposal::Repair proposal is not established by requesting an assessment; replacement, cost, and disruption have not been determined.]] is established. An assessment request does not mean replacement has been decided, and I do not have a repair price to quote.
-Theo | Equally, I suppose you cannot tell me everything is sound simply because you have not seen a damaged joist. They are still hidden.
-Nia | Correct. The [[visibility limit::Visibility limit prevents both a confirmed decay diagnosis and a claim that concealed structural members are sound.]] works both ways. I cannot confirm decay, but I cannot use the lack of a visible joist as reassurance that the structure is sound.
-Theo | That is clearer than a yes or no. Please make sure the report does not describe the stain as a completed structural inspection.
-Nia | I will keep the [[investigation status::Investigation status remains unassessed for structural condition; describing staining is not equivalent to completing an inspection.]] accurate. There is a visible concern and a referral to arrange, not a completed structural inspection or a technical finding.
-Theo | Can you read back the location and the unanswered question? I want Sam to understand exactly what prompted me to ask about the floor.
-Nia | Dark staining on exposed subfloor beside the [[laundry doorway::Laundry doorway is the specific location of the observation, allowing the referral to identify the relevant area accurately.]]; joists not visible; structural condition not assessed; client asks whether decay may be present.
-Theo | That is the question I meant. Please send it to Sam so the assessment can be arranged before anyone gives me a repair conclusion.
-Nia | I will follow that [[referral route::Referral route passes the concern to Sam for arranging qualified assessment, without inventing a diagnosis or authorizing a repair.]]. The message will preserve what is seen, what is concealed, and what remains unknown, without adding a repair recommendation.''',
+    dialogue='''Theo | Nia, this dark patch by the laundry door looks worrying. Is that rot in the joists, or am I jumping to conclusions?
+Nia | What I can identify is [[dark staining::Dark staining is the observed discoloration on the exposed subfloor, not a confirmed finding of decay in concealed joists.]] on the exposed subfloor. The joists aren't visible, and I haven't assessed the structural condition.
+Theo | I thought what we're looking at might be the joists themselves. Are those different from this exposed layer?
+Nia | Yes. This is the [[subfloor::Subfloor is the visible supporting floor layer in this case, distinct from the concealed joists about which Theo asks.]]; the joists beneath it are concealed. A mark here doesn't tell us whether those hidden members have decay.
+Theo | So you can record the stain, but not my guess about what caused it as though it's a finding?
+Nia | Exactly. I'll separate the [[site observation::Site observation preserves the visible staining and its location without turning the client's proposed explanation into a diagnosis.]] from your question: visible discoloration here, and a concern about the condition of the concealed joists.
+Theo | Could it be coming from the laundry? That was my first thought because it's so close to the doorway.
+Nia | The [[moisture source::Moisture source has not been established; the question about water does not prove where it came from or what it affected.]] isn't established. The location is useful to report, but it doesn't prove a leak or tell us where any water came from.
+Theo | Who should look into it? I'd like someone qualified to assess it before I'm told the floor needs replacing.
+Nia | I'll contact Sam to arrange a [[qualified assessor::Qualified assessor is the appropriate person to examine the relevant concern; no completed assessment or finding exists yet.]]. The referral will give the location, what is exposed, and what we cannot currently see.
+Theo | Does that mean replacement is likely? I'm trying to work out whether we need to budget for a much bigger job.
+Nia | We don't have a [[repair proposal::Repair proposal is not established by requesting an assessment; replacement, cost, and disruption have not been determined.]] yet. Asking for an assessment doesn't establish replacement, a price, or the disruption involved.
+Theo | Would it be reasonable to say the joists are probably fine until someone finds damage? Or is that going too far as well?
+Nia | The [[visibility limit::Visibility limit prevents both a confirmed decay diagnosis and a claim that concealed structural members are sound.]] works both ways. I can't confirm decay, but hidden joists also prevent me from assuring you that the structure is sound.
+Theo | All right. Please don't describe today's conversation as a structural inspection. I can imagine that getting repeated later as an all-clear.
+Nia | I'll keep the [[investigation status::Investigation status remains unassessed for structural condition; describing staining is not equivalent to completing an inspection.]] explicit: structural condition not assessed. The visible concern is being referred, not diagnosed or signed off.
+Theo | Can you read the location back? There are two laundry doors, and I don't want the person coming out to review the wrong patch.
+Nia | The note identifies the exposed subfloor beside this [[laundry doorway::Laundry doorway is the specific location of the observation, allowing the referral to identify the relevant area accurately.]], with the staining shown in the referral record. It also states that the joists are concealed.
+Theo | Yes, that's the area. Please give Sam the question as well as the observation, so it doesn't become just a cosmetic stain report.
+Nia | I will use that [[referral route::Referral route passes the concern to Sam for arranging qualified assessment, without inventing a diagnosis or authorizing a repair.]] and include your concern about possible decay. I won't add a repair conclusion or a claim of structural safety.''',
     transfer_title='Describe what is visible',
     transfer_setup='Complete the report to the project lead. Keep the observed surface separate from the concealed joists and the unperformed assessment.',
     transfer='''Carpenter: "Dark staining is visible on the exposed ___." | subfloor | Subfloor is the visible layer carrying the reported staining.
 Client: "The joists are not ___." | visible | The joists remain concealed, so their condition cannot be judged from this view.
 Carpenter: "Structural condition has not been ___." | assessed | No structural assessment has occurred in the supplied case facts.
 Client: "Please ask Sam to arrange a qualified ___." | assessment | Assessment is the available next step, not a confirmed diagnosis or repair.''',
+    rehearsal=["Read turns 1-10 with a partner; distinguish the visible subfloor from the concealed joists.","Switch roles for turns 11-20. Retain both limits: no confirmed decay and no assurance of structural soundness.","Check the transfer answers, then read the referral with the location and Sam's role intact."],
 ))
 
 BOOK['units'].append(unit(
@@ -346,7 +350,7 @@ variation | Agreed or proposed change to the original work arrangement. | record
 change authorization | Permission to alter the agreed work. | obtain change authorization
 price agreement | Acceptance of a stated cost for defined work. | confirm the price agreement
 completion commitment | Agreed promise about when work will finish. | avoid an unsupported completion commitment
-provisional idea | Initial proposal not yet fully defined or agreed. | record a provisional idea
+book matching | Pairing consecutive veneer leaves by alternating their faces for mirrored grain. | specify book matching
 measurement visit | Attendance to establish relevant dimensions. | discuss a measurement visit
 client approval | Acceptance from the client through the relevant process. | record client approval
 existing contract | Current agreement governing the booked work. | distinguish the existing contract
@@ -359,25 +363,25 @@ scope handoff | Transfer of the task description for further review or quotation
 Which response is helpful without overpromising? | I can arrange a separate quotation, with dimensions and timing still to be agreed. | I guarantee a bench tomorrow at no charge. | The question itself changes the contract. | I will invent dimensions to speed things up. | The quotation route acknowledges the request while preserving the unresolved bench details.
 What does requesting a quote establish? | Interest in having the extra work priced, not approval to perform it | A final price agreement | A confirmed completion date | Approval of any design | A quotation request is not acceptance of terms or authorization of the additional work.
 Which item must remain excluded from the current booking? | Decorating | Skirting replacement | Recording the bench request | Clarifying the existing task | Decorating is explicitly excluded and is not added by the bench discussion.''',
-    dialogue='''Amara | While you are replacing the skirting, could you build a bench along that bedroom wall too? It would make the room more useful.
+    dialogue='''Amara | While you're doing the bedroom skirting, could you also build a bench along that wall? I'm wondering whether it could be added to this visit.
 Jules | I can pass on the idea, but the [[agreed scope::Agreed scope is bedroom skirting replacement only; the bench request does not automatically belong to that agreement.]] is skirting replacement only. A built-in bench would be a separate item rather than part of the existing task.
-Amara | I understand it is more work. I was not sure whether it could simply be added while you are already here with the materials.
+Amara | I realize it isn't another piece of skirting. I thought being here already might make it simpler, but I haven't worked out the details.
 Jules | It is [[additional work::Additional work describes the bench beyond the existing skirting task, even though both would be in the same bedroom.]], and we need a defined proposal for it. Being on site does not establish the dimensions, the price, or when it could be completed.
-Amara | Could you get it priced, then? I would like to know what is involved before deciding whether to go ahead with the idea.
+Amara | Could I get a separate price before I decide? I'm asking for an option, not telling you to start building it.
 Jules | I can arrange a [[separate quotation::Separate quotation is the available route for pricing the bench request; it is not an accepted price or permission to begin.]]. Asking for that quote does not mean you have approved the bench or agreed to pay an amount we have not supplied.
-Amara | Good. I have not settled how long or deep it should be. Please do not assume the full length of the wall just because I pointed there.
+Amara | I haven't settled the length or depth. When I pointed at the wall, I didn't mean that the bench must fill the whole space.
 Jules | I will keep the [[bench dimensions::Bench dimensions are not agreed; a pointing gesture does not establish length, depth, height, or a final design.]] unresolved. The handoff will describe a built-in bench request without turning your gesture into a fixed length or depth.
-Amara | Would painting be part of it? I know the current job is carpentry, but I want to understand whether the new idea changes the decorating arrangement.
+Amara | What about painting? I know decorating isn't in the present booking. Would a bench quote need to say explicitly whether finishing is included?
 Jules | The current [[scope exclusion::Scope exclusion keeps decorating outside the existing booking; the bench discussion does not silently add painting or other finishing work.]] remains decorating. The bench request does not add painting to today's agreement, and any proposed finish would need to be stated in its own quotation.
-Amara | That is useful. I would rather see exactly what a price includes than have a lower figure that leaves us disagreeing about the finish later.
+Amara | Yes, I'd rather see what's covered than compare prices that mean different things. The finish could affect which proposal I accept.
 Jules | A clear [[quotation scope::Quotation scope identifies what a proposed price covers, including any stated finish requirements, rather than relying on an unstated assumption.]] matters. We should not promise a finish, a design, or a service that has not been defined in the proposal.
-Amara | Do you have an idea of when it could be ready? I am interested, but I do not want to make room arrangements around a guessed date.
+Amara | Could it be finished this week? I'm asking whether that's possible, but I don't want you to put a date into the quote without checking.
 Jules | No [[completion commitment::Completion commitment for the bench is absent; interest in the idea and a quotation referral do not establish a finish date.]] has been made for the bench. I cannot give you a confirmed date before the proposed work and arrangements are agreed.
-Amara | Understood. Please keep the skirting replacement as the existing job. I do not want this question to sound like I have replaced that task with the bench.
+Amara | Then today's skirting job stays as agreed while the bench is priced separately. Is there anything in this discussion that changes the existing booking?
 Jules | I will preserve the [[existing contract::Existing contract continues to cover the skirting replacement; discussing a bench does not cancel or replace that task.]] scope. The skirting remains the agreed task, and the bench will be recorded as a separate request for pricing.
-Amara | If I like the quote later, I can confirm the details through the normal process. For now, we are only taking the idea to the next stage.
+Amara | Good. Please don't take my interest as approval. I'll review the defined proposal and price before giving a decision on the extra work.
 Jules | Correct. [[Change authorization::Change authorization has not been given; a future decision would need to establish the additional work through the relevant process.]] has not happened in this conversation. I will not describe your interest as approval to start building or to choose measurements for you.
-Amara | Please send the request with those open points. I want the bench considered, but I have not agreed dimensions, a price, or a completion date.
+Amara | Please pass on: built-in bedroom bench requested for a separate quote; size, finish, price, and timing unresolved. No instruction to proceed.
 Jules | I will make that [[scope handoff::Scope handoff transfers the bench request with its unresolved dimensions, price, and timing while preserving the skirting-only agreement.]] clearly. The note will keep the bench proposal separate, preserve the decorating exclusion, and leave the unagreed details open for the quotation process.''',
     transfer_title='Keep an extra request separate',
     transfer_setup='Complete the client exchange about the bedroom work. Preserve the original task, excluded decorating, separate quotation, and unresolved bench dimensions.',
@@ -385,6 +389,7 @@ Jules | I will make that [[scope handoff::Scope handoff transfers the bench requ
 Client: "Decorating remains ___." | excluded | The current booking excludes decorating, even after the bench question.
 Carpenter: "I can arrange a separate ___ for the bench." | quotation | A quotation can be arranged without approving or pricing the work now.
 Client: "The bench dimensions are not yet ___." | agreed | No bench measurements have been established or accepted during the conversation.''',
+    rehearsal=["Read turns 1-10; separate the existing skirting agreement from the proposed bench and decorating.","Switch roles for turns 11-20. Stress quotation, authorization, and unresolved timing.","Check and read the transfer, keeping the quote request separate from permission to begin."],
 ))
 
 BOOK['units'].append(unit(
@@ -413,9 +418,9 @@ area readiness | Whether a location is prepared for the intended activity. | con
 handover between trades | Transfer of an area or task from one trade to another. | coordinate the handover between trades
 installation access | Availability of an area for fitting work. | verify installation access
 confirmed delivery | Agreed arrival arrangement for goods. | report the confirmed delivery
-unreleased room | Area not yet handed over for the proposed work. | flag the unreleased room
+moisture content | Water mass expressed here as a percentage of oven-dry wood mass. | report wood moisture content
 purpose-specific access | Permission limited to a named activity. | respect purpose-specific access
-hallway | Passage connecting rooms or areas. | identify the hallway
+equilibrium moisture content | Wood moisture at balance with surrounding temperature and humidity. | distinguish equilibrium moisture content
 logistics update | Report on movement, receipt, access, or related arrangements. | give a logistics update
 storage location | Place where materials may be held. | confirm the storage location
 schedule dependency | Arrangement that must be resolved for a later task to proceed. | report a schedule dependency
@@ -429,25 +434,25 @@ coordination query | Question seeking clarification of interdependent arrangemen
 Which inference is unsupported? | A confirmed delivery means the study is ready for installation. | The hallway review has a stated time. | Storage in the hallway is excluded. | Study release remains unresolved. | Delivery and room access are separate arrangements, so one does not prove the other.
 What can Farah coordinate next? | The unresolved study-access arrangement | A completed installation already claimed | A storage location assumed without approval | A new delivery time invented by Ben | Farah needs the unresolved access dependency, not an unauthorized substitute arrangement.
 Which hallway statement should be corrected? | We can store the joinery there because the trim review is allowed. | The review is at 11:00. | The hallway is available for the specified review. | Storage permission is absent. | Permission for the review does not authorize material storage in the hallway.''',
-    dialogue='''Farah | Can you give me the study joinery update? I have a delivery note and a review time, but I want to know which arrangements are actually confirmed.
+    dialogue='''Farah | Ben, I have Tuesday delivery in the diary and an eleven-o'clock review. Does that mean the study will be ready to install, or am I combining separate arrangements?
 Ben | The [[delivery slot::Delivery slot is Tuesday morning for the joinery; it does not establish room access, storage permission, or installation readiness.]] is confirmed for Tuesday morning. The study, however, has not been released by the decorator for carpentry access.
-Farah | So I should not put the room down as ready just because the supplier is coming. Do we have a release time from the decorator?
+Farah | Is the decorator finished with the study? I don't want the delivery confirmation to be read as permission for the installers to enter that room.
 Ben | No confirmed [[access release::Access release for the study has not been given, and no release time is supplied in the case.]] time is available. I want that dependency kept visible rather than treated as settled in the delivery update.
-Farah | What about the hallway at 11:00? I saw that on the notes and wondered whether it gave the crew somewhere to put the joinery temporarily.
+Farah | Then what exactly is booked for eleven in the hallway? The word access in the message is a bit too broad for me.
 Ben | The hallway is available for a [[trim review::Trim review is the specific activity allowed in the hallway at 11:00; it is not a material-storage arrangement.]] at 11:00. That is a separate activity, and the hallway is not available for material storage.
-Farah | Thank you. I will not turn the review arrangement into a holding area. Is another place for the materials confirmed in the information you have?
+Farah | Can the joinery wait in the hallway until the study is released? I'm asking before anyone puts that location on the delivery instructions.
 Ben | No alternative [[storage location::Storage location is not confirmed elsewhere, and the hallway is explicitly excluded from material storage.]] is confirmed here. I should not invent one or assume that a room available for a discussion can receive the delivery.
-Farah | Understood. I need to coordinate the access issue, but I do not want to tell the team you have moved the delivery without an actual arrangement.
+Farah | So the delivery is still Tuesday morning, even though we don't yet have a permitted storage arrangement? Please don't invent a new slot in the update.
 Ben | I have not changed the [[confirmed delivery::Confirmed delivery remains Tuesday morning; reporting the access conflict does not itself reschedule the supplier.]]. Tuesday morning is still the stated slot. The update flags the mismatch without claiming that a replacement plan exists.
-Farah | Is there any basis for saying installation starts immediately after delivery? That is how someone might read a short note if we leave access out.
+Farah | And we can't advertise Tuesday installation just because the material is arriving? The room release is still the missing part.
 Ben | No. [[Installation access::Installation access is unresolved because the study has not been released; a delivered product does not authorize fitting work there.]] remains unresolved. Delivery, room release, and the start of fitting work should not be compressed into one promise.
-Farah | I also want to avoid blaming the decorator. We know the room has not been released, but the note does not tell us why or when that changes.
+Farah | Please put that distinction in the coordination message. What would you say without blaming the decorator for a delay we haven't established?
 Ben | That is the right [[logistics update::Logistics update reports the actual arrangements and unresolved dependency without inventing a cause or blaming another trade.]] to give. I am reporting the current release status, not a reason for it or a claim that another trade has missed a deadline.
-Farah | Please give me the four-point summary once more. I will use it when I coordinate with the people responsible for the room and the delivery.
+Farah | Read the four statuses back separately, please. I want delivery, study access, review access, and storage to be unmistakable.
 Ben | Here is the [[status readback::Status readback repeats delivery, access, review, and storage separately so no permission is lost or expanded in the handoff.]]: Tuesday-morning delivery confirmed; study unreleased; hallway trim review at 11:00; no material storage in the hallway.
-Farah | That makes the open question clear. I need to coordinate study access and any related arrangements without treating the hallway review as a solution to everything.
+Farah | Do we know when the study will be released? If not, keep that unknown rather than using eleven o'clock as a convenient estimate.
 Ben | Yes. The [[schedule dependency::Schedule dependency is the unresolved study access, which remains distinct from the already confirmed delivery and review arrangements.]] is still the study release. No alternative storage, changed delivery slot, or installation start has been established in this update.
-Farah | I will carry that into the coordination discussion. The team needs an accurate list of arrangements and restrictions, not a general statement that everything is ready.
+Farah | All right. Please flag the unresolved coordination to me. The hallway review permission mustn't turn into a general storage or installation permission.
 Ben | Exactly. [[Purpose-specific access::Purpose-specific access limits the hallway arrangement to the trim review; it does not authorize storage or substitute for study access.]] is the key point for the hallway. I will keep the review permission and the storage restriction together whenever I pass the update on.''',
     transfer_title='Keep four arrangements separate',
     transfer_setup='Complete the coordinator update. Preserve the confirmed delivery, unreleased study, hallway review time, and storage restriction.',
@@ -455,6 +460,7 @@ Ben | Exactly. [[Purpose-specific access::Purpose-specific access limits the hal
 Coordinator: "The study has not been ___ for carpentry access." | released | The decorator has not released the study for the intended work.
 Carpenter: "The hallway trim review is at ___." | 11:00 | Eleven o'clock is the separate trim-review time supplied in the case.
 Coordinator: "The hallway is not available for material ___." | storage | Storage is explicitly excluded even though the hallway review is allowed.''',
+    rehearsal=["Read turns 1-10 with a partner, distinguishing Tuesday delivery from study access and the hallway review.","Switch roles for turns 11-20. Read the four statuses without adding a storage location or installation time.","Check and read the transfer. Keep 11:00 attached to the review only."],
 ))
 
 BOOK['units'].append(unit(
@@ -489,42 +495,43 @@ correction of record | Amendment of an inaccurate earlier statement. | make a co
 specific exception | Identified case that contradicts a general claim. | acknowledge the specific exception
 quality claim | Statement about the condition or standard of work. | qualify the quality claim
 follow-up item | Matter retained for further checking or action. | record a follow-up item
-verification | Check establishing whether a claim or result is accurate. | complete verification
+slip matching | Placing consecutive veneer leaves alongside each other in the same face orientation. | compare slip matching
 closeout status | Whether review and required follow-up are complete. | preserve the closeout status''',
     precision='Luis must withdraw all fronts are flush because D3 provides a specific exception. The observation is a projecting left edge relative to the neighboring front. It does not establish the projection amount, applicable tolerance, underlying cause, or correct remedy.',
     precision_extra='Record the component identifier, side, and comparison surface so follow-up is specific. Do not convert projects into a claim that the drawer is broken, or a possible adjustment into an agreed repair. The item remains open pending the appropriate assessment.',
     phrases='''Correct the earlier statement | I need to correct what I said about all the fronts being flush.\nAcknowledge the exception | You are right to point out D3.\nName the component | The observation concerns drawer D3.\nLocate the edge | Its left edge projects beyond the neighboring front.\nAvoid a guessed measurement | I have not established the amount of the offset.\nAvoid a tolerance claim | I have not checked the applicable tolerance.\nKeep the cause open | The cause has not been assessed.\nKeep the remedy open | I have not determined the appropriate remedy.\nAvoid blaming hardware | I cannot call the runner defective from this observation alone.\nRecord the follow-up | I will add the specific item to the snagging list.\nPreserve the comparison | The neighboring front is the reference in this observation.\nAvoid minimizing | I will not dismiss it as acceptable without checking.\nAvoid a repair promise | No repair method or completion time is agreed.\nLimit the finding | This identifies D3, not every drawer in the wardrobe.\nRead back the item | D3 left edge projects; cause and remedy unassessed.\nClose honestly | The earlier overall claim is corrected and this item remains open.''',
     notes='''All | A universal claim contradicted by even one verified exception.\nProjects beyond | Describes relative position without supplying a measured amount.\nLeft edge | Makes the observation more useful than saying the drawer looks wrong.\nUnassessed | Keeps an observation separate from a technical conclusion.\nCorrect what I said | Directly withdraws an inaccurate statement rather than quietly changing the subject.\nOpen item | Acknowledgement and recording do not establish that correction is complete.''',
-    d='''Which opening corrects the earlier claim? | I need to correct that: D3's left edge is not flush with the neighboring front. | I said all, but I meant most, so nothing needs changing. | You must be looking at the wrong wardrobe. | The runner is definitely broken. | The opening explicitly withdraws the inaccurate overall claim and identifies the exception.
+    d='''Which opening corrects the earlier claim? | I need to correct that: D3's left edge is not flush with the neighboring front. | D3 is an exception, but the overall flush claim can stay unchanged. | D3 projects, so its runner needs replacement. | D3 looks close enough to accept without checking tolerance. | The opening explicitly withdraws the inaccurate overall claim and identifies the exception.
 Which snag entry is precise? | D3 left edge projects beyond neighboring front; cause and remedy unassessed. | All drawers broken and replacement approved. | Wardrobe fine; no follow-up. | Five-millimeter failure repaired. | The entry preserves the component, side, reference surface, and unassessed cause and remedy.
 Which conclusion is unsupported? | A replacement runner is definitely required. | D3 needs follow-up. | The left edge projects. | The earlier all-fronts claim needs correction. | No assessment establishes that the runner caused the projection or needs replacement.
 What remains open after recording the item? | Cause, remedy, and any completion arrangement | Whether Luis made the earlier claim | Whether Priya identified D3 | Which edge is described | Recording the observation does not determine the cause, repair, or completion timing.''',
-    dialogue='''Priya | You said all the fronts were flush, but look at D3. The left edge sits forward of the neighboring front, which does not match that description.
-Luis | You are right. I need a [[correction of record::Correction of record explicitly withdraws the inaccurate claim that all fronts are flush in light of the D3 observation.]] here: my statement about all the fronts being flush was too broad. D3 is a specific exception.
-Priya | Thank you. I want the exact drawer recorded, because a general note saying check the wardrobe could miss the point when someone comes back.
-Luis | I will identify the [[drawer front::Drawer front is D3's visible face, the specific component Priya wants recorded rather than a vague whole-wardrobe concern.]] as D3 and state that its left edge projects beyond the neighboring front. That preserves the location and comparison.
-Priya | Is it an adjustment issue, or is something wrong with the runner? I am asking because I do not know what makes one side project like that.
-Luis | I have not assessed the [[root cause::Root cause remains unassessed; the visible projection does not establish a runner defect or another explanation.]]. I should not call the runner defective or promise an adjustment before the reason for the position is checked.
-Priya | Have you measured how far it projects? I can see the difference, but I do not want a guessed number written down as if it was measured.
-Luis | I have not established the [[offset::Offset is the amount of displacement between the fronts; no measured value is supplied by the visible observation alone.]]. The record can describe the visible projection without inventing a measurement or claiming a particular amount.
-Priya | Then please do not dismiss it as within tolerance yet either. That would sound like a decision made before the relevant detail has been checked.
-Luis | Agreed. I have not checked the applicable [[tolerance::Tolerance is the permitted variation under the relevant specification; no comparison with that requirement has been completed here.]]. I will not label it acceptable or unacceptable against a limit that has not been assessed.
-Priya | What will you put on the follow-up list? I want the issue acknowledged without the note saying every drawer in the wardrobe has the same problem.
-Luis | The [[snagging list::Snagging list records the specific D3 item for follow-up; it does not establish that every drawer has the same condition.]] entry will name D3, the left edge, and the neighboring front as the reference. It will not generalize to every drawer.
-Priya | And the earlier statement will be corrected, rather than left above the new note? Otherwise someone could read the two entries and think the item is already resolved.
-Luis | Yes. The original [[quality claim::Quality claim that all fronts were flush must be corrected rather than retained as a conflicting statement beside the new observation.]] needs correction. I will not leave an unqualified all-fronts statement standing as though this exception had not been identified.
-Priya | Can you tell me when it will be put right? I would like to plan, but I understand you have not established what needs doing.
-Luis | I do not have an agreed [[remedy::Remedy is the corrective action, which has not been determined; therefore no method or completion time can be promised here.]] or completion time. Recording the concern is the next step, not confirmation of a particular repair or return arrangement.
-Priya | Please read the entry back. I want it specific enough for someone else to find the same edge without needing me to repeat this whole conversation.
-Luis | The [[follow-up item::Follow-up item is the precise D3 left-edge projection, with cause and remedy left unassessed for the next review.]] is: drawer D3, left edge projects beyond neighboring front; cause and remedy unassessed; earlier claim that all fronts are flush corrected.
-Priya | That is accurate. It acknowledges what we can see and leaves the technical explanation open, without turning the issue into a claim that all the work is wrong.
-Luis | Correct. The [[closeout status::Closeout status remains open for D3 because recording the observation and correcting a statement do not complete the necessary follow-up.]] for D3 remains open. We have corrected the statement and recorded the observation, but we have not completed the assessment or the follow-up work.''',
+    dialogue='''Priya | Luis, you said all the fronts were flush. D3's left edge is sitting forward of the neighboring front. Can you check what you told me?
+Luis | You're right; I need a [[correction of record::Correction of record explicitly withdraws the inaccurate claim that all fronts are flush in light of the D3 observation.]]. All fronts are flush was too broad. D3 is an exception, and I withdraw that overall statement.
+Priya | Thank you. I don't want the list to say wardrobe problem, though. Someone coming back needs to know which edge we're discussing.
+Luis | I'll identify the [[drawer front::Drawer front is D3's visible face, the specific component Priya wants recorded rather than a vague whole-wardrobe concern.]] as D3 and specify its left edge relative to the neighboring front. That is the visible difference.
+Priya | Is it a runner fault? I wondered whether adjusting the hardware would bring it back, but I don't know what's behind it.
+Luis | The [[root cause::Root cause remains unassessed; the visible projection does not establish a runner defect or another explanation.]] hasn't been assessed. I can't call the runner defective or promise that a particular adjustment will correct the position.
+Priya | How far does it project? I can see the edge, but I haven't measured it, and I don't want my estimate repeated as a measurement.
+Luis | The [[offset::Offset is the amount of displacement between the fronts; no measured value is supplied by the visible observation alone.]] isn't established numerically. I'll record the observation without inventing a millimeter figure or treating an estimate as a checked dimension.
+Priya | So we can't call it within tolerance yet? Earlier I thought you were saying the whole installation had passed that comparison.
+Luis | I haven't checked the applicable [[tolerance::Tolerance is the permitted variation under the relevant specification; no comparison with that requirement has been completed here.]] for this item. I won't dismiss it as acceptable, or make the opposite specification finding, without that check.
+Priya | Please make sure it stays on the follow-up list. I don't want a general handover tick to hide this particular point.
+Luis | I'll add it to the [[snagging list::Snagging list records the specific D3 item for follow-up; it does not establish that every drawer has the same condition.]]: D3, left edge projects beyond the neighboring front, with cause and appropriate action still to be assessed.
+Priya | Does correcting your earlier statement mean you're saying every drawer is wrong now? That's not what I'm asking you to report.
+Luis | No. The [[quality claim::Quality claim that all fronts were flush must be corrected rather than retained as a conflicting statement beside the new observation.]] is narrowed by this specific exception. We have identified D3; we haven't established that all the other fronts have the same issue.
+Priya | Can you tell me what will be done and when, or do those both have to wait for the follow-up assessment?
+Luis | The [[remedy::Remedy is the corrective action, which has not been determined; therefore no method or completion time can be promised here.]] hasn't been determined, and no completion time is agreed. I'll avoid turning a possible adjustment into an approved repair promise.
+Priya | Then read me the item as it will appear. I'd like the edge and comparison surface to survive the handoff.
+Luis | The [[follow-up item::Follow-up item is the precise D3 left-edge projection, with cause and remedy left unassessed for the next review.]] says D3's left edge projects beyond the neighboring front; amount, cause, tolerance comparison, and appropriate action are not established.
+Priya | That's accurate. Please keep it open after today's discussion. Correcting the wording doesn't itself put the front into the right position.
+Luis | Agreed. The [[closeout status::Closeout status remains open for D3 because recording the observation and correcting a statement do not complete the necessary follow-up.]] stays open. I've corrected what I said, but the physical item and its follow-up still need to be resolved.''',
     transfer_title='Correct and record the exception',
     transfer_setup='Complete the review exchange. Correct the universal claim, identify the projecting edge, and leave the cause and remedy unresolved.',
     transfer='''Carpenter: "I need to correct my claim that all fronts are ___." | flush | Flush was the inaccurate overall claim contradicted by D3's projecting edge.
 Client: "The specific drawer is ___." | D3 | D3 identifies the drawer that needs the recorded follow-up.
 Carpenter: "Its ___ edge projects beyond the neighboring front." | left | Left identifies the side of the visible projection in the case.
 Client: "The cause and remedy remain ___." | unassessed | Neither cause nor remedy has been determined by the observation alone.''',
+    rehearsal=["Read turns 1-10; make Luis's correction explicit and identify D3's left edge.","Switch roles for turns 11-20; distinguish the observed projection from a tolerance decision or repair promise.","Check the transfer, then read it with the neighboring front named as the comparison."],
 ))
 
 BOOK['units'].append(unit(
@@ -569,25 +576,25 @@ closure evidence | Information supporting that an item is genuinely complete. | 
 What does Mina's Friday commitment cover? | A phone call to Daniel | A confirmed installation visit | Guaranteed cover delivery | A new warranty term | Mina explicitly commits to calling Friday, while delivery and attendance remain unconfirmed.
 Which warranty statement is appropriate? | The terms remain those in the supplied document. | Everything is covered forever. | A verbal handover automatically replaces the document. | Every outstanding item is excluded without reading the terms. | The case authorizes no change to the supplied warranty terms in either direction.
 What is insufficient evidence to close the cover item? | Receipt of the drawings and care sheet alone | Verified actual completion of the relevant follow-up | Confirmation of the actual outcome through the project process | Evidence that the unresolved item has genuinely been addressed | Receiving documents does not establish delivery, fitting, or resolution of the replacement cover.''',
-    dialogue='''Daniel | I have the cabinet drawings and the care sheet. Before we finish the handover, can we confirm what is still open and who is following it up?
+    dialogue='''Daniel | I've received the cabinet drawings and care sheet. Before you leave, can we run through the missing cover and the follow-up?
 Mina | Yes. The [[handover pack::Handover pack includes the cabinet drawings and correct finish care sheet already received; the replacement cover remains a separate open item.]] documents are with you, including the correct sheet for the finish. The replacement shelf pin cover is still outstanding.
-Daniel | Is the cover already here waiting to be fitted, or are we waiting for it to arrive? I want to record the right stage.
+Daniel | It's the replacement shelf-pin cover we're waiting for, correct? I haven't received it just because its name appears in the handover pack.
 Mina | We are waiting for [[part receipt::Part receipt has not occurred because the replacement shelf pin cover is due but has not been delivered.]]. The cover is due, but it has not been delivered. I should not describe it as here or ready to fit.
-Daniel | Who will contact the supplier about it? I do not want each person to assume someone else is checking while the item remains open.
+Daniel | Who will chase the supplier? I'd prefer one named contact so I don't have to repeat the same question to several people.
 Mina | I accept the [[supplier follow-up::Supplier follow-up is Mina's accepted responsibility for the outstanding cover, rather than an unassigned action for someone else.]]. I will contact the supplier about the cover, and the record should name me as the person responsible.
-Daniel | Thank you. When will I hear from you? A clear update time would help even if the delivery arrangement is not settled yet.
+Daniel | Can you give me a firm time for the next update, even if the supplier hasn't confirmed the delivery by then?
 Mina | I will call you on Friday. That is my [[callback commitment::Callback commitment is Mina's explicit promise to call Friday, distinct from a request or a confirmed delivery arrangement.]], so you have a definite contact point rather than an open-ended note to wait for news.
-Daniel | Does Friday also mean you will return to fit the cover, or is that only the call? I need to know whether to arrange access.
+Daniel | When you say Friday, do you mean you'll call, or that someone will come and fit the part? Those are different arrangements for me.
 Mina | It is the call, not [[appointment confirmation::Appointment confirmation for a return visit has not been given; Friday identifies the promised call only.]]. No return-visit date is confirmed, and I do not have a confirmed arrival date for the part to give you.
-Daniel | All right. I will not keep Friday free for a visit on that basis. Please make that distinction clear if another person reads the handover record.
+Daniel | Thanks. I won't keep Friday free for a visit. Please make the written note just as clear for anyone else who picks this up.
 Mina | I will preserve the [[commitment boundary::Commitment boundary limits the Friday promise to a call, without expanding it into delivery or physical attendance.]]. The entry will show supplier follow-up with Mina and a Friday call, with the return visit still unconfirmed.
-Daniel | One other question: does anything you have said today change the warranty? I have the document, but I do not want two different versions of the terms.
+Daniel | One more thing: does today's conversation change the warranty? I have the document and don't want to rely on a different verbal promise.
 Mina | The [[warranty document::Warranty document remains the source of the applicable terms; Mina does not add or remove coverage through this handover conversation.]] remains the reference. I am not adding broader coverage verbally or changing the terms supplied with your records.
-Daniel | Good. I will use that document for the terms and the care sheet for the finish instructions, rather than treat the outstanding cover note as either one.
+Daniel | Then I'll keep the finish-care instructions separate from the warranty terms. Neither document confirms that the missing part has arrived.
 Mina | Exactly. The [[care sheet::Care sheet contains the relevant finish-care information and is already received; it is distinct from warranty terms and the open-part record.]] and warranty document have different purposes. Receiving them does not establish that the replacement cover has arrived or been fitted.
-Daniel | Could you read the final record back? I want the documents acknowledged without the whole handover being marked complete while the cover is still missing.
+Daniel | Could you read back what is complete and what remains open? I'd like the documents acknowledged without the part being marked done.
 Mina | The [[handover record::Handover record must distinguish received documents from the undelivered cover and preserve Mina's follow-up and Friday-call commitment.]] says drawings and correct care sheet received; replacement cover outstanding; supplier follow-up owned by Mina; Friday callback committed; return date unconfirmed.
-Daniel | That is clear. Please keep the cover on the open list until its actual outcome is confirmed. The Friday call will give us the next communication point.
+Daniel | That's clear. Please keep the cover open until its actual outcome is confirmed, and call Friday as agreed even if the delivery is still unresolved.
 Mina | I will retain it in the [[open-item tracker::Open-item tracker keeps the replacement cover unresolved until the actual outcome supports closure, rather than closing it because documents were supplied.]]. We can acknowledge the documents received while keeping the part, its follow-up, and any later attendance arrangement visible.''',
     transfer_title='Confirm the promise without expanding it',
     transfer_setup='Complete the handover exchange. Distinguish received documents, the undelivered cover, Mina as owner, and the Friday callback.',
@@ -595,4 +602,5 @@ Mina | I will retain it in the [[open-item tracker::Open-item tracker keeps the 
 Lead: "The replacement cover has not been ___." | delivered | The cover is due but has not arrived, so it remains outstanding.
 Owner: "___ owns the supplier follow-up." | Mina | Mina explicitly accepts responsibility for contacting the supplier about the cover.
 Lead: "I will call ___; the return visit is not confirmed." | Friday | Friday is the committed call date, not an agreed return visit.''',
+    rehearsal=["Read turns 1-10, stressing received documents, outstanding cover, and Mina's ownership.","Switch roles for turns 11-20; make Friday a committed call, not a delivery or visit.","Check and read the transfer. Keep the open part separate from the completed document handover."],
 ))

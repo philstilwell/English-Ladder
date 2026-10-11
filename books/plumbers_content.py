@@ -21,16 +21,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Plumbers, Pipefitters, and Steamfitters.',
              url='https://www.bls.gov/ooh/construction-and-extraction/plumbers-pipefitters-and-steamfitters.htm',
-             note='Occupational context for fixtures, project drawings, estimates, and coordination. No installation or repair procedures are reproduced.', checked='1 October 2026'),
+             note='Occupational context for fixtures, project drawings, estimates, and coordination. No installation or repair procedures are reproduced.', checked='10 October 2026'),
         dict(title='Charlotte Pipe. ChemDrain Technical and Installation Manual.',
              url='https://www.charlottepipe.com/uploads/documents/technical/TM-CD.pdf',
-             note='Terminology reference distinguishing nominal size and outside diameter. The book gives no product sizing, compatibility, or installation decisions.', checked='1 October 2026'),
+             note='Terminology reference distinguishing nominal size and outside diameter. The book gives no product sizing, compatibility, or installation decisions.', checked='10 October 2026'),
         dict(title='Oatey. Access Panels.',
              url='https://www.oatey.com/products/rough-products/access-panels',
-             note='Background for describing access to concealed services. Examples do not specify compliant panel dimensions or approve enclosure changes.', checked='1 October 2026'),
+             note='Background for describing access to concealed services. Examples do not specify compliant panel dimensions or approve enclosure changes.', checked='10 October 2026'),
         dict(title='Kohler. Product Support.',
              url='https://www.kohler.com/en/support',
-             note='Context for model identification, technical documents, care information, and warranty records. Fictional cases do not reproduce product instructions.', checked='1 October 2026'),
+             note='Context for model identification, technical documents, care information, and warranty records. Fictional cases do not reproduce product instructions.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -67,7 +67,7 @@ service history | Record of earlier attendance or work. | check the service hist
 previous repair | Corrective work completed on an earlier occasion. | confirm a previous repair
 reported symptom | Condition described by a customer before assessment. | retain the reported symptom
 call summary | Concise record of information from the conversation. | read back the call summary
-unknown cause | Origin or explanation that is not established. | record an unknown cause
+static pressure | In this plumbing report, pressure at a point with no flow. | distinguish static from flowing pressure
 attendance | Visit by the relevant service person. | arrange attendance''',
     precision='Water was noticed on the cabinet base at 07:00. This does not establish when it first appeared or which component caused it. Keep the fixture identity, observed location, and time together.',
     precision_extra='The bathroom basin and utility sink are different fixtures. Familiar terms such as tap and faucet can be clarified without correcting the customer unnecessarily. No previous repair or component failure is established here.',
@@ -97,26 +97,27 @@ No history supplied | Does not mean that no earlier work ever occurred.''',
 Which summary preserves the time accurately? | Water noticed on the cabinet base at 07:00 | Leak began exactly at 07:00 | Repair completed at 07:00 | Plumber booked for 07:00 | Noticed records the tenant's observation rather than onset or scheduling.
 Which statement wrongly converts location into cause? | The water must be coming from the trap | Water was seen on the cabinet base | The bathroom basin is the reported fixture | The source needs assessment | The trap is not identified as the source by the supplied facts.
 What should accompany the handoff? | Fixture, unit, observed surface, time, and unresolved source | Only the word sink | An invented previous repair | A guaranteed diagnosis | These details preserve the usable report without adding unsupported history or conclusions.''',
-    dialogue='''Mina | I need someone to look at the sink in Unit 3B. I found water underneath it this morning, and I am not sure what to call the problem.
-Ellis | Let me identify the [[fixture::Fixture names the particular appliance; the room contains two different sinks.]] first. Do you mean the bathroom basin, or the utility sink that stands beside it?
-Mina | The bathroom one, where we wash our hands. The utility sink is beside the cabinet, but that is not the sink I am talking about.
-Ellis | Thank you. I will put [[bathroom basin::Bathroom basin resolves the two-fixture ambiguity using Mina's explicit clarification.]] in the request and keep Unit 3B attached to it. Where had you already noticed the water?
-Mina | On the bottom of the cabinet, below that basin. I noticed it at seven this morning. I do not know when it first appeared.
-Ellis | I will record water on the [[cabinet base::Cabinet base identifies the observed surface without asserting where the water originated.]], noticed at 07:00. That describes the location you saw, not yet where the water came from.
-Mina | Exactly. I had started to say the pipe was leaking, but I cannot actually tell you which part it came from.
-Ellis | Then the [[source::Source concerns origin, which Mina's observation has not established.]] remains unknown. We can give the plumber a useful description without naming a failed part before it has been assessed.
-Mina | Does saying I saw it at seven make it sound as though the problem began then? I cannot confirm that.
-Ellis | No. I will label seven as the [[observation time::Observation time preserves when Mina noticed water without inventing the onset.]], rather than the start of the problem. That distinction should stay in the call notes.
-Mina | Good. I also do not have a record of any earlier work on that basin, so I cannot give you a repair date.
-Ellis | I will mark the [[service history::Service history concerns earlier work; none has been supplied, not proven absent.]] as not supplied. That does not mean we know there has never been a repair.
-Mina | One other thing: I sometimes call the fitting above the basin a tap. Will the plumber understand that, or should I use another word?
-Ellis | Tap is understood in many workplaces; [[faucet::Faucet is the alternative name for the water-delivery fitting, not a diagnosis.]] is another common term. We can clarify the name without suggesting that fitting caused the water.
-Mina | That helps. I do not want the request to say the tap has failed simply because I mentioned it in this conversation.
-Ellis | It will not. The record will preserve your [[reported symptom::Reported symptom distinguishes Mina's account from a confirmed component failure.]] and the fixture location. It will not identify a failed supply or waste connection.
-Mina | Please read the short version back to me before you send it. I want the plumber to come to the correct fixture.
-Ellis | Here is the [[call summary::Call summary gathers fixture, location, observation, and uncertainty for the next person.]]: Unit 3B, bathroom basin, water on the cabinet base, noticed at 07:00. Source unestablished; earlier repair history not supplied.
-Mina | Yes, that is accurate. It names the right basin and does not make me sound certain about something I have not identified.
-Ellis | I will pass that through for [[attendance::Attendance means the service visit being arranged, without promising a diagnosis or time.]]. You have clarified the report; the next assessment must establish the cause rather than assume one from the wording.''',
+    dialogue='''Mina|Hi, it's the sink in Unit 3B. There was water underneath it when I went into the bathroom this morning. Can you log a call?
+Ellis|Of course. Which [[fixture::Fixture names the particular appliance; the room contains two different sinks.]] do you mean: the bathroom basin where you wash your hands, or the utility sink beside it?
+Mina|The bathroom one. The utility sink is next to the cabinet, so I can see why just saying sink isn't very helpful.
+Ellis|I'll name the [[bathroom basin::Bathroom basin resolves the two-fixture ambiguity using Mina's explicit clarification.]]. When you say underneath, where was the water you had already seen: inside the cabinet or somewhere else?
+Mina|Inside, on the bottom of the cabinet. I noticed it at seven. I don't know how long it had been there before that.
+Ellis|Water on the [[cabinet base::Cabinet base identifies the observed surface without asserting where the water originated.]], noticed at 07:00. That's a useful location and time. Have you identified where it came from?
+Mina|No. I almost said the pipe was leaking, but I haven't seen which part the water came from. Can you leave that open?
+Ellis|Yes. I'll record the [[source::Source concerns origin, which Mina's observation has not established.]] as unestablished. We won't turn water beneath a basin into a diagnosis of a failed pipe or connection.
+Mina|The form has a box for when it started. Seven is when I noticed it, but I can't honestly say that was the start.
+Ellis|I'll keep it as the [[observation time::Observation time preserves when Mina noticed water without inventing the onset.]] and leave onset unconfirmed. That avoids giving the plumber a more precise history than you can support.
+Mina|There's another box for earlier repairs. I don't have any records. Does leaving that blank mean the basin has never been repaired?
+Ellis|No. I'll mark [[service history::Service history concerns earlier work; none has been supplied, not proven absent.]] as not supplied. Missing information isn't evidence that there was never earlier work, so we shouldn't select no previous repairs.
+Mina|One naming question: when I say tap, I mean the fitting above the basin. Is that what your form calls the faucet?
+Ellis|Yes, [[faucet::Faucet is the alternative name for the water-delivery fitting, not a diagnosis.]] is another common name for that water-delivery fitting. Mentioning it doesn't make it the source of the water you've reported.
+Mina|Good. I don't want someone arriving with a note that says the tap is broken. I haven't established that at all.
+Ellis|I'll retain your [[reported symptom::Reported symptom distinguishes Mina's account from a confirmed component failure.]] instead: water beneath the identified basin. The plumber can assess the cause; you don't need to dismantle anything for this call.
+Mina|Could you read the request back? Especially the location. I don't want the two sinks mixed up when the plumber sees the job.
+Ellis|The [[call summary::Call summary gathers fixture, location, observation, and uncertainty for the next person.]] is Unit 3B, bathroom basin, water on the cabinet base, noticed at 07:00. Source unestablished; earlier repair history not supplied.
+Mina|That's right. It includes what I saw and doesn't add a cause. I haven't been given a visit time yet, either.
+Ellis|I'll pass it through to arrange [[attendance::Attendance means the service visit being arranged, without promising a diagnosis or time.]]. I haven't confirmed a time in this conversation, so please don't treat seven as the plumber's arrival time.''',
+    rehearsal=["Read turns 1-10 in pairs. Stress bathroom, cabinet base, and noticed at seven to keep fixture, location, and time distinct.","Switch roles for turns 11-20. Keep not supplied separate from never repaired, and arrange attendance separate from a booked time.","Complete and check the handoff exchange. Read it twice, preserving basin, base, 07:00, and unestablished."],
     transfer_title='Give the plumber the precise report',
     transfer_setup='Complete the handoff using the tenant account. Keep the fixture, observed surface, time, and cause status distinct.',
     transfer='''Coordinator: "The tenant means the bathroom ___ in Unit 3B." | basin | Basin identifies the fixture Mina selected, not the adjacent utility sink.
@@ -134,14 +135,14 @@ BOOK['units'].append(unit(
     cast='Omar | Buyer\nLeila | Supplier coordinator',
     culture=('Correct the comparison without dismissing the concern', 'A customer can make an invalid comparison and still have a genuine delivery problem. Explain the terminology, then investigate the actual item identity. Avoid moving from the numbers are different to either the goods are wrong or the goods are definitely right.'),
     a='''What is Omar comparing? | A nominal designation and a measured outside diameter | Two verified inside diameters | Two complete product labels | Identical manufacturer part numbers | The comparison uses a size designation and a physical measurement of a different kind.
-What information is incomplete? | The delivery label | The fact that an order exists | The buyer's concern | The meaning of outside | The order names a series, but the delivered item's label is incomplete.
+What information is incomplete? | The delivery label | The series named on the order | Whether the measurement is an outside diameter | Whether the compared numbers differ | The order names a series and the outer measurement is identified; the delivered item's label remains incomplete.
 What remains unverified? | Product identity and relevant compatibility | That the measured number differs | That the order lists a series | That Omar has a question | The supplied facts do not verify the delivered product or its compatibility.''',
     vocabulary='''nominal size | Conventional size designation that may differ from a measured diameter. | confirm the nominal size
 outside diameter | Measurement across the outer surface of a pipe. | compare the outside diameter
 inside diameter | Measurement across the internal opening of a pipe. | distinguish inside diameter
 wall thickness | Distance between the inner and outer pipe surfaces. | specify the wall thickness
 size designation | Standard or commercial name used to identify a size. | read the size designation
-measured dimension | Numerical value obtained from an actual measurement. | record the measured dimension
+flow rate | Volume passing in a stated time, such as liters per minute. | report the flow rate
 product series | Named family of related products. | identify the product series
 part number | Manufacturer identifier for a particular item. | verify the part number
 delivery label | Identification attached to supplied goods. | check the delivery label
@@ -185,29 +186,30 @@ Still need to | Keeps a remaining verification step explicit.
 Matches the designation | Does not by itself establish material or connection compatibility.
 Unverified | Neither accepts nor rejects the product without evidence.''',
     d='''Which response best corrects the comparison? | Nominal size and outside diameter are different; we still need full item identification | Different numbers always prove the wrong item | Nominal always equals measured outside diameter | The explanation proves all supplied goods are suitable | The response corrects terminology while preserving the unresolved product check.
-Which information should Leila request next? | Complete label details and product identification | An invented replacement size | Immediate installation approval | Only the color of the packaging | Full identification is needed to reconcile the actual item with the order.
+Which information should Leila request next? | Complete label details and product identification | A different measurement chosen to equal the nominal number | A substitution request before identifying the delivered item | The dimensions of a similarly colored pipe from another range | Full identification is needed to reconcile the actual item with the order; altering measurements or using unrelated data would not settle identity.
 Which conclusion is unsupported? | The material and connection are compatible | The order names a product series | The label is incomplete | The numerical comparison needs clarification | Compatibility has not been verified by the available information.
 What does a dimensional table need to match? | The relevant identified product and series | Any pipe with a similar color | A different manufacturer's unrelated item | The buyer's preferred number | Dimensions must be read in the context of the actual identified product.''',
-    dialogue='''Omar | I think the pipe delivery is the wrong size. The number on our order does not match the outside measurement I have recorded.
-Leila | Are you comparing the order's [[nominal size::Nominal size is the designation on the order, not necessarily the measured outside diameter.]] with an outside measurement? Those can be different kinds of information even when the item is correctly identified.
-Omar | Yes, that is the comparison. I assumed the ordered size had to equal the measurement across the outside, so I flagged the delivery.
-Leila | The [[outside diameter::Outside diameter names the measured outer dimension Omar is comparing with a designation.]] is a physical dimension. The nominal designation names the size within the relevant system; we should not assume the two numbers must match.
-Omar | So should I remove the delivery query and tell the site team the goods are correct? I do not want to hold them unnecessarily.
-Leila | Not yet. We have clarified the comparison, not the [[product identification::Product identification remains incomplete because the delivery label does not fully identify the goods.]]. The label is incomplete, so I cannot confirm which exact item arrived.
-Omar | The order does name the series we wanted. I can give you that order reference, but the delivery label does not show everything.
-Leila | Good. We can use the [[product series::Product series provides the ordered family against which full delivery identification must be checked.]] on the order as a reference. We still need the complete details for the supplied item.
-Omar | Would the full manufacturer's item code be more useful than my description of the packaging? I can ask the supplier for that information.
-Leila | Yes, the [[part number::Part number identifies a particular manufacturer item more precisely than packaging appearance.]] and full label details will help us reconcile the delivery. Please keep the recorded measurement too; it remains useful information.
-Omar | I will keep it. Once the identity is clear, where do we look for the dimensions rather than guessing from the size name?
-Leila | The matching manufacturer's [[dimensional table::Dimensional table defines measurements for the identified product rather than an unrelated pipe.]] is the appropriate reference. It must belong to the relevant product, not merely something with a similar description.
-Omar | There is also a question from the site about whether the supplied component will join the specified item. Does the nominal designation answer that?
-Leila | No. We still need the [[connection type::Connection type concerns the joining interface and cannot be inferred from nominal size alone.]] and relevant requirements. The size name alone does not establish that two components can be used together.
-Omar | Understood. I should not describe the delivery as an approved alternative either, even if the supplier says the dimensions look close.
-Leila | Correct. A [[substitution::Substitution means replacing a specified product; no such replacement is approved by this discussion.]] needs its own review. We have not verified material or connection compatibility, and we have not accepted another product in place of the order.
-Omar | Let me check the message: the different numbers do not prove the goods are wrong, but the incomplete label means we cannot confirm them yet.
-Leila | Exactly. Keep the [[acceptance status::Acceptance status must remain unresolved while identification and compatibility checks are incomplete.]] unchanged while I reconcile the details. Neither the numerical difference nor my explanation should be treated as a final product decision.
-Omar | I will obtain the full label information and part number from the supplier, then send them with the order reference and recorded measurement.
-Leila | Thank you. That gives us a proper basis to investigate the [[supply discrepancy::Supply discrepancy identifies the unresolved delivery question without assuming either rejection or acceptance.]]. We can resolve the actual delivery question without relying on a misleading comparison.''',
+    dialogue='''Omar|Leila, the number on our order doesn't match the outside measurement of the delivered pipe. I think you've sent the wrong size.
+Leila|Let's check what each number represents. The order gives a [[nominal size::Nominal size is the designation on the order, not necessarily the measured outside diameter.]], which is a conventional designation, not necessarily the measured outer diameter.
+Omar|I measured across the outside. Are you saying I should discard that measurement because it doesn't use the same kind of number as the order?
+Leila|Keep it. The [[outside diameter::Outside diameter names the measured outer dimension Omar is comparing with a designation.]] is useful evidence, but it needs comparison with the correct manufacturer's dimensions, not automatic equality with the nominal designation.
+Omar|Then perhaps there's no delivery problem after all. Can I tell the team the goods are correct and move on?
+Leila|Not yet. The delivery label is incomplete, so [[product identification::Product identification remains incomplete because the delivery label does not fully identify the goods.]] is still missing. Explaining the size convention doesn't verify which item actually arrived.
+Omar|Our order names the series. I can send that line, but the label doesn't give me enough to match the delivered item to it.
+Leila|Send the ordered [[product series::Product series provides the ordered family against which full delivery identification must be checked.]] with the available label details. I'll use those references to request the missing identity information from the supplier.
+Omar|Would a photograph of similar packaging settle it? Another delivery had the same color, and that one matched the order.
+Leila|No. We need the actual item's [[part number::Part number identifies a particular manufacturer item more precisely than packaging appearance.]] and supporting identification. Similar packaging isn't a reliable substitute for the manufacturer's item reference.
+Omar|Once we've identified it, how do we check the measurement without comparing it with an unrelated pipe from a different range?
+Leila|Use the matching [[dimensional table::Dimensional table defines measurements for the identified product rather than an unrelated pipe.]] for that product and series. It defines what the nominal designation and measured dimensions mean in that specific range.
+Omar|Suppose those dimensions check out. Does that settle whether it joins the components already specified for the project?
+Leila|Not by itself. The [[connection type::Connection type concerns the joining interface and cannot be inferred from nominal size alone.]] and material requirements still need verification. Matching one size description doesn't establish that every joining interface is compatible.
+Omar|The team suggested treating it as an alternative if the original item isn't available. That sounds like a separate decision.
+Leila|It is. A [[substitution::Substitution means replacing a specified product; no such replacement is approved by this discussion.]] needs the applicable review. We haven't approved a different product simply by explaining why two size numbers can differ.
+Omar|I'll stop calling the delivery wrong on the strength of the measurement alone. What should the goods record say while you investigate?
+Leila|Keep the [[acceptance status::Acceptance status must remain unresolved while identification and compatibility checks are incomplete.]] unresolved pending identification and the relevant checks. Don't replace premature rejection with premature acceptance; both would overstate what we know.
+Omar|I'll send the order line and the incomplete label details, keeping my outside measurement attached rather than changing it to the order's number.
+Leila|Good. I'll investigate the possible [[supply discrepancy::Supply discrepancy identifies the unresolved delivery question without assuming either rejection or acceptance.]] against those records. Our next update should identify the actual product and outstanding checks, not just repeat the size explanation.''',
+    rehearsal=["Read turns 1-10. Contrast nominal designation with measured outside diameter; do not change the reported measurement.","Switch roles for turns 11-20. Stress not by itself and unresolved when explaining compatibility and acceptance.","Complete and check the short exchange. Read the item-identification request without approving or rejecting the delivery."],
     transfer_title='Clarify the comparison, retain the query',
     transfer_setup='Complete the supplier summary. Distinguish the designation from the measurement and preserve the missing identification.',
     transfer='''Buyer: "The order gives a ___ size." | nominal | Nominal identifies a size designation rather than necessarily the measured diameter.
@@ -242,13 +244,13 @@ cabinet drawing | Drawing describing the cabinetry arrangement. | compare the ca
 wall build-up | Layers forming the wall assembly and its finish. | establish the wall build-up
 finish thickness | Dimension occupied by the finishing layer or layers. | confirm the finish thickness
 offset | Distance between two defined reference positions. | calculate a verified offset
-alignment | Relative positioning along a common reference. | coordinate fixture alignment
+gradient | Vertical rise or fall divided by horizontal run. | distinguish gradient from an angle
 interface | Meeting point between related building elements or trades. | resolve the cabinet interface
 clearance | Required space between or around components. | verify the relevant clearance
 design query | Request to clarify design information. | raise a design query
 coordinated detail | Information reconciled across the relevant elements and trades. | issue a coordinated detail
 drawing reference | Identifier of the drawing supporting a statement. | cite the drawing reference
-assumed conversion | Unverified adjustment between reference systems. | avoid an assumed conversion
+invert level | Elevation of the inside bottom of a pipe, relative to a datum. | read back the invert level
 installation position | Location authorized for the actual installed item. | confirm the installation position
 dimension readback | Spoken repetition of a dimension and its references. | give a dimension readback''',
     precision='Both drawings use 450 millimeters, and both concern the basin centerline. The conflict is the origin: finished wall face versus framing face. The shared number does not remove that difference.',
@@ -279,26 +281,27 @@ Remains | Preserves an established fact while another issue is resolved.''',
 Which proposed action is unsupported? | Subtract an assumed finish thickness and release installation | Cite both drawing references in the query | Retain B2 as the selected basin | Ask for a coordinated rough-in detail | No finish thickness or approved adjustment is supplied for such a conversion.
 What does selecting B2 establish? | The chosen basin model, not a confirmed coordinated rough-in | Every service position | Approval of the cabinet datum | A verified wall build-up | The selected model does not resolve the differing references or missing detail.
 Which question is most precise? | Which reference surface governs the coordinated centerline position? | Can someone fix the drawings somehow? | Why did the cabinet team choose the wrong basin? | May we assume the two positions are identical? | Naming the reference surface targets the actual unresolved design issue.''',
-    dialogue='''Nia | Before we pass the bathroom information on, I need to resolve the basin position. Both drawings show 450, but they do not start in the same place.
+    dialogue='''Nia | Nia, both drawings say four hundred fifty to the basin centerline. I was about to tell the cabinet team they agree. Am I missing something?
 Ben | I see that. The cabinet drawing starts at the [[framing face::Framing face is the origin on the cabinet drawing, distinct from the finished wall surface.]]. Does the bathroom layout use that same surface, or the completed wall surface?
-Nia | It uses the completed surface. The dimension runs from the finished wall face to the centerline of the basin, not to its outside edge.
+Nia | The cabinet sheet starts at the framing face. I can see now that the bathroom sheet names a different surface, even though the number matches.
 Ben | Then the [[dimension origin::Dimension origin is the starting reference, which differs between these two dimensions.]] differs, even though the endpoint and the number appear to agree. We should make that explicit in the query.
-Nia | Yes. I do not want someone to see two matching numbers and assume we have a coordinated position. The difference could be missed in a short email.
+Nia | So the bathroom layout isn't saying four hundred fifty from the exposed framing. I shouldn't shorten that reference to just the wall.
 Ben | I will describe the layout as 450 millimeters from the [[finished wall face::Finished wall face preserves the bathroom layout's stated origin rather than substituting framing.]] to the basin centerline, then state the cabinet reference separately.
-Nia | Keep the number unchanged in both descriptions. We are asking which reference should govern, not silently replacing one drawing with our own calculation.
+Nia | Can we use an assumed finish thickness to translate between them? The detail we've been given doesn't state what that thickness is.
 Ben | Agreed. We do not have the [[finish thickness::Finish thickness is missing, so an offset between framing and finished faces cannot be invented.]], so I cannot convert one dimension into the other and call the result confirmed.
-Nia | The basin choice itself is settled. B2 is the selected model, and I do not want the question to reopen the product selection unnecessarily.
+Nia | B2 appears in the schedule as the selected basin. Does selecting that model settle the position of the plumbing connections as well?
 Ben | I will preserve B2 in the [[fixture schedule::Fixture schedule identifies the selected basin; it does not settle the coordinated service positions.]] reference. Product selection and the location of the preliminary service provisions are separate pieces of information.
-Nia | Exactly. What we do not have is a confirmed detail showing how the plumbing position and cabinet arrangement work together for that basin.
+Nia | Then I need a drawing response that brings the cabinet and plumbing references together. Choosing whichever sheet is easier wouldn't resolve the discrepancy.
 Ben | Then we should request a [[coordinated detail::Coordinated detail reconciles the plumbing and cabinet information rather than favoring an unverified drawing.]], with the datum clearly stated. The query should attach both drawing references so the designer can see the mismatch.
-Nia | Would it help to write that both dimensions end at the basin centerline? Otherwise someone might answer a different question about the edge of the bowl.
+Nia | Please read back the two dimensions exactly. I'll compare the origins as well as the shared centerline endpoint before I send the query.
 Ben | Yes. A complete [[dimension readback::Dimension readback repeats the number, origin, and endpoint so the actual ambiguity remains visible.]] needs the number, origin, and endpoint. Here, the origin is unresolved; the centerline endpoint is already identified.
-Nia | Can we also make clear that the question does not release the rough-in work? A copied email can otherwise start to sound like a direction.
+Nia | The cabinet maker asked whether the rough-in can proceed. I can't point to matching four-hundred-fifty numbers as confirmation, can I?
 Ben | Certainly. The [[rough-in detail::Rough-in detail remains unconfirmed despite the selected basin and matching numerical dimensions.]] is not confirmed. Asking for clarification does not authorize either team to use an assumed installation position.
-Nia | Let me hear the short version you will send, including B2 and both surfaces. That should keep the request specific enough to answer.
+Nia | Who needs to clarify the governing reference? I'd like the question to identify what's missing without prescribing a finish thickness myself.
 Ben | Selected basin B2; both drawings show 450 millimeters to its centerline. Layout uses finished wall face; cabinet drawing uses framing face. Please resolve the [[datum::Datum names the governing reference that the designer needs to clarify.]] and confirm the coordinated detail.
-Nia | That captures it. No invented wall thickness, no revised basin choice, and no claim that the two positions are already the same.
+Nia | I'll leave the positions unconfirmed and submit the discrepancy. We need the origin and missing finish information resolved, not a guessed offset.
 Ben | I will submit that [[design query::Design query requests clarification without creating an installation instruction or approving an assumed offset.]] and keep the rough-in information unconfirmed until the relevant response is received and accepted through the project process.''',
+    rehearsal=["Read turns 1-10 with the drawings' references visible. Stress from the framing face and from the finished wall face.","Switch roles for turns 11-20. Repeat four hundred fifty with its origin and basin-centerline endpoint every time.","Complete and check the readback. Keep the finish thickness missing and rough-in positions unconfirmed."],
     transfer_title='Read back both references',
     transfer_setup='Complete the coordination exchange. Keep the shared endpoint and number, but do not erase the different origins.',
     transfer='''Plumber: "The layout starts at the ___ wall face." | finished | Finished wall face is the origin explicitly stated on the bathroom layout.
@@ -370,26 +373,27 @@ Cannot confirm | Marks a specific evidence limit, not disbelief in the customer.
 What is wrong with saying leak stopped? | It infers a change in a leak that has not been established | It uses too few words | It preserves the observation time too carefully | It identifies the patch location | Dry surface condition does not establish an active leak's history or cessation.
 Which phrase best communicates the inspection limit? | No pipework was visible from this position | All pipework was inspected | The washroom was proved unrelated | The entire structure was assessed | The phrase states the actual visibility limit without inventing a broader examination.
 What should the report avoid? | A repair or structural conclusion unsupported by the visit | The location of the stain | The dry surface observation | The unresolved-source statement | Neither a completed repair nor structural assessment is supplied in the brief.''',
-    dialogue='''Rosa | The stain is below the upstairs washroom, but the patch looks dry today. Can I tell the shop manager that the leak has stopped?
+    dialogue='''Rosa | Arun, the ceiling patch under the washroom looks dry now. Can I tell the shop staff that the leak has stopped?
 Arun | I can confirm the [[surface condition::Surface condition refers to the visible patch, not the state of concealed pipework.]] we can see during this visit. I cannot turn that into confirmation that a leak has stopped.
-Rosa | I see the distinction, but I need something more useful than we do not know. What can I accurately put in the manager's update?
+Rosa | So your observation is about the surface during this visit. You aren't saying you've seen the pipework inside the ceiling.
 Arun | Say the [[visible patch::Visible patch limits the observation to the exposed stained area that Arun can see.]] is dry during the visit. Keep the time in the sentence, and add that the source of the staining has not been established.
-Rosa | Does the fact that the washroom is directly above help us name the cause, or does that only describe where we found the stain?
+Rosa | The washroom is directly above it. Wouldn't the basin there be the obvious source to put in the report?
 Arun | It describes the location. It does not establish the [[moisture source::Moisture source concerns origin, which the location below a washroom does not prove.]]. No pipework is visible here, so we should not name a concealed component as responsible.
-Rosa | I had been going to write that the basin upstairs must have leaked. I will leave that out unless there is an actual finding.
+Rosa | I had written basin leak on the job record. That sounds more definite than what we've actually established about this stain.
 Arun | That is right. It would be a [[causal claim::Causal claim assigns the stain to the basin without evidence establishing that connection.]], not a description of the ceiling. We need to keep those two kinds of statement separate.
-Rosa | Could the dry patch at least mean that nothing is happening now? I am trying to explain the situation without making the update sound alarming.
+Rosa | What wording will give the owner something useful without making the dry patch sound like confirmation that everything above it is fine?
 Arun | The [[observation scope::Observation scope confines the statement to the visible surface during the visit.]] is the visible surface during this attendance. It does not establish the condition of hidden pipework or prove that an issue cannot recur.
-Rosa | Then it would also be wrong to say you checked all the pipes and found no problem. We have not seen them here.
+Rosa | The pipework wasn't visible. Should that limitation sit beside the observation, rather than disappear into another part of the report?
 Arun | Exactly. That would erase the [[inspection limitation::Inspection limitation identifies the concealed pipework that was not visible for assessment.]]. The accurate record should say no pipework was visible, rather than imply that every relevant component was examined.
-Rosa | I understand. There is no completed repair for me to mention either, is there? I do not want the manager to assume something was fixed.
+Rosa | I also have a box marked repair completed. No repair is established by this account, so I shouldn't use that as the closing status.
 Arun | Correct. There is no [[repair claim::Repair claim would assert completed corrective work, which this visit account does not establish.]] to make from these facts. We have an observation and an unresolved source, not a documented correction of the problem.
-Rosa | Please help me make the final wording concise. I want it to sound clear, not as though I am avoiding the question.
+Rosa | Could you give me one concise sentence with both the observation and its limits? The staff need a clear update, not a vague reassurance.
 Arun | Use a [[qualified statement::Qualified statement provides explicit limits while still communicating a useful observation.]]: ceiling stain below the upstairs washroom; visible patch dry during the visit; source not established, with assessment still needed.
-Rosa | That gives the location, what was seen, and what remains open. I will not shorten dry during the visit to no leak.
+Rosa | Should I retain at the time of the visit? Removing it makes the sentence shorter but seems to broaden what it claims.
 Arun | Good. The [[time qualifier::Time qualifier prevents a visit-specific observation from becoming a general assurance.]] matters. Removing it could make a limited observation sound like a continuing assurance about the whole system.
-Rosa | I will send that wording and keep the source question open. Thank you for explaining the difference without dismissing what we have noticed.
+Rosa | I'll record the dry surface and unresolved source. I won't describe the pipework as sound or the issue as repaired on that basis.
 Arun | You are welcome. That [[finding summary::Finding summary reports established observations and limits without claiming a diagnosis or resolution.]] is accurate and useful. It records the condition we can describe while leaving the cause for the appropriate assessment.''',
+    rehearsal=["Read turns 1-10. Contrast a dry visible patch with an established moisture source.","Switch roles for turns 11-20. Keep the visit-time qualifier and concealed-pipework limitation in the report.","Complete and check the report exchange. Read it without changing dry into repaired or cause known."],
     transfer_title='Correct the manager update',
     transfer_setup='Complete the concise report. Preserve the surface observation and the missing source assessment without implying a repair.',
     transfer='''Owner: "The visible patch was ___ during the visit." | dry | Dry is the observed surface condition during the stated attendance.
@@ -458,29 +462,30 @@ Has not been reviewed | States the missing evaluation, not an automatic rejectio
 Any alternative | Keeps every proposed replacement subject to the relevant requirements.
 Before confirming | Makes review a condition of a later commitment.''',
     d='''Which explanation is clearest? | The panel lets the relevant team reach the cleanout; it is not another drain | The panel drains the cabinet | The cleanout is merely decorative | A small panel never needs review | The explanation separates the access cover from the drainage-maintenance feature.
-What should Dev do with Hana's preference? | Record it for design coordination without approving concealment | Promise permanent covering immediately | Remove the cleanout from the record | Treat the preference as a completed plumbing review | Recording a preference does not establish an acceptable access arrangement.
+What should Dev do with Hana's preference? | Record it for design coordination without approving concealment | Accept a fixed front once the cabinet maker agrees | Specify a smaller opening before dimensions are reviewed | Promise a concealed panel based on a different project | Recording a preference does not establish acceptable access; cabinet agreement, smaller dimensions, and another project's detail do not complete this review.
 Which claim is unsupported? | The drawn panel dimensions are approved and sufficient | The drawing shows a removable panel | The client wants a continuous finish | The plumber has not reviewed the change | No approved dimensions or verified access arrangement are supplied.
 What is the appropriate next step? | Coordinate the access detail with the designer and plumbing team | Give the client instructions to dismantle the panel | Approve a fixed cover based on appearance | Assume all removable covers are interchangeable | The case calls for design coordination, not client intervention or assumed equivalence.''',
-    dialogue='''Hana | On this cabinet drawing, why is there an extra drain in the front panel? I would prefer a continuous finish across that whole section.
-Dev | The marked feature is an [[access panel::Access panel is the cover shown in the cabinet drawing, not another drain.]], rather than an additional drain. It provides access to a recorded plumbing component behind the cabinet finish.
-Hana | That makes more sense. The label says cleanout, which is not a word I use. Is that another name for the basin outlet?
-Dev | No. A [[cleanout::Cleanout identifies drainage-maintenance access, distinct from the basin's waste outlet.]] provides access to drainage piping for maintenance. The basin outlet and this access feature should not be treated as the same thing.
-Hana | I understand the function now. Could we permanently cover the front anyway? I would rather not have a visible break in the cabinet face.
-Dev | I can record that [[appearance request::Appearance request preserves Hana's preference without turning it into an approved enclosure change.]], but the plumber has not reviewed the enclosure change. I cannot confirm permanent covering as an acceptable arrangement.
-Hana | I am not asking to change the drainage route. I am asking whether the cabinet can look continuous while keeping whatever access is needed.
-Dev | That is a clearer design question. The designer needs to coordinate the [[access detail::Access detail determines how required access is provided within the proposed cabinet arrangement.]] with the plumbing team, including how the relevant component can be reached.
-Hana | Does the small rectangle on the drawing tell us the opening is already large enough? It looks quite small compared with the cabinet door.
-Dev | Not from this information. We do not have an approved [[clear opening::Clear opening is the usable access space, whose approved dimensions are not supplied here.]] or a confirmed replacement arrangement. The symbol alone cannot establish that a particular access solution is sufficient.
-Hana | Then I should not tell the cabinet maker to replace the removable part with a fixed decorative panel just because it looks cleaner.
-Dev | Correct. A [[fixed panel::Fixed panel does not automatically perform the access function of the removable panel it would replace.]] is not automatically equivalent to the removable feature. We need the access requirements resolved before anyone confirms that change.
-Hana | Could the design team consider something less visible without assuming that I have demanded a specific technical solution? I am open to their advice.
-Dev | Yes. We can record your preference separately from the [[access requirement::Access requirement concerns the conditions the final arrangement must satisfy, independent of appearance preference.]]. Any alternative still needs review; I am not promising a particular panel type or location.
-Hana | Please make the request specific. I do not want the next drawing to remove the access entirely because my first email called it an extra drain.
-Dev | I will clarify the [[design intent::Design intent explains the access function that must not be lost through the client's earlier terminology.]] in the note: the feature provides access to a cleanout, and the client asks for a less visible arrangement.
-Hana | That accurately describes what I want. Who needs to respond before I can regard the cabinet appearance as settled?
-Dev | We need the designer and plumbing team to provide a [[coordination response::Coordination response is the relevant combined review needed before the access arrangement can be confirmed.]]. Until then, the permanent-enclosure proposal remains unapproved and the access question stays open.
-Hana | All right. I will describe this as an access-detail review, not a request to delete a drain or an instruction to cover the opening.
-Dev | Thank you. That keeps the [[review status::Review status preserves the distinction between a client request and an accepted design change.]] clear while giving the design team an answerable question about appearance and access, without authorizing an unreviewed alteration.''',
+    dialogue='''Hana|Dev, there's a small panel in the cabinet drawing. Is that another drain? I'd rather have one clean surface without that extra piece.
+Dev|The drawing shows an [[access panel::Access panel is the cover shown in the cabinet drawing, not another drain.]], not an extra drain. The removable cover allows the relevant maintenance point behind the cabinet to be reached.
+Hana|Then what is the thing behind it? I thought every opening shown near the basin was another place for water to drain away.
+Dev|It's a [[cleanout::Cleanout identifies drainage-maintenance access, distinct from the basin's waste outlet.]], a drainage-maintenance access point. It isn't the basin's waste outlet, and the cabinet cover isn't itself part of that drainage opening.
+Hana|I understand the difference now. My concern is how the panel looks. Could the cabinet maker cover it permanently so the front stays uninterrupted?
+Dev|I can record that as an [[appearance request::Appearance request preserves Hana's preference without turning it into an approved enclosure change.]], but not approve it as a construction change. The access function needs to be preserved in the reviewed arrangement.
+Hana|If the cabinet maker is happy with a fixed front, doesn't that settle it? The change would be to the cabinet rather than the pipe.
+Dev|The [[access detail::Access detail determines how required access is provided within the proposed cabinet arrangement.]] crosses both trades. The plumber and designer need to review how the required point remains accessible within the proposed cabinet arrangement.
+Hana|How large does the usable opening have to be? I don't see a dimension in the information we've been discussing.
+Dev|We haven't been supplied an approved [[clear opening::Clear opening is the usable access space, whose approved dimensions are not supplied here.]] dimension. I shouldn't invent one or say a smaller opening works just because it looks less noticeable.
+Hana|What if the front could eventually be removed with substantial cabinet work? Would that count as the same thing as the removable cover?
+Dev|Don't assume a [[fixed panel::Fixed panel does not automatically perform the access function of the removable panel it would replace.]] provides equivalent access. The reviewed detail must establish how the required access works, rather than relying on a future workaround.
+Hana|I don't want a maintenance visit to turn into a cabinet replacement. Can you ask for an option that looks tidy and keeps the necessary access?
+Dev|Yes. I'll pass on both the appearance preference and the [[access requirement::Access requirement concerns the conditions the final arrangement must satisfy, independent of appearance preference.]]. The response needs to address them together; one doesn't cancel the other.
+Hana|Should the request say remove the extra drain? That's what I wrote initially, but it now sounds as though I meant something quite different.
+Dev|I'll correct it to preserve the [[design intent::Design intent explains the access function that must not be lost through the client's earlier terminology.]]: access to the cleanout. Your request concerns the visible cabinet finish, not removal of a drainage feature.
+Hana|Can you promise a concealed panel will solve it? I've seen those elsewhere, although I don't know whether this cabinet can use one.
+Dev|I can't promise a panel type before the [[coordination response::Coordination response is the relevant combined review needed before the access arrangement can be confirmed.]]. We'll ask for a suitable reviewed option, not assume another project's detail works here.
+Hana|Then the record is a request for a cleaner appearance, with the access arrangement still awaiting review. It isn't permission to cover the point permanently.
+Dev|Exactly. I'll keep that [[review status::Review status preserves the distinction between a client request and an accepted design change.]] clear and return the response to you. We have clarified what you want without treating the revised cabinet detail as accepted.''',
+    rehearsal=["Read turns 1-10. Stress access panel, cleanout, and clear opening as three different descriptions.","Switch roles for turns 11-20. Keep the appearance request open while the access detail awaits coordination.","Complete and check the short exchange. Repeat the proposed cabinet change without granting approval."],
     transfer_title='Explain the panel and the pending review',
     transfer_setup='Complete the client exchange. Name the access feature and preserve the approval boundary.',
     transfer='''Client: "The panel is not an extra ___." | drain | The feature provides access rather than acting as an additional drain.
@@ -548,30 +553,31 @@ From ... to | Supplies both endpoints of a time window.
 Still pending | Makes the unresolved approval visible after other details are corrected.
 Does not mean | Blocks an inference from arrival time to service interruption.
 Separate lines | Helps readers avoid combining distinct events into one schedule.''',
-    d='''Which notice wording preserves all supplied facts? | Visit 09:00; east-washroom interruption proposed 10:00-11:00, pending approval | Whole building closed from 09:00 | East washroom interruption confirmed from 09:00 | Visit proposed at 11:00, interruption approved | The first wording separates the booked visit from the limited, unapproved interruption.
+    d='''Which notice wording preserves all supplied facts? | Visit 09:00; east-washroom interruption proposed 10:00-11:00, pending approval | Whole building closed from 09:00 | East washroom interruption confirmed from 09:00 | Visit proposed at 11:00, interruption approved | The correct wording separates the booked visit from the limited, unapproved interruption.
 What is wrong with only changing whole building to east washroom? | Timing and approval status may still be wrong | It removes the correct building name | It changes an approved interruption to a proposal | It supplies too much technical detail | Correcting the area alone does not correct the arrival-time confusion or pending approval.
 Which item is already confirmed? | The 09:00 visit booking | The proposed interruption | The whole-building effect | Valve operating permission | The case confirms attendance only, not the proposed service interruption.
 What should Joel avoid treating the message as? | Permission to operate valves or start an interruption | A correction of the area | A statement of the proposed window | A clarification of attendance time | Scheduling language does not provide an operational instruction or authorization.''',
-    dialogue='''Joel | I was about to tell the tenants the whole building will be unavailable from nine. That is when the plumbing team is booked, correct?
+    dialogue='''Joel | Imani, I combined the visit and the water interruption in one notice: nine to eleven, east washroom. Have I accidentally made the interruption longer?
 Imani | The [[attendance time::Attendance time belongs to the booked visit and does not establish the start of an interruption.]] is 09:00, yes. But that is not the proposed start of the water interruption, and the proposal does not cover the whole building.
-Joel | Thank you for stopping me. I have combined the arrival and the interruption into one message. What are the two times I should keep separate?
+Joel | Then nine is the booked arrival. What are the start and end times of the separate interruption we are proposing?
 Imani | The visit is booked for nine. The proposed [[interruption window::Interruption window identifies the separate proposed service pause from 10:00 to 11:00.]] is 10:00-11:00. Those are separate events, and they also have different approval states.
-Joel | Before we get to approval, can you confirm the area named in the proposal? I should correct the whole-building wording as well.
+Joel | I also wrote building water off. That would affect far more people than the east washroom named in our information.
 Imani | The stated [[affected area::Affected area is limited to the east washroom, not the entire building.]] is the east washroom only. Please keep that room name attached to the proposed interruption rather than describing every area as unavailable.
-Joel | So I can write east washroom unavailable from ten to eleven, with the visit at nine. Does that now accurately capture the arrangement?
+Joel | If I correct the times and area, can I remove proposed? Ten to eleven sounds definite enough when it's written on a notice.
 Imani | It still needs the [[status qualifier::Status qualifier retains proposed status and prevents the revised notice from implying approval.]]. The interruption is proposed, not confirmed, because building-manager approval is pending. Your revised sentence currently sounds like a firm arrangement.
-Joel | I see. Correcting the room and the times is not enough if I drop the fact that someone still has to approve the interruption.
+Joel | Who still needs to approve that window? I don't want the visit booking mistaken for the missing decision.
 Imani | Exactly. The [[building manager::Building manager is the named approval role whose decision remains pending in the case.]] has not approved that proposal yet. We need both the accurate details and the accurate level of certainty in the communication.
-Joel | Would separate lines help? One for the booked visit, then another for the proposed interruption with the room and approval note together?
+Joel | Please help me word the draft with the visit and interruption on separate lines. Both times need to stay attached to the right event.
 Imani | Yes. That would improve the [[notice wording::Notice wording should distinguish the booked visit from the proposed, limited interruption.]] and make the distinction easier to scan. Keep 09:00 with attendance and 10:00-11:00 with the proposed east-washroom interruption.
-Joel | I will not add a wider room-access arrangement from my own assumptions. That needs its actual coordination rather than a guess based on the visit.
+Joel | Does booking the visit also confirm how the plumber will get access? I don't see a separate agreed arrangement in these notes.
 Imani | Correct. We should not invent an [[access arrangement::Access arrangement must come from actual coordination rather than being inferred from the visit booking.]] in this correction. We are clarifying the supplied timing, impact, and approval status, not adding new permissions.
-Joel | Let me read it back: visit booked for 09:00. East-washroom water interruption proposed for 10:00-11:00, with building-manager approval still pending.
+Joel | Let me read it back: visit booked for nine, interruption proposed ten to eleven, east washroom only, subject to the manager's approval.
 Imani | That [[schedule readback::Schedule readback preserves both times, the limited area, and the unresolved approval in one accurate summary.]] is accurate. It fixes the earlier whole-building claim without turning the interruption into a confirmed event.
-Joel | When that wording is reviewed, it will be a tenant notice, not a direction for anyone to begin the interruption or operate equipment.
+Joel | One tenant asked which valve to use at ten. This draft doesn't authorize a tenant to operate anything, does it?
 Imani | Precisely. It is not an [[operating instruction::Operating instruction would direct equipment action, which this scheduling conversation does not authorize.]]. Actual operations and the release of the final notice must follow their separate relevant processes.
-Joel | I will replace the earlier draft with the corrected wording and keep the approval note visible. I will not tell tenants the window is confirmed.
+Joel | I'll hold the notice for the required approval and keep the operating arrangements separate. Please update me when the pending decision is available.
 Imani | Thank you. That gives us a clear [[coordination update::Coordination update communicates the corrected arrangements while keeping the outstanding decision explicit.]]: booked visit, limited proposed interruption, and a named approval still outstanding. Those distinctions should remain in any later summary.''',
+    rehearsal=["Read turns 1-10. Say nine for booked attendance and ten to eleven for the proposed interruption.","Switch roles for turns 11-20. Preserve east washroom only and the pending manager approval in the readback.","Complete and check the notice exchange. Keep the draft separate from an approved notice or operating instruction."],
     transfer_title='Separate the two times',
     transfer_setup='Complete the corrected schedule notice. Preserve the room limit and the proposal status.',
     transfer='''Coordinator: "The visit is booked for ___." | 09:00 | The confirmed booking concerns attendance at nine, not the service interruption.
@@ -611,8 +617,8 @@ commercial terms | Conditions concerning price, timing, and agreement. | confirm
 completion date | Date agreed or proposed for finishing defined work. | confirm the completion date
 trade coordination | Alignment of work between the relevant specialists. | arrange trade coordination
 scope boundary | Limit separating included work from other work. | explain the scope boundary
-price assumption | Belief about cost not yet confirmed in the agreement. | correct a price assumption
-restoration boundary | Limit of any agreed surface reinstatement. | clarify the restoration boundary
+first-hour rating | Rated hot-water delivery in an hour beginning with a fully heated tank. | compare first-hour ratings
+storage volume | Amount held in a tank, distinct from its rated first-hour delivery. | distinguish storage volume from delivery
 client selection | Product or arrangement chosen by the customer. | record the client selection
 approval to proceed | Authorization to carry out the agreed work. | obtain approval to proceed''',
     precision='The estimate covers the specified replacement of B1. The fixture allowance does not establish that cabinet alterations and redecoration are included. Explain the actual document instead of treating an allowance as a complete project package.',
@@ -639,30 +645,31 @@ Now asking for | Marks a change from the original arrangement.
 Before confirming | Makes scope definition a condition of a reliable commitment.
 Any making good | Avoids assuming all restoration is included or already priced.
 Reliable figure | Explains why a price cannot responsibly be supplied before assessment.''',
-    d='''Which response best addresses Ava's assumption? | The estimate covers B1 replacement; cabinet changes and redecoration are not listed | All related work is automatically covered by an allowance | The wall-hung vanity has already been installed | No plumbing assessment is needed for any vanity change | The response states the estimate's actual coverage and identifies the unlisted related work.
+    d='''Which response best addresses Ava's assumption? | The estimate covers B1 replacement; cabinet changes and redecoration are not listed | The allowance covers the vanity if its product price is unchanged | Cabinet alterations will definitely be necessary and are already priced | Making good includes all room redecoration because the estimate names a basin | The response identifies the actual coverage without treating a product allowance as a package or claiming unassessed cabinet work is certain.
 What must happen before revised terms can be confirmed? | Assess access requirements and define the revised scope | Reuse the original date automatically | Assume all cabinet work is free | Treat the product preference as installation approval | The changed arrangement requires assessment before price and timing can be established.
 Which phrase overpromises? | The wall-hung vanity will cost exactly the same and finish on the original date | I will record the change request | Cabinet changes are not listed here | We need to define any making-good work | Neither unchanged cost nor unchanged timing is supported for the unassessed change.
 What does making good need in an agreement? | A defined extent of restoration | An assumption that every surface is included | A guessed repair method | No connection to the scope | Restoration boundaries must be stated rather than inferred from a broad phrase.''',
-    dialogue='''Ava | I would like to change the basin replacement to a wall-hung vanity. I assumed the fixture allowance covered the cabinet changes and repainting around it.
-Luis | The current [[estimate::Estimate refers to the existing cost document for the specified B1 replacement.]] covers replacing B1 with the specified basin model. Cabinet changes and redecoration are not listed, so we need to separate those from the original work.
-Ava | I read the allowance as a budget for the whole area, not just the fixture described. Is that where my reading went wrong?
-Luis | I can see how that happened. The [[fixture allowance::Fixture allowance has the scope stated in the estimate and does not establish all related work as included.]] must be read with the scope stated in the estimate. It does not establish a complete vanity-and-decoration package here.
-Ava | I still prefer the wall-hung arrangement. Can we keep that as my request without assuming I have accepted a new price already?
-Luis | Certainly. I will record a [[change request::Change request records the new arrangement without treating it as agreed scope or accepted price.]] for the wall-hung vanity. We then need to assess what changes in the plumbing work and the related arrangements.
-Ava | What is missing before you can tell me the difference in cost? I would like to understand why a quick fixture-price comparison is not enough.
-Luis | We have not assessed the [[access requirements::Access requirements concern reaching the changed work and remain unassessed in the case.]] or the revised plumbing scope. The product price alone does not tell us what work the new arrangement requires.
-Ava | Does that mean you are already saying extra cabinet construction is definitely required, or only that the current estimate does not include those changes?
-Luis | Only the second is established here. A [[cabinet alteration::Cabinet alteration is related work not listed in the original estimate, not a predetermined technical requirement.]] is not listed in the current estimate; I am not inventing a construction requirement before the arrangement is assessed.
-Ava | That is helpful. I also want any affected surfaces to look finished afterward. I have heard people call that making good.
-Luis | Yes, but [[making good::Making good means agreed restoration and needs a defined extent rather than an unlimited assumption.]] needs a clear stated extent. We should not assume it includes every cabinet change or all redecoration without describing and pricing the relevant work.
-Ava | Could you give me a firm extra amount now and revise the details later? It would help me decide whether to keep the new idea.
-Luis | I cannot give a reliable [[additional cost::Additional cost cannot be fixed reliably while the changed work and access remain unassessed.]] before the scope is assessed. A guessed figure could make the decision look simpler now and create a misunderstanding later.
-Ava | Fair enough. Does the original completion date carry over automatically, or should I regard timing as another point to confirm for the change?
-Luis | Timing also needs review. The [[completion date::Completion date for the changed work is not established by the original estimate.]] for the changed work is not confirmed. We need to define the work and coordinate it before promising the revised terms.
-Ava | Then the next document should show what the plumbing work covers, what happens to the cabinet and finishes, and what is outside the price.
-Luis | Exactly. A [[revised quotation::Revised quotation sets out a price proposal for a defined changed scope rather than merely restating the product allowance.]] should make those boundaries clear. The original estimate remains the reference for the specified B1 replacement, not evidence that the new package is included.
-Ava | Please proceed with assessing the request, but do not treat this conversation as my approval for unpriced additional installation work.
-Luis | Understood. There is no [[approval to proceed::Approval to proceed with extra work has not been given by this assessment request.]] with the extra work. We will assess the changed scope, state the price and timing, and obtain the relevant agreement before treating them as commitments.''',
+    dialogue='''Ava|Luis, I'd like to change B1 to a wall-hung vanity. The estimate already includes a basin allowance, so is this just a product-price difference?
+Luis|The existing [[estimate::Estimate refers to the existing cost document for the specified B1 replacement.]] is for replacing the specified B1 basin. We need to separate that original scope from the different arrangement you're now requesting.
+Ava|I saw fixture allowance and assumed it included everything around the new basin. Are the cabinet changes and redecorating already covered by that line?
+Luis|The [[fixture allowance::Fixture allowance has the scope stated in the estimate and does not establish all related work as included.]] has the extent stated in the document. Cabinet changes and redecoration aren't listed as included; the allowance isn't a complete vanity package.
+Ava|Then please price the wall-hung option before anyone orders it. I haven't agreed to a revised amount, and I don't know what other work it involves.
+Luis|I'll log a [[change request::Change request records the new arrangement without treating it as agreed scope or accepted price.]] for assessment and pricing. That records the option you want examined; it doesn't make the option agreed work or an approved order.
+Ava|Can you tell from the product picture whether the existing connections can stay where they are? It would be helpful to avoid opening anything up.
+Luis|The plumbing changes and [[access requirements::Access requirements concern reaching the changed work and remain unassessed in the case.]] haven't been assessed. A product picture doesn't establish the existing arrangement or what would be needed to reach the work.
+Ava|So you aren't saying cabinet work is definitely necessary. You're saying it wasn't included and the changed arrangement hasn't been checked yet.
+Luis|Exactly. A [[cabinet alteration::Cabinet alteration is related work not listed in the original estimate, not a predetermined technical requirement.]] is a possible related scope item to assess, not a technical conclusion we've already reached. We need to define the actual work first.
+Ava|Another phrase in these estimates puzzles me: making good. Would that mean repainting the whole room after any access work?
+Luis|Not automatically. [[making good::Making good means agreed restoration and needs a defined extent rather than an unlimited assumption.]] means the agreed restoration, with its extent specified. We should identify the affected finishes and included work rather than imply unlimited redecoration.
+Ava|Could you at least give me a fixed extra price today? I'd prefer one number, but we haven't established what that number would cover.
+Luis|A fixed [[additional cost::Additional cost cannot be fixed reliably while the changed work and access remain unassessed.]] would be premature before the changed scope and access are assessed. The price needs a defined basis so you can compare it meaningfully.
+Ava|The original schedule was based on replacing B1. I shouldn't assume the wall-hung arrangement will be finished on the same date, then.
+Luis|Correct. The changed work's [[completion date::Completion date for the changed work is not established by the original estimate.]] is not confirmed by the original estimate. Availability, assessed work, and coordination need to be addressed in the revised proposal.
+Ava|Please send something that distinguishes the fixture, the related work, and what's excluded. I don't want the same ambiguity when I review the option.
+Luis|I'll request a [[revised quotation::Revised quotation sets out a price proposal for a defined changed scope rather than merely restating the product allowance.]] with that scope and the relevant assumptions. You can then review the proposed price and timing against a clearly described change.
+Ava|Until that comes back, I am asking for an assessment, not authorizing anyone to buy the vanity or start extra work.
+Luis|Understood. This isn't [[approval to proceed::Approval to proceed with extra work has not been given by this assessment request.]]. We'll keep the original estimate and your change request distinct, and seek the appropriate decision after the revised proposal is available.''',
+    rehearsal=["Read turns 1-10. Separate the original B1 estimate from the requested wall-hung arrangement.","Switch roles for turns 11-20. Stress defined scope before price, completion date, and approval to proceed.","Complete and check the estimate exchange. Preserve the exclusions without claiming unassessed work is definitely required."],
     transfer_title='State what is and is not priced',
     transfer_setup='Complete the estimate discussion. Preserve the original scope and the need to assess the changed arrangement.',
     transfer='''Estimator: "The estimate covers replacement of ___ with the specified model." | B1 | B1 identifies the fixture in the original stated estimate.
@@ -733,27 +740,28 @@ Without promising | Preserves a useful commitment while limiting unsupported out
     d='''Which handover summary is accurate? | Pack received; wrong-model leaflet pending replacement; Leo calls Monday; trim visit unbooked | All documents verified and all work complete | Return visit confirmed for Monday | Warranty extended automatically until a visit | The summary preserves receipt, document correction, ownership, callback, and unbooked visit.
 What would turn the callback into an unsupported promise? | Telling Maya the team will attend on Monday | Confirming Leo will call Monday | Recording the leaflet mismatch | Keeping the trim review on the open-item list | The promise concerns a call; no return appointment has been booked.
 Which action best handles the leaflet mismatch? | Obtain the document for the current model | Assume similar products use identical guidance | Treat delivery as verification | Replace the model identifier by guesswork | The correct model-specific document is needed rather than an assumed equivalent.
-What is not changed by this conversation? | The actual warranty terms | The need to correct the leaflet | Leo's follow-up ownership | The record of the Monday call | A follow-up conversation does not itself revise the applicable warranty terms.''',
-    dialogue='''Maya | I have received the pack for B1, but this care leaflet appears to be for the old basin model. Can we check that before handover is closed?
+Which statement correctly addresses the warranty question? | The actual warranty terms are not revised by the callback promise | The Monday call extends the warranty until a return visit | Receipt of the pack replaces the existing warranty terms | The trim issue creates a new warranty period automatically | A follow-up conversation does not itself revise the applicable warranty terms; the promised call and open items create no automatic extension.''',
+    dialogue='''Maya | Leo, I received the handover pack, but the B1 care leaflet names the previous model. Can you check that before I use it?
 Leo | Yes. There is a [[model mismatch::Model mismatch identifies the leaflet's previous-model reference rather than denying receipt of the pack.]] in that leaflet. The pack has been delivered, but we should not treat the wrong document as confirmed guidance for the current model.
-Maya | I do not want to assume the instructions are identical just because the two basins look similar. I would prefer the actual document for this one.
+Maya | So the pack arrived, but the care document needs correcting. Please don't mark the leaflet issue resolved just because I signed for the envelope.
 Leo | That is the right distinction. I will obtain the [[replacement document::Replacement document is the correct model-specific leaflet needed to resolve the mismatch.]] for the current model rather than ask you to rely on an unverified equivalent.
-Maya | Who should I contact if the new leaflet has not arrived? It would help to have one named person responsible for that item.
+Maya | Who will chase the model-specific document? I need one contact so the request doesn't pass between the installer and the supplier without an answer.
 Leo | I will be the [[follow-up owner::Follow-up owner names Leo as the person responsible for progressing the leaflet correction.]] for the leaflet. Please record me against it, and I will call you on Monday with an update.
-Maya | Thank you. There is also the cosmetic trim that needs review. Does Monday mean someone will return to look at that as well?
+Maya | You said you'd call on Monday. Is Monday the update date, or are you also confirming the separate visit to look at the cosmetic trim?
 Leo | No. Monday is the [[update date::Update date is the promised communication date, not an appointment for the separate trim review.]]. The cosmetic-trim review needs a return visit, but we do not have a date booked for that attendance.
-Maya | I had nearly put Monday into our site calendar as a visit. I will leave it as a call instead and keep the visit separate.
+Maya | I had nearly put you in the site diary for Monday. I'll remove that assumption if you're promising a call rather than an appointment.
 Leo | Please do. A [[callback::Callback means the promised phone communication and does not establish site attendance.]] is not a site appointment. I can commit to the Monday call without pretending the return visit has already been arranged.
-Maya | In the handover notes, should I list the leaflet and trim together as one general outstanding item, or give them separate entries?
+Maya | Can you keep the leaflet correction and the trim visit as separate open items? One might be resolved before the other is arranged.
 Leo | Give them separate entries on the [[open-item list::Open-item list should retain the document correction and visit arrangement as distinct unfinished matters.]]. One concerns the correct document; the other concerns a review requiring further attendance. Combining them could hide an unfinished action.
-Maya | That makes sense. Receiving the pack is one completed step, but it does not mean the incorrect leaflet has somehow been accepted as right.
+Maya | Does my acknowledgment of the pack mean I've accepted that every document matches the installation? That's not what I intended to confirm.
 Leo | Exactly. [[Document receipt::Document receipt acknowledges delivery without verifying the accuracy or suitability of each enclosed record.]] and document accuracy are different. We can acknowledge delivery while keeping the care-leaflet mismatch open until the proper document is supplied.
-Maya | I also do not want the note to say the trim has been corrected merely because we have agreed that someone should review it.
+Maya | The trim hasn't been reviewed on a return visit yet. Please don't write corrected when the outstanding task is still arranging that visit.
 Leo | Agreed. That would be an unsupported [[completion claim::Completion claim would wrongly describe the trim as corrected when only a future review is required.]]. The review remains outstanding, and there is no return date to report yet.
-Maya | Will anything about this follow-up change the warranty record, or should I keep the actual terms in the documents separate from these arrangements?
+Maya | Do these open items change any warranty terms automatically? I want to avoid reading a new promise into the Monday callback.
 Leo | Keep the [[warranty record::Warranty record retains its actual terms; the callback and open items do not automatically revise them.]] and its actual terms. This conversation assigns follow-up and clarifies scheduling; it does not create a new warranty promise.
-Maya | Let me summarize: pack received, care leaflet for the wrong model, Leo owns its replacement and calls Monday. Trim review needs a return visit with no date booked.
+Maya | Please read back the pack status, document owner, Monday call, and unbooked trim visit. That will give me a reliable note of what we've agreed.
 Leo | That [[handover readback::Handover readback preserves received records, open corrections, ownership, and the distinction between call and visit.]] is accurate. It lets us finish this discussion with clear responsibilities while keeping the remaining work visible, rather than describing the whole handover as complete.''',
+    rehearsal=["Read turns 1-10. Distinguish pack received, leaflet mismatched, Monday callback, and return visit unbooked.","Switch roles for turns 11-20. Keep document correction and trim review as two separate open items.","Complete and check the handover exchange. Read the actual commitments without inventing an appointment or warranty change."],
     transfer_title='Keep the call and visit separate',
     transfer_setup='Complete the closing exchange. Identify the model mismatch, named owner, call date, and unbooked return attendance.',
     transfer='''Client: "The leaflet belongs to the ___ model." | previous | Previous identifies why the supplied leaflet does not match the current product.

@@ -91,7 +91,7 @@ What should Leena say about timing? | "No vacancy is confirmed, so I cannot give
 Leena | Her [[eligibility::Eligibility confirms that the child met the entry criteria, even though the later allocation did not produce an offer.]] is confirmed. The program had twenty places and twenty-four eligible applicants. Meeting the entry conditions allowed her into the allocation process, but did not guarantee selection.
 Mr. Ortiz | Was this a comparison of ability, or was something missing from my daughter's file?
 Leena | The published process used a [[lottery::The lottery, rather than a comparative judgment of merit, was the supplied allocation method among eligible applicants.]] among eligible applicants. I can explain your daughter's record and that process, but I cannot discuss other families' applications or personal information.
-Mr. Ortiz | So this was a capacity decision, not a new assessment of her ability. The notice also mentions a list, but I need to understand her position.
+Mr. Ortiz | All right, so her application passed that stage. Where is she on the list, and should we keep looking for another place?
 Leena | She is fourth on the [[waiting list::The waiting list records the applicant's current position for possible vacancies, not a confirmed future offer.]]. No vacancy is confirmed at present. I understand that makes planning difficult, but I do not want to give you an unsupported date.
 Mr. Ortiz | Does fourth mean that four children would have to leave? I do not want to misunderstand the number and make plans the school cannot support.
 Leena | It states her current position, not an offer timetable. Any [[vacancy::A vacancy is an actual available place; the supplied case confirms none at present.]] would be handled under the published procedure. I can send that procedure so you can see how the list operates.
@@ -101,7 +101,7 @@ Mr. Ortiz | I would like to check the record first. How long do I have to reques
 Leena | The [[review window::The review window is the locally specified period for requesting review, here five school days from the notice.]] is five school days from the decision notice. I will send the instructions with the record information you are authorized to receive.
 Mr. Ortiz | If I identify an incorrect fact, should I send a whole new application, or just explain the issue and attach the relevant evidence?
 Leena | Identify the disputed fact and attach the relevant [[supporting document::The supporting document substantiates the particular claimed error rather than reopening every aspect of the application.]]. The review team needs a clear account of the issue. A new application is not what this procedure asks for.
-Mr. Ortiz | Will receiving my request mean that you agree an error occurred? I would like the acknowledgment to be clear about what has actually happened.
+Mr. Ortiz | If I send that document today, what will your reply actually confirm? I do not want to mistake a receipt for a changed decision.
 Leena | An [[acknowledgment::An acknowledgment confirms receipt; it does not establish that the review has accepted the claim or changed the outcome.]] confirms receipt, not the outcome. The review team still needs to examine the identified fact. I cannot promise that the result will change.
 Mr. Ortiz | Thank you. I had also assumed the placement discussion would happen now, but perhaps that is a different stage from this application review.
 Leena | Yes. [[Placement::Placement assigns a learner to a class or setting and is distinct from eligibility and the offer decision.]] concerns the class or setting, rather than whether a place has been offered. We should keep those stages separate while the admissions position remains unchanged.
@@ -112,7 +112,8 @@ Leena | I will include the relevant [[decision notice::The decision notice ancho
     transfer='''Officer: "The applicant met the ___." | entry criteria | The brief explicitly confirms eligibility, meaning the entry conditions were met.
 Guardian: "The current waiting-list position is ___." | second | The supplied position is second, not a prediction of waiting time.
 Officer: "The review concerns a claimed ___." | factual error | The fictional procedure limits review to a disputed fact or record.
-Guardian: "A future offer is ___." | not confirmed | No vacancy is confirmed, so a future place cannot be promised.'''))
+Guardian: "A future offer is ___." | not confirmed | No vacancy is confirmed, so a future place cannot be promised.''',
+    rehearsal=['Read the completed conversation in pairs; stress eligible, lottery, and fourth.', 'Repeat turns 9-16, distinguishing the review request from its acknowledgment.', 'Switch roles and read the four completed transfer lines, retaining the second waiting-list position.']))
 
 BOOK['units'].append(unit(
     title='Curriculum Planning and Learning Outcomes',
@@ -172,7 +173,7 @@ Justify | Requires reasons, not just a selected answer.
 Criteria | The dimensions of judgment, not the topic headings.
 Aligned | Instruction and assessment support the intended outcome.
 Draft | Changes can be approved before learners are taught and assessed.''',
-    d='''Which assessment matches the intended outcome? | Compare the supplied sources using authorship and evidence, then justify the stronger source. | List five definitions from memory. | Copy a paragraph without evaluation. | Rank sources by length alone. | The first task directly elicits comparison and justification against both required criteria.
+    d='''Which assessment matches the intended outcome? | Compare the supplied sources using authorship and evidence, then justify the stronger source. | List five definitions from memory. | Copy a paragraph without evaluation. | Rank sources by length alone. | The correct task directly elicits comparison and justification against both required criteria.
 Which instructional change is needed? | Add guided source comparisons before the final assessment. | Keep recall-only practice and assess comparison unexpectedly. | Remove all explanation of evidence. | Teach only the scoring total. | Learners need preparation in the performance that the intended assessment will require.
 Which proposed scoring feature is unsupported? | Awarding marks only for response length | Assessing use of authorship information | Assessing use of supporting evidence | Assessing the justification for the judgment | Length alone is not one of the agreed criteria and does not establish sound evaluation.
 Which statement preserves an appropriate role for definitions? | Definitions can support comparison but are insufficient evidence of the complete outcome. | Definitions and evaluation are identical performances. | Factual knowledge is always irrelevant. | Recalling terms proves both criteria were applied. | Factual knowledge can enable higher-level work without demonstrating that the work occurred.''',
@@ -180,7 +181,7 @@ Which statement preserves an appropriate role for definitions? | Definitions can
 Nia | The intended [[learning outcome::The learning outcome specifies the observable source-comparison performance, rather than merely naming the media-literacy topic.]] is to compare two supplied sources and justify which is more reliable using authorship and supporting evidence. That is more specific than covering the topic.
 Pavel | At the moment the quiz asks for definitions of reliability, evidence, and author. Those questions are clear, but do they show the performance we agreed?
 Nia | They show [[recall::Recall demonstrates retrieval of definitions, which is useful but does not itself demonstrate comparative evaluation.]], not the complete comparison. A learner could reproduce every definition without applying either criterion to the sources. We need a different final task.
-Pavel | I agree, although I do not want colleagues to think we are dismissing factual knowledge. Learners still need the terms before they can discuss the sources.
+Pavel | I would keep the definitions as a starter quiz. Could we use them to check the vocabulary before students tackle the sources?
 Nia | Certainly. The issue is [[alignment::Alignment requires the outcome, instructional practice, and assessment to support the same intended learner performance.]], not whether definitions matter. The outcome, classroom practice, and assessment should reinforce the same performance, with vocabulary serving that performance rather than replacing it.
 Pavel | Our lessons practice definitions too. Changing only the final assessment would confront learners with a comparison task they had not practiced.
 Nia | Add a guided [[practice task::A practice task prepares learners for the comparison and justification they will later need to demonstrate independently.]] with two sources. We can model how authorship and supporting evidence affect the judgment, then gradually reduce the support before the assessed task.
@@ -188,7 +189,7 @@ Pavel | For the final task, I suggest supplying both sources and asking for a ch
 Nia | Yes. Each [[assessment criterion::An assessment criterion identifies a dimension of performance to judge, here authorship or supporting evidence.]] should be visible in the task and the scoring guidance. We should not reward a long response that never evaluates either source.
 Pavel | Some teachers suggest one overall mark for sounding persuasive. That seems hard to explain consistently without mentioning the two required criteria.
 Nia | A shared [[rubric::The rubric describes performance against the required criteria, providing a clearer basis for consistent scoring than an undefined impression.]] should describe how well the learner uses authorship information and supporting evidence. Persuasive wording alone cannot substitute for an accurate, supported comparison.
-Pavel | We also need a concrete description of an adequate answer. Otherwise the same word, sufficient, could mean something different to every teacher.
+Pavel | The draft says sufficient evidence. One teacher expects a quotation; another expects an explanation. We need to settle that before anyone marks it.
 Nia | Write a clear [[descriptor::A descriptor explains a performance level so teachers do not rely on different unstated interpretations of quality.]] for each level. It should distinguish naming a feature from explaining why that feature strengthens or weakens a source for this purpose.
 Pavel | Could we use a sample response during teaching? Students might understand the distinction more quickly if they could see how a reason connects to a judgment.
 Nia | An [[exemplar::An exemplar makes the expected performance visible and supports discussion of how criteria are applied.]] would help. We can identify the evidence supporting its conclusion, rather than asking students to copy its wording or assume there is only one acceptable sentence.
@@ -201,7 +202,8 @@ Nia | That captures the required [[evaluation::Evaluation is the supported judgm
     transfer='''Coordinator: "The quiz currently tests ___." | recall | Asking for definitions measures retrieval rather than the required classification with reasons.
 Teacher: "The revised task must include ___." | classification | The stated outcome requires sorting each supplied expense into a category.
 Coordinator: "Each choice also needs an ___." | explanation | The outcome requires reasons for classifications, not only category labels.
-Teacher: "We should revise practice and assessment before ___." | teaching begins | The course is still a draft, allowing alignment before students encounter instruction.'''))
+Teacher: "We should revise practice and assessment before ___." | teaching begins | The course is still a draft, allowing alignment before students encounter instruction.''',
+    rehearsal=['Read turns 1-8 with a pause after recall to make the assessment mismatch clear.', 'Read turns 9-16, stressing authorship, supporting evidence, and descriptor.', 'Switch roles for the transfer; pronounce classification and explanation as two separate requirements.']))
 
 
 BOOK['units'].append(unit(
@@ -263,14 +265,14 @@ Barrier | A condition to clarify, not a character judgment.
 No more than one | Zero or one meets the numerical target.
 Improved | Describes a change; does not by itself identify its cause.''',
     d='''Which sentence accurately summarizes implementation? | "Two check-ins are documented; eight have no delivery record." | "All ten check-ins definitely occurred." | "Exactly eight check-ins definitely did not occur." | "The learner refused eight check-ins." | The available log supports two contacts and leaves the remaining delivery unverified.
-Which question is most useful before evaluating effectiveness? | Was the planned support delivered as intended? | Is the learner inherently unreliable? | Can the missing records be counted as completed? | Should the target be removed from the report? | Effectiveness cannot be fairly attributed to a fully delivered plan without establishing its implementation.
+Which question is most useful before evaluating effectiveness? | Was the planned support delivered as intended? | Did the written plan include a target? | Can we compare this ten-day count with a twenty-day count without adjustment? | Would a lower target make the plan easier to close? | The missing delivery evidence must be resolved; a written target or an easier closure rule cannot establish implementation.
 What should the new record track? | Both check-in delivery and late arrivals during the same ten-day period | Only the existence of a written plan | Only staff impressions of motivation | A target with no observations | Recording delivery and outcomes together makes the implementation and progress review more informative.
 If the next period has one late arrival, what is supported? | The local numerical target was met for that ten-day period. | The intervention certainly caused the change. | All future lateness has been eliminated. | The earlier records were complete. | One late arrival meets the stated target but does not prove causation or permanent change.''',
     dialogue='''Theo | We have four late arrivals in ten school days. Someone suggested closing the morning check-in plan as an intervention that failed.
 Mina | First separate the [[baseline::The baseline is the starting attendance measure, here four late arrivals in ten school days, not an explanation of their cause.]] from the delivery evidence. Four late arrivals describe the attendance period. They do not show whether the planned support occurred or why the learner arrived late.
 Theo | The plan proposed ten contacts over two weeks. The recovered log records only two completed check-ins.
 Mina | Then our [[delivery log::The delivery log documents two check-ins while leaving the other eight without evidence of delivery.]] is incomplete. We can confirm two documented contacts, but the other eight are unverified. Missing entries do not prove either that the contacts happened or that they did not.
-Theo | Then saying ten check-ins made no difference goes beyond the record. It assumes full delivery before judging the result.
+Theo | I will remove failed intervention from the minutes. Can we check with the staff who covered the other mornings before the review?
 Mina | Exactly. We need to establish [[implementation::Implementation concerns whether the planned support was actually put into practice before its effectiveness is assessed.]] before describing a fully delivered intervention as ineffective. Otherwise a gap in delivery or documentation could be mistaken for evidence that the support approach cannot work.
 Theo | Colleagues suspect transport, but neither the learner nor the guardian has confirmed a cause.
 Mina | Record it as a possible [[barrier::A barrier is a possible obstacle to attendance that needs clarification, not an established cause merely because staff suspect it.]], not a finding. Ask for the learner's account and the guardian's input. We should not replace their experience with a convenient explanation that nobody has verified.
@@ -282,7 +284,7 @@ Theo | I will keep late arrivals separate from full-day absences. Combining them
 Mina | Use the same definitions for [[progress monitoring::Progress monitoring requires repeated, comparable observations so the team can assess change over the planned period.]]. Track the next ten school days, alongside support delivery. A count without the observation period would be difficult to compare fairly with the current record.
 Theo | At the review, should we first check whether the planned contacts occurred and then look at attendance? That would keep delivery and outcome from being confused.
 Mina | Yes. Review [[implementation fidelity::Implementation fidelity asks how closely actual delivery matched the agreed plan, separately from the learner's observed outcome.]] and the attendance measure separately, then discuss them together. We need to know what was delivered before deciding whether to continue, adjust, or seek additional support.
-Theo | If late arrivals fall from four to one, we can say the target was met. But other changes might have contributed, so causation would still be uncertain.
+Theo | Suppose next fortnight we get one late arrival. I would report that against the target and ask what else changed in the mornings.
 Mina | Correct. That would be useful [[outcome evidence::Outcome evidence records the observed result but does not alone establish which action caused it.]], not proof that check-ins alone caused the improvement. We can report progress honestly while remaining open to the learner's explanation of what helped.
 Theo | I will correct the meeting note: two contacts documented, eight unverified, cause of lateness not established, new ten-day monitoring coordinated by you.
 Mina | Add the [[review point::The review point sets when the team will examine the new delivery and attendance evidence rather than leaving the plan open-ended.]] at the end of that period. The next discussion should have a clear delivery record, comparable attendance information, and the learner's and guardian's accounts available.''',
@@ -291,7 +293,8 @@ Mina | Add the [[review point::The review point sets when the team will examine 
     transfer='''Coordinator: "Documented check-ins total ___." | four | The delivery log confirms four contacts, not all six scheduled contacts.
 Teacher: "Delivery of the other two is ___." | unverified | The missing records establish uncertainty, not definite delivery or non-delivery.
 Coordinator: "The numerical attendance target was ___." | met | One late arrival is within the stated limit of no more than one.
-Teacher: "The result alone does not prove ___." | causation | The observed change does not isolate support from other possible contributing factors.'''))
+Teacher: "The result alone does not prove ___." | causation | The observed change does not isolate support from other possible contributing factors.''',
+    rehearsal=['Read the completed script; emphasize two documented and eight unverified without implying eight missed contacts.', 'Repeat turns 11-18, distinguishing the target, the observation period, and causation.', 'Switch roles for the transfer and read the answer explanations before repeating the corrected exchange.']))
 
 BOOK['units'].append(unit(
     title='Parent and Guardian Communication',
@@ -359,7 +362,7 @@ What should the follow-up summary contain? | Actions actually agreed and any arr
 Rosa | I understand why the [[tone::Tone concerns the attitude conveyed by the email, which here implied blame unsupported by the attendance record.]] concerned you. I should not have inferred your family's priorities. The attendance record shows late arrivals, but it does not establish your intentions or the reason.
 Ms. Lin | There was a bus delay. I wanted someone to ask about it before deciding we did not care.
 Rosa | Thank you for explaining. I will record that as your [[reported concern::A reported concern preserves the guardian's account while avoiding an unsupported claim that the cause has been independently established.]] and make sure it is discussed. We have not yet confirmed how that delay affected each arrival, so I will not present more as established.
-Ms. Lin | Are you withdrawing the whole message, or just the assumption about our priorities? Please make the correction clear.
+Ms. Lin | Please correct that sentence. I am not disputing the three late marks; I am disputing what you said they meant.
 Rosa | I am correcting the unsupported [[inference::The inference concerns the family's priorities, a conclusion that does not follow from the attendance count alone.]], not removing accurate attendance information. The verified record shows three late arrivals in the last five school days. Both parts should be stated clearly.
 Ms. Lin | That is fair. What is the purpose of the meeting? The original email left me wondering whether a penalty had already been decided.
 Rosa | The [[agenda::The agenda is to understand barriers and agree support, not to announce a predetermined penalty.]] is to understand the barriers and agree support. This invitation is not announcing a predetermined penalty. We need to hear your account and discuss practical arrangements together.
@@ -369,7 +372,7 @@ Ms. Lin | I will check and reply. I may also need language support. I can discus
 Rosa | Please tell me your [[preferred language::The preferred language must be established before an appropriate interpreter request can be arranged.]] and whether you would like an interpreter. I can request one, but I still need to confirm availability before saying the service is booked.
 Ms. Lin | Could you also send the meeting purpose in writing? Having it in advance would help me check the facts and prepare the information I need.
 Rosa | Yes. I will send a corrected [[meeting invitation::The meeting invitation records the proposed time, purpose, and unresolved arrangements so the guardian can respond accurately.]] stating the attendance facts, the purpose, and the proposed time. It will identify anything still awaiting confirmation, including the language-support arrangement.
-Ms. Lin | I would like the discussion to include what the mornings are actually like. I do not want the school to speak for us before hearing that.
+Ms. Lin | Could we start with the journey to school? I can explain where the delay happens, and then we can look at what might help.
 Rosa | We need [[two-way communication::Two-way communication gives the guardian a genuine opportunity to contribute rather than treating the meeting as a one-sided announcement.]]. Your account matters, alongside the school's records. We can clarify the circumstances and identify actions without assuming that either side already has the whole picture.
 Ms. Lin | Afterward, please distinguish agreed actions from open questions. That should help avoid another misunderstanding.
 Rosa | I will send a [[follow-up summary::A follow-up summary records actual agreements and unresolved points without inventing consent or completion.]] distinguishing those items. It should name the actions, responsible people, and any dates we actually agree, rather than presenting a suggestion as a settled commitment.
@@ -380,7 +383,8 @@ Rosa | I will send the [[correction::The correction removes the unsupported clai
     transfer='''Administrator: "The claim about your interest was an unsupported ___." | inference | Missed appointments alone do not establish the guardian's interest or motivation.
 Guardian: "The shift change is my ___." | reported explanation | The account is attributed to the guardian rather than described as independently verified.
 Administrator: "The two missed appointments remain recorded ___." | facts | Correcting the unsupported judgment does not erase the verified appointment record.
-Guardian: "The new arrangements are still ___." | awaiting confirmation | Neither the meeting nor interpreter request has yet been confirmed in the brief.'''))
+Guardian: "The new arrangements are still ___." | awaiting confirmation | Neither the meeting nor interpreter request has yet been confirmed in the brief.''',
+    rehearsal=['Read turns 1-6 in pairs, keeping the apology direct and the attendance facts neutral.', 'Repeat turns 9-14 with rising intonation on the proposed appointment and language-support questions.', 'Switch roles for the transfer, stressing the difference between reported explanation and recorded facts.']))
 
 
 BOOK['units'].append(unit(
@@ -451,7 +455,7 @@ Sam | The evidence criterion. The paper has two examples, but I expected more wr
 Erin | Read the [[descriptor::The descriptor specifies the requirements for a performance level, here two relevant examples and an explanation connecting each to the claim.]]. Level three requires two relevant examples and an explanation of how each supports the claim. It does not specify a page count or minimum response length.
 Sam | Looking at the paper, both examples are relevant, and each has a sentence explaining its connection. The response is concise, but those elements are present.
 Erin | Then the [[rationale::The rationale must connect the judgment to the supplied descriptor and work, not to an unstated preference for longer answers.]] supports level three on this criterion. Concision does not remove the evidence. We should avoid rewarding additional words merely because they create an impression of greater effort.
-Sam | Averaging our totals gives eight and a half, but does not explain which interpretation students should follow.
+Sam | Eight and a half would split the difference. But I would still be marking short answers down tomorrow, so that would not fix this.
 Erin | It would preserve the [[scoring discrepancy::The scoring discrepancy arises from incompatible interpretations, which an average would conceal rather than resolve.]] beneath a compromise number. We need a shared interpretation of the published standard, not a numerical agreement that leaves the unsupported length rule in place.
 Sam | Let us use this paper in the team meeting without identifying the learner. Teachers can compare the descriptor with the same two examples and explanations.
 Erin | That provides an [[anchor paper::An anchor paper is a shared reference sample that helps teachers apply a scoring level consistently.]] for calibration. The aim is consistent use of evidence, not persuading everyone to copy a senior colleague's mark without understanding the reasoning.
@@ -459,7 +463,7 @@ Sam | We have settled the evidence criterion. Should I now replace seven with te
 Erin | Review them before any [[score adjustment::A score adjustment must follow a complete relevant review; resolving one criterion does not establish the final total.]]. The brief evidence supports this criterion at three, but it does not establish the correct total across all three. Do not invent the remaining scores.
 Sam | I may have applied the same length expectation elsewhere. We should identify affected work rather than assume this is isolated.
 Erin | Review the [[affected cohort::The affected cohort consists of work potentially influenced by the same interpretation and needing review, not automatic score increases.]] under the institution's process. Some judgments may remain unchanged after review; others may need correction. We should not apply a blanket increase without examining the work.
-Sam | The feedback comments also need checking. A note saying too short would tell students to add words, even when the actual criteria require relevant support.
+Sam | I wrote too short in the margin. I should replace that comment as well; otherwise the student will think we want extra words.
 Erin | Each [[feedback comment::A feedback comment should explain performance against the actual criterion so learners are not directed toward an unstated requirement.]] should describe the criterion used and the evidence in the paper. If a score changes, the explanation should make that change understandable to the learner.
 Sam | We will need a record of the original score, the reviewed score, and the reason. Otherwise later questions could make the correction difficult to explain.
 Erin | Preserve an [[audit trail::An audit trail records what changed and why, supporting transparent review rather than silently replacing marks.]] and follow the authorized correction process. That protects transparency without exposing another student's work or implying that every original judgment was invalid.
@@ -470,7 +474,8 @@ Erin | Correct. This is [[calibration::Calibration develops a shared application
     transfer='''Lead: "The maximum total is ___." | ten | Two criteria worth five points each allow a total of ten.
 Teacher: "The confirmed first-criterion score is ___." | four | The supplied review establishes four points only for the first criterion.
 Lead: "The final corrected total remains ___." | unresolved | The second criterion is not yet reviewed, so the total cannot be inferred.
-Teacher: "The six potentially affected papers need ___." | review | Possible use of the same unsupported penalty requires examination, not automatic identical changes.'''))
+Teacher: "The six potentially affected papers need ___." | review | Possible use of the same unsupported penalty requires examination, not automatic identical changes.''',
+    rehearsal=['Read turns 1-8; pronounce criterion and criteria accurately and stress the two required examples.', 'Repeat turns 11-16, keeping the confirmed criterion score separate from the unconfirmed total.', 'Switch roles for the transfer and read ten and four distinctly.']))
 
 BOOK['units'].append(unit(
     title='Compliance, Records, and Privacy',
@@ -532,7 +537,7 @@ Identifier | Can still be personal information; it is not automatically anonymou
 Expires | Refers to access here, not automatic record destruction.''',
     d='''Which response best supports the transport task? | Prepare the ID-and-stop roster for owner review without releasing it. | Send complete files immediately. | Refuse to identify any permitted path forward. | Upload counseling notes to the old folder. | The limited roster addresses the task while respecting the pending release authorization.
 Why is the old folder not sufficient authority? | Existing access may be broader than the approved task requires. | Every internal folder is always illegal. | Student IDs are never information. | A folder name establishes consent. | Current permissions must be reviewed against purpose and authorization rather than assumed appropriate.
-What must be approved under this fictional procedure? | Fields, recipients, and access period | Only the recipient's job title | Only the file color | Every future use automatically | The brief explicitly identifies these three approval elements before release.
+What must be approved under this fictional procedure? | Fields, recipients, and access period | Fields and access period, with the entire department assumed to be recipients | Recipients and purpose, with the complete file assumed necessary | A secure channel, with the existing folder permissions treated as release approval | The brief requires approval of all three named elements; a secure channel or a partially defined scope does not replace it.
 Which statement about access expiry is accurate? | It does not by itself determine record retention or deletion. | It orders immediate destruction of every source record. | It makes further sharing unrestricted. | It removes the need for authorization. | The period of permitted access and the record-retention schedule address different decisions.''',
     dialogue='''Dana | I need complete student files for the pickup-assignment update. The old shared folder would be convenient, and I already have access to it.
 Yusuf | Let us define the [[access scope::Access scope identifies the information and actions actually needed, instead of treating an existing folder as permission for every record.]] for this task. Updating pickup assignments needs student IDs and assigned pickup stops. It does not require counseling notes, disciplinary history, or health information.
@@ -540,11 +545,11 @@ Dana | I did not know which fields you could separate. A two-field list would le
 Yusuf | I can prepare that [[roster::The roster is the limited list of student IDs and pickup stops that supports the stated task.]] for review. Reducing the information is helpful, but it does not mean I can release it immediately. The required approval is still pending.
 Dana | Who decides? I assumed my transport role allowed me to receive anything about students on the routes.
 Yusuf | The [[records owner::The records owner is the designated authority for approving the fields, recipients, and access period under the fictional procedure.]] must approve the fields, recipients, and access period. Your role explains the task, but it does not create unrestricted permission to receive every part of a student file.
-Dana | Then I should name the people who will use the list, not just request access for the whole transport team in case someone needs it.
+Dana | I will name the two route planners in the request. If another colleague covers a shift, we will check their access rather than forward the list.
 Yusuf | Correct. Each [[authorized recipient::An authorized recipient is approved for the specified information and purpose, rather than included through an indefinite team-wide request.]] must be within the approved scope. We should not expand the audience for hypothetical future work that has not been assessed or authorized.
 Dana | The task is a pickup update, not a welfare or discipline review. I will state that purpose in the request.
 Yusuf | That supports [[purpose limitation::Purpose limitation keeps use tied to the authorized pickup task instead of allowing unrelated uses of the same information.]]. It also explains why the unrelated notes should be excluded. A narrower request helps us complete the legitimate work without exposing information the task does not need.
-Dana | What about the student IDs? They are not names, so could we treat the list as anonymous and skip the records review?
+Dana | The roster would only show IDs and stops. Does removing the names change whether we need that approval?
 Yusuf | No. A [[student identifier::A student identifier can link the roster to a particular learner and is not automatically anonymous merely because it is not a name.]] can still link the information to a learner. Replacing a name with an ID does not automatically remove privacy obligations or the local approval requirement.
 Dana | I will include the proposed access period. Once that ends, should the source records be deleted, or does the period refer only to our access?
 Yusuf | It concerns access. The [[retention schedule::The retention schedule governs how long records are kept, a different question from how long a recipient may access them.]] determines how records are kept under the applicable rules. Do not turn an access end date into an unauthorized instruction to destroy source records.
@@ -559,7 +564,8 @@ Yusuf | That is the correct [[release authorization::Release authorization is th
     transfer='''Officer: "The relevant fields are IDs and ___." | assigned rooms | The stated examination task needs the room assignment, not unrelated records.
 Coordinator: "The medical notes should be ___." | excluded | Medical notes are not needed for the narrowly defined task in this scenario.
 Officer: "The required approval remains ___." | pending | The brief states that the records owner has not yet approved release.
-Coordinator: "A prepared list must not yet be ___." | released | Preparation does not replace the required authorization before disclosure.'''))
+Coordinator: "A prepared list must not yet be ___." | released | Preparation does not replace the required authorization before disclosure.''',
+    rehearsal=['Read turns 1-8, making the two permitted fields and named recipients easy to hear.', 'Repeat turns 11-16, distinguishing removal of names, access expiry, and record retention.', 'Switch roles for the transfer; stress prepared and released as different stages.']))
 
 
 BOOK['units'].append(unit(
@@ -620,7 +626,7 @@ Unassigned | No accountable owner has yet been designated.
 Evidence | Must support the particular claim being made.
 Effective | Concerns results, not merely the existence of a process.
 Accredited | A status determined through the applicable external process.''',
-    d='''Which headline accurately reports progress? | "Three actions complete; one underway; one unassigned." | "The entire improvement plan is complete." | "Four actions complete because one has started." | "No actions have any evidence." | The first statement preserves all three status categories supplied in the brief.
+    d='''Which headline accurately reports progress? | "Three actions complete; one underway; one unassigned." | "The entire improvement plan is complete." | "Four actions complete because one has started." | "No actions have any evidence." | The correct statement preserves all three status categories supplied in the brief.
 What should the director decide about Action 5? | Assign an owner and deadline, without falsely marking it complete. | Declare completion because the review is approaching. | Delete it silently from the denominator. | Transfer accreditation authority to the action owner. | The missing ownership and timing need a decision, while completion remains unsupported.
 Which evidence would address effectiveness rather than mere completion? | A suitable evaluation of whether the actions improved the intended outcomes | A copy of the action-plan title page | A statement that the deadline is approaching | An email saying the plan looks professional | Effectiveness concerns the intended result, which requires appropriate outcome evidence rather than presentation or scheduling.
 What does the October 15 date represent? | The internal review submission deadline | A guaranteed accreditation award | Proof that every action is effective | The recorded completion date for Action 5 | The brief assigns October 15 to internal submission, not external recognition or outcome proof.''',
@@ -636,11 +642,11 @@ Hugh | For the three closed actions, where should we point reviewers? The narrat
 Amara | Link them through the [[evidence register::The evidence register connects each completion claim with its supporting record so reviewers can verify the stated status.]]. Each claim should lead to the relevant approved record. A persuasive summary still needs a traceable basis, not just a confident description.
 Hugh | One colleague wants to say these completed actions have improved student learning. The work is real, but I have not seen an outcome evaluation yet.
 Amara | Then [[effectiveness::Effectiveness concerns whether intended results were achieved, which has not been established by the supplied completion evidence.]] is not established. We can say the actions were completed, while stating that outcome evaluation remains outstanding. Doing the work and showing its effect are different claims.
-Hugh | Could we report the number of revised documents as the outcome? It would be easy to count, although the intended result is better learning.
+Hugh | We can count the revised documents now. Would that belong in the completion column rather than the learning-results column?
 Amara | That count describes an output, not the intended [[outcome measure::The outcome measure should address the result sought, rather than substitute a convenient count of revised documents.]]. We need suitable evidence about the learning result. A convenient administrative count should not quietly replace the purpose of the improvement.
 Hugh | The internal submission will therefore show sixty percent complete, the October tenth action still underway, and the unassigned action needing a decision.
 Amara | Include the remaining [[evidence gap::The evidence gap concerns missing support for outcome effectiveness as well as the unfinished action, and should remain visible.]] about outcomes too. Reviewers need to distinguish an incomplete action from an action completed without an evaluated result. Those require different follow-up work.
-Hugh | I also noticed a heading saying accreditation achieved. This is our internal program review, and no external body has made that decision.
+Hugh | There is another problem on the cover: accreditation achieved. Can we change that to internal action-plan update before this goes out?
 Amara | Remove that claim. The relevant [[decision authority::The decision authority for accreditation is distinct from the team preparing an internal progress report.]] determines accreditation status through its process. Our action-plan update cannot confer an external status or predict the outcome of a future review.
 Hugh | I will request an owner and date for Action Five today, keep the existing deadline for Action Four, and make the evidence links explicit.
 Amara | Then schedule a [[follow-up review::The follow-up review checks unresolved actions and outcome evidence rather than treating submission of the current report as completion of all work.]]. The October fifteenth submission should honestly show what is verified, what remains open, and which decisions are needed next, without overstating completion or results.''',
@@ -649,7 +655,8 @@ Amara | Then schedule a [[follow-up review::The follow-up review checks unresolv
     transfer='''Coordinator: "The completed-action count is ___." | five | Only the five actions with approved completion evidence are counted as complete.
 Director: "The completion rate is ___ percent." | 62.5 | Five divided by eight equals sixty-two point five percent.
 Coordinator: "The action without an owner is ___." | unassigned | Unassigned describes the missing accountability, not completed or underway work.
-Director: "External accreditation is ___." | not confirmed | The brief states that no external accreditation decision has been issued.'''))
+Director: "External accreditation is ___." | not confirmed | The brief states that no external accreditation decision has been issued.''',
+    rehearsal=['Read turns 1-8, stressing sixty percent and the distinction between underway and complete.', 'Repeat turns 11-18, separating outputs, outcomes, and accreditation status.', 'Switch roles for the transfer; read 62.5 percent aloud and check its explanation.']))
 
 BOOK['units'].append(unit(
     title='Budget, Staffing, and Institutional Priorities',
@@ -723,11 +730,11 @@ Elise | We have five thousand uncommitted dollars. Please state the remaining am
 Kiran | The [[budget headroom::Budget headroom is the two hundred dollars remaining after subtracting the stated cost from the uncommitted budget.]] is two hundred dollars. Five thousand minus four thousand eight hundred leaves that amount. The option fits the supplied budget, although fitting it does not authorize spending.
 Elise | Good. Funding approval is still pending. We should not tell the temporary teacher that the appointment is confirmed while the decision is unresolved.
 Kiran | Exactly. [[Funding approval::Funding approval is the authorization still needed before a commitment, separate from available funds and operational readiness.]] remains a decision condition. We can recommend the option and describe readiness, but we must keep the appointment unconfirmed until the authorized decision is made.
-Elise | How should we explain Option A fairly? I do not want colleagues to think that no new charge means we are hiding an unquantified financial bill.
+Elise | Let us keep no additional staffing charge in the comparison, but put the lost tutoring hours right beside it. That is the actual choice.
 Kiran | State the [[service trade-off::The service trade-off is the loss of four weekly tutoring hours; the brief does not assign that loss a dollar value.]] in its own terms: four tutoring hours are lost each week. The brief does not price that loss. We should neither ignore it nor invent a dollar equivalent.
 Elise | Then Option B meets the tutoring priority more closely, while Option A reduces that service. Both add the same twenty places and fit the practical timetable.
 Kiran | That supports the [[staffing business case::The staffing business case connects the recommendation to cost, capacity, feasibility, and the stated institutional priority.]] for Option B. The recommendation follows the supplied priority and facts, not a general claim that temporary staffing is always better than using existing staff.
-Elise | We also need a separate statement about the four learners who remain waiting. Approving this class does not decide what happens to them next.
+Elise | Before families hear about an extra class, the message needs to say twenty places, not twenty-four. What happens to the remaining four is still unresolved.
 Kiran | Keep that [[unmet demand::Unmet demand is the remaining need not covered by the new class, here four learners still awaiting places.]] visible. The proposal adds capacity without resolving every request. Any further provision would need its own feasible plan and authorization rather than being implied by this decision.
 Elise | The final paragraph should ask for the exact approval needed, state the full cost, and make clear that tutoring is preserved under the recommended option.
 Kiran | I will connect it to the [[institutional priority::The institutional priority is the supplied objective of preserving tutoring while adding capacity, which justifies the choice between otherwise feasible options.]] and record the two hundred dollars remaining. We should also state the capacity limit so the budget decision is not confused with a promise to all families.
@@ -738,4 +745,5 @@ Kiran | I will state those [[decision conditions::Decision conditions define wha
     transfer='''Manager: "The remaining waiting-list count would be ___." | four | Twenty-two waiting learners minus eighteen new places leaves four without a place.
 Principal: "The remaining budget would be ___ dollars." | 400 | Four thousand dollars minus three thousand six hundred leaves four hundred.
 Manager: "Existing tutoring would be ___." | preserved | The supplied temporary-support option does not reallocate current tutoring hours.
-Principal: "The spending decision remains ___." | pending | Available funds and staffing do not replace the outstanding authorization.'''))
+Principal: "The spending decision remains ___." | pending | Available funds and staffing do not replace the outstanding authorization.''',
+    rehearsal=['Read turns 1-8, giving a clear pause before the four learners still waiting and the $200 remaining.', 'Repeat turns 9-14, distinguishing a budget balance from spending authorization.', 'Switch roles for the transfer; read the $400 headroom separately from the four remaining learners.']))

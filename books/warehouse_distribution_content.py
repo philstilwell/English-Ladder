@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Material Recording Clerks.',
              url='https://www.bls.gov/ooh/office-and-administrative-support/material-recording-clerks.htm',
-             note='Occupational context for shipment records, package checks, stock information, and inventory discrepancies. All teaching cases and conversations are original and fictional.', checked='1 October 2026'),
-        dict(title='Microsoft Learn. Unit of Measure and Stocking Policies.',
+             note='Occupational context for shipment records, package checks, stock information, and inventory discrepancies. All teaching cases and conversations are original and fictional.', checked='10 October 2026'),
+        dict(title='Microsoft Learn. Set Up Unit Sequence Groups.',
              url='https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/unit-measure-stocking-policies',
-             note='Terminology background for product-specific relationships between individual units, boxes, and pallets. The book does not teach Microsoft system setup or prescribe a universal pack size.', checked='1 October 2026'),
+             note='Terminology background for product-specific relationships between individual units, boxes, and pallets. The book does not teach Microsoft system setup or prescribe a universal pack size.', checked='10 October 2026'),
         dict(title='Microsoft Learn. Cycle Counting.',
              url='https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting',
-             note='Context for distinguishing physical inventory counts from review of differences. Fictional approval limits and handoffs are not instructions for operating a particular warehouse system.', checked='1 October 2026'),
+             note='Context for distinguishing physical inventory counts from review of differences. Fictional approval limits and handoffs are not instructions for operating a particular warehouse system.', checked='10 October 2026'),
         dict(title='Occupational Safety and Health Administration. Warehousing: Hazards and Solutions.',
              url='https://www.osha.gov/warehousing/hazards-solutions',
-             note='Safety context for separating communication practice from actual site training, equipment use, and handling procedures. The dialogues do not provide operational safety certification.', checked='1 October 2026'),
+             note='Safety context for separating communication practice from actual site training, equipment use, and handling procedures. The dialogues do not provide operational safety certification.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -79,26 +79,27 @@ reconciliation | Comparison of records and actual figures to explain differences
 Which figure describes the variance? | Two cartons over the order. | Two cartons short of the order. | Twenty-two cartons over the order. | No difference because labels match. | Twenty-two observed minus twenty expected gives an excess of two cartons.
 Which action exceeds Nia's authority? | Approving the order change to twenty-two. | Flagging the extra quantity. | Stating that labels match. | Asking for a supplier explanation. | The brief explicitly denies authority to approve an order amendment.
 Which conclusion does not follow from the labels? | The additional quantity is approved for payment and release. | The observed labels match the ordered item. | Quantity review is still needed. | The original order remains twenty cartons. | Identity information alone establishes neither payment approval nor stock-release permission.''',
-    dialogue='''Nia | Ben, I have a quantity exception on purchase order 740. The order expects twenty cartons, but I have counted twenty-two at receiving.
-Ben | That is an [[overage::Overage describes the two-carton excess above the twenty cartons expected on purchase order 740.]] of two cartons. Before we ask about the additional quantity, do the item labels match what the order actually names?
-Nia | Yes, the labels match the ordered item. The problem is the number of cartons, not a different product reference on the labels.
-Ben | Keep that [[item match::Item match concerns product identity; it does not settle whether the additional quantity was ordered or approved.]] in the report, but do not let it hide the quantity exception. We need both facts together.
-Nia | Has the supplier explained why there are two extra? I do not want to assume they are free stock or part of an approved change.
-Ben | No [[supplier explanation::Supplier explanation is absent, so the reason for the two extra cartons remains unknown.]] has been received. We should not describe the extras as a bonus, replacement stock, or an agreed increase without evidence.
-Nia | Then I will flag twenty expected and twenty-two counted. Should the original order stay at twenty while that question is reviewed?
-Ben | Yes. The [[expected quantity::Expected quantity remains twenty cartons, preserving the original comparison basis rather than changing it to match arrival.]] is still twenty. Changing the order to fit the arrival would conceal the difference we need to resolve.
-Nia | I can report the count, but I cannot approve an order amendment. I want that limit clear before someone treats my entry as approval.
-Ben | That [[approval limit::Approval limit prevents the receiving clerk's count from being treated as authority to alter the purchase order.]] matters. This conversation does not authorize you to increase the purchase order or decide what should happen to the additional cartons.
-Nia | Good. I also want to avoid saying that we received twenty-two and leaving everyone to infer that we accepted and paid for all twenty-two.
-Ben | State the [[received count::Received count here means twenty-two physically counted cartons, not automatic quantity acceptance or payment approval.]] as a physical count, with acceptance unresolved. If a local status label means something more, use the actual receiving process carefully.
-Nia | So the report should not suggest that matching labels authorize the extra quantity for use, either. The cartons are here, but that is a separate issue.
-Ben | Correct. [[Stock release::Stock release is a separate authorization; matching item labels and physical presence do not supply it.]] is not established by the count alone. We are documenting the discrepancy and routing it for the appropriate decision.
-Nia | Let me read back the message: purchase order 740 expects twenty cartons, twenty-two are present, and their item labels match the ordered product.
-Ben | Add that the [[quantity variance::Quantity variance is the two-carton excess, whose cause and treatment still require review.]] is two cartons over, with no supplier explanation yet. That gives the next person a precise question to follow up.
-Nia | I will include that. No change to the ordered quantity, no claim that the extras are free, and no payment or release approval.
-Ben | Exactly. An [[order amendment::Order amendment would require authorization that has not been given; reporting the overage is not that approval.]] has not been approved. We can keep the original order visible while the additional quantity is reviewed.
-Nia | That is clear. I will flag the overage to you with both counts and the matching-label detail, rather than just saying the delivery looks fine.
-Ben | Thank you. That starts the [[reconciliation::Reconciliation compares the order and physical count to resolve the difference without inventing its cause or outcome.]] with reliable facts. The extra two cartons still need an explanation and an authorized decision.''',
+    dialogue='''Nia | Ben, can you check PO 740 with me? It calls for twenty cartons. I've counted twenty-two, and the item labels match.
+Ben | So we're two over. I'll log an [[overage::Overage names the two cartons above the order's twenty, not the total quantity received.]], with the product match noted separately. Have we heard from the supplier?
+Nia | Not yet. Could these be extras from an earlier shortage? I don't have anything linking them to another order.
+Ben | Then we need a [[supplier explanation::The supplier has not explained the extra cartons; a possible earlier shortage is not an established cause.]]. Don't put replacement stock in the note unless that is actually confirmed.
+Nia | All right. I'll leave the ordered figure at twenty. I don't want my count to make it look as though we'd ordered twenty-two.
+Ben | Keep the [[expected quantity::The expected quantity remains twenty, so the original order can still be compared with the physical count.]] unchanged. The discrepancy would disappear on paper if we quietly increased the order to match the truck.
+Nia | My receiving note can say twenty-two physically counted, but that sounds different from accepting twenty-two. Which wording do you need?
+Ben | Say [[received count::Received count describes the physical observation of twenty-two cartons, without approving their acceptance or payment.]] and make the unresolved acceptance clear. Use our actual status fields; don't select a status that approves more than you've checked.
+Nia | The labels are right, at least. I'll put that beside the count instead of describing the whole delivery as correct.
+Ben | Yes, the [[item match::The labels match the ordered product, but that does not resolve whether the additional quantity is accepted.]] tells us which product arrived. It doesn't answer what to do with the two extra cartons.
+Nia | Can I amend the order once you've seen the count, or does that still go through the approval process?
+Ben | An [[order amendment::Changing the purchase order requires authorization; Ben's review of a count does not itself provide that approval.]] still needs authorization. Neither this call nor the matching labels gives you that authority.
+Nia | Understood. I'll flag it to you. I haven't agreed to pay for the extras or made them available for use.
+Ben | Good. [[Stock release::Stock release is a separate authorization and is not established by reporting that cartons are physically present.]] remains a separate decision. Keep that separate from the quantity record so the next shift doesn't assume they're cleared.
+Nia | For the summary, should I say plus two cartons, rather than simply twenty-two? Both numbers seem useful.
+Ben | Include both. The [[quantity variance::The variance is positive two cartons: twenty-two counted minus twenty ordered.]] is plus two, against twenty ordered and twenty-two counted. That makes the comparison clear.
+Nia | I'll send that with PO 740 and the label match. The supplier's explanation is still the open question.
+Ben | And retain your [[approval limit::Nia can report the discrepancy but cannot approve an order change, payment, or release through this conversation.]] in the handoff. Someone reviewing the note needs to know what has not been authorized.
+Nia | Read-back: twenty ordered, twenty-two counted, labels matching, two over. No explanation yet and no approved order change.
+Ben | That's enough to start [[reconciliation::Reconciliation compares the order with the count and follows up the difference without erasing the original figures.]]. I'll take the discrepancy for review; don't describe it as resolved before we have the answer.''',
+    rehearsal=["Read the two quantities with their labels: twenty ordered and twenty-two counted.","Repeat the two-carton overage and the separate item-label match.","Read the closing handoff without changing the original order or approving payment."],
     transfer_title='Flag another inbound overage',
     transfer_setup='Purchase order 851 expects twelve cartons. Receiving counts fifteen with matching item labels. The extra quantity is unexplained, and the clerk cannot approve an order change.',
     transfer='''Clerk: "The order expects ___ cartons." | twelve | Twelve is the unchanged purchase-order quantity used as the reference.
@@ -140,36 +141,37 @@ assigned location | Storage position shown for an item in the relevant record. |
 observed stock | Goods actually seen at the location. | describe the observed stock
 picking error | Selection of an incorrect item or quantity. | prevent a picking error
 location correction | Authorized change to inaccurate location information. | request a location correction
-verification request | Request to check conflicting facts before proceeding. | raise a verification request
-inventory clerk | Worker maintaining and checking stock records. | contact the inventory clerk''',
+SSCC | Serial Shipping Container Code: an 18-digit GS1 identifier for a logistic unit, such as one pallet. | verify the full SSCC
+GTIN | Global Trade Item Number identifying a trade item, not a unique pallet shipment instance. | distinguish the GTIN from the SSCC''',
     precision='BK-14-B is the requested blue-folder item; BK-14-G is the green-folder item observed at A12. The bin sign and stock label conflict. Neither their similarity nor the shared location authorizes substituting the green folders.',
     precision_extra='The mismatch alone does not establish a bad putaway, a wrong sign, or a missing-blue-stock location. Read back both full codes and A12, then request the record check. Do not make an unapproved move or label change to force agreement.',
     phrases='''State the requirement | I need BK-14-B, blue folders.\nName the location | I am checking bin A12.\nRead the sign | The bin sign says BK-14-B.\nRead the stock | The stock label says BK-14-G.\nClarify the differing letter | B as in blue, not G as in green.\nReport the conflict | The sign and the actual stock label disagree.\nAvoid a substitution | Green folders are not the requested item.\nAsk for the record | Can you check the putaway record?\nKeep the cause unknown | I do not yet know why the green folders are here.\nKeep location unknown | We have not established where the blue folders are.\nAvoid a false correction | No bin-sign change has been approved.\nAvoid an unapproved move | I will not move the stock based on a guess.\nPreserve both codes | Please keep BK-14-B and BK-14-G separate in the note.\nConfirm the next owner | I will check the record for A12.\nDistinguish checking and approval | A record check is not permission to substitute.\nClose the clarification | The item mismatch remains open pending verification.''',
     notes='''B as in blue | Clarifies the code suffix using the relevant product color.\nSays versus contains | The sign's wording and the location's physical contents are separate observations.\nAssigned versus observed | A recorded location assignment is not proof of the goods currently present.\nSimilar versus identical | A one-letter difference can identify a different product variant.\nWhy versus where | The cause of the mismatch and the location of the correct stock are separate questions.\nCheck versus change | Looking at a record does not authorize a stock move or label amendment.''',
     d='''Which message is precise? | A12 sign says BK-14-B; stock says BK-14-G. | A12 has the right item because the sign says so. | The two codes mean the same thing. | The blue folders are definitely in the next bin. | The precise message preserves both conflicting identifiers and the relevant location.
-Which clarification targets the code difference? | B as in blue, not G as in green. | Just take whichever ends in a letter. | Both begin BK, so they match. | Ignore the suffix when the location agrees. | The final letter distinguishes the requested blue variant from the observed green variant.
+Which clarification targets the code difference? | B as in blue, not G as in green. | B as in blue, not B as in the bin location. | BK-14, with the color suffix omitted. | A12 as the requested product code. | The final letter distinguishes the requested blue variant from the observed green variant.
 Which claim lacks evidence? | A specific worker put the stock away incorrectly. | The bin sign and stock label disagree. | Mei can check the putaway record. | No substitution is approved. | The observed mismatch does not identify a cause or responsible worker.
-Which next step matches the authority supplied? | Mei checks the putaway record. | Luis silently substitutes green folders. | Luis changes the bin sign immediately. | Both codes are merged into one item. | The available next step is verification, not an unapproved movement or record change.''',
-    dialogue='''Luis | Mei, I have a mismatch at A12. I need BK-14-B, the blue folders, but the stock label in the bin reads BK-14-G.
+Which next step matches the authority supplied? | Mei checks the putaway record. | Luis silently substitutes green folders. | Luis changes the bin sign immediately. | The stock label is changed to match the bin sign. | The available next step is verification, not an unapproved movement or record change.''',
+    dialogue='''Luis | Mei, can you check A12? I need blue folders, BK-14-B, but the stock here says BK-14-G.
 Mei | Let us separate the [[bin sign::Bin sign identifies the location's displayed assignment, which must be compared with the different stock label.]] from the stock label. What does the sign at A12 say, and what color are the folders you actually see?
-Luis | The sign says BK-14-B. The stock is green folders labelled BK-14-G. The last letter differs, although the rest of the code looks alike.
+Luis | The sign says B, blue. The stock says G, green. It's just that last letter, but it changes the item.
 Mei | Then the [[color variant::Color variant distinguishes blue folders from green folders; similarity of the other code characters does not make them interchangeable.]] is different. You need B as in blue, while the stock label has G as in green.
-Luis | Correct. I have not picked the green folders as a replacement. I wanted the mismatch checked before treating this bin as the right stock.
+Luis | I haven't picked the green ones. Can you check how they were put away before we go any further?
 Mei | Good. An unapproved [[substitution::Substitution would replace the requested blue folders with green ones, which this location mismatch does not authorize.]] would not resolve the issue. I can check the putaway record to see what information we have for A12.
-Luis | Could the sign be wrong, or could the wrong folders have been put there? I do not have evidence to choose between those explanations.
+Luis | Could be the sign or the stock location. I don't know which, and I don't want to blame the last putaway without checking.
 Mei | The [[putaway record::Putaway record may help establish what was placed in A12; it must be checked rather than assumed to prove a cause.]] is a useful next check. We should not assign a cause simply because the sign and the goods disagree.
-Luis | Please do not record the blue folders as missing from the whole warehouse. I only know that the stock I see here is green.
+Luis | Please don't mark the blue folders missing everywhere. I've only checked what is in A12.
 Mei | Agreed. This is a [[location mismatch::Location mismatch describes the observed conflict at A12 without establishing warehouse-wide absence or the correct item's location.]] at A12. We have not established where the blue folders are or why the green folders are in this bin.
-Luis | I will keep the location in the message. A code alone might send someone to another aisle and leave the same problem here.
+Luis | I'll include A12. Just sending the two codes wouldn't tell you where I found the mismatch.
 Mei | Include a complete [[read-back::Read-back repeats the two full item codes and the bin so the verification request cannot collapse them into one.]]: requested BK-14-B, sign BK-14-B, observed stock BK-14-G, location A12. That gives us the exact conflict.
-Luis | That matches. Is there any approval to move the green folders or change the sign while you check the record?
+Luis | That's right. Am I authorized to move anything or change the sign while you're checking?
 Mei | No [[stock move::Stock move is a separate action requiring authorization; the record-checking conversation does not approve it.]] has been approved, and no sign change has been approved either. A check is not permission to make the records agree by changing something.
-Luis | Understood. I will report what is there rather than trying to fix the location from memory. The codes are too similar to guess.
+Luis | Understood. I'll leave the correction to the proper process and report the labels as they are.
 Mei | Yes. The [[suffix::Suffix is the final B or G, the small code difference that identifies different folder colors.]] matters even when the rest of the code is identical. A familiar-looking reference is not enough to confirm the requested variant.
-Luis | So you will review the record, and the pick remains unresolved until the correct stock information is verified. No green-folder replacement is agreed.
+Luis | You'll check the record, then. I still don't have confirmed blue stock for this pick.
 Mei | Correct. I own the [[verification request::Verification request assigns the record check while leaving the stock identity conflict and pick unresolved.]]. I will check the putaway information without claiming that it has already located the blue folders.
-Luis | Let me repeat the essential point: A12 is signed for blue BK-14-B, but its observed stock is green BK-14-G.
+Luis | Final read-back: A12 sign, BK-14-B blue; actual stock, BK-14-G green. Both codes stay in the note.
 Mei | Exactly. Keep the [[observed stock::Observed stock is the green BK-14-G actually seen, distinct from the bin's assigned blue-item description.]] distinct from the assigned location information. No substitution, move, or relabeling is approved by this discussion.''',
+    rehearsal=["Read both complete item codes, then stress B as in blue and G as in green.","Repeat the sign, observed stock, and A12 location as three separate facts.","Read Mei's record-check commitment without claiming a substitute or stock move."],
     transfer_title='Clarify a different variant mismatch',
     transfer_setup='Bin C08 is signed for BX-20-R, red binders. The stock label reads BX-20-Y, yellow binders. Red is requested. Jo can check the putaway record; no move or substitution is approved.',
     transfer='''Picker: "The requested item is ___." | BX-20-R | BX-20-R identifies the requested red binders, not the yellow variant.
@@ -221,26 +223,27 @@ quantity correction | Amendment of an incorrect interpretation or recorded quant
 How many trays would six cases contain? | Thirty-six | Six | Twelve | One | Six cases multiplied by six trays per case gives thirty-six trays.
 How many excess trays would the mistaken six-case pick contain? | Thirty | Six | Thirty-six | Five | Thirty-six trays minus the six requested trays gives thirty excess trays.
 Which statement wrongly generalizes the pack size? | Every product in the warehouse has six units per case. | This item has six trays per case. | Another item's case pack needs checking. | S18 requests six individual trays. | The supplied conversion applies to this tray item, not every warehouse product.''',
-    dialogue='''Omar | I have S18 here. It says six for the storage trays, so I was preparing to treat that as six cases. Can you confirm?
-Asha | Let us read the [[unit of measure::Unit of measure determines what six counts; the ticket specifies individual units rather than cases.]] beside the number. The ticket says six each, which means six individual trays rather than six cases.
-Omar | I missed the each part. I saw six and assumed the case was the unit. How many trays are in a standard case of this item?
-Asha | The [[case pack::Case pack is six trays in one standard case for this particular item.]] is six trays. That is the stated pack size for this tray item, so one case contains six individual units.
-Omar | Then the requested six trays equal one case, not six cases. I want to make sure I have the conversion the right way around.
-Asha | Yes. The [[case equivalent::Case equivalent is one case, calculated by dividing six requested trays by six trays per case.]] is one: six requested trays divided by six trays per case. The required total stays at six trays.
-Omar | If I had used six cases, I would have multiplied six cases by six trays. That would have given thirty-six trays in total.
-Asha | Correct. Those [[total units::Total units for six cases would be thirty-six, which exceeds the requested six individual trays.]] would be thirty-six, not six. The number on the ticket cannot be interpreted without its accompanying unit.
-Omar | And thirty-six is thirty more than the order asks for. It is a much bigger difference than simply using a different word on the ticket.
-Asha | That would be an [[overpick::Overpick means selecting more than requested; the mistaken six-case interpretation would add thirty excess trays.]] of thirty trays. Clarifying the unit now prevents the wrong quantity from being treated as the intended order.
-Omar | Does this mean each always corresponds to one sixth of a case in our warehouse, or only for this tray product?
-Asha | Only this [[product-specific conversion::Product-specific conversion applies the stated six-tray case pack to this item, not all warehouse products.]] is supplied. Other products can have different pack sizes, so you must check their actual unit relationships separately.
-Omar | Understood. I should not carry the six-per-case assumption over to a different tray style or another product just because its packaging looks similar.
-Asha | Exactly. Confirm the [[pack size::Pack size is the verified number in the relevant package, which cannot be inferred from similar appearance.]] for the actual item. Similar boxes do not establish identical quantities inside them.
-Omar | Let me read it back: S18 requests six individual storage trays. This product has six per case, giving one standard case equivalent.
-Asha | That [[quantity read-back::Quantity read-back repeats both the requested six individual trays and the one-case equivalent to prevent renewed ambiguity.]] is correct. Keep both the total and the unit in the message, rather than just saying take one or take six.
-Omar | We have clarified the quantity, but we have not said that the picking work or dispatch has already been completed. Is that distinction important here?
-Asha | Yes. [[Pick confirmation::Pick confirmation would record completed picking; resolving the arithmetic does not establish that the work has occurred.]] belongs to the actual completion process. Our calculation is not evidence that the goods have been picked, packed, or sent.
-Omar | Good. I will correct my interpretation of the ticket without describing it as a new order for six cases.
-Asha | Right. The [[requested quantity::Requested quantity remains the original six trays; the correction fixes interpretation rather than increasing the order.]] has not changed. S18 is six trays total, equivalent to one standard case of this particular item.''',
+    dialogue='''Omar | Asha, can you check this before I confirm the pick? S18 says six, and I was about to read that as six cases.
+Asha | Read the [[unit of measure::The unit beside six is each, so the requested quantity is six individual trays rather than six cases.]] beside it. It's six each: six individual trays. The number alone isn't the instruction.
+Omar | You're right; I skipped each. What is the pack for this tray? I need the conversion for this item, not the last one I picked.
+Asha | Its [[case pack::This particular storage-tray item contains six trays per standard case, as stated in the briefing.]] is six trays. One standard case contains the complete six-tray quantity on S18.
+Omar | Then the case count is one. Six trays required, divided by six trays in a case. Have I got that the right way round?
+Asha | Yes, the [[case equivalent::Six requested trays divided by six trays per case gives one case equivalent, without changing the requested total.]] is one. Say six trays total as well, so nobody hears one and assumes you mean one tray.
+Omar | If I'd taken six cases, I'd have thirty-six trays. I was multiplying the request instead of converting it.
+Asha | Those would be the [[total units::Six cases multiplied by six trays per case produces thirty-six individual trays, not the six requested.]] in the mistaken pick. Thirty-six is thirty above what this ticket asks for.
+Omar | So the excess would be thirty trays, not five. Five is the difference in cases, using this particular case pack.
+Asha | Exactly. An [[overpick::An overpick is a quantity above the request; here the proposed six cases would exceed demand by thirty trays.]] needs its unit stated too. Five extra cases and thirty extra trays describe the same excess here.
+Omar | I shouldn't use six per case for the folders on my next ticket, though. Their cartons look similar.
+Asha | No. This is a [[product-specific conversion::The six-tray relationship belongs to this item; it does not establish a conversion for folders or other products.]]. The folder pack must come from the folder record, not the appearance of its carton.
+Omar | What about another size of tray? Same product family, different item code. I'd check that separately as well.
+Asha | Yes, confirm the [[pack size::Pack size is the quantity inside the actual item's package, which can differ between variants and products.]] for the exact item. A different variant may have a different quantity per case.
+Omar | Let me try the radio message: S18, six storage trays each, one standard case equivalent. No pick confirmation yet.
+Asha | That [[quantity read-back::The read-back preserves the six individual trays and one-case equivalent while keeping picking status explicit.]] is clear. I'd say six individual trays rather than six trays each, which can sound awkward.
+Omar | Six individual trays total. Thanks. We've corrected my reading, but I haven't said the stock has been picked or sent.
+Asha | Right. [[Pick confirmation::Pick confirmation records actual completed picking; a correct conversion alone does not establish that completion.]] belongs to the actual work record. The calculation cannot stand in for it.
+Omar | I'll use the corrected quantity in the proper picking process. I won't change the order to six cases just because that was my first reading.
+Asha | Good. The [[requested quantity::S18 still requests six individual trays; the conversation corrects an interpretation rather than amending demand.]] remains six trays. We caught the unit error before calling the pick complete.''',
+    rehearsal=["Read six individual trays and one standard case equivalent.","Contrast thirty-six trays with six requested; say thirty excess trays, not five trays.","Read the pick-confirmation exchange without claiming the goods have been picked."],
     transfer_title='Convert a different pack size',
     transfer_setup='Pick ticket T29 requests twelve each of a folder. This item has four folders per standard case. A coworker misreads the request as twelve cases. No picking work has yet been confirmed.',
     transfer='''Picker: "The order requests twelve individual ___." | folders | Each refers to individual folders, not full cases of folders.
@@ -281,9 +284,9 @@ order cutoff | Latest stated time relevant to processing the order. | state the 
 fulfillment commitment | Promise to supply the required order under stated conditions. | avoid an unsupported fulfillment commitment
 timing estimate | Provisional expectation for when work may be completed. | request a timing estimate
 demand | Quantity needed by orders or other requirements. | review competing demand
-priority review | Assessment of how a task should be handled relative to others. | request a priority review
+FEFO | First-expire, first-out: prioritizing eligible stock by expiry rather than receipt date. | apply FEFO to eligible batches
 availability check | Verification of stock usable for the specific requirement. | complete an availability check
-replenishment desk | Team or contact coordinating pick-location stock supply. | contact the replenishment desk''',
+remaining shelf life | Time between the relevant delivery date and expiry, assessed against customer requirements. | check remaining shelf life''',
     precision='D55 needs ten baskets and B04 has four, so the location is six short. Twelve shown in reserve is a possible source to investigate, not proof that six can be allocated and replenished in time for 15:00.',
     precision_extra='On-hand, reserved, allocated, released, and available may describe different inventory states. Use the actual system definitions. A short pick at one location does not prove a warehouse-wide stockout, and a replenishment request does not prove movement has occurred.',
     phrases='''Identify the demand | D55 needs ten baskets.\nName the location | The pick face is B04.\nState the observed quantity | There are four baskets at B04.\nCalculate the shortfall | We are six short at the pick face.\nState the system figure | The system lists twelve in reserve.\nPreserve the uncertainty | Allocation and availability have not been checked.\nAvoid promising the reserve | I cannot say those twelve are free for D55.\nAsk for review | Can the replenishment desk review the requirement?\nKeep the cutoff visible | The order cutoff is 15:00.\nAvoid a timing promise | We do not yet have a confirmed replenishment time.\nLimit the shortage claim | This is a B04 shortfall, not a confirmed warehouse-wide stockout.\nSeparate request and movement | The request does not mean the stock has moved.\nConfirm the needed amount | Six more baskets would meet the ten-basket requirement.\nPreserve the order reference | Keep the review attached to D55.\nAvoid automatic priority | The cutoff needs review, not an invented priority approval.\nClose with next checks | We need allocation, availability, and timing checked before promising fulfillment.''',
@@ -292,26 +295,27 @@ replenishment desk | Team or contact coordinating pick-location stock supply. | 
 How many additional baskets are needed at the pick face? | Six | Four | Ten | Twelve | Ten required minus four present leaves a six-basket shortfall.
 Which claim is unsupported? | All twelve reserve baskets are available for D55. | Allocation needs checking. | Four baskets are at B04. | The cutoff is 15:00. | The reserve figure has not been checked for allocation or actual availability to this order.
 What must happen before a supported completion promise? | Review stock allocation, availability, and replenishment timing. | Repeat the system total confidently. | Assume a request completes movement. | Remove the cutoff from the message. | Quantity in reserve alone does not establish usable stock or arrival at the pick face in time.''',
-    dialogue='''Elena | Dev, D55 needs ten baskets, but I have only four at B04. I need to flag the shortfall before the 15:00 cutoff.
+    dialogue='''Elena | Dev, D55 is short at B04: ten baskets needed, four here. The cutoff is fifteen hundred.
 Dev | You are six short at the [[pick face::Pick face is B04, where four baskets are present against the order requirement of ten.]]. Does the system show any reserve stock for the same item, and has its availability been checked?
-Elena | It lists twelve in reserve, but I have not checked allocation or availability. I do not want to say those twelve are free for this order.
+Elena | Twelve shown in reserve, but I haven't checked whether they're allocated. I can't say they're free for us.
 Dev | Keep that distinction. The [[system quantity::System quantity is the twelve shown in reserve, not verified stock available to D55.]] is a possible source for review, not confirmation that the stock can be assigned and brought to B04.
-Elena | So the message should say ten required, four at B04, six short, and twelve in reserve still needing checks. Is that enough to start?
+Elena | Then I'll report ten needed, four here, six short, twelve in reserve unchecked. What else do you need?
 Dev | Include the [[order cutoff::Order cutoff is fifteen hundred and must accompany the request without being turned into a completion promise.]] of 15:00 as well. That tells us why timing matters without claiming that replenishment can definitely meet it.
-Elena | I will include D55 and the item details. I do not want the desk to replenish a similar basket while the correct order remains short.
+Elena | I'll include D55 and the exact item, so we don't get a different basket sent to B04.
 Dev | Right. A [[replenishment request::Replenishment request starts review of supplying the correct stock to B04; it is not a completed movement.]] needs the exact demand and location. Raising it does not mean a replenishment task has already been completed.
-Elena | Could some of the reserve stock already belong to another order? I have only the displayed total, not the information behind it.
+Elena | Could those twelve already be committed? I can see the balance, not the allocation detail.
 Dev | That is why [[allocation::Allocation identifies stock assigned to particular demand and must be checked before assuming the reserve is free.]] needs checking. Twelve on the screen does not necessarily mean twelve uncommitted baskets for D55.
-Elena | Understood. I should not tell packing that ten will definitely be ready, even though twelve sounds more than enough to cover six.
+Elena | So I can't tell packing we'll have ten in time just because twelve appears on the screen.
 Dev | Correct. We need an [[availability check::Availability check establishes usable stock for the specific order rather than relying only on a reserve balance.]] for this requirement, followed by a realistic timing assessment. The arithmetic alone does not supply those results.
-Elena | I also should not call this a warehouse-wide stockout. I have observed a shortage at B04, not checked every possible source.
+Elena | I won't call it a warehouse-wide stockout, either. My count is only for B04.
 Dev | Exactly. It is a [[location shortfall::Location shortfall limits the observed problem to B04 and avoids an unsupported claim about all warehouse stock.]] of six baskets. We should not expand that into a claim that no baskets are available anywhere in the warehouse.
-Elena | If six more become available at B04, that would make ten and meet the quantity. But we still need the stock and timing confirmed.
+Elena | Six more at B04 would cover the quantity. We still need to know if those six can get here in time.
 Dev | Yes. Any [[timing estimate::Timing estimate remains to be established; neither the reserve quantity nor the cutoff supplies a replenishment completion time.]] must follow the actual review. No confirmed replenishment time has been supplied so far.
-Elena | Can you take the review from here? I can give the exact order and location, while leaving the stock assignment and timing as open questions.
+Elena | Can you take the review? I'll keep the order and location together with the unanswered stock and timing questions.
 Dev | I can review it at the [[replenishment desk::Replenishment desk is the responsible review point, not a guarantee that stock has been allocated or moved.]]. Keep D55, ten required, four at B04, six short, twelve shown in reserve, and the 15:00 cutoff together.
-Elena | That is the complete position. I will not tell anyone the reserve has moved or that the order is guaranteed before those checks happen.
+Elena | Thanks. I'll tell packing you've taken the review, with no confirmed replenishment time or completion promise.
 Dev | Good. A [[fulfillment commitment::Fulfillment commitment would promise the order outcome, which remains unsupported until stock and timing checks are complete.]] still needs support. We are taking the next review step, with allocation, availability, and replenishment timing still unresolved.''',
+    rehearsal=["Read ten needed, four at B04, six short, and twelve shown in reserve.","Repeat allocation, availability, and timing as three checks still required.","Read the 15:00 cutoff without turning it into a replenishment promise."],
     transfer_title='Report a different pick-face gap',
     transfer_setup='Order E66 needs fourteen bins. Pick face C05 has five. The system lists twenty in reserve, but allocation and availability are unchecked. The order cutoff is 16:30.',
     transfer='''Picker: "The pick face is short by ___ bins." | nine | Fourteen required minus five present creates a nine-bin shortfall.
@@ -359,30 +363,31 @@ shipment departure | Actual movement of a shipment away from the facility. | con
     precision_extra='The necessary message identifies a potential mismatch and requests verification of both references. Do not describe it as a completed mislabeled shipment or guess a correction from the recipient names alone. Actual label production and application follow the site process.',
     phrases='''Request a precise pause | Please pause before applying that label.\nName the station | This is packing station 3.\nIdentify the screen | The C70 screen names Harbor Shop.\nIdentify the loose label | This label names Hillside School and references C71.\nState the mismatch | The carton reference and the loose label do not match.\nAvoid a proximity assumption | Being beside C70 does not make it the C70 label.\nCheck both cartons | Let us verify C70 and C71 separately.\nPreserve application status | No label has been applied yet.\nAvoid an accusation | I am flagging a possible mismatch before application.\nKeep recipients separate | Harbor Shop and Hillside School are different recipients.\nAsk for the full match | Check the carton reference and recipient together.\nAvoid a memory correction | Do not relabel from memory.\nDistinguish prevention and repair | This is a verification pause, not a completed relabeling.\nKeep departure separate | No shipment departure is established by this check.\nRead back the pairs | C70 with Harbor Shop; the loose C71 label with Hillside School.\nClose with the required check | Both carton-label associations need verification before application.''',
     notes='''Beside versus belongs to | Physical proximity does not establish record association.\nBefore applying | Places the intervention before an error is completed.\nYet | Preserves the fact that no label application has occurred.\nBoth | Calls for checking each reference rather than assuming the other carton is correct.\nPossible mismatch | Flags the risk without accusing someone of a completed mistake.\nRecipient and reference | The name alone is not a substitute for checking the identifier.''',
-    d='''Which interruption is most precise? | Please pause: C70 names Harbor Shop, but this loose label names C71 and Hillside School. | You always label everything wrongly. | Something somewhere looks odd. | Apply it now because it is nearby. | The specific pause identifies both conflicting reference-recipient pairs before application.
+    d='''Which interruption is most precise? | Please pause: C70 names Harbor Shop, but this loose label names C71 and Hillside School. | C70 has already been sent to Hillside School. | Please reprint C70 before checking either record. | C71 belongs to Harbor Shop because it is beside C70. | The specific pause identifies both conflicting reference-recipient pairs before application.
 Which status report is accurate? | No label has been applied; both references need checking. | C70 has already shipped with the wrong label. | Relabeling is complete. | Both recipients have received their cartons. | The discrepancy is detected before application and no shipment outcome is established.
 What does the loose label's location prove? | Only that it is beside C70, not that it belongs to C70. | It must be the correct label for C70. | The C70 screen is necessarily wrong. | C71 has already departed. | Physical proximity alone does not establish which record or carton the label belongs to.
 Which next step preserves accuracy? | Verify both carton references and recipient associations. | Swap labels from memory. | Merge the two recipients into one record. | Mark both cartons dispatched to clear the station. | The supplied next step is a reference cross-check, not an assumed correction or departure.''',
-    dialogue='''Arun | Rosa, please pause before applying that loose label. The screen for C70 says Harbor Shop, but the label beside it says Hillside School.
-Rosa | I have not applied it. Let me check the [[carton reference::Carton reference identifies which physical carton is being matched; the screen currently concerns C70.]] rather than assuming the label belongs here just because it is next to C70.
-Arun | The loose label references C71. We have two cartons at station 3, so we need to keep the two recipient associations separate.
-Rosa | I see it now. The [[loose label::Loose label remains unattached and identifies C71 for Hillside School, not the adjacent carton C70.]] says C71 and Hillside School. The C70 screen names Harbor Shop, which is a different recipient.
-Arun | Exactly. I am not saying a carton has already been mislabeled. I am asking us to verify the match before any label is attached.
-Rosa | That is a useful [[verification pause::Verification pause stops application while the specific conflict is checked, without claiming a completed labeling error.]]. No label has been applied yet, and I will not describe this as a completed error.
-Arun | Please check both C70 and C71. If we only focus on the one nearest us, we could leave the other association unchecked.
-Rosa | Agreed. The [[reference cross-check::Reference cross-check compares both carton identifiers and their recipient records rather than assuming one side is correct.]] should include both carton references and recipients. We should not swap anything from memory simply because the names look familiar.
-Arun | Good. A label can be printed correctly for one carton and still be wrong for the carton beside it.
-Rosa | Yes. Physical proximity does not establish the [[order association::Order association links a carton to its relevant order; being beside another carton does not create that link.]]. The label needs to match the relevant record, not merely the nearest package.
-Arun | Could you read the details back before continuing the check? I want to be sure I have not mixed up the two references myself.
-Rosa | C70 has Harbor Shop on its [[screen record::Screen record supplies the C70 recipient information, which must stay separate from the C71 label.]]. The loose label says C71 and Hillside School. Nothing has been applied to either carton in this discussion.
-Arun | That is what I observed. We have a clear conflict to check, without needing to invent how the label ended up beside the other carton.
-Rosa | Correct. A [[workstation mix-up::Workstation mix-up describes the confusing arrangement at the station without establishing who caused it or that goods shipped incorrectly.]] may be what we are preventing, but we have no basis to accuse a particular person or claim anything has shipped.
-Arun | I appreciate that. The important thing is to interrupt the uncertain application and preserve the references for the actual verification process.
-Rosa | We should distinguish [[prevention::Prevention catches the potential labeling error before application, unlike correcting a completed mislabeling.]] from repair. There is no completed mislabeling or relabeling to report here; there is an unapplied label and a mismatch.
-Arun | Exactly. Once both associations are properly checked, any label handling needs to follow the normal process, not a guess based only on names.
-Rosa | Yes. [[Label application::Label application is the action that remains to follow proper verification; it has not occurred in this conversation.]] has not happened. I will keep the check separate from any claim that the cartons are ready or have left.
-Arun | Then our handoff is station 3, C70 Harbor Shop on the screen, loose C71 Hillside School label, and both references to be verified.
-Rosa | That is accurate. No [[shipment departure::Shipment departure is a separate actual event and is not established by a label-match discussion at the packing station.]] is established here. We have paused the match before application and kept both carton-recipient pairs explicit.''',
+    dialogue='''Arun | Rosa, stop a moment before you use that loose label. C70 says Harbor Shop on the screen; the label beside it says Hillside School.
+Rosa | I haven't attached it. I'll check the [[carton reference::The carton reference identifies which carton the label belongs to; proximity to C70 is not sufficient.]] first. Does the loose one actually say C70?
+Arun | No, it says C71. We're at station 3 with both cartons here. I think we're looking at two different recipient pairs.
+Rosa | I see C71 on the [[loose label::The unattached label identifies C71 for Hillside School, separate from the C70 screen record.]], with Hillside School underneath. C70 on the screen is Harbor Shop.
+Arun | Thanks for pausing. I caught it before anything went on, so we don't have a mislabeled carton to report at this point.
+Rosa | Then it's a [[verification pause::The work pauses before application while the conflicting references are verified, not after a completed labeling error.]], not a relabeling job. I'll keep the current status accurate.
+Arun | Can you check both references, not just change the one in your hand? I don't want C71 left with an assumed match.
+Rosa | Yes, the [[reference cross-check::Both carton identifiers and their recipient records need comparison; checking one does not validate the other.]] covers C70 and C71. I'll use their records rather than swap labels from memory.
+Arun | The print could be perfectly right for C71 and still be wrong for C70. Being next to this carton doesn't make it its label.
+Rosa | Exactly. The [[order association::The association links a carton to its relevant order or recipient record, not to whichever label is nearest.]] comes from the matching record. We need more than the names looking familiar.
+Arun | Read the two pairs back once, please. I nearly said Hillside for C70 myself because I'd just read the loose label.
+Rosa | C70's [[screen record::The screen for C70 names Harbor Shop; that information must remain separate from the loose C71 label.]] names Harbor Shop. The loose C71 label names Hillside School. Neither label has been applied.
+Arun | That's what I saw. We don't know why the loose label was there, and there's no need to guess who put it there.
+Rosa | I'll report the possible [[workstation mix-up::The arrangement creates a potential mix-up, without proving who caused it or that anything was shipped incorrectly.]] with the exact references. A useful note doesn't need an accusation.
+Arun | Right. Please don't write corrected wrong label. That would tell the next person a label was already attached and removed.
+Rosa | I'll describe [[prevention::The check prevents a possible error before application; it is not evidence of repairing a completed mislabeling.]] instead: mismatch spotted before application, both references being checked. That's the stage we're at.
+Arun | Once the records are verified, label handling follows the normal process. I haven't checked either carton for dispatch readiness.
+Rosa | Understood. [[Label application::Application has not happened yet and must follow the verified match and actual packing process.]] and dispatch readiness are separate from identifying the two recipient names.
+Arun | I'll leave the handoff as station 3, C70 Harbor Shop on screen, loose C71 Hillside School label, no labels applied.
+Rosa | Agreed. We have no [[shipment departure::The label check supplies no evidence of shipment departure, and nothing has been described as dispatched.]] to record here. I'll finish the reference check before reporting any later stage.''',
+    rehearsal=["Read C70 with Harbor Shop and C71 with Hillside School.","Repeat the interruption and the statement that no label has been applied.","Read the cross-check request for both references, without swapping labels from memory."],
     transfer_title='Pause another loose-label mismatch',
     transfer_setup='At station 5, the screen for carton D80 names Maple Clinic. A loose label beside it names Meadow Cafe and references D81. No label has been applied.',
     transfer='''Colleague: "The D80 screen names ___." | Maple Clinic | Maple Clinic is the recipient associated with D80 on the screen.
@@ -433,27 +438,28 @@ pending correction | Record amendment that has not yet been completed. | report 
     d='''Which status update is accurate? | L66 has three staged in lane 2, two listed, and no departure yet. | L66 has departed because the cartons are staged. | One physical carton is definitely lost. | The manifest is corrected because someone will check it. | The accurate update separates the physical count, document count, and unfinished departure.
 What is the known discrepancy? | One carton fewer on the manifest than in staging. | One carton fewer in staging than on the manifest. | Three cartons missing from the warehouse. | No discrepancy because the order number matches. | Two listed is one below the three physically staged cartons.
 Which statement invents an outcome? | The goods will definitely depart before 16:00. | The carrier cutoff is 16:00. | Dispatch can investigate. | No goods have departed. | The deadline and review request do not establish a guaranteed departure outcome.
-What should Noah investigate? | The missing carton entry and correct association with L66. | An assumed theft with no supporting facts. | A fabricated carton reference. | A departure already treated as complete. | The supplied issue concerns a count mismatch in the dispatch record for L66.''',
-    dialogue='''Imani | Noah, L66 has three cartons staged in lane 2, but the manifest lists only two. The carrier cutoff is 16:00, so I need to flag it.
+What should Noah investigate? | The missing carton entry and correct association with L66. | The physical location of a carton assumed lost. | The carrier's receipt assumed to cover three cartons. | A replacement shipment assumed necessary. | The supplied issue concerns a count mismatch in the dispatch record for L66.''',
+    dialogue='''Imani | Noah, there's a manifest discrepancy on L66. Three cartons in lane 2, but only two listed. Carrier cutoff is sixteen hundred.
 Noah | I will check the [[dispatch manifest::Dispatch manifest lists two cartons and must be reconciled with the three physically staged for L66.]]. First, are we talking about three cartons physically present, rather than a system quantity you have not verified?
-Imani | Yes, three cartons are staged in lane 2. The difference is in the manifest count. The goods have not departed.
+Imani | Three physically staged, yes. Nothing has departed. I'm comparing what's in lane 2 with the manifest.
 Noah | Then the [[staged count::Staged count is the three cartons physically present, distinct from the manifest's recorded two.]] is three and the document count is two. We should not describe that as a physically missing carton.
-Imani | Exactly. I want the report to say one missing entry against the staged quantity, not one carton lost somewhere in the warehouse.
+Imani | Please call it a missing entry, not a lost carton. The third carton is here with the other two.
 Noah | That is the right [[status distinction::Status distinction separates the record mismatch from physical stock absence and from actual departure.]]. A record can be incomplete while all the staged cartons are present. We still need to establish which entry is missing.
-Imani | I have not identified a specific omitted carton reference. I only have the order, lane, and the two different counts so far.
+Imani | I haven't identified which carton reference is omitted yet. I have L66, lane 2, and the count difference.
 Noah | I will investigate the [[missing entry::Missing entry is the document issue; its specific carton identifier has not yet been established.]] without inventing an identifier. The check needs to connect the correct carton records with L66.
-Imani | Please keep the carrier cutoff in the message. I do not want the discrepancy passed along as though there were no timing consequence.
+Imani | Can you flag sixteen hundred with it? Dispatch needs the deadline as well as the discrepancy.
 Noah | I will flag the [[cutoff risk::Cutoff risk marks possible impact on the sixteen-hundred deadline without guaranteeing departure or acceptance.]] at 16:00. That gives the issue its timing context, but it does not mean I can promise a completed correction or departure by then.
-Imani | Understood. The cartons being in the staging lane can make the order look further along than it is. I want that wording kept precise.
+Imani | The order may look ready because it's staged. I don't want that turned into a departed status.
 Noah | Yes. [[Staging::Staging places goods in a preparation area; it does not confirm loading, carrier acceptance, or departure.]] is not the same as loading or carrier acceptance, and neither of those should be assumed from their position in lane 2.
-Imani | Have you corrected the manifest already, or are you accepting the investigation now? I need to know which status to give the next colleague.
+Imani | Have you corrected the record, or are you taking the check now? I need to pass on the right stage.
 Noah | I am taking the investigation. A [[manifest correction::Manifest correction has not occurred merely because Noah accepts the investigation; the document still requires checking.]] is not complete, and I should not tell you that the count has been fixed before the check.
-Imani | Thank you. We also do not know why the manifest lists two. I have no evidence of a particular person's mistake or a system failure.
+Imani | I haven't established what caused the missing entry. It could be several things; I don't have evidence yet.
 Noah | Keep the [[unverified cause::Unverified cause remains unknown; the observed count difference does not identify an individual or system failure.]] out of the factual conclusion. We can report the discrepancy accurately without assigning blame.
-Imani | Let me summarize for the handoff: L66, lane 2, three cartons staged, two on the manifest, cutoff 16:00, no departure.
+Imani | Read-back: L66, lane 2, three staged, two listed, cutoff sixteen hundred, nothing departed.
 Noah | That is a clear [[reconciliation check::Reconciliation check compares the actual staged quantity with the manifest and seeks the correct missing association.]] to take forward. I will investigate the omitted entry while keeping those figures and the cutoff in view.
-Imani | I will tell the next colleague you own that investigation, not that the order has been released or sent. The current record remains unresolved.
+Imani | I'll name you for the investigation and keep it open. I won't tell the next shift the order has gone.
 Noah | Correct. No [[departure confirmation::Departure confirmation is absent because the goods have not left; an accepted review task does not change that fact.]] exists here. Three staged, two listed, and the manifest question is still open while I investigate.''',
+    rehearsal=["Read three physically staged and two on the dispatch manifest.","Repeat lane 2, L66, and the 16:00 cutoff in one handoff.","Contrast a missing entry with a missing physical carton; then read no departure."],
     transfer_title='Report a different manifest gap',
     transfer_setup='Order M77 has five cartons staged in lane 4. The manifest lists four. The carrier cutoff is 17:00, and nothing has departed. Dispatch will investigate the missing entry.',
     transfer='''Colleague: "There are ___ cartons staged." | five | Five is the observed physical carton count in lane four.
@@ -505,26 +511,27 @@ status release | Authorized change from a restricted or pending state. | disting
 Which conclusion overstates the observation? | The kettle is definitely functional and unused. | The packaging appears unopened. | Condition review remains pending. | Theo lacks sale-release authority. | External packaging appearance does not establish function or prior use.
 Who has the next defined task? | Mira, to perform the condition review. | Theo, to mark it saleable without review. | Hana, to promise a refund. | A customer, to decide the warehouse stock status. | Mira is the named owner of the required pending assessment.
 Which status should not be claimed yet? | Ready for sale. | Matched return reference. | Packaging appears unopened. | Review pending. | Sale-ready status is unsupported because condition review and release approval remain incomplete.''',
-    dialogue='''Hana | Theo, what is the status of the returned kettle K25? I need to know whether it can go into saleable stock or still needs review.
+    dialogue='''Hana | Theo, is returned kettle K25 cleared for sale, or is the condition review still outstanding?
 Theo | It has a [[reference match::Reference match confirms K25 belongs to the return record; it does not establish condition or saleability.]] with the return record. The packaging appears unopened, but the condition review is still pending.
-Hana | The box looks tidy from here. Is appears unopened your observation, or are you confirming that the kettle has never been used?
+Hana | The box looks untouched. Are you saying it appears unopened, or that you've confirmed the kettle was never used?
 Theo | It is an [[intake observation::Intake observation reports the packaging appearance and does not verify the item's complete use history.]], not a confirmed history. I cannot say the kettle has never been used based only on how the packaging looks.
-Hana | That distinction matters. I do not want a positive-looking box to become an automatic decision that the product is ready for another customer.
+Hana | Then I won't call it ready for sale just because the box looks good. What has actually been completed?
 Theo | Exactly. [[Condition review::Condition review is the required next assessment, still unfinished despite the matching reference and apparent packaging state.]] has not been completed. We have matched the identity, but that does not tell us the result of the required examination.
-Hana | Who is responsible for that review? I want to give the next shift a person and an action rather than simply saying someone should look at it.
+Hana | Who's taking the review? I need a named person for the handover, not just someone to look at it.
 Theo | Mira is the [[review owner::Review owner identifies Mira as responsible for the assessment without implying she has already carried it out.]]. She owns the condition review. Assigning that work to her does not mean we already have a decision.
-Hana | Understood. Do you have authority to mark it ready for sale while the review is pending, perhaps because the packaging seems untouched?
+Hana | Can you release it while we're waiting, or is that outside your authority?
 Theo | No. I do not have that [[release authority::Release authority to mark K25 ready for sale is not held by Theo and is not created by packaging appearance.]]. I cannot turn an intake observation into permission to return the kettle to saleable stock.
-Hana | Then the record should not say function tested either. A matched reference is not the same as checking whether the kettle works.
+Hana | And we haven't established that it works. Matching the return reference isn't a function test.
 Theo | Correct. No [[functional check::Functional check would examine operation; no such completed check is supplied by this intake conversation.]] is confirmed here. Nor does our conversation establish a product-safety finding or an approved sale-ready condition.
-Hana | I will keep financial questions separate too. We have not said that a refund was approved merely because the returned item matches the reference.
+Hana | What about the refund? I shouldn't tell customer service it's approved from this warehouse note, should I?
 Theo | Yes. [[Refund status::Refund status concerns a separate financial process and is not established by matching the returned item.]] is not established by this handoff. Identity, condition, inventory status, and a customer remedy are different questions.
-Hana | Let me read the note back: K25 matches its return reference; packaging appears unopened; condition review pending with Mira; no sale release.
+Hana | I'll read the note back: K25 matched, packaging appears unopened, condition review with Mira, no sale release.
 Theo | That keeps the [[stock status::Stock status must preserve the pending review and absence of sale release rather than imply immediate availability.]] accurate. It also avoids claiming that the item is either approved or rejected before the review provides its result.
-Hana | Good point. Pending does not mean it has failed. It means the required decision has not been made, despite the reassuring appearance.
+Hana | So pending isn't the same as rejected, either. We don't have the condition decision yet.
 Theo | Exactly. A [[disposition::Disposition is the authorized decision about the returned item, still to follow the required condition review.]] still needs to follow the actual review process. We should not choose sale, rejection, repair, or another outcome from appearance alone.
-Hana | I will pass on the same facts and the named owner. The next person should know what was checked and what remains to be checked.
+Hana | I'll pass on exactly that, with Mira as owner. The next shift will know what remains outstanding.
 Theo | Thank you. [[Review completion::Review completion remains absent; the handoff names the owner but does not supply the assessment or its outcome.]] is still pending with Mira. K25 is matched to the return, but it has not been marked ready for sale.''',
+    rehearsal=["Read appears unopened with emphasis on appears.","Repeat the matched return reference and the condition review pending with Mira.","Read the distinction between pending, rejected, and ready for sale."],
     transfer_title='Hand over another pending return review',
     transfer_setup='Returned toaster T36 matches its return reference. Packaging appears unopened, but condition review is pending with Jo. Intake staff cannot release it for sale.',
     transfer='''Intake: "The returned item is ___." | T36 | T36 is the toaster reference supplied for this new return.
@@ -556,7 +563,7 @@ issue transaction | Record of stock taken out for an order or use. | check the i
 transfer transaction | Record of stock moved between locations or inventory categories. | review the transfer transaction
 stock adjustment | Authorized change to recorded inventory to correct a difference. | request a stock adjustment
 adjustment approval | Permission to make the relevant inventory correction. | await adjustment approval
-posting | Recording a transaction in the relevant system. | check transaction posting
+posting | Recording a transaction in the relevant system, possibly later than physical movement. | compare movement and posting times
 unposted movement | Movement not yet reflected in the relevant records. | investigate a possible unposted movement
 audit trail | Record allowing changes and actions to be traced. | preserve the audit trail
 count sheet | Document recording an inventory count and its context. | retain the count sheet
@@ -576,26 +583,27 @@ inventory integrity | Reliability of inventory records and their supporting evid
 Which task is already complete? | The recount that also found eighteen. | The cause investigation. | The approved system adjustment. | The transaction-history review by Sam. | The briefing explicitly states that the recount is complete and agrees at eighteen.
 What does the count variance establish? | Two fewer physical units than the system balance. | The cause is definitely an unposted issue. | Theft by the outgoing clerk. | Permission for any worker to change the balance. | The two-unit difference is arithmetic evidence, not proof of cause or authority.
 Which next statement respects the approval limit? | I will review history; no adjustment is approved yet. | I will change twenty to eighteen because I accepted the handoff. | The recount automatically approves posting. | There is no need to retain the original system figure. | Reviewing records and accepting ownership do not authorize an inventory adjustment.''',
-    dialogue='''Priya | Sam, I need to hand over T9 in B11. The first count was eighteen units, and the recount also gave eighteen. The system still shows twenty.
-Sam | So the [[recount::Recount is already complete and agrees with the original eighteen-unit result, rather than remaining an unfinished task.]] is complete, not something you are asking me to do for the first time. The difference is still two units against the system.
-Priya | Correct. I want that clear because a note saying count issue could make you repeat completed work instead of checking what remains unresolved.
-Sam | I will preserve the [[verified count::Verified count is eighteen, supported by both completed physical counts and distinct from the system's twenty.]] of eighteen and the recorded twenty. Has any cause been confirmed, or are we still at the discrepancy stage?
-Priya | No cause is confirmed. We know the figures disagree, but we do not yet know whether a transaction, movement, or something else explains it.
-Sam | Then [[transaction history::Transaction history is the next record source to review for an explanation; it has not yet supplied a cause.]] is the next review I can take. I will not call a possible unposted movement an established explanation.
-Priya | Thank you. No stock adjustment is approved either. The fact that two counts agree should not be mistaken for permission to change the system.
-Sam | Understood. [[Adjustment approval::Adjustment approval is still absent; agreement between counts does not give automatic authority to alter inventory records.]] is a separate requirement. I can review the records without claiming that I may simply replace twenty with eighteen.
-Priya | Please keep the exact item and location in your notes. The difference belongs to T9 in B11, not every location that holds T9.
-Sam | I will preserve the [[item-location pair::Item-location pair ties the verified difference specifically to T9 in B11 rather than all stock of T9.]]. A location-specific count should not become a statement that the entire warehouse has the same discrepancy.
-Priya | Good. Also, two below the system balance is not the same as saying we found only two units. We physically counted eighteen.
-Sam | Yes. The [[count variance::Count variance is minus two relative to the recorded twenty; it is not the total physical quantity.]] is two units below the reference balance. The count itself remains eighteen units.
-Priya | I have no evidence to accuse anyone. I want the handoff neutral enough that the transaction review can follow the records instead of a story.
-Sam | That protects the [[audit trail::Audit trail preserves the original figures and checks so the review can trace actual actions rather than an assumed explanation.]]. We should retain both count results and the system figure, rather than overwriting information to make the discrepancy disappear.
-Priya | Can you confirm that you are taking the transaction-history review, while keeping the recount listed as complete and the cause as unknown?
-Sam | Yes. My [[handoff acknowledgment::Handoff acknowledgment accepts the next review task while preserving the completed recount and unresolved cause.]] covers that review. It does not mean the records have already been checked or the variance has been resolved.
-Priya | Please read the current status back once before we finish. That will show whether we agree on both the figures and the unfinished action.
-Sam | T9 in B11: eighteen counted and recounted, [[system balance::System balance remains twenty; no authorized posting has changed it to the physical count.]] twenty, two-unit difference, cause unknown, no approved adjustment. I own the transaction-history review.
-Priya | That is accurate. We have transferred the next action without losing the completed check or claiming that the record now agrees with the stock.
-Sam | Exactly. The [[pending investigation::Pending investigation is the cause-focused transaction review, distinct from the recount already finished.]] remains open. I will review the history, preserve the existing evidence, and keep any adjustment subject to the proper approval.''',
+    dialogue='''Priya | Sam, I've got one count issue for handover: T9 in B11. Eighteen on the first count, eighteen on the recount, twenty in the system.
+Sam | Is the [[recount::The recount has already been completed and agrees at eighteen, so it is not the missing next action.]] finished? I want to be sure I'm taking an investigation, not a request for a second count.
+Priya | Finished, and it agreed at eighteen. The note needs both results, otherwise the next shift could think we're still waiting for that check.
+Sam | I'll retain the [[verified count::Eighteen is supported by the first count and recount, while the recorded balance remains twenty.]] alongside twenty in the system. Have you established why they differ?
+Priya | No. A movement or transaction might explain it, but I haven't checked enough to say that one does.
+Sam | I'll take the [[transaction history::The history is the next evidence source to review; it has not yet established a cause for the difference.]] review. We need the actual records before turning a possible explanation into a finding.
+Priya | Also, no adjustment is approved. Two matching counts don't mean I had authority to replace the recorded twenty with eighteen.
+Sam | Yes, [[Adjustment approval::Approval to change the inventory record remains separate from verifying the physical count or accepting the review.]] is separate. Taking this handoff doesn't give me permission to post a change either.
+Priya | Please keep B11 in the note. We haven't counted every location holding T9, so this isn't a total-stock statement.
+Sam | I'll keep the [[item-location pair::T9 and B11 together define the count being discussed; the finding does not cover all locations of T9.]] explicit. T9 without B11 could send someone to the wrong balance.
+Priya | And say two below the recorded balance, not two remaining. There are eighteen physically here, not two.
+Sam | Agreed. The [[count variance::Eighteen counted minus twenty recorded gives a variance of minus two units, not a physical total of two.]] is minus two units; the physical count is eighteen. I'll use both figures with their labels.
+Priya | The cause stays unknown for now. I don't have evidence of theft or a particular person making an error.
+Sam | That's important for the [[audit trail::Retaining both counts and the original system figure keeps the evidence traceable instead of replacing it with an assumed cause.]]. Keep the original figures and count results so we can trace what happened.
+Priya | Can I name you for the transaction review in my handover? I'd like the next person to know who has that follow-up.
+Sam | Yes. My [[handoff acknowledgment::Sam accepts responsibility for the history review, not a claim that it is already complete or the discrepancy resolved.]] covers that review. Mark it assigned to me, with the cause still unresolved.
+Priya | Thanks. Read the current position back once, please, including the part that's already done and the part you're taking.
+Sam | T9, B11: eighteen counted and recounted; [[system balance::The system balance is still twenty because no authorized adjustment has changed the recorded figure.]] twenty; cause unknown; adjustment unapproved. Recount complete, history review with Sam.
+Priya | That's it. The physical check is complete, but the reason for the difference and any authorized correction are still outstanding.
+Sam | I'll continue the [[pending investigation::The remaining investigation concerns the unexplained difference and transaction history, not a recount already completed.]] from that point. I'll preserve the evidence rather than make the record agree before the explanation is established.''',
+    rehearsal=["Read eighteen counted, eighteen recounted, and twenty recorded.","Repeat minus two as the variance, not the physical quantity.","Read Sam's next action while keeping the recount complete and adjustment unapproved."],
     transfer_title='Hand over another verified count difference',
     transfer_setup='Item U8 in D03 was counted at twenty-seven units, and the completed recount agrees. The system shows thirty. The cause is unknown. Clerk Jo accepts transaction-history review; no adjustment is approved.',
     transfer='''Clerk: "Both counts give ___ units." | twenty-seven | Twenty-seven is the verified physical quantity supported by the completed recount.

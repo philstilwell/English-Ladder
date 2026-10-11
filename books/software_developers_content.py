@@ -21,16 +21,16 @@ BOOK = dict(
     sources=[
         dict(title='Google Engineering Practices. What to Look for in a Code Review.',
              url='https://google.github.io/eng-practices/review/reviewer/looking-for.html',
-             note='Context for reviewing functionality, tests, naming, and changed behavior. All pull requests and conversations here are original.', checked='1 October 2026'),
+             note='Context for reviewing functionality, tests, naming, and changed behavior. All pull requests and conversations here are original.', checked='10 October 2026'),
         dict(title='Amazon Builders Library. Making Retries Safe with Idempotent APIs.',
              url='https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/',
-             note='Background on uncertain outcomes and retry contracts. The fictional reservation interface is not an AWS service or implementation guide.', checked='1 October 2026'),
+             note='Background on uncertain outcomes and retry contracts. The fictional reservation interface is not an AWS service or implementation guide.', checked='10 October 2026'),
         dict(title='Python Documentation. unittest.mock.',
              url='https://docs.python.org/3/library/unittest.mock.html',
-             note='Reference for configured test doubles, return values, and raised exceptions. Exercises distinguish simulated behavior from actual dependency coverage.', checked='1 October 2026'),
+             note='Reference for configured test doubles, return values, and raised exceptions. Exercises distinguish simulated behavior from actual dependency coverage.', checked='10 October 2026'),
         dict(title='Semantic Versioning 2.0.0.',
              url='https://semver.org/',
-             note='Terminology for public interfaces, compatibility, and deprecation. The fictional packages are not assumed to follow this versioning convention.', checked='1 October 2026'),
+             note='Terminology for public interfaces, compatibility, and deprecation. The fictional packages are not assumed to follow this versioning convention.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -61,13 +61,13 @@ serialization | Conversion of data into a transportable representation. | inspec
 deserialization | Conversion from transported data into usable values. | verify deserialization behavior
 schema | Formal description of data structure and constraints. | revise the schema
 field presence | Whether a particular field exists in the input. | check field presence
-sentinel value | Special value used to signal a particular condition. | define a sentinel value
+strong ETag | Representation validator compared strongly in an If-Match condition. | compare the strong ETag
 backward compatibility | Ability to preserve supported behavior for earlier consumers. | assess backward compatibility
 consumer | Component using another component's interface. | identify the consumer
 producer | Component providing data or behavior through an interface. | align producer expectations
-wire format | Actual representation transmitted between components. | inspect the wire format
+decimal arithmetic | Base-ten calculation with specified precision and rounding behavior. | use decimal arithmetic
 contract test | Test checking agreed interactions across an interface boundary. | add a contract test
-undefined behavior | Behavior not specified by the relevant agreement here. | resolve undefined behavior
+unspecified interface behavior | Input effect not defined by this interface contract. | resolve unspecified interface behavior
 acceptance criterion | Specific condition used to judge whether work meets requirements. | state an acceptance criterion''',
     precision='Optional and nullable answer different questions. Optional concerns presence; nullable concerns allowed values. The stated contract defines omission and an empty string, but it does not authorize treating null as either one.',
     precision_extra='Use an input-to-effect sentence: If nickname is omitted, the stored value remains unchanged. Keep the proposed null behavior explicitly unresolved until the responsible parties agree, document it, and add the appropriate checks.',
@@ -94,29 +94,30 @@ Not yet | Keeps an unresolved decision visible without implying permanent disagr
 Each defined input state | Prevents a broad test claim based on only one example.
 Can we agree | Invites a concrete decision about the missing behavior.''',
     d='''Which comment identifies the real gap? | The null case needs an agreed meaning | Optional proves null clears it | Empty string and omission are identical | Every API interprets null alike | Only null lacks a specified meaning in this particular contract.
-Which pair must remain distinct? | Omission and an empty string | Two spellings of the same field name | Two confirmed clearing commands | Null and a documented clearing command | Omission preserves the value, whereas an empty string clears it.
+Which pair already has different defined effects in this contract? | Omission and an empty string | Two spellings of the same field name | Two confirmed clearing commands | Null and a documented clearing command | Omission preserves the value, whereas an empty string clears it.
 What would justify calling null a clearing command? | An explicit agreed contract change | The developer's preference alone | The word optional alone | An unrelated API example | A new interpretation needs agreement rather than an unsupported inference.
 Which test plan matches the discussion? | Check each defined input state and resolve null before asserting its effect | Test omission and assume all other inputs match | Test only the client's display | Treat null as proven compatible | Distinct input states require distinct expectations, with null still unresolved.''',
-    dialogue='''Maya | Before I finish the profile client, can we check what happens when someone removes a nickname? My proposed payload sends null, but the contract mentions an empty string.
+    dialogue='''Maya | The form currently sends null when a user removes a nickname. Before I ship that, which input does this service actually define as clearing?
 Arun | We should separate that from an [[omitted field::An omitted field is absent and preserves the stored nickname under the stated contract.]]. If nickname is absent from the request, the stored value stays unchanged. That part is already defined.
-Maya | Right. I was reading optional as permission to send no value. I can see that absence and an explicit value are different on the wire.
+Maya | I treated optional as permission to send null. But a missing property and a present property with a null value aren't the same payload.
 Arun | Exactly. An [[optional field::Optional field describes allowed absence, not the meaning or acceptability of an explicit null.]] may be absent. It does not tell us whether null is accepted or what effect null should have if it is accepted.
-Maya | For the existing clearing behavior, the client should send a string with no characters. That is different from leaving the property out altogether.
+Maya | For the existing clearing action, then, I'd send a string with zero characters. Leaving nickname out would preserve the old value instead.
 Arun | Yes, an [[empty string::An empty string has the specified effect of clearing the nickname, unlike omission.]] clears the nickname. We should preserve that distinction in the examples so nobody silently changes the current behavior while updating the client.
-Maya | Then my null proposal has no agreed effect yet. I should not describe it as equivalent to clearing just because another service uses it that way.
+Maya | I'll stop calling null an alternative clearing command. We haven't agreed on what it means here, even if another API uses it that way.
 Arun | Correct. The [[interface contract::The interface contract is the agreement that must specify the missing null behavior before implementation.]] needs a decision for that input. We could discuss a change, but discussion alone does not make the proposed meaning an existing guarantee.
-Maya | Could we inspect what the client actually sends? A serializer might drop a property, and then our conversation about null would not match the transmitted data.
+Maya | The client object shows null, but I haven't captured what its serializer sends. Could that conversion drop the property before the request leaves?
 Arun | Let us check the [[request payload::Request payload identifies the actual submitted data, which may differ from an assumed client representation.]] in a controlled example. We need to distinguish the client's internal value from the representation delivered to the service.
-Maya | I will keep three examples separate: nickname absent, nickname as an empty string, and nickname explicitly null. The third will have no claimed result until we agree.
+Maya | I'll show the actual three wire examples separately: absent, empty string, and explicit null. Only the first two have defined outcomes so far.
 Arun | That will make [[field presence::Field presence distinguishes an absent nickname property from a present property carrying a value.]] visible. For the first two, write the resulting stored value beside the input rather than using the vague label no nickname.
-Maya | Should the schema be changed now to allow null? I do not want the schema to appear to settle a behavior we have not actually decided.
+Maya | Would allowing null in the schema get ahead of the decision? I don't want that change to imply a stored-state rule nobody has approved.
 Arun | Hold that change until the [[validation rule::The validation rule must reflect an agreed input policy rather than preempt the unresolved decision.]] and intended effect are agreed. Allowing a value and defining its effect need to be consistent.
-Maya | Once the rule is documented, I can add client examples and ask for checks at the interface boundary, not only checks of the form display.
+Maya | Once the rule is settled, I'll test the client-service interaction, not just whether the form looks empty on screen.
 Arun | A [[contract test::A contract test checks the agreed interaction across the client-service boundary rather than only the visible form.]] can support that. Its expected result must come from the agreement, though; the test must not invent the missing null rule.
-Maya | I also want existing clients protected. We should not accidentally change omission from leave unchanged to clear while solving this new input question.
+Maya | And I want the omission case protected. Solving the null question shouldn't silently turn an unchanged nickname into a cleared one for older clients.
 Arun | That is a [[backward compatibility::Backward compatibility concerns preserving supported behavior for existing clients, including the established omission rule.]] concern worth recording. We have not demonstrated compatibility merely by agreeing that the new client looks correct.
-Maya | My summary will say omission preserves, empty string clears, and null remains unspecified. I will leave the proposed null implementation pending the interface decision.
+Maya | Then I'll report omission preserves, empty string clears, and null unresolved. My proposed null implementation stays pending until the interface decision.
 Arun | Good. That gives us an explicit [[acceptance criterion::An acceptance criterion must name the agreed input and effect before implementation can be judged complete.]] once the decision is made, instead of treating an ambiguous word as enough to approve the change.''',
+    rehearsal=["Read Maya's three input examples, then read Arun's matching contract statements. Keep omission, empty string, and null distinct.","Swap roles and repeat turns 9-16, stressing actual payload and agreed validation rule.","Compare your readback with turns 19-20: two defined outcomes, one unresolved input, and no premature implementation approval."],
     transfer_title='Three inputs, three separate statements',
     transfer_setup='Complete the interface summary using only the stated contract and the unresolved proposal.',
     transfer='''Developer: "An omitted nickname leaves the value ___." | unchanged | Omission explicitly preserves the existing nickname under the current contract.
@@ -146,12 +147,12 @@ hypothesis | Proposed explanation requiring evidence. | test a hypothesis
 root cause | Underlying cause established through investigation. | isolate the root cause
 confounding variable | Additional changed factor obscuring a comparison. | remove a confounding variable
 controlled comparison | Comparison holding relevant conditions fixed except the tested change. | run a controlled comparison
-minimal example | Reduced example retaining the relevant behavior. | reduce to a minimal example
-baseline | Reference condition against which changes are compared. | establish a baseline
+optimistic concurrency | Detecting intervening changes when a conditional update is attempted. | enforce optimistic concurrency
+rounding mode | Rule for selecting a representable value when a result must be rounded. | specify the rounding mode
 failure signature | Identifying pattern of an observed failure. | compare the failure signature
 exception | Signal that interrupts normal execution under specified conditions. | capture the exception
-log context | Surrounding recorded information explaining an event. | preserve log context
-row count | Number of records or lines in the input table. | hold row count constant
+batched lookup | Retrieving data for several keys in one grouped operation. | replace repeated calls with a batched lookup
+N+1 query pattern | One initial query followed by one related query per loaded item. | identify an N+1 query pattern
 empty field | Present field containing no supplied value. | isolate the empty field
 malformed input | Data not conforming to the required structure or rules. | identify malformed input
 deterministic behavior | Behavior producing the same result under the same relevant conditions. | check deterministic behavior
@@ -188,26 +189,27 @@ Whether | Introduces a check whose result is genuinely unresolved.''',
 Which proposed comparison is strongest? | Keep three rows and other content fixed while varying the suspect date | Delete two more rows and change the environment | Compare unrelated files | Change date, encoding, and parser version together | Holding other factors fixed better isolates the condition being tested.
 Which phrase avoids overstating evidence? | The empty date is a working hypothesis | The empty date is conclusively responsible | The trace proves every input rule | The successful file eliminates all other causes | A working hypothesis accurately labels the explanation as still requiring evidence.
 What should the handoff preserve? | The failing fixture, conditions, and trace | Only the developer's confidence | A rewritten file without its original data | A production change without authorization | Reproducible evidence needs the original input and execution context.''',
-    dialogue='''Nia | I can reproduce the import failure with this three-row file. One row has an empty date, and the trace ends in the date-parsing path.
-Ellis | That gives us a useful [[reproducible example::A reproducible example provides the input and conditions needed to observe the reported failure again.]]. What did you change in the file that succeeds, and did you keep the other conditions the same?
-Nia | I removed the row with the empty date. The remaining two rows import successfully. I was about to report that the empty date causes the failure.
-Ellis | I would call that a [[hypothesis::Hypothesis labels the empty-date explanation as plausible but not yet isolated by a controlled test.]] for now. Removing the row changed its content and the total number of rows, so the comparison does not isolate the date.
-Nia | Fair point. The successful file tells us the smaller input works, but it cannot show which part of the removed row matters.
-Ellis | Exactly. The changed row count is a possible [[confounding variable::A confounding variable is another changed factor that prevents this comparison from isolating the date condition.]]. We should avoid ruling it out before making a comparison that keeps the relevant conditions fixed.
-Nia | Would keeping all three rows and changing only that date give us a clearer test? I would preserve the other fields and use the same environment.
-Ellis | That is a [[controlled comparison::Controlled comparison holds the other relevant conditions fixed while varying the suspected date condition.]] worth preparing. We still need to run it and record the outcome; a proposed test is not evidence of its result.
-Nia | I will keep the original file untouched as a reference. The comparison file can be separate, with the specific change recorded beside it.
-Ellis | Good. Preserve the failing [[input fixture::Input fixture names the prepared test data, which must remain available to reproduce the original failure.]] so another developer can reproduce your starting point. Otherwise we may accidentally lose the very example that made the problem observable.
-Nia | How should I describe the trace in the issue? I do not want to make it sound irrelevant just because it does not settle causation.
-Ellis | Say the [[stack trace::The stack trace records the observed call path around the error but does not alone establish its root cause.]] points to date parsing. That is useful location evidence. Keep it separate from the stronger claim that a particular input condition caused the failure.
-Nia | I should also record the exact error pattern. If the modified file fails differently, saying both failed could hide an important distinction.
-Ellis | Yes, compare the [[failure signature::Failure signature distinguishes the original error pattern from a different failure in the comparison run.]], not just the final status. A different exception or call path may mean you are looking at another problem rather than reproducing the same one.
-Nia | I have not checked repeated runs yet. The example failed when I tried it, but I should confirm how consistently it behaves under those conditions.
-Ellis | That helps establish [[deterministic behavior::Deterministic behavior concerns consistent results under the same relevant conditions, which repeated checks can investigate.]]. Record what you actually observe rather than assuming repeatability from one successful reproduction.
-Nia | This should stay outside production. We can prepare the comparison in an appropriate test setting without asking live users to trigger the error.
-Ellis | Agreed. Use a suitable [[nonproduction environment::A nonproduction environment supports the investigation without treating this dialogue as permission to test on live workloads.]] and record its relevant conditions. A result there still needs its environment boundary stated when you pass it on.
-Nia | I will update the issue to say the empty date is suspected, the two-row comparison is inconclusive, and the controlled three-row test is pending.
-Ellis | That is a well-qualified [[causal claim::A causal claim needs stronger evidence than the current confounded comparison, so the proposed cause remains qualified.]]. Include the fixture and trace, and we will assess the controlled result before calling anything the root cause.''',
+    dialogue='''Nia | The three-row import failed, and the trace reaches date parsing. I've attached the input, including the empty date in row two.
+Ellis | Let's make that a [[reproducible example::A reproducible example provides the input and conditions needed to observe the reported failure again.]] before calling the cause settled. Can another run with the same input and conditions produce the same failure?
+Nia | I haven't established that yet. I removed row two and the import passed, which made me suspect the empty date.
+Ellis | That's a useful [[hypothesis::Hypothesis labels the empty-date explanation as plausible but not yet isolated by a controlled test.]], not a conclusion. Removing the row changed its contents and the number of rows together.
+Nia | I wrote that the empty date causes the error. You're asking me to narrow that to what the comparison actually shows.
+Ellis | Yes. Row count is a [[confounding variable::A confounding variable is another changed factor that prevents this comparison from isolating the date condition.]] in this comparison. We don't know whether it matters, but we haven't held it fixed.
+Nia | Then I'll keep three rows and change only that date to a valid value, with the other data and settings unchanged.
+Ellis | That gives us a [[controlled comparison::Controlled comparison holds the other relevant conditions fixed while varying the suspected date condition.]]. Keep both files so we can inspect exactly what changed rather than rely on a description.
+Nia | Should I reduce the file further first? Two rows would be easier to send around, but that version currently passes.
+Ellis | Keep the failing [[input fixture::Input fixture names the prepared test data, which must remain available to reproduce the original failure.]] intact. A smaller passing file isn't a smaller reproduction of the failure we're investigating.
+Nia | The trace points into the parser. Could that still be downstream of a problem elsewhere in the import?
+Ellis | It could. The [[stack trace::The stack trace records the observed call path around the error but does not alone establish its root cause.]] records the observed call path; it doesn't establish which input condition first caused the problem.
+Nia | I'll preserve the error type and location with the run details. If a later run fails differently, we shouldn't count it as the same result.
+Ellis | Exactly. Compare the [[failure signature::Failure signature distinguishes the original error pattern from a different failure in the comparison run.]] as well as pass or fail. Otherwise a changed exception could hide a different defect.
+Nia | And I'll rerun each controlled input. A single failure followed by a single success doesn't establish repeatability.
+Ellis | Right. Check [[deterministic behavior::Deterministic behavior concerns consistent results under the same relevant conditions, which repeated checks can investigate.]] rather than assuming it. Record variations if the same input doesn't reliably produce the same result.
+Nia | I'll use the approved test environment, not try these files against a live customer import to get a quick answer.
+Ellis | Use the suitable [[nonproduction environment::A nonproduction environment supports the investigation without treating this dialogue as permission to test on live workloads.]] and keep its configuration in the record. We need evidence without changing production data.
+Nia | My update will say the empty date is suspected, the successful comparison changed two factors, and a controlled repeat test is pending.
+Ellis | That keeps the [[causal claim::A causal claim needs stronger evidence than the current confounded comparison, so the proposed cause remains qualified.]] at the right strength. Bring back the actual results; don't mark the hypothesis confirmed before the comparison is run.''',
+    rehearsal=["Read the failed-file report and the two-row comparison. Stress which facts were observed and which cause was only suspected.","Swap roles and repeat turns 5-10, keeping row count constant in the proposed test.","Check your closing report against turns 17-20: nonproduction setting, pending comparison, and no confirmed causal claim."],
     transfer_title='Report the evidence without upgrading the conclusion',
     transfer_setup='Complete the debugging handoff. The controlled test has not yet produced a result.',
     transfer='''Developer: "The failing file contains ___ rows." | three | The supplied failing fixture has three rows, including one empty date.
@@ -278,26 +280,27 @@ Once | Makes approval conditional on a specific unresolved correction.''',
 Why is this not only a refactor? | Observable notification behavior changes | The helper has a new name | Review comments are present | The title is short | A behavior-preserving refactor would not add completion notices after failure.
 What should the failure test assert? | No completion notice is sent | A completion notice always appears | Only the helper spelling is correct | Production release is approved | The defect concerns a false success message after export failure.
 Which statement preserves Priya's position? | The rename is acceptable; the notification behavior needs correction | Every line must be reverted | The author cannot write software | The test can be omitted because the rename is small | Priya distinguishes an acceptable naming change from an unresolved behavioral defect.''',
-    dialogue='''Priya | The new helper name makes sense to me. I have one blocking concern in the same diff: the completion-notification call has moved outside the success branch.
-Tomas | I intended this as a [[rename::Rename identifies the accepted identifier change, which does not explain or justify the additional behavioral change.]], so I was not expecting a behavior objection. Can you point me to the consequence you are seeing rather than the name itself?
-Priya | When export fails, execution can still reach that notification call. Users then receive a completion message even though the export did not complete successfully.
-Tomas | I see the changed [[control flow::Control flow determines whether a failed export can reach the notification call after it moves outside the branch.]] now. The call used to depend on success, and the new position removes that condition. That was not my intended change.
-Priya | Thanks. I am not asking you to undo the clearer name. I am asking for the notification to remain conditional on a successful export.
-Tomas | So the concern is the [[side effect::Side effect refers to the externally visible notification rather than the helper's new name.]], not the naming style. I can keep the rename and restore the original success-only placement.
-Priya | Yes. Please also add a test where export fails and verify that no completion notification is sent. The success case alone will not cover this problem.
-Tomas | That gives the [[failure path::The failure path must be exercised to check that unsuccessful exports do not trigger a completion notice.]] an explicit expectation. I will not just assert that the helper was called; I need to check the notification does not happen.
-Priya | Exactly. The review comment will identify the moved call, explain the false completion message, and request the condition and test. That should make the revision clear.
-Tomas | I appreciate the specific [[review comment::A review comment is actionable when it identifies the changed location, effect, and requested correction.]]. A general request to improve the code would not tell me which behavior you need preserved.
-Priya | The title also understates the current diff. Once you revise it, please make sure the description accurately reflects what remains and why the test was added.
-Tomas | I will update the [[review scope::Review scope should reflect the actual remaining changes rather than rely solely on the original rename title.]] rather than assume the title proves this is harmless. Reviewers still need to examine the changed lines.
-Priya | Calling the whole change a refactor would be misleading in its present form. A behavior-preserving change should not turn failed exports into apparent successes.
-Tomas | Agreed. The [[false success::False success is the completion indication produced even though the export operation failed.]] is the defect here. It is separate from whether the new name is clearer or the patch is small.
-Priya | After your revision, I will check the call placement and the failure assertion. Please include the test result, but do not describe my current feedback as approval.
-Tomas | Understood. I will submit a [[patch revision::A patch revision is an updated proposed change, which still needs review rather than automatic approval.]] with the rename intact, the notification guarded by success, and evidence from the added test.
-Priya | The test should be specific enough to fail if someone moves the call out again. Otherwise it could pass while the same user-visible problem returns.
-Tomas | That makes it a useful [[regression test::A regression test should detect recurrence of the known false-notification defect rather than merely execute the helper.]]. I will check the negative notification expectation, not only that the test reaches the export code.
-Priya | Good. My final comment will say the naming change is acceptable and the notification issue blocks approval until corrected and verified. That keeps the two points distinct.
-Tomas | Then the next step is [[verification evidence::Verification evidence supports the revised behavior and is needed before the reviewer can resolve the blocking concern.]], not a debate about naming. I will revise the patch and return it for review with the relevant result.''',
+    dialogue='''Priya | The helper name is clearer. Before I approve, though, can we look at the notification call you moved below the success branch?
+Tomas | I titled this as a [[rename::Rename identifies the accepted identifier change, which does not explain or justify the additional behavioral change.]]. Are you concerned about the identifier or something the new position changes?
+Priya | The position. A failed export can now reach that call, so the user could receive a completion notice for an unsuccessful export.
+Tomas | I see the [[control flow::Control flow determines whether a failed export can reach the notification call after it moves outside the branch.]] change. I pulled the call out while cleaning up the method, but that removes the success condition.
+Priya | Keep the clearer name. Restore the guard around the notification; that's the behavior I'm blocking on, not my naming preference.
+Tomas | Understood. The notification is a [[side effect::Side effect refers to the externally visible notification rather than the helper's new name.]] we need to preserve correctly. I'll keep it dependent on a successful export.
+Priya | Please add a failing-export case too. It should verify that no completion notice is sent, not merely that export was attempted.
+Tomas | So the [[failure path::The failure path must be exercised to check that unsuccessful exports do not trigger a completion notice.]] needs a no-notification expectation. A test that only checks the helper call could pass with this defect still present.
+Priya | Exactly. I'll point to the moved call and explain that consequence in the review so you don't have to infer the requested change.
+Tomas | That makes the [[review comment::A review comment is actionable when it identifies the changed location, effect, and requested correction.]] actionable. I can address the changed behavior without reopening the whole naming discussion.
+Priya | Also check the description against the final patch. Right now the title makes this sound like a purely mechanical change.
+Tomas | I'll clarify the [[review scope::Review scope should reflect the actual remaining changes rather than rely solely on the original rename title.]]. A small diff and a rename title don't establish that the actual behavior stayed the same.
+Priya | Would you agree the current version isn't behavior-preserving? The failed export and the completion notice contradict each other.
+Tomas | Yes. That [[false success::False success is the completion indication produced even though the export operation failed.]] is a defect, not a style disagreement. I won't describe the current patch as an approved refactor.
+Priya | Once the guard and failure assertion are in place, send the updated change back with the relevant test result.
+Tomas | I'll submit a [[patch revision::A patch revision is an updated proposed change, which still needs review rather than automatic approval.]] for another review. Your acceptance of the name isn't approval of the whole change.
+Priya | Make sure the new check would fail if that notification moved outside the success condition again. Otherwise it won't protect this behavior.
+Tomas | I'll verify the [[regression test::A regression test should detect recurrence of the known false-notification defect rather than merely execute the helper.]] catches that specific recurrence. Simply executing the failure branch isn't enough if the assertion misses the notice.
+Priya | Good. My review remains blocked on corrected behavior and its check. I'm happy with the name; those are separate decisions.
+Tomas | I'll return with [[verification evidence::Verification evidence supports the revised behavior and is needed before the reviewer can resolve the blocking concern.]] for the correction. We can resolve the blocking comment after you've reviewed that, not from this conversation alone.''',
+    rehearsal=["Read the review once, keeping acceptance of the name separate from the blocking behavior concern.","Swap roles for turns 5-10. Stress success-only notification and no notification after failure.","Repeat the final four turns. Include the regression check and pending review rather than announcing approval."],
     transfer_title='Turn a vague objection into a review request',
     transfer_setup='Complete the review summary while preserving the accepted rename and unresolved behavior issue.',
     transfer='''Reviewer: "The helper ___ is acceptable." | name | Priya explicitly accepts the naming change in the pull request.
@@ -369,26 +372,27 @@ Actual | Directs attention to the selected versions and applicable policy.''',
 What should be checked first about the selected version? | The resolved dependency record | Only the pull-request title | An unrelated package's policy | The latest version mentioned in a blog | The resolved record establishes the concrete TextCore version selected by this upgrade.
 What does deprecated not establish? | That the entry point has been removed | That a transition may need review | That a note exists | That the interface deserves attention | Deprecation and removal are different statuses, and removal has not been established.
 Which compatibility claim is justified now? | Compatibility remains unverified | The replacement is guaranteed identical | Every minor upgrade is safe | No call-site review is needed | Usage and replacement behavior have not yet been checked.''',
-    dialogue='''Leila | I have proposed the ParcelKit upgrade. The headline change looks small, but the resolved dependency list also shows a different TextCore version.
+    dialogue='''Leila | The ParcelKit upgrade also selects a different TextCore version. The request title doesn't show that indirect change, but the resolved list does.
 Ben | Then we need to review the [[transitive dependency::TextCore is a transitive dependency because the application receives it through ParcelKit rather than using it directly here.]] change as well. The application uses ParcelKit directly, but that does not make TextCore irrelevant to its behavior.
-Leila | I can attach the resolved versions before and after. Would the package declaration alone be enough, or do you want the selection recorded by the build?
+Leila | I can attach the package constraints and actual selected versions. Which record do you need to see what this build will really use?
 Ben | Please include the [[lockfile::The lockfile records resolved dependency selections and is more specific than a top-level version constraint alone.]] and the relevant dependency relationship. A constraint can allow several versions, while the resolved record tells us which one this change actually selects.
-Leila | There is also a note about a deprecated parsing entry point. I have not found whether we call it or whether ParcelKit calls it internally.
+Leila | The release notes mark a parsing entry point deprecated. I don't yet know whether our code or ParcelKit's internals call it.
 Ben | Keep that as a [[deprecation::Deprecation marks an interface for discouragement or transition but does not alone establish removal or current usage.]] finding, not a removal finding. The note deserves investigation, but its label alone does not tell us whether this application is affected.
-Leila | So I should not write that the upgrade removes a parser we use. Both removal and our usage are still unverified.
+Leila | I'll remove my claim that the upgrade deletes a parser we use. Deprecation, removal, and our usage are three different questions.
 Ben | Correct. Start by locating any relevant [[call site::A call site shows where the affected parsing interface is invoked, which must be checked rather than assumed.]], including indirect calls through ParcelKit. An absence of direct application calls would not automatically rule out an indirect dependency on that behavior.
-Leila | If there is a replacement entry point, could I simply switch to it? The name suggests it does the same kind of parsing.
+Leila | The replacement has a similar name. Before I switch anything, where should we check whether its inputs and error behavior actually match?
 Ben | Consult the [[migration guide::The migration guide provides transition details that a similar replacement name cannot establish.]] first. Similar names do not establish identical inputs, outputs, error behavior, or handling of edge cases. We need the relevant documented differences.
-Leila | I was also tempted to rely on the version number. The upgrade request does not tell us what versioning policy these packages follow.
+Leila | The version looks familiar, but we haven't checked either package's versioning policy. I shouldn't infer its compatibility promise from the number alone.
 Ben | Then do not assume [[semantic versioning::Semantic versioning provides specific conventions only when the relevant project actually adopts and follows that policy.]] guarantees. We can check the actual policy, but a familiar number pattern is not evidence that its promised compatibility rules apply.
-Leila | I will separate the questions: selected versions, affected usage, the old interface status, and the replacement's behavior. That should keep the review focused.
+Leila | I'll trace ParcelKit to TextCore in the review notes. That should explain why a package we don't call directly still matters to this upgrade.
 Ben | Good. The [[dependency tree::The dependency tree makes the ParcelKit-to-TextCore relationship visible so indirect impact is included in the review.]] will help explain why TextCore belongs in the discussion even though the request is named after ParcelKit.
-Leila | What should the test evidence cover once we identify the affected calls? Running the existing suite is useful, but I do not know whether it reaches them.
+Leila | The existing suite passes, but I haven't shown that it exercises the affected parsing entry point. What evidence should the review request?
 Ben | Ask which checks exercise the relevant [[public interface::The public interface is the exposed parsing surface whose supported behavior and affected callers need verification.]]. A passing suite cannot establish coverage of a path it never executes.
-Leila | That makes sense. I can list any coverage gap explicitly instead of using all tests passed as a blanket compatibility claim.
+Leila | I'll name that coverage gap instead of saying all tests passed therefore compatible. A green suite could simply miss the changed path.
 Ben | Exactly. We need [[upgrade evidence::Upgrade evidence combines actual versions, affected usage, documentation, and relevant checks rather than a broad assertion of safety.]] tied to this change. It should show what was checked and what remains unknown, not just that an upgrade command succeeded.
-Leila | My revised summary will say ParcelKit changes the resolved TextCore version, the parsing entry point is deprecated, and usage and replacement behavior still need review.
+Leila | My revised summary will separate resolved versions, deprecation status, usage, and replacement behavior. The last two still need investigation.
 Ben | That is accurate. Keep [[compatibility::Compatibility remains unverified until the relevant consumers and behavior have been checked against the proposed versions.]] unverified for now. Once those findings are available, we can discuss the upgrade on evidence rather than infer its impact from the headline.''',
+    rehearsal=["Read the dependency discussion and distinguish the requested ParcelKit change from the selected TextCore version.","Swap roles and repeat turns 5-12. Keep deprecated, removed, used, and compatible separate.","Check the final readback against turns 17-20. Usage and compatibility must remain unresolved until evidence is supplied."],
     transfer_title='Keep the dependency chain and uncertainty intact',
     transfer_setup='Complete the upgrade handoff without turning deprecation into confirmed removal or compatibility.',
     transfer='''Developer: "ParcelKit is the ___ dependency." | direct | The application uses ParcelKit directly under the stated dependency relationship.
@@ -459,26 +463,27 @@ One gap | Avoids overstating the scope of the proposed improvement.''',
 Which addition targets the defect? | Configure rejection and assert no success message | Rename the success test only | Check only that storage is called | Remove all assertions | The new case must trigger rejection and verify the missing user-visible boundary.
 What does the rejection unit test not establish? | Correct behavior of the real storage adapter | Behavior under the configured double response | Whether the assertion passes in that case | Whether the fixture rejects | The test still substitutes for the real adapter rather than exercising it.
 Which report is precise? | Success-path coverage exists; rejection and real-adapter coverage need work | All storage behavior is verified | A green test proves no bugs remain | Rejection cannot be simulated | The report separates existing coverage from two distinct unresolved areas.''',
-    dialogue='''Owen | The save test is green, but I am not sure it would catch the old bug. It checks the success message after the storage double returns success.
-Farah | Then it exercises the [[happy path::The happy path is the successful execution route supplied by the always-successful storage double.]]. What happens in the test when storage rejects the save, which was the condition behind the earlier false success message?
-Owen | Nothing produces rejection in the current fixture. The double always succeeds, so that condition is never reached. I should not claim the old defect is covered.
-Farah | Right. The [[test double::The test double replaces real storage and must be configured to produce the rejection needed by this test.]] is useful, but its configured behavior limits the test. We need a separate case that makes storage report the relevant unsuccessful outcome.
-Owen | I can add that case while preserving the successful-save test. Then the new check should concern the displayed result, not just whether storage was called.
-Farah | Add a [[negative assertion::A negative assertion checks that the unwanted success message does not appear after the simulated rejection.]] that no success message appears after rejection. Calling storage is compatible with both correct handling and the old bug.
-Owen | That distinction helps. A call-count check could pass even if the application ignored the rejected result and displayed completion anyway.
-Farah | Exactly. [[Interaction verification::Interaction verification checks dependency calls but does not alone establish the correct user-visible result.]] is not the same as verifying the resulting message. The assertion needs to match the defect we are trying to prevent.
-Owen | Should I describe the new case as an integration test? It crosses from the save operation to the storage interface, but the real adapter is still replaced.
-Farah | No. The relevant [[integration test::An integration test would exercise the relevant connected components, whereas this case still replaces the real storage adapter.]] would need to exercise the actual components whose interaction you are claiming to verify. This proposed case still uses a substitute.
-Owen | Then I will state that it checks application behavior under a simulated rejection. It does not establish how the real adapter responds.
-Farah | That keeps the [[coverage gap::The coverage gap for the real adapter remains open even if the simulated rejection unit case passes.]] visible. We know the real adapter is untested, and changing the double does not make that separate fact disappear.
-Owen | For the new case, I will prepare the rejection response, execute the save, and inspect the resulting user message. That gives the test a clear sequence.
-Farah | Yes: [[arrange::Arrange is the preparation stage that configures the rejection condition before the save behavior is executed.]] the condition, act on the save request, and assert the expected result. Keep the failure setup explicit so reviewers can see what the test really exercises.
-Owen | The success-only test was not worthless, then. Its result was simply being described too broadly as proof of the whole storage workflow.
-Farah | Correct. It provides evidence for its [[success response::Success response is the outcome configured in the existing test, so its evidence is limited to that path.]] case. The problem is the wider claim, not the existence of a focused test for a successful save.
-Owen | When I report the new result, I will name the double's configured outcome and the no-success assertion. I will list actual adapter behavior separately as unverified.
-Farah | Good. That is [[behavioral verification::Behavioral verification checks the observed application result, while retaining the boundary imposed by the substituted dependency.]] within a clear boundary. Avoid saying storage is fully tested when the evidence concerns only these simulated responses.
-Owen | The handoff will retain the happy-path test, add the rejection case, and call out the missing real-adapter check. Approval still depends on reviewing the actual revision.
-Farah | Exactly. A targeted [[unit test::A unit test can cover the application's rejection handling without proving the behavior of the real storage integration.]] closes a specific omission. We should welcome that improvement while remaining precise about what it does and does not demonstrate.''',
+    dialogue='''Owen | The save test passes. I was about to mark the old false-success bug covered, but the storage substitute always returns success.
+Farah | Then this checks the [[happy path::The happy path is the successful execution route supplied by the always-successful storage double.]]. Where does the test make storage reject the save, which is what exposed the old bug?
+Owen | It doesn't. I have no rejection case in this fixture, so the green result can't tell us whether we still ignore rejection.
+Farah | Configure the [[test double::The test double replaces real storage and must be configured to produce the rejection needed by this test.]] for that outcome in a separate case. Keep the successful-save case; it still checks useful behavior.
+Owen | I could assert that storage was called once. Would that distinguish the corrected application from the old one?
+Farah | Not by itself. Add a [[negative assertion::A negative assertion checks that the unwanted success message does not appear after the simulated rejection.]] that the success message is absent after rejection. Both versions might call storage once.
+Owen | Right, the old version called it but treated the rejected save as completed. The call count wouldn't catch that.
+Farah | Exactly. [[Interaction verification::Interaction verification checks dependency calls but does not alone establish the correct user-visible result.]] answers whether the dependency was called as expected; it doesn't replace checking what the user is told afterward.
+Owen | This still crosses the storage interface. Could I label it an integration check once the failure case is in place?
+Farah | Not as evidence for the real adapter. An [[integration test::An integration test would exercise the relevant connected components, whereas this case still replaces the real storage adapter.]] of that interaction needs the relevant actual components; your adapter remains replaced.
+Owen | Then the description should say simulated storage rejection and application response. We haven't exercised the actual adapter at all.
+Farah | Keep that [[coverage gap::The coverage gap for the real adapter remains open even if the simulated rejection unit case passes.]] explicit. Better simulated coverage doesn't silently close a different untested boundary.
+Owen | I'll prepare the rejected result, execute the save, then inspect the displayed message. The fixture should make the unsuccessful outcome obvious.
+Farah | Yes: [[arrange::Arrange is the preparation stage that configures the rejection condition before the save behavior is executed.]] the rejection, act on the save, and assert no success indication. Reviewers should see that setup without hunting through defaults.
+Owen | I'll retain the original check separately. It confirms that the application shows the intended message when the substitute reports a successful save.
+Farah | That's a bounded claim about the [[success response::Success response is the outcome configured in the existing test, so its evidence is limited to that path.]] case. The misleading part was describing it as proof of the complete storage workflow.
+Owen | After adding rejection, I'll report exactly which outcome was simulated and which visible behavior was checked, alongside the real-adapter gap.
+Farah | That is useful [[behavioral verification::Behavioral verification checks the observed application result, while retaining the boundary imposed by the substituted dependency.]]. Report the assertion result, not a blanket statement that storage is fully tested.
+Owen | The patch is still pending review. I'll attach both test results when they're available, without inventing a successful run in the handoff.
+Farah | Good. A targeted [[unit test::A unit test can cover the application's rejection handling without proving the behavior of the real storage integration.]] can catch this application defect while leaving the real integration question clearly open.''',
+    rehearsal=["Read the save-test exchange, stressing always succeeds when describing the original double.","Swap roles and repeat turns 5-12. Distinguish a no-success-message assertion from checking a dependency call.","Use the final four turns to rehearse a bounded test report. Include the simulated rejection and remaining real-adapter gap."],
     transfer_title='Name the test boundary',
     transfer_setup='Complete the review note about the current test and the proposed rejection case.',
     transfer='''Developer: "The existing double always ___." | succeeds | The current fixture supplies only successful storage outcomes to the save operation.
@@ -500,7 +505,7 @@ How far is B over the memory budget? | 40 megabytes | 15 megabytes | 80 megabyte
 What is unmeasured? | Tail latency and production behavior | The stated median values | The stated memory values | The budget difference | Only the benchmark median and memory figures are supplied, not tail or production results.''',
     vocabulary='''benchmark | Structured measurement under specified conditions. | run a benchmark
 latency | Time taken for a request or operation. | measure latency
-median | Middle value of an ordered set of measurements. | report median latency
+median | Middle ordered value, or mean of the two middle values for an even sample. | report median latency
 tail latency | Slower-end behavior in a latency distribution. | measure tail latency
 percentile | Value below which a stated percentage of observations falls. | report a latency percentile
 p95 | Ninety-fifth percentile of a measured distribution. | distinguish p95 from the median
@@ -550,26 +555,27 @@ Not automatically | Preserves the benefit while resisting an overall conclusion.
 Which budget statement is correct? | A is 40 below and B is 40 above | Both are within budget | B is 80 below budget | A is 40 above budget | The 120-megabyte limit lies forty above A and forty below B.
 Which claim exceeds the evidence? | B improves every production request | B has a lower measured median | B uses more measured memory | The benchmark used the same machine | Production behavior and every-request outcomes have not been measured.
 Which summary is balanced? | B lowers median latency but exceeds the memory budget; tail and production remain unmeasured | B is universally superior | A is faster in the supplied test | Memory no longer matters because latency improved | The summary combines the measured benefit, resource constraint, and remaining evidence limits.''',
-    dialogue='''Sora | The benchmark gives B a lower median: twenty-five milliseconds against A's forty. Both used the same input and machine, so the comparison conditions are matched.
+    dialogue='''Sora | B's measured median is twenty-five milliseconds versus A's forty on the same input and machine. I'd like to propose B, but its memory figure complicates that.
 Malik | That is useful [[benchmark::Benchmark identifies the controlled measurement, whose conditions limit the scope of the comparison.]] evidence. Put the memory figures beside it before we call B the better option. The resource budget is part of this decision.
-Sora | A uses eighty megabytes and B uses one hundred sixty. The budget is one hundred twenty, so B does not fit the stated limit.
+Sora | A uses eighty megabytes; B uses a hundred sixty. The budget is a hundred twenty, so B is forty over even in this measured case.
 Malik | Right. Its [[memory footprint::Memory footprint is the measured memory usage, which is 160 megabytes for B against a 120-megabyte budget.]] is twice A's and forty megabytes over budget. The latency improvement does not cancel that constraint.
-Sora | I want the percentage wording right. The median drops by fifteen milliseconds from a forty-millisecond baseline, which is a thirty-seven-point-five percent reduction.
+Sora | For the percentage, I subtracted twenty-five from forty and divided the fifteen-millisecond decrease by forty. That gives thirty-seven-point-five percent.
 Malik | Yes, that is the [[relative reduction::Relative reduction divides the fifteen-millisecond decrease by A's forty-millisecond baseline, yielding 37.5 percent.]] relative to A. Keep the baseline explicit so nobody divides by twenty-five and reports a different quantity under the same label.
-Sora | Could I say B is thirty-seven-point-five percent faster? That sounds more compact, but I can see it might blur latency with another speed measure.
+Sora | Would faster be too loose in the headline? I measured latency, not how many requests per second either version handles.
 Malik | Prefer the precise [[absolute difference::Absolute difference is the direct fifteen-millisecond reduction, which can be reported alongside the relative latency reduction.]] and percentage latency reduction. Those statements tell readers exactly which measurement changed without suggesting an unmeasured throughput result.
-Sora | We also have no tail-latency data. The median does not tell us whether the slowest requests improved or became worse.
+Sora | We didn't collect tail percentiles. A lower median could coexist with worse slow requests, so I can't claim improvement for every request.
 Malik | Correct. [[Tail latency::Tail latency concerns slower-end observations and cannot be inferred from the supplied median alone.]] remains unmeasured. Do not turn a better middle value into a claim about every request or a specific percentile we did not record.
-Sora | For A, the memory calculation goes the other way: eighty against a limit of one hundred twenty leaves forty megabytes available.
+Sora | A is forty megabytes below the same budget. I'll keep that separate from B's forty-megabyte excess rather than call both numbers spare memory.
 Malik | That is forty megabytes of [[headroom::Headroom is the forty-megabyte difference between A's eighty-megabyte usage and the 120-megabyte limit.]] under the stated budget. It is a different claim from saying A has more memory available under all possible workloads.
-Sora | Should the summary mention production explicitly? These measurements come from the controlled comparison, and we have not collected live-environment results.
+Sora | These are benchmark runs, not live measurements. Should I put that boundary alongside the numbers instead of burying it in a note?
 Malik | Yes. [[Production behavior::Production behavior remains unmeasured, so the controlled benchmark cannot establish live-system outcomes.]] is not established by these figures. Name that limit instead of relying on readers to infer it from the word benchmark.
-Sora | Then the headline should combine the gain and cost: lower measured median, higher memory, and a budget violation for B.
+Sora | Then the proposal needs both sides: fifteen milliseconds lower median, twice the memory, and B above the present limit.
 Malik | That presents the [[tradeoff::Tradeoff connects B's lower median latency with its higher memory use and failure to meet the stated budget.]] fairly. It acknowledges a real improvement without treating one favorable number as a complete engineering decision.
-Sora | I will not ask for the budget to disappear from the table. If someone proposes a different limit, that would be another decision, not a property of this measurement.
+Sora | I could request a changed memory budget, but that wouldn't make this run compliant with the current one. It would be a separate decision.
 Malik | Exactly. Current [[budget compliance::Budget compliance is evaluated against the stated 120-megabyte limit, which B exceeds regardless of its latency gain.]] is clear: A is below the limit and B is above it. A hypothetical future budget should not rewrite today's comparison.
-Sora | My final summary will report both values, the fifteen-millisecond decrease, the memory difference, and the missing tail and production measurements.
+Sora | I'll report the matched conditions, latency decrease, memory figures, and unmeasured tail and live behavior. We still need to decide what to investigate next.
 Malik | Good. Keep the [[controlled conditions::Controlled conditions specify the matched input and machine and prevent the result being generalized without further evidence.]] visible alongside that summary. We can make a reasoned next decision without pretending the benchmark answers questions it never measured.''',
+    rehearsal=["Read the performance comparison aloud with units: milliseconds for latency, megabytes for memory.","Swap roles for turns 5-12. State the fifteen-millisecond decrease, 37.5 percent reduction, and forty-megabyte headroom accurately.","Compare the final report with the supplied table facts. Keep the budget violation and unmeasured production behavior visible."],
     transfer_title='Report both sides of the comparison',
     transfer_setup='Use the supplied numbers to complete the benchmark summary. Units are printed in each sentence.',
     transfer='''Developer: "B's median is ___ milliseconds." | 25 | The measured median for implementation B is twenty-five milliseconds.
@@ -640,26 +646,27 @@ Before claiming | Makes a confidence statement dependent on missing contract evi
 Why is a new reservation request risky? | The first may already have created a reservation | Every retry always duplicates | The client has confirmed cancellation | Backoff guarantees a second failure | A repeated new operation may add another effect while the first outcome remains unknown.
 What does an idempotency key require? | Agreed service semantics | Only a convenient label | No server participation | Automatic universal guarantees | A key is useful only when the service contract defines how repeated intent is handled.
 Which next step is appropriate? | Clarify reconciliation and retry behavior, then test it outside production | Enable the retry in production immediately | Assume timeout means rejection | Promise exactly one reservation without evidence | The contract and controlled evidence are missing, and production changes are not authorized.''',
-    dialogue='''Imani | The reservation client timed out before it received a reply. I have a proposal to retry automatically, but it currently submits the second attempt as a new reservation.
+    dialogue='''Imani | The reservation client stopped waiting before a reply arrived. My retry proposal creates a new request, and I'm worried the first reservation may already exist.
 Leo | We need to preserve the [[uncertain outcome::Uncertain outcome means the first reservation may exist even though the client did not receive a timely response.]] of the first attempt. The service may already have created it, so the timeout is not proof that nothing happened.
-Imani | That is the gap in my current explanation. I described the request as failed, when what I actually know is that the client stopped waiting.
+Imani | I wrote request failed in the incident note. That's too strong: the only confirmed fact is that the client didn't get a response in time.
 Leo | Exactly. A [[timeout::Timeout describes expiration of the client's wait, not a confirmed service-side rejection or absence of a reservation.]] is an observation at the client. We need separate evidence about the service state before turning that into a business conclusion.
-Imani | If the first reservation exists, the new request might create another. We do not have documented behavior saying the service will recognize it as the same intent.
+Imani | If the service completed the first request, our new request could create another reservation. We don't have a documented rule that combines them.
 Leo | Then [[deduplication::Deduplication behavior is unspecified, so repeated intent cannot be assumed to produce only one reservation.]] must remain unspecified in the proposal. We cannot promise the second request will be merged or ignored just because the input looks similar.
-Imani | Would adding a request key solve it? I have heard teams describe keys as making retries safe, but I do not know this service's rules.
+Imani | Could we use a key to repeat the original intent? I don't want to add a field and assume the service knows how to handle it.
 Leo | An [[idempotency key::An idempotency key needs a defined service contract for repeated intent rather than merely being added to a request.]] needs agreed semantics on the service side. A new field alone does not tell us its scope, reuse rules, or what response a repeat receives.
-Imani | We should also be clear whether the retry represents the original operation or a genuinely new booking. Giving it a new identity could contradict our intended behavior.
+Imani | Then we need to specify whether this is another attempt at one booking or a genuinely new booking. The identifiers must reflect that distinction.
 Leo | Yes. Define the [[request identity::Request identity distinguishes a repeated attempt at the original operation from a new reservation with another intended effect.]] and how the service interprets it. That distinction belongs in the contract, not in an assumption hidden inside the client's retry loop.
-Imani | Before another attempt, could we establish the first result through a supported status check? I do not want to invent an endpoint that this service may not have.
+Imani | Is there a supported way to check the first outcome? I can ask about a status operation, but I haven't established that one exists.
 Leo | Request an agreed [[status lookup::Status lookup is a possible reconciliation mechanism that must actually be supported and defined rather than invented.]] or another supported reconciliation process. Its availability and meaning need confirmation; we have not established either in this discussion.
-Imani | Someone suggested adding a delay between attempts. That could reduce repeated traffic, but it would not tell us whether the first reservation already exists.
+Imani | Someone suggested waiting longer before retrying. That might reduce traffic, but wouldn't it leave the duplicate-reservation question exactly where it is?
 Leo | Correct. [[Backoff::Backoff changes timing between attempts but does not itself establish the earlier outcome or prevent duplicate business effects.]] is a timing policy, not a substitute for outcome and duplicate-handling semantics. A slower duplicate is still a possible duplicate.
-Imani | I will revise the proposal around those unresolved questions. There is no permission to enable the automatic retry in production while we investigate.
+Imani | I'll keep automatic retry disabled while those rules are unresolved. This investigation isn't permission to change live reservation behavior.
 Leo | Keep that [[authorization::Authorization is explicitly absent for production changes, so investigation must not be described as permission to enable the retry.]] boundary visible. Once the contract is defined, we can plan a controlled check without changing live reservation behavior.
-Imani | The test should cover a reply arriving too late after the service may have completed the operation, not only an immediate rejection before any work.
+Imani | For the controlled test, I want the service to complete while its reply is delayed. Testing only an immediate rejection misses the uncertain-outcome case.
 Leo | That will address the relevant [[shared state::Shared state is the reservation state whose service-side result may differ from what the timed-out client knows.]] uncertainty. Use a suitable sandbox and define the expected outcome before interpreting the test as evidence.
-Imani | My summary is no timely reply, first outcome unknown, proposed retry currently new, duplicate handling unspecified, and no production change approved.
+Imani | My revised note will say no timely reply, first outcome unknown, retry currently new, duplicates unspecified, and no production change approved.
 Leo | Good. We need [[reconciliation::Reconciliation establishes the actual first-request outcome and supports a defined retry decision rather than assuming failure from silence.]] and an explicit retry contract before claiming safety. That is the concrete next discussion, not a guarantee that an extra attempt will be harmless.''',
+    rehearsal=["Read the timeout report without replacing no reply with confirmed failure.","Swap roles and repeat turns 5-14. Distinguish request identity, outcome lookup, and retry timing.","Repeat the final four turns. The first outcome remains unknown and production retry remains unauthorized."],
     transfer_title='Do not turn silence into failure',
     transfer_setup='Complete the retry discussion using the stated uncertainty and permission boundary.',
     transfer='''Developer: "The client observed a ___." | timeout | The client stopped waiting before it received the service reply.
@@ -730,26 +737,27 @@ With Lee | Assigns decision ownership without predicting approval.''',
 Why does optional not settle compatibility? | The previous application's behavior with migrated data is untested | Optional fields are always incompatible | The migration never ran anywhere | Lee has already rejected release | Optional describes a field rule, not evidence of the older application's behavior.
 Which rollback claim is justified? | Readiness remains unverified without the relevant compatibility evidence | An older build guarantees safe rollback | Staging deployment proves data reversibility | A disabled flag automatically undoes the migration | The earlier application's compatibility with the changed state has not been tested.
 Who owns the unresolved production decision? | Lee | Every staging user | The feature flag itself | The migration tool | Lee is explicitly identified as the reviewer responsible for the production decision.''',
-    dialogue='''Chen | I am handing over R18 for your release review. It is deployed in staging, and the new search feature remains disabled by its flag.
-Lee | Keep that [[environment boundary::Environment boundary limits the deployment claim to staging rather than implying a live production release.]] explicit in the summary. I do not want deployed shortened into live when someone forwards this message.
-Chen | Agreed. The deployment is complete in staging, but the feature is not enabled there. I will report those as separate statuses.
-Lee | Good. The [[feature flag::The feature flag controls whether new search is enabled, which is separate from the code being deployed.]] state matters independently of where the code is installed. Neither fact is a production decision.
-Chen | The migration adds an optional field. I initially wrote backward compatible in the handoff, but we have not tested the previous application version against the changed state.
-Lee | Then replace that with [[known limitation::Known limitation identifies the untested previous-version compatibility rather than presenting optionality as proof.]]. Optional describes the field, not the older application's demonstrated behavior. We need to preserve the missing check.
-Chen | I will say compatibility with the previous application version remains untested. That is more accurate than predicting it from the small size of the change.
-Lee | Yes. [[Schema compatibility::Schema compatibility requires relevant evidence about components working with the changed structure, which is not supplied here.]] is a claim about interaction with the changed structure. A field being optional does not automatically establish every consumer's handling.
-Chen | Someone may ask whether we can simply return to the previous build if production review uncovers a problem. We have not verified that path either.
-Lee | Do not claim [[rollback::Rollback is a return to an earlier state whose readiness depends on compatibility with the actual migrated data and system state.]] readiness from the existence of an older build alone. Its behavior against the post-migration state is part of the unresolved question.
-Chen | Should I list that as a request to check the prior application with the migrated data, rather than as a request merely to locate the old build?
-Lee | Exactly. The relevant [[data compatibility::Data compatibility concerns whether the earlier application can correctly use the actual migrated state, not whether an old executable exists.]] evidence needs the real combination under review. Availability of a file is not the same as verified operation.
-Chen | I will keep the review outcome separate from the handoff. Sending you this status does not mean I have permission to enable search or proceed to production.
-Lee | Correct. I own the [[go/no-go decision::The go/no-go decision is Lee's unresolved production decision, not an automatic consequence of receiving the handoff.]] for production, and it has not been made. Please do not phrase my pending review as expected approval.
-Chen | The summary can list R18, staging, search disabled, optional-field migration, untested prior-version compatibility, and your decision ownership. That should be enough to avoid an ambiguous ready label.
-Lee | That is a useful [[handoff::Handoff transfers specific state, evidence gaps, and responsibility so the reviewer does not have to infer readiness.]]. It gives the next person concrete facts and an open item instead of a broad status that means different things to different readers.
-Chen | Once the missing check is performed, its actual result should be added. Until then, I will not mark compatibility complete because the staging deployment succeeded.
-Lee | Right. Keep the [[release gate::A release gate is a condition for advancing the release and cannot be treated as satisfied by an unrelated completed deployment.]] distinct from a completed deployment step. The relevant review still needs its evidence and an explicit decision.
-Chen | My final line will be staging deployed, search disabled, compatibility pending, production decision with Lee. There will be no claim that search is live.
-Lee | That supports an accurate [[readiness claim::A readiness claim must stay within the completed checks and unresolved decision rather than equating staging deployment with approval.]]. We can review what is actually known without confusing a status update with authorization to release.''',
+    dialogue='''Chen | R18 is deployed in staging. Search is still disabled, and I need your release decision after we address the compatibility gap.
+Lee | Keep that [[environment boundary::Environment boundary limits the deployment claim to staging rather than implying a live production release.]] in the first sentence. Someone reading only the headline mustn't mistake staging deployment for a production launch.
+Chen | I'll put the flag status next to the environment. The code being present doesn't mean users can use the new search.
+Lee | Right. The [[feature flag::The feature flag controls whether new search is enabled, which is separate from the code being deployed.]] remains off. Installed code, enabled behavior, and production approval are separate facts.
+Chen | The migration adds an optional field. I called it backward compatible in the draft, but we haven't tested the prior application against the migrated data.
+Lee | Make that a [[known limitation::Known limitation identifies the untested previous-version compatibility rather than presenting optionality as proof.]] instead. Optionality is a property of the field, not a result from running the previous application.
+Chen | So I'll replace the claim with prior-version compatibility untested. I don't have evidence that the older reader tolerates the changed data.
+Lee | Correct. [[Schema compatibility::Schema compatibility requires relevant evidence about components working with the changed structure, which is not supplied here.]] needs the relevant combination checked. Successful deployment of the new build doesn't answer how the old build handles it.
+Chen | We do have the old build available. Is that enough to say we can revert if the release causes a problem?
+Lee | No. [[rollback::Rollback is a return to an earlier state whose readiness depends on compatibility with the actual migrated data and system state.]] readiness depends on more than having the executable. The data state after migration matters to that path.
+Chen | Then the open check is the previous application with the migrated state, not simply confirming that its build artifact can be downloaded.
+Lee | Exactly. Request [[data compatibility::Data compatibility concerns whether the earlier application can correctly use the actual migrated state, not whether an old executable exists.]] evidence for that combination. Don't substitute an artifact-availability check for an operational result.
+Chen | I'll leave production pending. Sending you the handoff doesn't authorize me to turn search on or change the production environment.
+Lee | Correct. I own the [[go/no-go decision::The go/no-go decision is Lee's unresolved production decision, not an automatic consequence of receiving the handoff.]], and it hasn't been made. Please don't phrase my review as approval that's already expected.
+Chen | The handoff will list R18, staging, search disabled, the optional-field change, and the missing prior-version check with you as decision owner.
+Lee | That's a usable [[handoff::Handoff transfers specific state, evidence gaps, and responsibility so the reviewer does not have to infer readiness.]]. Concrete states tell me what's complete and what I still need; ready on its own doesn't.
+Chen | When we get the compatibility result, I'll attach the actual evidence. Until then the successful staging step stays separate from that open check.
+Lee | Good. A [[release gate::A release gate is a condition for advancing the release and cannot be treated as satisfied by an unrelated completed deployment.]] isn't met simply because another step completed. We'll review the missing evidence before deciding whether to advance.
+Chen | Final status: staging deployed, search disabled, compatibility pending, production decision with Lee. No statement that search is live.
+Lee | That keeps the [[readiness claim::A readiness claim must stay within the completed checks and unresolved decision rather than equating staging deployment with approval.]] defensible. Now the next person can act on the unresolved check without having to undo an implied release approval.''',
+    rehearsal=["Read the handoff with a pause after each status: environment, flag, compatibility, decision.","Swap roles for turns 5-12. Stress untested prior-version behavior rather than assuming optional means compatible.","Check the final readback against turns 19-20. Staging deployment must not become a claim of a live feature or production approval."],
     transfer_title='Four facts for the release handoff',
     transfer_setup='Complete the R18 handoff. Do not upgrade any pending check or decision to completed status.',
     transfer='''Developer: "R18 is deployed in ___." | staging | The only established deployment environment in the scenario is staging.

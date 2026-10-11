@@ -1,4 +1,4 @@
-"""Checks for the unpublished Cross-Cultural Leadership learner-book pilot."""
+"""Checks for the expanded Cross-Cultural Leadership learner book."""
 import re
 import unittest
 from collections import Counter
@@ -11,6 +11,7 @@ except ImportError:
     pdfplumber = None
 
 from books.cross_cultural_leadership_content import UNITS, SLUG, AUTHOR, COPYRIGHT, REPRODUCTION_NOTICE
+from books.supplements import load_supplements
 from build_leadership_book import (
     OUT, content_hash, validate_content, validate_layout, unit_page, key_page,
     TOTAL_PAGES, KEY_START, PHRASES_START, INDEX_START, INDEX_PAGES, SOURCES_PAGE,
@@ -53,10 +54,10 @@ class LeadershipBookContentTests(unittest.TestCase):
 
     def test_numbered_layout_references(self):
         self.assertEqual([unit_page(i) for i in range(8)], [4, 13, 22, 31, 40, 49, 58, 67])
-        self.assertEqual([key_page(i) for i in range(8)], list(range(76, 92, 2)))
-        self.assertEqual([key_page(i, True) for i in range(8)], list(range(77, 92, 2)))
+        self.assertEqual([key_page(i) for i in range(8)], list(range(85, 101, 2)))
+        self.assertEqual([key_page(i, True) for i in range(8)], list(range(86, 102, 2)))
         self.assertEqual((KEY_START, PHRASES_START, INDEX_START, INDEX_PAGES, SOURCES_PAGE),
-                         (76, 92, 94, 8, 102))
+                         (85, 104, 106, 8, 114))
 
     def test_layout_guard_rejects_overlaps_and_overflow(self):
         valid = dict(page=1, text='example', x=46, width=100, top=120, bottom=100)
@@ -74,9 +75,9 @@ class LeadershipBookPDFTests(unittest.TestCase):
         cls.text = [' '.join(p.extract_text().split()) for p in cls.reader.pages]
 
     def test_branding_page_count_and_placeholder_cleanup(self):
-        self.assertIn(content_hash(), self.reader.metadata.subject)
+        self.assertIn(content_hash(UNITS, load_supplements(SLUG)), self.reader.metadata.subject)
         self.assertEqual(len(self.reader.pages), TOTAL_PAGES)
-        self.assertEqual(TOTAL_PAGES, 102)
+        self.assertEqual(TOTAL_PAGES, 114)
         for number, text in enumerate(self.text, 1):
             self.assertIn('English Ladder', text)
             self.assertIn(f'Phil Stilwell | {number:02d}', text)
@@ -199,8 +200,16 @@ class LeadershipBookPDFTests(unittest.TestCase):
                         self.assertEqual(len(span), CLOZE_UNDERSCORES, page.page_number)
                         self.assertTrue(all(abs(char['size'] - CLOZE_FONT_SIZE) < .01 for char in span))
                         widths.append(span[-1]['x1'] - span[0]['x0'])
+                    page.close()
         self.assertEqual(len(widths), 112)
         self.assertAlmostEqual(min(widths), max(widths), places=3)
+
+    @unittest.skipIf(pdfplumber is None, 'Optional local visual-audit dependency is not installed')
+    def test_all_original_and_additional_printed_blanks(self):
+        from audit_work_books import audit_blank_geometry
+        result = audit_blank_geometry(OUT, UNITS, load_supplements(SLUG))
+        self.assertEqual(result['count'], 142)
+        self.assertEqual(result['min_width_pt'], result['max_width_pt'])
 
     @unittest.skipIf(pdfplumber is None, 'Optional local visual-audit dependency is not installed')
     def test_printed_text_stays_on_page(self):
@@ -211,6 +220,7 @@ class LeadershipBookPDFTests(unittest.TestCase):
                     self.assertLessEqual(char['x1'], page.width, page.page_number)
                     self.assertGreaterEqual(char['top'], 0, page.page_number)
                     self.assertLessEqual(char['bottom'], page.height, page.page_number)
+                page.close()
 
 
 if __name__ == '__main__':

@@ -26,6 +26,7 @@ BOOK = dict(
 BOOK['units'].append(unit(
     title='Product Discovery and Problem Framing',
     scene='One button request, two different problems',
+    rehearsal=['Read turns 1-10 in pairs. Stress finding and permission as different barriers.', 'Switch roles for turns 11-20. Pause after the two-day limit and the no-approval statement.', 'Check the Download exchange, then read it with six and four clearly distinguished.'],
     skill='Reframe a requested interface addition using supplied support evidence and agree a focused discovery task.',
     brief='Support lead Morgan asks product manager Li for a new Export button on the home page. Their review finds 12 relevant tickets from the past month: eight users could not find the existing action, while four found it but lacked the required permission. The records do not show how common either problem is among all users. No design change is approved. Morgan and Li agree to separate the two issues and prepare a two-day investigation of navigation and permission messaging before choosing a solution.',
     cast='Morgan | Support lead\nLi | Product manager',
@@ -89,13 +90,13 @@ Why is adding a button not a complete answer for the four permission cases? | Fi
 Li | I want to address that, but let us separate the [[solution request::The solution request names a new button, while the underlying evidence may support more than one kind of problem.]] from the problem. The existing action already exports, so what happened when these users tried to reach it?
 Morgan | We reviewed twelve tickets from last month. Eight users could not find the action. Four found it but did not have the required permission.
 Li | Then [[discoverability::Discoverability concerns finding the available action, which is the barrier described in eight of the twelve tickets.]] is one issue, not the entire set. We should keep the four permission cases separate instead of treating cannot export as a single diagnosis.
-Morgan | That distinction helps. Another button might give the first group a clearer route, but it would not authorize the other four users to perform the action.
+Morgan | So the button might help eight of them, but it would leave the other four stuck. Can we keep those groups separate in the ticket summary?
 Li | Right. Their [[permission::Permission is authorization to use the action, distinct from being able to locate it.]] problem needs its own review. We can examine the explanation and request path without suggesting that legitimate access controls should disappear.
 Morgan | I can attach the relevant ticket excerpts and task details. We should not just count the phrase cannot export when it can describe different experiences.
 Li | That makes the [[support evidence::Support evidence provides concrete reported experiences, but the ticket sample does not establish prevalence among all users.]] more useful. It still does not tell us how common either problem is across all users, so keep that broader claim out of the summary.
 Morgan | For the navigation cases, I would like to know where people started and which menu labels they tried. That could explain why the existing location was missed.
 Li | Trace the [[navigation path::The navigation path records the sequence users followed and can reveal where they missed the existing action.]] during the actual task. A clearer label, a different location, and an additional button are distinct options rather than interchangeable fixes.
-Morgan | We can arrange a focused review rather than leave the request in discovery indefinitely. I need a concrete next step to give the support team.
+Morgan | How much investigation are we talking about? Support needs a date for an update, even if we cannot promise a fix yet.
 Li | Let us set a two-day [[discovery scope::Discovery scope bounds the work to navigation and permission messaging, creating a specific decision point before design selection.]]. We will examine these two paths and bring the findings back before choosing a design change.
 Morgan | For the navigation work, the question should be whether people can find the action when they need it, not whether they like our preferred button idea.
 Li | That is a better [[research question::The research question tests the user's task and obstacle instead of soliciting approval of a predetermined button solution.]]. We can observe what happens and compare the evidence with the assumption behind the request.
@@ -116,6 +117,7 @@ Product: "These records are a ticket sample, not all ___." | users | The supplie
 BOOK['units'].append(unit(
     title='Roadmaps and Prioritization',
     scene='Three urgent requests, two delivery slots',
+    rehearsal=['Read turns 1-10. Emphasize two slots and the fixed-commitment rule.', 'Switch roles for turns 11-20. Contrast a review point with a delivery promise.', 'Check the X/Y/Z exchange. Read the selected pair and deferred item aloud in order.'],
     skill='Apply agreed priorities to a capacity conflict, explain the displaced work, and distinguish a review date from a delivery promise.',
     brief='Product owner Nora and commercial sponsor Samir review three features. A improves setup recovery and directly supports the agreed activation goal. B provides audit export needed for a recorded October 31 customer commitment. C refreshes the home page; no fixed commitment or activation evidence is supplied for it. Each feature needs one of two available delivery slots, and splitting them is not feasible this cycle. The agreed rule is to protect fixed commitments first, then the activation goal. Nora proposes B and A, with C reviewed again in two weeks.',
     cast='Nora | Product owner\nSamir | Commercial sponsor',
@@ -177,7 +179,7 @@ What new information could justify reconsideration? | Relevant evidence changing
 Which statement about the review is accurate? | C will be reconsidered in two weeks without a promised delivery date. | C is guaranteed in production within two weeks. | The review cancels the current pair automatically. | The review proves C has no possible future value. | A reconsideration checkpoint preserves flexibility without creating an unsupported release commitment.''',
     dialogue='''Samir | All three sponsors are calling their feature urgent. My team wants the home-page refresh included because we have already discussed it in several customer conversations.
 Nora | We have a [[capacity constraint::The capacity constraint is two available delivery slots for three one-slot features, with no feasible split this cycle.]]. There are two slots, and the team has assessed each feature at one slot. We need to choose rather than announce a scope the team cannot deliver.
-Samir | I understand the limit. I do not want priorities decided by the most forceful sponsor. What basis are we using?
+Samir | Understood. But I need more than "there is no room" for the sponsor. Can you walk me through the rule we agreed?
 Nora | The agreed [[decision rule::The decision rule protects recorded fixed commitments first and then the activation goal, rather than ranking sponsors by forcefulness.]] is fixed commitments first, then the activation goal. It gives us a shared basis instead of comparing the intensity of each sponsor's request.
 Samir | The audit export has the October thirty-first customer commitment. That is different from my team's interest in showing a more current home page.
 Nora | Yes. B protects that [[fixed commitment::The fixed commitment is the recorded October 31 audit-export obligation that the supplied rule prioritizes.]]. We should not displace it without explicitly addressing the obligation and the required authority, rather than treating it as another optional preference.
@@ -189,7 +191,7 @@ Samir | Then putting C back in would require removing one of the selected featur
 Nora | Exactly. Explain the [[opportunity cost::Opportunity cost makes the displaced alternative visible when C competes for one of the two available slots.]]. Choosing the refresh means giving up the selected work that would otherwise occupy that slot under our current capacity.
 Samir | I can explain that to the sponsor. How can we bring new evidence back if a specific customer consequence becomes clearer?
 Nora | Set a [[review trigger::A review trigger identifies new evidence or a condition that would justify reconsidering C under the agreed decision rule.]]. Relevant new evidence can change the decision, but the review must still account for the fixed commitment, activation goal, and available capacity.
-Samir | We also agreed to revisit C in two weeks. I should be careful not to describe that checkpoint as a promise that the refresh will be released then.
+Samir | Two weeks is a review, then, not a release date? I need to correct that in my customer-call notes before it becomes an expectation.
 Nora | Correct. C is a [[deferred item::A deferred item is outside the current cycle; its review date does not guarantee a future delivery slot.]], and the two-week meeting is a review point. It is not automatic approval for the next cycle or a hidden delivery commitment.
 Samir | Please record the rationale for every sponsor. Different informal explanations could make a consistent decision look arbitrary.
 Nora | I will update the [[decision log::The decision log preserves the selected pair, shared rationale, capacity constraint, and conditions for reconsideration.]] with B and A, the capacity limit, and the review point for C. Your concern and the relevant evidence request will be recorded too.
@@ -205,6 +207,7 @@ Sponsor: "Adding it requires a ___." | trade-off | With unchanged two-slot capac
 
 BOOK['units'].append(unit(
     title='User Stories and Acceptance Criteria',
+    rehearsal=['Read turns 1-10. Stress usable, at least 95, and every run.', 'Switch roles for turns 11-20. Keep criterion passed distinct from story complete.', 'Check the transfer. Read 93 and 95 distinctly, then stress fails in the conclusion.'],
     scene='Quickly needs a clock and a test condition',
     skill='Turn a vague performance request into a checkable criterion and distinguish that criterion from the wider completion standard.',
     brief='Product manager Eva and test lead Omar refine a story saying an authorized editor should open the records page quickly. They agree a fictional acceptance test: 100 navigations with the fixed 1,000-record dataset and test profile N, timed from the navigation click until records and the primary action are usable. At least 95 runs must finish within 2 seconds, and every run within 5 seconds without an error. A trial records 96 within 2 seconds and four more within 4.5 seconds, with no errors. Other completion checks remain open.',
@@ -261,7 +264,7 @@ Within | Includes the stated boundary unless the agreed rule says otherwise.
 Average | Does not describe every run or the slow tail.
 Accepted | Specify which criterion or work item was accepted.
 Done | Requires the applicable completion standard, not only one passing test.''',
-    d='''Which criterion is testable on the supplied basis? | At least 95 of 100 defined navigations usable within 2 seconds, all within 5, without errors | The page feels quick to most people | The team is generally pleased with performance | The browser starts a request promptly | The first option supplies the count, timing endpoints, limits, and error condition needed for evaluation.
+    d='''Which criterion matches the agreed performance rule? | At least 95 of 100 defined navigations usable within 2 seconds, all within 5, without errors | Average navigation time below 2 seconds, with every run below 5 | At least 95 loading shells visible within 2 seconds, with no request errors | All 100 navigations usable within 5 seconds, regardless of the two-second count | The correct criterion preserves usable completion, both count and ceiling requirements, and the no-error condition. An average or a loading shell measures something different.
 What if only 94 runs meet 2 seconds, while all finish before 5 seconds without errors? | The stated criterion fails. | It passes because the slow ceiling is met. | It passes because 94 is close to 95. | No conclusion is possible about the supplied count rule. | The rule independently requires at least 95 runs within two seconds, so meeting the ceiling alone is insufficient.
 Why time until the primary action is usable? | The user must be able to perform the intended task, not merely see a loading shell. | A visual placeholder always proves the task can be completed. | Network start and task readiness are identical by definition. | The dataset size becomes irrelevant once anything appears. | The defined endpoint connects performance evidence to usable behavior instead of an earlier technical event.
 What can Eva say after the actual trial? | This criterion passed under profile N; other completion checks remain open. | Every possible user environment is proven fast. | The whole increment automatically meets all quality requirements. | The four slower runs were errors despite completing within the ceiling. | The evidence supports the stated test result, not untested conditions or all remaining work.''',
@@ -273,13 +276,13 @@ Eva | We should fix the data as well. Let us use the agreed one-thousand-record 
 Omar | Use that [[test fixture::The test fixture supplies controlled data and setup, here the fixed one-thousand-record dataset.]] with profile N. The evidence needs its configuration attached so another reviewer can understand what was measured and repeat the check appropriately.
 Eva | For the main threshold, I propose that at least ninety-five of one hundred navigations finish within two seconds. We should also define what happens to the slower runs.
 Omar | Add a [[response-time threshold::The response-time threshold defines an acceptable duration; the case also sets a separate ceiling for every run.]] of five seconds for every run, with no errors. That prevents a good fast-run count from concealing an unacceptable slow tail.
-Eva | We are using a count-based rule, not an average. An average below two seconds would not tell us that ninety-five individual runs met the requirement.
+Eva | The dashboard gives me an average. Could you send the individual run counts as well? Otherwise I cannot check our ninety-five-out-of-a-hundred rule.
 Omar | Correct. [[Tail latency::Tail latency concerns the slower responses that can be hidden by an average and are bounded here by the five-second ceiling.]] matters to the experience too. Keep the exact rule in the story rather than replace it with a different summary statistic during reporting.
 Eva | The trial produced ninety-six runs within two seconds. The other four finished within four point five seconds, and there were no errors.
 Omar | Then this [[acceptance test::The acceptance test passes because the recorded run counts, ceiling, and no-error condition all satisfy the agreed rule.]] passes on the supplied result. Ninety-six meets the minimum, and all one hundred remain within the separate ceiling without an error.
 Eva | I can report that clearly, but I should not imply that every device, network, or dataset has been tested. The result belongs to the agreed setup.
 Omar | Keep the [[test profile::The test profile identifies the environment and conditions under which the passing result was obtained.]] visible. The conclusion applies to profile N and the defined data, not automatically to every environment a future user might have.
-Eva | We also have other completion checks outstanding. Passing performance should not make the entire story or increment appear complete if the wider requirements remain open.
+Eva | Can I mark the performance criterion passed and leave the story open? We still have completion checks outstanding, and I do not want to hide them.
 Omar | Exactly. The [[Definition of Done::The Definition of Done is the wider agreed quality standard in Scrum, not a substitute label for one story-specific passing criterion.]] is a separate completion standard where the team uses Scrum. One story-specific criterion does not replace the agreed quality requirements for the increment.
 Eva | We should preserve the distinction between an ordinary successful path and the other states the product must handle. This test did not define every exceptional situation.
 Omar | Yes. The [[happy path::The happy path is the intended successful sequence; covering it does not automatically address all exceptional or empty states.]] is not the entire behavior of the product. Keep the remaining checks visible rather than let one useful test stand for everything.
@@ -294,6 +297,7 @@ Product: "The recorded timing unit is ___." | seconds | All thresholds and obser
 
 BOOK['units'].append(unit(
     title='Metrics, Funnels, and Product Analytics',
+    rehearsal=['Read turns 1-10. Keep signup counts and completion rates clearly separated.', 'Switch roles for turns 11-20. Stress possible explanations without making them causes.', 'Check the transfer. Read each rate and the percentage-point decline with its unit.'],
     scene='More signups, fewer completed setups',
     skill='Explain opposing funnel movements using aligned cohorts, counts, rates, and an explicit limit on causal interpretation.',
     brief='Analyst Imani and growth lead Alex compare two fully matured signup cohorts using the same seven-day setup-completion definition. The earlier cohort has 1,000 signups and 600 completions; the later cohort has 1,500 signups and 500 completions. Event counts are verified. A campaign ran during the later period, but other conditions were not controlled, and no causal attribution is established. Alex calls the campaign a complete success. Imani must explain acquisition growth alongside the decline in completed setups and completion rate.',
@@ -362,11 +366,11 @@ Alex | Then the counts describe a real difference in the recorded outcome, not m
 Imani | Correct. Keep the [[denominator::The denominator is each cohort's eligible signup count, which must remain aligned with its own completions.]] with each rate. The earlier rate is six hundred divided by one thousand, while the later is five hundred divided by fifteen hundred.
 Alex | That is sixty percent before and about thirty-three point three three percent later. The decline in the rate is larger than the decline in the completion count.
 Imani | Yes. The [[conversion rate::The conversion rate is the share of signups completing setup within seven days, not the raw completion count.]] fell by about twenty-six point six seven percentage points. The count and the rate answer related but different questions.
-Alex | The completed-setup count fell by about sixteen point six seven percent relative to six hundred. I should not confuse that with the percentage-point change in the rate.
+Alex | I have sixteen point six seven percent in my slide. That is the fall in completed setups, not the change in conversion rate. I need separate labels.
 Imani | Exactly. State [[setup completion::Setup completion is the defined downstream event whose count and rate both declined in the supplied comparison.]] in both forms when needed: five hundred completions and roughly thirty-three percent of signups. Neither should disappear behind the favorable acquisition headline.
 Alex | Could the campaign have attracted people who were less ready to configure the product? That seems plausible, but we have not examined the composition of the new signups.
 Imani | Investigate [[channel mix::Channel mix concerns the composition of acquisition sources and is a possible explanation to investigate, not an established cause here.]] and other relevant differences. Plausibility is a reason to analyze, not enough to assign the entire decline to the campaign.
-Alex | We should also look at the setup steps. The total says fewer users completed, but it does not tell us where they stopped or what obstacle they encountered.
+Alex | Can we break setup into steps for the next review? I can see the loss in the total, but not where people got stuck.
 Imani | Locate the [[drop-off::Drop-off identifies loss between defined funnel steps; step-level evidence is needed to locate the obstacle.]] using the appropriate step-level evidence. A product problem, a changed audience, and other explanations need different supporting records.
 Alex | The event counts have been verified for this comparison. That removes one data-quality concern, but it does not make the business explanation automatic.
 Imani | Correct. Verified [[instrumentation::Instrumentation produces the event records; verifying those counts does not establish the causal explanation for their movement.]] supports trust in the observation. It does not show which uncontrolled difference between the periods caused the outcome.
@@ -384,6 +388,7 @@ Growth: "The cause remains ___." | unestablished | The briefing supplies descrip
 
 BOOK['units'].append(unit(
     title='Experimentation and A/B Testing',
+    rehearsal=['Read turns 1-10. Contrast observed lead with final winner.', 'Switch roles for turns 11-20. Stress that guardrail monitoring continues.', 'Check the transfer. Read 8%, 10%, and 25% with the correct comparison each time.'],
     scene='A day-one lead is not a final winner',
     skill='Discuss interim experiment results without changing the decision rule after seeing favorable data, while preserving guardrail monitoring.',
     brief='Product manager Jules and experimentation analyst Priya review day one of a randomized test. Control A has 100 conversions from 1,000 eligible users; variant B has 120 from 1,000. The pre-agreed fixed-horizon plan requires 14 days and at least 10,000 eligible users per arm before the final analysis. No sequential early-success rule is approved. The safety guardrail pauses an arm if its defined error rate exceeds 3%; current B errors are 1.2%. Data-quality checks are clear so far. Jules wants to announce B as the winner.',
@@ -450,13 +455,13 @@ Jules | The observed rates are twelve percent and ten percent. I can describe th
 Priya | Correct, and keep the [[control arm::The control arm is A, whose ten-percent rate provides the reference for the stated relative increase.]] clear. Those expressions describe the observed difference; neither one supplies a final significance conclusion or a guarantee of rollout benefit.
 Jules | The plan calls for fourteen days and at least ten thousand eligible users per arm. We are short of both requirements after the first day.
 Priya | This is a [[fixed-horizon test::A fixed-horizon test follows its preplanned endpoint and analysis rules rather than stopping whenever an interim result looks favorable.]]. We should not redefine its success decision because today's numbers look attractive, especially when no alternative early-success method has been approved.
-Jules | Could we simply keep checking each day and stop on the first favorable result? That would give us a way to move quickly if the pattern continues.
+Jules | What if B is still ahead tomorrow and we call it then? I want to avoid waiting unnecessarily, but would that change the analysis?
 Priya | That changes the [[stopping rule::The stopping rule determines when a decision is permitted; changing it after repeated favorable looks can invalidate the planned inference.]]. Repeated opportunities to declare success need an appropriate statistical method, not an improvised rule added after seeing the data.
 Jules | I understand that success stopping needs discipline. But we should still watch for a poor experience while the test runs, rather than wait until the final day.
 Priya | Absolutely. The [[guardrail::The guardrail protects against unacceptable effects during the experiment and remains active before the final success analysis.]] stays active. Our defined error rule pauses an arm above three percent; B is currently at one point two percent, so it has not breached that threshold.
 Jules | If that error rate later crosses the threshold, we follow the pause and investigation process. The fixed horizon does not require us to ignore that change.
 Priya | Correct. [[Sequential testing::Sequential testing is a method designed for valid repeated decisions; none is approved here for declaring early success.]] could support different success rules if properly planned, but it is not the method approved here. Guardrail monitoring is still part of this plan.
-Jules | We should also keep checking allocation and event quality. A positive-looking metric would not be useful if the assignment or measurement data were unreliable.
+Jules | Who is watching assignment and event quality while it runs? I do not want us discussing a conversion gain that turns out to be a logging problem.
 Priya | Yes. Investigate a [[sample ratio mismatch::A sample ratio mismatch can indicate a problem in allocation or data capture, so it must be assessed rather than ignored for a favorable outcome.]] if one is flagged, alongside the relevant event checks. The current checks are clear so far, which is a status rather than a permanent guarantee.
 Jules | One day also gives us only a narrow time slice. Different weekday behavior or a temporary reaction to the new experience could affect what we see.
 Priya | A [[novelty effect::A novelty effect is a temporary response to the new experience and is one possible reason early behavior may not persist.]] is one possible concern. Do not claim it explains this result, but do not assume the first day's response represents the full planned period either.
@@ -473,6 +478,7 @@ Product: "The final winner remains ___." | undecided | The approved final-analys
 
 BOOK['units'].append(unit(
     title='Release Readiness and Go-to-Market',
+    rehearsal=['Read turns 1-10. Contrast sent with confirmed usable.', 'Switch roles for turns 11-20. Stress review, approval, and announcement as separate events.', 'Check the transfer. Read the four handoff terms clearly without adding an approval.'],
     scene='The software is ready; the support handoff is not',
     skill='Coordinate a release review by naming the missing operational prerequisite, its owner, and the distinction between review and launch approval.',
     brief='Release manager Ana and product marketer Rob prepare a Friday 10 a.m. launch review for a workspace-permissions update. Engineering checks are complete and the rollback rehearsal passed. The local launch checklist also requires migration notes delivered to Support and confirmed usable by its lead. Those notes have not been delivered. Ana can assign delivery for Thursday 3 p.m. and request Support review, but no waiver or launch approval exists. Rob wants to send the customer announcement now.',
@@ -541,11 +547,11 @@ Rob | Can we set Thursday at three as the delivery deadline and ask the Support 
 Ana | We can assign a [[dependency owner::The dependency owner is responsible for producing the missing input, making the delivery request actionable.]] and that deadline. We should also confirm who performs the recipient review so delivery does not become an unowned handoff.
 Rob | I will coordinate with the author and make sure Support can access the current document. A draft in a private folder would not meet the requirement.
 Ana | Correct. The [[migration notes::Migration notes explain how to move to or handle the changed behavior, and must actually reach Support in usable form.]] need to reach the people using them. Their content should address the change and support route, not just repeat the marketing headline.
-Rob | Once the file is sent, I should still wait for the Support lead's response. The requirement is more specific than an email timestamp.
+Rob | I can show that we sent a file. Are you saying I also need the Support lead to confirm that it answers the migration questions?
 Ana | We need [[acceptance confirmation::Acceptance confirmation records that Support considers the delivered notes usable, not merely that an attachment was transmitted.]]. Sent and accepted are different states here, and the readiness record should preserve both rather than assume silence means the document is sufficient.
 Rob | We can keep Friday's ten o'clock meeting scheduled while those actions proceed. But the invitation should not be read as proof that the launch has already been approved.
 Ana | Exactly. It is a [[go/no-go decision::The go/no-go decision is the pending authorization point, distinct from scheduling the meeting or completing engineering work.]] review. The decision depends on the required evidence and any open items, not on the fact that everyone has accepted the calendar invitation.
-Rob | Then I can prepare the announcement but leave the availability claim unsent until the release decision. That avoids turning a campaign task into an unauthorized launch promise.
+Rob | I will prepare the announcement but keep it unsent. Please flag the release decision; I should not infer it from the meeting invitation.
 Ana | Keep the [[customer announcement::The customer announcement must reflect actual availability and approval, so it should not get ahead of the pending release decision.]] aligned with the decision. We can prepare coordinated messages now without telling customers a pending change is already approved or available.
 Rob | If the notes arrive late or Support finds gaps, we need an explicit response. Otherwise people may assume the engineering result overrides the unfinished handoff.
 Ana | Agree the [[contingency::The contingency states the response if the required delivery or confirmation is missing, preserving the authorized decision process.]] with the release owner. The unresolved gate must be presented honestly; no waiver is recorded, and we should not invent one to preserve a preferred date.
@@ -555,14 +561,15 @@ Rob | Our status can now acknowledge the completed engineering checks while nami
 Ana | That gives an accurate [[operational readiness::Operational readiness includes the people and processes needed to support the live change, not only the software's technical state.]] picture. We can keep preparing for the launch while leaving its approval with the responsible review and the evidence it requires.''',
     transfer_title='A sent file is only half the gate',
     transfer_setup='The checklist requires a migration guide delivered to Support and confirmed usable by its lead. Delivery is recorded, but confirmation is absent. The launch review is tomorrow; no approval is recorded.',
-    transfer='''Release: "The guide has been ___." | delivered | The briefing records delivery to Support but does not record usability confirmation.
-Support: "Usability confirmation is still ___." | absent | The required recipient confirmation has not yet been provided.
-Release: "The launch review is ___." | tomorrow | The supplied schedule places the decision review on the following day.
-Marketing: "Launch approval remains ___." | pending | No approval is recorded, and the checklist condition is not fully complete.'''))
+    transfer='''Release: "The guide reached Support, so we can record ___." | delivery | Delivery is the recorded transfer of the guide, not acceptance of its contents.
+Support: "You still need my usability ___ before closing that item." | confirmation | The recipient must confirm usability; sending the document does not establish this.
+Release: "We will take the open item to the launch ___ tomorrow." | review | Tomorrow is the scheduled review, not a recorded decision or completed handoff.
+Marketing: "I will keep the availability announcement unsent until we have launch ___." | approval | Approval is still absent, so Marketing cannot announce an authorized launch yet.'''))
 
 
 BOOK['units'].append(unit(
     title='Platform, APIs, and Technical Debt',
+    rehearsal=['Read turns 1-10. Stress estimated timing and the compatibility requirement.', 'Switch roles for turns 11-20. Pause before ownership, rollback, and expiry conditions.', 'Check the transfer. Read two, eight, and twenty-one with the correct time basis.'],
     scene='A three-day adapter or a ten-day interface',
     skill='Explain a short-term delivery option and its maintenance consequences without hiding compatibility, ownership, or retirement requirements.',
     brief='Product manager Camille and engineering lead Dev assess a customer request due in five working days. A client-specific adapter is estimated at three days including tests and could support a single-client pilot. A shared API change is estimated at ten days including tests. The adapter duplicates an existing transformation and needs named ownership, monitoring, rollback, and an approved 30-day expiry or extension process. Existing clients must retain their current behavior. Neither option is approved, and no engineering capacity beyond the estimates is confirmed.',
@@ -585,7 +592,7 @@ migration path | The supported route from an old interface or behavior to a new 
 adapter | A component translating between interfaces or data forms. | scope the adapter
 client-specific logic | Behavior implemented for a particular consumer. | isolate client-specific logic
 duplicated logic | The same rule or transformation maintained in multiple places. | track duplicated logic
-technical debt | Future work or cost arising from design or implementation choices. | make technical debt explicit
+technical debt | Additional future work caused by expedient or inadequate design or implementation. | make technical debt explicit
 maintenance burden | The effort and risk involved in keeping a solution working. | estimate the maintenance burden
 ownership | Clear responsibility for a component or decision. | assign ownership
 observability | The ability to understand a system through its exposed signals. | provide observability
@@ -633,11 +640,11 @@ Camille | The shared option also needs to preserve existing clients. We cannot c
 Dev | Review the [[API contract::The API contract includes the supported inputs, outputs, and behavior on which existing consumers depend.]]. Existing behavior must remain supported. Keeping the same endpoint name would not be enough if we changed the meaning of a field or response.
 Camille | We should distinguish a new optional capability from a change that older clients cannot handle. That will help me explain the engineering review in product terms.
 Dev | A [[breaking change::A breaking change can invalidate existing client expectations even when the visible endpoint or field names remain similar.]] can be behavioral, not just structural. We need to assess the actual consumers and contract rather than promise compatibility from a superficial comparison.
-Camille | For the pilot, limiting it to one client helps bound exposure. But the proposal still needs a way to observe failures and respond if the path behaves unexpectedly.
+Camille | One client sounds contained, but can another client hit that path accidentally? I need to understand the boundary and how we will detect a problem.
 Dev | Define the [[blast radius::Blast radius is the scope of affected consumers and systems, which the single-client pilot must explicitly bound.]] and the relevant monitoring. Narrow scope is useful only if the implementation and controls actually preserve that boundary.
 Camille | Who will support it after delivery? I do not want the team to assume the first implementer will maintain it indefinitely without agreed capacity.
 Dev | Assign [[ownership::Ownership names responsibility for operating and maintaining the adapter after its initial implementation.]] before approval. The proposal must identify who watches the signals, handles issues, and keeps the temporary transformation consistent with the existing one.
-Camille | The reversal path matters too. A temporary pilot should not leave the customer stranded if we need to disable it after a problem.
+Camille | If we switch it off, what happens to that customer? Can we test the return path before offering the pilot, rather than work it out during an incident?
 Dev | Include a tested [[rollback plan::The rollback plan defines how the pilot can be reversed if necessary, rather than assuming temporary code is automatically easy to remove.]]. The decision needs a practical recovery route, not just confidence that the change is small.
 Camille | We proposed a thirty-day limit. At that point the adapter should expire or receive an explicit extension under an approved process, not remain by accident.
 Dev | Make that [[expiry condition::The expiry condition makes the thirty-day limit actionable through retirement or an explicit authorized extension.]] part of the proposal. Temporary is only useful language if the end condition has an owner and a decision route.
@@ -652,6 +659,7 @@ Engineering: "Both options still need ___." | approval | The briefing states tha
 
 BOOK['units'].append(unit(
     title='Stakeholder Pushback and Executive Narrative',
+    rehearsal=['Read turns 1-10. Stress tickets rather than distinct customers.', 'Switch roles for turns 11-20. Keep pilot approval distinct from full rollout.', 'Check the transfer. Read the 25% ticket result and ten-day request without adding a retention claim.'],
     scene='Turn competing opinions into a decision request',
     skill='Present a concise recommendation tied to a shared objective while acknowledging evidence limits, displaced work, and decision authority.',
     brief='Product lead Iris prepares a decision with executive chair Malik. The agreed quarterly objective is to reduce support friction for existing paid teams. Option A is a two-week reliability pilot addressing an error category present in 40 of 100 reviewed support tickets. Those tickets are not 40 distinct customers, and no retention effect is established. Option B is a sales dashboard requested for uncommitted prospects. Capacity allows only one pilot. The agreed criterion favors documented existing-customer friction; the chair makes the decision. Iris recommends A, with B deferred and results reviewed after two weeks.',
@@ -720,7 +728,7 @@ Malik | What exactly does the evidence show? I heard someone say forty customers
 Iris | It is a [[ticket category::A ticket category groups support records; forty tickets in it do not establish forty distinct customers.]] count, not forty distinct customers. The category appears in forty of the hundred reviewed tickets, and we should preserve that unit when presenting the problem.
 Malik | Does that also mean the reliability work will improve retention? That would be useful, but I do not want the recommendation to promise a result we have not measured.
 Iris | No [[retention effect::A retention effect would require evidence about continued use and attribution, neither of which is established by the ticket count.]] is established. We are proposing to address documented friction, not claiming the ticket count proves a future reduction in customer loss.
-Malik | Give the strongest reasonable case for the sales dashboard. Deferring it should not depend on portraying the commercial team's concern as foolish.
+Malik | Sales will challenge that. What is the strongest case for their dashboard? Tell me what we give up, not just what supports your recommendation.
 Iris | It could support prospect conversations, but the supplied [[uncommitted pipeline::Uncommitted pipeline represents potential business without the relevant confirmed commitment, limiting the strength of the dashboard's current case.]] is not guaranteed business. That potential matters, yet it is less directly supported under the criterion chosen for this quarter.
 Malik | Capacity permits one pilot. If I approve A, the dashboard pilot does not happen at the same time, and that consequence should be visible to the commercial team.
 Iris | I will name the [[displaced work::Displaced work is the sales-dashboard pilot that cannot proceed alongside A under the one-pilot capacity limit.]]. B is deferred, not declared worthless. Any later reconsideration should use updated evidence and the available capacity rather than an implied promise that it is already next.
@@ -728,7 +736,7 @@ Malik | How broad is the approval you want? I do not want a small pilot decision
 Iris | The [[decision boundary::The decision boundary limits the requested authorization to the defined two-week pilot, not an unrestricted rollout.]] is the defined two-week pilot. We should record its scope and responsible owner, with any wider rollout requiring its own evidence and decision.
 Malik | We also need to agree what we will examine afterward. Otherwise each team may select whichever number makes its original preference look right.
 Iris | Agree the [[success measure::The success measure defines how the pilot will be evaluated before results are interpreted, avoiding a retrospective change of criteria.]] before interpreting the results. It should connect to the friction we are addressing, with the limits of the pilot evidence kept visible.
-Malik | Schedule the result discussion after two weeks. That should be a real decision point, not a ceremony that assumes the recommendation must have succeeded.
+Malik | Put the result review in for two weeks. Bring the same measures whether the pilot succeeds or disappoints; we need an actual decision at that meeting.
 Iris | The [[follow-up review::The follow-up review evaluates the pilot evidence after two weeks without guaranteeing a positive result in advance.]] will show what changed, what remains uncertain, and what decision follows. The review date does not promise a retention result or automatic expansion.
 Malik | The request is clear: one bounded pilot, an explicit trade-off, and a defined review. I will decide on that basis and record any conditions.
 Iris | I will preserve the [[decision record::The decision record captures the authorized choice, scope, rationale, and conditions so teams do not infer more than was decided.]] with your choice and conditions. That gives both teams the same account of the decision, including what was approved and what was deferred.''',

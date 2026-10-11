@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=40,
     tagline='Listen carefully. Clarify the details.',
     audience='For medical assistants and outpatient clinic staff supporting patients, clinicians, and care coordination.',
-    map_intro='Eight clinic conversations: clarify the visit, report observations, identify a medication-list discrepancy, preserve specimen times, track a referral, support an instruction question, route a clinical call, and correct an appointment message.',
+    map_intro='Eight clinic cases: visit expectations, patient reports, medication lists, specimen records, referrals, instruction questions, clinical calls, and appointment corrections.',
     notes_title='Accurate details. Respectful conversations.',
     notes_intro='Medical assistants move between patient language, clinical terminology, and administrative systems. Clear communication preserves what the patient said, distinguishes a recorded event from a judgment, and makes the next responsible person visible.',
     field_notes=[
@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='American Association of Medical Assistants. State Scope of Practice Laws.',
              url='https://www.aama-ntl.org/publications/state-scope-of-practice-laws',
-             note='US context for jurisdiction-dependent duties and delegation. The fictional roles in this book do not authorize clinical work.', checked='1 October 2026'),
+             note='US context for jurisdiction-dependent duties and delegation. The fictional roles in this book do not authorize clinical work.', checked='10 October 2026'),
         dict(title='AHRQ. Use the Teach-Back Method: Tool 5.',
              url='https://www.ahrq.gov/health-literacy/improve/precautions/tool5.html',
-             note='Communication context for checking an explanation without shaming the patient. Clinical instruction questions remain with the appropriately authorized professional.', checked='1 October 2026'),
+             note='Communication context for checking an explanation without shaming the patient. Clinical instruction questions remain with the appropriately authorized professional.', checked='10 October 2026'),
         dict(title='AHRQ. Make Referrals Easy: Tool 21.',
              url='https://www.ahrq.gov/health-literacy/improve/precautions/tool21.html',
-             note='Background on referral coordination, clear instructions, and follow-up. Original referral cases separate receipt, review, booking, and completed attendance.', checked='1 October 2026'),
+             note='Background on referral coordination, clear instructions, and follow-up. Original referral cases separate receipt, review, booking, and completed attendance.', checked='10 October 2026'),
         dict(title='CDC. Collect Adult Blood Culture Sets.',
              url='https://www.cdc.gov/lab-quality/php/preventing-adult-blood-culture-contamination/collect.html',
-             note='A specific laboratory example distinguishing collection documentation and specimen receipt. The book does not teach blood collection or universal specimen handling.', checked='1 October 2026'),
+             note='A specific laboratory example distinguishing collection documentation and specimen receipt. The book does not teach blood collection or universal specimen handling.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -45,7 +45,7 @@ BOOK['units'].append(unit(
     cast='Alex | Patient\nSam | Medical assistant',
     culture=('Respect the person and verify the record', 'A preferred name and a verified record name can coexist. Use the requested form of address while following the actual identification process. A mismatch in visit expectations deserves clarification rather than blame for booking or an automatic refusal to discuss the concern.'),
     a='''What does the schedule show? | An annual review | A confirmed procedure for the recent concern | An emergency assessment already completed | A canceled visit | The schedule lists an annual review, while the patient's expectation differs.
-What name does the patient prefer in conversation? | Alex | Dana | An invented nickname | Only the record name in every spoken exchange | Alex is the stated preference; verified identification remains a separate process.
+What should Sam do with the name preference? | Use Alex while preserving the verified record match. | Open another record under Alex to avoid the mismatch. | Replace verified identifiers without following the correction process. | Use Alexandra in conversation until the appointment type changes. | Alex is the preferred spoken name; that does not justify a duplicate record or an unverified identifier change.
 Who can clarify the visit plan? | Nurse Dana | Sam making an independent clinical decision | Another waiting patient | A billing code alone | Dana is the available clinical route, and Sam cannot determine suitability independently.''',
     vocabulary='''check-in | Arrival process confirming a patient and the scheduled visit. | complete check-in
 appointment type | Category describing the scheduled purpose or format of a visit. | verify the appointment type
@@ -111,14 +111,15 @@ Alex | Will you tell Dana that I expected this to be the concern visit, rather t
 Sam | I will preserve that [[patient expectation::Patient expectation describes what Alex believed the visit would address, not merely dissatisfaction with an administrative reminder.]]. The handoff will say the schedule lists an annual review and you expected a discussion of a recent concern.
 Alex | Is this a billing problem too? I have heard different visit categories can mean different charges, and I do not want a surprise.
 Sam | A [[billing category::A billing category may affect charging, but the scenario supplies no verified charge or coverage decision from the visit label.]] is another question to clarify through the proper process. I cannot promise a charge or coverage outcome from the label alone.
-Alex | That is fair. I would rather you say what you know than assure me everything is covered just because I have arrived for an appointment.
+Alex | Please check before anyone promises it is covered. I took time off for this visit, and I need to understand what will actually happen today.
 Sam | I can confirm the schedule and your expectation, then request a [[clinical handoff::The clinical handoff passes the mismatch to Dana, the identified clinical route, without Sam inventing a treatment decision.]] to Dana. I cannot promise how the clinician will resolve the concern.
 Alex | Please also make sure the team uses Alex. Sometimes one person agrees, but the preference disappears as soon as I move to another room.
 Sam | I will handle that preference through our record process while preserving the [[identity match::The identity match links Alex to the verified existing record and must remain intact while the preferred address is communicated.]]. The name used in conversation and the correctly matched record need not conflict.
 Alex | Thank you. I do not need you to change the appointment yourself; I need someone qualified to clarify what today's visit can include.
 Sam | That is the [[visit plan::The visit plan concerns what this encounter will address and is the question Dana can clarify with Alex.]] question for Dana. I will not turn the appointment label into a refusal or a guarantee before that discussion.
-Alex | Then the next step is to explain the mismatch to Dana, not to assume I made a booking mistake or that the concern is already dealt with.
+Alex | All right. Can you let Dana know I am here? I would like to settle the visit plan before I explain everything again.
 Sam | Correct. I will record the [[appointment type::The appointment type remains the recorded annual review, distinct from the clinical clarification now requested.]] accurately and pass on your expectation. We will keep the two facts clear while Dana clarifies the next step.''',
+    rehearsal=["Read Alex and Sam's corrected exchange. Stress annual review, recent concern, and Dana; keep the patient concern separate from the booking label.","Switch roles. Repeat the privacy request and preferred-name exchange without changing the verified identity facts.","Complete Morgan's four-line exchange, check the key, then read it aloud with follow-up and initial consultation clearly contrasted."],
     transfer_title='Clarify a different appointment expectation',
     transfer_setup='The schedule says follow-up. Patient Morgan expected an initial consultation. Assistant Lee cannot decide suitability. Nurse Inez is available to clarify the plan.',
     transfer='''Lee: "The recorded visit is a ___." | follow-up | Follow-up is the scheduled category stated in this scenario.
@@ -153,7 +154,7 @@ vital signs | Physiological measurements such as pulse and temperature. | record
 blood pressure | Pressure exerted by blood within the circulation, measured with relevant units. | document blood pressure
 pulse rate | Number of palpable arterial pulses per unit of time. | measure pulse rate
 respiratory rate | Number of breaths per unit of time. | record respiratory rate
-oxygen saturation | Proportion of oxygen-bound hemoglobin estimated or measured by an appropriate method. | report oxygen saturation
+oxygen saturation | Percentage of hemoglobin oxygen-binding sites occupied by oxygen, estimated or measured by an appropriate method. | report oxygen saturation
 temperature | Measure of how hot or cold the body or another object is. | record the measured temperature
 unit of measurement | Standard used to express a measured quantity. | include the unit of measurement
 measurement time | Time at which a measurement was actually taken. | preserve the measurement time
@@ -186,16 +187,16 @@ Have not assessed | Describes the actual evidence limit, not a negative result.
 Not automatically absent | Prevents a blank field from becoming a clinical finding.
 Separately | Helps a receiving professional distinguish evidence types quickly.''',
     d='''Which report is supported? | Pat reports tiredness since Monday; I observed Pat answering questions while seated. | Pat has a mild condition caused by poor sleep. | All vital signs are normal. | Pat is safe to wait because Pat can speak. | The supported report preserves both supplied sources without adding a cause, severity, or safety judgment.
-What should an unmeasured temperature become in the record? | No invented numeric value | A typical normal temperature | The value from another patient | A guessed fever category | No measurement is supplied, so a numeric or clinical finding would be fabricated.
+What belongs in the temperature field when no measurement is available? | No invented numeric value | A previous visit's value entered as today's reading | A normal category inferred from Pat answering questions | A numeric value inferred from the reported tiredness | No measurement is supplied; neither a previous value nor an impression can establish today's temperature.
 Why is "Pat is fine" inadequate? | It substitutes a broad conclusion for the limited observation. | It gives the exact onset. | It preserves the patient quotation. | It identifies a measured oxygen level. | Fine does not describe the actual observation and implies a clinical reassurance that Rosa has not established.
 Which statement about other symptoms is accurate? | No other symptoms are supplied; that does not prove their absence. | Every unmentioned symptom was denied. | Pat has no associated symptoms. | Every blank field can be completed as normal. | Silence in the case does not constitute a negative clinical history or assessment.''',
     dialogue='''Rosa | Dana, I have Pat's rooming report. Pat said, "I have felt tired since Monday." I want to keep that separate from what I observed.
 Dana | Please give the [[source attribution::Source attribution identifies Pat as the source of the symptom report and Rosa as the source of the observation.]] clearly. What came from Pat, what did you directly observe, and what has not been assessed?
 Rosa | The tiredness and Monday starting point came from Pat. I observed Pat answering questions while seated. I have not assessed the cause or severity.
 Dana | Good. The reported [[onset::Onset is the stated beginning of the symptom; Monday is attributed to Pat rather than independently established.]] is Monday. Do not replace it with a guessed date or calculate a duration from an assumed calendar.
-Rosa | I was tempted to summarize the observation as looking fine, but that would say more than the actual event I can describe.
+Rosa | The handoff draft says looks fine. I will replace that with what I saw: Pat was seated and answering my questions.
 Dana | Exactly. Keep the [[observation::The observation is Pat answering questions while seated; it does not establish a diagnosis, severity, or normal measurements.]] specific. Answering questions while seated does not establish the severity of tiredness or whether a concern can safely wait.
-Rosa | There are no measurement values in my report. I will not insert typical numbers to make the vital-sign fields look complete.
+Rosa | I also need to flag the blank measurement fields. I have no values to report; those fields should not be read as normal findings.
 Dana | Correct. [[Vital signs::Vital signs require actual measurements and context; expected or typical values cannot fill missing clinical data.]] need actual values and appropriate context. A missing measurement cannot be converted into normal by choosing a familiar number.
 Rosa | Should I write that Pat denied other symptoms? None are included in the information I am handing over, but I have not established their absence.
 Dana | No. A [[pertinent negative::A pertinent negative is an established relevant absence, not a conclusion drawn from an unmentioned symptom.]] must come from the relevant question or assessment. Lack of a statement in this report is not a denial.
@@ -209,6 +210,7 @@ Rosa | Have you received those points? I do not want the phrase answering questi
 Dana | I have received the report and its limits. [[Clinical assessment::Clinical assessment is the qualified evaluation still needed; it must not be inferred from Rosa's limited rooming observation.]] is separate, and the concern will follow our clinical process rather than an administrative assumption.
 Rosa | I will record the report accordingly and preserve what I actually observed. I will not add a measurement, diagnosis, or assurance about waiting.
 Dana | Thank you. Keep the [[severity::Severity remains unassessed in Rosa's report and cannot be inferred merely from Pat speaking while seated.]] question open in that record. Clear limits help the receiving team know what still requires attention.''',
+    rehearsal=["Read Rosa and Dana's corrected report. Contrast Pat reports with I observed; keep the reported onset attached to Pat.","Switch roles. Repeat the unmeasured-vitals and pertinent-negative exchanges without adding a normal finding.","Complete the second patient report, check the key, and read the patient's words separately from the observation."],
     transfer_title='Attribute a different symptom report',
     transfer_setup='Patient Lee reports dizziness since breakfast. Assistant Noor observed Lee speaking while seated. No measurements or cause assessment are supplied. Nurse Inez receives the report.',
     transfer='''Noor: "Lee reports ___ since breakfast." | dizziness | Dizziness is the symptom attributed to Lee in the facts.
@@ -256,7 +258,7 @@ verification source | Person, document, or system used to confirm information. |
     phrases='''Acknowledge the report | You report that another clinic stopped this medicine.
 State the local source | The local medication list still includes it.
 Name the discrepancy | Those two sources need to be reconciled.
-Avoid judging memory | I am not asking you to prove your memory is wrong.
+Avoid judging memory | I will record what you remember and ask the clinical team to check the difference.
 Keep attribution | I will record that this information came from you.
 Identify the missing evidence | The outside instruction is not available here.
 Give the review route | Dana can review the discrepancy with the clinician.
@@ -287,18 +289,19 @@ Ren | Then please do not remove it and say everything is sorted either. I want t
 Talia | Exactly. We need the [[outside instruction::The outside instruction is the missing source needed for appropriate verification; its absence does not prove Ren's report is false.]] and appropriate review. Nurse Dana can take the discrepancy to the clinician; I cannot verify the change myself from this conversation.
 Ren | I appreciate that. Sometimes questions about medicines sound as though I am being accused of not following instructions, even when I am trying to explain a change.
 Talia | I will not label this an [[adherence::Adherence concerns use in relation to an agreed plan; a conflict between records does not establish deliberate nonadherence.]] problem without evidence. The immediate issue is that your report and our entry differ, and we need to clarify the plan.
-Ren | Will the note identify where the information came from? I would not want someone later to think that a clinician here had already confirmed the change.
+Ren | I do not have the other clinic's instructions with me. Can you help get them checked? I am worried about being given conflicting advice again.
 Talia | Yes. The [[verification source::A verification source is the document or professional used to confirm information; Ren's attributed report is not a substitute for that review.]] is still to be established through the review. I will distinguish your report from a verified clinical decision.
 Ren | The medicine being marked active is what confused me. Is that label always current, or can the record need updating after another clinic makes a change?
 Talia | An [[active entry::An active entry describes the system status and may require reconciliation; it cannot independently settle the reported outside change.]] tells us how the item is marked. It does not settle this conflicting information, so we must not treat that label as the answer.
 Ren | I also do not have the exact strength or dose in front of me. I would rather say that than give you a number from memory.
 Talia | That is helpful. [[Strength::Strength describes active ingredient per product unit and is different from the amount prescribed for a dose.]] and dose are different details, and neither should be guessed. We will preserve what is known and identify what requires verification.
-Ren | So this is a medication-list problem to resolve with Dana and the clinician, not a decision for either of us to invent at the desk.
+Ren | Can Dana speak with me about it? The list worries me because I still need to know which instruction I should follow.
 Talia | It is a [[discrepancy::A discrepancy is the unresolved difference between Ren's report and the local record, not a confirmed treatment error or new instruction.]] needing the appropriate review. I will pass on both sources and the missing instruction rather than silently choose one over the other.
 Ren | Please make sure any current question about what I should do reaches the clinical team. I do not want the record discussion mistaken for actual advice.
 Talia | I will route that clinical question appropriately. [[Medication reconciliation::Medication reconciliation compares and resolves medication information through the authorized process; merely documenting a conflict does not complete it.]] and clinical guidance need the proper owner, and recording a history does not authorize me to change treatment.
 Ren | Then I understand the position: I reported an outside change, your list still includes the medicine, and Dana will review the difference with the clinician.
 Talia | Correct. The reported [[discontinuation::Discontinuation is the claimed stopping of the medicine; it remains a reported change rather than a verified decision in this conversation.]] is not yet verified here. I will keep the source clear, preserve the question, and connect the review with Dana.''',
+    rehearsal=["Read Ren's question and Talia's responses using the checked answers. Stress reports, active, unavailable, and review.","Switch roles. Repeat the exchange about the outside instruction without adding a dose or restart recommendation.","Complete the Ellis transfer, check the key, then read it aloud with Priya clearly named as the receiving owner."],
     transfer_title='Report a different medication-list change',
     transfer_setup='Patient Ellis reports an outside dose change. The local record is unchanged, and the outside instruction is unavailable. Nurse Priya accepts the query. No new dose is supplied.',
     transfer='''Assistant: "Ellis reports an outside ___ change." | dose | The patient reports a dose change, not an established allergy.
@@ -377,9 +380,9 @@ Ben | Let me read it back: collected at nine twenty; arrival at ten oh five. The
 Imani | That preserves the [[arrival time::The arrival time is 10:05 on the courier sheet; its meaning remains separate from collection and other laboratory events.]] correctly. We also should not rename arrival as a later laboratory event unless the record actually defines it that way.
 Ben | I was about to enter ten oh five in a field labeled received. I should check what that field means before assuming the courier entry is enough.
 Imani | Yes. [[Receipt time::Receipt time refers to the receiving service's documented event and must not be inferred from an undefined arrival field.]] depends on the receiving record and process. Ask the laboratory which event the destination field requires rather than copying a nearby value.
-Ben | Do the different times suggest the specimen belongs to another patient, or is that a separate issue requiring actual evidence?
+Ben | The patient details match in these records. I was only looking at the two times; I do not have evidence of a labeling problem.
 Imani | That would be a separate [[specimen label::The specimen label supports identification; the two different event times do not themselves establish an identity mismatch.]] or identification question. No identity discrepancy is established here, so we should not turn an event-time difference into a patient mismatch.
-Ben | Could we at least say that the specimen is acceptable because forty-five minutes sounds like a reasonable journey? I want to know what the interval tells us.
+Ben | A colleague called that a quick delivery and marked the specimen acceptable. We have the journey time, but have we checked the requirements for this test?
 Imani | It gives the [[transport interval::The transport interval is a calculated difference between defined events, not an independent judgment of specimen acceptability.]] between these entries. It does not establish acceptability without the relevant specimen, test, handling conditions, and actual laboratory requirements.
 Ben | Then I will avoid writing acceptable or rejected. Neither result follows just from the times we have read on these two documents.
 Imani | Correct. [[Acceptance criteria::Acceptance criteria are the applicable requirements for the specimen and test; they are not supplied by the time difference alone.]] belong to the real laboratory process. A language clarification about timestamps is not a quality decision.
@@ -389,6 +392,7 @@ Ben | I also should not tell the patient that these times predict when a result 
 Imani | Exactly. [[Turnaround time::Turnaround time needs defined start and end events; the collection-to-arrival interval does not establish result availability.]] must have defined start and end points. These entries do not supply an analysis completion or result-release time.
 Ben | I will keep both source references, preserve 09:20 as collection and 10:05 as arrival, and clarify the receiving field before entering anything there.
 Imani | Good. The [[requisition::The requisition remains the source of the collection entry, while the courier sheet supplies the distinct arrival entry.]] and courier sheet can both be accurate. Our task is to carry their meanings forward without creating a false match.''',
+    rehearsal=["Read Ben and Imani's corrected dialogue. Say nine twenty and ten oh five clearly, with collection and arrival attached.","Switch roles. Repeat the received-field clarification and the distinction between elapsed time and acceptability.","Complete the 08:40 and 09:15 transfer, check the key, and read it aloud without merging the two events."],
     transfer_title='Keep a second pair of events distinct',
     transfer_setup='The collection record says 08:40. The courier sheet says arrival 09:15. The destination field meaning is unclear. No acceptability decision is supplied.',
     transfer='''Assistant: "Collection was recorded at ___." | 08:40 | The collection record supplies 08:40 as its event time.
@@ -463,13 +467,13 @@ How should a new clinical concern be handled? | Through the clinic's appropriate
 Omar | Let me clarify the [[follow-up checkpoint::The follow-up checkpoint is Lia's Friday status check, not a booked time for Morgan to attend the specialist.]]. Friday is when Lia will check its status. No specialist appointment has been booked.
 Morgan | I thought received meant they had accepted me into a slot. Is there still another step before I can arrange time away from work?
 Omar | The [[receipt acknowledgment::Receipt acknowledgment confirms the referral reached the specialist office; it does not establish an appointment or completed clinical review.]] means the office received the referral. They say it is under review, and we do not yet have a date for you to attend.
-Morgan | Could you give me the sequence again? I want to keep the sending date, the receiving date, and the follow-up date separate.
+Morgan | Let me get this straight. It went out Monday and reached them Tuesday. What exactly is Lia doing on Friday if I am not booked in?
 Omar | The [[referral identifier::The referral identifier F8 links the conversation to the specific request, preserving which case the three dates describe.]] is F8. It was sent Monday, received Tuesday, and Lia has agreed to check the status Friday.
 Morgan | Does under review mean the referral has been rejected, or that the office is still deciding what happens next?
 Omar | [[Under review::Under review describes the current assessment stage; it is not a supplied rejection or confirmed booking.]] is the status they gave us. We should not turn it into either a rejection or an appointment confirmation without further information.
 Morgan | Who is Lia in this process? I need to know whether she is the person checking the status or the clinician deciding about my care.
 Omar | Lia is the [[referral coordinator::The referral coordinator owns the administrative status check here, not the specialist's clinical decision or appointment availability.]] handling this follow-up. Her Friday check does not control the specialist's decision or guarantee that their review will finish that day.
-Morgan | Then I should not treat Friday as a booked visit. I would need an actual confirmation before making plans based on a particular appointment.
+Morgan | I nearly asked for Friday off work. Please make the next message clear about whether it is an update or an actual appointment offer.
 Omar | Correct. A [[booking confirmation::Booking confirmation would establish a scheduled appointment, which is specifically absent from the supplied referral status.]] is different from the status check. At present, no appointment date or time is confirmed.
 Morgan | If they offer a time later, I may need to explain my work schedule and transport arrangements. I cannot assume every offered slot is possible.
 Omar | An [[appointment offer::An appointment offer is a proposed time that still needs the relevant agreement and confirmation, not automatic attendance.]] should be handled through the booking process. Relevant access needs can be communicated appropriately rather than assuming an offered time has already been accepted.
@@ -479,6 +483,7 @@ Morgan | What if the concern I was referred for changes before Friday? Should I 
 Omar | No administrative checkpoint establishes that waiting is safe. A change or urgent concern needs our clinical route for [[clinical priority::Clinical priority requires the appropriate clinical assessment and cannot be inferred from a routine coordinator follow-up date.]], not an assumption based on Lia's diary.
 Morgan | Understood. The referral reached them Tuesday and remains under review. Lia will check Friday, but I do not have an appointment yet.
 Omar | Exactly. That is the current [[care coordination::Care coordination keeps the referral status, owner, and next action connected without falsely reporting that the specialist visit is booked.]] position. I will keep the status and ownership clear, and any actual booking information must be confirmed separately.''',
+    rehearsal=["Read Morgan and Omar's checked dialogue. Stress sent Monday, received Tuesday, and status check Friday.","Switch roles. Repeat the work-schedule question and explain the actual referral stage without inventing a booking.","Complete the transfer using the printed referral facts, check the key, and read the checkpoint as an update, not an appointment."],
     transfer_title='Separate another checkpoint from booking',
     transfer_setup='Referral G3 was received Wednesday and remains under review. No appointment is booked. Coordinator Noor will check Monday.',
     transfer='''Assistant: "The referral identifier is ___." | G3 | G3 identifies the specific referral in this second scenario.
@@ -557,11 +562,11 @@ Jules | I would prefer not to discuss the personal details across reception. The
 Mina | We can arrange an appropriate [[private discussion::A private discussion addresses Jules's request to ask away from reception without announcing the personal details publicly.]]. I will tell Dr Chen that you want clarification before leaving and that the setting matters to you.
 Jules | Thank you. I sometimes nod because I recognize a term, then realize I do not understand how it applies to the instruction.
 Mina | Recognizing a [[technical term::A technical term may be familiar in appearance without being understood in its clinical context, which is why clarification remains necessary.]] does not always make the instruction clear. Asking again is reasonable; receiving the paper does not mean every question has been answered.
-Jules | Please do not shorten my question to needs more information. The issue is this particular phrase and how it affects what I am supposed to do.
+Jules | Could you show Dr Chen this line on the summary? It is this phrase, not the whole page, that I cannot make sense of.
 Mina | I will preserve the [[patient question::The patient question concerns a specific phrase and its practical meaning, not merely a nonspecific request for more information.]] with the wording. That gives Dr Chen the actual issue rather than a vague message that could miss it.
 Jules | I would like a plain explanation, not just the same phrase repeated more loudly. I heard it; the meaning is what I need.
 Mina | You can request [[plain language::Plain language addresses understandable wording; louder repetition of the same unclear phrase does not resolve its meaning.]] from Dr Chen. I will not substitute my own clinical interpretation while arranging that explanation.
-Jules | Once the explanation is given, I may need to say what I understood and check whether I have the right meaning. Is that a reasonable request?
+Jules | After Dr Chen explains it, can I say back what I would actually do? I sometimes say yes too quickly when someone asks whether I understand.
 Mina | Yes. That kind of [[teach-back::Teach-back helps the professional check the explanation by hearing the patient's understanding, rather than accepting a yes answer as sufficient.]] can help the clinician identify what still needs clarification. It is not a test of your intelligence or a reason to feel embarrassed.
 Jules | I also want the original wording available during the conversation. Otherwise someone might explain a shortened version and miss the part that confused me.
 Mina | Keeping the [[instruction source::The instruction source preserves the actual wording and context for Dr Chen instead of an altered summary created during the handoff.]] with the question will help. We should not edit the direction simply to make the handoff shorter.
@@ -569,6 +574,7 @@ Jules | So there is no new instruction from this conversation yet. The next step
 Mina | Correct. No [[revised plan::A revised plan would require an authorized clinical change, which has not occurred merely because Jules asked for clarification.]] has been established here. I am arranging the explanation, not changing the clinical direction.
 Jules | Please tell Dr Chen that I am still here and that I want to understand the instruction before going. I appreciate having a clear next step.
 Mina | I will make that [[question handoff::The question handoff includes the document, specific phrase, privacy request, and need for clarification while Jules remains at the clinic.]] now: the phrase in your summary, your request for privacy, and clarification before leaving. Dr Chen is the available clinician for that conversation.''',
+    rehearsal=["Read Jules and Mina's corrected exchange. Keep the unclear phrase, original summary, and private explanation connected.","Switch roles. Repeat the request to explain understanding in the patient's own words without inventing the clinical instruction.","Complete Ari's abbreviation exchange, check the key, then read it aloud with Dr Malik and before leaving clearly stated."],
     transfer_title='Route an unclear abbreviation',
     transfer_setup='Patient Ari asks about an abbreviation in the visit summary before leaving. Assistant Lee cannot interpret the clinical instruction. Dr Malik is available for a private explanation.',
     transfer='''Lee: "The unclear item is an ___." | abbreviation | The supplied question concerns an abbreviation in the visit summary.
@@ -579,10 +585,10 @@ Ari: "I would like the explanation to be ___." | private | The facts specify an 
 
 BOOK['units'].append(unit(
     title='Telephone concerns and clinical escalation',
-    scene='Can this wait until next week?',
-    skill='Respond to pressure for a clinical yes-or-no answer by making an immediate, accountable transfer to the clinical route.',
-    brief='Caller Ellis has a newly reported concern and asks assistant Noor whether it can wait until next week\'s routine appointment. No symptom details or urgency assessment are supplied. Noor cannot triage or decide whether waiting is safe. Nurse Dana is available now through the clinic clinical-call route. Noor must preserve the question, use the proper clinical transfer process, and distinguish a connected call from a message merely placed in a queue. Emergency procedures still take precedence when applicable; the exercise does not establish an absence of danger.',
-    cast='Ellis | Caller\nNoor | Medical assistant',
+    scene='After the clinical connection',
+    skill='Confirm a received clinical handoff and record its actual outcome without inventing an assessment or delaying care.',
+    brief='Caller Ellis asked assistant Noor whether a new concern could wait until next week\'s routine appointment. Noor could not assess urgency and immediately connected Ellis with nurse Dana through the clinic process. Dana received the call. This later conversation reviews the handoff record; it does not delay the live clinical call. No symptom details, clinical assessment, or waiting advice are supplied. Noor must record the actual recipient and outcome without inventing a clinical conclusion. Applicable emergency procedures take priority over routine call handling or documentation.',
+    cast='Noor | Medical assistant\nDana | Receiving nurse',
     culture=('A calm caller can still need assessment', 'Tone of voice is not a reliable substitute for clinical information. Be respectful and direct when someone asks for reassurance you cannot provide. Name the available clinical route immediately, rather than giving a long explanation of your limitations.'),
     a='''What is Ellis asking Noor to decide? | Whether a new concern can safely wait until next week's visit | The spelling of a street name | A confirmed test result | A completed medication review | The caller seeks a clinical timing decision rather than an administrative fact.
 Who is available now? | Nurse Dana through the clinical-call route | An unspecified clinician next month | A specialist appointment already booked | No one in the clinic | Dana is specifically available now for the proper clinical route.
@@ -639,26 +645,27 @@ Without adding | Preserves the caller's information and avoids invented clinical
 What does an unanswered transfer establish? | The clinical connection has not been completed. | Dana received and assessed the concern. | The caller was reassured by a clinician. | The issue is resolved. | An attempted transfer is not evidence of a received or completed clinical assessment.
 Which information must not be invented for a structured handoff? | A diagnosis or urgency decision outside Noor's role | The caller's actual question | The receiving person's name when confirmed | The actual transfer outcome | A framework organizes real information; it does not authorize fabricated clinical judgments.
 What takes precedence when applicable? | The actual emergency pathway | Waiting for next week's booking regardless of circumstances | Completing an English practice dialogue | Obtaining a routine administrative update first | Emergency procedures must not be delayed by a routine booking or language exercise.''',
-    dialogue='''Ellis | I have a new concern, but I already have an appointment next week. Can you just tell me whether it is all right to wait until then?
-Noor | I cannot provide an [[urgency assessment::An urgency assessment is a clinical judgment about timing and care; Noor cannot supply it from an administrative call.]] or tell you waiting is safe. Nurse Dana is available through our clinical-call route now.
-Ellis | I am not asking for a diagnosis. I only want a yes or no about next week, because changing my plans will be difficult.
-Noor | That timing question still needs [[triage::Triage determines urgency and appropriate next care, so a yes-or-no question about waiting remains a clinical decision.]] through the appropriate clinician. I can help connect the concern rather than give you reassurance I am not qualified to provide.
-Ellis | Does the fact that I already have a routine appointment count for anything? I thought the booking might mean this could be discussed then.
-Noor | A [[routine appointment::A routine appointment is a booking and does not establish that a newly raised concern can safely wait for that date.]] is a scheduled visit. It does not assess a newly raised concern or settle how soon you may need care.
-Ellis | All right. I would prefer to speak with someone now rather than leave a general message without knowing whether anyone will see it.
-Noor | Dana is available through the [[clinical-call route::The clinical-call route is the clinic's established pathway to the available nurse, not an undefined general message queue.]]. I will follow that process and preserve your question about whether the concern can wait.
-Ellis | Please do not describe me as just anxious about my appointment. My question is about the new concern and the timing of care.
-Noor | I will pass that to the [[receiving clinician::The receiving clinician needs the actual timing question and reported concern, not Noor's unsupported characterization of the caller.]] accurately. I should not replace your concern with an impression about your mood or add a diagnosis.
-Ellis | Will you introduce the issue when you transfer me? Repeating everything can be difficult, especially if the next person only sees an appointment date.
-Noor | I will use the appropriate [[warm transfer::A warm transfer includes the relevant introduction or handoff, helping the receiving person understand the concern rather than only the booking.]] process. The actual clinical questions and assessment remain with the receiving professional; I will not invent them on your behalf.
-Ellis | What happens if the connection cuts off? I would not want the record to show that I spoke to the nurse when the call never reached her.
-Noor | We need the clinic's [[dropped call::A dropped call interrupts communication and requires the actual continuity process; it must not be recorded as completed clinical contact.]] process and verified contact details. The record must show what happened, not assume that a transfer attempt was successful.
-Ellis | So leaving a message somewhere would not mean I had received clinical advice. I want to be clear about that distinction.
-Noor | Correct. A [[callback queue::A callback queue records pending contact requests and does not establish that a clinician has received, assessed, or answered this concern.]] is not a completed conversation. We must preserve the outstanding concern and follow the appropriate clinical process if connection is not completed.
-Ellis | I understand you cannot say it is safe to wait. Please connect me with Dana now through the route you described.
-Noor | I will do that. Applicable [[emergency pathway::The emergency pathway takes precedence when required; routine transfer language does not establish that a concern is nonurgent or safe to defer.]] procedures still take precedence when needed. This administrative conversation is not a finding that the concern is harmless.
-Ellis | Please make sure the next person receives the actual question and that any unfinished contact is still visible if the transfer does not work.
-Noor | Yes. The [[escalation outcome::The escalation outcome records whether the concern actually reached the clinical recipient, keeping failed or unfinished contact visible.]] must be recorded accurately. I will route the concern now and keep receipt, any unresolved contact, and the responsible next step clear.''',
+    dialogue='''Noor | Dana, thanks for taking Ellis's call immediately. I am checking my handoff note now, after the connection. Ellis asked whether a new concern could wait until next week.
+Dana | I received that question. Your note should not contain an [[urgency assessment::Urgency assessment is a clinical judgment, not a decision Noor made when connecting the call.]] from you. Receiving the call and assessing the concern are different events.
+Noor | I told Ellis I could not decide that and connected the call through our process. I did not ask Ellis to finish a long administrative discussion first.
+Dana | Good. The request needed [[triage::Triage addresses urgency and care needs; asking whether a concern can wait requires more than a booking check.]], not a yes-or-no answer from reception. Keep the actual clinical response in the appropriate clinical record.
+Noor | Ellis already had a booking next week. I included that as background, but I did not say the booking established a safe waiting period.
+Dana | Correct. A [[routine appointment::An existing routine booking does not assess a new concern or establish a safe waiting period.]] does not assess a new concern. Do not let the appointment date become the only information the next person receives.
+Noor | My note currently says passed to nursing. That leaves out who received the call. I should name you and record the actual connection.
+Dana | Yes. The [[clinical-call route::This is the established pathway used to connect Ellis with Dana; its actual outcome must be recorded.]] worked in this case. Record that factual outcome, not simply an attempt to put somebody through.
+Noor | I gave you Ellis's question without describing Ellis as anxious or suggesting the concern was mild. Neither would have been a finding I had established.
+Dana | As the [[receiving clinician::Dana confirmed receipt. Naming her does not authorize Noor to invent a clinical conclusion on her behalf.]], I need the actual report. Your introduction helped me understand why Ellis was calling rather than making Ellis start with the appointment history again.
+Noor | I stayed for the introduction and confirmed the connection before leaving the call. I will describe what happened rather than just checking a transfer box.
+Dana | That is the relevant [[warm transfer::Noor introduced the concern and confirmed Dana received the call, rather than merely attempting an unconfirmed transfer.]] detail. Keep the actual handoff time in the record; do not substitute the later time at which you finish writing.
+Noor | For a future call, if the line disconnects before anyone confirms receipt, I cannot use today's completed status as the default.
+Dana | Exactly. Follow the clinic's [[dropped call::A dropped call needs the actual continuity process; interruption does not establish successful clinical contact.]] process. Verified contact details and the actual unresolved concern matter; do not silently leave a failed connection marked complete.
+Noor | And if I only put a request into a message queue, the note should still show pending contact, not that the patient spoke to a nurse.
+Dana | Right. A [[callback queue::A callback queue holds requests awaiting contact, not evidence that a clinical conversation or assessment occurred.]] is not a clinical conversation. Use the appropriate follow-up and escalation process for the real situation, rather than assume the queue resolves urgency.
+Noor | This record review happened after the immediate connection. We should never make an active caller wait while we discuss all these documentation examples.
+Dana | Agreed. The actual [[emergency pathway::Applicable emergency procedures take priority over administrative work or this later language-practice review.]] takes precedence when needed. Do not use this case to decide that another caller is nonurgent.
+Noor | I will record your confirmed receipt and my factual introduction. I will not add a diagnosis, waiting advice, or clinical outcome that you have not provided.
+Dana | That keeps the [[escalation outcome::Dana's receipt is confirmed; no diagnosis, completed assessment, or waiting advice is supplied here.]] accurate. The call reached me; your note should say that clearly while leaving the clinical findings to the clinical record.''',
+    rehearsal=["Read Noor and Dana's corrected review. Stress received, not independently assessed, and the actual call outcome.","Switch roles. Repeat the distinction between a connected call and a queued message without adding a clinical result.","Complete Ari's interrupted-transfer exchange, check the key, then read it aloud without claiming receipt or assessment."],
     transfer_title='Preserve an interrupted clinical transfer',
     transfer_setup='A clinical transfer for caller Ari disconnects before receipt is confirmed. Assistant Lee must use the clinic dropped-call process. Nurse Priya is the intended clinical recipient. No assessment has occurred.',
     transfer='''Lee: "Receipt has not been ___." | confirmed | The connection ended before anyone confirmed clinical receipt of the concern.
@@ -728,12 +735,12 @@ Remain an open action | Prevents an unsuccessful attempt from being marked compl
     d='''Which correction preserves the history? | My Tuesday message was wrong; the verified booking is Thursday at 14:00 with Dr Chen. | Your appointment has been moved from Tuesday even though the schedule never changed. | Tuesday and Thursday mean the same thing here. | The booking is unverified because a message was wrong. | The original error was in the message, while the schedule supplies the verified Thursday booking.
 Which conclusion about results is unsupported? | Thursday means the results are definitely normal. | Dr Chen is the named clinician. | No results are supplied in the exercise. | The booking is for a results discussion. | Scheduling details do not establish the content or clinical significance of test results.
 What should be recorded if Robin is not reached? | The contact attempt and the still-outstanding correction | Confirmed patient receipt | Completed results counseling | Robin's agreement to the booking | An unsuccessful attempt does not prove that the patient received or acknowledged the corrected details.
-Which apology is strongest? | I am sorry my incorrect Tuesday message disrupted your work arrangements. | Sorry if you somehow misunderstood our perfect message. | The system did it, so nothing needs correcting. | We guarantee unlimited compensation. | The apology names the actual error and impact without blame-shifting or an unauthorized promise.''',
+Which apology is strongest? | I am sorry my incorrect Tuesday message disrupted your work arrangements. | I am sorry you understood the Tuesday message differently. | I am sorry the schedule changed, although the verified booking never changed. | I am sorry for the inconvenience; the original date does not matter now. | The strongest apology identifies the actual message error and work disruption without shifting blame or inventing a schedule change.''',
     dialogue='''Robin | Elena, I arranged time off for the Tuesday results discussion, but the latest information says Thursday. Has the appointment been moved again?
 Elena | I need to make a [[message correction::The message correction replaces Elena's inaccurate Tuesday notification; the actual booking was not changed from Tuesday to Thursday.]]. My Tuesday message was incorrect. The verified schedule shows Thursday at 14:00 with Dr Chen.
 Robin | That matters because I changed my work shift after reading what you sent. I need to know whether Thursday is confirmed or just another possible date.
 Elena | I have checked the [[schedule of record::The schedule of record is the verified source showing Thursday at 14:00 with Dr Chen, rather than another tentative message.]]. Thursday at 14:00 with Dr Chen is confirmed. I am sorry my incorrect message disrupted your work arrangements.
-Robin | Please be clear about whether the clinic changed the booking or whether the original message was wrong. Those are different explanations.
+Robin | I have the Tuesday message right here. Was that date wrong from the start, or did someone move my appointment without telling me?
 Elena | You are right. This is not [[rescheduling::Rescheduling changes an actual appointment; here the booking remained Thursday and only the Tuesday message was wrong.]]. The earlier message was wrong; I should not describe that as moving an appointment that was booked for Tuesday.
 Robin | Fourteen hundred means two in the afternoon, correct? I want to check the time as well as the day before I speak to my manager.
 Elena | Correct. That is [[twenty-four-hour time::Twenty-four-hour time expresses two in the afternoon as 14:00, which is the verified booking time in this case.]] for two in the afternoon. Please keep Thursday, 14:00, and Dr Chen together when you read back the details.
@@ -745,10 +752,11 @@ Robin | Will the earlier message remain visible appropriately? Otherwise a later
 Elena | We need the appropriate [[audit trail::The audit trail preserves the inaccurate original message and its correction, so the sequence is not rewritten as patient error.]]. I will preserve the earlier event and the correction through our process rather than erase the reason for your confusion.
 Robin | And will you record that you actually reached me today? I would like the team to know I received and repeated back the Thursday information.
 Elena | Yes. This is [[successful contact::Successful contact means Robin actually received the corrected details; it is different from a call attempt or unsent message.]], not merely an attempted call. I will document the actual communication and acknowledgment through the required process.
-Robin | If there were still an unanswered call or an unresolved correction, someone would need to own it rather than assume the task was finished.
+Robin | Please send the corrected details through the clinic's usual channel too. I need something accurate to refer to when I rearrange my shift.
 Elena | Exactly. A named [[follow-up owner::A follow-up owner remains responsible for unfinished communication; an unsuccessful contact attempt must not automatically close the task.]] would need to keep that action visible. I own this correction and will record what has actually been communicated.
 Robin | Thank you for acknowledging the work disruption. I may still raise that concern through the clinic process, but I now have the confirmed appointment details.
 Elena | We can use the appropriate [[escalation route::The escalation route provides a real process for the unresolved service concern without inventing an unauthorized remedy or compensation promise.]] for that concern. The verified booking remains Thursday at 14:00 with Dr Chen, and I am sorry for the inaccurate Tuesday message.''',
+    rehearsal=["Read Robin and Elena's corrected dialogue. Contrast the wrong Tuesday message with the verified Thursday booking.","Switch roles. Repeat the apology and read-back, saying 14:00 and two in the afternoon as the same time.","Complete the second correction, check the key, and read the verified time without describing the message error as rescheduling."],
     transfer_title='Correct a different time error',
     transfer_setup='Assistant Noor sent 09:00 in error. The verified booking is Friday at 11:30 with Dr Shah. The appointment itself has not changed. Patient Ari has now received the correction.',
     transfer='''Noor: "My message incorrectly said ___." | 09:00 | The error was the 09:00 time in the message.

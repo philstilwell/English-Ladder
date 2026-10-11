@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=37,
     tagline='Clear details. Reliable handovers.',
     audience='For truck drivers, delivery drivers, dispatchers, receiving staff, and route coordinators.',
-    map_intro='Eight delivery conversations: correct a destination note, reconcile carton counts, update an arrival estimate, describe visible damage, discuss an unavailable recipient, explain service boundaries, match a return, and hand over unfinished route records.',
+    map_intro='Eight delivery lessons, plus extended conversations about time zones, detention charges, and route-height checks.',
     notes_title='Keep the delivery story accurate.',
     notes_intro='A clear delivery conversation connects the shipment reference to a checked fact and a specific next action. It distinguishes an estimate from an appointment, an observation from a cause, and a received shipment from a successfully uploaded record.',
     field_notes=[
@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Heavy and Tractor-trailer Truck Drivers.',
              url='https://www.bls.gov/ooh/transportation-and-material-moving/heavy-and-tractor-trailer-truck-drivers.htm',
-             note='Occupational context for driver-dispatch communication, delivery records, and reported problems. These original conversations do not provide vehicle-operation instructions.', checked='1 October 2026'),
+             note='Occupational context for driver-dispatch communication, delivery records, and reported problems. These original conversations do not provide vehicle-operation instructions.', checked='10 October 2026'),
         dict(title='FedEx. Shipping Terms and Definitions.',
              url='https://www.fedex.com/en-us/shipping/glossary.html',
-             note='Terminology reference for shipment parties, transport documents, tracking, and additional services. Fictional service arrangements are not FedEx terms or quotations.', checked='1 October 2026'),
+             note='Terminology reference for shipment parties, transport documents, tracking, and additional services. Fictional service arrangements are not FedEx terms or quotations.', checked='10 October 2026'),
         dict(title='Federal Motor Carrier Safety Administration. Hours of Service.',
              url='https://www.fmcsa.dot.gov/regulations/hours-of-service',
-             note='Context for distinguishing a customer request from the rules and constraints governing actual driver availability. No numerical driving-time rule is taught in this book.', checked='1 October 2026'),
+             note='Context for distinguishing a customer request from the rules and constraints governing actual driver availability. No numerical driving-time rule is taught in this book.', checked='10 October 2026'),
         dict(title='Occupational Safety and Health Administration. Trucking Industry: Loading and Unloading.',
              url='https://www.osha.gov/trucking-industry/loading-unloading',
-             note='Context for keeping language practice separate from site-specific loading and unloading training. The book does not authorize handling equipment or entering loading areas.', checked='1 October 2026'),
+             note='Context for keeping language practice separate from site-specific loading and unloading training. The book does not authorize handling equipment or entering loading areas.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -68,8 +68,8 @@ site instruction | Direction applying at a particular receiving location. | veri
 delivery record | Recorded information about a delivery and its status. | update the delivery record
 handover | Transfer of goods to the appropriate receiving party. | confirm the handover
 stop number | Identifier for one location in a planned route sequence. | state the stop number
-landmark | Recognizable feature used to describe a location. | clarify a landmark
-adjacent unit | Neighboring unit that may have a different occupant. | distinguish an adjacent unit
+vehicle profile | Vehicle-specific dimensions and restrictions entered for route planning. | verify the vehicle profile
+clearance | Available space around or above a vehicle; height must match the specific route. | verify overhead clearance
 record amendment | Authorized change to existing recorded information. | confirm the record amendment''',
     precision='The street address is not the dispute. Suite 4 and suite 6 use different receiving points. The shipment remains for Alder Books in suite 4; identifying the front desk does not transfer the shipment to another consignee.',
     precision_extra='Confirmation by a receiving contact and amendment of the route record are separate steps. Leo can accurately report the corrected receiving information while stating that dispatch has not yet corrected the note or completed the delivery.',
@@ -77,28 +77,29 @@ record amendment | Authorized change to existing recorded information. | confirm
     notes='''For versus at | For names the intended recipient; at gives the location.\nBelongs to | Connects the annex specifically to suite 6.\nNot yet | Preserves an unfinished record update without implying refusal.\nStaffed | Describes personnel being present, not a general delivery authorization.\nThis building | Too broad when several units use different receiving points.\nCorrected information | Can be known before the official record has been amended.''',
     d='''Which read-back matches the facts? | Alder Books, suite 4, staffed front desk. | Alder Books, suite 6, rear annex. | Any desk at 26 Mill Street. | Suite 4, unattended rear annex. | The read-back preserves the consignee, correct suite, and confirmed receiving point.
 Which statement wrongly reports completion? | Dispatch has already corrected the note. | I will report the conflict to dispatch. | The annex belongs to suite 6. | The shipment has not been handed over. | Dispatch correction is still required and has not occurred in this call.
-Which question targets the actual ambiguity? | Does the rear annex serve suite 4 or suite 6? | Is Mill Street a street? | Should I change the consignee automatically? | Can every tenant sign for every delivery? | The ambiguity concerns which suite uses the named receiving point.
+Which question targets the actual ambiguity? | Does the rear annex serve suite 4 or suite 6? | Does suite 4 still use number 26? | Is 418 the stop number or the shipment number? | Does Alder Books use a different trading name? | The ambiguity concerns which suite uses the named receiving point.
 What should remain unchanged? | The intended consignee, Alder Books | The incorrect rear-annex note | The assumption that all suites share an entrance | A false completed-handover status | Correcting the receiving-point information does not replace the intended consignee.''',
-    dialogue='''Leo | Hello, I am parked nearby with shipment 418 for Alder Books. Could I check the receiving entrance before I report a problem with my instructions?
-Hana | Certainly. I am the [[receiving contact::Receiving contact identifies Hana's role in confirming where Alder Books accepts its shipment.]] for Alder Books. What does your paperwork say about the address and the entrance?
-Leo | It gives 26 Mill Street, suite 4, but the route note says rear annex. I want to make sure those details refer to the same place.
-Hana | The street address is right. The [[rear annex::Rear annex is the conflicting location, which belongs to suite six rather than Alder Books.]] belongs to suite 6, not us. Alder Books is in suite 4.
-Leo | Thank you. That sounds like an entrance problem rather than a different street address. Where does your team normally receive a delivery for suite 4?
-Hana | Our [[receiving point::Receiving point names the specific place for suite four, beyond the shared street address.]] is the staffed front desk. Please do not treat the annex as our receiving area simply because it shares the building.
-Leo | Let me repeat that: Alder Books, 26 Mill Street, suite 4, staffed front desk. The rear annex is associated with suite 6. Is that accurate?
-Hana | Yes, that [[read-back::Read-back repeats the corrected details so Hana can check the complete destination information.]] is accurate. The suite number matters because the two units do not use the same receiving point.
-Leo | I have not handed anything over. I will contact dispatch about the conflict so the next instruction is tied to the right unit.
-Hana | That is helpful. The [[consignee::Consignee remains Alder Books; correcting the entrance does not change the intended receiving party.]] is still Alder Books. We are clarifying our receiving location, not asking you to deliver to another business.
-Leo | Exactly. I also want the incorrect note corrected, rather than leaving a future driver with the same rear-annex instruction.
-Hana | Please ask [[dispatch::Dispatch is the coordinating team that must amend the conflicting route information.]] to make that correction. I can confirm our location, but this phone call does not update your route system.
-Leo | Understood. I will say the receiving contact confirms the staffed front desk for suite 4, while the existing note incorrectly points to the annex.
-Hana | Yes. Describe it as a [[location conflict::Location conflict captures the disagreement between the route note and the confirmed receiving information.]] so they know exactly what needs checking. The street number itself is not the problem.
-Leo | Before I call them, could you confirm once more that suite 6 is separate from Alder Books? I do not want to merge the two units.
-Hana | It is an [[adjacent unit::Adjacent unit distinguishes suite six from the intended recipient even though both share the building.]], not our delivery destination. Your shipment remains for suite 4, and our receiving point is the staffed front desk.
-Leo | Thank you. I have the details for dispatch now. I will not describe the delivery as completed just because we have clarified the entrance.
-Hana | Correct. No [[handover::Handover means transfer of the shipment, which has not occurred during this clarification call.]] has occurred in this conversation. We have resolved which receiving information you need to report.
-Leo | I will keep those two things separate: the confirmed receiving details and the route note that still needs to be changed.
-Hana | Good. The [[record amendment::Record amendment remains pending; accurate information in a call is not an already updated route record.]] is still pending with dispatch. The corrected location to report is suite 4, staffed front desk.''',
+    dialogue='''Leo | Hello, I'm parked nearby with shipment 418 for Alder Books. Could I check the entrance? The address and route note don't seem to agree.
+Hana | Yes, I'm the [[receiving contact::Hana is the contact for Alder Books and can clarify its receiving point, not amend the carrier's route system.]] for Alder Books. Which address and entrance have you been given?
+Leo | Twenty-six Mill Street, suite four. Under instructions it says rear annex. Does the annex serve your part of the building?
+Hana | No, the [[rear annex::The rear annex belongs to suite six, not the suite-four consignee named on the shipment.]] belongs to suite six. We're in suite four; you've got the correct street number.
+Leo | That explains it. I was checking the building number again, but it's the entrance note that needs attention.
+Hana | Our [[receiving point::The staffed front desk is the specific receiving point for suite four, beyond the building's shared street address.]] is the staffed front desk. The other tenant uses the annex, so the two shouldn't be mixed up.
+Leo | Let me check I've got it: Alder Books, twenty-six Mill Street, suite four, staffed front desk. The rear annex is suite six.
+Hana | Your [[read-back::Repeating the consignee, address, suite, and receiving point lets Hana check the full corrected information.]] is right. Please keep the suite number with the entrance so it doesn't get separated again.
+Leo | I haven't handed the shipment over. I'll report the conflict to dispatch before treating the instructions as corrected.
+Hana | The [[consignee::Alder Books remains the intended receiving party; the entrance correction does not redirect the shipment to another tenant.]] is still Alder Books. We're not asking you to deliver to a different business.
+Leo | Understood. I'd also like the note fixed for the next visit; otherwise another driver will have the same problem.
+Hana | Please ask [[dispatch::Dispatch is responsible for the carrier's route-note correction; this receiving contact cannot update it through the call.]] about that. I can confirm our entrance, but I can't change your route record from here.
+Leo | I'll report that Hana at receiving confirmed the staffed front desk for suite four, while the note points to the annex.
+Hana | That describes the [[location conflict::The conflict concerns the receiving entrance and suite, not an incorrect street number.]] clearly. There's no correction to the street number itself.
+Leo | Just checking: suite six isn't another department of Alder Books? I don't want the note to imply either desk can receive for you.
+Hana | It's an [[adjacent unit::Suite six is a separate neighboring unit, not a second receiving destination for Alder Books.]], separate from us. Your shipment names suite four, and that's the detail to preserve.
+Leo | Thanks. I'll keep the delivery open while I speak with dispatch. This call hasn't completed the stop.
+Hana | Right, no [[handover::A handover would transfer the goods to the receiving party; none has occurred in this location-clarification call.]] has taken place. You've confirmed where our receiving point is.
+Leo | So I have corrected information to pass on, but the old route note is still there until dispatch amends it.
+Hana | Exactly. The [[record amendment::The route record still needs amendment; knowing the corrected information does not make the recorded change complete.]] is pending. Suite four, staffed front desk is the receiving information to report.''',
+    rehearsal=["Read the full destination: Alder Books, 26 Mill Street, suite 4, staffed front desk.","Contrast suite 4 with suite 6 and the rear annex in turns 4 and 8.","Read the final record status without claiming dispatch has amended it or goods were handed over."],
     transfer_title='Correct another entrance conflict',
     transfer_setup='Shipment 529 names Birch Print, suite 2 at 14 Oak Lane. A side-door note belongs to suite 3. The receiving contact confirms suite 2 uses the main reception. Dispatch correction is pending.',
     transfer='''Driver: "The consignee is ___." | Birch Print | Birch Print remains the named receiving party despite the entrance correction.
@@ -149,27 +150,28 @@ cause attribution | Statement assigning a reason or responsibility for an event.
     d='''Which discrepancy report is accurate? | Twelve cartons listed, eleven counted, contents unchecked. | Twelve products listed, eleven products received. | Eleven cartons prove all contents are complete. | Dispatch lost one carton at the depot. | The accurate report preserves both carton figures and the unchecked contents.
 Which calculation matches the count? | One carton below the listed quantity. | One carton above the listed quantity. | Eleven cartons missing. | Twelve cartons missing. | Twelve listed minus eleven counted leaves a one-carton difference.
 Which statement exceeds the evidence? | The missing carton is definitely at another depot. | Dispatch has not located the twelfth carton. | Both people count eleven cartons. | The contents have not been checked. | No confirmed location is supplied, so the depot claim is unsupported.
-What should a follow-up preserve? | The quantity basis and unresolved location. | An invented count of missing products. | A claim that contents were inspected. | Automatic blame assigned to the driver. | The follow-up must retain carton units and the still-unknown location.''',
-    dialogue='''Ben | I have eleven cartons on my receiving tally, but the bill of lading says twelve. Can we make sure we are counting the same thing?
+What should a follow-up preserve? | The quantity basis and unresolved location. | A product count inferred from the carton count. | A second-delivery time not supplied here. | Only the difference, without the listed and counted figures. | The follow-up must retain carton units and the still-unknown location.''',
+    dialogue='''Ben | My tally is eleven cartons, but this bill of lading says twelve. Can you check the count with me before we report it?
 Priya | Yes. The [[listed quantity::Listed quantity is twelve cartons on the document, distinct from the eleven physically counted.]] is twelve cartons. I also count eleven cartons here, so our physical counts agree.
-Ben | Then we are one short, not eleven short. I want the report to be clear because someone may read only the first line.
+Ben | Then we're one carton short against the document. I'll include both totals so the difference isn't mistaken for the received count.
 Priya | Exactly. We are [[short by::Short by introduces the amount below the documented count: one carton rather than eleven.]] one carton against the twelve listed. I will keep both numbers in the message rather than reporting the difference alone.
-Ben | Should I write that one product is missing? The boxes contain office supplies, but I have not opened them to check what is inside.
+Ben | I was about to write one item missing. That's too vague, isn't it? I haven't opened the boxes or counted the products inside.
 Priya | Keep the [[quantity basis::Quantity basis must remain cartons; unchecked contents do not establish how many individual products are missing.]] as cartons. One missing outer box does not tell us how many individual products it contains.
-Ben | Right. We have checked the number of boxes, not the contents. I do not want my count to suggest a full product inspection.
+Ben | Right, it's the outer boxes we've counted. The paperwork shouldn't suggest we've checked every product or its condition.
 Priya | We should state that the [[contents::Contents means the goods inside the cartons, which neither party has inspected here.]] are unchecked. That leaves a clear distinction between what we counted and what still needs verification.
-Ben | Have you heard from dispatch about the twelfth carton? I would prefer a confirmed location rather than telling our team it will arrive later.
+Ben | Has dispatch found the twelfth carton anywhere? Our team will ask whether to expect another delivery, and I don't have an answer.
 Priya | Dispatch has no confirmed location for the [[unlocated carton::Unlocated carton states the present information limit without declaring a final loss or a known location.]]. I cannot say it is at another depot or promise a later delivery.
-Ben | That is disappointing, but I would rather know. Please do not let the report say everything is complete just because we agree on eleven.
+Ben | Please leave that open in the report. Agreeing that there are eleven here doesn't make the twelve-carton order complete.
 Priya | It will record the [[discrepancy::Discrepancy is the difference between twelve documented cartons and eleven observed cartons, not a completed delivery count.]] explicitly: twelve listed, eleven counted, contents unchecked, and the twelfth carton not located.
-Ben | Could the bill of lading itself be wrong? I am asking whether that is one possibility, not saying we know it was written incorrectly.
+Ben | Could the twelve on the document be an error? I don't know that it is; I'm asking whether that needs checking too.
 Priya | That needs checking too. Our [[joint count::Joint count confirms agreement on what is present but does not establish whether the paperwork or movement caused the difference.]] establishes eleven here; it does not tell us whether the document or the shipment movement explains the difference.
-Ben | Good. I will avoid writing that the driver lost a carton. We have a shortage against the document, but we have not established responsibility.
+Ben | That makes sense. I'll report the shortage without writing that someone lost it. We haven't established where the difference arose.
 Priya | Thank you. Unsupported [[cause attribution::Cause attribution assigns responsibility or a reason, neither of which follows from this count alone.]] would go beyond what either of us observed. A precise count gives dispatch something concrete to investigate.
-Ben | What should the next person check first? I want the follow-up attached to this shipment and not confused with an individual-item stock query.
+Ben | Can the follow-up use this shipment reference? I don't want it passed on as a query about one individual office-supply item.
 Priya | The [[dispatch follow-up::Dispatch follow-up concerns locating or explaining the unaccounted-for carton, while the existing count stays explicit.]] should use the shipment details and the one-carton difference. It must not invent an item count or a location.
-Ben | Let me read the message back: twelve cartons listed, eleven counted, contents unchecked, and dispatch has not located the twelfth. Is that complete?
+Ben | Read-back: twelve cartons listed, eleven counted, contents unchecked, and no confirmed location for carton twelve. Have I missed anything?
 Priya | Yes. That preserves the [[physical count::Physical count is the eleven cartons observed, which must remain separate from the document's twelve.]] and the limits of our information. The discrepancy remains open until the relevant checks establish more.''',
+    rehearsal=["Read twelve cartons listed and eleven cartons counted, then state one carton short.","Repeat the contents-unknown line without changing cartons into individual products.","Use turns 14 and 20 to keep the shared count separate from the unresolved cause."],
     transfer_title='Report another count difference',
     transfer_setup='At Cedar Supplies, the document lists nine cartons. Driver and receiver count eight. Contents are unchecked, and the ninth carton has no confirmed location.',
     transfer='''Driver: "The document lists ___ cartons." | nine | Nine is the documented amount against which the actual count is compared.
@@ -212,7 +214,7 @@ driver availability | Whether a driver can lawfully and practically perform the 
 pending response | Reply that has not yet been received. | record a pending response
 rescheduling request | Proposal to change the arranged time, not automatic acceptance. | submit a rescheduling request
 confirmed appointment | Receiving arrangement explicitly agreed by the appropriate parties. | distinguish a confirmed appointment
-communication commitment | Promise to provide information, distinct from promising an outcome. | keep the communication commitment''',
+UTC offset | Difference between local time and Coordinated Universal Time. | state the UTC offset''',
     precision='At 10:20, the estimate is 11:40 and the cutoff is 11:30: a ten-minute mismatch. By 10:40 is the promised update deadline. None of those facts confirms permission to arrive after the cutoff.',
     precision_extra='A customer timing request does not override safe driving, actual working-time requirements, or carrier procedures. This lesson practices reporting the timing conflict and obtaining a decision; it supplies no instruction to change speed, rest, or duty records.',
     phrases='''State the call time | It is 10:20, and I am parked for this call.\nGive the estimate | My current estimated arrival is 11:40.\nName the cutoff | Receiving has an 11:30 cutoff.\nQuantify the mismatch | That puts the estimate ten minutes after the cutoff.\nAvoid minimizing | We should flag the mismatch now.\nKeep the estimate provisional | 11:40 is an estimate, not a guarantee.\nAsk about confirmation | Has receiving agreed to a later slot?\nState the open status | No later slot is confirmed yet.\nAssign the contact | I will contact receiving about the timing.\nCommit to an update | I will update you by 10:40.\nKeep the commitment even if unresolved | You will hear from me even if their answer is still pending.\nDistinguish the times | 10:40 is the update deadline, not the arrival time.\nReject a false appointment | A request for 11:40 is not a confirmed appointment.\nProtect the factual record | Keep the 11:30 cutoff in the message.\nAvoid pressure to rush | We need a receiving decision, not a promise to make up time.\nClose the handoff | I own the receiving call and the next update.''',
@@ -221,26 +223,27 @@ communication commitment | Promise to provide information, distinct from promisi
 What does by 10:40 refer to? | The deadline for Mei's update | Guaranteed delivery completion | A new receiving cutoff | The time Omar must begin driving | Ten forty is a communication deadline, not a movement or delivery instruction.
 Which sentence turns a request into a false result? | I will ask, so your 11:40 appointment is confirmed. | I will ask whether a later slot is possible. | Their response is still pending. | I will update you even without a final answer. | Asking receiving does not establish that receiving has accepted a later appointment.
 What should Omar do linguistically? | Report the timing conflict without promising to rush. | Promise to beat the estimate by any means. | Omit the cutoff to sound reassuring. | Call the estimate a guarantee. | The useful message states the conflict and avoids unsafe or unsupported timing promises.''',
-    dialogue='''Omar | Mei, I am parked and checking in at 10:20. My current estimate is 11:40, which does not fit the receiving time on the route.
-Mei | I see the [[receiving cutoff::Receiving cutoff is eleven thirty, the stated acceptance limit that the later estimate does not change.]] is 11:30. Your estimate is ten minutes after that, so we need to contact them before assuming they can receive you.
-Omar | Yes. I wanted to flag it now instead of arriving and finding the office unable to accept the shipment. I have no later confirmation.
-Mei | I will make a [[rescheduling request::Rescheduling request asks for a different arrangement but is not itself an accepted appointment.]] with receiving. Until they respond, we should keep the original cutoff and the unconfirmed status in the record.
-Omar | Please keep 11:40 as an estimate, too. I do not want them to hear it as a guaranteed appointment that I have already accepted.
-Mei | Agreed. The [[estimated time of arrival::Estimated time of arrival is the provisional eleven-forty expectation, not a promise or a receiving agreement.]] remains 11:40. I will explain that it falls after their stated cutoff and ask what arrangement they can offer.
-Omar | When should I expect to hear back? A clear update time would help even if receiving has not made a decision by then.
-Mei | I will update you [[by::By sets ten forty as the latest promised update time, not the delivery time.]] 10:40. That is the latest time for my next message, not a promise that the delivery will be completed then.
-Omar | Understood. So if you are still waiting at 10:40, you will tell me that, rather than leaving me to assume the later time is accepted?
-Mei | Exactly. You will receive a [[status update::Status update communicates the current position even when the requested receiving decision remains unresolved.]] even if their answer is pending. Silence should not become an unofficial confirmation.
-Omar | I appreciate that. The ten-minute difference may sound small, but it still puts the estimate outside the stated receiving limit.
-Mei | Correct. The [[time mismatch::Time mismatch is the ten-minute difference between the eleven-forty estimate and the eleven-thirty cutoff.]] needs a decision from receiving. We should not describe it as effectively on time or quietly extend their cutoff ourselves.
-Omar | Nor should I promise to make up the difference on the road. I can provide an honest estimate, but I cannot solve their schedule by rushing.
-Mei | Right. Actual [[driver availability::Driver availability depends on lawful and practical conditions; a customer's request does not remove those constraints.]] and applicable rules still matter. We need an agreed receiving plan, not an unsupported promise to recover time.
-Omar | Have we confirmed any alternative yet, or are you about to make the first contact about a later slot?
-Mei | No [[later slot::Later slot remains unconfirmed because receiving has not yet accepted a revised arrangement.]] is confirmed. I am taking the contact action now, and I will keep that distinct from whatever answer they eventually give.
-Omar | Please repeat the three times once: the call, the arrival estimate, and your update deadline. That will keep my notes clear.
-Mei | Call at 10:20, arrival estimate 11:40, and my [[update deadline::Update deadline is ten forty, distinct from the ten-twenty call and eleven-forty arrival estimate.]] is 10:40. Receiving still has the 11:30 cutoff.
-Omar | That matches my notes. I will await your update without treating the proposed later arrival as a booking.
-Mei | Good. A [[confirmed appointment::Confirmed appointment requires an actual accepted arrangement; the present conversation establishes only a request and an update commitment.]] still needs receiving approval. I own that contact and will update you by 10:40, even if unresolved.''',
+    dialogue='''Omar | Mei, I'm parked for this call. It's ten twenty. My arrival estimate is eleven forty, but the receiving note looks earlier.
+Mei | Their [[receiving cutoff::The receiving cutoff is 11:30; an 11:40 estimate is ten minutes after it and does not extend it.]] is eleven thirty. That's ten minutes before your estimate, so we need a receiving decision.
+Omar | That's why I'm calling now. I don't have anything confirming that they'll accept this delivery after eleven thirty.
+Mei | I'll make a [[rescheduling request::A rescheduling request asks for a changed receiving arrangement; it does not itself confirm a new slot.]]. For now I'll leave the eleven-thirty cutoff in the record, not replace it with your estimate.
+Omar | Please make clear it's still an estimate. I don't want eleven forty going into their system as a guaranteed arrival.
+Mei | Yes, your [[estimated time of arrival::The estimated time of arrival is the provisional 11:40 expectation, not an accepted appointment.]] is eleven forty. I'll give them that and ask whether a later arrangement is possible.
+Omar | When will you update me? Even a message saying you're still waiting would help me know where things stand.
+Mei | I'll update you [[by::By means no later than 10:40 for the communication; it says nothing about delivery completion.]] ten forty, whether or not they've decided. That's the latest time for my next message.
+Omar | Good. If there's no answer from them, please say that explicitly. I won't read silence as permission for the later arrival.
+Mei | You'll get a [[status update::A status update conveys the latest position even if receiving has not yet decided on the request.]] either way. If the request is still open, I'll say so.
+Omar | Ten minutes sounds small, but it still puts the estimate beyond their limit. We can't call that within the window.
+Mei | Agreed. The [[time mismatch::The mismatch is the ten minutes between the 11:30 cutoff and the later 11:40 arrival estimate.]] stays in the message. Only the appropriate receiving decision can settle the scheduling question.
+Omar | I also can't promise to make up those minutes on the road. We need a workable receiving plan.
+Mei | Right. I'll keep [[driver availability::Driver availability includes lawful and practical limits; a requested appointment cannot override applicable rules or safe operation.]] and the applicable rules in view. This isn't a request to rush or change your duty record.
+Omar | Has anyone else already spoken to them, or is the later time still entirely unconfirmed?
+Mei | No [[later slot::No later receiving slot is confirmed; the dispatcher is only taking the contact action.]] is confirmed. I'll take that contact action and report their actual response.
+Omar | Let me check the times: this call at ten twenty, arrival estimated eleven forty, and your message no later than ten forty.
+Mei | Correct. My [[update deadline::10:40 is the update deadline, separate from the call at 10:20 and the ETA at 11:40.]] is ten forty. The receiving cutoff remains eleven thirty.
+Omar | Thanks. I'll wait for that update without treating eleven forty as a booking. Keep the estimate and their cutoff separate.
+Mei | I will. A [[confirmed appointment::A confirmed appointment requires acceptance of a receiving arrangement; asking for it supplies no such acceptance.]] still needs an accepted arrangement. I own the contact and the update by ten forty.''',
+    rehearsal=["Read the four times in the case: call 10:20, ETA 11:40, cutoff 11:30, update by 10:40.","Repeat the by-10:40 commitment and stress that an unresolved answer still gets an update.","Read the driver-availability exchange without promising to recover time on the road."],
     transfer_title='Separate another estimate and update',
     transfer_setup='A parked driver calls at 13:00. Arrival is estimated at 14:20 and receiving closes for this delivery at 14:00. No later slot is agreed. Dispatcher Jo promises an update by 13:15.',
     transfer='''Driver: "Estimated arrival is ___." | 14:20 | Fourteen twenty is the provisional arrival time, not a confirmed appointment.
@@ -291,27 +294,28 @@ acceptance decision | Decision about receiving the shipment under the actual pro
     d='''Which condition note matches the evidence? | One carton has a crushed lower corner; contents uninspected. | Driver broke the equipment inside. | Contents inspected and confirmed undamaged. | Every carton is crushed. | Only one external corner is observed, while internal condition remains unchecked.
 Which sentence acknowledges concern without asserting damage? | You are concerned that the equipment may be damaged. | The driver definitely broke your equipment. | There cannot be any damage inside. | Your concern is irrelevant because the carton is closed. | The correct wording attributes a possibility while taking the receiver's concern seriously.
 What does a follow-up referral establish? | The issue is being routed for review, not approved as a claim. | Legal liability has been decided. | A refund has been authorized. | The shipment must be accepted. | Referral starts or continues review without supplying a remedy or acceptance decision.
-Which distinction must remain explicit? | Packaging condition versus uninspected contents. | Carton color versus driver nationality. | Claim approval versus guaranteed replacement today. | Any concern versus proven driver fault. | The observed outer condition does not establish what happened inside the carton.''',
-    dialogue='''Ellis | This carton has a crushed corner. Please put broken equipment caused by the driver on the receipt, because I do not want the problem ignored.
+Which distinction separates the observed condition from the still-unchecked condition? | Packaging condition versus uninspected contents. | This delivery date versus the previous delivery date. | One receiving entrance versus another receiving entrance. | Claim approval versus payment of a claim. | The observed outer condition does not establish what happened inside the carton.''',
+    dialogue='''Ellis | Look at this crushed corner. I want the receipt to say the driver broke the equipment; otherwise I'm worried nobody will take it seriously.
 Nia | I will not ignore it. I can record the [[visible condition::Visible condition is the crushed lower corner that can actually be observed, rather than uninspected equipment damage.]]: one carton has a crushed lower corner. We have not opened it or inspected the equipment inside.
-Ellis | The corner looks bad enough that I am worried about the equipment. I do not want a note that makes it sound as though nothing happened.
+Ellis | It's a bad dent, though. This equipment matters to us, and I don't want the note to make the problem sound trivial.
 Nia | The [[condition notation::Condition notation preserves the observed packaging issue without turning a concern into a finding about cause or contents.]] should clearly describe the corner. Saying the contents are uninspected does not remove or minimize that visible concern.
-Ellis | But if you only mention the box, will someone assume I said the equipment was fine? That is not what I mean at all.
+Ellis | If you only mention the box, could someone read that as me agreeing the equipment is fine? I haven't opened it.
 Nia | We can state the [[inspection::Inspection has not occurred, so neither damaged nor undamaged contents can be confirmed.]] status explicitly. The contents are unopened and uninspected, so I cannot confirm that they are fine or that they are broken.
-Ellis | All right. I am concerned that the equipment may be damaged. Please keep that concern alongside the description of the corner.
+Ellis | Then say I'm concerned the equipment may be damaged. Keep that concern with the description of the lower corner.
 Nia | Yes. That is an [[attributed statement::Attributed statement identifies the receiver's concern as a concern rather than a verified internal-damage finding.]]: you are concerned about possible internal damage. It is different from recording confirmed broken equipment as an observed fact.
-Ellis | I still think the damage happened during delivery, although I did not see the carton being damaged. Can the note say that is what caused it?
+Ellis | I think it happened during delivery, although I didn't see it happen. Can you include what I think without calling it proved?
 Nia | That would be a [[causal claim::Causal claim asserts how the condition arose, which neither the visible corner nor the receiver's suspicion establishes.]] we have not established. I can report your concern, but I cannot state driver-caused damage as a verified conclusion.
-Ellis | So you are not deciding that the carrier has no responsibility either? I do not want careful wording to become an automatic rejection.
+Ellis | You're not ruling out carrier responsibility either, are you? I don't want this careful wording to become a rejection of the concern.
 Nia | Correct. I am not deciding [[liability::Liability is responsibility for the event; this factual description neither establishes nor rejects it.]] in either direction. I am separating the observation from questions that need the appropriate review.
-Ellis | Then let us be specific about the location. It is the lower corner of this carton, not all the cartons in the delivery.
+Ellis | Let's make the location exact: the lower corner of this carton. I'm not saying every carton has the same problem.
 Nia | I will keep that precise: a [[crushed corner::Crushed corner describes the lower-corner deformation on one carton, not a whole-shipment or equipment-damage finding.]] on one carton, at the lower corner, with the contents still unopened and uninspected.
-Ellis | What happens to the concern next? I want someone to review it, but I understand you cannot promise a replacement here.
+Ellis | Who will review it next? I'm asking for follow-up, not expecting you to promise a replacement on the spot.
 Nia | I will make a [[follow-up referral::Follow-up referral routes the reported issue through the actual carrier process without promising a particular outcome.]] through our carrier process. Reporting the issue does not itself approve a claim or decide how it will be resolved.
-Ellis | Please do that. I will keep the difference clear between what we can see and what we do not yet know about the equipment.
+Ellis | Please refer it. I'll keep the packaging observation separate from whatever an inspection later finds inside.
 Nia | That distinction matters. [[Internal damage::Internal damage concerns the goods inside; their condition remains unknown because the carton has not been inspected.]] remains unverified. The packaging condition is visible, and both facts should remain in the report.
-Ellis | We have agreed on a factual description, then. We have not agreed that the driver caused broken equipment or that a claim is approved.
+Ellis | All right. We've agreed what to report, but we haven't decided what caused it, what the equipment's condition is, or what happens with a claim.
 Nia | Exactly. No [[claim approval::Claim approval would require an authorized decision, which this description and referral do not provide.]] or acceptance decision is made by this conversation. We have a clear condition report and a concern to refer.''',
+    rehearsal=["Read the condition note: one crushed lower corner, contents unopened and uninspected.","Repeat the receiver's concern with may, without converting it into a verified finding.","Read the referral lines while keeping liability, claim approval, and acceptance undecided."],
     transfer_title='Describe a different visible condition',
     transfer_setup='At Cedar Studio, one carton has a tear in its upper side panel. Contents are unopened and uninspected. The receiver fears internal damage, but neither damage inside nor its cause is established.',
     transfer='''Driver: "One carton has a ___ in its upper side panel." | tear | Tear is the observed external condition, not a finding about the goods inside.
@@ -335,7 +339,7 @@ Which alternative can be reviewed but is not confirmed? | Redelivery through dis
 listed contact | Person named in the delivery contact information. | call the listed contact
 receiving office | Office responsible for handling incoming deliveries. | check the receiving office
 closed premises | Location not currently open for the relevant service. | report closed premises
-arrival timestamp | Recorded time of reaching the location. | state the arrival timestamp
+dwell time | Total elapsed time at a facility, with the measurement endpoints stated. | record the dwell time
 contact attempt | Effort to reach the named recipient or contact. | record a contact attempt
 answered call | Telephone contact successfully established. | distinguish an answered call
 return time | Time when the contact expects to be back. | confirm the return time
@@ -349,7 +353,7 @@ delivery attempt | Visit or action aimed at delivery, not necessarily successful
 received status | Record that the shipment has actually been received. | distinguish received status
 no response | Contact outcome where no reply is obtained. | avoid an inaccurate no-response note
 service availability | Whether the requested service can actually be offered. | confirm service availability
-waiting period | Length of time spent or proposed at the stop. | specify the waiting period
+detention charge | Contract-dependent charge for delay beyond the allowed period. | explain the detention charge
 dispatch review | Assessment by the team coordinating the delivery. | request dispatch review
 new slot | Proposed replacement delivery time. | confirm a new slot
 unconfirmed alternative | Possible option not yet agreed or available. | explain an unconfirmed alternative
@@ -360,29 +364,30 @@ follow-up owner | Person responsible for the next action or communication. | ide
     phrases='''State the present position | I am outside the closed receiving office at 14:10.\nConfirm the contact | Am I speaking with the listed receiving contact?\nAsk about availability | When will someone be available to receive?\nRepeat the return time | You can return at 15:00; is that correct?\nQuantify the wait | That would be fifty minutes from now.\nAvoid an unsupported commitment | I cannot commit to waiting until 15:00.\nAcknowledge the inconvenience | I understand that this disrupts your plans.\nOffer a review | Dispatch can review a redelivery arrangement.\nSeparate review and booking | No new slot is confirmed yet.\nKeep collection uncertain | I do not yet know whether collection is available.\nAvoid an unauthorized release | No unattended release has been authorized.\nPreserve the contact outcome | I reached the listed contact by phone.\nPreserve the delivery status | The shipment has not been received.\nCorrect a false inference | Answering the phone does not mean someone is here to receive.\nName the next action | I will send the current details to dispatch for review.\nSummarize the open position | Return at 15:00; waiting and alternatives remain unconfirmed.''',
     notes='''Can return | Describes the contact's availability, not the driver's waiting agreement.\nUntil | Gives the endpoint of a proposed wait.\nCan review | Offers assessment without promising the outcome.\nNot available versus unknown | Unknown collection availability is not a definite refusal of that option.\nAttempted versus received | A delivery visit does not itself establish a completed handover.\nReached versus present | A person can answer remotely while the receiving office remains closed.''',
     d='''Which record preserves the facts? | Office closed at 14:10; contact answered and can return at 15:00. | No response from the listed contact. | Shipment received at 14:10. | Driver agreed to wait until 15:00. | The correct record distinguishes an answered call from current receiving availability.
-Which response correctly addresses waiting? | I cannot commit to waiting until 15:00. | I will definitely wait because you answered. | Your return automatically changes my route. | Waiting is confirmed although I have not checked. | The brief states that the driver cannot promise the fifty-minute wait.
+Which response correctly addresses waiting? | I cannot commit to waiting until 15:00. | I have booked a fifty-minute wait. | I will be waiting at 15:00 for your return. | Dispatch has already agreed that I can stay. | The brief states that the driver cannot promise the fifty-minute wait.
 Which collection statement is accurate? | Collection availability has not been confirmed. | You can definitely collect tonight. | Collection is impossible at every carrier location. | Your collection booking is complete. | Unknown availability supports neither a guaranteed collection nor a universal refusal.
 What can happen next? | Dispatch can review redelivery without promising a slot yet. | Mark the shipment received to close the stop. | Leave it unattended without authorization. | Promise a new time before dispatch responds. | Review is the available next step, while the final arrangement remains unconfirmed.''',
-    dialogue='''Sam | Hello, I am outside Marlow Design at 14:10. The receiving office is closed. Are you the listed contact for this delivery?
-Lina | Yes, I am the [[listed contact::Listed contact identifies Lina as the person on the delivery record, although she is not currently at the office.]], but I am away from the office. I can return at 15:00. Could you wait until then?
-Sam | That would be fifty minutes from now. I understand you want to receive it today, but I cannot commit to that wait.
-Lina | I thought my [[return time::Return time is Lina's fifteen-hundred availability, not an agreement that the driver will remain.]] might solve it. I see that it also depends on whether you can stay. What happens if you cannot?
-Sam | Dispatch can review redelivery. I will pass on the closed-office situation and your return time, but I cannot promise a new slot here.
-Lina | Would [[redelivery::Redelivery means another delivery attempt, which dispatch may review but has not yet scheduled.]] mean later today, or could it be a different day? I do not want to plan around a time that is only a possibility.
-Sam | No replacement time is confirmed. The review needs to establish what can be offered, so I should not describe today or tomorrow as agreed.
-Lina | Understood. What about a [[collection option::Collection option would let the customer pick up the shipment elsewhere, but its availability is currently unknown.]] at one of your locations? Could I go there after I get back to the office?
-Sam | I do not yet know whether collection is available for this shipment. That also needs checking before you make a trip to a carrier location.
-Lina | Then please keep both questions clear. My [[service availability::Service availability concerns what the carrier can actually offer, not what the customer would prefer.]] question is about collection, while the other question is whether another delivery can be arranged.
-Sam | I will. Neither option is confirmed. Also, this phone call does not mean the shipment has been received, because no handover has occurred.
-Lina | Yes, please do not put [[received status::Received status would falsely imply a completed handover when the office is closed and the contact is remote.]] on the record. I answered the phone, but I am not there to accept the goods.
-Sam | Exactly. I should record that I reached you and that the office is closed, not say there was no response from the contact.
-Lina | That is the correct [[contact outcome::Contact outcome is an answered call with the recipient unavailable in person, not an unanswered attempt.]]. It matters to me that the notes show we spoke and that I gave you a return time.
-Sam | I will include 15:00, with waiting unconfirmed. I also have no authorization to treat this as an unattended delivery.
-Lina | Agreed. No [[release authorization::Release authorization has not been supplied, so the call does not authorize leaving the goods unattended.]] has been arranged in this conversation. Please do not read my return time as permission to leave the shipment.
-Sam | Let me summarize: office closed at 14:10, listed contact reached, return possible at 15:00, no waiting commitment, and alternatives still need review.
-Lina | That is accurate. The [[dispatch review::Dispatch review is the next assessment step, not confirmation of a wait, collection, or replacement delivery time.]] should determine what can actually be offered. I would rather hear a checked arrangement than guess.
-Sam | I will send those details to dispatch for that review. I cannot give a confirmed new slot or collection location yet.
-Lina | Thank you. Keep each [[unconfirmed alternative::Unconfirmed alternative describes redelivery or collection before its availability and arrangement have been established.]] separate from the facts we know. I can return at 15:00, but we have not agreed on the delivery solution.''',
+    dialogue='''Sam | Hello, I'm safely parked outside Marlow Design. It's fourteen ten, and the receiving office is closed. Is this Lina?
+Lina | Yes, I'm the [[listed contact::Lina is the named receiving contact and answers remotely, though she is not present to receive the goods.]]. I'm away from the office. I can be back at fifteen hundred; could you wait?
+Sam | That's fifty minutes from now. I understand you'd like to receive it today, but I can't commit to waiting until then.
+Lina | I thought giving you my [[return time::15:00 is when Lina can return, not a commitment that the driver will wait until then.]] would solve it. I hadn't checked whether that would work with your route.
+Sam | I can pass the details to dispatch for a redelivery review. I don't have a new slot to offer on this call.
+Lina | Would [[redelivery::Redelivery is another delivery attempt; its date and time have not been agreed in this case.]] mean another visit today? I'd need to know before asking someone else to stay late.
+Sam | It hasn't been scheduled. Dispatch needs to review what can be offered; I can't promise today or tomorrow.
+Lina | Could there be a [[collection option::A collection option would let Lina pick up the shipment at an appropriate carrier location, but availability is unknown.]] instead? I might be able to pick it up later.
+Sam | I don't know whether that's available for this shipment. Please don't travel to a carrier location before it's checked.
+Lina | Then please include that [[service availability::Service availability concerns whether collection can actually be offered; preference alone does not confirm it.]] question as well. I'd like them to check collection, not just another delivery.
+Sam | I'll pass on both. For the stop record, I've reached you by phone, but no one is here to receive the goods.
+Lina | Yes, don't mark it with a [[received status::Received status would claim an actual handover that has not happened; an answered phone call is not receipt of goods.]]. I've answered remotely; I haven't taken delivery.
+Sam | And I won't mark the call no response. The office is closed, but we did speak and you gave me a return time.
+Lina | That's the correct [[contact outcome::The call was answered and receiving was unavailable in person; those facts must not become a no-response record.]]. Please make sure dispatch sees that we spoke.
+Sam | I will. I also haven't been authorized to leave the shipment unattended. Your return time doesn't change that.
+Lina | Understood. No [[release authorization::No permission for unattended release is established; the contact's future return time cannot supply it.]] has been arranged here. Please send the situation for review.
+Sam | I'll report office closed at fourteen ten, contact reached, return possible at fifteen hundred, and no commitment to wait.
+Lina | And the [[dispatch review::Dispatch review is the next assessment, not an already agreed new slot or collection arrangement.]] will cover redelivery and whether collection is possible? Those are the two questions I want answered.
+Sam | Yes. Neither is confirmed, and I don't have a collection address or new delivery time to give you yet.
+Lina | Thank you. I'll treat each [[unconfirmed alternative::Both redelivery and collection remain possible questions for review, not arrangements Lina can rely on yet.]] as a question to check. My return time is fifteen hundred, not an agreed delivery solution.''',
+    rehearsal=["Read 14:10 and 15:00, then say fifty minutes without implying a waiting agreement.","Repeat the contact outcome: call answered, office closed, no goods received.","Read the two review questions: redelivery and collection availability."],
     transfer_title='Clarify another closed-office call',
     transfer_setup='At 09:20, a driver reaches the contact for a closed office. The contact can return at 10:00. Waiting cannot be promised; dispatch can review redelivery, and collection availability is unknown.',
     transfer='''Driver: "Your return would be ___ minutes from now." | forty | Ten hundred is forty minutes after the nine-twenty call.
@@ -434,26 +439,27 @@ change acceptance | Customer agreement to a specific confirmed proposal. | obtai
 Which price statement is supported? | No upgrade price has been confirmed. | The upgrade is definitely free. | The driver can name an informal price. | Rafael has accepted any amount. | Neither a quotation nor customer acceptance of a price exists.
 What does Rafael's review request authorize in the dialogue? | Referring the request to dispatch, not performing the upgrade. | Immediate upstairs placement. | Automatic assembly and installation. | Treating unloading as completed. | The customer asks for an assessment, not an unpriced or unauthorized service change.
 Which summary keeps all uncertainties? | Upgrade availability, price, and timing remain unknown. | Only timing is unknown; everything else is approved. | The service has been amended and accepted. | The customer must move the goods upstairs personally. | No checked proposal exists for availability, price, or timing.''',
-    dialogue='''Rafael | I need this taken upstairs to my apartment. I thought delivery meant putting it where I can use it, not stopping outside.
+    dialogue='''Rafael | I need it upstairs in my apartment. When I booked delivery, I thought that meant bringing it to the room where I'll use it.
 Amara | I understand the expectation. The [[booked service::Booked service is the recorded curbside arrangement, which differs from the requested upstairs placement.]] here is curbside delivery. This booking does not include inside service or upstairs placement.
-Rafael | That is not what I was expecting. Could you add the upstairs part now? I would rather settle it here than arrange another conversation.
+Rafael | That's a problem. Can the upstairs part be added now? I wasn't planning for the item to stop outside.
 Amara | I cannot make that [[service amendment::Service amendment would change the authorized work; the driver cannot approve it in this conversation.]] myself. Dispatch can review an upgrade or rearrangement, but I do not have an approved change to carry out.
-Rafael | Is that a definite no to any upstairs service, or are you saying that this particular booking does not include it?
+Rafael | Do you mean the carrier never offers upstairs delivery, or just that it isn't part of the service I've booked?
 Amara | I am explaining the [[service scope::Service scope identifies what this booking includes; it does not establish every possible service the carrier offers.]] of this booking. Whether another service can be offered needs checking, so I should not give you a definite yes or no yet.
-Rafael | Fair enough. Would an upgrade cost extra? I do not want asking the question to mean I have agreed to an unknown charge.
+Rafael | Would it cost extra? Please don't take my asking as agreement to whatever the price turns out to be.
 Amara | No [[quotation::Quotation would specify a checked price; none exists, and a question does not authorize an unknown charge.]] has been provided. You have not accepted an unknown price simply by asking what alternatives might be available.
-Rafael | And do you know whether it could happen today? The date matters to me as much as the price.
+Rafael | And could it happen today? I need to check both the price and the date before deciding.
 Amara | I have no [[timing confirmation::Timing confirmation is absent, so today or any replacement date cannot be promised.]] either. Availability, price, and timing all need a checked response before you can assess a specific proposal.
-Rafael | Please ask dispatch, then. I want the request to say upstairs placement, not just a vague complaint that I am unhappy.
+Rafael | Please ask dispatch. Make the request specific: upstairs placement, not just customer unhappy with delivery.
 Amara | I can send an [[upgrade request::Upgrade request names the proposed additional service for review without representing it as approved.]] for upstairs placement. I will explain that curbside is booked and that you want them to review a different arrangement.
-Rafael | Thank you. I do not need assembly discussed right now. First I need to understand whether the placement I wanted is possible.
+Rafael | I don't need assembly or installation considered at this point. First I need to know whether the item can be placed upstairs.
 Amara | Understood. [[Assembly::Assembly means putting parts together and is separate from the placement request Rafael wants reviewed.]] is separate from placement, and I will not expand your request into installation or other work you have not asked about.
-Rafael | I also do not want an informal arrangement outside the booking. I need to know what the carrier has actually agreed to provide.
+Rafael | I want it handled through the booking, not an informal arrangement. I need a clear record of what's included.
 Amara | That requires the proper [[authorization::Authorization must cover the specific changed service; an informal understanding with the driver is not supplied here.]] and a confirmed arrangement. I cannot agree to an informal extra charge or treat that as a replacement for the process.
-Rafael | So the next step is a review, and I will hear an actual proposal before deciding whether to accept it. Is that the position?
+Rafael | So I'll get the actual proposal before deciding? There isn't a confirmed extra service or charge for me to accept yet.
 Amara | Yes. Your [[change acceptance::Change acceptance applies to a specific confirmed proposal; none has yet been offered or accepted.]] would concern a specific proposed service, price, and timing. At present those details remain unknown.
-Rafael | Please keep that clear in the message. We are discussing an upstairs-service request, not saying that it has been performed.
+Rafael | Please pass that on. We've discussed what I wanted, but nothing here says the upgrade or unloading has happened.
 Amara | I will. The [[scope mismatch::Scope mismatch is the difference between booked curbside delivery and requested upstairs placement, still awaiting review.]] is clear, and I will refer it to dispatch. This conversation does not confirm an upgrade or any completed unloading.''',
+    rehearsal=["Contrast booked curbside delivery with requested upstairs placement in turns 2 and 12.","Read price, availability, and timing as three unanswered questions.","Repeat the review request without adding assembly, installation, or an informal charge."],
     transfer_title='Refer another service-change request',
     transfer_setup='A household booking specifies curbside delivery. The customer requests room-of-choice placement. The driver cannot add it; dispatch can review it, with price and timing still unknown.',
     transfer='''Driver: "The booked service is ___ delivery." | curbside | Curbside is the existing arrangement, not the additional placement requested.
@@ -470,8 +476,8 @@ BOOK['units'].append(unit(
     brief='Driver Kai arrives for return collection R62, which lists two printer cartons. Customer Dana presents those two identifiable cartons and a third carton of cables without a matching collection reference. Dispatch can query the extra carton, but no authorization to add it has been received. The two printer cartons remain identifiable under R62. The conversation establishes the mismatch and next query; it does not confirm that any carton has been loaded, collected, rejected permanently, or credited to the customer.',
     cast='Kai | Driver\nDana | Customer',
     culture=('Separate the extra item from the valid reference', 'A customer may reasonably group related equipment together, while the collection record identifies a narrower set. Explain which items match and which item needs clarification. Avoid turning one unmatched carton into a claim that the entire collection is invalid.'),
-    a='''What does R62 list? | Two printer cartons | Three cable cartons | One printer and one cable carton | Every item at the customer location | R62 identifies two printer cartons, not an unrestricted collection of related items.
-Which item lacks a matching reference? | The third carton of cables | Both identified printer cartons | The R62 document itself | A fourth carton not mentioned | The cable carton is additional and has no matching collection reference.
+    a='''What does R62 list? | Two printer cartons | Three cable cartons | One printer and one cable carton | Two cable cartons and one printer carton | R62 identifies two printer cartons, not an unrestricted collection of related items.
+Which item lacks a matching reference? | The third carton of cables | Both identified printer cartons | The R62 document itself | The second printer carton | The cable carton is additional and has no matching collection reference.
 What is established by the discussion? | The mismatch and a dispatch query, not completed collection | All three cartons have been loaded | The extra carton is permanently rejected | A customer credit has been approved | The conversation clarifies identity and follow-up without supplying a collection or credit outcome.''',
     vocabulary='''return reference | Identifier connecting goods to a particular return arrangement. | confirm the return reference
 collection booking | Recorded arrangement for picking up specified goods. | check the collection booking
@@ -505,26 +511,27 @@ return disposition | Decision about what happens to returned goods under the act
 Which action is available in the conversation? | Ask dispatch to query the extra carton. | Invent a matching reference. | Declare a customer credit approved. | Mark all three cartons collected. | Dispatch can seek clarification, while adding or collecting the extra carton remains unconfirmed.
 Which statement goes too far? | The unmatched carton is permanently rejected. | The cable carton lacks a matching reference. | The original two printer cartons remain identifiable. | No amendment is authorized yet. | Missing information now does not establish a permanent rejection decision.
 Which status distinction is essential? | Reference matched is not the same as collection completed. | Any return automatically creates a refund. | Related equipment always shares one booking. | A query automatically approves an extra carton. | Identity verification and actual collection are different stages with different evidence.''',
-    dialogue='''Kai | I am here for return collection R62. The booking lists two printer cartons, but I can see you have presented three cartons.
-Dana | Yes, these are the two printers, and this is a [[cable carton::Cable carton identifies the additional package, which is not one of the two printer cartons on R62.]]. The cables relate to the printers, so I put everything together for the return.
-Kai | Thank you for explaining. The two printer cartons match R62. I do not have a matching collection reference for the carton of cables.
-Dana | I assumed the same [[return reference::Return reference R62 links the two printer cartons to the booking, not automatically every related accessory.]] covered the related equipment. Are you saying the cable carton needs its own confirmed link to the collection?
-Kai | Yes, we need the relevant confirmation. Related equipment is not automatically included in this booking, and I should not silently change two cartons to three.
-Dana | Understood. I do not have a [[matching reference::Matching reference is absent for the cables, leaving that carton unlinked to the stated collection arrangement.]] for the third carton with me. Can dispatch check whether there is another arrangement for it?
-Kai | Dispatch can query it. I will explain the item and the missing reference without describing an extra carton as already authorized for pickup.
-Dana | Please keep the [[booked quantity::Booked quantity remains two printer cartons, despite the customer presenting a third carton.]] at two while that question is checked. I do not want the record to suddenly describe three printers.
-Kai | Exactly. I will preserve the descriptions: two printer cartons match R62, and a separate carton described as cables has no matching reference.
-Dana | Does that make the whole [[collection booking::Collection booking still identifies the original two cartons; an extra unmatched carton does not erase those matches.]] invalid, or are the two printer cartons still identifiable under R62?
-Kai | The original two remain identifiable. The unresolved question is the additional carton, not whether those two correspond to the return record.
-Dana | That distinction helps. Please do not describe every item as an [[unmatched item::Unmatched item applies to the cable carton only, not the two printer cartons already linked to R62.]] because I presented one extra box. The two printers are the ones listed.
-Kai | I agree. We can isolate the extra-item question and send it to dispatch. We have not received approval to add the cable carton.
-Dana | So a [[collection amendment::Collection amendment would be an approved change; raising the query has not supplied that approval.]] is still pending, rather than something that happens automatically when I ask about it?
-Kai | Correct. At this point we have a query, not an approved change. I also cannot say that the extra carton is permanently rejected.
-Dana | Nor should the record show [[collected status::Collected status requires an actual completed pickup, which this reference-checking conversation does not establish.]] yet. We are clarifying the references here, not confirming that any carton has been taken.
-Kai | That is right. Matching a record, loading goods, and completing a pickup are separate stages. This conversation has established the identity issue.
-Dana | And I assume this is not [[credit approval::Credit approval is a separate financial decision and does not follow from matching cartons to a return booking.]] either. I will not tell our accounts team that the return check guarantees a credit.
-Kai | Correct. Let me read back the position: R62 lists two printer cartons; both are identifiable; the third cable carton needs dispatch clarification.
-Dana | That is accurate. The [[collection scope::Collection scope remains the recorded two cartons unless the additional item is properly confirmed and authorized.]] has not been expanded. Please raise the cable-carton query while preserving the original two-item description.''',
+    dialogue='''Kai | I'm here for return R62. It lists two printer cartons, but there are three cartons ready here. Could we check which is which?
+Dana | These two are the printers. The third is a [[cable carton::The cable carton is the additional third package, not another printer carton under the two-carton booking.]]. I packed the cables separately because they go with the printers.
+Kai | The two printer cartons match R62. I don't have a matching collection reference for the cables.
+Dana | I thought the [[return reference::R62 is the return reference for two printer cartons; related accessories are not automatically added to it.]] covered everything we were returning together. Does that not include this separate box?
+Kai | Not on the record I've got. We need to check the extra carton rather than quietly change a two-carton collection to three.
+Dana | I don't have a [[matching reference::No matching reference links the cable carton to this pickup; dispatch needs to clarify its arrangement.]] for that one. Can you ask dispatch whether it's covered by another arrangement?
+Kai | Yes. I'll give them the cable description and explain that the printers match but the extra box doesn't have a reference here.
+Dana | Please keep the [[booked quantity::The booked quantity is two printer cartons even though three cartons have been presented.]] as two printer cartons while they check. There aren't three printers.
+Kai | Exactly. Two printer cartons linked to R62, plus one separate carton you've described as cables.
+Dana | Does the extra box cancel the whole [[collection booking::The original booking still identifies two printer cartons; the additional question does not erase those matches.]], or can the record still show which two match?
+Kai | The original two are still identifiable under R62. It's the additional cable carton that needs clarification.
+Dana | Good. I don't want each printer labelled an [[unmatched item::Only the cable carton is unmatched; applying that label to the two identified printers would misstate the check.]] because I've brought out an extra box.
+Kai | I won't do that. I'll keep the matches and the extra-item query separate. Dispatch hasn't authorized adding the cables yet.
+Dana | So any [[collection amendment::A collection amendment is an authorized change, not the customer's question or dispatch inquiry by itself.]] is still pending. Asking you about the box hasn't changed the booking.
+Kai | Correct. It's a query, not an approved addition. It also isn't a permanent rejection of the cable carton.
+Dana | And no [[collected status::No pickup has been completed during this reference check, so collected status would be premature.]] yet. We're still checking the paperwork, not saying you've taken any of these cartons.
+Kai | Right. A reference match, loading, and a completed pickup are different stages. We've only clarified the identity question here.
+Dana | It isn't [[credit approval::A financial credit decision is separate from matching goods to a collection reference or completing a pickup.]] either, then. I'll avoid telling accounts that a return check means the credit has gone through.
+Kai | Yes. My report is R62, two identified printer cartons, one additional cable carton without a matching reference, query to dispatch.
+Dana | That's accurate. Keep the [[collection scope::The recorded scope stays at the two printer cartons unless the extra item is properly confirmed and authorized.]] clear while you ask about the cables. Don't change the description to three printers.''',
+    rehearsal=["Read R62 with two printer cartons, then identify the additional cable carton.","Repeat the distinction between two matched cartons and one unmatched carton.","Read the closing lines without claiming a pickup, booking amendment, or financial credit."],
     transfer_title='Match another return accurately',
     transfer_setup='Return S73 lists three monitor cartons. The customer presents those three and an extra keyboard carton without a matching reference. Dispatch can query the extra item; no amendment or collection is confirmed.',
     transfer='''Driver: "S73 lists three ___ cartons." | monitor | Monitor cartons are the goods named in the recorded return scope.
@@ -576,26 +583,27 @@ resolution | Established outcome addressing an open issue. | distinguish referra
 Which stop-8 wording preserves attribution? | The customer reported a duplicate order and refused the delivery. | The carrier definitely created a duplicate order. | A duplicate was independently verified. | Stop 8 was successfully received. | The customer's explanation must remain attributed rather than promoted to a verified cause.
 Which handoff wrongly claims completion? | Jo accepted the tasks, so both issues are resolved. | Jo will check the receipt upload. | Customer-service contact is still pending. | No refund is confirmed. | Ownership acceptance assigns future work but does not supply its completed outcome.
 Which action pair belongs to Jo? | Check stop-7 receipt upload and contact customer service about stop 8. | Deliver both shipments again automatically. | Approve a refund and delete the receipt time. | Change both stops to undelivered. | The two assigned tasks match the distinct unfinished items in the briefing.''',
-    dialogue='''Luis | Jo, before I finish route 12, I need to hand over two open items. They are different issues, so I will take them separately.
+    dialogue='''Luis | Jo, I've got two open items from route twelve before I finish. Stop seven is a receipt issue; stop eight is a refusal.
 Jo | Go ahead. Start with the [[stop outcome::Stop outcome describes what actually happened at each location, before discussing unfinished records or follow-up.]] for stop 7, then tell me what remains unfinished. I do not want to merge it with stop 8.
-Luis | Mei received the shipment at stop 7 at 16:05. The receipt has not uploaded, so the electronic record is still incomplete.
+Luis | Mei received stop seven at sixteen oh five. The receipt hasn't uploaded, so you won't find the completed electronic record yet.
 Jo | I will check the [[receipt upload::Receipt upload is the unfinished electronic transfer, not an uncompleted physical delivery at stop seven.]]. The receiving event is recorded as Mei at 16:05, and the missing upload is the follow-up issue.
-Luis | Correct. Please do not change that to undelivered just because the document is not available in the system yet.
+Luis | Yes. Please don't mark that stop undelivered just because the upload is missing. The goods were received by Mei.
 Jo | Understood. [[Record completeness::Record completeness concerns the missing receipt in the system and must not erase the actual receiving event.]] is still in question, but the missing document does not erase your report that Mei received the shipment.
-Luis | Stop 8 was refused. The customer said the order was a duplicate, but I have no independent verification of that explanation.
+Luis | At stop eight, the customer refused it and said the order was a duplicate. I haven't independently checked whether that's true.
 Jo | I will keep the [[refusal reason::Refusal reason is the customer's reported duplicate order, not an independently established ordering error.]] attributed to the customer. The wording should not become a finding that our company created a duplicate.
-Luis | Exactly. We need customer service to review that, not an automatic refund or another delivery based only on the refusal note.
+Luis | Please have customer service review that account. I didn't agree a refund or promise that we'd deliver it again.
 Jo | I will contact [[customer service::Customer service is the team Jo will approach about stop eight; that contact has not yet resolved the issue.]] about stop 8. No refund, replacement delivery, or other resolution is confirmed by this handoff.
-Luis | Can you take responsibility for both items: the receipt upload at stop 7 and the customer-service contact about stop 8?
+Luis | Can you take both jobs: checking the stop-seven upload and contacting customer service about the stop-eight refusal?
 Jo | Yes, I am the [[action owner::Action owner names Jo as responsible for both next steps without implying either step is already complete.]] for both follow-ups. I have accepted the tasks; I have not yet checked the upload or made the customer-service contact.
-Luis | Thank you. Please keep 16:05 with Mei and stop 7. It should not become the time of the refusal at stop 8.
+Luis | Thanks. Keep sixteen oh five with Mei at stop seven. It isn't the refusal time for stop eight.
 Jo | I will preserve that [[receipt timestamp::Receipt timestamp belongs to Mei's receiving event at stop seven and must not be reassigned to the refusal.]] exactly. We have no supplied time for the stop-8 refusal, so I will not copy 16:05 onto it.
-Luis | Good. Could you read both items back before I leave? I want to be sure the next steps and the unfinished status have transferred clearly.
+Luis | Could you read the two notes back before I leave? I want the different outcomes and next actions kept together correctly.
 Jo | Here is the [[read-back confirmation::Read-back confirmation checks the two outcomes, pending tasks, and ownership before the driver leaves.]]: stop 7 received by Mei at 16:05, upload pending; stop 8 refused for a customer-reported duplicate order. I own both follow-ups.
-Luis | That matches. The customer's statement is not proof of an actual duplicate, and your acceptance does not mean the work is already done.
+Luis | That's it. The duplicate is what the customer reported, not a verified ordering error. Both follow-ups are still outstanding.
 Jo | Agreed. [[Independent verification::Independent verification of the alleged duplicate has not occurred, so the customer's reason remains an attributed report.]] of the duplicate is still absent. The receipt check and customer-service contact remain pending.
-Luis | Then the handoff is clear, but I should not describe the entire route-closeout process as complete just because we have had this conversation.
+Luis | Then the handover's clear. I won't call the whole route closed just because you've agreed to take the follow-ups.
 Jo | Correct. [[Route closure::Route closure requires the relevant process to be completed; this handoff only transfers the two unfinished actions.]] is not established here. We have transferred the two open items with their facts, uncertainties, and next owner intact.''',
+    rehearsal=["Read stop 7 with Mei at 16:05 and the separate pending receipt upload.","Read stop 8 with the customer's reported duplicate reason, without calling it verified.","Repeat Jo's two follow-ups and leave both marked unfinished."],
     transfer_title='Hand over another pair of stops',
     transfer_setup='On route 15, stop 3 was received by Noor at 12:25, but its receipt upload is pending. Stop 4 was refused after a customer reported an unwanted order. Dispatcher Ana accepts both follow-ups; neither is complete.',
     transfer='''Driver: "Stop 3 was received by ___ at 12:25." | Noor | Noor is the named receiver for the physically completed receiving event.

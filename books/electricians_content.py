@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Electricians.',
              url='https://www.bls.gov/ooh/construction-and-extraction/electricians.htm',
-             note='Occupational context for drawings, electrical systems, and coordination. The scenarios provide no installation or testing procedures.', checked='1 October 2026'),
+             note='Occupational context for drawings, electrical systems, and coordination. The scenarios provide no installation or testing procedures.', checked='10 October 2026'),
         dict(title='Occupational Safety and Health Administration. Electrical Glossary.',
              url='https://www.osha.gov/electrical/glossary',
-             note='Terminology for devices, raceways, ratings, and qualified roles. Learner definitions do not replace standards or safety procedures.', checked='1 October 2026'),
+             note='Terminology for devices, raceways, ratings, and qualified roles. Learner definitions do not replace standards or safety procedures.', checked='10 October 2026'),
         dict(title='US Department of Energy. Purchasing Energy-Efficient Light Bulbs.',
              url='https://www.energy.gov/cmei/femp/purchasing-energy-efficient-light-bulbs',
-             note='Reference for distinguishing lumen output, power input, and correlated color temperature. Procurement rules, historical prices, efficiency thresholds, and product recommendations are not taught here.', checked='1 October 2026'),
+             note='Reference for distinguishing lumen output, power input, and correlated color temperature. Procurement rules, historical prices, efficiency thresholds, and product recommendations are not taught here.', checked='10 October 2026'),
         dict(title='US Department of Energy. LED Basics.',
              url='https://www.energy.gov/cmei/ssl/led-basics',
-             note='Background for lighting-system attributes, color appearance, color rendering, and product compatibility questions. No performance forecast, lifetime guarantee, or installation decision is inferred.', checked='1 October 2026'),
+             note='Background for lighting-system attributes, color appearance, color rendering, and product compatibility questions. No performance forecast, lifetime guarantee, or installation decision is inferred.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -63,7 +63,7 @@ directory entry | Individual item in a panel or circuit list. | quote the direct
 circuit identification | Establishing which circuit corresponds to a device or area. | refer circuit identification for verification
 circuit | Electrical path or connected arrangement through which current may flow. | distinguish the circuit from the room name
 distribution panel | Assembly distributing electrical supply to outgoing circuits. | identify the distribution panel
-device count | Number of devices included in a report. | confirm the device count
+IP code | Enclosure protection code with separate digits for solid-object and water protection. | verify the IP code
 room reference | Identifier locating a room in the building. | include the room reference
 verified status | Condition established through the appropriate authorized process. | distinguish verified status
 de-energized | In a state without energization, requiring appropriate verification before reliance. | avoid an unsupported de-energized claim
@@ -79,25 +79,25 @@ readback | Repetition of important information to confirm accuracy. | give a pre
 Which question is appropriate? | Which room does your existing report concern? | Can you open the panel and test the circuit? | Can you reset devices until something changes? | Can you operate equipment to prove the label? | The question clarifies known information without asking the client to perform an electrical action.
 What does the label office establish? | Only the wording of an unverified directory entry | Verified circuit identity for the two devices | Safe isolation of all office equipment | A completed technical assessment | The entry's wording is known, but its accuracy and associated electrical status are not.
 Which statement wrongly upgrades the evidence? | The receptacles are confirmed de-energized because the client called them dead. | The client used the word dead. | The report concerns Room 204. | The directory needs verification. | An informal symptom description does not establish de-energization, isolation, or safety.''',
-    dialogue='''Rosa | The office sockets are dead. I need to report it, but I am not sure how much detail you want before someone looks at the issue.
+    dialogue='''Rosa | The office sockets are dead, Kai. What information do you need for the request? I can tell you what we've already noticed.
 Kai | Let us clarify the [[service request::Service request captures Rosa's existing observations without requiring her to operate or test electrical equipment.]] using what you already know. Which room and which connection points does your report concern? You do not need to test or operate anything.
-Rosa | It is Room 204, specifically the two receptacles at the desks. I used office because that is how we refer to that room.
+Rosa | It's the two desk receptacles in Room 204. When I said office, I meant that room, not every office on the floor.
 Kai | I will use the [[room reference::Room reference is Room 204, which is more precise than treating the word office as the entire office area.]] of 204 and name the two desk receptacles. I will not expand that to every connection point in the office.
-Rosa | I noticed the issue at 08:30. I cannot say exactly when it started, because that was when I first became aware of it.
+Rosa | I noticed it at eight-thirty. I don't know whether it began then or earlier; that's when I became aware of the problem.
 Kai | Then 08:30 is the [[observation time::Observation time records when Rosa noticed the issue, not a proven start time for the underlying condition.]]. I will keep that distinction and avoid saying the fault definitely began at that exact time.
-Rosa | Nobody has assessed the other rooms as part of this report. I do not want my broad wording to make it sound as though they have.
+Rosa | The other rooms haven't been assessed as part of this report. My wording shouldn't suggest they're all affected or all working.
 Kai | I will describe those as [[unassessed areas::Unassessed areas remain unknown; the report does not establish that they are either affected or working normally.]]. That means their status is unknown here, not that they are definitely affected or definitely working normally.
-Rosa | The panel directory has an entry saying office. I have that wording in the information we already hold, but I do not know whether it is accurate.
+Rosa | The records we already hold include a directory entry saying office. I don't know whether it correctly identifies these two devices.
 Kai | I will record the [[directory entry::Directory entry supplies the word office, but its accuracy and relationship to the reported devices remain unverified.]] separately. Its wording is useful information, but it does not verify which circuit serves the devices in your report.
-Rosa | Should I call them outlets or receptacles? I have heard both terms, and I want the person reading the request to recognize the same two points.
+Rosa | Should I describe them as receptacles or outlets? I want the actual devices identified, rather than an uncertain whole-room arrangement.
 Kai | We can specify two desk [[receptacles::Receptacles identifies the two plug-connection devices in Rosa's account and keeps the device description specific.]]. The important detail is the exact devices and room, not replacing your wording with a broader claim about the electrical installation.
-Rosa | And when I say dead, I only mean they were not working as I expected. I am not giving a technical statement about their condition.
+Rosa | By dead I mean they weren't working as I expected. I'm not claiming someone checked their electrical state or isolated them.
 Kai | I will preserve that as a [[reported symptom::Reported symptom attributes the informal description to Rosa without treating it as a verified electrical condition.]]. Dead in a client account is not proof that equipment is de-energized, isolated, or safe to use or work on.
-Rosa | Thank you. I would prefer the report to keep that limit explicit rather than have someone assume a check has already taken place because the wording sounds confident.
+Rosa | That's helpful. I don't want an everyday description copied into the request as if a technical assessment has already been completed.
 Kai | There is no [[verified status::Verified status is not supplied by this intake conversation, so no assessment or safety conclusion can be claimed.]] established by this conversation. I am clarifying the information for the request, not reporting a completed electrical assessment.
-Rosa | Could you read the description back before it goes further? The room, the two devices, and the time are the details I can confirm.
+Rosa | Could you read back the room, count, and observation time? Those are the details I can confirm from what I already know.
 Kai | The [[readback::Readback confirms the two devices, Room 204, and the 08:30 observation while retaining unknown conditions elsewhere.]] is: client reports two desk receptacles in Room 204, noticed at 08:30; exact onset unknown; other areas unassessed; directory wording unverified.
-Rosa | That is accurate. Please keep the directory wording attached as unverified information, not as proof that the circuit has already been identified.
+Rosa | Yes, that's accurate. Please retain office as unverified wording and keep it separate from the two devices I've reported.
 Kai | I will. [[Circuit identification::Circuit identification remains unverified; the office label is not proof of which circuit serves the reported receptacles.]] remains open for the appropriate process. The request will preserve your observations without asking you to carry out any electrical action or adding a technical finding.''',
     transfer_title='Keep the report attributed and specific',
     transfer_setup='Complete the intake readback from the client information. Do not turn the word dead or an unverified label into a technical conclusion.',
@@ -105,6 +105,7 @@ Kai | I will. [[Circuit identification::Circuit identification remains unverifie
 Client: "They are in Room ___." | 204 | Room 204 identifies the reported location without including the whole office.
 Electrician: "You noticed the issue at ___." | 08:30 | This records the observation time rather than a verified onset time.
 Client: "The directory entry remains ___." | unverified | The word office appears in the directory, but its accuracy is unconfirmed.''',
+    rehearsal=["Read turns 1-10, stressing two, Room 204, and noticed at 08:30.","Switch roles for turns 11-20; keep dead attributed to the client, not a verified electrical state.","Check and read the transfer without asking the client to operate or test anything."],
 ))
 
 BOOK['units'].append(unit(
@@ -116,7 +117,7 @@ BOOK['units'].append(unit(
     culture=('Correct the comparison without making the client feel foolish', 'Lighting labels place several numbers close together, and a larger figure can seem like a simple improvement. Name what each unit describes, compare the supplied values, and keep separate questions such as distribution, compatibility, and approval visible.'),
     a='''What do both products list? | 1,200 lumens | The same color temperature | Confirmed driver compatibility | An approved substitution | Both luminaires list the same light output of 1,200 lumens.
 What differs between them? | The 3,000 K and 4,000 K color-temperature values | The listed lumen output | A confirmed installation position | A supplied warranty duration | The kelvin values differ, while the listed lumen values are equal.
-What remains for specialist review? | Driver compatibility | Whether 4,000 is greater than 3,000 | Whether both labels say 1,200 lumens | Whether Ben asked a question | Driver compatibility has not been established by the supplied product comparison.''',
+What remains for specialist review? | Driver compatibility | Which listed product has greater lumen output | Whether 4,000 K establishes lower input power | Whether equal lumens establish identical desk illuminance | Driver compatibility has not been established by the supplied product comparison.''',
     vocabulary='''luminaire | Complete lighting unit with its relevant light source and supporting components. | compare the luminaires
 lumen | Unit of luminous flux, describing visible light output. | compare lumen output
 luminous flux | Total visible light output weighted for human visual sensitivity. | specify luminous flux
@@ -149,32 +150,33 @@ specialist review | Assessment by a person with relevant technical competence. |
 Which claim is not supported by equal lumens? | Both will provide identical illumination at every desk. | Their listed light-output values match. | Each is listed at 1,200 lumens. | The lumen figures do not differ in this comparison. | Surface illumination also depends on distribution and installation conditions not supplied in the case.
 What should happen with driver compatibility? | Refer it for specialist review using the relevant information | Assume compatibility because both list 1,200 lumens | Ask the client to try connecting them | Treat the higher kelvin value as approval | Matching light-output figures do not establish electrical or control compatibility.
 What is the substitution status? | Not approved | Automatically approved by the color comparison | Approved because the client mentioned both products | Completed and tested | The scenario explicitly states that no product substitution has been approved.''',
-    dialogue='''Ben | I picked these two fittings to compare. The 4,000 K one gives more light than the 3,000 K one, so it should make the desk brighter, correct?
-Asha | The larger number is the [[correlated color temperature::Correlated color temperature describes color appearance, not the amount of light emitted by the luminaire.]], not the light-output figure. Both products are listed at 1,200 lumens, so their stated outputs are equal.
-Ben | I had treated all the numbers as variations on brightness. Could you explain which one I should use when comparing the amount of light?
-Asha | Compare the [[lumen::Lumen is the unit for visible light output; both supplied product figures are 1,200 lumens.]] values for the listed output. In this comparison, each says 1,200. The kelvin values describe another attribute and should not replace that comparison.
-Ben | Then what would I notice about the difference between 3,000 and 4,000 K? I want the wording right when I discuss the options with our designer.
-Asha | The 4,000 K option has a cooler [[color appearance::Color appearance is cooler at 4,000 K than at 3,000 K; this is separate from the equal listed lumen output.]] than the 3,000 K option. That describes the character of the white light, not an increase from 1,200 lumens.
-Ben | If the listed output is the same, can I assume either one gives exactly the same light level on the desk after installation?
-Asha | Not from that figure alone. [[Illuminance::Illuminance concerns light reaching a surface, which is not determined by the listed lumen output alone.]] at the desk is a different question. Distribution and installation conditions affect how much of the emitted light reaches that surface.
-Ben | So two fittings can have the same total output and send it into the room differently. We would need more than these two numbers to compare that.
-Asha | Yes. Their [[light distribution::Light distribution describes where emitted light goes and can affect surface illumination even when listed outputs match.]] matters. I will not turn matching lumen figures into a guarantee that every point in the room receives the same light.
-Ben | What about electricity use? Does the higher kelvin number mean the fitting needs more power, or is that another separate part of the data?
-Asha | Input power is stated in [[watts::Watts measure power, which is distinct from lumens and color temperature; no wattage comparison is supplied.]]. We do not have those figures here, so neither the kelvin difference nor the matching lumens establishes which uses more power.
-Ben | Understood. I also saw a driver mentioned in the product information. Can we assume the one planned for the first fitting will suit the second?
-Asha | No. [[Driver compatibility::Driver compatibility remains for specialist review and cannot be inferred from matching lumen values or a color-temperature comparison.]] still needs specialist review. Matching output figures do not establish that the electrical and control arrangements are suitable for both products.
-Ben | I am only comparing options at this stage. Please do not treat my question about the second fitting as approval to substitute it in the order.
-Asha | I will keep [[substitution::Substitution is not approved; discussing the alternative does not authorize replacing a specified product.]] approval separate. No replacement product is approved in this conversation, and the outstanding compatibility question remains visible.
-Ben | Could the specialist review the relevant product and driver details before anyone tells me that changing the fitting is straightforward? I would rather know the actual requirements.
-Asha | The relevant [[product data sheet::Product data sheet provides product-specific information for review; a brief comparison does not establish all compatibility requirements.]] and driver information should support that review. We have not established dimming behavior or interchangeability from the supplied figures.
-Ben | My summary is that both list 1,200 lumens, while 3,000 and 4,000 K describe different color appearances. The comparison does not settle the technical replacement question.
-Asha | Correct. The [[specialist review::Specialist review remains the next step for compatibility; neither equal output nor a cooler appearance resolves the substitution decision.]] remains outstanding. We can explain the labels accurately while leaving compatibility and any substitution decision open until the appropriate information is assessed.''',
+    dialogue='''Ben | These are the two fittings I'm comparing. The four-thousand-K version should give more light than the three-thousand-K one, shouldn't it?
+Asha | That figure is the [[correlated color temperature::Correlated color temperature describes color appearance, not the amount of light emitted by the luminaire.]], not the output. Both products list twelve hundred lumens, so their stated outputs are equal.
+Ben | I've been comparing the wrong numbers. Which figure should I use when I mean the amount of light coming from the fitting?
+Asha | Use the [[lumen::Lumen is the unit for visible light output; both supplied product figures are 1,200 lumens.]] value. Both list twelve hundred here. Kelvins describe the white light's color appearance, not how much light it emits.
+Ben | What would four thousand look like compared with three thousand? I'd like to describe the difference accurately when I speak to our designer.
+Asha | It has a cooler [[color appearance::Color appearance is cooler at 4,000 K than at 3,000 K; this is separate from the equal listed lumen output.]]. Cooler doesn't mean the fitting runs colder, and a higher kelvin figure doesn't mean more lumens.
+Ben | If their outputs match, will they put the same light level on each desk? That's what matters most to the people using this room.
+Asha | Not necessarily. [[Illuminance::Illuminance concerns light reaching a surface, which is not determined by the listed lumen output alone.]] concerns the light arriving at the surface. The installation conditions and where the light goes both affect that result.
+Ben | So the total leaving a fitting isn't the same as the amount arriving at one particular desk. We need more information for that comparison.
+Asha | Yes, including the [[light distribution::Light distribution describes where emitted light goes and can affect surface illumination even when listed outputs match.]]. Equal total outputs can be directed differently, so I won't promise identical light levels throughout the desk area.
+Ben | What about electricity use? Does the higher color-temperature number mean more power, or is that another separate figure on the specification?
+Asha | Power is stated in [[watts::Watts measure power, which is distinct from lumens and color temperature; no wattage comparison is supplied.]]. Those values aren't supplied here, so neither the color difference nor the equal output establishes which uses more electricity.
+Ben | Can the driver planned for the first fitting be used with the second? I don't want to discover a separate compatibility issue after choosing.
+Asha | [[Driver compatibility::Driver compatibility remains for specialist review and cannot be inferred from matching lumen values or a color-temperature comparison.]] needs specialist review. Equal lumens don't establish that the electrical and control arrangements suit both products.
+Ben | Please leave the order unchanged while we compare. I'm asking about the alternative, not giving permission to substitute it for the specified fitting.
+Asha | Understood. No [[substitution::Substitution is not approved; discussing the alternative does not authorize replacing a specified product.]] is approved. I'll keep your comparison question separate from permission to change the order.
+Ben | What should go to the specialist? The two label numbers clearly aren't enough to settle the driver and control questions.
+Asha | Send the relevant [[product data sheet::Product data sheet provides product-specific information for review; a brief comparison does not establish all compatibility requirements.]] with the driver information. We haven't established dimming behavior or technical interchangeability in this conversation.
+Ben | Then I can report equal listed output, different white-light appearance, and an unresolved replacement question. I shouldn't promise equal desk illumination.
+Asha | Correct. The [[specialist review::Specialist review remains the next step for compatibility; neither equal output nor a cooler appearance resolves the substitution decision.]] remains outstanding. We can explain the labels now while leaving compatibility and substitution for the appropriate assessment.''',
     transfer_title='Keep light output and color separate',
     transfer_setup='Complete the client explanation using the supplied values. Do not infer a different output, identical desk illumination, or approved compatibility.',
     transfer='''Electrician: "Both products list 1,200 ___." | lumens | Lumens describe the equal light-output figures supplied for the two products.
 Client: "The 3,000 and 4,000 values are in ___." | kelvins | Kelvins identify the color-temperature values rather than the output figures.
 Electrician: "The 4,000 K option has a ___ appearance." | cooler | Cooler compares the white-light appearance with that of the 3,000 K option.
 Client: "Driver compatibility still needs specialist ___." | review | Compatibility remains unresolved and requires the stated specialist review.''',
+    rehearsal=["Read turns 1-10; distinguish lumens, kelvins, and light arriving at the desk.","Switch roles for turns 11-20. Stress watts, compatibility, and substitution as separate questions.","Check and read the transfer, keeping cooler separate from brighter or lower power use."],
 ))
 
 BOOK['units'].append(unit(
@@ -219,25 +221,25 @@ reference readback | Repetition of the datum and endpoint to verify shared under
 Which fact is already known? | The datum is finished floor level | The electrical endpoint is definitely centerline | The lower edge is approved | The device height needed for conversion | The elevation names finished floor level even though the device reference remains unclear.
 Which inference is unsupported? | The joinery centerline automatically approves the electrical centerline position. | The joinery drawing uses a centerline. | The electrical note needs clarification. | No installation position is approved. | A convention on another drawing does not resolve or authorize the ambiguous electrical detail.
 What should the clarification preserve? | Both drawing references, the stated height, the floor datum, and the unanswered endpoint | A guessed device height | An invented installation approval | A substituted floor reference | These details define the actual coordination question without adding dimensions or permission.''',
-    dialogue='''Omar | The reception elevation says 1,100 above finished floor. Our joinery drawing uses a centerline, so can we treat the electrical device position as matching that?
+    dialogue='''Omar | Our joinery drawing uses a centerline at eleven hundred above finished floor. Can the electrical position use that reference, or does your note leave it open?
 Leila | Not yet. The [[mounting height::Mounting height is stated as 1,100 millimeters, but the point on the device to which it applies remains unclear.]] is shown, but the electrical note does not say whether it refers to the centerline or the lower edge.
-Omar | I see. We know the level from which the height starts, but not exactly where it ends on the device. Is that the distinction?
+Omar | So finished floor tells us where the dimension starts. The uncertainty is where it ends on the device, not which floor level to use.
 Leila | Yes. [[Finished floor level::Finished floor level is the stated datum; the ambiguity concerns the device endpoint rather than the floor reference.]] is the stated datum. The missing part is the reference on the device, and we should keep those two questions separate.
-Omar | I can include the joinery detail in the query. It shows why I expected a centerline, but I do not want it treated as a decision for your drawing.
+Omar | I'll attach the joinery detail to explain why I expected a centerline. It shouldn't be taken as an answer for the electrical designer.
 Leila | That will help explain the [[joinery interface::Joinery interface identifies the coordination point between the device and fitted woodwork without authorizing a position.]]. The other drawing is relevant evidence for the question, not permission to fill in the missing electrical reference ourselves.
-Omar | Should we ask whether the dimension is to the faceplate, the box, or some other feature? I want the reply to remove the ambiguity rather than repeat the number.
+Omar | Can the reply name the feature explicitly? Repeating eleven hundred won't resolve whether it's centerline, lower edge, faceplate, or another reference.
 Leila | We need an explicit [[dimension endpoint::Dimension endpoint is the particular point or edge being measured to, which must be clarified instead of merely repeating 1,100.]]. The reply should identify the intended device reference, including whether the note means centerline or lower edge.
-Omar | Could we calculate the difference between those positions now? That might show the team why the same number does not necessarily put the device in the same place.
+Omar | Can we calculate the difference between those positions, or is the device size missing as well as the intended endpoint?
 Leila | We do not have the device dimensions for that calculation. A [[reference ambiguity::Reference ambiguity cannot be resolved by a guessed conversion when the device dimensions and intended endpoint are not established.]] is not solved by inventing an offset or assuming a particular faceplate size.
-Omar | Fair point. I will keep the question about interpretation, not turn it into a proposal to raise or lower the device by a guessed amount.
+Omar | Then I won't sketch a guessed offset. We're asking what the existing number means, not proposing a different height.
 Leila | Exactly. The [[design clarification::Design clarification asks what the current note means; it does not automatically request a new height or authorize a position.]] concerns what the existing note means. We are not asking to change the 1,100-millimeter value or the finished-floor datum without a design decision.
-Omar | No position has been approved for installation, correct? I want the review note to make that explicit before it reaches the site team.
+Omar | No position is approved for installation yet, correct? That must be clear before the query reaches the site team.
 Leila | Correct. There is no [[approved location::Approved location has not been established, so neither centerline nor lower-edge interpretation can be presented as ready for installation.]] from this conversation. Neither interpretation should be presented as an authorized installation position while the reference remains unresolved.
-Omar | I can prepare a marked-up comparison showing the reception elevation and the joinery centerline. That should make the question easier to locate.
+Omar | I can put both views on a coordination mark-up. How do I avoid making it look like I've approved the centerline?
 Leila | A [[coordination mark-up::Coordination mark-up communicates the unresolved interface question and is not itself an instruction or approval to install.]] is useful for the review. It should identify the uncertainty clearly, not look like an instruction to install at the position you have assumed.
-Omar | Please give me the wording you want in the query. I want the responsible designer to answer the specific issue rather than comment generally on reception.
+Omar | Give me the precise query, please. The responsible designer needs to answer the reference question, not comment generally on reception.
 Leila | Use this [[reference readback::Reference readback preserves the 1,100-millimeter height, finished-floor datum, and unresolved device endpoint together.]]: 1,100 millimeters above finished floor level; electrical endpoint unclear; joinery uses centerline; please confirm the intended device reference with both drawings reviewed together.
-Omar | That is precise. I will keep the current value and the unapproved status visible, and avoid using the mark-up as if the designer had already answered.
+Omar | I'll keep the value, floor datum, and unresolved endpoint together. The comparison stays a question until the proper clarification arrives.
 Leila | Thank you. The clarification is not an [[installation instruction::Installation instruction is not supplied by the unresolved query; the team still needs the intended reference and appropriate approval.]] until the relevant process establishes what is intended and approved. For now, the endpoint remains open and no position is authorized here.''',
     transfer_title='Name both ends of the dimension',
     transfer_setup='Complete the coordination query. Preserve the height, known floor datum, unclear endpoint, and lack of installation approval.',
@@ -245,6 +247,7 @@ Leila | Thank you. The clarification is not an [[installation instruction::Insta
 Coordinator: "It is measured above finished ___ level." | floor | Finished floor level is the stated datum for the dimension.
 Electrician: "The device reference could be centerline or lower ___." | edge | Lower edge is the alternative endpoint that the note leaves unclear.
 Coordinator: "No installation position is ___ yet." | approved | The position remains unapproved until the relevant clarification and approval process.''',
+    rehearsal=["Read turns 1-10, stressing the known floor datum and unknown device endpoint.","Switch roles for turns 11-20. Keep the joinery convention separate from electrical approval.","Check the transfer, then read the query with 1,100 unchanged and no guessed conversion."],
 ))
 
 BOOK['units'].append(unit(
@@ -285,36 +288,37 @@ unresolved interface | Cross-discipline connection or conflict not yet settled. 
     precision_extra='The meeting at 13:00 is a review point, not a route approval or installation start. Both drawings need joint review. No alternative route, offset, clearance, support detail, or maintenance-access solution is supplied for students to invent.',
     phrases='''Locate the conflict | The clash is in ceiling bay C3.\nCite the electrical source | E6 shows the cable tray in that space.\nCite the mechanical source | The mechanical layout shows a duct there.\nState the interface | The two drawn routes occupy the same space.\nRequest joint review | We need both drawings reviewed together.\nPreserve the current status | Neither trade has agreed a revised route.\nAvoid priority assumptions | I am not assuming that one trade automatically takes priority.\nAvoid an invented offset | No offset has been proposed and approved here.\nState the meeting time | The ceiling coordination meeting is at 13:00.\nSeparate meeting and approval | The meeting time does not authorize a routing change.\nKeep related requirements open | Clearances and access would need review for any proposed solution.\nAvoid an installation claim | I am describing the drawings, not a completed site installation.\nKeep the record specific | Cable tray and duct conflict at C3, with route revision unresolved.\nAsk for an explicit outcome | The review needs to identify the agreed arrangement through the project process.\nPreserve both sources | Please keep E6 and the mechanical layout attached to the query.\nClose with the open issue | The interface remains unresolved pending coordinated review.''',
     notes='''Shows | Attributes the position to a drawing rather than claiming it is installed.\nSame space | Defines the conflict between the two arrangements.\nNeither | Makes clear that no trade has agreed the revised route.\nTogether | Calls for coordinated review rather than separate assumptions.\nAt 13:00 | Identifies the meeting, not the time a technical solution becomes approved.\nProposed versus agreed | A possible change and an accepted route are different stages.''',
-    d='''Which report identifies the conflict precisely? | E6 cable tray and mechanical-layout duct share ceiling bay C3; revised route unresolved. | The ceiling is wrong somewhere. | Mechanical must move because electrical has priority. | A new offset is already approved. | The report names both components, sources, location, and unresolved route status.
+    d='''Which report identifies the conflict precisely? | E6 cable tray and mechanical-layout duct share ceiling bay C3; revised route unresolved. | E6 tray at C3 conflicts with a duct, and electrical has agreed to move. | C3 shows a tray and duct, so mechanical must move first. | E6 and the mechanical layout are coordinated because both use C3. | The report names both components, sources, location, and unresolved route status.
 What does Dev need at the meeting? | Both drawings reviewed together | Only E6 treated as automatically authoritative | A guessed offset presented as agreed | Confirmation of a completed reroute that never occurred | Joint review is needed to resolve the cross-trade conflict without unilateral assumptions.
 Which statement overstates the 13:00 arrangement? | The new route is approved for installation at 13:00. | The coordinator meeting is at 13:00. | The route remains unresolved. | Neither trade has agreed a revision. | The meeting time establishes no route approval or installation authorization.
 What must remain open for a proposed solution? | The actual route and relevant technical coordination requirements | Whether E6 shows a tray | Whether C3 is the identified bay | Whether the mechanical layout shows a duct | No alternative route or supporting technical details have been established in the case.''',
-    dialogue='''Elena | What needs to come into the ceiling meeting at 13:00? I want each issue tied to a location so we can review the relevant drawings together.
-Dev | There is a [[route conflict::Route conflict is the cable tray and duct occupying the same drawn space in ceiling bay C3.]] in bay C3. Electrical drawing E6 places a cable tray where the mechanical layout shows a duct.
-Elena | Is that a conflict on the drawings, or are you reporting that both services have already been installed in the same area?
-Dev | I am reporting the [[electrical layout::Electrical layout E6 shows the proposed tray position; the case does not establish that either service is already installed.]] against the mechanical layout. I am not saying the components are already installed or that a site alteration has been authorized.
-Elena | Thank you. Has either trade agreed to a revised path, perhaps in a separate discussion that has not reached the coordination record?
-Dev | Neither trade has agreed a [[revised route::Revised route remains unagreed by both trades, so no changed path can be presented as a settled arrangement.]]. I do not have an accepted alternative to bring to the team, only the conflict and the two drawing sources.
-Elena | Then we should show both views rather than ask one trade to solve its route in isolation. The shared space is the point we need to address.
-Dev | Exactly. A [[joint review::Joint review brings both drawing arrangements into the same discussion instead of assuming either trade can resolve the interface alone.]] is needed. Looking only at E6 would hide the duct, while looking only at the mechanical layout would hide the tray requirement.
-Elena | Can we state that one service has priority? Sometimes people arrive with that assumption, even when the project has not made a decision about the interface.
-Dev | No [[trade priority::Trade priority is not established in the case, so neither electrical nor mechanical can be assumed to take precedence automatically.]] is supplied here. I should not tell the mechanical team it must move, or promise that electrical will move, before the coordinated review.
-Elena | Agreed. We also need to avoid a sketch that looks like an approved solution when it is only a way of showing the clash.
-Dev | I can identify the [[ceiling bay::Ceiling bay C3 is the precise shared-space reference, not an approved route or technical solution.]] as C3 and preserve both positions. No offset is agreed, so the query should not draw an invented change as though it has been accepted.
-Elena | If a route is proposed during review, the team will need the relevant clearances and access considered. We do not have those details in this issue note yet.
-Dev | Correct. [[Maintenance access::Maintenance access is one relevant coordination question for any solution; no access or clearance arrangement is supplied here.]] and other requirements cannot be assumed from a simple line moved on a drawing. The current report does not settle them.
-Elena | Please keep the 13:00 time in the message, but make clear that it is the meeting. I do not want it copied as an installation start.
-Dev | I will label it as the [[coordination meeting::Coordination meeting identifies the 13:00 review point and does not authorize installation or guarantee a completed solution.]]. It is a review point, not permission to install a new route or a promise that the conflict will be resolved by then.
-Elena | Read the issue back once before you send it. I want the two sources and the unagreed status in the same short summary.
-Dev | E6 cable tray and mechanical-layout duct share bay C3; [[route approval::Route approval is absent because neither trade has agreed a revised path; the query must preserve that status.]] is not established; both drawings need review at the 13:00 ceiling meeting. No alternative route is agreed.
-Elena | That gives the team the question without assigning blame or inventing the answer. I will keep both drawings with the issue for the joint discussion.
-Dev | Thank you. I will retain it as an [[unresolved interface::Unresolved interface keeps the cross-trade conflict open until the actual project process establishes an agreed arrangement.]] until the project process records an agreed arrangement. The meeting and the query do not themselves authorize a routing change.''',
+    dialogue='''Elena | Dev, what is the ceiling issue for thirteen hundred? Give me the bay and references so I can put the right drawings on the agenda.
+Dev | There's a [[route conflict::Route conflict is the cable tray and duct occupying the same drawn space in ceiling bay C3.]] at C3. E6 shows a cable tray in the same space where the mechanical layout shows a duct.
+Elena | Is that what the drawings show, or are you reporting an installed clash? Those need different descriptions in the coordination record.
+Dev | I'm comparing the [[electrical layout::Electrical layout E6 shows the proposed tray position; the case does not establish that either service is already installed.]] against the mechanical layout. The case doesn't establish an installed clash or authorize any physical change.
+Elena | Has either team agreed another path in a separate discussion? I'd rather check that before reopening something already settled.
+Dev | Neither has agreed a [[revised route::Revised route remains unagreed by both trades, so no changed path can be presented as a settled arrangement.]]. We have the conflict and the two sources, but no accepted alternative to present.
+Elena | Then we need both drawings in the meeting, not just an electrical screenshot that leaves out the mechanical constraint.
+Dev | A [[joint review::Joint review brings both drawing arrangements into the same discussion instead of assuming either trade can resolve the interface alone.]] is needed. Either drawing alone would omit the other service and conceal the interface we need to resolve.
+Elena | Is there a project decision giving one service precedence here? I don't want competing assumptions that the other trade must move.
+Dev | No [[trade priority::Trade priority is not established in the case, so neither electrical nor mechanical can be assumed to take precedence automatically.]] is established. I won't assign the move to mechanical or promise an electrical change before the coordinated review.
+Elena | Could the mark-up highlight the conflict without adding a new route? A suggested line can easily be forwarded as an accepted solution.
+Dev | I'll identify [[ceiling bay::Ceiling bay C3 is the precise shared-space reference, not an approved route or technical solution.]] C3 and preserve both shown positions. No offset is agreed, so the query shouldn't show an invented change as approved.
+Elena | If a new path is proposed, the review still needs clearances, supports, and access. Shifting a line doesn't settle all those requirements.
+Dev | Correct. [[Maintenance access::Maintenance access is one relevant coordination question for any solution; no access or clearance arrangement is supplied here.]] is one of those questions. This issue note doesn't provide a complete alternative arrangement for the team to install.
+Elena | Please label thirteen hundred explicitly as the meeting time. It isn't a guaranteed resolution time or an installation start.
+Dev | I'll call it the [[coordination meeting::Coordination meeting identifies the 13:00 review point and does not authorize installation or guarantee a completed solution.]]. It tells people when to review the information, not when a changed route becomes authorized.
+Elena | Read the short agenda entry back. I need both services, the bay, and the outstanding decision together.
+Dev | E6 tray and mechanical-layout duct share C3; [[route approval::Route approval is absent because neither trade has agreed a revised path; the query must preserve that status.]] remains outstanding; both drawings need review at thirteen hundred. Neither trade has accepted a revision.
+Elena | That gives the meeting a precise issue without assigning blame. I'll retain both sources with it.
+Dev | I'll keep it as an [[unresolved interface::Unresolved interface keeps the cross-trade conflict open until the actual project process establishes an agreed arrangement.]] until the project process records an agreed arrangement. The meeting and query don't themselves authorize a routing change.''',
     transfer_title='Bring both drawings to the review',
     transfer_setup='Complete the coordination summary. Include the electrical source, shared bay, meeting time, and unresolved route status.',
     transfer='''Electrician: "The cable tray is shown on drawing ___." | E6 | E6 is the electrical drawing that shows the cable-tray route.
 Coordinator: "The shared ceiling bay is ___." | C3 | C3 is the location where the tray and duct drawings conflict.
 Electrician: "The coordination meeting is at ___." | 13:00 | Thirteen hundred is the meeting time, not an installation approval.
 Coordinator: "Neither trade has ___ a revised route." | agreed | No revised route has been agreed by either relevant trade.''',
+    rehearsal=["Read turns 1-10; name E6, C3, the tray, and the mechanical duct distinctly.","Switch roles for turns 11-20. Make 13:00 a meeting, not an installation start.","Check and read the transfer without assigning either trade an unapproved revised route."],
 ))
 
 BOOK['units'].append(unit(
@@ -344,7 +348,7 @@ operational instruction | Direction to perform an equipment or system action. | 
 notice correction | Amendment of inaccurate communication. | make a notice correction
 whole-floor impact | Claim that an entire floor is affected. | avoid an unsupported whole-floor impact
 service boundary | Limit of the functions included in the request. | preserve the service boundary
-time range | Stated beginning and end of a period. | confirm the time range
+kilowatt-hour | Unit of energy equal to one kilowatt sustained for one hour. | estimate kilowatt-hours
 pending approval | Awaiting a decision rather than accepted. | mark the request pending approval
 communication release | Authorization or controlled action to issue a notice. | confirm the communication release
 scope readback | Repetition of the exact extent of a proposal. | give a scope readback
@@ -359,32 +363,33 @@ revision record | Note showing how a communication or document changed. | mainta
 Why is changing whole floor alone insufficient? | The notice must also stop presenting the unapproved window as confirmed. | The time range must be invented again. | Every service must be added instead. | A corrected area automatically verifies isolation. | Accurate area wording does not fix an inaccurate claim of approval or certainty.
 What does the request establish about isolation? | No verified isolation status is supplied | All equipment is safe to work on | Reception lighting is already isolated | The floor has been tested | Planning information supplies no verified electrical status or safety clearance.
 What is the purpose of this review? | Correct the communication and preserve the unresolved approval | Instruct tenants to operate equipment | Authorize switching without the actual procedure | Announce restoration already complete | The task is a communication review, not authorization or instructions for electrical operation.''',
-    dialogue='''Joel | The draft tenant notice says the whole floor will be unavailable from 18:00 to 19:00. Is that the scope you put in the outage request?
-Imani | No. The [[affected service::Affected service is reception lighting only; the request does not cover every service or the whole floor.]] is reception lighting only. The notice has expanded the impact beyond the request, and that needs to be corrected.
-Joel | I will change the area description. Can the notice then say the reception lighting will be unavailable during that hour, or is there another status issue?
-Imani | There is another issue: [[facilities approval::Facilities approval has not been given, so the proposed window cannot be presented as a confirmed outage.]] has not been given. The window is proposed, not confirmed, so the wording must preserve that as well.
-Joel | Then we have two errors to avoid: an impact that is too broad and a definite statement about a window that has not been accepted.
-Imani | Exactly. Correcting the [[impact scope::Impact scope limits the proposal to reception lighting, but correcting it does not resolve the separate pending-approval issue.]] alone would not make the notice accurate. It also needs to describe the pending approval rather than promise an outage.
-Joel | Please confirm the requested times. I want to preserve the actual proposal while changing the inaccurate wording, not introduce a different window by mistake.
-Imani | The [[proposed window::Proposed window is 18:00-19:00, with neither endpoint constituting a confirmed operational arrangement.]] is 18:00-19:00. Both times belong to the request, and neither should be treated as a confirmed operational arrangement in this review.
-Joel | Could the notice simply say proposed reception-lighting interruption, pending facilities approval? That would make its present status visible to whoever reviews the wording next.
-Imani | Yes, that [[status qualifier::Status qualifier makes the proposal and pending approval explicit, preventing the wording from implying a settled arrangement.]] preserves the distinction. Include the proposed time range and keep reception lighting only attached to it, rather than saying all services.
-Joel | Does an outage request tell us anything about isolation? I do not want the notice to imply that the lighting has already been made safe for work.
-Imani | No [[isolation status::Isolation status is not supplied by the request or this conversation, so no de-energization or safety conclusion can be inferred.]] is supplied. Planning paperwork is not proof that equipment is de-energized or safe, and the notice should not make that claim.
-Joel | Understood. We are correcting information about a proposal, not giving tenants or the site team instructions to switch, test, or restore anything.
-Imani | Correct. This is a [[notice correction::Notice correction amends scope and certainty in the communication; it does not direct an electrical operation.]], not an operating procedure. No electrical action is authorized by the revised sentence or by our discussion.
-Joel | What should the record say about issuing the notice? I do not want a wording review to be taken as permission to release a final confirmed message.
-Imani | Keep [[communication release::Communication release remains subject to the actual review process; correcting a draft does not authorize issuing a final notice.]] separate. The corrected wording still needs the relevant review and release process, and facilities approval of the outage remains pending.
-Joel | Please give me a final readback that I can compare with the request. It should include the exact service, the hour, and the missing approval.
-Imani | The [[scope readback::Scope readback preserves reception lighting only, the proposed 18:00-19:00 window, and pending facilities approval together.]] is: reception lighting only; proposed window 18:00-19:00; facilities approval pending. No whole-floor impact or verified isolation status is established.
-Joel | That is clear. I will preserve those facts in the review record and remove the unsupported whole-floor statement without presenting the proposal as confirmed.
-Imani | Thank you. The [[authorization::Authorization for the outage or electrical operation is not created by this notice review; the actual approval processes still apply.]] status remains unchanged by this wording discussion. We have identified the corrections, not approved the outage or established operational clearance.''',
+    dialogue='''Joel | The draft tenant notice says the whole floor will be unavailable from eighteen hundred to nineteen hundred. Is that actually your request?
+Imani | No. The [[affected service::Affected service is reception lighting only; the request does not cover every service or the whole floor.]] is reception lighting only. Whole floor expands the impact beyond the request and needs correcting.
+Joel | I'll change that. Can I then say reception lighting will be unavailable during the hour, or is will too definite?
+Imani | It's too definite. [[facilities approval::Facilities approval has not been given, so the proposed window cannot be presented as a confirmed outage.]] hasn't been given. The requested window remains proposed, not confirmed.
+Joel | Then there are two problems: the notice includes too much of the building and presents an unaccepted request as a settled arrangement.
+Imani | Exactly. Correcting the [[impact scope::Impact scope limits the proposal to reception lighting, but correcting it does not resolve the separate pending-approval issue.]] alone won't make it accurate. Pending approval needs to remain visible beside the service description.
+Joel | Read the requested times back as well. I don't want to change the window while fixing the wording.
+Imani | The [[proposed window::Proposed window is 18:00-19:00, with neither endpoint constituting a confirmed operational arrangement.]] is eighteen hundred to nineteen hundred. Those are requested times, not directions to begin or end an electrical operation.
+Joel | Would proposed reception-lighting interruption, pending facilities approval work? I'd include the requested hour and keep only with the lighting scope.
+Imani | Yes. That [[status qualifier::Status qualifier makes the proposal and pending approval explicit, preventing the wording from implying a settled arrangement.]] makes the uncertainty explicit. It avoids presenting all services as affected or the window as accepted.
+Joel | Should we mention that the equipment is isolated? People sometimes treat an outage announcement as proof the work area is already safe.
+Imani | No [[isolation status::Isolation status is not supplied by the request or this conversation, so no de-energization or safety conclusion can be inferred.]] is supplied. Planning paperwork doesn't verify de-energization or safety, and the notice mustn't imply either.
+Joel | Understood. We're correcting a proposal description, not giving tenants or the site team switching, testing, or restoration instructions.
+Imani | Correct. This is a [[notice correction::Notice correction amends scope and certainty in the communication; it does not direct an electrical operation.]], not an operating procedure. Neither our discussion nor the revised sentence authorizes electrical action.
+Joel | Does agreeing the sentence mean I can release a final notice now, or must it stay in the draft-review process?
+Imani | [[communication release::Communication release remains subject to the actual review process; correcting a draft does not authorize issuing a final notice.]] remains separate. The wording needs the actual review and release process, and outage approval is still pending.
+Joel | Give me the final short read-back so I can compare it with the request before sending it to the next reviewer.
+Imani | The [[scope readback::Scope readback preserves reception lighting only, the proposed 18:00-19:00 window, and pending facilities approval together.]] is reception lighting only; proposed eighteen hundred to nineteen hundred; facilities approval pending. No whole-floor impact or verified isolation is established.
+Joel | I'll retain those qualifiers. A corrected sentence mustn't make it look as though facilities has now approved the request.
+Imani | Right. The [[authorization::Authorization for the outage or electrical operation is not created by this notice review; the actual approval processes still apply.]] status is unchanged. We've identified communication corrections, not approved the outage or established an operational clearance.''',
     transfer_title='Correct scope and certainty',
     transfer_setup='Complete the notice-review exchange. Retain the exact service and proposed time range, while making the approval limit explicit.',
     transfer='''Coordinator: "The request covers reception ___ only." | lighting | Lighting is the specified reception service, not every service on the floor.
 Electrician: "The proposed window starts at ___." | 18:00 | Eighteen hundred is the proposed start, not a confirmed switching instruction.
 Coordinator: "It ends at ___." | 19:00 | Nineteen hundred is the proposed endpoint in the request.
 Electrician: "Facilities approval is still ___." | pending | Facilities has not approved the proposal, so it remains pending.''',
+    rehearsal=["Read turns 1-10 with reception lighting only and proposed clearly stressed.","Switch roles for turns 11-20; separate facilities approval, notice release, and electrical status.","Check and read the corrected notice without turning its window into an operating instruction."],
 ))
 
 BOOK['units'].append(unit(
@@ -429,32 +434,33 @@ unsupported reassurance | Comforting claim not established by the available evid
 Which summary is supported? | No flickering observed during the visit; cause unestablished; report review pending. | Installation now guaranteed fault-free. | Driver failure confirmed and repaired. | All areas cleared for unrestricted use. | The summary preserves the actual observation, unresolved cause, and report stage.
 Which statement invents a repair? | The issue is fixed because it did not flicker while we were there. | The visit note records no observed flickering. | The client reported an occasional symptom. | The technical report awaits review. | No repair or verified correction is supplied, so symptom absence during the visit cannot prove a fix.
 What should remain in the record? | Both Mira's reported history and the limited visit observation | Only a declaration that the client was mistaken | A guessed cause presented as fact | A universal fault-free certificate | Keeping both accounts preserves the history and the actual limits of the visit evidence.''',
-    dialogue='''Mira | Your visit note says no flickering was observed. Does that mean the installation is fault-free now, and I can tell our manager the issue is finished?
-Ellis | The note records the [[observation period::Observation period limits the finding to the visit, not every time the installation has operated.]] of that visit. It does not establish a fault-free installation, and no cause has been identified in the information we have.
-Mira | I reported it because the lights flicker occasionally in display bay 2, not because they do it continuously. I would not expect it every minute.
-Ellis | That is an [[intermittent symptom::Intermittent symptom describes occasional flickering, which may not appear during a particular attendance.]], so your report and the visit note can both be accurate. Not seeing it during one attendance does not invalidate what you previously reported.
-Mira | Thank you. I was concerned that the wording might be taken to mean I had described the wrong area or imagined the problem.
-Ellis | I will retain the [[reported history::Reported history preserves Mira's earlier account instead of replacing it with a claim that she was mistaken.]] of occasional flickering in display bay 2. The note does not establish that your account was wrong or that every other area was assessed.
-Mira | Has the visit established a likely component or cause? I would rather distinguish a possibility from something the technical team has actually concluded.
-Ellis | There is no [[established cause::Established cause is absent; the supplied information does not support naming a failed component or a diagnosis.]]. I should not name a component or give you a diagnosis when the report has not established one.
-Mira | And is the technical report final, or does someone still need to review it before its conclusions are communicated as accepted findings?
-Ellis | It is [[pending review::Pending review describes the current report stage and does not imply an approved technical conclusion.]]. That status matters. I can explain the visit note, but I should not present the report as finalized or approved.
-Mira | Then I should not say a repair has fixed the problem either. There is nothing in this information telling me a corrective repair was completed.
-Ellis | Correct. No [[repair record::Repair record confirming completed corrective work is not supplied; absence of observed flickering is not proof of repair.]] is established here. The absence of flickering during the visit does not prove a repair happened or that a correction has been verified.
-Mira | What wording would accurately describe the position to our manager? I need a short summary that does not either dismiss the issue or exaggerate the findings.
-Ellis | Use a [[qualified statement::Qualified statement limits the summary to the actual visit observation, unresolved cause, and pending report review.]]: occasional flickering reported in display bay 2; none observed during the visit; cause not established; technical report awaiting review.
-Mira | That makes the difference clear. It preserves the earlier report without claiming the electrician saw the flickering or found a particular explanation.
-Ellis | Exactly. The [[evidence limit::Evidence limit prevents a visit-specific observation from becoming a universal fault-free assurance or a technical diagnosis.]] is important. We can state what was observed, and what was not, without adding a universal assurance about the installation.
-Mira | Could someone read that summary as permission to use or work on equipment? I want to avoid wording that sounds like a safety clearance.
-Ellis | It gives no [[operational clearance::Operational clearance is not established by the visit note or language summary; the actual authorized process still governs use and work.]]. This conversation and the note do not authorize an electrical action or establish safe status. The actual authorized process governs those questions.
-Mira | Understood. I will say that review is pending and the cause remains unresolved, rather than announce that the installation is now fault-free or repaired.
-Ellis | That preserves the [[case status::Case status remains unresolved with review pending; the client report and limited observation both stay in the record.]]. Your report stays recorded alongside the limited visit observation. We have clarified the information, not closed the issue with a diagnosis or a repair claim.''',
+    dialogue='''Mira | The visit note says no flickering was observed. Can I tell our manager the installation is fault-free now, or would that go too far?
+Ellis | It would. The [[observation period::Observation period limits the finding to the visit, not every time the installation has operated.]] is limited to that attendance. The note doesn't establish a fault-free installation or identify a cause.
+Mira | It happens occasionally in display bay two, not continuously. That's why I was concerned a visit might not catch it.
+Ellis | An [[intermittent symptom::Intermittent symptom describes occasional flickering, which may not appear during a particular attendance.]] may not appear during a particular attendance. Your report and the visit note can both be accurate.
+Mira | I'm glad that doesn't mean my report is being dismissed. I don't want anyone to read it as saying I imagined the problem.
+Ellis | We'll retain the [[reported history::Reported history preserves Mira's earlier account instead of replacing it with a claim that she was mistaken.]] of occasional flickering in display bay two. The note doesn't disprove it or establish conditions in every other area.
+Mira | Has anyone identified a component or explanation? I'd like to distinguish a possibility from a conclusion the technical team has actually reached.
+Ellis | There's no [[established cause::Established cause is absent; the supplied information does not support naming a failed component or a diagnosis.]] in this information. I can't name a failed component or offer a diagnosis that the report hasn't established.
+Mira | Is the technical report final? Our manager will probably ask whether this is the accepted conclusion or just the current visit record.
+Ellis | It's [[pending review::Pending review describes the current report stage and does not imply an approved technical conclusion.]]. I can explain the visit note, but I shouldn't describe the report as finalized or approved.
+Mira | And we can't say a repair fixed it merely because it didn't flicker during the visit? I haven't seen anything recording corrective work.
+Ellis | No [[repair record::Repair record confirming completed corrective work is not supplied; absence of observed flickering is not proof of repair.]] confirming completed work is supplied. Absence of the symptom during attendance doesn't establish that a repair happened or succeeded.
+Mira | Could you give me a short accurate summary? I need to avoid both closing the issue prematurely and exaggerating the findings.
+Ellis | Use a [[qualified statement::Qualified statement limits the summary to the actual visit observation, unresolved cause, and pending report review.]]: occasional flickering reported in display bay two; none observed during the visit; cause not established; report awaiting review.
+Mira | That preserves my account without claiming the electrician saw the flickering. It also explains why the two records aren't contradictory.
+Ellis | Yes. The [[evidence limit::Evidence limit prevents a visit-specific observation from becoming a universal fault-free assurance or a technical diagnosis.]] matters. A visit-specific observation mustn't become a universal assurance about the whole installation.
+Mira | Does that summary give anyone permission to use or work on the equipment? I want to be careful with words like cleared.
+Ellis | It gives no [[operational clearance::Operational clearance is not established by the visit note or language summary; the actual authorized process still governs use and work.]]. The actual authorized process governs those questions; this conversation isn't permission for an electrical action.
+Mira | I'll tell the manager the cause remains unresolved and review is pending. I won't call it fixed or fault-free from this note.
+Ellis | That preserves the [[case status::Case status remains unresolved with review pending; the client report and limited observation both stay in the record.]]. Your report stays alongside the limited observation, and no unsupported diagnosis or repair claim closes the issue.''',
     transfer_title='Keep the observation within its limits',
     transfer_setup='Complete the client summary. Retain the intermittent history, the visit-specific observation, the unknown cause, and pending review.',
     transfer='''Client: "I reported occasional ___ in display bay 2." | flickering | Flickering is the reported intermittent symptom in the specified display area.
 Electrician: "It was not ___ during the visit." | observed | Not observed limits the finding to that visit rather than proving permanent absence.
 Client: "No cause is ___." | established | No assessment result in the case identifies the cause.
 Electrician: "The technical report is pending ___." | review | Review remains pending, so the report is not presented as finalized.''',
+    rehearsal=["Read turns 1-10, retaining Mira's report alongside the limited visit observation.","Switch roles for turns 11-20; stress not observed rather than fixed or fault-free.","Check and read the transfer. Keep review pending and the cause unestablished."],
 ))
 
 BOOK['units'].append(unit(
@@ -481,13 +487,13 @@ revised assessment | Updated review accounting for changed information or scope.
 revised quotation | Updated price proposal for the changed defined work. | prepare a revised quotation
 original scope | Work included before the new request. | preserve the original scope
 scope addition | Extra item proposed after the agreed scope. | record the scope addition
-commercial request | Client request about price, timing, or other business terms. | separate the commercial request
+active power | Electrical power associated with net energy transfer, expressed in watts or kilowatts. | report active power
 price commitment | Agreed promise about cost. | avoid an unsupported price commitment
 schedule impact | Effect of a change on timing. | assess the schedule impact
 technical suitability | Whether the proposed arrangement meets relevant technical needs. | verify technical suitability
 product substitution | Replacement of a specified item with a different product. | review a product substitution
 like-for-like claim | Assertion that a replacement or addition has equivalent relevant characteristics. | verify a like-for-like claim
-data gap | Missing information necessary for a review. | identify the data gap
+apparent power | For a single-phase load, RMS voltage times RMS current, expressed in volt-amperes. | distinguish apparent power
 approval boundary | Limit of what has actually been authorized. | preserve the approval boundary
 change request | Proposal to alter the agreed work or requirements. | submit a change request
 assessment outcome | Result reached after the required review. | await the assessment outcome''',
@@ -499,25 +505,25 @@ assessment outcome | Result reached after the required review. | await the asses
 Which assumption is unsupported? | The second machine has the same requirements as the first. | A second machine has been requested. | Equipment data are unavailable. | Revised assessment can be arranged. | No product-specific information establishes equivalence between the two machines.
 What is the status of unchanged price and date? | Requested by Hana but not committed by Luis | Already accepted for the extra work | Technically proven by the machine category | Irrelevant because extra work is always free | Hana's commercial preference remains a request while the additional work is unassessed.
 What should the next handoff contain? | Added machine, missing data, requested terms, and need for revised assessment and quotation | A guessed load rating and connection instruction | A completed capacity approval | An invented revised price | The handoff preserves the actual change and unresolved questions without technical or commercial invention.''',
-    dialogue='''Hana | We are adding a second espresso machine to the café. Can you include it in the electrical work at the original price and still finish on the agreed date?
+    dialogue='''Hana | We're adding a second espresso machine. Can the work still fit the original price and completion date, or does this need separate review?
 Luis | I understand the request, but it is a [[scope addition::Scope addition identifies the second machine as new work introduced after the original electrical agreement.]]. The second machine was added after we agreed the electrical scope, and its equipment data are not available yet.
-Hana | It is another espresso machine, so I assumed the requirements would be similar to the first. Is the type of machine enough information for an initial decision?
+Hana | I assumed another espresso machine would need similar provision. Is the category enough information, or do you need its specific details?
 Luis | The category does not establish the [[supply requirement::Supply requirement depends on the specific equipment information, not simply on both appliances being called espresso machines.]]. I cannot assume the added unit has the same relevant characteristics or that the existing provision is suitable.
-Hana | What information do you need from the project team? I want to give you the right documents rather than ask someone to guess from a product description.
+Hana | Which documents should the project team send? I don't want ratings guessed from a photograph or a general product name.
 Luis | We need the relevant [[equipment data::Equipment data are the missing product-specific information required for the revised review, not guessed ratings or client testing.]] for the added unit through the usual project process. This is an information request, not a request for you to test or connect anything.
-Hana | Understood. Once the information is available, is the next question whether the existing electrical arrangement can support the additional equipment?
+Hana | Once the data arrive, you'll review capacity and installation requirements? Neither answer is established for the addition yet?
 Luis | A [[capacity assessment::Capacity assessment remains necessary for the addition; the conversation does not establish available capacity or a suitable arrangement.]] forms part of the revised review. At present, capacity and installation requirements are not established, so I cannot give a yes-or-no technical approval.
-Hana | I am also trying to control costs. I would like the original figure to remain the same, but I understand that is a request from me, not a quote.
+Hana | I'd like the original price retained, but record that as my request. You haven't quoted or accepted the extra work.
 Luis | Correct. There is no unchanged [[price commitment::Price commitment for the extra machine has not been made; Hana's wish to retain the original price remains a request.]] for the addition. We can preserve your preference without recording it as something we have already accepted.
-Hana | The original completion date matters because we have other work coordinated around it. Please include that constraint when the added machine is reviewed.
+Hana | Please keep the original completion date in the review brief. Other work depends on it, although this change's effect is still unknown.
 Luis | I will include it, but the [[schedule impact::Schedule impact of the added equipment remains unassessed, so the original completion date cannot be guaranteed for the change.]] remains open. I cannot promise the same completion date for changed work before the requirements and arrangements have been assessed.
-Hana | Then the review needs to address both the technical information and the commercial terms. A technical answer alone would not tell me the final price or timing.
+Hana | Then a technical answer won't settle everything. I need defined pricing and timing before I decide whether to proceed.
 Luis | Exactly. I can arrange a [[revised quotation::Revised quotation will address defined changed work after the necessary review; no new or unchanged price is established now.]] alongside the revised assessment process. Neither the technical outcome nor the commercial terms has been settled in this discussion.
-Hana | Please do not call the new machine a like-for-like addition in the note. We have not checked that, and the phrase might make the change sound already accepted.
+Hana | Don't call it like-for-like in the note. That could imply equivalence before anyone compares the added machine's data.
 Luis | I will avoid that [[like-for-like claim::Like-for-like claim is unsupported because the added machine's relevant data have not been supplied or compared.]]. The note will identify a second machine with missing data, not an equivalent unit whose requirements we already know.
-Hana | What should I tell the project coordinator today? I need a clear next step without making it sound as though you have rejected the idea outright.
+Hana | What can I tell the coordinator today? I need a next step, not a message saying you've rejected it or agreed to fit it.
 Luis | Say the [[change request::Change request remains open for data collection and revised review, rather than being automatically accepted or rejected.]] needs product information, revised assessment, and quotation. Capacity, installation requirements, cost, and completion timing are still to be established.
-Hana | That is fair. I will ask the team for the relevant documents and keep my request about the original price and date separate from any agreement.
+Hana | I'll arrange the product documents through the team. My preferred price and date remain requests until the revised review establishes the terms.
 Luis | Thank you. The [[approval boundary::Approval boundary keeps the added machine unapproved until the relevant technical and commercial process establishes what is acceptable.]] remains clear: this conversation records the request and the next review steps, not approval to add equipment or a promise of unchanged terms.''',
     transfer_title='Request data before confirming terms',
     transfer_setup='Complete the café update. Keep the missing information, changed scope, review route, and unresolved commercial terms visible.',
@@ -525,6 +531,7 @@ Luis | Thank you. The [[approval boundary::Approval boundary keeps the added mac
 Electrician: "Its equipment ___ are not available." | data | Product-specific data are missing and needed for the revised review.
 Owner: "We need revised assessment and a ___." | quotation | The added work needs pricing through a revised quotation process.
 Electrician: "Capacity, price, and timing are not yet ___." | established | None of these outcomes has been determined for the unassessed addition.''',
+    rehearsal=["Read turns 1-10, separating a machine category from product-specific data.","Switch roles for turns 11-20; distinguish requested price and date from commitments.","Check and read the handoff without inventing capacity, ratings, or a quotation."],
 ))
 
 BOOK['units'].append(unit(
@@ -554,8 +561,8 @@ operational clearance | Authorization or verified status for use under the actua
 handover exception | Open item retained when other handover elements are complete. | list a handover exception
 record accuracy | Correctness of the information contained in a document or label. | verify record accuracy
 installed arrangement | Actual configuration of the relevant equipment or system. | distinguish the installed arrangement
-document title | Name describing a record, not proof of every entry's accuracy. | distinguish document title from verification
-location name | Words identifying a space. | preserve the current location name
+power factor | Ratio of active power to apparent power, distinct from output-to-input efficiency. | interpret power factor
+RMS | Root mean square; an effective-value measure used for AC voltage and current. | state the RMS basis
 circuit identity | Verified correspondence between a circuit and what it serves. | establish circuit identity
 update commitment | Promise to provide further information at a stated time. | make an update commitment
 open-item record | List or note preserving unresolved matters. | maintain the open-item record
@@ -566,28 +573,28 @@ handover readback | Repetition of received records and unresolved items to confi
     phrases='''Acknowledge the records | You have received the as-built drawings.\nName the remaining issue | One circuit-directory entry still says old store.\nState the current room name | The room is now called archive.\nPreserve the uncertainty | The circuit identification still needs verification.\nAvoid a naming shortcut | A room-name change does not prove the circuit identity.\nAvoid premature relabeling | We should not relabel the entry by assumption.\nAccept follow-up | I will take responsibility for the follow-up.\nName the owner | Priya owns the identification follow-up.\nState the commitment | I will report on Thursday.\nKeep the outcome open | I cannot state the verification result before it is established.\nSeparate receipt and accuracy | Receiving the drawings does not verify every directory entry.\nKeep the exception visible | The identification discrepancy remains an open handover item.\nAvoid operational inference | This handover does not establish operational clearance.\nPreserve the actual process | Any correction needs verified information and the relevant approval process.\nRead back the handover | Drawings received; old-store entry unresolved; Priya follows up and reports Thursday.\nClose with the right limit | The reporting date is committed, but no corrected identity is supplied here.''',
     notes='''As-built | A record-document description, not a reason to ignore an identified discrepancy.\nStill says | Flags older wording without proving the correct electrical identity.\nNow called | Establishes the current room name, not the circuit correspondence.\nWill report Thursday | Commits to communication, not a predetermined technical result.\nBy assumption | Describes the shortcut the dialogue must avoid.\nReceived versus verified | Receipt of records and verification of their contents are separate facts.''',
     d='''Which handover statement is accurate? | Drawings received; directory wording differs from the room name; identification needs verification. | Every circuit verified because drawings were delivered. | Archive can be substituted immediately without checking. | Operational clearance is automatic at handover. | The statement preserves document receipt and the separate unresolved identification question.
-Why is immediate relabeling unsupported? | The current room name does not establish circuit identity. | The word archive can never be used. | All old labels are definitely correct. | Receiving drawings forbids any later correction. | Verification is required because matching a name does not prove the circuit correspondence.
+Why is immediate relabeling unsupported? | The current room name does not establish circuit identity. | The directory wording alone confirms which circuit serves archive. | The as-built title establishes the accuracy of the old-store entry. | A Thursday reporting promise authorizes an immediate name change. | Verification is required because matching a name does not prove the circuit correspondence.
 What does Thursday identify? | Priya's committed reporting date | Guaranteed completion of a label change | Permission to operate equipment | A verified circuit identity | Priya promises to report Thursday without promising an unestablished technical outcome.
 What belongs in the open-item record? | Old-store entry, current archive name, verification needed, Priya as owner, Thursday report | A guessed corrected circuit and automatic clearance | A claim that no follow-up remains | An invented completed verification | These details preserve the discrepancy, required review, responsible person, and communication commitment.''',
-    dialogue='''Ben | I have received the as-built drawings. Before we close the handover discussion, one circuit-directory entry still says old store, but that room is now called archive.
+    dialogue='''Ben | I've received the as-built drawings, Priya. One directory entry says old store, though the room is now archive. Can we keep that open?
 Priya | I will keep that [[identification discrepancy::Identification discrepancy is the old-store directory wording against the current archive name, with circuit correspondence still unverified.]] open. The room name has changed, but the associated circuit identification still needs verification rather than a label change based on the name alone.
-Ben | I was going to ask whether we could simply replace the words. I see that would assume the existing entry actually refers to the room we mean.
+Ben | I was about to suggest changing the words. That would assume the entry really identifies the room we're discussing, wouldn't it?
 Priya | Exactly. The [[circuit identity::Circuit identity requires verification; the room-name change does not establish which circuit serves the archive.]] is the unresolved point. We should not treat a familiar location name as proof of the electrical correspondence.
-Ben | Does receiving the as-built set mean the directory has already been checked as part of that document package? I do not want to confuse the two statuses.
+Ben | Does receiving the as-built set establish that this entry was checked? I don't want document delivery confused with a verification result.
 Priya | [[Document receipt::Document receipt confirms the as-built drawings reached Ben, not that every directory entry or circuit identity has been verified.]] confirms that you have the drawings. It does not establish that this directory entry is verified or that the discrepancy has been resolved.
-Ben | Then please retain the old wording exactly in the note, as well as the current room name. That will help the follow-up refer to the same entry.
+Ben | Please retain old store exactly, alongside archive. The follow-up needs the original wording, not a silently amended entry.
 Priya | I will record the [[legacy label::Legacy label is the exact wording old store, retained alongside archive so the specific entry can be followed up.]] as old store and the current designation as archive. The record will not silently replace one with the other as though verification were complete.
-Ben | Who is taking responsibility for the follow-up? I want someone named so the item does not remain between facilities and the electrical team.
+Ben | Who owns the follow-up? I want a name so facilities and electrical aren't each expecting the other to respond.
 Priya | I accept it as the [[follow-up owner::Follow-up owner is Priya, who explicitly accepts responsibility for the unresolved identification issue.]]. Please record Priya against the item. That identifies who is responsible without pretending the check has already produced a result.
-Ben | When will you report back? We need a communication point, even if the record still has an unresolved detail at that stage.
+Ben | When will you report back? We need a definite update point even if the result isn't established by then.
 Priya | I will report Thursday. That is the [[reporting date::Reporting date is Thursday for Priya's update, not a guaranteed correction or a predetermined verification result.]] I am committing to, not a promise that a particular circuit identity or amendment has already been established.
-Ben | Understood. I will not tell anyone the entry is corrected now or that Thursday automatically becomes an instruction to use equipment under a new identification.
+Ben | Then Thursday is a report, not a promised corrected label or permission to operate equipment under an assumed new identity.
 Priya | Correct. No [[operational clearance::Operational clearance is not established by receiving drawings, discussing names, or assigning a reporting date.]] is inferred from this handover. The records discussion does not authorize operating equipment or relying on an unverified label.
-Ben | Once the relevant information is verified, any correction can follow the actual project process. Until then, the open note needs to stay separate from completed document delivery.
+Ben | Any correction needs verified information and the project process. The received drawings and unresolved circuit identification remain separate statuses.
 Priya | Yes. A [[record correction::Record correction needs verified information and the applicable process; it is not authorized by a room-name assumption.]] should reflect verified information and the relevant approval process. It should not be a guessed amendment made just to make the wording look current.
-Ben | Could you read back the whole handover status? I want to make sure the received drawings, the remaining entry, and your commitment are all visible.
+Ben | Can you read the whole entry back? Include the old wording, current name, required verification, your ownership, and the reporting date.
 Priya | The [[handover readback::Handover readback combines received drawings, the unresolved label discrepancy, Priya's ownership, and the Thursday report without adding clearance.]] is: as-built drawings received; old-store entry differs from current archive designation; identification needs verification; Priya owns follow-up and will report Thursday.
-Ben | That is accurate. We can acknowledge the documents without closing the identification question, and the reporting commitment gives us a clear next contact point.
+Ben | That's accurate. We'll acknowledge the drawings while keeping identification open until the follow-up actually supports closure.
 Priya | I will retain the [[handover exception::Handover exception keeps the unverified directory entry open while allowing receipt of the drawings to be acknowledged separately.]] until the actual outcome supports closure. No corrected circuit identity, relabeling approval, or operational status is established by this conversation.''',
     transfer_title='Separate receipt from verification',
     transfer_setup='Complete the handover record. Retain the current and old names, the verification need, the owner, and the committed report date.',
@@ -595,4 +602,5 @@ Priya | I will retain the [[handover exception::Handover exception keeps the unv
 Lead: "The old-store entry needs ___ before any assumed correction." | verification | The identification must be checked rather than changed from the name alone.
 Facilities: "___ owns the follow-up." | Priya | Priya explicitly accepts responsibility for the unresolved identification item.
 Lead: "I will report ___; no operational clearance is inferred." | Thursday | Thursday is the committed reporting date, without a guaranteed technical outcome.''',
+    rehearsal=["Read turns 1-10; distinguish old store, archive, and unverified circuit identity.","Switch roles for turns 11-20; make Thursday a committed report, not a promised correction.","Check and read the transfer while keeping document receipt separate from operational clearance."],
 ))

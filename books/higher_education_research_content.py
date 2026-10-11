@@ -48,7 +48,7 @@ random assignment | Allocation to study conditions using a random process. | dis
 random sampling | Selection of units from a population by a random process. | distinguish random sampling
 association | An observed relationship between variables. | report an association
 causal effect | A change attributable to an intervention or exposure. | estimate a causal effect
-confounder | A factor that can distort the exposure-outcome relationship. | address potential confounders
+confounder | A factor influencing both exposure and outcome that can distort their apparent causal relationship. | address potential confounders
 baseline difference | A group difference present before the studied exposure or outcome. | examine baseline differences
 operational definition | A precise specification of how a concept is measured. | state an operational definition
 completion rate | The proportion meeting the defined completion outcome. | calculate the completion rate
@@ -83,7 +83,7 @@ Higher | Describes direction without establishing cause.
 Associated with | Does not mean caused by.
 Random | State whether it concerns sampling or assignment.
 May differ | Marks a possible explanation, not a finding.''',
-    d='''Which headline fits the available evidence? | Tutoring participation was associated with higher completion in this course cohort. | Tutoring caused every participant to complete. | Tutoring improves all university outcomes everywhere. | The two groups had equal completion. | The first headline describes the observed contrast while respecting self-selection and the limited setting.
+    d='''Which headline fits the available evidence? | Tutoring participation was associated with higher completion in this course cohort. | Tutoring increased completion by twenty percentage points in this course cohort. | Tutoring participants had twenty percent higher completion than nonparticipants. | Randomly selecting more records would establish the tutoring effect. | The supported headline preserves an association; the alternatives add causation, misstate relative change, or confuse sampling with assignment.
 Which question is still unresolved? | Whether tutoring caused the completion difference | Whether 32 of 40 equals 80% | Whether the course records span one semester | Whether participation was optional | The current observational records do not isolate the causal contribution of tutoring.
 Which statement about possible confounding is accurate? | Prior preparation or motivation may differ, but these records do not establish those differences. | Motivation is proved to explain the entire contrast. | Self-selection makes confounding impossible. | A percentage-point calculation adjusts for preparation. | The brief identifies plausible unmeasured factors, not verified explanations or adjusted estimates.
 Which design distinction is correct? | Random assignment allocates conditions; random sampling selects sample members. | Random assignment guarantees every population is represented. | Random sampling automatically makes an optional program randomized. | Both terms mean the same operation. | The two random processes concern different stages and do not substitute for one another.''',
@@ -93,7 +93,7 @@ Leon | Then completion, rather than examination performance or long-term retenti
 Imani | Agreed. The [[outcome variable::The outcome variable is course completion, not every possible academic benefit that tutoring might produce.]] is completion as recorded for that semester. I will use the same definition for participants and nonparticipants, so the comparison does not change meaning between groups.
 Leon | Walk me through the counts before we discuss the interpretation. Percentages can conceal different group sizes, especially when the audience sees only a headline.
 Imani | The participant [[denominator::The denominator is forty tutoring participants; pairing it with thirty-two completers yields the eighty-percent completion rate.]] is forty, with thirty-two completing. That is eighty percent. Among sixty nonparticipants, thirty-six completed, giving sixty percent for the comparison group.
-Leon | So the rates differ by twenty percentage points. Saying a twenty-percent increase would not be the same calculation, because that uses a relative base.
+Leon | The draft says twenty percent higher. Do you mean twenty percentage points, or are you calculating a relative increase from the nonparticipant rate?
 Imani | Correct. The [[percentage-point difference::The percentage-point difference subtracts sixty percent from eighty percent, producing twenty points rather than a twenty-percent relative change.]] is twenty. Relative to sixty percent, the difference is about thirty-three point three percent. Neither phrasing, by itself, explains why the groups differ.
 Leon | Were students allocated to tutoring, or did they choose it? That matters more for the causal claim than how confidently we present the percentages.
 Imani | Participation involved [[self-selection::Self-selection means students chose tutoring, so the groups may differ in ways other than the tutoring exposure.]]. Students chose whether to attend. The records do not measure prior preparation or motivation, and either could differ between groups. We have not established those differences.
@@ -103,7 +103,7 @@ Leon | A colleague proposed solving the problem by randomly sampling more record
 Imani | No. [[Random assignment::Random assignment allocates study conditions; selecting additional records randomly would not change the original self-selected tutoring exposure.]] concerns allocation to conditions. Random sampling concerns which people enter the sample. A larger randomly sampled record set would not retroactively randomize the tutoring decision.
 Leon | Good. We should also avoid implying that one course at one institution establishes what happens for all students in every subject and setting.
 Imani | That is an [[external validity::External validity concerns application beyond the studied course and cohort, which the supplied records do not establish.]] question. The current description stays with this course and semester. Broader applicability needs evidence across the relevant settings, not just a less cautious title.
-Leon | We can keep the long-term ambition of studying causation, provided the proposal separates that future work from the analysis we can conduct now.
+Leon | Let us keep the causal question for the next study. For this paper, can you put the course, semester, and two counts into the abstract?
 Imani | The future [[causal effect::A causal effect is the contribution attributable to tutoring, which requires a suitable design beyond the current descriptive comparison.]] question needs a suitable design and explicit assumptions. We should discuss that design as a proposed next step, not imply that it has already been implemented.
 Leon | Revise the objective to describe completion by tutoring participation in this cohort. Then make the design limitation visible in the abstract as well.
 Imani | I will update the [[study protocol::The study protocol should record the precise question, definitions, and analysis boundaries so later reporting follows the same plan.]] and the proposal wording together. The useful result is a bounded comparison with clear counts, while the causal and broader-population questions remain open.''',
@@ -112,7 +112,8 @@ Imani | I will update the [[study protocol::The study protocol should record the
     transfer='''Researcher: "The attendee completion rate is ___ percent." | 60 | Eighteen completers divided by thirty attendees equals sixty percent.
 Supervisor: "The nonattendee rate is ___ percent." | 50 | Twenty completers divided by forty nonattendees equals fifty percent.
 Researcher: "The difference is ___ percentage points." | 10 | Sixty percent minus fifty percent is ten percentage points.
-Supervisor: "The contrast establishes an association, not a ___." | causal effect | Self-selection and unmeasured differences prevent this comparison from isolating causation.'''))
+Supervisor: "The contrast establishes an association, not a ___." | causal effect | Self-selection and unmeasured differences prevent this comparison from isolating causation.''',
+    rehearsal=['Read turns 5-8, stressing each denominator and the words percentage points.', 'Repeat turns 9-14, distinguishing self-selection, random sampling, and random assignment.', 'Switch roles for the transfer and read the three completed calculations with their explanations.']))
 
 BOOK['units'].append(unit(
     title='Grant Proposals and Specific Aims',
@@ -172,7 +173,7 @@ Retained | Needs a specified follow-up point and denominator.
 Both | One successful criterion is insufficient.
 Automatic progression | A local planning rule, not a funding guarantee.
 Did not meet | Does not establish that the intervention has no effect.''',
-    d='''Which specific aim matches the supplied pilot? | Assess recruitment and follow-up procedures to refine a later study. | Establish improved attainment for all students. | Prove every future trial will succeed. | Guarantee an external funding award. | The first aim matches the procedural feasibility purpose and keeps later efficacy work separate.
+    d='''Which specific aim matches the supplied pilot? | Assess recruitment and follow-up procedures to refine a later study. | Estimate workshop efficacy by treating retained participants as improved learners. | Establish feasibility from recruitment alone, leaving follow-up outside the progression rule. | Demonstrate that the observed retention rate met both predefined criteria. | Recruitment and follow-up procedures are the pilot's actual focus; retention is not an attainment measure, and both stated criteria still apply.
 How many retained participants would meet at least 85% of thirty? | Twenty-six | Twenty-four | Twenty-five | Twenty | Twenty-six out of thirty exceeds eighty-five percent, whereas twenty-five is below it.
 What is the correct progression statement? | Recruitment passed, but retention requires redesign or explicit review before progression. | One passed milestone automatically overrides the other. | Retention should be rounded up to the target. | The target can be changed silently after seeing the result. | Both criteria were required, and the retention shortfall prevents automatic progression under that rule.
 What does the retention result say about efficacy? | It does not establish whether the workshop improves attainment. | It proves the workshop never works. | It proves a large effect. | It directly measures examination improvement. | Retention describes follow-up feasibility, not the workshop's effect on academic attainment.''',
@@ -182,11 +183,11 @@ Ben | We can keep the wider educational problem in the significance section. Rev
 Sora | The [[deliverable::The deliverable is the practical output of the pilot, here a refined and tested procedure for later research.]] is a refined study procedure, informed by recruitment and follow-up evidence. That is useful preparation for a later study, without pretending the larger question has already been answered.
 Ben | The preparatory work enrolled thirty students in four weeks. Remind me whether that matches the target set before the results were available.
 Sora | It meets the [[recruitment::Recruitment concerns bringing students into the study; thirty within four weeks meets the supplied local recruitment threshold.]] criterion of at least thirty within four weeks. We should report that success, while checking the other criterion separately instead of treating enrollment as the whole feasibility assessment.
-Ben | At follow-up, twenty-four of the thirty students remained. The draft calls that good retention, but the adjective hides the numerical comparison with our rule.
+Ben | Can we replace good retention with the actual rate? We kept twenty-four of thirty, and the milestone table still says eighty-five percent.
 Sora | The [[retention::Retention is twenty-four of thirty recruited students, or eighty percent, at the specified follow-up point.]] rate is eighty percent. We had set at least eighty-five percent, so this criterion was not met. The denominator is all thirty recruited students.
 Ben | Would twenty-five retained students meet the threshold? We need to translate the percentage into a whole-participant count.
 Sora | The [[progression criterion::The progression criterion requires at least eighty-five percent, which with thirty recruited students needs at least twenty-six retained.]] requires at least twenty-six retained out of thirty. Twenty-five would be approximately eighty-three point three percent, still below the threshold. We should apply the stated rule accurately.
-Ben | Our planning document requires both milestones for automatic progression. Recruitment passed, but it cannot compensate for the retention shortfall under that rule.
+Ben | Then the milestone table needs one pass and one shortfall. I cannot sign off automatic progression on the recruitment number alone.
 Sora | We need a [[contingency::A contingency addresses the failed milestone through redesign or explicit review rather than ignoring or silently changing the predefined rule.]] such as redesign or explicit review. We should explain what the shortfall means for planning, not silently lower the criterion because we prefer a positive result.
 Ben | That does not mean the workshop is educationally ineffective. The missing follow-up information concerns the study procedure, and the pilot was not an efficacy trial.
 Sora | Correct. [[Feasibility::Feasibility concerns whether the proposed methods can be carried out, which is distinct from the intervention's effect on attainment.]] and efficacy are different questions. The result tells us the retention procedure missed our local target; it does not establish whether the workshop improves attainment.
@@ -201,7 +202,8 @@ Sora | That gives us a consistent [[rationale::The rationale explains why the bo
     transfer='''Researcher: "The recruitment condition was ___." | met | Twenty students were recruited within the stated three-week window.
 Adviser: "Retention was ___ percent." | 85 | Seventeen divided by twenty equals eighty-five percent, below ninety percent.
 Researcher: "At least ___ retained students were required." | 18 | Eighteen out of twenty equals the required ninety-percent retention threshold.
-Adviser: "Automatic progression is ___ under the stated rule." | not supported | Only recruitment passed, while the rule requires both conditions to be satisfied.'''))
+Adviser: "Automatic progression is ___ under the stated rule." | not supported | Only recruitment passed, while the rule requires both conditions to be satisfied.''',
+    rehearsal=['Read turns 5-12, stating 24 out of 30 and the minimum qualifying count of 26 clearly.', 'Repeat turns 13-16, separating feasibility, efficacy, and the funding decision.', 'Switch roles for the transfer; read the 85% observation and 90% requirement without rounding one into the other.']))
 
 
 BOOK['units'].append(unit(
@@ -228,7 +230,7 @@ batch effect | A systematic difference associated with processing groups. | inve
 technical replicate | A repeated measurement used to assess measurement variability. | compare technical replicates
 biological replicate | An independently derived biological sample or unit. | distinguish biological replicates
 signal intensity | The magnitude of the detected measurement signal. | compare signal intensity
-linear response | A proportional relationship over a specified range. | verify a linear response
+linear response | A straight-line input-output relationship over a specified range, possibly with a nonzero offset. | verify a linear response
 saturation | A measurement ceiling beyond which more input is not represented proportionally. | check for signal saturation
 normalization | Adjustment to a defined reference or scale. | justify normalization
 measurement variability | Variation arising across repeated measurements. | quantify measurement variability
@@ -237,7 +239,7 @@ lab notebook | The record of research methods, observations, and changes. | main
 dated correction | A visible amendment recording when a correction was made. | add a dated correction
 provenance | The origin and history of data or records. | preserve data provenance
 hypothesis | A proposed explanation or prediction to be tested. | test a methodological hypothesis
-reproducibility check | A check that specified materials and methods yield consistent outputs. | document a reproducibility check''',
+repeatability check | A check of measurement agreement under the same specified short-term conditions. | document a repeatability check''',
     precision='Run B is 60 arbitrary units higher, a 50% increase relative to Run A. Exposure doubled, but the signal increased by only half. Do not divide or scale signals as though proportional response had been established.',
     precision_extra='A recorded method difference is a candidate explanation, not proof of the entire cause. Retain both results and document the correction. Repeating measurements of the same material does not create new independent biological samples.',
     phrases='''Open with the result | "Run A gave 120 units; Run B gave 180."
@@ -271,27 +273,28 @@ Alex | The [[instrument setting::The instrument setting difference is establishe
 Priya | Preserve both files, including the unexpected result, before correcting the notes. We need the original evidence intact.
 Alex | I have retained the [[raw data::Raw data preserves the original observations and settings, allowing later checks without losing an inconvenient result.]] and the original metadata. I will not replace either measurement with an adjusted value. Any later processing must remain distinguishable from what the instrument originally recorded.
 Priya | The exposure doubled, so somebody suggested halving the second signal and treating that as the comparable result. Have we established a proportional response?
-Alex | No. A [[linear response::A linear response would justify proportional scaling only within a verified range; that relationship is not established here.]] has not been verified over these settings. The signal changed from one hundred twenty to one hundred eighty, not to two hundred forty, so simple scaling needs justification.
+Alex | No. A [[linear response::A linear response can include an offset; proportional rescaling also requires a justified zero or background correction and a validated range.]] has not been verified here. Even a straight-line response could include background signal. We cannot simply halve one raw value and call it corrected.
 Priya | Check whether the detector reaches a ceiling or other conditions differed. The exposure change is a lead, not a complete explanation.
 Alex | We can check for [[saturation::Saturation could make the signal response nonproportional, but it is only a possibility to investigate in this case.]] and review other recorded conditions. I will describe these as possible contributors, not confirmed causes. We have not isolated the exposure effect or explained the full discrepancy.
 Priya | How will the correction show when we discovered the omitted setting, without hiding the original note?
 Alex | I will add a [[dated correction::A dated correction records the discovery transparently while preserving the original note and the history of the omission.]] linked to the instrument files. It will state the actual exposure for each run and when the omission was identified, without backdating the new entry.
 Priya | Good. That also avoids implying misconduct before anything has been investigated. The immediate issue is an incomplete method record and a result needing explanation.
-Alex | Preserving [[provenance::Provenance records the origin and history of the data and corrections, making the discrepancy traceable without prejudging responsibility.]] makes that distinction visible. We can show what was measured, what the notes originally said, and what we subsequently learned, without concealing the gap or assigning unsupported blame.
+Alex | Preserving [[provenance::Provenance records the origin and history of the data and corrections, making the discrepancy traceable without prejudging responsibility.]] keeps the measurement, original notes, and later correction connected. I will record what changed and when, without assigning blame before the facts are checked.
 Priya | For the next measurement, we need documented matched settings and a clear plan. Simply running the instrument again would not address the comparison problem.
 Alex | I will propose a [[controlled comparison::A controlled comparison holds relevant settings consistent so the team can investigate the discrepancy more meaningfully.]] using matched settings and retained raw files. We should specify the protocol version and checks in advance, so another undocumented change does not create the same uncertainty.
-Priya | These measurements use the same reference material. They are not additional independent biological samples.
-Alex | They are [[technical replicates::Technical replicates repeat measurements on the material to examine measurement variability; they do not add independent biological samples.]], not new biological replicates. The distinction matters because repeating a measurement can inform measurement variability without increasing the number of independently sampled biological units.
+Priya | For that repeat, keep the operator, instrument, location, and procedure the same within one session. We are testing measurement consistency, not collecting new biological samples.
+Alex | Those planned measurements are [[technical replicates::The planned matched measurements assess measurement variability on the same material, not additional independent biological samples.]]. The original exposure settings differed, so those two runs are not a matched set. Neither repeating the measurement nor changing exposure adds an independent biological sample.
 Priya | The slide should report the observed difference as sixty units, fifty percent relative to Run A. It must not say exposure caused exactly that increase.
 Alex | I will separate the observation from the [[hypothesis::The hypothesis proposes that the method change contributes to the discrepancy, but it still requires testing rather than being reported as established.]]. The documented change is a plausible contributor. Its role remains to be tested, and other sources of variation have not been ruled out.
-Priya | Bring the corrected record, both raw files, and the matched-settings plan to the next meeting. We can then decide what the evidence supports.
-Alex | I will label the planned work a [[reproducibility check::The reproducibility check is planned work to examine consistent results under specified conditions, not a completed resolution of the discrepancy.]], not a resolved discrepancy. The current conclusion is limited: the results differ, the exposure settings differ, and the complete explanation is still open.''',
+Priya | Bring both raw files, the corrected record, and the matched-settings plan next time. We can then review the evidence together.
+Alex | I will label the planned work a [[repeatability check::The same operator, instrument, method, location, and session specify repeatability conditions, unlike a changed-condition measurement reproducibility study.]]. The two original runs and their settings stay in the record. We still need to explain the discrepancy; scheduling a repeat does not close it.''',
     transfer_title='Preserve the change history',
     transfer_setup='Two readings of the same reference material used different documented gain settings. The summary omitted the change. No causal check has been completed. Both original files remain available.',
     transfer='''Researcher: "The gain change is a verified method ___." | difference | The instrument records establish a setting difference, not merely a suspected change.
 Lead: "Its causal contribution remains ___." | untested | No check has isolated the effect of the setting change.
 Researcher: "The notebook needs a ___." | dated correction | A dated correction transparently records the omission without rewriting the past.
-Lead: "Both original files should be ___." | preserved | Retaining original records allows later verification and avoids selective removal of evidence.'''))
+Lead: "Both original files should be ___." | preserved | Retaining original records allows later verification and avoids selective removal of evidence.''',
+    rehearsal=['Read turns 1-10; distinguish the recorded setting change from an untested explanation.', 'Repeat turns 13-16, stressing same session and technical replicates.', 'Switch roles for the transfer; use a firm, neutral tone for the correction without implying misconduct.']))
 
 BOOK['units'].append(unit(
     title='Research Ethics and Human Subjects',
@@ -351,9 +354,9 @@ Existing approval | May not cover a new question or sharing arrangement.
 May require | A possibility, not a determination already made.
 Requested | Not granted.
 Preparing a proposal | Distinct from conducting the proposed new research.''',
-    d='''Which description should be sent to the ethics office? | Coded interviews with a linking key accessible to the research team | Anonymous data with no possible identity connection | Public information requiring no consideration | Newly consented data for every conceivable purpose | The first description accurately reports the team's actual ability to link codes with people.
+    d='''Which description should be sent to the ethics office? | Coded interviews with a linking key accessible to the research team | Anonymous data with no possible identity connection | Public information requiring no consideration | Newly consented data for every conceivable purpose | The correct description accurately reports the team's actual ability to link codes with people.
 What does the old approval establish about this new purpose? | Nothing conclusive until its scope is checked against the proposal. | Automatic approval for all later questions | A granted waiver of every requirement | Permission to promise external access immediately | The original materials have not been reviewed against the new use, so their coverage cannot be assumed.
-Which message to a collaborator is accurate? | "The proposed access awaits the designated ethics determination." | "Approval is guaranteed because we have the files." | "All participants have already agreed to this new question." | "A requested exemption is the same as a granted one." | The first message states the pending status without inventing approval or participant agreement.
+Which message to a collaborator is accurate? | "The proposed access awaits the designated ethics determination." | "Approval is guaranteed because we have the files." | "All participants have already agreed to this new question." | "A requested exemption is the same as a granted one." | The correct message states the pending status without inventing approval or participant agreement.
 Which preparatory step respects the supplied boundary? | Gather documents and describe the proposed use without beginning analysis or sharing. | Run the analysis first and seek retrospective permission. | Remove the key label but keep unrestricted key access. | Email the full interviews to collaborators now. | The local procedure permits proposal preparation while holding the proposed research use and disclosure.''',
     dialogue='''Tessa | We already have the interview files, and the new employment-discrimination question is promising. Can I begin analyzing them while we check the old paperwork?
 Omar | The local [[review status::The review status is unresolved: the required determination has not been made, so the new analysis cannot start under the supplied rule.]] does not permit that yet. The designated ethics office must determine the route before new analysis or sharing. You can prepare the proposal and gather the existing documents.
@@ -363,14 +366,14 @@ Tessa | Yes, the team can access the key. The draft should state that plainly ra
 Omar | Exactly. The [[linking key::The linking key connects the interview codes to participant identities and must be disclosed in the description of access conditions.]] must be included in the access description. Coding alone does not establish anonymity to your team, and changing the label would not change the underlying arrangement.
 Tessa | I have the original participant information and consent documents, but I have not checked whether the employment question is within what they describe.
 Omar | Review the [[consent scope::Consent scope concerns the uses covered by the relevant participant materials, which have not been checked against the new purpose.]] alongside the original approval. We should not assume that agreement to the student-stress study covers every later question or sharing arrangement.
-Tessa | The new topic is related to student experience, but related does not necessarily mean it is covered. I should explain the difference in the proposal.
+Tessa | I will send both research questions side by side. The employment topic is not actually named in the documents I have opened so far.
 Omar | Yes, state the [[purpose change::The purpose change distinguishes the proposed employment-discrimination question from the original student-stress research and requires assessment.]] clearly. The reviewer needs the actual new question, intended information, recipients, and safeguards, not a broad assurance that everything is still generally about students.
 Tessa | Would this be an amendment, a new submission, or an exemption? Collaborators keep asking me which route applies, and I do not want to guess.
 Omar | That requires an [[authorized determination::The authorized determination is made by the designated ethics office, not inferred by collaborators or the researcher from possession of the files.]]. The designated office will assess the proposal under the applicable rules. We cannot announce the route before that assessment has been made.
 Tessa | I can say an amendment might be needed, but none is approved. The draft wrongly implies approval is routine.
 Omar | Keep any [[protocol amendment::A protocol amendment is a proposed change to approved work and must not be described as already authorized when none has been granted.]] conditional. A plausible route is not a completed decision. Likewise, no waiver or new consent has been granted, so neither should appear as an established fact.
-Tessa | One collaborator wants the files now to check what variables are available. Can I promise access after simply replacing the names in the documentation?
-Omar | No. The current [[access restriction::The access restriction remains in force while review is pending; changing labels does not authorize collaborator access or disclosure.]] remains. Describe the proposed fields and access needs without sharing the interviews. Do not promise access that depends on a decision outside your authority.
+Tessa | The collaborator says they only want to check the available variables. Could I send a description of the proposed fields instead of the interviews?
+Omar | Yes, describe the proposed fields without sharing participant information. The [[access restriction::The access restriction remains in force for the interviews while the determination is pending; a general description does not authorize disclosure.]] on the interviews remains. Do not promise that the files themselves will be released before the designated review.
 Tessa | I will gather the approval, consent materials, key-access details, and proposed analysis description. That gives the office enough context to assess the new use.
 Omar | Include the proposed [[data-use agreement::A data-use agreement can describe intended access and use conditions, but it does not replace the required ethics determination.]] arrangements if collaboration is planned. Such terms may be relevant, but they do not replace the required ethics determination or establish participant consent by themselves.
 Tessa | My update will say the proposal is being prepared, no new analysis has begun, and collaborator access remains subject to the designated review.
@@ -379,8 +382,9 @@ Omar | That accurately describes the [[secondary use::Secondary use is the propo
     transfer_setup='A researcher proposes a new use of coded survey data. The team can access the linking key. The institution requires a designated-office determination before new analysis. The request has been sent but no decision issued.',
     transfer='''Researcher: "The files are coded, not automatically ___." | anonymous | The accessible linking key means coding does not establish anonymity to the team.
 Coordinator: "The proposed use still awaits an authorized ___." | determination | Sending the request does not complete the required institutional decision.
-Researcher: "New analysis must remain ___." | on hold | The supplied local rule prohibits starting before the designated decision.
-Coordinator: "We can accurately report that review is ___." | pending | No decision has been issued, so pending is the supported status.'''))
+Researcher: "Our team can access the linking ___." | key | The brief confirms that the team can link participant codes to identities.
+Coordinator: "We can accurately report that review is ___." | pending | No decision has been issued, so pending is the supported status.''',
+    rehearsal=['Read turns 3-8, emphasizing that the research team can access the linking key.', 'Repeat turns 15-18, separating a general field description from sharing participant information.', 'Switch roles for the transfer and read the four completed lines without adding an approval claim.']))
 
 
 BOOK['units'].append(unit(
@@ -455,9 +459,9 @@ Harper | I will review the full paper and discuss the analysis. Please do not cl
 Marta | Agreed. [[Accountability::Accountability connects authorship with responsibility for addressing accuracy and integrity questions, not merely receiving credit.]] must be understood and accepted. We will record the status honestly and identify outstanding steps, rather than inventing agreement to meet the submission timetable.
 Harper | Professor Nolan is listed already, but his contribution so far was funding, without the other responsibilities.
 Marta | We should record [[funding acquisition::Funding acquisition is a contribution to recognize, but by itself does not meet the adopted journal's authorship criteria.]] accurately too. Under the adopted criteria, that alone does not establish authorship. His title should neither replace the criteria nor prevent a respectful discussion of his actual contribution.
-Harper | If I complete the remaining responsibilities, does the main analysis automatically make me first author? Different collaborators seem to have assumed different ordering conventions.
+Harper | I also need us to discuss order. I had expected first authorship for the analysis work, but I realize we never agreed that as a group.
 Marta | We must discuss [[author order::Author order is a separate collective decision and is not automatically determined by identifying one substantive contribution.]] separately. The criteria establish eligibility, not a universal ordering formula. We need a transparent conversation about the project and the journal's conventions, without promising a position prematurely.
-Harper | That conversation should include the people who collected and curated the data. I do not want my concern resolved by overlooking somebody else's work.
+Harper | Please invite the data collection and curation leads too. I do not want us settling my position without hearing what everyone else contributed.
 Marta | Yes. Accurate [[contributorship::Contributorship describes each person's work and helps the group avoid overlooking relevant contributions while assessing the author list.]] requires the whole project's contribution record. We should not decide credit solely through the loudest objection, personal seniority, or who happened to see the draft first.
 Harper | Who will communicate with the journal? People sometimes describe that role as though it always means first author.
 Marta | The [[corresponding author::The corresponding author handles journal communications, a role distinct from a guaranteed first position in the byline.]] role should be agreed explicitly. It concerns communication and associated submission responsibilities. It does not automatically determine first position, and it cannot resolve an unsettled authorship dispute by itself.
@@ -470,7 +474,8 @@ Marta | Then we can finalize the [[byline::The byline is the eventual list of au
     transfer='''Lead: "The methods work is a substantive ___." | contribution | The supplied methods work satisfies the stated substantive-contribution element.
 Collaborator: "Receiving the manuscript gives me an opportunity for ___." | critical review | Circulation enables review but does not mean that intellectual review has already occurred.
 Lead: "Final approval remains ___." | outstanding | The brief states that no final approval has yet been recorded.
-Collaborator: "Eligibility alone does not settle ___." | author order | The ordering decision remains separate and explicitly unresolved in this case.'''))
+Collaborator: "Eligibility alone does not settle ___." | author order | The ordering decision remains separate and explicitly unresolved in this case.''',
+    rehearsal=['Read turns 1-8, keeping the contribution request direct and the remaining responsibilities explicit.', 'Repeat turns 9-16, distinguishing funding acquisition, author order, and corresponding-author duties.', 'Switch roles for the transfer; emphasize outstanding rather than implying final approval.']))
 
 BOOK['units'].append(unit(
     title='Peer Review and Revision Responses',
@@ -493,7 +498,7 @@ abstract | A concise summary of a scholarly work. | revise the abstract
 conclusion | The manuscript's final interpretation or takeaway. | narrow the conclusion
 claim | An assertion about what the evidence establishes. | qualify a claim
 overgeneralization | Extending a conclusion beyond its support. | remove an overgeneralization
-sampling frame | The source population from which a sample is selected. | describe the sampling frame
+sampling frame | The operational list or source of units available for selection, which may not fully cover the target population. | describe the sampling frame
 volunteer sample | Participants who chose to take part. | acknowledge the volunteer sample
 single-site study | Research conducted at one location. | state the single-site limitation
 self-report | Information supplied by participants about themselves. | distinguish self-report from direct measurement
@@ -544,13 +549,13 @@ Mei | What about all adults? Even if we had measured learning, sixty volunteers 
 Luca | Remove that [[overgeneralization::Overgeneralization extends the conclusion beyond the volunteer, single-campus sample without supporting evidence.]]. The revised statement should name the observed sample. We can discuss broader questions as future research without presenting them as conclusions already established by these participants.
 Mei | The abstract and conclusion both contain the overclaim. We need to change both, not just the quoted sentence.
 Luca | Check the [[revised manuscript::The revised manuscript must use consistent claim boundaries across sections, rather than correcting only one quoted sentence.]] throughout. The title, summary, results description, and final interpretation should not quietly restore the same unsupported claim after we have corrected it elsewhere.
-Mei | Our response should say we agree, explain what changed, and show where the reviewer can find it. A generic thank-you would not demonstrate the revision.
+Mei | I will quote the replacement sentence in our reply, then give its location. Could you check that the conclusion now says the same thing?
 Luca | Use a [[point-by-point response::A point-by-point response links the specific reviewer concern to the corresponding explanation and revision.]]. For this comment, identify the outcome correction, the population boundary, and the design limitation. The reviewer should be able to verify each without guessing what we meant.
 Mei | I will add the page and line numbers after the revised file is finalized. The current numbers could shift as we edit the abstract.
 Luca | A checked [[page-and-line reference::A page-and-line reference must match the revised version so the reviewer can locate the actual correction.]] matters. Use the submitted revision's locations, not an earlier draft's numbering. We should also keep the response wording consistent with the actual replacement text.
 Mei | Someone suggested claiming additional analyses. We have not done them, and an impressive-sounding statement would not solve the problem.
 Luca | Do not claim [[reanalysis::Reanalysis means new analysis of existing data, which the brief explicitly says has not occurred.]]. No new data or analysis was added. This revision corrects the interpretation and reporting of the existing observation; it does not create evidence the study never collected.
-Mei | The response can say the limitation has been addressed in the text, but I worry that addressed might sound as if the methodological weakness disappeared.
+Mei | I have written limitation addressed. That sounds as though we fixed the study design. Would limitation clarified describe what we actually did?
 Luca | Say the [[revision::The revision clarifies the interpretation and limitation rather than eliminating the underlying design constraint.]] makes the boundary explicit. That is accurate and useful. We have improved the manuscript's claims, not repaired the completed design or established an effect through wording alone.
 Mei | I will keep the mean, remove the improvement and all-adults claims, and verify locations before resubmission.
 Luca | Then await the [[editorial decision::The editorial decision remains with the journal; a valid correction does not guarantee acceptance.]]. A clear correction supports evaluation, but it does not guarantee acceptance. Our responsibility is to make the evidence, changes, and remaining limitations straightforward to inspect.''',
@@ -559,7 +564,8 @@ Luca | Then await the [[editorial decision::The editorial decision remains with 
     transfer='''Author: "The measured outcome was ___." | satisfaction | The survey asks about satisfaction, not directly observed performance.
 Reviewer: "The study cannot calculate improvement without a ___." | baseline | A post-only observation lacks the starting measure needed for a before-and-after change.
 Author: "The work completed here is a wording ___." | revision | The authors changed the claim without collecting data or performing a new analysis.
-Reviewer: "The design limitation is explicit, not ___." | eliminated | More accurate wording does not change the completed study's design.'''))
+Reviewer: "The design limitation is explicit, not ___." | eliminated | More accurate wording does not change the completed study's design.''',
+    rehearsal=['Read turns 1-8, distinguishing a post-only confidence score from improvement in learning.', 'Repeat turns 11-18, making the revision location and lack of reanalysis explicit.', 'Switch roles for the transfer and read explicit, not eliminated with a clear contrast.']))
 
 
 BOOK['units'].append(unit(
@@ -620,19 +626,19 @@ Excluded from this mean | Does not mean erased from the raw record.
 Imputed | An estimated replacement; none is supplied in this case.
 May 4 | Confirmed meaning of the otherwise ambiguous source label.
 Reproducible | Computation can repeat; that alone does not prove scientific validity.''',
-    d='''Which data-handling description is correct? | Preserve the raw file and convert the sentinel to missing in a documented analysis copy. | Overwrite the raw value without a record. | Replace the failed reading with zero and call it observed. | Treat -999 as a valid air temperature. | The first option preserves provenance and applies the collector's confirmed coding rule.
+    d='''Which data-handling description is correct? | Preserve the raw file and convert the sentinel to missing in a documented analysis copy. | Overwrite the raw value without a record. | Replace the failed reading with zero and call it observed. | Treat -999 as a valid air temperature. | Preserving the raw file retains provenance. The documented analysis copy applies the collector's confirmed missing-value rule without inventing a measurement.
 What does using four valid observations imply? | No value has been imputed for the failed reading. | The missing temperature is proved to be zero. | Five valid temperatures were measured. | The raw file must be deleted. | The calculation uses observed values only and does not estimate the failed measurement.
 Why is the collector's date confirmation necessary? | The original numeric label could otherwise be interpreted in different date orders. | All countries use the same numeric date order. | Time zone alone decides the calendar format. | The date should be chosen to improve the mean. | The source label is ambiguous without verified knowledge of its intended date convention.
 Which release package best supports reproducibility? | Data, dictionary, processing steps, and the identified software environment | Only a column named t | Only the final mean without units | A screenshot with an unexplained missing code | Interpretable data and traceable computation allow another analyst to understand and rerun the result.''',
     dialogue='''Ravi | The shared file has a column called t and five values. Four look like ordinary temperatures, but the fifth is minus nine hundred ninety-nine.
 Elena | Do not guess the [[unit of measurement::The unit of measurement must come from verified collection information; the collector confirms degrees Celsius in this case.]] from the values. The collector confirms air temperature in degrees Celsius. We need that definition in the documentation, because the column name alone does not establish it.
 Ravi | The collector confirmed that minus nine hundred ninety-nine codes a failed reading, not a cold observation.
-Elena | Record it as a [[missing-value code::The missing-value code represents an absent valid reading, not an observed temperature or a zero measurement.]]. In the analysis copy, mark that entry as missing. Do not substitute zero, because that would invent an observed temperature and change the meaning of the calculation.
+Elena | Document the [[missing-value code::The missing-value code represents an absent valid reading, not an observed temperature or a zero measurement.]] and mark it missing in the analysis copy. Do not use zero: that would turn a failed reading into an invented temperature.
 Ravi | Including the code gives a mean of minus one hundred eighty-one point four, which is not the supported calculation.
 Elena | Use the four [[valid observations::The valid observations are twenty, twenty-two, twenty-four, and twenty-six, excluding the failed-reading code from the stated mean.]] for this mean: twenty, twenty-two, twenty-four, and twenty-six. They sum to ninety-two, so the mean is twenty-three degrees Celsius. State the four-observation base alongside it.
 Ravi | Replacing the code with zero would give eighteen point four instead. That is also wrong for this requested mean, even though it looks less obviously unusual.
 Elena | Correct. We are not performing [[imputation::Imputation would estimate a replacement value, whereas this case calculates a mean from four observed temperatures without filling the missing reading.]]. We have no estimated replacement for the failed reading. The analysis should say exactly which observed values were used, without turning an absent measurement into a convenient number.
-Ravi | Should I replace the code in the original to prevent mistakes? Then only the cleaned version would remain.
+Ravi | I can make a separate cleaned file. Should the original keep minus nine hundred ninety-nine so the transformation can be checked later?
 Elena | Preserve the [[raw file::The raw file retains the original record, including its sentinel, while documented transformations belong in a separate derived copy.]]. Keep the original code and create a documented analysis copy. Future users need both the source record and the explanation of how the derived data were produced.
 Ravi | There is also a date labeled zero-four slash zero-five slash twenty-six. The collector says it means May fourth, twenty twenty-six, not April fifth.
 Elena | Use an unambiguous [[date format::The date format should reflect the confirmed May fourth date, written as 2026-05-04 rather than guessed from regional convention.]] such as 2026-05-04 in the documented copy. Record how you resolved the source label. A plausible regional assumption would not be enough without that confirmation.
@@ -640,16 +646,17 @@ Ravi | The readings were taken at nine in the morning UTC. I will include that r
 Elena | Yes, the [[time zone::The time zone anchors the collection time; 09:00 UTC is more precise than an unspecified nine o'clock.]] belongs with the collection information. Keep the timestamp meaning explicit so another researcher does not align these readings with observations from a different hour.
 Ravi | The data dictionary will define t, the Celsius unit, the failed-reading code, and the confirmed date and time conventions. What else belongs in the release?
 Elena | Add a [[transformation log::The transformation log records conversion of the sentinel and the calculation rule so the result can be traced to the original data.]] describing the missing-code conversion and mean calculation. It should connect the raw file to the analysis copy and reported result without requiring a colleague to reconstruct undocumented choices.
-Ravi | We need the software version and dependencies. The file name alone does not identify the analysis environment.
+Ravi | I will add the software version and dependencies to the readme. Could you check that the instructions start from the raw file?
 Elena | Document the [[software environment::The software environment identifies the tools and versions used to produce the result, supporting a repeatable computation.]] with the data and instructions. Even a simple calculation benefits from a traceable version, especially when this small example becomes part of a larger processing workflow.
 Ravi | I will ask another analyst to follow the release instructions and reproduce the twenty-three-degree mean from the preserved source and documented rules.
-Elena | That checks [[computational reproducibility::Computational reproducibility checks whether the specified data and steps reproduce the result, not whether every scientific assumption is thereby validated.]]. A matching result is useful, but it does not alone prove the study's scientific validity. The release must make both the computation and the meaning of the data clear.''',
+Elena | That checks [[computational reproducibility::Computational reproducibility checks whether the specified data and steps reproduce the result, not whether every scientific assumption is thereby validated.]]. A matching result is useful, but it does not prove scientific validity. Keep the variable definitions with the calculation so readers can check both.''',
     transfer_title='Do not turn missing into zero',
     transfer_setup='A confirmed Celsius column contains 10, 12, -999, and 14. The collector defines -999 as missing. The requested mean uses only observed temperatures, and the original file must be preserved.',
     transfer='''Analyst: "There are ___ valid observations." | three | Ten, twelve, and fourteen are valid; the sentinel marks the missing reading.
 Steward: "Their mean is ___ degrees Celsius." | 12 | The three valid values sum to thirty-six, which divided by three equals twelve.
 Analyst: "The raw sentinel is retained in the ___." | original file | The source record remains unchanged while a derived copy handles missing values.
-Steward: "No missing temperature has been ___." | imputed | The calculation uses observed values rather than estimating a replacement temperature.'''))
+Steward: "No missing temperature has been ___." | imputed | The calculation uses observed values rather than estimating a replacement temperature.''',
+    rehearsal=['Read turns 1-8, saying minus nine hundred ninety-nine as a code and twenty-three degrees Celsius as the mean.', 'Repeat turns 11-14 with May fourth and UTC clearly audible.', 'Switch roles for the transfer; distinguish three observations from the mean of twelve.']))
 
 BOOK['units'].append(unit(
     title='Academic Presentations and Conferences',
@@ -709,7 +716,7 @@ Before and after | Does not by itself isolate the intervention.
 Could reflect | Marks an alternative explanation rather than a finding.
 Not supplied | Do not invent a statistic to fill the conversational gap.
 Next test | A proposal, not an already completed replication.''',
-    d='''Which opening best answers the audience's question? | "No; the study reports a task-specific change, not proof of the general theory." | "Yes; every theory is proved by one lower mean." | "The question is hostile and cannot be answered." | "The effect is definitely statistically significant." | The first opening directly rejects the overstatement while preserving the actual observed result.
+    d='''Which opening best answers the audience's question? | "No; the study reports a task-specific change, not proof of the general theory." | "Yes; every theory is proved by one lower mean." | "The question is hostile and cannot be answered." | "The effect is definitely statistically significant." | The correct opening directly rejects the overstatement while preserving the actual observed result.
 Which causal claim is unsupported? | Training alone caused the entire reduction. | Mean response time was lower afterward. | All participants followed the same sequence. | The study used 24 volunteers. | The missing comparison group and fixed order leave alternatives to a training-only explanation.
 Which next step best addresses the limitation? | A controlled follow-up designed to separate training from practice and order effects | Repeating the universal claim more confidently | Hiding the fixed sequence | Calling the same data an independent replication | A stronger comparison design can test competing explanations that the current study does not isolate.
 Which statement about the mechanism is accurate? | The observed response-time change does not by itself establish the memory mechanism. | Lower response time identifies every internal memory process. | The mechanism was directly measured because the talk was accepted. | A proposed theory and an observed mean are identical evidence. | Task performance and its explanatory mechanism are different claims requiring appropriate evidence.''',
@@ -729,8 +736,8 @@ Audience member | Fair enough. Would a controlled follow-up be aimed at repeatin
 Noor | A [[controlled follow-up::A controlled follow-up should address practice and order alternatives rather than merely repeat the original uncontrolled sequence.]] should address those alternatives explicitly. The design needs an appropriate comparison and attention to sequence, with its analysis planned before results are examined. That is proposed work, not a completed validation.
 Audience member | Even if that study supports a training effect, would you still need evidence beyond this task and these volunteers before making the broad theory claim?
 Noor | Yes. [[Generalizability::Generalizability concerns application beyond the observed volunteers and laboratory task, which requires additional relevant evidence.]] remains a separate issue. Other populations, tasks, and conditions could behave differently. A better-controlled local result would not automatically establish every application of the theory.
-Audience member | We have little time left. What is the single sentence you would like the audience to take away without overstating the contribution?
-Noor | My [[take-home message::The take-home message summarizes the observation and its limits rather than converting a task-specific result into a universal causal claim.]] is that twenty-four volunteers responded faster after training in this task, while training, practice, and order contributions remain unresolved. It is a useful observation to investigate, not universal proof.
+Audience member | The chair is asking us to wrap up. Could you give us the main result in one sentence, with that qualification?
+Noor | The [[take-home message::The take-home message summarizes the observation and its limits rather than converting a task-specific result into a universal causal claim.]] is this: response time fell ten percent in twenty-four volunteers, but we have not separated the training effect from practice and order effects.
 Audience member | Thank you. That distinguishes the observed change from a general explanation. The planned test sounds like the important next step.
 Noor | Exactly. The [[unresolved question::The unresolved question is what produced the change and how broadly it applies, not whether the reported means differ arithmetically.]] is what produced the change and how broadly it applies. We will keep those questions explicit rather than promise that the next study must confirm our preferred explanation.''',
     transfer_title='Give the observation and its boundary',
@@ -738,4 +745,5 @@ Noor | Exactly. The [[unresolved question::The unresolved question is what produ
     transfer='''Presenter: "The mean reduction is ___ milliseconds." | 80 | Eight hundred minus seven hundred twenty equals eighty milliseconds.
 Questioner: "Relative to the initial mean, that is ___ percent." | 10 | Eighty divided by eight hundred equals ten percent.
 Presenter: "Training has not been isolated from ___." | practice and order effects | The fixed sequence and absent comparison group leave those alternative explanations unresolved.
-Questioner: "A significance result must not be ___." | invented | No significance test result is supplied in the case.'''))
+Questioner: "A significance result must not be ___." | invented | No significance test result is supplied in the case.''',
+    rehearsal=['Read turns 1-8, giving the direct answer before the sample and design qualification.', 'Repeat turns 11-14 without inventing a confidence interval; keep the follow-up study in the future tense.', 'Switch roles for the transfer and read eighty milliseconds and ten percent as different descriptions of the same change.']))

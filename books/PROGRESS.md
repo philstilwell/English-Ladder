@@ -1,4 +1,8 @@
-# Learner-Book Expansion
+# Original Learner-Book Expansion (Historical Record)
+
+The entries below record the first 102-page edition. The October 10, 2026
+revision expands all 66 books to 114 pages and eleven extended dialogues each;
+see `AUDIT-2026-10.md` for the current editorial and release record.
 
 Requested scope: all 65 courses other than the approved Cross-Cultural
 Leadership book. All 65 books were completed sequentially without parallel assistants.

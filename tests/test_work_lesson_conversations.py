@@ -65,7 +65,7 @@ class LessonConversationTests(unittest.TestCase):
             self.assertLess(meta['bytes'], 1_000_000, 'Embed the course icon, not the entire atlas: ' + href)
             reader = PdfReader(ROOT / href)
             self.assertGreaterEqual(len(list(reader.pages[0].images)), 2, href)
-            self.assertEqual(len(reader.pages), 102)
+            self.assertEqual(len(reader.pages), 114)
             self.assertEqual((ROOT / href).read_bytes(), book_source(track['slug']).read_bytes())
             self.assertEqual(meta['kind'], 'Learner book')
             self.assertNotIn('lesson_conversation_hash', meta)

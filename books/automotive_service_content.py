@@ -21,16 +21,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Automotive Service Technicians and Mechanics.',
              url='https://www.bls.gov/ooh/installation-maintenance-and-repair/automotive-service-technicians-and-mechanics.htm',
-             note='Occupational context for customer communication, workshop records, maintenance, and repair roles. Technical procedures are not reproduced.', checked='1 October 2026'),
+             note='Occupational context for customer communication, workshop records, maintenance, and repair roles. Technical procedures are not reproduced.', checked='10 October 2026'),
         dict(title='Federal Trade Commission. Auto Repair Basics.',
              url='https://consumer.ftc.gov/articles/0211-auto-repair-basics',
-             note='Background for distinguishing diagnostic charges, estimates, parts, labor, and repair records. The fictional charges are not market prices or universal legal rules.', checked='1 October 2026'),
+             note='Background for distinguishing diagnostic charges, estimates, parts, labor, and repair records. The fictional charges are not market prices or universal legal rules.', checked='10 October 2026'),
         dict(title='Bosch Car Service. Car Diagnostics.',
              url='https://ap.boschcarservice.com/in/en/car-services/car-diagnostics/',
-             note='Reference for distinguishing fault-code information from confirmed diagnosis and replacement decisions. No testing or repair instructions are supplied.', checked='1 October 2026'),
+             note='Reference for distinguishing fault-code information from confirmed diagnosis and replacement decisions. No testing or repair instructions are supplied.', checked='10 October 2026'),
         dict(title='Federal Trade Commission. Auto Warranties and Auto Service Contracts.',
              url='https://consumer.ftc.gov/articles/auto-warranties-and-auto-service-contracts',
-             note='Context for checking actual coverage and terms rather than promising them. The cases offer no warranty determination or jurisdiction-specific advice.', checked='1 October 2026'),
+             note='Context for checking actual coverage and terms rather than promising them. The cases offer no warranty determination or jurisdiction-specific advice.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -48,14 +48,14 @@ What assessment has occurred? | None by a technician yet | A confirmed component
     vocabulary='''service advisor | Staff member coordinating customer communication and workshop work. | brief the service advisor
 customer concern | Issue described by the vehicle owner or user. | capture the customer concern
 vehicle identification | Information establishing which vehicle a record concerns. | confirm vehicle identification
-household account | Customer record containing vehicles used by one household. | check the household account
+service interval | Specified time or accumulated-distance basis for scheduled maintenance, subject to the actual vehicle schedule. | check the service interval
 hatchback | Car body style with an upward-opening rear door to the cargo area. | identify the blue hatchback
 booking reference | Identifier for a scheduled service appointment. | confirm the booking reference
-registration number | Identifier assigned through vehicle registration. | verify the registration number
+tire aspect ratio | Nominal sidewall height expressed as a percentage of nominal section width in a tire-size designation. | read the tire aspect ratio
 vehicle identification number | Unique vehicle identifier commonly abbreviated VIN. | confirm the vehicle identification number
-make | Manufacturer or brand of a vehicle. | record the make
+load index | Tire rating code associated with load capacity, not a literal weight in kilograms. | verify the load index
 model | Named vehicle design within a manufacturer's range. | confirm the model
-model year | Year designation associated with a vehicle version. | identify the model year
+state of charge | Battery charge level expressed as a percentage on the applicable battery system's basis. | distinguish state of charge from capacity
 odometer | Instrument recording accumulated vehicle distance. | record the odometer reading
 intermittent | Occurring at intervals rather than continuously. | describe an intermittent concern
 rattle | Repeated light knocking or vibrating sound. | describe the reported rattle
@@ -63,10 +63,10 @@ rear | Part or direction toward the back of the vehicle. | locate the sound at t
 overnight parking | Period during which a vehicle remains parked through the night. | note overnight parking
 reported conditions | Circumstances described as accompanying the concern. | preserve the reported conditions
 frequency | How often a symptom is reported to occur. | clarify the reported frequency
-onset | Time or circumstance when a symptom begins. | distinguish onset from observation
+total toe | Combined toe value for the two wheels on an axle under the report's sign convention. | read total toe
 symptom description | Account of the experienced sound, behavior, or condition. | retain the symptom description
 technician assessment | Relevant professional evaluation of the concern. | distinguish a technician assessment
-suspected cause | Possible explanation not yet verified. | avoid presenting a suspected cause as fact
+angular minute | One sixtieth of a degree, not one hundredth of a degree. | convert angular minutes to decimal degrees
 job card | Workshop record containing the requested work and relevant details. | prepare the job card
 concern readback | Repetition of the customer's account to confirm accuracy. | give a concern readback''',
     precision='The booked vehicle is the blue hatchback, not both cars on the account. The sound is occasional and reported from the rear after overnight parking. Do not change those details to a constant noise or a named failed component.',
@@ -97,26 +97,27 @@ Does that wording ...? | Invites a bounded accuracy check instead of a request t
 Which question is leading? | Which rear component has failed? | Which car is booked today? | Is the sound occasional or constant in your account? | Does this readback match what you noticed? | The question assumes a failed component before any assessment has occurred.
 What should Ellis not add? | A precise cause or unreported driving condition | The blue hatchback | The rear location | Overnight parking | The account contains no verified cause or additional driving conditions.
 Why should the vehicle be confirmed first? | Two cars are on the account and only one is booked | Color proves the mechanical cause | Both cars must receive the same repair | The booking identifies a failed sensor | Confirming identity prevents the concern from being attached to the wrong household vehicle.''',
-    dialogue='''Mina | I have booked in because of a rattle. We have two cars on the account, so I want to make sure the notes go against the right one.
+    dialogue='''Mina | I've booked the blue hatchback for a rattle. There are two cars on our account; could you check which one you've opened?
 Ellis | Certainly. Let us confirm the [[vehicle identification::Vehicle identification prevents this concern from being recorded against the other household car.]] first. Which of the two cars is booked for today's appointment?
-Mina | The blue hatchback. The other car is on the same household account, but today's concern is only about the hatchback.
+Mina | Yes, the blue hatchback. Today's concern isn't about the other car.
 Ellis | I will keep the [[booking reference::Booking reference connects today's appointment to the selected vehicle rather than both cars.]] with the blue hatchback and make sure the concern is recorded there. How would you describe the sound you have noticed?
-Mina | It is a rattle from the rear. It happens occasionally, and I have noticed it after the car has been parked overnight.
+Mina | It's an occasional rattle from the rear. I've noticed it after the car's been parked overnight.
 Ellis | I will record an [[intermittent::Intermittent preserves Mina's description of an occasional sound rather than a constant one.]] rattle from the rear after overnight parking. In this context, intermittent means occasional rather than continuous; is that consistent with your experience?
-Mina | Yes. I do not want the note to say it happens all the time. I cannot give you a fixed number of occurrences either.
+Mina | Occasional is right. I can't tell you how many times, and I wouldn't say it happens every morning.
 Ellis | Then we will preserve the reported [[frequency::Frequency is limited to occasional because Mina has not supplied a count or fixed pattern.]] as occasional, without inventing a count. The technician should receive what you know, not a more definite pattern than you described.
-Mina | I also do not know which part makes the sound. I can say rear, but I cannot name a component or explain why it happens.
+Mina | Rear is as specific as I can be. I don't know which part is making it.
 Ellis | That is enough for the [[symptom description::Symptom description captures the experienced sound and location without requiring a component diagnosis.]]. We can keep rear as the reported location without turning it into a claim that a particular component has failed.
-Mina | Good. I have not had a technician assess it yet, so any technical explanation from me would only be a guess.
+Mina | Nobody's assessed it yet. I don't want my guess written down as a diagnosis.
 Ellis | I will make that stage clear. No [[technician assessment::Technician assessment has not occurred, so the concern must remain attributed to the customer.]] has taken place, and the cause is unknown. The record will not present your description as a workshop finding.
-Mina | Please keep the overnight detail. That is the condition I have noticed, but I am not saying parking overnight is itself the cause.
+Mina | Please keep after overnight parking in the note. I don't know whether that's the cause, but it's when I've noticed it.
 Ellis | Agreed. Those are [[reported conditions::Reported conditions preserve the overnight-parking circumstance without treating it as proven causation.]], not an established explanation. I will not add a speed, journey length, or other circumstance that you have not supplied.
-Mina | Thank you. I would rather give a clear account of what I have already heard than try to use technical words I am uncertain about.
+Mina | Will those details reach the technician? I don't want the job card to end up saying only noisy car.
 Ellis | That helps us produce a useful [[job card::Job card is the workshop record that should preserve the precise customer concern for assessment.]]. Ordinary words such as rattle can carry important detail when the vehicle, location, and circumstances are accurately recorded.
-Mina | Could you read the final wording back? I want to check that occasional has not become constant and that the other car is not included.
+Mina | Yes, that readback matches. No fixed frequency, and no part identified.
 Ellis | Here is the [[concern readback::Concern readback checks the vehicle, intermittent sound, reported conditions, and unknown cause together.]]: customer reports an occasional rear rattle in the blue hatchback after overnight parking. Cause unknown; no technician assessment has occurred.
-Mina | That matches my account. It says what I have noticed without naming a faulty part or claiming the technician has already confirmed anything.
+Mina | Thank you. That's what I wanted recorded, without making the sound seem constant.
 Ellis | I will retain that [[customer concern::Customer concern remains the owner's account, distinct from a later diagnosis or vehicle-safety conclusion.]] for the workshop handoff. The next assessment can build on an accurate description instead of starting from an assumed cause.''',
+    rehearsal=["Read the concern in the brief, then complete the dialogue using the supplied word bank.","Read Mina's turns aloud, stressing occasional, rear, and after overnight parking. Then read Ellis's matching readback.","Complete the four-line transfer and check each answer against the explained key. Keep the vehicle and reported conditions unchanged."],
     transfer_title='Read back the booked concern',
     transfer_setup='Complete the intake summary. Preserve the correct car, sound, location, and reported condition.',
     transfer='''Advisor: "The booked vehicle is the blue ___." | hatchback | Hatchback identifies the selected household car for today's booking.
@@ -188,26 +189,27 @@ Remains | Preserves the valid booking while correcting its misinterpretation.'''
 What does by 10:00 mean here? | The status call will be provided no later than 10:00 | The repair must finish exactly at 10:00 | The car can be collected before 10:00 | No update is needed until the next day | By establishes the latest promised communication time, not completion.
 Which detail belongs in the contact notes? | Phone call preferred | Email only despite the request | No contact method needed | Customer can infer completion from silence | The notes should preserve the explicitly stated phone preference.
 Which promise exceeds Leila's stated authority? | The car will definitely be ready by 09:00 | I can update you by 10:00 | The booking is for intake | I will note your phone preference | No completion guarantee is supplied, so a nine o'clock promise is unsupported.''',
-    dialogue='''Omar | I booked an eight o'clock appointment. I expected you to start at eight and finish by nine, so I planned the rest of my morning around that.
+    dialogue='''Omar | I'm dropping it off at eight. Can I wait and collect it at nine? I thought eight was when the technician would start.
 Leila | I understand. I need to clarify that the booking is for [[drop-off::Drop-off identifies delivery of the vehicle, not an immediate start of technical work.]] at 08:00. It does not confirm an eight o'clock technician start or a nine o'clock finish.
-Omar | When I heard appointment, I assumed someone would have a work slot reserved for my car at that exact time. What happens at eight?
+Omar | I see. I had treated the drop-off time as the start of the work.
 Leila | Eight is the [[intake::Intake is the booked process of receiving the vehicle and recording the request.]] time for receiving the vehicle and the service request. The technical start and duration have not been confirmed in this booking.
-Omar | Thank you for explaining. I would rather correct my plans now than arrive thinking I have a guaranteed one-hour turnaround.
+Omar | Then nine isn't confirmed either. I need to know that before I arrange the rest of my morning.
 Leila | That is important. We do not have a confirmed [[completion time::Completion time has not been established by the intake booking or the customer's expectation.]], so I should not repeat your nine o'clock expectation as though it were a promise from the workshop.
-Omar | What can you commit to, then? I need a definite point at which I will hear from you, even if the work is not finished.
+Omar | What can you commit to today, even if you can't give me a collection time yet?
 Leila | I can give you a [[status update::Status update is the communication Leila can promise, distinct from completed work.]] by 10:00. That will report the position at that stage; it is not a guarantee that the vehicle will be ready then.
-Omar | A call would be best. I may not check email during the morning, and I do not want important information going through the wrong channel.
+Omar | By ten, rather than at ten exactly? I don't want to miss the call because I've assumed a fixed time.
 Leila | I will record that [[phone preference::Phone preference preserves Omar's explicit choice of a telephone call rather than email.]]. The promised update will be by phone, using the agreed contact details in your booking.
-Omar | Does by ten mean the call could come earlier, but no later than ten? I want to make sure I understand the deadline correctly.
+Omar | Phone is best. Please keep that with the update deadline.
 Leila | Yes. Ten is the [[update deadline::Update deadline is the latest promised time for the call, not an exact repair completion time.]], not a fixed completion appointment. Keeping those separate should make the booking notes and your expectations consistent.
-Omar | I will keep the eight o'clock drop-off, then. I am not asking you to relabel this as a waiting appointment without an actual agreement.
+Omar | So I shouldn't tell someone I'm booked to wait here while it's done.
 Leila | Correct. A [[waiting appointment::Waiting appointment would need its own stated arrangement and cannot be inferred from this intake booking.]] is not confirmed here. We should not add that assumption merely because you initially hoped to stay for an hour.
-Omar | Nor should I tell someone to meet me for collection at ten just because that is the update deadline. The call may not confirm completion.
+Omar | And nothing has been agreed about a lift or other transport. I'll keep that separate.
 Leila | Exactly. The [[collection time::Collection time needs actual readiness confirmation and is not established by the update deadline.]] remains unconfirmed. A communication promise helps you plan the next decision, but it does not itself establish that the vehicle can be handed back.
-Omar | That is clear. Please keep my phone preference in the notes so the person handling the update does not assume an email will be enough.
+Omar | Could you read back what is actually booked, without the nine o'clock assumption?
 Leila | I will keep the [[contact method::Contact method records how the promised update should reach Omar.]] alongside the deadline. The handoff should say phone update by 10:00, not simply contact customer when convenient.
-Omar | Let me repeat the arrangement: I drop off at eight, you call by ten with status, and there is no confirmed start or finish time yet.
+Omar | Understood: drop-off at eight, phone update by ten, no confirmed finish or collection time.
 Leila | That [[commitment readback::Commitment readback preserves the actual intake and call promises without inventing workshop timing.]] is accurate. I will record it that way so the next colleague sees what is booked, what is promised, and what still needs confirmation.''',
+    rehearsal=["Complete the dialogue, distinguishing drop-off, workshop start, update, and collection.","Read the time exchanges aloud: eight for drop-off, by ten for the phone update, nine not confirmed. Switch roles and repeat.","Complete the transfer. Check whether each time names an appointment, a deadline, or an unconfirmed expectation."],
     transfer_title='Confirm the appointment without a finish promise',
     transfer_setup='Complete the booking readback. Keep intake, communication, and completion distinct.',
     transfer='''Advisor: "Drop-off intake is booked for ___." | 08:00 | Eight o'clock belongs to intake rather than a confirmed technician start.
@@ -279,26 +281,27 @@ Separate from | Prevents present consent from silently authorizing later work.''
 What should Dev avoid promising? | A particular diagnostic result or unpriced repair | The assessment charge stated in the booking | A clear approval record | A separate later repair decision | The brief supplies neither a guaranteed outcome nor a repair price.
 What makes the original go ahead ambiguous? | It does not itself state the exact approved scope | It always means refusal | It is a technical vehicle identifier | It establishes every repair cost | A short approval phrase needs the agreed service and limit attached.
 Which item belongs in the approval record? | Assessment only, $95, with repair excluded | A guessed replacement part | A promised free repair | Unlimited additional work | The record should preserve the permission actually given under the stated terms.''',
-    dialogue='''Hana | I have seen the ninety-five-dollar assessment charge. Go ahead with that, please. I want to know what the concern is before deciding on any repair.
-Dev | I will confirm the [[assessment scope::Assessment scope defines the evaluation Hana is approving, separate from corrective work.]] before I record your approval. The $95 is for assessment only under this booking, and no repair is included.
-Hana | Yes, that is what I meant. I do not intend go ahead to mean replace parts or carry out whatever repair may later be suggested.
-Dev | Then the [[approval limit::Approval limit preserves Hana's permission for assessment without extending it to unspecified repairs.]] is clear: the $95 assessment, not corrective work. I will read that back in the record rather than leave only the words go ahead.
-Hana | Thank you. I have had conversations where the price and the service got separated, and it became unclear what my yes applied to.
-Dev | We will keep the [[assessment fee::Assessment fee is the stated $95 charge for the defined evaluation service.]] attached to the service. It is not a repair allowance or a promise that a particular replacement is covered by that amount.
-Hana | Does paying for the assessment guarantee that you will identify one specific failed part? I do not want the wording to promise a result that is uncertain.
-Dev | No particular [[diagnostic outcome::Diagnostic outcome is not guaranteed by the stated assessment fee or authorization.]] is supplied in these terms. The assessment is the authorized service; we have not promised a particular cause or component finding before it occurs.
-Hana | If the technician later recommends work, I want the proposed repair explained and priced before I make that next decision.
-Dev | Any [[repair proposal::Repair proposal describes later corrective work and must be presented for a distinct customer decision.]] will be a separate matter. Your current assessment approval does not settle its scope, price, or whether you want it carried out.
-Hana | That includes component replacement, even if the technician thinks it is likely to be needed? I do not want likelihood treated as my permission.
-Dev | Correct. No [[component replacement::Component replacement is corrective work outside the present assessment-only authorization.]] is authorized by this assessment-only agreement. A possible recommendation is not the same as customer approval to do the work.
-Hana | Please make the later approval requirement explicit in the notes. I may speak to a different advisor when the findings are available.
-Dev | I will state that [[separate approval::Separate approval is required for any later repair outside the current assessment scope.]] is needed for any repair proposal. The next advisor should see the actual boundary rather than infer broader permission from a short yes.
-Hana | Could you read back the exact permission I am giving now? I want the amount, the service, and the exclusion in the same statement.
-Dev | Here is the [[scope readback::Scope readback repeats the service, price, and exclusion so Hana can confirm the actual agreement.]]: you authorize the $95 assessment only; no repair is included or approved. Any later repair proposal will be explained and routed for separate approval.
-Hana | That matches my intention. I agree to the assessment on those stated terms, without approving an unpriced repair or asking for a guaranteed diagnosis.
-Dev | I will preserve that [[customer consent::Customer consent applies to the specific assessment and stated terms, not to future unpriced work.]] in the booking record. It identifies what you have agreed to while keeping any later recommendation and decision distinct.
-Hana | Good. I am comfortable proceeding with the assessment now that the scope is clear and the next repair decision remains mine to consider separately.
-Dev | The [[approval record::Approval record documents the present limited permission so the workshop and later advisor receive the same instruction.]] will show exactly that: $95 assessment only, repair excluded, separate approval required later. That gives the workshop and the next advisor the same clear instruction.''',
+    dialogue='''Hana | Go ahead with the ninety-five dollars. But before you put that through, is that just looking at the problem, or does it include fixing it?
+Dev | It's assessment only. I'll record the [[assessment scope::Assessment scope defines the evaluation Hana is approving, separate from corrective work.]] with the price so there's no suggestion that a repair is included.
+Hana | Then please don't put just customer says go ahead. Someone else could read that as permission to fit whatever part they find.
+Dev | Agreed. The [[approval limit::Approval limit preserves Hana's permission for assessment without extending it to unspecified repairs.]] is the $95 assessment, with no corrective work approved. I'll put that in the workshop instruction.
+Hana | Is ninety-five a deposit against a repair, then? I had understood it as a charge for finding out what's wrong.
+Dev | Here it's the [[assessment fee::Assessment fee is the stated $95 charge for the defined evaluation service.]] for the evaluation, not a repair allowance. We haven't agreed any later repair price.
+Hana | And if the assessment doesn't identify one definite faulty part, does that mean you haven't done what I've paid for?
+Dev | We haven't guaranteed a particular [[diagnostic outcome::Diagnostic outcome is not guaranteed by the stated assessment fee or authorization.]]. The authorized service is the assessment; I shouldn't promise a specific finding before it happens.
+Hana | All right. Suppose the technician recommends work. I want to hear what it is and what it costs before deciding.
+Dev | We'll bring any [[repair proposal::Repair proposal describes later corrective work and must be presented for a distinct customer decision.]] back to you as a separate decision. Today's approval doesn't settle that work or its price.
+Hana | Even a replacement that seems obvious to the technician? I don't want obvious to become already ordered on my behalf.
+Dev | No [[component replacement::Component replacement is corrective work outside the present assessment-only authorization.]] is authorized under this agreement. A likely recommendation still isn't your permission to carry it out.
+Hana | Can you make that visible to the next advisor? I may not speak to you when the assessment comes back.
+Dev | Yes. The note will require [[separate approval::Separate approval is required for any later repair outside the current assessment scope.]] for any repair, so the handover doesn't depend on someone remembering this conversation.
+Hana | Please read that line to me before we finish. I'd like the price and the limit together.
+Dev | My [[scope readback::Scope readback repeats the service, price, and exclusion so Hana can confirm the actual agreement.]] is: you authorize the $95 assessment only; no repair is included or approved. Any later repair proposal requires another decision from you.
+Hana | Yes, that's what I'm agreeing to. Not an open-ended repair, and not a promise that the assessment finds a particular failed part.
+Dev | I'll attach that [[customer consent::Customer consent applies to the specific assessment and stated terms, not to future unpriced work.]] to this booking, with the assessment-only scope. It won't carry forward as approval for future work.
+Hana | Thank you. Go ahead with the assessment on those terms, and come back to me about anything beyond it.
+Dev | I'll complete the [[approval record::Approval record documents the present limited permission so the workshop and later advisor receive the same instruction.]] now: assessment, $95, no repair included. The workshop and the next advisor will receive the same instruction.''',
+    rehearsal=["Complete the dialogue with the assessment and approval terms.","Read the approval exchange aloud. Include $95, assessment only, repair excluded, and separate approval without dropping any part.","Complete the transfer, check the key, and reread the corrected approval in full."],
     transfer_title='Read back the exact approval',
     transfer_setup='Complete the authorization record using the fictional booking terms. Do not add an unpriced repair.',
     transfer='''Advisor: "The authorized charge is ___ dollars." | 95 | Ninety-five dollars is the stated price of the assessment service.
@@ -370,26 +373,27 @@ Concern, scope, contact | Groups three different kinds of essential handoff info
 What does not reproduced mean here? | Arun has not observed the reported concern during assessment | The customer invented the sound | The fault has been repaired | The cause is confirmed | Non-reproduction describes the technician's observation limit, not the truth of the customer's history.
 When should the preferred phone contact occur? | After 14:00, outside the stated unavailable interval | Between 12:00 and 14:00 | Exactly 12:00 regardless of availability | Only by email before 14:00 | The supplied preference is a phone call after the unavailable interval ends.
 What changes the approval limit during customer unavailability? | Nothing in these facts | The inability to contact them automatically permits repair | The job number authorizes replacement | Non-reproduction grants unlimited work | The assessment-only authorization remains unchanged by the customer's contact restriction.''',
-    dialogue='''Rosa | Arun, this is the handoff for job card 208. I want the concern, permission, and contact details together before the next update goes to the customer.
-Arun | I have the [[job identifier::Job identifier anchors the handoff to record 208 rather than another workshop job.]] as 208. Please give me the customer's wording first, so I do not replace it with a technical assumption.
-Rosa | The customer reports an intermittent cabin rattle after the car has been parked overnight. That is their description, not a confirmed component diagnosis.
-Arun | I will retain [[customer-reported::Customer-reported attributes the intermittent rattle to the owner's account rather than a verified technician finding.]] in the record. I have not reproduced the concern, so I cannot add a confirmed cause from my assessment.
-Rosa | Thank you. Please do not let not reproduced become no problem exists in the summary. The occasional nature of the report needs to remain visible.
-Arun | Agreed. [[Non-reproduction::Non-reproduction is a limited assessment result and does not prove the reported intermittent condition never occurs.]] describes what I have not observed during the assessment. It does not establish that the customer is mistaken or that the concern has been repaired.
-Rosa | The permission is limited too. The customer approved assessment only, and there is no repair authorization for additional work on this job.
-Arun | I will keep that [[authorization boundary::Authorization boundary limits the approved work to assessment rather than corrective action.]] explicit. Identifying a possible next step would not itself give me permission to carry out an unapproved repair.
-Rosa | There is an important availability note: the customer is unavailable from noon to two, and prefers a phone call after two.
-Arun | I have the [[unavailable interval::Unavailable interval is the stated 12:00-14:00 period that must remain in the contact notes.]] as 12:00-14:00. I will not suggest an update during that period or let the contact restriction disappear from the handoff.
-Rosa | Good. After two is the preferred window, not a promised call at precisely two. Please preserve that wording when the job comes back to the desk.
-Arun | Understood. The [[contact window::Contact window begins after 14:00 but is not an exact appointment at 14:00.]] is after 14:00, with no exact time supplied. I will not create a fixed appointment that nobody has agreed.
-Rosa | The customer prefers a call rather than an email. That detail is easy to lose if the note only says contact customer later.
-Arun | I will retain the [[preferred channel::Preferred channel is a telephone call, which must not be replaced with an assumed email update.]] as phone. The next advisor should see both when contact is appropriate and how the customer wants to receive it.
-Rosa | Also, not being able to reach the customer during that interval must not become a reason to proceed beyond the assessment approval.
-Arun | Correct. [[Repair authorization::Repair authorization is absent and is not created by difficulty contacting the customer.]] remains absent. The communication constraint does not expand the permitted work or turn an assumed remedy into an approved one.
-Rosa | Please read back the complete handoff now, including what you have not reproduced. That will help me check the desk and workshop records agree.
-Arun | Job 208: customer-reported intermittent cabin rattle after overnight parking; concern not reproduced; assessment only. Customer unavailable 12:00-14:00; phone preferred after 14:00. No [[confirmed cause::Confirmed cause has not been established, so it must not appear as an assumed diagnosis in the readback.]] is supplied.
-Rosa | That matches the record. It preserves the customer's experience, your observation limit, the permission boundary, and the contact arrangement without adding a diagnosis.
-Arun | I will carry that [[handoff readback::Handoff readback checks the complete transfer of technical and communication facts between colleagues.]] into the job notes. The next communication can use the same facts rather than reconstructing the customer's request from an incomplete summary.''',
+    dialogue='''Rosa | Arun, can we check 208 before I call the customer? The desk needs your result and the contact restriction, not just rattle checked.
+Arun | Yes, the [[job identifier::Job identifier anchors the handoff to record 208 rather than another workshop job.]] is 208. Is this the intermittent cabin rattle after overnight parking?
+Rosa | That's the customer's description. Did you reproduce it, or is that still open?
+Arun | It's still [[customer-reported::Customer-reported attributes the intermittent rattle to the owner's account rather than a verified technician finding.]]. I haven't reproduced the concern, and I don't have a confirmed component diagnosis to add.
+Rosa | Then I shouldn't tell them nothing is wrong. They were quite clear that it doesn't happen every time.
+Arun | Correct. [[Non-reproduction::Non-reproduction is a limited assessment result and does not prove the reported intermittent condition never occurs.]] means I haven't observed it in this assessment. It doesn't prove the sound never occurs or that we've repaired it.
+Rosa | Have you done any repair work? The customer approved assessment only, and that's what I have on the desk record.
+Arun | That [[authorization boundary::Authorization boundary limits the approved work to assessment rather than corrective action.]] hasn't changed. There's no approved corrective work, and a possible next step wouldn't create permission to do it.
+Rosa | They're unavailable from noon until two. Please keep that beside the assessment result so nobody tries to contact them in that interval.
+Arun | I'll retain the [[unavailable interval::Unavailable interval is the stated 12:00-14:00 period that must remain in the contact notes.]] as 12:00-14:00. The result and that restriction will go back together.
+Rosa | They asked for a phone call after two. I haven't promised a call at two exactly.
+Arun | Understood. The [[contact window::Contact window begins after 14:00 but is not an exact appointment at 14:00.]] is after 14:00, not a fixed 14:00 appointment. I'll keep the wording as supplied.
+Rosa | The note currently says contact later. Can you include phone? An email wouldn't match their preference.
+Arun | Yes, phone is the [[preferred channel::Preferred channel is a telephone call, which must not be replaced with an assumed email update.]]. I'll include both the method and the after-two window in the return note.
+Rosa | And if we can't reach them, assessment-only still applies. I don't want silence treated as a yes to repair.
+Arun | Agreed. [[Repair authorization::Repair authorization is absent and is not created by difficulty contacting the customer.]] is absent. Difficulty reaching the customer doesn't extend the work they've approved.
+Rosa | Give me the whole handoff once, please, so I can check it against the desk entry.
+Arun | Job 208: intermittent cabin rattle reported after overnight parking, not reproduced, no [[confirmed cause::Confirmed cause has not been established, so it must not appear as an assumed diagnosis in the readback.]]. Assessment only; unavailable 12:00-14:00; phone preferred after 14:00.
+Rosa | That matches. I'll use not reproduced, not no fault exists, and won't turn the contact window into a promised appointment.
+Arun | I'll save that [[handoff readback::Handoff readback checks the complete transfer of technical and communication facts between colleagues.]] with the job. You can use the same facts without filling in a cause, repair, or call time we haven't established.''',
+    rehearsal=["Complete the workshop handoff using the supplied terms.","Read the handoff aloud, preserving not reproduced, assessment only, unavailable 12:00-14:00, and phone after 14:00.","Complete the transfer and check the key. Repeat the handoff without turning after two into at two."],
     transfer_title='Pass on the concern, scope, and contact',
     transfer_setup='Complete the internal handoff. Keep the job identifier and contact window attached to the assessment-only scope.',
     transfer='''Advisor: "This is job card ___." | 208 | The handoff concerns record 208, not another service job.
@@ -461,26 +465,27 @@ Estimated, not confirmed | Preserves the level of certainty attached to the date
 Why can Nia not promise Tuesday pickup? | Supply, technician scheduling, and completion are not confirmed | The customer has not asked for pickup | Monday afternoon is a repair deadline | Every back order always takes a month | The necessary supply and workshop stages remain unresolved in the brief.
 What should Nia promise in this case? | A supply-status update Monday afternoon | Guaranteed installation Tuesday morning | Confirmed shipment Monday morning | A fixed completed-repair outcome | The supplied commitment is a status update at the stated time.
 What does Ben's request establish? | His preferred collection date, not an accepted promise | A guaranteed workshop slot | Confirmation that the part is allocated | A completed repair | A requested pickup date must remain distinct from a confirmed collection commitment.''',
-    dialogue='''Ben | I am calling about job 315. I heard Tuesday mentioned for the part, and I would like to collect the car on Tuesday if that is the plan.
+    dialogue='''Ben | I was told Tuesday for the part on job 315. Can I arrange to collect the vehicle that afternoon?
 Nia | The part is on [[back order::Back order is the current supply status; the part is not confirmed as immediately available.]]. The supplier has estimated Tuesday arrival, but shipment is not confirmed, so I cannot describe Tuesday collection as an agreed plan.
-Ben | I had understood Tuesday as a firm date rather than an estimate. Has the supplier actually sent the part, or are we still waiting for that confirmation?
+Ben | So Tuesday is the supplier's estimate, and you don't have a shipment confirmation yet?
 Nia | We are still waiting for [[shipment confirmation::Shipment confirmation is absent, so an actual dispatch must not be implied.]]. I should keep the supplier estimate separate from evidence of dispatch rather than let the date sound more definite than it is.
-Ben | Thank you. If the part does arrive on Tuesday, does that automatically mean the technician can fit it and finish the vehicle the same day?
+Ben | Even if it arrives then, does that automatically put my vehicle into the workshop on Tuesday?
 Nia | No. [[Workshop scheduling::Workshop scheduling remains unconfirmed and is a separate stage from the supplier's estimated arrival.]] is not confirmed either. Part arrival, the work slot, and completion are distinct stages; the supply estimate does not establish all of them.
-Ben | I need the car, but I do not want you to promise a collection time that depends on several things nobody has confirmed yet.
+Ben | Tuesday pickup is what I'd like, but I understand you haven't accepted it as a booking.
 Nia | I understand your [[pickup request::Pickup request records Ben's preference for Tuesday without making it an accepted collection commitment.]] for Tuesday. I will keep it in the notes as your preference, not as a confirmed handover date.
-Ben | What definite contact can you offer before then? I would like an update that tells me whether the supply position has changed.
+Ben | When will you check again and contact me? I'd rather have a clear update than keep calling.
 Nia | I will provide a [[supply-status update::Supply-status update is the Monday-afternoon communication Nia actually promises.]] on Monday afternoon. That is my commitment to contact you, even though I cannot promise what the supplier's answer will be.
-Ben | So Monday afternoon is not a guarantee that the part will ship by then. It is the point at which you will tell me the current position.
+Ben | Monday afternoon for the supply update. That doesn't mean the part will have shipped by then.
 Nia | Exactly. It is a [[progress checkpoint::Progress checkpoint identifies an agreed communication point, not a shipment or completion guarantee.]], not a guaranteed dispatch or arrival. The update should distinguish what is confirmed from what remains estimated at that time.
-Ben | I appreciate that. I had almost arranged a Tuesday lift to the shop based only on the part date, which would have been premature.
+Ben | Please don't change the collection request to confirmed in the notes. I need a real finish time before arranging transport.
 Nia | A [[collection commitment::Collection commitment requires actual readiness arrangements and is not established by a supplier estimate.]] needs the relevant completion and handover confirmation. We do not yet have that, and I would not want your travel plans built on an unsupported promise.
-Ben | Please keep the job number in the update as well. We have had more than one conversation with the shop, and I want the information traceable.
+Ben | Can you keep job 315 on the parts query, so the next advisor sees the same order?
 Nia | Certainly. Job 315 will stay attached to the [[order status::Order status records the supply position for the specific job rather than a general parts conversation.]] information. The note will identify the back order, the supplier's Tuesday estimate, and the missing shipment confirmation.
-Ben | Can you give me a short version I can explain at home? I want to avoid repeating Tuesday as though the vehicle is definitely ready then.
+Ben | Read back the supplier estimate for me once. I'd been treating Tuesday as a promise.
 Nia | The [[estimated arrival::Estimated arrival is the supplier's provisional Tuesday date, not a confirmed delivery or finished vehicle.]] is Tuesday; shipment is unconfirmed. Technician scheduling and completion are also unconfirmed. I will update you about supply on Monday afternoon.
-Ben | That is clear. Tuesday remains a preference for pickup, not a booking, and I will wait for actual readiness information before treating collection as settled.
+Ben | All right. I'll expect your Monday-afternoon update, with collection still unconfirmed.
 Nia | Correct. We will keep [[completion confirmation::Completion confirmation is the later verified status needed before a collection promise can be made.]] separate from the parts forecast. You have a definite next update, but no invented guarantee about delivery, installation, or pickup.''',
+    rehearsal=["Complete the parts-delay dialogue using the word bank.","Read the exchanges about Tuesday and Monday afternoon aloud. Keep estimated arrival, supply update, and collection separate.","Complete the transfer, then use the key to correct any phrase that turns an estimate into a confirmed commitment."],
     transfer_title='Separate the supply forecast from collection',
     transfer_setup="Complete the delay update using the actual supplier estimate and Nia's communication commitment.",
     transfer='''Clerk: "The part is on back ___." | order | Back order is the current supply status for the required part.
@@ -552,26 +557,27 @@ What the finding supports | Requests an evidence-based explanation rather than a
 Which abbreviation is correctly expanded? | DTC: diagnostic trouble code | DTC: direct technician clearance | DTC: delivery timing confirmation | DTC: defective transmission component | Diagnostic trouble code is the stated full term for DTC.
 Which sentence invents evidence? | Jules tested the sensor and proved it faulty | The note contains a code | No replacement is approved | We need Jules to clarify the finding | No sensor-test result or confirmed component fault appears in the supplied facts.
 Which handoff respects the approval limit? | Request clarification before any separate repair proposal | Replace the sensor because Tomas mentioned it | Treat a recorded code as permission | Promise a free replacement today | Clarification is needed, and no replacement authorization has been given.''',
-    dialogue='''Tomas | I saw the code on the note you sent. Does that mean the sensor is bad and you are ordering a new one?
-Ava | I can explain what the note says. It records a [[diagnostic trouble code::Diagnostic trouble code is the recorded information, not proof that a particular sensor needs replacement.]], often shortened to DTC. It does not confirm a cause.
-Tomas | I thought those codes told you exactly which part to replace. Otherwise, why would the system identify something connected with a sensor?
-Ava | The information can help an investigation, but it is not automatically a [[replacement decision::Replacement decision requires support beyond treating the recorded code as a parts-order instruction.]]. I should not turn that entry into a repair instruction.
-Tomas | Has Jules actually tested the sensor? Perhaps there is another result that was left out of the message I received.
-Ava | I do not have that result. The [[assessment note::Assessment note is the available technician record, which contains no supplied sensor-test result.]] for job 416 records the code without a confirmed cause or component fault. I cannot add a test that is not recorded.
-Tomas | Fair enough. But I need something clearer than a string of letters. What should I understand from the information you do have?
-Ava | The [[finding::Finding here is limited to the recorded code, not a completed diagnosis or readiness conclusion.]] is that diagnostic information was recorded. What caused it, and whether a particular part needs replacement, are not established in this note.
-Tomas | So it might mention a system or a circuit without proving the sensor itself is defective. Is that the distinction you are making?
-Ava | Yes. We need to distinguish the information from a confirmed [[component fault::Component fault would attribute an established problem to a particular part, which this note does not do.]]. I am not diagnosing an alternative cause; I am explaining the limit of what is recorded.
-Tomas | Please ask Jules to explain that limit directly. I would rather have a useful explanation than an immediate answer that turns out to be wrong.
-Ava | I will request [[technician clarification::Technician clarification asks Jules to explain the available evidence rather than having Ava supply a guess.]]. The question will be what the code and assessment establish, and what remains unconfirmed before any repair proposal.
-Tomas | I also want to be clear that asking about the sensor was not permission to replace it. I was trying to understand the note.
-Ava | Understood. There is no [[repair authorization::Repair authorization has not been given merely because Tomas asked whether a sensor needs replacement.]] for a replacement. Your question will remain a request for explanation, not an instruction to order or fit a part.
-Tomas | And you are not telling me the vehicle is ready just because you have read the code. I have not heard that confirmation either.
-Ava | Correct. A [[plain-language explanation::Plain-language explanation makes the note understandable without adding a vehicle-readiness or safety claim.]] must not add a readiness claim. I have no such confirmation to give from the information we are discussing.
-Tomas | All right. Could your message to Jules include my original misunderstanding? That might help the explanation address the question I actually have.
-Ava | Certainly. I will say the customer understood the code as proof of sensor failure. That is an [[unsupported inference::Unsupported inference identifies the leap from a code to proven sensor failure without dismissing the customer's question.]] we need to correct with a clear account of the evidence.
-Tomas | Then we are agreed: code recorded, cause not confirmed, no replacement approved. The next step is a more useful explanation from Jules.
-Ava | Exactly. I will request the missing [[interpretation::Interpretation explains the significance and limits of the information without inventing a diagnosis or approval.]] and keep it connected to job 416. Any later repair proposal must remain separate from this clarification.''',
+    dialogue='''Tomas | The message about 416 says there's a code. Does that mean you've found a bad sensor and ordered a replacement?
+Ava | Not from this note. It records a [[diagnostic trouble code::Diagnostic trouble code is the recorded information, not proof that a particular sensor needs replacement.]], or DTC, but doesn't confirm the cause.
+Tomas | I thought a code was basically the name of the part you needed. Otherwise, what is it telling us?
+Ava | It can guide the investigation; it isn't automatically a [[replacement decision::Replacement decision requires support beyond treating the recorded code as a parts-order instruction.]]. A recorded code isn't an instruction to order a sensor.
+Tomas | Did Jules test that sensor, then? Perhaps there's another result missing from the message I received.
+Ava | I can't see one here. The [[assessment note::Assessment note is the available technician record, which contains no supplied sensor-test result.]] records the code, with no supplied sensor-test result or confirmed component fault.
+Tomas | That's the part I'm struggling with. I've got technical information, but I still don't know what you've actually established.
+Ava | The recorded [[finding::Finding here is limited to the recorded code, not a completed diagnosis or readiness conclusion.]] is limited to the code. Its cause and whether a part needs replacing aren't established in this note.
+Tomas | So a reference to a system or circuit wouldn't, by itself, prove the sensor is defective?
+Ava | Correct. We haven't established a [[component fault::Component fault would attribute an established problem to a particular part, which this note does not do.]]. I'm explaining the note's limit, not proposing a different diagnosis.
+Tomas | Could you ask Jules to explain what the evidence does show? I need something more useful than just reading the code back.
+Ava | I'll request [[technician clarification::Technician clarification asks Jules to explain the available evidence rather than having Ava supply a guess.]] on what the assessment establishes and what remains unresolved before a repair proposal can be explained.
+Tomas | Also, my question about a new sensor wasn't a request to buy one. Please don't treat it as an order.
+Ava | Understood. No [[repair authorization::Repair authorization has not been given merely because Tomas asked whether a sensor needs replacement.]] has been given. I'll record your question as a request for explanation, not permission to order or fit a part.
+Tomas | Can I collect the vehicle while that explanation is being sorted out? Or has nobody confirmed that either?
+Ava | I have no readiness confirmation here. A [[plain-language explanation::Plain-language explanation makes the note understandable without adding a vehicle-readiness or safety claim.]] of a code mustn't become a claim that the vehicle is ready or safe.
+Tomas | Tell Jules why I'm confused, please. I read code as sensor failure, and that's where the conversation went off track.
+Ava | I'll include that. It's an [[unsupported inference::Unsupported inference identifies the leap from a code to proven sensor failure without dismissing the customer's question.]] from the available note, and the clarification should address that specific misunderstanding.
+Tomas | All right: code recorded, cause unconfirmed, no replacement approved. I need Jules's explanation, not a parts order.
+Ava | I'll request that [[interpretation::Interpretation explains the significance and limits of the information without inventing a diagnosis or approval.]] against job 416. Any later repair proposal remains separate from this clarification and will need its own approval.''',
+    rehearsal=["Complete the dialogue about the recorded code.","Read Tomas's misunderstanding and Ava's correction aloud. Keep code, confirmed cause, repair approval, and readiness distinct.","Complete the transfer and check each explanation. Reread the corrected explanation without naming an unsupported failed part."],
     transfer_title='Relay the finding without upgrading it',
     transfer_setup='Complete the advisor readback. Use the recorded evidence and approval status only.',
     transfer='''Advisor: "DTC means diagnostic trouble ___." | code | Code completes the correct full form of the diagnostic abbreviation.
@@ -643,26 +649,27 @@ Separately from | Keeps financial clarification and collection status distinct.'
 Which statement wrongly infers readiness? | The invoice exists, so come and collect now | The desk has not confirmed readiness | We should check collection separately | The bill identifies the charges | Invoice creation does not establish the vehicle's collection status.
 What can Leo say about payment? | The supplied facts do not establish payment status | The full amount has definitely been paid | A receipt proves an unpaid balance | The customer owes an invented late fee | No payment or receipt information is included in the supplied facts.
 Which request should Leo send? | Confirm collection status for job 527 | Add another $70 to labor | Issue a driving-safety guarantee | Tell the customer the car is ready without checking | The service desk must verify readiness independently of the invoice explanation.''',
-    dialogue='''Imani | I have the invoice in front of me. There is seventy for parts and one hundred ten for labor. Does labor include another seventy for the parts?
+    dialogue='''Imani | The invoice for 527 says seventy for parts and a hundred ten for labor. I added seventy to the total and got two hundred fifty.
 Leo | No. There are two separate entries on this [[itemized bill::Itemized bill separates the parts and labor entries so their amounts can be explained individually.]]. The parts charge is seventy dollars and the labor charge is one hundred ten dollars.
-Imani | Then I should not add seventy again after those two figures? I was getting two hundred fifty, which is why I called.
+Imani | Then the parts are already in the hundred eighty. I shouldn't add them again.
 Leo | Correct. The [[invoice total::Invoice total is $180 because the two stated charges are $70 and $110.]] is one hundred eighty dollars: seventy plus one hundred ten. There is no extra seventy-dollar parts charge inside the labor line.
-Imani | That makes more sense. I was reading the two descriptions as though the second one repeated the first charge and then added the work.
+Imani | Could you point out the total separately from the two charges? That's where I went wrong.
 Leo | I understand the [[billing query::Billing query names Imani's request to understand the apparent extra charge without assuming an accusation.]]. The layout led you to ask whether parts were being charged twice. Here, the two lines represent parts and labor separately.
-Imani | Could you repeat them once more, slowly? I am making a note next to the invoice so I can explain it to my partner.
+Imani | I'm asking about the calculation, not a discount. The same parts charge should appear only once in the sum.
 Leo | Certainly. The [[parts charge::Parts charge is the $70 entry, distinct from the $110 labor entry.]] is seventy dollars. Labor is one hundred ten dollars. Those two figures produce the stated total of one hundred eighty dollars.
-Imani | Thank you. Now that the invoice has been issued, should I come down and collect the vehicle? I could arrange a lift this afternoon.
+Imani | Does having the invoice mean I can come and collect the vehicle now?
 Leo | Please let me check [[collection readiness::Collection readiness has not been confirmed merely because the invoice was issued.]] separately. The service desk has not confirmed it yet, so I should not invite you to collect on the strength of the invoice.
-Imani | I assumed a finished bill meant a finished car. Are you saying the billing document and the collection message are separate things?
+Imani | Please leave the itemized charges as they are. It was my addition that needed correcting.
 Leo | Yes. The [[billing record::Billing record explains the charges but is not the missing vehicle-handover confirmation.]] tells us about the charges. It does not, by itself, give the missing handover confirmation or settle when you should travel here.
-Imani | All right. I do not want to arrive before that has been checked. Does the invoice at least show that payment has gone through?
+Imani | Also, I haven't told you I've paid. An invoice total isn't a payment confirmation.
 Leo | We have not established [[payment status::Payment status is not supplied, so Leo must not infer that the invoice has been paid.]] in this conversation. An invoice is not automatically a receipt, and I will not say a payment has been made without the relevant record.
-Imani | That is useful. There are several different questions here: what the charges mean, whether payment is recorded, and whether collection can happen.
+Imani | Could you check readiness separately before I make the trip?
 Leo | Exactly. We have clarified the arithmetic. The next [[readiness check::Readiness check asks the service desk to verify the unresolved collection position.]] should go to the service desk for job 527, without treating the bill as proof of readiness.
-Imani | Please keep that job number in the request. I would rather wait for the correct answer than have the desk check a different vehicle.
+Imani | Use job 527 for that check, please. I want the readiness message linked to the same vehicle record.
 Leo | I will match the [[job reference::Job reference connects the collection inquiry and billing conversation to the same service job.]] before requesting confirmation. The figures we discussed remain seventy for parts and one hundred ten for labor, totaling one hundred eighty.
-Imani | Good. The extra seventy was my misunderstanding, not another listed charge. I will not take the invoice as an invitation to collect.
+Imani | So the bill is seventy plus a hundred ten, total a hundred eighty; collection still needs confirmation.
 Leo | Understood. We still need [[handover confirmation::Handover confirmation is the missing readiness information needed before collection arrangements are treated as settled.]]. I will keep the billing explanation and the collection inquiry clear, so resolving one does not accidentally promise the other.''',
+    rehearsal=["Complete the invoice dialogue.","Read the arithmetic aloud: seventy for parts plus one hundred ten for labor equals one hundred eighty. Then read the separate readiness exchange.","Complete the transfer and check the key. Correct any answer that counts the parts twice or treats an invoice as a collection confirmation."],
     transfer_title='Explain the bill and preserve the handoff limit',
     transfer_setup='Complete the customer-service exchange using the two charges and the unresolved collection status.',
     transfer='''Advisor: "The parts charge is ___ dollars." | seventy | Seventy is the supplied parts entry, not an additional charge within labor.
@@ -732,27 +739,28 @@ Has not been determined | Keeps coverage unresolved without denying that it migh
     d='''Which apology is most appropriate? | I am sorry I dismissed your report; the cause has not been established | I am sorry you failed to understand our diagnosis | The sound is impossible, but I will call you | I apologize, so the repair will definitely be free | The response owns the unsupported dismissal without inventing a diagnosis or remedy.
 Which note preserves the evidence? | Customer reports same intermittent rattle two days after service | Technician proved the original repair failed | New cause confirmed unrelated to earlier work | Warranty claim denied after full review | The note retains timing and attribution without adding an unestablished technical conclusion.
 What does 15:00 refer to? | Nia's review call | Completion of a free repair | A confirmed collection slot | The time warranty coverage automatically begins | The brief identifies 15:00 as the time of the service lead's call.
-Which statement should be avoided? | Your warranty definitely covers this repair | The cause remains unknown | Nia can review the report | I will correct my earlier statement | Warranty coverage is unknown and cannot be promised from the supplied facts.''',
-    dialogue='''Farah | I called because the rattle is back, two days after the service. You told me it could not be the same issue, and that felt dismissive.
-Daniel | You are right to challenge that wording. I made an [[unsupported dismissal::Unsupported dismissal describes Daniel's rejection of the report without an established cause.]], and I am sorry. I should not have said the issue could not be the same.
-Farah | Thank you for saying that. I cannot name the faulty part. I can only tell you the intermittent sound seems the same to me.
-Daniel | I will record that as a [[reported recurrence::Reported recurrence preserves Farah's account without turning it into a confirmed technical diagnosis.]] of the same intermittent rattle, two days after service. We have not established what is causing it.
-Farah | I do not expect you to diagnose it over this call. I do expect the earlier visit to remain part of the conversation.
-Daniel | It will. I will connect your new report with the [[service history::Service history keeps the earlier visit available during review of the repeat report.]], so the service lead can review the concern with the earlier record rather than treating it as unrelated without evidence.
-Farah | Does admitting the earlier statement was wrong mean you now agree the repair failed? I want to know exactly what you are accepting.
-Daniel | I am accepting that my response was wrong. The [[underlying cause::Underlying cause remains unknown even after Daniel corrects his inappropriate response.]] has not been established, so I cannot say the previous work definitely failed or that the current concern is definitely unrelated.
-Farah | That distinction is fair. What happens next, and who will contact me? I do not want to repeat the whole story to another unidentified person.
-Daniel | Nia, our [[service lead::Service lead identifies the named person who can review the report and discuss next arrangements.]], can call at fifteen hundred. The purpose is to review your report and the next arrangements, with the earlier service information available.
-Farah | By fifteen hundred, you mean three in the afternoon? And that is a telephone call, not a request to bring the vehicle in then?
-Daniel | Yes, three in the afternoon for a [[callback::Callback is the promised telephone review, not a vehicle drop-off or repair appointment.]]. It is not a booked repair slot or a completion promise. Nia will review the report and discuss what can be arranged next.
-Farah | I will be available for the call. I also need to ask about the cost, because the service was only two days ago.
-Daniel | I understand why you are asking. [[Warranty coverage::Warranty coverage is unresolved and must not be promised or denied without the relevant review.]] has not been determined. I cannot promise that work will be free, or say coverage is excluded, from the information we currently have.
-Farah | Please include that question for Nia rather than leaving me to ask it all over again. I am not asking you to invent an answer.
-Daniel | I will include it in the [[follow-up record::Follow-up record carries the repeat concern, earlier correction, and coverage question into the next conversation.]]. The record will show your concern, my correction, and the coverage question for review, without recording a decision that has not been made.
-Farah | Could you read back the arrangement once? I want to be sure the apology has actually led to a clear next contact.
-Daniel | Your [[repeat concern::Repeat concern is the same intermittent rattle reported again two days after the earlier service.]] is recorded with the earlier service history. My dismissal is withdrawn. Nia can call at fifteen hundred to review the report and next arrangements.
-Farah | That is what I needed. I will speak with Nia then, and I understand that the call does not itself settle the cause or coverage.
-Daniel | Correct. We have started the [[communication repair::Communication repair corrects the mishandled response while keeping diagnosis, coverage, and later arrangements unresolved.]] by correcting the statement and specifying the next contact. I will make sure the handoff reflects those facts accurately.''',
+Which response answers the coverage question accurately? | Coverage needs review; the callback does not decide it | A recurrence within two days automatically guarantees free repair | The apology confirms a covered failure | An unknown cause means coverage has been denied | Neither the cause nor coverage has been determined; a callback and an apology do not establish either.''',
+    dialogue='''Farah | The same rattle is back two days after the service. When you said that couldn't be the same issue, it sounded like you weren't listening.
+Daniel | I'm sorry. That was an [[unsupported dismissal::Unsupported dismissal describes Daniel's rejection of the report without an established cause.]]. I had no basis to say it couldn't be the same issue.
+Farah | I can't tell you which part is involved. I just recognize the same intermittent sound, and I want that taken seriously.
+Daniel | I'll record a [[reported recurrence::Reported recurrence preserves Farah's account without turning it into a confirmed technical diagnosis.]] of the same intermittent rattle, two days after service. The cause isn't established yet.
+Farah | Will Nia see the earlier visit? I don't want to start again as though nobody has worked on the vehicle.
+Daniel | Yes. I'll connect this report to the [[service history::Service history keeps the earlier visit available during review of the repeat report.]] so she can review it alongside the previous record.
+Farah | Does that mean you're accepting that the repair failed? I need to understand what your apology actually covers.
+Daniel | I'm correcting my response. The [[underlying cause::Underlying cause remains unknown even after Daniel corrects his inappropriate response.]] is still unknown, so I can't say the earlier work failed or that this concern is unrelated.
+Farah | Fair enough. Who is actually going to follow this up, and when will I hear from them?
+Daniel | Nia, our [[service lead::Service lead identifies the named person who can review the report and discuss next arrangements.]], can call at 15:00 to review your report and discuss the next arrangements.
+Farah | Three this afternoon, by phone? I don't need to bring the car in at three?
+Daniel | Right, it's a [[callback::Callback is the promised telephone review, not a vehicle drop-off or repair appointment.]] at three. It isn't a repair booking, a collection time, or a promise of completion.
+Farah | I'll be available. But I do need to ask about cost: the service was only two days ago.
+Daniel | I understand. [[Warranty coverage::Warranty coverage is unresolved and must not be promised or denied without the relevant review.]] hasn't been determined. I can't promise free work or rule coverage out from what we have.
+Farah | Please pass that question on too. I don't want the call to end with me explaining the cost concern all over again.
+Daniel | I'll put it in the [[follow-up record::Follow-up record carries the repeat concern, earlier correction, and coverage question into the next conversation.]] with your report and my correction. There won't be a coverage decision recorded before one is made.
+Farah | Could you read back the arrangement, so I know exactly what Nia will receive?
+Daniel | Your [[repeat concern::Repeat concern is the same intermittent rattle reported again two days after the earlier service.]] is linked to the earlier visit: same intermittent rattle, two days later. My dismissal is withdrawn; Nia can call at 15:00 to review it.
+Farah | Yes. I understand the call doesn't settle the cause or the cost, but at least the earlier report won't be lost.
+Daniel | That's the start of the [[communication repair::Communication repair corrects the mishandled response while keeping diagnosis, coverage, and later arrangements unresolved.]]. I'll pass on the complete history and coverage question, with the agreed call time and no invented outcome.''',
+    rehearsal=["Complete the complaint-recovery dialogue.","Read the apology and next-contact exchanges aloud. Name Nia, 15:00, and the purpose of the call; retain the unresolved cause and coverage.","Complete the transfer and check the key. Reread the full follow-up with the report attributed to the customer."],
     transfer_title='Recover the conversation accurately',
     transfer_setup='Complete the follow-up readback. Keep the apology, report, contact time, and unresolved coverage distinct.',
     transfer='''Advisor: "I should not have ___ your report." | dismissed | Dismissed identifies the unsupported response that Daniel must explicitly correct.

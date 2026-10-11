@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=40,
     tagline='Precise details. Clear agreement.',
     audience='For nail technicians, salon receptionists, assistants, and nail-service team leads.',
-    map_intro='Eight nail-service conversations: clarify an overlay, compare shapes, separate finish from coverage, quote nail art, respond to tenderness, confirm station readiness, review design direction, and hand over an unbooked request.',
+    map_intro='Eight lessons on consultations, shapes, finishes, quotes, concerns, station updates, and bookings. Three additional conversations cover curing-system checks, tool turnover, and precise nail-art placement.',
     notes_title='Small details change the whole request.',
     notes_intro='A useful nail-service conversation separates length, shape, color, coverage, finish, product, design placement, price, and permission. Confirming those details prevents a familiar label or attractive reference from silently replacing what the client actually wants.',
     field_notes=[
@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='US Food and Drug Administration. Nail Care Products.',
              url='https://www.fda.gov/cosmetics/cosmetic-products/nail-care-products',
-             note='Background for product directions, warnings, and the distinction between cosmetic services and treatment of health problems. No medical or chemical procedure is taught.', checked='1 October 2026'),
+             note='Background for product directions, warnings, and the distinction between cosmetic services and treatment of health problems. No medical or chemical procedure is taught.', checked='10 October 2026'),
         dict(title='Occupational Safety and Health Administration. Health Hazards in Nail Salons.',
              url='https://www.osha.gov/nail-salons',
-             note='Context for chemical, biological, and ergonomic concerns and the need for actual workplace checks. The readiness dialogue does not supply disinfection instructions.', checked='1 October 2026'),
+             note='Context for chemical, biological, and ergonomic concerns and the need for actual workplace checks. The readiness dialogue does not supply disinfection instructions.', checked='10 October 2026'),
         dict(title='OPI. How to Shape Nails.',
              url='https://www.opi.com/blog/nail-care/how-to-shape-nails',
-             note='Manufacturer vocabulary for visible shape distinctions such as almond, square, and squoval. The book compares appearances and does not reproduce shaping steps or durability claims.', checked='1 October 2026'),
+             note='Manufacturer vocabulary for visible shape distinctions such as almond, square, and squoval. The book compares appearances and does not reproduce shaping steps or durability claims.', checked='10 October 2026'),
         dict(title='Creative Nail Design. Troubleshooting and FAQs: PLEXIGEL Q&A.',
              url='https://www.cnd.com/pages/troubleshooting-faqs',
-             note='The linked manufacturer FAQ distinguishes enhancement uses and product-dependent removal. This book teaches terminology without endorsing a product or reproducing application instructions.', checked='1 October 2026'),
+             note='The linked manufacturer FAQ distinguishes enhancement uses and product-dependent removal. This book teaches terminology without endorsing a product or reproducing application instructions.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -78,27 +78,28 @@ read-back | Repetition of key details to verify understanding. | give a length r
     d='''Which question resolves the key ambiguity? | Do you want added length, or your current short length kept? | Which payment method do you prefer? | Shall I copy the longest nail in the picture? | Does full set always mean extensions? | The question directly checks the client's actual length preference rather than assuming the label.
 Which summary is accurate? | Natural-nail overlay discussion at current short length, with no extensions requested. | Long extensions confirmed from the image. | Product system selected by the word short. | The reference authorizes an exact copy. | The summary preserves the clarified length and leaves other service decisions open.
 Which product statement is supported? | Product selection still needs clarification. | Gel polish and every builder gel are the same. | Acrylic is required whenever a photo is long. | No consultation is needed for short nails. | The case does not select a system or bypass the normal consultation.
-Which response avoids blaming the client for terminology? | Service names vary; let us confirm the result you want. | You booked incorrectly, so no questions are allowed. | Everyone knows full set has one meaning. | We must copy the photo because you brought it. | The response invites clarification respectfully instead of treating vocabulary knowledge as a prerequisite.''',
-    dialogue='''Zoe | I am here for my full set. I brought this picture, but I should say that I do not want my nails as long as those.
-Lin | Thank you for clarifying. Your booking says [[overlay::Overlay is the booked service label, which needs clarification rather than being treated as automatic permission for extensions.]]. When you say full set, are you asking for added length, or would you like to keep the length you have now?
-Zoe | I want to keep them short, as they are now. I used full set because that is the phrase I have heard other people use.
-Lin | That is fine. The [[service label::Service label is the name used for the appointment; the desired result matters more than assuming the client uses it with one technical meaning.]] can mean different things in conversation. Let us focus on the result you want rather than assume the word settles the details.
-Zoe | The photo is really just to show the general look I liked. The length in it would not work for me day to day.
-Lin | Then we will treat it as a [[reference image::Reference image supplies visual ideas for discussion, not permission to copy the length or every other feature.]], not an instruction to copy every feature. Your own length preference takes priority over the long nails shown in the picture.
-Zoe | Good. I was worried that showing the image after saying full set might make it sound as though I had already agreed to extensions.
-Lin | No [[extensions::Extensions would add length beyond the existing natural nail; Zoe has explicitly said that is not the current request.]] are requested at this stage. We are clarifying a service that keeps your current short length instead of adding the photographed length.
-Zoe | Is natural-nail overlay the more precise phrase for the discussion, then? I want to understand what to say without choosing the wrong material.
-Lin | Yes, [[natural-nail overlay::Natural-nail overlay specifies a coating over the existing nail in this request, without automatically adding length or choosing the material.]] describes what we are discussing here. It does not by itself decide which product is appropriate, so we will keep that part open.
-Zoe | That helps. I have also heard gel polish and builder gel, and I had assumed those names were interchangeable because both contain gel.
-Lin | They are different [[product categories::Product categories distinguish color-coating and enhancement uses; similar names do not establish an identical service or suitable product.]]. We should clarify the actual service and product rather than treating similar words as proof that they do the same job.
-Zoe | So keeping the nails short tells you my length preference, but it does not finish the consultation or select a particular product for me.
-Lin | Correct. Your [[retained length::Retained length is the existing short length Zoe wants to preserve; it is one confirmed preference within a wider consultation.]] is clear, while product choice, suitability, and any further design details still need the normal consultation before we proceed.
-Zoe | Please keep that in the note. I would like the next person who sees the booking to understand that I have not asked for anything longer.
-Lin | I will make the [[service scope::Service scope records the work being discussed, including the no-added-length boundary, without inventing unconfirmed product or design choices.]] clear: an overlay discussion at your current short length, with no added length requested. That is more useful than leaving only the phrase full set.
-Zoe | Could you read it back once more? I want to make sure the long photograph has not remained the main instruction after all these questions.
-Lin | The [[read-back::Read-back repeats the current short length and no-extension request so Zoe can verify that the image has not displaced the agreement.]] is: keep the current short length, discuss a natural-nail overlay, and do not add extensions. The photograph is only a reference for further discussion.
-Zoe | Yes, that is what I want. I am glad we checked before anything started instead of discovering later that we meant different things.
-Lin | No work has begun. We have settled the [[length preference::Length preference is the confirmed wish to retain the current short nails; the remaining consultation still determines other service details.]] and can continue the consultation from that clear starting point, without assuming the image or the service name answers every remaining question.''',
+Which response avoids blaming the client for terminology? | Service names vary; let us confirm the result you want. | Your booking says overlay, so I will ignore the picture. | Full set means extensions here, so I will add length. | We can copy the photograph now and check your preference afterwards. | The response invites clarification respectfully instead of treating vocabulary knowledge as a prerequisite.''',
+    dialogue='''Zoe | I'm here for a full set. I brought this picture, but please don't make them this long. I want to keep my own length.
+Lin | Your booking says [[overlay::Overlay is the booked service; the word alone does not authorize extensions or choose a product.]]. Do you want material over your existing nails, without adding length beyond them?
+Zoe | Yes, that's what I meant. I heard someone call it a full set and assumed that was the right name.
+Lin | That's fine. The [[service label::A service label names an appointment, but checking the desired result resolves differences in how people use it.]] can be used differently. Your short-length preference is more useful than guessing from the name.
+Zoe | Good. I like the look in the photograph, but the long nails would get in my way at work.
+Lin | We'll use the [[reference image::The image supplies visual ideas but does not replace Zoe's explicit decision to retain short nails.]] to discuss the look, not copy every feature. No extra length is requested.
+Zoe | So an overlay and extensions aren't the same thing? I'd like to know what the menu means next time.
+Lin | [[Extensions::Extensions add length beyond the existing natural nail, which Zoe has declined in this case.]] add length. Here we're discussing material over the nail you already have, without adding to it.
+Zoe | And the hard part I can see is the nail plate? I've heard that called the nail bed too.
+Lin | The [[nail plate::The plate is the hard visible nail; the nail bed is the tissue beneath it.]] is the hard visible part. The nail bed is the tissue underneath, so those terms aren't interchangeable.
+Zoe | That helps. What about builder gel and gel polish? I thought anything with gel in the name was the same service.
+Lin | [[Builder gel::Builder gel is used to create enhancement structure; gel polish names a color-coating category, not an identical service.]] is used for enhancement structure. Gel polish is a color-coating category. We'll discuss which service is appropriate rather than treat them as synonyms.
+Zoe | I haven't chosen a material yet. I'd like you to explain the options before we settle on one.
+Lin | Certainly. The [[product system::The product system remains unselected even after the length preference has been clarified.]] is still open. Keeping the nails short doesn't answer that question by itself.
+Zoe | Please keep that short-length request on the booking. I don't want the picture confusing anyone else who helps today.
+Lin | I'll record your [[retained length::Retained length means the existing short length Zoe wants preserved rather than extended.]] clearly, along with no extensions requested. We can then continue with the other design details.
+Zoe | Could you repeat the main point before we start? I want to be sure I explained it properly.
+Lin | Here's the [[read-back::The read-back lets Zoe verify that her stated preference has not been replaced by the long reference.]]: natural-nail overlay discussion, current short length kept, no extensions. Product and suitability still need consultation.
+Zoe | Yes, that's right. I want the look discussed, not the long length copied.
+Lin | Understood. That's the [[length preference::The length preference is settled while other service choices remain open and no work has begun.]] we'll work from. Nothing has begun, so we can clarify the remaining choices first.''',
+    rehearsal=["Read the booking clarification, stressing keep my own length and without adding length.","Switch roles and read the plate-versus-bed and builder-gel-versus-gel-polish exchanges with the definitions intact.","Complete and check the transfer; retain medium length rather than the short length used in the main dialogue."],
     transfer_title='Clarify another overlay request',
     transfer_setup='A client shows a long reference but wants the existing medium length retained. The discussion is a natural-nail overlay with no extensions requested. Product choice is still open, and no work has begun.',
     transfer='''Technician: "The current ___ length should be retained." | medium | Medium is the existing length the client explicitly wants to keep.
@@ -152,24 +153,25 @@ Which promise is unsupported? | This shape will never cause discomfort or break.
 What does the selected sample establish? | A preferred appearance for discussion | An exact universal measurement | An approved technical procedure | A guarantee for every daily task | The client selects the visible direction while assessment and exact details remain open.''',
     dialogue='''Amara | I like this almond sample, but it looks much longer than I could manage at work. I spend most of the day using a keyboard.
 Kai | The [[practical requirement::Practical requirement is the client's need for short nails during keyboard work, which should remain central to the comparison.]] is a short result, then. We can compare the shape you like without assuming you want the full length of this display sample.
-Amara | Yes. I like the way it narrows, but I do not want to agree to that length just because I point to it.
+Amara | Yes. I like the tapered shape, but that length would make typing awkward for me.
 Kai | The [[almond::Almond identifies the sample's narrowing outline and rounded tip, separate from the long length shown in this particular example.]] outline narrows toward a rounded tip. In this particular sample, that outline is shown at a visibly longer length.
 Amara | What is the name of the shorter one beside it? The end looks straighter, but the corners do not look sharply square.
 Kai | That is the [[squoval::Squoval describes the straighter edge with softened corners shown in the shorter alternative sample.]] sample. It combines a straighter end with softened corners, and the example here is short.
-Amara | I think that is closer to what I need. Can we compare them without deciding on a product or method yet?
+Amara | I think the shorter one is closer. Could we use that shape without copying the long sample?
 Kai | Certainly. We are comparing the [[silhouettes::Silhouettes are the visible outer outlines, not instructions about which product or technique must be used.]] and lengths first. The technical method and the appropriate service still need their own discussion.
 Amara | The shorter one seems less likely to get in my way. Does that mean it will definitely be comfortable when I type?
 Kai | I cannot give a [[comfort guarantee::Comfort guarantee would promise a daily-use outcome that the sample alone cannot establish for this client.]] from a sample. Your work needs help guide the consultation, but they do not prove how a particular result will feel on your actual nails.
-Amara | Understood. I have also heard people say one shape never breaks. That sounded too definite to me.
+Amara | Does squoval mean it won't break? A friend told me it was the strongest shape.
 Kai | A [[breakage::Breakage is a possible outcome that cannot be ruled out merely by choosing a named shape or looking at a display.]] promise like that would be too strong. We can discuss your preferences and the assessment without claiming a shape is unbreakable.
 Amara | Then let us use the short squoval as the appearance I prefer. I do not want the long almond length copied.
 Kai | I will record the [[preferred outline::Preferred outline is the squoval appearance Amara chooses for discussion, while rejecting the long sample's length.]] and your short-length priority together. That keeps the visual choice connected to the practical reason you gave.
-Amara | Does short need a more exact explanation before we begin? It may mean something different to another person.
+Amara | How short do you mean on my nails? Could you show me before you start?
 Kai | Yes, we still need an agreed [[length reference::Length reference is the specific example or measurement to confirm on the actual nails, beyond the broad word short.]] for your actual nails. The word short is useful, but it should not be the only detail in the final agreement.
 Amara | Good. Please keep the softened corners in the discussion too. That is part of what I like about the second sample.
 Kai | I will. [[Softened corners::Softened corners distinguish the chosen squoval appearance from a more sharply square outline in this comparison.]] are part of the visible shape you prefer, separate from the exact length we still need to confirm.
-Amara | So the next step is to confirm those details, not to assume that choosing the sample has answered every service question.
+Amara | Yes, short with those softer corners. Let's check the actual length together.
 Kai | Correct. The [[suitability assessment::Suitability assessment remains part of the normal professional process; selecting an appearance does not establish a method or guaranteed performance.]] and remaining details still matter. We have a clear direction: short length for keyboard work, with the squoval appearance preferred.''',
+    rehearsal=["Read the comparison using almond, squoval, rounded tip, and softened corners.","Switch roles. Read the keyboard-work request without turning the client's preference into a guarantee against breakage.","Complete and check the round-shape transfer, then read the shape and length as separate choices."],
     transfer_title='Separate shape from a guarantee',
     transfer_setup='A client compares a long oval sample with a short round sample. They choose the short round appearance for keyboard work. No exact measurement or guarantee against breakage is agreed.',
     transfer='''Technician: "The preferred shape is ___." | round | The client chooses the round appearance from the two supplied samples.
@@ -212,7 +214,7 @@ top coat | Finishing coating whose properties depend on the product system. | di
 color coat | Layer providing the selected color effect. | identify the color coat
 product system | Compatible set of products and procedures for a service. | confirm the product system
 appearance specification | Separate agreed details of color, coverage, and finish. | record the appearance specification
-sample mismatch | Difference between a sample feature and the client's actual preference. | clarify the sample mismatch''',
+curing lamp | Light source specified for curing a compatible gel system; not selected by wattage alone. | verify the curing lamp''',
     precision='Matte and sheer answer different questions. Matte concerns shine; sheer concerns how much underlying nail remains visible. The client can request both. The glossy swatch illustrates the preferred color and coverage, not the agreed final shine.',
     precision_extra='A swatch is not a product-selection shortcut. The booking does not identify lacquer or gel polish, and the appearance request does not determine compatibility, suitability, or application steps. Those details remain within the actual consultation.',
     phrases='''Separate the choices | Let us check color, coverage, and finish one at a time.\nConfirm the color | Pink is the color you prefer.\nAsk about visibility | Do you want the natural nail line to remain visible?\nExplain sheer | Sheer coverage allows some nail detail to show through.\nExplain opaque | Opaque coverage conceals the underlying nail.\nExplain matte | Matte describes a low-shine finish.\nDescribe the swatch | This swatch is sheer and glossy.\nIdentify the mismatch | You like its pink color and coverage, but not its shine.\nConfirm the combined request | You want sheer pink with a low-shine finish.\nAvoid a false conflict | Sheer and matte describe different features, so they are not opposites.\nClarify the booking | The booking does not specify lacquer or gel polish.\nKeep product choice open | We still need to discuss the product system.\nAvoid copying everything | Selecting this swatch does not select every feature it shows.\nAsk for a read-back | Is visible nail line and low shine the right summary?\nAvoid an application promise | We have not confirmed the product or method yet.\nClose the appearance discussion | The appearance is clear; product selection remains open.''',
@@ -220,27 +222,28 @@ sample mismatch | Difference between a sample feature and the client's actual pr
     d='''Which statement explains the client's request? | Sheer concerns visibility through the color; matte concerns shine. | Sheer always means glossy. | Matte always means opaque. | Pink automatically means gel polish. | Coverage and finish are independent appearance dimensions in this consultation.
 Which swatch feature is not wanted? | Its glossy finish | Its pink color | Its sheer coverage | Its visible underlying detail | The client likes the color and transparency but asks for low shine.
 Which record is accurate? | Sheer pink, low shine, product category not yet specified. | Glossy opaque pink, gel polish confirmed. | Colorless glitter, lacquer confirmed. | Every swatch feature accepted without discussion. | The record preserves the three appearance details and unresolved product choice.
-Which question best checks coverage? | Do you want the nail line to show through? | Would you like a shinier surface? | What time is your appointment? | Which payment card will you use? | Visibility of the nail line directly clarifies the desired coverage.''',
-    dialogue='''Dana | I would like matte pink, something like this sample. I like being able to see a little of the nail underneath it.
-Noor | Let us check the [[coverage::Coverage describes how much the color conceals the underlying nail, which Dana clarifies by wanting some detail to remain visible.]] first. Do you want the natural nail line to remain visible through the pink, rather than have it completely hidden?
-Dana | Yes, I want that line to show. I do not want a solid block of color, even though I want the surface less shiny.
-Noor | Then [[sheer::Sheer describes the translucent coverage Dana wants, allowing the nail line to remain visible rather than concealing it fully.]] is the useful word for the coverage. It describes what shows through, not how shiny the surface is.
-Dana | That is the distinction I was missing. I thought sheer might mean shiny because the samples I noticed were all glossy.
-Noor | The [[finish::Finish identifies the surface appearance and shine, separate from the color's transparency or coverage.]] is a separate feature. This particular swatch is both sheer and glossy, but those words describe different things.
-Dana | So I can like the pink and the see-through quality without asking you to copy the shine in the sample.
-Noor | Exactly. Your [[matte::Matte is the requested low-shine appearance, which differs from the glossy finish on the chosen reference swatch.]] preference means low shine. We can record that alongside the sheer pink appearance instead of treating the sample as an all-or-nothing choice.
-Dana | Good. What would opaque mean in that comparison? I have seen it in descriptions but was not sure how it would look.
-Noor | [[Opaque::Opaque coverage conceals the underlying nail, unlike the sheer coverage Dana requests with the nail line still visible.]] means the underlying nail is concealed by the color. That would not describe your wish to keep the nail line visible.
-Dana | Then opaque is not what I mean. Please keep the transparency of this one as the reference, but change the shine preference in the note.
-Noor | I will describe the [[sample mismatch::Sample mismatch is limited to the shine: the reference's glossy finish differs from the client's low-shine preference.]] clearly. You like the color and coverage shown, while the glossy surface is not the finish you are requesting.
-Dana | Does pointing to this sample also tell you whether I have booked gel polish? I do not remember choosing that when I made the appointment.
-Noor | The [[product category::Product category remains unspecified because the booking does not identify lacquer or gel polish, and the swatch cannot decide it automatically.]] is not specified in your booking. We still need to discuss lacquer or gel polish rather than infer that choice from the sample.
-Dana | I would like that explained separately. I want to settle the appearance first, then understand the service options before agreeing.
-Noor | That makes sense. The [[appearance specification::Appearance specification records the agreed pink color, sheer coverage, and low-shine finish without choosing a product system.]] is sheer pink with low shine. Product choice and suitability remain part of the consultation.
-Dana | Could you repeat the appearance using the ordinary words too? I want to be sure I can explain it again if someone else asks.
-Noor | Pink color, a visible [[nail line::Nail line is the underlying visual detail Dana wants to remain visible through the sheer color.]], and a surface that is not glossy. That is the same request expressed without relying only on the technical labels.
-Dana | Yes, that is exactly it. The sample is close in two ways, but the shine is the part I do not want copied.
-Noor | I will keep those details separate when we discuss the [[product system::Product system is the service-specific choice still to be assessed; the agreed appearance does not establish its products or application method.]]. We have clarified the appearance without assuming a product, a method, or every feature of the swatch.''',
+Which question best checks coverage? | Do you want the nail line to show through? | Would you like a shinier surface? | Do you prefer warm pink or cool pink? | Would you like a fine shimmer in the color? | Visibility of the nail line directly clarifies the desired coverage.''',
+    dialogue='''Dana | I want matte pink, like this sample. I like seeing a little of the nail through it, but I don't want it so shiny.
+Noor | Let's check [[coverage::Coverage concerns how much underlying nail detail is concealed, not the amount of reflected shine.]] first. Do you want the natural nail line to show through the pink?
+Dana | Yes. I want some color, just not a solid block that hides the nail underneath.
+Noor | That's [[sheer::Sheer coverage allows some underlying detail to show through a tinted color.]] coverage. It describes the see-through quality, not the shine on top.
+Dana | Oh, I thought sheer meant shiny. The sheer samples I looked at all seemed glossy.
+Noor | Those samples combine two features. Their [[finish::Finish describes the surface appearance, which can be discussed separately from coverage.]] is glossy, but their coverage is sheer.
+Dana | Then this pink is right, and the transparency is right. It's the shiny surface I'd like changed.
+Noor | I'll record [[matte::Matte identifies Dana's requested low-shine surface, unlike the glossy reference.]] as the finish preference. That keeps the low-shine request separate from the color.
+Dana | What would opaque look like? Is that another word for dark pink, or does it mean something else?
+Noor | [[Opaque::Opaque means the underlying nail is concealed; it does not simply mean the color is dark.]] means you wouldn't see the underlying nail through the color. Pale colors can be opaque too.
+Dana | Then I don't mean opaque. Please keep the nail line visible even though I don't want a glossy finish.
+Noor | Yes. The [[nail line::The nail line is the underlying detail Dana wants to retain through the sheer pink coverage.]] stays in the appearance description. Low shine doesn't mean it has to be hidden.
+Dana | Have I already booked gel polish? I don't remember choosing between that and ordinary polish on the form.
+Noor | No [[product category::The booking specifies neither lacquer nor gel polish, so the appearance request cannot settle that choice.]] is listed. We should discuss lacquer and gel polish separately from this swatch.
+Dana | Could you explain the difference before I choose? I don't want to agree just because I pointed to this one.
+Noor | Of course. We'll discuss the [[product system::The product system is still to be selected through consultation, not inferred from the chosen color sample.]] and the service involved. The sample has only helped clarify the look.
+Dana | So my request is pink, slightly see-through, and not shiny. Is that the right way to put it?
+Noor | Yes. That's a clear [[appearance specification::The appearance specification records color, coverage, and finish together without selecting application products.]]: sheer pink with low shine.
+Dana | Great. Keep those three points together, please. I'd be disappointed if matte turned into a completely solid pink.
+Noor | I'll note the [[sample mismatch::The mismatch is limited to the sample's gloss, not its pink color or sheer coverage.]] too: you like this swatch's color and transparency, but not its glossy surface.''',
+    rehearsal=["Read the swatch dialogue. Stress sheer for coverage and matte for shine.","Switch roles and read the opaque explanation; preserve the distinction between pale color and see-through coverage.","Complete and check the blue-color transfer. Read color, coverage, finish, and the unresolved product category separately."],
     transfer_title='Decode another color request',
     transfer_setup='A client wants opaque blue with a glossy finish. They do not want the nail line visible. The booking leaves lacquer versus gel polish unspecified.',
     transfer='''Technician: "The requested color is ___." | blue | Blue is the chosen color family in this new scenario.
@@ -278,7 +281,7 @@ base price | Cost of the underlying service before art additions. | state the ba
 art subtotal | Total charge for the decorative additions alone. | calculate the art subtotal
 complete quote | Total price for the specifically described option. | give a complete quote
 budget limit | Maximum total the client agrees to spend. | respect the budget limit
-quantity reduction | Decrease in the number of decorated nails. | confirm a quantity reduction
+smile line | Curved boundary between a contrasting French tip and the rest of the nail design. | describe a crisp smile line
 ring fingernail | Nail on the finger between the middle and little fingers. | identify the ring fingernail
 each hand | Separately referring to the left and right hands. | confirm one on each hand
 both hands | Referring to the two hands together. | total across both hands
@@ -300,18 +303,19 @@ Ben | That is more than I can spend today. Is there a smaller version that stays
 Rosa | Two decorated nails would have an [[art subtotal::Art subtotal is ten dollars for two nails and must be added to the thirty-dollar base to reach the complete forty-dollar price.]] of ten dollars. With the base service, the complete total would be forty dollars.
 Ben | And if I decide not to have any art at all, would the base service still be available at thirty?
 Rosa | Yes. The [[base price::Base price remains thirty dollars for the service without the optional line art, giving a second option within the client's limit.]] is thirty dollars without the art. Your two choices within the limit are the base alone or the base with two decorated nails.
-Ben | I would like the two decorated nails, then. I still want a small design, just not the original four-nail version.
+Ben | Let's do two with the line design, then. I can manage forty, but not fifty today.
 Rosa | I will confirm that [[quantity reduction::Quantity reduction is the client's explicit choice to move from four decorated nails to two, not a silent change made by the technician.]] with you: two decorated nails instead of four, for forty dollars in total.
 Ben | When you say two, is that two on each hand or two altogether? I want to make sure I am counting the same way.
 Rosa | Two altogether, across [[both hands::Both hands means the combined total for left and right, so two across both hands is not two on each hand.]]. Two on each hand would be four nails and would return the total to fifty dollars.
 Ben | Then one on each hand sounds right. I would like the ring fingernails decorated, with the other nails left without that line design.
 Rosa | That gives one [[accent nail::Accent nail is the individually decorated nail, here one ring fingernail on each hand for two in total.]] on each hand. I will specify the two ring fingernails so the placement is not left to an assumption.
-Ben | Please do. I care about which fingers have the design, not only how many there are. I do not want another pair selected for me.
+Ben | Yes, these two. Please leave the others plain; I like the design better on the ring fingers.
 Rosa | The [[placement::Placement identifies the exact nails receiving the art, which is a separate detail from the overall quantity of two.]] is now clear: the ring fingernail on your left hand and the ring fingernail on your right.
 Ben | Good. And forty is still the complete total, not forty plus another amount for selecting those fingers?
 Rosa | Correct. Your [[budget limit::Budget limit is forty dollars for the entire selected service, and the confirmed option meets it with no other charges in this fictional menu.]] is met by this option. There are no other charges in this comparison, and the two-nail art total remains ten dollars.
-Ben | That is the option I agree to: the base service, simple line art on both ring fingernails, and forty dollars altogether.
+Ben | That's agreed: both ring fingernails, forty dollars altogether. No extra art today.
 Rosa | I have your [[design approval::Design approval covers the specified two ring fingernails, simple line art, and forty-dollar total, not further unrequested additions.]] for that exact option. We will confirm any later change before altering the quantity, placement, or price, rather than adding something without asking.''',
+    rehearsal=["Read the quotation aloud: $30 base, $5 per nail, four nails $50 total, two nails $40 total.","Switch roles for the placement exchange. Say one on each hand and two altogether distinctly.","Complete the new $35-plus-art transfer, check the calculation, and read the complete $43 total rather than only the art subtotal."],
     transfer_title='Recalculate another art quote',
     transfer_setup='A base service costs $35. Art costs $4 per nail, with no other charges. The client has a $43 limit and chooses one decorated nail on each hand.',
     transfer='''Technician: "The selected quantity is ___ nails." | two | One decorated nail on each of two hands gives two nails total.
@@ -367,22 +371,23 @@ Which distinction matters? | Healthcare assessment and cosmetic-service suitabil
 Dev | Thank you for telling me. I will [[pause::Pause means stopping the covering request before product is applied, rather than carrying on because the client has an event.]] that request for now. The tenderness needs appropriate attention before we make assumptions about a cosmetic service.
 Elena | I do not know what caused it. I was hoping the appointment could still go ahead because the event is important to me.
 Dev | I understand the [[event deadline::Event deadline explains why Elena wants a cosmetic result but does not establish that applying a product is suitable.]]. It matters to your plans, but it does not tell us whether applying product to the area is suitable.
-Elena | I am not asking you to name a condition. I just want to be sure you have understood where I feel it.
+Elena | It's beside this nail, not all over my hand. Can you see where I'm pointing?
 Dev | You are reporting [[tenderness::Tenderness is Elena's own description of the sensation beside one nail, not a diagnosis of its cause.]] beside this nail. I will keep that description rather than add a condition name or assume a cause.
 Elena | Yes. It was there before I arrived, and nothing from today's appointment has been put on it.
 Dev | I will record it as a [[pre-existing concern::Pre-existing concern means it was present before the proposed service, preventing an inaccurate claim that today's product application caused it.]]. No product has been applied today, and no service has started.
-Elena | Who should I ask about the tenderness, then? I do not want to rely on a guess from someone who has not assessed it.
+Elena | Who should I ask about it? I haven't had it checked, and I don't know what's causing it.
 Dev | Please have the concern assessed by an appropriate [[healthcare professional::Healthcare professional identifies the appropriate route for assessing an unexplained health concern, rather than asking the nail technician to diagnose or treat it.]]. I cannot determine the cause or recommend treatment from this salon conversation.
-Elena | All right. Does asking for that assessment mean the salon will definitely do the service afterward, once I have spoken to someone?
+Elena | If I get advice, can I come back for the service afterwards?
 Dev | No. The [[referral::Referral directs Elena toward appropriate health assessment; it does not itself approve the proposed cosmetic service or guarantee a later appointment.]] does not guarantee that. The salon must separately decide whether the proposed cosmetic service is suitable through its normal process.
-Elena | So there are two different questions: what the tenderness means, and whether the cosmetic service I requested is appropriate.
+Elena | So I need advice about the soreness first, and then we'd discuss whether the nail service can go ahead.
 Dev | Exactly. [[Cosmetic suitability::Cosmetic suitability is the separate salon assessment of the proposed appearance service, not a substitute for healthcare assessment.]] is not established simply by making a referral. We should not promise approval before the relevant decisions have been made.
-Elena | I understand. Please do not put a medical label in the note. I have not been told what it is, and I do not want that guessed.
+Elena | Please just note what I told you. Nobody has diagnosed it yet.
 Dev | I will make a [[factual note::Factual note records the reported tenderness, its timing, the paused request, and the referral without inventing a diagnosis.]] with your description, the fact that it was reported before service, and the request to cover it being paused.
 Elena | That is accurate. I will seek appropriate healthcare advice, and I understand that you are not suggesting a treatment here.
 Dev | Correct. I am not giving a [[diagnosis::Diagnosis identifies a health condition through appropriate clinical assessment, which the technician has not performed or claimed.]] or treatment advice. The immediate salon decision is not to apply a covering product to this unexplained concern.
-Elena | Thank you for explaining it without dismissing the event. I would rather know the limits clearly than leave with an assumption about what has been approved.
+Elena | Okay, I won't ask you to cover it. I'll get advice about the tenderness first.
 Dev | The [[service approval::Service approval has not been given: the covering request remains paused even though the client agrees to seek healthcare advice.]] remains unresolved. No cause is established, no product has been applied, and the cosmetic request stays paused while you seek the appropriate advice.''',
+    rehearsal=["Read the opening with a calm, firm pause before any product is applied.","Switch roles and read the referral exchange. Do not substitute an invented diagnosis for tenderness.","Complete and check the transfer; preserve the separate health assessment and unassessed cosmetic suitability."],
     transfer_title='Separate referral from service approval',
     transfer_setup='Before service, a client reports unexplained soreness beside one nail. No product is applied. The covering request is paused, and the client is directed to an appropriate healthcare professional. Salon suitability remains unassessed.',
     transfer='''Technician: "The reported concern is ___ beside one nail." | soreness | Soreness is the supplied client description, not an inferred condition.
@@ -424,8 +429,8 @@ personal protective equipment | Equipment used to reduce exposure to workplace h
 check record | Record showing what has been checked and its status. | update the check record
 responsible technician | Person accountable for the relevant station confirmation. | name the responsible technician
 release confirmation | Statement that the station has met the required readiness process. | await release confirmation
-available alternative | Verified option that can be offered now. | offer the available alternative
-readiness handover | Transfer of accurate station status to the next colleague. | give a readiness handover''',
+sterilization | Validated process eliminating viable microorganisms including bacterial spores; not a synonym for storage. | distinguish disinfection from sterilization
+cross-contamination | Transfer of unwanted microorganisms or material between tools, surfaces, or people. | prevent cross-contamination''',
     precision='Station three is tidy but not confirmed ready because required checks are incomplete. Station two is confirmed ready by Rosa. Offer the verified alternative without silently upgrading station three or inventing a completion time.',
     precision_extra='Cleaning, disinfection, storage, product information, and equipment terms describe different parts of real workplace systems. This lesson does not supply procedures or authorize a shortcut. Use actual instructions, training, and the responsible confirmation process.',
     phrases='''Identify the station | Station three is the one still awaiting checks.\nDescribe only what is known | It looks tidy, but its required checks are incomplete.\nAvoid an appearance shortcut | Tidiness does not establish confirmed readiness.\nState the verified alternative | Station two has been confirmed ready.\nName the confirmation source | Rosa is the responsible technician who confirmed it.\nOffer a workable next step | We can offer the client station two.\nKeep the pending status | Station three should remain marked pending.\nAvoid a guessed time | I do not have a confirmed completion time for station three.\nAcknowledge the wait | I know the client is waiting; we have a verified alternative.\nAsk a precise question | Which station has completed the required readiness process?\nKeep procedures separate | The checks must follow the actual salon process.\nPrevent an inaccurate update | Please do not change three to ready because the surface looks clear.\nRead back the numbers | Two is confirmed ready; three is pending.\nConfirm the next update | We will update three after the required confirmation.\nGive a client-facing message | A confirmed-ready station is available for you.\nClose the handover | Use the verified status, not an estimate based on appearance.''',
@@ -433,27 +438,28 @@ readiness handover | Transfer of accurate station status to the next colleague. 
     d='''Which handover is accurate? | Two confirmed ready by Rosa; three tidy with checks incomplete. | Both ready because the room looks neat. | Three ready and two awaiting review. | Three ready in five minutes without a source. | The correct message preserves both station numbers and their different verified statuses.
 Which message should reception give the client? | A confirmed-ready station is available at station two. | Station three is ready because its table is empty. | All checks are optional when someone is waiting. | Station three will definitely be ready immediately. | Station two provides the verified option without inventing readiness for station three.
 What would justify updating station three's status? | Completion of its required checks and the actual readiness confirmation | A shorter queue | A tidy appearance alone | A client's willingness to sit there | Readiness must follow the required process rather than appearance or scheduling pressure.
-Which question is most precise? | Has station three received the required readiness confirmation? | Does everything seem fine? | Are we usually quick? | Can the client wait quietly? | The question asks about the specific unresolved status rather than a vague impression.''',
-    dialogue='''Maya | I have a client waiting. Station three looks clear from reception, so I wanted to check whether I can direct the client there.
-Owen | Station three is [[tidy::Tidy describes its visible order, but does not establish that the required readiness checks are complete.]], but its required readiness checks are not complete. Please do not treat the clear surface as confirmation that the station is ready.
-Maya | Thank you for checking. I do not want to send someone to the wrong place just because it looks finished from a distance.
-Owen | There is an [[available alternative::Available alternative is station two, whose readiness has been confirmed rather than inferred from appearance.]]: station two. Rosa has confirmed that station ready, so we can offer it without waiting for three.
-Maya | Let me make sure I heard the numbers correctly. Two is ready, and three is still waiting for the remaining checks.
-Owen | Correct. Two is [[confirmed ready::Confirmed ready is the verified status for station two, with Rosa identified as the responsible confirmation source.]] by Rosa. Three has incomplete checks and should remain pending, even though it looks orderly.
-Maya | Do we have an estimate for three? The next person may ask how long it will be before that station is available.
-Owen | I do not have a verified [[completion time::Completion time for station three is unknown, so Owen cannot supply a reliable ready-at promise.]]. I would rather leave the time open than turn an unconfirmed guess into a promise to the next client.
-Maya | That is sensible. For the client already here, I can offer station two and avoid giving a waiting estimate for three.
-Owen | Yes. Use the [[readiness handover::Readiness handover transfers the verified station status and available next step, not instructions for performing the checks.]] as it stands: two is ready, three is pending. The actual checks for three still follow our salon process.
-Maya | The display currently has three marked almost ready. That might encourage someone to seat the client there while the checks are still unfinished.
-Owen | Please keep its [[pending status::Pending status makes the unfinished checks explicit, avoiding a vague almost-ready label that could be treated as approval to use the station.]] clear. Almost ready should not be read as permission to start a service there.
-Maya | Who should be named as the source for station two's confirmation? I want the update to be traceable if another colleague asks.
-Owen | Rosa is the [[responsible technician::Responsible technician identifies who confirmed station two through the relevant process, rather than implying an anonymous or assumed approval.]] who confirmed station two. Naming the source is more useful than simply saying somebody said it was fine.
-Maya | And station three should not change to ready until its checks are complete and the responsible confirmation has actually been given.
-Owen | Exactly. We need the [[release confirmation::Release confirmation is the actual readiness decision after the required checks, not a conclusion based only on a cleared work surface.]] through the salon process. A tidy station and a waiting client do not replace that step.
-Maya | I will offer two now. For the client, I can simply say that a confirmed-ready station is available, without describing technical procedures.
-Owen | That is a clear [[client-facing message::Client-facing message gives the useful verified option without unnecessary procedural detail or an unsupported promise about station three.]]. The client needs an accurate next step, while the internal record preserves which checks are still unfinished elsewhere.
-Maya | I have it: station two confirmed ready by Rosa, station three pending, and no confirmed completion time for three.
-Owen | That [[read-back::Read-back repeats station numbers, confirmation source, and the unknown time, catching errors before the client is directed to a station.]] is accurate. We will update station three when its required confirmation is available, and we will not let its appearance stand in for the actual status.''',
+Which question is most precise? | Has station three received the required readiness confirmation? | Does everything seem fine? | Is the tabletop at station three clear of used items? | Has the waiting client agreed to use station three? | The question asks about the specific unresolved status rather than a vague impression.''',
+    dialogue='''Maya | Can I seat the waiting client at station three? The table looks clear from here.
+Owen | Not yet. It's [[tidy::Tidy describes appearance only; station three still has incomplete required readiness checks.]], but the readiness checks aren't complete. Station two is the one Rosa has confirmed ready.
+Maya | Two, not three. Thanks for catching that. I'll move the client to two rather than leave them standing at reception.
+Owen | Yes, that's the [[available alternative::Station two is the verified alternative; using it does not change station three's unfinished status.]]. Three needs to stay out of use until the remaining checks are finished and confirmed.
+Maya | The board says almost ready beside three. Should that say pending instead?
+Owen | Yes. [[Pending::Pending clearly indicates unfinished checks, whereas almost ready can be mistaken for permission to start.]] makes the status clearer. Almost ready could encourage someone else to seat a client there.
+Maya | I'll change the label. Do you know how long the remaining checks will take?
+Owen | I don't have a confirmed [[completion time::No reliable completion time is supplied for station three, so a waiting estimate would be invented.]] yet. Please don't promise the next client five minutes on that basis.
+Maya | All right. For the client who's here, I'll say we have another station available now.
+Owen | That works. Station two is [[confirmed ready::Rosa has confirmed station two through the salon process; that status cannot be transferred to station three.]]; we don't need to give the client a detailed account of the unfinished checks elsewhere.
+Maya | Who confirmed two? I'd like to put the name in the note so the next receptionist can see it.
+Owen | Rosa is the [[responsible technician::Rosa is the named source of the station-two confirmation, avoiding an anonymous or assumed approval.]]. She's already given that confirmation, so you can name her.
+Maya | Good. Does a cleared work surface at three tell us anything about the tools that will be used there?
+Owen | Not by itself. The [[readiness check::The readiness check must cover the actual required items; surface appearance alone does not verify tools or other controls.]] follows our actual process. An empty table doesn't establish that the tools or other requirements are ready.
+Maya | Then I'll leave the station pending, even if the client says they're happy to sit there.
+Owen | Correct. We still need the [[release confirmation::Release confirmation is the actual readiness decision after the required checks, not the client's willingness to use the station.]] after the checks. Their willingness doesn't complete our responsibilities.
+Maya | Let me repeat it: two ready, confirmed by Rosa; three pending, no confirmed time. Is that everything?
+Owen | That's an accurate [[read-back::The read-back connects the correct station number with its status, confirmation source, and timing limit.]]. It should prevent the ready label ending up beside the wrong station.
+Maya | I'll offer two now and wait for an actual update before changing three on the board.
+Owen | Thanks. Keep that [[readiness handover::The handover gives an immediately usable option while retaining the pending station's actual status.]] for the next receptionist too, so nobody has to guess from what the room looks like.''',
+    rehearsal=["Read the station exchange, clearly contrasting two ready with three pending.","Switch roles. Read the no-confirmed-time response without adding a five-minute estimate.","Complete and check the transfer; read station one as ready and station five as pending, using the new confirming name."],
     transfer_title='Read back different station numbers',
     transfer_setup='Station five is tidy but has incomplete required checks. Station one is confirmed ready by technician Jo. No completion time is known for five. A waiting client can be offered one.',
     transfer='''Reception: "The verified alternative is station ___." | one | Jo has confirmed station one ready, making it the available option.
@@ -505,26 +511,27 @@ review confirmation | Agreement on the time and purpose of the review. | send th
 Which promise exceeds the supplied facts? | Every correction will be free and completed during the review. | The review has no fee. | Rosa is available at 4:00. | No refund has been approved. | Correction price, method, and completion time have not been assessed or approved.
 Which concern should the case note identify? | A lettering-orientation mismatch | A confirmed product allergy | A reported chip that was never mentioned | A guaranteed removal procedure | The complaint concerns design direction rather than an invented health or wear issue.
 Which confirmation is accurate after acceptance? | Today at 4:00 with Rosa for a no-fee review of the direction concern. | A full correction at 4:00 with every cost waived. | A refund already processed. | A new paid design unrelated to the original record. | The confirmation states the agreed review and its limited fee scope.''',
-    dialogue='''Imani | I am calling about the lettering on my nails. I asked for it to face toward me, but the finished lettering faces away from me.
-Alex | I have checked the [[service record::Service record confirms the original toward-client direction, so the concern is not a new preference.]], and it confirms the direction you requested. You wanted the lettering facing toward you.
-Imani | Yes. I wanted to be able to read it from my own viewpoint. I do not want that described as changing my mind after the appointment.
-Alex | I understand. This is an [[orientation mismatch::Orientation mismatch identifies the difference between the recorded toward-client request and the reported away-facing result.]] against the recorded request, not simply a new direction you have decided on afterward.
-Imani | Thank you. I would like someone to look at it, but I need to know whether you can offer a time today.
-Alex | Rosa has a [[review appointment::Review appointment is the available opportunity to examine the concern today at 4:00, not a preapproved correction service.]] available at four today. The purpose is to examine the design concern and discuss the appropriate next step.
-Imani | Is there a charge just to come in and have that review? I want to understand that before I agree to the appointment.
-Alex | There is no [[review fee::Review fee applies to the assessment appointment itself; its absence does not determine the cost of any unassessed further work.]] for this appointment. I want to keep that clear and separate from any additional work that has not yet been assessed.
-Imani | Does that mean you are not promising a particular correction before Rosa sees it? I would rather hear an accurate answer now.
-Alex | Correct. The [[correction method::Correction method has not been assessed or approved, so Alex cannot promise a specific way of changing the finished design.]] needs assessment. I cannot tell you that one particular change will be made before Rosa has reviewed the result with you.
-Imani | That is fine. I do not want more work started without an explanation of what is proposed and what it would involve.
-Alex | Any [[remedy decision::Remedy decision follows the review and relevant agreement; accepting the review does not automatically authorize further work.]] should follow that discussion. Accepting a review is not the same as agreeing in advance to whatever further work might be suggested.
-Imani | Could you also avoid promising that I will leave with it corrected at a certain time? I may need to plan another commitment.
-Alex | We have not established a [[completion promise::Completion promise would guarantee a finish time for unassessed work; the review slot does not establish that.]] for any correction. Four o'clock is the review time, not a guaranteed finishing time for additional work.
-Imani | All right. I will take the review at four with Rosa. Please make sure the note explains the direction rather than just saying nail problem.
-Alex | I will make a specific [[case note::Case note records the toward-client request, reported away-facing lettering, and accepted review rather than a vague or different concern.]]: lettering requested toward you, recorded that way, but reported as facing away in the finished result.
-Imani | Exactly. It is not a chip or a problem I am reporting about wear. It is the direction of the lettering.
-Alex | That [[viewing perspective::Viewing perspective identifies the client as the intended reader, keeping direction separate from chipping or wear.]] is central to the report. I will not replace it with a different issue or say that a cause, refund, or correction has already been settled.
-Imani | Thank you. The review time and the fact that the review itself has no fee are the two things I needed confirmed today.
-Alex | Your [[review confirmation::Review confirmation covers the accepted 4:00 no-fee review, not the method, price, or timing of a correction.]] is today at four with Rosa, with no fee for the review. Any proposed further work will be discussed after assessment rather than promised during this booking call.''',
+    dialogue='''Imani | I'm calling about the lettering on my nails. I asked to read it facing toward me, but it's facing away.
+Alex | I've found the [[service record::The record confirms the original toward-client request, rather than a new preference after the service.]]. It says toward the client, just as you've described.
+Imani | Thank you. I don't want this treated as changing my mind. I explained the direction during the appointment.
+Alex | I understand. You're reporting an [[orientation mismatch::The mismatch concerns the delivered lettering direction compared with the documented request, not chipping or product wear.]], not asking us to replace the original request with a new one.
+Imani | Can Rosa look at it today? I can come back if there's an appointment.
+Alex | She has a [[review appointment::The available 4:00 appointment is to review the concern, not a promised completed correction.]] at four. She can look at the lettering with you and discuss what happens next.
+Imani | Would I have to pay just to come back and show her the problem?
+Alex | There's no [[review fee::No review fee applies to the assessment itself; it does not settle the cost of every possible remedy.]]. I haven't assessed any further work, so I can't give a correction price on this call.
+Imani | I see. Can you tell me how she'd change it, or does she need to see the nails first?
+Alex | She needs to assess the [[correction method::The method has not been assessed, so the receptionist should not promise a particular procedure.]] with you first. I don't want to promise a procedure we haven't discussed.
+Imani | Please don't start anything else without explaining it. I'd like to know exactly what's being proposed.
+Alex | Certainly. A [[remedy decision::The remedy decision follows review and agreement; accepting the appointment does not approve additional work automatically.]] comes after that discussion. Booking the review doesn't commit you to further work.
+Imani | And how long would I be there? I need to arrange the rest of my afternoon.
+Alex | I can't make a [[completion promise::A review start time does not establish when an unassessed correction could finish.]] for a correction yet. Four is the review time, not a guaranteed finish time.
+Imani | All right, I'll take the four o'clock review. Please make the note specific, not just unhappy with nails.
+Alex | The [[case note::The case note preserves the exact documented direction and reported result rather than a vague complaint.]] will say toward you requested and recorded, but finished lettering reported as facing away.
+Imani | Exactly. The letters should be readable from where I'm sitting. Nothing has chipped; it's the direction.
+Alex | I'll keep your [[viewing perspective::The client is the intended reader, which explains the toward-versus-away distinction.]] clear. I won't substitute a wear problem for the concern you're actually reporting.
+Imani | Thank you. Could you send me the time and Rosa's name so I can check them?
+Alex | Yes. The [[review confirmation::The confirmation covers the accepted time, named technician, and no-fee review, not an approved correction or refund.]] is today at four with Rosa, no charge for the review. No correction or refund has been approved during this call.''',
+    rehearsal=["Read the concern from the client's viewpoint. Contrast toward me with away from me.","Switch roles and read the review arrangement. Stress no fee for the review, without promising a correction's price or finish time.","Complete and check the reversed-direction transfer, then read the new 11:00 review details exactly."],
     transfer_title='Confirm a different design review',
     transfer_setup='The record says lettering should face away from the client, but the client reports it faces toward them. A no-fee review with Jo tomorrow at 11:00 is accepted. No correction method or price is agreed.',
     transfer='''Reception: "The recorded direction is ___ from the client." | away | Away is the documented original direction in this new case.
@@ -578,24 +585,25 @@ Which phrase makes an unsupported commitment? | Your infill is confirmed for Fri
 What does reception taking responsibility mean? | Reception owns the next availability discussion. | Consultation has already been completed. | Existing product is now identified. | Removal duration is automatically confirmed. | Ownership assigns the pending action without changing any unfinished assessment or booking status.''',
     dialogue='''Sora | I need to hand over a follow-up request. The client wants plain color next Friday at ten, but there is an existing product we have not identified.
 Malik | I will separate the [[plain-color request::Plain-color request records the desired appearance without selecting a removal method, infill, or confirmed appointment.]] from the service assessment. Is nail art wanted, or should the record explicitly say that it has been declined?
-Sora | Please say no nail art. The client was clear about that, and I do not want a small design added just because someone thinks it would be suitable.
+Sora | No art. The client specifically asked for plain color, even on the accent nails.
 Malik | I will preserve that [[declined option::Declined option is nail art, which the client explicitly excludes rather than leaving open for an unrequested design choice.]]. Plain color and no nail art should remain together in the appearance note.
 Sora | Thank you. Friday at ten is the time the client requested, but we did not offer a confirmed appointment or get acceptance of a slot.
 Malik | Then the [[requested time::Requested time is Friday at 10:00 as a preference, not an accepted or confirmed appointment.]] stays requested. I will not enter it as a booking just because the client named a day and an hour.
 Sora | Exactly. We also cannot assume what removal involves. The client says there is product on the nails but cannot identify it.
 Malik | I will record an [[unidentified product::Unidentified product means material is present but its identity is unknown; it must not be recorded as no product.]], not no product. That distinction matters before anyone promises a standard removal time.
-Sora | Reception needs to arrange a consultation first. We should not choose a short slot and then make the service description fit that time.
+Sora | Could you arrange the consultation first? We don't know enough to book a removal slot yet.
 Malik | The [[consultation prerequisite::Consultation prerequisite means assessment must come before confirming removal duration or whether an infill is appropriate.]] is clear. I will discuss consultation availability rather than confirm an unassessed removal or infill service.
 Sora | Good. The client may use infill as a general word for the next visit, but we have not established whether that is appropriate here.
 Malik | An [[infill::Infill is a maintenance service for an existing enhancement when suitable; its name does not establish that it is appropriate for this unidentified product.]] is not automatically the right booking just because it is a familiar term. Its suitability still needs assessment through the consultation.
-Sora | And removal time remains unconfirmed. Please do not give a number based on what another client's service happened to take.
+Sora | Please don't quote the usual removal time. We still don't know what we're dealing with.
 Malik | I will leave [[removal duration::Removal duration is the time needed for the actual service, which cannot be confirmed from an unidentified product or another client's appointment.]] unconfirmed. The product and relevant service need to be understood before a meaningful time allocation is promised.
 Sora | Could you read back the handover now? I want to catch any wording that makes the Friday preference sound more definite than it is.
 Malik | Plain color, no nail art, Friday at ten requested but unbooked, and existing product unidentified. The [[pending action::Pending action is the consultation availability discussion, which has not yet resulted in an accepted appointment or assessed service.]] is to discuss a consultation before confirming removal time or infill suitability.
-Sora | That is accurate. Reception will handle that next discussion and ask the client to confirm any actual appointment offered.
+Sora | Yes. Please offer consultation times and get the client's agreement before sending a booking confirmation.
 Malik | I will be the [[handover owner::Handover owner identifies Malik as responsible for the next discussion without claiming that the consultation or booking has already been completed.]] for the availability discussion. Taking responsibility does not change the unbooked status or resolve the product uncertainty.
-Sora | Perfect. Please keep the client informed about what the consultation is for, so it does not sound as though we are refusing to discuss the request.
+Sora | Thanks. Explain that we need to check the existing material so we can plan the right appointment.
 Malik | I will explain the purpose and seek [[client confirmation::Client confirmation is the explicit agreement still needed for an offered consultation appointment; a requested time alone does not provide it.]] for any offered slot. The record will remain precise: request received, consultation pending, and no removal duration or infill booking confirmed.''',
+    rehearsal=["Read the handover, keeping plain color and no art together as the appearance request.","Switch roles. Stress product present but unidentified and Friday requested but unbooked.","Complete and check the Tuesday transfer; read the consultation step without confirming a removal duration or infill."],
     transfer_title='Hand over another unbooked request',
     transfer_setup='A client requests plain color on Tuesday at 2:00, with no nail art. Existing product is unidentified. Reception owns the consultation availability discussion before removal time or infill suitability can be confirmed.',
     transfer='''Technician: "The requested day is ___." | Tuesday | Tuesday is the stated preference, not proof of an accepted appointment.

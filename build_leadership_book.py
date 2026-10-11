@@ -28,6 +28,7 @@ from books.cross_cultural_leadership_content import (
     TITLE, EDITION, AUTHOR, COPYRIGHT, REPRODUCTION_NOTICE, SLUG, UNITS, WEB_ORDER,
 )
 from work_icons import icon_asset
+from books.supplements import load_supplements
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'output/pdf/cross-cultural-leadership-english-book.pdf'
@@ -41,8 +42,11 @@ PAPER = '#F2F4FC'
 ACCENTS = ['#294EDB', '#984261', '#4857A6', '#895E10', '#5B4BB2', '#854B96', '#315EB3', '#A24738']
 FRONT_PAGES = 3
 UNIT_PAGES = 9
-KEY_START = FRONT_PAGES + len(UNITS) * UNIT_PAGES + 1
-PHRASES_START = KEY_START + len(UNITS) * 2
+SUPPLEMENT_COUNT = 3
+SUPPLEMENT_START = FRONT_PAGES + len(UNITS) * UNIT_PAGES + 1
+KEY_START = SUPPLEMENT_START + SUPPLEMENT_COUNT * 3
+SUPPLEMENT_KEYS_START = KEY_START + len(UNITS) * 2
+PHRASES_START = SUPPLEMENT_KEYS_START + SUPPLEMENT_COUNT
 INDEX_START = PHRASES_START + 2
 INDEX_PAGES = math.ceil(sum(len(u['vocabulary']) for u in UNITS) / 24)
 SOURCES_PAGE = INDEX_START + INDEX_PAGES
@@ -85,8 +89,21 @@ def key_page(index, conversation=False):
     return KEY_START + index * 2 + int(conversation)
 
 
-def content_hash(units=None):
-    return hashlib.sha256(json.dumps(UNITS if units is None else units, sort_keys=True).encode('utf-8')).hexdigest()
+def supplement_page(index):
+    return SUPPLEMENT_START + index * 3
+
+
+def content_hash(units=None, supplements=None):
+    content = dict(units=UNITS if units is None else units,
+                   supplements=[] if supplements is None else supplements)
+    return hashlib.sha256(json.dumps(content, sort_keys=True).encode('utf-8')).hexdigest()
+
+
+def conversation_location(unit, supplement=None):
+    if supplement is not None:
+        return (supplement_page(supplement), SUPPLEMENT_KEYS_START + supplement,
+                f'additional-{supplement + 1}-answers')
+    return unit_page(unit) + 6, key_page(unit, True), f'key-{unit + 1}-conversations'
 
 
 def validate_layout(boxes):
@@ -135,13 +152,14 @@ class Book:
         self.title = title
         self.slug = slug
         self.units = UNITS if units is None else units
+        self.supplements = load_supplements(slug)
         self.out = Path(out)
         self.out.parent.mkdir(parents=True, exist_ok=True)
         self.c = Canvas(str(self.out), pagesize=(W, H), initialFontName='Book', invariant=1)
         self.c.setTitle(title + ' | Learner book')
         self.c.setAuthor(AUTHOR)
         self.c.setCreator('English Ladder')
-        self.c.setSubject('Eight workplace scenarios, vocabulary, phrases, and structured practice. Content SHA-256: ' + content_hash(self.units))
+        self.c.setSubject('Eleven extended workplace conversations, vocabulary, phrases, and structured practice. Content SHA-256: ' + content_hash(self.units, self.supplements))
         self.c.setKeywords('English Ladder, ' + title + ', workplace English, B2, C1')
         self.page = 0
         self.y = 0
@@ -261,16 +279,15 @@ class Book:
         self.y -= after
 
     def bank(self, answers, small=False):
-        order = ([5, 2, 8, 0, 9, 4, 7, 1, 6, 3] if len(answers) == 10 else [2, 0, 3, 1])
-        if self.bank_seed is not None:
-            order = sorted(range(len(answers)), key=lambda n: hashlib.sha256(
-                f'{self.bank_seed}:{self.page}:{answers[n]}'.encode()).digest())
-            if order == list(range(len(answers))):
-                order = order[1:] + order[:1]
+        order = sorted(range(len(answers)), key=lambda n: hashlib.sha256(
+            f'{self.bank_seed or self.slug}:{self.page}:{answers[n]}'.encode()).digest())
+        if order == list(range(len(answers))):
+            order = order[1:] + order[:1]
         words = '   /   '.join(answers[n] for n in order)
         self.panel('Word + phrase bank', words, size=10 if small else 10.5, leading=15, after=12)
 
-    def answer_strip(self, answers, unit, bottom=False):
+    def answer_strip(self, answers, unit, bottom=False, supplement=None):
+        _, answer_page, anchor = conversation_location(unit, supplement)
         text = '   |   '.join(f'{i}. {answer}' for i, answer in enumerate(answers, 1))
         p, h = paragraph(esc(text), WIDTH - 24, 8.8, 12.5)
         height = h + 30
@@ -279,9 +296,9 @@ class Book:
             raise ValueError(f'Answer strip collides with dialogue on page {self.page}')
         self.c.setFillColor(colors.HexColor('#F5F0DF'))
         self.c.rect(LEFT, top - height, WIDTH, height, fill=1, stroke=0)
-        self.block(f'ANSWERS  /  EXPLANATIONS: PAGE {key_page(unit, True)}', LEFT + 12, top - 8,
+        self.block(f'ANSWERS  /  EXPLANATIONS: PAGE {answer_page}', LEFT + 12, top - 8,
                    WIDTH - 24, 7.2, 10, '#765514', True)
-        self.c.linkRect('', f'key-{unit + 1}-conversations',
+        self.c.linkRect('', anchor,
                         (LEFT + 12, top - 20, RIGHT - 12, top - 7), relative=0, thickness=0)
         self.block(esc(text), LEFT + 12, top - 23, WIDTH - 24, 8.8, 12.5)
         self.y = top - height - 15
@@ -321,9 +338,9 @@ def front(b):
     b.text(REPRODUCTION_NOTICE, size=8, leading=11, color=MUTED, after=0, width=325)
     b.y = 306
     b.rule(18)
-    b.text('Eight scenarios. Eight extended conversations.',
+    b.text('Eight lessons. Eleven extended conversations.',
            size=15, leading=21, bold=True, after=18)
-    b.panel('Inside the book', '192 vocabulary entries  /  128 reusable phrases\n160 dialogue turns  /  80 numbered dialogue gaps\nWord banks and explained answer keys', size=11, leading=17)
+    b.panel('Inside the book', '192 vocabulary entries  /  128 reusable phrases\n220 extended-dialogue turns  /  11 transfer exchanges\nWord banks and explained answer keys', size=11, leading=17)
     b.text('Upper-intermediate to advanced (B2-C1). For international managers, cross-border teams, and workplace English learners.',
            size=10, leading=15, color=MUTED, after=12)
     b.text(EDITION,
@@ -335,13 +352,14 @@ def front(b):
         top = b.y
         b.text(f'{i + 1:02d}  {unit["title"]}', size=11.1, leading=15, bold=True, after=5)
         b.text(unit['scene'] + '  |  ' + unit['skill'], size=9, leading=12.5,
-               width=WIDTH - 42, color=MUTED, after=13)
+               width=WIDTH - 42, color=MUTED, after=9)
         b.c.setFont('BookBold', 11)
         b.c.setFillColor(colors.HexColor(ACCENTS[i]))
         b.c.drawRightString(RIGHT, top - 11, str(unit_page(i)))
         b.c.linkRect('', f'unit-{i + 1}', (LEFT, b.y + 7, RIGHT, top), relative=0, thickness=0)
     b.rule()
     for label, page, anchor in [('Directness, disagreement, and boundaries', 3, 'culture'),
+                                ('Three more workplace conversations', SUPPLEMENT_START, 'additional-1'),
                                 ('Answers and explanations', KEY_START, 'key-1-checks'),
                                 ('Fast-access phrase pages', PHRASES_START, 'quick-phrases'),
                                 ('Vocabulary index', INDEX_START, 'index'),
@@ -452,15 +470,98 @@ def dialogue(b, u, i, second=False):
         b.bank(answers, small=True)
     else:
         b.text(f'Continue with the word bank on page {unit_page(i) + 6}.', size=9.2, leading=13, after=15)
+    dialogue_turns(b, u, second)
+    if second:
+        b.answer_strip(answers, i, bottom=True)
+
+
+def dialogue_turns(b, u, second=False, spacing=10):
     start = 10 if second else 0
+    palette = [b.accent, '#895E10' if b.accent == '#984261' else '#984261', '#46515E']
+    speaker_colors = {name: palette[n % len(palette)] for n, (name, _) in enumerate(u['cast'])}
     for turn, (speaker, text) in enumerate(u['dialogue'][start:start + 10], start + 1):
         rich = re.sub(r'\{\{(\d+)\}\}', lambda m: blank(m[1], b.accent), esc(text))
         top = b.y
-        b.block(f'{turn:02d}', LEFT, top - 1, 20, 7.7, 11, MUTED)
-        b.block(f'<b>{esc(speaker)}:</b> {rich}', LEFT + 26, top, WIDTH - 26,
-                size=10, leading=14, after=10)
-    if second:
-        b.answer_strip(answers, i, bottom=True)
+        speaker_color = speaker_colors[speaker]
+        b.c.setFillColor(colors.HexColor(speaker_color))
+        b.c.roundRect(LEFT, top - 15, 18, 15, 3, fill=1, stroke=0)
+        b.block(f'{turn:02d}', LEFT + 3, top - 2, 14, 7.1, 10, '#FFFFFF')
+        b.block(f'<font color="{speaker_color}"><b>{esc(speaker)}:</b></font> {rich}', LEFT + 26, top, WIDTH - 26,
+                size=10, leading=14, after=spacing)
+
+
+def additional_conversation(b, u, index):
+    number = 8 + index
+    answers = [g['answer'] for g in u['gaps']]
+    for second in (False, True):
+        b.new_page(f'Conversation {number + 1:02d}',
+                   u['scene'] if not second else 'The conversation, continued', number,
+                   None if second else f'additional-{index + 1}')
+        b.label('E', 'More workplace conversations / ' + ('11-20' if second else '1-10'))
+        if not second:
+            b.text(u['skill'], size=10.3, leading=14, bold=True, after=6)
+            b.text(u['brief'], size=9.4, leading=13, after=7)
+            b.text('PEOPLE / ' + ' | '.join(f'{name}: {role}' for name, role in u['cast']),
+                   size=8.2, leading=11.5, color=MUTED, after=8)
+            b.text('Use each bank entry once, without changing its form. Answers follow turn 20.',
+                   size=9.2, leading=13, after=8)
+            b.bank(answers, small=True)
+        else:
+            b.text(f'Continue with the word bank on page {supplement_page(index)}.',
+                   size=9.2, leading=13, after=15)
+        dialogue_turns(b, u, second, spacing=10 if second else 8)
+        if second:
+            b.answer_strip(answers, number, bottom=True, supplement=index)
+    b.new_page(f'Conversation {number + 1:02d} / transfer', u['transfer']['title'], number)
+    b.label('F', 'Say it in a new situation')
+    b.text(u['transfer']['setup'], size=10.5, leading=15, after=12)
+    b.text('Complete the four gaps. Use each bank entry once.', size=9.7, leading=14, after=10)
+    lines = u['transfer']['lines']
+    answers = [q['options'][q['answer']] for q in lines]
+    b.bank(answers)
+    for n, q in enumerate(lines, 1):
+        b.text(esc(q['prompt']).replace('___', blank(n, b.accent)),
+               rich=True, size=11, leading=16, after=12)
+    b.answer_strip(answers, number, supplement=index)
+    b.text('Read, switch, repeat', size=13, leading=18, bold=True, after=10)
+    b.text('1. Check the four answers and read the complete exchange aloud.', after=12)
+    b.text('2. Switch roles. Read it again with the word bank covered.', after=12)
+    b.text('3. Return to the extended conversation. Read turns 1-10, then switch roles for turns 11-20. Use the corrected expressions.', after=12)
+    b.panel('Solo practice', 'Read both roles. Pause briefly at each change of speaker. Repeat any line that needed an answer check.', size=9.5, leading=13.5)
+
+
+def additional_answers(b, u, index):
+    number = 8 + index
+    b.new_page(f'Answers / conversation {number + 1:02d}', f'{number + 1:02d}  Conversation answers',
+               number, f'additional-{index + 1}-answers')
+    b.text(u['scene'], size=10.5, leading=15, color=b.accent, bold=True, after=17)
+    top = b.y
+    col_width = (WIDTH - 26) / 2
+    b.text('E  Extended conversation', width=col_width, size=11, leading=15, bold=True, after=5)
+    b.text(f'Pages {supplement_page(index)}-{supplement_page(index) + 1}', width=col_width,
+           size=8.8, leading=12, color=MUTED, after=12)
+    for n, gap in enumerate(u['gaps'], 1):
+        b.text(f'<b>{n}. {esc(gap["answer"])}.</b> <font color="{MUTED}">Turn {gap["turn"]}.</font> {esc(gap["reason"])}',
+               rich=True, width=col_width, size=9.6, leading=14, after=14)
+    left_bottom = b.y
+    b.y = top
+    x = LEFT + col_width + 26
+    b.text('F  Transfer exchange', x=x, width=col_width, size=11, leading=15, bold=True, after=5)
+    b.text(f'Page {supplement_page(index) + 2}', x=x, width=col_width, size=8.8, leading=12,
+           color=MUTED, after=12)
+    for n, question in enumerate(u['transfer']['lines'], 1):
+        answer = question['options'][question['answer']]
+        b.text(f'<b>{n}. {esc(answer)}</b>', rich=True, x=x, width=col_width,
+               size=9.6, leading=14, after=5)
+        b.text(question['prompt'].replace('___', answer), x=x, width=col_width,
+               size=9.6, leading=14, after=6)
+        b.text(question['reason'], x=x, width=col_width, size=9.3, leading=13.5, after=16)
+    if u.get('reference'):
+        b.y = min(left_bottom, b.y)
+        b.rule(10)
+        title, url = u['reference']
+        b.text(f'Background reading: <link href="{html.escape(url, quote=True)}" color="{b.accent}">{esc(title)}</link>. The conversation is an original fictional teaching case.',
+               rich=True, size=8.7, leading=12.5, after=8)
 
 
 def transfer(b, u, i):
@@ -473,11 +574,11 @@ def transfer(b, u, i):
     b.bank(answers)
     for n, q in enumerate(items, 1):
         prompt = esc(q['prompt']).replace('___', blank(n, b.accent))
-        b.text(prompt, size=11, leading=16, after=15, rich=True)
+        b.text(prompt, size=11, leading=16, after=12, rich=True)
     b.answer_strip(answers, i)
     b.text('Rehearse with a fixed script', size=13, leading=18, bold=True, after=10)
     for n, instruction in enumerate(u['rehearsal'], 1):
-        b.text(f'{n}. {instruction}', size=10, leading=14.5, after=12)
+        b.text(f'{n}. {instruction}', size=10, leading=14.5, after=10)
     b.panel('Working alone', 'Read both roles, pausing for two seconds when the speaker changes. Repeat with the bank covered, then check any missed expressions.', size=9.5, leading=13.5)
 
 
@@ -590,9 +691,15 @@ def build():
         dialogue(b, u, i)
         dialogue(b, u, i, second=True)
         transfer(b, u, i)
+    for i, u in enumerate(b.supplements):
+        assert b.page + 1 == supplement_page(i)
+        additional_conversation(b, u, i)
     for i, u in enumerate(UNITS):
         assert b.page + 1 == key_page(i)
         explanations(b, u, i)
+    for i, u in enumerate(b.supplements):
+        assert b.page + 1 == SUPPLEMENT_KEYS_START + i
+        additional_answers(b, u, i)
     assert b.page + 1 == PHRASES_START
     reference(b)
     assert b.page + 1 == SOURCES_PAGE
@@ -603,8 +710,9 @@ def build():
     assert len(reader.pages) == TOTAL_PAGES
     assert all('English Ladder' in (page.extract_text() or '') for page in reader.pages)
     print(json.dumps(dict(path=str(OUT), pages=len(reader.pages), bytes=OUT.stat().st_size,
-                         units=8, extended_dialogue_turns=160, dialogue_gaps=80,
-                         vocabulary_entries=192, set_phrases=128, structured_items=168), indent=2))
+                         units=8, extended_dialogue_turns=220, dialogue_gaps=98,
+                         transfer_dialogues=11, vocabulary_entries=192, set_phrases=128,
+                         structured_items=198), indent=2))
 
 
 if __name__ == '__main__':

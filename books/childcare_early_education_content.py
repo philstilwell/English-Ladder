@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=32,
     tagline='Warm communication. Clear care.',
     audience='For early-years educators, nursery staff, preschool assistants, and childcare teams working with children and families.',
-    map_intro='Eight early-years conversations: clarify arrival plans, support shared play, prepare a transition, mediate a resource disagreement, describe learning, explain inclusive participation, route a health-plan query, and verify a collection arrangement.',
+    map_intro='Eight early-years cases: arrivals, shared play, transitions, peer disagreements, learning observations, inclusive participation, health plans, and collection checks.',
     notes_title='Be specific, warm, and fair.',
     notes_intro='Early-years communication moves between brief child-facing phrases and detailed discussions with families and colleagues. Describe what happened, offer genuine choices, preserve the child perspective, and keep important care arrangements clear.',
     field_notes=[
@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='Department for Education. Early Years Foundation Stage Statutory Framework.',
              url='https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2',
-             note='England framework updated September 2026. Context for family communication, health information, confidentiality, and collection procedures; not a universal legal code.', checked='1 October 2026'),
+             note='England framework updated September 2026. Context for family communication, health information, confidentiality, and collection procedures; not a universal legal code.', checked='10 October 2026'),
         dict(title="NAEYC. Observing, Documenting, and Assessing Children's Development and Learning.",
              url='https://www.naeyc.org/node/3811',
-             note='Professional context for responsive observation and appropriate use of assessment evidence. Original cases do not establish developmental diagnoses or rankings.', checked='1 October 2026'),
+             note='Professional context for responsive observation and appropriate use of assessment evidence. Original cases do not establish developmental diagnoses or rankings.', checked='10 October 2026'),
         dict(title='Office of Head Start. Home Language Support.',
              url='https://headstart.gov/culture-language/article/home-language-support',
-             note='Developmental background on supporting home languages alongside English. The fictional participation plan is specific to the child and activity.', checked='1 October 2026'),
+             note='Developmental background on supporting home languages alongside English. The fictional participation plan is specific to the child and activity.', checked='10 October 2026'),
         dict(title='Rosanbalm and Murray. Co-Regulation From Birth Through Young Adulthood: A Practice Brief.',
              url='https://fpg.unc.edu/sites/fpg.unc.edu/files/resources/reports-and-policy-briefs/Co-RegulationFromBirthThroughYoungAdulthood.pdf',
-             note='Research-to-practice context for supportive relationships, predictable environments, and coaching. The original peer scenarios are language practice, not behavior-treatment protocols.', checked='1 October 2026'),
+             note='Research-to-practice context for supportive relationships, predictable environments, and coaching. The original peer scenarios are language practice, not behavior-treatment protocols.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -96,7 +96,7 @@ Exactly how | Limits promises about the child's feelings.
 Not yet agreed | Prevents a possible arrangement from becoming a confirmed instruction.
 Same message | Connects adult coordination with the child's experience.''',
     d='''Which opening is most useful? | You expected ten minutes; the note says brief goodbye. Let us clarify the plan together. | You are making Mina difficult by staying. | Ten minutes is mandatory in every center. | A brief goodbye guarantees no tears. | The opening preserves both sources and invites a practical agreement without blame or a false guarantee.
-What should be said about the cloth? | Its use follows the center's actual arrangements. | It is suitable for every activity and sleep setting. | It guarantees Mina will settle immediately. | Its presence proves a developmental problem. | The case permits discussion of the familiar item but supplies no universal safety or emotional guarantee.
+What should be said about the cloth? | Its use follows the center's actual arrangements. | Approval during arrival automatically extends to sleep. | A parent's usual home practice replaces the center's safety checks. | Keeping it nearby confirms Mina will not become upset. | Arrival comfort, sleep safety, and the child's response are separate questions; familiarity does not settle all three.
 Why should adults coordinate their wording? | To give Mina a calm, consistent message about the clarified plan | To hide the parent expectation | To avoid ever recording a change | To make the child choose which adult is right | Consistent communication supports a clearer transition without making the child resolve an adult disagreement.
 Which statement overreaches? | Mina will definitely be calm as soon as Daniel leaves. | It is Mina's third morning. | Rosa is present. | The departure time is not yet agreed here. | The facts do not establish or guarantee Mina's future emotional response.''',
     dialogue='''Daniel | Rosa, I thought I could stay for ten minutes this morning, but the note says a brief goodbye. I do not want Mina hearing two different instructions.
@@ -105,20 +105,21 @@ Daniel | It is only her third morning, and I had prepared her for me staying a l
 Rosa | I am her [[key educator::The key educator is Rosa, the present staff member identified to clarify the plan with Daniel and support Mina.]], so let us work through the difference calmly. We should not make Mina choose between what you expected and what the note appears to say.
 Daniel | When staff say brief, do they mean a particular number of minutes? I cannot tell whether ten minutes fits that word or contradicts it.
 Rosa | A [[brief goodbye::A brief goodbye needs a shared practical meaning here; the word alone does not specify a universal number of minutes.]] needs a clear meaning in our arrangement. I should not treat that word as though we have already agreed on an exact departure time.
-Daniel | I appreciate that. I do not want to be blamed for staying when I thought I was following the plan, or blamed for leaving if she is upset.
+Daniel | Yesterday I was told not to rush. This morning the note sounds different. I need to know what to do, and Mina is listening to us.
 Rosa | This is about [[family partnership::Family partnership treats Daniel's information as part of the clarification rather than assigning blame for an unresolved arrival arrangement.]], not blame. We can acknowledge what you understood and clarify the plan without labeling your choice as the cause of a reaction we have not observed.
 Daniel | She has brought her familiar cloth. It helps her recognize something from home, but I do not know the center arrangements for using it.
 Rosa | We should check the [[comfort item::The comfort item is the familiar cloth; its use depends on actual center and safety arrangements, not an automatic permission for every situation.]] arrangements. Its familiarity is useful information, but I will not assume it can be used in every activity or setting.
 Daniel | Could you promise that she will be settled after I leave? I know that may be difficult to answer, but it would make leaving easier.
 Rosa | I can offer honest support, not a guaranteed [[emotional response::An emotional response cannot be promised in advance; Rosa can support Mina without guaranteeing a specific reaction to separation.]]. We will need to notice how Mina responds and follow the agreed approach rather than promise a particular feeling.
-Daniel | Then I would like us to be clear about who receives her and what each of us says. That seems more helpful than pretending we can predict everything.
+Daniel | Could you be the person she comes to after our goodbye? She knows you now, and I would like to tell her who will be with her.
 Rosa | Agreed. A consistent [[arrival routine::The arrival routine is the understandable sequence adults clarify for Mina, not a promise that every morning will feel identical.]] should make the next step understandable. Let us clarify the practical handover and use the same message with her.
-Daniel | If the plan needs a note, can it reflect what we actually agree rather than leave tomorrow's staff with the same ambiguous word?
+Daniel | Will tomorrow's staff see what we agree? I do not want to prepare Mina for one routine and be given a different instruction when we arrive.
 Rosa | Yes. We should preserve the [[shared understanding::Shared understanding means the practical agreement is clear to the adults, rather than relying on the unresolved word brief.]] through our process. A clear record will help colleagues continue the arrangement without inventing a new version.
-Daniel | I also would like to understand any later update arrangement. I do not want to expect an immediate call if that has not been agreed.
+Daniel | And how will I hear how she gets on? I keep checking my phone, but I do not know when I should expect an update.
 Rosa | We can clarify the [[update arrangement::An update arrangement specifies actual later communication; it must be agreed rather than assumed or offered as an unsupported timing guarantee.]] as part of the conversation. We should say what contact is genuinely agreed rather than leave you waiting for an assumed promise.
 Daniel | Thank you. My main concern is that Mina gets one calm message and that I understand the plan before being told to leave.
 Rosa | That is why [[consistency::Consistency aligns the adults' messages after clarification, helping Mina receive one coherent plan without an invented departure deadline.]] matters here. Let us resolve the expectation, confirm the handover, and keep the message to Mina clear and respectful.''',
+    rehearsal=["Read Daniel and Rosa's checked dialogue. Contrast expected ten minutes with the note's brief goodbye without blaming the parent.","Switch roles. Repeat the handover and update questions, keeping every unconfirmed arrangement conditional.","Complete the five-minute/immediate-handover transfer, check the key, then read it without inventing a revised agreement."],
     transfer_title='Clarify another arrival mismatch',
     transfer_setup='Parent Ellis expects a five-minute stay. The note says immediate handover. Key educator Noor is present. No revised agreement has been made.',
     transfer='''Ellis: "I expected a ___ stay." | five-minute | The parent expectation is a five-minute stay, not an agreed revision.
@@ -145,7 +146,7 @@ leading question | Question that steers the listener toward an implied preferred
 wait time | Deliberate pause allowing a child time to process and respond. | allow wait time
 sustained shared thinking | Extended joint exploration of an idea or problem through interaction. | support sustained shared thinking
 modeling | Demonstrating language or action that can support learning. | use language modeling
-recasting | Restating a child's meaning in an expanded or adjusted form without changing the idea. | use a gentle recast
+recasting | Restating a child's message with an adjusted grammatical form while preserving the intended meaning. | use a gentle recast
 expansion | Adding useful language to a child's expressed idea while preserving its meaning. | offer a language expansion
 comparative language | Words used to describe relative qualities such as wider or taller. | model comparative language
 spatial language | Words describing position, direction, distance, or arrangement. | introduce spatial language
@@ -195,20 +196,21 @@ Ben | I could say, "Eva, show us what you mean by wider." That lets her point or
 Maya | Yes. That is an [[open prompt::An open prompt invites Eva's meaning through words or demonstration instead of supplying the adult's preferred design.]]. It supports her idea without putting our answer into her mouth or turning the exchange into a vocabulary test.
 Ben | For Jo, I could ask where the opening should be taller. I should not translate his request into another version of Eva's idea.
 Maya | Exactly. Use [[spatial language::Spatial language identifies the opening underneath the bridge and helps preserve the location relevant to Jo's proposal.]] such as underneath while keeping the idea his. Height of an opening and width of a bridge are different features.
-Ben | If I say, "Wouldn't a wider bridge be better?" I would be suggesting the answer even though the sentence sounds like a question.
+Ben | I caught myself saying, "Wouldn't a wider bridge be better?" That was really my idea in question form. I need to give Jo's opening a fair hearing too.
 Maya | That is a [[leading question::A leading question contains an implied preferred answer, here favoring the wider design before the children's ideas are explored.]]. It could make Jo feel that the decision is already made. We can invite explanations without hinting which child should agree with us.
 Ben | We have blocks available for trying two designs. I could suggest that practical option instead of making the children compete for one approved plan.
 Maya | A second [[trial::A trial is an attempt to explore a design; proposing two trials does not establish either outcome or a winner.]] gives us something to compare. We should not announce the result in advance or promise that a particular structure will work.
-Ben | What language would help them notice the difference without taking over? I want more than simply saying good job every time they place a block.
+Ben | I keep saying good job, but it does not give them much to work with. What could I say about the supports they are moving?
 Maya | Offer [[specific feedback::Specific feedback names an observed action or feature, giving useful language without replacing the child's idea with general praise or ranking.]] such as, "You moved the supports farther apart." That names an action and leaves room for the child to explain what they intended.
 Ben | I can also model wider and taller while pointing to the appropriate dimension. I should not use taller as another word for better.
 Maya | Right. [[Comparative language::Comparative language describes relative qualities such as width and height, not an automatic judgment that one child or design is better.]] helps describe the structures. It should not quietly become a ranking of the children or an unsupported claim about strength.
 Ben | If Eva says, "More space here," I might say, "You want more space across the bridge," while checking that I have kept her meaning.
 Maya | That is a useful [[expansion::Expansion adds language to the child's expressed meaning while preserving the intention rather than substituting an adult idea.]]. We are adding language around her idea, not correcting her into a different design or requiring her to repeat our exact sentence.
-Ben | I need to pause after a prompt too. If I immediately answer my own question, neither child gets much chance to show what they mean.
+Ben | I tend to fill the silence. Eva may be about to point when I jump in with another question. I will try leaving that space.
 Maya | Allow [[wait time::Wait time leaves room for processing and response; answering immediately for the children would remove that opportunity.]]. Watch their responses, including gestures, and keep the exploration moving at a pace that allows both to participate.
 Ben | Then our plan is to hear both intentions, offer two available-block trials, and describe what happens without choosing a winner beforehand.
 Maya | Yes. That supports [[collaborative play::Collaborative play involves shared exploration and coordination, which the two-design comparison supports without a predetermined winner.]]. We can compare features, invite a later revision, and keep the children's ideas at the center of the conversation.''',
+    rehearsal=["Read Maya and Ben's corrected dialogue. Use your voice to distinguish a wider bridge from a taller opening.","Switch roles. Read the exact child-facing prompts, pausing after each prompt instead of supplying a child's answer.","Complete the tower comparison, check the key, then read it aloud without changing wider, taller, or the two proposed trials."],
     transfer_title='Compare two tower intentions',
     transfer_setup='Ari wants a wider tower base. Bea wants a taller tower. Available blocks allow two trials. No winner or result is established.',
     transfer='''Educator: "Ari wants a ___ base." | wider | Ari's stated intention concerns the width of the base.
@@ -224,7 +226,7 @@ BOOK['units'].append(unit(
     brief='Luca is building when the room will move to story time in five minutes. The current center arrangement allows the structure to remain on the marked shelf. Luca can choose to place the last block or ask the educator for a photograph using the center permitted practice. Educators Nora and Ben discuss how to explain these options. They cannot extend play indefinitely, promise a return time that is not supplied, or use a personal device outside the approved photography arrangements. The choices concern how to finish, not whether story time happens.',
     cast='Nora | Early-years educator\nBen | Colleague coordinating the transition',
     culture=('A boundary and a choice can coexist', 'A genuine choice can help a child finish an activity without removing the next routine. State the shared boundary first, then offer the available options in simple language. Avoid asking a yes-or-no question when no is not an available outcome.'),
-    a='''When does story time begin? | In five minutes | Whenever Luca decides indefinitely | In an hour | At an unspecified date next week | The brief gives a five-minute warning before the transition to story time.
+    a='''Which timing statement is supplied by the arrangement? | Story time begins in five minutes. | Building resumes immediately after the story. | Luca has five minutes after the group starts story time. | The photograph postpones the group transition. | Five minutes is the warning before story time, not a return promise or an extension triggered by the finishing choice.
 What can remain on the marked shelf? | Luca's structure under the current arrangement | Every object permanently | An unapproved personal camera | A guaranteed future activity slot | The current arrangement specifically permits the structure to remain on the marked shelf.
 What do the two choices concern? | How Luca finishes before the transition | Whether the room ever moves to story time | A new permanent center rule | Unlimited building time | The last block or permitted photograph supports finishing within the existing boundary.''',
     vocabulary='''transition | Move from one activity, place, or part of the day to another. | support a transition
@@ -255,7 +257,7 @@ consistent cue | Signal used in an aligned way across adults or occasions. | agr
     precision_extra='Preserving the structure does not establish when Luca will return to it. A photograph also requires the actual permission, device, storage, and privacy arrangements. Do not treat a useful transition idea as authorization to use a personal phone.',
     phrases='''Give advance notice | Story time begins in five minutes.
 Name the boundary | We will move to story time after this finishing step.
-Offer the two choices | You can place the last block or ask me for a permitted photograph.
+Offer the two choices | You can add the last block, or I can take a photo using our center's camera.
 Show the storage place | Your structure can stay on the marked shelf.
 Keep the choice genuine | Both options are available under our current arrangement.
 Avoid an open-ended promise | I cannot promise unlimited building time.
@@ -283,22 +285,23 @@ What should remain with the adults? | Responsibility for supervision during the 
 Nora | Start with [[advance warning::Advance warning tells Luca about the five-minute change before it occurs, supporting preparation rather than a sudden instruction.]]: "Story time begins in five minutes." Then explain that the current arrangement allows his structure to stay on the marked shelf.
 Ben | That could help. He has put effort into it, so moving on does not need to sound as though the work is being thrown away.
 Nora | Exactly. Name the [[preserved work::Preserved work means the structure can remain under the current arrangement; it does not imply unlimited play or a promised return time.]] and show where it will stay. We can respect the effort while keeping the transition clear.
-Ben | He can place the last block or ask for a photograph through our permitted practice. Those are real options, not choices I have invented to distract him.
+Ben | I can say, "You can add the last block, or I can take a photo using our center's camera." I will check our photo arrangements first.
 Nora | That is a [[bounded choice::A bounded choice offers two genuinely available ways to finish while the move to story time remains fixed.]]. Both options concern how to finish. Neither means the group waits indefinitely or that story time becomes optional.
 Ben | I should avoid saying, "Do you want to go to story time?" if I am not actually offering the possibility of staying here instead.
 Nora | Right. State the [[nonnegotiable boundary::The nonnegotiable boundary is the move to story time, distinct from Luca's available choice of a finishing action.]] calmly, then offer the finishing choices. The question should not imply an option that disappears as soon as he chooses it.
 Ben | I could say, "First the last step, then story time." That gives him a short sequence rather than several instructions in one breath.
 Nora | Use that [[first-then language::First-then language makes the sequence explicit: the finishing step precedes the move to the next activity.]] with the actual options. It helps us keep the sequence clear without promising extra building time beyond the arrangement.
-Ben | What about the photograph? I do not want a colleague hearing photograph and automatically taking out a personal phone while I handle the group.
+Ben | The photo option needs a clear handoff between us. I do not want someone taking out a personal phone while we are moving the children.
 Nora | The option still requires [[photography permission::Photography permission and the center's actual arrangements govern the image; a helpful transition idea does not authorize any device or use.]] and the permitted device and storage practice. We should not treat the child-facing choice as permission to bypass those arrangements.
 Ben | I will also avoid promising that Luca can return immediately after the story. We have permission to preserve the structure, not a supplied return slot.
 Nora | Correct. Keep the [[return expectation::The return expectation must not include an invented time; preserving the structure does not establish when building will resume.]] accurate. We can explain what stays without inventing when the next building opportunity will happen.
-Ben | After presenting the choices, I should give him a moment to understand rather than repeat them faster or change the options while he is responding.
+Ben | If he is still looking at the tower, I will pause and keep the choices the same. Repeating them faster is not helping him finish.
 Nora | Allow [[processing time::Processing time lets Luca understand and respond to the available choices rather than face a changing or rushed instruction.]]. The wording can stay short and consistent, with the same boundary instead of a new offer every few seconds.
 Ben | During the move, we still need to keep the group appropriately supervised. Offering Luca a choice does not make him responsible for everyone else.
 Nora | Yes. [[Supervision continuity::Supervision continuity keeps appropriate adult oversight in place through the transition; the child does not assume that responsibility.]] stays with us. Coordinate the adults and materials through our actual routine, not through an assumption that the children will manage it.
 Ben | Then the message is five minutes, one of the two finishing choices, structure on the marked shelf, and a clear move to story time.
 Nora | That gives us a [[consistent cue::A consistent cue aligns the adults' transition message so Luca hears the same sequence and available choices.]]. We can acknowledge his work, follow through calmly, and keep the choice meaningful without changing the agreed boundary.''',
+    rehearsal=["Read Nora and Ben's checked exchange. Stress five minutes, last block or photo, and the marked shelf.","Switch roles. Repeat the first-then sentence with a calm boundary and the two printed choices; do not invent a return time.","Complete the drawing-to-music transfer, check the key, then read it with the three-minute warning and named tray unchanged."],
     transfer_title='Offer a different finishing choice',
     transfer_setup='Drawing time ends in three minutes. The current arrangement allows the drawing to stay in the named tray. Ari can add one final line or ask the educator to label the work. The next activity is music.',
     transfer='''Educator: "Music begins in ___ minutes." | three | The scenario gives a three-minute warning before music begins.
@@ -351,9 +354,9 @@ Name the finishing point | Ari wants to finish one container.
 Preserve the next request | Bea wants the large scoop next.
 Offer the actual alternative | The smaller scoop is available while waiting.
 Do not pretend equivalence | The smaller scoop is an option, not an identical replacement.
-Model a short sequence | First Ari finishes this container; then we support Bea's turn.
+Model a short sequence | First Ari finishes this container; then it is Bea's turn.
 Keep language neutral | Let us describe the action without labeling either child.
-Validate without surrendering | You want the scoop; we still need a clear turn-taking arrangement.
+Validate without surrendering | You want the big scoop. Ari is using it now; you can have the next turn.
 Check the proposal | We need to help both children understand the next step.
 Keep adult support present | I will stay responsive to the interaction.
 Avoid an invented time | No exact number of waiting minutes has been agreed.
@@ -365,7 +368,7 @@ Now and next | Makes the resource sequence concrete.
 An option, not identical | Preserves the real difference between available resources.
 Help both understand | Treats a proposed arrangement as something to support, not an automatic result.
 Stay responsive | Keeps adult attention present rather than assuming the conflict is solved by one sentence.''',
-    d='''Which account avoids an unsupported motive? | Ari held the large scoop; Bea then reached toward it. | Bea deliberately wanted to upset Ari. | Ari is always selfish. | Both children planned to disrupt the session. | The first account preserves the observed sequence without adding intention or a fixed label.
+    d='''Which account avoids an unsupported motive? | Ari held the large scoop; Bea then reached toward it. | Bea deliberately wanted to upset Ari. | Ari is always selfish. | Both children planned to disrupt the session. | The correct account preserves the observed sequence without adding intention or a fixed label.
 Which proposal uses the supplied facts? | Ari finishes one container, then Bea has the next supported turn; the smaller scoop is available meanwhile. | Bea must wait exactly ten minutes. | Ari keeps the scoop for the entire session. | A second large scoop is available. | The proposal uses the stated finishing point, next-turn request, and actual alternative without inventing resources or timing.
 What does emotional validation mean here? | Acknowledge wanting the scoop without approving every action used to obtain it. | Allow any action because the wish is strong. | Deny that either child has a preference. | Diagnose the cause of every feeling. | Acknowledging the wish can coexist with boundaries and practical support for access.
 What remains necessary after proposing the sequence? | Support understanding and remain responsive to the actual interaction. | Assume every child agreed without checking. | Leave all supervision to the children. | Record a guaranteed permanent resolution. | A proposed sequence does not prove acceptance or remove the need for adult support.''',
@@ -373,11 +376,11 @@ What remains necessary after proposing the sequence? | Support understanding and
 Sora | The [[observed sequence::The observed sequence is Ari holding the large scoop followed by Bea reaching toward it; it does not establish a motive.]] was Ari holding it, then Bea reaching toward it. I do not know the motive, and I should keep that uncertainty clear.
 Leon | Then describing Bea as deliberately upsetting Ari would add something we did not establish. We can describe the reach without attaching that explanation.
 Sora | Yes. That would be an [[inferred motive::An inferred motive is an assumed reason for the behavior, unlike the directly observed holding and reaching.]]. It can affect how colleagues treat the child later, so the record and conversation should not present it as fact.
-Leon | What do the children want now? A practical account of their requests may help us support the next step without turning this into a character judgment.
+Leon | What are they asking for now? If Ari has nearly finished something, we may be able to make the next turn clearer than just saying share.
 Sora | Ari wants to finish one container. Bea wants the large scoop next. That gives us a possible [[finishing point::The finishing point is one container, a specific stated limit rather than unlimited use or an invented number of minutes.]] and a next-turn request to work with.
 Leon | We could say, "Ari is using the large scoop now. Bea wants it next." That names the situation without saying one child is bad for wanting it.
 Sora | That is a [[neutral description::A neutral description names current use and the next request without judging the children or claiming to know their intentions.]]. It helps us respond to the actual resource issue while staying attentive to any safety concern.
-Leon | There is a smaller scoop available. We can offer it while Bea waits, but we should not pretend it is another large scoop or insist the two are identical.
+Leon | I can offer the smaller scoop while Bea waits. I will say it is smaller; telling Bea it is just the same would ignore what she wants.
 Sora | Exactly. It is an [[alternative resource::The alternative resource is the smaller scoop, which can be offered honestly without claiming it is an identical replacement.]], not an identical replacement. We can name what is available without denying that Bea specifically wants the larger one.
 Leon | How do we acknowledge the wish without suggesting that reaching for whatever you want always gets you immediate access?
 Sora | Use [[emotional validation::Emotional validation acknowledges the wish or feeling while allowing adults to maintain a clear boundary and support appropriate access.]] alongside the boundary: "You want the scoop. Ari is finishing this container, and we can help with your turn next."
@@ -389,6 +392,7 @@ Leon | And if one child remains upset, we stay responsive. A calm adult presence
 Sora | That is part of [[co-regulation::Co-regulation combines supportive adult interaction and clear structure while the child develops ways to manage the disagreement.]]. We can model calm language and maintain the boundary without treating a forced phrase as proof that the practical conflict is resolved.
 Leon | Then we describe the sequence, preserve both requests, offer the smaller scoop honestly, and help the children understand the proposed current and next turns.
 Sora | Yes, with an [[agreement check::An agreement check establishes whether the proposed sequence has been understood or accepted rather than assuming completion from an adult announcement.]] and continued attention. We have a supported proposal, not evidence that the children have already agreed or that no further help will be needed.''',
+    rehearsal=["Read Sora and Leon's corrected dialogue. Keep what was seen separate from the motive that was not established.","Switch roles. Repeat the child-facing now-and-next lines with one container as the finishing point and the smaller scoop as the alternative.","Complete the red-truck/blue-truck transfer, check the key, then read it without inventing a motive or a waiting time."],
     transfer_title='Describe another resource disagreement',
     transfer_setup='Noor is using the red truck and wants to finish one route. Eli wants it next. A blue truck is available. The educator observed Eli reaching but does not know the motive.',
     transfer='''Educator: "Noor is using the ___ truck." | red | The red truck is the object currently being used.
@@ -405,7 +409,7 @@ BOOK['units'].append(unit(
     cast='Andre | Eli\'s parent\nRosa | Early-years educator',
     culture=('Warmth does not require exaggeration', 'A parent may hear a cautious answer as a refusal to celebrate. Start with the actual achievement and explain why it is worth sharing. Then distinguish the observation from a comparison that has not been made, without sounding as though the child work is unimportant.'),
     a='''What did Rosa observe? | Eli sorting four buttons by color during a supervised activity | Eli outperforming every same-age child | A completed developmental screening | A diagnosis of exceptional ability | The observed action involves four buttons and color sorting, not a comparative assessment.
-Which words were heard? | These go together. | I am ahead of everyone. | I completed a standardized test. | Every task is easy for me. | These go together is the exact quotation supplied in the brief.
+Which words belong inside quotation marks in Rosa's note? | These go together. | These four buttons are the same color. | I counted four matching buttons. | I can sort all the colors. | Only These go together was heard; the other sentences add wording or skills that Rosa did not record.
 What evidence is missing for the parent's claim? | Appropriate comparison data and broader assessment | Any observation at all | The educator's identity | The fact that the activity was supervised | A universal age-peer ranking requires evidence that this single observation does not provide.''',
     vocabulary='''observation record | Account of what was noticed in a defined context. | create an observation record
 anecdotal note | Brief factual account of a meaningful event or behavior. | write an anecdotal note
@@ -463,22 +467,23 @@ How should a home example be handled? | Keep it attributed to the family and dis
 Rosa | I can share a specific [[observation record::The observation record describes today's event, not Eli's rank among all same-age children.]]. Today I saw Eli sort four buttons by color during a supervised activity, and I heard, "These go together."
 Andre | I am pleased to hear that. I do not want a technical report, but I would like to understand exactly what made you notice the moment.
 Rosa | The [[sorting criterion::The sorting criterion was color, the feature Eli used to group the buttons in the observed activity.]] was color. Eli grouped the items on that basis, and the words connected with the action. That is the specific moment I wanted to share.
-Andre | So you are not saying the event is unimportant. You are saying that comparing him with every child his age would require a different kind of evidence.
+Andre | He will be pleased you noticed. When I ask how his day went, I usually get one word. This gives me something specific to talk about with him.
 Rosa | Exactly. A [[strength-based description::A strength-based description recognizes Eli's observed capability without exaggerating it into an unsupported peer comparison.]] can celebrate what happened without adding a ranking. I do not need to overstate it to say it was worth noticing.
-Andre | Does using four buttons show that he can count to four, or could sorting and counting be separate things in this situation?
+Andre | Four buttons sounds like counting practice too. Did he actually count them aloud, or was he just putting matching colors together?
 Rosa | They are separate. [[Classification::Classification groups items by a shared feature; it does not establish counting or understanding quantity.]] by color does not prove he counted them. Four objects were present, but we should not add an unobserved counting action to the note.
-Andre | I understand. Would this be the same as a developmental screening, or is that a more structured process with a different purpose?
+Andre | I have also heard people mention a developmental check. Is this note part of a screening, or are you sharing something you noticed during play?
 Rosa | [[Developmental screening::Developmental screening identifies possible evaluation needs through a structured process, unlike this single observation.]] has a different purpose and process. This conversation does not supply a screening result, and the observation is not a diagnosis.
-Andre | Then the phrase ahead of everyone is too broad. We would need to know who the comparison is with and whether the information supports that use.
+Andre | I see. His cousin did something similar later, so I started comparing them. That is probably not enough to say where Eli stands with children his age.
 Rosa | Yes. A relevant [[comparison group::A comparison group provides a basis for comparative interpretation, which is absent from the parent's universal ranking claim.]] and appropriate assessment evidence would matter. A single classroom moment does not establish that Eli is ahead of every same-age child.
-Andre | Please keep his actual words in the note. Sometimes a cheerful summary turns into language that sounds much more advanced than what the child really said.
+Andre | Did he really say, "These go together"? I would like to remember his own words. That sounds just like something he would say at home.
 Rosa | I will preserve the [[verbatim quotation::A verbatim quotation retains Eli's exact words, not a more elaborate invented statement.]] when quoting him. If I paraphrase elsewhere, I should make that clear rather than put new words into his mouth.
 Andre | At home I have seen him put similar objects together too. Is that useful to tell you, even if it is not a formal assessment?
 Rosa | Yes, with the [[context::Context preserves each event's setting; the family's home report remains distinct from Rosa's observation.]] and source kept clear. Your home example and my observation can both inform a conversation without being recorded as the same event.
-Andre | I also would not want one success to become an expectation that he must perform the same way every time or in every area.
+Andre | At home he sometimes loses interest halfway through. Does that mean today's success does not count, or can you see different things on different days?
 Rosa | Different [[developmental domains::Developmental domains concern different areas of development; one sorting observation cannot establish performance across them.]] and settings can show different patterns. We should not turn this one observation into a fixed description of all his abilities.
 Andre | That makes sense. I can enjoy hearing what he did without needing it to prove a rank. Please keep sharing these specific moments with me.
 Rosa | I will. A useful [[anecdotal note::An anecdotal note preserves an event's action, words, and context without claiming a full developmental assessment.]] includes what happened, what was said, and when and where it occurred. We can be enthusiastic and precise at the same time.''',
+    rehearsal=["Read Andre and Rosa's checked exchange. Say Eli's exact quotation naturally, without adding counting or a peer rank.","Switch roles. Repeat the explanation distinguishing sorting, counting, and screening while keeping the parent conversation warm.","Complete the shape-sorting transfer, check the key, then read three objects as an activity fact, not proof of counting."],
     transfer_title='Describe a shape-sorting observation',
     transfer_setup='Educator Noor observed Ari sort three large shapes by shape during a supervised activity today. Ari said, "These are the same." No counting action or peer comparison is supplied.',
     transfer='''Noor: "The grouping feature was ___." | shape | The observed grouping criterion is shape rather than color.
@@ -513,9 +518,9 @@ augmentative communication | Methods that support existing speech or communicati
 alternative communication | Methods used instead of speech for some or all communication. | support alternative communication
 AAC | Augmentative and alternative communication: tools and strategies supporting communication. | follow the AAC plan
 home language | Language used in the child's home or family life. | value the home language
-dual language learner | Child learning two languages, including children learning English alongside another language. | support a dual language learner
+dual language learner | Child learning two or more languages, including English alongside a home language. | support a dual language learner
 language difference | Variation connected with languages used, distinct from an assumed disorder. | distinguish a language difference
-language delay | Developmental concern requiring appropriate assessment rather than inference from one response. | refer a language-delay concern
+language delay | Language skills developing more slowly than expected, assessed in context rather than inferred from one response or multilingualism. | refer a language-delay concern
 multilingual repertoire | Languages and communication resources a person can draw on. | recognize a multilingual repertoire
 family language information | Details families share about language use and communication. | gather family language information
 access barrier | Feature that prevents or limits meaningful participation. | identify an access barrier
@@ -555,7 +560,7 @@ Ben | I saw the pointing, but I was listening for a sentence. I may have treated
 Amina | That confuses [[participation::Participation means taking part through an appropriate available form; here a permitted pointing response can count without spoken language.]] with one particular format. We should recognize the actual response while staying precise about what it demonstrates.
 Ben | Does that mean we should describe pointing as exactly the same evidence as a spoken answer? I do not want our notes to lose the difference.
 Amina | No. The [[response mode::The response mode records how Noor answered, preserving pointing as distinct from a spoken sentence.]] matters. We can write that Noor selected a picture by pointing and that no spoken sentence was recorded in that response.
-Ben | That seems fair. It preserves what happened without claiming a sentence was produced. I was using a single label where we need a more specific description.
+Ben | I will change my note from no response to selected a picture by pointing. That is what I saw; I did not hear a sentence.
 Amina | Exactly. The [[evidence limit::The evidence limit prevents an allowed pointing response from being treated as proof of spoken-language production that did not occur.]] stays visible. A meaningful contribution does not need to be exaggerated into evidence of a different kind of performance.
 Ben | Could the preference mean a language delay, or tell us which language Noor uses at home? I have heard colleagues make those assumptions.
 Amina | Neither follows from this moment. A [[language difference::A language difference and a developmental concern require appropriate contextual information; Noor's single pointing preference establishes neither.]] or concern needs appropriate information, not an inference from one pointing response or from the child's name.
@@ -565,10 +570,11 @@ Ben | If I insist on a spoken sentence before Noor can count as taking part, I w
 Amina | That would create an [[access barrier::An access barrier would arise from excluding the picture-choice route that Noor's plan currently permits for this activity.]]. We can support the activity through its available options rather than change the participation rule without the appropriate process.
 Ben | We still need to notice how children use language over time. Recognizing pointing should not mean we stop describing the language we actually hear.
 Amina | Agreed. Evidence of [[expressive language::Expressive language concerns conveying meaning; the record must identify the actual form rather than invent a spoken sentence or erase other communication.]] should identify the actual form and context. Precise observation and inclusive participation are compatible, not opposing goals.
-Ben | The picture choices should also be genuinely available, rather than technically allowed but kept where the child cannot use them during the activity.
+Ben | Before the next group, let us put the picture choices where Noor can reach them. They are not much help if they stay behind my chair.
 Amina | Yes. The [[visual support::Visual support must be usable within the activity; merely listing picture choices in a plan does not make them practically accessible.]] needs to be accessible through the planned arrangement. We should check the environment rather than interpret a missing opportunity as a child failure.
 Ben | I will change my note to describe the pointing response and its limits. I will not label it nonparticipation or infer a diagnosis or home language.
 Amina | That supports [[equitable opportunity::Equitable opportunity can involve different supports while preserving accurate evidence about how each child participated.]]. Noor used an allowed option today, and we can keep both the participation and the response difference clear.''',
+    rehearsal=["Read Amina and Ben's corrected dialogue. Contrast selected a picture with no spoken sentence, without calling the child unresponsive.","Switch roles. Repeat the exchange about making the picture choices physically accessible under the current plan.","Complete Ari's transfer, check the key, then read the permitted response and unspecified home language as separate facts."],
     transfer_title='Record another permitted response mode',
     transfer_setup="Ari's current story plan permits a spoken answer or a picture selection. Ari selects a picture today. No spoken answer or home-language information is supplied.",
     transfer='''Educator: "The selected response used a ___." | picture | Ari selected a picture under the current permitted arrangement.
@@ -585,7 +591,7 @@ BOOK['units'].append(unit(
     cast='Morgan | Theo\'s parent\nRosa | Early-years educator',
     culture=('Take an update seriously without guessing its content', 'A missing revised document does not make a parent report unimportant. Acknowledge the concern and give it a receiving owner. At the same time, do not invent the revision, alter a treatment instruction, or announce that every relevant staff member has been updated before that happens.'),
     a='''What does Morgan report? | The allergy plan may have changed. | A verified revision has already reached every staff member. | A food exposure occurred in this case. | An emergency treatment decision is supplied. | The report concerns a possible plan change, not a completed revision or an exposure.
-Who accepts the document query? | Health coordinator Amira | An unidentified person next week | Another child | Morgan acting as the center's record system | Amira is present and explicitly accepts this query.
+Which status is established when Amira accepts the document query? | The question has a named receiving owner. | The revised allergy instructions are confirmed. | The earlier plan has been formally superseded. | Every educator has received the updated instructions. | Amira accepts ownership of the query; verification, version replacement, and staff communication are not yet established.
 What remains unavailable? | The revised document | The fact that an earlier plan is held | The parent's report | The name of the receiving coordinator | No revised document is supplied, so its contents cannot be treated as verified.''',
     vocabulary='''allergy action plan | Individualized document specifying management of a known allergy under appropriate guidance. | verify the allergy action plan
 healthcare plan | Agreed information and arrangements for a person's relevant health needs. | review the healthcare plan
@@ -643,22 +649,23 @@ What should not be added to the incident record for this case? | An invented exp
 Rosa | Thank you for telling me. I will record the [[reported change::The reported change preserves Morgan's information as a possible update, not as a verified revision or an irrelevant comment.]] and connect you with health coordinator Amira, who is here and has accepted the document query.
 Morgan | Does the fact that you still have the old document mean staff will simply assume nothing has changed? That is what I am concerned about.
 Rosa | We need to address the [[unresolved query::The unresolved query concerns the possible change and missing revision; holding an earlier document does not settle its implications.]] through our actual health process. Holding an earlier plan does not justify ignoring your report or guessing the new instructions.
-Morgan | I want to be careful with the wording. I said the plan may have changed, not that I can give you a verified new set of directions now.
+Morgan | I need to check the new paperwork myself. Please do not take what I am saying as a complete set of replacement instructions.
 Rosa | I will preserve that [[parent report::The parent report must retain Morgan's wording and uncertainty rather than become a confirmed new clinical instruction.]] accurately. The record should not turn may have changed into a completed update or a treatment instruction you did not provide.
 Morgan | Who will check which version should apply? I need to know this has reached someone responsible, rather than become a general note no one owns.
 Rosa | Amira is the [[health coordinator::The health coordinator is the named receiving owner who is present and has accepted this document question.]] receiving the query. Let us connect you with her now so the discrepancy and its practical implications are handled through the appropriate process.
-Morgan | Please also keep clear that we are discussing a document update. I have not reported an exposure or a reaction in this conversation.
+Morgan | I am calling about the paperwork, not to report a reaction today. I do not want anyone to think I have described an incident that did not happen.
 Rosa | I will not add an [[incident record::An incident record must contain actual reported or observed events; this conversation does not supply an exposure, reaction, or treatment.]] that invents such an event. The information we have is your possible-plan-change report and the missing revised document.
-Morgan | If a later colleague reads the note, they should be able to tell which document was available and which part still needed checking.
+Morgan | I am worried another member of staff will see a note saying updated and assume you already have the new document. You do not have it yet.
 Rosa | That is why [[document control::Document control preserves the status and version of the available plan and the unresolved revision, rather than silently substituting an assumed update.]] matters. The earlier plan is held, the revised document is unavailable here, and the applicable version needs the appropriate confirmation.
-Morgan | I do not want an educator to rewrite a care instruction from memory just to make the file look current. That could create another problem.
+Morgan | I can try to get the document through the approved route. Until then, I would rather the team ask Amira than piece together instructions from my memory.
 Rosa | Agreed. A [[verified revision::A verified revision requires the appropriate source and process; rewriting from memory would not establish an authorized update.]] cannot be created by guessing. We must use the real source and authorization process, including any required communication to the people who need it.
-Morgan | Does Amira accepting the question mean that all of that has already happened? I want to distinguish receiving the query from finishing the review.
+Morgan | Once I speak with Amira, will she confirm what still needs doing? I do not want to leave believing the plan has been checked if it has not.
 Rosa | No. The [[handoff acknowledgment::Handoff acknowledgment confirms Amira accepted the question, not that the revised plan or staff communication is complete.]] confirms ownership. It does not establish a completed verification, new care decision, or finished staff briefing.
 Morgan | That distinction helps. Please keep the information private while making sure it reaches the appropriate staff through the actual process.
 Rosa | Yes. Any [[staff briefing::A staff briefing must actually occur through the appropriate process before being recorded as completed; it is not implied by the first handoff.]] must be appropriate and recorded accurately. We should not claim that everyone has received new instructions before that has happened.
 Morgan | Then my report is taken seriously, but no one is pretending I supplied a complete new plan today. I will speak with Amira now.
 Rosa | Correct. The [[allergy action plan::The allergy action plan requires appropriate verification of its applicable instructions; this conversation establishes the query and handoff, not a replacement plan.]] question is with Amira. We will preserve the source, the missing revision, and the actual next actions without inventing a food or treatment decision.''',
+    rehearsal=["Read Morgan and Rosa's checked exchange. Stress may have changed, earlier plan, revision unavailable, and Amira.","Switch roles. Repeat the immediate handoff without turning the parent report into new food or treatment instructions.","Complete the care-plan transfer, check the key, then read it without adding symptoms, verification, or a completed staff briefing."],
     transfer_title='Hand off another health-document query',
     transfer_setup='Parent Ellis reports that a care plan may have changed. The earlier document is held, and the revised version is unavailable. Health coordinator Noor accepts the query. No symptoms are reported.',
     transfer='''Educator: "The revised document is ___." | unavailable | The revised version has not been supplied in this scenario.
@@ -725,7 +732,7 @@ Before any release | Makes the sequence and boundary clear.
 Not the same as | Separates identity, relationship, and authority.
 Private contact details | Names information that should not be casually disclosed.
 Has not been released | States the actual child status rather than an anticipated outcome.''',
-    d='''Which opening is respectful and accurate? | Hello. Let me check today's collection arrangement with Rosa. | You are unfamiliar, so you must be attempting an abduction. | Being an uncle automatically authorizes collection. | Nia can leave while we check later. | The opening acknowledges the request while preserving the required verification before any release.
+    d='''Which opening is respectful and accurate? | Hello. Let me check today's collection arrangement with Rosa. | Nia recognizes you, so the family relationship is enough. | Please sign out first; Rosa can confirm permission afterward. | Once your identity is checked, today's permission is automatic. | The opening preserves today's authorization check; recognition, identity, and a sign-out entry cannot replace it.
 What would confirming identity alone establish? | Who the person is, not necessarily today's collection authority | Permission to collect in every circumstance | A court's decision on parental responsibility | That a handover has already occurred | Identity verification does not by itself establish the separate authorization or legal questions.
 Which information should not be casually read aloud to Owen? | Private family contact details | The fact that Rosa is available | The fact that a check is needed | The fact that no release has occurred | The request does not authorize unnecessary disclosure of confidential family contact information.
 Which final record fits the supplied facts? | Owen stated he was Nia's uncle; authority unverified; Rosa available; no release. | Owen's legal authority confirmed and Nia released. | Owen committed an offense. | Nia approved the collection and waived all checks. | The factual record preserves the attributed statement and actual status without inventing approval, wrongdoing, or release.''',
@@ -735,20 +742,21 @@ Owen | I understand that you have not met me before. Does being unfamiliar mean 
 Lea | No. We need to verify the [[collection authority::Collection authority concerns permission for this collection; unfamiliarity is not itself a completed decision or accusation.]]. I am explaining the check, not making an accusation or announcing a decision before the process is complete.
 Owen | I have told you I am her uncle. Surely that explains why I am here, even if you have not seen me at collection before.
 Lea | I will record that [[relationship claim::The relationship claim is attributed to Owen; it does not independently verify identity, legal status, or permission to collect.]] accurately. A stated family relationship does not, by itself, confirm identity or permission for today's collection.
-Owen | If my identity is confirmed, would that automatically settle everything? I want to understand what you mean by these different checks.
+Owen | I have identification with me. Would showing that be enough, or do you also need to confirm that I am collecting today?
 Lea | [[Identity verification::Identity verification establishes who someone is through the appropriate process, not every separate question of collection authorization.]] concerns who you are. The applicable collection permission is a separate question, and we must follow our actual process for both.
 Owen | Could you read out the family contact details so I can tell you which person to call? That might make this quicker.
 Lea | I cannot disclose [[confidential information::Confidential information must be protected; an unverified collection request does not justify reading private family contacts aloud.]] at the collection point. We will use the appropriate verified contact route and involve Rosa without sharing private details unnecessarily.
 Owen | Can Nia wait outside with me while that happens? I am asking because I do not know how long the check will take.
 Lea | Nia needs to remain under our [[supervision::Supervision remains with the setting while the collection authority is unverified; waiting outside with Owen would bypass that boundary.]] while we follow the process. We have not authorized a release, and I cannot give a completion time that has not been confirmed.
-Owen | I do not want the note to say something has happened that has not. I have made a request, and you are checking it.
+Owen | I understand Nia needs to stay with you. I do not want this written up as though I tried to take her without asking.
 Lea | That is how the [[factual record::The factual record distinguishes Owen's statement, unverified authority, and actual actions without inventing a release or wrongdoing.]] should read. It will distinguish your statement, the unverified authority, and the actions actually taken, rather than infer a legal conclusion.
-Owen | So I should not interpret Rosa being available as meaning she has already approved the arrangement. Those are different stages.
+Owen | Has Rosa actually seen the arrangement yet? I heard her name and thought perhaps she had already agreed that I could collect Nia.
 Lea | Correct. Her availability does not make you an [[authorized collector::An authorized collector has applicable permission confirmed through the proper process; the lead educator's availability alone establishes no approval.]] for today. The check still needs to establish the applicable permission, and we should not announce its outcome in advance.
 Owen | If there is a question that you cannot resolve at the collection point, who handles it? I would prefer a clear next step.
 Lea | Rosa will use the appropriate [[escalation route::The escalation route sends an unresolved concern to the responsible people under the setting's actual procedures, not an invented universal rule.]] if needed. Any actual safeguarding concern must follow our procedures, while we keep the information accurate and the child supervised.
-Owen | All right. Please ask Rosa to check the arrangement. I understand that no permission or handover has been confirmed in this conversation.
+Owen | All right. Please ask Rosa to check. I will wait where you direct me while Nia stays with the staff; tell me what information you need.
 Lea | Yes. No [[release::Release means the authorized transfer of the child; none has occurred while today's collection authority remains unverified.]] has occurred. Rosa is available to check, and we will keep the verification, supervision, and record clear while that happens.''',
+    rehearsal=["Read Owen and Lea's corrected dialogue. Use a calm tone while keeping the authorization boundary clear.","Switch roles. Repeat the identity-check and confidential-contact exchanges without promising release or alleging wrongdoing.","Complete Mia's transfer, check the key, then read the aunt claim and unverified permission as separate facts."],
     transfer_title='Separate a family claim from collection permission',
     transfer_setup='An unfamiliar adult says she is Mia\'s aunt. Today\'s collection authority is unverified. Lead educator Noor is available to check. Mia has not been released. No legal document is supplied.',
     transfer='''Educator: "The stated relationship is ___." | aunt | The adult claims to be Mia's aunt, but this remains an attributed statement.

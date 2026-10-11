@@ -101,8 +101,8 @@ def profile(path, soup):
         t = tracks()[path.stem.removeprefix('efsp-')]
         result.update(kind='work', track=t, parent=category_url(t['category']), level='B1–C1',
                       title=t['title'] + ': Free Learner Book',
-                      description=(f'Learn English for {WORK_TOPICS[t["slug"]]}. Practice with workplace dialogues and a free 102-page learner book with vocabulary, phrases and explained answers.'
-                                   if t['slug'] in WORK_TOPICS else t['summary'] + ' Includes guided practice and a free 102-page learner book.'),
+                      description=(f'Learn English for {WORK_TOPICS[t["slug"]]}. Practice with workplace dialogues and a free 114-page learner book with vocabulary, phrases and explained answers.'
+                                   if t['slug'] in WORK_TOPICS else t['summary'] + ' Includes guided practice and a free 114-page learner book.'),
                       teaches=t['outcomes'], pdfs=[(label, href) for label, href in t['pdfs']])
     elif relative.startswith('english-for-work/'):
         name, category = next((n,c) for n,c in CATEGORIES.items() if c['slug'] == path.stem)

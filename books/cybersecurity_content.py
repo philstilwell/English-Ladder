@@ -26,6 +26,7 @@ BOOK = dict(
 BOOK['units'].append(unit(
     title='Security Triage and Alert Investigation',
     scene='A successful login is not verified authorization',
+    rehearsal=['Read turns 1-10. Stress observed facts separately from the maintenance hypothesis.', 'Switch roles for turns 11-20. Keep authentication distinct from authorization.', 'Check the transfer. Read the UTC time and the two missing-evidence statements clearly.'],
     skill='Give a concise alert handoff that separates logged events, plausible explanations, and unresolved authorization.',
     brief='Analyst Anika reviews alert S14 with shift lead Luis. The identity log records a successful privileged-account sign-in at 02:14 UTC from an unfamiliar address. A maintenance ticket covers 02:00-03:00 UTC, but its host and account have not been matched to the event. The account owner has not replied. Application logs are missing for 02:10-02:20 UTC. No malicious action is confirmed. The local process requires escalation to Luis now while correlation continues.',
     cast='Anika | Security analyst\nLuis | Shift lead',
@@ -81,7 +82,7 @@ Confirmed | Use only when the stated conclusion has supporting evidence.
 No evidence found | Name the sources, period, and missing observations.
 May be | Introduces a possibility without treating it as established.
 Escalate | Means involve the required authority, not necessarily declare a breach.''',
-    d='''Which handoff best fits S14? | Successful privileged sign-in; authorization unverified; application-log gap; escalated for investigation. | Authorized maintenance because the times overlap. | Confirmed intrusion by the named account owner. | No incident because no malicious action is confirmed. | The first summary preserves the observation, uncertainty, limitation, and required handling.
+    d='''Which handoff best fits S14? | Successful privileged sign-in; authorization unverified; application-log gap; escalated for investigation. | Successful privileged sign-in; authorized maintenance; application-log gap; awaiting closure. | Successful privileged sign-in; authorization unverified; complete application visibility; escalated. | Successful privileged sign-in; authorization unverified; application-log gap; escalation deferred until the owner replies. | The correct summary preserves all four facts. The alternatives invent authorization, erase the visibility gap, or delay the required escalation.
 Which record would help test the maintenance explanation? | A ticket matching this host, account, and authorized task | A ticket from a different server at any time | The owner's seniority alone | The alert's red display color | A relevant authorization record must connect to this event rather than merely exist.
 Why is the log gap relevant? | It limits what the team can exclude about application activity. | It proves the actor deleted all records. | It changes UTC into local time. | It makes the successful sign-in disappear. | Missing visibility limits negative conclusions without proving why the records are absent.
 Which wording avoids premature blame? | The account was used; the operator is not yet verified. | The account owner attacked the system. | The owner must have approved the activity. | Every unfamiliar address is malicious. | Account activity does not by itself identify the person or their intent.''',
@@ -89,11 +90,11 @@ Which wording avoids premature blame? | The account was used; the operator is no
 Luis | Start with the [[event::The event is the recorded sign-in, distinct from the conclusion that it was malicious.]], then tell me what remains unknown. A successful sign-in matters, but I do not want the handoff to imply confirmed hostile activity.
 Anika | There is a maintenance ticket from two to three UTC. The timing overlaps, although I have not matched its host or account to this record.
 Luis | Then maintenance is a [[hypothesis::Maintenance is a possible explanation because the timing overlaps, but the relevant match is unverified.]], not a closure reason. We need the actual task, operator, and asset match before describing this particular sign-in as approved work.
-Anika | The account owner has not replied. I was going to wait for that response before updating you, because the ticket may explain everything.
+Anika | I nearly waited for the owner to reply before calling you. Should I escalate now and keep the maintenance explanation provisional?
 Luis | Keep [[triage::Triage is the initial assessment and handling process that continues while the owner response is pending.]] moving. Our process requires escalation now, and your uncertainty belongs in the update. We can investigate without accusing the owner or announcing a confirmed intrusion.
 Anika | I also found missing application logs between two ten and two twenty UTC. That interval includes the identity event we are discussing.
 Luis | Record the [[visibility gap::The missing application logs create a visibility gap that restricts the conclusions available to investigators.]] explicitly. We cannot use an incomplete application search to say that nothing happened after the sign-in, even if the records we have look ordinary.
-Anika | The monitoring dashboard marks the address as new for this account. Can I call that evidence that the login came from an attacker?
+Anika | The dashboard says new address. Is that enough to label the source hostile, or should I just report that it is unfamiliar?
 Luis | Call it an [[anomaly::An unfamiliar address departs from the expected pattern but does not establish malicious ownership or intent.]]. It deserves investigation, but novelty does not establish who controlled the connection. The maintenance explanation still needs testing, just as the hostile explanation does.
 Anika | Understood. I will say that the identity log records success, the source is unfamiliar, and the account holder has not confirmed the activity.
 Luis | Separate [[authentication::Authentication concerns the identity check reflected in the successful sign-in, not permission for every subsequent action.]] from permission. The recorded login result does not establish that the operator was entitled to perform the particular task at that time.
@@ -115,6 +116,7 @@ Lead: "The escalation has been ___." | received | The briefing says the shift le
 BOOK['units'].append(unit(
     title='Incident Response and Containment',
     scene='Isolation is complete; the investigation is not',
+    rehearsal=['Read turns 1-10. Give report, authorization, and completion times as separate events.', 'Switch roles for turns 11-20. Stress that the next update is not a recovery promise.', 'Check the transfer. Read the three times without swapping authorization and execution.'],
     skill='Coordinate a response update with action status, operational impact, evidence preservation, and a defined next report.',
     brief='Incident coordinator Mara briefs service owner Joel about suspected unauthorized activity on billing host B7, first reported at 09:10 UTC. Under the approved playbook, Mara authorized network isolation at 09:18; completion was verified at 09:22. Billing jobs are paused. Investigators are preserving available evidence; cause, data access, and wider scope remain unconfirmed. Restoration requires the response lead and service owner under the local process. The next update is due at 09:45, not a promised restoration time.',
     cast='Mara | Incident coordinator\nJoel | Billing service owner',
@@ -178,7 +180,7 @@ What belongs in the handover? | Actions, timestamps, impact, open questions, and
 Mara | No. The [[containment::Containment aims to limit impact; it does not establish that investigation, eradication, or recovery is complete.]] action is complete, but cause, data access, and wider scope remain unconfirmed. We should be precise about what that completed action means.
 Joel | Give me the timeline so I can explain the interruption. I have nine ten in the report and nine eighteen in the response channel.
 Mara | The [[action log::The action log records the report, authorization, and verified execution as separate events.]] should show first report at nine ten, isolation authorization at nine eighteen, and verified completion at nine twenty-two, all UTC.
-Joel | That helps. I had treated the authorization message as confirmation that the host was already isolated. I will correct that in my update.
+Joel | I put nine eighteen as the isolation time in my update. That was only permission to act. I will change it to nine twenty-two.
 Mara | Please also keep the [[business impact::The confirmed business impact is paused billing jobs, not an assumed broader outage or data loss.]] concrete: billing jobs are paused. We have not established that every related service is affected or that customer data left the environment.
 Joel | Would restarting B7 help us resume sooner? Someone suggested it in the operations channel, but I do not know what investigators still need.
 Mara | Route that request through the response team. [[Evidence preservation::Evidence preservation protects relevant information from loss or alteration while response decisions are coordinated.]] is in progress, and an improvised state change could affect the investigation. We must coordinate recovery and evidence needs.
@@ -188,7 +190,7 @@ Joel | I can explain the business impact and available operational options. I ca
 Mara | Correct. [[Eradication::Eradication concerns removing the incident cause or persistence as applicable and is distinct from isolating a host.]] has not been confirmed. We also cannot infer the absence of earlier unauthorized data access from the fact that connections are restricted now.
 Joel | The team has also asked whether other hosts are involved. I only have the report about B7, so I have not named additional systems.
 Mara | Keep the [[incident scope::Incident scope covers the systems and effects under investigation; it remains incomplete in this case.]] open in the update. One known host does not prove that there are no others, but uncertainty is not evidence that all systems are affected.
-Joel | Can I give them nine forty-five as the next definite time? I want to offer something reliable without creating another recovery promise.
+Joel | What can I promise for nine forty-five: an update, or a working service? People will read the time as a restoration deadline unless I spell it out.
 Mara | Yes, as a [[status update::The agreed status update commits the team to communicate at 09:45 without promising restoration by then.]]. We will report what changed, what remains unresolved, and the next actions then. That time is not a restoration estimate.
 Joel | I will say that plainly. I also need the next shift to understand what was authorized and which checks are still open when they arrive.
 Mara | Use the [[handover::The handover transfers the current evidence, decisions, impact, and outstanding work to the incoming team.]] record, including timestamps, owners, and outstanding decisions. They should not have to infer permission from a short chat message or an optimistic headline.
@@ -205,6 +207,7 @@ Owner: "Recovery remains ___." | unauthorized | The briefing explicitly states t
 BOOK['units'].append(unit(
     title='Vulnerability Management',
     scene='The same score, a different repair priority',
+    rehearsal=['Read turns 1-10. Stress equal scores, different exposure, and exploitation elsewhere.', 'Switch roles for turns 11-20. Keep available, deployed, and verified distinct.', 'Check the transfer. Read the priority without claiming a confirmed local compromise.'],
     skill='Explain a risk-based remediation order without treating severity scores as complete business-risk assessments.',
     brief='Vulnerability analyst Chen and infrastructure owner Petra review two fictional findings, each with a base severity score of 8.8. A affects an internet-facing production gateway; a validated threat bulletin reports exploitation of that flaw elsewhere. B affects an isolated test server containing synthetic data, with no route from the internet. No local exploitation is confirmed. Their agreed rule prioritizes demonstrated exploitation and external exposure when scores tie. A patch is available for each; testing, change approval, and verification remain required.',
     cast='Chen | Vulnerability analyst\nPetra | Infrastructure owner',
@@ -270,7 +273,7 @@ Petra | Let us separate those facts. A is the production gateway reachable exter
 Chen | Yes. A is [[internet-facing::Internet-facing identifies A's external exposure, which differentiates it from the isolated test system.]], while B has no route from the internet in this case. That changes the immediate exposure even before we discuss the bulletin.
 Petra | The bulletin says the gateway flaw has been used against other organizations. Does that mean we should announce an incident in our own environment?
 Chen | No. It establishes [[exploitation in the wild::Real-world exploitation elsewhere supports prioritization but does not by itself establish local compromise.]], not local compromise. We should preserve that distinction while using the verified information as a reason to prioritize corrective work.
-Petra | I can explain that. I do not want the lower position of B to be interpreted as permission to forget the test server entirely.
+Petra | Fine, A first. Can we leave B assigned and visible? I do not want lower priority to turn into nobody owning the test-server fix.
 Chen | Keep it in the [[remediation::Remediation is the corrective work still required for both findings, even though A comes first.]] queue. The ordering is A first under our agreed rule, not A matters and B never matters. Both need an accountable path.
 Petra | A patch is available for each. The gateway update may interrupt production, so we still need the service team involved in timing and checks.
 Chen | Obtain the required [[change approval::Change approval authorizes the defined operational change; a security priority does not automatically supply that permission.]]. Prioritizing A does not prove the update is compatible or authorize an unplanned production interruption. We need the relevant testing and operational coordination.
@@ -280,7 +283,7 @@ Petra | If we cannot deploy immediately, the service owner may propose a tempora
 Chen | Describe it as a [[mitigation::A mitigation reduces a defined exposure or impact and need not remove the underlying software weakness.]] with a defined scope and verification. Do not claim that reducing one access path automatically corrects the underlying software or removes every route.
 Petra | Any delay would need the owner, rationale, and review conditions required by our process. An informal note saying accepted would be too vague.
 Chen | Exactly. Formal [[risk acceptance::Risk acceptance is an authorized decision concerning a specified retained risk, not an informal label that erases the weakness.]] is not something the analyst can invent to clear the queue. It must follow the assigned authority and state what remains exposed.
-Petra | After the approved update, we will collect the required verification, including the follow-up assessment of the original finding. Installation and closure stay separate states.
+Petra | After installation, what evidence do you need to close the finding? I can attach the change record, but we still need to verify the affected condition.
 Chen | Attach the [[closure evidence::Closure evidence demonstrates that the required completion conditions were actually met after the change.]] to the record. The person reviewing completion should see why the affected condition is considered resolved, not just that someone ran an installer.
 Petra | My summary is A first for demonstrated exploitation and external exposure, B still open, and no local exploitation confirmed. The change steps remain required.
 Chen | That makes the [[asset criticality::Asset criticality adds the importance of the production gateway to the context of the prioritization discussion.]] and exposure visible alongside severity. We can justify urgency without exaggerating the evidence or treating the score as the whole decision.''',
@@ -294,6 +297,7 @@ Owner: "Deployment is still ___." | pending | The briefing says deployment has n
 BOOK['units'].append(unit(
     title='Identity, Access, and Least Privilege',
     scene='Support needs logs, not a shared administrator',
+    rehearsal=['Read turns 1-10. Contrast read-only access with administrator rights.', 'Switch roles for turns 11-20. Stress pending approval and the recorded expiry.', 'Check the transfer. Read the three-hour proposal as a request, not an approval.'],
     skill='Negotiate a specific access arrangement using identity, task, permission, duration, approval, and accountability.',
     brief='Vendor coordinator Eva requests a shared administrator account so two technicians can diagnose a service issue. Access reviewer Rashid confirms that the supplied task needs only read access to sanitized diagnostic logs for two hours. Their local policy requires named identities, multifactor authentication, owner approval, and recorded expiry. No approval has been granted. The proposed alternative gives each technician only the required log access. Any later write task needs a separate assessed request; no broader privilege is justified by the present facts.',
     cast='Eva | Vendor coordinator\nRashid | Access reviewer',
@@ -349,7 +353,7 @@ Read-only | Still requires appropriate handling and approval.
 Temporary | Needs an explicit end, not an informal expectation.
 Approved | Distinguish a proposal from a recorded decision.
 More access | Requires a reason beyond convenience or a possible future task.''',
-    d='''Which proposal best matches the supplied task and policy? | Named read-only log access for two hours, with MFA and owner approval | A permanent shared administrator account | Anonymous log access because the logs are sanitized | Administrator access with no expiry because MFA is used | The first proposal matches task scope while retaining every stated local requirement.
+    d='''Which proposal best matches the supplied task and policy? | Named read-only log access for two hours, with MFA and owner approval | Shared read-only log access for two hours, with MFA and owner approval | Named administrator access for two hours, with MFA and owner approval | Named read-only log access with MFA and owner approval, without an expiry | The correct proposal preserves individual identity, task-limited permission, authentication, approval, and duration. Each alternative changes one required boundary.
 Why does MFA not settle the request? | It strengthens identity verification but does not justify unnecessary permissions. | It guarantees every requested action is appropriate. | It replaces the need for named identities in this policy. | It means the account can never be misused. | Authentication strength and permission scope address different questions in access decisions.
 What should happen if a write task emerges? | Submit the additional need for a separate assessment. | Quietly add write access to the original request. | Treat all future tasks as already approved. | Reuse a shared administrator password without a record. | The original facts justify only reading, and the briefing requires a separate request for writes.
 Which explanation avoids blaming the vendor? | The task requires log reading, so we are proposing only that access. | Vendors always misuse administrator accounts. | Familiar technicians never need access review. | We are refusing all support without reviewing the task. | The task-based explanation states a legitimate boundary without making a personal accusation.''',
@@ -357,13 +361,13 @@ Which explanation avoids blaming the vendor? | The task requires log reading, so
 Rashid | Let us start with [[least privilege::Least privilege ties the permissions to the actual authorized task rather than to the broadest convenient account.]]. The supplied task needs read access to sanitized diagnostic logs for two hours. Which part requires changing the system or administering it?
 Eva | None of the documented diagnostic steps requires a write. They want to inspect the logs and compare the recorded errors with their product knowledge.
 Rashid | Then propose [[read-only access::Read-only access matches inspection of the supplied diagnostic logs without adding unsupported write or administrative rights.]]. That supports the described work without granting unrelated administrative rights. We should make the permitted action clear in the request.
-Eva | They may work at different times during the two hours. Could one account still be simpler, provided they agree not to share it outside their team?
+Eva | They will take turns during the two hours. Can one account cover both, or do we need two identities even for that short window?
 Rashid | Our policy requires a [[named account::A named account associates access with an identified technician, as required by the stated local policy.]] for each technician. A private agreement about sharing does not replace individual attribution or the access conditions we have been asked to enforce.
 Eva | I will collect both identities. The vendor also says their ordinary login is secure. Does that satisfy our sign-in requirement for this request?
 Rashid | We require [[multifactor authentication::Multifactor authentication is the explicit local sign-in condition and is separate from the task's permission scope.]]. We need to verify that the approved arrangement meets it, not rely on the general adjective secure or treat vendor familiarity as an exemption.
 Eva | That gives me the identity and sign-in requirements. For timing, I can specify a two-hour window rather than leaving the access available indefinitely.
 Rashid | Make it [[time-bound access::Time-bound access records a limited period of need instead of granting ongoing privilege for a short task.]] with a recorded end. Short work does not justify standing privilege, and the duration should be visible to whoever reviews and implements the request.
-Eva | The service owner has not signed off. I have only submitted the support need, so I should not tell the technicians their access is already approved.
+Eva | I have submitted the request, but the owner has not signed off. What can I tell the technicians while that decision is pending?
 Rashid | Correct. [[Provisioning::Provisioning enables the access, but the case still requires owner approval before that approved arrangement can be implemented.]] follows the required approval. A well-scoped request is ready for review; it does not authorize itself simply because the proposed permissions are narrow.
 Eva | If their diagnosis later shows that a configuration change is needed, I will ask them to describe the new action and why it is necessary.
 Rashid | That is a new [[entitlement::An entitlement is a particular permission; adding write authority changes the access requested and needs reassessment.]] question. Do not silently add write access to a request justified only by log reading. The additional need must go through its own assessment.
@@ -384,6 +388,7 @@ Reviewer: "Owner approval remains ___." | pending | The supplied facts say appro
 BOOK['units'].append(unit(
     title='Threat Modeling and Secure Design',
     scene='A sign-in check does not decide document access',
+    rehearsal=['Read turns 1-10. Stress identity and document permission as separate decisions.', 'Switch roles for turns 11-20. Keep design evidence distinct from an implementation test.', 'Check the transfer. Read identity, authorization, and server as different parts of the control.'],
     skill='Trace a data flow, identify a trust boundary, and turn a specific abuse case into a testable design requirement.',
     brief='Architect Noor and security engineer Daniel review a fictional document portal. A signed-in browser sends a document ID to a service, which retrieves a file from storage. The draft checks the user at sign-in but does not specify a server-side check that the user may access the requested document. Customers must see only their own organization-owned documents. The review has no implemented-system test result or confirmed breach. Daniel proposes a per-request authorization check and an approved test using separate fictional tenant accounts.',
     cast='Noor | Application architect\nDaniel | Security engineer',
@@ -449,7 +454,7 @@ Noor | The draft does not say. It describes checking the user at sign-in, then r
 Daniel | That leaves an [[authorization check::The authorization check decides permission for the requested document, distinct from verifying identity at sign-in.]] unspecified. We know who signed in, but we still need the service to decide whether that user may access the requested object.
 Noor | So the gap is not simply that somebody could be anonymous. It also concerns a legitimate user asking for a document outside their organization.
 Daniel | Exactly. That is the [[abuse case::The abuse case describes a signed-in user attempting access outside the intended document boundary.]] we should record. It makes the missing decision concrete without claiming that the implemented system has already leaked anything or that a breach occurred.
-Noor | The client currently supplies the document identifier. I can add a note saying that only identifiers displayed in the page should be requested.
+Noor | Could we just hide documents from other organizations in the browser? Or does the service need to enforce the same boundary independently?
 Daniel | The client crosses a [[trust boundary::The trust boundary separates client-controlled input from the service's responsibility to enforce access decisions.]]. A page convention does not give the server a dependable authorization decision. We need enforcement where the service controls access to the content.
 Noor | Then the requirement should say the service checks permission on every request, using the authenticated user's allowed organization scope and the requested document.
 Daniel | Yes, that is [[object-level authorization::Object-level authorization applies the permission rule to each specific requested document rather than to sign-in alone.]]. The service must deny access when the document is outside that permitted scope, while keeping the legitimate same-tenant request working.
@@ -457,7 +462,7 @@ Noor | I will put both outcomes into the design. Otherwise someone could call th
 Daniel | Good. A useful [[security requirement::A security requirement states a checkable protected outcome while preserving the intended authorized behavior.]] is checkable and preserves intended use. We should identify the denied case and the allowed case instead of saying only make document access secure.
 Noor | For validation, we can use two fictional organizations with controlled test accounts and documents in the approved environment. No live customer exploration is needed.
 Daniel | That supports a [[tenant isolation::Tenant isolation concerns preventing unauthorized access between customer organizations sharing the service.]] check within an authorized scope. Record which account owns which document, the requested action, and the expected result before interpreting the observed outcome.
-Noor | Do we label this a confirmed vulnerability now? We have reviewed a draft, but nobody has supplied a test result from an implementation.
+Noor | What label goes in the review: confirmed vulnerability or design gap? We have a draft in front of us, not an implementation test.
 Daniel | Keep the [[threat model::The threat model records the design-level threat and response without converting an untested design gap into a confirmed breach.]] precise: documented design gap, proposed requirement, validation pending. We should not manufacture certainty, but the lack of a live failure does not erase the gap.
 Noor | I will assign the requirement to the service owner and include the browser input, storage ownership, and access-decision location in the revised diagram.
 Daniel | Make [[server-side enforcement::Server-side enforcement places the permission decision in the controlled service rather than relying on browser behavior.]] explicit. The next reviewer should not have to guess whether the note describes a user-interface preference or an actual control over returned content.
@@ -473,6 +478,7 @@ Security: "Implementation validation remains ___." | pending | The briefing says
 BOOK['units'].append(unit(
     title='Governance, Risk, and Compliance',
     scene='A written policy does not close the control finding',
+    rehearsal=['Read turns 1-10. Contrast three supported cases with two unverified cases.', 'Switch roles for turns 11-20. Stress sample limits and the required owner review.', 'Check the transfer. Read the evidence request without calling the missing case late.'],
     skill='Describe audit evidence, distinguish missing proof from proven failure, and state the actual closure conditions.',
     brief='Control owner Rosa asks auditor Amir to close a leaver-access finding because a new policy was approved. The local control requires access removal within 24 hours of departure. In a five-person sample, three records prove timely removal; two lack removal timestamps. The agreed closure criteria require evidence for all five sampled cases and owner review. That review is not recorded. Amir must distinguish a documentation gap from proof that the two removals were late, while keeping the finding open.',
     cast='Rosa | Control owner\nAmir | Internal auditor',
@@ -542,11 +548,11 @@ Rosa | I agree about not calling them late without evidence. The help desk think
 Amir | That is an [[evidence gap::The evidence gap is the absence of timestamps needed to determine timeliness, not proof of a late action.]]. Request the relevant system records and identify their source. A recollection can guide the search, but it should not become an invented historical timestamp.
 Rosa | The closure note says evidence for every sampled case and owner review. I have not completed a recorded review because the two records are still missing.
 Amir | Those are the [[closure criteria::The closure criteria explicitly require all five cases to be evidenced and owner review recorded.]] we must use. The finding remains open until the missing support and required review are addressed, rather than closing merely because the policy now exists.
-Rosa | The committee may read open as no progress. I want to acknowledge that the rule has been approved and that three cases have usable evidence.
+Rosa | The committee will ask why it is still open. Can we show the approved policy and three supported cases without implying the remaining work is done?
 Amir | Show that in the [[remediation plan::The remediation plan can record completed policy work and the remaining evidence and review tasks without falsely closing the finding.]]. Completed work and an open finding can coexist. A progress update should say what changed and what still prevents the agreed closure.
 Rosa | I will assign the record retrieval and keep the committee wording bounded. For the missing cases, I will use timeliness unverified rather than late.
 Amir | That preserves the [[audit trail::The audit trail records what the evidence shows and how later conclusions are reached without overwriting the uncertainty.]]. We need a traceable account of the assessment, including any later records or corrections, not a headline that hides unresolved support.
-Rosa | Would my signed statement that the team normally follows the policy be enough? I can provide it, but it would not include those two removal times.
+Rosa | Could I sign a statement about our normal process? I can describe what the team does, but I cannot supply those two times yet.
 Amir | An [[attestation::An attestation is a formal statement, but it does not replace the source evidence expressly required by these closure criteria.]] may be relevant context, but it does not replace the specific records required here. We should not silently change the closure standard at the end.
 Rosa | Understood. I will separate approval of the policy, evidence for three timely removals, two unverified cases, and the owner review still to be recorded.
 Amir | Also state the [[sampling limitation::The sampling limitation prevents the five reviewed cases from being presented as proof about every leaver in the organization.]]. We examined five records; we have not established the result for every leaver. The percentage needs both its denominator and its evidence meaning.
@@ -554,15 +560,16 @@ Rosa | Then I can give the committee a truthful progress report and a clear rema
 Amir | Exactly. The [[control owner::The control owner is responsible for gathering the remaining support and completing the required review in this case.]] can bring the missing evidence for reassessment. We will evaluate closure against the same criteria and record the conclusion the completed support actually justifies.''',
     transfer_title='Missing proof is not a proven delay',
     transfer_setup='A four-case access-removal sample has three documented timely removals and one missing timestamp. Closure requires evidence for all four and an owner review. Neither the missing evidence nor the review is complete.',
-    transfer='''Auditor: "Documented timely removal covers ___ percent of this sample." | 75 | Three divided by four is seventy-five percent of the examined sample.
-Owner: "The remaining case has ___ timeliness." | unverified | A missing timestamp does not establish whether removal was timely or late.
-Auditor: "The owner review is still ___." | incomplete | The briefing explicitly says the required owner review is not complete.
-Owner: "The finding remains ___." | open | The supplied closure conditions remain unmet because evidence and review are incomplete.'''))
+    transfer='''Auditor: "For the fourth case, we still need the removal ___." | timestamp | The missing removal timestamp is the source evidence needed to compare the action with the deadline.
+Owner: "Without it, I cannot verify that case's ___." | timeliness | Timeliness is unresolved; the missing record does not prove either timely or late removal.
+Auditor: "We also need the recorded owner ___." | review | The local closure criteria separately require an owner review that has not been completed.
+Owner: "Keep the finding open until the evidence and review meet our conditions for ___." | closure | Closure depends on both outstanding requirements, not merely the existence of the approved policy.'''))
 
 
 BOOK['units'].append(unit(
     title='Security Awareness and Phishing',
     scene='Report the click, without guessing the consequence',
+    rehearsal=['Read turns 1-10. Use a calm tone and distinguish each reported action.', 'Switch roles for turns 11-20. Stress the trusted reporting route without promising an all-clear.', 'Check the transfer. Read the seven-minute interval and pending classification accurately.'],
     skill='Elicit a precise suspicious-message report, encourage prompt disclosure, and avoid requests for secrets or unsupported reassurance.',
     brief='Employee Ben calls security responder Leila about an email claiming to be from Payroll. He clicked its link at 09:32 UTC and reported it at 09:36. He says he entered no credentials, opened no attachment, and approved no sign-in prompt. He worries that reporting will get him blamed. The message has not been classified, and compromise is not established. The local process routes the original message through the approved reporting tool. Leila asks for factual details, not passwords, and tells Ben not to interact further while the response team assesses it.',
     cast='Ben | Employee reporter\nLeila | Security responder',
@@ -630,7 +637,7 @@ Ben | I clicked at nine thirty-two UTC and reported it at nine thirty-six. A pag
 Leila | I will record the [[interaction history::The interaction history distinguishes the click from later actions such as entering data, opening files, or approving prompts.]]. Did you enter credentials, open an attachment, or approve a sign-in prompt? Those are separate actions, and we need each one described accurately.
 Ben | No credentials, no attachment, and no prompt approval. I can give you my password if that helps you check whether the account was affected.
 Leila | Please do not share any [[credential::A credential supports authentication and should not be disclosed during this factual intake conversation.]]. We do not need your password in this conversation. We need the account identifier and factual actions through the approved response process.
-Ben | Does not entering anything mean I am definitely safe? I want to tell my manager that nothing happened, but I do not want to mislead them.
+Ben | I did not enter anything. Can I tell my manager the account is safe, or do you still need to check?
 Leila | We have not established [[compromise::Compromise is not confirmed, but the absence of reported credential entry alone does not prove that no risk exists.]], and I cannot give an all-clear from that fact alone. Your report narrows the assessment; it does not replace it.
 Ben | Understood. I still have the original email. Should I forward it to everyone in my department so they can recognize it and avoid clicking?
 Leila | Use the approved [[reporting tool::The reporting tool is the stated route for submitting the original message without spreading it through an ordinary distribution list.]] for the original. Do not distribute the message more widely or interact further. The response team will assess it and coordinate any necessary communication.
@@ -638,7 +645,7 @@ Ben | I will use that route. The message also gives a phone number for Payroll. 
 Leila | Use [[out-of-band verification::Out-of-band verification uses a separate trusted route rather than contact details supplied by the suspicious communication.]] through a Payroll channel you already know is genuine. A number supplied only in the suspicious message would rely on the same unverified source.
 Ben | I can reach Payroll through our established internal contact. For the security report, I will keep the times and the original message available.
 Leila | Good. The [[reporting delay::The reporting delay is four minutes between the supplied click and report times, not a measure of confirmed harm.]] was four minutes in this case. Prompt reporting gives us useful information sooner, but we still need the assessment before describing the outcome.
-Ben | I appreciate the clear questions. I was tempted to leave out the click because I was embarrassed, even though I had not entered a password.
+Ben | I almost left out the click. I felt embarrassed and thought the fact that I had not entered a password was the important part.
 Leila | Complete [[intake::Intake gathers the relevant facts needed for assessment; omitting the click would distort the response team's understanding.]] depends on those details. Please keep the account accurate. I can explain our response steps, but I should not make promises about decisions outside my role.
 Ben | My manager can hear that I clicked, reported four minutes later, and did not enter credentials, open an attachment, or approve a prompt. Assessment is pending.
 Leila | Exactly. [[Message classification::Message classification remains pending until assessment determines the appropriate category; a familiar label does not settle it.]] is still open. Submit the original through the approved tool and follow the response team's instructions. Do not treat either embarrassment or reassurance as evidence.''',
@@ -652,6 +659,7 @@ Employee: "I will use the approved reporting ___." | tool | The local process sp
 BOOK['units'].append(unit(
     title='Executive Risk Briefings',
     scene='A recovery shortfall needs a bounded decision',
+    rehearsal=['Read turns 1-10. Stress restoration time, the assumed rate, and deferred records.', 'Switch roles for turns 11-20. Contrast requested funding with demonstrated improvement.', 'Check the transfer. Read the two-hour excess and 300-record illustration with their units.'],
     skill='Connect a measured security gap to a business consequence and a specific investment request without claiming guaranteed risk elimination.',
     brief='Security lead Imani briefs finance sponsor Victor on payroll resilience. A controlled recovery test took six hours against an approved four-hour recovery-time objective. It did not establish data loss, and no live incident is occurring. Payroll normally processes 200 scheduled records per hour. A four-hour interruption would defer 800 records at that assumed rate, not prove lost revenue. Proposal A requests $30,000 for recovery automation and repeat testing. Proposal B requests $20,000 for alert-dashboard improvements. The agreed priority is the evidenced payroll recovery shortfall; Victor must decide on A.',
     cast='Imani | Security lead\nVictor | Finance sponsor',
@@ -721,11 +729,11 @@ Victor | That is a useful scale. But eight hundred records does not mean eight h
 Imani | Correct. This is [[deferred processing::Deferred processing means delayed work under the supplied rate assumption, not proven permanent loss or lost revenue.]], not a calculated revenue loss. The rate is an assumption for the illustration, and there is no live incident in this briefing.
 Victor | What exactly does the thirty thousand fund? I do not want an approval interpreted as a general authorization for unrelated tooling later in the year.
 Imani | The [[funding envelope::The funding envelope is the defined thirty-thousand-dollar request for the stated automation and repeat-testing scope.]] covers proposal A: recovery automation and repeat testing. Any additional scope or funding would need its own decision rather than being implied by this approval.
-Victor | Give the alternative a fair hearing. The twenty-thousand-dollar dashboard proposal could still help the security team, even if it is not your first recommendation.
+Victor | The dashboard is ten thousand dollars cheaper. Why not buy that first? Tell me how each option addresses the gap we actually measured.
 Imani | It could improve alert visibility, but our agreed [[risk treatment::The proposed risk treatment targets the demonstrated recovery shortfall, which the dashboard alternative does not directly address.]] priority is the evidenced payroll recovery shortfall. A is directly aimed at that gap; B does not directly address this test result.
 Victor | How will we know whether the automation works? A purchase receipt will show spending, but it will not show that recovery has become faster.
 Imani | The [[success measure::The success measure is recovery performance against the existing four-hour objective in the agreed repeat test.]] is performance in the agreed repeat test against the four-hour objective. We need that evidence before claiming that the restoration capability meets the target.
-Victor | Can you promise that meeting the target will remove our payroll cyber risk? Some people may hear the request as a complete solution.
+Victor | If the repeat test meets four hours, what risk remains? I need that limitation in the committee note, not just the improvement headline.
 Imani | No. [[Residual exposure::Residual exposure is the risk remaining outside or after this specific improvement, so the proposal is not a complete risk-elimination claim.]] remains, and this work addresses one defined capability. Faster recovery does not establish prevention of every incident or eliminate every consequence of disruption.
 Victor | That distinction belongs in the committee note. We have a measured gap, a conditional operational illustration, a bounded proposal, and a validation requirement.
 Imani | I will include the [[assurance evidence::Assurance evidence supports the claim that the improved recovery capability actually works after the proposed changes.]] expected from the repeat test and identify any implementation dependencies. The recommendation should show what must be demonstrated, not just what we hope to buy.

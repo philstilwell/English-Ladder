@@ -21,13 +21,13 @@ BOOK = dict(
     sources=[
         dict(title='International Software Testing Qualifications Board. Foundation Level Syllabus v4.0.1.',
              url='https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf',
-             note='Terminology reference for boundaries, exploratory sessions, and reporting. Copyright in the syllabus belongs to its authors and ISTQB; these cases are original.', checked='1 October 2026'),
+             note='Terminology reference for boundaries, exploratory sessions, and reporting. Copyright in the syllabus belongs to its authors and ISTQB; these cases are original.', checked='10 October 2026'),
         dict(title='pytest Documentation. Flaky Tests.',
              url='https://docs.pytest.org/en/stable/explanation/flaky.html',
-             note='Background on shared state and order-dependent results. The fictional cleanup and search scenario does not prescribe a particular framework.', checked='1 October 2026'),
+             note='Background on shared state and order-dependent results. The fictional cleanup and search scenario does not prescribe a particular framework.', checked='10 October 2026'),
         dict(title='MDN Web Docs. When and How to File Bugs with Browsers.',
              url='https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/File_browser_bugs',
-             note='Context for reproducible examples, versions, and expected versus actual results. No source code examples are reproduced.', checked='1 October 2026'),
+             note='Context for reproducible examples, versions, and expected versus actual results. No source code examples are reproduced.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -55,7 +55,7 @@ exclusive limit | Limit that excludes the endpoint itself. | distinguish an excl
 threshold | Value at which a rule changes or applies. | name the threshold
 test oracle | Reference used to decide the expected outcome. | establish the test oracle
 test basis | Information from which tests and expectations are derived. | review the test basis
-example | Concrete instance illustrating a rule. | reconcile conflicting examples
+Boolean condition | Condition with a true or false value. | combine Boolean conditions
 business rule | Product behavior specified for a business purpose. | confirm the business rule
 requirement owner | Person responsible for clarifying the relevant requirement. | consult the requirement owner
 decision record | Traceable statement of an agreed decision. | preserve the decision record
@@ -90,30 +90,31 @@ Should ... or | Requests a choice without choosing on the owner's behalf.
 Not yet | Preserves the unresolved status of an interpretation.
 By itself | Limits what an ambiguous phrase or implementation can establish.
 After the decision | Keeps the sequence of clarification and test update clear.''',
-    d='''Which question is most precise? | At exactly 24 hours before the event, should cancellation be accepted or rejected? | Is the feature generally good? | Can we ignore both examples? | Should every booking be deleted? | The question identifies the exact input on which the examples conflict.
+    d='''Which question isolates the unresolved rule? | At exactly 24 hours before the event, should cancellation be accepted or rejected? | Did cancellation work at 23 hours? | Does the current build reject at 24 hours? | Which time zone does the event use? | Only the equality question asks for the intended outcome at the conflicting endpoint; observed behavior and excluded time zones do not settle it.
 What should serve as the test expectation? | The explicitly clarified requirement | The tester's unrecorded preference | Whatever the code currently does | A different product's behavior | A justified expectation must follow the agreed rule rather than an unsupported assumption.
 Which status is accurate now? | Equality remains unresolved | Equality is confirmed accepted | Equality is confirmed rejected | Time zones have been fully tested | No owner decision has resolved the contradictory equality examples yet.
 What should follow clarification? | Align the examples and link the test to the decision | Keep contradictory examples as equal authorities | Erase all requirement history | Claim every cancellation case passed | Updating conflicting examples and preserving the decision supports consistent test expectations.''',
-    dialogue='''Maya | I need a clarification before I finalize the cancellation test. The requirement says within twenty-four hours, but the examples disagree about exactly twenty-four hours before the event.
+    dialogue='''Maya | Before I finalize the cancellation test, can we resolve the two examples for exactly twenty-four hours before the event? One accepts it; one rejects it.
 Dev | Show me the [[equality case::Equality case is the input exactly twenty-four hours before the event, where the examples disagree.]] you are comparing. I want to separate that exact endpoint from any other timing question before we decide what the rule should mean.
-Maya | One example permits cancellation at that exact point. The other rejects it. They describe the same timing condition, so I cannot use both as the expected result.
+Maya | They describe the same endpoint, not nearby times. I can't give the test two incompatible expected outcomes for the same condition.
 Dev | That is a real [[contradiction::Contradiction identifies the incompatible accept and reject outcomes assigned to the same input.]], not merely a difference in wording. We need to resolve the intended outcome rather than ask you to choose whichever example matches the implementation.
-Maya | My first reading was that the endpoint would be included. I have kept that as my interpretation, not entered it as an approved rule.
+Maya | My first reading included the endpoint, but I haven't treated that as an approved product rule. I need the owner's decision.
 Dev | Good. Label it an [[assumption::Assumption marks Maya's preferred interpretation as unconfirmed rather than an agreed cancellation rule.]] until the requirement decision is explicit. Your reading may be reasonable, but it is not enough to declare the product correct or defective.
-Maya | The question I need answered is narrow: should cancellation exactly twenty-four hours before the event be accepted or rejected? I am not asking about time-zone conversion here.
+Maya | The precise question is accept or reject at exactly twenty-four hours. I want to leave time-zone conversion outside this particular clarification.
 Dev | That keeps the [[scope boundary::Scope boundary excludes time-zone handling and keeps the discussion focused on the conflicting endpoint rule.]] clear. We should not introduce a separate timing policy into this discussion and then mistake that for resolving the original conflict.
-Maya | Could we simply take the current application result as authoritative? It would let me finish the test, but it would also make the test copy the implementation.
+Maya | Could I copy what the application currently does into the expected result? It would finish the script, but wouldn't show whether the behavior is intended.
 Dev | That would not establish the [[test oracle::Test oracle is the reference for correct behavior and cannot be established merely by copying the current implementation.]]. We need the intended rule first, otherwise the test can repeat an existing mistake and still appear to pass.
-Maya | Once the decision is recorded, I can update the expected result and identify which example needs correction. Until then, the test expectation remains open.
+Maya | Once the outcome is agreed, I'll record it and correct the conflicting example. A note saying clarified without the actual rule won't be enough.
 Dev | Yes. The [[decision record::Decision record preserves the owner's clarified outcome so examples and tests can consistently refer to it.]] should state the endpoint behavior explicitly. A vague note saying clarified would leave the same interpretation problem for the next tester.
-Maya | I will avoid writing inclusive until the owner actually chooses that rule. The alternative would exclude the endpoint, and the current examples support both readings.
+Maya | I'll hold off calling the boundary inclusive. That describes one possible decision, and the other example currently says the opposite.
 Dev | Exactly. An [[inclusive limit::Inclusive limit would include the endpoint, but that interpretation has not yet been selected for this requirement.]] is one possible decision, not a fact we have already agreed. Keep the options separate from the final rule.
-Maya | The issue can include both examples and the single equality question. That should make it easy to answer without reopening every aspect of cancellation.
+Maya | I can attach the two examples and the one equality question. That should give the owner a focused decision instead of a vague requirement complaint.
 Dev | That is a useful [[clarification request::Clarification request asks for the missing authoritative outcome while retaining the evidence of the conflicting examples.]]. It gives the requirement owner a concrete choice and shows why testing cannot make a justified judgment yet.
-Maya | When the clarification arrives, I will link it to the test and align the examples. I will not change the old example silently and lose the reason.
+Maya | I'll link the updated expectation to that decision. Silently changing an example would hide why we chose the new outcome.
 Dev | Preserve that [[traceability::Traceability links the updated test and examples to the requirement decision that justifies their expectation.]]. Anyone reviewing the result should be able to see which rule was applied and why it replaced the conflicting interpretation.
-Maya | For now, my status is equality unresolved, expected result pending clarification, and time-zone handling outside this discussion. I have not chosen accept or reject.
+Maya | For now: equality unresolved, expected result pending, time zones outside this discussion. I haven't selected accept or reject.
 Dev | That is accurate. Defer the [[pass/fail judgment::Pass/fail judgment requires an agreed expected outcome, which the unresolved equality case does not yet provide.]] for this case until the intended outcome is recorded. The next step is a requirement decision, not an invented test result.''',
+    rehearsal=["Read the two conflicting examples and the single equality question aloud. Do not choose an outcome that the case leaves unresolved.","Swap roles for turns 9-16, stressing intended rule rather than current application behavior.","Repeat the closing status and compare it with the brief: equality unresolved and time zones outside this discussion."],
     transfer_title='Ask one answerable requirement question',
     transfer_setup='Complete the clarification exchange without choosing the unresolved cancellation outcome.',
     transfer='''Tester: "The examples conflict at exactly ___ hours." | 24 | Both examples concern the exact twenty-four-hour boundary before the event.
@@ -145,15 +146,15 @@ selection size | Number of items included in the chosen input. | compare selecti
 reproduction frequency | Observed failures relative to stated attempts and conditions. | report reproduction frequency
 denominator | Total count against which a proportion is measured. | state the denominator
 environment detail | Relevant setting or configuration for an observation. | preserve environment details
-attachment | Supporting file included with a report. | add an attachment
+mutation testing | Checking test sensitivity using deliberately modified program variants. | interpret mutation testing results
 evidence bundle | Group of supporting records for an investigation. | prepare an evidence bundle
-screen recording | Recorded visual sequence of an interaction. | attach a screen recording
+equivalent mutant | Modified variant with the same observable behavior for the relevant domain. | investigate an equivalent mutant
 log excerpt | Relevant portion of recorded system events. | include a log excerpt
 minimal reproduction | Smallest useful example retaining the observed problem. | seek a minimal reproduction
 counterexample | Example contradicting a universal claim under its relevant terms. | assess a counterexample
 scope of evidence | Range of conditions actually supported by observations. | limit the scope of evidence
 unverified condition | Condition whose behavior has not been checked. | identify an unverified condition
-confirmation run | Repeat intended to check the reported behavior. | perform a confirmation run
+reproduction run | Repeat intended to check the reported behavior. | perform a reproduction run
 input parity | Use of matching input in a comparison. | establish input parity
 cannot reproduce | Status indicating failure to observe the report under stated attempts. | qualify cannot reproduce
 handoff note | Concise record transferring evidence and next steps. | prepare the handoff note''',
@@ -185,26 +186,27 @@ Not claiming every | Corrects an overgeneralization without weakening the actual
 Why does Joel's result not refute Hana's? | The selection size differs | Successful tests never matter | Q12 cannot export anything | Hana tested every possible input | A one-item input does not reproduce the reported three-item conditions.
 Which next attempt is most directly relevant? | Use Q12 and the same saved three-item selection | Use an unrelated build and ten new items | Change all settings at once | Repeat only the one-item test | Matching the reported build and input directly checks the existing reproduction.
 Which claim is unsupported? | Every selection size is affected | The last item was omitted twice | Joel's one-item attempt succeeded | Other builds are unchecked | No selection sizes beyond the stated one-item and three-item cases have been checked.''',
-    dialogue='''Hana | I have an export issue on Q12. With the saved selection of three items, the output omits the last selected item. I observed it in both attempts.
-Joel | My one-item export succeeded, so I initially marked it [[cannot reproduce::Cannot reproduce must be qualified by Joel's different one-item attempt rather than treated as refutation of Hana's conditions.]]. I should compare the input before treating that result as a response to your report.
-Hana | Yes. I am not saying every export fails. The evidence concerns this three-item selection on Q12, and I have not checked other builds or sizes.
-Joel | Let us establish [[input parity::Input parity requires using the same saved three-item selection instead of comparing it with a different one-item input.]]. Can you attach the saved selection so I can use the exact same items rather than create a roughly similar example?
-Hana | I can include that and the exported output. The important difference is that the final selected item is absent, not that the entire export is empty.
-Joel | That makes the [[actual output::Actual output is the produced export, which demonstrates the specific missing final item rather than a total export failure.]] clear. The report should distinguish a partial omission from a completely failed operation because those observations suggest different investigation paths.
-Hana | For frequency, I will write two attempts out of two. I do not want the shorthand always to sound like I have tried many inputs.
-Joel | Good. State the [[denominator::Denominator is the two total attempts supporting the observed two-out-of-two frequency, not an unlimited set of exports.]] and conditions together. Two repeat observations are useful, but they do not justify a universal claim about all exports.
-Hana | Would my second attempt count as confirmation that the saved selection reproduces the issue? It gave the same missing final item, with no build change.
-Joel | It is a [[confirmation run::Confirmation run describes the repeated attempt under the reported conditions, while leaving broader behavior untested.]] under those stated conditions. Keep that fact separate from any claim that you have isolated the internal cause.
-Hana | I have no evidence yet about why the item disappears. The report can remain useful without naming a loop error or a particular component.
-Joel | Exactly. A [[defect report::Defect report can document reproducible behavior and conditions without inventing an internal explanation for the omission.]] needs clear behavior and supporting evidence; it does not require you to guess the implementation defect.
-Hana | I will include the build label at the top, then the saved selection, the export action, and a comparison showing the missing item.
-Joel | The [[build identifier::Build identifier Q12 ties the observation to the tested software version and prevents assumptions about untested builds.]] is important. If I use a different build, I need to report that difference rather than merge the outcomes as though the conditions matched.
-Hana | Your one-item success should stay in the discussion too. It is a real observation, just not the same test as mine.
-Joel | Agreed. It narrows the [[scope of evidence::Scope of evidence includes the separate one-item success and three-item failures without generalizing to untested conditions.]], and we should preserve it. Different results can coexist when the input differs; neither needs to be erased to make the report coherent.
-Hana | If you later reduce the three-item selection while keeping the omission, please record exactly which input still fails. We do not yet know the smallest failing example.
-Joel | That would help find a [[minimal reproduction::Minimal reproduction is a smaller retained failure example, which has not yet been established by the current observations.]]. For now, the known reproducer is your saved selection, and I should start there rather than assume another size behaves the same.
-Hana | My handoff will attach that selection and output, name Q12, state two out of two, and list other builds and selection sizes as unchecked.
-Joel | That is a usable [[evidence bundle::Evidence bundle combines the saved input, actual output, build, action, and frequency needed for a focused investigation.]]. I will run the reported conditions and return the actual result, not repeat the broader cannot-reproduce label without its limits.''',
+    dialogue='''Hana | Q12 exported only two of my three selected items. The last selected item is missing, and I got the same omission in both attempts.
+Joel | My one-item export worked, so I marked it [[cannot reproduce::Cannot reproduce must be qualified by Joel's different one-item attempt rather than treated as refutation of Hana's conditions.]]. I should qualify that: I didn't use your three-item selection.
+Hana | Exactly. I'm reporting this saved selection on Q12, not claiming that every export fails. Other builds and sizes haven't been checked.
+Joel | Let's establish [[input parity::Input parity requires using the same saved three-item selection instead of comparing it with a different one-item input.]]. Send the saved selection so I can repeat your input, not just pick three different items.
+Hana | I'll attach the output alongside it. The export isn't empty; comparing selected and exported items shows which one disappeared.
+Joel | That distinguishes the [[actual output::Actual output is the produced export, which demonstrates the specific missing final item rather than a total export failure.]] from a total failure. We need the precise omission, not just export broken.
+Hana | For frequency, I'm writing two out of two attempts. Always would make it sound as though I'd tested a much larger set.
+Joel | Include the [[denominator::Denominator is the two total attempts supporting the observed two-out-of-two frequency, not an unlimited set of exports.]] with the conditions. Two repeats support your report, but not a failure rate across every possible export.
+Hana | The second attempt used the same build and selection and lost the same final item. I haven't changed any code or checked a fix.
+Joel | Call that a [[reproduction run::Reproduction run describes the repeated attempt under the reported conditions, while leaving broader behavior untested.]] of the failure. It is not confirmation testing of a repaired version, because no repair has been tested.
+Hana | I suspect a loop boundary, but I don't have internal evidence. Should I leave that theory out of the title?
+Joel | Yes. A useful [[defect report::Defect report can document reproducible behavior and conditions without inventing an internal explanation for the omission.]] doesn't require guessing the cause. Keep the observed behavior in the title and any hypothesis explicitly provisional.
+Hana | I'll put Q12 first, then the saved input, export action, and item comparison. That should make the starting conditions clear.
+Joel | Good. The [[build identifier::Build identifier Q12 ties the observation to the tested software version and prevents assumptions about untested builds.]] matters. A result from another version belongs in the record with that difference, not as an identical repeat.
+Hana | Your one-item pass should stay too. It doesn't erase my failure, but neither should we erase a genuine successful case.
+Joel | Agreed. Keep the [[scope of evidence::Scope of evidence includes the separate one-item success and three-item failures without generalizing to untested conditions.]] bounded: one-item success, this three-item failure, other sizes unknown. Those facts can coexist.
+Hana | If you reduce the input and the same omission remains, record that smaller case. We don't yet know the smallest failing selection.
+Joel | That would establish a [[minimal reproduction::Minimal reproduction is a smaller retained failure example, which has not yet been established by the current observations.]]. I'll start with the known saved selection before trying to remove anything from it.
+Hana | My handoff will include both observations and the exact reproducer, with two attempts out of two and untested conditions listed.
+Joel | That's the [[evidence bundle::Evidence bundle combines the saved input, actual output, build, action, and frequency needed for a focused investigation.]] I need. I'll return the result under those conditions, not another unqualified cannot-reproduce label.''',
+    rehearsal=["Read the failure report using the actual build, saved selection, missing item, and two-out-of-two frequency.","Swap roles for turns 3-10. Keep different input separate from a reproduction of the reported failure.","Check the final handoff against turns 17-20. Include the saved evidence and untested conditions without guessing the cause."],
     transfer_title='Report a bounded reproduction',
     transfer_setup='Complete the report using only the observed build, input, output, and frequency.',
     transfer='''Tester: "The tested build is ___." | Q12 | Hana's reported omission is tied specifically to build Q12.
@@ -275,26 +277,27 @@ Improve ... but | Recognizes a benefit while limiting the coverage claim.''',
 Which expected result is correct? | Accept 20 and reject 21 | Reject 20 and accept 21 | Accept both 0 and 21 | Reject every interior value | Twenty is included in the stated range, while twenty-one lies above it.
 Which decimal statement is justified? | The rule requires clarification for decimals | All decimals round down | Every decimal is explicitly rejected | Decimals are already tested | The scenario provides no decimal policy or completed decimal checks.
 Which coverage claim is appropriate? | The proposed set addresses the missing edges but has not been executed | All possible defects are eliminated | Three interior checks prove both bounds | The new cases have already passed | Case design identifies intended coverage, but execution evidence is still absent.''',
-    dialogue='''Rosa | The proposed quantity tests use five, ten, and fifteen. They are all accepted values, but none checks the point where acceptance changes to rejection.
+    dialogue='''Rosa | The quantity tests use five, ten, and fifteen. All sit inside the accepted range, so none reaches the point where the rule changes.
 Amir | You mean the [[boundary value::Boundary value identifies an endpoint where the quantity rule changes between acceptance and rejection.]] cases at one and twenty. The requirement says both endpoints are included, so those exact values should be accepted.
-Rosa | Yes. We should also check zero below the lower endpoint and twenty-one above the upper endpoint. Both are outside the accepted whole-number range.
+Rosa | The nearest rejected whole-number values are zero and twenty-one. They check both sides of the accepted one-through-twenty range.
 Amir | That gives us an [[invalid partition::An invalid partition contains whole-number inputs outside the accepted one-through-twenty range that the rule says to reject.]] on either side. The existing tests only sample the accepted middle and tell us nothing about either rejection region.
-Rosa | I propose zero, one, two, nineteen, twenty, and twenty-one. That includes each endpoint and the nearest whole number on both sides.
+Rosa | I propose zero, one, two, nineteen, twenty, and twenty-one. That includes each endpoint and the nearest relevant value on either side.
 Amir | The [[adjacent value::Adjacent value refers to the nearest whole-number neighbor beside an endpoint, such as zero or two beside one.]] matters because a comparison can be wrong by one. Checking only five would not expose an error that rejects one but accepts the rest.
-Rosa | Two and nineteen are still valid, but they check just inside the limits. I want to explain their role so the extra cases do not look arbitrary.
+Rosa | Two and nineteen are accepted, but they test just inside the edges. I'll explain that role rather than describe the extra values as more coverage without details.
 Amir | That is a clear use of [[boundary value analysis::Boundary value analysis concentrates case selection on endpoints and nearby inputs rather than only central accepted values.]]. Connect each proposed input to its expected result and the edge condition it helps examine.
-Rosa | For the lower end, zero should be rejected, while one and two should be accepted. We have not run those new cases yet.
+Rosa | At the lower edge, zero should reject and one and two should accept. Those are expectations; the new cases haven't run.
 Amir | Keep that [[expected result::Expected result states the outcome required by the rule, which is distinct from an actual result of an executed test.]] language. Saying should be accepted follows the requirement; saying passed would falsely imply an observation we do not have.
-Rosa | At the upper end, nineteen and twenty should be accepted, while twenty-one should be rejected. The word inclusive is doing important work here.
+Rosa | At the upper edge, nineteen and twenty should accept, twenty-one should reject. Inclusive means we must not reject twenty itself.
 Amir | Exactly. An [[inclusive range::Inclusive range includes both stated endpoints, so one and twenty belong to the accepted set.]] includes the endpoints themselves. We should not quietly turn twenty into the first rejected value.
-Rosa | A colleague asked about one point five. The current rule is about whole numbers, and no decimal policy is stated.
+Rosa | What about one point five? The stated rule covers whole-number quantities, and we haven't been given a fractional-input policy.
 Amir | Then [[decimal input::Decimal input falls outside the supplied whole-number rule and needs its own clarified handling policy.]] needs a separate clarification. We should not invent rounding, truncation, acceptance, or rejection and present it as an existing requirement.
-Rosa | Could the decision table keep the whole-number regions separate: below one, one through twenty, and above twenty? That would show which rule each case represents.
+Rosa | I'll map below one, one through twenty, and above twenty to their outcomes, with decimal handling visibly unresolved rather than silently added to reject.
 Amir | Yes. A [[decision table::A decision table maps the stated quantity regions to their required outcomes without inventing a decimal rule.]] can organize those outcomes. Mark decimal behavior as unspecified rather than folding it into a rejection rule that was never agreed.
-Rosa | I will retain the interior tests where useful, but I will not use their count as proof that the limits are covered. Three tests can still miss both edges.
+Rosa | We can retain useful interior cases, but their count won't establish edge coverage. Three central examples still miss both endpoints.
 Amir | Correct. [[Case selection::Case selection concerns which meaningful conditions are checked, not merely how many tests exist.]] is about the conditions exercised, not simply having several numbers in a list. The current values all occupy the interior.
-Rosa | The revised proposal will list the six boundary-focused cases and their expectations. It will say they are planned and that decimal handling remains unresolved.
+Rosa | I'll submit the six cases and expected outcomes as a proposal, not a pass report. The separate decimal question remains open.
 Amir | That is accurate [[coverage::Coverage describes the conditions addressed by the proposed cases, not proof that every defect is absent or every test has passed.]] language. It improves the design while keeping both execution status and the missing decimal rule visible to the team.''',
+    rehearsal=["Read the six proposed boundary values in order, with their expected accept or reject results.","Swap roles for turns 9-16. Stress should accept rather than passed, and keep decimal handling unresolved.","Compare the final proposal with the brief: both endpoints and immediate neighbors, with no invented execution result."],
     transfer_title='Read the limits literally',
     transfer_setup='Complete the expected-result exchange. These expectations come from the stated rule, not from completed test runs.',
     transfer='''Tester: "The accepted lower endpoint is ___." | 1 | One is explicitly included as the lower endpoint of the range.
@@ -336,7 +339,7 @@ test objective | Purpose a particular check is meant to serve. | define the test
 selection rationale | Reason for choosing particular checks. | explain the selection rationale
 coverage claim | Statement about what the tests have exercised. | limit the coverage claim
 test summary | Concise account of scope, results, and limits. | write the test summary
-follow-up check | Additional test proposed after initial evidence. | schedule a follow-up check
+branch coverage | Proportion of defined control-flow branches exercised by tests. | report branch coverage
 release recommendation | Evidence-based advice about proceeding with a release. | qualify a release recommendation''',
     precision='Opening the account page does not establish correct account-save formatting, and it does not exercise export. Both use the changed formatter. Existing behavior can need regression checking even when the visible update is described as an account change.',
     precision_extra='One hour limits the work, not the meaning of full coverage. Propose focused checks of the changed formatter through both consumer paths, then report what actually ran and any remaining gaps without implying all risks were removed.',
@@ -366,26 +369,27 @@ Which ... and their | Requires named checks paired with actual outcomes.''',
 Why include export in follow-up? | It uses the changed formatter | Every old feature must be rewritten | The smoke test already failed export | Export is the only account feature | Shared-component usage creates a relevant change-impact question for the existing export path.
 What does one hour justify? | Prioritized checks with disclosed gaps | A full-coverage claim without execution | Automatic release approval | Ignoring all shared consumers | The timebox limits testing and requires explicit reporting of remaining uncertainty.
 Which statement confuses plan and evidence? | Both paths passed because we intend to check them | Both paths need checking | The current smoke scope is narrow | One hour remains for further work | Intending to run checks provides no evidence that either path has passed.''',
-    dialogue='''Elena | The smoke test passed for sign-in and opening the account page. I want to keep that wording narrow because we have not checked account-save or export.
-Sam | Agreed. A [[smoke test::Smoke test describes the small basic check set, not evidence that every changed behavior has been exercised.]] result is useful, but its scope matters. What changed that makes those two paths the next candidates for checking?
-Elena | The formatter changed, and both paths use it. Although the update is described as an account change, the existing export path consumes the same component.
-Sam | Then the [[shared component::Shared component identifies the formatter used by both account-save and export, linking both paths to the modification.]] connects the risks. We should not exclude export just because it was already present before this update.
-Elena | Exactly. Opening the account page does not tell us whether saving an account produces the correct formatted result. It also says nothing about the exported output.
-Sam | That is a clear [[coverage gap::Coverage gap names the untested account-save and export behavior that the narrow smoke test did not exercise.]]. We have evidence for two basic actions, but not for the consumer behavior most directly linked to the change.
-Elena | With one hour available, I propose focused checks through both consumers. I would make the expected formatted output explicit in each case.
-Sam | That gives a [[selection rationale::Selection rationale explains why the changed formatter's consumers deserve attention within the limited testing time.]] tied to the modification rather than simply adding unrelated checks until the hour is gone.
-Elena | I cannot promise full regression coverage in that time. The handoff should name what we manage to run and what remains unchecked.
-Sam | Yes. The [[timebox::Timebox is the one-hour limit on additional work, which does not expand the meaning of the evidence collected.]] limits the amount of checking; it does not make a small set equivalent to full coverage.
-Elena | Would it be fair to say export is high priority because it shares the formatter, without inventing a probability that it will fail?
-Sam | Explain the [[change impact::Change impact concerns the plausible effect of the modified formatter on both consumers without asserting an unmeasured failure probability.]] relationship directly. We do not need a made-up percentage to justify checking a path that uses the changed code.
-Elena | I will also avoid marking the proposed checks passed in the status table before execution. At the moment, both paths remain untested.
-Sam | Keep [[execution evidence::Execution evidence consists of actual performed checks and results, not a planned check list.]] separate from the plan. Planned, running, passed, and failed are different statuses, even when the next steps look straightforward.
-Elena | If the hour ends before every intended check finishes, I will carry those items forward as gaps. I will not silently drop them from the summary.
-Sam | That makes [[residual risk::Residual risk is the uncertainty or exposure remaining after the checks actually completed, including unfinished planned work.]] visible. A useful report shows the remaining exposure alongside the new evidence rather than presenting a clean-looking but incomplete table.
-Elena | The account-save check and export check should each have an expected result tied to the formatter. Merely reaching the screen would repeat the smoke-test limitation.
-Sam | Right. State the [[test objective::Test objective specifies the formatted behavior to verify in each consumer path rather than only opening a screen.]] so the action and assertion address the change. Otherwise we could increase the test count without answering the relevant question.
-Elena | My update will say smoke passed for sign-in and page opening, both formatter consumers untested, one hour available, and focused follow-up proposed.
-Sam | That is an accurate [[test summary::Test summary combines checked scope, actual results, proposed follow-up, and limits without claiming complete coverage or release approval.]]. We can use the subsequent results to inform a recommendation while keeping any unfinished work and release decision separate.''',
+    dialogue='''Elena | Sign-in and opening the account page passed. I don't want that smoke result reported as account-save or export tested; neither path ran.
+Sam | Agreed. What changed that makes those the next checks? The [[smoke test::Smoke test describes the small basic check set, not evidence that every changed behavior has been exercised.]] itself tells us only about those basic actions.
+Elena | The update changes a formatter used by both save and export. The account label on the change doesn't remove export from its impact.
+Sam | Then the [[shared component::Shared component identifies the formatter used by both account-save and export, linking both paths to the modification.]] gives us a concrete reason to include both. Existing export behavior can regress when its dependency changes.
+Elena | Opening the page doesn't compare the formatted saved value. It also doesn't generate an export whose contents we can check.
+Sam | That's the [[coverage gap::Coverage gap names the untested account-save and export behavior that the narrow smoke test did not exercise.]]. We have basic access evidence, not results for the two consumers of the changed formatter.
+Elena | We have one hour. I'd focus on each consumer's output, with an explicit expected representation, before spending time on unrelated screens.
+Sam | That is a defensible [[selection rationale::Selection rationale explains why the changed formatter's consumers deserve attention within the limited testing time.]]. Explain which changed behavior the checks target rather than just promising more test cases.
+Elena | I can't promise full regression coverage in that hour. I'll keep the uncompleted checks visible if the time runs out.
+Sam | Right. The [[timebox::Timebox is the one-hour limit on additional work, which does not expand the meaning of the evidence collected.]] constrains the work; it doesn't redefine a short check set as full coverage.
+Elena | For export, the rationale is the shared formatter, not evidence that it already fails. I don't have a failure probability to attach.
+Sam | State the [[change impact::Change impact concerns the plausible effect of the modified formatter on both consumers without asserting an unmeasured failure probability.]] relationship without inventing one. A relevant dependency is enough to justify investigating that path.
+Elena | Both proposed checks are still planned. I'll update their statuses only after execution gives us actual results.
+Sam | Keep [[execution evidence::Execution evidence consists of actual performed checks and results, not a planned check list.]] separate from intention. A planned check doesn't become passed because we expect it to be straightforward.
+Elena | If only one consumer finishes, I'll identify which one and its result. I won't combine it with the other under formatter verified.
+Sam | That preserves the [[residual risk::Residual risk is the uncertainty or exposure remaining after the checks actually completed, including unfinished planned work.]]. Readers need to know what remains unchecked as well as what the completed case showed.
+Elena | I'll also check the content, not merely that Save or Export can be clicked. Otherwise we'd repeat the smoke-test limitation.
+Sam | Exactly. The [[test objective::Test objective specifies the formatted behavior to verify in each consumer path rather than only opening a screen.]] is the changed formatting behavior in each path. Make the assertion answer that question.
+Elena | Current update: narrow smoke pass, save and export untested, shared formatter changed, one hour available, focused follow-up proposed.
+Sam | That's an accurate [[test summary::Test summary combines checked scope, actual results, proposed follow-up, and limits without claiming complete coverage or release approval.]]. The subsequent evidence can inform a recommendation without implying that every risk or release question is settled.''',
+    rehearsal=["Read the narrow smoke result and identify both consumers of the changed formatter.","Swap roles for turns 7-14. Keep the one-hour plan separate from completed execution evidence.","Repeat the closing update, retaining both untested paths and the limit on coverage."],
     transfer_title='Keep scope, change, and time together',
     transfer_setup='Complete the testing update before the proposed follow-up checks have run.',
     transfer='''Tester: "The ___ test covered sign-in and opening the page." | smoke | The initial smoke test was limited to those two basic actions.
@@ -453,29 +457,30 @@ Required record | Names a specific precondition rather than vague environment tr
 Does not fix | Distinguishes another observation from an actual correction.
 Relevant sequence | Requests verification where the interference was originally observed.''',
     d='''Which explanation matches the evidence? | Cleanup removes data needed by the later search check | The code changes between every run | Search never passes | Every failure is random | The supplied shared-record relationship explains the observed order-dependent interference.
-What should be compared? | Execution order and starting data state | Only the color of the test report | Unrelated production traffic | A made-up build number | Order and sample-record presence differ between the supplied observations.
+What comparison most directly tests the reported interference? | Record presence before search alone and after cleanup on T8 | Only search duration in two unrelated runs | Q12 export output versus T8 search output | Pass percentages with execution order omitted | The difference is the shared record removed by cleanup; matching the build while observing record presence targets that interference.
 Which action is not a demonstrated fix? | Rerun alone until the check passes | Define independent test data | Review cleanup scope | Verify required setup | A standalone pass leaves the original suite interference unresolved.
 What should verification include? | The relevant sequence after the data arrangement is corrected | Only deleting the failing assertion | A claim that no tests need data | An unchanged summary saying always passes | Verification must address the sequence and starting-state problem that produced the failure.''',
-    dialogue='''Noah | The search check is inconsistent on T8. It fails after cleanup but passes on its own, and there was no code change between those observations.
-Aisha | Let us record the [[execution order::Execution order is the relevant sequence in which cleanup precedes the failing search check on the same build.]] before calling it random. What does cleanup change that the standalone search run might still have available?
-Noah | Cleanup removes the shared sample record. Search expects that record to be present, so its starting state is different after cleanup has run.
-Aisha | That is an [[order dependency::Order dependency means the search result depends on cleanup having run first and removed its required record.]]. The build can stay identical while the data changes enough to alter the result.
-Noah | I was going to add automatic reruns because the isolated attempt is green. That would make the report look better without repairing the shared-data problem.
-Aisha | Exactly. A [[rerun::Rerun is another execution, whose success does not repair the original interference between cleanup and search.]] gives another observation. It is not a correction unless the underlying conditions have actually been made reliable and the relevant behavior verified.
-Noah | We should document which check owns the record. At present, one check removes something another assumes will remain available.
-Aisha | Define [[test data ownership::Test data ownership assigns responsibility for creating and removing records so one check does not invalidate another's preconditions.]] explicitly. Otherwise the same interference can return even if a particular sequence happens to pass today.
-Noah | One possible revision is independent data for each check. Another is setup that reliably establishes what search requires without relying on a previous check.
-Aisha | Both address [[test isolation::Test isolation prevents another check's state changes from determining whether search has its required starting data.]], but the chosen arrangement still needs review and execution. A design proposal is not yet proof that the suite behaves reliably.
-Noah | I will preserve the failed sequence in the issue. The standalone pass should be included too, with its different context rather than as a replacement.
-Aisha | Good. Keep the [[failure evidence::Failure evidence preserves the observed failing sequence and its conditions even when a different standalone attempt passes.]]. Deleting the earlier result would hide the condition that made the dependency visible.
-Noah | The check's required record is really a precondition. It should not be an undocumented assumption about whatever data the environment happens to contain.
-Aisha | Yes. A [[precondition::Precondition is the required sample-record state that must be established before the search check starts.]] should be established and visible. Then a missing fixture can be distinguished from the product behavior the assertion is intended to examine.
-Noah | We also need to review cleanup's scope. It should not remove records belonging to another check merely because they share a broad label.
-Aisha | That is the [[interference::Interference is cleanup's unintended effect on the later search check through removal of its required record.]] we are addressing. Preserve the search assertion and change the data arrangement rather than weakening the check just to get a green result.
-Noah | After the revision, I want to run the relevant sequence and the isolated search case. We should compare actual results, not assume separation solved everything.
-Aisha | A [[verification run::Verification run checks the revised data arrangement under the relevant sequence instead of assuming the proposed fix succeeded.]] should target the original condition. Record setup, order, and result so the conclusion is tied to what was exercised.
-Noah | My summary will say T8, no code change, failure after cleanup, standalone pass, and shared sample deletion. The data isolation correction remains to be verified.
-Aisha | That describes the [[environment state::Environment state includes the sample-record presence that changes between suite and standalone execution despite an unchanged build.]] precisely. We can investigate a concrete dependency instead of treating inconsistent results as permission to ignore the test.''',
+    dialogue='''Noah | Search fails after cleanup on T8 but passes alone. I was about to enable reruns, though no code changed between these results.
+Aisha | Before doing that, compare the [[execution order::Execution order is the relevant sequence in which cleanup precedes the failing search check on the same build.]]. What does cleanup remove that the isolated search run still has?
+Noah | The shared sample record. Search expects it, and cleanup deletes it. The build matches, but the data at the start doesn't.
+Aisha | That explains an [[order dependency::Order dependency means the search result depends on cleanup having run first and removed its required record.]]. An identical build doesn't make the starting conditions identical.
+Noah | A standalone rerun could turn the report green without fixing the sequence that lost the record. It would hide what we need to investigate.
+Aisha | Exactly. A [[rerun::Rerun is another execution, whose success does not repair the original interference between cleanup and search.]] is another observation, not a repair. Keep its changed context visible instead of replacing the failure with it.
+Noah | We need to decide who creates and removes the sample. Right now cleanup assumes ownership of something search treats as available.
+Aisha | Make [[test data ownership::Test data ownership assigns responsibility for creating and removing records so one check does not invalidate another's preconditions.]] explicit. Otherwise a different execution order can expose the same problem again.
+Noah | We could give each check its own records, or establish the required state explicitly without depending on another check's leftovers.
+Aisha | Those address [[test isolation::Test isolation prevents another check's state changes from determining whether search has its required starting data.]]. Choose and review the arrangement, then verify it; proposing separation isn't evidence that the suite is repaired.
+Noah | I'll retain the failing order and logs. The successful isolated run belongs beside them as a comparison, not as a replacement.
+Aisha | Good. That [[failure evidence::Failure evidence preserves the observed failing sequence and its conditions even when a different standalone attempt passes.]] shows why the shared state matters. Deleting it would remove the most useful reproduction conditions.
+Noah | The record's presence is required before the search assertion can mean anything. We shouldn't leave that hidden in the environment.
+Aisha | Establish the [[precondition::Precondition is the required sample-record state that must be established before the search check starts.]] in setup. A missing fixture and an application search defect are different problems to report.
+Noah | Cleanup also needs narrower ownership checks. A broad delete based on a shared label could still remove another test's record.
+Aisha | That's the [[interference::Interference is cleanup's unintended effect on the later search check through removal of its required record.]] to remove. Keep the useful search assertion rather than weakening it until the suite looks green.
+Noah | After the revision, I'll run cleanup then search, as well as search alone, and capture the starting data and actual results.
+Aisha | The [[verification run::Verification run checks the revised data arrangement under the relevant sequence instead of assuming the proposed fix succeeded.]] needs that original sequence. A standalone pass alone would leave the reported interaction unverified.
+Noah | My handoff will show T8, unchanged code, deletion of the expected record, and the two observed outcomes. The revised arrangement is not yet verified.
+Aisha | That names the [[environment state::Environment state includes the sample-record presence that changes between suite and standalone execution despite an unchanged build.]] precisely. We can investigate the actual dependency instead of calling the result random and moving on.''',
+    rehearsal=["Read the two T8 outcomes with their execution order and starting data state.","Swap roles for turns 7-16. Stress ownership of the sample record and preserving the search assertion.","Compare the final report with the brief. The data arrangement is proposed, not yet verified."],
     transfer_title='Name the hidden difference',
     transfer_setup='Complete the automation report using the observed order and shared-record facts.',
     transfer='''Engineer: "Both observations use build ___." | T8 | The scenario names T8 for both the suite and standalone observations.
@@ -547,26 +552,27 @@ For each issue | Prevents one broad statement from concealing different disposit
 What does the demonstration establish? | A timing reason to discuss the typo urgently | Automatic permission to release both defects | A universal severity ranking | Proof export is correct | The planned account-page demonstration affects scheduling relevance, not defect correctness or release authority.
 Which claim needs more evidence? | A workaround exists for the export | The export omits its final row | The typo appears on every account page | No export is planned for the demo | No alternative export method or verified workaround is supplied.
 Which statement avoids a false decision? | The repair order and release disposition still need agreement | The typo is automatically first under every policy | The export has been waived | Both issues are approved for release | The scenario gives no final scheduling or authorization decision.''',
-    dialogue='''Lina | We have two issues for triage: the monthly export omits its final row, and a heading typo appears on every account page. I want to compare them without mixing impact and timing.
+    dialogue='''Lina | Before we rank these issues, can we separate missing export data from the heading typo? Tomorrow's demonstration affects urgency, but not the underlying consequences.
 Marcus | Start with the [[functional impact::Functional impact identifies what the export defect prevents or corrupts, here completeness of the exported rows.]] of the export. A missing row affects the completeness of that workflow's output, even though the workflow runs monthly.
-Lina | Right. Monthly tells us how often the workflow is used, not that its data is unimportant. We should not reduce the description to a rare cosmetic problem.
+Lina | Monthly is the workflow frequency, not proof that the missing row is harmless. We should retain the actual completeness problem in the description.
 Marcus | Agreed. [[Frequency::Frequency describes how often the monthly workflow occurs and does not determine the seriousness of a missing row by itself.]] is one part of the context, not a substitute for describing the effect. What is established about the typo?
-Lina | It is visible on every account page. Tomorrow's customer demonstration uses that page, and no export is planned for the demonstration.
+Lina | The typo appears on every account page, including the one used in tomorrow's demonstration. No export is planned for that event.
 Marcus | That gives the typo immediate [[business timing::Business timing captures the upcoming demonstration's relevance to scheduling without equating it with greater functional harm.]]. We should discuss it urgently for that reason, while keeping its presentation effect distinct from the export's missing data.
-Lina | Could we say the typo has greater reach in the observed interface, but avoid claiming that broader visibility automatically makes it more severe?
+Lina | So its visibility is broad, while the export has a different functional consequence. I don't want account-wide to become a substitute for an impact analysis.
 Marcus | Yes. [[Reach::Reach describes the affected surfaces, such as every account page, rather than the degree of functional damage.]] and severity are not synonyms. A widespread heading error and an incomplete export have different consequences that need separate descriptions.
-Lina | We also do not have a severity scale in front of us. I would rather use the observed effects than invent critical or minor labels.
+Lina | We haven't been supplied a severity scale. I'll describe the observed consequences before assigning labels such as critical or minor.
 Marcus | Use the applicable [[defect classification::Defect classification should follow the actual agreed categories rather than invented labels based only on frequency or visibility.]] process when those labels are assigned. For this discussion, the concrete effects and timing are enough to explain the competing concerns.
-Lina | Does focusing on the typo for tomorrow mean the export is approved for release? I want to avoid that implication in the meeting notes.
+Lina | Does discussing the typo urgently imply the export is cleared to ship? I'd like the meeting note to avoid linking those decisions.
 Marcus | No. [[Priority::Priority concerns urgency or work order and does not itself authorize release with an unresolved defect.]] concerns what receives attention and when. It is not permission to ship a known issue, and we have not finalized the repair order either.
-Lina | Then each issue needs its own recorded disposition. A general note saying handled would not show whether it was fixed, deferred, or still awaiting a decision.
+Lina | Then each issue needs a recorded outcome once decided: corrected, deferred, or still pending. Handled wouldn't tell the next person which one applies.
 Marcus | Exactly. Record the [[disposition::Disposition is the specific handling decision for each issue, which must not be replaced by a vague handled status.]] once the authorized decision is made. Do not write deferred as though it meant corrected.
-Lina | We have not established a workaround for the export. I should not suggest users can recover the missing row through another route unless that route is verified.
+Lina | We also don't have a verified alternative export method. I won't soften the risk statement by inventing a workaround.
 Marcus | Correct. A [[workaround::Workaround is an alternative way to complete the task, and none has been established for the incomplete export.]] is another factual claim requiring evidence. It cannot be added just to make the risk summary sound more reassuring.
-Lina | My comparison will retain export data completeness, the typo's account-page visibility, tomorrow's demonstration, and the absence of export from that demonstration.
+Lina | My comparison will show the missing row, the typo's reach, and the demonstration's actual scope. It won't invent consequences we haven't observed.
 Marcus | That is an [[evidence-based comparison::Evidence-based comparison uses the stated effects and demonstration scope without inventing severity ratings, workarounds, or approvals.]]. It gives the team a clear basis for scheduling discussion without pretending a decision has already been reached.
-Lina | I will finish with repair order and release disposition pending. That leaves the next decision visible instead of choosing a winner in the report.
+Lina | I'll leave the repair order and release disposition pending. Strongly arguing for urgency doesn't mean I can announce an authorization.
 Marcus | Good. Keep any [[risk acceptance::Risk acceptance is an explicit authorized decision about identified exposure, not an inference from urgency or a triage conversation.]] separate and explicit. We can discuss urgency strongly without silently approving either defect for release.''',
+    rehearsal=["Read the triage comparison once for functional impact, then again for demonstration timing.","Swap roles for turns 9-16. Keep classification, work order, and permission to release separate.","Repeat the closing status without adding an invented workaround, severity scale, or approved repair order."],
     transfer_title="Impact is not the same as tomorrow's priority",
     transfer_setup='Complete the triage summary without assigning an unsupported rating or release decision.',
     transfer='''Tester: "The export omits the final ___." | row | The supplied export defect concerns the final row of the monthly output.
@@ -587,7 +593,7 @@ What happens after a saved edit? | Navigating away preserves the value | Every v
 What is unresolved? | Whether a warning is required for unsaved edits | Whether mobile was fully tested | Whether the session lasted twenty minutes | Whether the saved value persisted | Warning requirements are unspecified even though the no-warning behavior was observed.''',
     vocabulary='''exploratory testing | Investigation that adapts checks as the tester learns. | conduct exploratory testing
 test charter | Statement guiding the purpose of an exploratory session. | define the test charter
-session | Bounded period of testing work. | document the session
+focus containment | Keeping keyboard tab navigation within an open modal dialog. | verify focus containment
 timebox | Fixed time allocated to an investigation. | respect the timebox
 debrief | Discussion reviewing observations, limits, and follow-up. | hold a debrief
 session notes | Record of actions, observations, and questions from testing. | preserve session notes
@@ -600,7 +606,7 @@ persistence | Continued retention of data across the relevant transition. | chec
 warning prompt | Message alerting a user before a consequential action. | clarify the warning prompt
 state transition | Change from one defined condition to another. | record the state transition
 user journey | Sequence of actions a user takes toward an objective. | describe the user journey
-interruption | Event that breaks or diverts the current workflow. | investigate an interruption
+focus restoration | Returning keyboard focus to the required target after an interface closes. | check focus restoration
 requirement gap | Missing specification needed to judge intended behavior. | raise the requirement gap
 usability concern | Potential difficulty in understanding or using the product. | record a usability concern
 confirmed defect | Established departure from an applicable expectation. | distinguish a confirmed defect
@@ -637,26 +643,27 @@ Whether save occurred | Identifies the state distinction needed to reproduce the
 What should be requested? | Clarification of whether an unsaved-edit warning is required | Automatic release approval | A declaration that all edits are broken | Removal of the saved-path observation | The missing rule concerns the intended warning behavior for unsaved navigation.
 Which claim exceeds the evidence? | Mobile shows the same result | No warning appeared in the explored unsaved path | The session lasted twenty minutes | Saved value persisted in the explored saved path | Mobile was explicitly not explored, so its behavior is unknown.
 Why avoid calling this a confirmed warning defect now? | The applicable warning requirement is unspecified | Observations never matter | Unsaved changes cannot affect users | Twenty minutes invalidates every finding | A confirmed requirement violation needs an applicable expectation, which is missing for the warning.''',
-    dialogue='''Isha | My twenty-minute session focused on interrupted profile edits. I have two different navigation observations and one requirement question, rather than a general claim that editing is broken.
+    dialogue='''Isha | My twenty-minute session found different results before and after saving a profile edit. I'd like to report those separately and ask about the warning rule.
 Owen | Start with the [[test charter::Test charter names the session's purpose, investigating interrupted profile edits, rather than a claim of complete feature coverage.]]. That will help me understand which paths you explored and what the session was not intended to settle.
-Isha | The charter was to investigate interrupted profile edits. When I saved an edit and then navigated away, the value remained present.
+Isha | The charter was interrupted profile edits. In the saved path, I saved first and then navigated away; the value remained.
 Owen | So the [[saved state::Saved state refers to the value retained after the completed save, which persisted through the observed navigation.]] persisted in that sequence. Keep it separate from what happened when navigation occurred before the edit was saved.
-Isha | In the unsaved sequence, I navigated away while the edit was still unsaved. The change was lost, and no warning appeared before leaving.
+Isha | When I left during an unsaved edit, the change disappeared without a warning. I didn't observe saved values disappearing in that sequence.
 Owen | That is a specific [[observation::Observation reports the actual loss of the unsaved change without warning, without inventing an intended-behavior rule.]]. We can record both the lost change and the absence of a warning without yet deciding whether either violates a requirement.
-Isha | The requirement does not say whether a warning is needed. I did not want to choose the product policy myself and then judge the application against it.
+Isha | The requirement doesn't say whether a warning is required. I can raise that question without choosing the policy myself.
 Owen | Raise that [[requirement gap::Requirement gap identifies the missing warning rule needed to classify the observed behavior against intended expectations.]] explicitly. Ask whether leaving an unsaved edit should trigger a warning, rather than treating your preferred behavior as already agreed.
-Isha | I will keep the actual sequence in the notes: edit without saving, navigate away, change absent, no warning. That should make the question concrete.
+Isha | I'll record edit, no save, navigate away, change absent, no warning. Saying profile loses data would omit the condition that makes this finding meaningful.
 Owen | The [[evidence trail::Evidence trail connects the question to the recorded action sequence and outcome so another person can investigate it.]] matters. A note saying profile loses data would omit the saved-versus-unsaved distinction and could misrepresent the finding.
-Isha | There is a usability concern even before classification, because someone may leave without realizing the change will disappear. But that is not the same as a confirmed requirement violation.
+Isha | The lack of warning may confuse users, but I haven't established that it violates an agreed rule. Both points can stay in the report.
 Owen | Correct. A [[usability concern::Usability concern can flag a potentially confusing user experience before an unspecified warning policy is resolved.]] can be worth discussing while its status remains clear. We do not need to exaggerate the evidence to make the question relevant.
-Isha | I did not explore mobile behavior. I want that exclusion visible so the report is not copied into a broader statement about every platform.
+Isha | Mobile wasn't explored. That needs to remain visible if someone forwards the report to another platform team.
 Owen | List the [[scope exclusion::Scope exclusion records that mobile behavior was not explored and prevents the observed result being generalized to it.]]. Untested mobile behavior is unknown, not assumed identical and not assumed different.
-Isha | The twenty-minute limit also matters. I explored these paths, but the duration does not mean every possible interruption was covered.
+Isha | The twenty-minute duration tells you how long I explored, not that I covered every possible interruption. I'll name the paths actually checked.
 Owen | Exactly. The [[timebox::Timebox is the twenty-minute duration of the investigation, not a measure proving complete coverage of interruptions.]] explains the session boundary. Report the actual paths and questions rather than using elapsed time as a proxy for exhaustive checking.
-Isha | Once the owner clarifies the warning rule, the relevant case can be checked against that expectation. Until then, the observation should remain attached to the question.
+Isha | After the owner decides the warning rule, we can test against it. Until then the original observation stays attached to the clarification request.
 Owen | That keeps [[confirmed defect::Confirmed defect requires evidence of a departure from an applicable expectation, which the missing warning rule does not yet provide.]] separate from an unresolved finding. The eventual decision may change the classification without changing what you actually observed.
-Isha | My debrief summary will preserve the saved-path success, the unsaved loss without warning, the missing warning requirement, and the absence of mobile exploration.
+Isha | My summary will retain saved-value persistence, unsaved loss without warning, the missing warning rule, and no mobile coverage.
 Owen | Good. That is a bounded [[session outcome::Session outcome summarizes the explored behaviors and remaining questions without claiming all profile edits or mobile behavior were tested.]]. It gives the next reviewer concrete evidence and one answerable follow-up question, rather than a broad label they have to reconstruct.''',
+    rehearsal=["Read the saved and unsaved navigation sequences separately, with the observed result after each.","Swap roles for turns 7-14. Keep the warning requirement unresolved and mobile behavior untested.","Check the final debrief against the supplied observations, not a broad claim that all profile edits fail."],
     transfer_title='Separate the two paths and the missing rule',
     transfer_setup='Complete the exploratory report without converting an observation into an unsupported requirement judgment.',
     transfer='''Tester: "The session lasted twenty ___." | minutes | Twenty minutes is the stated duration of the exploratory session.
@@ -724,29 +731,30 @@ Must be ... and | Preserves both execution and review requirements.
 Alongside | Keeps failures visible rather than reporting only blockers.
 Remains pending | Makes clear that a report is not an authorization.''',
     d='''How many checks have executed? | Eight | Ten | Seven | Two | Seven passed checks plus one failed check equals eight executed checks.
-What is seven divided by ten in this report? | Passes as a share of planned checks | Proof all critical checks passed | The share of blocked checks | A release approval score | Ten is the planned total, so seven of ten describes passes against planned checks.
+Which pair states pass proportions with matching denominators? | 70% of planned; 87.5% of executed | 87.5% of planned; 70% of executed | 70% of both planned and executed | 87.5% of both planned and executed | Seven divided by ten planned is 70%; seven divided by eight executed is 87.5%. Neither rate satisfies the missing critical-path criterion.
 Which criterion statement is justified? | It is unmet because a critical check remains unexecuted | It is met because most checks passed | It does not apply to blocked checks | It is automatically waived by missing data | Every critical-path check must execute and be reviewed, and one remains blocked.
 Which handover is complete? | Q20: seven passed, one failed, two blocked including one critical; criterion unmet; Mara's decision pending | Q20 passed because seven is a majority | Q20 has only two minor gaps | Q20 approved automatically | The complete handover includes all statuses, the critical gap, criterion consequence, and decision ownership.''',
-    dialogue='''Ben | Here is the Q20 evidence handover. We planned ten checks: seven passed, one failed, and two could not run because the required sample data was unavailable.
-Mara | Keep that full [[status breakdown::Status breakdown accounts separately for all ten planned checks instead of hiding failure and blockers behind the pass count.]] at the top. Which of the blocked checks matters to the agreed critical-path criterion?
-Ben | One blocked check is critical. The criterion requires all critical-path checks to be executed and reviewed, so we do not currently meet it.
-Mara | Correct. The [[exit criterion::Exit criterion requires execution and review of every critical-path check, which the blocked critical check prevents us from satisfying.]] is not satisfied by a majority of passes. We need to state the missing critical evidence directly.
-Ben | I will not label that blocked check failed, because it did not execute. But I will not count it as passed simply because no failing result exists.
-Mara | Exactly. A [[blocked check::Blocked check means execution is prevented by a missing prerequisite, not that the expected result was met or violated.]] has a different status from a completed pass or failure. The absence of a result is the important fact here.
-Ben | Eight checks executed in total: the seven passes and the one failure. The other two remain unexecuted, with sample data as their dependency.
-Mara | That makes the [[execution status::Execution status separates the eight checks that ran from the two that could not run due to missing data.]] clear. It also prevents someone from reading ten planned as ten completed.
-Ben | A percentage could be misleading without the denominator. Seven out of ten planned is seventy percent, while seven out of eight executed is eighty-seven-point-five percent.
-Mara | Yes. Specify the [[denominator::Denominator determines whether the reported pass proportion uses ten planned checks or eight executed checks.]] whenever you report a rate. Neither number changes the fact that an essential path has not been checked.
-Ben | The failed check also needs to remain visible. Focusing on the missing data should not make the actual failure disappear from the handover.
-Mara | Keep the [[failed check::Failed check records an executed expectation mismatch and must remain visible separately from the unavailable-data blockers.]] alongside the blockers. They require different follow-up, and a clean-looking pass rate cannot substitute for either explanation.
-Ben | The immediate prerequisite for the blocked checks is the unavailable sample data. We need that before execution can produce any result to review.
-Mara | Name that [[blocked dependency::Blocked dependency is the unavailable sample data that must be resolved before the affected checks can execute.]] precisely. Do not turn data requested into data received or assume the later check will pass once the prerequisite arrives.
-Ben | I will also retain the review requirement. Executing a critical check would be necessary, but the criterion says its evidence must be reviewed too.
-Mara | Good. [[Review status::Review status is a separate requirement from execution under the stated criterion, so running a check alone is not sufficient.]] must not be silently inferred from execution. We need both parts of the agreed condition accounted for.
-Ben | My report will say the criterion is unmet and your release decision remains pending. I have no recorded exception or permission to proceed.
-Mara | That respects [[release authority::Release authority remains with Mara, and the evidence report does not itself grant approval or an exception.]]. I own the decision, but I have not made it. Do not phrase this handover as a sign-off from either of us.
-Ben | The final line will identify Q20, all ten statuses, the critical blocked check, the missing sample data, and the unresolved decision.
-Mara | That is useful [[readiness evidence::Readiness evidence presents actual results and unmet conditions for the decision maker without claiming release approval.]]. It allows an explicit decision process while keeping the failure, unexecuted critical path, and required review visible.''',
+    dialogue='''Ben | Q20 has ten planned checks: seven passed, one failed, two blocked by unavailable sample data. One of the blocked checks is critical.
+Mara | Keep that [[status breakdown::Status breakdown accounts separately for all ten planned checks instead of hiding failure and blockers behind the pass count.]] in the headline. A pass percentage alone won't tell me whether our critical-path condition has been met.
+Ben | It hasn't. Every critical-path check must execute and have its evidence reviewed, and the blocked one has no result to review.
+Mara | Then state the [[exit criterion::Exit criterion requires execution and review of every critical-path check, which the blocked critical check prevents us from satisfying.]] is unmet. A majority of passes doesn't substitute for that missing critical evidence.
+Ben | I'll keep blocked separate from failed. Those two never executed, so there's no result showing either success or an expectation mismatch.
+Mara | Correct. A [[blocked check::Blocked check means execution is prevented by a missing prerequisite, not that the expected result was met or violated.]] isn't a pass by default, and it isn't an executed failure. Name why it couldn't proceed.
+Ben | Eight ran: seven passes plus one failure. Ten is the planned total, not the number completed.
+Mara | That makes [[execution status::Execution status separates the eight checks that ran from the two that could not run due to missing data.]] unambiguous. The remaining two still need their prerequisites before they can run.
+Ben | Seven over ten planned is seventy percent. Seven over eight executed is eighty-seven-point-five. Both leave the critical blocker unresolved.
+Mara | Exactly. Every rate needs its [[denominator::Denominator determines whether the reported pass proportion uses ten planned checks or eight executed checks.]]. A higher-looking percentage doesn't change what actually happened.
+Ben | I'll retain the failed result alongside the blockers. Otherwise the missing-data discussion could overshadow a defect we actually observed.
+Mara | Yes. The [[failed check::Failed check records an executed expectation mismatch and must remain visible separately from the unavailable-data blockers.]] needs its own follow-up. It shouldn't vanish when the report focuses on enabling the unexecuted checks.
+Ben | The data request is still pending. I won't write data received or assume the tests will pass once somebody supplies it.
+Mara | Keep that [[blocked dependency::Blocked dependency is the unavailable sample data that must be resolved before the affected checks can execute.]] explicit. Requesting a prerequisite, receiving it, and executing a check are separate stages.
+Ben | And even after execution, the criterion still requires review. I'll show that separately instead of copying completed into every column.
+Mara | Good. [[Review status::Review status is a separate requirement from execution under the stated criterion, so running a check alone is not sufficient.]] can't be inferred from a test run. Account for both parts of the requirement.
+Ben | The report will say criterion unmet, no granted exception, and your production decision pending. This handoff isn't a sign-off.
+Mara | That respects [[release authority::Release authority remains with Mara, and the evidence report does not itself grant approval or an exception.]]. I own the decision, but I haven't made it or authorized an exception.
+Ben | Final status: Q20, seven passed, one failed, two blocked including one critical, missing data, required review, and decision pending.
+Mara | That's usable [[readiness evidence::Readiness evidence presents actual results and unmet conditions for the decision maker without claiming release approval.]]. It supports an explicit decision without concealing the failed check or implying the blocked critical path has passed.''',
+    rehearsal=["Read the Q20 status counts aloud and verify that seven plus one plus two accounts for ten planned checks.","Swap roles for turns 7-16. Say the denominator with each percentage and keep execution separate from review.","Repeat the closing handoff. Retain the unmet critical-path criterion and Mara's pending decision."],
     transfer_title='Account for every planned check',
     transfer_setup='Complete the Q20 handover. The release decision has not been made.',
     transfer='''Tester: "___ checks passed." | Seven | The scenario establishes seven passed checks out of the ten planned.

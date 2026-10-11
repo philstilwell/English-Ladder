@@ -10,6 +10,7 @@ from pypdf import PdfReader
 import build_leadership_book as design
 from build_industry_books import illustration, load_book, validate_book
 from books.cross_cultural_leadership_content import COPYRIGHT, REPRODUCTION_NOTICE
+from books.supplements import load_supplements
 from work_curriculum import load_tracks
 from work_icons import icon_bottom_trim, icon_right_trim
 
@@ -45,8 +46,8 @@ class IndustryBookTests(unittest.TestCase):
                 validate_book(book, TRACKS[slug])
                 reader = PdfReader(ROOT / f'output/pdf/{slug}-english-book.pdf')
                 pages = [' '.join(page.extract_text().split()) for page in reader.pages]
-                self.assertEqual(len(pages), 102)
-                self.assertIn(design.content_hash(book['units']), reader.metadata.subject)
+                self.assertEqual(len(pages), 114)
+                self.assertIn(design.content_hash(book['units'], load_supplements(slug)), reader.metadata.subject)
                 self.assertEqual(reader.metadata.author, 'Phil Stilwell')
                 self.assertGreaterEqual(len(list(reader.pages[0].images)), 2)
                 for i, text in enumerate(pages, 1):
@@ -114,6 +115,7 @@ class IndustryBookTests(unittest.TestCase):
             with self.subTest(slug=slug), pdfplumber.open(ROOT / f'output/pdf/{slug}-english-book.pdf') as pdf:
                 widths = []
                 cloze_pages = {design.unit_page(i) + offset for i in range(8) for offset in (6, 7, 8)}
+                cloze_pages.update(design.supplement_page(i) + offset for i in range(3) for offset in range(3))
                 for page in pdf.pages:
                     spans = []
                     for char in page.chars:
@@ -131,7 +133,8 @@ class IndustryBookTests(unittest.TestCase):
                         self.assertEqual(len(span), design.CLOZE_UNDERSCORES)
                         self.assertTrue(all(abs(c['size'] - design.CLOZE_FONT_SIZE) < .01 for c in span))
                         widths.append(span[-1]['x1'] - span[0]['x0'])
-                self.assertEqual(len(widths), 112)
+                    page.close()
+                self.assertEqual(len(widths), 142)
                 self.assertAlmostEqual(min(widths), max(widths), places=3)
 
 

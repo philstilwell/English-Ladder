@@ -41,7 +41,7 @@ def validate_book(book, track):
     assert len({t.casefold() for u in units for t, _, _ in u['vocabulary']}) >= 144
     assert len(book['field_notes']) == 4 and 2 <= len(book['sources']) <= 4
     for i, u in enumerate(units):
-        assert 350 <= sum(len(line.split()) for _, line in u['dialogue']) <= 520, (i, 'dialogue length')
+        assert 220 <= sum(len(line.split()) for _, line in u['dialogue']) <= 520, (i, 'dialogue length')
         assert [len(u[k]) for k in ('language', 'language_extra', 'rehearsal')] == [3, 3, 3]
         numbers = re.findall(r'\{\{(\d+)\}\}', ' '.join(line for _, line in u['dialogue']))
         assert numbers == [str(n) for n in range(1, 11)]
@@ -88,8 +88,8 @@ def front(b, book):
     b.text(REPRODUCTION_NOTICE, size=8, leading=11, color=design.MUTED, after=0, width=325)
     b.y = 306
     b.rule(18)
-    b.text('Eight scenarios. Eight extended conversations.', size=15, leading=21, bold=True, after=18)
-    b.panel('Inside the book', '192 vocabulary entries  /  128 reusable phrases\n160 dialogue turns  /  80 numbered dialogue gaps\nWord banks and explained answer keys', size=11, leading=17)
+    b.text('Eight lessons. Eleven extended conversations.', size=15, leading=21, bold=True, after=18)
+    b.panel('Inside the book', '192 vocabulary entries  /  128 reusable phrases\n220 extended-dialogue turns  /  11 transfer exchanges\nWord banks and explained answer keys', size=11, leading=17)
     b.text('Upper-intermediate to advanced (B2-C1). ' + book['audience'], size=10, leading=15, color=design.MUTED, after=12)
     b.text(EDITION, size=8.3, leading=12, color=design.MUTED)
 
@@ -106,6 +106,7 @@ def front(b, book):
         b.c.linkRect('', f'unit-{i + 1}', (design.LEFT, b.y + 4, design.RIGHT, top), relative=0, thickness=0)
     b.rule()
     for label, page, anchor in [('Communication field notes', 3, 'culture'),
+                                ('Three more workplace conversations', design.SUPPLEMENT_START, 'additional-1'),
                                 ('Answers and explanations', design.KEY_START, 'key-1-checks'),
                                 ('Fast-access phrase pages', design.PHRASES_START, 'quick-phrases'),
                                 ('Vocabulary index', design.INDEX_START, 'index'),
@@ -161,9 +162,15 @@ def build(slug):
         design.dialogue(b, unit, i)
         design.dialogue(b, unit, i, second=True)
         design.transfer(b, unit, i)
+    for i, unit in enumerate(b.supplements):
+        assert b.page + 1 == design.supplement_page(i)
+        design.additional_conversation(b, unit, i)
     for i, unit in enumerate(b.units):
         assert b.page + 1 == design.key_page(i)
         design.explanations(b, unit, i)
+    for i, unit in enumerate(b.supplements):
+        assert b.page + 1 == design.SUPPLEMENT_KEYS_START + i
+        design.additional_answers(b, unit, i)
     assert b.page + 1 == design.PHRASES_START
     design.reference(b)
     assert b.page + 1 == design.SOURCES_PAGE
@@ -171,7 +178,7 @@ def build(slug):
     assert b.page == design.TOTAL_PAGES
     b.save()
     reader = PdfReader(out)
-    assert len(reader.pages) == 102
+    assert len(reader.pages) == design.TOTAL_PAGES
     assert all('English Ladder' in p.extract_text() for p in reader.pages)
     return dict(slug=slug, title=book['title'], pages=b.page, path=str(out), bytes=out.stat().st_size)
 

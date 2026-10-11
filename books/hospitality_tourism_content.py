@@ -82,12 +82,12 @@ At no additional charge | Explains complimentary in plain guest-facing language.
 By versus at | By sets a latest time; at names the planned moment.
 I will check | Commits to an action, not to a favorable result.
 Even if | Makes the update commitment independent of a status change.''',
-    d='''Which reply handles the misunderstanding best? | I see why you expected noon access; the request was recorded, but no room is released yet. | You should have understood the wording. | Your room will certainly be ready in ten minutes. | Housekeeping always causes this problem. | The first reply acknowledges the expectation and preserves the verified room status.
+    d='''Which reply handles the misunderstanding best? | I see why you expected noon access; the request was recorded, but no room is released yet. | You should have understood the wording. | Your room will certainly be ready in ten minutes. | Housekeeping always causes this problem. | The correct reply acknowledges the expectation and preserves the verified room status.
 Which promise is within Arun's stated control? | I will update you at 13:00 even if we are still waiting. | The room will be ready at 13:00. | I guarantee an upgrade. | I have approved a refund. | The brief authorizes a status update, not a room guarantee or financial remedy.
 Which statement accurately explains complimentary storage? | We can hold your luggage without an additional charge. | Your whole stay is now free. | You must accept storage instead of a room. | Storage guarantees immediate room access. | Complimentary describes the storage charge only, not the wider booking terms.
 What should Arun do if compensation is requested? | Refer the request for the duty manager's review. | Promise approval before checking. | Delete the booking to remove the dispute. | Say no manager can ever consider it. | Arun lacks personal authority to approve compensation but can seek the appropriate review.''',
     dialogue='''Ms Vega | I asked to arrive at noon, and your email said it was noted. It is already twelve fifteen. I expected to go straight to my room.
-Arun | I understand the [[expectation gap::The expectation gap is the difference between expected noon access and the actual unconfirmed room availability.]], and I am sorry the message was unclear. Let me explain the current position and what I can arrange for you immediately.
+Arun | I understand your [[frustration::Frustration acknowledges the effect of the unclear message without claiming that noon access was actually guaranteed.]], and I am sorry the message was unclear. Let me check the room status and explain what we can arrange now.
 Ms Vega | I have been traveling since early this morning. I would have planned differently if I had known I might be waiting.
 Arun | Your [[early-arrival request::The request was recorded with the booking, but recording it did not establish guaranteed early access.]] is in the booking record. It asked for noon access, but that access was not confirmed. Standard check-in begins at three this afternoon.
 Ms Vega | Is there no possibility of a room before three? Should I leave and return later?
@@ -104,14 +104,15 @@ Ms Vega | Would the manager be able to consider some compensation for the inconv
 Arun | I can submit that for [[review::Review means the request will be considered; it does not mean compensation has already been authorized.]], but I cannot promise the outcome. For now, the confirmed arrangements are luggage storage, lobby seating, and my update at one o'clock.
 Ms Vega | That is clear. I will hand over the bags now, and I will look for you here at one. Please update me even without good news.
 Arun | I will. Once the bags are stored, I will give you a [[claim ticket::The claim ticket identifies the stored bags and supports their later retrieval.]] for collecting them. Please keep it with you, and let me know if you need something from the luggage while you wait.
-Ms Vega | Thank you. An accurate answer helps me plan the afternoon. I would rather know what is confirmed than hear another time that might change.
-Arun | Understood. I will keep the [[follow-through::Follow-through means carrying out the promised check and update, not merely making a reassuring statement.]] with me: check housekeeping, record your concern, and speak with you at one. I will distinguish any new estimate from a confirmed room release.''',
+Ms Vega | Thank you. I will wait here until one, then decide about lunch. Please come and find me even if the room is still not ready.
+Arun | I will take care of the [[follow-through::Follow-through means carrying out the promised check and update, not merely making a reassuring statement.]]: check with housekeeping, pass on your concern, and find you here at one. I will distinguish an estimate from a confirmed release.''',
     transfer_title='An update is not a release time',
     transfer_setup='At 11:30, no room is released. Free luggage storage is confirmed. The agent commits to an update at 12:00 but has no verified access time.',
     transfer='''Guest: "Is noon a guaranteed time for ___?" | room access | The question concerns entry, which remains unconfirmed despite the scheduled update.
 Agent: "No; noon is the time for my ___." | update | The agent controls the noon communication, not the unverified room release.
 Guest: "Can you hold my ___ while I wait?" | luggage | Storage of the guest's bags is the immediate confirmed service.
-Agent: "Yes, that service is ___." | complimentary | The brief explicitly states that luggage storage is free.'''))
+Agent: "Yes, that service is ___." | complimentary | The brief explicitly states that luggage storage is free.''',
+    rehearsal=['Read the completed conversation in pairs, keeping the apology warm and direct.', 'Repeat turns 9-12 and 17-20; stress one as the update time, not the room-access time.', 'Switch roles for the transfer, explaining complimentary in a natural guest-facing tone.']))
 
 BOOK['units'].append(unit(
     title='Complaint Handling and Online Reviews',
@@ -171,7 +172,7 @@ Review the details | Names a process, not a guaranteed result.
 Privately | Concerns the channel; still apply the approved access rules.
 In exchange for | Signals a condition linking the benefit to the review.
 Resolved | Use only when the relevant outcome and status support it.''',
-    d='''Which public reply is most appropriate? | We are sorry to hear about the noise concern; please contact our published guest-relations channel so we can review it. | Your room number proves that you are exaggerating. | Delete the review and we will consider helping. | Our investigation proves you are wrong, although we have not checked. | The first reply acknowledges the concern and offers a private next step without inventing findings.
+    d='''Which public reply is most appropriate? | We are sorry to hear about the noise concern; please contact our published guest-relations channel so we can review it. | Your room number proves that you are exaggerating. | Delete the review and we will consider helping. | Our investigation proves you are wrong, although we have not checked. | The correct reply acknowledges the concern and offers a private next step without inventing findings.
 Which internal note is suitably neutral? | The guest reports late-night noise; verification is pending. | The guest is dishonest. | The noise definitely never happened. | The complaint is resolved because we replied. | It distinguishes the reported experience from the pending factual review.
 Which proposal should be rejected? | Offer a credit only if the guest removes the review. | Check the incident log. | Remove booking details from the public response. | Assign a private follow-up contact. | Linking a benefit to review removal improperly conditions service recovery on the review.
 What does posting the public reply establish? | The concern has received an acknowledgement and a next step. | The investigation is complete. | A refund is approved. | The guest has accepted a settlement. | A public acknowledgement does not itself establish investigation, remedy, or acceptance.''',
@@ -183,11 +184,11 @@ Elise | No, not yet. I used the original complaint and my colleague's impression
 Mateo | Then describe it as [[guest feedback::Guest feedback identifies the reported experience without pretending that its factual review is already complete.]] awaiting review. Do not call the account false, and do not claim that we have already proved a service failure. Neither conclusion is established.
 Elise | Could the reply say that we are sorry to hear the stay was disappointing, then invite the guest to contact our published guest-relations channel?
 Mateo | Yes. That provides an [[acknowledgement::An acknowledgement recognizes the concern and does not by itself confirm every allegation or approve a remedy.]] without announcing an investigation result. Keep it brief, and make the next step easy to find. We do not need to reconstruct the stay in public.
-Elise | I will remove the exaggeration sentence. We are judging the guest personally instead of checking the service concern.
+Elise | I will take that sentence out. Could you check the new wording after I remove the booking details as well?
 Mateo | Exactly. That [[defensive tone::A defensive tone shifts attention from helping with the complaint to protecting the property from criticism.]] makes a factual conversation harder. We can explain relevant verified information later, but first we need a proper review and a clear person responsible.
 Elise | I can handle the follow-up. Once the guest contacts us privately, I will confirm the necessary booking information through our approved process and review the available records.
 Mateo | Consult the [[incident log::The incident log may contain relevant reports and actions; it is a source to check, not a presumed verdict.]] as part of that work. Record what it supports and what remains uncertain. An absent entry alone should not become a sweeping claim that nothing happened.
-Elise | A colleague suggested a credit if the guest removes the review. That seems to connect two separate decisions.
+Elise | The handover suggests a credit, but only after the review comes down. We cannot use that condition, can we?
 Mateo | Do not make that [[conditional offer::The proposed credit is improperly conditional on removing the review rather than on the service-review outcome.]]. Any approved remedy must stand independently of review removal or revision. Our task is to address the service concern, not purchase a different public account.
 Elise | Understood. I will not promise compensation in the initial reply either. We still need to check the facts and determine what our policy permits.
 Mateo | Correct. A [[service remedy::A service remedy is an authorized response to the service problem, not an outcome already decided by acknowledging the complaint.]] has not been decided. Explain that clearly in the private conversation if asked, and avoid language that suggests approval is automatic or impossible.
@@ -200,7 +201,8 @@ Mateo | Good. Update the [[resolution status::Resolution status records where th
     transfer='''Manager: "Remove the ___ from the public response." | reservation code | The reservation identifier is private booking information, not necessary public reply content.
 Agent: "We can give a courteous ___ now." | acknowledgement | Recognition of the concern is appropriate before the factual review is complete.
 Manager: "The complaint still needs a ___." | factual check | The brief states that no investigation has yet been completed.
-Agent: "Any approved voucher must be independent of review ___." | deletion | A service remedy must not be conditional on removing the review.'''))
+Agent: "Any approved voucher must be independent of review ___." | deletion | A service remedy must not be conditional on removing the review.''',
+    rehearsal=['Read turns 1-8, separating acknowledgment of the concern from a completed investigation.', 'Repeat turns 13-16; make the rejection of a review-removal condition explicit.', 'Switch roles for the transfer and read the corrected public/private boundary aloud.']))
 
 BOOK['units'].append(unit(
     title='Reservations, Overbooking, and Walks',
@@ -260,7 +262,7 @@ Equivalent | Avoid when a material feature or location differs.
 Walk | Internal jargon; explain relocation plainly to the guest.
 Would you like | Requests a choice rather than assuming agreement.
 Confirmed | Identify which part of the arrangement is confirmed.''',
-    d='''Which description is most accurate? | The twin room is on-site but has two separate beds. | The twin room is identical to a king room. | The king room is on-site. | Both alternatives change only the price. | The first description preserves the verified difference in bed configuration.
+    d='''Which description is most accurate? | The twin room is on-site but has two separate beds. | The twin room is identical to a king room. | The king room is on-site. | Both alternatives change only the price. | The correct description preserves the verified difference in bed configuration.
 Which statement overpromises? | We will pay every expense you incur. | The approved offer covers the price difference and transfer. | Harbor Hotel has a king room available tonight. | I need your choice before completing the change. | The approval does not extend to every incidental or future expense.
 What should happen before changing the booking? | Explain the alternatives and obtain the guest's choice. | Select the cheaper alternative without asking. | Mark both hotels as occupied by the guest. | Announce that every detail is complete. | The guest has not selected an alternative and needs accurate information before agreeing.
 Which handover is complete in principle? | Verify the chosen booking, receiving contact, arrival details, and approved transfer. | Send the guest away with only a hotel name. | Treat room availability as a confirmed transfer. | Promise unspecified costs later. | A practical relocation requires coordination of the selected accommodation and its agreed supporting arrangements.''',
@@ -272,7 +274,7 @@ Mr Chen | That difference matters to us. What is the second option, and have you
 Sofia | The [[receiving property::The receiving property is Harbor Hotel, which has verified the relevant accommodation for tonight.]] is Harbor Hotel nearby. They have confirmed that a king room is available tonight. That preserves the bed type, although it changes where you will stay.
 Mr Chen | Would I have to pay the difference? I do not want to arrive there and discover that this solution costs more than the booking I made.
 Sofia | Our approved arrangement covers the [[rate difference::The rate difference is the additional room-price amount the original property has specifically approved paying.]] and the transfer to Harbor Hotel. Other expenses are not included. I will make that scope clear in the arrangements rather than leave you with an open-ended promise.
-Mr Chen | I understand the room difference and transport are covered, not everything I might spend. Can you arrange the king room there if that is our choice?
+Mr Chen | The king room sounds better for us. Before you arrange it, please confirm we would not pay extra for the room or the transfer.
 Sofia | Yes. I need your [[consent::Consent means the guest agrees to the specific alternative after hearing the differences and approved costs.]] before completing the change. I have not treated the availability check as your acceptance or amended the booking without asking you.
 Mr Chen | Then we choose the king room at Harbor Hotel for tonight. Please confirm the actual reservation before we leave with the luggage.
 Sofia | I will complete the [[booking amendment::The booking amendment records the guest's selected change; it is distinct from merely identifying an available alternative.]] and coordinate with Harbor Hotel. I will check the room, arrival details, and payment arrangements so the receiving team has the same information.
@@ -282,14 +284,15 @@ Mr Chen | Do you have a transport departure time yet? Should we stay by receptio
 Sofia | I still need to confirm the [[transfer::The transfer is the transport arrangement, which requires its own confirmation even though the room option is available.]] details. Please remain by reception while I coordinate them. I will not describe a departure time as confirmed until the transport arrangement is verified.
 Mr Chen | That is fine. Before we leave, please give us the receiving contact and explain what we should show when we arrive at Harbor Hotel.
 Sofia | I will provide the [[arrival instructions::Arrival instructions make the receiving handover practical by explaining where to go and what booking information is needed.]] once the booking is completed. They will identify the receiving contact and booking details, with the agreed room-price and transfer arrangements clearly recorded.
-Mr Chen | Let me check: a king room at Harbor Hotel tonight, the price difference and transfer covered, and other expenses outside that offer.
-Sofia | That [[readback::A readback repeats the agreed details so both parties can correct any misunderstanding before the relocation is carried out.]] is accurate. I will now finish the booking and transport coordination, then confirm the completed details with you before you leave this property.''',
+Mr Chen | Could you put those details in writing? I do not want to explain the price and transport agreement again at Harbor Hotel.
+Sofia | Certainly. First, a quick [[readback::A readback repeats the agreed details so both parties can correct any misunderstanding before the relocation is carried out.]]: a king room at Harbor Hotel tonight, price difference and transfer covered, other expenses excluded. I will complete the arrangements and confirm them in writing before you leave.''',
     transfer_title='A feature match still needs agreement',
     transfer_setup='A guest booked a king bed. The local room has two singles. A nearby hotel has a verified king room; the approved offer covers its price difference and transport only.',
     transfer='''Agent: "The local option has a different ___." | bed configuration | Two singles differ from the king bed originally booked.
 Guest: "The nearby option preserves the ___." | king bed | The verified nearby room contains the requested king bed.
 Agent: "Our offer includes the price difference and ___." | transport | These are the two costs explicitly approved in the scenario.
-Guest: "Please confirm the details before changing my ___." | booking | A change should follow informed agreement and completed coordination.'''))
+Guest: "Please confirm the details before changing my ___." | booking | A change should follow informed agreement and completed coordination.''',
+    rehearsal=['Read turns 1-8, contrasting two separate beds with a king bed without calling them equivalent.', 'Repeat turns 13-20, explaining walk in ordinary language and reading back the included costs.', 'Switch roles for the transfer and emphasize the feature that each option preserves or changes.']))
 
 BOOK['units'].append(unit(
     title='Revenue Management and Pricing',
@@ -367,8 +370,8 @@ Owen | Could we still say that profit improved because we had fewer rooms to ser
 Mina | That is possible, but we have no [[cost figures::Cost figures are needed before a revenue comparison can support a conclusion about profit.]] here. We cannot calculate profit or assume how expenses changed. A possible cost effect should remain a question, not become a reported financial result.
 Owen | Fair point. What about restaurant and event spending? Those could change the property's total revenue even when the room figures move in the opposite direction.
 Mina | They could, but [[non-room revenue::Non-room revenue is outside the supplied room-only figures, so no total-property revenue conclusion is established.]] is not included in this comparison. We should label the scope clearly instead of using the room result as a complete measure of hotel performance.
-Owen | Does the rate increase explain the lower occupancy, or is that too strong a claim from two nightly results?
-Mina | Yes. We have not isolated [[price elasticity::Price elasticity concerns how demand responds to price; two uncontrolled nights do not establish that response.]] or controlled the other influences on demand. Different events, segments, or booking patterns could matter, but none is established as the explanation here.
+Owen | Can I say the price increase caused the occupancy fall, or do we need to look at the business mix first?
+Mina | We need more evidence. We have not established [[price elasticity::Price elasticity concerns how demand responds to price; two uncontrolled nights do not establish that response.]] or controlled other influences on demand. Let us compare the dates, segments, and booking patterns before attributing the whole decline to price.
 Owen | Then the next discussion should look at context rather than force a cause into the headline. Which breakdown would make that review more useful?
 Mina | Examine market segments and [[channel mix::Channel mix identifies how sales are distributed across booking routes and can add context to revenue and distribution-cost analysis.]], alongside demand and booking pace. Keep the same period and definitions, and include relevant costs before making a profitability claim.
 Owen | I will revise the summary to say that ADR increased while occupancy, RevPAR, and room revenue declined. That is less sweeping and more informative.
@@ -378,7 +381,8 @@ Mina | Exactly. It describes the observed [[trade-off::The trade-off is the high
     transfer='''Analyst: "Occupancy is ___ percent." | 80 | Forty sold rooms divided by fifty available rooms equals eighty percent.
 Manager: "ADR is ___ dollars." | 150 | Six thousand dollars divided by forty sold rooms equals one hundred fifty.
 Analyst: "RevPAR is ___ dollars." | 120 | Six thousand dollars divided by fifty available rooms equals one hundred twenty.
-Manager: "We cannot calculate ___ from these figures alone." | profit | The case supplies revenue but no relevant cost figures.'''))
+Manager: "We cannot calculate ___ from these figures alone." | profit | The case supplies revenue but no relevant cost figures.''',
+    rehearsal=['Read turns 3-10, stating whether each calculation uses rooms sold or rooms available.', 'Repeat turns 11-16, separating revenue, profit, and a causal claim about pricing.', 'Switch roles for the transfer and read 80%, $150, and $120 with their units.']))
 
 BOOK['units'].append(unit(
     title='Housekeeping, Maintenance, and Turnover',
@@ -448,13 +452,13 @@ Leah | The room screen shows vacant clean. I assumed that meant it was available
 Marco | That label describes [[housekeeping clearance::Housekeeping clearance covers housekeeping's checks and cannot stand in for maintenance clearance or the final room release.]] here, not every release condition. We must check the separate maintenance and authorization records rather than infer that all teams have completed their work.
 Leah | I see an open work order for the lock. Could it simply be an old entry that someone forgot to close after finishing the repair?
 Marco | It could need checking, but the [[work order::The work order is the maintenance record requiring verification; its possible staleness is not proof the repair is complete.]] is still open. We cannot turn that possibility into a completed repair. Ask the responsible team for the recorded status.
-Leah | I do not want to hold up the guest unnecessarily. Is there another room that we can use without waiting for this particular repair?
+Leah | The guest is still at the desk. Is 419 released, and does it match the booking? I would rather offer a confirmed alternative now.
 Marco | Room 419 has [[maintenance clearance::Maintenance clearance is already recorded for 419, alongside its housekeeping clearance and final release.]], housekeeping clearance, and final release. Its room type and the guest-required features have been checked and match. It is the confirmed alternative available now.
 Leah | Good. I will assign 419. I will not change 417 to available simply because we have solved this guest's immediate accommodation problem.
 Marco | Exactly. The [[room assignment::The room assignment concerns 419 only; providing that alternative does not change the unresolved status of 417.]] and the unresolved repair are separate matters. The guest can be accommodated while 417 remains unavailable under the current release process.
 Leah | What should I say if the guest asks why the originally considered room is not ready? I do not want to share a speculative technical diagnosis.
 Marco | Say that it is awaiting the required [[release authorization::Release authorization is the missing operational permission, which can be described without guessing at the technical fault or repair time.]]. Then explain that we have a released room matching the booking. Do not invent a repair deadline or blame a department.
-Leah | We sometimes receive conflicting room lists at shift change. One says clean and another says unavailable, and staff assume somebody has made a mistake.
+Leah | I will put both statuses in the handover. The next shift needs to see why 417 says clean on one screen but unavailable on the other.
 Marco | That calls for [[status reconciliation::Status reconciliation checks what each label means and resolves the records without automatically treating different department statuses as contradictions.]]. The labels may describe different checks rather than contradictory facts. Confirm their definitions and ensure reception sees whether final release has actually occurred.
 Leah | For the handover, I will record 419 as the assigned room and 417 as unavailable, with its lock work order still open pending verification.
 Marco | Include that in the [[handover log::The handover log transfers the actual room assignment, unresolved item, and responsibility to the next shift.]], together with the contact responsible for checking the maintenance status. Avoid marking the repair complete merely to make two screens display the same word.
@@ -467,7 +471,8 @@ Marco | That [[readback::The readback confirms the room numbers, hold, and relea
     transfer='''Reception: "The released alternative is Room ___." | 210 | The brief identifies 210 as released and suitable for the booking.
 Coordinator: "Room 208 still lacks ___ clearance." | maintenance | Only housekeeping clearance has been recorded for Room 208.
 Reception: "It also needs the manager's final ___." | release | The local process requires a separate final manager authorization.
-Coordinator: "Keep 208 ___ until those requirements are met." | unavailable | Assignment must wait for the outstanding clearance and release.'''))
+Coordinator: "Keep 208 ___ until those requirements are met." | unavailable | Assignment must wait for the outstanding clearance and release.''',
+    rehearsal=['Read turns 1-8 with the room numbers clearly separated: four-one-seven and four-one-nine.', 'Repeat turns 15-20, distinguishing maintenance clearance from the final release.', 'Switch roles for the transfer, preserving Room 208 on hold and Room 210 as the released alternative.']))
 
 BOOK['units'].append(unit(
     title='Events, Banquets, and Run of Show',
@@ -527,7 +532,7 @@ Doors open | Means attendee admission, not the soundcheck start.
 Owner | Name a person with accepted responsibility, not merely a department.
 Sent versus acknowledged | Delivery action does not establish receipt or understanding.
 Buffer | A planned gap; do not silently allocate it to another activity.''',
-    d='''Which schedule entry is complete? | Soundcheck: Room A, 10:30-11:00, Vera, microphone and playback feed. | Soundcheck: sometime before the event. | Audio: someone from the venue. | Room A: equipment maybe available. | The complete entry identifies location, interval, owner, and specific work.
+    d='''Which schedule entry is complete? | Soundcheck: Room A, 10:30-11:00, Vera, microphone and playback feed. | Soundcheck: Room A, 10:30-11:00, technical team, scope to follow. | Soundcheck: Room A, 10:30, Vera, microphone and playback; finish not listed. | Soundcheck: 10:30-11:00, Vera, microphone and playback; room awaiting confirmation. | Only the complete entry preserves all confirmed details: location, interval, named owner, and test scope.
 What happens if soundcheck ends at 11:15 with doors unchanged? | The fifteen-minute buffer disappears. | The buffer grows to thirty minutes. | Doors automatically move to noon. | The original schedule remains unaffected. | The revised finish coincides with admission, leaving no transition buffer.
 Which statement correctly separates responsibilities? | Ren updates and sends; Asha confirms affected-team acknowledgement. | Nobody owns communication after the edit. | Asha silently edits Vera's task. | Vera alone must guess every team's needs. | The brief assigns preparation and distribution to Ren and acknowledgement follow-up to Asha.
 What is the best response to a later timing change? | Review its effects with the relevant teams and issue an acknowledged update. | Change one private copy only. | Assume the buffer will absorb any delay. | Treat an unread email as acceptance. | Changes can affect dependencies and must reach the teams expected to act on them.''',
@@ -535,7 +540,7 @@ What is the best response to a later timing change? | Review its effects with th
 Ren | No. That [[assumption::The assumption is the unverified belief that another team had arranged the soundcheck; it left essential details unconfirmed.]] was shared without a named owner. We need to replace it with a definite entry, not ask both teams to keep expecting the other to act.
 Asha | Agreed. I have checked Room A, and the available slot is ten thirty until eleven. Does that fit the equipment and audio lead?
 Ren | Yes. Vera has accepted the [[soundcheck::The soundcheck is the scheduled audio test Vera will conduct in the verified room and time slot.]] responsibility, and the equipment is available. She will test the event microphone and playback feed during that slot.
-Asha | Let us name her explicitly. If the schedule only says technical team, several people may see it without knowing who is actually responsible for finishing.
+Asha | Please replace technical team with Vera on the schedule. I want the presenter to know exactly who is meeting them in Room A.
 Ren | Vera will be listed as the [[task owner::The task owner is the named person who has accepted responsibility, avoiding an ambiguous department-level assignment.]]. I will also include Room A and both times. A start time alone would not show when the space must be ready for the next activity.
 Asha | The audience comes in at eleven fifteen. Finishing at eleven gives us fifteen minutes between the audio work and admission, provided nobody silently extends the test.
 Ren | Correct. That is our [[buffer time::Buffer time is the fifteen-minute interval between the eleven o'clock soundcheck finish and eleven-fifteen audience admission.]]. It is not an unallocated extra rehearsal slot. Any change that consumes it needs a review of the handover before doors open.
@@ -547,7 +552,7 @@ Asha | I will ask the affected teams to confirm receipt. Sending the revised ver
 Ren | Thank you. Their [[acknowledgement::Acknowledgement confirms that the update reached the relevant teams; sending it alone does not establish that shared awareness.]] closes the communication step. If someone raises a conflict, we should resolve it explicitly rather than interpret silence as acceptance of every detail.
 Asha | If Vera later needs more time, should she simply edit the finish in the shared document, or contact us before changing the schedule?
 Ren | Follow [[change control::Change control requires reviewing and communicating the effect of a later adjustment rather than silently changing a dependent schedule.]]. A later finish could affect the room handover and audience admission. We need coordinated review and a communicated update before treating a new time as agreed.
-Asha | I will also make sure the admission team sees eleven fifteen clearly. They should not mistake the eleven o'clock soundcheck finish for permission to let attendees enter.
+Asha | I will flag eleven fifteen to the admission team. They have an older copy with eleven on it, so we need that copy replaced.
 Ren | Exactly. [[Doors open::Doors open identifies the audience-admission time, which is eleven fifteen rather than the eleven o'clock technical finish.]] remains eleven fifteen. Keep that separate from setup and testing times, even though all three activities occur in the same room sequence.
 Asha | To confirm: Room A, ten thirty to eleven, Vera responsible, microphone and playback checked, then a fifteen-minute buffer before audience admission.
 Ren | That [[readback::The readback verifies the agreed location, duration, owner, scope, and dependent admission time before circulation.]] captures it. I will send the revised run of show, and you will collect team acknowledgements. We now have an arrangement instead of a shared assumption.''',
@@ -556,7 +561,8 @@ Ren | That [[readback::The readback verifies the agreed location, duration, owne
     transfer='''Planner: "The test lasts ___ minutes." | 30 | The interval from 09:20 to 09:50 is thirty minutes.
 Coordinator: "The buffer before doors is ___ minutes." | 10 | Ten minutes separate the 09:50 finish from 10:00 admission.
 Planner: "The named task owner is ___." | Jo | The brief explicitly assigns responsibility to audio lead Jo.
-Coordinator: "After circulation, collect team ___." | acknowledgement | Sending the schedule alone does not confirm the affected teams received it.'''))
+Coordinator: "After circulation, collect team ___." | acknowledgement | Sending the schedule alone does not confirm the affected teams received it.''',
+    rehearsal=['Read turns 3-8, stressing the start, finish, and separate doors-open time.', 'Repeat turns 11-18, distinguishing the current schedule from superseded copies.', 'Switch roles for the transfer, reading the thirty-minute test and ten-minute buffer as separate intervals.']))
 
 BOOK['units'].append(unit(
     title='Tour Operations and Traveler Safety',
@@ -626,13 +632,13 @@ Mr Ellis | Thank you for making that clear. I am worried about losing the whole 
 Camila | I understand the [[travel disruption::Travel disruption describes the effect on the guest's plans without implying that a restart or remedy is already confirmed.]]. I will give you verified information as it arrives. At present, no route or restart time has been confirmed, so I cannot promise when the excursion will begin.
 Mr Ellis | The sky looks brighter. Could the driver take us out now and avoid the worst part of the coast?
 Camila | We need [[operational clearance::Operational clearance must come through the authorized operator process; a change in appearance or an improvised route does not provide it.]], not a judgment based on a brighter patch of sky. Our operations lead, Ben, is responsible for the decision. I cannot clear departure myself.
-Mr Ellis | So the coastal route is still being checked, rather than canceled? I want to be precise when I explain the situation to the rest of my family.
+Mr Ellis | Has the operator canceled it, or are they still deciding? My family heard both versions in the lobby.
 Camila | Correct. The [[route assessment::The route assessment concerns whether and how the excursion can operate; no route outcome has yet been confirmed.]] has not produced a confirmed route for us. Cancellation is also unconfirmed. The current status is a hold, with the group remaining in the designated indoor area.
 Mr Ellis | Will we hear from you at nine thirty even without a decision, or should we keep asking at the desk?
 Camila | I will relay the [[status update::The status update must be passed on even if it only confirms that the existing hold continues.]] to the group even if the hold is unchanged. You should not have to interpret silence or assume that no message means permission to leave.
 Mr Ellis | I appreciate that. Would a cancellation mean that we automatically receive our money back, or move to another excursion today?
 Camila | I need to verify [[refund eligibility::Refund eligibility depends on the applicable conditions and decision; the case does not establish an approved refund.]] and any available alternatives before promising either outcome. No refund or replacement excursion has been approved. Those arrangements are separate from the immediate departure decision.
-Mr Ellis | Please do not put us on a different activity without asking. Our group includes people with different preferences, and a replacement might not work for everyone.
+Mr Ellis | Please check with us before moving the booking. An afternoon replacement might clash with our other activity, even if it sounds similar.
 Camila | Of course. Any [[rebooking::Rebooking changes the reservation and would require a confirmed option and the guest's agreement, not an automatic assumption.]] would need a confirmed option and your agreement. I will explain the actual itinerary and relevant terms if an alternative becomes available, rather than treating it as already arranged.
 Mr Ellis | Where should our group wait so that we do not miss the announcement?
 Camila | Stay together in this [[indoor waiting area::The designated indoor waiting area is the location specified by the current local plan, keeping guests available for the authorized update.]]. If someone needs assistance, please tell the desk. We will use the operator's communication process and keep the current instruction clear until it changes.
@@ -645,7 +651,8 @@ Camila | I will. The [[communication chain::The communication chain carries the 
     transfer='''Guest: "Does eleven mean ___?" | departure | The guest is asking about leaving, which has not been authorized.
 Agent: "No; eleven is the next ___." | update | The scheduled time refers only to the operator's communication.
 Guest: "We should remain in the designated indoor ___." | lounge | The current local plan keeps the group in that location.
-Agent: "Correct; the operational ___ remains active." | hold | No authorized decision has ended the restriction on departure.'''))
+Agent: "Correct; the operational ___ remains active." | hold | No authorized decision has ended the restriction on departure.''',
+    rehearsal=['Read turns 1-6, putting the current waiting instruction before the explanation.', 'Repeat turns 9-14, making update, departure, cancellation, and rebooking distinct.', 'Switch roles for the transfer and read the unchanged hold without suggesting permission to board.']))
 
 BOOK['units'].append(unit(
     title='Cultural Expectations and Service Style',
@@ -705,33 +712,34 @@ If available | Keeps the requested option conditional until checked.
 Decline | Specify exactly which service or timing was declined.
 Would you prefer | Gives a neutral choice without demanding a cultural explanation.
 Recorded versus arranged | A saved preference is not proof that staffing is confirmed.''',
-    d='''Which note is accurate? | No routine entry before 14:00 today; later service requested, slot pending. | No housekeeping for this nationality. | Cancel all service for three nights. | Service guaranteed at exactly 14:00. | The first note preserves the guest's stated scope and the unconfirmed afternoon availability.
+    d='''Which note is accurate? | No routine entry before 14:00 today; later service requested, slot pending. | No housekeeping for this nationality. | Cancel all service for three nights. | Service guaranteed at exactly 14:00. | The correct note preserves the guest's stated scope and the unconfirmed afternoon availability.
 Which question avoids stereotyping? | Would you prefer service later today or no service today? | Do people from your country dislike housekeeping? | Your nationality means you never need service, correct? | Why are all your compatriots so private? | The neutral question asks about the individual's service choice rather than a presumed group trait.
 What needs confirmation before promising afternoon service? | An available slot from the afternoon team | The guest's nationality | The employee's general impression | A guess based on the empty corridor | The requested time depends on staffing availability that has not yet been checked.
 Which statement about future days is supported? | Their service preference remains unstated. | Today automatically controls every later day. | Three nights means exactly three afternoon services are booked. | An individual preference cannot ever change. | The guest has only specified today's preference, so later days cannot be inferred.''',
-    dialogue='''Nico | Ms Rahman, may I clarify your housekeeping request? I understand you declined the morning visit. Would you prefer service later today, or no service today?
-Ms Rahman | Later today, if possible. My [[service preference::The service preference is the guest's individual choice about timing, which should be checked directly rather than inferred from nationality.]] is not to have routine room entry before two. I would like housekeeping after that if your team has availability.
-Nico | I will record no routine entry before fourteen hundred today, then check with the afternoon team before confirming a time.
-Ms Rahman | That is fine. I am asking for an [[afternoon slot::An afternoon slot is the requested service allocation that still needs confirmation from the relevant team.]], not insisting that someone starts at exactly two. Please tell me what is available rather than promise a time that may not work.
-Nico | I will do that. One earlier note seemed to treat the morning decline as a request to cancel housekeeping for your whole three-night stay.
-Ms Rahman | That is not the [[scope of request::The scope of request is limited to today's routine-entry timing and does not cover the entire three-night stay.]]. I was only describing today. We have not discussed the other days, and I do not want them marked as declined on that basis.
-Nico | I will correct the note to reflect today only. You do not need to explain a personal reason for the preference.
-Ms Rahman | Thank you. Someone suggested it was connected with where I come from. I would prefer a [[clarifying question::A clarifying question asks what this guest wants rather than substituting a nationality-based explanation.]] about the service itself. People from the same place do not all want the same arrangements.
-Nico | You are right. I should ask each guest directly and avoid treating a nationality or language as an explanation for an unstated preference.
-Ms Rahman | Exactly. There is plenty of [[individual variation::Individual variation means people within a group can have different preferences; group membership does not determine this guest's request.]]. Today I want a quiet morning, but that does not tell you how I want every future visit or conversation handled.
-Nico | I will keep the record practical: no routine entry before two today, with housekeeping after two requested if a slot is available. Is that accurate?
-Ms Rahman | Yes. Please make the [[preference note::The preference note should record the explicit day, service boundary, and pending request without adding unsupported personal explanations.]] specific enough that the afternoon staff do not read it as no service at all. A broad do-not-enter note could create another misunderstanding.
-Nico | Good point. I will use the property's request process and distinguish routine service from the separate emergency-access rules. I am not changing those rules.
-Ms Rahman | That distinction is clear. My request concerns [[routine room entry::Routine room entry identifies ordinary housekeeping access, not a new rule governing emergencies or other separate procedures.]] and its timing today. It is not a request for you to redefine the hotel's emergency procedures.
-Nico | I will now check with the afternoon team. The request will be recorded, but I will not mark the service as arranged until they confirm availability.
-Ms Rahman | Please keep that [[service confirmation::Service confirmation is the verified arrangement, which comes after recording the request and checking the team's availability.]] separate. I have had requests entered in a system before, then discovered the staff could not actually provide the time I had asked for.
-Nico | I will report the available option once checked. We can clarify later days separately instead of copying today's timing.
-Ms Rahman | That works. I may choose a different [[service window::The service window concerns the period for service and may differ on later days; today's request does not fix it for the stay.]] tomorrow, but I have not decided yet. Please leave those future arrangements unassumed rather than filling in a preference for me.
-Nico | To read it back: no routine entry before fourteen hundred today, later housekeeping requested subject to availability, and no stated preference yet for the remaining days.
-Ms Rahman | Yes. Please keep the note [[neutral::Neutral describes wording limited to the service facts, without stereotyping or unsupported explanations of the guest's motives.]], as you have just done. Confirm the afternoon option when you have it; your colleagues do not need assumptions about my reasons.''',
+    dialogue='''Nico | Ms Rahman, may I check your housekeeping request? Would you like service later today, or would you prefer to skip it today?
+Ms Rahman | Later, please. I would like some [[privacy::Privacy concerns the guest's request not to be interrupted before two today, not a whole-stay cancellation.]] this morning. Please do not send anyone in before two, but I would still like the room serviced afterward if possible.
+Nico | Certainly. I will ask the afternoon team what they can arrange, then come back to you with an available time.
+Ms Rahman | Thank you. An [[afternoon slot::An afternoon slot is the requested later housekeeping allocation; the team has not yet confirmed it.]] would work. It does not have to be exactly two. I just do not want another knock before then.
+Nico | I also need to correct our earlier note. It says you declined housekeeping for all three nights. Is that what you intended?
+Ms Rahman | No, not for the [[whole stay::The whole stay covers all three nights, whereas the guest has only stated today's timing preference.]]. I only declined this morning. Please do not cancel the other days because of that.
+Nico | I am sorry; that note went beyond what you asked. I will correct it to today's request only.
+Ms Rahman | Someone also said guests from my country usually want no service. That felt like an [[assumption::An assumption substitutes an unverified group-based belief for this particular guest's stated request.]] about me. Please just ask what I need.
+Nico | You are right. We should have asked you directly. I will keep the note about the service and timing, not your nationality.
+Ms Rahman | Good. My [[preference::The preference is the individual's choice for today, not a permanent choice determined by nationality.]] today is a quiet morning and housekeeping later if you have space. That is all I need the team to know.
+Nico | I have entered no routine entry before two today; later housekeeping requested, awaiting the team's reply. Does that describe it correctly?
+Ms Rahman | Yes. Could you make sure the [[housekeeping note::The housekeeping note carries the practical request to the team and must not imply cancellation of all service.]] still says I want service later? I do not want the afternoon team to think I refused everything.
+Nico | It does. This covers ordinary housekeeping visits; the hotel's separate emergency procedures are unchanged.
+Ms Rahman | Understood. I am asking about [[routine service::Routine service means ordinary housekeeping, distinct from entry governed by a separate urgent-situation procedure.]], not emergencies. Please let me know if the afternoon team cannot fit me in.
+Nico | I will. I have recorded the request, but I still need their answer before I can say it is arranged.
+Ms Rahman | Please send me the [[confirmation::Confirmation establishes the arrangement after availability is checked; entering a request does not provide it.]] once you have it. A recorded request has been mistaken for a booking on another stay.
+Nico | Certainly. We can check tomorrow's arrangements separately when you know what you would like.
+Ms Rahman | That suits me. I may want a different [[time window::The time window is the period for service; tomorrow's period has not been requested or agreed.]] tomorrow, but I have not decided. Please leave tomorrow's timing open for now.
+Nico | To confirm today's request: no routine visit before two, housekeeping afterward if available, and no change requested for the remaining days.
+Ms Rahman | Correct. That is a clear, [[factual::Factual describes a note limited to the stated service request, without cultural explanations or invented future preferences.]] note. Thank you for correcting it. I will wait for your message about the afternoon.''',
     transfer_title='A one-day request stays a one-day request',
     transfer_setup='A guest asks for no routine service before 15:00 today and requests later service if available. The team has not confirmed a slot. No preference has been stated for tomorrow.',
     transfer='''Agent: "The no-entry boundary is before ___ today." | 15:00 | The guest supplied fifteen hundred as today's routine-entry boundary.
 Guest: "Later service is subject to ___." | availability | The team has not yet confirmed that a suitable later slot exists.
 Agent: "Tomorrow's preference remains ___." | unstated | No request has been supplied for the following day.
-Guest: "Please record my individual request without a cultural ___." | stereotype | A nationality-based generalization is not evidence of this guest's service preference.'''))
+Guest: "Please record my individual request without a cultural ___." | stereotype | A nationality-based generalization is not evidence of this guest's service preference.''',
+    rehearsal=['Read the completed script, giving the guest time to correct the whole-stay assumption.', 'Repeat turns 11-16, distinguishing the recorded request from the service confirmation.', 'Switch roles for the transfer and stress today without applying that timing to tomorrow.']))

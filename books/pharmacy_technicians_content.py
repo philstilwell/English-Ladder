@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=38,
     tagline='Check the detail. Explain the next step.',
     audience='For pharmacy technicians and pharmacy support staff communicating with patients, pharmacists, prescribers, insurers, and suppliers.',
-    map_intro='Eight pharmacy conversations: clarify an order, explain a claim response, track a renewal, qualify a stock estimate, hand off a label question, handle a private collection request, compare recall details, and correct a mistaken readiness message.',
+    map_intro='Clarify orders, claims, renewals, stock, label questions, private collection, recalls, and readiness messages. Three further cases address days-supply calculations, a temperature excursion, and a mid-cycle medicine-pack change.',
     notes_title='Small wording differences carry important meaning.',
     notes_intro='Pharmacy communication connects exact product information with patient expectations. Keep a request separate from approval, a delivery estimate separate from stock on hand, and a queue entry separate from completed pharmacist review. Give the person a useful next step without inventing a clinical answer.',
     field_notes=[
@@ -19,20 +19,20 @@ BOOK = dict(
         ('Keep a handoff accountable', 'Name the person who accepted the question, what remains unresolved, and the next contact you can genuinely commit to. Do not turn an update window into a promise of supply.', '"Jo will call between three and four with the status, not a guaranteed collection time."'),
         ('Correct a wrong message plainly', 'If an earlier readiness statement was wrong, say what was wrong, give the verified status, and act promptly on its practical effect. Preserve the correction and actual contact outcome in the record.', '"I told you it was ready; that was incorrect. Pharmacist review is still pending."'),
     ],
-    scope_note='All medicines, patients, orders, claims, lot references, and timelines in the scenarios are fictional. This book teaches workplace English, not prescribing, dose selection, clinical counseling, legal advice, or certification. Follow current local law, actual role authorization, pharmacist direction, privacy procedures, and the real recall notice. Urgent clinical concerns require the appropriate prompt response; a routine update window is not a safety clearance. United States source examples are not universal rules.',
+    scope_note='All cases, calculations, and product limits are fictional language exercises, not patient-specific directions or clinical certification. Follow local law, authorized duties, pharmacist direction, privacy procedures, and actual recall notices. Urgent concerns need the appropriate prompt response, not a routine update window. US and UK sources provide context, not interchangeable rules. This book does not teach prescribing, dose selection, or clinical counseling.',
     sources=[
         dict(title='Pharmacy Technician Certification Board. Guidebook: Code of Conduct.',
-             url='https://myaccount.ptcb.org/guidebook/general-policies?print=1',
-             note='United States credentialing context for truthful communication, confidentiality, supervision, and practice limits. Fictional role assignments do not establish universal technician duties.', checked='1 October 2026'),
+             url='https://myaccount.ptcb.org/guidebook/guidebook_sections/view/general-policies',
+             note='United States credentialing context for truthful communication, confidentiality, supervision, and practice limits. Fictional role assignments do not establish universal technician duties.', checked='10 October 2026'),
         dict(title='HealthCare.gov. Prior Authorization.',
              url='https://www.healthcare.gov/glossary/prior-authorization/',
-             note='United States insurance terminology. The original claim scenario does not establish any specific plan decision, response deadline, coverage, or patient charge.', checked='1 October 2026'),
+             note='United States insurance terminology. The original claim scenario does not establish any specific plan decision, response deadline, coverage, or patient charge.', checked='10 October 2026'),
         dict(title='U.S. Department of Health and Human Services. Prescription Pickup by a Friend or Family Member.',
              url='https://www.hhs.gov/hipaa/for-professionals/faq/can-a-patient-have-a-friend-or-family-member-pick-up-a-prescription/index.html',
-             note='United States privacy guidance permits appropriate pickup using pharmacist judgment. The fictional unresolved request is not a blanket ban or universal written-authorization requirement.', checked='1 October 2026'),
+             note='United States privacy guidance permits appropriate pickup using pharmacist judgment. The fictional unresolved request is not a blanket ban or universal written-authorization requirement.', checked='10 October 2026'),
         dict(title='U.S. Food and Drug Administration. Understanding Drug Recalls.',
              url='https://www.fda.gov/drugs/drug-recalls/understanding-drug-recalls-what-know-and-what-do',
-             note='Background on matching recall details and obtaining appropriate guidance. The fictional lot comparison supplies no affected-stock finding or patient medication instructions.', checked='1 October 2026'),
+             note='Background on matching recall details and obtaining appropriate guidance. The fictional lot comparison supplies no affected-stock finding or patient medication instructions.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -60,7 +60,7 @@ route | The specified way a medicine is taken or applied. | verify the route
 frequency | How often a prescribed action or administration occurs. | clarify the frequency
 directions for use | The authorized instructions for taking or using the medicine. | verify directions for use
 quantity | The amount of product specified for supply. | confirm the quantity
-days supply | The period the supplied quantity is intended to cover under the verified directions. | verify days supply
+days supply | Days represented by quantity and verified directions under the relevant calculation rules; not proof of actual use. | verify days supply
 brand name | A trade name for a particular product. | confirm the brand name
 generic name | The recognized nonproprietary name of the medicine substance. | identify the generic name
 product identifier | A code or reference identifying a specified product. | verify the product identifier
@@ -97,11 +97,11 @@ Do not yet have | Preserves timing uncertainty without inventing a deadline.
 Verified instruction | Identifies the required result of clarification, not the technician's preferred answer.''',
     d='''Which reply is accurate? | The strength is unclear; Maya can clarify it, and no completion time is confirmed. | A blue label always identifies one strength. | The most common strength must be correct. | A previous order automatically overrides the current one. | The reply identifies the unresolved detail, appropriate route, and genuine timing uncertainty.
 Which distinction is correct? | Strength describes product content per unit or quantity; dose describes the prescribed amount used. | Strength and dose always mean the same thing. | Label color is a universal product identifier. | Days supply can be confirmed without relevant directions. | These terms describe different information and cannot be substituted without creating ambiguity.
-What should happen to the patient's recollection? | Record it as reported context for the pharmacist, not verified current instructions. | Erase it because patients never remember anything. | Treat it as the final prescription. | Use it to choose a strength independently. | The recollection may help clarification while remaining distinct from an authorized current instruction.
+What should happen to the patient's recollection? | Record it as reported context for the pharmacist, not verified current instructions. | Copy the previous strength and mark the current field verified. | Record the blue label as confirmation of product identity. | Leave out the recollection so the pharmacist sees only the unclear field. | The recollection may help clarification while remaining distinct from an authorized current instruction.
 What must Nia avoid promising? | A completion time that has not been confirmed | A route to the available pharmacist | An accurate description of the unclear field | That the question remains pending | The brief provides no known completion time, so a definite timing promise would be unsupported.''',
     dialogue='''Ellis | Nia, this should be the same prescription I usually collect. I remember the blue label, so can you finish it while I wait?
 Nia | I understand, but the [[strength::Strength identifies product content per unit or quantity, and the current unclear field cannot be resolved from label color.]] field on this order is unclear. I cannot select it from the color or usual pattern; pharmacist Maya can take the clarification.
-Ellis | I do not know the number from memory. I would rather not guess and give you the wrong information just to make the conversation move faster.
+Ellis | I cannot remember the number. I could recognize the box, but I do not want to guess a strength and send you in the wrong direction.
 Nia | You do not need to guess the [[current order::The current order is the prescription being processed now, which needs its actual instructions clarified.]]. I will explain the specific missing detail and pass on what you remember as context, not ask you to choose between possible entries.
 Ellis | The prescriber has ordered the same thing for a long time. Would looking at the previous record settle it?
 Nia | A [[historical record::A historical record may provide context for the pharmacist but does not automatically replace unclear current instructions.]] may help the pharmacist review the question, but it does not automatically replace unclear current instructions. We need the appropriate clarification rather than assume no change could have occurred.
@@ -113,12 +113,13 @@ Ellis | Please make sure the question goes to Maya rather than just sit in a gen
 Nia | I can give the [[pharmacist::The pharmacist is the identified professional route for resolving the order question rather than leaving the technician to select a strength.]] the exact question and check that it is received. A handoff should identify who has the clarification, not merely say that someone will look at it.
 Ellis | Can you tell me how long that will take? I need to decide whether to wait here or arrange another trip.
 Nia | I do not have a confirmed completion time for this [[ambiguous entry::The ambiguous entry remains unresolved, and its clarification process has no confirmed completion time in the supplied facts.]]. I can ask about the update route, but I should not promise a collection time before the relevant information is verified.
-Ellis | I would rather hear that clearly than be told ten minutes and then discover the question has not even been answered.
+Ellis | Thanks. I have a bus to catch, so a guessed ten minutes would leave me in a difficult position.
 Nia | Agreed. A [[verified instruction::A verified instruction is the appropriately confirmed direction needed to resolve the order, not an expected answer or timing promise.]] is still needed. We will distinguish receiving the question, completing clarification, and completing the remaining pharmacy checks instead of treating them as one event.
 Ellis | If I have a question about how to take the medicine once the order is clarified, should I ask Maya that as well?
 Nia | Yes. Questions about the [[directions for use::Directions for use concern the authorized use of the medicine and should be addressed through the pharmacist's appropriate clinical discussion.]] need the pharmacist's appropriate explanation. Resolving the strength field does not mean every question about your medicine has already been answered.
 Ellis | Thank you. Please tell Maya that I remember a blue label and a usual pattern, but that I have not supplied a confirmed current strength.
 Nia | I will preserve that in [[intake::Intake organizes the current request and its sources while keeping the unresolved field visible for the proper clarification process.]]. The strength remains unclear, Maya is the clarification route, and no completion time is confirmed. We will not fill the gap with an assumption.''',
+    rehearsal=("Read the strength question aloud without guessing a number or naming a medicine.", "Complete the transfer with dosage form, the reported box description, the accepting pharmacist, and the actual timing status.", "Check the four answers, then repeat the handoff while keeping memory separate from a verified current instruction."),
     transfer_title='Clarify an unclear dosage form',
     transfer_setup='A current order has an unclear dosage-form field. The patient remembers a white box. Pharmacist Ren accepts the clarification. No product form or completion time has been confirmed.',
     transfer='''Technician: "The unclear field concerns the ___." | dosage form | The unresolved field is the product's physical form, not a verified strength.
@@ -187,13 +188,13 @@ Request sent versus decision received | Separates activity from outcome.
 Depends on the actual decision | Avoids inventing the right appeal or exception process before the facts are known.''',
     d='''Which explanation is accurate? | The plan requires prior authorization; no decision or accepted claim has arrived. | The medicine is excluded forever. | Approval is certain once someone submits a form. | The pharmacy can ignore the response code. | The explanation preserves the actual requirement and open outcome without inventing permanent denial or approval.
 Which statement overstates the billing handoff? | Inez accepted the query, so the claim is now approved. | Inez can explain the request route. | The original response should be preserved. | No final patient price is established. | Accepting a status query is an administrative action and does not establish a plan decision.
-Which pair must remain distinct? | Request submitted and authorization granted | Copayment and every possible payment term as identical | Formulary and every medicine ever prescribed as identical | Claim response and physical medicine stock as identical | Submitting a request begins or advances a process but does not establish the result.
+Which statement accurately separates the request from the result? | Submission does not establish that authorization was granted. | Submission confirms approval unless the plan sends a refusal that day. | Submission confirms the patient's final copayment. | Submission changes the pharmacy claim to accepted automatically. | Submitting a request begins or advances a process but does not establish the result.
 What should happen to a question about a different medicine? | Refer it to the pharmacist for appropriate clinical discussion. | Choose one solely because another plan covered it. | Let the claim code prescribe a replacement. | Promise that every cheaper medicine is equivalent. | A payment response does not authorize the technician to make a clinical substitution.''',
     dialogue='''Morgan | Alex, this message says prior authorization required. Does that mean my medicine is excluded permanently and there is no point asking the plan anything else?
 Alex | It identifies a [[prior authorization::Prior authorization is the plan approval requirement stated in the response, not a completed decision or permanent exclusion.]] requirement, not a permanent exclusion by itself. We do not yet have the plan's authorization decision or an accepted claim, so the outcome remains open.
-Morgan | Then is approval just a formality? I have heard people say the pharmacy only needs to send a form and the problem disappears.
+Morgan | My friend said you send a form and it goes through. Is that certain, or are we waiting for a real decision?
 Alex | I cannot promise that [[coverage decision::The coverage decision is the plan's actual determination, which has not arrived and cannot be assumed from submitting a form.]]. The request has to follow the actual plan process, and the result is not established merely because someone starts gathering or sending information.
-Morgan | I want to understand the message without hearing that everything is impossible or already sorted.
+Morgan | So it is neither a final no nor a definite yes. What is actually blocking the claim today?
 Alex | We should preserve the exact [[claim response::The claim response is the recorded message requiring prior authorization; it should be explained without changing its meaning.]] and explain its current meaning. It tells us what requirement was returned, but it does not confirm the final price, supply status, or a favorable decision.
 Morgan | Who is looking into that requirement? I do not want my question to be passed from person to person without anyone knowing what happens next.
 Alex | Inez has accepted the [[status query::The status query has an identified owner, Inez, but accepting it does not resolve the coverage requirement.]]. She can explain the request route for this plan and identify the information needed, rather than leave you with a general instruction to contact somebody.
@@ -209,6 +210,7 @@ Morgan | If another medicine might be an option, I would like that question answ
 Alex | The [[pharmacist::The pharmacist is the appropriate route for a clinical alternatives question; insurance processing does not authorize the technician to choose treatment.]] should discuss any clinical alternative with you through the appropriate process. We can keep that question separate from Inez's work on the claim requirement.
 Morgan | Please tell Inez that I understand the requirement is not a permanent exclusion, but I still need the route, outstanding information, and actual next step.
 Alex | I will. The [[health plan::The health plan's actual rules and decision govern the coverage process; the technician's explanation does not create approval or a deadline.]] process remains unresolved, no final charge is confirmed, and Inez owns the status query. We will explain verified developments without turning them into a guarantee.''',
+    rehearsal=("Read the prior-authorization exchange with requirement, decision, and accepted claim clearly separated.", "Complete the quantity-limit transfer using its named billing colleague and pharmacist route.", "Check the key, then repeat the final status without promising either a payment amount or an exception decision."),
     transfer_title='Explain a different unresolved claim requirement',
     transfer_setup='A response says quantity limit exceeded. No exception decision or accepted claim is available. Billing colleague Sam accepts the query; the pharmacist handles questions about changing treatment.',
     transfer='''Technician: "The returned requirement concerns a ___." | quantity limit | The response specifically identifies a quantity limit rather than a completed exception decision.
@@ -283,7 +285,7 @@ Who owns the promised call? | Jo | The patient automatically | An unidentified p
 Jo | The record shows no [[refills remaining::Refills remaining describes existing authorization in the record; zero means the requested further supply is not already authorized there.]]. We sent a renewal request at nine, but no response has arrived as of eleven, so I cannot confirm collection yet.
 Casey | Does that mean the prescriber refused it? I am worried that no reply means they have decided I should not have it anymore.
 Jo | A [[pending response::A pending response means no reply has arrived; it does not establish a refusal or a change in treatment.]] is not the same as a refusal. I can report what the record shows, but I should not invent a decision or a reason for the delay.
-Casey | Was the request actually sent, though? Sometimes people say requested when they only mean they have added something to a list.
+Casey | Can you check that it actually went out? Last time, requested meant someone had put it on a list to send later.
 Jo | The [[request timestamp::The request timestamp records nine o'clock as the sending time and separates an actual sent request from a planned action.]] is nine this morning. We should distinguish that sent event from a task waiting to be sent, while also keeping it separate from a completed authorization.
 Casey | If the system says the message went through, why can that not count as approval? It seems as though the practice must have received it.
 Jo | [[Transmission confirmation::Transmission confirmation can establish message movement but does not establish that the prescriber reviewed and approved the renewal.]] concerns the message, not the decision. Even when delivery is confirmed, the actual response and any remaining pharmacy checks still need to be established.
@@ -291,7 +293,7 @@ Casey | What can you tell me about this afternoon? I do not want to travel here 
 Jo | I can promise a [[status call::The status call provides current information and does not guarantee that the order will be ready for collection.]] between three and four. I will tell you whether a response has arrived and what remains pending; that is not a guaranteed collection time.
 Casey | So if there is still no answer by then, you will call anyway rather than wait silently until the order is eventually finished?
 Jo | Yes. I own that [[callback window::The callback window is Jo's agreed three-to-four communication period, independent of whether the renewal has been resolved.]]. The update should happen within it even if the status is unchanged, so you know what has and has not been confirmed.
-Casey | I also have a concern about how much medicine I have left. I do not want the later call to be treated as advice that waiting is definitely safe.
+Casey | I am worried about running out before anyone replies. Can I speak to the pharmacist now, rather than wait for the afternoon call?
 Jo | Please discuss that possible [[treatment interruption::Treatment interruption can raise a clinical concern that needs prompt pharmacist assessment rather than a routine update assumption.]] with the pharmacist now. I cannot advise you to stop, change, or wait without the appropriate clinical guidance.
 Casey | Could the pharmacist discuss whether any immediate supply route is possible? I understand you cannot promise one just because I ask.
 Jo | The pharmacist can assess the actual need and rules around any [[emergency supply::Emergency supply depends on the applicable clinical and legal requirements and is not automatically available from a technician's promise.]] or other appropriate option. I cannot authorize that independently or guarantee that a particular route applies.
@@ -299,6 +301,7 @@ Casey | Please use my verified contact details for the update. If you cannot rea
 Jo | I will record the actual [[contact outcome::Contact outcome distinguishes a successful conversation from an attempt or message, so the record does not falsely imply the patient was informed.]]. A call attempt is not the same as speaking with you, and any further action must follow our communication process.
 Casey | Thank you. I understand the renewal is still pending, no supply time is confirmed, and you will update me between three and four.
 Jo | Correct. I am the [[follow-up owner::The follow-up owner is Jo for the agreed status call, not the person who can guarantee the prescriber's response.]] for that call. We will keep your immediate concern with the pharmacist and keep the later update separate from any promise of prescriber response or medicine availability.''',
+    rehearsal=("Read the renewal call with nine, eleven, and the three-to-four update window clearly distinguished.", "Repeat the transfer using 10:30, 12:30, and 16:00 to 17:00; do not turn its call into a collection promise.", "Check all four answers, then repeat the prompt pharmacist referral for a concern about running out."),
     transfer_title='Explain a later renewal update window',
     transfer_setup='No refills remain. A request sent at 10:30 has no reply at 12:30. Technician Mei owns a status call between 16:00 and 17:00. No collection time is confirmed.',
     transfer='''Technician: "The request was sent at ___." | 10:30 | The supplied sending time is 10:30, not the current inquiry time.
@@ -371,7 +374,7 @@ Who should address an alternative medicine question? | The pharmacist under the 
 What does Tuesday at 16:00 represent? | A supplier information check, not guaranteed supply or clinical advice to wait | A confirmed delivery to the patient | An automatic approval to change treatment | A promised Wednesday arrival hour | The brief gives a checkpoint for information and does not establish a supply outcome or safe waiting period.''',
     dialogue='''Robin | Lee, I was told there was no stock for my order. Has that changed, or are you still waiting for a delivery?
 Lee | We still have a [[stockout::The stockout describes the pharmacy's current lack of the required product, not a confirmed shortage at every pharmacy.]] for this order. The wholesaler estimates Wednesday delivery, but shipment is not confirmed, so I cannot tell you the order is available now.
-Robin | When I hear Wednesday, I assume I can come in first thing that morning. Is that what the supplier has actually promised?
+Robin | I can get a lift Wednesday morning. Should I book it, or does Wednesday just mean that is when the supplier hopes to deliver?
 Lee | No. It is a [[supplier estimate::The supplier estimate forecasts Wednesday delivery without guaranteeing a morning arrival or a patient collection time.]], without a confirmed hour or shipment. I should not turn that into a Wednesday-morning collection promise when the information does not establish one.
 Robin | Does no shipment confirmation mean the supplier definitely cannot provide it, or only that you do not yet have confirmation?
 Lee | We do not yet have [[shipment confirmation::Shipment confirmation has not arrived; that gap is not itself a definite cancellation or completed dispatch.]]. That is different from a confirmed cancellation. I will keep the uncertainty clear rather than replace it with either a guarantee or an unsupported refusal.
@@ -379,7 +382,7 @@ Robin | When will you next be able to check? I do not want to call repeatedly if
 Lee | The [[supplier checkpoint::The supplier checkpoint is Tuesday at sixteen hundred, when Lee can check updated information rather than guarantee delivery.]] is Tuesday at sixteen hundred. I can check the latest status then, including whether the order has been allocated, dispatched, or remains unconfirmed.
 Robin | If the tracking page starts showing movement, would that be enough for you to tell me I can collect it?
 Lee | [[Carrier tracking::Carrier tracking records shipment movement and does not establish that the product has reached the pharmacy or completed its checks.]] may show progress in transit, but it is not the same as pharmacy receipt. The actual product and order status still need to be verified.
-Robin | I also want to know whether the whole quantity is coming. A general statement about a delivery might not mean my full order is included.
+Robin | Is my whole quantity included? Last time a delivery arrived, but only part of what I needed was in it.
 Lee | Correct. We need the [[order allocation::Order allocation identifies the quantity assigned to this particular order rather than a general delivery or stock announcement.]] confirmed for your order. A shipment to the pharmacy does not automatically prove that the requested quantity is included or complete.
 Robin | If only some arrives, I suppose that is another question rather than a reason to tell me the entire order has been fulfilled.
 Lee | Yes. A [[partial delivery::A partial delivery contains less than the ordered quantity and should not be reported as complete fulfillment.]] should be described accurately. Any decision about what may be supplied to you must follow the pharmacist's process and applicable requirements, not my assumption.
@@ -389,6 +392,7 @@ Robin | Does your stock problem mean the product is unavailable across the regio
 Lee | We have not established a [[regional shortage::A regional shortage concerns availability across an area and cannot be inferred solely from this pharmacy's local stockout.]]. The fact I can confirm is our current local stock position. A broader claim needs its own verified information.
 Robin | Thank you. I will not treat Wednesday as a pickup appointment. Please keep the supplier's estimate and any later confirmed facts separate.
 Lee | I will. [[Collection readiness::Collection readiness requires the relevant receipt and pharmacy checks, not just a supplier forecast or movement in transit.]] comes after the appropriate steps are confirmed. For now: no stock, Wednesday estimated, shipment unconfirmed, and the supplier checkpoint Tuesday at four.''',
+    rehearsal=("Read the supplier-status exchange aloud, stressing estimated rather than guaranteed.", "Complete the Friday transfer with Thursday at 11:00 as the information checkpoint.", "Check the key, then repeat the distinction between dispatch, receipt, and collection readiness."),
     transfer_title='Explain a Friday estimate without promising pickup',
     transfer_setup='No stock is available for an order. The supplier estimates Friday delivery, but dispatch is unconfirmed. Technician Bea can check Thursday at 11:00. The pharmacist handles alternative-treatment questions.',
     transfer='''Technician: "Estimated delivery is ___." | Friday | Friday is the supplier's forecast, not a guaranteed collection time.
@@ -416,7 +420,7 @@ patient information leaflet | Written product information intended for the patie
 package insert | Product information supplied with the medicine, with audience and purpose varying by format. | identify the package insert
 warning | Information drawing attention to a relevant risk or required caution. | clarify a warning
 precaution | A condition or measure requiring care in using a medicine. | ask about a precaution
-contraindication | A circumstance in which a medicine or treatment may be inappropriate. | refer a contraindication question
+contraindication | A condition in which a medicine or treatment should not be used under its labeling or clinical assessment. | refer a contraindication question
 interaction | A relevant effect arising from a medicine used with another substance or condition. | ask about an interaction
 food interaction | A possible effect involving medicine use and food. | refer a food-interaction question
 alcohol interaction | A possible effect involving medicine use and alcohol. | refer an alcohol-interaction question
@@ -463,13 +467,13 @@ What should the patient be encouraged to clarify? | The actual unclear wording a
 Kit | Thank you for asking. You are referring to the [[auxiliary label::The auxiliary label is the additional label prompting the question; identifying it is different from interpreting its instruction.]] beside the main label. I can identify it, but pharmacist Ravi needs to explain the instruction for your medicine.
 Arden | I assumed that if it was important, everything would be on the main label. Is an extra sticker just general advice I can ignore?
 Kit | It is not automatically optional. Ravi can explain how the [[dispensing label::The dispensing label and additional information may have different functions; the main label does not make every auxiliary instruction optional.]] and additional information apply together. A label's position on the package is not a reason to disregard it.
-Arden | Can you explain it quickly here? I can see there is a queue, and I do not want to hold everyone up with a long question.
+Arden | Could you just tell me quickly? Everyone behind me is waiting, and I feel awkward asking for another conversation.
 Kit | Your question deserves proper [[patient counseling::Patient counseling is the professional discussion needed to understand the instruction, not a hurried interpretation by an unauthorized technician.]]. Ravi has accepted it and is available. I will connect you with him; I am not authorized to interpret the instruction.
 Arden | Where should I go? I want to know the person is expecting me and understands the question.
 Kit | Ravi is at the [[consultation counter::The consultation counter gives Arden a specific location for the pharmacist who has accepted the question.]]. I will make clear that your question is about this auxiliary label, so the handoff includes the issue rather than only your arrival.
 Arden | That helps. Does accepting the question mean somebody has already checked everything with me, or simply that Ravi is going to discuss it?
 Kit | It is an [[accepted handoff::An accepted handoff confirms that Ravi will receive the question, not that the counseling discussion has already occurred.]], not a completed discussion. We should not record counseling as finished just because the question was passed on or a package reached the pickup counter.
-Arden | The leaflet uses another phrase. I would like to understand how it relates to the label rather than choose an instruction myself.
+Arden | The leaflet says it differently. Can I show Ravi both? I am not sure whether they mean the same thing.
 Kit | Bring the [[patient information leaflet::The patient information leaflet is another information source the pharmacist can discuss in relation to the actual label and question.]] into the consultation question. Ravi can address the actual wording and context; I should not resolve an apparent difference by choosing an instruction for you.
 Arden | There is a device with the package too. Could I ask about it in the pharmacist conversation?
 Kit | Yes. A question about the [[administration device::An administration device relates to delivering the medicine and should be discussed within the appropriate pharmacist consultation and role.]] belongs in the appropriate consultation. I will not assume that recognizing the package means you have already been shown or understand the device.
@@ -479,6 +483,7 @@ Arden | Once Ravi explains it, I may need to repeat what I understood. Sometimes
 Kit | That kind of [[teach-back::Teach-back checks the person's understanding so the professional can clarify the explanation; it is not proof of understanding from a simple yes.]] can help Ravi clarify the explanation. You can say what you understood and ask about anything that does not fit, rather than feel obliged to pretend.
 Arden | Thank you. Please keep the original directions unchanged and connect me with Ravi. I want the meaning clarified, not a new instruction guessed at this counter.
 Kit | No direction has been changed. We will distinguish the handoff from [[counseling completion::Counseling completion concerns the actual professional discussion, which must not be recorded merely because the referral or package handover occurred.]], and Ravi will address the question through the consultation. I will preserve the label reference and your request for a clear explanation.''',
+    rehearsal=("Read the label question and named pharmacist handoff without adding a medicine instruction.", "Complete the storage transfer with Noor and the consultation area.", "Check all four answers, then repeat that the direction is unchanged and the consultation has not yet happened."),
     transfer_title='Hand off a storage-label question',
     transfer_setup='Patient Drew asks about storage wording. The technician cannot interpret it. Pharmacist Noor accepts the question and is available in the consultation area. No instruction is changed.',
     transfer='''Technician: "The question concerns the ___ wording." | storage | The supplied question concerns storage, not an invented change to dosing.
@@ -546,14 +551,14 @@ Can review | Offers a practical next step without promising approval.
 Not saying friends can never | Avoids turning a local uncertainty into a universal legal claim.
 Relevant circumstances | Leaves professional judgment tied to actual evidence.''',
     d='''Pavel says, "So friends are never allowed to collect?" Which response is accurate? | That is not what I am saying; Maya can review this unresolved request privately. | Correct, every friend is prohibited everywhere. | Any claimed friendship automatically permits every disclosure. | We can settle it by announcing all the medicines. | The response distinguishes this unresolved request from a universal rule and gives a confirmed review route.
-Which pair must remain distinct? | Knowing a person's identity and establishing the collection arrangement | A medicine name and a public announcement as identical actions | A claimed relationship and automatic unlimited access | A preferred channel and any convenient number | Identity alone does not determine every collection or disclosure decision.
+Why does confirming Pavel's identity not finish this review? | It establishes who he is, while this collection arrangement still needs review. | A confirmed identity makes every medication-list disclosure permissible. | Identity verification automatically authorizes every future collection. | A familiar collector's identity removes the need to follow the pharmacy process. | Identity alone does not determine every collection or disclosure decision.
 What can Vera promise now? | Connection with Maya for private review | Approval of the collection | Disclosure of the medication list | Permission to contact any relative | Maya is available to review; the decision and contact permissions remain unestablished.
 Which note is factual? | Neighbor collection requested; arrangement unresolved; referred to Maya privately. | Unauthorized stranger confirmed to be stealing medicines. | Written authorization is legally mandatory in every pickup. | Patient consented to every contact method. | The note records established events without inventing wrongdoing, legal requirements, or patient permission.''',
     dialogue='''Pavel | I am collecting for my neighbor. She asked me to stop here on my way home, but I do not know which package I need.
 Vera | I understand. We need to verify the [[collection arrangement::The collection arrangement remains unresolved, so Vera names the process needing review rather than inventing approval or misconduct.]] through our process. I can ask lead pharmacist Maya to review your request privately.
 Pavel | Could you just read out her medicines? I will probably recognize one of the names, and that would save us both some time.
 Vera | I cannot use the [[medication list::The medication list contains patient information and should not be read publicly as an improvised identity test.]] as a public identification test. We can take the request forward without announcing those names to everyone at the counter.
-Pavel | Are you suggesting that I am making this up? I am trying to do someone a favor, not ask for her entire medical history.
+Pavel | Do you think I am lying? She asked me to help, and now I feel as though I have done something wrong.
 Vera | No. I am not accusing you. The [[pickup request::A pickup request records the action Pavel wants; its existence does not establish that the collection decision is complete.]] needs review, and Maya is available to handle it with you. I appreciate why you have come.
 Pavel | Does that mean friends and neighbors are never allowed to collect, or just that you have not settled the arrangement for this visit?
 Vera | It means this request is unresolved. I am not announcing a blanket ban. Maya can use the applicable process and [[professional judgment::Professional judgment applies relevant circumstances and rules; uncertainty does not justify inventing a universal ban on friend pickups.]] in reviewing it.
@@ -561,7 +566,7 @@ Pavel | I can tell you my name and explain the relationship. Is proving who I am
 Vera | Those are related but distinct. [[identity verification::Identity verification concerns who Pavel is; it does not independently resolve every question about receiving another person's prescription.]] addresses who you are. The appropriate review also needs to resolve the collection arrangement without using medicine names as a guessing game.
 Pavel | Would calling her help? I have a number on my phone, but I do not know what contact details or preferences your pharmacy holds.
 Vera | We should use the appropriate process for [[contact permission::Contact permission must be established through the actual process rather than assumed from a number offered by another person.]] and verified details. I will not assume that every number or channel offered at the counter is suitable.
-Pavel | All right. I would also prefer not to explain the personal circumstances within hearing of the queue. Could we move the discussion somewhere appropriate?
+Pavel | Can we move away from the queue? I can explain why she could not come, but I would rather not announce it here.
 Vera | Yes. Maya can provide a [[private review::A private review moves the unresolved request to an appropriate setting without promising that collection will be approved.]]. I will pass on the collection question without describing your neighbor's medicines or circumstances to the waiting customers.
 Pavel | Please make sure she knows that I am here to collect, rather than telling her that I asked for permission to see every record.
 Vera | I will keep the [[relevant information::Relevant information is limited to the actual request and unresolved arrangement, not an invented demand for unrestricted patient records.]] accurate: you requested collection for your neighbor, and we have not yet resolved the arrangement. That is the issue Maya will receive.
@@ -569,6 +574,7 @@ Pavel | Thank you. I can wait for that conversation. I mainly needed to know whe
 Vera | There is. We will protect [[confidentiality::Confidentiality requires appropriate protection of information while the request follows its proper review route, not public accusation or disclosure.]] while Maya reviews it. I cannot promise the outcome before that review, but I can connect you with her.
 Pavel | Then please do that. I understand that you have not approved or refused the collection yet and that we should discuss the details privately.
 Vera | Exactly. The [[authority to collect::Authority to collect is the unresolved basis for receiving the prescription; it must not be assumed from the request alone.]] will be addressed through the appropriate review. I will explain where the request stands and introduce you to Maya.''',
+    rehearsal=("Read the private-collection exchange, keeping the courteous acknowledgment and unresolved arrangement together.", "Complete the alternate-number transfer without assuming that a supplied number establishes contact permission.", "Check the key, then repeat the private handoff without reading patient details to the queue."),
     transfer_title='Clarify an alternate contact request',
     transfer_setup='Collector Sam supplies a new telephone number. Contact permission is unverified. Pharmacist Ellis accepts the private review. No patient information has been disclosed.',
     transfer='''Technician: "The new ___ has not been verified." | telephone number | The supplied number needs verification through the actual contact process.
@@ -607,7 +613,7 @@ return authorization | Permission or reference required for an approved product 
 destruction record | Documentation that product was destroyed through the authorized process. | retain a destruction record
 release decision | Authorized decision allowing stock to become available for its intended use. | document a release decision
 patient exposure | Situation in which a patient received or used a relevant product. | assess patient exposure
-first-expiry-first-out | Stock rotation using items with the earliest expiry first; often FEFO. | apply first-expiry-first-out
+first-expiry-first-out | Using the earliest-expiring eligible stock first; FEFO does not permit expired or quarantined stock. | apply first-expiry-first-out
 temperature excursion | Temperature outside specified storage limits. | report a temperature excursion
 tamper evidence | Visible feature intended to show that packaging may have been interfered with. | check tamper evidence
 quality defect | Product problem affecting conformity with relevant quality requirements. | report a quality defect''',
@@ -643,7 +649,7 @@ Which patient-facing claim is unsupported? | Every recall means you should stop 
 Maya | Start with the [[recall notice::The recall notice is the source naming AB41; its identifier must remain distinct from the different delivery entry.]]. Read its lot exactly, then name the second source. We should not let a familiar-looking code substitute for an exact comparison.
 Emil | The notice says A, B, four, one: AB41. The delivery record says A, B, one, four: AB14. I have not checked the shelf label.
 Maya | The [[lot number::A lot number identifies the production group and must be read in the correct character order to support matching.]] on the notice is AB41; the record shows AB14. Thank you for separating them. The physical label is still an outstanding check.
-Emil | Could I mark the stock unaffected because the delivery entry is different, or would that jump ahead of what we have actually verified?
+Emil | I was about to mark unaffected because AB14 is different. Then I realized I had only checked the delivery entry, not the cartons themselves.
 Maya | It would jump ahead. The [[delivery record::The delivery record documents an entry but does not alone establish the identifier on the stock physically present.]] is one source. It does not establish which lot is on the shelf or complete the assessment against the notice.
 Emil | Then I will not tell the counter team that the shelf is clear. What should I include when I describe the unresolved query?
 Maya | Name both sources and the unchecked [[physical stock::Physical stock is the inventory actually present; checking it is distinct from reading a delivery entry.]]. Also identify me as the assessment owner so colleagues know where findings and questions must go.
@@ -651,7 +657,7 @@ Emil | The product has other identifying details as well. I assume the lot code 
 Maya | Correct. We need the complete [[recall scope::Recall scope defines the relevant products and limits; a single similar code does not replace the complete notice comparison.]] and applicable product details. Follow the actual notice and our approved process rather than infer the scope from two letters and two digits.
 Emil | If we find a match, should I immediately describe it as proof that a patient received the affected product, or is that another question?
 Maya | That is another question. [[Patient exposure::Patient exposure concerns whether someone received or used relevant product and is not established merely by an inventory query.]] has not been established. Stock findings and patient-related assessment must be recorded accurately without turning one into an unsupported conclusion about the other.
-Emil | I will keep the original codes visible in the record. Correcting the summary should not erase the source that created the query.
+Emil | I will attach both source references. Otherwise the next shift may see a corrected summary without understanding why we raised the query.
 Maya | Exactly. Preserve [[traceability::Traceability depends on retaining source references and verified findings so product history and decisions can be followed.]] through the source references and actual findings. Anyone reviewing the matter needs to see what was checked, what differed, and what remains unresolved.
 Emil | I also want to avoid using hold, return, and destroy as if they were the same action. The required action depends on the actual instructions.
 Maya | Yes. [[Quarantine::Quarantine controls availability pending an authorized decision; it is not automatically a return, destruction, or final release decision.]] and final disposition are distinct. Use the applicable process and notice; do not invent disposal or release instructions from this discrepancy.
@@ -659,6 +665,7 @@ Emil | If a patient asks whether to stop taking a medicine while we check this, 
 Maya | Correct. Do not turn an inventory query into a treatment instruction. An authorized [[disposition::Disposition is the decision about the product's handling; it does not authorize a technician to invent patient treatment advice.]] for stock and clinical advice for a patient are different matters.
 Emil | My summary will say AB41 on the notice, AB14 in the delivery record, stock label unchecked, and assessment with Maya. No affected-stock conclusion yet.
 Maya | That is accurate. The [[release decision::A release decision requires the authorized assessment and cannot be inferred from the differing delivery code alone.]] is not established either. Bring the verified findings through our process, and keep the pending status clear until the responsible decision is recorded.''',
+    rehearsal=("Read AB41 and AB14 character by character, attaching each to the correct source.", "Repeat the transfer with CD27 and CD72, the unchecked stock, and Noor.", "Check every blank, then repeat the difference between a document mismatch and a confirmed affected-stock finding."),
     transfer_title='Read back a different lot discrepancy',
     transfer_setup='Notice lot CD27 differs from delivery entry CD72. Actual stock is unchecked. Pharmacist Noor owns the assessment. No affected-stock conclusion has been reached.',
     transfer='''Technician: "The notice names ___." | CD27 | CD27 is the notice identifier, not the different delivery entry.
@@ -733,7 +740,7 @@ Which handoff is complete in principle? | Verified status, actual contact outcom
 Asha | I can speak. I am already traveling because your [[ready notification::The ready notification prompted travel, so the correction must explicitly replace that earlier claim rather than offer a vague apology.]] said I could collect. What has changed?
 Jo | At 14:10 I checked the status and confirmed that pharmacist review is still pending. I misread the queue entry when I spoke to you at 14:00.
 Asha | Then the [[verified status::The verified status is pending pharmacist review, not ready for collection; it replaces the earlier inaccurate message.]] is that it is not confirmed ready. I need you to say that clearly because I arranged my afternoon around collecting it.
-Jo | Yes. Please do not rely on my earlier ready statement. I am sorry that my inaccurate message caused this disruption. I cannot confirm a collection time now.
+Jo | Yes. My earlier ready message was wrong. I am sorry you arranged travel because of it. Review is still pending, and I cannot give you a collection time.
 Asha | Can you explain the difference between seeing it in the system and knowing it has completed [[pharmacist review::Pharmacist review is the outstanding professional step and must not be represented as complete merely because a queue entry exists.]]? That seems to be where the message went wrong.
 Jo | I treated a queue entry as though it established readiness. It did not. I should have checked the actual stage before giving you a collection message.
 Asha | I appreciate you owning the mistake. What is the [[update commitment::The update commitment concerns a 16:00 status report; it is not a replacement guarantee that collection will be possible then.]] now, and does that tell me when I can collect?
@@ -745,10 +752,11 @@ Jo | Yes. I will record the actual contact result and the corrected information 
 Asha | If someone else takes over later, I want the [[open action::The open action is the unfinished follow-up and must remain visible with an owner rather than disappear at a shift change.]] to stay visible. Otherwise I may need to explain the entire problem again.
 Jo | I remain responsible for the follow-up. If a transfer becomes necessary, it must include the verified status, what I communicated, the outstanding action, and a colleague who accepts responsibility.
 Asha | That sounds like a [[closed-loop handoff::A closed-loop handoff confirms receipt and ownership, not merely a note naming someone who may never have accepted the task.]], rather than leaving a name in the system and hoping they notice.
-Jo | Exactly. I will also preserve the original message and its correction appropriately. We should not erase the earlier event and leave a record that suggests the error never occurred.
+Jo | Exactly. I will keep the original message and this correction in the record. The next shift needs to know what you were told, not just the latest status.
 Asha | Keep the [[audit trail::The audit trail preserves the original event and subsequent correction so later reviewers can understand the sequence accurately.]]. I have received the correction: review is pending, there is no collection time, and you will update me at 16:00.
 Jo | That is correct. Thank you for confirming receipt. I am sorry for the disruption. I will keep the follow-up assigned and communicate the verified status at the agreed time.
 Asha | All right. Please make the [[status correction::The status correction replaces the inaccurate ready statement while preserving the pending review and the separate follow-up commitment.]] clear to anyone handling my enquiry, so the original ready message is not repeated when I next contact the pharmacy.''',
+    rehearsal=("Read the correction call with the original error, pending review, and 16:00 update clearly audible.", "Complete the transfer in which the message has not been sent; do not invent a patient contact that never occurred.", "Check the key, then repeat the distinction between correcting a queued message and communicating a correction to a patient."),
     transfer_title='Correct a queued message',
     transfer_setup='At 10:05, technician Erin discovers an inaccurate ready message prepared for patient Leo. It has not been sent. Review is pending. Erin owns correcting the queued message before release.',
     transfer='''Erin: "The inaccurate message has not been ___." | sent | The message is prepared but has not reached the patient.

@@ -21,16 +21,16 @@ BOOK = dict(
     sources=[
         dict(title='US Department of Energy. Weatherization Training Glossary.',
              url='https://www.energy.gov/sites/prod/files/2016/06/f32/glossary.pdf',
-             note='Background terminology for air distribution, temperature, humidity, and building systems. Historical program rules and technical procedures are not taught here.', checked='1 October 2026'),
+             note='Background terminology for air distribution, temperature, humidity, and building systems. Historical program rules and technical procedures are not taught here.', checked='10 October 2026'),
         dict(title='Carrier. Return Air Vent System.',
              url='https://www.carrier.com/us/en/residential/hvac-resources/return-air-vent/',
-             note='Reference for distinguishing supply and return airflow. No airflow targets, maintenance intervals, adjustments, or product recommendations are adopted.', checked='1 October 2026'),
+             note='Reference for distinguishing supply and return airflow. No airflow targets, maintenance intervals, adjustments, or product recommendations are adopted.', checked='10 October 2026'),
         dict(title='US Environmental Protection Agency. Section 608 Technician Certification.',
              url='https://www.epa.gov/section608/section-608-technician-certification',
-             note='Context for professional boundaries around refrigerant work. The book does not teach certification requirements or authorize servicing.', checked='1 October 2026'),
+             note='Context for professional boundaries around refrigerant work. The book does not teach certification requirements or authorize servicing.', checked='10 October 2026'),
         dict(title='US Food and Drug Administration. Refrigerator Thermometers: Cold Facts about Food Safety.',
              url='https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety',
-             note='Background for treating temperature information carefully. The fictional cabinet case supplies no food-release decision or substitute for site procedures.', checked='1 October 2026'),
+             note='Background for treating temperature information carefully. The fictional cabinet case supplies no food-release decision or substitute for site procedures.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -53,13 +53,13 @@ temperature reading | Value reported by a temperature-measuring device. | identi
 degrees Celsius | Temperature unit used in the supplied report. | state the value in degrees Celsius
 comfort complaint | Occupant report that environmental conditions feel uncomfortable. | log a comfort complaint
 occupant feedback | Account supplied by people using the space. | preserve occupant feedback
-meeting room | Room used for group meetings. | identify the meeting room
+sensible cooling | Heat removal associated with lowering air temperature without counting moisture condensation. | distinguish sensible cooling
 afternoon pattern | Reported tendency occurring later in the day. | record the afternoon pattern
 sensor | Device responding to a physical condition for measurement or control. | identify the relevant sensor
 measured value | Quantity established by a measurement. | distinguish the measured value
 displayed value | Number shown by a device or interface. | clarify the displayed value
 target temperature | Temperature the control is intended to seek. | state the target temperature
-actual condition | State present at the relevant place and time. | establish the actual condition
+latent cooling | Heat removal associated here with condensing water vapor from air. | account for latent cooling
 relative humidity | Water-vapor level relative to saturation at the same temperature. | report relative humidity
 occupancy | Use of a space by people. | describe room occupancy
 control schedule | Timing arrangement for control settings or operation. | review the control schedule
@@ -97,26 +97,27 @@ No fault established | Avoids both a diagnosis and an unsupported fault-free ass
 Which summary preserves the complaint? | Staff feel warm in the meeting room after 14:00; ambient reading not supplied | Staff are mistaken because the setting is 22 | Every room overheats all day | A sensor fault begins at 14:00 | The summary keeps attribution, place, period, and missing measurement intact.
 What should Ben avoid inferring? | A particular equipment fault | The value's unit | The reported room | The afternoon pattern | No diagnostic evidence establishes a component failure in the supplied facts.
 Which question best clarifies the displayed value? | Does the record label 22 as the target or the measured room temperature? | Why is the compressor broken? | Which new setting should we choose immediately? | Can the client test the equipment now? | The bounded question identifies the value using existing information without assuming a fault.''',
-    dialogue='''Asha | The meeting room is twenty-two degrees, but people still say it feels warm in the afternoon. I am not sure how to describe that to the service team.
+    dialogue='''Asha | Ben, the meeting room is twenty-two degrees, but staff keep saying it feels warm after lunch. How should I describe that without sounding contradictory?
 Ben | Before I record it, is twenty-two the [[setpoint::Setpoint identifies the target setting, which must not be mistaken for a room measurement.]], or is it a separate measured room-temperature value? Those mean different things in a service request.
-Asha | It is the setting on the thermostat. I do not have a separate room reading in the information I was given by the office team.
+Asha | It's the thermostat setting, not a separate room measurement. I copied the number from the information the office team gave me.
 Ben | Then we should not call it the [[ambient temperature::Ambient temperature is the surrounding-air condition, for which no confirmed reading is supplied.]]. We can record the target and the staff account without treating the setting as proof of the room condition.
-Asha | The complaint is specifically about the meeting room. Staff say they feel warm there after two in the afternoon, rather than making a claim about every room.
+Asha | The reports concern the meeting room after two in the afternoon. I don't have the same complaint about every room or every part of the day.
 Ben | That is a useful [[afternoon pattern::Afternoon pattern preserves the reported period after 14:00 without inventing continuous discomfort or exact onset.]]. I will retain the meeting-room location and after 14:00, so the request does not become a whole-office complaint.
-Asha | Will mentioning the setting make it sound as though the staff must be mistaken? I do not want their experience dismissed because of one number.
+Asha | Will the service team dismiss the complaint if the request says the thermostat is set to twenty-two? The people still feel uncomfortable.
 Ben | No. We can preserve the [[occupant feedback::Occupant feedback records the staff experience alongside the target rather than treating one as a contradiction.]] and clarify the number at the same time. A target does not establish what everyone in the room actually experiences.
-Asha | Good. I had started to write that the sensor must be wrong. That is probably another step beyond the information we have.
+Asha | I had written possible sensor failure to make the request more specific. But the information doesn't establish a failed sensor, does it?
 Ben | It is. No [[equipment fault::Equipment fault has not been established by the setpoint or the comfort report.]] has been established. We should not name a failed sensor or another component simply to give the complaint a technical-sounding cause.
-Asha | The twenty-two is in Celsius, not Fahrenheit. Please keep that in the record too, because our overseas office sometimes uses a different scale.
+Asha | Please include Celsius. Our overseas colleagues sometimes use Fahrenheit, and I'd rather the unit didn't disappear when the request is forwarded.
 Ben | Certainly. I will state [[degrees Celsius::Degrees Celsius supplies the unit attached to the stated target value.]] explicitly. A number without its unit and its meaning can become misleading when the message is forwarded.
-Asha | Is it enough to say no measured value was supplied, rather than suggesting nobody has ever measured the room or could measure it?
+Asha | When we say no confirmed reading supplied, we mean this account lacks it. We don't know whether someone has measured the room on another occasion.
 Ben | Yes. The missing [[temperature reading::Temperature reading is absent from this account; that does not assert that no measurement ever exists.]] is a limit of this information. It does not establish the history of every measurement or the condition of the equipment.
-Asha | I also do not want the message to ask the occupants to change settings or try tests. We are only passing on what is already known.
+Asha | I'll keep the request to the existing information. I don't want my summary mistaken for an instruction to change the thermostat or test a component.
 Ben | Agreed. We are clarifying a [[service description::Service description communicates the known complaint without prescribing tests or a control adjustment.]], not issuing control instructions. Any assessment belongs with the relevant team and its actual procedures.
-Asha | Please read the short version so I can use the same wording when the facilities manager asks what we reported.
+Asha | Could you read it back with the target and missing measurement separate? I need a short version for the facilities manager.
 Ben | Here is the [[attributed report::Attributed report links the comfort account to staff and keeps the target and missing reading separate.]]: staff feel warm in the meeting room after 14:00; thermostat setpoint 22 degrees Celsius; no confirmed ambient reading supplied; cause unestablished.
-Asha | That is clear. It preserves the complaint, explains the twenty-two, and does not invent a temperature above the target or a failed component.
+Asha | That preserves the staff account without inventing a measured temperature above target. I'll stop describing twenty-two as the actual room condition.
 Ben | I will pass on that record. It distinguishes the [[target temperature::Target temperature is the intended control value, not proof of actual room conditions or performance.]] from the actual condition that still needs assessment, while keeping the staff's reported experience visible.''',
+    rehearsal=["Read turns 1-10. Stress setpoint, no ambient reading, meeting room, and after two to preserve the complaint's meaning.","Switch roles for turns 11-20. Keep Celsius with the target and distinguish missing information from no measurement ever taken.","Complete and check the service exchange. Read the actual report without inventing a sensor fault or setting change."],
     transfer_title='Label the value correctly',
     transfer_setup='Complete the service report using the target, time pattern, and missing measurement. Do not add a diagnosis.',
     transfer='''Manager: "The thermostat ___ is 22 degrees Celsius." | setpoint | Setpoint correctly identifies the target rather than a measured ambient temperature.
@@ -185,29 +186,30 @@ By guesswork | Identifies an unsupported substitution of one label for another.
 Already have | Directs attention to available information rather than new physical access.
 Before merging | Makes verification a condition of consolidating records.''',
     d='''Which summary is accurate? | Request AC-4; roof plan CU-4; register AH-4; relationship unverified | AC-4 is definitely another name for CU-4 | AH-4 and CU-4 are paired because both end in four | All three labels identify one physical item | The summary preserves the separate source labels and unresolved relationship.
-What should Owen ask Mira to provide? | The relevant existing register information for reconciliation | A roof inspection performed during the call | A guessed replacement label | A test of the refrigerant circuit | The case calls for existing records, not physical access or testing.
+What should Owen ask Mira to provide? | The relevant existing register information for reconciliation | A revised request replacing AC-4 with CU-4 immediately | A cross-reference based only on the shared numeral | A served-area label borrowed from another request | Existing source records support reconciliation; renaming, pairing by number, or borrowing an unrelated room would add unsupported information.
 Why is the numeral four insufficient? | Similar numbering does not establish verified component relationships | Numbers can never be used in asset labels | All outdoor units must have different numerals | AH always means the entire outdoor system | An identifier pattern is not evidence that the recorded components form a confirmed pairing.
 What should remain visible until clarified? | The source of each label and the unverified link | Only the shortest label | A presumed served area | An invented nameplate reading | Keeping sources and uncertainty supports accurate reconciliation without losing original information.''',
-    dialogue='''Mira | The school request says AC-4, but I have found different labels in the project documents. I do not want the service team sent with the wrong reference.
-Owen | Let us keep the [[record source::Record source identifies where each label comes from instead of treating the labels as interchangeable.]] attached to each label. What does the roof plan call the outdoor item, and what does the indoor register list?
-Mira | The roof plan shows CU-4 for an outdoor unit. The indoor register lists AH-4 as an air handler. The request itself just says AC-4.
-Owen | Thank you. An [[air handler::Air handler is the indoor item named AH-4 in the register, not a confirmed synonym for CU-4.]] is a component reference here, while AC-4 may be a broader system label. We should not collapse those descriptions into one item.
-Mira | The matching four makes me think they belong together, but I cannot find a confirmed link in the information I have in front of me.
-Owen | Then the [[equipment pairing::Equipment pairing is the relationship that remains unverified despite the shared numeral.]] remains unverified. Similar numbering is a reason to ask the question, not a sufficient answer to it.
-Mira | I have the equipment register available. Would it help to send the relevant entries with the roof-plan reference rather than asking someone to go up there?
-Owen | Yes. Use the existing [[equipment register::Equipment register is already available to Mira and can support the document reconciliation.]] and the plan reference. This conversation is about reconciling records, not arranging roof access or directing anyone to inspect equipment.
-Mira | Should I change the original request from AC-4 to CU-4 in the meantime? That would at least match one of the drawings.
-Owen | No, not by assumption. Preserve the [[service request::Service request retains the original AC-4 wording while its relationship to other labels is clarified.]] wording and add the other references as unresolved identification information. Replacing it could erase the original meaning before we know what was intended.
-Mira | That makes sense. A request about a whole system might otherwise become a request about only the outdoor component because I changed the label.
-Owen | Exactly. We need to distinguish the [[system reference::System reference may identify the overall arrangement rather than one physical component.]] from each component identifier. The next person should see both the naming difference and the missing confirmation.
-Mira | The register may also contain model and serial information. I will keep those fields separate rather than treating them as another version of the asset tag.
-Owen | Good. A [[model number::Model number identifies a product design or version, unlike the individual-unit serial number.]] identifies a product design or version; a serial number distinguishes an individual unit. Those fields help only when kept with the right recorded item.
-Mira | We have not confirmed which rooms these entries serve either. I should not add the meeting-room location just because it appears in another recent request.
-Owen | Correct. The [[served area::Served area must be established for the identified system rather than borrowed from another request.]] needs its own confirmation. We should not fill an information gap with a location from an unrelated service record.
-Mira | I will send all three labels and their sources. Can you phrase the question so it asks for the relationship rather than accusing one document of being wrong?
-Owen | Please confirm the [[cross-reference::Cross-reference asks how the documented labels correspond without presuming that any one record is wrong.]] between request AC-4, outdoor unit CU-4 on the roof plan, and air handler AH-4 in the register, including their verified relationship.
-Mira | That is clear. It leaves the original labels intact and gives the record owner a specific issue to resolve through the proper process.
-Owen | Once we receive [[confirmed mapping::Confirmed mapping supplies verified correspondence before labels are merged or the request is relabeled.]], the service reference can be clarified accordingly. Until then, keep the three source labels and the unverified link visible in the record.''',
+    dialogue='''Mira|Owen, the school's request says AC-4, but I can't match that cleanly to the project documents. I don't want to send the wrong reference.
+Owen|Let's keep the [[record source::Record source identifies where each label comes from instead of treating the labels as interchangeable.]] beside each identifier. What does the roof plan call the outdoor equipment, and what does the indoor register say?
+Mira|The roof plan labels the outdoor unit CU-4. The indoor register lists AH-4, an air handler. Only the service request uses AC-4.
+Owen|So the [[air handler::Air handler is the indoor item named AH-4 in the register, not a confirmed synonym for CU-4.]] has its own reference. AC-4 may refer to the system more broadly; we shouldn't treat all three labels as one physical item.
+Mira|They all end in four. I thought that would be enough to link the indoor and outdoor entries, but the records don't actually confirm it.
+Owen|Then leave the [[equipment pairing::Equipment pairing is the relationship that remains unverified despite the shared numeral.]] unverified. The shared numeral suggests a question to resolve; it doesn't establish that those components operate together.
+Mira|I have the register here already. Can we resolve the question through the records process instead of asking someone to go onto the roof?
+Owen|Yes. Send the relevant [[equipment register::Equipment register is already available to Mira and can support the document reconciliation.]] entries and roof-plan reference. We're reconciling existing documents, not requesting physical access or a new equipment inspection.
+Mira|Would it help if I changed AC-4 to CU-4 on the request now? At least that label would agree with the roof plan.
+Owen|Please retain the original [[service request::Service request retains the original AC-4 wording while its relationship to other labels is clarified.]] wording. Add the plan and register references alongside it; changing the label prematurely could narrow what the requester meant.
+Mira|Right, a request about the whole system might become one about just the outdoor unit. We need the relationship before choosing the final reference.
+Owen|Exactly. A [[system reference::System reference may identify the overall arrangement rather than one physical component.]] and a component identifier can describe different levels of the equipment arrangement. The records need a supported link between them.
+Mira|There may be model and serial fields in the register too. Those aren't interchangeable with the school's asset tags, are they?
+Owen|No. A [[model number::Model number identifies a product design or version, unlike the individual-unit serial number.]] identifies a product design or version; a serial number distinguishes a manufactured unit. Keep each field with its recorded equipment item.
+Mira|Another request mentions the meeting room. Can I borrow that location to make this one more useful, or would that introduce an unsupported connection?
+Owen|Don't borrow it. The [[served area::Served area must be established for the identified system rather than borrowed from another request.]] still needs confirmation for these references. A plausible location from a different request isn't evidence for this equipment relationship.
+Mira|Please phrase the query without saying one document must be wrong. The labels may describe different things correctly, even if their connection is missing.
+Owen|Ask for a confirmed [[cross-reference::Cross-reference asks how the documented labels correspond without presuming that any one record is wrong.]] between request AC-4, plan item CU-4, and register item AH-4, including the component relationship and the served area.
+Mira|I'll send all three sources intact. That should let the record owner investigate the actual mapping instead of guessing which label we preferred.
+Owen|Once we receive [[confirmed mapping::Confirmed mapping supplies verified correspondence before labels are merged or the request is relabeled.]], we can clarify the service reference. Until then, keep the separate labels and unresolved relationship visible in the request.''',
+    rehearsal=["Read turns 1-10. Say each identifier with its source: request AC-4, roof plan CU-4, indoor register AH-4.","Switch roles for turns 11-20. Contrast system, component, model, serial, and served area without merging those fields.","Complete and check the identification exchange. Retain the unverified relationship rather than pairing items by their numeral."],
     transfer_title='Keep all three references',
     transfer_setup='Complete the identification exchange using the three labels and the unresolved relationship. Use existing records only.',
     transfer='''Manager: "The request says ___." | AC-4 | AC-4 is the original request label and must remain traceable.
@@ -240,7 +242,7 @@ airflow rate | Volume of air passing a point per unit time. | report the airflow
 cubic feet per minute | Volume-flow unit commonly abbreviated CFM. | state cubic feet per minute
 liters per second | Volume-flow unit used for air or liquid movement. | record liters per second
 air velocity | Speed of air movement at a stated position. | distinguish air velocity
-volume flow | Quantity of air volume moving per unit time. | specify volume flow
+air changes per hour | Hourly airflow divided by room volume, with the air source specified. | distinguish total and outdoor-air changes
 draft | Air movement perceived as unwanted by an occupant. | describe a reported draft
 occupied zone | Part of a room normally used by people. | identify the occupied zone
 throw | Distance associated with a defined air jet under stated conditions. | review diffuser throw
@@ -279,26 +281,27 @@ Does not specify | Keeps an explanation separate from an operating instruction.'
 What can the drawing labels establish here? | The stated functions of S3 and R2 | A verified airflow rate | The cause of the discomfort | The correct damper adjustment | The supplied drawing labels identify functions, not measured operating conditions.
 Which report invents a measurement? | S3 delivers too many liters per second | Tomas reports discomfort below S3 | R2 is labeled return | No airflow data were supplied | No airflow measurements support a quantified excess at S3.
 What is the proper scope of Leila's response? | Explain labels and preserve the complaint for assessment | Prescribe a grille adjustment | Declare the system balanced | Reject the complaint because S3 is supply | The case supports explanation and accurate reporting, not adjustment or performance conclusions.''',
-    dialogue='''Tomas | I have two air-conditioning outlets in the ceiling. The one above this part of the room is uncomfortable to sit under, and the drawing calls it S3.
-Leila | The drawing identifies S3 as [[supply air::Supply air is the stated delivery function of S3 on the current drawing.]]. The other opening, R2, has a different function, so calling both outlets can make the description less precise.
-Tomas | What is different about R2? I had assumed that both openings did the same thing because they look like parts of the same system.
-Leila | R2 is labeled [[return air::Return air describes the flow back toward the system rather than delivery into the room.]]. In plain language, supply delivers air into the room, while return carries air back toward the air-handling system.
-Tomas | That helps. My complaint is below S3, the supply location, rather than below the return opening. I want the service record to identify the right place.
-Leila | I will keep that location in the [[distribution report::Distribution report records the air-related complaint and its location without adding measurements.]]. The complaint is discomfort below S3; the drawing gives us its label, but it does not supply an airflow measurement.
-Tomas | I have no measured figures. I was going to say too much air comes through it, but that would be my impression rather than a measured quantity.
-Leila | Exactly. A [[measured airflow::Measured airflow would require relevant measurement data, which Tomas has not supplied.]] value is different from an occupant description. We can retain what you experience without inventing a numerical excess or a diagnosis.
-Tomas | I have seen CFM on another report. Is that a speed, or does it describe something different about the air moving through the system?
-Leila | CFM means [[cubic feet per minute::Cubic feet per minute is a volume-flow unit, not an air-speed unit.]], a unit of volume flow. It tells how much air volume moves per unit time, rather than directly stating the air speed.
-Tomas | So the feeling of moving air near a seat cannot simply be relabeled as a particular CFM result, especially when we have no measurement.
-Leila | Correct. [[Air velocity::Air velocity is the speed of air movement and must not be confused with volume flow.]] describes speed at a location. It is a different quantity from volume flow, and neither has been measured in the information you have given me.
-Tomas | Does identifying the return opening tell us the system is balanced, or is that another conclusion the drawing cannot establish by itself?
-Leila | It cannot establish [[balancing::Balancing involves technical distribution work and verification, not merely identifying supply and return labels.]]. We have identified the stated functions, not verified that the distribution meets its requirements or determined why your seat feels uncomfortable.
-Tomas | Then please do not put an adjustment instruction in the record on my behalf. I am asking for the complaint to be assessed, not choosing a technical change.
-Leila | Understood. I will not prescribe a [[damper::Damper is an airflow-control component; no adjustment to it is supported by this conversation.]] adjustment or a grille change. The appropriate assessment must establish what is happening before a remedy is selected.
-Tomas | The distinction is clearer now: S3 supplies, R2 returns, and the concern remains the experience below S3, with no figures attached.
-Leila | Yes. That preserves the [[occupied zone::Occupied zone is the area used by people, helping locate the comfort issue rather than diagnose equipment.]] concern while avoiding a performance claim. We know where you report discomfort, not a confirmed cause or measured flow problem.
-Tomas | Please read the short note back so I can use the same description when I speak to our facilities manager.
-Leila | Discomfort reported below supply S3; R2 labeled return on the current drawing; no airflow measurements supplied. No [[performance finding::Performance finding would require supporting evidence beyond the labels and discomfort account.]] or cause has been established. That is the account I will pass on for assessment.''',
+    dialogue='''Tomas|Leila, the ceiling outlet above this seat is uncomfortable to sit under. It's S3 on the drawing. The other outlet is R2.
+Leila|S3 is labeled [[supply air::Supply air is the stated delivery function of S3 on the current drawing.]] on the drawing. R2 has a different function, so calling both outlets can hide a useful distinction.
+Tomas|They look like parts of the same system. Does R2 also send air into the room, just from a different position?
+Leila|R2 is labeled [[return air::Return air describes the flow back toward the system rather than delivery into the room.]]. Supply delivers air into the space; return carries air back toward the air-handling system. Return isn't automatically an outdoor exhaust.
+Tomas|Then the complaint belongs below the supply opening, S3. Please keep that location rather than writing that the whole room's ventilation has failed.
+Leila|I'll retain it in the [[distribution report::Distribution report records the air-related complaint and its location without adding measurements.]]: discomfort below S3. We can identify the drawing label without claiming that it verifies how the installed system performs.
+Tomas|I was about to say S3 delivers too much air. That's how it feels here, but I don't have a measured figure to attach.
+Leila|Keep it as your experience, then. A [[measured airflow::Measured airflow would require relevant measurement data, which Tomas has not supplied.]] value needs measurement evidence. We shouldn't turn a comfort report into an unsupported volume-flow result.
+Tomas|An earlier report used CFM. I assumed that was how fast the air moves. Does it actually describe something different?
+Leila|It means [[cubic feet per minute::Cubic feet per minute is a volume-flow unit, not an air-speed unit.]], a volume per unit time. It describes how much air volume moves, not the speed at one point by itself.
+Tomas|So a feeling of air movement at my seat doesn't give us a CFM figure. And liters per second would be another volume-flow unit.
+Leila|Correct. [[Air velocity::Air velocity is the speed of air movement and must not be confused with volume flow.]] is speed at a location, distinct from volume flow. Neither measurement is supplied in this report, although your location description is useful.
+Tomas|Since we know which opening is the return, can we at least say the system is balanced? The drawing appears to show a complete arrangement.
+Leila|Identifying the openings doesn't establish [[balancing::Balancing involves technical distribution work and verification, not merely identifying supply and return labels.]]. That involves technical distribution work and verification, not simply checking that supply and return labels exist.
+Tomas|Someone suggested closing a grille to stop the discomfort. I don't want the service request to present that suggestion as the approved remedy.
+Leila|It won't. No [[damper::Damper is an airflow-control component; no adjustment to it is supported by this conversation.]] adjustment or grille change is prescribed by these records. The appropriate assessment needs to establish the condition and any required response.
+Tomas|Please include that it's the seat below S3 that concerns me. Saying air-conditioning problem leaves the person reading it with very little to locate.
+Leila|Agreed. The [[occupied zone::Occupied zone is the area used by people, helping locate the comfort issue rather than diagnose equipment.]] location matters to the report. We'll preserve where you experience discomfort without naming an equipment fault that hasn't been established.
+Tomas|Read me the short version, please. I'll use that wording when the facilities manager asks why the request was raised.
+Leila|Discomfort reported below supply S3; R2 labeled return; no airflow measurements supplied. No [[performance finding::Performance finding would require supporting evidence beyond the labels and discomfort account.]] or cause is established. That keeps the complaint precise without inventing results.''',
+    rehearsal=["Read turns 1-10. Use clear contrastive stress for supply into the room and return back toward the system.","Switch roles for turns 11-20. Distinguish CFM volume flow from air velocity and a comfort report from a measured result.","Complete and check the exchange. Keep the complaint below S3 and avoid converting the drawing labels into a balancing finding."],
     transfer_title='Explain supply and return',
     transfer_setup='Complete the client summary. Identify each function and keep the missing measurement visible.',
     transfer='''Technician: "S3 is labeled ___ air." | supply | Supply is the stated function assigned to S3 by the drawing.
@@ -336,11 +339,11 @@ refrigerant charge | Quantity of refrigerant specified or present in a system. |
 blend | Refrigerant made from more than one component substance. | identify a refrigerant blend
 compatibility | Suitability of materials or components for use together. | verify compatibility
 manufacturer specification | Product requirement or attribute stated by its manufacturer. | consult the manufacturer specification
-technical submittal | Product information submitted for project review. | review the technical submittal
+superheat | Vapor temperature above its saturation reference at the same pressure; use dew for the stated blend. | report superheat in kelvin
 selection basis | Information and criteria supporting an equipment choice. | establish the selection basis
 like-for-like comparison | Comparison of matching quantities on a consistent basis. | make a like-for-like comparison
-input-output distinction | Difference between energy supplied and useful effect produced. | preserve the input-output distinction
-approved selection | Equipment choice accepted through the relevant process. | confirm the approved selection
+sensible heat ratio | Sensible cooling capacity divided by total cooling capacity on the same basis. | calculate the sensible heat ratio
+subcooling | Liquid temperature below its saturation reference at the same pressure; use bubble for the stated blend. | distinguish subcooling from superheat
 substitution review | Evaluation of a proposed replacement for a specified item. | request a substitution review''',
     precision='Both proposals state 5 kilowatts, but A describes cooling output and B electrical input. The unit can express either quantity. It does not follow that the systems have equal cooling capacities or equal efficiencies.',
     precision_extra='The complete data sheets and component pairings are missing. A refrigerant designation must stay tied to the actual equipment specification; a familiar refrigerant name does not approve a substitution, determine compatibility, or authorize servicing.',
@@ -367,29 +370,30 @@ Cannot calculate from these entries | Limits a conclusion to the information act
 Type versus quantity | Separates refrigerant identity from charge amount.
 No selection approved | Keeps information gathering distinct from a purchase or installation decision.''',
     d='''Which comparison is valid from the supplied entries? | A's value is cooling capacity; B's is electrical input | Both values prove equal cooling output | Both values prove identical energy consumption | B must be more efficient than A | Only the differently labeled quantities can be identified; performance equivalence is not established.
-What additional information is needed? | Full data sheets, rating conditions, and component pairings | Only which proposal has a shorter title | An assumed refrigerant substitution | A guessed efficiency value | The missing specifications are needed to compare matching quantities and equipment combinations.
+What additional information is needed? | Full data sheets, rating conditions, and component pairings | A ratio of A's output to B's input | Confirmation that both headlines still say five kilowatts | A shared refrigerant name without the component information | Matching quantities, conditions, and actual equipment combinations are needed; headline numbers or refrigerant names do not fill those gaps.
 Which conclusion exceeds the evidence? | The systems have equal efficiency | A is labeled cooling capacity | B is labeled electrical input | No selection is approved | The two entries do not provide the corresponding output and input data needed for that claim.
 What does a refrigerant designation provide? | Identification to be checked against the actual equipment specification | Automatic approval to substitute fluids | A complete compatibility assessment | Permission for untrained servicing | The designation identifies the fluid but does not establish compatibility or authorization.''',
-    dialogue='''Jules | These two proposals both say five kilowatts. I have been calling them equal-size systems, so I thought we could compare their prices directly.
-Farah | We need to read the quantity labels first. Proposal A gives [[cooling capacity::Cooling capacity identifies A's heat-removal output rating, not its electrical power input.]], while proposal B labels its five-kilowatt figure as something different.
-Jules | You are right; B says electrical input. I had treated the unit as though it always described how much cooling a system could deliver.
-Farah | [[Electrical input::Electrical input is the power required by the equipment, not the useful cooling output.]] describes the power required by the equipment. Cooling capacity describes heat removal under stated conditions, so the matching numbers do not establish matching performance.
-Jules | Does that mean one is definitely less efficient, or are we missing the other half of the information needed for that comparison?
-Farah | We are missing information. A supported [[efficiency::Efficiency comparison needs corresponding output and input information on a consistent basis.]] comparison needs corresponding output and input values on an appropriate basis, not one quantity from A and a different quantity from B.
-Jules | I should ask for the full documents, then, rather than only another summary sentence saying each system is five kilowatts.
-Farah | Yes. We need each complete [[data sheet::Data sheet supplies product characteristics beyond the two incomplete proposal entries.]] and the proposed component combination. The ratings also need their conditions, because a stated output is not a promise for every operating situation.
-Jules | I have not been given the indoor and outdoor pairings. Would comparing a single component's sheet still leave an important gap?
-Farah | It would. The [[equipment combination::Equipment combination identifies the components whose joint specifications are relevant to the proposal.]] must be clear. We should not assume that information for one item describes any indoor and outdoor units someone happens to pair with it.
-Jules | There is a refrigerant name in one of the short descriptions. Can we use that to decide whether the alternative is an equivalent replacement?
-Farah | A [[refrigerant designation::Refrigerant designation identifies the specified fluid but does not establish system equivalence or replacement approval.]] identifies a fluid or blend; it does not by itself prove equivalent equipment or approve a replacement. It must match the actual equipment specification.
-Jules | So even a familiar refrigerant reference should not become an instruction to use another fluid or a shortcut around checking the manufacturer's information.
-Farah | Correct. Any [[substitution review::Substitution review evaluates a proposed replacement and is not bypassed by a familiar refrigerant name.]] needs the relevant technical process. This comparison does not authorize refrigerant handling, servicing, or an assumed change to the specified system.
-Jules | One more terminology question: if I see a quantity of refrigerant beside the name, that is not another cooling-capacity rating, is it?
-Farah | No. [[Refrigerant charge::Refrigerant charge concerns the quantity of working fluid, distinct from capacity and refrigerant identity.]] refers to the quantity specified or present. Type, quantity, cooling output, and electrical input are separate information and should not be substituted for one another.
-Jules | Then the next request should ask for matching rating information and the actual components, with no approved choice implied by our discussion.
-Farah | Exactly. We need a [[like-for-like comparison::Like-for-like comparison uses matching quantities and conditions instead of the superficially matching five-kilowatt figures.]] before the proposals can be assessed meaningfully. The shared number has helped us find an ambiguity, not resolve the selection.
-Jules | I will stop describing them as equal-size systems. I will request full data sheets, the pairings, and the conditions attached to the ratings.
-Farah | Thank you. That establishes the next step toward a sound [[selection basis::Selection basis is the supporting information still needed before an equipment choice can be approved.]]. No selection is approved, and we have made no unsupported claim about equal capacity, efficiency, or refrigerant compatibility.''',
+    dialogue='''Jules|Farah, both proposals show five kilowatts. I put equal-size systems in my comparison sheet and moved straight to the two prices.
+Farah|Let's check five kilowatts of what. Proposal A labels it [[cooling capacity::Cooling capacity identifies A's heat-removal output rating, not its electrical power input.]]. B uses a different quantity label even though its number and unit look the same.
+Jules|B says electrical input. I treated kilowatts as though they always told us how much heat the system could remove from the room.
+Farah|[[Electrical input::Electrical input is the power required by the equipment, not the useful cooling output.]] is the power required by the equipment. Cooling capacity is heat-removal output under stated conditions, so these entries don't establish equal output.
+Jules|Could I divide A's five by B's five and report a performance ratio of one? They're both power figures, after all.
+Farah|Not for an [[efficiency::Efficiency comparison needs corresponding output and input information on a consistent basis.]] comparison. You would be combining one system's output with another system's input, rather than corresponding quantities for each proposed arrangement.
+Jules|Then asking each supplier to confirm five kilowatts again wouldn't fix it. We need both quantity labels and the missing values for each proposal.
+Farah|Yes, request each full [[data sheet::Data sheet supplies product characteristics beyond the two incomplete proposal entries.]], with the proposed components and rating conditions. A short headline doesn't establish performance across every operating situation.
+Jules|I haven't received the indoor and outdoor pairings. Is a brochure for the outdoor unit enough if the installer chooses the indoor one later?
+Farah|No. The [[equipment combination::Equipment combination identifies the components whose joint specifications are relevant to the proposal.]] matters to the stated performance. We need to know which components the proposal actually pairs, not assume any indoor unit gives the same result.
+Jules|One summary includes a refrigerant name. Could I use that as evidence that the two proposals are interchangeable replacements?
+Farah|A [[refrigerant designation::Refrigerant designation identifies the specified fluid but does not establish system equivalence or replacement approval.]] identifies a fluid or blend, not an equivalent system. It must be checked against the actual equipment specification and doesn't settle all compatibility requirements.
+Jules|I don't want the supplier to read our question as permission to use another fluid. We're asking for information, not changing the specified equipment.
+Farah|Then keep any [[substitution review::Substitution review evaluates a proposed replacement and is not bypassed by a familiar refrigerant name.]] separate and explicitly pending. A familiar refrigerant name doesn't bypass that process or authorize refrigerant handling.
+Jules|The sheet also has a refrigerant amount. Is that a different statement of capacity, or is it simply another product detail?
+Farah|[[Refrigerant charge::Refrigerant charge concerns the quantity of working fluid, distinct from capacity and refrigerant identity.]] is the quantity of refrigerant specified or present. Keep the type and amount separate from cooling capacity and electrical input.
+Jules|I see four different things now: fluid identity, fluid quantity, output power, and input power. The matching fives only concern two of those.
+Farah|Right. We need a [[like-for-like comparison::Like-for-like comparison uses matching quantities and conditions instead of the superficially matching five-kilowatt figures.]] using corresponding ratings and conditions. None of the missing values should be filled with the figure from the other proposal.
+Jules|I'll remove equal-size and ask for complete data sheets, actual pairings, and both output and input values with their conditions.
+Farah|That improves the [[selection basis::Selection basis is the supporting information still needed before an equipment choice can be approved.]]. It doesn't approve either option yet, but it gives the technical review the information needed to make a meaningful comparison.''',
+    rehearsal=["Read turns 1-10. Attach cooling capacity to A and electrical input to B every time five kilowatts is mentioned.","Switch roles for turns 11-20. Keep refrigerant designation and charge separate, and make the missing pairing explicit.","Complete and check the comparison exchange. Request complete data without approving equipment or calculating across different proposals."],
     transfer_title='Keep input and output apart',
     transfer_setup='Complete the proposal comparison. Preserve the different quantity labels and the missing approval.',
     transfer='''Client: "A gives 5 kilowatts of cooling ___." | capacity | Capacity identifies the cooling-output quantity stated in proposal A.
@@ -457,30 +461,31 @@ Mentions | Records what a document says without upgrading it to a verified diagn
 Does not establish a link | Keeps a plausible history item from becoming a proven cause.
 Recorded as | Attributes an observation to the supplied note.
 Remains open | Preserves an unresolved matter without inventing an outcome.''',
-    d='''Which summary preserves chronology? | Water near AH-6 yesterday at 15:00; floor dry today; source unidentified | The floor has always been dry | The drain pan failed at 15:00 and was repaired | The visit disproves the client's account | The summary combines the different times while retaining the unresolved source.
+    d='''Which summary preserves chronology? | Water near AH-6 yesterday at 15:00; floor dry today; source unidentified | Water from AH-6 yesterday at 15:00; floor dry today | Water seen by the service team today; earlier pan concern | Drain-pan failure yesterday; repair inferred from today's dry floor | The accurate summary retains near AH-6, yesterday's 15:00 report, today's dry floor, and the unidentified source without changing attribution or inventing cause.
 Which wording improperly asserts origin? | Water came from AH-6 | Water was reported near AH-6 | The nearby floor was dry today | The source was not identified | The supplied report gives proximity, not proof that AH-6 produced the water.
 How should the drain-pan entry be handled? | Retain it as history with no established causal link | Treat it as the final diagnosis | Delete it because the floor is dry | Relabel it as a completed repair | Relevant history can be preserved without asserting a cause or resolution.
 What can the dry-floor note establish about repair? | No completed repair by itself | Every possible leak was fixed | The earlier concern was resolved | A drainage component was replaced | A surface observation is not evidence that corrective work occurred.''',
-    dialogue='''Elena | I reported water near AH-6 at three yesterday afternoon. Today's note says the floor is dry, and I am worried that my report will be treated as mistaken.
+    dialogue='''Elena | Kai, yesterday I reported water near AH-6 at three. Today's note says dry floor. I don't want my report dropped because the visit happened later.
 Kai | We can preserve the [[chronology::Chronology keeps yesterday's report and today's observation separate instead of treating them as simultaneous claims.]]. Your account and today's note refer to different times, so a dry floor now does not cancel the water you reported yesterday.
-Elena | Please keep three o'clock with yesterday's report. Otherwise the summary may make it sound as though the service team saw water during today's visit.
+Elena | Please keep yesterday and fifteen hundred attached to my account. Otherwise it could sound as though the technician saw water on today's visit.
 Kai | I will. The [[visit note::Visit note is the source for today's dry-floor observation, not yesterday's client report.]] records today's nearby floor as dry and says the source was not identified. That is a separate observation with its own limits.
-Elena | There is an older entry about the drain pan. Someone suggested we could simply name that as the explanation for the water.
+Elena | The earlier service log mentions a drain-pan concern. Someone suggested putting that as the cause so the record has an explanation.
 Kai | We should retain the [[drain-pan concern::Drain-pan concern is historical information, not a confirmed cause of the later water report.]] as history, but the entry does not establish a connection to yesterday's report. It is not enough to name the pan as the proven source.
-Elena | The wording near the air handler matters too, then. I saw the water near it; I did not identify the point it came from.
+Elena | I only know the water was near the air handler. Writing that it came from AH-6 would be more specific than what I observed.
 Kai | Exactly. That is an [[evidence boundary::Evidence boundary limits the account to observed location rather than asserting origin from AH-6.]]. Changing near AH-6 to from AH-6 would turn a location description into an unsupported statement about origin.
-Elena | Would calling the old entry a drain-pan failure make the record stronger, or would that change what the earlier person actually wrote?
+Elena | The old wording is concern, not failure. Could you retain that distinction rather than turning a historical note into a confirmed broken part?
 Kai | It would change it. The [[historical entry::Historical entry must retain its recorded status as a concern rather than being upgraded to confirmed failure.]] says concern, not confirmed failure. We need to preserve that distinction even if the topic appears relevant to the current question.
-Elena | Understood. I would rather have a precise unresolved record than a confident explanation that nobody has actually established.
+Elena | Then we'll have an unresolved source, but an accurate record. I don't want a neat explanation that neither the client report nor visit note establishes.
 Kai | Then the [[source identification::Source identification remains unresolved because today's note explicitly says the source was not identified.]] stays open. We can report the facts and the earlier concern without claiming that the relationship between them has been verified.
-Elena | Does the dry floor tell us a repair must have worked overnight? I do not have a record of corrective work, but someone asked that.
+Elena | Does dry today imply someone repaired it overnight? I haven't supplied any record of work between my report and the visit.
 Kai | No. The [[repair status::Repair status cannot be inferred from a later dry surface when no corrective work is documented.]] cannot be inferred from the dry-floor observation. Nothing in these records establishes that a repair was completed between your report and the visit.
-Elena | We also should not call it a recurring problem unless there are actual records showing repeated events, correct? One older concern is not the same thing.
+Elena | One older concern also doesn't establish a pattern of repeated water events. We shouldn't attach a frequency to the problem without the history.
 Kai | Correct. A [[recurrence history::Recurrence history requires evidence of repeated events, not merely an earlier concern about a component.]] would need supporting information. We should not invent a frequency or treat every earlier note as another occurrence of the same water event.
-Elena | Please give me a short summary that includes my report, today's visit, and the older log without mixing the three together.
+Elena | Please combine the three records without losing their sources: my account, today's visit note, and the earlier drain-pan entry.
 Kai | Client reported water near AH-6 at 15:00 yesterday. Today's floor was dry; source unidentified. Earlier log notes a drain-pan concern, with no established [[causal link::Causal link is the missing connection between the earlier concern and the reported water.]] to the water.
-Elena | That is accurate. It does not dismiss my observation, promise the issue is resolved, or make the earlier note say more than it does.
+Elena | That's the chronology I need. It neither dismisses yesterday's observation nor treats today's dry floor as proof that the source has been fixed.
 Kai | I will use that [[record reconciliation::Record reconciliation combines the three sources while preserving time, attribution, and uncertainty.]] in the handoff. The next assessment can address the source question with the original accounts intact, rather than starting from an assumed diagnosis.''',
+    rehearsal=["Read turns 1-10. Stress yesterday at fifteen hundred, today dry, and earlier concern as three separate records.","Switch roles for turns 11-20. Keep near distinct from from, and dry distinct from repaired.","Complete and check the summary. Read the source status without treating historical concern as a confirmed cause."],
     transfer_title='Preserve the three records',
     transfer_setup='Complete the service summary. Keep yesterday, today, and the earlier concern distinct.',
     transfer='''Client: "Water was reported near AH-6 at ___ yesterday." | 15:00 | The time belongs to Elena's report on the previous day.
@@ -494,7 +499,7 @@ BOOK['units'].append(unit(
     title='Discussing refrigeration alarms and temperature records',
     scene='An alarm, a display value, and missing product data',
     skill='Report an alarm chronology accurately, distinguish cabinet and product information, and route a food-safety question to the responsible lead.',
-    brief='Cafe manager Noah discusses a refrigeration record with technician Imani. A cabinet display recorded 8 degrees Celsius at 06:10. Product temperatures are not supplied. An alarm-history entry and a scheduled-defrost entry have the same time, but event cause and duration are unconfirmed. Noah asks whether the food is safe. The responsible food-safety lead must decide under the site procedures. The display value and coincident entries do not authorize food release or establish a harmless defrost event.',
+    brief='Cafe manager Noah discusses a refrigeration record with technician Imani. A cabinet display recorded 8 degrees Celsius at 06:10. Product temperatures are not supplied. An alarm-history entry and a scheduled-defrost entry have the same time, but event cause and duration are unconfirmed. Noah has already alerted the responsible food-safety lead under the site procedures; this discussion occurs alongside that escalation and does not delay protective action. He asks how the records relate to the food-safety question. The display value and coincident entries do not authorize food release or establish a harmless defrost event.',
     cast='Noah | Cafe manager\nImani | Refrigeration technician',
     culture=('Give the record, not an improvised release decision', 'Operational pressure can turn a request for information into a request for reassurance. Identify exactly what the record contains and what is missing. Refer the product decision to the responsible food-safety lead while preserving the technical event as unresolved.'),
     a='''What was recorded at 06:10? | A cabinet display value of 8 degrees Celsius | Verified temperatures for every food item | A confirmed harmless alarm cause | The end of a measured exposure period | The record supplies a cabinet display value, not product temperatures or duration.
@@ -549,29 +554,30 @@ Must decide under | Names both the responsible role and the governing site proce
 Would not itself | Limits what an alarm-status change can establish.
 Separate from | Keeps equipment assessment and product disposition as distinct questions.''',
     d='''Which summary belongs in the escalation? | Display 8 degrees Celsius at 06:10; product data absent; cause and duration unconfirmed | Food definitely safe because defrost was scheduled | Every product was measured at 8 degrees | Alarm lasted only until 06:11 | The summary preserves the actual value and all material information limits.
-Why is defrost caused it unsupported? | The shared timestamp does not establish causation | Defrost can never appear in a schedule | The display has no number | Product temperatures are all confirmed | Temporal coincidence alone does not prove the explanation for the alarm.
+Why is defrost caused it unsupported? | The shared timestamp does not establish causation | A scheduled entry proves the entire cycle completed normally | A timestamp establishes both start and finish | A defrost entry establishes every product's exposure history | Coincident entries show a shared recorded time, not a verified cause, completed cycle, duration, or food-temperature history.
 Who should receive the food-release question? | The responsible food-safety lead using site procedures | Whoever recognizes the cabinet brand | The person who wants service to resume fastest | The alarm display as sole authority | Product decisions require the assigned responsible process rather than an improvised technical assurance.
 Which statement improperly fills a data gap? | The food was warm for only one minute | The display value was recorded at 06:10 | Product temperatures were not supplied | The duration remains unconfirmed | No event duration or product exposure period is established by the record.''',
-    dialogue='''Noah | The cabinet display recorded eight degrees at 06:10, and there is an alarm entry. We open soon; can you tell me whether the food is safe?
-Imani | I cannot make that release decision from the [[display value::Display value is equipment information and does not supply the missing product temperatures or exposure history.]] alone. We need to keep the equipment record separate from the actual product information.
-Noah | The value is in Celsius. I have not been given any temperatures for the food itself, only the number from the cabinet display.
-Imani | Then [[product temperature::Product temperature concerns the food itself and is absent from the information supplied.]] is a missing piece of information. The display record must not be rewritten as though every item was measured at eight degrees.
-Noah | The alarm history and the scheduled-defrost entry both show 06:10. Could that mean the alarm was simply part of a harmless defrost period?
-Imani | The [[timestamp::Timestamp establishes the recorded time shared by the entries, not why the alarm occurred.]] tells us the entries coincide, but it does not establish that defrost caused the alarm or that the event was harmless.
-Noah | We do not have the length of the event either. The record gives that one time, not a confirmed start and finish.
-Imani | Then the [[event duration::Event duration remains unknown because one timestamp does not establish a complete interval.]] remains unconfirmed. We should not turn 06:10 into a one-minute event or another guessed exposure period.
-Noah | I understand. I need to give our food-safety lead the facts now, rather than asking you to infer a release decision from the equipment screen.
-Imani | Yes. The [[food-safety lead::Food-safety lead is the assigned decision-maker for product safety under the site's procedures.]] must decide under your site procedures. I can help describe the technical records accurately, but this conversation does not authorize serving the food.
-Noah | Please help me separate what we know from what we are only wondering about. I do not want the scheduled entry to become a diagnosis in the handoff.
-Imani | We know there is a [[scheduled defrost::Scheduled defrost is a recorded event sharing the time, not a proven explanation for the alarm.]] entry at the same time as the alarm. The causal relationship is unconfirmed, and product-temperature information has not been supplied.
-Noah | Even if somebody later tells us the alarm is no longer showing, that would not by itself settle what happened to the products earlier, would it?
-Imani | Correct. [[Alarm clearance::Alarm clearance concerns equipment alarm status and does not establish product safety or past exposure.]] would not establish the products' temperature history or make a release decision. The equipment status and the food decision remain different matters.
-Noah | I will not invent a holding period or tell the staff everything is fine because the entries share a time. The lead needs the unresolved points.
-Imani | Exactly. The [[exposure history::Exposure history describes conditions experienced by the products over time, which these isolated records do not establish.]] is not established here. Keep that gap visible along with the unknown event duration and cause, rather than substituting a reassuring guess.
-Noah | Here is my summary: display eight degrees Celsius at 06:10; no product readings; alarm and defrost entries coincide; cause and duration unconfirmed.
-Imani | That is an accurate [[escalation summary::Escalation summary passes the actual records and missing information to the responsible lead without authorizing release.]]. Send it through the site process to the responsible lead, and keep the technical cause question open separately.
-Noah | I will do that. Any decision about using, retaining, or otherwise handling the products will come from the responsible process, not this call.
-Imani | Yes. [[Product disposition::Product disposition is the responsible decision about the food, distinct from interpreting the equipment records.]] must follow that process. We have clarified the information for the decision-maker; we have not declared the food safe or resolved the equipment event.''',
+    dialogue='''Noah|Imani, we've alerted our food-safety lead and aren't treating this call as clearance to serve the affected food. Can you help explain the cabinet record?
+Imani|Yes. The [[display value::Display value is equipment information and does not supply the missing product temperatures or exposure history.]] is eight degrees Celsius at 06:10. It describes the equipment record, not a verified temperature for every stored item.
+Noah|That's all I've been given for temperature: the cabinet display. There are no food readings in the information I'm sending to the lead.
+Imani|Then [[product temperature::Product temperature concerns the food itself and is absent from the information supplied.]] is missing. Keep that gap explicit; don't copy the display number into a field that would imply the actual food was measured.
+Noah|The alarm history and the scheduled-defrost entry both say 06:10. Could I describe the alarm as caused by defrost?
+Imani|The shared [[timestamp::Timestamp establishes the recorded time shared by the entries, not why the alarm occurred.]] only tells us the entries coincide. It doesn't establish the cause, prove the event was harmless, or determine what happened to the products.
+Noah|The owner asked how long it lasted. There's only that one recorded time in this extract, with no confirmed ending time.
+Imani|Then [[event duration::Event duration remains unknown because one timestamp does not establish a complete interval.]] is unconfirmed. A timestamp doesn't mean a one-minute event, and we shouldn't invent an interval to make the report look complete.
+Noah|I'll keep the lead updated with those gaps. Our opening time is close, but the technical call isn't a substitute for the product decision.
+Imani|Correct. The [[food-safety lead::Food-safety lead is the assigned decision-maker for product safety under the site's procedures.]] must decide under your site procedures. Follow that process while the equipment information is clarified; don't wait for a reassuring guess from the display.
+Noah|Please distinguish the scheduled item from the actual explanation. I want the handoff to say what the log contains without implying we've diagnosed the event.
+Imani|It contains a [[scheduled defrost::Scheduled defrost is a recorded event sharing the time, not a proven explanation for the alarm.]] entry at the same recorded time as the alarm. That association needs assessment; it isn't yet a confirmed causal explanation.
+Noah|Suppose a later update says the alarm has disappeared. Would that alone answer whether the affected stock can be used?
+Imani|No. [[Alarm clearance::Alarm clearance concerns equipment alarm status and does not establish product safety or past exposure.]] describes alarm status, not the products' earlier conditions. It doesn't replace the responsible food-safety decision or establish an acceptable exposure history.
+Noah|So I should leave the earlier product conditions unresolved, rather than assume that a cleared display would make the whole episode irrelevant.
+Imani|Exactly. The [[exposure history::Exposure history describes conditions experienced by the products over time, which these isolated records do not establish.]] isn't established by this extract. Keep the missing product data, duration, and cause visible alongside the known display reading.
+Noah|My message says display eight Celsius at 06:10; no product readings supplied; alarm and defrost entries coincide; duration and cause unconfirmed.
+Imani|That's a useful [[escalation summary::Escalation summary passes the actual records and missing information to the responsible lead without authorizing release.]]. Send any relevant updates through the site process as they become available, keeping the product question separate from the equipment diagnosis.
+Noah|The lead will handle the food decision under our procedures. I'll preserve the technical record and won't describe this call as approval to resume using the stock.
+Imani|Right. [[Product disposition::Product disposition is the responsible decision about the food, distinct from interpreting the equipment records.]] belongs to that responsible process. We have clarified the supplied evidence, not declared the food safe or resolved the equipment event.''',
+    rehearsal=["Read turns 1-10. Keep the immediate site escalation in place while separating display temperature, product data, and event duration.","Switch roles for turns 11-20. Contrast a scheduled-defrost entry with established cause, and alarm clearance with product disposition.","Complete and check the handoff. Preserve the missing data and responsible lead; do not add a food-release claim."],
     transfer_title='Escalate the record without a safety claim',
     transfer_setup='Complete the handoff to the responsible lead. Preserve the display record and the missing product information.',
     transfer='''Manager: "The display recorded ___ degrees Celsius." | 8 | Eight is the cabinet display value, not a verified product temperature.
@@ -643,26 +649,27 @@ With its consequences | Requires the proposal to show related effects, not merel
 Which item must not disappear from review? | Service access | A guessed refrigerant change | An invented system failure | A promised unchanged date | Service access is explicitly one of the unassessed matters in the brief.
 What does requesting a proposal authorize here? | Assessment of the change, not its installation | Immediate relocation | Automatic acceptance of any price | Waiving ceiling restoration | A request for review does not equal agreement to carry out the proposed work.
 Which phrase overstates certainty? | We can move it with no cost or timing effect | We need to assess the ductwork | The conflict is visual | You can retain the current layout | Cost and timing effects remain unknown, so a no-impact promise is unsupported.''',
-    dialogue='''Priya | The supply grille sits awkwardly beside the pendant light. I would like it moved so the ceiling looks more deliberate. Is that a small change?
+    dialogue='''Priya | Daniel, the supply grille looks awkward beside the pendant light. I'd like it moved. Is the small distance on the ceiling a small change to the work?
 Daniel | It is a [[design preference::Design preference identifies the appearance concern without claiming a performance fault.]] we can record, but the visible size of the move does not tell us the amount of work involved above the ceiling.
-Priya | I am not reporting a cooling problem. It is the way the grille and light look together that bothers me in the current arrangement.
+Priya | Yes, it's an appearance issue. I'm not reporting poor cooling or saying the grille has failed; I want the light and grille to sit better together.
 Daniel | Understood. We should call it a [[visual conflict::Visual conflict describes the relationship in appearance between the grille and pendant light.]], not an established performance defect. That keeps the reason for the request accurate when it reaches the design team.
-Priya | What would need review beyond drawing the grille in a different position? I want to understand the practical issues before choosing the next step.
+Priya | What would need assessment beyond marking a new position on the ceiling plan? I hadn't thought about the connection above it.
 Daniel | The [[ductwork::Ductwork is one of the hidden systems whose changes have not been assessed for the proposed move.]] has not been assessed, nor have ceiling restoration, service access, price, or timing. A revised drawing must be supported by review of those related effects.
-Priya | I had only thought about the visible ceiling opening. The work needed to restore the original position would need a clear scope too.
+Priya | Would restoring the old ceiling opening be part of that review too? I don't want a price that leaves the finishing work unexplained.
 Daniel | Yes. [[Ceiling restoration::Ceiling restoration concerns reinstating affected finishes and remains part of the unassessed change scope.]] must be assessed rather than treated as automatically included or unnecessary. We should not give you a price for only part of the actual change.
-Priya | And access above the ceiling cannot simply be ignored because the new position looks better from the room below, correct?
+Priya | Can we also check service access? Moving something to a neater position wouldn't help if it makes the relevant services hard to reach.
 Daniel | Correct. The [[access provision::Access provision concerns how the relevant services remain reachable after a proposed layout change.]] needs review with the other requirements. Appearance is important, but it does not by itself establish whether a revised arrangement is technically acceptable.
-Priya | What can I decide today without having to invent the new technical solution myself? I would prefer a clear choice about how to proceed.
+Priya | What decision can I make now? I don't have the information to design the duct route or choose a technically acceptable new position myself.
 Daniel | You can retain the current [[reviewed layout::Reviewed layout is the existing arrangement available as the first stated option.]], or request a coordinated change proposal. Those are the two options at this stage; neither requires you to specify a duct route.
-Priya | I would like the proposal, provided that asking for it does not mean I have already approved installation or accepted an unknown extra price.
+Priya | I'd like a proposal. Please don't treat that request as acceptance of an unknown extra cost or as permission to start the move.
 Daniel | It does not. A [[change proposal::Change proposal is the requested assessed alternative, not authorization to install or acceptance of its terms.]] will define the alternative and its consequences for review. Requesting it is separate from accepting the resulting work and commercial terms.
-Priya | Can you guarantee the original finish date while that is being assessed? The office move-in planning depends on the overall schedule.
+Priya | Can you keep the original finish date? The office move-in depends on it, though I realize the schedule effect hasn't been assessed yet.
 Daniel | I cannot confirm that yet. The [[schedule impact::Schedule impact remains unassessed, so unchanged completion cannot be guaranteed.]] is one of the open questions, along with cost. Your timing concern should be recorded without being mistaken for a promise that no effect exists.
-Priya | Please also avoid describing the move as free or minor in the meeting notes. I want the assessment to be clear before anyone makes that assumption.
+Priya | Then please record timing as a concern, not as your guarantee. And avoid calling the move free or minor before the full scope is known.
 Daniel | Agreed. The [[cost impact::Cost impact must be assessed with the defined work rather than assumed absent because the visible move seems small.]] will need a defined scope. We will include ductwork, access, restoration, and timing in the coordinated review rather than price only the visible grille.
-Priya | Then record that I am requesting a proposal, not directing the team to move the grille now. I will review the actual consequences before agreeing.
+Priya | That's my decision: assess a coordinated proposal and return the consequences for review. I'm not instructing the team to relocate the grille now.
 Daniel | That is the [[decision record::Decision record preserves the selected assessment step without turning it into an instruction to proceed.]]: coordinated proposal requested; relocation not authorized. The current reviewed arrangement is not replaced by an assumed new position during this conversation.''',
+    rehearsal=["Read turns 1-10. Name the visual issue and each unassessed effect: ductwork, restoration, access, cost, and timing.","Switch roles for turns 11-20. Stress retain the layout or request a proposal, with no approval to relocate.","Complete and check the choice exchange. Keep a request for assessment separate from agreed work and an unchanged finish date."],
     transfer_title='Offer two clear paths',
     transfer_setup='Complete the choice discussion. Keep the existing layout and the request for assessment separate from installation approval.',
     transfer='''Coordinator: "You can retain the reviewed ___." | layout | Layout refers to the existing reviewed arrangement available as the first option.
@@ -733,27 +740,28 @@ Remain visible | Keeps unfinished items in the handover instead of hiding them i
     d='''Which summary preserves all responsibilities? | Nia corrects documents and updates Friday; seasonal-check owner and date remain open | Nia has booked every check for Friday | Report receipt proves full performance | The client automatically owns the seasonal check | The summary keeps Nia's accepted task distinct from the unresolved scheduling responsibility.
 What does Friday identify? | Nia's promised update | A confirmed seasonal test date | A warranty start date supplied by this case | Completion of every open item | The only Friday commitment is communication about follow-up.
 Which inference is unsupported? | Correcting the maintenance sheet completes the seasonal check | The sheet names the wrong model | The report was received | Scheduling ownership is unconfirmed | A document correction is not performance of the deferred verification.
-What should the handover keep open? | Correct model guidance, deferred verification, scheduling owner, and date | Only a general statement saying all complete | A guessed successful test result | An automatic warranty extension | The remaining matters must be separately visible rather than replaced by an unsupported closure claim.''',
-    dialogue='''Ben | I have received the commissioning report, but it lists a seasonal check as deferred. The maintenance sheet also seems to name a different model from our system.
+What should the handover keep open? | Correct model guidance, deferred verification, scheduling owner, and date | Only the leaflet, because receiving the report completes verification | Only a date, because Nia's document task assigns her the seasonal check | A Friday test appointment inferred from the update commitment | The remaining items are separate; receipt, a document task, and an update commitment do not complete verification, assign scheduling ownership, or book a check.''',
+    dialogue='''Ben | Nia, the commissioning report arrived, but it lists a deferred seasonal check. The maintenance sheet also names a different model from our actual system.
 Nia | Those are two distinct handover matters. I accept the [[document mismatch::Document mismatch identifies the wrong-model maintenance sheet as a correction task.]] on the maintenance sheet and will take responsibility for correcting that information.
-Ben | Thank you. Before we close the handover discussion, I also need to know whether receiving the report means the remaining seasonal check is treated as complete.
+Ben | Thanks for taking the document correction. I want to separate that from the outstanding check rather than mark everything complete on receipt of the report.
 Nia | No. The [[deferred check::Deferred check remains outstanding even though its existence is recorded in the delivered report.]] is still outstanding. The report records its status; delivery of that report does not carry out the verification or supply its result.
-Ben | Can you confirm who is arranging that check and when it will take place? I cannot find a booked date in the information I received.
+Ben | Who is arranging the seasonal check? I also can't find a booked date, so both responsibility and scheduling seem unresolved.
 Nia | The [[scheduling owner::Scheduling owner has not been confirmed, so the arranging responsibility remains open.]] has not been confirmed, and no date is booked. I should not imply that my document-correction task resolves either of those questions.
-Ben | That distinction matters. I might otherwise assume that because you own the wrong-sheet correction, you also own arranging all the remaining technical work.
+Ben | I nearly assigned that to you because you're handling the wrong sheet. That would add a responsibility you haven't actually accepted.
 Nia | Exactly. We need to preserve the [[ownership gap::Ownership gap names the unassigned scheduling responsibility rather than silently giving it to Nia.]] for the seasonal check. It needs an explicit assignment, not an assumption based on who is speaking at handover.
-Ben | What commitment can you give me today about the documents, so I have a clear next contact point even while the other responsibility remains open?
+Ben | What date can I put down for the next update? I need a communication commitment even while the technical appointment remains unbooked.
 Nia | I will correct the document information and make an [[update commitment::Update commitment is Nia's promise to communicate on Friday, not a promised technical-check result.]] for Friday. That gives you a communication date without presenting an unbooked seasonal check as scheduled.
-Ben | Please make sure the corrected maintenance sheet is for the actual model. A similar-looking product document would leave us with the same uncertainty.
+Ben | Please match the corrected sheet to the actual model. A similar product leaflet would still leave the maintenance information uncertain.
 Nia | Agreed. We need [[model-specific guidance::Model-specific guidance links the corrected maintenance information to the actual equipment rather than a similar model.]] for the actual equipment. Correcting the sheet is a defined records task; it is not evidence that the seasonal verification has occurred.
-Ben | Would it be accurate to say the system has passed every operating condition because the commissioning report is now in our hands?
+Ben | Would report received support a statement that the system has passed every operating condition? The deferred check suggests that would be too broad.
 Nia | No. We have no overall [[performance result::Performance result cannot be generalized to all conditions when a seasonal check is still deferred.]] to add from these facts. The deferred item remains part of the record, and we should not invent a successful result for it.
-Ben | I also want to avoid changing the warranty language in our summary. We should keep the actual warranty terms separate from this follow-up discussion.
+Ben | I also want the summary to preserve the actual warranty terms, without implying the open check creates a new warranty promise.
 Nia | Correct. The [[warranty terms::Warranty terms retain their actual meaning and are not revised by the document update or deferred-check discussion.]] are not changed by this conversation. Neither an update date nor an outstanding check creates a new warranty promise here.
-Ben | Let me read the responsibilities back: you own the document correction and Friday update. The seasonal check is unbooked, and its scheduling owner is still unconfirmed.
+Ben | Let me check the responsibilities: you own document correction and the Friday update. The seasonal-check owner and date are both still unconfirmed.
 Nia | That [[responsibility readback::Responsibility readback distinguishes the assigned document task from the unassigned seasonal scheduling task.]] is accurate. It makes the commitment and both remaining scheduling questions visible instead of assigning the whole handover to one person by implication.
-Ben | Then I will record receipt of the report without marking every item complete. Friday will be listed as an update, not a test appointment.
+Ben | I'll acknowledge receipt and keep the unresolved items separate. Friday goes in the update column, not the seasonal-test appointment column.
 Nia | Thank you. The [[handover register::Handover register should record receipt alongside corrections and outstanding verification without claiming full completion.]] should preserve the report receipt, wrong-model correction, deferred check, and open scheduling responsibility and date. That is a clear close to today's conversation, with the unfinished work still visible.''',
+    rehearsal=["Read turns 1-10. Separate document correction from seasonal-check scheduling, stating both the owner gap and the missing date.","Switch roles for turns 11-20. Keep Friday as an update and report receipt separate from a completed performance check.","Complete and check the responsibility exchange. Name Nia only for the task she accepted; do not silently assign the seasonal check."],
     transfer_title='Assign only the responsibility actually accepted',
     transfer_setup='Complete the handover readback. Keep the document owner, update date, and unassigned seasonal-check task distinct.',
     transfer='''Client: "___ owns document correction." | Nia | Nia accepts the correction task, not confirmed ownership of arranging the seasonal check.

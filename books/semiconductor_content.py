@@ -81,15 +81,15 @@ Lot | A tracking group, not necessarily one die or one finished package.
 Next | Must follow the approved route and current restrictions.
 Ready | Needs a named next step and its prerequisites.
 Released | Means a specific authorized status change, not merely elapsed time.''',
-    d='''Which customer update is accurate? | L24 remains in wafer fabrication at M2, on hold for inspection review; packaging has not started. | L24 is packaged because BEOL contains the word back. | L24 is ready to ship once the current meeting ends. | All wafers in the fab have completed final test. | The update preserves the actual stage and hold without inventing later progress.
+    d='''Which customer update is accurate? | L24 remains in wafer fabrication at M2, on hold for inspection review; packaging has not started. | L24 has completed the interconnect stack and awaits wafer sort. | L24 is in package assembly with final electrical test pending. | L24 is at M2 and can move while the inspection report is being completed. | M2 identifies the current fabrication work, not completion of the stack or assembly. The hold still prevents an unapproved next move.
 Why expand BEOL for the coordinator? | Different teams can use back-end for different parts of the manufacturing chain. | BEOL always means package assembly in every organization. | Acronyms eliminate the need to name an operation. | The lot ID alone reveals its full status. | Expanding the term prevents a cross-team ambiguity that already caused an inaccurate update.
 What is the appropriate next-step wording? | The lot awaits inspection review and authorized disposition under its route. | Move the lot because M2 is usually near completion. | Skip the review because packaging has not started. | Promise shipment before checking the remaining flow. | The stated hold and route control what may happen next, not a generic assumption about progress.
-Which distinction is correct? | Wafer sort tests die on the wafer; package assembly integrates die into packages. | Wafer sort is another name for every packaging operation. | Dicing creates the entire interconnect stack. | Package assembly proves all earlier fabrication stages passed inspection. | The terms describe different activities and cannot be used as interchangeable progress labels.''',
+Which distinction is correct? | Wafer sort tests die on the wafer; package assembly integrates die into packages. | Wafer sort separates die mechanically; dicing classifies their electrical performance. | BEOL joins die to package substrates; package assembly forms on-wafer metal layers. | FEOL forms package connections; BEOL forms the active transistor devices. | Wafer sort is electrical testing, dicing is physical separation, FEOL principally forms devices, and BEOL forms on-wafer interconnects.''',
     dialogue='''Eric | I wrote that L24 is in packaging because the status says BEOL. The customer wants to know whether that means finished parts will be ready soon.
 Min | Here [[BEOL::BEOL refers to the on-wafer interconnect stage in this case, not to completed package assembly.]] means back end of line. We are building the interconnect structure on the wafer, so your update places the lot at a later stage than the record supports.
 Eric | That explains the confusion. The assembly team also calls its work back-end, so I assumed both groups meant the same stage.
 Min | Use [[wafer fabrication::Wafer fabrication locates the current work on the wafer before the package assembly stage described in the mistaken update.]] in the customer message, then name the actual operation. Expanding the term is especially useful when the reader does not share our process shorthand.
-Eric | The current entry refers to M2. I should identify that layer rather than give the impression that every interconnect level or every remaining operation is complete.
+Eric | I will name M2 in the update. Does that identify the current layer, rather than mean the full interconnect stack is finished?
 Min | Correct. M2 is the relevant [[metal layer::The metal layer identifies the specific interconnect level involved in the current operation.]]. A layer name locates the work, but it does not by itself tell you that inspection, disposition, or later stages have finished.
 Eric | Can you explain how that fits with the earlier device work? I need enough context to brief the customer without reciting every operation in the fab.
 Min | [[FEOL::FEOL principally forms active devices, distinct from the later on-wafer interconnect work now involving L24.]] principally forms the active devices, while later interconnect work connects them. The exact flow is technology-specific, so use our product route for the actual sequence and status.
@@ -99,18 +99,22 @@ Eric | Then the update should identify what must happen before the next move, no
 Min | Yes. We need [[disposition::Disposition is the authorized decision about how the lot may proceed after review, not an assumption based on its position in the flow.]] under the approved process. The review owner can explain the decision basis; we should not predict the outcome before that evidence is assessed.
 Eric | I will confirm the owner and preserve the lot reference. We should also keep the record connected to the individual wafers where the inspection information requires that detail.
 Min | Keep the [[traveler::The traveler connects the material with its operation history and required next steps, supporting traceable status communication.]] and relevant wafer IDs aligned with the update. Otherwise two teams may discuss different material while assuming they are referring to the same issue.
-Eric | After fabrication, the remaining route includes other work before a finished product can ship. We should not jump directly from an interconnect entry to a delivery promise.
+Eric | What later stages should I distinguish in the message? I need to explain why an M2 status does not yet give the customer a finished-product date.
 Min | Exactly. [[Wafer sort::Wafer sort is electrical testing of die on the wafer and is distinct from package assembly or shipment.]], dicing, assembly, and subsequent checks have their own place in the approved route. Their timing is not established by the M2 entry alone.
 Eric | I will correct the packaging statement now, before the customer plans around a stage the lot has not reached.
 Min | Say that [[package assembly::Package assembly is the later integration of die into packages, which has not started for L24.]] has not started for this lot. You can give a precise current status without inventing dates for the remaining operations.
 Eric | The revised message will locate L24 in wafer fabrication at M2, explain the inspection hold, and identify the next review. It will leave shipment timing uncommitted.
 Min | That reflects the [[process flow::The process flow connects the current stage and authorized next steps without collapsing fabrication, testing, and assembly into one label.]] accurately. The customer gets a clear explanation of progress and the pending decision instead of an optimistic interpretation of an abbreviation.''',
+    rehearsal=[
+        'Check the dialogue answers. Read Eric and Min aloud, expanding BEOL and FEOL when they appear.',
+        'Switch roles. Read turns 9-20 again, stressing the hold, required decision, and stage not yet started.',
+        'Complete the transfer and check its key. Read the corrected update without adding a shipping date.'],
     transfer_title='Name the stage before the date',
     transfer_setup='Lot N6 is forming on-wafer interconnects. It is on hold for inspection review. Package assembly has not started, and no shipping date is confirmed.',
-    transfer='''Coordinator: "The lot is still in wafer ___." | fabrication | Forming on-wafer interconnects belongs to wafer fabrication in this case.
-Engineer: "Its current restriction is a lot ___." | hold | The briefing explicitly states that the lot is on hold for review.
-Coordinator: "Package assembly has not ___." | started | The supplied facts say package assembly has not yet begun.
-Engineer: "The shipping date remains ___." | unconfirmed | No confirmed shipping date is supplied for the remaining process flow.'''))
+    transfer='''Coordinator: "I will correct the update: this on-wafer interconnect work is still ___." | BEOL | BEOL names the on-wafer interconnect stage, not package assembly.
+Engineer: "Keep the restriction visible too; the record still shows a ___." | lot hold | A lot hold restricts movement while the required review and decision remain open.
+Coordinator: "Then I should not tell the customer we have started ___." | package assembly | Package assembly is distinct from the current on-wafer work and has not begun here.
+Engineer: "Correct. Ask the review owner for the authorized ___ before discussing the next move." | disposition | Disposition is the authorized material decision, not a date inferred from the process stage.'''))
 
 BOOK['units'].append(unit(
     title='Lithography, Reticles, and Critical Dimensions',
@@ -171,20 +175,20 @@ Same recipe | Confirm the actual revision, not only the displayed name.
 Out of spec | Needs the applicable limit and a valid measurement basis.
 Adjust | Requires an authorized technical decision, not a language exercise inference.''',
     d='''Which report sentence is justified? | The means differ by 3 nm, but recipe and site changes limit comparability. | Exposure drift has been confirmed at exactly 3 nm. | Both datasets prove the same physical result because they use nanometers. | M2 is out of specification without any stated limit. | The sentence reports the arithmetic while preserving the unresolved measurement basis.
-Which comparison best helps investigate the apparent change? | Comparable measurements on identified sites using an agreed recipe basis | A different feature at an unspecified stage | A packaging thickness average with no layer reference | A guessed exposure correction with no review | Comparable measurement conditions help distinguish process behavior from measurement and sampling differences.
+Which comparison best helps investigate the apparent change? | Comparable measurements on identified sites using an agreed recipe basis | Repeating both datasets with their different original recipes and locations | Increasing sample counts while leaving recipe and site differences uncontrolled | Comparing the post-etch mean with a post-develop mean as though the stages were identical | An agreed measurement basis addresses the changed recipes and sampling. More data alone does not remove those differences, and different stages answer different questions.
 Why is post-etch important? | The result follows pattern transfer and does not isolate lithography alone. | It means no etch process has occurred. | It establishes that every cause is in the reticle. | It makes the sampling locations irrelevant. | The measurement stage affects interpretation because more than the exposure step contributes to the resulting feature.
-Which distinction is accurate? | CD concerns feature size; overlay concerns layer alignment. | CD and overlay are interchangeable labels for the same result. | A reticle revision is a unit of CD. | Pitch always equals every line's width. | Feature size and alignment describe different pattern properties and require distinct measurements.''',
+Which distinction is accurate? | CD concerns feature size; overlay concerns layer alignment. | CD measures layer alignment; overlay measures a line's width. | Pitch measures line-edge variation; line-edge roughness measures repeat distance. | Etch bias is the exposure energy; exposure dose is the post-etch dimensional change. | CD and overlay separate size from alignment. Pitch is repeat distance, roughness is edge variation, dose is exposure energy per area, and etch bias concerns dimensional transfer.''',
     dialogue='''Lina | The review slide says CD shifted, but it does not identify the layer or the measurement stage. I cannot tell which process team should investigate first.
 Theo | The records identify [[post-etch::Post-etch locates the measurement after pattern transfer, which matters when interpreting possible causes.]] M2 measurements. The two means are eighty-six and eighty-nine nanometers, so the reported numerical increase is three nanometers.
 Lina | That locates the result, but I still need to know whether the two measurements were obtained on a comparable basis before calling it a physical process shift.
 Theo | The [[measurement recipe::The measurement recipe defines settings and analysis that can affect the reported CD and differs between these datasets.]] changed between datasets. Both used CD-SEM, but sharing the instrument type does not mean their settings and analysis were identical.
 Lina | Were the same locations measured? A different selection across the wafer could also change the average without establishing the process explanation stated in the meeting.
 Theo | The [[sampling site::A sampling site is a selected measurement location; different site selections can affect the reported average.]] selection changed too. We need the location records alongside the recipes, rather than treating the two mean values as a controlled before-and-after comparison.
-Lina | Then I can report an apparent three-nanometer difference while making the comparability limitation explicit. I should not write that exposure drift has already been isolated.
+Lina | I will keep the three-nanometer difference and remove the exposure-drift conclusion. Can we show the changed recipe and sites beside the two means?
 Theo | Correct. The [[critical dimension::Critical dimension is the relevant feature size, but its reported change does not alone establish the physical cause.]] result is important, but the present comparison does not separate process behavior from measurement and sampling effects.
 Lina | Because this is after etch, the final feature can reflect both the earlier resist pattern and the transfer step. It is not a direct exposure-only measurement.
 Theo | Exactly. [[Etch bias::Etch bias concerns the dimensional change associated with pattern transfer and is one reason post-etch CD does not isolate exposure.]] is a separate consideration in the investigation. Naming it does not establish that etch caused this case, but it prevents an unjustified shortcut to lithography.
-Lina | Someone also asked whether the CD result proves an alignment problem. We should distinguish those metrics rather than let one technical term replace another.
+Lina | The review also asks whether this is an alignment problem. Can we clarify that separately? I do not want the CD figure copied into an overlay conclusion.
 Theo | [[Overlay::Overlay describes alignment between layers, whereas CD describes a feature dimension.]] concerns alignment between layers. It is not another name for feature width, so this CD comparison cannot be relabeled as an overlay finding.
 Lina | Our next request should identify the relevant feature, layer, stage, locations, and agreed measurement settings. Then the engineers can compare results with a traceable basis.
 Theo | Request comparable [[remeasurement::Remeasurement on an agreed basis can help determine whether the apparent difference persists under comparable conditions.]] through the approved process. Preserve the original datasets too, because their recipes and locations are part of the explanation for what was initially reported.
@@ -194,12 +198,16 @@ Lina | I will include the reticle revision in the context record as well. That g
 Theo | Good. The [[reticle::The reticle carries the lithographic pattern; identifying its revision provides context without proving it caused the observation.]] identity belongs with the layer history. Configuration details help evaluate hypotheses, but listing a component does not make it the cause.
 Lina | The revised slide will keep the two means and the three-nanometer difference, state the changed measurement basis, and leave the cause and specification assessment open.
 Theo | That protects [[pattern fidelity::Pattern fidelity concerns how well the produced pattern matches its intent; assessing it requires more than an unexplained mean difference.]] discussions from unsupported conclusions. We can plan the next evidence review without treating this comparison as permission to change exposure settings.''',
+    rehearsal=[
+        'Check the answers. Read 86 nm and 89 nm as complete spoken measurements.',
+        'Switch roles for turns 7-16. Stress apparent difference, post-etch, and the changed measurement basis.',
+        'Check and read the transfer twice. Keep feature size distinct from alignment.'],
     transfer_title='Same units, different measurement basis',
     transfer_setup='A layer has reported means of 120 and 124 nm after etch. Different measurement recipes and sampling sites were used. The cause is not established.',
-    transfer='''Engineer: "The apparent increase is ___ nm." | 4 | Subtracting 120 from 124 gives a four-nanometer numerical increase.
-Reviewer: "The measurements were taken after ___." | etch | The briefing explicitly identifies both values as post-etch measurements.
-Engineer: "The measurement recipes were ___." | different | The two datasets do not share the same stated measurement recipe.
-Reviewer: "The cause remains ___." | unconfirmed | Changed measurement and sampling conditions prevent a confirmed causal interpretation here.'''))
+    transfer='''Engineer: "Check that both reports refer to the same ___." | critical dimension | Critical dimension refers to feature size, not the settings or locations used to measure it.
+Reviewer: "Send the settings and analysis from each ___." | measurement recipe | The recipe defines the settings and analysis that differ between the datasets.
+Engineer: "I will attach a wafer map of both sets of ___." | sampling sites | Sampling sites identify the measurement locations, which also differed in this case.
+Reviewer: "Good. An alignment claim would need separate ___ evidence." | overlay | Overlay addresses alignment rather than the reported feature-size difference of four nanometers.'''))
 
 
 BOOK['units'].append(unit(
@@ -215,11 +223,11 @@ Which conclusion is premature? | The complete process window is validated. | The
     vocabulary='''deposition | Formation of a material film on a surface. | qualify a deposition step
 thin film | A material layer with a small controlled thickness. | characterize the thin film
 CVD | Chemical vapor deposition, forming a film through chemical reactions of vapor precursors. | evaluate CVD film properties
-PVD | Physical vapor deposition, transferring material through a physical vapor process. | review PVD performance
+PVD | Physical vapor deposition, forming a film from material vaporized by methods such as sputtering or evaporation. | review PVD performance
 ALD | Atomic layer deposition, using successive self-limiting surface reactions. | assess ALD conformality
 precursor | A starting substance used in a film-forming reaction. | qualify the precursor
 conformality | How consistently a film coats different surface orientations or features. | assess film conformality
-step coverage | Relative film coverage over a feature's steps or sidewalls. | evaluate step coverage
+step coverage | Film thickness on a specified feature relative to thickness on a reference surface. | evaluate step coverage
 film stress | Internal stress within a deposited film. | measure film stress
 thickness nonuniformity | Variation in film thickness under a defined metric. | report thickness nonuniformity
 etch selectivity | Relative removal rates of different materials in an etch process. | assess etch selectivity
@@ -227,7 +235,7 @@ anisotropy | Direction-dependent behavior, such as preferential vertical removal
 endpoint detection | Monitoring used to identify a process completion condition. | verify endpoint detection
 overetch | Additional etching beyond a defined clearing or endpoint condition. | assess overetch effects
 CMP | Chemical mechanical planarization, combining chemical and mechanical surface removal. | evaluate CMP compatibility
-slurry | A fluid mixture used in polishing or planarization. | qualify the CMP slurry
+slurry | A polishing fluid mixture supplying chemical action and often suspended abrasive particles in CMP. | qualify the CMP slurry
 dishing | Local depression of a material surface during planarization. | measure dishing
 erosion | Excess regional material removal during planarization. | assess erosion
 process window | A range of conditions meeting defined process requirements. | establish the process window
@@ -260,9 +268,9 @@ Corner | A defined edge or combination in the evaluation plan.
 Better | Name the response that improved and what was not assessed.
 Integrated | Requires consideration of connected process steps.
 Released | An authorization status, not a synonym for promising.''',
-    d='''Which summary preserves the evidence boundary? | The nominal-setting metric improved; the range and downstream effects remain untested. | The full process window is validated by the center result. | All etch and CMP outcomes improved by 40%. | Production release follows automatically from the lower metric. | The statement separates the observed response from the untested range and integration behavior.
+    d='''Which summary preserves the evidence boundary? | The nominal-setting metric improved; the range and downstream effects remain untested. | The metric improved at nominal, so the same reduction applies at the low and high settings. | A lower nonuniformity metric establishes improved film stress and conformality too. | The trial establishes the window, with etch and CMP review needed only after release. | The observed improvement concerns one response at one setting. Untested settings, other film properties, integration, and release remain separate questions.
 What is the relative reduction from 5% to 3%? | 40% | 2% | 60% | 3% | The decrease of two divided by the original five equals forty percent.
-Why review downstream etch and CMP? | A film change may alter later process behavior. | Deposition results never interact with later operations. | Lower nonuniformity proves all later steps are equivalent. | Their results can be assumed from the recipe name. | Connected process steps can create trade-offs not captured by one deposition response.
+Why review downstream etch and CMP? | A film change may alter later process behavior. | The deposition metric already establishes the etch selectivity. | An unchanged CMP recipe proves the new film polishes identically. | Lower thickness variation removes the need to assess other film properties. | A changed film can interact differently with later processes. A shared recipe or one improved response does not establish selectivity, polishing behavior, or all material properties.
 Which status should remain separate from trial success? | Recipe release | The reported nominal-setting value of 3% | The unchanged metric definition | The recorded original value of 5% | Recipe release is an authorized decision that has not occurred in this case.''',
     dialogue='''Yuki | The nominal-setting trial reduced our thickness-nonuniformity metric from five percent to three percent. The summary now says the full process window is validated, which seems too broad.
 Sam | It is too broad. A [[process window::A process window is a range satisfying defined requirements, not a single successful nominal setting.]] covers a range of conditions meeting defined requirements. We have one encouraging center-point result, not evidence for the entire proposed range.
@@ -270,7 +278,7 @@ Yuki | Both values use the same measurement definition, and lower is better for 
 Sam | Name [[thickness nonuniformity::Thickness nonuniformity is the specific response that improved; it does not stand for all film or integration properties.]] explicitly. Saying the process improved could imply that every relevant response was assessed, while the supplied result addresses only this defined metric.
 Yuki | The absolute decrease is two percentage points. Relative to the original five percent, the decrease is forty percent, not merely two percent.
 Sam | Keep that arithmetic tied to the [[nominal setting::The nominal setting is the only process condition tested, so the measured improvement must remain limited to it.]]. Neither way of expressing the improvement extends the evidence to settings that have not been run.
-Yuki | The proposed low and high settings are still untested. We need to avoid describing them as passed, but their absence also does not prove they would fail.
+Yuki | I will mark the low and high settings untested. What evidence does the approved plan require before we can make a claim about that range?
 Sam | Correct. Each planned [[corner condition::A corner condition is a defined limiting setting or combination that requires its own evidence in the evaluation plan.]] needs its own assessment under the approved plan. An untested condition is unresolved, not a favorable result or a demonstrated defect.
 Yuki | The deposition change may also affect other film characteristics. A lower thickness-variation metric does not tell us that stress, coverage, or later pattern transfer remained acceptable.
 Sam | That is an [[integration trade-off::An integration trade-off concerns benefits and consequences across related steps that a single improved deposition metric cannot settle.]] question. We need to assess the relevant responses and interactions rather than optimize one number in isolation from the product flow.
@@ -280,16 +288,20 @@ Yuki | The planarization team also needs the proposed film information. Their re
 Sam | State that [[CMP::CMP is chemical mechanical planarization, a downstream process whose compatibility with the changed film remains unassessed.]] compatibility remains open. The deposition result does not establish that planarization behavior, surface effects, or related requirements are unchanged.
 Yuki | We can identify the relevant responses in the evaluation plan without improvising operating settings during this review. The process owners should define the approved technical work.
 Sam | Yes. Capture each [[process interaction::A process interaction is a relationship between factors or steps that can change the overall result and needs explicit assessment.]] question and its owner. That makes the remaining work specific enough to schedule and review without treating the meeting as recipe authorization.
-Yuki | The recipe is still a trial revision. Production teams should not receive the summary as though the new settings were ready for routine use.
+Yuki | Please keep trial revision on the summary. Planning is asking about routine use, and I do not want this result mistaken for a production release.
 Sam | Keep [[recipe release::Recipe release is the controlled authorization for defined use, separate from a promising experimental result.]] separate from the experiment. A favorable metric can support the review, but the required scope and approvals still need to be completed.
 Yuki | I will revise the summary to report the center-point improvement, the unchanged metric basis, and the untested range. I will list the etch and planarization reviews as pending.
 Sam | That presents the [[deposition::Deposition is the film-forming step actually assessed; the statement should not imply the entire integrated flow was validated.]] result accurately. The team can recognize progress while seeing exactly what evidence is still needed before making a broader process claim.''',
+    rehearsal=[
+        'Check the answers. Read the opening six turns, distinguishing two percentage points from forty percent.',
+        'Switch roles. Read the etch and CMP exchanges while keeping both assessments pending.',
+        'Complete and check the transfer. Read nominal setting, process window, and release as separate claims.'],
     transfer_title='An improved metric with a limited range',
     transfer_setup='At one nominal setting, an unchanged nonuniformity metric falls from 8% to 6%. Lower is better. Edge settings and downstream etch remain untested; the recipe is not released.',
-    transfer='''Engineer: "The decrease is ___ percentage points." | 2 | Eight percent minus six percent is a two-percentage-point decrease.
-Reviewer: "The relative reduction is ___ percent." | 25 | Two divided by the original eight equals a twenty-five percent reduction.
-Engineer: "Only the ___ setting was tested." | nominal | The briefing limits the available result to the nominal setting.
-Reviewer: "The recipe still needs ___." | release | The recipe has not received release despite the favorable trial metric.'''))
+    transfer='''Engineer: "The metric fell from eight to six percent, but only at the ___." | nominal setting | The nominal setting is the single tested condition, not the full range.
+Reviewer: "Keep the low and high settings open; we have not established the ___." | process window | A process window requires evidence across the relevant range, which is missing here.
+Engineer: "I will also list the untested effect on the later etch as an ___." | integration question | The film change may affect a later step, so downstream compatibility remains an integration question.
+Reviewer: "And keep routine production use pending the authorized ___." | recipe release | A favorable trial result does not itself authorize the recipe for production use.'''))
 
 BOOK['units'].append(unit(
     title='Metrology, SPC, and Yield Learning',
@@ -351,17 +363,17 @@ In spec | An acceptance statement, not proof of statistical control.
 Caused | Stronger than followed or coincided with.''',
     d='''Which announcement is supported? | The pilot observed 92% versus 90% yield, with different product mixes and no causal conclusion. | The process change is proven to improve every product by two relative percent. | The pilot proves the process is statistically stable. | Different denominators make both observed percentages meaningless. | The counts support descriptive percentages, but the comparison does not isolate cause or establish stability.
 What is the approximate relative increase from 90% to 92%? | 2.22% | 2.00% | 20.00% | 92.00% | The two-point increase divided by the 90% starting value is approximately 2.22%.
-Which next analysis addresses the product-mix problem? | Separate comparable product groups and review consistent test bases. | Remove the reference denominator from the slide. | Rename the pilot a production lot. | Assume all products have identical yield without checking. | Stratification helps compare relevant groups rather than allowing product composition to drive the headline.
-Which statement distinguishes control and specification limits? | Control limits monitor behavior; specification limits define acceptance boundaries. | They are always identical and interchangeable. | A specification pass proves no special cause exists. | A control signal alone proves all material must be scrapped. | Their purposes differ, and investigation and disposition require the applicable evidence and procedures.''',
+Which next analysis addresses the product-mix problem? | Separate comparable product groups and review consistent test bases. | Pool both lots into one aggregate percentage and omit the product breakdown. | Equalize lot sample sizes while retaining their different product compositions. | Compare only the absolute pass counts without the tested populations. | Stratification examines comparable product groups. Equal sample sizes, pooled totals, or pass counts alone do not remove a difference in product composition.
+Which statement distinguishes control and specification limits? | Control limits monitor behavior; specification limits define acceptance boundaries. | Control limits are customer acceptance boundaries; specification limits summarize observed variation. | A process within its specification limits necessarily has stable statistical behavior. | A process within its control limits necessarily meets all product requirements. | Statistical stability and conformity are different questions. A stable process may miss specifications, and in-spec observations do not establish statistical control.''',
     dialogue='''Elena | The pilot reached ninety-two percent against ninety percent in the reference lot. Can we announce that the process change caused a two-percent yield improvement?
 Ravi | Begin with the [[pass count::The pass count identifies the actual successes behind the percentage, preserving the scale of the evidence.]] and denominator. The pilot passed ninety-two of one hundred tested die; the reference passed nine hundred of one thousand.
-Elena | Those counts make the sample-size difference visible. They do not stop us from reporting the observed yields, but they matter when we interpret the comparison.
+Elena | Put both counts beside the percentages. A reader needs to see that one result comes from a hundred die and the other from a thousand.
 Ravi | Correct. Also state the [[product mix::Product mix differs between the lots and may affect observed yield independently of the process change.]]. The lots contain different product compositions, so the two percentages are not a controlled comparison of the process change alone.
 Elena | The wording about two percent needs correction too. The absolute difference between ninety and ninety-two percent is two percentage points.
 Ravi | Yes, use [[percentage point::Percentage point measures the absolute difference between the two yield percentages, here 92 minus 90.]] for that absolute change. Relative to the ninety-percent starting value, the increase is approximately two point two two percent.
 Elena | I want the team to see the pilot as useful progress without overstating what caused the result. The change happened before the pilot, but timing is not enough.
 Ravi | Avoid unsupported [[causal attribution::Causal attribution assigns the observed yield difference to the process change, which this mixed comparison does not isolate.]]. The result can guide further investigation while the product mix and other relevant differences remain visible.
-Elena | We should compare the relevant products separately and confirm their test basis. Otherwise a favorable shift in composition might look like a process benefit.
+Elena | Can you break the results down by product and confirm the test basis? I want to see whether the mix is driving the overall difference.
 Ravi | Use [[stratification::Stratification separates the data into comparable product groups to examine the mix effect more directly.]] to examine the appropriate groups. It will not automatically prove causality, but it addresses one important weakness in the aggregate comparison.
 Elena | The draft also says the pilot demonstrates stable production. We have not presented a time-ordered analysis, only these two lot summaries.
 Ravi | Then remove that [[process stability::Process stability concerns statistical behavior over time under a defined monitoring method, not two favorable aggregate yields.]] claim. A favorable summary percentage does not establish how the process behaves over time or whether a monitoring rule has signaled a change.
@@ -373,12 +385,16 @@ Elena | We also need to make sure the measurements and test criteria are consist
 Ravi | Check the [[measurement system::The measurement system includes methods and conditions that affect whether the collected results can be compared consistently.]] and test basis. Clear denominators are essential, but they do not solve inconsistencies in how observations were produced or classified.
 Elena | The revised update will report the counts, the two-point difference, and the changed product mix. It will leave significance, stability, and causality unclaimed pending the appropriate analysis.
 Ravi | That supports [[yield learning::Yield learning uses the observations to investigate losses and drivers without claiming an effect before the evidence supports it.]]. The pilot remains informative, and the team gets a precise next question instead of a success claim that the present data cannot establish.''',
+    rehearsal=[
+        'Check the answers. Read both pass counts and denominators before reading their percentages.',
+        'Switch roles. Read turns 5-16, emphasizing percentage points, product mix, and the two types of limits.',
+        'Complete and check the transfer. Read the corrected exchange without turning the observed difference into a causal claim.'],
     transfer_title='Percentage points need a denominator',
     transfer_setup='A trial passes 48 of 50 tested die, or 96%. A reference passes 450 of 500, or 90%. Product mixes differ, and no causal analysis is complete.',
-    transfer='''Engineer: "The trial denominator is ___." | 50 | Fifty die were tested in the trial, which supplies its denominator.
-Reviewer: "The reference denominator is ___." | 500 | Five hundred die were tested in the reference dataset.
-Engineer: "The absolute yield difference is ___ percentage points." | 6 | Ninety-six percent minus ninety percent equals six percentage points.
-Reviewer: "A causal process improvement remains ___." | unproven | Different product mixes and incomplete analysis prevent a proven causal conclusion.'''))
+    transfer='''Engineer: "Put 48 passing die over the trial's 50-die ___." | denominator | The tested total is the denominator; the 48 passing die form the numerator.
+Reviewer: "Then show the changed ___ beside the reference comparison, not in a separate appendix." | product mix | Product mix differs between the trial and reference and may affect the observed yields.
+Engineer: "I will report the difference as six ___, not six relative percent." | percentage points | Ninety-six percent minus ninety percent is six percentage points, not six relative percent.
+Reviewer: "Good. Leave the claim that the process caused it open until we have supported ___." | causal attribution | Causal attribution needs evidence isolating the process effect, which the supplied comparison lacks.'''))
 
 
 BOOK['units'].append(unit(
@@ -441,19 +457,19 @@ Cluster | A spatial pattern that can guide but not finish an investigation.
 Cleanroom problem | Too broad to locate the evidence or assign a justified cause.''',
     d='''What is the observed detection density? | 0.12 detections per square centimeter | 12 detections per square centimeter | 8.33 detections per square centimeter | 0.12 particles per cubic meter of air | Twenty-four detections divided by two hundred square centimeters equals 0.12 on a surface-area basis.
 Which conclusion is unsupported? | C2 introduced all 24 detections. | The records are after C2. | The map shows an edge cluster. | Defect review is incomplete. | Timing after C2 does not establish introduction by C2 without the needed comparison and investigation.
-Which next record is useful for the investigation? | Traceable wafer, inspection-setting, timing, and exposure information | An operator's nationality as an assumed contamination cause | A density with its denominator removed | A new source conclusion before reviewing detections | Relevant process and inspection context helps assess the spatial pattern without substituting blame for evidence.
-Which distinction is correct? | Surface detection density and airborne particle counts use different measurement bases. | A square centimeter and a cubic meter are interchangeable denominators. | Every surface detection is a proven electrical failure. | An edge cluster proves an airborne source. | Surface area and air volume describe different measurements and cannot be silently substituted.''',
+Which next record is useful for the investigation? | Traceable wafer, inspection-setting, timing, and exposure information | A count from another layer using a different threshold, treated as a matched pre-scan | A whole-fab monthly total used to assign the source for this lot | A surface map converted to an airborne count without an air sample | The traceable records preserve the actual material and measurement context. Unmatched layers, aggregate totals, and unsupported conversions cannot replace that evidence.
+Which distinction is correct? | Surface detection density and airborne particle counts use different measurement bases. | A post-process detection count equals an added-defect count without a pre-scan. | An inspection's flagged-feature count is already the confirmed killer-defect count. | An edge pattern identifies the contamination source without further review. | Surface and air results have different bases. Detection is not confirmed classification, timing is not proof of introduction, and a pattern alone does not identify a source.''',
     dialogue='''Hana | The review note says cleanroom problem, but that label is much broader than the evidence. We have twenty-four particle-like detections on the inspected surfaces from P8.
 Oscar | Start with the [[inspected area::The inspected area provides the denominator for the surface detection density rather than leaving the count without scale.]]. The record covers two hundred square centimeters, so the number can be interpreted on a defined surface basis rather than as an unexplained total.
 Hana | That gives zero point one two detections per square centimeter. I should keep the word detections because the detailed classification has not been completed.
 Oscar | Correct. [[Defect review::Defect review determines how flagged features should be classified before they are treated as confirmed relevant defects.]] is still open. A flagged feature is not automatically a confirmed defect of the relevant type, much less a demonstrated electrical failure.
-Hana | The wafer map shows the observations concentrated near the edge. That pattern may help the investigation, but it does not identify a source by itself.
+Hana | The map clusters near the edge. I will send the wafer IDs and coordinates so the team can examine the pattern without guessing its source.
 Oscar | Call it an [[edge cluster::An edge cluster describes the spatial concentration actually observed without claiming its origin has been established.]]. Describe where it appears and connect the map to the wafer IDs, rather than turn the pattern into an immediate diagnosis of the cleanroom.
 Hana | The records follow C2 between nine and ten a.m. Someone has rewritten that as C2 added twenty-four particles, although we do not have a comparable earlier scan.
 Oscar | We cannot claim an [[added defect::An added defect requires evidence that it appeared between comparable inspection points, which is missing here.]] count on that basis. After C2 establishes the recorded sequence, not proof that C2 introduced every detected feature.
 Hana | A matched earlier inspection would help distinguish what was already present from what appeared later. We would also need to check the inspection basis before comparing counts.
 Oscar | Exactly. A [[pre-process scan::A pre-process scan provides the earlier observation needed for a valid before-and-after comparison when methods are comparable.]] must be comparable with the later scan. Different sensitivity, locations, or thresholds could otherwise make a count difference look like process-added contamination.
-Hana | The facilities team has separate air-monitoring information. We should not place those values in the same column as the surface counts without naming their units and methods.
+Hana | Facilities sent an air-monitoring result too. I will keep it separate from these surface counts; the units and measurement methods are different.
 Oscar | An [[airborne particle count::An airborne particle count concerns a defined air sample or volume, unlike the surface-area-based detections here.]] is a different measurement. A value per air volume cannot be treated as the same quantity as detections per inspected surface area.
 Hana | I will include the inspection recipe and threshold with the maps. That will let reviewers see whether the method was capable of detecting the features being discussed.
 Oscar | Keep [[inspection sensitivity::Inspection sensitivity affects which features are detected and must be considered when comparing inspection results.]] visible. A tool finding more features after a settings change does not by itself prove that the process produced more contamination.
@@ -463,12 +479,16 @@ Hana | We can reconstruct the lot's recent handling and process history alongsid
 Oscar | Review the [[exposure history::Exposure history connects the wafers to relevant handling and environments that may help evaluate possible contamination origins.]]. It can guide source investigation, but a shared tool or time interval is not enough on its own to establish the origin.
 Hana | The corrected note will give the count, area, edge pattern, interval, and incomplete classification. It will state that introduction by C2 and an airborne source are unconfirmed.
 Oscar | That keeps the [[contamination source::The contamination source is the origin to be established by investigation, not assumed from the latest process step or vague label.]] question open on an accurate basis. We can investigate efficiently while preserving the distinction between an observation, a hypothesis, and a confirmed cause.''',
+    rehearsal=[
+        'Check the answers. Read 24 detections over 200 square centimeters and the resulting density aloud.',
+        'Switch roles for turns 5-14. Keep the edge pattern, possible source, and surface-versus-air distinction explicit.',
+        'Complete and check the transfer. Read the evidence requests without naming an unconfirmed contamination source.'],
     transfer_title='Count the detections, not an invented cause',
     transfer_setup='A post-process scan flags 12 features over 100 square centimeters. Classification is pending, and no comparable pre-process scan exists. No contamination source is confirmed.',
-    transfer='''Engineer: "The observed density is ___ detections per square centimeter." | 0.12 | Twelve flagged features divided by one hundred square centimeters equals 0.12.
-Reviewer: "Feature classification is still ___." | pending | The briefing states that classification has not yet been completed.
-Engineer: "There is no comparable ___ scan." | pre-process | The missing earlier scan prevents a supported before-and-after attribution.
-Reviewer: "The contamination source is ___." | unconfirmed | The supplied observations do not establish the origin of the flagged features.'''))
+    transfer='''Engineer: "Keep 100 square centimeters beside the count as the ___." | inspected area | Inspected area supplies the surface basis for the 12 detections, giving a density of 0.12.
+Reviewer: "And leave the twelve flagged features unclassified pending ___." | defect review | Defect review determines how inspection detections should be classified; it remains incomplete.
+Engineer: "I will request a comparable ___ before reporting any process-added count." | pre-process scan | A comparable pre-process scan is needed to assess what was introduced between inspection points.
+Reviewer: "Thank you. Do not name the last tool as the ___ without supporting investigation." | contamination source | The source is an origin to investigate, not a conclusion established by the post-process count.'''))
 
 BOOK['units'].append(unit(
     title='Equipment Uptime, Recipes, and Tool Matching',
@@ -529,8 +549,8 @@ Matched | Requires an actual matching criterion and supporting evidence.
 Backup | A planning role that does not automatically authorize production use.
 Offset | A measured difference to investigate, not an instruction to adjust settings.''',
     d='''Which status report is accurate? | Both means meet the mean specification; their 4 nm difference fails the 2 nm matching limit. | Both tools are matched because 98 and 102 lie within 95 to 105. | Tool B is approved because its availability is 90%. | Every wafer from both tools is proven in specification. | The specification and matching tests use different criteria, and individual results are not supplied.
-What does using the same recipe establish? | The identified recipe input is shared, not that output performance is interchangeable. | The chamber conditions must be identical. | Every calibration requirement has been met. | All tool-to-tool differences are zero. | Recipe identity alone does not demonstrate equivalent physical conditions or process outcomes.
-Which calculation matches the availability basis? | 900 divided by 1,000 equals 90%. | 1,000 divided by 900 equals 90%. | 102 minus 98 equals 90%. | The film-thickness specification directly determines uptime. | Availability uses the supplied available time divided by the defined total window.
+What does using the same recipe establish? | The identified recipe input is shared, not that output performance is interchangeable. | The two tools have equivalent physical chamber conditions throughout the run. | The same nominal setpoints remove the need to compare actual results. | A matching recipe revision substitutes for product-specific transfer approval. | Shared commanded inputs do not establish identical physical conditions, equivalent output, or authorization to transfer the process.
+Which calculation matches the availability basis? | 900 divided by 1,000 equals 90%. | 900 divided by the 100 unavailable minutes equals the availability fraction. | 100 unavailable minutes divided by 1,000 gives 10% availability. | The available-time count alone establishes utilization without a used-time count. | Availability is available time over the defined window. Ten percent is the unavailable fraction, and utilization needs its own use-time data and basis.
 What remains necessary before calling B an approved interchangeable backup? | The required matching or qualification evidence and transfer approval | Only a repeated statement that R7 is installed | Only a higher availability percentage | Only a passing sample mean against the broad mean specification | The case lacks matching acceptance and transfer approval, neither of which is replaced by uptime.''',
     dialogue='''Victor | Tool B has the same R7 recipe as A and was available for ninety percent of the window. The planning note calls it an interchangeable backup.
 Asha | That combines different questions. [[Tool matching::Tool matching requires measured performance against a defined comparison criterion, not simply a shared recipe or uptime figure.]] depends on the measured outcomes and our criterion, not only the recipe name or the amount of time the tool was available.
@@ -538,11 +558,11 @@ Victor | We confirmed the same recipe revision and an agreed measurement basis. 
 Asha | The [[matching criterion::The matching criterion allows no more than two nanometers between means; the observed difference is four.]] allows a difference of no more than two nanometers. These means differ by four, so this comparison does not establish an acceptable match.
 Victor | Both means are within the local mean specification of ninety-five to one hundred five. That explains why someone thought the comparison had passed.
 Asha | The [[actual value::Actual value concerns the measured outcome; passing the mean specification does not remove the separate difference between tools.]] has to be assessed against the correct question. Each mean passes that specification, but the pair fails the separate matching limit.
-Victor | We should also avoid saying every wafer was in specification. The figures we have in this review are sample means, not the complete individual measurements.
+Victor | I will say both sample means meet that limit. We have not reviewed every individual measurement, so I cannot extend that claim to every wafer.
 Asha | Agreed. Confirm the [[recipe revision::The recipe revision identifies the shared controlled input, but cannot stand in for unsupplied individual wafer evidence.]] and report the evidence at its actual level. Do not let a summary mean or a shared input become a claim about every processed unit.
 Victor | The observed difference needs investigation. Chamber history and maintenance condition may be relevant, but neither has been established as the cause from these numbers.
 Asha | Review [[chamber condition::Chamber condition is a possible contributor to tool behavior that must be assessed rather than assumed from the recipe.]] and the other appropriate records. Identical commanded settings do not guarantee identical physical conditions or measurement behavior.
-Victor | Calibration and monitor records should be linked to the comparison as well. That will help the process team assess whether the apparent offset has a consistent basis.
+Victor | I will bring the calibration and monitor records. Can we review those before anyone suggests changing R7 to remove the offset?
 Asha | Check [[calibration status::Calibration status concerns the documented measurement basis and is relevant to interpreting the observed tool difference.]] through the approved process. We should not prescribe a recipe adjustment before the team understands the relevant evidence and authorization requirements.
 Victor | For the uptime figure, B was available for nine hundred minutes out of a defined one-thousand-minute window. That calculation gives ninety percent.
 Asha | Label it [[availability::Availability is the available-time fraction on the stated basis, not a measure of matching, yield, or approval.]] and retain the denominator. It does not mean ninety percent yield or ninety percent confidence that the tool can substitute for A.
@@ -552,12 +572,16 @@ Victor | The backup proposal remains useful because capacity is constrained, but
 Asha | Treat it as a [[process transfer::Process transfer moves a defined process to another tool and requires its own relevant assessment and approval.]] decision. The defined scope, matching evidence, and required authorization must be clear instead of being inferred from the existence of an alternative tool.
 Victor | I will revise the planning note to separate the passing means, failed matching comparison, ninety-percent availability, and missing approval. It will no longer call B interchangeable.
 Asha | That preserves the [[release status::Release status records authorization for the intended use, which remains absent despite the tool's availability and passing means.]] accurately. We can pursue the backup option while making its unresolved requirements visible to the people planning production.''',
+    rehearsal=[
+        'Check the answers. Read the 98 nm and 102 nm means, then the separate specification and matching limits.',
+        'Switch roles. Read the availability exchange without replacing availability with yield or utilization.',
+        'Complete and check the transfer. Read each claim with its own criterion and keep approval pending.'],
     transfer_title='Two different limits',
     transfer_setup='Two tools have sample means of 50 and 53 nm. Both meet a mean specification of 48 to 55 nm. Matching allows at most 1 nm difference. Transfer approval is pending.',
-    transfer='''Engineer: "The means differ by ___ nm." | 3 | Fifty-three minus fifty gives a three-nanometer difference between means.
-Reviewer: "The matching limit is ___ nm." | 1 | The supplied matching criterion allows no more than one nanometer difference.
-Engineer: "The means are in spec, but the tools are not ___." | matched | The three-nanometer difference exceeds the separate one-nanometer matching limit.
-Reviewer: "Transfer approval remains ___." | pending | The briefing states that the transfer decision has not been approved.'''))
+    transfer='''Engineer: "Both means meet the 48-to-55 nm ___." | specification | The specification applies to each sample mean, and both 50 and 53 fall within it.
+Reviewer: "But their three-nanometer gap misses our one-nanometer ___." | matching criterion | The matching criterion applies to the three-nanometer difference, which exceeds the permitted one.
+Engineer: "Then moving this process to the other tool remains a proposed ___." | process transfer | Process transfer is the move between tools and requires its own assessment and authorization.
+Reviewer: "Correct. Keep approval pending in the ___ field." | release status | Release status concerns authorization; passing individual means does not establish that approval.'''))
 
 
 BOOK['units'].append(unit(
@@ -619,8 +643,8 @@ Not started | Does not mean failed or waived.
 Similar | Needs a justified and accepted relevance argument.
 Complete | Includes the required evidence review, not only laboratory scheduling.''',
     d='''Which customer headline is supported? | Qualification in progress: temperature cycling passed; HTOL running; HAST not started. | Q7 is fully qualified because temperature cycling passed. | Q7 failed HAST because HAST has not started. | Q7 is approved by similarity despite no accepted substitution. | The headline accurately separates each test's status without inventing a result or approval.
-What does the passing temperature-cycle result establish? | The stated test result under its protocol and scope | Completion of every operating-life requirement | Automatic approval for all customer applications | That no other failure mechanism can occur | A test result supports the claim within its defined conditions rather than universal qualification.
-When could related evidence replace a required test in this case? | Only through the applicable accepted change or similarity process, which has not occurred | Whenever a salesperson prefers an earlier date | Whenever two packages look similar in a photograph | Automatically after any one test passes | The plan cannot be silently changed; an applicable authorized route and accepted rationale would be needed.
+What does the passing temperature-cycle result establish? | The stated test result under its protocol and scope | Completion of the operating-life test because both involve temperature | Completion of HAST because both are accelerated stress tests | Qualification of every package variant sharing the Q7 marketing name | Temperature cycling, operating-life testing, and humidity-related stress address different test conditions. A shared name also does not establish equivalent package construction or scope.
+When could related evidence replace a required test in this case? | Only through the applicable accepted change or similarity process, which has not occurred | When the related package has the same outside dimensions, without a construction review | When the older report is newer than the current plan, without an applicability assessment | When final electrical test passes, without assessing the reliability evidence gap | Related evidence requires an accepted relevance and authorization basis. Dimensions, document age, and a different passing test do not by themselves justify substitution.
 What should final review examine? | Required evidence, scope, configuration, open items, and approval conditions | Only whether the slide uses the word complete | Only the date the first test started | A presumed pass for all tests without final results | Qualification approval depends on the required evidence and scope, not a favorable summary label.''',
     dialogue='''Diego | The customer slide says Q7 qualification is complete because temperature cycling passed. We still have two other tests in the plan, so I need a more accurate headline.
 Mei | Start from the [[qualification plan::The qualification plan defines all required tests and final review, so one passing test cannot complete it.]]. Our approved plan requires all three tests and final evidence review. We have completed one part, not the entire qualification decision.
@@ -630,24 +654,28 @@ Diego | The operating-life test is still running. The lab has not supplied its f
 Mei | Label [[HTOL::HTOL is high-temperature operating life testing, which is currently running rather than completed in this case.]] as running. If a progress checkpoint is available, identify it as interim information without treating it as the completed test outcome.
 Diego | The accelerated humidity-related stress test has not started. That is a schedule and evidence gap, but it is not a failed result.
 Mei | Exactly. [[HAST::HAST is the highly accelerated stress test that has not started; absence of a result is not a pass or failure.]] remains unstarted in this plan. Use that status rather than either a reassuring green result or an unsupported failure label.
-Diego | The customer also needs to know which package construction the results cover. A broad Q7 name could hide differences in materials or assembly details.
+Diego | Which package construction should I name on the slide? Q7 alone may cover variants with different materials or assembly details.
 Mei | Keep the [[package construction::Package construction identifies the materials and structure covered by the evidence, preventing unsupported extension to other variants.]] linked to the evidence. Qualification scope should not silently expand to a different variant simply because the marketing name is similar.
 Diego | We should confirm the tested device or structure as well. Otherwise reviewers may not know how the selected samples relate to the configuration being discussed.
 Mei | Identify the [[qualification vehicle::The qualification vehicle is the selected device or structure whose results support the defined qualification scope.]] and its approved rationale. Traceability makes it possible to review applicability rather than assume that any available sample represents every product.
 Diego | The assembly preparation records also belong in the package. I do not want the final review to discover that important preparation details were omitted from the summary.
 Mei | Include the required [[preconditioning::Preconditioning records show the defined preparation used before testing and form part of interpreting the evidence.]] records where the plan calls for them. A passing result needs the relevant preparation and test context to be interpreted correctly.
-Diego | Sales asked whether an older package result could stand in for the tests still open. No substitution has been reviewed or accepted for this plan.
+Diego | Sales wants to reuse results from an older package. I will refer that request for review; we have no accepted substitution for the open tests.
 Mei | [[Qualification by similarity::Qualification by similarity requires an accepted technical rationale; no such substitution is established in this case.]] needs an accepted basis under the applicable process. A related package or a desired delivery date does not automatically change the approved requirements.
 Diego | We also have final electrical test records, but those should not be presented as though they address every stress-related concern in the qualification plan.
 Mei | Correct. [[Test coverage::Test coverage identifies which requirements or concerns the available tests address; final electrical testing does not replace every reliability stress.]] differs between production checks and reliability assessments. Each result needs to be connected to what it actually evaluates, not treated as interchangeable evidence.
 Diego | I will change the headline to qualification in progress, list the three statuses, and keep the configuration and outstanding review visible. We will not announce release from this slide.
 Mei | That preserves [[qualification approval::Qualification approval is the authorized acceptance of the required evidence, which remains pending while tests and review are incomplete.]] as a separate decision. The next update can show genuine progress while keeping the unresolved tests and final review clear.''',
+    rehearsal=[
+        'Check the answers. Read the three test statuses, expanding HTOL and HAST using the vocabulary pages.',
+        'Switch roles for turns 9-20. Keep construction, preparation, related evidence, and final approval distinct.',
+        'Complete and check the transfer. Read the pending work without changing it into either a pass or a failure.'],
     transfer_title='Pending is neither passed nor failed',
     transfer_setup='A fictional package plan requires tests A, B, and C plus final review. A passed, B is running, and C has not started. No substitution or final approval is recorded.',
-    transfer='''Engineer: "Test A has ___." | passed | The supplied plan status identifies A as the completed passing test.
-Reviewer: "Test B is ___." | running | B is in progress and does not yet have a final result.
-Engineer: "Test C has not ___." | started | The briefing states that C has not yet begun.
-Reviewer: "Qualification approval remains ___." | pending | Required tests and final review are incomplete, and no approval is recorded.'''))
+    transfer='''Engineer: "Keep A's passing result as test ___, not a claim that every requirement is complete." | evidence | The passing result is evidence for its defined test, not completion of the whole plan.
+Reviewer: "B and C are still required by the approved ___." | plan | The approved qualification plan still requires these tests; neither has an accepted replacement.
+Engineer: "We would need an accepted technical ___ before substituting related results." | rationale | A justified and accepted rationale is necessary for a relevant substitution; none exists here.
+Reviewer: "Until the tests and final review are complete, do not announce qualification ___." | approval | Qualification approval remains pending while required tests and final review are incomplete.'''))
 
 BOOK['units'].append(unit(
     title='Foundry, Tape-Out, PDK, and Capacity Communication',
@@ -708,8 +736,8 @@ Clean | State the check scope, version, and remaining exceptions.
 Waived | Requires an actual authorized exception, not a schedule preference.
 Committed | Name the deliverable, date, dependencies, and accepting party.''',
     d='''Which reply to the earlier-date request is supported? | October 8 remains conditional on check closure, the required handoff, and capacity confirmation. | October 8 guarantees finished samples because a slot was mentioned. | The unresolved findings disappear if the customer accepts schedule risk. | The foundry has already reserved capacity by discussing it. | The reply preserves the separate technical and capacity prerequisites without inventing acceptance.
-What does an LVS mismatch concern? | A difference between extracted layout connectivity and the schematic | Only an available tool's uptime percentage | The package's shipping label | The number of wafers already shipped | LVS checks layout against schematic information, so its mismatch is a design-verification issue.
-Why retain the PDK and rule-deck versions with results? | The check result depends on the process-specific definitions actually used. | A filename guarantees every future revision is identical. | Version records eliminate every physical verification requirement. | A newer version is automatically approved for this project. | Traceable versions show which rules and models underlie the reported verification status.
+What does an LVS mismatch concern? | A difference between extracted layout connectivity and the schematic | A minimum geometric spacing violation against a design-rule deck | A negative setup-slack result in a required timing scenario | An offset between patterned wafer layers measured as overlay | LVS compares the layout-derived circuit with the schematic. Spacing rules, timing slack, and overlay belong to different verification or measurement questions.
+Why retain the PDK and rule-deck versions with results? | The check result depends on the process-specific definitions actually used. | A clean result from one revision automatically clears later rule changes. | The design filename alone identifies every rule and model used. | The latest available deck replaces the agreed deck without an impact review. | Traceable versions identify the actual basis of the result. A filename is insufficient, and neither a later release nor an earlier clean run establishes unchanged applicability.
 Which statement about tape-out is accurate? | It is a design-data handoff milestone, not proof of wafer start or sample availability. | It means every package has completed reliability qualification. | It always occurs on the same day as customer shipment. | It guarantees that no respin can be needed. | Fabrication, test, qualification, and delivery remain distinct activities after the design-data handoff.''',
     dialogue='''Sofia | Can we move tape-out from October fifteenth to October eighth? The foundry mentioned an earlier slot, and the customer is asking whether that means samples can arrive sooner.
 Ken | Separate the [[tape-out::Tape-out is the design-data release milestone being requested, not a confirmed wafer start or finished-sample date.]] request from the later milestones. An earlier data handoff may matter to the plan, but it does not itself establish a wafer start or sample-delivery date.
@@ -717,13 +745,13 @@ Sofia | We still have four design-rule findings and one layout-versus-schematic 
 Ken | The [[sign-off::Sign-off is the required completion and approval of the defined checks; the complete package is not yet available here.]] package is not complete. No waiver is approved, so we cannot describe the design as ready by treating the open checks as an informal schedule exception.
 Sofia | The verification team is working against P3, the agreed kit revision. We should preserve that basis when reporting progress rather than mix results from different revisions.
 Ken | Keep the [[PDK::The PDK supplies process-specific design resources; its agreed revision must remain connected to the verification results.]] revision with the dataset and check results. The design rules and supported flow are process-specific, so version identity is part of the evidence.
-Sofia | The four rule findings need owners and disposition. A count alone does not show whether they are being resolved or merely reclassified.
+Sofia | Please list the owner and status for each of the four findings. A falling count is not useful if the items were only relabeled.
 Ken | Report each [[DRC::DRC checks the layout against applicable design rules; its open findings need documented resolution rather than a changed headline.]] finding with its status under the agreed process. Do not call the run clean while unresolved findings or required decisions remain outside the summary.
 Sofia | The connectivity mismatch is a separate issue. I do not want the customer to hear that all five items are the same kind of geometric spacing check.
 Ken | Correct. [[LVS::LVS compares extracted layout connectivity with the schematic and therefore addresses a different verification question from geometric rule checks.]] addresses layout versus schematic consistency. Keep that distinction clear when assigning ownership and explaining why the complete sign-off package is not yet available.
 Sofia | On capacity, the foundry said a slot might become available. We have no written confirmation that it is allocated to this design.
 Ken | Then there is no confirmed [[capacity reservation::Capacity reservation is an actual allocation; a possible earlier slot has not been reserved or accepted in this case.]]. We can discuss feasibility, but a mentioned opportunity must not be reported as an accepted manufacturing commitment.
-Sofia | Even after we complete the design package, the receiving team will need to check the delivered data against its requirements. Sending files is not necessarily the same as acceptance.
+Sofia | Who confirms that the foundry has accepted the data package? I do not want a file-transfer receipt reported as acceptance of the design handoff.
 Ken | Exactly. [[Data acceptance::Data acceptance confirms the receiving process's requirements have been met; transmitting files alone does not establish it.]] is a separate handoff status. Record what the foundry needs and who confirms it, rather than assume a sent dataset has cleared the receiving review.
 Sofia | Could a formal exception be considered if one finding remains? I want to ask through the correct route, not imply that my request already authorizes it.
 Ken | A [[waiver::A waiver is an authorized exception to a specific requirement; none is approved for the open findings here.]] would need the applicable technical assessment and authorization. We cannot assume it is available or accepted simply because the earlier date is commercially attractive.
@@ -731,9 +759,13 @@ Sofia | I will avoid calling October eighth a fabrication start. The manufacturi
 Ken | Correct. A [[wafer start::A wafer start is the lot's entry into fabrication and is distinct from the earlier design-data handoff milestone.]] is a different milestone. Its timing and the subsequent flow must be confirmed on their own basis before anyone promises finished samples.
 Sofia | The next update will separate check closure from slot confirmation. It will identify owners and show what remains conditional rather than announce the earlier date as secured.
 Ken | That protects the [[delivery commitment::A delivery commitment must identify an accepted deliverable and date; neither a requested tape-out nor a possible slot guarantees finished samples.]]. We can pursue the opportunity actively while making clear which evidence, acceptance, and manufacturing decisions still stand between a request and a confirmed outcome.''',
+    rehearsal=[
+        'Check the answers. Read the requested tape-out date separately from wafer start and finished samples.',
+        'Switch roles for turns 5-16. Expand PDK, DRC, and LVS using the vocabulary pages and preserve each open status.',
+        'Complete and check the transfer. Read the four milestones without converting a possible slot into a commitment.'],
     transfer_title='A requested handoff is not a shipment',
     transfer_setup='A team requests tape-out on November 3. Two DRC items remain open. The foundry has mentioned a possible slot but has not reserved it. No waiver or sample-delivery date is approved.',
-    transfer='''Designer: "November 3 is the requested ___ date." | tape-out | The briefing identifies November 3 as the requested design-data handoff.
-Liaison: "The two DRC items remain ___." | open | The stated design-rule findings have not yet been resolved.
-Designer: "The possible slot is not ___." | reserved | The foundry has discussed an opportunity but has not allocated the slot.
-Liaison: "No sample-delivery date is ___." | approved | The briefing supplies no approved commitment for finished samples.'''))
+    transfer='''Designer: "Keep November third attached to the requested design-data handoff: ___." | tape-out | Tape-out identifies the requested design-data handoff, not a later manufacturing or delivery event.
+Liaison: "The possible slot is not yet an allocated ___." | capacity reservation | Capacity reservation requires a confirmed allocation; a possible slot has not reached that status.
+Designer: "I will not tell the customer that fabrication begins then; we have no confirmed ___." | wafer start | A wafer start is distinct from the requested design-data handoff and is not confirmed here.
+Liaison: "And discussing a slot does not establish a finished-sample ___." | delivery commitment | A delivery commitment needs an accepted deliverable and date, neither of which follows from discussing a slot.'''))

@@ -42,9 +42,11 @@ class WorkBookPublicationTests(unittest.TestCase):
                 self.assertIn('v=', links[0]['href'])
                 description = page.find(id=links[0]['aria-describedby']).get_text()
                 for phrase in ('20-turn', '192 vocabulary', '128 reusable phrases',
-                               'word banks', 'answer keys with explanations', 'page references'):
+                               'word banks', 'answer keys with explanations', 'page references',
+                               'three additional workplace scenarios', '11 extended',
+                               '11 short follow-up exchanges'):
                     self.assertIn(phrase.lower(), description.lower())
-                self.assertIn('102 pages', section.get_text())
+                self.assertIn('114 pages', section.get_text())
                 for selector in ('.work-study-card', '#lessons'):
                     self.assertTrue(any(urlparse(a['href']).path == book_href(track['slug'])
                                         for a in page.select(selector + ' a[href]')))
@@ -82,6 +84,24 @@ class WorkBookPublicationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'stale book'):
                     publish_books()
             self.assertEqual(target.read_bytes(), b'previous approved book')
+
+    def test_edited_additional_dialogue_requires_republication(self):
+        from books.supplements import load_supplements
+        changed = [dict(item) for item in load_supplements(self.tracks[0]['slug'])]
+        changed[0]['brief'] += ' Newly edited material.'
+        with patch('books.supplements.load_supplements', return_value=changed):
+            with self.assertRaisesRegex(ValueError, 'Rebuild and republish'):
+                validate_publication(self.tracks)
+
+    def test_previous_edition_cannot_generate_current_pages(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            manifest = root / 'content/work/documents.json'
+            manifest.parent.mkdir(parents=True)
+            manifest.write_text(json.dumps(dict(self.manifest, revision='2026-10-01')))
+            with patch('work_books.ROOT', root):
+                with self.assertRaisesRegex(ValueError, 'current learner-book edition'):
+                    validate_publication(self.tracks)
 
     def test_missing_unselected_book_does_not_publish_partial_edition(self):
         tracks = [{'slug': 'one'}, {'slug': 'two'}]

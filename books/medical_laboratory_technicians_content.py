@@ -21,13 +21,13 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Clinical Laboratory Technologists and Technicians.',
              url='https://www.bls.gov/ooh/healthcare/clinical-laboratory-technologists-and-technicians.htm',
-             note='Occupational context for specimen work, equipment, records, and communication. No salary forecasts or qualification advice are reproduced.', checked='1 October 2026'),
+             note='Occupational context for specimen work, equipment, records, and communication. No salary forecasts or qualification advice are reproduced.', checked='10 October 2026'),
         dict(title='World Health Organization. Laboratory Quality Management System: Handbook, publication overview.',
              url='https://www.who.int/publications/i/item/9789241548274',
-             note='Overview of laboratory quality-management scope. Fictional procedures and examples are original, not reproductions of the handbook or current accreditation rules.', checked='1 October 2026'),
+             note='Overview of laboratory quality-management scope. Fictional procedures and examples are original, not reproductions of the handbook or current accreditation rules.', checked='10 October 2026'),
         dict(title='Agency for Healthcare Research and Quality. Check-Back or Repeat-Back.',
              url='https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/checkback.html',
-             note='Communication reference for recipient repetition and sender confirmation. The critical-result scenario supplies its own fictional value and local designation.', checked='1 October 2026'),
+             note='Communication reference for recipient repetition and sender confirmation. The critical-result scenario supplies its own fictional value and local designation.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -94,26 +94,27 @@ Still required | Prevents the conversation from being mistaken for a completed m
 What does the digit resemblance establish? | A possible mismatch requiring checking, not identity | A confirmed typo by the clinic | Automatic disclosure permission | A final result for A341 | Similar digits do not establish identity, responsibility for an error, or report status.
 Which action preserves traceability? | Keep the supplied reference and document the unresolved enquiry | Replace the caller's number silently | Delete the enquiry because it is inconvenient | Combine both cases without review | Retaining the actual request prevents a guessed correction from obscuring the enquiry.
 Which final status is accurate? | Identity verification remains required | The case match is complete | The other accession has been disclosed appropriately | A341 is confirmed absent from every system | The scenario ends without an established case match or broader search conclusion.''',
-    dialogue='''Mira | I am calling from the clinic about A341. Could you tell me where that case stands? I have the reference in front of me.
+    dialogue='''Mira | I have A341 on our request. Could you check the case status? I'm calling from the clinic.
 Noor | You are asking about A, three, four, one. I need to complete the required [[verification::Verification must establish the correct case and permitted recipient before Noor discusses case-specific information.]] before discussing case details, and I have not established a match yet.
-Mira | Thank you for repeating it digit by digit. I might have copied the reference incorrectly, but I do not want to choose another number without checking.
+Mira | I may have transposed two digits. Could you tell me which other reference looks closest?
 Noor | That is helpful. A possible [[transcription error::Transcription error is only a possibility, not an established explanation for the difference between references.]] should be checked against the appropriate source rather than assumed. I will retain the number you actually supplied.
-Mira | Can you search the receiving information while I check our request? I understand that a similar number would not necessarily mean the same case.
+Mira | If you can search the log, why can't we just use the closest number and confirm it afterward?
 Noor | I can consult the [[accession log::Accession log is the laboratory record Noor can check, without treating a similar entry as an authorized case match.]]. That does not replace the case and recipient checks required by our process, and I cannot offer another case as a likely answer.
-Mira | Understood. I do not need information about a different case. I need to establish which record belongs to this enquiry through the approved route.
+Mira | Understood. I'll keep our request separate until the required checks link it to the right case.
 Noor | Exactly. The [[case match::Case match is the verified link between the clinic's enquiry and the correct laboratory record, which remains unestablished.]] remains unresolved. Similar digits are not enough to link records or authorize a case-specific status update.
-Mira | Should I use the laboratory's usual verification channel for the required details? I do not want to send more personal information than the process needs.
+Mira | I can use the usual protected verification route. Should I send the details through that process rather than this enquiry?
 Noor | Yes, use the approved [[secure channel::Secure channel is the approved protected route for the required verification information rather than unrestricted disclosure in the enquiry.]] and provide the information that process requires. We should not improvise a different identity check during this call.
-Mira | I will check the original request rather than correcting the number from memory. That should give us a more reliable starting point.
+Mira | I'll check the original requisition. A number I remember from another call may not be reliable.
 Noor | The [[source record::Source record provides the authoritative reference to check rather than relying on a remembered or guessed number.]] is the right place to confirm what was requested. Please keep any correction traceable through the established arrangements.
-Mira | I also understand that being from the clinic is not, by itself, the same as being verified to receive this particular case's information.
+Mira | Our clinic name is on the request. Does that also establish my authority to receive this particular information?
 Noor | Correct. [[Receiving authority::Receiving authority concerns permission to receive the specific information and is separate from merely claiming a clinic affiliation.]] needs the applicable check as well. We should keep the correct case and the permitted recipient clear before sharing its status.
-Mira | For my note, I will say I requested A341 and that verification is still required. I will not write that you confirmed a match.
+Mira | I'll note that I asked about A341 and that verification is still required. I won't write case confirmed.
 Noor | That preserves the [[unverified reference::Unverified reference accurately describes A341 while the enquiry has not been linked to the correct case through the required checks.]]. It also avoids turning a search or clarification conversation into evidence of a completed identity resolution.
-Mira | If our source shows a different number, I will provide the correction through the approved process. I will not assume the difference is harmless.
+Mira | If our source shows a correction, I'll send it through the established route. I won't silently replace the number in the enquiry.
 Noor | Thank you. That supports the [[audit trail::Audit trail preserves the supplied reference, subsequent correction, and verification actions instead of silently replacing the original request.]] without changing records simply to make two numbers agree.
-Mira | I will now use the verification arrangements and confirm the requested case. No case-specific result or status has been established in this exchange.
+Mira | I'll complete those checks next. For now, I have no case-specific result or status from you.
 Noor | Agreed. [[Confidentiality::Confidentiality requires protecting case information while the correct identity and recipient authority remain unresolved.]] remains important throughout that process. I can assist with the enquiry once the required checks establish the correct case and authorized recipient.''',
+    rehearsal=["Check the completed dialogue, then read A341 as A, three, four, one. Do not offer the other logged accession as a possible patient match.","Switch roles. Repeat the lines that require case verification and receiving authority before disclosure; retain the supplied request unchanged.","Complete the four-line exchange. Confirm that A314 belongs to the receiving log and A341 to the caller's request, with the match still unverified."],
     transfer_title='Read the reference without guessing',
     transfer_setup='Complete the internal training summary. These record references are not authorization to disclose a real case.',
     transfer='''Technician: "The receiving log lists ___." | A314 | A314 is the reference explicitly supplied for the receiving log.
@@ -184,26 +185,27 @@ Not giving | Separates operational communication from clinical interpretation.''
 Which action is documented? | Recollection through the clinic | A specific unsupplied collection technique | Emergency treatment | Release of an invented value | Only recollection through the clinic is stated as the lead's requested action.
 Which statement wrongly adds a cause? | The collector definitely used the wrong container | No cause is supplied | The lead documented insufficient quantity | Collection details need authorized guidance | The scenario supplies no cause, so blaming a container or collector is unsupported.
 How should urgency be described? | Not supplied in this message; follow the applicable escalation arrangements | Automatically routine | Automatically critical | Already assessed by the caller | No urgency classification is given, so neither routine nor critical may be invented.''',
-    dialogue='''Alex | I received the message about Q6 saying insufficient quantity. Does that mean the patient's test result is low, or that something else is missing?
-Noor | It concerns [[specimen volume::Specimen volume is the amount available for testing, not the patient's measured test result.]], not a low patient result. The laboratory lead documented insufficient quantity for the requested test and asked for recollection through the clinic.
-Alex | Thank you. I had linked the word quantity to the result rather than the submitted material. I will correct that in the message I pass on.
-Noor | Please keep the [[test request::Test request Q6 identifies the work associated with the documented quantity issue and recollection request.]] reference Q6 with the explanation. It helps prevent the operational message being separated from the request it concerns.
-Alex | Is there a numerical result I should include alongside the recollection message? I do not see one in the information I received.
-Noor | No [[patient result::Patient result has not been supplied, so Noor must not invent a value or a low-result interpretation.]] is supplied in this message. Insufficient material and a measured concentration are different statements, and we should not substitute one for the other.
-Alex | The requested next step is another specimen through the clinic. I want to keep that clear without adding instructions that the lead did not provide.
-Noor | Correct. The documented action is [[recollection::Recollection is the lead's requested next action through the clinic, without a supplied method or urgency classification.]]. The appropriate collection instructions must come through the authorized procedure or role; I am not supplying a method in this call.
-Alex | Do we know why the quantity was insufficient? Someone may ask whether the original collection was done incorrectly.
-Noor | The [[rejection reason::Rejection reason here is insufficient quantity for Q6, which does not establish who caused it or how it happened.]] given is insufficient quantity. No cause is supplied, so I cannot attribute it to a collection error, a container problem, or a particular person.
-Alex | Then I will not write collector error. I will preserve the lead's wording and ask the appropriate contact for any additional documented explanation.
-Noor | That keeps the [[preanalytical phase::Preanalytical phase concerns work before measurement, and this specimen issue must not be recast as an analytical patient finding.]] issue distinct from a clinical finding. We can communicate the limitation clearly without claiming to know its cause.
-Alex | What about urgency? I do not want to tell staff this is routine or critical when neither appears in the message.
-Noor | Seek the applicable [[authorized guidance::Authorized guidance is needed for missing urgency or collection details rather than inventing a classification from the quantity message.]] and use the actual escalation arrangements. This message itself supplies no urgency classification.
-Alex | I will also avoid promising a report time after recollection. There is no new collection time or reporting estimate in the information we have.
-Noor | Agreed. The [[specimen requirement::Specimen requirement must be established from the relevant test instructions, not inferred into a collection or reporting promise.]] and subsequent timing need the relevant confirmed information. The current message does not establish when a report will be available.
-Alex | My corrected note will say the lead documented insufficient quantity for Q6 and requested recollection through the clinic, with further instructions to come from the proper source.
-Noor | That accurately relays the [[recollection request::Recollection request is the documented action to obtain another specimen through the clinic without additional invented details.]]. Please do not add a low-result statement or a presumed collection method.
-Alex | Understood. This is an issue with the amount available for the test, not evidence about the patient's condition. The method, cause, and urgency remain unspecified here.
-Noor | Exactly. Any [[clinical interpretation::Clinical interpretation concerns patient meaning and is not provided by this specimen-quantity communication.]] belongs with the appropriate qualified professional and actual result context. Our exchange preserves the documented specimen issue and the requested clinic follow-up.''',
+    dialogue='''Alex | I'm updating the clinic's Q6 note. It says insufficient quantity. Should I tell the clinician the patient's result is low?
+Noor | No. It refers to [[specimen volume::Specimen volume is the amount available for testing, not the patient's measured test result.]], not the patient's concentration. The lead documented too little material for the requested test and asked for recollection through the clinic.
+Alex | I'll remove low result. Which reference should stay with the message so the team links it to the right order?
+Noor | Keep [[test request::Test request Q6 identifies the work associated with the documented quantity issue and recollection request.]] Q6 in the note. The quantity message and the requested follow-up both belong to that request.
+Alex | The result field is blank. Should I enter zero until the replacement specimen arrives?
+Noor | No. No [[patient result::Patient result has not been supplied, so Noor must not invent a value or a low-result interpretation.]] is supplied. A blank result field does not mean the measured value is zero.
+Alex | Understood. The action is to obtain another specimen. Can you confirm that is actually what the lead requested?
+Noor | Yes, the documented request is [[recollection::Recollection is the lead's requested next action through the clinic, without a supplied method or urgency classification.]] through the clinic. That is the action supplied, not an instruction to use a particular collection method.
+Alex | Someone has suggested the collector used the wrong container. Is that documented anywhere in this message?
+Noor | No. The stated [[rejection reason::Rejection reason here is insufficient quantity for Q6, which does not establish who caused it or how it happened.]] is insufficient quantity. It does not establish a container error or identify who caused the shortage.
+Alex | So I can report a suitability issue without recording collector error. Is this a problem before the analytical measurement rather than a low concentration?
+Noor | Yes. This is a [[preanalytical phase::Preanalytical phase concerns work before measurement, and this specimen issue must not be recast as an analytical patient finding.]] issue about the submitted material. It is not a patient finding from an analytical result.
+Alex | The clinic will ask whether recollection is routine or urgent. Neither label appears in the message I have.
+Noor | Obtain the applicable [[authorized guidance::Authorized guidance is needed for missing urgency or collection details rather than inventing a classification from the quantity message.]] through the actual escalation arrangements. Don't assign a clinical urgency from the quantity wording alone.
+Alex | I also need the collection instructions. I should not choose a container or amount simply to complete the note.
+Noor | Correct. Check the relevant [[specimen requirement::Specimen requirement must be established from the relevant test instructions, not inferred into a collection or reporting promise.]] through the authorized procedure. This message does not provide those instructions or a new report time.
+Alex | I'll relay Q6, insufficient specimen quantity, and the lead's request to recollect through the clinic. Missing instructions go to the appropriate contact.
+Noor | That preserves the [[recollection request::Recollection request is the documented action to obtain another specimen through the clinic without additional invented details.]]. It also removes the unsupported low-result statement without replacing it with a guessed cause.
+Alex | The clinician may still ask what this means for the patient. I'll distinguish that question from the specimen-status message.
+Noor | Yes. Refer [[clinical interpretation::Clinical interpretation concerns patient meaning and is not provided by this specimen-quantity communication.]] to the appropriately qualified professional with the actual clinical context. Our note should preserve the documented limitation and requested follow-up.''',
+    rehearsal=["Check the answers, then contrast specimen volume with patient result in turns 1-6. Do not read a blank result field as zero.","Switch roles and read the recollection message for Q6. Keep collection method, cause and urgency unspecified, as supplied.","Complete the four-line exchange. Say insufficient specimen quantity and recollection through the clinic without adding a diagnosis."],
     transfer_title='Correct the meaning and retain the request',
     transfer_setup='Complete the clinic exchange without adding a collection method or patient finding.',
     transfer='''Technician: "The request reference is ___." | Q6 | The documented insufficient-quantity message concerns test request Q6.
@@ -222,7 +224,7 @@ BOOK['units'].append(unit(
     culture=('A completed stage is not a completed process', 'Under time pressure, a caller may use finished to mean ready to report. Repeat the completed stage, then name the outstanding review and authority. This acknowledges progress without allowing the caller to infer a final report that does not exist.'),
     a='''Which stage is complete? | The analytical run | The quality-control review | Authorized result release | A final clinic report | The instrument has finished the analytical run, but review and release remain unresolved.
 What is the quality-control status? | Review unresolved | Passed and approved | Confirmed failed under supplied criteria | Irrelevant because the instrument stopped | No resolved quality-control finding is supplied, so neither pass nor failure may be assumed.
-Who has not authorized release? | The laboratory lead | A courier | The patient | An unnamed manufacturer | The scenario explicitly states that the laboratory lead has not authorized result release.''',
+Which release claim is supported? | The lead has not authorized release | Instrument completion itself authorizes release | A clinic request replaces lead authorization | Review pending means approval with a warning | The run is complete, but only the stated laboratory process can authorize release; no such permission is supplied.''',
     vocabulary='''analytical run | Defined set of measurements performed in one testing sequence. | complete the analytical run
 quality control | Checks used to monitor analytical performance; abbreviated QC. | review quality control
 control material | Material with defined characteristics used to assess analytical performance. | identify control material
@@ -231,9 +233,9 @@ acceptance limit | Defined boundary used to assess an applicable control conditi
 quality review | Authorized assessment of relevant quality evidence. | await quality review
 release authorization | Permission to issue results under the applicable process. | obtain release authorization
 reportable result | Result meeting the applicable requirements for reporting. | distinguish a reportable result
-analytical completion | Status showing the measurement sequence has finished. | report analytical completion
+standard deviation | Measure of spread around the mean; abbreviated SD. | express a difference in SD units
 pending review | Status indicating an assessment is not yet resolved. | retain pending review
-run status | Current condition of the analytical sequence. | check run status
+z-score | Difference from a specified mean divided by the specified SD. | calculate the control z-score
 report status | Current stage of a report in its lifecycle. | state report status
 precision | Closeness among repeated measurements under specified conditions. | discuss analytical precision
 accuracy | Closeness of a measurement to an accepted reference value. | distinguish accuracy from precision
@@ -242,7 +244,7 @@ random variation | Unpredictable spread in measurements under relevant condition
 trend | Directional pattern across observations over time. | identify a control trend
 shift | Sustained change in the level of observed measurements. | investigate a control shift
 out-of-control condition | Quality state outside the applicable accepted criteria. | report a documented out-of-control condition
-analytical validity | Suitability of the analytical evidence under the relevant method requirements. | review analytical validity
+coefficient of variation | SD divided by the mean, usually expressed as a percentage; CV. | report the CV with its basis
 withheld result | Result not released pending the applicable process. | preserve withheld-result status
 review outcome | Documented conclusion of an assessment. | request the review outcome
 authorized reviewer | Person permitted to assess and approve the relevant evidence. | consult the authorized reviewer
@@ -275,26 +277,27 @@ Relabel | Identifies a wording change that would misrepresent actual status.''',
 What does unresolved QC review establish? | No completed review outcome is supplied | Every result is wrong | Every result is final | The review can be ignored | An unresolved review supports neither a pass nor a failure conclusion.
 Who should address the review question? | The laboratory lead under the authorized process | The caller by renaming the report | An unrelated delivery driver | The learner by inventing a control limit | The stated release and review authority belongs to the laboratory process and lead.
 Which action misrepresents status? | Calling the results final without authorization | Reporting that the run finished | Saying review remains unresolved | Declining to invent a release time | Final status cannot be created merely by changing the wording of an unreleased result.''',
-    dialogue='''Dana | The instrument has finished the run, so can I tell the clinic the results are final? We need a clear update about where things stand.
-Noor | The [[analytical run::Analytical run completion confirms that the measurement sequence finished, not that review or release has been authorized.]] has finished, but quality-control review is still unresolved. The laboratory lead has not authorized release, so I cannot describe the results as final.
-Dana | I see. I was using finished for the whole process, when it only describes the instrument's completed work. What wording should I retain for the outstanding stage?
-Noor | Use [[pending review::Pending review accurately states the unresolved quality assessment without suggesting it has passed or failed.]] for the unresolved assessment. Please keep that separate from the completed run so the update does not imply the remaining requirements have been met.
-Dana | Does unresolved mean the quality controls failed? I do not want to pass on a stronger statement than the laboratory has actually made.
-Noor | No completed [[review outcome::Review outcome is not supplied, so an unresolved assessment cannot be reported as a confirmed pass or failure.]] is supplied here. I cannot characterize it as passed or failed; I can only report that the review remains unresolved.
-Dana | Then I should avoid saying the results are wrong as well. The status message concerns the review and release process, not a supplied clinical finding.
-Noor | Correct. A [[status update::Status update communicates the current workflow stage without inventing patient findings or an analytical conclusion.]] can explain what is complete and what is outstanding. It should not invent a patient value or interpret a result that has not been released.
-Dana | If the clinic specifically asks us to call them final, does that change who can authorize the report? I assume a request is not permission.
-Noor | It does not supply [[release authorization::Release authorization must come through the applicable laboratory process, not from the clinic's request for final wording.]]. The lead has not authorized release, and changing the label would not change that fact.
-Dana | Can you give a time when the final report will be available? I need to distinguish a possible next update from a guaranteed result time.
-Noor | No confirmed release time is supplied. The [[authorized reviewer::Authorized reviewer is the role that must resolve the quality assessment under the laboratory process before a release claim is made.]] needs to address the outstanding review. I can refer that status question without promising its outcome or completion time.
-Dana | Please do that. I will tell the clinic the run is complete and review remains unresolved, rather than suggesting the report is waiting only for printing.
-Noor | That preserves the actual [[report status::Report status remains unreleased and not final, even though the instrument's analytical stage is complete.]]. The distinction matters because an administrative-sounding delay could wrongly imply that all analytical review is already finished.
-Dana | I will also avoid asking for an unofficial value to put in the note. There is no patient value supplied in this exchange.
-Noor | Exactly. A [[reportable result::Reportable result must meet the relevant reporting requirements, which are not established by instrument completion alone.]] requires the applicable review and authorization. This call does not establish those requirements or provide technical instructions to bypass them.
-Dana | Let me confirm the message: the run finished, quality-control review is unresolved, and the laboratory lead has not authorized release. Final reporting is not confirmed.
-Noor | That is correct. Keep [[quality control::Quality control is the analytical-performance review area still unresolved, not an optional step erased by the completed run.]] visible as the outstanding stage. I will direct the review question to the laboratory lead.
-Dana | Thank you. I will not relabel the results final or describe the controls as failed. The clinic will receive the actual process status.
-Noor | Good. Preserve the [[withheld result::Withheld result describes information not released pending the applicable review and authorization rather than a final report.]] status until the authorized process changes it. Any later update should report the documented decision, not an inference from the instrument finishing.''',
+    dialogue='''Dana | The instrument has finished. Can I tell the clinic these are final results? They're waiting for an answer.
+Noor | The [[analytical run::Analytical run completion confirms that the measurement sequence finished, not that review or release has been authorized.]] is complete, but quality review remains unresolved. The laboratory lead has not authorized release.
+Dana | I'll remove final from the update. What wording should I use for the stage that is still outstanding?
+Noor | Use [[pending review::Pending review accurately states the unresolved quality assessment without suggesting it has passed or failed.]]. That describes the unresolved assessment without suggesting the controls passed or failed.
+Dana | I was about to call it a QC failure because nothing is being released. Is that too strong?
+Noor | Yes. No [[review outcome::Review outcome is not supplied, so an unresolved assessment cannot be reported as a confirmed pass or failure.]] is supplied. An unresolved assessment is not the same as a documented failure.
+Dana | The clinic still needs a message. Can we give them the process status without including patient values?
+Noor | Yes. A [[status update::Status update communicates the current workflow stage without inventing patient findings or an analytical conclusion.]] can say analysis completed, review unresolved, release not authorized. It must not imply a final report exists.
+Dana | Would the clinic's request to treat it as final count as permission? They say they accept that review is pending.
+Noor | No. [[release authorization::Release authorization must come through the applicable laboratory process, not from the clinic's request for final wording.]] must come through the laboratory's applicable process. The request does not replace the lead's decision.
+Dana | Then the next question is who can resolve the review, rather than whether I can change the label.
+Noor | Correct. The [[authorized reviewer::Authorized reviewer is the role that must resolve the quality assessment under the laboratory process before a release claim is made.]] needs to assess the relevant evidence. I can pass the enquiry to the laboratory lead without inventing a technical conclusion.
+Dana | If I leave final off but say available, could that still suggest the results are ready to use?
+Noor | It could. Keep the [[report status::Report status remains unreleased and not final, even though the instrument's analytical stage is complete.]] explicit: not released, not final. A softer label should not hide the outstanding requirement.
+Dana | Understood. The completed measurement stage alone does not establish that the result meets the reporting requirements.
+Noor | Exactly. A [[reportable result::Reportable result must meet the relevant reporting requirements, which are not established by instrument completion alone.]] requires those requirements to be met; instrument completion alone is not enough.
+Dana | Is there any supplied indication that the review can be skipped because the clinic is under time pressure?
+Noor | No. The unresolved [[quality control::Quality control is the analytical-performance review area still unresolved, not an optional step erased by the completed run.]] remains part of the process. We have no authorization to bypass it or provide troubleshooting instructions.
+Dana | I'll send the process update, remove the final claim, and direct the release-status enquiry to the lead.
+Noor | Good. Keep any [[withheld result::Withheld result describes information not released pending the applicable review and authorization rather than a final report.]] unreleased until the applicable review and authorization are resolved. A clear update can acknowledge the delay without supplying unsanctioned findings.''',
+    rehearsal=["After checking the dialogue, read the three statuses aloud: analysis complete, quality review unresolved, release not authorized.","Switch roles. Correct final to not released in the printed exchange; keep unresolved distinct from both QC passed and QC failed.","Complete the four-line exchange. Retain the lead's authorization requirement and do not substitute the clinic's request for permission."],
     transfer_title='Three stages, three separate facts',
     transfer_setup='Complete the clinic update using the actual run, review, and release status.',
     transfer='''Technician: "The analytical run is ___." | complete | The instrument has finished the stated analytical sequence.
@@ -336,7 +339,7 @@ service provider | Organization or person supplying equipment support. | contact
 operational readiness | State meeting the requirements for intended operation. | confirm operational readiness
 status confirmation | Explicit verification of the current equipment condition. | request status confirmation
 outstanding review | Assessment not yet completed or resolved. | identify outstanding review
-clinic update | Communication to the clinic about relevant service status. | prepare the clinic update''',
+dilution factor | Ratio of final diluted volume to the original sample volume. | verify whether the factor was applied''',
     precision='The service visit ended at 11:00, but H2 remains marked unavailable. A departure time is not return-to-service authorization, proof of a completed repair, or a guaranteed restart time.',
     precision_extra="Request the lead's confirmed status and report only the authorized message. Do not add repair steps, settings, calibration results, reagent causes, or patient findings that are not supplied in the record.",
     phrases='''Identify the instrument | I am checking the status of analyzer H2.
@@ -365,26 +368,27 @@ When ... changes | Makes a later update conditional on an actual status change.'
 What would establish a status change here? | The laboratory lead's confirmed return-to-service status | The visit end alone | A caller's assumption | The learner choosing a setting | The lead has not yet confirmed return, so that explicit status is needed.
 Which detail must not be invented? | A restart time | The identifier H2 | The visit's 11:00 end | The unavailable label | No restart time is supplied by the known service event.
 What does the service visit prove? | Support personnel attended and the visit ended | Every repair was successful | Calibration passed | Patient results are authorized | Attendance and its end are the only service facts established in the scenario.''',
-    dialogue='''Noor | I need the current status of analyzer H2 before I update the clinic. It is marked unavailable, although the service visit ended at eleven.
+    dialogue='''Noor | The clinic saw that service on H2 ended at eleven. They're asking if we can use the analyzer again. Its status still says unavailable.
 Elena | Keep the [[instrument status::Instrument status remains unavailable until the lead confirms a documented change, regardless of the service visit ending.]] separate from the visit time. I have not confirmed return to service, so unavailable remains the status you can report.
-Noor | Thank you. I did not want to interpret the engineer leaving as permission to resume testing or as confirmation that every issue was resolved.
+Noor | Does the completed visit establish anything about availability, or only that the service attendance has finished?
 Elena | Correct. A [[service visit::Service visit records support attendance and its completion, not automatic approval that the instrument is operational.]] can end without establishing operational readiness. We need the relevant documented outcome and authorized decision, not an inference from departure.
-Noor | The clinic may ask whether eleven is the restart time. I will explain that it is the end of the visit, not a promised time for availability.
+Noor | I'll remove eleven as the restart time. Can you confirm that return to use is still outstanding?
 Elena | Exactly. [[Return to service::Return to service is the authorized restoration of operational use and has not been confirmed for H2.]] has not been confirmed. Please do not turn a known event time into a commitment we have not made.
-Noor | Should I ask for the service report as part of the status enquiry? I need to know what record supports any later update.
+Noor | Which document should the authorized reviewer check for the work completed? I don't have the service findings.
 Elena | The [[service report::Service report can document service work or findings, but its contents and resulting authorization must be reviewed rather than assumed.]] is relevant to the authorized review, but do not invent its contents. No repair steps or completed verification findings are supplied in this exchange.
-Noor | I will not tell the clinic there was a particular reagent fault. Nothing in the information I have identifies a reagent or a lot problem.
+Noor | The clinic is asking if this was a reagent problem. I don't see a reagent batch or fault finding in the supplied information.
 Elena | Good. A [[reagent lot::Reagent lot identifies a production batch and is not a documented cause of H2's unavailability in this scenario.]] reference would be a specific technical claim. We have no such finding here, and it should not be added to make the explanation sound complete.
-Noor | The same applies to calibration. I cannot say calibration passed merely because service personnel attended, and I am not changing instrument settings.
+Noor | Someone has also described calibration as passed. We don't have that result from the completed visit, do we?
 Elena | Correct. [[Calibration::Calibration is a technical measurement-related process whose successful completion is not established by the service visit ending.]] status and settings belong to the applicable technical process. This conversation is about accurate coordination, not an instruction to perform or bypass that work.
-Noor | For the clinic, the useful message is H2 unavailable, service visit ended at eleven, and return-to-service confirmation outstanding. There is no confirmed restart estimate.
+Noor | Then my update is H2 unavailable, service visit ended at eleven, and no confirmed restart time. I won't give a duration for the remaining outage.
 Elena | That describes the [[downtime::Downtime is the period of unavailability, which remains ongoing in the supplied status despite the completed visit.]] without inventing its cause or duration. We can acknowledge the completed visit while preserving the unresolved operating status.
-Noor | If the status later changes, I need an explicit confirmation from the authorized process. I should not rely on a general message that service is done.
+Noor | If the next message just says service done, I'll still need to ask whether the operational status changed.
 Elena | Yes. Ask for [[status confirmation::Status confirmation explicitly establishes the operating state needed for a clinic update rather than relying on a vague service-complete message.]] tied to H2. The wording should tell you whether availability changed, not merely that a person completed a task.
-Noor | I will keep the equipment reference in the note so nobody applies an update about another analyzer to H2. The clinic needs the correct instrument status.
+Noor | I'll retain H2 in the subject and message. An update about another instrument would not resolve this enquiry.
 Elena | The [[equipment identifier::Equipment identifier H2 keeps the status attached to the correct analyzer and prevents confusion with another instrument.]] should remain visible. That is especially important when multiple service enquiries are being handled at once.
-Noor | My update will not promise patient results or a restart time. I will relay the present unavailability and say confirmation is still required.
+Noor | Please send the documented status change through the proper route when available. Until then, I'll keep the clinic's message at unavailable.
 Elena | That is accurate. [[Operational readiness::Operational readiness requires the relevant confirmed requirements for use and has not been established for H2.]] remains unconfirmed. I will communicate a documented status change through the proper route when one is available.''',
+    rehearsal=["Check the dialogue and read H2 unavailable beside service visit ended at eleven. Stress which statement describes the instrument.","Switch roles. Read the lines rejecting an unsupported restart time, reagent fault and passed calibration; retain the missing findings.","Complete the four-line exchange. End with return to service unconfirmed, not operational readiness established."],
     transfer_title='Do not turn a visit time into a restart time',
     transfer_setup='Complete the status exchange using the known event and unresolved availability.',
     transfer='''Technician: "The analyzer identifier is ___." | H2 | H2 is the equipment reference supplied for this service enquiry.
@@ -456,26 +460,27 @@ Current uncertainty | Keeps the unresolved reporting time explicit after correct
 What does 09:00 plus two hours establish? | An 11:00 reference calculation, not a confirmed report time | Guaranteed final results at eleven | A new clinical urgency classification | Proof that no backlog exists | Arithmetic applies the quoted interval correctly but does not remove the stated uncertainty.
 Which update is accurate? | T5 arrived at nine; backlog affects estimates; no report time is confirmed | T5 is guaranteed final at ten | T5 is guaranteed final at eleven | The delay has no possible clinical importance | The correct update uses the receipt time and preserves the unresolved estimate.
 What is distinct from a result commitment? | An agreed time to provide a status update | An explicit promise results will be ready | A guaranteed final report deadline | A confirmed reporting time | An update can communicate progress or continued delay without promising completed results.''',
-    dialogue='''Eva | T5 was collected at eight, and the service quotes two hours. I told the clinic to expect the report at ten. Is that still correct?
+    dialogue='''Eva | I told the clinic T5 would be reported at ten: collected at eight plus the quoted two hours. Have I used the right starting point?
 Noor | The quoted [[turnaround time::Turnaround time for this service is measured from laboratory receipt to reporting, not from specimen collection.]] starts at laboratory receipt, not collection. T5 was received at nine, and a backlog is currently affecting estimates.
-Eva | So the eight-o'clock entry is collection, while nine is the event used by the quoted service interval. I had combined those two stages.
+Eva | Then the nine-o'clock laboratory entry matters for that interval. I'll keep the eight-o'clock collection event in the record as a separate fact.
 Noor | Correct. The [[receipt time::Receipt time is 09:00 for T5 and is the starting event specified in this service's quoted interval.]] is the relevant starting point here. It is important to keep both events in the record rather than replacing one with the other.
-Eva | Nine plus two hours gives eleven. Can I correct the clinic message to promise the report at eleven instead of ten?
+Eva | Nine plus two gives eleven. Is eleven an actual reporting commitment, or only what the quoted interval would calculate?
 Noor | No. That is a [[reference calculation::Reference calculation applies the quoted interval to receipt but does not establish a confirmed report time during the backlog.]], not a confirmed reporting promise. No report time is confirmed, and the backlog means the estimate cannot be treated as guaranteed.
-Eva | I understand. There were two errors in my message: the wrong starting point and a level of certainty that the available information did not support.
+Eva | I need to withdraw the guarantee as well as correct the arithmetic. Simply replacing ten with eleven would keep the certainty error.
 Noor | Exactly. The [[quoted interval::Quoted interval is the service's stated receipt-to-report duration, which is distinct from a guaranteed time for this specimen.]] explains how timing is described, but it does not by itself establish when this particular report will be issued under the current conditions.
-Eva | I will correct both points together. The clinic should hear receipt-based timing and an unconfirmed report time, not simply a later promise.
+Eva | I'll tell the clinic I used collection instead of receipt and gave a promise the available status didn't support.
 Noor | That is a clear [[expectation reset::Expectation reset corrects both the collection-based assumption and the unsupported reporting guarantee in the earlier message.]]. It preserves the known collection and receipt facts while withdrawing the unsupported ten-o'clock commitment.
-Eva | Is the backlog a confirmed factor, or just one possible explanation? I want the update to distinguish known conditions from guesses.
+Eva | Can I attribute the uncertainty to a confirmed backlog, or would that be another assumption?
 Noor | The [[backlog::Backlog is explicitly supplied as affecting estimates, while the exact report time remains unconfirmed.]] is a stated factor affecting estimates. We should not add an exact queue position, duration, or cause beyond the information actually available.
-Eva | If we agree to give the clinic another status update, I should make clear that the update might still report a delay rather than a completed result.
+Eva | If we later agree an update time, I'll say update rather than report ready. No replacement update time has been agreed here.
 Noor | Yes. An [[update commitment::Update commitment promises communication of status, which may still be pending, rather than guaranteeing that a report is ready.]] is different from a result commitment. No new update time is supplied in this discussion, so we should not invent one either.
-Eva | What if the clinic says the timing is clinically urgent? I cannot decide the clinical significance from this administrative status conversation.
+Eva | If the clinic raises clinical urgency, whom should that concern go through? I can't assess it from these timestamps.
 Noor | Use the applicable [[escalation route::Escalation route directs clinical urgency concerns to the authorized process rather than inferring their significance from turnaround arithmetic.]]. We must not dismiss urgency or give clinical reassurance merely because the quoted interval was misunderstood.
-Eva | My corrected note will say collected at eight, received at nine, quoted two hours from receipt to reporting, backlog affecting estimates, and no confirmed report time.
+Eva | My correction will retain collection at eight, receipt at nine, and the quoted two-hour receipt-to-report interval, with no report time confirmed.
 Noor | That keeps the [[time reference::Time reference links each clock time to its actual event so collection and receipt are not confused again.]] explicit. Anyone reading the note can see which event starts the quoted interval and which timing remains unknown.
-Eva | I will withdraw the ten-o'clock promise and avoid replacing it with an eleven-o'clock guarantee. The actual reporting time needs confirmed information.
+Eva | I'll withdraw ten o'clock and avoid promising eleven. Any actual reporting commitment needs its own confirmation.
 Noor | Agreed. A [[confirmed deadline::Confirmed deadline would require an explicit established reporting commitment, which this scenario does not provide.]] is not supplied here. Keep the calculation, estimate, and any later authorized commitment distinct in subsequent messages.''',
+    rehearsal=["Check the answers. Read collection at eight and receipt at nine as separate events, then calculate nine plus two as eleven.","Switch roles. Read the correction withdrawing the ten-o'clock promise; do not replace it with an eleven-o'clock guarantee.","Complete the four-line exchange. Keep a status update separate from a report-ready commitment, and retain the unconfirmed reporting time."],
     transfer_title='Correct the clock without inventing a promise',
     transfer_setup='Complete the T5 timing summary. Clock values identify known events or arithmetic only.',
     transfer='''Clinic: "T5 was collected at ___." | 08:00 | Eight o'clock is the specimen collection time, not the service's starting event.
@@ -502,7 +507,7 @@ report version | Identified edition or stage of a report. | check the report ver
 issue time | Recorded time a report was issued. | quote the issue time
 status label | Wording identifying a report's current stage. | correct the status label
 communication correction | Explicit repair of an inaccurate spoken or written message. | make a communication correction
-withdrawal | Retraction of an earlier inaccurate statement. | state the withdrawal clearly
+detection limit | Lowest amount reliably detectable under the stated method conditions. | distinguish detection from quantification
 version control | Management of identifiable document revisions and their relationships. | preserve version control
 current report | Report currently applicable under the stated reporting process. | identify the current report
 superseded version | Earlier record replaced by an applicable later version. | retain the superseded version appropriately
@@ -517,7 +522,7 @@ reissue | Issuance of a report again under the applicable procedure. | verify th
 distribution record | Record of where a report or update was sent. | check the distribution record
 document history | Record of earlier versions and changes. | preserve document history
 explicit correction | Statement directly identifying and fixing the prior error. | provide an explicit correction
-reference copy | Identified copy used for the current discussion. | verify the reference copy''',
+quantification limit | Lowest amount quantified with suitable precision and accuracy. | retain the below-quantification qualifier''',
     precision='The 10:00 report was preliminary; calling it final was a communication error. The 14:00 final report supersedes that version. This sequence does not establish what any findings say or whether their content changed.',
     precision_extra="An amended report is a formally revised report under the relevant process. Correcting Noor's inaccurate label does not prove such a report exists. Preserve the report history and follow the actual record-correction arrangements rather than deleting the earlier version.",
     phrases='''Open the correction | I need to correct my earlier description.
@@ -546,26 +551,27 @@ Respective | Keeps each time paired with its own version.''',
 What does supersedes mean here? | The later final version replaces the preliminary version for this request | Both reports become preliminary | Every previous record must be destroyed | A diagnosis has been reversed | Superseding describes which version is applicable, not deletion or a clinical conclusion.
 Which claim is unsupported? | An amended report was issued after 14:00 | The 10:00 report was preliminary | The 14:00 report is final | Noor's earlier label was wrong | No later amendment appears in the supplied report sequence.
 What should be preserved? | A traceable correction and report history under policy | Only the incorrect phone message | An invented new issue time | A claim that no error occurred | A documented correction should repair the message without concealing the relevant history.''',
-    dialogue='''Noor | Priya, I need to correct my earlier description of the report received at ten. I called it final, and that label was incorrect.
-Priya | Thank you for making an [[explicit correction::Explicit correction directly identifies the earlier inaccurate final label instead of leaving the recipient to infer what changed.]]. I have the ten-o'clock version and the fourteen-hundred version here. Please confirm the status of each.
-Noor | The ten-o'clock report was preliminary. The fourteen-hundred report is final and supersedes the preliminary version for this request.
-Priya | I will mark the ten-o'clock [[status label::Status label for the earlier report must be preliminary, correcting Noor's mistaken description without inventing clinical content.]] as preliminary in the communication record. I will not keep your earlier final wording as though both descriptions were correct.
-Noor | That is right. My mistake was in describing the earlier version. This correction does not supply a clinical interpretation or say what any finding means.
-Priya | Understood. A [[communication correction::Communication correction repairs Noor's inaccurate message and does not itself establish an amended clinical report.]] is not automatically a new laboratory report. Are we given any later amended version beyond the final report at fourteen?
-Noor | No later amended report is supplied in this enquiry. The known sequence is preliminary at ten and final at fourteen.
-Priya | Then I should not call the fourteen-hundred report an [[amended report::Amended report would be a formally revised report under the applicable process, which the stated preliminary-to-final sequence does not establish.]] merely because your earlier telephone description was wrong. Its supplied status is final.
-Noor | Exactly. Please keep the issue times attached to the versions. Saying the later one without a reference could become ambiguous if the message is forwarded.
-Priya | I will retain the [[issue time::Issue time distinguishes the 10:00 preliminary report from the 14:00 final report in the correction and handoff.]] with each status. Ten is preliminary, fourteen is final, and the final version supersedes the earlier one for this request.
-Noor | We should also avoid saying the findings changed. The information in this exchange concerns report status and sequence, not the report's clinical content.
-Priya | Agreed. No [[finding::Finding refers to report content, which has not been supplied and must not be inferred from a change in report status.]] or clinical conclusion is provided here. I will not turn the correction into a statement that the patient's result improved, worsened, or reversed.
-Noor | Please link the corrected note to the earlier message so anyone who read my first description can identify the replacement wording.
-Priya | That preserves the [[correction trail::Correction trail links the inaccurate message to its explicit replacement so the earlier error remains traceable.]]. A separate note saying updated might not tell someone which statement was withdrawn.
-Noor | The preliminary version should remain handled according to the record policy. Superseded does not mean we should silently erase its existence or the communication error.
-Priya | I will preserve the relevant [[document history::Document history retains the version sequence and correction record according to policy instead of hiding the earlier report or error.]]. The current status can be clear without pretending the preliminary report was never received.
-Noor | Can you confirm that you have the corrected status and understand which report supersedes which? I want the message closed with an explicit acknowledgment.
-Priya | I confirm [[receipt::Receipt establishes that Priya received the corrected version information rather than leaving communication assumed.]] of the correction: the ten-o'clock report was preliminary, and the fourteen-hundred final report supersedes it for this request.
-Noor | Thank you. I will record that acknowledgment through the appropriate process. I am withdrawing the earlier final label, not adding an interpretation of the report.
-Priya | The [[current report::Current report is the supplied 14:00 final version applicable to this request, with no later amendment established.]] for this enquiry is the fourteen-hundred final version. The earlier label is corrected, and no clinical conclusion or later amended version has been asserted.''',
+    dialogue='''Noor | Priya, I need to correct my earlier message. I called the ten-o'clock report final. It was preliminary; the fourteen-hundred report is final.
+Priya | Thank you for the [[explicit correction::Explicit correction directly identifies the earlier inaccurate final label instead of leaving the recipient to infer what changed.]]. I'll correct my note before passing the earlier label on.
+Noor | Please keep both issue times. The ten-o'clock document wasn't final at issue, even though a final version now exists.
+Priya | I'll change the earlier [[status label::Status label for the earlier report must be preliminary, correcting Noor's mistaken description without inventing clinical content.]] to preliminary and identify fourteen hundred as the final version. I won't relabel the original document itself.
+Noor | Right. I'm correcting what I said about its status, not announcing a new laboratory finding.
+Priya | So this is a [[communication correction::Communication correction repairs Noor's inaccurate message and does not itself establish an amended clinical report.]]. It repairs your message but does not, by itself, tell me that any clinical content changed.
+Noor | Exactly. Nor should we call the fourteen-hundred final report amended merely because I used the wrong word earlier.
+Priya | An [[amended report::Amended report would be a formally revised report under the applicable process, which the stated preliminary-to-final sequence does not establish.]] would need its own formal status and record. The supplied sequence is preliminary followed by final.
+Noor | Can you repeat the two versions back? I want to make sure the earlier mistake is not carried forward.
+Priya | Ten hundred: preliminary. Fourteen hundred: final. I'll retain each [[issue time::Issue time distinguishes the 10:00 preliminary report from the 14:00 final report in the correction and handoff.]] beside the corresponding status.
+Noor | That's correct. We haven't been given the clinical content of either version, so I can't describe a change in the patient's result.
+Priya | I won't infer a changed [[finding::Finding refers to report content, which has not been supplied and must not be inferred from a change in report status.]] from the status change. The supplied evidence concerns the report versions and your earlier wording.
+Noor | Please link this correction to the inaccurate message rather than silently replacing it. The next reader should know what was corrected.
+Priya | I'll preserve the [[correction trail::Correction trail links the inaccurate message to its explicit replacement so the earlier error remains traceable.]] through the applicable record process. That keeps the original error and its correction traceable.
+Noor | The earlier report also belongs in the retained version record under policy. Superseded does not mean erase the history.
+Priya | Understood. The [[document history::Document history retains the version sequence and correction record according to policy instead of hiding the earlier report or error.]] stays intact while the fourteen-hundred final version is identified as current for this request.
+Noor | Can you confirm that you've received the corrected version information, rather than only seen that I sent a follow-up?
+Priya | I confirm [[receipt::Receipt establishes that Priya received the corrected version information rather than leaving communication assumed.]]: ten hundred preliminary, fourteen hundred final, and your earlier final label for ten hundred is withdrawn.
+Noor | Thank you. No later amendment is established here. I'll use the same version wording in any onward communication.
+Priya | I'll refer to the fourteen-hundred final version as the [[current report::Current report is the supplied 14:00 final version applicable to this request, with no later amendment established.]], without inventing findings or hiding the earlier correction.''',
+    rehearsal=["After checking the answers, read the explicit correction: ten hundred preliminary, fourteen hundred final.","Switch roles and repeat both versions and times. Say communication correction without converting the sequence into an amended-report claim.","Complete the four-line exchange. Keep the earlier mistake traceable and identify the current final version without inventing clinical findings."],
     transfer_title='Correct the version, not the patient finding',
     transfer_setup='Complete the report-status correction using only the supplied times and relationship.',
     transfer='''Technician: "The 10:00 report was ___." | preliminary | The earlier report's correct status is preliminary despite the mistaken phone label.
@@ -643,20 +649,21 @@ Noor | Correction: six point four, not six point one. For C7, potassium is six p
 Dr Shah | C7, potassium, six point four [[millimoles per liter::Millimoles per liter is the required concentration unit accompanying the corrected potassium value of 6.4.]], critical under Lumen's criteria, report issued at fourteen ten.
 Noor | That read-back is correct. Please confirm receipt of the critical notification. Our case-identity and receiving-authority checks were completed before this exchange.
 Dr Shah | I confirm [[receipt::Receipt confirms that the verified authorized recipient has received the corrected critical-result message.]] of the critical notification for C7: potassium six point four millimoles per liter, with the report issued at fourteen ten.
-Noor | Thank you. For the communication record, this call is at fourteen twelve. I will keep that separate from the report's fourteen-ten issue time.
-Dr Shah | Yes, the [[notification time::Notification time is 14:12 for this call and must remain distinct from the report's 14:10 issue time.]] is fourteen twelve. Fourteen ten belongs to the issued report, not to the time of this call.
-Noor | Please confirm your contact extension for the record. I have Dr Shah at extension two one four as the verified recipient.
-Dr Shah | The [[contact extension::Contact extension 214 identifies Dr Shah's telephone contact and is not a result value or timestamp.]] is two one four. Please retain my name with that contact information rather than recording only an unnamed acknowledgment.
-Noor | I will record your name, the relevant times, the result message, and the corrected read-back according to our notification procedure.
-Dr Shah | That will preserve the [[communication discrepancy::Communication discrepancy is the initial 6.1 repeat that was explicitly corrected to 6.4 and confirmed.]] and its resolution. My first repeat was six point one; the accurate value I received is six point four.
-Noor | Correct. The analyte and unit remain potassium and millimoles per liter. I am not changing any report finding; I am correcting the spoken repeat.
-Dr Shah | Understood. The [[numerical value::Numerical value is 6.4, while the correction concerns the misheard repeat rather than a changed laboratory report.]] in the report is six point four. The earlier six point one was my inaccurate read-back, not another issued result.
-Noor | Lumen's critical designation is the status I am notifying. This call does not state a diagnosis or give a treatment instruction.
-Dr Shah | I understand that [[clinical action::Clinical action belongs to the appropriate authorized patient-care process and is not supplied by this language-practice notification.]] is separate from confirming receipt of the laboratory message. I have received the exact result and its stated local designation.
-Noor | I will complete the communication record with the acknowledgment and correction. We have the correct case reference, analyte, value, unit, recipient, and times.
-Dr Shah | The [[complete message::Complete message retains the case reference, potassium, corrected 6.4 value, unit, critical designation, and report time.]] has been received: C7, potassium six point four millimoles per liter, designated critical by Lumen, report issued at fourteen ten.
-Noor | Confirmed correct. I am recording receipt by Dr Shah at extension two one four during this fourteen-twelve call, with the inaccurate initial repeat corrected.
-Dr Shah | That completes the [[closed-loop communication::Closed-loop communication is completed through the corrected recipient repetition, sender confirmation, and explicit acknowledgment of receipt.]]. The corrected value and unit are confirmed, and I have acknowledged the notification as the verified authorized recipient.''',
+Noor | Thank you. This call is at fourteen twelve; the report issue time is fourteen ten. I'll keep those events separate.
+Dr Shah | Agreed. Fourteen twelve is the [[notification time::Notification time is 14:12 for this call and must remain distinct from the report's 14:10 issue time.]], not a revised issue time.
+Noor | Please confirm extension two-one-four for the communication record. The receiving identity and authority checks are already complete.
+Dr Shah | Two-one-four is my [[contact extension::Contact extension 214 identifies Dr Shah's telephone contact and is not a result value or timestamp.]]. It isn't part of the concentration or the report time.
+Noor | I'll record that the initial six-point-one repeat was corrected and the complete six-point-four message confirmed.
+Dr Shah | Yes, retain that [[communication discrepancy::Communication discrepancy is the initial 6.1 repeat that was explicitly corrected to 6.4 and confirmed.]]. The error was in my initial repetition, not a newly amended laboratory value.
+Noor | Correct. I haven't changed the result. The report remains potassium six point four millimoles per liter.
+Dr Shah | That is the confirmed [[numerical value::Numerical value is 6.4, while the correction concerns the misheard repeat rather than a changed laboratory report.]]. Keep the unit with it, not just the digits.
+Noor | The laboratory notification is now acknowledged. No treatment instruction has been supplied in this call.
+Dr Shah | Any [[clinical action::Clinical action belongs to the appropriate authorized patient-care process and is not supplied by this language-practice notification.]] will go through the appropriate patient-care process. Please retain the notification record while I attend to that responsibility.
+Noor | I will retain C7, potassium, six point four, millimoles per liter, Lumen's critical designation, and fourteen-ten report time.
+Dr Shah | That preserves the [[complete message::Complete message retains the case reference, potassium, corrected 6.4 value, unit, critical designation, and report time.]] I received, along with the separate call time and corrected read-back.
+Noor | Your accurate repeat and acknowledgment are recorded. I won't substitute message sent for confirmed receipt.
+Dr Shah | Thank you. That completes the [[closed-loop communication::Closed-loop communication is completed through the corrected recipient repetition, sender confirmation, and explicit acknowledgment of receipt.]] for the notification; the subsequent care decisions remain separate.''',
+    rehearsal=["Check the answers, then read turns 1-6 in order. Correct six point one immediately to six point four millimoles per liter and confirm the complete repeat.","Switch roles. Read the record details: report fourteen ten, notification fourteen twelve, extension two-one-four. Keep each number attached to its purpose.","Complete the four-line exchange with C7, potassium, the correct value and unit. Use only the fictional case; no treatment instruction is supplied."],
     transfer_title='Correct, repeat, confirm',
     transfer_setup='Complete the result exchange. Identity and authority are already verified; the critical designation is specific to fictional Lumen.',
     transfer='''Technician: "Correction: potassium ___ mmol/L, not 6.1." | 6.4 | The supplied potassium value is 6.4, correcting the inaccurate initial repeat.
@@ -727,26 +734,27 @@ Does not mean | Prevents one completed milestone from implying another.''',
 What is the precise follow-up question? | Has the referral laboratory accepted X8's accession? | Did the courier diagnose the patient? | Can we invent a result date? | Was every parcel in the country delivered? | The outstanding laboratory milestone is X8's individual accession acceptance.
 What should happen at 15:00 under the agreed handover? | Eli gives the clinic the actual status | A final result is guaranteed | The enquiry disappears automatically | Noor is assumed to remain on shift | The commitment concerns a clinic update, not guaranteed testing completion.
 Which statement confirms ownership? | I accept the X8 enquiry and the 15:00 clinic update | Someone probably saw the note | Delivered means everything is finished | No reply means accepted | Eli's explicit acceptance transfers both the enquiry and the stated communication responsibility.''',
-    dialogue='''Noor | Before I finish my shift, I need to hand over X8. It appears on Monday's manifest, and the courier confirms the parcel was delivered Tuesday.
+    dialogue='''Noor | Can you take over X8 before I leave? Monday's manifest lists it, and the parcel was delivered Tuesday, but one laboratory status is still missing.
 Eli | What is the outstanding [[laboratory milestone::Laboratory milestone is X8's individual accession acceptance, which is distinct from the confirmed transport delivery.]]? I want to separate what the courier has confirmed from what the referral laboratory has actually acknowledged.
-Noor | The referral laboratory has not confirmed accession acceptance for X8. Delivery is established, but we do not yet have that individual acceptance confirmation.
+Noor | It's the individual accession acceptance. The referral laboratory hasn't confirmed accepting X8, even though the courier delivered the parcel.
 Eli | Then the [[outstanding enquiry::Outstanding enquiry asks whether the referral laboratory has accepted X8, rather than whether its parcel reached the destination.]] is specifically about X8's accession acceptance. I will not treat parcel arrival as evidence that this particular item was accepted for work.
-Noor | Correct. Please keep the manifest and delivery confirmation with the enquiry. Each supports a different stage, and neither supplies a result date.
+Noor | I'll leave you both records. The manifest supports dispatch; the courier record supports arrival. Neither is an issued-result notice.
 Eli | I will preserve the [[dispatch record::Dispatch record is the Monday manifest listing X8, which supports shipment history but not later acceptance or reporting.]] and the courier evidence. I will not replace those source details with a single vague status such as received and complete.
-Noor | There is also an agreed clinic update at fifteen hundred. That is a promise to communicate status, not a promise that testing will be finished.
+Noor | The clinic is expecting a status update at fifteen hundred. That commitment remains even if the acceptance enquiry is unresolved.
 Eli | I accept the [[update time::Update time is the agreed 15:00 clinic communication commitment, not a confirmed result deadline.]] of fifteen hundred as part of the handover. If accession acceptance remains unresolved, the update must state that accurately.
-Noor | Thank you. Can you also explicitly accept the follow-up enquiry itself? I do not want the responsibility to remain implied after my shift ends.
+Noor | Can you explicitly take the enquiry as well as the call? I need to know who will continue it after this shift.
 Eli | Yes. I accept [[follow-up ownership::Follow-up ownership makes Eli responsible for continuing the X8 accession enquiry rather than merely receiving a note.]] for X8's accession enquiry and the clinic update. I will carry both tasks forward under the laboratory's actual process.
-Noor | No referral accession number has been confirmed in the information I have. Please do not generate one simply to fill an empty field in the handover.
+Noor | The referral's accession field is blank in the information I have. X8 is our send-out reference, not a newly confirmed external accession.
 Eli | Understood. A [[referral reference::Referral reference must come from the relevant confirmed record and must not be invented to make the handover appear complete.]] needs the appropriate source. I will preserve X8 as the send-out reference while seeking the missing acceptance information.
-Noor | The courier confirmation relates to the parcel. If someone asks whether it proves every item was accepted, the answer needs to retain that limit.
+Noor | If someone says received, please ask whether they mean the whole parcel or acceptance of the individual specimen.
 Eli | I will call it [[delivery confirmation::Delivery confirmation establishes the parcel's arrival on Tuesday but not the referral laboratory's acceptance of every individual item.]], not accession confirmation. The referral laboratory must establish the individual laboratory status we are asking about.
-Noor | The same caution applies to the result date. Nothing in the manifest or delivery confirmation establishes when a report will be available.
+Noor | We also have no result date. Please don't turn the fifteen-hundred update into a promise that the report will be ready.
 Eli | No [[result date::Result date remains unconfirmed and cannot be inferred from dispatch, parcel arrival, or acceptance of follow-up responsibility.]] is confirmed. I will not turn the fifteen-hundred update into a reporting promise or infer a date from the transport timeline.
-Noor | Let me summarize: X8 on Monday's manifest, parcel delivered Tuesday, accession acceptance outstanding, no result date, and you own the enquiry and fifteen-hundred update.
+Noor | I'll read back the handover: X8 dispatched Monday, parcel delivered Tuesday, accession acceptance outstanding; you own that enquiry and the fifteen-hundred update.
 Eli | That is my [[acceptance acknowledgment::Acceptance acknowledgment explicitly confirms Eli's responsibility for both the unresolved enquiry and the agreed clinic update.]] of the handover. I accept those two responsibilities, with the accession status and result timing still unresolved as stated.
-Noor | I will record that you have accepted the work before I leave. The enquiry is not resolved, but it now has a named incoming owner.
+Noor | Thanks. I'll record your acceptance before leaving. The unresolved enquiry now has an owner, but the laboratory status itself has not changed.
 Eli | That maintains [[continuity::Continuity preserves the unresolved work, evidence, and communication commitment across Noor's shift ending and Eli taking over.]]. I will follow up the acceptance question and give the clinic the actual status at fifteen hundred, without claiming a result that has not been confirmed.''',
+    rehearsal=["Check the dialogue, then read the timeline: Monday dispatch, Tuesday parcel delivery, individual accession acceptance unconfirmed.","Switch roles. Have Eli explicitly accept both the X8 enquiry and the fifteen-hundred clinic update, not just receipt of a note.","Complete the four-line exchange. Preserve the absent result date and do not turn the update time into a reporting promise."],
     transfer_title='Transfer the question and the commitment',
     transfer_setup='Complete the shift handover without upgrading parcel delivery to laboratory acceptance.',
     transfer='''Outgoing: "The send-out reference is ___." | X8 | X8 identifies the outstanding referral enquiry in the supplied handover.

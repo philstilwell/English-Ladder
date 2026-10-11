@@ -20,6 +20,7 @@ class DialoguePublicationTests(unittest.TestCase):
 
     def test_published_books_use_the_new_extended_dialogue_edition(self):
         from build_leadership_book import content_hash
+        from books.supplements import load_supplements
         from work_books import book_source, book_units
         manifest = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
         for track in load_tracks():
@@ -27,9 +28,10 @@ class DialoguePublicationTests(unittest.TestCase):
             with self.subTest(course=track['slug']):
                 meta = manifest[href]
                 units = book_units(track['slug'])
-                self.assertEqual(meta['book_content_hash'], content_hash(units))
-                self.assertEqual(meta['dialogue_count'], 8)
-                self.assertEqual(meta['dialogue_turns'], 160)
+                self.assertEqual(meta['book_content_hash'], content_hash(units, load_supplements(track['slug'])))
+                self.assertEqual(meta['dialogue_count'], 11)
+                self.assertEqual(meta['dialogue_turns'], 220)
+                self.assertEqual(meta['transfer_dialogue_count'], 11)
                 self.assertEqual((ROOT / href).read_bytes(), book_source(track['slug']).read_bytes())
                 self.assertEqual(meta['sha256'], hashlib.sha256((ROOT / href).read_bytes()).hexdigest())
 

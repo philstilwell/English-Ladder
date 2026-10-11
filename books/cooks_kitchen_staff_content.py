@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=36,
     tagline='Clear calls. Coordinated kitchens.',
     audience='For line cooks, prep cooks, kitchen assistants, station leads, and food-service production teams.',
-    map_intro='Eight kitchen conversations: clarify a prep quantity, count a delivery, replace a revised ticket, coordinate the pass, explain a shortage, check an allergy modification, report a faulty scale, and hand over unfinished work.',
+    map_intro='Eight lessons on prep, receiving, tickets, the pass, shortages, allergies, equipment, and handovers. Additional conversations cover recipe scaling, usable yield, and tracing a recalled ingredient.',
     notes_title='Say the quantity. Name the stage.',
     notes_intro='Kitchen communication needs to be brief enough for service and complete enough to prevent mistakes. Numbers need units, revised tickets need a clear total, and ready must identify which items have actually reached which stage.',
     field_notes=[
@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Cooks.',
              url='https://www.bls.gov/ooh/food-preparation-and-serving/cooks.htm',
-             note='Occupational context for recipe-based preparation, station work, portioning, and kitchen coordination. The original cases do not reproduce workplace transcripts.', checked='1 October 2026'),
+             note='Occupational context for recipe-based preparation, station work, portioning, and kitchen coordination. The original cases do not reproduce workplace transcripts.', checked='10 October 2026'),
         dict(title='US Food and Drug Administration. Food Allergies.',
              url='https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies?lv=true',
-             note='Background for allergy and cross-contact terminology. Removing a named topping does not verify a complete dish or its preparation.', checked='1 October 2026'),
+             note='Background for allergy and cross-contact terminology. Removing a named topping does not verify a complete dish or its preparation.', checked='10 October 2026'),
         dict(title='US Food and Drug Administration. Food Code 2026.',
              url='https://www.fda.gov/food/fda-food-code/food-code-2026',
-             note='Model code offered for jurisdictional adoption. The language exercises do not replace applicable local rules or the actual kitchen food-safety system.', checked='1 October 2026'),
+             note='Model code offered for jurisdictional adoption. The language exercises do not replace applicable local rules or the actual kitchen food-safety system.', checked='10 October 2026'),
         dict(title='US Food and Drug Administration. Have Food Allergies? Read the Label.',
              url='https://www.fda.gov/consumers/consumer-updates/have-food-allergies-read-label',
-             note='Ingredient-source context, including casein and whey as milk proteins. Label information must match the actual product; it does not alone settle kitchen handling.', checked='1 October 2026'),
+             note='Ingredient-source context, including casein and whey as milk proteins. Label information must match the actual product; it does not alone settle kitchen handling.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -79,7 +79,7 @@ State the intended quantity | I mean twenty-four portions.
 Name the recipe basis | Use the current recipe.
 Keep the rejected interpretation clear | Not twenty-four containers.
 State the work status | I have not started the batch yet.
-Avoid a volume guess | We have not specified a total volume in this exchange.
+Check the quantity basis | What portion size and finished yield does this recipe use?
 Check the recipe yield | I will use the yield stated in the approved recipe.
 Separate container and serving | Container size does not define the portion count by itself.
 Make the correction visible | Let us add portions to the prep list.
@@ -96,18 +96,18 @@ Yet | Indicates that clarification is occurring before a batch has begun.
 Using | Links the quantity to the specified recipe basis.
 By itself | Prevents one available fact from being treated as enough for a conversion.''',
     d='''Which read-back is complete? | Soup: twenty-four portions using the current recipe, not twenty-four containers. | Soup: twenty-four of something. | Twenty-four containers because the storeroom label says containers. | Twenty-four liters because soup is liquid. | The read-back preserves the clarified unit and recipe basis while rejecting the mistaken interpretation.
-What information is still needed to calculate ingredient amounts? | The actual recipe yield, portion size, and approved scaling details | Only the word soup | An arbitrary container count | Yesterday's number without its recipe | The brief supplies the target portions but no ingredient quantities or numeric conversion basis.
+What information is still needed to calculate ingredient amounts? | The actual recipe yield, portion size, and approved scaling details | The number of portions without their size | The container capacity without the recipe | The old ingredient list without its yield | The brief supplies the target portions but no ingredient quantities or numeric conversion basis.
 Which statement correctly describes production status? | No batch has started. | The soup has already been served. | All ingredients have been weighed as a supplied fact. | Twenty-four containers are complete. | Asha has paused before production, so no completed preparation should be invented.
 Why add portions to the list? | To make the clarified unit visible to the next reader | To change the target to containers | To certify all food-safety controls | To imply the batch is already complete | Updating the wording prevents the original ambiguity from being passed to another colleague.''',
     dialogue='''Asha | Mateo, can I check the soup line before I start? It says twenty-four, but there is no unit beside the number.
 Mateo | Thank you for checking the [[prep list::The prep list contains the ambiguous soup quantity; clarifying it prevents the wrong production amount from being started.]]. I mean twenty-four portions from the current recipe, not twenty-four containers.
-Asha | That helps. Yesterday's sheet counted portions, but the storeroom label counts containers. I did not want to assume those two records meant the same thing.
+Asha | Thanks. The store label says containers, so I wanted to check before I started filling twenty-four of those.
 Mateo | They do not establish the same [[unit of measure::The unit of measure identifies what the number counts; portions and containers are different units unless explicitly related.]]. Today's instruction is portions. The storage label does not change the production target I have given you.
 Asha | I have not started a batch, so nothing needs undoing. I wanted to settle the quantity before collecting ingredients and beginning the preparation.
 Mateo | Good. Keep the [[task start::The task start has not occurred; the clarification precedes production rather than correcting an already completed batch.]] clear in the handoff. We are clarifying an instruction, not reporting that twenty-four of anything has already been made.
-Asha | Should I use the recipe we currently keep for this soup, rather than copy a quantity from yesterday's working sheet?
+Asha | Which recipe version are we using today? I have yesterday's working sheet, but I would rather check it against the approved one.
 Mateo | Use the [[current recipe::The current recipe is the specified production basis; yesterday's working sheet is not automatically the correct recipe authority.]]. Confirm the approved version for the task, including its yield and portion size, before working out the required ingredients.
-Asha | We have not named a volume here. I cannot turn twenty-four portions into a number of liters unless the recipe gives me the necessary basis.
+Asha | What is the portion size on that recipe? Without it, I cannot turn twenty-four servings into a finished volume.
 Mateo | Exactly. The [[portion size::The portion size defines the amount per serving; it is needed to relate a portion count to an actual quantity.]] comes from the actual recipe arrangement. Do not invent it from the size of a container you happen to see.
 Asha | I will check how many portions the approved recipe produces. That will tell me whether I need a whole batch or an appropriately scaled quantity.
 Mateo | The [[recipe yield::The recipe yield states the output of the approved recipe, providing the basis for comparing it with the target portions.]] is the relevant starting point. The twenty-four target alone does not tell you the ingredient weights or the number of preparation cycles.
@@ -115,10 +115,11 @@ Asha | And the size of a storage container is a separate detail. One container c
 Mateo | Correct. [[Container capacity::Container capacity measures what a vessel can hold; it does not by itself define a serving or the required portion count.]] is not a synonym for portion count. We need to keep storage descriptions and production quantities distinct.
 Asha | If the recipe needs scaling, I will use its actual yield and the target rather than multiply everything by twenty-four automatically.
 Mateo | Yes. A [[scaling factor::A scaling factor relates target yield to recipe yield; twenty-four portions is not automatically a factor of twenty-four.]] depends on the recipe basis. Follow the approved method, and ask about any unresolved detail before changing ingredient amounts.
-Asha | Let us add the word portions to the list now. Otherwise another cook could read the same short line and have the same question.
+Asha | I will add portions to the line now. Whoever takes over this prep should not have to ask the same question again.
 Mateo | Agreed. Make the [[production quantity::The production quantity is twenty-four portions, which should remain visible with its unit on the corrected instruction.]] explicit. The corrected entry should preserve soup, twenty-four portions, and the current recipe basis without implying the task is complete.
 Asha | My repeat is soup, twenty-four portions, current recipe. No batch started. I will check the recipe details before beginning the actual preparation.
 Mateo | That [[read-back::The read-back repeats item, quantity, unit, recipe basis, and current work status, confirming the instruction understood.]] is correct. We have resolved the missing unit, and the next step is to prepare against the approved recipe and actual kitchen process.''',
+    rehearsal=["Check the answers. Read the prep-list conversation, stressing portions rather than containers.","Switch roles. Repeat the twenty-four-portion instruction, current recipe, and no-batch-started status without inventing a volume.","Complete and check the sauce transfer. Read the eighteen-portion instruction and keep the tub interpretation rejected."],
     transfer_title='Clarify a sauce quantity',
     transfer_setup='A prep line says sauce: 18. Lead Noor clarifies eighteen portions from the current recipe, not eighteen tubs. No batch has started, and no portion volume is supplied.',
     transfer='''Cook: "The target is eighteen ___." | portions | Noor explicitly names portions as the intended production unit.
@@ -185,7 +186,7 @@ May be | Preserves the uncertainty in the driver's statement.
 Not accounted for here | States the local observation without claiming universal absence.
 Through our process | Refers to the actual receiving arrangement rather than an improvised shortcut.
 When supported | Makes a record change conditional on verification.''',
-    d='''Which report is accurate? | Six cases listed, four present; the driver suggests two may be on an unchecked trolley. | Six verified because the note says six | The driver definitely stole two cases | Two damaged cases have been credited | The report distinguishes the document, physical observation, and unverified explanation.
+    d='''Which report is accurate? | Six cases listed, four present; the driver suggests two may be on an unchecked trolley. | Six received, with two still to unload from a verified trolley | Four received; the supplier has confirmed two were not sent | Six expected, four accepted after all condition checks | The report distinguishes the document, physical observation, and unverified explanation.
 What should not be recorded as established? | Six cases received | Four cases physically counted | The note lists six | The driver has not checked the other trolley | The current observation does not verify receipt of all six listed cases.
 Which conclusion exceeds the evidence? | The supplier deliberately shorted the kitchen. | There is a quantity discrepancy to resolve. | Another location needs checking through the process. | The receiving lead owns the record question. | The cause and intent behind the discrepancy are not established by the count.
 What remains separate from the quantity count? | Required product acceptance checks | The arithmetic difference between six and four | The fact that the unit is cases | The driver's attributed statement | Counting cases does not establish their condition or satisfy every required receiving control.''',
@@ -193,22 +194,23 @@ What remains separate from the quantity count? | Required product acceptance che
 Lina | Thank you. Keep the [[listed quantity::The listed quantity belongs to the delivery document and must remain distinct from the goods physically verified.]] separate from your observed count. Six on the note does not let us record six received without the relevant check.
 Ben | The driver says two more may be on another trolley. He has not looked yet, so I have not treated that explanation as a confirmed location.
 Lina | That is an attributed [[driver statement::The driver statement is an unverified suggestion about another trolley, not evidence that the missing cases have been found.]]. Record it as a possibility he gave us, not as two additional cases already verified.
-Ben | For the immediate count, I have four cases here. The unit is cases, not individual tomatoes or a number of pallets.
+Ben | I have counted four cases at the receiving bay. I am comparing cases with cases, not counting the tomatoes inside.
 Lina | Good. The [[physical count::The physical count is four cases actually present in the receiving area, preserving both number and unit.]] should name the product and unit clearly. We need everyone comparing the same thing when they read the record.
 Ben | So the difference between the note and what I see is two cases. I should not jump from that difference to a statement about why it happened.
 Lina | Correct. It is a [[quantity discrepancy::A quantity discrepancy identifies a difference between listed and observed amounts; it does not establish cause or deliberate misconduct.]] to resolve through receiving. It could have an explanation, but we do not have that explanation verified yet.
 Ben | I have not signed off six as received. I did not want the paperwork to appear complete while the extra two cases were still only a suggestion.
 Lina | That protects the [[receipt record::The receipt record should reflect actual supported receipt, not an expected quantity entered merely to match the delivery note.]]. It needs to reflect what the actual process verifies, not what would make the numbers look tidy.
-Ben | Should the other trolley be checked before anyone says this is a short delivery? At the moment, we do not know whether the cases are there.
+Ben | Can we have the driver check that other trolley? I have not seen those two cases yet, so I do not know whether they arrived.
 Lina | Yes, the [[unchecked location::The unchecked location is the suggested other trolley; its possible contents remain unknown until the actual check occurs.]] needs to be resolved through our process. Do not convert not seen here into a final account of the whole delivery.
 Ben | I also have not made any claim about the tomatoes' condition. Counting the cases is not the same as finishing every required receiving check.
 Lina | Exactly. The [[acceptance check::The acceptance check concerns the required product and receiving criteria, which a simple quantity count does not complete.]] is a separate matter. Product identity, condition, and any required controls still need the appropriate actual checks.
 Ben | I will keep the tomato details with the discrepancy. Otherwise a later note saying two cases missing could be confused with another delivery.
 Lina | Preserve the [[product identifier::The product identifier links the count discrepancy to the correct tomatoes rather than leaving an ambiguous two-case note.]] and relevant delivery reference. Accurate context matters as much as the subtraction when another colleague follows it up.
-Ben | If a supplier question or credit request becomes necessary, I will not mark one approved just because I have raised the discrepancy with you.
+Ben | I will keep the commercial question with you. We have a discrepancy to resolve, not an approved credit to enter.
 Lina | Correct. A [[credit note::A credit note is a supplier adjustment document; the current count discrepancy does not establish that any credit has been approved.]] is not established here. First keep the receiving facts accurate and follow the proper route for any later commercial action.
 Ben | My handoff is six cases listed, four physically present, and a possible two on an unchecked trolley. You own the record question from here.
 Lina | I accept that as [[receiving lead::The receiving lead is the responsible owner for resolving the record through the actual process, without inventing a completed outcome.]]. I will coordinate the next checks. The extra two cases remain unverified until the actual result supports an update.''',
+    rehearsal=["Check the answers. Read the receiving exchange, separating six on the note from four physically counted.","Switch roles. Attribute the unchecked-trolley explanation to the driver without recording the two cases as received.","Complete the flour-sack transfer and check the key. Read the documented count, observed count, suggested location, and receiving lead."],
     transfer_title='Report another count difference',
     transfer_setup='A delivery note lists eight flour sacks. Six are physically present. The driver suggests two may still be in the vehicle, which has not been checked. Receiving lead Noor accepts the query.',
     transfer='''Cook: "The note lists ___ sacks." | eight | Eight is the documented quantity, not the physically verified count.
@@ -259,13 +261,13 @@ Confirm replacement | It replaces the old quantity.
 Give the total | Ticket 41 is three tarts total.
 Reject the wrong addition | Not two plus three.
 Specify the modification | One of the three has salad instead of potatoes.
-Keep the other sides unchanged | The other two retain the standard potato accompaniment.
+Keep the other sides unchanged | The other two keep potatoes.
 Avoid changing every plate | The salad substitution applies to one item only.
-Check the affected item | We still need the correct item identification through the ticket process.
+Check the affected item | Which guest gets the salad substitution?
 Keep the number stable | Both slips refer to ticket 41.
 Prevent two active orders | Do not treat the earlier slip as another order to produce.
 Preserve the record | Keep the revision trail according to our system.
-Acknowledge the change | I have received and understood the replacement quantity.
+Acknowledge the change | Heard: three total, replacing the earlier two.
 Keep production status separate | This correction does not mean the tarts are already ready.
 Clarify the scope | I am confirming this ticket, not every tart outstanding across the kitchen.
 Close with a read-back | Ticket 41: three total, one salad instead of potatoes, earlier quantity replaced.''',
@@ -281,24 +283,25 @@ What is not established by the revised ticket? | That the three tarts are prepar
 What should the team avoid doing with the earlier slip? | Treating it as a second active order | Preserving its required history | Marking its superseded status through the actual process | Checking that both slips concern ticket 41 | Treating both versions as active would create duplicate production beyond the confirmed total.''',
     dialogue='''Imani | Cole, I have two slips for ticket forty-one. The original says two tarts, and the new one says three tarts, revised forty-one. Can I check the meaning before proceeding?
 Cole | Yes. The [[revised ticket::The revised ticket updates the existing order; Cole confirms that its three-tart quantity replaces the earlier two.]] replaces the earlier quantity. We need three tarts total for ticket forty-one, not two from one slip and three from another.
-Imani | Thank you. I was not sure whether three meant a new total or three additional items. Those would give us very different production counts.
+Imani | Three altogether, then, not three more. I will not make the five I would get by adding both slips.
 Cole | The [[current total::The current total is three after replacement; adding the two slips would incorrectly produce five tarts.]] is three. Please read it as a replacement instruction so the earlier two do not remain a separate quantity to make.
 Imani | I also see one tart has salad instead of potatoes. That changes one accompaniment, not the number of tarts, correct?
 Cole | Correct. It is a [[one-item change::The one-item change applies the salad substitution to one of the three tarts, not to every item.]]. One tart has salad; the other two keep the standard potato accompaniment.
-Imani | I will keep the side request attached to the affected tart. I do not have a seat number in this exchange, so I will not guess one.
+Imani | Which item gets the salad? I need the correct reference on the ticket before it goes to the pass.
 Cole | Good. The [[item identification::Item identification must connect the substitution to the correct tart through the actual process, without inventing a seat reference.]] still needs to be clear through our ticket process. A correct quantity does not help if the side reaches the wrong diner.
 Imani | The phrase instead of matters here. It does not mean I should put both salad and potatoes on the modified plate.
 Cole | Exactly. The [[substitution::The substitution replaces potatoes with salad for the identified tart; it does not add both sides or change all plates.]] replaces potatoes on that item. Do not expand it into an extra side for every guest or cancel the tart itself.
-Imani | What about the original slip? I want the record to remain traceable, but I do not want another cook to pick it up as fresh work.
+Imani | How do we mark the old slip in this system? I do not want another cook picking it up as a fresh order.
 Cole | Handle it as the [[superseded ticket::The superseded ticket is the earlier version no longer governing production; retaining history must not keep it active.]] through our actual system. Preserve the required history while making the current instruction unmistakable.
 Imani | I will not add the two and three together. We should also keep the ticket number visible so this change is not applied to a different table.
 Cole | Yes. The [[order scope::The order scope is ticket forty-one; its three-tart total is not a count of every outstanding tart in the kitchen.]] is ticket forty-one. We are not giving an all-day count for every tart outstanding across the kitchen.
-Imani | That distinction is useful. A colleague asking three all day could mean a wider total than the three we are confirming on this one ticket.
+Imani | If someone asks for the all-day count, I will check the other live tickets too. These three belong to forty-one only.
 Cole | Right. State the scope whenever it could be unclear. Our aim here is to prevent [[duplicate production::Duplicate production would result from treating the original and revised quantities as separate active orders instead of one replacement.]] from the two versions, not to change any other confirmed order.
 Imani | My repeat is forty-one, three tarts total, one with salad instead of potatoes, and the earlier quantity replaced. I will confirm the affected item's identification through the system.
 Cole | That is the [[change acknowledgment::Change acknowledgment confirms the replacement quantity and modification have been understood, not merely that a new slip arrived.]] I need. You have the new total and the limited substitution, without adding an invented seat number.
 Imani | I will update the working instruction accordingly. I am not calling the ticket ready; this conversation has clarified what we need to prepare.
 Cole | Correct. Keep the [[revision trail::The revision trail records how the instruction changed while leaving the current production status distinct from completed preparation.]] clear, and report production progress separately. Three required does not mean three cooked, plated, or released from the pass.''',
+    rehearsal=["Check the answers, then read the revised-ticket conversation. Stress three total, not three extra.","Switch roles. Repeat ticket 41's one-item salad substitution, keeping the other two accompaniments unchanged.","Complete the pie transfer and check its key. Read six total with one peas substitution; do not announce the pies ready."],
     transfer_title='Replace a different quantity',
     transfer_setup='Ticket 52 originally lists four pies. A revised slip lists six, and the expediter confirms replacement, not addition. One pie has peas instead of carrots. No seat number or readiness is supplied.',
     transfer='''Cook: "The current total is ___ pies." | six | The confirmed replacement sets the total at six, not four plus six.
@@ -352,7 +355,7 @@ Keep the scope clear | That estimate is for the two outstanding mains.
 Avoid a premature call | I am not calling all four ready.
 Separate plating and release | Plated does not mean the full release check is complete.
 Coordinate holding properly | We need to follow our actual holding and quality arrangements.
-Avoid an invented dispatch | No pickup decision has been confirmed in this exchange.
+Avoid an invented dispatch | I have not called that ticket for pickup yet.
 Make a useful repeat | Four total, two plated, two pending, around four more minutes.
 Update a change | I will call you if that estimate changes.
 Keep the runner informed | The runner needs the actual ready-to-run status.
@@ -366,29 +369,30 @@ I estimate | Identifies the speaker's forecast rather than a guaranteed time.
 For the remaining pair | Limits the timing claim to the unfinished items.
 If that changes | Creates an expectation of updated information.''',
     d='''Which status call answers Jules accurately? | Ticket 28: four total, two plated, two at the station, estimated four more minutes for the pair. | All four ready now | Nothing has been done | Two mains total, all complete | The call preserves the full quantity, partial completion, location, and estimated remaining time.
-What does plated establish by itself? | A preparation stage, not completion of every food and release check | Guaranteed food safety in all conditions | Confirmed table delivery | Payment completed | Plating describes assembly and does not independently certify all required checks or later stages.
+What does plated establish by itself? | A preparation stage, not completion of every food and release check | Completion of the final check for the whole ticket | The runner's acceptance of all four dishes | Permission to hold the dishes for any length of time | Plating describes assembly and does not independently certify all required checks or later stages.
 Which time statement overclaims? | The entire table will definitely be delivered in exactly four minutes. | Rosa estimates four more minutes for the pair. | The estimate may need updating. | Pickup still needs the actual process. | The estimate concerns the remaining pair and cannot guarantee the timing of every later service stage.
 What should happen if the estimate changes? | Tell the expediter the revised status. | Keep repeating the old time as certain. | Pretend the dishes were already dispatched. | Change the ticket total without instruction. | Updated communication prevents a provisional earlier estimate from misleading the rest of the service team.''',
-    dialogue='''Jules | Rosa, can I call ticket twenty-eight ready for the table? I need to know whether the runner can collect the whole order, not just one part of it.
-Rosa | Not the whole ticket yet. I have [[partial progress::Partial progress means some required dishes have advanced, while the whole four-main ticket is not yet ready.]]: four mains total, two plated, and two still at my station.
-Jules | Thank you. I could see two plates, but that did not tell me whether the other two were finished somewhere else or still being prepared.
-Rosa | The [[remaining pair::The remaining pair is the two mains still at Rosa's station, distinct from the two already plated.]] is still here. My current estimate is four more minutes for those two, not a statement that the table is ready now.
-Jules | Is that four minutes from this update? I need to pass on the current expectation without confusing it with how long the ticket has already been open.
-Rosa | Yes. That [[readiness estimate::The readiness estimate is four additional minutes from the current update for the two unfinished mains, not elapsed ticket time.]] is additional time from now for the pair. It is approximate, and I will update you if it changes.
-Jules | I will not tell the runner that all four are ready. Two visible plates are useful progress, but the table-level answer is still incomplete.
-Rosa | Correct. The [[full ticket::The full ticket comprises all four mains; readiness of only two does not establish completion of the whole order.]] is four mains. We need to preserve that total when we discuss what is finished and what remains.
-Jules | We also need to handle the plated dishes under our actual kitchen process while the others are being completed. I do not want a timing discussion to bypass that.
-Rosa | Agreed. The [[holding arrangement::The holding arrangement must follow the actual kitchen requirements; the language estimate does not authorize arbitrary food holding.]] and relevant quality checks still apply. This count and estimate are not permission to ignore them.
-Jules | Have you made a release decision for any part of the order? I am checking because preparation progress and permission to send are different things.
-Rosa | No [[release decision::A release decision authorizes the relevant dispatch stage, which is not established merely by reporting two plated dishes.]] has been confirmed in this exchange. I am reporting where the four dishes stand, not announcing a pickup or dispatch instruction.
-Jules | That is clear. I need to coordinate the service rather than let one station's progress turn into a premature ready call for the whole table.
-Rosa | Exactly. [[Synchronized service::Synchronized service coordinates related dishes under the actual plan; a partial station update is not itself that final arrangement.]] needs the actual plan and checks. My estimate helps you coordinate, but it does not settle every part of the service sequence.
-Jules | When you give the next call, please make clear whether you mean the remaining two are plated or whether all four have reached the required ready stage.
-Rosa | I will name the [[status call::The status call should specify the actual stage and scope, distinguishing the pair's progress from whole-ticket readiness.]] precisely. Plated, checked, and ready to run are not interchangeable labels unless the actual process has reached those stages.
-Jules | And if the four-minute expectation becomes unrealistic, tell me then rather than wait for me to discover the runner is still waiting.
-Rosa | That is our [[update trigger::The update trigger is a material change to the estimate or status, prompting a fresh report before others rely on stale information.]]. A changed estimate or relevant readiness issue needs a fresh message so you can give the service team an accurate picture.
-Jules | My repeat is four mains on twenty-eight, two plated, two at your station, estimated four more minutes for the pair. The whole table is not confirmed ready.
-Rosa | Correct. We have not yet confirmed [[ready-to-run::Ready-to-run is the actual collection-ready status under the kitchen process; it is not established for all four by this update.]] status for all four. Keep that distinction in the handoff, and I will report the next actual change.''',
+    dialogue='''Jules | Rosa, twenty-eight: can I call the runner? I have four mains on the ticket but can only see two plates at the pass.
+Rosa | Not yet. It is [[partial progress::Two of the four mains are plated, so the update reports partial progress rather than whole-ticket readiness.]]: two plated, two still at my station. Keep the full ticket open.
+Jules | What is the wait on the other two? I need a clear update for the server, not a guess from looking at the plates.
+Rosa | The [[remaining pair::The remaining pair is the two mains still at Rosa's station, distinct from the two plated dishes.]] needs about four more minutes. I will call if that changes.
+Jules | Four more from now, understood. That is preparation time for those two, not a promise that the runner will be at the table then.
+Rosa | Correct. That is my [[readiness estimate::Rosa's estimate is four additional minutes for the unfinished pair, not an exact table-delivery promise.]], not a finished call. I am still working on the pair.
+Jules | I will tell the server: four ordered, two plated, two still coming. I will not say the whole table is ready.
+Rosa | Yes, keep the [[full ticket::The full ticket is all four mains; seeing two plated dishes does not establish completion of that scope.]] in view. My station update covers only part of it.
+Jules | The plated dishes need attention while we coordinate the rest. We cannot just leave them here indefinitely because a time was mentioned.
+Rosa | Follow the agreed [[holding arrangement::Holding must follow the actual kitchen's approved conditions; an estimated delay does not authorize arbitrary holding.]] and checks. Tell me promptly if the timing creates a problem for those dishes.
+Jules | I have not sent either plate. Are you calling for pickup now, or are we still coordinating?
+Rosa | Still coordinating. No [[release decision::A release decision authorizes dispatch; this conversation has not established that decision for any part of the order.]] has been confirmed. I am not telling the runner to take the pair.
+Jules | Understood. I need the dishes brought together through our service plan, with the relevant checks, not a stream of unrelated plates.
+Rosa | [[Synchronized service::Synchronized service coordinates related dishes under the kitchen's actual plan rather than equating one station's progress with dispatch.]] is what we are coordinating. I will keep you informed about the two at my station.
+Jules | When they are plated, say that first. Then we can verify the whole ticket before anyone gives the ready-to-run call.
+Rosa | I will make the [[status call::The status call identifies the actual stage; plated and ready to run are not automatically interchangeable.]] specific. Two more plated is a different message from four checked and ready.
+Jules | And if four minutes slips, call it straight away. I would rather update the server than leave them repeating an old time.
+Rosa | That is the [[update trigger::A changed estimate or readiness problem triggers a fresh message before colleagues continue relying on stale information.]]: a change to timing or readiness. I will not wait for you to chase.
+Jules | My read-back: twenty-eight, four mains total, two plated, two at your station, around four more minutes for the pair. No pickup call yet.
+Rosa | Correct. [[Ready-to-run::Ready-to-run means the actual collection-ready stage; it has not yet been established for all four mains.]] is not confirmed for all four. I will give you the next actual change while we follow the kitchen's checks.''',
+    rehearsal=["Check the answers. Read the pass exchange, using a short pause between the total, plated count, and remaining pair.","Switch roles. Give the last read-back without converting a four-minute estimate into a pickup promise.","Complete and check the six-main transfer. Say four plated and two remaining, with three more minutes estimated for the pair."],
     transfer_title='Report a six-main ticket',
     transfer_setup='Ticket 63 has six mains. Four are plated, and two remain at the station. The cook estimates three more minutes for that pair. No whole-ticket release is confirmed.',
     transfer='''Cook: "The ticket total is ___ mains." | six | Six is the complete number required for ticket sixty-three.
@@ -412,7 +416,7 @@ unallocated portion | Prepared or available portion not yet assigned to a specif
 allocation | Assignment of stock to a particular order or purpose. | confirm the allocation
 committed stock | Quantity already assigned to existing requirements. | protect committed stock
 shortfall | Amount by which supply is less than the stated requirement. | quantify the shortfall
-remaining balance | Quantity left after specified allocations or use. | state the remaining balance
+as-purchased weight | Ingredient weight in its purchased form before the specified trimming or preparation, often abbreviated AP weight. | record the as-purchased weight
 portion count | Number of defined servings available or required. | update the portion count
 par level | Target stock quantity used for planning under the establishment's system. | review the par level
 replenishment | Addition of stock to restore availability. | confirm replenishment
@@ -425,10 +429,10 @@ proposed substitution | Suggested replacement that has not yet been agreed. | la
 accepted substitution | Replacement explicitly agreed through the appropriate process. | record the accepted substitution
 guest decision | Diner's choice after the relevant option and conditions are explained. | obtain the guest decision
 order hold | Pause while an unresolved order detail is clarified. | maintain the order hold
-side station | Kitchen area responsible for relevant accompaniments. | brief the side station
+yield percentage | Usable output divided by input quantity, multiplied by 100, for a defined preparation stage. | calculate the yield percentage
 reallocation | Change in which order receives a quantity of stock. | authorize reallocation
 yield variance | Difference between expected and actual usable output. | investigate a yield variance
-forecast demand | Expected requirement used for preparation planning. | compare forecast demand
+edible portion | Usable quantity after the specified preparation or trimming stage, often abbreviated EP. | calculate the edible portion
 portion control | Consistent serving amounts under the applicable recipe and service specification. | maintain portion control
 return message | Information brought back after a query or request is answered. | request a return message''',
     precision='The shortfall is two portions, not a complete absence of potatoes. Rice being available does not prove that two diners want it. Do not reduce portion sizes, borrow committed stock, or change prices without the actual authorized process.',
@@ -443,7 +447,7 @@ Accept ownership | I will ask them and return with the decision.
 Avoid a silent change | Do not substitute rice before the choice is confirmed.
 Keep the remaining potatoes clear | The three available portions do not cover all five requests.
 Avoid invented replenishment | We have no confirmed time for more potatoes.
-Do not imply price equality | Any price question needs its actual answer.
+Do not imply price equality | Check the price before offering it as a like-for-like change.
 Keep dietary questions separate | Rice availability is not a dietary-suitability confirmation.
 Retain the unresolved item | The two-side decision remains open.
 Do not distort portions | A shortage does not authorize smaller portions without approval.
@@ -463,22 +467,23 @@ What is not supported by the case? | Rice has the same price and is suitable for
 Mei | So the [[shortfall::The shortfall is five requested minus three available, leaving two potato portions not covered by the current supply.]] is two portions. I should not tell the table that potatoes are completely gone, but we cannot cover all five requests.
 Dario | Correct. Rice is available as an option for the other two sides, but nobody has asked the diners whether they want that change.
 Mei | I will present it as a [[proposed substitution::The proposed substitution is an available rice option that remains unaccepted until the diners' relevant choice is confirmed.]], not as something the kitchen has already decided for them. I need to return with their actual choices.
-Dario | Thank you. The three potato portions I counted are not assigned to another order. I do not want to confuse them with stock already promised elsewhere.
+Dario | Those three portions are free for this ticket. I have already separated them from stock committed to other orders.
 Mei | That makes the [[unallocated portion::An unallocated portion has not been assigned to another order; three such portions are available in the stated count.]] count clear. We have three available for allocation, not five available and not three already committed to another table.
 Dario | Exactly. I also have no confirmed time for more potatoes. Please do not tell the guests another batch will be ready shortly unless that is actually checked.
 Mei | I will not promise [[replenishment::Replenishment would add more stock, but the case supplies no confirmed additional quantity or timing.]] that has not been confirmed. My message will be the current count and the rice option, with the choice still open.
-Dario | Can you take responsibility for asking the two diners and telling the station what they decide? I need a specific person to bring the answer back.
+Dario | Mei, can you ask the table and bring the answer straight back? Please tell me exactly which two guests agree to rice.
 Mei | Yes. I will obtain the [[guest decision::The guest decision belongs to the diners; Mei explicitly accepts the task of asking and reporting it back.]] and return to you. I will identify the affected diners so a confirmed alternative is not attached to the wrong plate.
 Dario | Good. Until then, I will not put rice on two plates and hope that saves time. The availability of an ingredient is not agreement to change the order.
 Mei | Agreed. The [[order hold::The order hold preserves the unresolved side choice; it prevents a proposed alternative from becoming a silent change.]] on that unresolved detail stays clear. We have an option to discuss, not a completed replacement instruction.
 Dario | If they ask whether the price changes, I do not have that answer from the information we have. That needs the actual authorized pricing response.
 Mei | I will separate that from the [[alternative side::The alternative side is rice, but its availability does not establish a price consequence or settle dietary suitability.]] itself. I also will not claim it meets a dietary requirement without the appropriate ingredient and preparation checks.
-Dario | Right. We should not stretch the three portions into five smaller servings just to make the count look complete. Our portion specification still matters.
+Dario | We also cannot make five by quietly shrinking the three portions. The serving specification has not changed.
 Mei | The shortage does not change [[portion control::Portion control preserves the specified serving amount; a shortage does not authorize silently shrinking portions to cover demand.]]. I will explain the real option rather than hide the difference in the amount served.
 Dario | If they accept rice, please bring back which two diners agreed. If they do not, tell me that too so we can use the proper next step.
 Mei | I will make the [[return message::The return message reports the actual choices and affected diners, completing the communication loop without assuming acceptance.]] specific. Silence or the fact that I walked to the table will not count as acceptance.
 Dario | Then we are aligned: five requested, three potato portions available, two pending choices, and you are asking about rice. The ticket is not complete yet.
 Mei | Correct. An [[accepted substitution::An accepted substitution requires an actual confirmed choice; the present handoff establishes only the option and the person asking.]] will be recorded only after the relevant decision. I am taking the question now and will return with the answer.''',
+    rehearsal=["Check the answers. Read the shortage exchange and stress five requested, three available, two short.","Switch roles. Keep rice as an offer until Mei reports the affected diners' actual decisions.","Complete and check the couscous transfer. Read the carrot proposal without inventing acceptance, a price, or dietary suitability."],
     transfer_title='Offer a different available side',
     transfer_setup='A ticket requests seven portions of couscous, but five remain unallocated. Roasted carrots are available as a proposed alternative. Server Noor will ask the two affected diners. No acceptance or price decision is supplied.',
     transfer='''Cook: "The shortfall is ___ portions." | two | Seven requested minus five unallocated leaves two portions short.
@@ -495,7 +500,7 @@ BOOK['units'].append(unit(
     cast='Arun | Server carrying the allergy report\nTessa | Cook receiving the updated ticket information',
     culture=('New information can change the question', 'No cheese may begin as an omission instruction, but a later allergy report requires clear communication of the allergen and the relevant review. Do not criticize the timing of the disclosure or reduce the new information back to a preference. Keep the guest informed without promising suitability.'),
     a='''What additional information does Arun report? | The diner has a milk allergy. | The sauce has already been verified. | A safe replacement has been accepted. | The diner has had a reaction in this case. | Arun reports a milk allergy beyond the original no-cheese wording.
-Which specification remains unchecked? | The sauce specification | A supplied verified medicine dose | A completed payment record | The ticket number itself | Tessa has not checked the sauce specification, so its relevant contents remain unverified.
+Which specification remains unchecked? | The sauce specification | The confirmed replacement dish recipe | A completed payment record | The ticket number itself | Tessa has not checked the sauce specification, so its relevant contents remain unverified.
 Who is available to review the question? | Lead Noor with the server | Only an unidentified person next month | Another guest making a guess | No responsible person | Noor is available to review the question with Arun through the actual process.''',
     vocabulary='''omission request | Instruction to leave out a named component. | record the omission request
 reported allergy | Allergy information attributed to the diner or relaying colleague. | communicate the reported allergy
@@ -547,28 +552,29 @@ Also | Includes preparation questions beyond ingredients alone.
 Not already resolved | Prevents a progress update from becoming reassurance.''',
     d='''Which statement correctly handles the new report? | Keep no cheese and add the reported milk allergy for the appropriate review. | No cheese proves the dish is suitable. | Ignore the allergy because the first ticket was shorter. | Replace milk with an unspecified preference. | The update preserves the omission and communicates the new allergen information accurately.
 What does unchecked sauce mean? | No relevant ingredient conclusion is established yet. | The sauce definitely contains milk. | The sauce is certified milk-free. | The sauce can be served without further process. | An unchecked specification supports neither a positive ingredient finding nor an absence assurance.
-Which statement about casein and whey is correct? | They are examples of milk-derived proteins relevant to ingredient checking. | They always mean the dish contains no milk protein. | They are synonyms for cheese omission. | They prove the entire kitchen is suitable for every diner. | These terms identify milk-derived proteins but do not by themselves complete a whole-dish or preparation assessment.
+Which statement about casein and whey is correct? | They are examples of milk-derived proteins relevant to ingredient checking. | They are forms of milk sugar, so only lactose intolerance is relevant. | They are removed from every sauce when the cheese topping is omitted. | They are advisory label phrases rather than ingredients. | These terms identify milk-derived proteins but do not by themselves complete a whole-dish or preparation assessment.
 Which guest update is accurate? | The milk-allergy question is under review; suitability is not confirmed yet. | All checks are complete because the cook heard the report. | A substitute has been accepted without asking. | The diner had a reaction despite no such report. | The message communicates the actual unresolved stage without a false guarantee or invented event.''',
-    dialogue='''Arun | Tessa, I need to update ticket seventeen. It says no cheese, but the diner has now told me they have a milk allergy. I want to make that explicit.
+    dialogue='''Arun | Tessa, stop on seventeen for an allergy update. The guest now reports a milk allergy. The ticket only says no cheese, so that note is not enough.
 Tessa | Thank you. I will keep the [[omission request::The omission request is no cheese; it remains relevant but does not replace the broader reported milk-allergy information.]] and the allergy information together. Leaving off the cheese does not confirm that the complete dish is suitable.
 Arun | I have not told the diner it is suitable. I said I would bring the information to the kitchen and return with an accurate answer.
 Tessa | Good. The [[sauce specification::The sauce specification has not been checked, so its relevant ingredients cannot yet be stated as present or absent.]] has not been checked. We cannot answer the sauce question from the topping instruction alone.
 Arun | Noor is available to review it with me. I can make sure the lead has the ticket number, the cheese omission, and the milk allergy exactly as reported.
 Tessa | Please do. Keep the [[allergen flag::The allergen flag keeps the reported milk allergy attached to ticket seventeen as it moves between the server, cook, and lead.]] clear on ticket seventeen through our actual process. The new information should not disappear into a vague special-request note.
-Arun | Should I say the sauce contains milk, or only that we have not checked it? I do not want to give the guest the wrong conclusion in either direction.
+Arun | For my next update, the sauce is still unchecked, right? I should not tell the guest it contains milk or that it is suitable.
 Tessa | Say it is an [[unverified component::An unverified component has not been checked; that status does not establish either milk content or absence.]]. We have no verified ingredient finding here. Do not turn unknown into definitely contains milk or definitely suitable.
 Arun | We will need the actual current sauce information, not a memory of a recipe that may have been used on another service.
 Tessa | Exactly. [[Recipe verification::Recipe verification checks the relevant current recipe and ingredients, rather than relying on recollection or a different sauce version.]] must match what is being prepared. If it is a supplied product, the current product information matters as well.
-Arun | And the ingredient check needs to include the components of the sauce, not just whether its name happens to mention cream or milk.
+Arun | I will check the full ingredient information, including the sauce components. Its name alone does not tell us what went into it.
 Tessa | Yes. A [[compound ingredient::A compound ingredient contains multiple components, so its relevant subingredients may need checking rather than relying on its short name.]] can have components that need review. Casein and whey are milk-derived proteins; the familiar dish name is not a complete ingredient answer.
 Arun | I will also ask Noor about the preparation arrangements. A suitable ingredient list would not by itself answer every question about handling.
 Tessa | Correct. [[Cross-contact::Cross-contact concerns unintended allergen introduction during handling or preparation, which remains distinct from intentional ingredients.]] needs the appropriate process too. We should not present one completed ingredient check as proof that every relevant preparation question is settled.
 Arun | I will tell the diner that Noor is reviewing the question with us. I will not say the review is complete simply because you have received the update.
 Tessa | That is an accurate [[guest update::The guest update should describe the actual review stage without converting receipt of the allergy report into a completed suitability decision.]]. Keep the uncertainty visible, and do not propose an unverified replacement as automatically safe.
-Arun | If the diner asks about a different dish, I will bring that specific option back for its own checks and obtain their decision before any change.
+Arun | If the guest wants a different dish, I will bring back that exact option. We still need to check it before promising anything.
 Tessa | Good. Any [[dish suitability::Dish suitability concerns the complete relevant dish and preparation, so another menu item needs its own appropriate assessment.]] conclusion must concern the actual dish and preparation. We do not have an accepted alternative or a verified outcome in this conversation.
 Arun | My handoff to Noor is ticket seventeen, no cheese, milk allergy reported, sauce unchecked. I will ask for the actual review and report back.
 Tessa | Yes. Noor is the [[review owner::The review owner coordinates the unresolved question; Noor's availability does not itself complete the checks or authorize service.]] available for that next step. Keep the food and message within our real allergy procedure until the relevant questions are properly resolved.''',
+    rehearsal=["Check the answers. Read the allergy update, preserving ticket 17, no cheese, and the reported milk allergy.","Switch roles. Clearly distinguish an unchecked sauce from a verified milk finding and a completed whole-dish review.","Complete and check the peanut-dressing transfer. Read Maya's role and the unresolved suitability accurately."],
     transfer_title='Expand a different omission request',
     transfer_setup='Ticket 35 says no peanuts on top. The server then reports a peanut allergy. The dressing specification is unchecked. Lead Maya is available to review the question. No suitability result is supplied.',
     transfer='''Server: "The reported allergen is ___." | peanut | The reported allergy concerns peanut and must be preserved accurately.
@@ -598,7 +604,7 @@ out-of-use status | State indicating equipment has been removed from use under t
 pastry bench | Work surface or station used for pastry preparation. | identify the pastry bench
 weighing task | Work requiring measurement of ingredient mass. | pause the weighing task
 measurement result | Value produced by a measurement process. | verify the measurement result
-measurement uncertainty | Characterization of doubt associated with a measurement result. | understand measurement uncertainty
+measurement uncertainty | Quantified spread associated with a measurement result, not a known measurement error. | report measurement uncertainty
 resolution | Smallest displayed or distinguishable increment of a measuring device. | check the scale resolution
 capacity | Maximum load or operating range specified for the equipment. | verify scale capacity
 calibration | Comparison against a reference to establish measurement relationships, not necessarily adjustment. | review calibration information
@@ -625,7 +631,7 @@ Keep the status clear | Scale B has not been cleared for return to use.
 Separate previous-work questions | We have not established an error in earlier batches.
 Preserve the location | The report concerns the pastry bench, not an unspecified station.
 Stay within authority | I will not attempt an unauthorized repair.
-Keep alternative status honest | Scale A is a proposed alternative until checked.
+Keep alternative status honest | Please check scale A before we move the weighing task.
 Ask for the actual next owner | Who will receive the service request?
 Avoid a guessed timeline | No return-to-use time has been confirmed.
 Close the report | Scale B, pastry bench, repeated blank display, use stopped, review needed.''',
@@ -635,17 +641,17 @@ Do not know | Separates observation from diagnosis.
 Whether | Leaves the alternative genuinely open pending confirmation.
 Available and suitable | Names two different checks.
 Has not been cleared | Preserves the current operating status until the actual process changes it.''',
-    d='''Which report is strongest? | Scale B at the pastry bench repeatedly goes blank; I stopped using it; the cause is unknown. | All kitchen equipment is broken. | The internal circuit has definitely failed. | Earlier batches are all defective. | The report names equipment, location, symptom, action, and uncertainty without an unsupported diagnosis.
+    d='''Which report is strongest? | Scale B at the pastry bench repeatedly goes blank; I stopped using it; the cause is unknown. | Scale A at the pastry bench is unavailable because its circuit failed. | Scale B has a confirmed power-supply fault and will return in five minutes. | Scale B went blank, so every earlier weight must be discarded as wrong. | The report names equipment, location, symptom, action, and uncertainty without an unsupported diagnosis.
 Which request about scale A is appropriate? | Please verify that it is available and suitable for this task. | Its existence guarantees we can use it immediately. | Ignore its capacity and measurement requirements. | It proves scale B is repaired. | The alternative needs both practical availability and task suitability, not merely a known name.
 What does the fault establish about previous batches? | No specific previous-batch error by itself | That every batch is unsafe | That every earlier weight was exact | That no review could ever be needed | A display symptom alone does not determine previous measurement results or eliminate appropriate follow-up questions.
 Which statement falsely reports completion? | Scale B is repaired and cleared for use. | Review is needed. | Nia stopped using scale B. | No return time is confirmed. | The case supplies no completed repair, verification, or authorization to return scale B to use.''',
     dialogue='''Nia | Omar, I need help with scale B at the pastry prep bench. Its display keeps going blank, so I have stopped using it for the weighing task.
 Omar | Thank you for making the [[fault report::The fault report identifies the specific equipment, observed problem, and action taken without claiming a diagnosed cause.]] specific. Scale B, pastry prep bench, repeated blank display, and use stopped. Do you know the cause, or only the symptom?
-Nia | Only the symptom. I have not identified an internal fault, and I have not tried to open the scale or make a repair.
+Nia | Only the display problem. It has happened repeatedly. I have stopped using B and have not opened it or tried a repair.
 Omar | Keep that as an [[observed symptom::The observed symptom is the blank display; a cause or repair diagnosis requires appropriate assessment not supplied here.]]. We should not write that a particular component failed when we have not established it through the appropriate assessment.
 Nia | Can you arrange the equipment review and check whether scale A is available? I need a confirmed way forward for the work at this bench.
 Omar | I will arrange the appropriate [[service request::The service request routes the equipment problem for authorized review; submitting it is not the same as completing a repair.]]. I also need to check scale A rather than assume it can be assigned to you immediately.
-Nia | I know it exists, but I do not know whether another station is using it. I also cannot confirm that it meets this task's requirements.
+Nia | I saw scale A earlier, but another station may need it. Could you check that as well as whether it fits this weighing task?
 Omar | Exactly. [[Equipment availability::Equipment availability means the device can actually be assigned when needed; knowing scale A exists does not establish that.]] is one question, and suitability is another. We need both answered before presenting it as your confirmed alternative.
 Nia | Please keep the location in the report. A message saying the scale is blank could send someone to a different bench or device.
 Omar | I will include the [[equipment identifier::The equipment identifier distinguishes scale B from scale A or other devices, keeping the report tied to the correct asset.]] and the pastry location. That gives the person reviewing it a clear starting point without a guessed cause.
@@ -655,10 +661,11 @@ Nia | I will not resume using scale B just because the display briefly comes bac
 Omar | Keep the [[out-of-use status::Out-of-use status preserves the stopped-use condition until the actual review and authorization process determines the next action.]] clear through our actual process. A momentary display change is not evidence that a repair or required check has been completed.
 Nia | For scale A, we need more than a place to put ingredients. Its capacity and the required measurement performance have to fit the job.
 Omar | Yes, it must be [[fit for task::Fit for task means meeting the actual weighing requirements, not merely being a different device that can display a number.]]. I will not call it suitable just because it is another scale or appears to be free.
-Nia | Should I tell the pastry team that scale B will be back in service in a few minutes? No one has given me a review time.
+Nia | What should I tell pastry about the delay? I have no confirmed review or return time for B.
 Omar | Do not promise a [[return to use::Return to use requires the relevant actual assessment and authorization; no timing or completed decision is supplied here.]] time. We have a report to route and an alternative to verify, not a completed equipment decision.
 Nia | My update to the team will be scale B unavailable for our task, use stopped, cause unknown, and scale A still awaiting your confirmation.
 Omar | That accurately states the [[review status::Review status distinguishes the current unresolved equipment question from a repaired scale or confirmed replacement.]]. I will handle the review route and alternative check, and communicate the actual outcome before anyone treats the issue as resolved.''',
+    rehearsal=["Check the answers. Read the scale report with a partner, naming scale B and the pastry prep bench.","Switch roles. Separate the observed blank display from a diagnosed cause; keep scale A's availability and suitability unconfirmed.","Complete and check the scale C transfer. Repeat the cold-prep location and proposed scale D without changing their statuses."],
     transfer_title='Report another display problem',
     transfer_setup='Scale C at the cold-prep bench repeatedly goes blank. Cook Noor has stopped using it. The cause is unknown. Lead Maya will arrange review and verify whether scale D is available and suitable.',
     transfer='''Cook: "The affected scale is ___." | C | Scale C is the device with the reported display problem.
@@ -694,7 +701,7 @@ disposal authorization | Permission for a disposal action under the applicable p
 date marking | Labeling food with relevant dates under the actual food-safety system. | verify date marking
 stock rotation | Organized use of stock in the required order. | check stock rotation
 FIFO | First in, first out: rotation approach using earlier received stock first where appropriate. | follow the FIFO arrangement
-FEFO | First expired, first out: rotation approach prioritizing the earliest applicable expiry. | distinguish FEFO from FIFO
+FEFO | First expiring, first out: prioritize the earliest applicable expiry while stock remains suitable and within its permitted use period. | distinguish FEFO from FIFO
 storage location | Identified place where an item is held. | record the storage location
 cleaning | Removal of food residue, dirt, and other unwanted material. | complete the required cleaning
 sanitizing | Treatment reducing microorganisms to the required level under the applicable process. | verify the sanitizing step
@@ -710,7 +717,7 @@ State the unchecked task | The closing shelf check has not been performed.
 Ask for acceptance | Can you take the shelf check?
 Accept precisely | I accept the shelf check; I have not completed it yet.
 Preserve the decision owner | The lead still owns the waste review.
-Avoid a false disposal record | No disposal action is established in this handover.
+Avoid a false disposal record | The waste entry is pending; I cannot confirm disposal.
 Keep the units | Twelve portions of garnish and three damaged tarts are different counts.
 Do not call everything done | The whole closing checklist is not complete.
 Record completion afterward | Mark the shelf check complete only after it has been performed.
@@ -731,7 +738,7 @@ Which claim is unsupported? | The three damaged tarts have been disposed of with
 How should completion be recorded? | After the actual required check, using its real result | Before checking because someone accepted the task | By copying a previous shift's sign-off | By replacing every pending label with done | Records must reflect actual performed work, not intentions, assumptions, or copied completion states.''',
     dialogue='''Elena | Owen, before I finish, I need to hand over three separate items. The garnish count is done, but the waste review and shelf check are not complete.
 Owen | I am ready for the [[closing handover::The closing handover transfers actual completed and unfinished states, rather than compressing different tasks into an all-done summary.]]. Please give me each count and status separately so I do not confuse a finished task with one I need to take on.
-Elena | The garnish count is complete at twelve portions. That is the quantity I counted, not a statement that every storage or closing check is done.
+Elena | Garnish is counted: twelve portions. That is the finished count; the other closing checks still need their own entries.
 Owen | Understood. The [[completed count::The completed count establishes twelve garnish portions counted; it does not establish completion of other checks or authorize service.]] is twelve portions of garnish. I will keep that separate from shelf condition, storage checks, and any permission to use the food.
 Elena | The waste-log entry concerns three damaged tarts. It still awaits the lead's review, and I have no approved outcome to pass to you.
 Owen | I will keep that as [[review pending::Review pending means the lead has not completed the relevant waste-entry decision; the handover must not imply approval.]]. The three damaged tarts and the twelve garnish portions are different items with different statuses.
@@ -739,16 +746,17 @@ Elena | Correct. I am not reporting that the tarts have been disposed of, or tha
 Owen | Then I will not record [[disposal authorization::Disposal authorization is a separate actual permission; a pending waste-log entry does not establish it or a completed disposal.]] or a disposal event from the handover alone. The actual handling requirements still apply while the record is being reviewed.
 Elena | The third item is the closing shelf check. It has not been performed. Can you accept responsibility for carrying it out through our closing process?
 Owen | Yes, I accept that [[carryover task::The carryover task is the unperformed shelf check transferred to Owen, not the already completed garnish count.]]. I will perform the shelf check and report the actual result. Accepting it now does not mean it is already done.
-Elena | Thank you. Please do not copy a previous sign-off or mark it complete because we have talked about it. The record needs to follow the real check.
+Elena | Please record the shelf result after the check. I have left it unfinished on my sheet, so no one should copy a completed mark from yesterday.
 Owen | The [[completion record::The completion record must follow the performed check and its actual result, rather than a promise or copied previous entry.]] will reflect what I actually do. I will not let an accepted task turn into a completed task before the work occurs.
 Elena | We also should not use the garnish count as a shortcut for checking labels, storage arrangements, or whatever the actual shelf procedure requires.
 Owen | Agreed. The [[shelf check::The shelf check concerns the relevant storage requirements and remains separate from the numerical garnish count.]] has its own requirements. I will follow the actual checklist rather than assume a known quantity proves the shelf has been checked.
 Elena | The lead still owns the waste review. I am asking you to take the shelf task, not to approve the waste entry outside your authority.
 Owen | That boundary stays clear in the [[waste log::The waste log entry remains with the lead for review; Owen's shelf-task acceptance does not approve that separate record.]]. I can preserve its pending status while taking responsibility for the shelf check.
-Elena | Could you repeat the three items back? I want to make sure I have not blurred the quantities or left the unfinished task without an owner.
+Elena | Can you give me the three-item read-back? Especially who has the shelf check and who has the waste review.
 Owen | My [[task acceptance::Task acceptance explicitly assigns the shelf check to Owen while preserving the completed count and separately pending waste review.]] is the shelf check. Garnish is counted at twelve portions, the entry for three damaged tarts awaits the lead, and the shelf check is still unperformed.
 Elena | That is correct. When the shelf check is finished, report its real result through the process. Until then, the kitchen closing work is not all complete.
 Owen | I will keep the [[closing checklist::The closing checklist should show each task's true state, distinguishing counted, pending review, accepted, and completed work.]] accurate. My next action is the shelf check, while the lead retains the waste review and all actual food-handling controls remain in force.''',
+    rehearsal=["Check the answers. Read the closing handover, distinguishing the garnish count, tart entry, and shelf check.","Switch roles. Accept the shelf check without marking it complete or approving the lead's waste decision.","Complete and check the sauce-and-rolls transfer. Repeat nine portions, two damaged rolls, the unperformed check, and Noor's responsibility."],
     transfer_title='Transfer another unfinished closing check',
     transfer_setup='The sauce count is complete at nine portions. A waste entry for two damaged rolls awaits lead review. The refrigerator shelf check is unperformed. Incoming cook Noor accepts that check.',
     transfer='''Outgoing cook: "The completed sauce count is ___ portions." | nine | Nine portions is the completed sauce count supplied in this case.

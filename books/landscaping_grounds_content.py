@@ -23,16 +23,16 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Grounds Maintenance Workers.',
              url='https://www.bls.gov/ooh/building-and-grounds-cleaning/grounds-maintenance-workers.htm',
-             note='Occupational context for landscape maintenance, grounds tasks, and supervised crew work. The scenarios are original fictional conversations, not work instructions.', checked='1 October 2026'),
+             note='Occupational context for landscape maintenance, grounds tasks, and supervised crew work. The scenarios are original fictional conversations, not work instructions.', checked='10 October 2026'),
         dict(title='Occupational Safety and Health Administration. Landscape and Horticultural Services: Hazards and Solutions.',
              url='https://www.osha.gov/landscaping/hazards/',
-             note='Context for respecting site conditions, training, and task-specific safety boundaries. No tool-operation or chemical-application procedure is taught here.', checked='1 October 2026'),
+             note='Context for respecting site conditions, training, and task-specific safety boundaries. No tool-operation or chemical-application procedure is taught here.', checked='10 October 2026'),
         dict(title='University of Minnesota Extension. Pruning Trees and Shrubs.',
              url='https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/pruning-trees-and-shrubs',
-             note='Background for distinguishing plant identity, appearance goals, and qualified pruning decisions. Regional timing advice and cutting procedures are not reproduced as learner instructions.', checked='1 October 2026'),
+             note='Background for distinguishing plant identity, appearance goals, and qualified pruning decisions. Regional timing advice and cutting procedures are not reproduced as learner instructions.', checked='10 October 2026'),
         dict(title='US Environmental Protection Agency. WaterSense: Sprinkler Spruce-Up.',
              url='https://www.epa.gov/watersense/sprinkler-spruce-up',
-             note='Terminology context for irrigation components and observed pooling that warrants review. The book does not diagnose a leak or direct system testing or repair.', checked='1 October 2026'),
+             note='Terminology context for irrigation components and observed pooling that warrants review. The book does not diagnose a leak or direct system testing or repair.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -79,26 +79,27 @@ completion claim | Statement that assigned work has been finished. | avoid an un
 Which next-step statement is accurate? | I can pass the separate hedge request to the office for review. | I have booked the hedge for tomorrow. | The extra work is free. | Your question authorizes the crew to begin. | Referring the request is available, while approval, cost, and timing remain open.
 Which statement overpromises? | The hedge will definitely be shaped today at no charge. | No price is confirmed. | The office can review the request. | The existing scope has not changed. | Neither same-day service nor a free price is supplied or authorized.
 What should remain in the handoff? | Rear-hedge shaping requested; separate review needed; price and date unknown. | All outdoor tasks approved and completed. | Hedge task silently added to the mowing order. | A guessed quotation and appointment. | The handoff must preserve the actual request and the unresolved approval, price, and timing.''',
-    dialogue='''Ben | While you are here at Oak Court, could you shape the rear hedge as well? I thought the grounds visit might cover that too.
-Asha | I understand the request. Let me check the [[work order::Work order specifies today's front-lawn mowing and path leaf clearance, rather than every grounds task.]] with you: today includes front-lawn mowing and path leaf clearance. Rear-hedge work is not included in this booking.
-Ben | I see. I was thinking of the hedge because it is at the same property, but the location alone does not mean it is included.
-Asha | Correct. The [[booked scope::Booked scope limits the current visit to the agreed tasks; sharing a property does not add hedge work.]] names those two tasks. I can pass your hedge request to the office rather than treat it as part of the existing visit.
-Ben | Please do. I mean the hedge at the back, not any shaping around the front lawn. I want the request to be clear.
-Asha | I will specify [[rear hedge::Rear hedge identifies the exact subject of the additional request and keeps it separate from the front-lawn task.]] shaping. The office can review that as a separate request, with the location and the work you want stated explicitly.
-Ben | Would that mean a separate charge? I do not want to ask a question and then find I have agreed to a price.
-Asha | No [[separate quotation::Separate quotation would provide a price for the additional work; none has been given or accepted here.]] has been confirmed. Asking for a review does not mean you have accepted a charge, and I cannot invent the price here.
-Ben | Fair enough. Do you know whether the hedge could be done on another day this week, or is that also still to be checked?
-Asha | The [[service date::Service date for the hedge remains unconfirmed and must not be presented as an appointment this week.]] is still open. I can pass the request on, but I do not have an approved date to offer you.
-Ben | I appreciate the distinction. I do not want to tell the other residents that a hedge visit is booked when it is only being considered.
-Asha | Exactly. [[Office review::Office review assesses the new request and is separate from approval or an entered booking.]] is the next step, not a confirmed booking. It should establish what can be offered before anyone relies on a date or price.
-Ben | Would it help if I called it just a quick tidy rather than shaping? I do not want to make the request sound larger than it is.
-Asha | The [[task authorization::Task authorization is still needed for the actual hedge work; changing the informal description does not add approval.]] still depends on the actual work, not the shorter phrase. I cannot add an excluded task as a quick favor.
-Ben | Understood. Let us keep the description honest. I want the rear hedge shaped, and the office can decide how to review that request.
-Asha | I will make that [[request handoff::Request handoff transfers the accurately described hedge request while leaving approval, price, and date unresolved.]]. Today's listed tasks remain front-lawn mowing and path leaf clearance; the hedge request is separate.
-Ben | Please repeat those current tasks once more so I can explain the difference to the other residents without suggesting anything was omitted from the booking.
-Asha | The [[included task::Included task identifies front-lawn mowing, alongside path leaf clearance, as work actually named for today's visit.]] for the lawn is mowing, and path leaf clearance is also included. Rear-hedge shaping is outside today's scope.
-Ben | That is clear. Confirming the work order does not mean you have completed it, and discussing the hedge does not mean the extra work is approved.
-Asha | Correct. No [[scope change::No scope change is approved; the separate hedge request is only being passed for review.]] is approved here. I will relay your rear-hedge request with its price and service date still unconfirmed.''',
+    dialogue='''Ben | Could you shape the rear hedge while you're here? I'd assumed the grounds visit covered that as well as the lawn.
+Asha | I can pass that request on. Today's [[work order::Work order specifies today's front-lawn mowing and path leaf clearance, rather than every grounds task.]] lists front-lawn mowing and path leaf clearance; the hedge isn't included.
+Ben | Oh, I thought it was a general garden visit. You're saying the lawn and the path are the actual tasks on the booking?
+Asha | That's the [[booked scope::Booked scope limits the current visit to the agreed tasks; sharing a property does not add hedge work.]], yes. Being at Oak Court doesn't mean the crew has approval for every outdoor job.
+Ben | Please tell the office it's the hedge at the back. I'm not asking for shaping around the front lawn.
+Asha | I'll specify [[rear hedge::Rear hedge identifies the exact subject of the additional request and keeps it separate from the front-lawn task.]] shaping, so the location doesn't get confused with the mowing area. The office can review it separately.
+Ben | Would that mean an extra bill? I don't want a request for information to be taken as agreement to a price.
+Asha | No [[separate quotation::Separate quotation would provide a price for the additional work; none has been given or accepted here.]] is confirmed. Asking for a review doesn't commit you to a charge, and I don't have a price to offer.
+Ben | All right. Could it happen later this week, or do they need to check the schedule before you can say?
+Asha | The [[service date::Service date for the hedge remains unconfirmed and must not be presented as an appointment this week.]] still needs checking. I can relay your request, but I can't confirm a hedge appointment for this week.
+Ben | Please don't tell the other residents it's booked yet. They'll expect someone to turn up if they hear a definite day.
+Asha | [[Office review::Office review assesses the new request and is separate from approval or an entered booking.]] is the next step. I'll keep it described as a request until there is an actual arrangement.
+Ben | What if I only want a quick tidy? Is that different from asking for the hedge to be shaped?
+Asha | The wording doesn't replace [[task authorization::Task authorization is still needed for the actual hedge work; changing the informal description does not add approval.]]. We need the actual work assessed and agreed; I can't add it as a quick favor.
+Ben | Then leave it as rear-hedge shaping. I'd rather the office knows what I'm asking for than gets an unclear note.
+Asha | I'll make that [[request handoff::Request handoff transfers the accurately described hedge request while leaving approval, price, and date unresolved.]] with the location and requested work. Today's mowing and leaf-clearance tasks stay as they are.
+Ben | Can you repeat the two tasks before I speak to the residents? I don't want to say the hedge was missed.
+Asha | Mowing is the [[included task::Included task identifies front-lawn mowing, alongside path leaf clearance, as work actually named for today's visit.]] for the front lawn; path leaf clearance is also listed. The rear hedge was not part of today's booking.
+Ben | Thanks. Please refer the hedge separately. I'll wait for the office to discuss the price and a possible day.
+Asha | Yes. No [[scope change::No scope change is approved; the separate hedge request is only being passed for review.]] has been approved in this conversation. I'll send the request with both price and timing still open.''',
+    rehearsal=["Read the included tasks: front-lawn mowing and path leaf clearance.","Repeat Ben's rear-hedge shaping request and the separate office-review route.","Read the price and date answers without adding a quotation or appointment."],
     transfer_title='Refer another additional task',
     transfer_setup='Elm Court has booked front-lawn mowing and driveway leaf clearance. A resident requests side-hedge shaping. It is excluded from the current booking; the office can review it, with no price or date confirmed.',
     transfer='''Worker: "The booked lawn task is ___." | mowing | Mowing is the included lawn task in the existing work order.
@@ -150,26 +151,27 @@ revised plan | Updated work arrangement after the appropriate review and approva
 What does the rear fence establish in this scenario? | The endpoint of the current work plan. | The definitive legal property line. | Permission to work on both sides. | An automatically revised clearance area. | The fence is the supplied work-plan reference, not a legal ownership determination.
 Which action is within Kai's stated role? | Refer the request and access uncertainty to the office. | Perform a boundary survey without qualification. | Clear beyond the fence while ownership is unknown. | Treat the extra strip as already authorized. | Kai can flag the issue but cannot decide ownership or extend the plan.
 Which statement wrongly combines separate questions? | If the customer believes it is theirs, entry and clearance are automatically approved. | Work scope and ownership both need clarification. | The current plan ends at the fence. | No revised plan is confirmed. | An uncertain ownership belief establishes neither access permission nor authorization for additional work.''',
-    dialogue='''Rosa | Could you clear the strip on the other side of the rear fence? I think it is probably ours, and it would make the area look tidier.
+    dialogue='''Rosa | Could you clear the strip beyond the rear fence? I think it's probably ours, but I'm not certain.
 Kai | You mean the [[land strip::Land strip identifies the narrow area beyond the rear fence, separate from the current planned work area.]] beyond the fence, not the ground on this side? I want to make sure I pass on the correct area.
-Rosa | Yes, the narrow strip beyond it. I am not completely sure about ownership, but the fence seems to have been placed inside the edge.
+Rosa | Yes, that narrow strip on the far side. The fence looks as though it's inside the edge, but I haven't confirmed it.
 Kai | Thank you for clarifying. The current [[work-plan limit::Work-plan limit is the rear fence, which defines assigned work without deciding the legal property boundary.]] is the rear fence. That tells me where this job ends, but it does not establish the legal boundary.
-Rosa | I understand. I was hoping that because I asked, you could include it while the crew is here. Does the request itself change anything?
+Rosa | I'd hoped you could include it while the crew was here. Does asking now change the work area?
 Kai | It creates an [[additional request::Additional request records Rosa's proposed extra work but does not itself extend the approved area.]] to refer, not an approved extension. I cannot decide the ownership question or assume permission to enter beyond the fence.
-Rosa | Then please make clear that I said probably, not definitely. I do not want my uncertainty turned into a firm statement on your work record.
+Rosa | Please keep probably in the note. I don't want it recorded as though I've established ownership.
 Kai | I will keep the [[qualified statement::Qualified statement preserves probably or may, rather than changing an uncertain ownership belief into a verified fact.]] accurate: you believe the strip may belong to the property, but ownership has not been confirmed.
-Rosa | Would the fence position settle it for you? It looks as though the planting continues beyond it, although I realize that could be misleading.
+Rosa | Does the fence position help? The planting continues past it, but that may not tell us much.
 Kai | The [[fence alignment::Fence alignment is an observed location feature and does not establish ownership or the property's legal limit in this case.]] alone does not settle ownership here. A planting pattern is not enough for me to make a property-line determination either.
-Rosa | That makes sense. I would rather have the question checked than create a problem by asking you to clear land that may not be ours.
+Rosa | All right. I'd rather check than ask you to clear land that turns out not to be ours.
 Kai | I can make an [[office referral::Office referral passes the precise clearance request and unresolved access question to the coordinating office for review.]]. I will identify the strip, the clearance request, and the uncertainty about ownership and access.
-Rosa | Please do. I am requesting the clearance, but I understand you are not agreeing to carry it out during this visit.
+Rosa | Please refer it. I'm asking about clearance, not saying you've agreed to do it today.
 Kai | Correct. No [[scope extension::Scope extension would expand the work area beyond the fence, which has not been approved.]] has been approved. The current plan still ends at the fence while the additional request is reviewed.
-Rosa | And if I later find information about ownership, that should go through the office rather than expecting you to decide the issue on the spot?
+Rosa | If I find any ownership information, should I send it to the office for their review?
 Kai | Yes. The relevant [[boundary clarification::Boundary clarification requires the appropriate review process, not an on-site ownership decision by the grounds worker.]] and access review need the proper process. This conversation is not a survey or a legal decision about the strip.
-Rosa | Please read back the request so I know it has not been changed into a general instruction to clear everything at the rear.
+Rosa | Could you read back the exact area? I don't mean everything behind the property.
 Kai | You request clearance of the strip [[beyond the fence::Beyond the fence precisely locates the additional area outside the current work-plan limit.]]. Ownership is unconfirmed, and no permission or extension of the current work area has been established here.
-Rosa | That is accurate. I would like the office to review it, but I am not expecting work beyond the fence before that review.
+Rosa | That's the request. Please keep the uncertainty in the referral, and I'll wait for the office.
 Kai | I will pass it on. A [[revised plan::Revised plan remains unconfirmed; referring the request has not approved entry or clearance beyond the fence.]] is not confirmed yet. The existing work limit remains the fence, with the extra request and its uncertainties clearly recorded.''',
+    rehearsal=["Read the fence as the work-plan limit, not a verified property line.","Repeat Rosa's probably or may wording when attributing her ownership belief.","Read the office referral without treating it as permission to enter the strip."],
     transfer_title='Refer another uncertain area request',
     transfer_setup='A work plan ends at a side gate. A customer asks for clearance beyond it and says the area may belong to the property. Ownership and access are unconfirmed; the worker can refer the request to the office.',
     transfer='''Worker: "The current plan ends at the side ___." | gate | The side gate is the stated endpoint of the existing work plan.
@@ -208,38 +210,39 @@ qualified assessment | Review by someone with the relevant competence. | request
 pruning extent | Amount and reach of proposed pruning. | clarify the pruning extent
 proposed method | Suggested way to carry out a task. | review the proposed method
 reference point | Fixed feature used to clarify a location. | use a reference point
-left-hand bed | Planting bed on the stated left side. | identify the left-hand bed
+cultivar | Named cultivated selection within a plant group, such as lavender Hidcote. | confirm the cultivar name
 customer preference | Result favored by the customer. | record the customer preference
-scope fit | Whether a requested task belongs to the agreed job. | check scope fit
+botanical name | Scientific plant name identifying genus and species, with cultivar where relevant. | read the full botanical name
 cutting authorization | Permission to perform specified cutting work. | confirm cutting authorization''',
     precision='The rosemary is identified, while the magnolia is excluded from this request. Nina wants a neater appearance. Neither that preference nor the clearer plant reference determines a suitable pruning method, pruning extent, or permission to start cutting.',
     precision_extra='Tidy up is useful as the beginning of a conversation, but it is not a precise work instruction. The lead must assess the request and its fit with the job. Avoid converting an informal appearance goal into removal, treatment, or immediate pruning.',
     phrases='''Clarify the reference | Which plant do you mean by the tall one?\nOffer the two candidates | Do you mean the rosemary or the specimen magnolia?\nUse the location | Is it the rosemary beside the left flower bed?\nConfirm the exclusion | You are not asking us to work on the magnolia.\nClarify the result | What would you like to look neater?\nPreserve the wording | I will record a neater appearance as your goal.\nAvoid an invented diagnosis | I have not assessed the plant's health.\nSeparate identification and permission | We have identified the plant, but pruning is not yet authorized.\nRefer the method | The qualified lead needs to assess how to approach it.\nRefer the extent | The amount of pruning is still to be assessed.\nCheck the job fit | The lead also needs to check whether it fits this job.\nAvoid promising removal | I am not recording a removal request.\nRead back the request | Rosemary beside the left flower bed, with a neater appearance requested.\nKeep the other plant separate | The magnolia is outside this request.\nExplain the next step | I will pass the specific request to the lead.\nClose without approval | No cutting decision has been made in this conversation.''',
     notes='''The tall one | An ambiguous reference when more than one plant could fit the description.\nBeside | Gives a location relative to a visible reference point.\nNot the magnolia | Explicitly excludes the other candidate from the request.\nNeater | Describes an appearance preference without specifying a method.\nWhether and how | Preserves both job suitability and the appropriate approach for review.\nIdentified versus authorized | Knowing the subject does not establish permission to perform the task.''',
-    d='''Which clarification resolves the ambiguity? | Do you mean the rosemary beside the left flower bed, not the magnolia? | I will cut both plants to be certain. | Tall always means the magnolia. | Tidy up must mean removal. | The question identifies the intended plant and explicitly distinguishes the nearby alternative.
+    d='''Which clarification resolves the ambiguity? | Do you mean the rosemary beside the left flower bed, not the magnolia? | Do you mean both entrance plants need the same work? | Do you want the magnolia beside the left bed tidied? | Do you mean the rosemary should be removed? | The question identifies the intended plant and explicitly distinguishes the nearby alternative.
 Which record preserves Nina's request? | Rosemary beside the left flower bed; neater appearance requested; lead review needed. | Magnolia removal approved. | Both plants diagnosed as unhealthy. | Immediate heavy pruning authorized. | The record preserves the plant, appearance goal, and unresolved qualified assessment.
 Which statement goes beyond the facts? | The rosemary definitely needs a specific amount cut off today. | The customer means the rosemary. | The magnolia is excluded. | The pruning method remains to be assessed. | Neither a suitable amount nor same-day cutting permission has been established.
 What can Tomas confirm now? | The plant and the requested visual goal | The best pruning method | The plant's health diagnosis | That pruning is included and approved | Tomas can clarify the reference and preference while leaving technical and scope decisions open.''',
-    dialogue='''Nina | Could you tidy the tall one by the entrance while you are here? It looks less neat than I would like, particularly beside that bed.
-Tomas | There are two plants near us. For [[plant identification::Plant identification establishes the intended subject before the worker records or refers any pruning request.]], do you mean the rosemary beside the left flower bed, or the specimen magnolia?
-Nina | I mean the rosemary beside the left flower bed. I am not asking for anything to be done to the magnolia on this visit.
-Tomas | Thank you. I will use the bed as our [[reference point::Reference point uses the left flower bed to distinguish the rosemary from the nearby magnolia.]] and name the rosemary clearly. That should prevent the request being passed on as simply the tall plant.
-Nina | Yes, please. I do not know the right gardening expression. I just want it to look neater rather than have someone guess what I meant.
-Tomas | A neater appearance is a useful [[appearance goal::Appearance goal records the visual result Nina wants without inventing a pruning method or amount.]]. I can record that wording, but the qualified lead needs to assess whether and how pruning would fit the job.
-Nina | So you are not treating tidy as an instruction to cut a particular amount off? I would prefer someone to assess that properly first.
-Tomas | Correct. The [[pruning extent::Pruning extent concerns how much work would be appropriate; Nina has not specified or authorized that amount.]] is not decided. Identifying the plant tells us what you mean, not how much should be removed or whether to proceed.
-Nina | That makes sense. I also do not want the request written as removal. I want a conversation about its appearance, not a promise to take it out.
-Tomas | I will preserve your [[customer preference::Customer preference is for a neater appearance, not plant removal or a particular technical treatment.]] accurately. The note will not call for removal, and it will keep the magnolia separate from the rosemary request.
-Nina | Does the lead need to check the booking too? I had assumed that asking while the crew was here might be enough to include it.
-Tomas | Yes. [[Scope fit::Scope fit asks whether the requested pruning belongs to the agreed job; the conversation has not settled that question.]] still needs review. Being on site does not tell us whether this additional request belongs to the agreed work.
-Nina | Understood. I can wait for that review. I would rather know what is being proposed than assume the word tidy gives everyone the same picture.
-Tomas | The lead can consider the [[proposed method::Proposed method remains a matter for qualified assessment rather than a cutting instruction supplied by the customer.]] after assessing the plant and the request. I am not recommending a cutting approach during this conversation.
-Nina | Could you read the note back before you pass it on? I want the location included so nobody works on the wrong plant.
-Tomas | Rosemary beside the [[left-hand bed::Left-hand bed preserves Nina's specific location and helps the lead identify the correct plant at the entrance.]] near the entrance; neater appearance requested; magnolia excluded; qualified lead to assess the request and whether it fits the job.
-Nina | That captures it. We have identified the plant, but we have not agreed on an amount to cut or changed the work order.
-Tomas | Exactly. [[Cutting authorization::Cutting authorization has not been granted merely by clarifying the plant and describing a preferred appearance.]] is not established here. I will not present your clarification as permission to begin pruning or as approval of a technical plan.
-Nina | Thank you. Please pass that specific request to the lead, and leave the magnolia out of it. I will wait to hear what the review says.
-Tomas | I will refer it for a [[qualified assessment::Qualified assessment is the next step for the request; no pruning result, method, or completion is promised.]]. The next step is the lead's review, not a claim that pruning has been agreed or completed.''',
+    dialogue='''Nina | Could you tidy the tall one by the entrance? I mean the one beside that bed; it looks a bit untidy.
+Tomas | For [[plant identification::Plant identification establishes the intended subject before the worker records or refers any pruning request.]], do you mean the rosemary beside the left flower bed, or the specimen magnolia? Both are near the entrance.
+Nina | The rosemary, please. Not the magnolia. I can see why the tall one wasn't a very useful description with both here.
+Tomas | I'll use the left bed as the [[reference point::Reference point uses the left flower bed to distinguish the rosemary from the nearby magnolia.]] and name the rosemary in the note. That should keep the two plants separate.
+Nina | I don't know the gardening term for what I want. Neater is probably the best way I can describe it.
+Tomas | I can record that [[appearance goal::Appearance goal records the visual result Nina wants without inventing a pruning method or amount.]] without choosing a cutting method. The lead needs to assess what is suitable for this plant and this job.
+Nina | That's fine. I don't want someone to take off a large amount just because I said tidy it up.
+Tomas | The [[pruning extent::Pruning extent concerns how much work would be appropriate; Nina has not specified or authorized that amount.]] hasn't been decided. We've identified the plant, but not how much, if anything, should be removed.
+Nina | And please don't put removal in the note. I want to keep the rosemary; I'm asking about how it looks.
+Tomas | I'll preserve that [[customer preference::Customer preference is for a neater appearance, not plant removal or a particular technical treatment.]]. Neater appearance, not removal, and no request to work on the magnolia.
+Nina | Does the lead also need to check whether this is part of our booking? I wasn't sure if I could add it while you're here.
+Tomas | Yes, [[Scope fit::Scope fit asks whether the requested pruning belongs to the agreed job; the conversation has not settled that question.]] still needs review. An appearance request doesn't automatically add pruning to the work order.
+Nina | Could the lead explain what they're proposing before anything is cut? I'd like to know what the result would mean.
+Tomas | The [[proposed method::Proposed method remains a matter for qualified assessment rather than a cutting instruction supplied by the customer.]] needs that assessment first. I'm not recommending a technique or promising a particular result from this conversation.
+Nina | Please read the location back for me. The entrance has several plants, and I don't want the wrong one included.
+Tomas | Rosemary beside the [[left-hand bed::Left-hand bed preserves Nina's specific location and helps the lead identify the correct plant at the entrance.]] at the entrance; neater appearance requested; magnolia excluded. The qualified lead reviews suitability and whether it belongs to this job.
+Nina | Yes, that's the one. I'm agreeing that you've understood my request, not agreeing to an amount of cutting today.
+Tomas | [[Cutting authorization::Cutting authorization has not been granted merely by clarifying the plant and describing a preferred appearance.]] isn't established by that clarification. I'll keep the request separate from any later decision to proceed.
+Nina | Thank you. Send that to the lead, please. I'll wait to hear the assessment rather than choose a pruning amount myself.
+Tomas | I'll refer it for a [[qualified assessment::Qualified assessment is the next step for the request; no pruning result, method, or completion is promised.]], with the plant and your appearance goal clear. No pruning has been agreed or reported complete.''',
+    rehearsal=["Read rosemary beside the left flower bed, then explicitly exclude the magnolia.","Repeat neater appearance without replacing it with a pruning amount or removal.","Read the lead-review lines, keeping plant identification separate from cutting authorization."],
     transfer_title='Read back the plant request',
     transfer_setup='Complete this exchange using the clarified plant, the excluded plant, the appearance goal, and the unresolved review. Do not add a pruning amount or approval.',
     transfer='''Worker: "You mean the ___ beside the left flower bed." | rosemary | Rosemary is the plant Nina explicitly identifies beside the left bed.
@@ -290,26 +293,27 @@ work status | Current stage of the assigned work. | report the work status''',
 Which statement should be corrected? | Thursday is definitely booked and everything will be finished before Friday. | Crew availability remains unconfirmed. | Work has been paused. | The customer has a Friday event. | Neither the Thursday booking nor completion before the event is confirmed.
 What should Imani send the office? | The Friday event detail and a request for a scheduling update by Wednesday noon | A report that the customer accepted completed work | An invented resumption authorization | A confirmed Thursday appointment | These are the customer constraint and communication request actually supported by the case.
 What does unconfirmed availability mean? | The crew arrangement still needs verification | The crew is definitely free | The crew is definitely unavailable | The work is already complete | Unconfirmed preserves the open check rather than asserting availability or unavailability.''',
-    dialogue='''Joel | I heard Thursday mentioned, and I have an event here on Friday. Can I tell the organizer that the outdoor work will be finished in time?
+    dialogue='''Joel | I heard Thursday mentioned. We've got an event on Friday; can I tell the organizer the work will be finished?
 Imani | Not yet. The current [[work status::Work status is paused because of site conditions after rain; the conversation does not establish completion or resumption.]] is paused because of the site conditions after rain. I understand why you need a reliable answer before your event.
-Joel | I appreciate that, but Thursday sounded fairly definite when it was mentioned. Is someone already assigned to come back that day, or is it only an idea?
+Joel | Thursday sounded definite when I heard it. Is a crew assigned, or was it only a possible day?
 Imani | It is a [[tentative date::Tentative date describes Thursday as a suggestion rather than a confirmed return visit or guaranteed completion date.]]. The office suggested Thursday, but crew availability has not been confirmed. Please do not treat that suggestion as a booked visit.
-Joel | All right. My concern is making arrangements around the event, not asking the crew to ignore the conditions. I need to know what I can reasonably expect.
+Joel | I'm not asking you to ignore the site conditions. I just need to know what arrangements I can rely on.
 Imani | I will relay that [[customer constraint::Customer constraint is the Friday event, which affects planning but does not authorize resuming work or promise completion.]] clearly. Friday is your event date; it is not a completion commitment that we have made, and I should keep those separate.
-Joel | When might I hear something more definite? Waiting until Friday morning would leave me with very little time to make any other arrangements.
+Joel | Can we ask for an update before Wednesday lunchtime? Friday morning would be too late for my planning.
 Imani | I can request a [[scheduling update::Scheduling update is the information Imani can request by Wednesday noon; it is not the work itself.]] by Wednesday noon. That is a request for the next communication, not a promise that the work will happen then.
-Joel | So Wednesday noon is about hearing from the office, while Thursday remains the possible return day. I should not combine those into one confirmed schedule.
+Joel | So Wednesday noon is the update request, and Thursday is still only the possible return day.
 Imani | Exactly. The [[confirmation status::Confirmation status keeps Thursday open because the office has not established crew availability or a confirmed return arrangement.]] of Thursday remains open. The office still needs to check availability before a return arrangement can be confirmed.
-Joel | Could you make sure they know why I am asking for an update before Friday? I do not want the event detail lost in the message.
+Joel | Please include the Friday event in the message. That's why I need the scheduling answer.
 Imani | Yes. I will include your [[event deadline::Event deadline records Friday as the customer's planning constraint without treating it as an agreed service deadline.]] and the requested Wednesday-noon update together. The message will say the timing matters for your event, without guaranteeing a result.
-Joel | Does mentioning Thursday mean the pause has been lifted, or does that require a separate decision about the site conditions before work can resume?
+Joel | Has the pause actually been lifted, or is Thursday just a calendar suggestion at this stage?
 Imani | The suggestion does not establish [[resumption::Resumption means restarting paused work; a proposed date alone does not authorize it or establish suitable conditions.]]. The pause remains the current status, and I will not present a calendar suggestion as permission to restart the work.
-Joel | Understood. I would rather receive a clear update that something is unresolved than hear a confident date that changes after I have made plans.
+Joel | I'd prefer an honest unresolved update to a date that sounds certain and then falls through.
 Imani | I will make the [[outstanding check::Outstanding check is crew availability, which remains unresolved and must not be silently treated as confirmed.]] explicit. Crew availability is unconfirmed, and no return date or completion date has been agreed in this conversation.
-Joel | Please ask for that update by Wednesday noon and mention the Friday event. I will hold off telling the organizer that Thursday is booked.
+Joel | Please request Wednesday noon and flag Friday. I won't tell the organizer Thursday is booked.
 Imani | I will pass both details to the [[office coordinator::Office coordinator is the scheduling contact who receives the event constraint and the requested communication time.]]. Requesting the update does not mean the office has already accepted the deadline, so I will describe it accurately.
-Joel | Thank you. The distinction helps: work is paused, Thursday is suggested, and I am asking to hear more by Wednesday noon because the event is Friday.
+Joel | Thanks. Work paused, Thursday suggested, update requested by Wednesday noon, event Friday. I'll keep those separate.
 Imani | That is the correct summary of the [[service interruption::Service interruption refers to the paused planned work, with a suggested return day and an unresolved scheduling arrangement.]]. I will relay it without adding a booking or a promise that everything will be finished before your event.''',
+    rehearsal=["Read the three time references: Wednesday-noon update, suggested Thursday, Friday event.","Repeat requested and suggested with emphasis; neither means confirmed.","Read the current pause without implying the calendar suggestion authorizes resumption."],
     transfer_title='Separate three time references',
     transfer_setup='Complete the customer update. Keep the pause, the suggested Thursday visit, the requested Wednesday-noon update, and the Friday event in their correct roles.',
     transfer='''Lead: "The work remains ___ because of the site conditions." | paused | Paused is the stated work status after rain affected the site.
@@ -348,38 +352,39 @@ system check | Examination of the relevant system. | request a system check
 leak | Escape of water from a system or container. | refer a possible leak concern
 pipework | Pipes collectively within a system. | refer to the pipework
 inspection request | Request for examination of a condition or system. | pass an inspection request
-site location | Specific position within the property. | record the site location
+precipitation rate | Irrigation application depth per unit of time, commonly millimeters or inches per hour. | compare precipitation rates
 review owner | Person responsible for arranging or carrying out a review. | name the review owner
 diagnosis | Identification of the cause or nature of a problem. | distinguish observation from diagnosis
-unverified explanation | Proposed cause not yet supported by a check. | label an unverified explanation''',
+distribution uniformity | Measure of how evenly irrigation is applied across sampled positions. | assess distribution uniformity''',
     precision='Standing water is an observation. A broken pipe is a possible explanation raised by Evan, not a finding. Near zone 3 identifies the location; it does not prove that zone 3 or any particular irrigation component is faulty.',
     precision_extra='The useful report includes what was seen, where, when, and what has not been checked. Marco can arrange review. Do not add a leak diagnosis, repair plan, visit time, or claim that someone has already tested the system.',
     phrases='''Name the observation | I saw standing water beside the east bed.\nGive the time | I noticed it at 09:15.\nLocate the area | It is near irrigation zone 3.\nAcknowledge the concern | I understand why you are asking about a pipe.\nSeparate possibility from finding | A broken pipe has not been confirmed.\nState the limit | I do not know the cause.\nKeep the check status clear | No irrigation-system check has taken place.\nAvoid a location inference | Being near zone 3 does not identify the faulty component.\nRefer the observation | I will report what I saw to Marco.\nName the review route | The grounds lead can arrange a review.\nPreserve the customer question | I will include your question about a possible pipe problem.\nAvoid a repair promise | No repair or visit time is confirmed.\nDistinguish reporting and testing | Passing the report does not mean the system has been tested.\nUse neutral wording | Standing water observed; cause unknown.\nRead back the details | East bed, near zone 3, observed at 09:15.\nClose with the next step | Marco can review the report and arrange the appropriate follow-up.''',
     notes='''Observed | Claims only that the worker saw the condition.\nNear | Locates the observation without establishing a causal connection.\nCould be | Introduces a possibility and should not be repeated later as a confirmed cause.\nNo check yet | Preserves the actual evidence limit at the time of the conversation.\nArrange review | Describes a next step, not a completed inspection or repair.\nCause unknown | Gives a precise limit rather than a vague reassurance.''',
     d='''Which report is supported? | Standing water beside the east bed near zone 3 at 09:15; cause unknown. | Zone 3 has a confirmed broken pipe. | The controller failed at 09:15. | Marco has completed a repair. | Only the visible water, location, time, and unknown cause are established.
-How should Leila answer the pipe question? | I cannot confirm that; no system check has occurred. | Yes, every pool of water proves a broken pipe. | No, pipes cannot cause standing water. | The repair is already booked. | The response preserves uncertainty without asserting or excluding an untested cause.
+How should Leila answer the pipe question? | I cannot confirm that; no system check has occurred. | Yes, because the patch is beside the irrigation zone. | No, because recent rain already explains the water. | The repair is already booked. | The response preserves uncertainty without asserting or excluding an untested cause.
 Which detail must not be silently changed? | Near zone 3 must not become a confirmed fault in zone 3. | The east bed remains the location. | The observation time remains 09:15. | Marco remains the grounds lead. | A location reference does not establish that the nearby system zone caused the water.
 Which next step is accurate? | Refer the observation to Marco, who can arrange review. | Announce that the system passed inspection. | Promise a same-day repair. | Tell the customer the pipe has been replaced. | The lead can arrange review, while inspection findings and repair arrangements remain unknown.''',
-    dialogue='''Evan | There is water sitting beside the east bed. Is a pipe broken? I am worried this is more than a wet patch after the weather.
-Leila | I saw the [[standing water::Standing water names the visible condition without identifying the cause or proving a pipe failure.]] there at 09:15. I can report it, but I do not know the cause and cannot confirm a broken pipe.
-Evan | Is that close to the part of the irrigation system marked zone 3? I remember seeing that number on the site information.
-Leila | Yes, the location is near [[irrigation zone::Irrigation zone identifies the nearby numbered area; proximity does not establish that the zone is faulty.]] 3. That helps describe where the water is, but it does not tell us which component, if any, is responsible.
-Evan | Has anyone checked the system yet? I do not want to repeat the pipe idea to the office if someone has already found a different cause.
-Leila | No [[system check::System check has not occurred, so no test result or confirmed cause can be included in the report.]] has taken place. I will make that clear rather than give the impression that an inspection has already produced a finding.
-Evan | Please mention what time you saw it. If the lead comes later, the area may not look exactly the same as it does now.
-Leila | I will include the [[observation time::Observation time is 09:15, when Leila saw the water; it is not a failure time or inspection appointment.]] of 09:15, along with the east-bed location and the reference to zone 3.
-Evan | That sounds useful. I am not saying I know a pipe has failed. I was asking because that was the first explanation I thought of.
-Leila | I understand. I will describe that as a [[suspected cause::Suspected cause preserves Evan's pipe question as a possibility rather than a diagnosis or established finding.]], not a confirmed finding. Your concern can be included without changing it into a diagnosis.
-Evan | Who would decide what needs checking? I would prefer the report to reach someone who can arrange the next step, not just sit in a message.
-Leila | Marco is the grounds lead and the [[review owner::Review owner identifies Marco as the person who can arrange review of the reported condition.]] for this referral. He can arrange a review of the observation and the concern you have raised.
-Evan | Does that mean a repair is being booked now, or are we still at the point of reporting the condition and asking for it to be looked at?
-Leila | We are still reporting the [[visible condition::Visible condition is the water Leila observed; reporting it does not establish a repair booking or technical conclusion.]]. No repair or visit time is confirmed, and I should not promise either before the review is arranged.
-Evan | Could the note say cause unknown? I would rather have those words there than have the office think the crew has diagnosed a leak.
-Leila | Yes. I will not call it a [[confirmed fault::Confirmed fault would claim a problem had been established through checking; no such finding exists in the case.]]. The note will say standing water observed, cause unknown, and no irrigation-system check completed.
-Evan | Please read the location back as well. There are several beds, and the east one is the place I need the lead to understand.
-Leila | The [[site location::Site location is beside the east bed near zone 3, which distinguishes this observation from other planting beds.]] is beside the east bed near zone 3, observed at 09:15. Your question concerns a possible pipe problem, not a confirmed break.
-Evan | That is accurate. Please pass it to Marco so he can arrange the review. I will not tell anyone a broken pipe has been established.
-Leila | I will send the [[inspection request::Inspection request asks for review of the observation; it does not mean an inspection or repair has already happened.]] with those details. The report will keep the observation, your question, and the unresolved cause separate.''',
+    dialogue='''Evan | There's water beside the east bed. Could a pipe be broken? I'm worried it might be more than a wet patch.
+Leila | I noticed the [[standing water::Standing water names the visible condition without identifying the cause or proving a pipe failure.]] at nine fifteen. I can report exactly where it is, but I haven't established what caused it.
+Evan | Is that near zone 3 on the irrigation plan? I remember seeing that number beside this part of the garden.
+Leila | Yes, near [[irrigation zone::Irrigation zone identifies the nearby numbered area; proximity does not establish that the zone is faulty.]] 3. That gives us a location reference; it doesn't prove that the zone or a particular component caused the water.
+Evan | Has anyone checked the system? I don't want to tell the office it's a pipe problem if they've already found something else.
+Leila | No [[system check::System check has not occurred, so no test result or confirmed cause can be included in the report.]] has happened yet. I'll include that in the report so it isn't mistaken for an inspection result.
+Evan | Please include the time you saw it. The patch may look different by the time someone comes to review it.
+Leila | I'll record the [[observation time::Observation time is 09:15, when Leila saw the water; it is not a failure time or inspection appointment.]] as zero nine fifteen, with the east bed and nearby zone number. It isn't a confirmed fault-start time.
+Evan | I'm asking about a pipe, not saying I know one's broken. That was just the first explanation that occurred to me.
+Leila | I'll keep it as a [[suspected cause::Suspected cause preserves Evan's pipe question as a possibility rather than a diagnosis or established finding.]] raised in your question. The observation itself is standing water, with the cause still unknown.
+Evan | Who should get the report? I'd like someone to take the next step rather than have it passed around without an owner.
+Leila | Marco, the grounds lead, is the [[review owner::Review owner identifies Marco as the person who can arrange review of the reported condition.]] for this referral. He can arrange the appropriate review of what you've raised.
+Evan | So we're asking for it to be checked. That doesn't mean there's already a repair crew booked to come here?
+Leila | Correct. We're reporting a [[visible condition::Visible condition is the water Leila observed; reporting it does not establish a repair booking or technical conclusion.]] and requesting review. No repair or attendance time has been confirmed.
+Evan | Could the note actually say cause unknown? I don't want a message about a possible leak shortened to leak confirmed.
+Leila | Yes. I won't record a [[confirmed fault::Confirmed fault would claim a problem had been established through checking; no such finding exists in the case.]]. I'll retain cause unknown and no system check, alongside what I actually saw.
+Evan | Read the location back once, please. There are several beds, and I want the lead sent the right information.
+Leila | The [[site location::Site location is beside the east bed near zone 3, which distinguishes this observation from other planting beds.]] is beside the east bed, near zone 3, observed at zero nine fifteen. Your question concerns a possible pipe problem.
+Evan | That's right. Please pass it to Marco with the time and the fact that nothing has been checked yet.
+Leila | I'll send that [[inspection request::Inspection request asks for review of the observation; it does not mean an inspection or repair has already happened.]]. Marco can arrange review, and any later finding must come from the actual check, not our guess about the cause.''',
+    rehearsal=["Read standing water, east bed, near zone 3, and 09:15.","Repeat the possible-pipe question as a question, not a confirmed diagnosis.","Read Marco's role and leave inspection findings and visit timing unresolved."],
     transfer_title='Pass on an observation accurately',
     transfer_setup='Complete the report to Marco. Keep the visible condition, time, location, and unknown cause distinct. Do not turn the customer question into a diagnosis.',
     transfer='''Worker: "I observed standing ___ beside the east bed." | water | Water is the visible condition reported, not a confirmed damaged component.
@@ -415,11 +420,11 @@ description discrepancy | Difference between the requested and delivered descrip
 substitute material | Product proposed instead of the specified material. | seek approval for substitute material
 substitution approval | Agreement to use an alternative product. | confirm substitution approval
 coverage | Area that a quantity of material can cover under relevant conditions. | avoid an unsupported coverage promise
-front beds | Planting areas at the front of the site. | identify the front beds
+material takeoff | Calculation of required material quantities from dimensions and specifications. | check the material takeoff
 delivery record | Document or entry describing a delivery. | check the delivery record
 order reference | Identifier connecting a query to the relevant order. | include the order reference
 replacement request | Request for an appropriate replacement product. | discuss a replacement request
-outstanding quantity | Amount still unresolved or awaiting supply. | state the outstanding quantity
+net area | Area requiring material after stated exclusions have been subtracted. | calculate the net area
 acceptance | Agreement that delivered material meets the relevant requirement. | distinguish receipt from acceptance
 material match | Agreement between a supplied material and its specified reference. | verify the material match''',
     precision='Eight requested minus six delivered leaves two bags short. Separately, natural brown appears on the delivered label while the job and approved sample specify dark mulch. The quantity calculation does not resolve whether the delivered material matches or is acceptable.',
@@ -428,28 +433,29 @@ material match | Agreement between a supplied material and its specified referen
     notes='''Short by two | Expresses the difference between eight expected and six received.\nLabel says | Reports packaging information without claiming a verified visual or technical match.\nApproved sample | Refers to the customer's accepted reference, not any later substitute.\nEnough | A coverage claim requiring more information than the bag count alone.\nBoth | Keeps quantity and material description in the supplier query.\nDelivered versus accepted | Receiving material does not establish that it satisfies the order.''',
     d='''Which calculation is correct? | Eight requested minus six delivered equals two bags short. | Six minus eight means two bags extra. | Eight requested means eight delivered. | Two short means only two were ordered. | Comparing the expected and received counts shows a shortage of two bags.
 Which statement preserves the color issue? | The label says natural brown, while the approved sample was dark. | Natural brown is confirmed identical to the approved sample. | The customer approved any available color. | The label has already been corrected. | The statement compares the actual label with the approved reference without claiming a match.
-How should Dev answer whether six bags are enough? | I cannot promise coverage from the information we have. | Six always covers any front bed. | Two missing bags never affect coverage. | The label guarantees coverage of this site. | The case lacks the measurements and application information needed for a coverage promise.
+How should Dev answer whether six bags are enough? | I cannot promise coverage from the information we have. | Six is enough if each bag is spread more thinly. | Six should cover it because the label color is similar. | Six covers three quarters of the area regardless of bag volume. | The case lacks the measurements and application information needed for a coverage promise.
 What belongs in the supplier query? | Both the two-bag shortage and the material-description discrepancy | Only a request to approve the delivery automatically | An invented replacement arrival time | A claim that the customer changed the sample | Both unresolved differences need review; neither acceptance nor replacement timing is established.''',
-    dialogue='''Mira | I thought we ordered eight bags of dark mulch for the front beds. There seem to be fewer here, and the label does not look right.
+    dialogue='''Mira | We expected eight bags of dark mulch. I'm counting fewer, and these labels say natural brown. Can you check?
 Dev | I have checked the [[bag count::Bag count is six delivered bags, which must be compared with the eight bags listed in the job.]] and found six. The job lists eight bags, so the delivery is two bags short before we address the description.
-Mira | Yes, quantity is one problem. The sample I approved was dark, but these bags say natural brown. Has someone changed the material without telling me?
+Mira | My approved sample was dark. Does natural brown mean someone changed the specification, or don't we know yet?
 Dev | I cannot say that. The [[product label::Product label supplies the delivered description natural brown; it does not explain why that material was delivered.]] says natural brown, and the requested material is dark mulch. No approved change has been established.
-Mira | Could we use the six bags if the color turns out to be acceptable, or would that leave part of the front beds unfinished?
+Mira | If the color is acceptable, could six bags cover the beds? Or are we short of what the job needs?
 Dev | I cannot promise [[coverage::Coverage depends on information not supplied here; six bags cannot be declared sufficient simply because they arrived.]] from the count alone. We need to keep the missing quantity separate from the question of whether this material matches what you approved.
-Mira | Please do not let the office think I only asked for six. I approved the sample and expected the eight bags listed for the job.
+Mira | Please keep eight as the ordered quantity. Six is what arrived, not what I asked for.
 Dev | I will preserve the [[requested quantity::Requested quantity remains eight bags; receiving six does not amend the original job requirement.]] as eight. The record will show six delivered and two short, not a revised order for six bags.
-Mira | And please mention the sample, not just the color word. That was the reference I used when I agreed to the material for these beds.
+Mira | Could you include the actual sample in the query? The color word alone isn't the reference I approved.
 Dev | I will refer to the [[approved sample::Approved sample is the dark reference Mira accepted; the delivered label has not been verified against it as a match.]] as well as the job description. I am not confirming a match between that sample and the delivered bags.
-Mira | What happens next? I would rather ask the supplier than have the crew assume a different color is close enough and use it.
+Mira | What happens next? I don't want the crew using it on the assumption that it's close enough.
 Dev | The office will raise a [[supplier query::Supplier query is the agreed next route for investigating both quantity and material description, without assuming acceptance.]] about both points. The query will include the two-bag shortage and the difference between the label and your approved reference.
-Mira | Does that query count as ordering a replacement, or do they need to establish what was supplied before they can tell us how it will be resolved?
+Mira | Are we ordering a replacement now, or just asking the supplier to explain the delivery?
 Dev | No [[replacement request::Replacement request is not yet confirmed as an order or delivery arrangement; the current step is a supplier query.]] has been confirmed as an order. I also do not have a replacement delivery time to give you now.
-Mira | Understood. I am asking what is possible, not agreeing to use whatever arrived. Please keep that clear when you pass the conversation on.
+Mira | All right. I'm asking about options, not accepting a smaller quantity or a different material.
 Dev | I will. [[Substitution approval::Substitution approval has not been given; asking about possibilities does not authorize an alternative material.]] is still absent. Your question about making do will not be recorded as acceptance of a different material or a smaller quantity.
-Mira | Could you summarize the two issues one last time? I want the office to be able to follow them without treating the shortage as the only problem.
+Mira | Can you summarize both issues? I don't want the missing two bags to hide the color question.
 Dev | The [[quantity discrepancy::Quantity discrepancy is two bags short, while the material-description discrepancy remains a separate unresolved issue.]] is eight requested against six delivered. Separately, the delivered label says natural brown while your approved sample and the job request are dark.
-Mira | That is right. Please send both points to the office, and do not promise that six bags will be enough or that the color is already acceptable.
+Mira | Please send both points. We still don't know whether the material matches or whether six bags could cover the beds.
 Dev | I will keep [[acceptance::Acceptance of the delivery is not established; the office must resolve the quantity and material questions through the supplier.]] open while the office queries the supplier. The count, the material description, and any proposed resolution will remain separate in the message.''',
+    rehearsal=["Read eight requested, six delivered, and two bags short.","Compare natural brown on the label with the approved dark sample.","Read the supplier query with both discrepancies and no coverage or substitution promise."],
     transfer_title='Report two delivery discrepancies',
     transfer_setup='Complete the office handoff. Include the original quantity, the delivered count, the resulting shortage, and the unapproved material description.',
     transfer='''Worker: "The job requires ___ bags of dark mulch." | eight | Eight is the requested quantity and remains unchanged by the delivery.
@@ -500,26 +506,27 @@ resolution | Outcome that addresses the reported issue. | verify the resolution'
 Which scope statement is accurate? | The lead can organize missed front cleanup; the rear patio remains excluded. | A complaint automatically includes the rear patio. | No front cleanup was ever booked. | Every outdoor area is now approved. | Correcting the included task does not change the excluded status of the rear patio.
 Which status should not be recorded yet? | Resolved and fully corrected | Missed front cleanup reported | Clippings visible beside the steps | Return time unconfirmed | No completed correction or verified resolution has occurred in the supplied facts.
 What belongs in the correction request? | The exact front-step location, visible clippings, included scope, and pending follow-up | An invented all-property cleaning promise | A guaranteed return time not supplied | A statement that the rear patio was damaged | These details preserve the observed problem, its scope, and the unresolved arrangement.''',
-    dialogue='''Hazel | The front path does not look finished. There are clippings beside the steps, and I thought clearing that area was included in today's visit.
-Amir | You are right about that location. I can see the [[clippings::Clippings are the visible remaining material beside the front steps, supporting the report of incomplete cleanup.]] beside the front steps, and those steps are within the listed cleanup area.
-Hazel | Thank you for checking. I did not want to be told the visit was complete just because the crew had moved on from the lawn.
-Amir | The [[completion status::Completion status of the identified front cleanup is incomplete; leaving the site does not prove that task was finished.]] needs to reflect what is still there. I will not describe that part of the cleanup as finished while those clippings remain.
-Hazel | Can someone put it right? I am asking about the area that was included, not a new garden job or a different kind of work.
-Amir | The lead can organize the [[missed cleanup::Missed cleanup is an included front-area task left incomplete, which the lead can arrange to address.]] at the front. I will pass on the exact location so the request does not become a vague message about the whole property.
-Hazel | Could they also clear the rear patio when they come? I know we have been discussing the front, but it would be convenient to have both done.
-Amir | The [[rear patio::Rear patio is excluded from this booking and does not become included through the front-cleanup correction request.]] is outside this booking. I can distinguish that as a separate request, but it is not part of the agreed front cleanup correction.
-Hazel | All right. Please do not let that extra question distract from the clippings at the steps. I still need the included work dealt with.
-Amir | I will preserve the [[scope boundary::Scope boundary keeps the missed included front cleanup separate from the customer's additional rear-patio request.]]. The front correction remains the immediate concern; your question about another area does not replace or cancel it.
-Hazel | Do you know when the lead can send someone? I would like a time, but I would rather not be given one that has not been arranged.
-Amir | I do not have a confirmed [[return time::Return time is not supplied, so Amir cannot promise an exact attendance time for the correction.]]. The lead can organize the response, and I will not turn that into a specific appointment before one is confirmed.
-Hazel | That is fair. Could you note that you saw the clippings yourself? It may help the lead understand why I am saying this is unfinished.
-Amir | Yes. The [[observation record::Observation record preserves what Amir directly saw, rather than treating the concern as an unsupported general complaint.]] will say clippings remain beside the front steps, within the listed cleanup area. I can confirm that visible detail.
-Hazel | I am not saying every part of the visit was wrong. The lawn visit happened, but this part of the cleanup has clearly been missed.
-Amir | I will keep the [[correction request::Correction request concerns the specific missed front cleanup; it should not claim that every task or area was defective.]] specific. It will not claim that every area was left unfinished or that the excluded rear patio had been booked.
-Hazel | Please also leave the complaint open until the missed part has actually been dealt with. A message to the lead is helpful, but it is not the result.
-Amir | Agreed. [[Resolution::Resolution requires the issue to be addressed; merely passing a message to the lead does not establish that outcome.]] has not happened yet. I will not mark the concern resolved simply because I have acknowledged it or referred it.
-Hazel | Thank you. The front steps are the priority, and any question about the rear patio can be treated separately without changing what was already included.
-Amir | I will pass that on for a [[follow-up arrangement::Follow-up arrangement is still to be organized for the missed front cleanup; no wider task or exact time is agreed.]]. The handoff will identify the missed front area, the visible clippings, and the fact that timing remains unconfirmed.''',
+    dialogue='''Hazel | The cleanup beside the front steps hasn't been finished. There are still clippings there, and that area was included, wasn't it?
+Amir | Yes, it was. I can see the [[clippings::Clippings are the visible remaining material beside the front steps, supporting the report of incomplete cleanup.]] beside the steps. You're right to point out that the included area hasn't been fully cleared.
+Hazel | Thank you for looking. I was worried I'd just be told the crew had left, so everything must be complete.
+Amir | The [[completion status::Completion status of the identified front cleanup is incomplete; leaving the site does not prove that task was finished.]] needs to match what's here, not simply whether the visit has ended. I'll record this part as incomplete.
+Hazel | Can the lead arrange for that bit to be put right? I'm asking for the work we already booked.
+Amir | Yes, the lead can organize the [[missed cleanup::Missed cleanup is an included front-area task left incomplete, which the lead can arrange to address.]] at the front. I'll give the exact location rather than a general message about the garden.
+Hazel | While they're dealing with it, could they clear the rear patio too? It would help to have both areas done.
+Amir | The [[rear patio::Rear patio is excluded from this booking and does not become included through the front-cleanup correction request.]] is outside this booking. I can pass that on as a separate request, but it's not included in the front correction.
+Hazel | That's fair. Please don't let the patio question distract from the missed work beside the steps. That's the concern I'm reporting.
+Amir | I'll preserve the [[scope boundary::Scope boundary keeps the missed included front cleanup separate from the customer's additional rear-patio request.]]: front cleanup to be corrected, patio request separate. Asking about the patio doesn't cancel the front concern.
+Hazel | Do you have a time for someone to return? I can plan around it once it's actually arranged.
+Amir | I don't have a confirmed [[return time::Return time is not supplied, so Amir cannot promise an exact attendance time for the correction.]] yet. I'll refer the correction to the lead without promising an appointment that isn't booked.
+Hazel | Please mention that you saw the clippings yourself. That may make the note clearer than just saying I complained.
+Amir | The [[observation record::Observation record preserves what Amir directly saw, rather than treating the concern as an unsupported general complaint.]] will say clippings beside the front steps, inside the listed cleanup area. That's the part I've directly seen.
+Hazel | I'm not saying nothing was done. The issue I'm showing you is this unfinished part of the path cleanup.
+Amir | I'll keep the [[correction request::Correction request concerns the specific missed front cleanup; it should not claim that every task or area was defective.]] specific to that area. It won't say the whole visit failed or that the rear patio was included.
+Hazel | Thanks. Please don't close the complaint just because we've spoken. I need the missed cleanup dealt with, not only acknowledged.
+Amir | [[Resolution::Resolution requires the issue to be addressed; merely passing a message to the lead does not establish that outcome.]] still needs to follow the actual correction. I'll leave it open rather than mark it resolved when I pass on the message.
+Hazel | Good. The front steps are the first issue. The patio can be discussed separately, with its own scope and timing.
+Amir | I'll ask the lead for the [[follow-up arrangement::Follow-up arrangement is still to be organized for the missed front cleanup; no wider task or exact time is agreed.]] for the missed front cleanup. The exact return time remains unconfirmed until it's arranged.''',
+    rehearsal=["Read the visible clippings and the included front-step location.","Repeat the correction request separately from the excluded rear-patio request.","Read the closing follow-up without marking the complaint resolved or inventing a time."],
     transfer_title='Acknowledge and refer the missed area',
     transfer_setup='Complete the exchange about the visible front cleanup problem. Keep the included correction, excluded patio, and unresolved timing separate.',
     transfer='''Worker: "Clippings remain beside the front ___." | steps | The steps are the exact location of the visible missed cleanup.
@@ -570,26 +577,27 @@ closeout | Final review or closure of a job or issue. | avoid premature closeout
 What does before Friday refer to? | The requested callback | A confirmed site visit | Completed planting | A finished diagnosis | The customer requested communication before Friday, not an appointment or work-completion promise.
 Which appointment statement is supported? | Ava owns scheduling, but no visit date is booked. | Ava has already booked Friday. | The crew will definitely return tomorrow. | Scheduling ownership proves a visit is confirmed. | Responsibility for scheduling does not establish that an appointment has been made.
 Which closure would misstate the case? | Entire visit closed with all follow-up complete | Front-path leaf clearance complete | Rear-bed review remains pending | Callback request passed to Ava | A pending review and callback request remain, so all follow-up cannot be declared complete.''',
-    dialogue='''Rosa | I have the Pine Court handover for you. The front-path leaves are cleared, but there is a separate rear-bed item that needs to remain open.
+    dialogue='''Rosa | Ava, Pine Court handover: the front-path leaves are cleared. The rear-bed review needs to stay open.
 Ava | Let me separate the entries. The [[completed task::Completed task is front-path leaf clearance only; it does not include rear-bed assessment, planting, or diagnosis.]] is front-path leaf clearance. What is the current status of the rear-bed item, and what does the customer need from us?
-Rosa | The lead deferred the rear-bed review. No planting or diagnosis was done there, so I do not have a finding or a proposed treatment to pass on.
+Rosa | The lead deferred the rear review. No planting or diagnosis was done there; I've no finding to pass on.
 Ava | I will record a [[deferred review::Deferred review means the assessment was postponed, not completed with a finding or converted into planting work.]], not a completed inspection. I will also state that no planting or diagnosis took place in that area.
-Rosa | Thank you. The customer asks for a callback about the rear bed before Friday. That request is the reason I wanted to speak to you directly.
+Rosa | The customer wants a callback about the rear bed before Friday. Please keep that timing with the request.
 Ava | I have the [[callback deadline::Callback deadline is the customer's request for contact before Friday; it is not a confirmed work or visit deadline.]] as before Friday. Does the customer already have a booked visit, or is the request only for contact about the next step?
-Rosa | No visit date is booked. The customer wants someone to call about the deferred review, but we have not agreed when anyone will attend the site.
+Rosa | No visit is booked. They want a call about the next step, not a confirmed attendance on Friday.
 Ava | Then the [[appointment status::Appointment status remains unbooked; the callback request cannot be treated as confirmation of physical attendance.]] remains unbooked. I will not put Friday down as a confirmed attendance date just because it appears in the callback request.
-Rosa | Exactly. I also do not want the front-path completion to make the rear-bed item disappear when the office looks at the visit record.
+Rosa | Please don't let the cleared path close the rear-bed item. They have different statuses.
 Ava | I will keep a separate [[pending item::Pending item is the rear-bed review and its follow-up, which must remain visible alongside the completed front task.]] for the rear bed. The cleared front path can be recorded accurately without closing the unresolved review.
-Rosa | You own scheduling for this follow-up, correct? I want the next person reading the notes to know who has the customer contact request.
+Rosa | You'll take the scheduling follow-up, correct? I want the next reader to know who owns it.
 Ava | Yes, I am the [[scheduling owner::Scheduling owner identifies Ava's responsibility for arrangements; it does not imply that she has already booked a date.]]. That identifies responsibility, but it does not mean a date has already been arranged or a visit has been confirmed.
-Rosa | Please preserve the lead's decision as well. The review was deferred; it was not a finding that the bed was healthy or that planting was needed.
+Rosa | Please keep deferred as the lead's decision. It wasn't a diagnosis that planting or treatment was needed.
 Ava | I will not invent a [[review outcome::Review outcome is absent because the rear-bed assessment was deferred and no diagnosis was performed.]]. The note will describe the deferral and the absence of planting or diagnosis, rather than supply a reasoned finding we do not have.
-Rosa | Good. Can you read the customer's request back? I want to be certain the timing refers to a call, not completion of work on the bed.
+Rosa | Could you read the timing back? Before Friday means the callback request, not completed bed work.
 Ava | The [[communication request::Communication request is a callback about the rear bed before Friday, distinct from a booked visit or completed grounds work.]] is a callback about the rear bed before Friday. There is no promise of planting, diagnosis, or completed work by that time.
-Rosa | That is right. The useful next step is to follow up on that contact request while keeping any future site arrangement separate and unconfirmed.
+Rosa | That's right. Any later visit still needs arranging; we've only passed the request for contact.
 Ava | I will retain that as an [[open action::Open action is the unresolved scheduling follow-up on the callback request; it is not evidence that contact has already happened.]]. The record will name me as the owner and will not say the callback has already happened.
-Rosa | Thanks. We can show that the path work was completed while still being honest that the rear-bed review and the customer's follow-up are unfinished.
+Rosa | Thanks. The path can be marked complete without making the unfinished rear review disappear.
 Ava | Agreed. I will avoid premature [[closeout::Closeout of all work would be inaccurate because the rear-bed review and requested follow-up remain unresolved.]]. The handover will retain the completed front task, deferred rear review, requested callback deadline, and unbooked visit status as separate facts.''',
+    rehearsal=["Read front path complete and rear-bed review deferred as two separate entries.","Repeat before Friday as the requested callback timing, not a booked visit.","Read Ava's scheduling ownership while leaving the actual appointment unbooked."],
     transfer_title='Hand over four distinct facts',
     transfer_setup='Complete the office handoff. Preserve the finished front task, deferred rear review, requested callback timing, and absence of a booked visit.',
     transfer='''Worker: "The front-path leaves are ___." | cleared | Cleared confirms the completed front-path task, not all work at the site.

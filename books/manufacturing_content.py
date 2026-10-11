@@ -17,10 +17,10 @@ BOOK = dict(
         ('Make the handoff closed-loop', 'A sent message does not prove it was understood. Identify the open item, evidence, responsible person, and next checkpoint, then confirm receipt and understanding without implying completion.', '"Two checks remain open; please confirm their identifiers and the next update."')],
     scope_note='Original fictional language practice, not equipment-operation, maintenance, engineering, or safety instructions. Figures, organizations, and workplace cases are invented. Actual work must follow applicable law, approved site procedures, trained personnel, and authorized decisions. Classroom safety discussions do not authorize isolation, servicing, or restart.',
     sources=[
-        dict(title='National Institute of Standards and Technology. Value Stream Mapping.', url='https://www.nist.gov/mep/value-stream-mapping', note='Background on mapping material and information flow to identify improvement opportunities. The observations, pilot proposals, and datasets here are original.', checked='30 September 2026'),
-        dict(title='American Society for Quality. Root Cause Analysis.', url='https://asq.org/quality-resources/root-cause-analysis', note='Background on investigating causes rather than equating a symptom or timeline with a proven explanation.', checked='30 September 2026'),
-        dict(title='American Society for Quality. Quality Glossary.', url='https://asq.org/quality-resources/quality-glossary', note='Terminology reference. Definitions and practice cases in this book are independently written for language learning, not certification or a quality-system standard.', checked='30 September 2026'),
-        dict(title='US Occupational Safety and Health Administration. Control of Hazardous Energy.', url='https://www.osha.gov/control-hazardous-energy/', note='Background on the need for an appropriate energy-control program, procedures, and training. The book deliberately supplies no machine-specific isolation sequence.', checked='30 September 2026')],
+        dict(title='National Institute of Standards and Technology. Value Stream Mapping.', url='https://www.nist.gov/mep/value-stream-mapping', note='Background on mapping material and information flow to identify improvement opportunities. The observations, pilot proposals, and datasets here are original.', checked='10 October 2026'),
+        dict(title='Lean Enterprise Institute. Single Minute Exchange of Die.', url='https://www.lean.org/lexicon-terms/single-minute-exchange-of-die/', note='Background on changeover reduction and the distinction between internal and external setup. No example authorizes a machine operation.', checked='10 October 2026'),
+        dict(title='American Society for Quality. Quality Glossary.', url='https://asq.org/quality-resources/quality-glossary', note='Terminology reference. Definitions and practice cases in this book are independently written for language learning, not certification or a quality-system standard.', checked='10 October 2026'),
+        dict(title='US Occupational Safety and Health Administration. Control of Hazardous Energy.', url='https://www.osha.gov/control-hazardous-energy/', note='Background on the need for an appropriate energy-control program, procedures, and training. The book deliberately supplies no machine-specific isolation sequence.', checked='10 October 2026')],
     units=[])
 
 BOOK['units'].append(unit(
@@ -39,7 +39,7 @@ target attainment | Actual output expressed relative to the stated target. | cal
 shortfall | The amount by which a result falls below its target. | quantify the shortfall
 throughput | The quantity passing through a process per unit of time. | measure throughput
 cycle time | The elapsed time required for a defined process cycle. | measure cycle time
-takt time | The production pace required to meet demand using available time. | calculate takt time
+takt time | Available production time divided by required demand for the same period. | calculate takt time
 lead time | The elapsed time from a defined request or start to completion. | reduce lead time
 work in process | Material that has entered production but is not yet finished. | control work in process
 bottleneck | The step that limits the output of the overall process. | identify the bottleneck
@@ -51,7 +51,7 @@ unplanned stop | An interruption not included in the intended operating schedule
 availability | The share of planned production time in which equipment is running. | assess equipment availability
 performance loss | Output-speed loss relative to the defined ideal running rate. | analyze performance losses
 quality loss | Output that does not meet the defined good-product criteria. | quantify quality losses
-overall equipment effectiveness | A combined availability, performance, and quality measure, abbreviated OEE. | calculate overall equipment effectiveness
+overall equipment effectiveness | Availability multiplied by performance and quality, with defined factors; abbreviated OEE. | calculate overall equipment effectiveness
 daily management | Routine review of performance, problems, and follow-up actions. | support daily management
 tier meeting | A short escalation meeting at a defined organizational level. | escalate through a tier meeting
 visual board | A shared display of current measures, status, and actions. | update the visual board
@@ -83,17 +83,17 @@ Logged | Means recorded, not necessarily investigated or verified.
 Recover | Specify output, schedule, or service; one recovery may not imply another.''',
     d='''Which board entry is accurate? | 840 units completed; 84% of target; 160-unit shortfall. | OEE 84%, with all losses explained. | Availability 84% and first-pass yield 100%. | Forty missing units because downtime was 40 minutes. | The entry uses only the supplied output and target and keeps units distinct from time.
 Why is OEE not established? | Planned time, ideal cycle time, and quality information are not supplied. | OEE is always identical to target attainment. | A target of 1,000 automatically defines ideal cycle time. | Downtime alone supplies every OEE input. | OEE combines distinct factors whose required inputs are missing from the brief.
-Which sentence best describes the 40-minute stop? | It is recorded downtime whose cause and contribution to the output gap remain under review. | It proves the entire 160-unit loss came from one cause. | It demonstrates an operator was at fault. | It proves all running units met quality criteria. | A duration alone does not establish a cause, a full loss attribution, or quality performance.
+A manager converts the 40-minute stop into the full 160-unit shortfall. What is missing from that attribution? | A supported running-rate and loss breakdown linking the stop to the output gap | The subtraction of 840 completed units from the 1,000-unit target | Confirmation that 40 is smaller than the target of 1,000 | A relabeling of target attainment as availability | The count gap is known, but minutes cannot become lost units without a relevant rate and loss basis. Other speed, quality, or operating losses may also contribute.
 If a second shift produces 900 against a target of 1,000, what is its attainment? | 90%, six percentage points above 84% | 90%, exactly six percent above 84% | 10%, because 100 units are missing | 900%, because 900 units were produced | 900 divided by 1,000 is 90%; the difference between 90% and 84% is six percentage points.''',
     dialogue='''Daniel | Yesterday's board shows eight hundred forty units against a thousand. It labels eighty-four percent as OEE, but I cannot see the inputs behind that label.
 Mei | The figure is [[target attainment::The calculation compares actual output with the target, not the separate inputs needed for OEE.]]. We divided completed output by the stated target; we did not calculate the availability, performance, and quality factors.
-Daniel | Then the output gap should be stated directly. A manager reading the board should not have to infer whether the percentage means output, running time, or good units.
+Daniel | Please change the heading before the morning meeting. What is the gap in units, and what can we actually say about the stop?
 Mei | The [[shortfall::The shortfall is the target minus actual output: 1,000 minus 840 equals 160 units.]] is one hundred sixty units, or sixteen percent of target. That is a quantity gap, not a duration and not an explanation of the cause.
 Daniel | The stop log records forty minutes. Does the team believe that interruption accounts for all the missing units, or is the analysis still open?
 Mei | The [[downtime::Downtime is the recorded nonproducing duration, whose cause and contribution remain unconfirmed here.]] is logged, but its cause and contribution remain under review. We should not convert forty minutes into one hundred sixty lost units without the relevant basis.
 Daniel | We would need to know the expected production rate and whether other losses occurred. The board currently makes a single interruption look like a complete explanation.
 Mei | Exactly. [[Loss attribution::Loss attribution assigns losses to supported contributors; the log alone does not complete that analysis.]] needs supporting data. I will reconcile the timing, output, and other relevant records rather than attach the entire gap to the most visible event.
-Daniel | What should we request for the equipment measure? I want the corrected board to explain the missing information without turning the morning meeting into a statistics lecture.
+Daniel | Which inputs do you need for the equipment measure? Give me the missing fields so I can ask the line team for them.
 Mei | Start with the basis for [[availability::Availability relates running time to planned production time, which is not supplied in this brief.]]. We need the planned production time and the relevant running time, not merely the output target and one stop duration.
 Daniel | The speed side also needs a clear reference. Actual output can fall short even while the equipment is running, so time and quantity should not be merged.
 Mei | Yes. The [[performance loss::Performance loss concerns running below the defined ideal rate, requiring speed-related information beyond downtime.]] assessment needs the defined ideal rate and actual running performance. The supplied briefing does not provide that basis, so the board cannot claim a completed result.
@@ -110,7 +110,8 @@ Mei | Agreed. The [[recovery plan::A recovery plan is a proposal for addressing 
     transfer='''Lead: "Target attainment is ___ percent." | ninety | Dividing 450 by 500 gives 0.90, or ninety percent.
 Planner: "The output shortfall is ___ units." | fifty | The target of 500 minus actual output of 450 leaves fifty units.
 Lead: "Twenty minutes describes recorded ___." | downtime | The supplied duration is nonproducing time, not a quantity of missing units.
-Planner: "The cause remains ___." | unconfirmed | The briefing provides no established explanation for the recorded stop.'''))
+Planner: "The cause remains ___." | unconfirmed | The briefing provides no established explanation for the recorded stop.''',
+    rehearsal=["Read the production review. State 840 against 1,000, 84% target attainment, and a 160-unit shortfall.","Swap roles. Keep the forty-minute stop separate from its unconfirmed cause and output effect; do not label 84% as OEE.","Read the corrected 450-unit transfer. State ninety-percent attainment and a fifty-unit gap without inventing a stop cause."]))
 
 BOOK['units'].append(unit(
     title='Lean, Waste, and Continuous Improvement',
@@ -136,7 +137,7 @@ value stream | The connected activities and information involved in delivering a
 current-state map | A representation of how the process currently works. | create a current-state map
 future-state map | A proposed representation of an improved process. | develop a future-state map
 point-of-use storage | Keeping needed items near where they are used. | trial point-of-use storage
-5S | A workplace-organization method covering order, cleanliness, standards, and sustainment. | sustain 5S practices
+5S | Workplace organization through sort, set in order, shine, standardize, and sustain. | sustain 5S practices
 standard work | The agreed method and conditions for performing a process. | update standard work
 pull system | Replenishment or production triggered by downstream need. | design a pull system
 kanban | A signal authorizing defined replenishment or production in a pull system. | use a kanban signal
@@ -173,12 +174,12 @@ Sustained | Means an improvement persists, not merely that one test looked favor
     d='''Which observation is defensible? | Eight tool-waiting episodes totaled 24 operator-minutes during the hour. | Operators were lazy for exactly 40% of the shift. | The entire line stopped for 24 minutes. | The proposed trial saved 24 minutes already. | The statement preserves the actual event count, observation period, and accumulated time measure.
 What is the average time per recorded episode? | Three operator-minutes | Eight operator-minutes | Twenty-four hours | Forty percent of every operator's shift | Dividing 24 operator-minutes by eight episodes gives three operator-minutes per episode.
 Which proposal has suitable boundaries? | Trial tool placement at one bench, keep required controls, and compare waiting under comparable conditions. | Remove checks to guarantee a faster result. | Roll out everywhere before reviewing the local effect. | Declare all waits eliminated before the trial. | The proposal defines a limited comparison without changing required controls or assuming the outcome.
-What would a reduction at one bench fail to prove by itself? | That waiting fell across the whole factory without new problems elsewhere | That the local observation can be recorded | That the proposal was tested at that bench | That the trial has a defined location | A local improvement does not automatically establish factory-wide benefit or exclude displaced delays.''',
+Waiting falls at the trial bench while the shared tool is less available elsewhere. Which conclusion still needs evidence? | Total benefit across the connected process, including any displaced waiting | The fact that the observation came from a particular bench | The original eight waiting episodes in the supplied baseline | The existence of a proposal to change the tool location | Moving delay can improve a local measure without improving the whole process. Compare relevant areas on a consistent basis before claiming overall benefit.''',
     dialogue='''Marcus | We watched the bench for an hour and recorded eight delays. The team says the operators are slow, but each delay seemed to involve waiting for the shared tool.
 Ana | Then name the observed [[waiting::Waiting describes work delayed by unavailable input, not evidence of a slow working pace.]]. The tool was unavailable at those moments; that does not establish that the operators worked slowly when they had what they needed.
 Marcus | The sheet adds up to twenty-four minutes. I was going to call that twenty-four minutes of line downtime, although two operators sometimes waited at the same time.
 Ana | The measure is [[operator-minute::An operator-minute measures one person's time; overlapping waits cannot be relabeled as elapsed whole-line downtime.]]. The total accumulates individual waiting time, so overlapping episodes must not be presented as the same amount of elapsed whole-line downtime.
-Marcus | We should keep the hour-long observation period visible too. Otherwise someone might use the figure as a whole-shift loss or compare it with a different time basis.
+Marcus | I will put the one-hour observation period beside that figure. We did not watch a full shift, so I cannot call it a shift total.
 Ana | Exactly. This is our [[baseline observation::The baseline records the current process before a change and needs a clear time and task basis.]]. Record the task conditions and tool demand so the later comparison is meaningful rather than just another isolated total.
 Marcus | The operators suggested a tool location beside the bench. It sounds practical, but we need to understand whether other stations depend on that same shared tool.
 Ana | Create the [[current-state map::A current-state map represents the existing locations, activities, and information flow before proposing a changed arrangement.]] with their input. Show the tool's movements and users, not just the bench we observed.
@@ -188,7 +189,7 @@ Marcus | For the trial, the suggestion is to keep an appropriate tool at this on
 Ana | That is a proposal for [[point-of-use storage::Point-of-use storage places needed items near their use, here as a proposal rather than a verified result.]]. Check the practical requirements and shared demand before assuming that moving the tool solves the problem for the whole process.
 Marcus | We can start with one bench and compare the waiting pattern. Required inspection and safety checks should stay in place, so the trial does not gain time by removing controls.
 Ana | Make that explicit in the [[pilot trial::A pilot trial is a bounded test whose conditions and retained controls must be clear before interpreting results.]] description. Use comparable task conditions and the same measure, and record any new difficulties rather than reporting only the favorable observations.
-Marcus | The improvement slide already lists twenty-four minutes saved. That is not right: twenty-four is the observed waiting total, and no trial result exists yet.
+Marcus | Hold on, the slide already says twenty-four minutes saved. Nobody has run the trial. Can we change that before it reaches the review meeting?
 Ana | Correct it to proposed [[countermeasure::A countermeasure is an action intended to address a problem; it does not establish achieved savings before testing.]]. We can explain what the change is intended to address without booking the hoped-for benefit as an achieved result.
 Marcus | After the trial, we should ask whether a reduction here created a tool shortage elsewhere. A faster bench would not necessarily mean a better overall flow.
 Ana | Review the broader [[value stream::The value stream includes connected activities, so a local change must be assessed for effects elsewhere.]]. Local gains matter, but a change that simply transfers waiting to another step may not improve delivery to the customer.
@@ -199,7 +200,8 @@ Ana | That is [[sustainment::Sustainment concerns maintaining an accepted improv
     transfer='''Facilitator: "The accumulated waiting measure is ___." | operator-minutes | The case adds individuals' waiting time, including overlapping episodes.
 Supervisor: "Average waiting per episode is ___ minutes." | three | Twelve operator-minutes divided by four episodes gives three per episode.
 Facilitator: "The proposed tool location still needs a ___." | trial | No evaluation of the proposed location has yet been performed.
-Supervisor: "We cannot report achieved ___ yet." | savings | A proposal has no measured improvement result before it is tested.'''))
+Supervisor: "We cannot report achieved ___ yet." | savings | A proposal has no measured improvement result before it is tested.''',
+    rehearsal=["Read the tool-waiting discussion. Say eight episodes and twenty-four operator-minutes within the one-hour observation.","Swap roles. Contrast accumulated people-time with line downtime; keep the one-bench trial proposed and controls unchanged.","Read the corrected four-episode transfer. State three operator-minutes per episode, with no achieved savings yet."]))
 
 
 BOOK['units'].append(unit(
@@ -241,7 +243,7 @@ quality escape | Nonconforming product that passes beyond its intended detection
     phrases='''Define the population | The report covers 1,000 inspected units from this batch.
 State the first-pass result | Nine hundred met requirements on the first inspection.
 Separate the pending quantity | Sixty units await authorized rework.
-State irreversible disposition | Forty units have approved scrap disposition.
+State the scrap decision | Forty units have approved scrap disposition.
 Reconcile the categories | These three exclusive states account for the full batch.
 Correct the scrap total | The 100 non-first-pass units are not all scrap.
 Keep recovery conditional | If all 60 pass after rework, the accepted total would be 960.
@@ -262,34 +264,35 @@ Unit | One item; it may contain more than one defect.
 Scrapped | A disposition state, not a synonym for every quality problem.''',
     d='''Which report reconciles the batch correctly? | 900 first-pass accepted, 60 awaiting rework, and 40 scrap | 960 accepted now and 100 scrap | 900 accepted and 100 confirmed scrap | 1,000 accepted because rework is planned | The three supplied mutually exclusive states total 1,000 without counting pending recovery as accepted.
 If all 60 later pass the required acceptance process, what would the accepted total be? | 960, while first-pass yield remains 90% | 960, making the original first-pass yield 96% | 1,060 because the rework count is added twice | 900 because reworked units can never be accepted | Later acceptance can increase final accepted quantity without changing how many passed on their first attempt.
-An inspected unit has three separate defects. Which statement is accurate? | It contributes one defective unit and three defects under those definitions. | It contributes three defective units. | It must be counted as three scrapped units. | Its defects prove every other unit is defective. | Unit count and defect count describe different measures and must not be substituted for one another.
+One unit has three defects and is included in the sixty awaiting rework. How should the unit reconciliation treat it? | One pending unit, with three defects recorded in the separate defect count | Three pending units because each defect needs its own correction | One pending unit plus one scrap unit until rework is completed | Three accepted units once the three corrective operations are planned | The physical item appears once in its current unit category. The three defects are a different measure; neither a work plan nor multiple defects changes its acceptance or scrap status.
 Which financial statement is supported without further data? | Scrap quantity and pending rework are known; their complete costs are not supplied. | Total poor-quality cost is exactly 100 dollars. | Planned rework has no labor cost. | Every non-first-pass unit has the same financial consequence. | The case supplies quantities but no complete costing basis for scrap or rework.''',
-    dialogue='''Ellis | The summary says one hundred units were scrapped, but the detailed report shows forty scrap and sixty awaiting rework. Which quantity should management use for the loss?
-Priya | Use the approved [[scrap::Scrap is the forty-unit disposition category, not all one hundred units that failed to pass initially.]] quantity of forty. The other sixty are pending a different process, so combining them would misstate the current material states and their consequences.
-Ellis | We should begin with the whole batch: one thousand inspected, nine hundred passed immediately, sixty waiting, and forty scrapped. That accounts for every unit once.
-Priya | Those are [[mutually exclusive categories::Exclusive categories place each unit in one state, allowing the total to reconcile without overlap.]]. Keeping each unit in one current state makes the report reconcilable and prevents pending units from appearing simultaneously as accepted output and a loss.
-Ellis | The dashboard uses ninety-six percent yield because it assumes all sixty can be recovered. That sounds optimistic before the work and acceptance checks are complete.
-Priya | The [[first-pass yield::First-pass yield is 900 divided by 1,000, excluding any later rework recovery.]] is ninety percent. Nine hundred passed initially; a future recovery cannot change what happened on the first inspection.
-Ellis | We can still show the possible recovery as a forecast, provided it is clearly conditional. The current accepted quantity is nine hundred, not nine hundred sixty.
-Priya | Exactly. The sixty remain in the [[rework queue::The rework queue contains units awaiting the process, not units already recovered and accepted.]]. They have not yet completed the authorized work and required acceptance process, so they are not current good output.
-Ellis | If all sixty eventually meet requirements, the accepted total would reach nine hundred sixty. The word would matters because the necessary outcome has not happened yet.
-Priya | That is a [[recovery assumption::A recovery assumption describes a possible future accepted quantity and must not be reported as an achieved result.]]. Label it separately from actual results, and keep the condition that every reworked unit must meet the required acceptance criteria.
-Ellis | Operations sometimes calls any corrective work repair. Should this report retain the authorized process name instead?
-Priya | Keep [[rework::Rework aims to restore conformity to requirements, whereas repair can have a different acceptance basis.]] because the process is intended to bring the units into conformity. Repair can have a different meaning and acceptance basis, so casual substitution can confuse the decision.
-Ellis | After the work, the report needs to reflect the actual checks and decisions. It should not move all sixty to good output just because a technician finished the operation.
-Priya | Correct. The required [[reinspection::Reinspection provides the specified post-work inspection evidence and is not replaced by completion of the operation alone.]] and acceptance decision still matter. Completion of work is not by itself proof that the resulting units satisfy the relevant requirements.
-Ellis | There is another reporting issue: one unit can have several defects. If the defect table lists three problems on one unit, the unit total must still count one.
-Priya | Yes. The [[defect count::Defect count can exceed defective-unit count because one unit may contain several distinct defects.]] is not the defective-unit count. Define both measures if the report uses them, rather than letting the same number move between incompatible labels.
-Ellis | When units change state after acceptance, we should update the pending balance. Otherwise the total could grow even though no new physical units were added.
-Priya | That would be [[double-counting::Double-counting would include recovered units in both the pending and accepted states instead of transferring their status.]]. Move the accepted quantity out of the pending state when the decision is recorded, preserving the batch reconciliation throughout the update.
-Ellis | I will correct the scrap figure and separate current accepted units from potential recovery. Finance can then use the right quantities without assuming scrap and rework cost the same.
-Priya | Good. Complete the [[material reconciliation::Material reconciliation accounts for the batch across its actual states before quantities are used in cost or production summaries.]] before presenting costs. We know the quantities here, but not the full cost basis, so the report should not invent a monetary loss from these counts alone.''',
+    dialogue='''Ellis | The headline says one hundred units scrapped. The detail says nine hundred passed first time, sixty await rework, and forty are scrap. Which number should I report?
+Priya | Forty is the approved [[scrap::Scrap is the forty-unit disposition category, not all one hundred units that failed to pass initially.]] quantity. The other sixty have not been discarded; they are awaiting a different process with its outcome still open.
+Ellis | Let me check the batch total: nine hundred plus sixty plus forty is one thousand. Those categories cover every inspected unit once.
+Priya | Yes, they are [[mutually exclusive categories::Exclusive categories place each unit in one state, allowing the total to reconcile without overlap.]]. Keep the pending units out of both current accepted output and the scrap total.
+Ellis | The dashboard also shows ninety-six percent first-pass yield. Someone added the sixty units they expect to recover, even though none has passed after rework yet.
+Priya | The [[first-pass yield::First-pass yield is 900 divided by 1,000, excluding any later rework recovery.]] is ninety percent. Nine hundred passed at first inspection. A later recovery does not change that original first-pass result.
+Ellis | Then the current accepted count is nine hundred. I can show a possible nine hundred sixty separately, but not as output already available.
+Priya | Correct. Sixty remain in the [[rework queue::The rework queue contains units awaiting the process, not units already recovered and accepted.]]. Completion of the planned work and the required acceptance are still ahead of them.
+Ellis | Would this forecast work: if all sixty pass after the authorized process, final accepted output would be nine hundred sixty?
+Priya | That is a clear [[recovery assumption::A recovery assumption describes a possible future accepted quantity and must not be reported as an achieved result.]]. Keep the if and would; otherwise the forecast reads like a completed recovery.
+Ellis | The technician called the work repair in an email. Should I use that word in the report, or retain the process named in the record?
+Priya | Retain [[rework::Rework aims to restore conformity to requirements, whereas repair can have a different acceptance basis.]] here: restoring conformity to the requirements. Repair can have a different acceptance basis, so the terms are not interchangeable.
+Ellis | When the work finishes, should I move the units straight into accepted output? The work-order status will tell me that the operation is complete.
+Priya | Wait for the required [[reinspection::Reinspection provides the specified post-work inspection evidence and is not replaced by completion of the operation alone.]] and acceptance decision. A finished operation does not by itself establish that the units meet requirements.
+Ellis | Another table lists three defects on one unit. I need to keep that from becoming three defective units in the batch reconciliation.
+Priya | Exactly. The [[defect count::Defect count can exceed defective-unit count because one unit may contain several distinct defects.]] can be higher than the defective-unit count. One physical unit can contribute several separate defects.
+Ellis | And when a unit is accepted after rework, it leaves the pending category. Otherwise our total would grow without any additional material.
+Priya | That would be [[double-counting::Double-counting would include recovered units in both the pending and accepted states instead of transferring their status.]]. Move the status when the acceptance is recorded; do not leave the same unit in both balances.
+Ellis | I will show nine hundred currently accepted, sixty pending, and forty scrap. Finance will need the cost basis before turning those quantities into a monetary loss.
+Priya | Complete that [[material reconciliation::Material reconciliation accounts for the batch across its actual states before quantities are used in cost or production summaries.]] first. The states are known; equal cost per scrap and rework unit is not one of our supplied facts.''',
     transfer_title='Keep future recovery conditional',
     transfer_setup='A batch of 200 has 170 first-pass accepted units, 20 awaiting rework, and 10 approved scrap. No rework outcome is available.',
     transfer='''Analyst: "First-pass yield is ___ percent." | eighty-five | 170 divided by 200 is 0.85, or eighty-five percent.
 Manager: "The pending rework quantity is ___." | twenty | Twenty units await rework and are not yet accepted recovered output.
 Analyst: "Approved scrap is ___ units." | ten | The scrap category contains ten units, separate from pending rework.
-Manager: "A total of 190 accepted units remains ___." | conditional | Reaching 190 requires all twenty pending units to pass the required acceptance process.'''))
+Manager: "A total of 190 accepted units remains ___." | conditional | Reaching 190 requires all twenty pending units to pass the required acceptance process.''',
+    rehearsal=["Read the batch review. Reconcile nine hundred first-pass accepted, sixty pending rework, and forty scrap to one thousand.","Swap roles. Keep ninety-percent first-pass yield unchanged by possible later recovery; 960 accepted remains conditional.","Read the corrected 200-unit transfer. State 85% first-pass yield, twenty pending, ten scrap, and 190 only if recovery succeeds."]))
 
 BOOK['units'].append(unit(
     title='Root Cause and Corrective Action',
@@ -351,17 +354,17 @@ Verified | Must identify which proposition or action was checked.
 Closed | Requires the agreed criteria, not merely a completed meeting or form.''',
     d='''Which root-cause statement fits the evidence? | The supplier change and two setting changes remain competing explanations pending comparison. | The supplier is proven responsible because its change came first. | The settings are proven responsible because there are two of them. | No investigation is possible when several things change. | Multiple simultaneous changes leave the cause unresolved but identify evidence that can help examine the alternatives.
 What does sorting establish by itself? | A screening activity is being used; recurrence prevention is not demonstrated. | The occurrence cause is eliminated. | Every future lot will be defect-free. | The supplier admitted responsibility. | Sorting addresses detection or containment and does not by itself change the process producing the defect.
-Which evidence request is most useful? | Reconcile defects with supplier-lot identities and actual settings under comparable conditions. | Ask only for opinions about the least popular supplier. | Delete records that conflict with the favored explanation. | Use the number of ideas on a diagram as proof. | The requested records connect outcomes to competing factors so the explanations can be examined.
+Which request best tests the competing supplier and setting explanations? | Link defect observations to actual supplier lots and both settings under comparable conditions. | Group every later defect under the new supplier without checking setting history. | Count all proposed causes and select the one mentioned most often. | Treat completion of sorting as verification that the supplier caused the defect. | Records linked to each relevant factor permit meaningful comparisons. Period labels, voting, and containment completion do not isolate a cause when several inputs changed.
 What distinguishes an occurrence cause from a detection failure? | One explains production of the defect; the other explains why a check missed it. | Both always mean the supplier changed. | A missed check proves why the defect was created. | Eliminating a detection failure automatically eliminates occurrence. | Producing a defect and failing to detect it are distinct questions that may require different actions.''',
     dialogue='''Rosa | The draft says the new supplier is the root cause because the defect first appeared after the switch. I want to check whether the evidence really isolates that change.
 Jun | It does not yet. The supplier is a [[hypothesis::The supplier is a possible explanation awaiting evidence, not a confirmed cause established by sequence.]]. Two process settings changed in the same period, and the comparable lot records have not been reconciled.
-Rosa | Then we should retain the timeline but remove the causal conclusion. The fact that one event followed another is useful information without being sufficient proof.
+Rosa | I will keep the dates and remove the confirmed-cause label. Which competing explanations do you want the investigation team to check?
 Jun | Exactly. The observed [[correlation::Correlation describes association and does not isolate causation when other relevant variables also changed.]] does not establish which change produced the defect. We need to examine the competing explanations rather than select the easiest one to describe.
 Rosa | The process settings could affect the result directly or interact with the supplied material. The current summary treats them as background details instead of relevant changes.
 Jun | Each is a possible [[confounding factor::A confounding factor can influence the apparent relationship between the supplier switch and the defect.]]. If conditions changed together, we cannot attribute the outcome to the supplier alone without further supporting comparison.
 Rosa | What should the evidence package contain? The identifiers in our defect, receiving, and machine records do not yet line up.
 Jun | Reconstruct the [[change history::The change history establishes which modifications occurred and when, allowing records to be compared accurately.]] and link it to actual production. Dates in a meeting summary are not enough if the material or settings took effect at different times.
-Rosa | We also need to know which supplier lot was used for each relevant run. Otherwise a supplier label at month level could hide the actual material sequence.
+Rosa | Can you link each run to the actual material lot? The monthly supplier summary will not tell us whether the old stock was still being used.
 Jun | That is where [[lot traceability::Lot traceability connects specific material lots with production and defect records instead of relying on broad period labels.]] matters. Match the actual lots, settings, and observations before assuming that every unit made after the announcement used the new material.
 Rosa | The sorting team has been screening output while we investigate. The draft calls that corrective action complete, which sounds stronger than the work establishes.
 Jun | Call it a [[containment action::Containment limits impact while the cause is investigated; sorting alone does not demonstrate recurrence prevention.]]. Sorting may limit the movement of affected output, but it does not by itself stop the process from producing the defect.
@@ -373,12 +376,13 @@ Rosa | Once the evidence supports an action, we need a defined way to judge whet
 Jun | Set an [[effectiveness check::An effectiveness check evaluates whether the action achieved the intended prevention result rather than merely being documented.]] with the appropriate criteria and review period. Any trial or process change must follow the authorized procedure rather than become an improvised production experiment.
 Rosa | I will revise the status: containment active, supplier and setting hypotheses open, and record reconciliation assigned to you. We will not announce a cause before the evidence supports it.
 Jun | Good. Keep the [[closure criteria::Closure criteria specify the evidence required before the issue can be accepted as resolved.]] visible so the team knows what remains. A clear open status is more useful than a closed label built on an untested explanation.''',
-    transfer_title='Three changes, no isolated cause',
+    transfer_title='Two changes, no isolated cause',
     transfer_setup='A defect appears after a material change and a temperature-setting change. No comparative analysis is complete. Temporary sorting is active.',
     transfer='''Engineer: "The material explanation is still a ___." | hypothesis | Multiple changes occurred, so the material has not been established as the cause.
 Reviewer: "The setting change is a potential confounding ___." | factor | The other changing variable can affect the apparent material-defect relationship.
 Engineer: "Temporary sorting is a containment ___." | action | Screening limits impact while the cause remains under investigation.
-Reviewer: "Recurrence prevention still needs effectiveness ___." | evidence | Active containment does not establish that a corrective action prevents the defect from recurring.'''))
+Reviewer: "Recurrence prevention still needs effectiveness ___." | evidence | Active containment does not establish that a corrective action prevents the defect from recurring.''',
+    rehearsal=["Read the root-cause exchange. State the supplier switch and two setting changes without assigning a confirmed cause.","Swap roles. Distinguish sorting from recurrence prevention and the occurrence cause from a missed detection.","Read the corrected two-change transfer. Keep material and temperature hypotheses open while containment is active."]))
 
 
 BOOK['units'].append(unit(
@@ -408,7 +412,7 @@ wear indicator | A measured or observed sign of component deterioration. | monit
 spare-part readiness | Availability of the correct parts needed for the planned work. | confirm spare-part readiness
 changeover | Transitioning equipment from one product or setup to another. | plan the changeover
 setup time | The time required to prepare equipment for a specified job. | measure setup time
-SMED | A setup-reduction approach distinguishing internal and external changeover work. | apply SMED principles
+SMED | Single-minute exchange of die: a method for reducing changeover time. | apply SMED principles
 internal setup | Setup activity that requires the machine to be stopped. | identify internal setup tasks
 external setup | Setup activity that can be completed while the machine is running. | separate external setup tasks
 deferral | Postponement of a planned task subject to the required assessment and decision. | assess a maintenance deferral
@@ -416,7 +420,7 @@ return to service | The authorized restoration of equipment to operational use. 
 capacity contingency | A conditional alternative for meeting production needs. | assess a capacity contingency
 schedule dependency | A condition or predecessor affecting the timing of planned work. | identify schedule dependencies''',
     precision='The conflict is one hour, from 13:00 to 14:00, but moving a two-hour maintenance task may have consequences beyond that overlap. Its duration does not establish that it can be shortened, split, or deferred without the required assessment.',
-    precision_extra='A changeover prepares for a different job; maintenance addresses equipment condition or function. Setup-reduction methods do not authorize skipping required maintenance or safety controls. An alternative line must be assessed before it becomes a credible production commitment.',
+    precision_extra='SMED targets single-digit-minute changeovers, not a universal one-minute task. It distinguishes internal and external setup. It does not authorize skipping maintenance or safety controls. An alternative line needs suitability and readiness checks before a production commitment.',
     phrases='''State the overlap | The order needs the line until 14:00, while maintenance starts at 13:00.
 Keep duration distinct | A one-hour conflict does not mean a two-hour task can be completed in one hour.
 Name the open assessment | We do not yet have a basis for deferring the maintenance.
@@ -442,16 +446,16 @@ Contingency | A conditional alternative rather than a confirmed allocation.''',
     d='''Which schedule statement is accurate? | There is a one-hour overlap, but the maintenance scope remains two hours unless properly reassessed. | The maintenance must take only one hour because the overlap is one hour. | The order and maintenance never conflict. | The rush order automatically cancels the maintenance. | The overlap calculation does not shorten the planned work or authorize a schedule change.
 Which alternative-line statement is best? | Assess suitability, setup, readiness, and allocation before committing the order. | Any idle line can run any product. | Availability alone proves qualification. | A possible alternative is already an approved schedule. | A credible contingency needs more than the possibility of unused capacity.
 Which reply preserves authority? | We can present deferral for assessment, but it is not authorized in the current information. | We can skip it because production has a deadline. | No assessment is needed if the machine is currently running. | A planner's suggestion is sufficient return-to-service approval. | The supplied case contains no technical basis or authorized deferral decision.
-What should be distinguished at the end of the work? | Task completion, required checks, and authorized return to service | Task completion and automatic proof of permanent reliability | A signed schedule and every safety decision | An unused spare part and a release decision | Completing maintenance does not automatically demonstrate that all required checks and authorization are complete.''',
+The maintenance operation is marked finished. What remains a separate status to confirm? | Required checks and authorized return to service | Whether the original window lasted two hours | Whether the order and maintenance once overlapped | Whether the planner had mentioned an alternative line | Finishing the work does not automatically establish that the required checks and return-to-service decision are complete. The original schedule facts do not replace those controls.''',
     dialogue='''Ben | The rush order needs the line until fourteen hundred. Maintenance is booked from thirteen hundred to fifteen hundred, so the current schedule cannot satisfy both plans.
 Leila | The [[maintenance window::The maintenance window is the reserved period from 13:00 to 15:00, which conflicts with the order schedule.]] overlaps the order by one hour. That does not mean the two-hour task can be shortened to one hour.
 Ben | Could we move the work later? I need an option for the customer discussion, but I do not have the technical basis to say that postponement is acceptable.
 Leila | Treat [[deferral::Deferral is a proposed postponement requiring the relevant assessment and authorization, neither of which is supplied here.]] as an option for assessment, not an approved decision. We need the responsible review before changing the commitment or telling the team to proceed.
-Ben | The machine ran yesterday without a reported breakdown. I was tempted to use that as reassurance, although it may not answer the maintenance question.
+Ben | The customer will ask why we cannot use a machine that ran yesterday. What can I say without suggesting that yesterday's run settles today's maintenance decision?
 Leila | It does not establish [[reliability::Reliability concerns performance over defined conditions and time, not a guarantee inferred from one recent operating period.]] for the proposed period. The task's purpose, equipment condition, and consequences need assessment rather than a conclusion based only on yesterday's operation.
 Ben | What information should we bring to the decision maker? I can show the order timing and the impact on delivery, but the work scope needs your input.
 Leila | We should review the [[work order::The work order identifies the defined maintenance task and its controlled scope for the scheduling assessment.]], required resources, and relevant dependencies. The schedule discussion must not silently delete part of the task to make the overlap disappear.
-Ben | There may be another line free this afternoon. I have not checked whether it can run this product or what preparation would be needed.
+Ben | Line two may be free this afternoon. I will check its product capability and setup requirements before offering it as the alternative.
 Leila | Call it a [[capacity contingency::A capacity contingency is a conditional alternative whose suitability and readiness still need confirmation.]]. An unoccupied line is not automatically suitable, ready, or allocated to this order, so we cannot promise that route yet.
 Ben | It would need a different product setup. That is separate from the maintenance on the original line, even though both activities take equipment time.
 Leila | Correct. A [[changeover::A changeover transitions equipment to another job, while the original task concerns maintenance.]] prepares the alternative line for the job. Its scope and timing need review; it does not replace the original maintenance requirement.
@@ -468,7 +472,8 @@ Leila | Good. [[Return to service::Return to service is the authorized restorati
     transfer='''Planner: "The schedules overlap by ___ hour." | one | The shared period is 10:00 to 11:00, a one-hour overlap.
 Technician: "Moving maintenance would be a proposed ___." | deferral | Postponement is not approved merely because an order conflicts with the window.
 Planner: "The second line is a capacity ___." | contingency | The alternative remains conditional until its suitability and readiness are confirmed.
-Technician: "Before using it, confirm its ___." | suitability | The briefing specifically leaves the second line's capability for the job unconfirmed.'''))
+Technician: "Before using it, confirm its ___." | suitability | The briefing specifically leaves the second line's capability for the job unconfirmed.''',
+    rehearsal=["Read the schedule discussion. Identify the 13:00-to-14:00 conflict within the two-hour maintenance window.","Swap roles. Present the other line as conditional, and distinguish proposed deferral from authorization.","Read the corrected morning transfer. Preserve the one-hour overlap and the alternative line's unconfirmed suitability."]))
 
 BOOK['units'].append(unit(
     title='EHS and Safety Communication',
@@ -478,7 +483,7 @@ BOOK['units'].append(unit(
     cast='Hana | Operator in a classroom exercise\nOscar | Safety trainer',
     culture=('A short stop message can be respectful', 'Safety clarification works best when the concern is specific and the pause is unambiguous. Say which instruction is unclear and what needs confirmation. Do not bury the concern in an apology or turn uncertainty into a request to guess the missing step.'),
     a='''Where is this exchange taking place? | In a classroom safety exercise with no equipment work underway | During an authorized live servicing operation | At a completed restart inspection | In a confirmed emergency rescue | The brief explicitly describes a classroom exercise and supplies no live-work authorization.
-What is missing from the card? | Equipment identity, energy sources, and the applicable isolation procedure | The classroom's lunch menu only | A completed isolation verification result | Proof that the machine has no stored energy | The card lacks essential context and cannot supply a valid equipment-specific work instruction.
+Which clarification is needed before this classroom card could support the intended technical discussion? | Identified equipment, energy sources, and the current applicable approved procedure | A statement that switching off is always equivalent to isolation | A learner signature substituting for the missing equipment reference | A generic sequence assumed suitable for every machine | The card lacks the equipment-specific basis needed to interpret it. A signature or general statement does not supply that basis, and the exercise authorizes no actual work.
 What must not be invented? | An isolation sequence for an unidentified machine | A clear statement that the card is ambiguous | A request for the approved procedure | A named clarification route | The task is to stop and clarify communication, not create a machine procedure without the required basis.''',
     vocabulary='''EHS | Environment, health, and safety functions and practices. | raise an EHS concern
 hazard | A source or condition with the potential to cause harm. | identify a hazard
@@ -538,7 +543,7 @@ Hana | The phrase switch off sounds simple, but it could refer only to stopping 
 Oscar | Correct. [[Shutdown::Shutdown stops normal operation but does not establish that every hazardous energy source has been controlled.]] is not the same as complete energy control. This card gives us no basis for declaring any machine isolated or safe for the proposed work.
 Hana | There could also be energy remaining after a normal stop. I should not assume that the absence of movement proves there is nothing left that could cause harm.
 Oscar | Exactly. [[Stored energy::Stored energy can remain after normal supply or operation stops, so it cannot be dismissed from a generic off instruction.]] must be addressed through the applicable process. We will not improvise that process for unidentified equipment during a language exercise.
-Hana | Then the next step is to identify the equipment and obtain the approved instructions that actually apply. A generic training phrase is not enough.
+Hana | Which machine is this card supposed to cover? Can we get its approved instructions before the class goes any further?
 Oscar | We need the current [[equipment-specific procedure::The equipment-specific procedure supplies the approved instructions for identified equipment rather than a generic classroom shortcut.]] and the relevant qualified personnel. The correct document and assigned roles matter as much as the words on the card.
 Hana | I understand the need to ask, but I do not want my question to sound as though I am volunteering to perform the isolation myself.
 Oscar | You are not. The [[authorized employee::The authorized employee has the assigned role and required training for the relevant energy-control work.]] has an assigned role and the required training. Participating in this discussion does not give you that authorization.
@@ -546,7 +551,7 @@ Hana | Some learners also treat a tag as though it physically prevents the same 
 Oscar | Yes. [[Tagout::Tagout uses warning tags within the applicable system and must not be assumed to provide the same physical restraint as a lock.]] has particular functions and limitations under the applicable system. A warning tag must not be described as providing identical physical restraint to a lock.
 Hana | Once the correct information is available, I can repeat the equipment identity and the next communication step. That would help confirm that I heard the clarification correctly.
 Oscar | That is [[read-back::Read-back checks shared understanding of critical information but does not establish a physical equipment condition.]]. It checks our shared understanding; it does not replace the required technical process or demonstrate that the equipment has reached a particular state.
-Hana | So the class should not write isolated on the worksheet merely because we have discussed the concept. We have not performed or observed any equipment work.
+Hana | The worksheet asks me to mark the machine isolated. I am leaving that blank: we are in a classroom and have not checked any equipment.
 Oscar | Correct. [[Verification of isolation::Verification of isolation requires the approved technical method, which has not occurred in this classroom discussion.]] is a separate technical requirement under the applicable procedure. Our conversation does not establish that it has occurred.
 Hana | I will keep the concern specific: missing equipment identity and procedure. The training card needs correction, rather than a handwritten guess about the missing steps.
 Oscar | I will refer it through the [[EHS::EHS identifies the environment, health, and safety function involved in addressing the safety-related training issue.]] and training process. We should preserve the unclear wording so the responsible people can review and correct the source.
@@ -557,7 +562,8 @@ Oscar | Exactly. It also provides no [[restart authorization::Restart authorizat
     transfer='''Learner: "The equipment identity is ___." | missing | The card omits the specific machine, so its identity cannot be assumed.
 Trainer: "We must obtain the applicable approved ___." | procedure | A generic card cannot replace the required equipment-specific instructions.
 Learner: "This discussion remains a classroom ___." | exercise | The case supplies no actual equipment work or servicing authorization.
-Trainer: "It does not authorize a ___." | restart | A training clarification does not provide permission to resume equipment operation.'''))
+Trainer: "It does not authorize a ___." | restart | A training clarification does not provide permission to resume equipment operation.''',
+    rehearsal=["Read the classroom exchange. Pause at the ambiguous card and request the identified equipment and applicable approved procedure.","Swap roles. Distinguish shutdown, communication read-back, and physical isolation verification without inventing operating steps.","Read the corrected transfer. Keep the activity a classroom exercise with no servicing or restart authorization."]))
 
 
 BOOK['units'].append(unit(
@@ -619,35 +625,36 @@ Plus or minus | Sets symmetric limits around the stated nominal value.
 Acknowledged | Records the supplier's response; compare it with the actual order terms.
 Released | Requires the relevant authorization, not merely a favorable number.''',
     d='''What is the difference between 12.18 mm and revision C's upper limit? | 0.08 mm above the limit | 0.18 mm above the limit | 0.02 mm below the limit | 0.10 mm below the limit | The upper limit is 12.10 mm, and 12.18 minus 12.10 equals 0.08 mm.
-Which supplier statement is most precise? | The result meets the supplied B dimensional range; we still need to confirm whether B governs this order. | The result meets B, so the entire lot is automatically released. | The inspector is dishonest because C has a different limit. | A newer revision can never affect an existing order. | The precise statement separates the numerical comparison from the unresolved applicable requirement.
+Which update keeps the numerical result separate from the unresolved governing requirement? | 12.18 meets B's 12.10-12.30 range and exceeds C's upper limit by 0.08; applicability and release remain open. | 12.18 meets B, so B must be the applicable requirement and the lot can be released. | 12.18 exceeds C's nominal by 0.18, so it exceeds C's upper limit by 0.18. | C is the later letter, so it automatically governed every earlier order. | C's upper limit is 12.10, making the excess 0.08, not the distance from nominal. Neither numerical fit nor revision chronology establishes applicability or release authority.
 Which evidence best addresses the mismatch? | Order references, acknowledgment, drawing versions, and change effectivity records | Only the most recent filename in someone's downloads | The supplier's production deadline alone | A verbal claim that both revisions are equivalent | The relevant records connect the agreed requirement and change timing to the particular order and lot.
 How should the report be corrected? | Add the missing revision and resolution through the controlled record process while retaining traceability. | Replace the result silently so it appears to meet C. | Delete the original record and release immediately. | Remove units and tolerances to avoid disagreement. | The correction must preserve the measured result and traceable requirement basis rather than obscure the discrepancy.''',
-    dialogue='''Colin | Our report shows twelve point one eight millimeters within tolerance, but your incoming record calls it a failure. The two teams may be using different requirements.
-Farah | The missing reference is the [[drawing revision::The drawing revision identifies the requirement version needed to interpret the inspection result.]]. Our inspector used revision C, while your team used B, and the incoming report omitted that distinction.
-Colin | Revision B specifies twelve point two zero, plus or minus zero point one zero. That gives the range we used when assessing the measured feature.
-Farah | Its [[lower specification limit::Subtracting 0.10 from the B nominal 12.20 gives the lower permitted value of 12.10 mm.]] is twelve point one zero, with an upper limit of twelve point three zero. The reported result falls within that stated range.
-Colin | Revision C has a lower nominal value. I want to state its limits accurately rather than argue that a favorable result against our copy resolves everything.
-Farah | C's [[upper specification limit::Adding 0.10 to the C nominal 12.00 gives the upper permitted value of 12.10 mm.]] is twelve point one zero. The lower limit is eleven point nine zero, so the result is zero point zero eight above C's upper limit.
-Colin | Then both comparisons can be stated without contradiction. The disagreement concerns which version applies, not whether twelve point one eight is the reported measurement.
-Farah | Correct. The [[measured value::The measured value remains 12.18 mm; differing reference limits change its interpretation, not the recorded number.]] stays unchanged. We must not alter it to fit either drawing or let the missing reference obscure what the inspection actually recorded.
-Colin | Our production team says B was attached to the order package. We should provide that package, although we still need to compare it with your purchasing records.
-Farah | Please send the [[order acknowledgment::The acknowledgment records the supplier's received or accepted terms and can be compared with the purchase order references.]] and referenced drawing. I will check the purchase order so we can establish the agreed requirement rather than rely on separate recollections.
-Colin | There may also have been a change notice after the order was placed. A newer document exists, but I do not yet know when it was intended to apply.
-Farah | We need its [[effectivity::Effectivity specifies when or to which population the technical change applies, resolving more than simple revision chronology.]]. Latest in the document system does not automatically tell us whether the change governed this particular order or lot.
-Colin | If the updated requirement was meant to apply, we should trace how it was communicated. That will help identify the actual mismatch instead of simply assigning blame.
-Farah | Review the [[supplier flow-down::Supplier flow-down concerns how applicable requirements were communicated through the supply chain.]] evidence. The communication record may be important, but we should not state a responsible party before we have reconciled the order and change history.
-Colin | In the meantime, can you release the lot because it meets B's dimension? The production team is asking for a delivery update.
-Farah | No release is established by that comparison alone. The [[acceptance basis::The acceptance basis remains unresolved while the applicable revision is unknown, so a favorable B comparison cannot settle release.]] is still under review, and the lot retains its hold status until the required decision is made.
-Colin | We can discuss a formal exception if needed, but I understand that asking for one would not itself authorize use against a requirement.
-Farah | Exactly. A [[deviation request::A deviation request seeks an authorized departure and is not itself approval of that departure.]] would follow the applicable process. It must not be treated as an approved exception simply because someone needs the material urgently.
-Colin | I will send the order acknowledgment, drawing copy, and any change communication. The update will state both numerical comparisons without promising that the lot can be used.
-Farah | Good. Once the governing requirement and evidence are resolved, document the actual [[release decision::The release decision is the authorized result of the review, not an assumption drawn from one favorable comparison.]]. Correct the report through the controlled process and preserve the original measurement and reference history.''',
+    dialogue='''Colin | We measured 12.18 millimeters and reported it within tolerance. Your incoming report says it failed. Can we compare the requirement before we debate the result?
+Farah | Yes. The report is missing the [[drawing revision::The drawing revision identifies the requirement version needed to interpret the inspection result.]]. Your team used B, our inspector used C, and we have not confirmed which governs this order.
+Colin | B says nominal 12.20, plus or minus 0.10 millimeters. We used that drawing in production, but I agree its applicability still needs checking.
+Farah | B's [[lower specification limit::Subtracting 0.10 from the B nominal 12.20 gives the lower permitted value of 12.10 mm.]] is 12.10 millimeters, and its upper limit is 12.30. The measured 12.18 is inside that interval.
+Colin | C says 12.00, plus or minus 0.10. The upper end looks like the lower end of B, which may be why the report became confusing.
+Farah | C's [[upper specification limit::Adding 0.10 to the C nominal 12.00 gives the upper permitted value of 12.10 mm.]] is 12.10. The measurement is 0.08 above it, with C's full range running from 11.90 to 12.10.
+Colin | Then neither team needs a different measurement to explain the disagreement. The same 12.18 gets a different comparison because the references differ.
+Farah | Keep the [[measured value::The measured value remains 12.18 mm; differing reference limits change its interpretation, not the recorded number.]] unchanged. We need to resolve the reference, not adjust the recorded number until it fits a preferred drawing.
+Colin | Our production team says B came with the order. I will send the actual package rather than ask you to accept that recollection.
+Farah | Include the [[order acknowledgment::The acknowledgment records the supplier's received or accepted terms and can be compared with the purchase order references.]] and attached drawing. I will compare them with our purchase order and the controlled requirement references.
+Colin | I found a later change notice too. Its issue date does not tell me whether it applied to material already ordered.
+Farah | Check its [[effectivity::Effectivity specifies when or to which population the technical change applies, resolving more than simple revision chronology.]]: the order, lot, date, or other stated application point. Newest in the system does not necessarily mean governing this lot.
+Colin | If C was meant to apply, we also need to know whether the requirement reached our team. I will trace the communication history.
+Farah | That is the [[supplier flow-down::Supplier flow-down concerns how applicable requirements were communicated through the supply chain.]] question. Keep it evidence-based; a mismatch does not yet tell us which party caused it.
+Colin | Production wants a release estimate. Can I say the lot is usable because 12.18 meets B, while we finish the paperwork?
+Farah | No. The [[acceptance basis::The acceptance basis remains unresolved while the applicable revision is unknown, so a favorable B comparison cannot settle release.]] is unresolved and the lot is held. A favorable comparison with B does not supply the missing authorization.
+Colin | We could request a formal exception if one is needed. I will keep that separate from asking which revision actually governed the order.
+Farah | Correct. A [[deviation request::A deviation request seeks an authorized departure and is not itself approval of that departure.]] is a request, not an approved departure. Its submission would not itself remove the hold.
+Colin | My update will show both ranges, the unchanged measurement, and the documents we are tracing. I will not promise use of the lot.
+Farah | Once the requirement is resolved, record the authorized [[release decision::The release decision is the authorized result of the review, not an assumption drawn from one favorable comparison.]] and correct the report transparently. Preserve the measurement, references, and history of the discrepancy.''',
     transfer_title='Pass against which revision?',
     transfer_setup='A measurement is 5.08 mm. Revision A allows 4.90-5.10 mm; revision B allows 4.95-5.05 mm. The governing revision is unconfirmed and the lot remains held.',
     transfer='''Engineer: "The result is within revision ___ limits." | A | 5.08 lies between the supplied A limits of 4.90 and 5.10.
 Supplier: "It exceeds revision B's upper ___." | limit | 5.08 is above the B upper permitted value of 5.05.
 Engineer: "The applicable revision remains ___." | unconfirmed | The case does not establish which reference governs the order.
-Supplier: "The lot has not been ___." | released | The material remains held, so neither comparison supplies release authorization.'''))
+Supplier: "The lot has not been ___." | released | The material remains held, so neither comparison supplies release authorization.''',
+    rehearsal=["Read the supplier exchange. Compare 12.18 with B's 12.10-12.30 and C's 11.90-12.10 millimeter ranges.","Swap roles. State 0.08 above C's upper limit; preserve the measurement and the unresolved order effectivity.","Read the corrected 5.08-millimeter transfer. It meets A and exceeds B; applicability is unconfirmed and the lot remains held."]))
 
 BOOK['units'].append(unit(
     title='Shift Handoffs and Escalation',
@@ -672,7 +679,7 @@ handoff record | The documented status and responsibilities transferred between 
 attachment | A supporting file or record linked to the handoff. | verify the attachment
 record reference | An identifier locating the supporting evidence. | provide the record reference
 named owner | A specifically identified person responsible for an action. | assign a named owner
-acknowledgment | Confirmation that information or responsibility has been received. | obtain acknowledgment
+acknowledgment | Confirmation that a message was received, distinct from accepting responsibility. | obtain acknowledgment
 closed-loop communication | An exchange in which receipt and understanding are confirmed. | use closed-loop communication
 read-back | Repetition of key information to verify shared understanding. | request a read-back
 next checkpoint | The agreed time or event for the next status review. | set the next checkpoint
@@ -708,7 +715,7 @@ Accepted | May mean ownership accepted, not product accepted; name the object.
 By | Can imply a deadline; do not use it for an update unless that meaning is clear.
 Pending | Preserves an unresolved task or decision rather than predicting its outcome.''',
     d='''Which handoff line is most useful? | L27: checks 1-6 complete; 7 reconciliation and 8 final review open; lot not released. | L27 is 75% ready and should be fine. | All checks complete because the incoming supervisor is named. | L27 released subject to two required checks that have not occurred. | The line identifies the actual completed and open work and preserves the stated release restriction.
-What does Elena's acknowledgment establish? | Receipt and accepted follow-up responsibility, not completed checks | Automatic completion of label reconciliation | Final quality approval | Permission to ignore the dependency | A handoff acknowledgment confirms communication and ownership, not technical completion or release.
+Elena confirms receipt and explicitly accepts follow-up responsibility. What may the record state? | Handoff received and ownership accepted; checks 7 and 8 remain open and the lot is not released. | Receipt confirmed, so both remaining checks are technically complete. | Ownership accepted, so final quality review can precede reconciliation. | Handoff accepted, so release is authorized subject to later evidence. | Receipt and explicit acceptance establish communication and ownership. They do not complete the checks, remove their dependency, or authorize the lot's release.
 The teams agree an update at 09:00. Which interpretation is safest and most precise? | A status report is due at 09:00; completion is not guaranteed unless separately established. | Both checks must already be complete because an update time exists. | The lot is released at 09:00 regardless of results. | No communication is needed unless everything finishes. | An agreed checkpoint concerns reporting status and should not be turned into an unsupported completion promise.
 Which task order matches the brief? | Complete label reconciliation before the dependent final quality review. | Complete final review by assuming reconciliation will pass later. | Mark both complete when the attachments are opened. | Remove check 7 because six others are finished. | The brief explicitly makes final quality review dependent on the completed reconciliation.''',
     dialogue='''Diego | This handoff covers lot L27. Six of the eight required checks are complete, but the draft says seventy-five percent ready and should be fine.
@@ -719,13 +726,13 @@ Diego | The completed-check records are attached, with identifiers next to check
 Elena | First, let me verify each [[attachment::Attachments are the supporting records whose availability must be confirmed, not assumed from a sent message.]] is accessible. A file listed in a message is not useful evidence if the incoming team cannot open it or identify what it supports.
 Diego | Thank you. The site procedure requires all eight checks before release, so the two unfinished checks mean L27 has not been released.
 Elena | That restriction belongs beside the [[release checklist::The release checklist defines the required checks, all of which remain necessary before the stated release decision.]]. Six completed items do not reduce the requirement to finish the other two, regardless of how reassuring the summary sounds.
-Diego | I will remove should be fine. It was meant as encouragement, but it could be read as permission to proceed despite the unfinished work.
+Diego | I will delete should be fine. What exact status would you want the incoming team to see first?
 Elena | Use a clear [[status qualifier::A status qualifier such as not released states the limits of the current condition rather than offering vague reassurance.]] instead: not released, two checks open. That tells the team what the status means without suggesting a result we do not have.
 Diego | Can you confirm the records and the two remaining checks now? I want the handoff to be more than a message sent just before I leave.
 Elena | Yes. Here is my [[read-back::Read-back repeats the critical lot status, open checks, and restriction to confirm shared understanding.]]: L27, checks one through six complete; seven reconciliation and eight final review open; final review depends on seven; no release yet.
 Diego | That matches. You are taking responsibility for coordinating the follow-up, but the record should not mark either check complete just because you accepted the handoff.
 Elena | Correct. Record [[handover acceptance::Handover acceptance confirms responsibility for follow-up and does not establish technical completion of the remaining checks.]] separately from check completion. I accept the follow-up responsibility; the actual check results and authorized decision still need their own evidence.
-Diego | Let's agree a status update at nine tomorrow. I cannot promise that the reconciliation and final review will both finish by then.
+Diego | Can we agree on an update at nine tomorrow, even if the reconciliation is still open? I would rather hear the actual position than wait for good news.
 Elena | Nine will be the [[next checkpoint::The next checkpoint is an agreed status-review time, not a guaranteed completion or release time.]], not a guaranteed finish time. I will report the actual status and any unresolved issue rather than make completion a condition for communicating.
 Diego | If a required record is unavailable, we need the team to use the site's escalation process instead of treating silence as permission to move the lot.
 Elena | I will state that [[escalation trigger::The trigger identifies the missing evidence condition that requires referral through the site's responsible process.]] in the handoff. The appropriate route remains the site process; I will not invent an alternative approval because a record is delayed.
@@ -736,4 +743,5 @@ Elena | It also preserves the [[audit trail::The audit trail records who knew an
     transfer='''Outgoing lead: "The final review remains ___." | open | Three completed checks leave the fourth review unfinished.
 Noor: "I accept follow-up ___." | responsibility | Noor accepts ownership of the follow-up rather than declaring the review complete.
 Outgoing lead: "Sixteen hundred is the agreed update ___." | time | The checkpoint is a reporting time, not a guaranteed completion time.
-Noor: "The handoff does not itself authorize ___." | release | An accepted handoff cannot replace the remaining required review or release decision.'''))
+Noor: "The handoff does not itself authorize ___." | release | An accepted handoff cannot replace the remaining required review or release decision.''',
+    rehearsal=["Read the L27 handoff. Name checks 7 and 8, their dependency, and the not-released status.","Swap roles. Confirm receipt and accept responsibility explicitly; make nine tomorrow an update time, not a completion promise.","Read the corrected M8 transfer. Keep the final review open and 16:00 as Noor's status update."]))

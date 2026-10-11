@@ -10,7 +10,7 @@ BOOK = dict(
     cover_size=39,
     tagline='Clear orders. Confident service.',
     audience='For restaurant servers, food runners, section leads, and guest-facing food-service teams.',
-    map_intro='Eight service conversations: clarify an order, compare menu prices, receive an allergy question, explain a delay, correct a dish, split a bill, agree on clearing, and hand over a live section.',
+    map_intro='Eight lessons on orders, menu choices, allergies, delays, corrections, payment, shared service, and section handovers. Three additional conversations cover availability, service charges, and accessible ordering.',
     notes_title='Warm service. Precise details.',
     notes_intro='Good service depends on listening closely while several things happen at once. Move between friendly guest-facing language and concise kitchen messages. Keep the table, seat, dish, request, timing, and responsible person clear.',
     field_notes=[
@@ -23,13 +23,13 @@ BOOK = dict(
     sources=[
         dict(title='US Bureau of Labor Statistics. Waiters and Waitresses.',
              url='https://www.bls.gov/ooh/food-preparation-and-serving/waiters-and-waitresses.htm',
-             note='Occupational context for order-taking, kitchen communication, guest service, clearing, and payment work. The original cases do not represent employment statistics.', checked='1 October 2026'),
+             note='Occupational context for order-taking, kitchen communication, guest service, clearing, and payment work. The original cases do not represent employment statistics.', checked='10 October 2026'),
         dict(title='US Food and Drug Administration. Food Allergies.',
              url='https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies?lv=true',
-             note='Background for allergen and cross-contact terminology. The allergy dialogue never certifies a dish or substitutes for current ingredient and preparation checks.', checked='1 October 2026'),
+             note='Background for allergen and cross-contact terminology. The allergy dialogue never certifies a dish or substitutes for current ingredient and preparation checks.', checked='10 October 2026'),
         dict(title='US Food and Drug Administration. Food Code 2026.',
              url='https://www.fda.gov/food/fda-food-code/food-code-2026',
-             note='A model food code offered for jurisdictional adoption, not an automatically universal restaurant rule. Consult applicable current local requirements.', checked='1 October 2026'),
+             note='A model food code offered for jurisdictional adoption, not an automatically universal restaurant rule. Consult applicable current local requirements.', checked='10 October 2026'),
     ],
     units=[],
 )
@@ -38,12 +38,12 @@ BOOK['units'].append(unit(
     title='Confirming seats and order details',
     scene='Who asked for no onions?',
     skill='Attach each dish and modifier to the correct guest, then read back the order before sending it.',
-    brief='At fictional table 12, three guests are ordering. Seat one wants mushroom pasta; seat two wants salad with dressing separately; seat three has not chosen. Someone says "no onions," but server Lena cannot tell which dish the request belongs to. She has not sent the order. Guest Sam at seat two confirms during the conversation that the onion request belongs to the salad. Seat three still needs time. No allergy is reported in this case, and the onion request must not be treated as a confirmed allergy or a rule for every dish.',
-    cast='Lena | Server\nSam | Guest at seat two',
+    brief='At fictional table 12, three guests are ordering. Seat one wants mushroom pasta; seat two wants salad with dressing separately; seat three has not chosen. Someone says "no onions," but server Lena cannot tell which dish the request belongs to. She has not sent the order. Guest Sam at seat two confirms that the onion request belongs to the salad. The dialogue follows Lena and section lead Cam checking that clarified request before transmission. Seat three still needs time. No allergy is reported in this case, and the onion request must not be treated as a confirmed allergy or a rule for every dish.',
+    cast='Lena | Server\nCam | Section lead',
     culture=('Clarification is part of attention', 'A guest may speak while another person is ordering, or answer on behalf of someone else. A brief, neutral check avoids blame and keeps the exchange moving. Say which detail needs clarification rather than asking the whole table to repeat everything.'),
     a='''Which seat has not chosen? | Seat three | Seat one | Seat two | All three seats | The brief explicitly leaves seat three's dish undecided.
 Which request already belongs to the salad? | Dressing separately | No mushrooms in the pasta | A completed third main | Dressing mixed through the salad | Seat two requested salad with the dressing served separately.
-What should Lena clarify before sending? | Which dish should have no onions | Whether every guest dislikes all vegetables | Whether the pasta was already served | Whether there are four covers | The onion request has no clear dish or seat reference when first heard.''',
+What did Lena need to clarify when she first heard the request? | Which dish should have no onions | Which dish should have dressing mixed in | Whether seat three had ordered pasta | Whether seat one wanted a different main | The onion request initially lacked a dish reference; Sam subsequently attached it to the salad.''',
     vocabulary='''cover | One diner counted for restaurant service or planning. | serve three covers
 seat number | Identifier linking an order to a place at a table. | confirm the seat number
 table number | Identifier used to locate a dining table. | check the table number
@@ -75,10 +75,10 @@ Check the guest | Is that request for your salad?
 Read back seat one | Seat one is the mushroom pasta.
 Read back seat two | Seat two is the salad with dressing on the side.
 Preserve the pending choice | Seat three is still deciding.
-Attach the modifier | I will put no onions on the salad request.
+Attach the modifier | I have noted no onions for your salad.
 Avoid a table-wide change | I will not apply that request to the other dishes.
 Ask briefly | May I check one detail before I send this?
-Translate separately | The dressing will be requested on the side.
+Translate separately | You would like the dressing served separately, correct?
 Separate request and guarantee | I will confirm any preparation question through our kitchen process.
 Keep the record aligned | The seat reference and modifier need to stay together.
 Avoid an invented allergy | No allergy has been reported in this exchange.
@@ -92,30 +92,31 @@ On the side | Common serving phrase meaning separately.
 Put on the request | Refers to recording the instruction, not adding onions to the food.
 Yet | Distinguishes an unsent order from one already in preparation.
 Matched correctly | Invites correction before an avoidable error moves to the kitchen.''',
-    d='''Which clarification is most useful? | Which dish should have no onions? | Why did everyone speak so badly? | Should I remove every vegetable from every plate? | Shall I invent something for seat three? | The question asks for the missing dish reference without blame or unsupported changes.
+    d='''Which clarification is most useful? | Which dish should have no onions? | Shall I put no onions on the whole table? | Is the pasta the one with both changes? | Should I send three portions of pasta? | The question asks for the missing dish reference without blame or unsupported changes.
 What should be sent as the salad modifier after Sam confirms? | No onions, dressing on the side | No mushrooms in every dish | Dressing mixed through all dishes | Cancel seat three's meal | Sam confirms the onion request for the salad, which already has separate dressing.
 Which statement preserves the pending choice? | Seat three is still deciding. | Seat three ordered mushroom pasta. | Seat three is not eating. | All three mains are confirmed. | The brief leaves the third choice open rather than establishing a dish or cancellation.
 What does the onion request establish medically? | No allergy diagnosis or report by itself | A confirmed onion allergy for all diners | That no allergy process is ever needed | That all foods are safe | A requested omission alone does not supply an allergy report or a safety conclusion.''',
-    dialogue='''Lena | Before I send your order, may I check one detail? I heard no onions while the other dish was being discussed, but I did not catch which dish that was for.
-Sam | That was for my salad. I am in seat two. Please keep the [[modifier::The modifier changes the salad order; Sam identifies which dish the no-onions instruction belongs to.]] with that dish, not with the mushroom pasta.
-Lena | Thank you. I have mushroom pasta for seat one and salad for seat two. You also asked for the dressing separately, is that right?
-Sam | Yes, dressing [[on the side::On the side is the usual serving phrase for dressing provided separately rather than mixed into the salad.]]. I would like to add it myself. The no-onions request is also mine, so those two details belong together.
-Lena | That is clear now. Seat three has not chosen a main yet, so I have not added a dish for that person.
-Sam | Correct. Please leave that as a [[pending choice::A pending choice has not been made; it is not a cancellation or permission to invent a dish.]]. We were comparing the options, and I do not want my request to sound like an order for everyone.
-Lena | Of course. I will check with seat three separately. Let me repeat the confirmed details so you can tell me if I have missed anything.
-Sam | A quick [[read-back::A read-back repeats recorded details aloud so the guest can correct an error before the order is sent.]] would help. It was noisy when we were speaking, and I would rather correct the reference now than when the plates arrive.
-Lena | Seat one, mushroom pasta. Seat two, salad with no onions and dressing on the side. Seat three is still deciding. Have I matched those correctly?
-Sam | Yes. That [[seat reference::The seat reference links the salad and its two requests to seat two, keeping the pasta unchanged.]] is right. The pasta stays as ordered; the salad is the one with the two requests.
-Lena | Good. I will make sure the dish and its instructions stay together in our system. I have not transmitted the order yet.
-Sam | Thank you. I know a short note can look different on an [[order ticket::The order ticket carries preparation details to the kitchen, so the dish and its modifiers must remain linked.]] if the request is not linked to the right item.
-Lena | Exactly. I am checking the wording before it reaches the kitchen. I will also follow our process if any preparation detail needs further confirmation.
-Sam | That makes sense. We have three [[covers::Covers counts diners; three covers does not mean that three main-course choices have already been confirmed.]], but only two main-course choices so far. Please do not treat the number of diners as three completed orders.
-Lena | I will keep those separate. I also will not add an allergy note that no one has reported. If you have a dietary requirement, please tell me directly.
-Sam | Understood. The current [[omission::An omission is a requested removal; here it means leaving onions out of the salad, without an allergy report.]] is no onions in my salad. I can see why the exact wording matters when you pass it to the kitchen.
-Lena | I will give seat three another moment, then check the remaining choice. There is no need for you to decide on that person's behalf.
-Sam | Good. Once that person chooses, you can complete the [[confirmation::Confirmation establishes that the repeated order details are correct; it should include the actual third choice when made.]] with them. I have confirmed only the details that belong to me.
-Lena | Thank you. I now have the salad request attached correctly, and the mushroom pasta remains unchanged. I will check the third choice next.
-Sam | Thank you. Please check that last choice before you [[send the order::Send the order means transmit the confirmed details; Sam asks Lena to check the remaining choice before doing so.]]. I will leave seat three to tell you what they would like.''',
+    dialogue='''Lena | Cam, can you check table twelve with me before I send it? Three guests, two mains chosen. I clarified the onion request with Sam at seat two.
+Cam | Yes. Which dish gets the [[modifier::The modifier changes the salad order; Lena has confirmed that the onion request belongs to Sam at seat two.]]? Your first note says no onions between the two mains, so I cannot tell which one it follows.
+Lena | It belongs to the salad, not the pasta. Sam also wants the dressing separately. I have corrected the note against seat two.
+Cam | Salad, no onions, dressing [[on the side::On the side means the dressing is served separately, as Sam requested for the salad.]]. That is clear. What is seat one having?
+Lena | Mushroom pasta, unchanged. Seat three was still looking at the menu when I came over, so I have left that choice open.
+Cam | Keep it as a [[pending choice::Seat three has not selected a dish; a pending choice is neither a cancellation nor an order.]], then. Do not copy the pasta into the third seat just to fill the space.
+Lena | I will go back to that guest. Before I do, can you repeat what you have? I want to catch any mismatch now.
+Cam | Here is the [[read-back::A read-back repeats the recorded details so the colleagues can catch an error before transmission.]]: table twelve, seat one mushroom pasta; seat two salad, no onions, dressing on the side; seat three still deciding.
+Lena | Correct. The salad has both requests. I originally wrote them between the items because two people were speaking at once.
+Cam | Now the [[seat reference::The seat reference attaches both salad requests to seat two and leaves seat one's pasta unchanged.]] makes the connection clear. Keep the requests attached to that item in the system too.
+Lena | I have not sent anything yet. I wanted to settle the unclear detail first rather than ask the kitchen to interpret my note.
+Cam | Good. The [[order ticket::The order ticket communicates preparation instructions; its modifiers must stay with the correct dish when sent.]] needs the same dish-and-seat links. A general no-onions note across the table would give the kitchen a different instruction.
+Lena | The screen shows three diners, but only two main dishes so far. That is why the totals do not match yet.
+Cam | Three [[covers::Covers counts diners; three diners does not establish three completed main-course orders.]], two confirmed mains. That is fine while the last person is choosing. The diner count does not supply a missing order.
+Lena | Sam said no onions, but did not report an allergy. I repeated the request and confirmed the dish rather than guessing the reason.
+Cam | Record the [[omission::The omission is removal of onions from the salad; no allergy has been reported in this case.]] accurately. If an allergy is reported, use our allergy procedure; do not treat an ordinary modifier as a substitute for that process.
+Lena | I will return to seat three now and ask what they would like. Then I can repeat the complete order to the table.
+Cam | Get that last [[confirmation::Confirmation checks the actual chosen dish and details; the unfinished third choice cannot be confirmed in advance.]] from the guest. Leave Sam's salad request as it is unless Sam changes it.
+Lena | Understood: pasta unchanged, salad with its two requests, third main still open. I will come back if the guest needs a kitchen check.
+Cam | All right. Follow our process when you [[send the order::Send the order means transmit the checked details, after resolving the remaining choice through the restaurant's process.]]. Keep the dish, seat, and instructions together so the kitchen receives what the guests actually asked for.''',
+    rehearsal=["Check the cloze answers. Read Lena and Cam's exchange, stressing table twelve, seat one, seat two, and seat three.","Switch roles. Say the final read-back without changing the pasta or inventing the third main.","Complete the table 8 transfer and check its key. Repeat with a partner: fish, seat two, soup unchanged, two covers."],
     transfer_title='Attach a different request',
     transfer_setup='Table 8 has two covers. Seat one orders tomato soup; seat two orders grilled fish. A lemon-separately request is clarified as belonging to the fish. No third diner or allergy is reported.',
     transfer='''Server: "The lemon request belongs to the ___." | fish | The clarification specifically attaches the separate lemon to the grilled fish.
@@ -185,27 +186,28 @@ Would you prefer | Gives the decision to the guest after the comparison.''',
     d='''Which calculation is correct? | $24 + $5 = $29 for the steak set | $27 + $5 = $32 for the steak set | $24 - $5 = $19 for the steak set | $27 - $24 = $3 for dessert | The supplement is added to the set base, not to the a la carte price.
 Which comparison is complete? | $29 with dessert versus $27 without dessert; both include potatoes. | $24 versus $27 with identical inclusions | $29 without potatoes versus $27 with potatoes | $5 versus $27 for the entire meal | This comparison gives the actual prices and distinguishes shared and different inclusions.
 What cannot be inferred from the two-dollar difference? | The restaurant's standalone dessert price is $2. | The steak set costs $2 more. | The set includes dessert. | Both steak options include potatoes. | A difference between bundled offers does not establish the separate selling price of a component.
-Which recommendation avoids pressure? | If you want dessert, the set includes it for two dollars more than steak alone. | Everyone must buy the set. | The a la carte steak includes an unlisted free dessert. | The set guarantees the largest portion. | The recommendation uses the supplied price and inclusion difference without inventing benefits or removing choice.''',
+Which recommendation avoids pressure? | If you want dessert, the set includes it for two dollars more than steak alone. | The set saves five dollars compared with steak alone. | You can add any dessert later for two dollars. | The set includes coffee as well as dessert. | The recommendation uses the supplied price and inclusion difference without inventing benefits or removing choice.''',
     dialogue='''Jordan | Could you help me with the lunch menu? I saw twenty-four dollars beside the set, but there is another amount beside the steak.
 Priya | Certainly. Twenty-four dollars is the [[base price::The base price is the set's starting amount before the listed five-dollar steak supplement is added.]] for a main and dessert. Choosing steak adds five dollars, so that particular set comes to twenty-nine.
-Jordan | So the five dollars is on top of the set price, not the complete price of the steak and not a replacement for twenty-four?
+Jordan | So the steak is five dollars extra on the set? I first read that as a separate price, which did not seem right.
 Priya | Exactly. It is a [[supplement::A supplement is an addition to the stated base, not a replacement price or the cost of the whole dish.]] to the set. Twenty-four plus five is twenty-nine for the steak set, including dessert.
 Jordan | I also see steak listed separately at twenty-seven. Is that another way of ordering the same main without taking the lunch set?
 Priya | Yes, that is the [[a la carte::A la carte identifies an individual menu item rather than the main-and-dessert set being compared.]] option. The steak is twenty-seven without dessert. Both options include potatoes, so you do not need to add them to this comparison.
-Jordan | That answers my next question. I thought perhaps the lower price meant that the steak came on its own and I would pay separately for potatoes.
+Jordan | Good, I was about to ask about the potatoes. I do not want to discover I need to order a side as well.
 Priya | Potatoes are a shared [[inclusion::An inclusion is covered by the quoted option; potatoes are included in both steak choices in this menu.]] here. The difference stated on this menu is the dessert, alongside the two different menu prices.
 Jordan | Then the set is two dollars more than the steak alone. I am not especially hungry, so I am deciding whether I want dessert.
 Priya | That is the correct [[price difference::The price difference is twenty-nine minus twenty-seven, or two dollars between these two specific options.]]. If you want the included dessert, the set is twenty-nine. If not, the steak alone is twenty-seven.
-Jordan | Could I have the steak alone now and assume any dessert will cost two dollars later? That would let me decide after the main.
+Jordan | Could I order the steak alone and add dessert for two dollars later, or does that price only work with the set?
 Priya | I would need to check the [[standalone price::The standalone price applies to a dessert bought separately; the two-dollar bundle difference does not establish it.]] before quoting that. The two-dollar comparison does not mean every separately ordered dessert has a two-dollar price.
-Jordan | Fair enough. I do not want to order on the basis of a price that is not actually listed. I just wanted to understand the options.
+Jordan | That makes sense. I may not want dessert after the steak. Could you give me a moment to choose?
 Priya | Of course. A useful [[value comparison::A value comparison considers both price and inclusions, allowing the guest to decide whether the dessert matters.]] depends on what you want to eat. The more expensive option is not automatically the better choice for you.
 Jordan | Is coffee included with the dessert in that set? I sometimes see that elsewhere, but I cannot find it in this description.
 Priya | Coffee is not part of the stated [[main-and-dessert set::The main-and-dessert set names the included courses; coffee is not supplied as an inclusion in this comparison.]] in the details we are comparing. I would check its price and status separately rather than tell you it is part of the set.
-Jordan | Understood. For now, I only need the menu price of the two steak options and what each one includes. You have made that much clearer.
+Jordan | Thanks. I will leave coffee for now. Could you repeat just the two steak prices for me?
 Priya | Then the [[price basis::The price basis specifies what each quoted amount covers, avoiding unsupported claims about other items or charges.]] is twenty-nine for steak, potatoes, and the included dessert, or twenty-seven for steak and potatoes without dessert.
-Jordan | I will take another moment to decide about dessert. Please do not enter the set just because we have spent longer discussing it.
+Jordan | Let me check with my friend about dessert before I decide. I have not chosen the set yet.
 Priya | Certainly. I will wait for your [[guest choice::The guest choice must be confirmed explicitly; discussing an option at length does not authorize ordering it.]]. When you are ready, tell me set or a la carte, and I will confirm the option before entering it.''',
+    rehearsal=["Check the answers, then read the menu exchange with a partner. Stress twenty-four plus five and twenty-nine versus twenty-seven.","Switch roles. Repeat the final comparison, keeping potatoes in both options and dessert in the set only.","Complete and check the fish-set transfer. Read both prices aloud; do not turn the bundle difference into a standalone dessert price."],
     transfer_title='Compare another set',
     transfer_setup='A fictional main-and-dessert set has a $20 base and a $4 fish supplement. Fish alone costs $22 without dessert. Both options include rice. No separate dessert price is supplied.',
     transfer='''Server: "The fish set costs ___ dollars." | twenty-four | Twenty dollars plus the four-dollar supplement equals twenty-four dollars.
@@ -284,18 +286,19 @@ Eli | Please include how it is handled, not just the ingredients. I would rather
 Noor | Of course. I will ask about the ingredients and [[cross-contact::Cross-contact concerns unintended allergen introduction, which is not answered solely by the bun's intended ingredient list.]]. I cannot confirm suitability from this description, and I will not put the order through while that question is unresolved.
 Eli | Have you been able to pass that question to Cam? I would like to know it has reached the person checking the kitchen information.
 Noor | Yes, Cam has received it. We need the current [[ingredient list::The ingredient list must match the actual bun in use, rather than an older menu or another supplied product.]] for today's bun. That check has not been completed, so the old description is not our answer.
-Eli | And the preparation question is with Cam too? I would not want a confirmed list to be presented as confirmation of everything else.
+Eli | Good. Please ask about preparation as well. I have had to be careful with shared equipment at other restaurants.
 Noor | Yes. The relevant [[handling information::Handling information covers preparation and service conditions, making it distinct from the list of intentional ingredients.]] still needs verification through our allergy procedure. I made clear that you are asking about both ingredients and preparation.
 Eli | Thank you. I also do not want anyone to remove visible seeds and assume that has answered the question. The bread itself matters.
 Noor | Agreed. We need the actual [[product specification::The product specification describes the supplied item; visual appearance alone is not equivalent to verified product information.]] and relevant supplier information. A plain surface or removal of visible seeds is not enough to establish suitability.
-Eli | Please do not prepare a different dish while you check, either. I have not chosen an alternative or asked for a substitution.
+Eli | I will wait. Please do not bring me a different dish in the meantime; I need to choose after the check.
 Noor | Understood. The [[order hold::The order hold prevents this unresolved allergy query from being treated as an ordinary confirmed order ready for preparation.]] remains in place. Any alternative would need its own appropriate checks and your agreement before we proceed.
-Eli | When you return, could you make clear which information has actually been checked? I need to distinguish a progress update from a confirmed result.
+Eli | Has the kitchen actually checked the bun yet, or are they still finding the information?
 Noor | Certainly. The [[ingredient verification::Ingredient verification is the actual check of the relevant product; receiving the question does not mean that check is complete.]] and preparation checks are not complete yet. I will keep their actual status clear rather than describe Cam receiving the question as a final answer.
-Eli | Thank you for being clear. Please do not enter a substitute on my behalf while you are checking. I have not chosen something else.
+Eli | If the bun does not work for me, could we discuss another option afterward? I have not picked one yet.
 Noor | I will not. Any [[alternative dish::An alternative dish is a separate option requiring appropriate checks, not an automatically safe replacement for the bun.]] would need its own checks and your choice. Your order has not been sent.
 Eli | That is fine. I will wait for the verified information before deciding. Please keep the sesame allergy attached to the discussion if someone else takes over.
 Noor | Yes. The [[allergy flag::The allergy flag preserves the reported sesame allergy with the relevant order and handoff; it does not itself certify suitability.]] and the unresolved question must stay together. I will return with the information we can actually confirm and explain any remaining limits.''',
+    rehearsal=["Check the cloze answers. Read the conversation, keeping sesame clear in every handoff and update.","Switch roles. Stress the difference between Cam receiving the question and completing the ingredient and handling checks.","Complete the peanut-sauce transfer and check the key. Repeat all four lines without claiming the sauce is suitable."],
     transfer_title='Receive a different allergen question',
     transfer_setup='At table 9, guest Alex reports a peanut allergy and asks about a sauce. The server has an old description only. Kitchen lead Imani accepts the query. No ingredient or handling answer is yet verified.',
     transfer='''Server: "The reported allergen is ___." | peanut | Alex reports peanut, which must be repeated without changing the allergen.
@@ -313,7 +316,7 @@ BOOK['units'].append(unit(
     culture=('Tell the guest what the clock actually means', 'Internal timing can sound like a promise when repeated without context. Translate preparation status into guest-facing language, acknowledge the departure constraint, and check realistic options. Do not hide uncertainty behind kitchen jargon or assume the guest has enough time to eat.'),
     a='''When were the mains fired? | 7:20 | 7:30 | 7:38 as a completed event | 7:50 | The kitchen began the relevant preparation stage at the stated 7:20 time.
 What is the current estimate at 7:30? | Another eight minutes | Eight minutes total since 7:20 | Guaranteed service at 7:30 | Guaranteed departure at 7:38 | The estimate is eight additional minutes from the 7:30 update.
-What is the guests' departure requirement? | Leave at 7:50 | Begin starters at 7:50 | Arrive at 7:50 | Finish paying yesterday | The guests explicitly need to leave at 7:50.''',
+What is the guests' departure requirement? | Leave at 7:50 | Begin starters at 7:50 | Arrive at 7:50 | Have the mains ready by 7:50 | The guests explicitly need to leave at 7:50.''',
     vocabulary='''fire | Kitchen instruction to begin or advance preparation at the required service stage. | fire the mains
 fired time | Recorded time when the relevant preparation instruction was given. | confirm the fired time
 pickup | Kitchen-to-service handoff when dishes are ready for collection. | coordinate pickup
@@ -368,9 +371,9 @@ Which offer stays within the facts? | I can discuss the timing options with you 
 Which phrase needs translation for a guest? | Your mains were fired at 7:20. | You need to leave at 7:50. | One dish is still being prepared. | The current estimate is eight more minutes. | Fired is internal kitchen shorthand and may need a plain-language explanation of the preparation stage.''',
     dialogue='''Riley | Could you check our mains, please? We have finished the starters, and we need to leave at seven fifty. I am beginning to worry about the time.
 Tomas | I am sorry about the wait. I have a current [[readiness estimate::The readiness estimate is provisional information about food readiness, not a promise that the whole meal will finish on time.]] from the kitchen: at seven thirty, they expect another eight minutes. One dish is still being prepared.
-Riley | Eight minutes from when? We ordered earlier, so I want to make sure that does not mean eight minutes from the start of cooking.
+Riley | Another eight minutes from now? I thought the mains had gone in earlier. I am trying to work out whether we can stay.
 Tomas | The [[remaining time::Remaining time means additional time from the seven-thirty update, not total time since preparation began.]] is from the seven-thirty update. That points to around seven thirty-eight for the stated estimate, but I cannot guarantee arrival at that exact time.
-Riley | When did the kitchen start the mains? I am not asking you to blame anyone; I am trying to understand how far along they are.
+Riley | When did they start preparing them? We are not upset with you, but we do need to know where we stand.
 Tomas | The [[fired time::The fired time records the preparation instruction at seven twenty; it is distinct from the later readiness estimate.]] was seven twenty. In our kitchen language, that is when the mains were called for preparation. It does not mean they were ready or served then.
 Riley | All right. If they are ready around seven thirty-eight, that leaves twelve minutes before we have to go. That sounds rather tight for us.
 Tomas | I agree that your [[departure deadline::The departure deadline is seven fifty, which must be considered separately from preparation or service estimates.]] matters. The twelve minutes is only the difference between those times; it does not guarantee enough time to receive the food, eat, and settle the bill.
@@ -378,14 +381,15 @@ Riley | Can you move our order ahead of everyone else? I realize the kitchen is 
 Tomas | I can discuss a [[rush request::A rush request asks for acceleration; it does not establish accepted priority or a faster confirmed completion time.]] with the kitchen. I cannot promise a different position or faster completion before they confirm what is actually possible.
 Riley | Would it be quicker to change one of the dishes? I do not want to cancel the whole meal if a realistic option is available.
 Tomas | We can have a [[timing discussion::A timing discussion explores feasible options without claiming that a substitute or cancellation has already been approved.]] about that. I would need the kitchen to check any alternative; I do not have a confirmed substitute time to offer you now.
-Riley | Please do that. I would rather hear a realistic limitation than be told everything is fine and discover too late that we need to leave.
+Riley | Please check. We would rather hear what is possible now than sit here hoping the food will arrive.
 Tomas | Understood. My next [[table update::A table update should communicate the actual order status and options, not repeat reassurance unsupported by the kitchen.]] should tell you what the kitchen can confirm and what remains uncertain. We should also agree when you will hear from me again.
-Riley | Yes. And please do not treat seven thirty-eight as the time we will definitely be eating. There could still be a gap before the plates reach us.
+Riley | Does that time mean ready in the kitchen or actually at our table? We will still need time to eat and pay.
 Tomas | Correct. [[Pickup::Pickup is the kitchen-to-service handoff, which remains distinct from delivery to the table and completion of the meal.]] and delivery to the table are separate from the cooking estimate. I will clarify which stage the estimate covers when I speak with the kitchen.
 Riley | Thank you. We still need to leave at seven fifty, even if the food is delayed. That is the constraint we need you to work with.
 Tomas | I will carry that [[timing constraint::The timing constraint remains the guests' seven-fifty departure; an uncertain kitchen estimate does not remove it.]] into the conversation. I will not represent your departure as flexible or assume you can stay longer.
-Riley | Then please check the options, and come back with the actual answer. We have not agreed to a substitute or canceled anything yet.
+Riley | Thank you. Please check before changing anything. We still have the original order for now.
 Tomas | Agreed. I will avoid a [[completion promise::A completion promise would commit to a finished outcome; the available estimate does not justify such a guarantee.]] I cannot support. Your order status, the current estimate, and any decision we make next will stay clear.''',
+    rehearsal=["Check the answers and read the delay conversation. Stress seven thirty, another eight minutes, and seven fifty.","Switch roles. Repeat the readiness explanation without promising table arrival or enough time to eat.","Complete the new-estimate transfer. Check the arithmetic and key, then read both the approximate readiness and fixed departure times."],
     transfer_title='Anchor a new estimate',
     transfer_setup='At 8:10, the kitchen estimates six more minutes for a dish. The guests need to leave at 8:30. No faster alternative or guaranteed table-delivery time has been confirmed.',
     transfer='''Server: "The estimate starts from ___." | 8:10 | The additional six minutes is anchored to the 8:10 update.
@@ -443,39 +447,40 @@ Address the practical effect | I understand that the extra wait affects your mea
 Separate the financial question | Any bill adjustment needs the shift lead's review.
 Do not promise an unauthorized comp | I cannot confirm a free item before approval.
 Name the next action | I will bring the bill question to the shift lead.
-Keep consent clear | We have offered the remake, but you have not accepted it yet.
+Keep consent clear | I will wait for your go-ahead before arranging the replacement.
 Check completion later | I will confirm that the correct dish reaches you.
-Close with the two tracks | We need to confirm your replacement choice and review the bill question separately.''',
+Confirm the next step | I will check the bill question first, then come back for your decision.''',
     notes='''We brought | Acknowledges the service error without assigning unsupported individual blame.
 Confirms | Identifies evidence for what was ordered.
 Can remake | Describes an available action, not one already completed.
 Would you like | Requests the guest's decision.
 Current estimate | Preserves uncertainty in preparation timing.
 Needs review | Marks a pending decision rather than approval.''',
-    d='''Which apology fits the facts? | I am sorry; the ticket confirms pasta, but we brought risotto. | You must have ordered incorrectly. | The cook deliberately ignored you. | Nothing went wrong because both dishes contain vegetables. | The apology acknowledges the confirmed mismatch without blaming the guest or inventing a cause.
+    d='''Which apology fits the facts? | I am sorry; the ticket confirms pasta, but we brought risotto. | I am sorry; your order was entered as risotto. | I am sorry; the kitchen has confirmed who took the wrong plate. | I am sorry; I have already removed the charge. | The apology acknowledges the confirmed mismatch without blaming the guest or inventing a cause.
 Which offer is authorized? | A pasta remake with an estimated ten-minute wait | A guaranteed ten-minute arrival and free meal | A refund already completed | Any replacement at any price with no check | Dana may offer the remake, while timing remains estimated and billing requires review.
 Which statement keeps the financial decision accurate? | I will ask the shift lead to review the bill question. | I have already approved a comp. | Every remake legally requires a refund. | The kitchen estimate authorizes a discount. | The supplied authority covers referral for review, not a completed adjustment or universal rule.
 When can the issue be described as fully resolved? | After the relevant agreed actions are actually completed and checked | Immediately when an apology is spoken | Before the guest accepts an offer | As soon as someone guesses the cause | An apology and offer are steps toward resolution, not evidence that the correction and related decisions are complete.''',
-    dialogue='''Alex | Excuse me, this is mushroom risotto. I ordered the vegetable pasta. Could you check the order, please? I do not think this is my main.
-Dana | I am sorry about the [[order mismatch::The order mismatch is the confirmed difference between vegetable pasta ordered and mushroom risotto delivered.]]. I checked the ticket, and it confirms vegetable pasta. We brought the wrong dish.
-Alex | Thank you for checking. I was worried I would have to explain the whole order again. What can you do to put it right?
-Dana | The kitchen can offer a [[remake::A remake is a newly prepared corrected dish; here the available option is the originally ordered vegetable pasta.]] of the vegetable pasta. The current estimate is ten minutes. Would you like that replacement, or do you need to discuss the options first?
-Alex | Ten minutes would change the timing of our meal. Is that a firm promise that the plate will be here exactly ten minutes from now?
-Dana | It is an [[estimated wait::An estimated wait is approximate, so Dana must not turn it into a guaranteed exact arrival time.]], not a guaranteed arrival time. I understand that waiting again affects your meal, and I do not want to promise a time I cannot confirm.
-Alex | I appreciate that. I am also concerned about paying the same bill after receiving the wrong dish and having to wait again.
-Dana | I can take that [[bill adjustment::A bill adjustment is a separate financial decision that the shift lead must review under the supplied authority.]] question to the shift lead. I may offer the remake, but I cannot approve a financial change myself in this situation.
-Alex | So you are not telling me the pasta will automatically be free? I would rather know that now than have a different conversation when the check arrives.
-Dana | Correct. A [[comp::A comp means an item provided without charge under authorization; the available remake offer does not establish that approval.]] has not been approved. I will explain the mismatch and the extra wait to the shift lead and ask for a decision.
-Alex | Do you know why it happened? The ticket was right, but the dish was wrong. Was it sent from the kitchen that way?
-Dana | I have not established the [[cause::The cause of the wrong delivery is not supplied; a correct ticket does not identify which person or stage caused the error.]]. I can confirm the mismatch, but I should not blame a colleague or guess at the sequence before it has been checked.
-Alex | If I agree to the remake, will you make sure the correct dish reaches this table? I do not want the same confusion again.
-Dana | Yes, I will make a [[follow-up check::A follow-up check verifies that the agreed correction actually occurs, including delivery of the correct dish to the guest.]] on the corrected order and its delivery. I will also keep you informed if the timing changes rather than let the estimate silently pass.
-Alex | Please ask the shift lead about the bill first. I have heard the remake offer, but I have not accepted it yet.
-Dana | I understand. Your [[acceptance::Acceptance is the guest's agreement to the proposed remedy; Alex explicitly has not given it yet.]] is still pending. I will not describe the replacement as agreed or the meal problem as resolved before you have chosen.
-Alex | Thank you. Please make sure the person reviewing the bill knows both what I ordered and what actually arrived, along with the extra waiting time.
-Dana | I will give the [[shift lead::The shift lead is the named role responsible for reviewing a bill adjustment, distinct from Dana's replacement-offer authority.]] those facts: pasta ordered and confirmed on the ticket, risotto delivered, remake offered at an estimated ten minutes.
-Alex | That is accurate. I would like the next update to tell me what has actually been approved and what choice you still need from me.
-Dana | Certainly. I will keep the [[resolution status::Resolution status tracks actual agreement and completion; the current state is an offer and pending bill review, not closure.]] clear. The remake awaits your decision, and any bill adjustment awaits the shift lead's review.''',
+    dialogue='''Alex | Excuse me, this is mushroom risotto. I ordered vegetable pasta. Could you check? Everyone else has their main, and I do not want to start the wrong dish.
+Dana | I am sorry about the [[mistake::The ticket confirms pasta but risotto arrived, so mistake acknowledges an established service error without assigning blame.]]. The ticket says vegetable pasta. We brought you something different.
+Alex | Can I still get the pasta? I had been looking forward to it, but I am worried the others will finish before mine arrives.
+Dana | The kitchen can make a [[remake::A remake is a newly prepared corrected dish, here the vegetable pasta originally ordered.]]. Their current estimate is ten minutes. Would you like me to arrange that?
+Alex | Is that ten minutes from now? We have already waited for the first round, so I need a realistic idea before I decide.
+Dana | They have quoted an [[estimated wait::An estimated wait is approximate; Dana cannot turn the kitchen's estimate into a guaranteed arrival time.]] of ten minutes. I cannot promise the exact arrival time, and I understand another wait disrupts your meal.
+Alex | Will there be anything off the bill? I do not feel comfortable paying as though everything arrived correctly.
+Dana | I can ask for a [[bill adjustment::A bill adjustment changes the charge and requires the shift lead's review under this case's stated authority.]]. Our shift lead needs to review that; I can offer the replacement but cannot approve the charge change myself.
+Alex | I thought the replacement might be free. Are you saying you cannot promise that yet?
+Dana | That is right. I cannot promise it will be [[complimentary::Complimentary means provided without charge; the offered remake has not been approved as free.]] before the lead decides. I will explain both the wrong dish and the additional wait.
+Alex | Was the order entered incorrectly? I heard you say the ticket has pasta on it.
+Dana | The ticket is correct. I do not yet know the [[cause::Cause concerns how the delivery error happened; the correct ticket alone does not identify the responsible stage or person.]] of the delivery error. I can acknowledge it without guessing which colleague made it.
+Alex | If I do take the pasta, will you make sure it is mine this time? I would rather not go through this again.
+Dana | Yes. I will [[check back::Check back means return to verify the correction and update the guest if the timing changes.]] on the corrected dish and keep you updated if the kitchen's timing changes.
+Alex | Before I decide, could you speak to the lead about the bill? Please do not start the replacement yet.
+Dana | Understood. I will wait for your [[go-ahead::The go-ahead is the guest's permission to proceed; Alex has expressly asked Dana not to start the remake yet.]]. Hearing the offer is not the same as agreeing to it.
+Alex | Thank you. Can the lead speak with me if there are questions? I would prefer to explain what the extra wait means for us.
+Dana | I will pass that request to the [[shift lead::The shift lead reviews the charge question and can receive Alex's request for a direct conversation.]], along with the ticket, what arrived, and the ten-minute estimate.
+Alex | All right. For now, please check the bill question. Then I will decide whether to wait for the pasta.
+Dana | That is our [[next step::The next step is the bill review and update; neither the financial decision nor Alex's remake choice is complete.]]. I am sorry your meal has been interrupted. I will return with the decision rather than leave you wondering what is happening.''',
+    rehearsal=["Check the cloze answers. Read the apology and offer with a partner, acknowledging the wrong dish without assigning blame.","Switch roles. Keep Alex's go-ahead pending and the bill decision with the shift lead throughout.","Complete the soup transfer and check its key. Repeat the dish names, estimated wait, and named lead accurately."],
     transfer_title='Offer a different correction',
     transfer_setup='Table 7 ordered lentil soup but received tomato soup. The ticket confirms lentil soup. A remake is available with an estimated seven-minute wait. Lead Noor must review any bill adjustment.',
     transfer='''Server: "The ticket confirms ___ soup." | lentil | Lentil is the ordered soup confirmed by the ticket.
@@ -506,7 +511,7 @@ allocation method | Agreed way of dividing the total or items. | clarify the all
 subtotal | Sum before the specified additional components included in a final total. | distinguish the subtotal
 listed charge | Amount explicitly shown on the bill. | verify a listed charge
 service charge | Charge imposed under the restaurant's stated terms, distinct from a discretionary tip. | explain a service charge
-gratuity | Tip, whose treatment depends on the actual payment context and applicable rules. | clarify a gratuity
+gratuity | Usually a tip; an automatic mandatory charge may instead be a service charge under applicable rules. | clarify a gratuity
 payment method | Means used to pay, such as a card or cash. | confirm the payment method
 card terminal | Device used to submit a card payment. | present the card terminal
 authorization | Approval stage for a payment under the relevant payment system. | check payment authorization
@@ -530,11 +535,11 @@ Check the timing | We can arrange either method before processing payment.
 Confirm the selected method | You would like three equal payments, correct?
 Read back the amount | That is $24 for each of the three payments.
 Do not invent an extra charge | The stated total already includes all listed charges.
-Separate the tip decision | No tip choice has been specified in this exchange.
+Separate the tip decision | Would you like to decide on any optional tip separately?
 Keep payment status factual | The split is agreed, but no payment has been processed yet.
 Check the terminal amount | Please check the amount before confirming the payment.
 Track what remains | We need to record each actual payment against the balance.
-Offer a receipt | I can provide the relevant payment receipt through our process.
+Offer a receipt | Would each person like their own payment receipt?
 Close before processing | Three equal payments of $24, against the $72 total.''',
     notes='''Do you mean | Offers two concrete interpretations instead of making a guess.
 Would be | Gives the amount conditional on choosing equal shares.
@@ -542,15 +547,15 @@ By item | Refers to consumption allocation rather than equal portions of the tot
 Before processing | Locates the clarification before a transaction occurs.
 Each | Makes clear that twenty-four dollars applies to every equal share.
 Agreed, but not processed | Separates a payment plan from completed payment.''',
-    d='''Which first question resolves the ambiguity? | Do you mean equal payments or separate checks by item? | You all ate exactly the same amount, correct? | Shall I charge the loudest guest everything? | Three ways always means three unequal checks, right? | The question presents the two supported methods without guessing the group's intention.
+    d='''Which first question resolves the ambiguity? | Do you mean equal payments or separate checks by item? | You all ate exactly the same amount, correct? | Shall I split only the food and leave the shared charges on one card? | Three ways always means three unequal checks, right? | The question presents the two supported methods without guessing the group's intention.
 Which arithmetic is correct for equal shares? | $72 divided by 3 is $24 each. | $72 divided by 3 is $36 each. | Three payments of $24 leave $24 unpaid. | Three payments of $72 equal the original bill. | Three times twenty-four equals the full seventy-two-dollar total.
 What is needed to calculate item-based checks? | An agreed allocation of items and shared charges | Only the number of diners | A guessed tip amount | An assumption that all dishes cost the same | Item-based amounts depend on who is assigned each charge, not simply the diner count.
 What does confirmation of three equal payments establish? | The intended allocation, not completed payment | That every card has been charged | That a refund was issued | That all fees may be added again | Agreeing the method precedes processing and does not prove that any payment has been completed.''',
     dialogue='''Morgan | Could we split this three ways, please? There are three of us, and we would like to sort it out before everyone starts reaching for a card.
 Jules | Certainly. Do you mean three [[equal shares::Equal shares divide the total into the same amount for each diner, unlike separate checks based on individual items.]], or would you like separate checks according to what each person ordered? We can arrange either before payment.
-Morgan | I had not realized the phrase could mean two things. What would the equal option be for the bill we have in front of us?
+Morgan | What would it come to if we divided it equally? We shared a couple of dishes, so that may be easiest.
 Jules | The [[bill total::The bill total is the stated seventy-two dollars, including all listed charges in this fictional scenario.]] is seventy-two dollars. Divided equally among three people, that is twenty-four dollars each. Those three amounts add back to seventy-two.
-Morgan | And if we pay for our own dishes instead, you would need us to tell you which items belong to which person, is that right?
+Morgan | If someone wants to pay only for their own meal, can you do that too? We would need to sort out the shared starters.
 Jules | Yes. That requires an [[item allocation::Item allocation assigns charges to the relevant diners; their amounts cannot be calculated from the diner count alone.]]. We would also need your agreement about shared items rather than assume an equal division of those.
 Morgan | We did share some food, so equal payments may be simpler for us. Let me confirm with the others before you enter anything.
 Jules | Of course. The [[allocation method::The allocation method is the group's agreed way of dividing the bill, which the server should not choose for them.]] should be your group's choice. I will wait rather than treat our discussion as permission to process a payment.
@@ -558,14 +563,15 @@ Morgan | They have agreed. We want three equal payments, not separate bills base
 Jules | Thank you. I will arrange the [[split payment::The split payment applies three agreed twenty-four-dollar payments to one seventy-two-dollar bill; it does not change the total.]] as three payments of twenty-four dollars against the seventy-two-dollar total. Please confirm that is the method you want.
 Morgan | Yes, that is correct. I want to make sure the number on the terminal will match that amount, not the whole seventy-two dollars.
 Jules | We will check each amount on the [[card terminal::The card terminal displays the payment being submitted; checking its amount helps prevent an incorrect full-bill charge.]] before it is confirmed. Agreeing twenty-four each does not mean a payment has already been taken.
-Morgan | The bill already shows its listed charges. We are not asking you to add those again when you divide it among the three of us.
+Morgan | Does the seventy-two already include everything listed on this check? I just want to be sure we are dividing the final figure.
 Jules | Correct. The [[listed charge::A listed charge is already part of the supplied total; splitting the payment does not justify charging it a second time.]] amounts are included in the stated total. I will not invent an additional fee or assume a tip choice from this request.
-Morgan | Thank you. Can each person receive a record of the payment they actually make? That would help us keep our own records afterward.
+Morgan | Could we each have a receipt for our own payment? Two of us need one for our records.
 Jules | We can provide the relevant [[payment receipt::A payment receipt records an actual transaction; it should not be represented as proof of payment before processing occurs.]] through our payment process. It needs to reflect the payment that is actually completed, not just the split we have agreed.
-Morgan | And while the payments are going through, you will track what has been paid so the last person is not charged the full bill again?
+Morgan | We will pay one at a time, then. Could you show each person the amount before they tap?
 Jules | Yes. The [[outstanding balance::The outstanding balance is what remains unpaid after actual recorded payments, not an amount inferred solely from the agreed split.]] must reflect the actual payments recorded. Three agreed amounts are not a substitute for checking which transactions have completed.
-Morgan | Good. Then the arrangement is settled, but the payment itself is still to happen. We are ready for you to begin with the agreed amounts.
+Morgan | Yes, twenty-four each. We are all agreed now. You can bring the terminal when you are ready.
 Jules | Exactly. We will obtain [[payment confirmation::Payment confirmation establishes the relevant completed transaction status, which remains separate from agreeing a payment plan.]] through the actual process. Three equal payments of twenty-four dollars is the instruction I am working from.''',
+    rehearsal=["Check the answers. Read the exchange, contrasting equal payments with separate checks by item.","Switch roles. Say three payments of twenty-four against seventy-two, then confirm that agreement is not completed payment.","Complete and check the ninety-six-dollar transfer. Read four equal shares of twenty-four without changing the total."],
     transfer_title='Clarify four ways',
     transfer_setup='Four diners have a $96 total with all listed charges included. The restaurant supports equal payments or item-based checks before payment. The diners confirm equal payments. No payment has been processed.',
     transfer='''Server: "You have chosen ___ payments." | equal | The diners explicitly choose equal payments rather than item-based checks.
@@ -632,13 +638,13 @@ Of course | Accepts the preference without making it an inconvenience.
 Still | Signals continued use despite the empty surface.
 Would be useful | Offers help instead of imposing equipment.
 Not necessarily | Challenges an assumption without saying the cue is never meaningful.''',
-    d='''Which question is most appropriate? | May I clear this plate, or are you still using it? | You are obviously finished, so I will take everything. | Why are you keeping an empty plate? | Shall I reset the table while you are eating? | The question checks the actual plate and allows the diner to keep using it.
+    d='''Which question is most appropriate? | May I clear this plate, or are you still using it? | Shall I clear everyone's plates now? | Would you like the bill now the plates are empty? | May I remove the shared vegetables with this plate? | The question checks the actual plate and allows the diner to keep using it.
 What does the empty plate establish? | Its current contents, not that it is no longer needed | Permission to remove every dish | The diner's nationality | A request for the bill | The plate is empty but remains in use for another portion.
 Which instruction should Mina give Leo? | Leave the active plate and ask what may be cleared. | Remove the vegetables because one plate is empty. | Treat the meal as complete. | Add an unrequested charge for extra plates. | The instruction preserves active items while allowing a specific clearing-permission check.
 How should cultural differences be handled? | Ask the individual table about its preference. | Infer the answer from nationality. | Use one cutlery position as universal proof. | Require guests to explain their cultural background. | A direct, respectful question establishes the actual preference without relying on group stereotypes.''',
     dialogue='''Leo | Mina, one plate at table two is empty. I was about to take it away, but the vegetable dish in the middle still has food.
 Mina | Please leave that [[active item::The active item is the empty plate still needed for another portion; its empty surface does not make it finished.]] for now. The diner is using the plate for another portion, so empty does not mean finished in this situation.
-Leo | Thank you for catching that. I was reading the empty plate as a signal to clear, and I did not connect it with the food they were sharing.
+Leo | I see. They are sharing, so the empty plate is not finished with. I will leave it where it is.
 Mina | A [[service cue::A service cue may suggest a need, but the empty plate is ambiguous and requires checking with the guest.]] can help us notice a need, but it is not always permission. We should check the actual item before reaching across the table.
 Leo | What would you say without interrupting the conversation too much? I want the question to be clear but not sound as though I am trying to hurry them.
 Mina | Ask for [[clearing permission::Clearing permission is the guest's agreement to remove the specific item, which should be obtained before taking it.]] briefly: May I clear this plate, or are you still using it? Then pause long enough for an answer.
@@ -650,12 +656,13 @@ Leo | I will keep the vegetables in place too. There is still food there, and no
 Mina | Good. The [[shared dish::The shared dish still contains vegetables for continued service, so one empty individual plate does not establish permission to remove it.]] and the individual plate belong to the same ongoing meal. Do not treat them as unrelated clearing decisions.
 Leo | If another guest has actually finished with a glass or plate, may I check that item separately? I do not want to leave everything unnecessarily.
 Mina | Yes. A [[finished item::A finished item can be removed with appropriate agreement without treating the entire table as finished with the meal.]] can be handled separately. Ask specifically, and keep the action narrow enough that we do not accidentally clear something another diner is using.
-Leo | That is different from preparing the table for the next guests. We have no request to end this meal or reset the whole table.
+Leo | Right. I will check the glass separately, not start taking the whole setting away while they still have food.
 Mina | Correct. A [[table reset::A table reset prepares the setting for new guests; clearing one agreed item during a meal is a different stage.]] is another stage. Our immediate task is to support this table's meal, not turn an empty plate into a deadline.
 Leo | I will ask the diner, leave the active items, and offer extra sharing plates. Then I will tell you what they want so we stay consistent.
 Mina | Thank you. That supports their [[meal pace::Meal pace is the guests' eating rhythm, which the team can respect by checking needs instead of rushing active items away.]]. It also prevents a second colleague from returning a moment later and asking to take the same plate.
-Leo | I can keep the wording simple and calm. I do not need to explain every internal service step to the guests while they are eating.
+Leo | I will keep it brief at the table. May I clear this plate, or are you still using it? Then I wait for the answer.
 Mina | Exactly. [[Unobtrusive service::Unobtrusive service meets the real need with minimal disruption, combining a specific question with respectful follow-through.]] means noticing, asking briefly, and following the answer. Clear what is agreed, leave what is active, and keep the team informed.''',
+    rehearsal=["Check the answers. Read Mina and Leo's exchange, then repeat the exact plate-clearing question in turn.","Switch roles. Pause after the permission question; distinguish an empty plate from a plate no longer needed.","Complete and check the dessert transfer. Repeat the offer of extra plates without implying clearing permission."],
     transfer_title='Check a shared dessert plate',
     transfer_setup='At table 9, an empty plate is still needed for more shared dessert. The dessert dish contains food. Extra small plates can be offered. No permission to clear the active plate has been given.',
     transfer='''Server: "The empty plate is still ___." | needed | The diner needs the plate for another portion of shared dessert.
@@ -730,22 +737,23 @@ What must precede calling table 5's check closed? | The actual relevant payment 
 Maya | I am ready for the [[handover::The handover transfers relevant table information and accepted responsibility, not just a list of numbers.]]. Please give me the current stage and unfinished request for each table so I can take them on clearly.
 Ben | Table four has received its mains. Dessert has not been ordered, so please check their choice when it is appropriate in the service.
 Maya | Understood: [[mains served::Mains served means the main dishes have reached table four; it does not establish that dessert has been ordered.]], dessert not ordered. I will not enter desserts on the assumption that your mention of them means the guests have already chosen.
-Ben | Correct. There is no dessert selection for me to pass over. The follow-up is to ask, not to chase a dish that has already been sent.
+Ben | Exactly. Ask about dessert when they are ready. There is nothing on the dessert ticket to chase.
 Maya | I will handle the [[dessert decision::The dessert decision is the guest's pending choice; the incoming server should ask rather than treat it as an existing order.]] with table four. That is the first task I am accepting. What is happening at table five?
 Ben | Table five still has an open check. They asked about what may be a duplicate coffee charge, and the shift lead is reviewing that question.
 Maya | So the [[open check::The open check remains unsettled in the relevant process; the handover does not supply payment or closure.]] has a live query attached. I should not treat the bill as settled or the coffee line as already corrected.
 Ben | Exactly. I have not been given a review result, and no bill adjustment has been approved. The guest needs an accurate update once there is a decision.
 Maya | I will preserve the wording [[suspected duplicate::A suspected duplicate is a possible repeated charge under review, not a confirmed error or approved adjustment.]]. I will not tell them the charge is definitely wrong simply because a query has been raised.
-Ben | Thank you. The shift lead owns the charge review. I need you to keep the guest communication moving, rather than leave the table waiting because I have gone.
+Ben | The lead has the bill question. Can you check for the answer and keep table five updated after I leave?
 Maya | I can be the [[service owner::The service owner takes responsibility for guest-facing follow-up while the shift lead remains responsible for the charge decision.]] for that follow-up. The shift lead makes the relevant decision; I track it and explain the actual outcome to the guests.
 Ben | That is the distinction. Please keep the unresolved question visible in the notes as well, so it does not disappear when the section assignment changes.
 Maya | I will retain the [[exception note::The exception note preserves the unusual unresolved coffee query alongside the table's ordinary service and payment status.]] and the current status. A change of server should not make a pending charge question look like routine payment completed.
 Ben | Can you read back both tasks once more? I want to be sure I have not mixed the table numbers while we are moving between them.
 Maya | My [[read-back confirmation::Read-back confirmation checks that the receiving server has matched each table with the correct unfinished task.]] is table four: follow up the dessert choice. Table five: track the shift-lead coffee review and give the guests the actual update.
-Ben | Yes. Neither task is finished yet, and table five remains open. We should not record an adjustment or a payment event before it happens.
+Ben | Correct. Five is still open, and we have no approved adjustment. Please keep that separate from the fact you have taken the table.
 Maya | Agreed. Any [[status change::A status change must reflect an actual new event or decision, not an assumption caused by the handover.]] will reflect what actually occurs. Accepted follow-up is not the same as completed service, approved adjustment, or settled payment.
 Ben | Good. You have both follow-ups, and the shift lead still has the charge decision. That gives each next step a clear person to contact.
 Maya | Yes, I accept both. I will maintain [[continuity of service::Continuity of service keeps guest needs attended to across the staffing change without losing unresolved work.]] for the two tables, check the pending decision, and keep the records aligned with what the guests are actually told.''',
+    rehearsal=["Check the answers and read the handover with a partner. Keep table four and table five's tasks separate.","Switch roles. Repeat Maya's two accepted follow-ups, preserving the shift lead's separate charge-review responsibility.","Complete the tea-charge transfer and check the key. Read Noor's handover without calling the query confirmed or the check paid."],
     transfer_title='Hand over two different tables',
     transfer_setup='At 9:00, Noor takes tables 8 and 9. Table 8 has mains served and no dessert order. Table 9 has an open check with a possible duplicate tea charge under lead review. Noor accepts both follow-ups.',
     transfer='''Outgoing server: "Table 8 needs a ___ follow-up." | dessert | Dessert is not ordered, so Noor needs to check that choice.

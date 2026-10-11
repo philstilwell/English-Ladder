@@ -80,10 +80,11 @@ DIRECTORY_COLLAGE_CROPS = (
 def collage_art_style(size, crop):
     image_width, image_height = size
     x, y, width, height = crop
-    scale = min(160 / width, 96 / height)
+    # Square grid cells reserve the same 10% margin on every side.
+    scale = min(160 / width, 160 / height)
     return (
         f'width:{width * scale / 200 * 100:.6f}%;'
-        f'height:{height * scale / 120 * 100:.6f}%;'
+        f'height:{height * scale / 200 * 100:.6f}%;'
         f'background-size:{image_width / width * 100:.6f}% {image_height / height * 100:.6f}%;'
         f'background-position:{x / (image_width - width) * 100:.6f}% {y / (image_height - height) * 100:.6f}%'
     )

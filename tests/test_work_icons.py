@@ -1,4 +1,4 @@
-"""Directory artwork keeps a fixed, complete 6-by-12 layout."""
+"""Directory artwork keeps a fixed, complete 8-by-9 layout."""
 import unittest
 
 from bs4 import BeautifulSoup
@@ -12,6 +12,14 @@ from work_icons import (
 
 
 class DirectoryCollageTests(unittest.TestCase):
+    def test_grid_has_eight_columns_and_nine_square_rows(self):
+        css = (ROOT / 'work.css').read_text()
+        rule = css.split('.work-directory-collage {', 1)[1].split('}', 1)[0]
+        self.assertIn('grid-template-columns:repeat(8,minmax(0,1fr))', rule)
+        self.assertIn('grid-template-rows:repeat(9,minmax(0,1fr))', rule)
+        self.assertIn('aspect-ratio:8/9', rule)
+        self.assertEqual(len(ICON_SLUGS), 8 * 9)
+
     def test_every_field_appears_once_in_the_published_grid(self):
         generated = BeautifulSoup(directory_collage(), 'html.parser')
         published = BeautifulSoup((ROOT / 'efsp.html').read_text(), 'html.parser')
@@ -40,7 +48,7 @@ class DirectoryCollageTests(unittest.TestCase):
             self.assertLessEqual(display_width, 80)
             self.assertLessEqual(display_height, 80)
             self.assertAlmostEqual(max(display_width, display_height), 80)
-            self.assertAlmostEqual(display_width / display_height * 200 / 120, width / height, places=6)
+            self.assertAlmostEqual(display_width / display_height, width / height, places=6)
             px, py = [float(v.rstrip('%')) for v in style['background-position'].split()]
             self.assertAlmostEqual(px / 100 * (image_width - width), x, places=4)
             self.assertAlmostEqual(py / 100 * (image_height - height), y, places=4)

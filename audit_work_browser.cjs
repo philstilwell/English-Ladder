@@ -58,11 +58,17 @@ async function geometry(page, path, width, expanded) {
         await geometry(page, path, width, false);
         if (path === 'efsp.html') {
           const cells = await page.locator('.work-collage-cell').evaluateAll(nodes => nodes.map(node => {
-            const {width, height} = node.getBoundingClientRect();
-            return [width, height];
+            const {width, height, x, y} = node.getBoundingClientRect();
+            return [width, height, x, y];
           }));
           assert.equal(cells.length, courses.length);
           assert.ok(cells.every(([w, h]) => Math.abs(w - cells[0][0]) < 1 && Math.abs(h - cells[0][1]) < 1));
+          assert.equal(cells.length, 8 * 9, 'Eight columns and nine rows');
+          assert.ok(cells.every(([w, h]) => Math.abs(w - h) < 1), 'Square, equally spaced cells');
+          for (const [index, [w, h, x, y]] of cells.entries()) {
+            assert.ok(Math.abs(x - cells[0][2] - (index % 8) * w) < 1, 'Even horizontal spacing');
+            assert.ok(Math.abs(y - cells[0][3] - Math.floor(index / 8) * h) < 1, 'Even vertical spacing');
+          }
         }
         const art = await page.locator('.work-medical-icon').evaluateAll(async nodes => {
           return Promise.all(nodes.map(async node => {

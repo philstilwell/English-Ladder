@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse,unquote
 from bs4 import BeautifulSoup
+from html_identifiers import find_identifier,index_identifiers
 ROOT=Path(__file__).resolve().parent
 
 def validate_rendered_quiz(node, lesson):
@@ -39,14 +40,14 @@ def validate_rendered_quiz(node, lesson):
 
 def audit():
     from seo import published_pages
-    failures=[];paths=published_pages();documents={}
+    failures=[];paths=published_pages();documents={};identifier_maps={}
     for path in paths:
         s=BeautifulSoup(path.read_text(),'html.parser');documents[path.resolve()]=s
+        identifiers,duplicate_identifiers=index_identifiers(s);identifier_maps[path.resolve()]=identifiers
         if len(s.select('h1'))!=1:failures.append(f'{path.name}: expected one main heading')
         if not s.select_one('main, [role="main"]') or not s.select_one('.skip-link'):failures.append(f'{path.name}: missing main region or skip link')
         if not s.select_one('meta[name="description"]') or not s.select_one('link[rel="canonical"]'):failures.append(f'{path.name}: missing search metadata')
-        ids=[tag['id'] for tag in s.select('[id]')]
-        if len(ids)!=len(set(ids)):failures.append(f'{path.name}: duplicate page identifier')
+        if duplicate_identifiers:failures.append(f'{path.name}: duplicate page identifier')
         for image in s.find_all('img'):
             if not image.has_attr('alt'):failures.append(f'{path.name}: image lacks alternative text')
         if s.select('[data-save-study],[data-study-controls],[data-learning-dashboard],.save-word'):
@@ -54,7 +55,7 @@ def audit():
         for owner in s.select('.work-module,.us-life-module,.tool-panel,.daily-lesson'):
             if not owner.select_one('[data-ai-extension],[data-ai-preset]'):failures.append(f'{path.name}: a learning activity has no AI extension')
         for button in s.select('[data-ai-copy-text]'):
-            prompt=s.find(id=button['data-ai-copy-text'])
+            prompt=find_identifier(identifiers,button['data-ai-copy-text'])
             if not prompt or not prompt.get_text(strip=True):failures.append(f'{path.name}: a copy button has no prompt text')
         if 'curriculum-page' in s.body.get('class',[]):
             expected=f'../assets/grammar-concepts/{path.stem}.png'
@@ -76,8 +77,8 @@ def audit():
             if target==ROOT.resolve():target=ROOT/'index.html'
             if not target.is_file():failures.append(f'{path.relative_to(ROOT)}: missing {value}');continue
             if url.fragment and target.suffix=='.html' and not url.fragment.startswith('lesson-'):
-                doc=documents.get(target)
-                if doc is not None and not doc.find(id=unquote(url.fragment)):failures.append(f'{path.name}: missing fragment {value}')
+                identifiers=identifier_maps.get(target)
+                if identifiers is not None and find_identifier(identifiers,url.fragment,encoded=True) is None:failures.append(f'{path.name}: missing fragment {value}')
     from grammar_curriculum import load_curriculum
     from update_site import validate_lesson_data,validate_daily_minimums,validate_edition_vocabulary,normalize_text,LEVELS
     from news_quality import validate_evidence

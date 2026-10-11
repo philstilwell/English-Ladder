@@ -6,6 +6,7 @@ from urllib.parse import unquote, urljoin, urlparse
 from xml.etree import ElementTree as ET
 
 from bs4 import BeautifulSoup
+from html_identifiers import find_identifier, index_identifiers
 import seo
 
 
@@ -29,6 +30,7 @@ def audit():
     for path in seo.published_pages():
         relative = path.relative_to(seo.ROOT).as_posix()
         soup = BeautifulSoup(path.read_text(), 'html.parser')
+        identifiers, _ = index_identifiers(soup)
         documents[relative] = soup
         expected = seo.canonical(relative)
         for selector in ['title', 'meta[name="description"]', 'meta[name="robots"]',
@@ -75,7 +77,7 @@ def audit():
                     for pdf in node.get('encoding', []):
                         check((seo.ROOT / local(pdf['contentUrl'])).is_file(), f'{relative}: missing schema PDF')
                     for lesson in node.get('hasPart', []):
-                        check(soup.find(id=urlparse(lesson['url']).fragment) is not None,
+                        check(find_identifier(identifiers, urlparse(lesson['url']).fragment) is not None,
                               f'{relative}: missing schema lesson anchor')
             crumbs = next((n for n in entities if n['@type'] == 'BreadcrumbList'), None)
             if relative not in {'index.html', *seo.NOINDEX}:

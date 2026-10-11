@@ -93,8 +93,8 @@ class WebBookTests(unittest.TestCase):
                 self.assertTrue(1 <= int(urlparse(link['href']).fragment.split('=')[1]) <= 114)
             for unwanted in ('write a 70-110 word', 'ask me to write my own sentence', 'draft a two-sentence response'):
                 self.assertNotIn(unwanted, soup.get_text().lower())
-        self.assertEqual(len(fingerprints), 726)
-        self.assertEqual(total_questions, 6600)
+        self.assertEqual(len(fingerprints), 792)
+        self.assertEqual(total_questions, 7200)
 
 
 if __name__ == '__main__':

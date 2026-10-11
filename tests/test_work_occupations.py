@@ -16,7 +16,7 @@ class OccupationSourceTests(unittest.TestCase):
     def test_complete_distinct_inventory_and_authoring_contract(self):
         self.assertEqual(len(OCCUPATION_SLUGS), 25)
         self.assertFalse(set(OCCUPATION_SLUGS) & set(LEGACY_ICON_SLUGS))
-        self.assertEqual(len(set(ICON_SLUGS)), 66)
+        self.assertEqual(len(set(ICON_SLUGS)), 72)
         categories = {
             'Business & professional services', 'Customers & creative work',
             'Education & public service', 'Health & life sciences',

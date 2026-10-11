@@ -50,7 +50,7 @@ class WorkAIPromptTests(unittest.TestCase):
                     self.assertIn(t['scope_note'], prompt)
                     self.assertIn(t['title'], prompt)
                     self.assertLess(len(prompt), 30000)
-        self.assertEqual(count, 1096)
+        self.assertEqual(count, 1192)
 
     def test_web_has_static_prompt_and_exact_curriculum_data(self):
         for t in self.tracks:

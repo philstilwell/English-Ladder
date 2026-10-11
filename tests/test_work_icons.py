@@ -1,4 +1,4 @@
-"""Directory artwork keeps a fixed, complete 6-by-11 layout."""
+"""Directory artwork keeps a fixed, complete 6-by-12 layout."""
 import unittest
 
 from bs4 import BeautifulSoup
@@ -18,11 +18,12 @@ class DirectoryCollageTests(unittest.TestCase):
         for page in (generated, published):
             collage = page.select_one('.work-directory-collage')
             self.assertEqual(collage['role'], 'img')
-            self.assertIn('66', collage['aria-label'])
+            self.assertIn(str(len(ICON_SLUGS)), collage['aria-label'])
             cells = collage.select('.work-collage-cell')
             self.assertEqual([cell['data-collage-field'] for cell in cells], list(ICON_SLUGS))
             self.assertTrue(all(cell['aria-hidden'] == 'true' for cell in cells))
             self.assertEqual(len(collage.select('.work-collage-art')), 66)
+            self.assertEqual(len(collage.select('.work-collage-medical')), 6)
 
     def test_all_illustrations_fit_the_same_padding_without_stretching(self):
         self.assertEqual(len(DIRECTORY_COLLAGE_CROPS), 11)

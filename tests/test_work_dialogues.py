@@ -15,7 +15,7 @@ def normalized(text):
 
 class DialoguePublicationTests(unittest.TestCase):
     def test_full_inventory_and_substantial_conversations(self):
-        self.assertEqual(validate_dialogues(load_dialogues())['courses'], 66)
+        self.assertEqual(validate_dialogues(load_dialogues())['courses'], 72)
         self.assertGreaterEqual(validate_dialogues(load_dialogues())['dialogues'], 568)
 
     def test_published_books_use_the_new_extended_dialogue_edition(self):

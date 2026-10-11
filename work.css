@@ -182,7 +182,16 @@
 @media(max-width:700px) { .work-lesson-vocabulary,.work-phrase-list,.work-language-notes,.work-check-grid { grid-template-columns:minmax(0,1fr); } .work-extended-lines { padding-left:22px; } .work-extended-lines>li { padding-left:3px; } .work-page .work-gap select { font-size:16px; } .work-word-bank { padding:12px; } }
 .work-directory-hero { display:grid; grid-template-columns:minmax(0,1fr) 42%; align-items:center; gap:clamp(28px,4vw,60px); padding:30px 0; border-bottom:1px solid var(--work-line); }
 .work-directory-copy { min-width:0; }
-.work-directory-collage { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); grid-template-rows:repeat(11,minmax(0,1fr)); width:100%; aspect-ratio:10/11; }
+.work-directory-collage { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); grid-template-rows:repeat(12,minmax(0,1fr)); width:100%; aspect-ratio:10/12; }
+
+.work-card-icon.work-medical-icon,.work-collage-medical { background-size:contain; background-position:center; background-repeat:no-repeat; }
+.work-collage-medical { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); }
+.work-medical-icon[data-work-icon="general-practitioners"] { background-image:url("assets/work/medical/general-practitioners.webp"); }
+.work-medical-icon[data-work-icon="oncologists"] { background-image:url("assets/work/medical/oncologists.webp"); }
+.work-medical-icon[data-work-icon="cardiologists"] { background-image:url("assets/work/medical/cardiologists.webp"); }
+.work-medical-icon[data-work-icon="x-ray-technicians"] { background-image:url("assets/work/medical/x-ray-technicians.webp"); }
+.work-medical-icon[data-work-icon="pediatricians"] { background-image:url("assets/work/medical/pediatricians.webp"); }
+.work-medical-icon[data-work-icon="obstetricians"] { background-image:url("assets/work/medical/obstetricians.webp"); }
 .work-collage-cell { position:relative; min-width:0; min-height:0; }
 .work-collage-art { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background-image:url("assets/work/industry-collage-66.webp?v=20261010-equal-space"); background-repeat:no-repeat; }
 /* The directory uses the shared .page-hero title size, like Grammar and Everyday English. */

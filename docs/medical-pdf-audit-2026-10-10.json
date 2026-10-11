@@ -1,0 +1,109 @@
+{
+  "scope": "Structural checks of the six published medical learner books; see books/MEDICAL-COURSES-2026-10-10.md for editorial scope and visual sampling.",
+  "published": true,
+  "books": [
+    {
+      "slug": "general-practitioners",
+      "pages": 114,
+      "sha256": "0bb2d063524c609e57a52f4fcd872d36634a0b61072f8602cd91f4962c5808a8",
+      "extended_dialogues": 11,
+      "transfer_dialogues": 11,
+      "embedded_font_instances": 228,
+      "internal_links": 244,
+      "external_links": 119,
+      "printed_blanks": {
+        "count": 142,
+        "min_width_pt": 160.0,
+        "max_width_pt": 160.0
+      },
+      "structural_status": "passed",
+      "matches_master": true
+    },
+    {
+      "slug": "oncologists",
+      "pages": 114,
+      "sha256": "e6414da70bec8c9571b5a5fdc8a2f1943d4fc13fbb2ed826c1ddd8425854b801",
+      "extended_dialogues": 11,
+      "transfer_dialogues": 11,
+      "embedded_font_instances": 228,
+      "internal_links": 244,
+      "external_links": 119,
+      "printed_blanks": {
+        "count": 142,
+        "min_width_pt": 160.0,
+        "max_width_pt": 160.0
+      },
+      "structural_status": "passed",
+      "matches_master": true
+    },
+    {
+      "slug": "cardiologists",
+      "pages": 114,
+      "sha256": "cbc00b0997e84e98928338b735ebf9ea209d5a9f4c2cf1f97b49de5a8f746be8",
+      "extended_dialogues": 11,
+      "transfer_dialogues": 11,
+      "embedded_font_instances": 228,
+      "internal_links": 244,
+      "external_links": 119,
+      "printed_blanks": {
+        "count": 142,
+        "min_width_pt": 160.0,
+        "max_width_pt": 160.0
+      },
+      "structural_status": "passed",
+      "matches_master": true
+    },
+    {
+      "slug": "x-ray-technicians",
+      "pages": 114,
+      "sha256": "b9955d8efb9aa816fdaff2c63d05cd2d67a8eef86fff09156a5a1e33bd4d5658",
+      "extended_dialogues": 11,
+      "transfer_dialogues": 11,
+      "embedded_font_instances": 228,
+      "internal_links": 244,
+      "external_links": 119,
+      "printed_blanks": {
+        "count": 142,
+        "min_width_pt": 160.0,
+        "max_width_pt": 160.0
+      },
+      "structural_status": "passed",
+      "matches_master": true
+    },
+    {
+      "slug": "pediatricians",
+      "pages": 114,
+      "sha256": "aca537af699e6318b1c4e5f74b69df0818d41efaa8de30faf61c7d121ae83d02",
+      "extended_dialogues": 11,
+      "transfer_dialogues": 11,
+      "embedded_font_instances": 228,
+      "internal_links": 244,
+      "external_links": 119,
+      "printed_blanks": {
+        "count": 142,
+        "min_width_pt": 160.0,
+        "max_width_pt": 160.0
+      },
+      "structural_status": "passed",
+      "matches_master": true
+    },
+    {
+      "slug": "obstetricians",
+      "pages": 114,
+      "sha256": "9947c06d84676c4580c0040dd02c9e1736b3d5c9d3be6498daeee70731d09fb5",
+      "extended_dialogues": 11,
+      "transfer_dialogues": 11,
+      "embedded_font_instances": 228,
+      "internal_links": 244,
+      "external_links": 119,
+      "printed_blanks": {
+        "count": 142,
+        "min_width_pt": 160.0,
+        "max_width_pt": 160.0
+      },
+      "structural_status": "passed",
+      "matches_master": true
+    }
+  ],
+  "failures": []
+}

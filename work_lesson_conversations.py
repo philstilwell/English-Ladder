@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 from work_occupations import OCCUPATION_SLUGS, load_occupation, source_paths
+from work_medical import MEDICAL_SLUGS, short_lessons, source_paths as medical_source_paths
 
 SOURCE = Path(__file__).resolve().parent / "content/work/lesson-conversations"
 EDITION = "2026-09-28"
@@ -11,7 +12,8 @@ EDITION = "2026-09-28"
 
 @lru_cache(maxsize=None)
 def load_course(slug):
-    data = (load_occupation(slug)['lesson_conversations'] if slug in OCCUPATION_SLUGS
+    data = (short_lessons(slug) if slug in MEDICAL_SLUGS else
+            load_occupation(slug)['lesson_conversations'] if slug in OCCUPATION_SLUGS
             else json.loads((SOURCE / f"{slug}.json").read_text()))
     if set(data) != {f"module-{n}" for n in range(1, 9)}:
         raise ValueError(f"Incomplete conversation lessons: {slug}")
@@ -52,7 +54,8 @@ def lesson_content(track, module):
 
 
 def content_hash():
-    paths = sorted(SOURCE.glob('*.json')) + source_paths()
+    paths = sorted(SOURCE.glob('*.json')) + source_paths() + medical_source_paths()
+    paths += [SOURCE.parents[2] / 'books' / (slug.replace('-', '_') + '_short.py') for slug in MEDICAL_SLUGS]
     return hashlib.sha256(b"".join(p.name.encode() + p.read_bytes() for p in paths)).hexdigest()
 
 

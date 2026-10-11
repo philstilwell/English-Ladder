@@ -66,7 +66,7 @@ def enhance_page(soup,path,prefix):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'styles.css':'20261008-quality-pass2','tools.js':'20261008-teaching-quality1','work-ai.css':'20260930-prompt-spacing1','site.js':'20260915-stable-reading1','site.css':'20261008-quality-pass2','us-life.js':'20261008-quality-pass2','learning.js':'20261008-quality-pass2','app.js':'20260907-plain-titles1','editorial.css':'20261008-quality-pass2','ai-practice.js':'20261008-quality-pass2','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1','work.css':'20261010-work-books2','work.js':'20261010-work-books2'}.get(Path(asset).name,'20260906-quality1')
+            version={'styles.css':'20261008-quality-pass2','tools.js':'20261008-teaching-quality1','work-ai.css':'20260930-prompt-spacing1','site.js':'20260915-stable-reading1','site.css':'20261008-quality-pass2','us-life.js':'20261008-quality-pass2','learning.js':'20261008-quality-pass2','app.js':'20260907-plain-titles1','editorial.css':'20261008-quality-pass2','ai-practice.js':'20261008-quality-pass2','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1','work.css':'20261010-medical6','work.js':'20261010-work-books2'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)

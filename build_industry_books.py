@@ -60,6 +60,8 @@ def illustration(b):
         cw, ch = atlas.width / cols, atlas.height / rows
         left, top = index % cols * cw, index // cols * ch
         cell = atlas.crop((round(left), round(top), round(left + cw), round(top + ch)))
+        # A 160-point cover illustration needs about 667 pixels for 300-dpi print.
+        cell.thumbnail((672, 672), Image.Resampling.LANCZOS)
         right_trim = icon_right_trim(b.slug) * 160 / 104
         bottom_trim = icon_bottom_trim(b.slug) * 160 / 104
         b.c.saveState()

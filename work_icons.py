@@ -1,5 +1,6 @@
 """Explicit illustration mappings shared by the course cards, pages, and PDFs."""
 from work_occupations import OCCUPATION_SLUGS
+from work_medical import MEDICAL_SLUGS
 
 LEGACY_ICON_SLUGS = (
     "cultural-leadership-us-branches",
@@ -44,7 +45,19 @@ LEGACY_ICON_SLUGS = (
     "customer-success",
     "legal-operations-compliance",
 )
-ICON_SLUGS = LEGACY_ICON_SLUGS + OCCUPATION_SLUGS
+ATLAS_ICON_SLUGS = LEGACY_ICON_SLUGS + OCCUPATION_SLUGS
+ICON_SLUGS = ATLAS_ICON_SLUGS + MEDICAL_SLUGS
+
+# Visible artwork bounds, with a small allowance for soft edges and shadows.
+MEDICAL_ICON_SIZE = 1254
+MEDICAL_ICON_CROPS = {
+    'general-practitioners': (60, 175, 1175, 903),
+    'oncologists': (115, 132, 1090, 998),
+    'cardiologists': (121, 126, 1057, 953),
+    'x-ray-technicians': (67, 101, 1122, 1066),
+    'pediatricians': (59, 55, 1144, 1114),
+    'obstetricians': (22, 147, 1211, 957),
+}
 
 # Bounds of each complete illustration in the generated directory artwork.
 # The webpage supplies the equal cells; generated spacing is not a layout contract.
@@ -64,31 +77,44 @@ DIRECTORY_COLLAGE_CROPS = (
 )
 
 
+def collage_art_style(size, crop):
+    image_width, image_height = size
+    x, y, width, height = crop
+    scale = min(160 / width, 96 / height)
+    return (
+        f'width:{width * scale / 200 * 100:.6f}%;'
+        f'height:{height * scale / 120 * 100:.6f}%;'
+        f'background-size:{image_width / width * 100:.6f}% {image_height / height * 100:.6f}%;'
+        f'background-position:{x / (image_width - width) * 100:.6f}% {y / (image_height - height) * 100:.6f}%'
+    )
+
+
 def directory_collage():
-    """Center the native-generated artwork in 66 identical responsive cells."""
-    image_width, image_height = DIRECTORY_COLLAGE_SIZE
+    """Center the native-generated artwork in identical responsive cells."""
     crops = [crop for row in DIRECTORY_COLLAGE_CROPS for crop in row]
     cells = []
-    for slug, (x, y, width, height) in zip(ICON_SLUGS, crops, strict=True):
-        scale = min(160 / width, 96 / height)
-        style = (
-            f'width:{width * scale / 200 * 100:.6f}%;'
-            f'height:{height * scale / 120 * 100:.6f}%;'
-            f'background-size:{image_width / width * 100:.6f}% {image_height / height * 100:.6f}%;'
-            f'background-position:{x / (image_width - width) * 100:.6f}% {y / (image_height - height) * 100:.6f}%'
-        )
+    for slug, crop in zip(ATLAS_ICON_SLUGS, crops, strict=True):
+        style = collage_art_style(DIRECTORY_COLLAGE_SIZE, crop)
         cells.append(
             f'<span class="work-collage-cell" aria-hidden="true" data-collage-field="{slug}">'
             f'<span class="work-collage-art" style="{style}"></span></span>'
         )
+    for slug in MEDICAL_SLUGS:
+        style = collage_art_style((MEDICAL_ICON_SIZE, MEDICAL_ICON_SIZE), MEDICAL_ICON_CROPS[slug])
+        cells.append(
+            f'<span class="work-collage-cell" aria-hidden="true" data-collage-field="{slug}">'
+            f'<span class="work-collage-medical work-medical-icon" data-work-icon="{slug}" style="{style}"></span></span>'
+        )
     return (
         '<div class="work-directory-collage" role="img" '
-        'aria-label="Illustrated tools and people representing all 66 professional fields and occupations.">'
+        f'aria-label="Illustrated tools and people representing all {len(ICON_SLUGS)} professional fields and occupations.">'
         + ''.join(cells) + '</div>'
     )
 
 
 def icon_asset(slug):
+    if slug in MEDICAL_SLUGS:
+        return (f'assets/work/medical/{slug}.png', 1, 1, 0)
     if slug in OCCUPATION_SLUGS:
         return ('assets/work/occupation-icons.png', 5, 5, OCCUPATION_SLUGS.index(slug))
     return ('assets/work/professional-icons.png', 7, 6, LEGACY_ICON_SLUGS.index(slug))
@@ -123,6 +149,9 @@ def icon_bottom_trim(slug):
 
 def card_icon(track):
     """Select the profession's atlas cell without adding a screen-reader label."""
+    if track['slug'] in MEDICAL_SLUGS:
+        return (f'<span aria-hidden="true" class="work-card-icon work-medical-icon" '
+                f'data-work-icon="{track["slug"]}"></span>')
     _, columns, rows, index = icon_asset(track['slug'])
     x = (index % columns) * 100 / (columns - 1)
     y = (index // columns) * 100 / (rows - 1)

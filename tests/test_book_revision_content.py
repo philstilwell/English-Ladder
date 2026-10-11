@@ -869,7 +869,7 @@ class PrintedBlankTests(unittest.TestCase):
 
 
 class ExpandedConversationTests(unittest.TestCase):
-    def test_complete_collection_has_726_distinct_extended_conversations(self):
+    def test_complete_collection_has_792_distinct_extended_conversations(self):
         from work_books import book_units
         scripts = []
         for track in load_tracks():
@@ -877,7 +877,7 @@ class ExpandedConversationTests(unittest.TestCase):
             self.assertEqual(len(scenarios), 11)
             scripts.extend(re.sub(r'\s+', ' ', ' '.join(text for _, text in item['dialogue'])).casefold()
                            for item in scenarios)
-        self.assertEqual(len(scripts), 726)
+        self.assertEqual(len(scripts), 792)
         self.assertEqual(len(set(scripts)), len(scripts))
 
     def test_every_book_has_three_distinct_extended_scenarios(self):

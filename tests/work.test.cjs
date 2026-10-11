@@ -26,7 +26,7 @@ test('directory search combines words and category; empty state recovers', () =>
   change(w,category,'Technology & data','change');
   assert.equal(d.querySelector('[data-course-empty]').hidden,false);
   change(w,search,'');change(w,category,'','change');
-  assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,66);
+  assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,72);
   dom.window.close();
 });
 test('course search handles accents, punctuation, fields, restored inputs, and clear filters', () => {
@@ -48,7 +48,7 @@ test('course search handles accents, punctuation, fields, restored inputs, and c
   assert.equal(visible().length,0);
   assert.equal(d.querySelector('[data-course-empty]').hidden,false);
   reset.click();
-  assert.equal(visible().length,66);
+  assert.equal(visible().length,72);
   assert.equal(reset.hidden,true);
   assert.equal(d.activeElement,search);
   assert.equal(search.value,'');assert.equal(category.value,'');
@@ -59,7 +59,7 @@ test('without JavaScript, inert search controls stay hidden and all course links
     const dom=new JSDOM(fs.readFileSync(path.join(root,file),'utf8')),d=dom.window.document;
     if(file==='efsp.html'){
       assert.equal(d.querySelector('.work-directory-filters').hidden,true);
-      assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,66);
+      assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,72);
       assert.equal(d.querySelector('.work-directory-hero a.work-button').hash,'#courses');
       assert.ok(d.querySelector('#courses'));
     }else{
@@ -196,9 +196,9 @@ test('vocabulary search, lesson expansion, and fragment navigation work', () => 
   assert.equal(d.querySelector('#module-4').open,true);
   dom.window.close();
 });
-test('all 66 course pages initialize every quiz and preserve completed dialogue models', async () => {
+test('all 72 course pages initialize every quiz and preserve completed dialogue models', async () => {
   const files=fs.readdirSync(root).filter(n=>/^efsp-.*\.html$/.test(n));
-  assert.equal(files.length,66);
+  assert.equal(files.length,72);
   for(const file of files){
     const dom=setup(file),d=dom.window.document;
     assert.equal(d.querySelectorAll('[data-check-answer]:not([hidden])').length,100,file);

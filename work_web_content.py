@@ -10,7 +10,7 @@ from work_books import book_units
 EDITION = '2026-10-10'
 
 
-@lru_cache(maxsize=66)
+@lru_cache(maxsize=None)
 def course_book(slug):
     if slug == 'cultural-leadership-us-branches':
         return dict(units=book_units(slug))

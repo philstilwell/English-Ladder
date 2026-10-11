@@ -35,8 +35,8 @@ class LessonConversationTests(unittest.TestCase):
                 self.assertNotEqual(brief, module['brief'])
                 self.assertNotIn(brief, scenarios)
                 scenarios.add(brief)
-        self.assertEqual(len(all_scripts), 1584)
-        self.assertEqual(len(scenarios), 528)
+        self.assertEqual(len(all_scripts), 1728)
+        self.assertEqual(len(scenarios), 576)
 
     def test_accordions_are_closed_and_complete_without_javascript(self):
         for track in self.tracks:
@@ -62,9 +62,14 @@ class LessonConversationTests(unittest.TestCase):
             meta = manifest[href]
             illustration_hash = hashlib.sha256((ROOT / icon_asset(track['slug'])[0]).read_bytes()).hexdigest()
             self.assertEqual(meta['illustration_sha256'], illustration_hash)
-            self.assertLess(meta['bytes'], 1_000_000, 'Embed the course icon, not the entire atlas: ' + href)
+            standalone = icon_asset(track['slug'])[1:3] == (1, 1)
+            # Standalone native illustrations retain 300-dpi print detail.
+            self.assertLess(meta['bytes'], 1_300_000 if standalone else 1_000_000,
+                            'Embed the course illustration, not the entire atlas: ' + href)
             reader = PdfReader(ROOT / href)
             self.assertGreaterEqual(len(list(reader.pages[0].images)), 2, href)
+            if standalone:
+                self.assertTrue(all(max(image.image.size) <= 672 for image in reader.pages[0].images))
             self.assertEqual(len(reader.pages), 114)
             self.assertEqual((ROOT / href).read_bytes(), book_source(track['slug']).read_bytes())
             self.assertEqual(meta['kind'], 'Learner book')

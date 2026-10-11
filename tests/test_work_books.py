@@ -18,11 +18,11 @@ class WorkBookPublicationTests(unittest.TestCase):
         cls.tracks = load_tracks()
         cls.manifest = json.loads((ROOT / 'content/work/documents.json').read_text())
 
-    def test_public_assets_are_exactly_the_66_approved_books(self):
+    def test_public_assets_are_exactly_the_72_approved_books(self):
         expected = {book_href(t['slug']) for t in self.tracks}
         actual = {str(p.relative_to(ROOT)) for p in (ROOT / 'pdf/efsp').glob('*.pdf')}
         self.assertEqual(actual, expected)
-        self.assertEqual(len(actual), 66)
+        self.assertEqual(len(actual), 72)
         self.assertEqual(set(self.manifest['documents']), expected)
         validate_publication(self.tracks)
         for track in self.tracks:
@@ -56,8 +56,8 @@ class WorkBookPublicationTests(unittest.TestCase):
 
     def test_directory_and_search_metadata_describe_one_book(self):
         directory = BeautifulSoup((ROOT / 'efsp.html').read_text(), 'html.parser')
-        self.assertIn('66 complete learner books', directory.get_text())
-        self.assertEqual(len(directory.select('.work-card-footer')), 66)
+        self.assertIn('72 complete learner books', directory.get_text())
+        self.assertEqual(len(directory.select('.work-card-footer')), 72)
         self.assertTrue(all('1 learner book' in x.get_text() for x in directory.select('.work-card-footer')))
         for track in self.tracks:
             page = BeautifulSoup((ROOT / f'efsp-{track["slug"]}.html').read_text(), 'html.parser')

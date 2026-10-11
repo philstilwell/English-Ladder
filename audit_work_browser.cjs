@@ -4,14 +4,16 @@ const fs = require('node:fs');
 const assert = require('node:assert/strict');
 const {chromium} = require('playwright');
 const base = process.env.AUDIT_ORIGIN || 'http://127.0.0.1:8878';
-const output = 'output/playwright/work-books-audit';
+const output = process.env.AUDIT_OUTPUT || 'output/playwright/work-books-audit';
+const medical = ['general-practitioners', 'oncologists', 'cardiologists', 'x-ray-technicians', 'pediatricians', 'obstetricians'];
+const medicalPages = medical.map(slug => `efsp-${slug}.html`);
 const courses = fs.readdirSync('.').filter(name => /^efsp-.*\.html$/.test(name)).sort();
 const categories = fs.readdirSync('english-for-work').filter(name => name.endsWith('.html')).map(name => `english-for-work/${name}`);
 const paths = ['efsp.html', ...categories, ...courses];
 const report = {
   date: new Date().toISOString().slice(0, 10), pages: paths.length,
   widths: [320, 390, 768, 1280], layouts: 0, expandedLayouts: 0,
-  courseInteractions: 0, clozeInteractions: 0, noScriptPages: 0, titleSizes: [], errors: [],
+  courseInteractions: 0, clozeInteractions: 0, noScriptPages: 0, medicalArtChecks: 0, titleSizes: [], errors: [],
   scope: 'All work pages at four widths, all lesson disclosures expanded, course interaction samples, keyboard navigation, deep links, and no-JavaScript reading. External requests blocked. Not a full accessibility or professional-content certification.',
 };
 fs.mkdirSync(output, {recursive: true});
@@ -54,7 +56,30 @@ async function geometry(page, path, width, expanded) {
         await page.goto(`${base}/${path}`);
         await page.evaluate(() => document.fonts.ready);
         await geometry(page, path, width, false);
-        if (['efsp.html', 'efsp-manufacturing.html', 'efsp-baristas-cafe-staff.html', categories[0]].includes(path) && [390,1280].includes(width)) {
+        if (path === 'efsp.html') {
+          const cells = await page.locator('.work-collage-cell').evaluateAll(nodes => nodes.map(node => {
+            const {width, height} = node.getBoundingClientRect();
+            return [width, height];
+          }));
+          assert.equal(cells.length, courses.length);
+          assert.ok(cells.every(([w, h]) => Math.abs(w - cells[0][0]) < 1 && Math.abs(h - cells[0][1]) < 1));
+        }
+        const art = await page.locator('.work-medical-icon').evaluateAll(async nodes => {
+          return Promise.all(nodes.map(async node => {
+            const url = getComputedStyle(node).backgroundImage.match(/url\(["']?(.*?)["']?\)/)?.[1];
+            const image = new Image();
+            image.src = url || '';
+            try { await image.decode(); } catch { return false; }
+            return image.naturalWidth > 0 && image.naturalHeight > 0;
+          }));
+        });
+        assert.ok(art.every(Boolean), `Medical illustrations load on ${path}`);
+        if (medicalPages.includes(path)) {
+          assert.equal(art.length, 2, 'Both the course and sticky-menu illustration must load');
+          report.medicalArtChecks += art.length;
+          assert.equal(await page.locator('.work-conversation[open]').count(), 0);
+        }
+        if (['efsp.html', 'english-for-work/health-life-sciences.html', ...medicalPages].includes(path) && [390,1280].includes(width)) {
           await page.screenshot({path: `${output}/after-${path.replaceAll('/', '-')}-${width}.png`});
         }
         if (!courses.includes(path)) continue;
@@ -63,6 +88,15 @@ async function geometry(page, path, width, expanded) {
         // Reveal nested conversations, models, and complete prompt text too.
         await page.evaluate(() => document.querySelectorAll('main details').forEach(node => { node.open = true; }));
         await geometry(page, path, width, true);
+        if (medicalPages.includes(path) && [390,1280].includes(width)) {
+          await page.locator('#module-1-cloze').scrollIntoViewIfNeeded();
+          await page.screenshot({path: `${output}/dialogue-${path}-${width}.png`});
+          await page.locator('#ai-practice').scrollIntoViewIfNeeded();
+          assert.ok(await page.locator('.work-lesson-tools').evaluate(node => {
+            const rect = node.getBoundingClientRect();
+            return rect.top >= 0 && rect.bottom < innerHeight;
+          }), 'Lesson menu remains visible at the prompts');
+        }
         if (width === 390) {
           const quiz = page.locator('[data-work-quiz]').first();
           const correct = await quiz.getAttribute('data-correct');
@@ -107,7 +141,7 @@ async function geometry(page, path, width, expanded) {
     await page.locator('[data-course-category]').selectOption({label: 'Technology & data'});
     assert.equal(await page.locator('[data-course-empty]').isVisible(), true);
     await page.locator('[data-course-reset]').click();
-    assert.equal(await page.locator('[data-work-course-link]:visible').count(), 66);
+    assert.equal(await page.locator('[data-work-course-link]:visible').count(), courses.length);
     assert.equal(await page.locator('[data-course-search]').evaluate(node => node === document.activeElement), true);
     await page.goto(`${base}/efsp-manufacturing.html`);
     await page.locator('.work-lesson-links a[href="#module-4"]').focus();
@@ -143,7 +177,7 @@ async function geometry(page, path, width, expanded) {
     for (const path of paths) {
       await staticPage.goto(`${base}/${path}`);
       if (path === 'efsp.html') {
-        assert.equal(await staticPage.locator('[data-work-course-link]:visible').count(), 66);
+        assert.equal(await staticPage.locator('[data-work-course-link]:visible').count(), courses.length);
         assert.equal(await staticPage.locator('[data-course-search]').isVisible(), false);
       }
       if (courses.includes(path)) {
@@ -166,7 +200,7 @@ async function geometry(page, path, width, expanded) {
     report.errors.push({error: error.stack});
   } finally {
     await browser.close();
-    fs.writeFileSync(`docs/work-browser-audit-${report.date}.json`, JSON.stringify(report, null, 2) + '\n');
+    fs.writeFileSync(process.env.AUDIT_REPORT || `docs/work-browser-audit-${report.date}.json`, JSON.stringify(report, null, 2) + '\n');
     console.log(JSON.stringify(report, null, 2));
     if (report.errors.length) process.exitCode = 1;
   }

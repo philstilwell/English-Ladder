@@ -43,4 +43,11 @@ The field-specific editorial record is `books/AUDIT-2026-10.md`.
 Final books are in `output/pdf/`. Existing website downloads are not changed
 by this workflow. Incomplete sources must never be represented as completed
 books or published downloads. The complete inventory remains `load_tracks()`
-in `work_curriculum.py` (66 courses, including the approved leadership book).
+in `work_curriculum.py` (72 courses, including the approved leadership book).
+
+The six medical-specialty courses added in October 2026 use their books as the
+single content source, connected through `work_medical.py`. Their separately
+authored short webpage conversations are in `books/<slug>_short.py`. Original
+native-generated illustrations are in `assets/work/medical/`; PNGs serve the
+books and lighter WebP copies serve the webpages. See
+`books/MEDICAL-COURSES-2026-10-10.md` for the specialty scope and review record.

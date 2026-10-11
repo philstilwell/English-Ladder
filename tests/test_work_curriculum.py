@@ -7,6 +7,7 @@ from urllib.parse import unquote, urlparse
 
 from bs4 import BeautifulSoup
 from work_curriculum import ROOT, content_hash, load_tracks, validate_tracks, related_tracks
+from work_web_content import completed_turn, web_track
 
 
 class WorkCurriculumTests(unittest.TestCase):
@@ -59,7 +60,7 @@ class WorkCurriculumTests(unittest.TestCase):
             with self.subTest(course=t['slug']):
                 soup = BeautifulSoup((ROOT/f'efsp-{t["slug"]}.html').read_text(), 'html.parser')
                 self.assertEqual(len(soup.select('.work-module')),8)
-                self.assertEqual(len(soup.select('.work-quiz')),16)
+                self.assertEqual(len(soup.select('.work-quiz')),100)
                 self.assertEqual(len(soup.select('textarea[data-work-note]')),0)
                 self.assertIsNone(soup.select_one('input[type="checkbox"], [data-work-progress], [data-storage-controls]'))
                 orientation = soup.select_one('details.work-orientation')
@@ -67,10 +68,11 @@ class WorkCurriculumTests(unittest.TestCase):
                 self.assertNotIn('open', orientation.attrs)
                 self.assertEqual([heading.get_text() for heading in orientation.select('h2')],
                                  ['What you will practice', 'Choose your pace'])
-                for m in t['modules']:
+                for m in web_track(t)['modules']:
                     module = soup.find(id=m['id'])
                     self.assertIn(m['brief'], module.get_text())
-                    self.assertIn(m['model'], module.get_text())
+                    for role, line in m['book_unit']['dialogue']:
+                        self.assertIn(completed_turn(line, m['book_unit']['gaps']), module.get_text())
                     self.assertEqual([label.get_text() for label in module.select('.work-activity-letter')], list('ABCDEF'))
                     self.assertEqual([label.get_text(' ', strip=True) for label in module.select('.work-activity-heading')],
                                      ['A Read the situation', 'B Find the words', 'C Notice the language',

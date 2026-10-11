@@ -23,14 +23,13 @@ function setup(hash = '') {
   d.querySelector('#finished-dialogue-prompts').getBoundingClientRect = () => rect(33600 - position, 2000);
   d.querySelector('#ai-practice').getBoundingClientRect = () => rect(36000 - position, 2500);
   const modules = [...d.querySelectorAll('.work-module')];
-  const selectors = ['.work-case', '.work-module-body > .work-two-column > section:nth-child(2)',
+  const selectors = ['.work-case', '.work-words',
     '.work-language', '.work-checks', '.work-conversations', '.work-speaking'];
   modules.forEach((module, index) => {
     const start = 800 + index * 4000;
     module.getBoundingClientRect = () => rect(start - position, module.open ? 3500 : 90);
     selectors.forEach((selector, step) => {
-      // The first two subsections share a row on desktop.
-      const top = start + [200, 200, 800, 1200, 1600, 2000][step];
+      const top = start + [200, 400, 800, 1200, 1600, 2000][step];
       module.querySelector(selector).getBoundingClientRect = () => rect(top - position, module.open ? 300 : 0);
     });
     module.scrollIntoView = () => { module.dataset.scrolled = 'true'; };
@@ -54,6 +53,8 @@ test('six outlined markers follow reading position in both directions without re
   assert.equal(f.count(), 0);
   assert.equal(f.d.querySelector('.work-lesson-tools [data-expand-lessons]'), null);
   f.scroll(850);
+  assert.equal(f.count(), 1);
+  f.scroll(1100);
   assert.equal(f.count(), 2);
   assert.equal(f.d.querySelector('.work-jump [aria-current]').hash, '#module-1');
   f.scroll(1900);
@@ -62,7 +63,7 @@ test('six outlined markers follow reading position in both directions without re
   f.scroll(3000);
   assert.equal(f.count(), 6);
   f.scroll(850);
-  assert.equal(f.count(), 2);
+  assert.equal(f.count(), 1);
   f.scroll(0);
   assert.equal(f.count(), 0);
   assert.equal(f.d.querySelector('.work-jump [aria-current]'), null);
@@ -151,7 +152,7 @@ test('same-lesson links reopen and scroll, deep links work, and resized menus up
   f.scroll(750);
   assert.equal(f.count(), 0);
   f.resize(180, 100);
-  assert.equal(f.count(), 2);
+  assert.equal(f.count(), 1);
   assert.equal(f.d.querySelector('[data-work-course]').style.getPropertyValue('--work-navigation-height'), '100px');
   f.dom.window.close();
 });

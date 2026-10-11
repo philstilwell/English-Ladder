@@ -3,6 +3,7 @@ import unittest
 from bs4 import BeautifulSoup
 from work_curriculum import ROOT, load_tracks
 from work_dialogues import load_dialogues
+from work_web_content import web_track
 
 
 class ReadyPromptTests(unittest.TestCase):
@@ -10,6 +11,7 @@ class ReadyPromptTests(unittest.TestCase):
         count = 0
         scripts = load_dialogues()
         for track in load_tracks():
+            track = web_track(track)
             soup = BeautifulSoup((ROOT / f'efsp-{track["slug"]}.html').read_text(), 'html.parser')
             for module in track['modules']:
                 prompts = soup.select(f'#{module["id"]} .finished-prompt pre')
@@ -39,6 +41,7 @@ class ReadyPromptTests(unittest.TestCase):
         total = 0
         scripts = load_dialogues()
         for track in load_tracks():
+            track = web_track(track)
             text = (ROOT / 'prompts/work' / (track['slug'] + '.txt')).read_text()
             for title in ('Get feedback on a draft', 'Adjust tone and register', 'Test recall and transfer', 'Adapt a partner or class activity', 'Choose a clear message'):
                 self.assertNotIn(' | ' + title, text)

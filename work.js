@@ -54,7 +54,7 @@
     const promptSections = [...course.querySelectorAll('#finished-dialogue-prompts, #ai-practice')];
     const steps = [
       ['.work-case', 'Read the situation'],
-      ['.work-module-body > .work-two-column > section:nth-child(2)', 'Find the words'],
+      ['.work-words, .work-module-body > .work-two-column > section:nth-child(2)', 'Find the words'],
       ['.work-language', 'Notice the language'],
       ['.work-checks', 'Check your understanding'],
       ['.work-conversations', 'Conversations'],
@@ -157,11 +157,53 @@
       if (!selected) { feedback.textContent = 'Choose an answer first.'; delete feedback.dataset.result; return; }
       const correct = selected.value === quiz.dataset.correct;
       const reason = quiz.querySelectorAll('.work-answer-reasons li')[Number(selected.value)];
-      const explanation = [...reason.childNodes].filter(n => n.nodeType === Node.TEXT_NODE).map(n => n.textContent).join('').trim();
+      const explanation = quiz.dataset.explanation || [...reason.childNodes].filter(n => n.nodeType === Node.TEXT_NODE).map(n => n.textContent).join('').trim();
       feedback.textContent = `${correct ? 'Correct.' : 'Try again.'} ${explanation}`;
       feedback.dataset.result = correct ? 'correct' : 'retry';
     });
     quiz.querySelectorAll('input').forEach(input => input.addEventListener('change', () => { feedback.textContent = ''; delete feedback.dataset.result; }));
+  });
+  course.querySelectorAll('[data-work-cloze]').forEach(activity => {
+    const answers = JSON.parse(activity.querySelector('[data-cloze-answers]').textContent);
+    const gaps = [...activity.querySelectorAll('[data-cloze-gap]')];
+    const status = activity.querySelector('[data-cloze-status]');
+    const feedback = [...activity.querySelectorAll('[data-cloze-feedback]')];
+    activity.querySelector('.work-cloze-actions').hidden = false;
+    const clear = () => {
+      status.textContent = '';
+      delete status.dataset.result;
+      feedback.forEach(item => { item.hidden = true; item.textContent = ''; });
+      gaps.forEach(gap => { delete gap.dataset.result; gap.removeAttribute('aria-invalid'); });
+    };
+    gaps.forEach(gap => gap.addEventListener('change', clear));
+    activity.querySelector('[data-check-cloze]').addEventListener('click', () => {
+      let correct = 0;
+      let missing = 0;
+      gaps.forEach((gap, index) => {
+        const explanation = feedback[index];
+        if (!gap.value) {
+          missing += 1;
+          explanation.textContent = `${index + 1}. Choose a word or phrase.`;
+          gap.dataset.result = 'missing';
+          gap.setAttribute('aria-invalid', 'true');
+        } else {
+          const matches = gap.value === answers[index].answer;
+          if (matches) correct += 1;
+          gap.dataset.result = matches ? 'correct' : 'retry';
+          gap.setAttribute('aria-invalid', String(!matches));
+          explanation.textContent = `${index + 1}. ${matches ? 'Correct' : 'Review'}: ${answers[index].answer}. ${answers[index].reason}`;
+        }
+        explanation.hidden = false;
+      });
+      status.textContent = `${correct} of ${gaps.length} correct.${missing ? ` ${missing} unanswered.` : ''} ${correct === gaps.length ? 'Read the complete exchange aloud.' : 'Use the explanations to correct the remaining gaps.'}`;
+      status.dataset.result = correct === gaps.length ? 'correct' : 'retry';
+    });
+    activity.querySelector('[data-reset-cloze]').addEventListener('click', () => {
+      gaps.forEach(gap => { gap.value = ''; });
+      clear();
+      activity.querySelectorAll('details').forEach(details => { details.open = false; });
+      gaps[0]?.focus();
+    });
   });
   const openHash = () => {
     let id;
@@ -191,7 +233,7 @@
     const query = searchText(vocabSearch.value).split(/\s+/).filter(Boolean);
     terms.forEach(term => { term.hidden = !query.every(word => searchText(term.textContent).includes(word)); });
     const count = terms.filter(term => !term.hidden).length;
-    course.querySelector('[data-vocabulary-count]').textContent = count ? `${count} of ${terms.length} terms` : 'No terms match. Try a shorter word.';
+    course.querySelector('[data-vocabulary-count]').textContent = count ? `${count} of ${terms.length} vocabulary entries` : 'No terms match. Try a shorter word.';
   };
   course.querySelector('[data-vocabulary-filter]').hidden = false;
   vocabSearch.addEventListener('input', filterVocabulary);

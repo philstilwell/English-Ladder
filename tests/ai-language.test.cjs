@@ -166,7 +166,7 @@ test('workplace chooser, complete cards, printing and text downloads share the c
       const control = d.querySelector('[data-ai-mode]');
       control.value = 'grammar'; control.dispatchEvent(new w.Event('change'));
       const text = d.querySelector('[data-ai-prompt]').value;
-      assert.match(text, /TASK: Grammar that changes the meaning/);
+      assert.match(text, /TASK: Choose grammar that preserves the meaning/);
       assert.ok(text.includes(`My explanation language is ${name}.`));
       assert.doesNotMatch(text, /PRIVATE NOTES/);
       assert.equal(d.querySelector('[data-ai-print]').textContent, text);

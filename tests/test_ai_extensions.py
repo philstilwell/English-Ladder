@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import ai_extensions as ai
 from grammar_curriculum import load_curriculum
 from work_curriculum import load_tracks
+from work_web_content import web_track
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,6 +23,7 @@ class AIExtensionTests(unittest.TestCase):
                 self.assertIn(c['rules'][0], node.text)
             self.assertFalse(soup.select('textarea,input[type="text"]'))
         for t in load_tracks():
+            t = web_track(t)
             soup = BeautifulSoup((ROOT/f'efsp-{t["slug"]}.html').read_text(), 'html.parser')
             self.assertTrue(soup.select_one('#vocabulary #ai-field-vocabulary'))
             data=json.loads(soup.select_one('[data-ai-data]').text)

@@ -4,14 +4,14 @@ const fs = require('node:fs');
 const assert = require('node:assert/strict');
 const {chromium} = require('playwright');
 const base = process.env.AUDIT_ORIGIN || 'http://127.0.0.1:8878';
-const output = 'output/playwright/work-audit';
+const output = 'output/playwright/work-books-audit';
 const courses = fs.readdirSync('.').filter(name => /^efsp-.*\.html$/.test(name)).sort();
 const categories = fs.readdirSync('english-for-work').filter(name => name.endsWith('.html')).map(name => `english-for-work/${name}`);
 const paths = ['efsp.html', ...categories, ...courses];
 const report = {
   date: new Date().toISOString().slice(0, 10), pages: paths.length,
   widths: [320, 390, 768, 1280], layouts: 0, expandedLayouts: 0,
-  courseInteractions: 0, noScriptPages: 0, titleSizes: [], errors: [],
+  courseInteractions: 0, clozeInteractions: 0, noScriptPages: 0, titleSizes: [], errors: [],
   scope: 'All work pages at four widths, all lesson disclosures expanded, course interaction samples, keyboard navigation, deep links, and no-JavaScript reading. External requests blocked. Not a full accessibility or professional-content certification.',
 };
 fs.mkdirSync(output, {recursive: true});
@@ -71,6 +71,21 @@ async function geometry(page, path, width, expanded) {
           await quiz.locator(`input[value="${correct}"]`).check();
           await quiz.locator('[data-check-answer]').click();
           assert.equal(await quiz.locator('[data-quiz-feedback]').getAttribute('data-result'), 'correct');
+          for (const selector of ['#module-1-cloze', '#additional-1-cloze']) {
+            const cloze = page.locator(selector);
+            const answers = JSON.parse(await cloze.locator('[data-cloze-answers]').textContent());
+            await cloze.locator('[data-check-cloze]').click();
+            assert.match(await cloze.locator('[data-cloze-status]').innerText(), /unanswered/);
+            for (let index = 0; index < answers.length; index++) {
+              await cloze.locator('[data-cloze-gap]').nth(index).selectOption(answers[index].answer);
+            }
+            await cloze.locator('[data-check-cloze]').click();
+            assert.equal(await cloze.locator('[data-cloze-status]').getAttribute('data-result'), 'correct');
+            await cloze.locator('[data-reset-cloze]').click();
+            assert.equal(await cloze.locator('[data-cloze-gap]').first().inputValue(), '');
+            assert.equal(await cloze.locator('[data-cloze-gap]').first().evaluate(node => node === document.activeElement), true);
+            report.clozeInteractions++;
+          }
           await page.locator('[data-vocabulary-search]').fill('zzzz-no-matching-term');
           assert.equal(await page.locator('[data-work-term]:visible').count(), 0);
           await page.locator('[data-vocabulary-search]').fill('');
@@ -98,7 +113,7 @@ async function geometry(page, path, width, expanded) {
     await page.locator('.work-lesson-links a[href="#module-4"]').focus();
     await page.keyboard.press('Enter');
     assert.equal(await page.locator('#module-4').getAttribute('open'), '');
-    for (const id of ['module-8', 'vocabulary', 'finished-module-4-roleplay', 'finished-dialogue-prompts', 'ai-practice']) {
+    for (const id of ['module-8', 'module-4-cloze', 'additional-2', 'vocabulary', 'finished-module-4-roleplay', 'finished-dialogue-prompts', 'ai-practice']) {
       await page.goto(`${base}/efsp-manufacturing.html#${id}`);
       await page.evaluate(() => document.fonts.ready);
       await page.waitForFunction(id => {
@@ -134,8 +149,12 @@ async function geometry(page, path, width, expanded) {
       if (courses.includes(path)) {
         await staticPage.locator('#module-2 > summary').click();
         assert.equal(await staticPage.locator('#module-2 .work-case').isVisible(), true);
+        await staticPage.locator('#module-2 .work-briefing-checks > summary').click();
         await staticPage.locator('#module-2 .work-answer > summary').first().click();
-        assert.equal(await staticPage.locator('#module-2 .work-answer-reasons').first().isVisible(), true);
+        assert.equal(await staticPage.locator('#module-2 .work-answer p').first().isVisible(), true);
+        await staticPage.locator('#module-2 .work-extended-conversation > summary').click();
+        await staticPage.locator('#module-2 .work-completed-script > summary').click();
+        assert.equal(await staticPage.locator('#module-2 .work-completed-script li:visible').count(), 20);
         await staticPage.locator('#vocabulary > summary').click();
         assert.equal(await staticPage.locator('[data-vocabulary-search]').isVisible(), false);
         assert.ok(await staticPage.locator('[data-work-term]:visible').count());

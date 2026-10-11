@@ -86,7 +86,7 @@ test('quiz handles no answer, wrong answer, correction, and resets stale feedbac
   const dom=setup(),w=dom.window,d=w.document,q=d.querySelector('[data-work-quiz]');
   const button=q.querySelector('button'),feedback=q.querySelector('[data-quiz-feedback]');
   button.click();assert.match(feedback.textContent,/Choose an answer/);
-  const correct=Number(q.dataset.correct),wrong=(correct+1)%3;
+  const correct=Number(q.dataset.correct),wrong=(correct+1)%4;
   q.querySelectorAll('input')[wrong].click();button.click();
   assert.equal(feedback.dataset.result,'retry');assert.match(feedback.textContent,/Try again/);
   q.querySelectorAll('input')[correct].click();assert.equal(feedback.textContent,'');button.click();
@@ -114,7 +114,7 @@ test('course activities never save answers, drafts, progress, or orientation sta
   assert.equal(fresh.window.document.querySelector('input:checked'),null);
   [dom,fresh].forEach(x=>x.window.close());
 });
-test('every occupation question accepts its one answer and explains each distractor', () => {
+test('every occupation question accepts its one answer and explains its meaning', async () => {
   const sources=fs.readdirSync(path.join(root,'content/work/occupations')).filter(n=>n.endsWith('.json'));
   assert.equal(sources.length,25);
   let fourthAnswers=0;
@@ -134,6 +134,7 @@ test('every occupation question accepts its one answer and explains each distrac
       }
     }
     dom.window.close();
+    await new Promise(resolve => setImmediate(resolve));
   }
   assert.ok(fourthAnswers>0,'The fourth answer position must be used and checked.');
 });
@@ -185,7 +186,9 @@ test('blocked storage and failed removal never disable lessons, navigation, or t
 test('vocabulary search, lesson expansion, and fragment navigation work', () => {
   const dom=setup(),w=dom.window,d=w.document;
   change(w,d.querySelector('[data-vocabulary-search]'),'downtime');
-  assert.equal(d.querySelectorAll('[data-work-term]:not([hidden])').length,1);
+  const found=[...d.querySelectorAll('[data-work-term]:not([hidden])')];
+  assert.ok(found.length>0);
+  assert.ok(found.every(term=>term.textContent.toLowerCase().includes('downtime')));
   const expand=d.querySelector('[data-expand-lessons]');expand.click();
   assert.equal(d.querySelectorAll('.work-module[open]').length,8);expand.click();
   assert.equal(d.querySelectorAll('.work-module[open]').length,0);
@@ -193,13 +196,14 @@ test('vocabulary search, lesson expansion, and fragment navigation work', () => 
   assert.equal(d.querySelector('#module-4').open,true);
   dom.window.close();
 });
-test('all 66 course pages initialize every quiz and preserve static model responses', () => {
+test('all 66 course pages initialize every quiz and preserve completed dialogue models', async () => {
   const files=fs.readdirSync(root).filter(n=>/^efsp-.*\.html$/.test(n));
   assert.equal(files.length,66);
   for(const file of files){
     const dom=setup(file),d=dom.window.document;
-    assert.equal(d.querySelectorAll('[data-check-answer]:not([hidden])').length,16,file);
-    assert.equal(d.querySelectorAll('.work-model blockquote').length,8,file);
+    assert.equal(d.querySelectorAll('[data-check-answer]:not([hidden])').length,100,file);
+    assert.equal(d.querySelectorAll('.work-completed-script').length,11,file);
+    assert.equal(d.querySelectorAll('[data-check-cloze]').length,11,file);
     assert.equal(d.querySelectorAll('.work-jump a .work-section-dots').length,8,file);
     assert.equal(d.querySelectorAll('.work-section-dot').length,48,file);
     assert.equal(d.querySelectorAll('[data-work-step]').length,48,file);
@@ -226,5 +230,6 @@ test('all 66 course pages initialize every quiz and preserve static model respon
     assert.equal(icon.getAttribute('style'),headingIcon.getAttribute('style'),file);
     assert.equal(icon.parentElement.getAttribute('aria-hidden'),'true',file);
     dom.window.close();
+    await new Promise(resolve => setImmediate(resolve));
   }
 });

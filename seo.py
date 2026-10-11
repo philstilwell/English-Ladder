@@ -61,7 +61,8 @@ def read_json(relative):
 @lru_cache(maxsize=1)
 def tracks():
     from work_curriculum import load_tracks
-    return {t['slug']: t for t in load_tracks()}
+    from work_web_content import web_track
+    return {t['slug']: web_track(t) for t in load_tracks()}
 
 
 def grammar():

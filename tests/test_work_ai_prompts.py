@@ -8,6 +8,7 @@ from pypdf import PdfReader
 from work_curriculum import ROOT, load_tracks
 from work_dialogues import load_dialogues
 from work_ai_prompts import MODES, PRINT_MODES, compose, payload, prompt_hash, url
+from work_web_content import web_track
 
 RETAINED_MODES = ['vocabulary', 'grammar', 'roleplay', 'dialogues']
 REMOVED_MODES = {'writing', 'register', 'review', 'teacher'}
@@ -23,7 +24,7 @@ def normalized(value):
 class WorkAIPromptTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tracks = load_tracks()
+        cls.tracks = [web_track(track) for track in load_tracks()]
         cls.dialogues = load_dialogues()
 
     def test_all_published_cases_and_complete_dialogues_are_available(self):

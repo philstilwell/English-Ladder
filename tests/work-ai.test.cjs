@@ -22,7 +22,7 @@ function choose(w, selector, value) {
 const prompt = d => d.querySelector('[data-ai-prompt]').value;
 const tick = () => new Promise(resolve => setImmediate(resolve));
 
-test('all courses preserve the static prompt and expose every complete dialogue', () => {
+test('all courses preserve the static prompt and expose every complete dialogue', async () => {
   for (const file of fs.readdirSync(root).filter(n => /^efsp-.*\.html$/.test(n))) {
     const dom = setup('', () => {}, file), w = dom.window, d = w.document;
     const area = d.querySelector('[data-ai-prompt]');
@@ -38,6 +38,7 @@ test('all courses preserve the static prompt and expose every complete dialogue'
       assert.equal(d.querySelector('[data-ai-print]').textContent, prompt(d));
     }
     dom.window.close();
+    await tick();
   }
 });
 

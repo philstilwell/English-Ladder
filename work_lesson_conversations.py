@@ -1,7 +1,6 @@
 """Lesson-specific conversation scripts and bounded speaking scenarios."""
 from functools import lru_cache
 import hashlib
-import html
 import json
 from pathlib import Path
 from work_occupations import OCCUPATION_SLUGS, load_occupation, source_paths
@@ -58,27 +57,5 @@ def content_hash():
 
 
 def render_activities(track, module):
-    e = html.escape
-    lesson = lesson_content(track, module)
-    conversations = []
-    for i, conversation in enumerate(lesson["conversations"], 1):
-        turns = "".join(f'<li><strong>{e(role)}:</strong> {e(speech)}</li>' for role, speech in conversation["turns"])
-        conversations.append(f'<details class="work-conversation"><summary>{i}. {e(conversation["title"])}</summary>'
-                             f'<p>{e(conversation["setting"])}</p><ol class="work-conversation-lines">{turns}</ol></details>')
-    scenario = lesson["additional_scenario"]
-    workshop = module["workshop"]
-    checks = "".join(f"<li>{e(check)}</li>" for check in scenario["success_checks"])
-    return f'''<div class="work-practice">
-<section class="work-conversations"><p class="work-kicker work-activity-heading"><span class="work-activity-letter">E</span> <span>Conversations</span></p>
-<h4>Three conversations at work</h4><p class="work-small">Original fictional training conversations. Each line is one speaking turn.</p>{''.join(conversations)}</section>
-<section class="work-speaking"><p class="work-kicker work-activity-heading"><span class="work-activity-letter">F</span> <span>Say it</span></p><h4>Two scenarios to practice</h4>
-<div class="work-two-column"><section class="work-speaking-scenario"><h5>Scenario 1 · {e(module['title'])}</h5>
-<p>{e(module['brief'])}</p><p>{e(module['speaking_task'])}</p>
-<details><summary>Partner's role and follow-up</summary><p>{e(workshop['role_b'])}</p></details>
-<details><summary>Try a harder second round</summary><p>{e(workshop['challenge'])}</p></details></section>
-<section class="work-speaking-scenario"><h5>Scenario 2 · {e(scenario['title'])}</h5><p>{e(scenario['brief'])}</p>
-<p><strong>Role A:</strong> {e(scenario['role_a'])}</p><p><strong>Role B:</strong> {e(scenario['role_b'])}</p>
-<p><strong>Possible opening:</strong> “{e(scenario['opening_line'])}”</p>
-<details><summary>Success checks</summary><ul>{checks}</ul></details>
-<details><summary>Add a complication</summary><p>{e(scenario['complication'])}</p></details></section></div>
-<p class="work-support"><strong>Studying alone?</strong> Speak both roles aloud. For each scenario, prepare for two minutes, speak for one minute, then answer a follow-up. Switch roles and repeat using fewer notes. Use only the supplied facts; identify missing information instead of inventing it.</p></section></div>'''
+    from work_web_lessons import render_practice
+    return render_practice(track, module)

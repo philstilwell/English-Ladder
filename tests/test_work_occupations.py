@@ -9,6 +9,7 @@ from pypdf import PdfReader
 from work_curriculum import ROOT, WORKSHOPS, load_tracks
 from work_icons import ICON_SLUGS, LEGACY_ICON_SLUGS, icon_asset, icon_bottom_trim
 from work_occupations import OCCUPATION_SLUGS, load_occupation, validate_occupation
+from work_web_content import web_track
 
 
 class OccupationSourceTests(unittest.TestCase):
@@ -88,14 +89,14 @@ class OccupationSourceTests(unittest.TestCase):
 class OccupationPublicationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.tracks = [track for track in load_tracks() if track.get('is_occupation')]
+        cls.tracks = [web_track(track) for track in load_tracks() if track.get('is_occupation')]
 
     def test_pages_keep_collocations_and_four_choices_with_guided_ai_modes(self):
         for track in self.tracks:
             page = BeautifulSoup((ROOT / f'efsp-{track["slug"]}.html').read_text(), 'html.parser')
             self.assertIsNotNone(page.select_one('.work-hero .work-occupation-icon'))
             self.assertIn('English Ladder', page.get_text())
-            self.assertEqual(len(page.select('.work-quiz')), 16)
+            self.assertEqual(len(page.select('.work-quiz')), 100)
             for quiz in page.select('.work-quiz'):
                 self.assertEqual(len(quiz.select('input[type="radio"]')), 4)
             for module in track['modules']:

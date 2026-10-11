@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 
-# Allow five minutes of preflight, all three bounded uploads, and startup time.
+# Allow seven minutes of preflight, all three bounded uploads, and startup time.
 DEFAULT_TIMEOUT = 15 * 60
 DEFAULT_INTERVAL = 20
 REQUEST_TIMEOUT = 30

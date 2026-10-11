@@ -63,10 +63,16 @@ test('persistent upload failures stop after three attempts and give a generation
   });
   assert.equal(fixture.calls.length, 4);
   assert.deepEqual(fixture.pauses, [10_000, 30_000]);
-  assert.ok(PREFLIGHT_TIMEOUT_MS + 3 * DEPLOY_TIMEOUT_MS + RETRY_DELAYS_MS.reduce((a, b) => a + b, 0) + 5000 < 12 * 60_000);
+  assert.equal(PREFLIGHT_TIMEOUT_MS, 420_000);
+  assert.equal(DEPLOY_TIMEOUT_MS, 120_000);
+  assert.deepEqual(RETRY_DELAYS_MS, [10_000, 30_000]);
+  const boundedPublishingMs = PREFLIGHT_TIMEOUT_MS + 3 * DEPLOY_TIMEOUT_MS
+    + RETRY_DELAYS_MS.reduce((a, b) => a + b, 0);
+  assert.equal(boundedPublishingMs, 820_000);
+  assert.ok(boundedPublishingMs < 15 * 60_000);
 });
 
-test('a preflight slower than the old three-minute limit can finish and reports its elapsed time', async t => {
+test('a preflight slower than the old five-minute limit can finish and reports its elapsed time', async t => {
   const fixture = harness(t, [ok, ok]);
   const recordCommand = fixture.options.runner;
   let elapsed = 0;
@@ -74,14 +80,14 @@ test('a preflight slower than the old three-minute limit can finish and reports 
   fixture.options.runner = async (command, args, options) => {
     const result = await recordCommand(command, args, options);
     if (command === 'npm') {
-      elapsed += 240_250;
+      elapsed += 360_250;
       if (elapsed >= options.timeoutMs) return {code: null, signal: 'SIGKILL', timedOut: true};
     }
     return result;
   };
   assert.equal((await deploy(fixture.options)).attempts, 1);
   assert.equal(fixture.calls.length, 2, 'Preflight runs once before the upload');
-  assert.ok(fixture.logs.includes('Preflight passed after 240.3 seconds.'));
+  assert.ok(fixture.logs.includes('Preflight passed after 360.3 seconds.'));
 });
 
 test('failed preflight prevents every upload and is not retried', async t => {
@@ -97,10 +103,10 @@ test('a timed-out upload retries, but a timed-out preflight never uploads', asyn
   assert.equal((await deploy(fixture.options)).attempts, 2);
   assert.ok(fixture.logs.some(line => line.includes('timed out after 120 seconds')));
   const preflight = harness(t, [timedOut]);
-  const times = [1_000, 301_000];
+  const times = [1_000, 421_000];
   preflight.options.clock = () => times.shift();
-  await assert.rejects(deploy(preflight.options), /preflight timed out after 300 seconds/);
-  assert.ok(preflight.logs.includes('Preflight failed after 300.0 seconds.'));
+  await assert.rejects(deploy(preflight.options), /preflight timed out after 420 seconds/);
+  assert.ok(preflight.logs.includes('Preflight failed after 420.0 seconds.'));
   assert.equal(preflight.calls.length, 1);
 });
 

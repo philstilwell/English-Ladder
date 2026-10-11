@@ -8,8 +8,8 @@ const {performance} = require('node:perf_hooks');
 const ROOT = path.resolve(__dirname, '..');
 // The September 22 build exhausted the old three-minute limit while repeating
 // the SEO audit already included in audit_site.py. Run that audit only once in
-// build:cloudflare, and leave five minutes for checks on slower build machines.
-const PREFLIGHT_TIMEOUT_MS = 300_000;
+// build:cloudflare, and leave seven minutes for checks on slower build machines.
+const PREFLIGHT_TIMEOUT_MS = 420_000;
 const DEPLOY_TIMEOUT_MS = 120_000;
 const RETRY_DELAYS_MS = Object.freeze([10_000, 30_000]);
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));

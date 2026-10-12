@@ -634,16 +634,16 @@
             ]
           },
           {
-            "question": "According to the reading, what is Kyiv's justification for its attacks on Russian territory, contrasted with Moscow's view of its own strikes?",
+            "question": "According to the reading, how do Moscow and Kyiv justify the energy-infrastructure attacks described?",
             "options": [
               "Kyiv views its attacks as a means to increase Russia's war funding, while Moscow sees its strikes as a form of self-defense.",
-              "Kyiv aims to diminish Russia's financial capacity for war, whereas Moscow considers its targets legitimate for military support.",
+              "Moscow says its targets support Ukraine's military operations, while Kyiv says its attacks reduce Russia's ability to finance the war.",
               "Both Kyiv and Moscow agree their respective strikes are purely defensive measures."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Kyiv aims to reduce Russia's war funding, not increase it. Moscow's strikes are for military support, not explicitly self-defense in this context.",
-              "Correct. Kyiv aims at 'curtailing Russia's war finance capabilities,' while Moscow views its targets as 'legitimate targets supporting its military operations.'",
+              "Kyiv aims to reduce Russia's war funding, not increase it. Moscow says the installations it strikes support Ukraine's military operations, rather than describing the strikes simply as self-defense.",
+              "Correct. Moscow says the installations it strikes support Ukraine's military operations, while Kyiv says its attacks aim to curtail Russia's war-finance capabilities.",
               "Their justifications are presented as contrasting, not in agreement on purely defensive measures."
             ]
           },
@@ -673,7 +673,7 @@
           "Trump's latest initiative aims to lower domestic fuel prices before the midterm elections, following months of political backlash from a separate conflict.",
           "The higher pump prices and subsequent knock-on effects have soured Trump's standing with the American public, contributing to widespread inflation.",
           "Ukraine and Russia have engaged in months of retaliatory strikes targeting each other's energy infrastructure.",
-          "Moscow asserts these installations are legitimate targets supporting its military operations, while Kyiv views its attacks as essential to curtailing Russia's war finance capabilities.",
+          "Moscow asserts these installations are legitimate targets supporting Ukraine's military operations, while Kyiv views its attacks as essential to curtailing Russia's war finance capabilities.",
           "These sustained attacks have consequently disrupted energy supplies across both nations.",
           "Seven senators from both major US parties have issued a statement declaring Trump's deal 'runs directly counter' to a law prohibiting Russian energy imports.",
           "They urged the Trump administration to 'reverse course', emphasizing that Congress's intention was clear: no Russian oil imports until aggression against Ukraine ceases.",
@@ -697,33 +697,41 @@
           "Republican Senator Thom Tillis, one of the seven, told NBC News that the deal \"absolutely will\" put American lives at risk."
         ],
         "editorial_check": {
-          "date": "2026-10-12T07:26:12.692432+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets \"conditional\", \"advocating\", \"condemnation\", \"explicitly\", \"sentiment echoed\", \"backlash\", \"soured\", \"retaliatory\", and \"curtailing\" are precise, transferable, and offer meaningful advanced distinctions suitable for C1-Higher learners. No reserved vocabulary items from other levels were used as teaching targets."
+          "date": "2026-10-12",
+          "status": "revised",
+          "method": "Codex editorial correction against the saved BBC source evidence; no new independent model approval",
+          "changes": [
+            "Clarified that Moscow says the targeted installations support Ukraine's military operations, and kept that attribution explicit in advanced Q10."
+          ],
+          "previous_review": {
+            "date": "2026-10-12T07:26:12.692432+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets \"conditional\", \"advocating\", \"condemnation\", \"explicitly\", \"sentiment echoed\", \"backlash\", \"soured\", \"retaliatory\", and \"curtailing\" are precise, transferable, and offer meaningful advanced distinctions suitable for C1-Higher learners. No reserved vocabulary items from other levels were used as teaching targets."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a polished, natural reporting and analysis register, with accurate attribution and calibrated certainty, appropriate for C1-Higher. It uses phrases like \"expressed conditional support\", \"advocating for\", \"drawn increasing condemnation\", and \"sentiment echoed\"."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The definitions are concise and illuminating, such as \"conditional: Dependent on certain terms or circumstances; not absolute.\" The grammar explanation uses controlled complex sentences to explain the function of participle clauses clearly and relates it to the example quote. Feedback is precise and avoids overly simplistic language."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson develops supported inference, stance, and cause and effect, especially in quiz questions about paradoxes, implications of conditional support, and the function of participle clauses. Distractors are plausible, and explanations clarify why each fails, providing substantive learning beyond elementary recall. For example, Q1 and Q10 require synthesis of information."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a polished, natural reporting and analysis register, with accurate attribution and calibrated certainty, appropriate for C1-Higher. It uses phrases like \"expressed conditional support\", \"advocating for\", \"drawn increasing condemnation\", and \"sentiment echoed\"."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The definitions are concise and illuminating, such as \"conditional: Dependent on certain terms or circumstances; not absolute.\" The grammar explanation uses controlled complex sentences to explain the function of participle clauses clearly and relates it to the example quote. Feedback is precise and avoids overly simplistic language."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson develops supported inference, stance, and cause and effect, especially in quiz questions about paradoxes, implications of conditional support, and the function of participle clauses. Distractors are plausible, and explanations clarify why each fails, providing substantive learning beyond elementary recall. For example, Q1 and Q10 require synthesis of information."
-            }
-          },
-          "content_digest": "26509f13082e38336c58c32466e3f6336487338bc2ce8846fb88b5adde2b634b"
+            "content_digest": "26509f13082e38336c58c32466e3f6336487338bc2ce8846fb88b5adde2b634b"
+          }
         }
       }
     }

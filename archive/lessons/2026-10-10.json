@@ -353,17 +353,17 @@
             ]
           },
           {
-            "question": "Why was Alison Hammond anxious about returning to the show after her panic attack?",
+            "question": "Why did Alison Hammond return to the show that week even though she felt anxious?",
             "options": [
-              "She feared the show itself was causing her panic.",
-              "She had found a new job opportunity.",
-              "She thought she was still too ill to work."
+              "She feared that if she delayed her return, she might never come back.",
+              "She needed to announce a new job opportunity.",
+              "She believed the show had caused her panic and wanted to prove it on air."
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "That's right. She worried that not returning might make it seem like the show was the cause.",
-              "The article does not suggest she had a new job; her concern was about returning to This Morning.",
-              "She expressed gratitude upon her return, indicating she was well enough to be there."
+              "Correct. She said that if she did not return that week, she might never come back to the show.",
+              "The reading does not mention a new job. Her decision was about returning to This Morning.",
+              "She did not say the show had caused the panic. She said a panic attack could happen anywhere."
             ]
           },
           {
@@ -450,33 +450,41 @@
           "They affect more women than men and can last between five and 20 minutes, she said. People experiencing one can \"ground yourself\" by focusing on the moment and the safety of their surroundings, and by steadying their breathing, she added."
         ],
         "editorial_check": {
-          "date": "2026-10-10T07:08:47.248846+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 3,
-          "repaired_sections": [],
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary items selected are appropriate for B1-B2 learners, offering useful general news terms and contextual definitions. No reserved vocabulary items were used as targets."
+          "date": "2026-10-12",
+          "status": "revised",
+          "method": "Codex editorial correction against the saved BBC source evidence; no new independent model approval",
+          "changes": [
+            "Corrected intermediate Q5 so the question, answer and feedback reflect Hammond's stated reason for returning despite anxiety."
+          ],
+          "previous_review": {
+            "date": "2026-10-10T07:08:47.248846+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 3,
+            "repaired_sections": [],
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary items selected are appropriate for B1-B2 learners, offering useful general news terms and contextual definitions. No reserved vocabulary items were used as targets."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a consistent, natural, and neutral news English register throughout all learner-facing content, suitable for B1-B2."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses varied, manageable sentence structures and clear explanations in vocabulary, grammar, and quiz sections, making the content accessible for B1-B2 learners."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson provides appropriate challenge by combining direct comprehension with contextual vocabulary, grammar application, and thoughtful discussion prompts suitable for B1-B2 learners."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a consistent, natural, and neutral news English register throughout all learner-facing content, suitable for B1-B2."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses varied, manageable sentence structures and clear explanations in vocabulary, grammar, and quiz sections, making the content accessible for B1-B2 learners."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson provides appropriate challenge by combining direct comprehension with contextual vocabulary, grammar application, and thoughtful discussion prompts suitable for B1-B2 learners."
-            }
-          },
-          "content_digest": "cdf674d15ed6a56b0110c9ca256de1a424bfa7d2e5807130180957df99ab3f6a"
+            "content_digest": "cdf674d15ed6a56b0110c9ca256de1a424bfa7d2e5807130180957df99ab3f6a"
+          }
         }
       }
     },

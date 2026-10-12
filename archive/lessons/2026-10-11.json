@@ -286,7 +286,7 @@
         "grammar": {
           "concept": "Relative Clauses",
           "explanation": "Relative clauses add more information about a noun. They connect to the noun using words like \"that\", \"who\", \"which\", or \"where\", helping to describe it more fully. They make sentences more detailed and specific.",
-          "example_quote": "He also noted Wales has a history of extractive industries that often left little benefit for communities."
+          "example_quote": "She also noted Wales has a history of extractive industries that often left little benefit for communities."
         },
         "quiz": [
           {
@@ -346,7 +346,7 @@
             ]
           },
           {
-            "question": "In the sentence, 'He also noted Wales has a history of extractive industries that often left little benefit for communities,' what does the word \"that\" refer to?",
+            "question": "In the sentence, 'She also noted Wales has a history of extractive industries that often left little benefit for communities,' what does the word \"that\" refer to?",
             "options": [
               "Wales",
               "history",
@@ -360,7 +360,7 @@
             ]
           },
           {
-            "question": "What concern does Ernest Dyson's reference to Wales's history of extractive industries highlight?",
+            "question": "What concern does Liz Saville Roberts's reference to Wales's history of extractive industries highlight?",
             "options": [
               "That the new data centre will be too small",
               "That new projects might not benefit local communities in the long term",
@@ -368,9 +368,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "His concern is about the impact and benefit to communities, not the size of the data centre.",
-              "Ernest Dyson suggests that, like past industries, the data centre project might not bring lasting advantages to the local community if not managed properly.",
-              "He is using history as a warning, not advocating for reopening old industries."
+              "Her concern is about the impact and benefit to communities, not the size of the data centre.",
+              "Liz Saville Roberts suggests that, like past industries, the data centre project might not bring lasting advantages to the local community if not managed properly.",
+              "She is using history as a warning, not advocating for reopening old industries."
             ]
           },
           {
@@ -388,7 +388,7 @@
             ]
           },
           {
-            "question": "Why does Ernest Dyson emphasize the need for \"appropriate regulations\"?",
+            "question": "Why does Liz Saville Roberts emphasize the need for \"proper regulations\"?",
             "options": [
               "To make sure construction is completed quickly",
               "To ensure projects are built without any rules",
@@ -398,7 +398,7 @@
             "option_feedback": [
               "The purpose of regulations is not primarily about speed, but about control and standards.",
               "\"Regulations\" are rules, so they are explicitly about building with rules, not without them.",
-              "Ernest Dyson emphasizes \"appropriate regulations\" to ensure that large developments are controlled properly, leading to fair and safe outcomes that also benefit the community."
+              "Liz Saville Roberts emphasizes \"proper regulations\" to ensure that large developments are controlled properly and benefit the community."
             ]
           }
         ],
@@ -412,8 +412,8 @@
           "Additionally, over 22,500 people have signed a document opposing the development.",
           "Local resident Ernest Dyson believes the project would cause \"the destruction of the most beautiful part of the Menai Strait.\"",
           "He also stated that \"The people of the area are custodians of it.\"",
-          "Local opponent Ernest Dyson highlighted the need for appropriate regulations for such large-scale developments.",
-          "He also noted Wales has a history of extractive industries that often left little benefit for communities.",
+          "Plaid Cymru MP Liz Saville Roberts highlighted the need for proper regulations and community benefits from large-scale developments.",
+          "She also noted Wales has a history of extractive industries that often left little benefit for communities.",
           "Canolfan Ddata Menai claims the project will have \"no undue impact\" on the Menai Strait."
         ],
         "sentence_evidence": [
@@ -431,33 +431,41 @@
           "Canolfan Ddata Menai said the project would ensure \"continued use\" of the surrounding area , including Lôn Las Menai cycleway and footpath, and would have \"no undue impact\" on the Menai Strait and an associated Site of Special Scientific Interest (SSSI)."
         ],
         "editorial_check": {
-          "date": "2026-10-11T07:27:26.468327+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 2,
-          "repaired_sections": [],
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary items 'opposition', 'proposed', 'complex', 'site', 'temporary', 'permanent', 'gathered', 'rally', 'custodians', and 'regulations' are useful general news terms appropriate for B1-B2 learners. Their contextual definitions are clear and accessible, and none of them are on the reserved vocabulary list."
+          "date": "2026-10-12",
+          "status": "revised",
+          "method": "Codex editorial correction against the saved BBC source evidence; no new independent model approval",
+          "changes": [
+            "Corrected the intermediate reading, relative-clause example and Q5, Q6 and Q8 to attribute the regulations and extractive-industries remarks to Liz Saville Roberts."
+          ],
+          "previous_review": {
+            "date": "2026-10-11T07:27:26.468327+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 2,
+            "repaired_sections": [],
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary items 'opposition', 'proposed', 'complex', 'site', 'temporary', 'permanent', 'gathered', 'rally', 'custodians', and 'regulations' are useful general news terms appropriate for B1-B2 learners. Their contextual definitions are clear and accessible, and none of them are on the reserved vocabulary list."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a consistent natural, neutral news English register throughout the reading, vocabulary definitions, grammar explanation, and quiz. Connections between ideas are clear."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The reading sentences are manageable, and explanations for vocabulary, grammar, and quiz feedback are clear and use everyday language. Pronoun references are clear, and instructions are easy to understand for the target level."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson combines reading comprehension of details with contextual vocabulary (e.g., 'proposed', 'custodians') and grammar transfer (relative clauses). The quiz includes questions that require identifying relationships between details and supported inference, providing appropriate challenge for B1-B2 without introducing external knowledge or excessive difficulty."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a consistent natural, neutral news English register throughout the reading, vocabulary definitions, grammar explanation, and quiz. Connections between ideas are clear."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The reading sentences are manageable, and explanations for vocabulary, grammar, and quiz feedback are clear and use everyday language. Pronoun references are clear, and instructions are easy to understand for the target level."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson combines reading comprehension of details with contextual vocabulary (e.g., 'proposed', 'custodians') and grammar transfer (relative clauses). The quiz includes questions that require identifying relationships between details and supported inference, providing appropriate challenge for B1-B2 without introducing external knowledge or excessive difficulty."
-            }
-          },
-          "content_digest": "ba525e68405aa05e2ebfecd8c306d7191f975ca4ebc142577e86589331a3c53f"
+            "content_digest": "ba525e68405aa05e2ebfecd8c306d7191f975ca4ebc142577e86589331a3c53f"
+          }
         }
       }
     },

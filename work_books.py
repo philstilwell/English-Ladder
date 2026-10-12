@@ -10,7 +10,7 @@ from pathlib import Path
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parent
-EDITION = '2026-10-10'
+EDITION = '2026-10-11'
 
 
 def book_stem(slug):

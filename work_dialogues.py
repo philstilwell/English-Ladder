@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 from work_occupations import OCCUPATION_SLUGS, load_occupation, source_paths
 from work_medical import MEDICAL_SLUGS, medical_dialogues, source_paths as medical_source_paths
+from work_specialists import SPECIALIST_SLUGS, specialist_dialogues, source_paths as specialist_source_paths
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / 'content/work/dialogues'
@@ -14,7 +15,7 @@ EDITION = '2026-09-28'
 
 
 def dialogue_hash():
-    paths = sorted(SOURCE.glob('*.txt')) + sorted(SOURCE.glob('*.json')) + source_paths() + medical_source_paths()
+    paths = sorted(SOURCE.glob('*.txt')) + sorted(SOURCE.glob('*.json')) + source_paths() + medical_source_paths() + specialist_source_paths()
     return hashlib.sha256(b''.join(p.name.encode() + p.read_bytes() for p in paths)).hexdigest()
 
 
@@ -42,6 +43,7 @@ def load_dialogues():
     for slug in OCCUPATION_SLUGS:
         groups[slug] = load_occupation(slug)['dialogues']
     groups.update(medical_dialogues())
+    groups.update(specialist_dialogues())
     validate_dialogues(groups)
     return groups
 
@@ -51,6 +53,7 @@ def validate_dialogues(groups):
     inventory = {t['slug'] for t in json.loads((ROOT/'content/work/courses.json').read_text())}
     inventory.update(OCCUPATION_SLUGS)
     inventory.update(MEDICAL_SLUGS)
+    inventory.update(SPECIALIST_SLUGS)
     assert set(groups) == inventory, sorted(inventory-set(groups))
     for slug, scripts in groups.items():
         assert len(scripts) >= 8, (slug, len(scripts))

@@ -599,6 +599,32 @@ def explanations(b, u, i):
     b.text(u['title'], size=10.5, leading=15, color=b.accent, bold=True, after=17)
     top = b.y
     col_width = (WIDTH - 26) / 2
+    if getattr(b, 'balanced_answer_columns', False):
+        for column in range(2):
+            b.y = top
+            x = LEFT + column * (col_width + 26)
+            first_gap = column * 5
+            b.text(f'E  Dialogue gaps {first_gap + 1}-{first_gap + 5}',
+                   x=x, width=col_width, size=11, leading=15, bold=True, after=5)
+            b.text(f'Pages {unit_page(i) + 6}-{unit_page(i) + 7}', x=x, width=col_width,
+                   size=8.8, leading=12, color=MUTED, after=12)
+            for n, g in enumerate(u['gaps'][first_gap:first_gap + 5], first_gap + 1):
+                b.text(f'<b>{n}. {esc(g["answer"])}.</b> <font color="{MUTED}">Turn {g["turn"]}.</font> {esc(g["reason"])}',
+                       rich=True, x=x, width=col_width, size=9.2, leading=13.2, after=b.key_gap_spacing)
+            b.y -= 10
+            first_line = column * 2
+            b.text(f'F  Transfer answers {first_line + 1}-{first_line + 2}',
+                   x=x, width=col_width, size=11, leading=15, bold=True, after=5)
+            b.text(f'Page {unit_page(i) + 8}', x=x, width=col_width,
+                   size=8.8, leading=12, color=MUTED, after=12)
+            for n, q in enumerate(u['transfer']['lines'][first_line:first_line + 2], first_line + 1):
+                answer = q['options'][q['answer']]
+                b.text(f'<b>{n}. {esc(answer)}</b>', rich=True, x=x, width=col_width,
+                       size=9.2, leading=13.2, after=5)
+                b.text(q['prompt'].replace('___', answer), x=x, width=col_width,
+                       size=9.2, leading=13.2, after=6)
+                b.text(q['reason'], x=x, width=col_width, size=9.2, leading=13.2, after=16)
+        return
     b.text('E  Dialogue gaps', width=col_width, size=11, leading=15, bold=True, after=5)
     b.text(f'Pages {unit_page(i) + 6}-{unit_page(i) + 7}', width=col_width,
            size=8.8, leading=12, color=MUTED, after=12)

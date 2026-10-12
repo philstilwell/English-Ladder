@@ -17,7 +17,7 @@ class WorkCurriculumTests(unittest.TestCase):
 
     def test_complete_inventory_and_authored_cases(self):
         result = validate_tracks(self.tracks)
-        self.assertEqual((result['courses'], result['lessons'], result['pdfs']), (72, 576, 72))
+        self.assertEqual((result['courses'], result['lessons'], result['pdfs']), (80, 640, 80))
         models = [m['model'] for t in self.tracks for m in t['modules']]
         self.assertEqual(len(models), len(set(models)))
 
@@ -120,7 +120,7 @@ class WorkCurriculumTests(unittest.TestCase):
         for path in (ROOT/'english-for-work').glob('*.html'):
             soup = BeautifulSoup(path.read_text(), 'html.parser')
             cards.extend(soup.select('.work-course-card'))
-        self.assertEqual(len(cards), 72)
+        self.assertEqual(len(cards), 80)
         for card in cards:
             self.assertEqual(card.select_one('.work-kicker').get_text(), '8 lessons · 1 learner book')
 

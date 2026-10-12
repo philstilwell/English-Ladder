@@ -23,7 +23,7 @@ class MedicalProfessionTests(unittest.TestCase):
         cls.tracks = {t['slug']: t for t in load_tracks()}
 
     def test_six_distinct_courses_join_the_existing_inventory(self):
-        self.assertEqual(len(self.tracks), 72)
+        self.assertEqual(len(self.tracks), 80)
         self.assertEqual(len(set(MEDICAL_SLUGS)), 6)
         for slug in MEDICAL_SLUGS:
             track = self.tracks[slug]

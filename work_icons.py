@@ -1,6 +1,7 @@
 """Explicit illustration mappings shared by the course cards, pages, and PDFs."""
 from work_occupations import OCCUPATION_SLUGS
 from work_medical import MEDICAL_SLUGS
+from work_specialists import SPECIALIST_SLUGS
 
 LEGACY_ICON_SLUGS = (
     "cultural-leadership-us-branches",
@@ -46,7 +47,7 @@ LEGACY_ICON_SLUGS = (
     "legal-operations-compliance",
 )
 ATLAS_ICON_SLUGS = LEGACY_ICON_SLUGS + OCCUPATION_SLUGS
-ICON_SLUGS = ATLAS_ICON_SLUGS + MEDICAL_SLUGS
+ICON_SLUGS = ATLAS_ICON_SLUGS + MEDICAL_SLUGS + SPECIALIST_SLUGS
 
 # Visible artwork bounds, with a small allowance for soft edges and shadows.
 MEDICAL_ICON_SIZE = 1254
@@ -57,6 +58,16 @@ MEDICAL_ICON_CROPS = {
     'x-ray-technicians': (67, 101, 1122, 1066),
     'pediatricians': (59, 55, 1144, 1114),
     'obstetricians': (22, 147, 1211, 957),
+}
+SPECIALIST_ICON_CROPS = {
+    'nutrition-dietetics': (58, 124, 1135, 1037),
+    'sports-medicine': (37, 78, 1204, 1125),
+    'international-law': (61, 76, 1121, 1096),
+    'patent-law': (36, 142, 1201, 971),
+    'university-professors': (4, 122, 1250, 1055),
+    'investment-management-banking': (24, 174, 1206, 898),
+    'cross-border-ma-integration': (22, 280, 1210, 660),
+    'localization-qa': (26, 136, 1205, 1052),
 }
 
 # Bounds of each complete illustration in the generated directory artwork.
@@ -100,11 +111,13 @@ def directory_collage():
             f'<span class="work-collage-cell" aria-hidden="true" data-collage-field="{slug}">'
             f'<span class="work-collage-art" style="{style}"></span></span>'
         )
-    for slug in MEDICAL_SLUGS:
-        style = collage_art_style((MEDICAL_ICON_SIZE, MEDICAL_ICON_SIZE), MEDICAL_ICON_CROPS[slug])
+    for slug in MEDICAL_SLUGS + SPECIALIST_SLUGS:
+        crop = (MEDICAL_ICON_CROPS if slug in MEDICAL_SLUGS else SPECIALIST_ICON_CROPS)[slug]
+        style = collage_art_style((MEDICAL_ICON_SIZE, MEDICAL_ICON_SIZE), crop)
+        kind = 'medical' if slug in MEDICAL_SLUGS else 'specialist'
         cells.append(
             f'<span class="work-collage-cell" aria-hidden="true" data-collage-field="{slug}">'
-            f'<span class="work-collage-medical work-medical-icon" data-work-icon="{slug}" style="{style}"></span></span>'
+            f'<span class="work-collage-medical work-{kind}-icon" data-work-icon="{slug}" style="{style}"></span></span>'
         )
     return (
         '<div class="work-directory-collage" role="img" '
@@ -114,6 +127,8 @@ def directory_collage():
 
 
 def icon_asset(slug):
+    if slug in SPECIALIST_SLUGS:
+        return (f'assets/work/specialists/{slug}.png', 1, 1, 0)
     if slug in MEDICAL_SLUGS:
         return (f'assets/work/medical/{slug}.png', 1, 1, 0)
     if slug in OCCUPATION_SLUGS:
@@ -150,8 +165,9 @@ def icon_bottom_trim(slug):
 
 def card_icon(track):
     """Select the profession's atlas cell without adding a screen-reader label."""
-    if track['slug'] in MEDICAL_SLUGS:
-        return (f'<span aria-hidden="true" class="work-card-icon work-medical-icon" '
+    if track['slug'] in MEDICAL_SLUGS + SPECIALIST_SLUGS:
+        kind = 'medical' if track['slug'] in MEDICAL_SLUGS else 'specialist'
+        return (f'<span aria-hidden="true" class="work-card-icon work-{kind}-icon" '
                 f'data-work-icon="{track["slug"]}"></span>')
     _, columns, rows, index = icon_asset(track['slug'])
     x = (index % columns) * 100 / (columns - 1)

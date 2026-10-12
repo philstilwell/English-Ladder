@@ -35,8 +35,8 @@ class LessonConversationTests(unittest.TestCase):
                 self.assertNotEqual(brief, module['brief'])
                 self.assertNotIn(brief, scenarios)
                 scenarios.add(brief)
-        self.assertEqual(len(all_scripts), 1728)
-        self.assertEqual(len(scenarios), 576)
+        self.assertEqual(len(all_scripts), 1920)
+        self.assertEqual(len(scenarios), 640)
 
     def test_accordions_are_closed_and_complete_without_javascript(self):
         for track in self.tracks:

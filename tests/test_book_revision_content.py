@@ -877,7 +877,7 @@ class ExpandedConversationTests(unittest.TestCase):
             self.assertEqual(len(scenarios), 11)
             scripts.extend(re.sub(r'\s+', ' ', ' '.join(text for _, text in item['dialogue'])).casefold()
                            for item in scenarios)
-        self.assertEqual(len(scripts), 792)
+        self.assertEqual(len(scripts), 880)
         self.assertEqual(len(set(scripts)), len(scripts))
 
     def test_every_book_has_three_distinct_extended_scenarios(self):

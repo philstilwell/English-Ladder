@@ -1,4 +1,4 @@
-"""Directory artwork keeps a fixed, complete 8-by-9 layout."""
+"""Directory artwork keeps a fixed, complete 8-by-10 layout."""
 import unittest
 
 from bs4 import BeautifulSoup
@@ -12,13 +12,13 @@ from work_icons import (
 
 
 class DirectoryCollageTests(unittest.TestCase):
-    def test_grid_has_eight_columns_and_nine_square_rows(self):
+    def test_grid_has_eight_columns_and_ten_square_rows(self):
         css = (ROOT / 'work.css').read_text()
         rule = css.split('.work-directory-collage {', 1)[1].split('}', 1)[0]
         self.assertIn('grid-template-columns:repeat(8,minmax(0,1fr))', rule)
-        self.assertIn('grid-template-rows:repeat(9,minmax(0,1fr))', rule)
-        self.assertIn('aspect-ratio:8/9', rule)
-        self.assertEqual(len(ICON_SLUGS), 8 * 9)
+        self.assertIn('grid-template-rows:repeat(10,minmax(0,1fr))', rule)
+        self.assertIn('aspect-ratio:8/10', rule)
+        self.assertEqual(len(ICON_SLUGS), 8 * 10)
 
     def test_every_field_appears_once_in_the_published_grid(self):
         generated = BeautifulSoup(directory_collage(), 'html.parser')
@@ -31,7 +31,7 @@ class DirectoryCollageTests(unittest.TestCase):
             self.assertEqual([cell['data-collage-field'] for cell in cells], list(ICON_SLUGS))
             self.assertTrue(all(cell['aria-hidden'] == 'true' for cell in cells))
             self.assertEqual(len(collage.select('.work-collage-art')), 66)
-            self.assertEqual(len(collage.select('.work-collage-medical')), 6)
+            self.assertEqual(len(collage.select('.work-collage-medical')), 14)
 
     def test_all_illustrations_fit_the_same_padding_without_stretching(self):
         self.assertEqual(len(DIRECTORY_COLLAGE_CROPS), 11)

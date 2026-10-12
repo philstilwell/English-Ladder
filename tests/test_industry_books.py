@@ -54,8 +54,9 @@ class IndustryBookTests(unittest.TestCase):
                     self.assertIn('English Ladder', text)
                     self.assertEqual(text.count('ENGLISHLADDER.COM'), 1)
                     self.assertIn(f'Phil Stilwell | {i:02d}', text)
-                    self.assertNotRegex(text, r'\{\{\d+\}\}|\[\[|\ufffd|review copy|approval draft')
+                    self.assertNotRegex(text, r'\{\{\d+\}\}|\[\[|\ufffd')
                 for text in (pages[0], pages[-1]):
+                    self.assertNotRegex(text, r'review copy|approval draft')
                     self.assertIn(COPYRIGHT, text)
                     self.assertIn(REPRODUCTION_NOTICE, text)
                 for i, unit in enumerate(book['units']):

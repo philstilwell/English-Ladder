@@ -7,6 +7,8 @@ const base = process.env.AUDIT_ORIGIN || 'http://127.0.0.1:8878';
 const output = process.env.AUDIT_OUTPUT || 'output/playwright/work-books-audit';
 const medical = ['general-practitioners', 'oncologists', 'cardiologists', 'x-ray-technicians', 'pediatricians', 'obstetricians'];
 const medicalPages = medical.map(slug => `efsp-${slug}.html`);
+const specialists = ['nutrition-dietetics', 'sports-medicine', 'international-law', 'patent-law', 'university-professors', 'investment-management-banking', 'cross-border-ma-integration', 'localization-qa'];
+const illustratedPages = [...medicalPages, ...specialists.map(slug => `efsp-${slug}.html`)];
 const courses = fs.readdirSync('.').filter(name => /^efsp-.*\.html$/.test(name)).sort();
 const categories = fs.readdirSync('english-for-work').filter(name => name.endsWith('.html')).map(name => `english-for-work/${name}`);
 const paths = ['efsp.html', ...categories, ...courses];
@@ -63,14 +65,14 @@ async function geometry(page, path, width, expanded) {
           }));
           assert.equal(cells.length, courses.length);
           assert.ok(cells.every(([w, h]) => Math.abs(w - cells[0][0]) < 1 && Math.abs(h - cells[0][1]) < 1));
-          assert.equal(cells.length, 8 * 9, 'Eight columns and nine rows');
+          assert.equal(cells.length, 8 * 10, 'Eight columns and ten rows');
           assert.ok(cells.every(([w, h]) => Math.abs(w - h) < 1), 'Square, equally spaced cells');
           for (const [index, [w, h, x, y]] of cells.entries()) {
             assert.ok(Math.abs(x - cells[0][2] - (index % 8) * w) < 1, 'Even horizontal spacing');
             assert.ok(Math.abs(y - cells[0][3] - Math.floor(index / 8) * h) < 1, 'Even vertical spacing');
           }
         }
-        const art = await page.locator('.work-medical-icon').evaluateAll(async nodes => {
+        const art = await page.locator('.work-medical-icon,.work-specialist-icon').evaluateAll(async nodes => {
           return Promise.all(nodes.map(async node => {
             const url = getComputedStyle(node).backgroundImage.match(/url\(["']?(.*?)["']?\)/)?.[1];
             const image = new Image();
@@ -79,13 +81,13 @@ async function geometry(page, path, width, expanded) {
             return image.naturalWidth > 0 && image.naturalHeight > 0;
           }));
         });
-        assert.ok(art.every(Boolean), `Medical illustrations load on ${path}`);
-        if (medicalPages.includes(path)) {
+        assert.ok(art.every(Boolean), `Profession illustrations load on ${path}`);
+        if (illustratedPages.includes(path)) {
           assert.equal(art.length, 2, 'Both the course and sticky-menu illustration must load');
           report.medicalArtChecks += art.length;
           assert.equal(await page.locator('.work-conversation[open]').count(), 0);
         }
-        if (['efsp.html', 'english-for-work/health-life-sciences.html', ...medicalPages].includes(path) && [390,1280].includes(width)) {
+        if (['efsp.html', 'english-for-work/health-life-sciences.html', ...illustratedPages].includes(path) && [390,1280].includes(width)) {
           await page.screenshot({path: `${output}/after-${path.replaceAll('/', '-')}-${width}.png`});
         }
         if (!courses.includes(path)) continue;
@@ -94,7 +96,7 @@ async function geometry(page, path, width, expanded) {
         // Reveal nested conversations, models, and complete prompt text too.
         await page.evaluate(() => document.querySelectorAll('main details').forEach(node => { node.open = true; }));
         await geometry(page, path, width, true);
-        if (medicalPages.includes(path) && [390,1280].includes(width)) {
+        if (illustratedPages.includes(path) && [390,1280].includes(width)) {
           await page.locator('#module-1-cloze').scrollIntoViewIfNeeded();
           await page.screenshot({path: `${output}/dialogue-${path}-${width}.png`});
           await page.locator('#ai-practice').scrollIntoViewIfNeeded();

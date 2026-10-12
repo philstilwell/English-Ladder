@@ -151,6 +151,7 @@ def build(slug):
     out = OUT / f'{slug}-english-book.pdf'
     b = design.Book(title=book['title'], slug=slug, units=book['units'], out=out)
     b.key_gap_spacing = 6
+    b.balanced_answer_columns = book.get('balanced_answer_columns', False)
     b.bank_seed = slug
     front(b, book)
     for i, unit in enumerate(b.units):

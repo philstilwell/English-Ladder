@@ -12,6 +12,7 @@ import re
 from pathlib import Path
 from work_occupations import occupation_courses, source_paths
 from work_medical import medical_courses, source_paths as medical_source_paths
+from work_specialists import specialist_courses, source_paths as specialist_source_paths
 from work_books import book_href
 
 ROOT = Path(__file__).resolve().parent
@@ -255,7 +256,7 @@ def read_cases():
                 raise ValueError("Case outside a course")
             function, brief, model = line.split("|", 2)
             result[slug].append(dict(function=function, brief=brief, model=model))
-    for course in occupation_courses() + medical_courses():
+    for course in occupation_courses() + medical_courses() + specialist_courses():
         result[course['slug']] = [m['case'] for m in course['modules']]
     return result
 
@@ -278,7 +279,7 @@ def scope_note(track):
 
 
 def load_tracks():
-    tracks = json.loads((CONTENT / "courses.json").read_text()) + occupation_courses() + medical_courses()
+    tracks = json.loads((CONTENT / "courses.json").read_text()) + occupation_courses() + medical_courses() + specialist_courses()
     glossary = dict(line.split('|', 1) for line in (CONTENT / 'glossary.txt').read_text().splitlines()
                     if line and not line.startswith('#'))
     glossary = {key.casefold(): value for key, value in glossary.items()}
@@ -338,7 +339,7 @@ def load_tracks():
 
 def content_hash():
     files = [CONTENT / "courses.json", CONTENT / "cases.txt", CONTENT / "glossary.txt", Path(__file__)]
-    files += [ROOT / 'work_occupations.py', *source_paths(), *medical_source_paths()]
+    files += [ROOT / 'work_occupations.py', *source_paths(), *medical_source_paths(), *specialist_source_paths()]
     return hashlib.sha256(b"".join(p.read_bytes() for p in files)).hexdigest()
 
 

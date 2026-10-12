@@ -74,6 +74,30 @@ class LessonRepairTests(unittest.TestCase):
         self.assertEqual(2, saved['editorial_check']['generation_attempts'])
         self.assertEqual(['vocabulary'], saved['editorial_check']['repaired_sections'])
 
+    def test_full_draft_repair_and_review_share_pro_high_configuration(self):
+        bad = copy.deepcopy(self.lesson)
+        bad['vocabulary'].pop()
+        client, calls = self.simulate([
+            bad,
+            lambda request: draft_response(self.lesson, request, bad),
+            approved_review(),
+        ])
+        u.generate_lesson(client, self.news, self.level, self.date)
+
+        self.assertEqual(3, len(calls))
+        for stage, request in zip(('full draft', 'targeted repair', 'editorial review'), calls):
+            with self.subTest(stage=stage):
+                self.assertEqual('gemini-3.1-pro-preview', request['model'])
+                config = request['config']
+                self.assertEqual('high', config['thinking_config']['thinking_level'])
+                self.assertNotIn('thinking_budget', config['thinking_config'])
+                self.assertEqual(65536, config['max_output_tokens'])
+                self.assertEqual('application/json', config['response_mime_type'])
+
+        self.assertIn('reading', calls[0]['config']['response_json_schema']['required'])
+        self.assertEqual(['vocabulary'], calls[1]['config']['response_json_schema']['required'])
+        self.assertIn('level_checks', calls[2]['config']['response_json_schema']['required'])
+
     def test_grammar_repair_copies_the_selected_reading_sentence_exactly(self):
         bad = copy.deepcopy(self.lesson)
         bad['grammar']['example_quote'] = 'This quotation does not appear in the story.'

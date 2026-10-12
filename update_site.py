@@ -14,10 +14,10 @@ from urllib.request import Request, urlopen
 
 import feedparser
 from bs4 import BeautifulSoup
+from lesson_model import MODEL_NAME, structured_generation_config
 from lesson_levels import STORY_TITLE_GUIDANCE, format_language_policy
 
 
-MODEL_NAME = "gemini-2.5-flash"
 LESSON_LIMIT = 14
 ARCHIVE_SCHEMA_VERSION = 1
 ARCHIVE_DIR = Path("archive/lessons")
@@ -1429,9 +1429,9 @@ def generate_lesson(client, news_item, level, release_dt, *, initial_state=None,
                 contents=(build_repair_prompt(lesson_data, news_item, level, repair_fields, issues)
                           if repair_fields else build_prompt(news_item, level,
                               revision_instructions(lesson_data, level, issues) if lesson_data else None)),
-                config={"response_mime_type": "application/json",
-                        "response_json_schema": (build_repair_schema(lesson_data, level, repair_fields)
-                                                 if repair_fields else build_response_schema(level, news_item))})
+                config=structured_generation_config(
+                    build_repair_schema(lesson_data, level, repair_fields)
+                    if repair_fields else build_response_schema(level, news_item)))
             try:
                 candidate = parse_lesson_response(response)
                 if not isinstance(candidate, dict):

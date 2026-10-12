@@ -283,7 +283,7 @@ jobs:
 
       - name: Run checks
         run: |
-          python -m py_compile update_site.py lesson_evidence.py lesson_checkpoint.py lesson_run.py generation_retry.py workflow_checkpoint.py daily_images.py verify_discover.py
+          python -m py_compile update_site.py lesson_model.py lesson_evidence.py lesson_checkpoint.py lesson_run.py generation_retry.py workflow_checkpoint.py daily_images.py verify_discover.py
           python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Resolve daily release date

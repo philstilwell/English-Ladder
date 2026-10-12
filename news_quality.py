@@ -2,6 +2,7 @@
 import json
 import re
 from datetime import datetime, timezone
+from lesson_model import structured_generation_config
 from lesson_levels import LANGUAGE_POLICY_VERSION, LEVEL_CHECKS, STORY_TITLE_GUIDANCE, format_language_policy
 
 
@@ -110,10 +111,8 @@ For every blocking issue or failed check, identify the problematic term or field
 Approve only if every check passes. If not, list concrete changes, not generic advice. Return the supplied JSON schema.
 \n'''+STORY_TITLE_GUIDANCE+'\n'+GUIDANCE+'\n'+format_language_policy(level)+'\nDATA:\n'+json.dumps(payload,ensure_ascii=False)
     from generation_retry import generate_with_retry
-    response=generate_with_retry(client,model=model,contents=prompt,config={
-        'response_mime_type':'application/json',
-        'response_json_schema':review_response_schema(),
-        'max_output_tokens':12288,'thinking_config':{'thinking_budget':8192}})
+    response=generate_with_retry(client,model=model,contents=prompt,
+        config=structured_generation_config(review_response_schema()))
     if not isinstance(response.text, str) or not response.text.strip():
         raise ValueError('Editorial review returned no JSON text.')
     raw=json.loads(response.text)

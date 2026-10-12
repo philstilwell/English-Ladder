@@ -204,8 +204,9 @@ class ReviewPolicyTests(unittest.TestCase):
     def test_reviewer_has_reasoning_room_without_weakening_the_response_contract(self):
         request, _, _ = self.capture_review()
         config = request['config']
-        self.assertEqual(8192, config['thinking_config']['thinking_budget'])
-        self.assertEqual(12288, config['max_output_tokens'])
+        self.assertEqual('high', config['thinking_config']['thinking_level'])
+        self.assertNotIn('thinking_budget', config['thinking_config'])
+        self.assertEqual(65536, config['max_output_tokens'])
         self.assertEqual('application/json', config['response_mime_type'])
         self.assertEqual(news_quality.review_response_schema(), config['response_json_schema'])
 

@@ -1,0 +1,125 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "President Zelensky supports an 'energy ceasefire'.",
+      "Ukraine's leader says he will support such a truce if Moscow does.",
+      "Donald Trump said Russia and Ukraine agreed to this 'energy ceasefire'.",
+      "But President Zelensky said Russia continued to hit power plants.",
+      "Russia attacked Ukrainian energy places after Trump's announcement.",
+      "For many months, Ukraine and Russia have attacked each other's energy buildings.",
+      "These attacks caused problems with energy for both sides.",
+      "Russia said its attacks were fair because these places helped Ukraine's army."
+    ],
+    "vocabulary": [
+      {
+        "term": "supports",
+        "part_of_speech": "verb",
+        "definition": "to give help or approval to something or someone."
+      },
+      {
+        "term": "ceasefire",
+        "part_of_speech": "noun",
+        "definition": "an agreement to stop fighting for a period of time."
+      },
+      {
+        "term": "agreed",
+        "part_of_speech": "verb",
+        "definition": "past tense of 'agree'; to say 'yes' to a plan or idea."
+      },
+      {
+        "term": "power plants",
+        "part_of_speech": "noun phrase",
+        "definition": "large buildings where electricity is made."
+      },
+      {
+        "term": "attacked",
+        "part_of_speech": "verb",
+        "definition": "past tense of 'attack'; to hurt or try to destroy something or someone."
+      },
+      {
+        "term": "energy",
+        "part_of_speech": "noun",
+        "definition": "power from fuel or electricity that can be used to make things work."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かや誰かに助けや賛成を与えること。",
+      "ko": "어떤 것이나 누군가에게 도움이나 동의를 주는 것.",
+      "zh-Hans": "给予某事或某人帮助或赞同。",
+      "es": "Dar ayuda o aprobación a algo o a alguien.",
+      "pt-BR": "Dar ajuda ou aprovação a algo ou alguém.",
+      "fr": "Donner de l'aide ou son approbation à quelque chose ou à quelqu'un.",
+      "de": "Jemandem oder etwas Hilfe oder Zustimmung geben."
+    },
+    {
+      "id": 1,
+      "ja": "一定期間、戦いをやめるという合意。",
+      "ko": "일정 기간 동안 싸움을 멈추기로 하는 합의.",
+      "zh-Hans": "一项在一段时间内停止战斗的协议。",
+      "es": "Un acuerdo para dejar de luchar por un período de tiempo.",
+      "pt-BR": "Um acordo para parar de lutar por um período de tempo.",
+      "fr": "Un accord pour arrêter de se battre pendant une certaine période.",
+      "de": "Eine Vereinbarung, für eine bestimmte Zeit aufzuhören zu kämpfen."
+    },
+    {
+      "id": 2,
+      "ja": "計画や考えに「はい」と言ったこと。",
+      "ko": "계획이나 생각에 '예'라고 말했다.",
+      "zh-Hans": "对一个计划或想法说了“是”。",
+      "es": "Se dijo 'sí' a un plan o idea.",
+      "pt-BR": "Disse 'sim' a um plano ou ideia.",
+      "fr": "A dit 'oui' à un plan ou une idée.",
+      "de": "Einem Plan oder einer Idee zugestimmt haben."
+    },
+    {
+      "id": 3,
+      "ja": "電気が作られる大きな建物。",
+      "ko": "전기가 만들어지는 큰 건물.",
+      "zh-Hans": "制造电的大型建筑物。",
+      "es": "Edificios grandes donde se produce electricidad.",
+      "pt-BR": "Grandes edifícios onde a eletricidade é produzida.",
+      "fr": "De grands bâtiments où l'électricité est produite.",
+      "de": "Große Gebäude, in denen Elektrizität hergestellt wird."
+    },
+    {
+      "id": 4,
+      "ja": "何かや誰かを傷つけたり破壊しようとしたりしたこと。",
+      "ko": "어떤 것이나 누군가를 다치게 하거나 파괴하려고 시도했다.",
+      "zh-Hans": "伤害或试图摧毁某物或某人。",
+      "es": "Se hirió o se intentó destruir algo o a alguien.",
+      "pt-BR": "Feriu ou tentou destruir algo ou alguém.",
+      "fr": "A blessé ou essayé de détruire quelque chose ou quelqu'un.",
+      "de": "Jemanden oder etwas verletzt oder versucht haben, es zu zerstören."
+    },
+    {
+      "id": 5,
+      "ja": "物事を動かすために使うことができる、燃料や電気からの力。",
+      "ko": "물건을 작동시키기 위해 사용될 수 있는, 연료나 전기에서 나오는 힘.",
+      "zh-Hans": "来自燃料或电力，可用于使事物运转的能量。",
+      "es": "El poder del combustible o la electricidad que se puede usar para hacer que las cosas funcionen.",
+      "pt-BR": "Força de combustível ou eletricidade que pode ser usada para fazer as coisas funcionarem.",
+      "fr": "La puissance provenant du carburant ou de l'électricité qui peut être utilisée pour faire fonctionner les choses.",
+      "de": "Kraft aus Kraftstoff oder Elektrizität, die dazu verwendet werden kann, Dinge zum Laufen zu bringen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-12T07:30:42.109231+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

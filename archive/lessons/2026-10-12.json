@@ -1,0 +1,731 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-12",
+  "release_iso": "2026-10-12T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Sun, 11 Oct 2026 21:36:40 GMT",
+    "retrieved_at": "2026-10-12T07:22:30.684359+00:00",
+    "title": "Zelensky backs Trump's 'energy ceasefire' but says Russia continues to hit power plants",
+    "summary": "Ukraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement.",
+    "evidence_text": "Zelensky backs Trump's 'energy ceasefire' but says Russia continues to hit power plants\nUkraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement.\nDonald Trump has claimed that Russia and Ukraine have agreed to an \"energy ceasefire\", with Kyiv saying it would support such a move but Moscow yet to comment.\nUkrainian President Volodymyr Zelensky initially expressed surprise at the announcement, before saying Kyiv would support it if Moscow did. He also accused Russia of striking Ukrainian energy facilities after Trump's post.\nFor months, Ukraine and Russia have been exchanging strikes on energy infrastructure.\nThe attacks have disrupted energy supplies on both sides.\nMoscow said the installations it hits were legitimate targets because they supported Ukraine's military operation, while Zelensky has characterised Ukrainian attacks deep inside Russian territory as part of an effort to \"reduce Russia's ability to finance the war\".\nTrump has been urging Ukraine to stop strikes on Russian oil infrastructure - which Kyiv says are vital to curtailing revenue for Moscow's war machine - so Russia can fulfil a recently-struck deal to release diesel to the US and the global market.\nThe diesel deal, temporarily undoing sanctions on Russian imports, is attracting growing criticism. Zelensky called it a gift to Russian President Vladimir Putin. European officials and some US politicians, including from Trump's Republican party, have said they do not support it.\nThe US president suggested that it was \"time for Ukraine to get a new president\".\nThe US president insisted that it was \"effective immediately\" but provided no details.\nThe deal is Trump's latest effort to lower domestic fuel prices ahead of the midterm elections, having spent months grappling with the political consequences of the war with Iran which has pushed up global fuel prices, particularly those for diesel.\nThat has soured Trump's standing with the American public, who have been stung by the higher pump prices and knock-on effects that led to across-the-board inflation.\nSeven senators, including three Democrats and four Republicans, have published a statement saying Trump's deal \"runs directly counter\" to a law that had explicitly banned Russian energy imports.\n\"Congress was clear: the US should not import oil from Russia until it ends its aggression against Ukraine and ceases threats against our Nato Allies,\" they said, urging the Trump administration to \"reverse course\".\nRepublican Senator Thom Tillis, one of the seven, told NBC News that the deal \"absolutely will\" put American lives at risk.",
+    "evidence_retrieved_at": "2026-10-12T07:22:30.684359+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c6pvg4jyz1m0o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "What does 'energy ceasefire' mean in this news story? I think it means a stop to attacks on...",
+          "Imagine you live in a city with no electricity. What problems might you have? People would have problems with..."
+        ],
+        "title": "Zelensky Backs Energy Ceasefire Amid Continued Attacks",
+        "overview": "Ukraine's leader says he will support a stop to energy attacks if Russia also agrees, but attacks continue.",
+        "topic": "International conflict and energy",
+        "vocabulary": [
+          {
+            "term": "supports",
+            "part_of_speech": "verb",
+            "definition": "to give help or approval to something or someone."
+          },
+          {
+            "term": "ceasefire",
+            "part_of_speech": "noun",
+            "definition": "an agreement to stop fighting for a period of time."
+          },
+          {
+            "term": "agreed",
+            "part_of_speech": "verb",
+            "definition": "past tense of 'agree'; to say 'yes' to a plan or idea."
+          },
+          {
+            "term": "power plants",
+            "part_of_speech": "noun phrase",
+            "definition": "large buildings where electricity is made."
+          },
+          {
+            "term": "attacked",
+            "part_of_speech": "verb",
+            "definition": "past tense of 'attack'; to hurt or try to destroy something or someone."
+          },
+          {
+            "term": "energy",
+            "part_of_speech": "noun",
+            "definition": "power from fuel or electricity that can be used to make things work."
+          }
+        ],
+        "grammar": {
+          "concept": "Using 'because' to show reason",
+          "explanation": "'Because' helps us explain why something happens. It connects an action to its reason. For example, 'I am happy because it is sunny' shows the reason for happiness.",
+          "example_quote": "Russia said its attacks were fair because these places helped Ukraine's army."
+        },
+        "quiz": [
+          {
+            "question": "What does President Zelensky say about an 'energy ceasefire'?",
+            "options": [
+              "He does not want it.",
+              "He supports it if Russia also does.",
+              "He thinks it is already happening."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the reading says President Zelensky supports it.",
+              "Yes, the text says Ukraine's leader will support a truce if Moscow does.",
+              "No, President Zelensky supports it if Russia agrees, not that it is already active."
+            ]
+          },
+          {
+            "question": "Who said Russia and Ukraine agreed to an 'energy ceasefire'?",
+            "options": [
+              "President Zelensky.",
+              "Donald Trump.",
+              "The BBC news."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Donald Trump made this claim.",
+              "Yes, Donald Trump said Russia and Ukraine agreed to this plan.",
+              "No, the BBC is the news source, but Donald Trump made the claim."
+            ]
+          },
+          {
+            "question": "What happened after Donald Trump's announcement about the ceasefire?",
+            "options": [
+              "All attacks stopped.",
+              "Russia attacked Ukrainian energy places.",
+              "Ukraine agreed to stop all attacks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Russia continued to attack power plants after the announcement.",
+              "Yes, Russia attacked Ukrainian energy places after Trump's announcement.",
+              "No, President Zelensky said Russia continued attacks, meaning Ukraine did not stop all attacks unilaterally."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'ceasefire' in this story?",
+            "options": [
+              "A new power plant.",
+              "An agreement to stop fighting.",
+              "A type of energy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a 'ceasefire' is not a building. It's about stopping a conflict.",
+              "Yes, a 'ceasefire' is an agreement between two sides to stop fighting.",
+              "No, 'ceasefire' is about stopping conflict, not a type of energy."
+            ]
+          },
+          {
+            "question": "Why did Russia say its attacks were fair?",
+            "options": [
+              "Because Ukraine also attacked first.",
+              "Because the places helped Ukraine's army.",
+              "Because the attacks did not cause problems."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text says Russia claimed its attacks were fair because of military support, not who attacked first.",
+              "Yes, Russia said its attacks were fair because these places helped Ukraine's army.",
+              "No, the text says these attacks caused problems with energy for both sides."
+            ]
+          },
+          {
+            "question": "What did Ukraine and Russia do for many months?",
+            "options": [
+              "They built new power plants.",
+              "They attacked each other's energy buildings.",
+              "They discussed peace plans."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the text states they attacked energy buildings, not built them.",
+              "Yes, for many months, Ukraine and Russia have attacked each other's energy buildings.",
+              "No, the text mentions continued attacks, not peace discussions."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "President Zelensky supports an 'energy ceasefire'.",
+          "Ukraine's leader says he will support such a truce if Moscow does.",
+          "Donald Trump said Russia and Ukraine agreed to this 'energy ceasefire'.",
+          "But President Zelensky said Russia continued to hit power plants.",
+          "Russia attacked Ukrainian energy places after Trump's announcement.",
+          "For many months, Ukraine and Russia have attacked each other's energy buildings.",
+          "These attacks caused problems with energy for both sides.",
+          "Russia said its attacks were fair because these places helped Ukraine's army."
+        ],
+        "sentence_evidence": [
+          "Zelensky backs Trump's 'energy ceasefire' but says Russia continues to hit power plants",
+          "Ukraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement.",
+          "Donald Trump has claimed that Russia and Ukraine have agreed to an \"energy ceasefire\", with Kyiv saying it would support such a move but Moscow yet to comment.",
+          "Zelensky backs Trump's 'energy ceasefire' but says Russia continues to hit power plants",
+          "Ukrainian President Volodymyr Zelensky initially expressed surprise at the announcement, before saying Kyiv would support it if Moscow did. He also accused Russia of striking Ukrainian energy facilities after Trump's post.",
+          "For months, Ukraine and Russia have been exchanging strikes on energy infrastructure.",
+          "The attacks have disrupted energy supplies on both sides.",
+          "Moscow said the installations it hits were legitimate targets because they supported Ukraine's military operation, while Zelensky has characterised Ukrainian attacks deep inside Russian territory as part of an effort to \"reduce Russia's ability to finance the war\"."
+        ],
+        "editorial_check": {
+          "date": "2026-10-12T07:23:15.123579+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Vocabulary items like 'supports', 'ceasefire', 'agreed', 'power plants', 'attacked', and 'energy' are common and useful for A1-A2 learners. Definitions are clear and contextual, and no reserved vocabulary is used from the provided list."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses straightforward, neutral everyday English without bureaucratic phrasing, idioms, or slang. Direct verbs and explicit subjects are used consistently throughout the reading and explanations."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Reading sentences are short, with an average of approximately 11 words, staying well below the 18-word editing guide. Grammar explanations and quiz feedback use simple clauses and familiar connectors. Discussion prompts include a simple sentence frame and a hypothetical scenario."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson appropriately tests main ideas, clearly stated details, contextual vocabulary, and the 'because' grammar pattern. Quiz options are plausible and short, avoiding dense reasoning or reliance on outside knowledge, suitable for A1-A2."
+            }
+          },
+          "content_digest": "9492498e1bcfffc45145d0b15edbf270afe0a2dd93b367290c064a71a8790e83"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Zelensky said he would support an energy ceasefire \"if Russia also agreed.\" What do you think is the importance of this condition?",
+          "The article discusses a deal that undoes some sanctions. In your opinion, when might it be necessary for countries to temporarily reverse sanctions?"
+        ],
+        "title": "Zelensky's Conditional Support for Energy Ceasefire Amid New Strikes",
+        "overview": "This lesson explores Ukraine's conditional agreement to an \"energy ceasefire\" proposed by Donald Trump, contrasting it with continued Russian strikes and significant criticism of a related diesel deal.",
+        "topic": "International Relations and Energy Policy",
+        "vocabulary": [
+          {
+            "term": "stated",
+            "part_of_speech": "verb",
+            "definition": "said something clearly and formally."
+          },
+          {
+            "term": "initially",
+            "part_of_speech": "adverb",
+            "definition": "at the beginning; at first."
+          },
+          {
+            "term": "announcement",
+            "part_of_speech": "noun",
+            "definition": "a public statement giving information about something new or important."
+          },
+          {
+            "term": "urging",
+            "part_of_speech": "verb",
+            "definition": "strongly advising or trying to persuade someone to do something."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "the basic systems and structures, like roads and power plants, that a country needs."
+          },
+          {
+            "term": "fulfill",
+            "part_of_speech": "verb",
+            "definition": "to do or complete what is required or promised."
+          },
+          {
+            "term": "undoes",
+            "part_of_speech": "verb",
+            "definition": "cancels the effect of something; reverses a previous action."
+          },
+          {
+            "term": "criticism",
+            "part_of_speech": "noun",
+            "definition": "comments expressing disapproval of someone or something, often pointing out faults."
+          },
+          {
+            "term": "facilities",
+            "part_of_speech": "noun",
+            "definition": "buildings, services, or equipment provided for a particular purpose."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to tell someone what another person said, thought, or felt without directly quoting them. They can introduce reported speech or ideas. Common reporting verbs include \"said,\" \"stated,\" \"claimed,\" \"accused,\" and \"suggested.\" The tense of the reported clause often shifts (e.g., present becomes past) if the reporting verb is in the past tense.",
+          "example_quote": "Ukrainian President Volodymyr Zelensky stated he would support an \"energy ceasefire\" if Russia also agreed."
+        },
+        "quiz": [
+          {
+            "question": "What was Ukrainian President Volodymyr Zelensky's initial reaction to Donald Trump's announcement of an energy ceasefire?",
+            "options": [
+              "He immediately supported it.",
+              "He expressed surprise.",
+              "He rejected the idea completely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states Zelensky only agreed to support it conditionally, not immediately.",
+              "Zelensky initially expressed surprise at the announcement before stating his conditional support.",
+              "Zelensky expressed surprise, but then stated he would support it if Russia also agreed, not that he rejected it."
+            ]
+          },
+          {
+            "question": "Under what main condition did Zelensky say he would support an \"energy ceasefire\"?",
+            "options": [
+              "If the US provided more military aid.",
+              "If Russia also agreed to stop striking energy infrastructure.",
+              "If the diesel deal was canceled."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article mentions Zelensky's condition was related to Russia's agreement, not military aid.",
+              "Zelensky stated he would support the ceasefire \"if Russia also agreed,\" according to the reading.",
+              "While Zelensky criticized the diesel deal, his condition for the ceasefire was Russia's agreement."
+            ]
+          },
+          {
+            "question": "What did Zelensky accuse Russia of doing after Trump's announcement of an energy ceasefire?",
+            "options": [
+              "Increasing diplomatic talks.",
+              "Striking Ukrainian energy facilities.",
+              "Withdrawing troops from key areas."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states Zelensky accused Russia of strikes, not diplomatic efforts.",
+              "Zelensky accused Russia of striking Ukrainian energy facilities even after the announcement of a ceasefire.",
+              "The article mentions strikes, not troop withdrawal, by Russia after the announcement."
+            ]
+          },
+          {
+            "question": "Why has Trump been urging Ukraine to stop strikes on Russian oil infrastructure?",
+            "options": [
+              "To help Russia improve its economy.",
+              "To allow Russia to fulfill a deal to release diesel to the global market.",
+              "To show a sign of goodwill to Russia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Trump's motivation, as stated, was to allow Russia to fulfill a deal, not directly to help Russia's economy.",
+              "The article says Trump is urging Ukraine to stop strikes so Russia can fulfill a deal to release diesel.",
+              "The main reason given is related to a diesel deal, not primarily goodwill."
+            ]
+          },
+          {
+            "question": "What is the general reaction to the diesel deal that temporarily \"undoes\" sanctions on Russian imports?",
+            "options": [
+              "It has received strong international support.",
+              "It is attracting significant criticism.",
+              "Most countries are indifferent to it."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article clearly states the deal \"is attracting significant criticism.\"",
+              "The deal is attracting considerable disapproval from various officials and politicians.",
+              "The article specifies that the deal is receiving \"significant criticism,\" not indifference."
+            ]
+          },
+          {
+            "question": "In the sentence, \"Ukrainian President Volodymyr Zelensky stated he would support an 'energy ceasefire' if Russia also agreed,\" what is the function of the word \"stated\"?",
+            "options": [
+              "It expresses a command.",
+              "It acts as a reporting verb.",
+              "It describes a future action."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Stated\" is not a command; it conveys information.",
+              "\"Stated\" is a reporting verb used to convey what Zelensky said without quoting his exact words.",
+              "While it reports a future condition, its grammatical function is to report speech, not simply describe a future action."
+            ]
+          },
+          {
+            "question": "What does the term \"infrastructure\" refer to in the context of the article's discussion of energy targets?",
+            "options": [
+              "Important political agreements.",
+              "Essential basic systems like roads and power plants.",
+              "Military defense strategies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Infrastructure\" refers to physical systems, not political agreements.",
+              "In the article, \"energy infrastructure\" refers to facilities like power plants and oil structures, which are essential basic systems.",
+              "The term is used to describe physical targets related to energy, not military strategies."
+            ]
+          },
+          {
+            "question": "What did Donald Trump suggest about Zelensky in the article?",
+            "options": [
+              "That Zelensky should be honored for his leadership.",
+              "That it was \"time for Ukraine to get a new president.\"",
+              "That Zelensky was effectively handling the energy crisis."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states Trump accused Zelensky of causing problems and suggested he be replaced.",
+              "Trump is quoted as suggesting that \"it was 'time for Ukraine to get a new president'.\"",
+              "Trump's comments were critical, accusing Zelensky of making problems, not praising his handling of the crisis."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Ukrainian President Volodymyr Zelensky stated he would support an \"energy ceasefire\" if Russia also agreed.",
+          "He initially expressed surprise at Donald Trump's announcement of this ceasefire.",
+          "Donald Trump claimed that Russia and Ukraine had already agreed to an \"energy ceasefire,\" though Moscow has yet to comment.",
+          "However, Zelensky later accused Russia of striking Ukrainian energy facilities after Trump's announcement.",
+          "Trump has been urging Ukraine to stop strikes on Russian oil infrastructure.",
+          "He wants Russia to fulfill a deal to release diesel to the global market.",
+          "This diesel deal, which temporarily undoes sanctions on Russian imports, is attracting significant criticism.",
+          "Zelensky himself called it \"a gift to Russian President Vladimir Putin.\"",
+          "Some European officials and US politicians also stated they do not support the deal.",
+          "Trump suggested that it was \"time for Ukraine to get a new president.\"",
+          "For many months, Ukraine and Russia have been exchanging strikes on each other's energy infrastructure."
+        ],
+        "sentence_evidence": [
+          "Ukraine's leader says he will support such a truce if Moscow does, after initially expressing surprise at Donald Trump's announcement.",
+          "Ukrainian President Volodymyr Zelensky initially expressed surprise at the announcement, before saying Kyiv would support it if Moscow did. He also accused Russia of striking Ukrainian energy facilities after Trump's post.",
+          "Donald Trump has claimed that Russia and Ukraine have agreed to an \"energy ceasefire\", with Kyiv saying it would support such a move but Moscow yet to comment.",
+          "Ukrainian President Volodymyr Zelensky initially expressed surprise at the announcement, before saying Kyiv would support it if Moscow did. He also accused Russia of striking Ukrainian energy facilities after Trump's post.",
+          "Trump has been urging Ukraine to stop strikes on Russian oil infrastructure - which Kyiv says are vital to curtailing revenue for Moscow's war machine - so Russia can fulfil a recently-struck deal to release diesel to the US and the global market.",
+          "Trump has been urging Ukraine to stop strikes on Russian oil infrastructure - which Kyiv says are vital to curtailing revenue for Moscow's war machine - so Russia can fulfil a recently-struck deal to release diesel to the US and the global market.",
+          "The diesel deal, temporarily undoing sanctions on Russian imports, is attracting growing criticism. Zelensky called it a gift to Russian President Vladimir Putin. European officials and some US politicians, including from Trump's Republican party, have said they do not support it.",
+          "The diesel deal, temporarily undoing sanctions on Russian imports, is attracting growing criticism. Zelensky called it a gift to Russian President Vladimir Putin. European officials and some US politicians, including from Trump's Republican party, have said they do not support it.",
+          "The diesel deal, temporarily undoing sanctions on Russian imports, is attracting growing criticism. Zelensky called it a gift to Russian President Vladimir Putin. European officials and some US politicians, including from Trump's Republican party, have said they do not support it.",
+          "The US president suggested that it was \"time for Ukraine to get a new president\".",
+          "For months, Ukraine and Russia have been exchanging strikes on energy infrastructure."
+        ],
+        "editorial_check": {
+          "date": "2026-10-12T07:24:50.839357+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items like 'stated', 'urging', 'infrastructure', and 'fulfill' are useful general news and work terms appropriate for B1-B2 learners. Definitions are clear and contextual, and no reserved vocabulary targets have been borrowed. The overall burden is suitable."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a consistent, natural, and neutral news English register throughout the reading, explanations, questions, and feedback. It avoids slang, overly academic language, or patronizing tones."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The reading sentences are varied but manageable (mostly 9-19 words), and pronoun references are clear. The grammar explanation is precise and uses everyday language. Definitions, questions, and feedback are clear and easy to understand for the target level."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson combines comprehension with understanding relationships between details (e.g., conditions for ceasefire, reasons for urging actions), contextual vocabulary, and grammar transfer. It goes beyond simple paraphrasing and provides sufficient learning value for B1-B2."
+            }
+          },
+          "content_digest": "23532bdd4a10d80d698983e631ab6bb56b4736e151d460e02a1b14d03bbec3d7"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain how the differing justifications for military strikes by Ukraine and Russia illustrate their conflicting objectives in the ongoing conflict.",
+          "Considering the global implications of such deals, how might an 'energy ceasefire' or a controversial fuel deal affect international diplomatic efforts and public opinion?"
+        ],
+        "title": "Zelensky Conditionally Backs 'Energy Ceasefire' Amid Russian Strikes",
+        "overview": "Ukrainian President Zelensky has conditionally supported a proposed energy ceasefire with Russia, as claimed by Donald Trump, even while Russia continues its strikes on Ukrainian power infrastructure and a controversial US-Russia fuel deal draws international criticism.",
+        "topic": "International Relations, Geopolitics, Energy Policy, Ukraine War",
+        "vocabulary": [
+          {
+            "term": "conditional",
+            "part_of_speech": "adjective",
+            "definition": "Dependent on certain terms or circumstances; not absolute."
+          },
+          {
+            "term": "insisted",
+            "part_of_speech": "verb",
+            "definition": "Demanded something forcefully, not accepting any refusal."
+          },
+          {
+            "term": "advocating",
+            "part_of_speech": "verb",
+            "definition": "Publicly supporting or recommending a particular cause or policy."
+          },
+          {
+            "term": "condemnation",
+            "part_of_speech": "noun",
+            "definition": "The expression of very strong disapproval; censure."
+          },
+          {
+            "term": "explicitly",
+            "part_of_speech": "adverb",
+            "definition": "In a clear and detailed manner, leaving no room for confusion or doubt."
+          },
+          {
+            "term": "sentiment echoed",
+            "part_of_speech": "phrase",
+            "definition": "An opinion or feeling that was repeated or shared by others."
+          },
+          {
+            "term": "backlash",
+            "part_of_speech": "noun",
+            "definition": "A strong, negative reaction by a large number of people, especially to a political or social development."
+          },
+          {
+            "term": "soured",
+            "part_of_speech": "verb",
+            "definition": "Caused to become unpleasant, difficult, or problematic; spoiled."
+          },
+          {
+            "term": "retaliatory",
+            "part_of_speech": "adjective",
+            "definition": "Characterized by an action that harms someone in return for an injury or offense."
+          },
+          {
+            "term": "curtailing",
+            "part_of_speech": "verb",
+            "definition": "Reducing in extent or quantity; imposing a restriction on."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses",
+          "explanation": "Participle clauses, often introduced by present participles (-ing forms) or past participles (-ed forms), provide additional information about the main clause. They can concisely express cause, result, or simultaneous actions. In the example sentence, 'emphasizing' introduces a clause that clarifies the core message accompanying the senators' urging, adding context without a separate conjunction and full clause.",
+          "example_quote": "They urged the Trump administration to 'reverse course', emphasizing that Congress's intention was clear: no Russian oil imports until aggression against Ukraine ceases."
+        },
+        "quiz": [
+          {
+            "question": "What is the central paradox presented in the report regarding the 'energy ceasefire'?",
+            "options": [
+              "Zelensky's full endorsement of the truce while Trump denies its existence.",
+              "Russia's enthusiastic agreement contrasting with Ukraine's skepticism.",
+              "Ukraine's conditional support for a truce while simultaneously facing Russian strikes."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Zelensky's support is conditional, and Trump claimed the ceasefire was in effect, he didn't deny it.",
+              "The report states Moscow has yet to comment, not that it enthusiastically agrees.",
+              "Correct. The core paradox is Zelensky offering conditional support for a ceasefire while Russia, which Trump claims has agreed, continues to strike Ukrainian facilities."
+            ]
+          },
+          {
+            "question": "What does 'conditional support' for the 'energy ceasefire' imply about Zelensky's position?",
+            "options": [
+              "He fully endorses the truce regardless of other factors.",
+              "His support depends on specific terms being met by Russia.",
+              "He is merely observing the situation without committing either way."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Conditional' means not absolute; his support is tied to specific prerequisites.",
+              "Correct. 'Conditional' implies that his backing is contingent upon certain circumstances or requirements, specifically Russia's reciprocation.",
+              "He has expressed support, but it is not a neutral observation; it is an offer subject to conditions."
+            ]
+          },
+          {
+            "question": "Why is Trump 'advocating' for Ukraine to stop strikes on Russian oil infrastructure?",
+            "options": [
+              "To pressure Russia into ending its military operations immediately.",
+              "To enable Russia to fulfill a deal to release diesel to the global market.",
+              "To prevent Ukraine from gaining a strategic advantage in the war."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states Trump's motivation is linked to a diesel deal, not directly ending military operations.",
+              "Correct. Trump's stated reason is to allow Russia to release diesel, which implies fulfilling a recently struck deal.",
+              "The reading does not suggest Trump's aim is to prevent Ukrainian strategic advantage, but rather to facilitate a diesel deal."
+            ]
+          },
+          {
+            "question": "The 'controversial diesel deal... has drawn increasing condemnation.' What does 'condemnation' primarily refer to in this context?",
+            "options": [
+              "Legal penalties imposed on the deal's participants.",
+              "Strong public and political disapproval of the agreement.",
+              "A formal process of revoking the deal's legitimacy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Condemnation' refers to strong disapproval, not specifically legal penalties, although legal issues might arise from it.",
+              "Correct. 'Condemnation' means expressing strong disapproval, which aligns with the criticism from officials and politicians mentioned.",
+              "While criticism might lead to such a process, 'condemnation' itself is the expression of disapproval, not the process of revoking."
+            ]
+          },
+          {
+            "question": "Who 'explicitly' called the diesel deal a 'gift' to Russian President Vladimir Putin?",
+            "options": [
+              "Donald Trump.",
+              "European officials.",
+              "Volodymyr Zelensky."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Trump is promoting the deal, not calling it a 'gift' to Putin in a negative sense.",
+              "European officials 'echoed' Zelensky's sentiment, but Zelensky was the one who 'explicitly called' it a gift.",
+              "Correct. The reading states, 'Zelensky explicitly called the agreement a 'gift' to Russian President Vladimir Putin.'"
+            ]
+          },
+          {
+            "question": "The reading mentions 'political backlash from a separate conflict.' What does 'backlash' signify here?",
+            "options": [
+              "Public support for Trump's foreign policy.",
+              "A strong negative reaction from the public or political figures.",
+              "A renewed effort to resolve a previous disagreement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Backlash' is a strong negative reaction, not support.",
+              "Correct. 'Backlash' refers to a strong and adverse reaction, indicating significant opposition or criticism.",
+              "'Backlash' implies a negative consequence or reaction, not an effort to resolve something."
+            ]
+          },
+          {
+            "question": "What consequence arose from 'higher pump prices and subsequent knock-on effects'?",
+            "options": [
+              "Increased support for Trump's energy policies.",
+              "An improvement in Trump's standing with the American public.",
+              "A decline in Trump's public approval, partly due to widespread inflation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading explicitly states these effects 'soured Trump's standing,' indicating a negative outcome, not increased support.",
+              "The phrase 'soured Trump's standing' means his public approval worsened, not improved.",
+              "Correct. 'Soured Trump's standing' and 'contributing to widespread inflation' directly link these effects to a decline in his public approval."
+            ]
+          },
+          {
+            "question": "In the sentence, 'They urged the Trump administration to 'reverse course', emphasizing that Congress's intention was clear...', what is the function of the participle clause starting with 'emphasizing'?",
+            "options": [
+              "It states a separate, unrelated action occurring after the urging.",
+              "It clarifies the manner or reason for their urging the administration.",
+              "It serves as the main verb of the sentence, expressing the primary action."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Participle clauses typically relate directly to the main clause, often providing context, cause, or additional detail, not an unrelated action.",
+              "Correct. The participle clause 'emphasizing' explains what message accompanied or motivated their urging, adding clarity to their action.",
+              "The main verb is 'urged'; 'emphasizing' is part of a subordinate clause modifying the main action."
+            ]
+          },
+          {
+            "question": "When the text states Ukraine and Russia 'engaged in months of retaliatory strikes,' what does 'retaliatory' imply about the nature of these attacks?",
+            "options": [
+              "The strikes were unprovoked acts of aggression by both sides.",
+              "The attacks were primarily aimed at testing new military technology.",
+              "The strikes were responses to previous attacks initiated by the opposing side."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Retaliatory' means reacting to an attack, suggesting they were not unprovoked.",
+              "The focus of 'retaliatory' is the nature of the response, not the technology used.",
+              "Correct. 'Retaliatory' indicates that these strikes were carried out in response to actions previously taken by the other side."
+            ]
+          },
+          {
+            "question": "According to the reading, what is Kyiv's justification for its attacks on Russian territory, contrasted with Moscow's view of its own strikes?",
+            "options": [
+              "Kyiv views its attacks as a means to increase Russia's war funding, while Moscow sees its strikes as a form of self-defense.",
+              "Kyiv aims to diminish Russia's financial capacity for war, whereas Moscow considers its targets legitimate for military support.",
+              "Both Kyiv and Moscow agree their respective strikes are purely defensive measures."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Kyiv aims to reduce Russia's war funding, not increase it. Moscow's strikes are for military support, not explicitly self-defense in this context.",
+              "Correct. Kyiv aims at 'curtailing Russia's war finance capabilities,' while Moscow views its targets as 'legitimate targets supporting its military operations.'",
+              "Their justifications are presented as contrasting, not in agreement on purely defensive measures."
+            ]
+          },
+          {
+            "question": "What specific outcome has resulted from the 'sustained attacks' on energy supplies across both nations?",
+            "options": [
+              "A complete collapse of both countries' power grids.",
+              "Disruption of energy supplies on both sides.",
+              "An immediate end to all military operations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states 'disrupted energy supplies,' not a 'complete collapse.'",
+              "Correct. The reading explicitly states these attacks 'have consequently disrupted energy supplies across both nations.'",
+              "The reading states that energy supplies were disrupted, but it does not claim that military operations ceased as a direct result."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Volodymyr Zelensky has expressed conditional support for a proposed 'energy ceasefire' between Ukraine and Russia, which Donald Trump claimed was already in effect.",
+          "Trump had insisted that the truce was 'effective immediately' but did not provide any specific details.",
+          "Zelensky initially expressed surprise at the announcement, then confirmed Kyiv would back the measure if Moscow also agreed.",
+          "However, Ukraine's President also accused Russia of striking Ukrainian energy facilities after Trump's public post.",
+          "Trump has been advocating for Ukraine to halt its strikes on Russian oil infrastructure, arguing this would allow Russia to release diesel to the US and global market.",
+          "This controversial diesel deal, which temporarily lifts sanctions on Russian imports, has drawn increasing condemnation.",
+          "Zelensky explicitly called the agreement a 'gift' to Russian President Vladimir Putin, a sentiment echoed by European officials and some US politicians.",
+          "Trump's latest initiative aims to lower domestic fuel prices before the midterm elections, following months of political backlash from a separate conflict.",
+          "The higher pump prices and subsequent knock-on effects have soured Trump's standing with the American public, contributing to widespread inflation.",
+          "Ukraine and Russia have engaged in months of retaliatory strikes targeting each other's energy infrastructure.",
+          "Moscow asserts these installations are legitimate targets supporting its military operations, while Kyiv views its attacks as essential to curtailing Russia's war finance capabilities.",
+          "These sustained attacks have consequently disrupted energy supplies across both nations.",
+          "Seven senators from both major US parties have issued a statement declaring Trump's deal 'runs directly counter' to a law prohibiting Russian energy imports.",
+          "They urged the Trump administration to 'reverse course', emphasizing that Congress's intention was clear: no Russian oil imports until aggression against Ukraine ceases.",
+          "Republican Senator Thom Tillis stated that the deal 'absolutely will' endanger American lives."
+        ],
+        "sentence_evidence": [
+          "Donald Trump has claimed that Russia and Ukraine have agreed to an \"energy ceasefire\", with Kyiv saying it would support such a move but Moscow yet to comment.",
+          "The US president insisted that it was \"effective immediately\" but provided no details.",
+          "Ukrainian President Volodymyr Zelensky initially expressed surprise at the announcement, before saying Kyiv would support it if Moscow did. He also accused Russia of striking Ukrainian energy facilities after Trump's post.",
+          "Ukrainian President Volodymyr Zelensky initially expressed surprise at the announcement, before saying Kyiv would support it if Moscow did. He also accused Russia of striking Ukrainian energy facilities after Trump's post.",
+          "Trump has been urging Ukraine to stop strikes on Russian oil infrastructure - which Kyiv says are vital to curtailing revenue for Moscow's war machine - so Russia can fulfil a recently-struck deal to release diesel to the US and the global market.",
+          "The diesel deal, temporarily undoing sanctions on Russian imports, is attracting growing criticism. Zelensky called it a gift to Russian President Vladimir Putin. European officials and some US politicians, including from Trump's Republican party, have said they do not support it.",
+          "The diesel deal, temporarily undoing sanctions on Russian imports, is attracting growing criticism. Zelensky called it a gift to Russian President Vladimir Putin. European officials and some US politicians, including from Trump's Republican party, have said they do not support it.",
+          "The deal is Trump's latest effort to lower domestic fuel prices ahead of the midterm elections, having spent months grappling with the political consequences of the war with Iran which has pushed up global fuel prices, particularly those for diesel.",
+          "That has soured Trump's standing with the American public, who have been stung by the higher pump prices and knock-on effects that led to across-the-board inflation.",
+          "For months, Ukraine and Russia have been exchanging strikes on energy infrastructure.",
+          "Moscow said the installations it hits were legitimate targets because they supported Ukraine's military operation, while Zelensky has characterised Ukrainian attacks deep inside Russian territory as part of an effort to \"reduce Russia's ability to finance the war\".",
+          "The attacks have disrupted energy supplies on both sides.",
+          "Seven senators, including three Democrats and four Republicans, have published a statement saying Trump's deal \"runs directly counter\" to a law that had explicitly banned Russian energy imports.",
+          "\"Congress was clear: the US should not import oil from Russia until it ends its aggression against Ukraine and ceases threats against our Nato Allies,\" they said, urging the Trump administration to \"reverse course\".",
+          "Republican Senator Thom Tillis, one of the seven, told NBC News that the deal \"absolutely will\" put American lives at risk."
+        ],
+        "editorial_check": {
+          "date": "2026-10-12T07:26:12.692432+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets \"conditional\", \"advocating\", \"condemnation\", \"explicitly\", \"sentiment echoed\", \"backlash\", \"soured\", \"retaliatory\", and \"curtailing\" are precise, transferable, and offer meaningful advanced distinctions suitable for C1-Higher learners. No reserved vocabulary items from other levels were used as teaching targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a polished, natural reporting and analysis register, with accurate attribution and calibrated certainty, appropriate for C1-Higher. It uses phrases like \"expressed conditional support\", \"advocating for\", \"drawn increasing condemnation\", and \"sentiment echoed\"."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The definitions are concise and illuminating, such as \"conditional: Dependent on certain terms or circumstances; not absolute.\" The grammar explanation uses controlled complex sentences to explain the function of participle clauses clearly and relates it to the example quote. Feedback is precise and avoids overly simplistic language."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson develops supported inference, stance, and cause and effect, especially in quiz questions about paradoxes, implications of conditional support, and the function of participle clauses. Distractors are plausible, and explanations clarify why each fails, providing substantive learning beyond elementary recall. For example, Q1 and Q10 require synthesis of information."
+            }
+          },
+          "content_digest": "26509f13082e38336c58c32466e3f6336487338bc2ce8846fb88b5adde2b634b"
+        }
+      }
+    }
+  }
+}

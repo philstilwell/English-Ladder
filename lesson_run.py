@@ -7,14 +7,21 @@ from pathlib import Path
 from lesson_checkpoint import CheckpointStore
 
 ROOT = Path(__file__).resolve().parent
+GENERATION_POLICY_FILES = (
+    'update_site.py',
+    'news_quality.py',
+    'lesson_model.py',
+    'lesson_levels.py',
+    'lesson_evidence.py',
+    'lesson_run.py',
+)
 MAX_SOURCE_ARTICLES_PER_RUN = 4
 SOURCE_FAILURES_BEFORE_WORLD_FALLBACK = 1
 
 
 def generation_policy_fingerprint():
     digest = hashlib.sha256()
-    for name in ('update_site.py', 'news_quality.py', 'lesson_levels.py',
-                 'lesson_evidence.py', 'lesson_run.py'):
+    for name in GENERATION_POLICY_FILES:
         digest.update(name.encode())
         digest.update((ROOT / name).read_bytes())
     return digest.hexdigest()

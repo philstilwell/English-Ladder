@@ -13,17 +13,28 @@ ROOT = Path(__file__).resolve().parents[1]
 class EditorialCorrectionTests(unittest.TestCase):
     @staticmethod
     def edition(date):
-        return json.loads((ROOT / 'archive' / 'lessons' / f'{date}.json').read_text())
+        path = ROOT / 'archive' / 'lessons' / f'{date}.json'
+        if not path.is_file():
+            raise unittest.SkipTest(f'{date} is no longer in the retained daily archive')
+        return json.loads(path.read_text())
 
     @staticmethod
     def lesson_nodes(date, level):
-        paths = [ROOT / 'news' / date / f'{level}.html', ROOT / f'{level}.html']
-        for path in paths:
-            soup = BeautifulSoup(path.read_text(), 'html.parser')
-            node = soup.find(class_='daily-lesson', attrs={'data-lesson-key': date})
-            if node is None:
-                raise AssertionError(f'{path}: missing {date} lesson')
-            yield path, node
+        permanent = ROOT / 'news' / date / f'{level}.html'
+        soup = BeautifulSoup(permanent.read_text(), 'html.parser')
+        node = soup.find(class_='daily-lesson', attrs={'data-lesson-key': date})
+        if node is None:
+            raise AssertionError(f'{permanent}: missing {date} lesson')
+        yield permanent, node
+
+        # Level feeds intentionally retain only the latest 14 editions. Check
+        # this copy while it is present without making an older retained lesson
+        # fail merely because it has rotated out of the feed.
+        feed = ROOT / f'{level}.html'
+        soup = BeautifulSoup(feed.read_text(), 'html.parser')
+        node = soup.find(class_='daily-lesson', attrs={'data-lesson-key': date})
+        if node is not None:
+            yield feed, node
 
     def assert_rendered_quiz_item(self, date, level, index, item):
         for path, node in self.lesson_nodes(date, level):
@@ -33,14 +44,26 @@ class EditorialCorrectionTests(unittest.TestCase):
                 question.find('p', recursive=False).get_text(' ', strip=True),
                 str(path),
             )
+            buttons = question.select('button')
             options = [re.sub(r'^[abc]\)\s*', '', button.get_text(' ', strip=True))
-                       for button in question.select('button')]
+                       for button in buttons]
             self.assertEqual(sorted(item['options']), sorted(options), str(path))
             expected_answer = item['options'][item['correct_option_index']]
             rendered_answer = [re.sub(r'^[abc]\)\s*', '', button.get_text(' ', strip=True))
-                               for button in question.select('button')
+                               for button in buttons
                                if button.get('data-bg') == '#e6ffe6']
             self.assertEqual([expected_answer], rendered_answer, str(path))
+            expected_feedback = {
+                option: ('Correct: ' if option_index == item['correct_option_index']
+                         else 'Incorrect: ') + item['option_feedback'][option_index]
+                for option_index, option in enumerate(item['options'])
+            }
+            rendered_feedback = {
+                re.sub(r'^[abc]\)\s*', '', button.get_text(' ', strip=True)):
+                    button.get('data-feedback')
+                for button in buttons
+            }
+            self.assertEqual(expected_feedback, rendered_feedback, str(path))
 
     def assert_prompts_contain(self, date, level, required, forbidden):
         for path, node in self.lesson_nodes(date, level):
@@ -129,8 +152,11 @@ class EditorialCorrectionTests(unittest.TestCase):
             ['supporting its military operations'],
         )
         current = json.loads((ROOT / 'lesson-data.json').read_text())
-        self.assertIn("supporting Ukraine's military operations", current['advanced']['brief'])
-        self.assertNotIn('supporting its military operations', current['advanced']['brief'])
+        if current['advanced'].get('url') == 'news/2026-10-12/advanced.html':
+            self.assertIn("supporting Ukraine's military operations",
+                          current['advanced']['brief'])
+            self.assertNotIn('supporting its military operations',
+                             current['advanced']['brief'])
 
 
 if __name__ == '__main__':

@@ -575,7 +575,7 @@
             "option_feedback": [
               "Correct. The clause is separated by a comma and provides extra background detail that could be removed without making the sentence ungrammatical.",
               "Incorrect. It does not define or restrict the noun; the context already establishes whose friendship is being discussed.",
-              "Incorrect. It functions as an adjective phrase modifying \"friendship\", not an adverb modifying a verb of time."
+              "Incorrect. This is a non-defining relative clause adding information about friendship. It does not explain when Cranston felt despair."
             ]
           },
           {
@@ -621,7 +621,7 @@
             ]
           },
           {
-            "question": "Why did the local justice of the peace order a \"post-mortem\" examination?",
+            "question": "What is the purpose of the post-mortem examination mentioned in the reading?",
             "options": [
               "To medically determine the exact circumstances surrounding Mitte's death.",
               "To review his final acting portrayal before it was released to the public.",
@@ -660,33 +660,42 @@
           "In a statement shared with the Hollywood Reporter, Aaron Paul, who played one of the show's lead characters, Jesse Pinkman, said he was at a loss and heartbroken."
         ],
         "editorial_check": {
-          "date": "2026-10-13T07:20:31.663651+00:00",
-          "model": "gemini-3.1-pro-preview",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary items, including 'levity', 'underbelly', and 'authenticity', are precise and appropriate for the C1 level, successfully avoiding any of the reserved lower-level terms."
+          "date": "2026-10-13",
+          "status": "revised",
+          "method": "Codex editorial correction against the saved BBC source evidence; no new independent model approval",
+          "changes": [
+            "Corrected advanced Q6 feedback to identify the non-defining relative clause accurately.",
+            "Corrected advanced Q10 to ask the supported purpose of the post-mortem without claiming the justice ordered it."
+          ],
+          "previous_review": {
+            "date": "2026-10-13T07:20:31.663651+00:00",
+            "model": "gemini-3.1-pro-preview",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary items, including 'levity', 'underbelly', and 'authenticity', are precise and appropriate for the C1 level, successfully avoiding any of the reserved lower-level terms."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The reading passage maintains a respectful and appropriately formal journalistic tone suitable for an obituary and retrospective piece at the advanced level."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The grammar explanation for non-defining relative clauses is clear and accurate. The option feedback provides concrete, text-supported reasoning for why each answer is right or wrong."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The quiz effectively tests advanced comprehension, including making supported inferences about professional relationships, and uses clever distractors such as confusing a medical 'post-mortem' with an artistic/project review."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The reading passage maintains a respectful and appropriately formal journalistic tone suitable for an obituary and retrospective piece at the advanced level."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The grammar explanation for non-defining relative clauses is clear and accurate. The option feedback provides concrete, text-supported reasoning for why each answer is right or wrong."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The quiz effectively tests advanced comprehension, including making supported inferences about professional relationships, and uses clever distractors such as confusing a medical 'post-mortem' with an artistic/project review."
-            }
-          },
-          "content_digest": "d40fc0825e743165e89229bd3214bf9c694cb008d694e5a78deaf401c908bdd5"
+            "content_digest": "d40fc0825e743165e89229bd3214bf9c694cb008d694e5a78deaf401c908bdd5"
+          }
         }
       }
     }

@@ -5186,6 +5186,131 @@
         "https://dictionary.cambridge.org/grammar/british-grammar/to",
         "https://dictionary.cambridge.org/grammar/british-grammar/word-patterns-look-forward-to"
       ]
+    },
+    {
+      "number": 46,
+      "title": "One of + plural noun",
+      "level": "A2–B1",
+      "category": "Quantity and reference",
+      "goal": "Describe one member of a group with a plural noun and the right main verb.",
+      "rules": [
+        "Use “one of” to select a single member from a group. The noun naming that group is plural: “one of the books”, “one of my friends”, “one of these ideas”. Keep the word that identifies the group, such as “the”, “my”, or “these”. Compare “one book” with “one of the books”.",
+        "Keep the noun plural after a describing word too: “one of the best ideas”, not “one of the best idea”. Use the correct plural form; it does not always end in -s. For example, say “one of the children”, not “one of the childs”.",
+        "When “one of …” is the subject of a simple sentence, its main verb agrees with “one”: “One of the books is missing” and “One of my friends has a bicycle”. The group noun stays plural, but we are describing one member. Compare “The books are missing” with “One of the books is missing”. This lesson covers these simple sentences; verbs inside added “who” or “that” clauses need their own analysis."
+      ],
+      "cards": [
+        {
+          "label": "ONE MEMBER, A PLURAL GROUP",
+          "example": "one book / one of the books; one friend / one of my friends",
+          "note": "After “one of”, name the group with a plural noun."
+        },
+        {
+          "label": "AFTER A DESCRIBING WORD",
+          "example": "This is one of the best ideas. One of the children is smiling.",
+          "note": "“Ideas” remains plural after “best”. “Children” is the plural of “child”."
+        },
+        {
+          "label": "THE MAIN VERB FOLLOWS ONE",
+          "example": "One of the books is missing. One of my friends has a bicycle.",
+          "note": "Use “is” and “has” for the single member, even though “books” and “friends” are plural."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Complete: “I borrowed one of the ___ from the shelf.”",
+          "options": [
+            {
+              "text": "book",
+              "correct": false,
+              "feedback": "“One of” selects a member from a group. Name the group with the plural “books”."
+            },
+            {
+              "text": "books",
+              "correct": true,
+              "feedback": "“Books” names the group; “one of” selects a single book from it."
+            },
+            {
+              "text": "book’s",
+              "correct": false,
+              "feedback": "The apostrophe does not make a noun plural. Use “books” to name this group."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete: “This is one of the best ___ in the town.”",
+          "options": [
+            {
+              "text": "café",
+              "correct": false,
+              "feedback": "The group noun after “one of” must be plural, even with “best” before it."
+            },
+            {
+              "text": "café’s",
+              "correct": false,
+              "feedback": "This apostrophe form is not the plural needed here. Use “cafés”."
+            },
+            {
+              "text": "cafés",
+              "correct": true,
+              "feedback": "“One of the best cafés” describes a single café within a group of excellent cafés."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete: “One of the children ___ a red backpack.”",
+          "options": [
+            {
+              "text": "has",
+              "correct": true,
+              "feedback": "The main verb agrees with “one”: “One of the children has a red backpack”."
+            },
+            {
+              "text": "have",
+              "correct": false,
+              "feedback": "“Children” names the group, but the subject refers to one child. Use “has”."
+            },
+            {
+              "text": "are",
+              "correct": false,
+              "feedback": "The sentence says that one child possesses a backpack, so it needs “has”."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You and your friends planned a picnic. Exactly one friend is bringing a blanket. Which message is grammatically correct and fits the plan?",
+        "options": [
+          {
+            "text": "One of my friend is bringing a blanket.",
+            "correct": false,
+            "feedback": "The group noun needs its plural form: “one of my friends”."
+          },
+          {
+            "text": "One of my friends is bringing a blanket.",
+            "correct": true,
+            "feedback": "“Friends” names the group, and “is bringing” describes the one friend bringing the blanket."
+          },
+          {
+            "text": "One of my friends are bringing a blanket.",
+            "correct": false,
+            "feedback": "The main verb agrees with “one”, so use “is bringing”, not “are bringing”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-46-one-of-plural-noun-student-workbook.pdf",
+        "concept-46-one-of-plural-noun-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-13",
+      "related": [
+        21,
+        23,
+        27
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/countability-one-of",
+        "https://www.languagecouncils.sg/goodenglish/resources/grammar-rules/subject-verb-agreement"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

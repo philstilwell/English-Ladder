@@ -1,0 +1,124 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "US actor RJ Mitte has died at the age of 34.",
+      "He played the son of Walter White in the drama series Breaking Bad.",
+      "Mitte lived with cerebral palsy.",
+      "He worked to help people with disabilities.",
+      "He created a foundation to support his community.",
+      "Police confirmed his death, but they do not know the cause yet.",
+      "One actor from the show shared a kind message about his friend."
+    ],
+    "vocabulary": [
+      {
+        "term": "actor",
+        "part_of_speech": "noun",
+        "definition": "A person who performs in movies, plays, or television shows."
+      },
+      {
+        "term": "series",
+        "part_of_speech": "noun",
+        "definition": "A television show that tells a story over many episodes."
+      },
+      {
+        "term": "disabilities",
+        "part_of_speech": "noun",
+        "definition": "Physical or mental conditions that can make some everyday tasks harder to do."
+      },
+      {
+        "term": "foundation",
+        "part_of_speech": "noun",
+        "definition": "An organization created to give money and support to others."
+      },
+      {
+        "term": "community",
+        "part_of_speech": "noun",
+        "definition": "A group of people living in the same place or sharing a common interest."
+      },
+      {
+        "term": "cause",
+        "part_of_speech": "noun",
+        "definition": "The reason why something happens."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "映画、演劇、テレビ番組に出演する人。",
+      "ko": "영화, 연극, 텔레비전 프로그램에서 연기하는 사람.",
+      "zh-Hans": "在电影、戏剧或电视节目中表演的人。",
+      "es": "Una persona que actúa en películas, obras de teatro o programas de televisión.",
+      "pt-BR": "Uma pessoa que atua em filmes, peças de teatro ou programas de televisão.",
+      "fr": "Une personne qui joue dans des films, des pièces de théâtre ou des émissions de télévision.",
+      "de": "Eine Person, die in Filmen, Theaterstücken oder Fernsehsendungen auftritt."
+    },
+    {
+      "id": 1,
+      "ja": "多くのエピソードを通して物語を語るテレビ番組。",
+      "ko": "여러 에피소드에 걸쳐 이야기를 전달하는 텔레비전 프로그램.",
+      "zh-Hans": "一部通过许多集讲述故事的电视节目。",
+      "es": "Un programa de televisión que narra una historia a lo largo de muchos episodios.",
+      "pt-BR": "Um programa de televisão que conta uma história ao longo de muitos episódios.",
+      "fr": "Une émission de télévision qui raconte une histoire sur de nombreux épisodes.",
+      "de": "Eine Fernsehsendung, die eine Geschichte über viele Episoden hinweg erzählt."
+    },
+    {
+      "id": 2,
+      "ja": "日常のタスクを困難にする可能性のある身体的または精神的な状態。",
+      "ko": "일부 일상적인 작업을 더 어렵게 만들 수 있는 신체적 또는 정신적 상태.",
+      "zh-Hans": "使一些日常任务更难完成的身体或精神状况。",
+      "es": "Condiciones físicas o mentales que pueden dificultar la realización de algunas tareas cotidianas.",
+      "pt-BR": "Condições físicas ou mentais que podem tornar algumas tarefas diárias mais difíceis de realizar.",
+      "fr": "Des conditions physiques ou mentales qui peuvent rendre certaines tâches quotidiennes plus difficiles à accomplir.",
+      "de": "Körperliche oder geistige Zustände, die es erschweren können, manche alltäglichen Aufgaben zu erledigen."
+    },
+    {
+      "id": 3,
+      "ja": "他者に資金と支援を提供するために設立された組織。",
+      "ko": "다른 사람들에게 돈과 지원을 제공하기 위해 설립된 조직.",
+      "zh-Hans": "为他人提供资金和支持而创建的组织。",
+      "es": "Una organización creada para dar dinero y apoyo a otros.",
+      "pt-BR": "Uma organização criada para dar dinheiro e apoio a outras pessoas.",
+      "fr": "Une organisation créée pour donner de l'argent et du soutien à autrui.",
+      "de": "Eine Organisation, die gegründet wurde, um anderen Geld und Unterstützung zu geben."
+    },
+    {
+      "id": 4,
+      "ja": "同じ場所に住んでいるか、共通の興味を持つ人々のグループ。",
+      "ko": "같은 장소에 살거나 공통의 관심사를 공유하는 사람들의 집단.",
+      "zh-Hans": "居住在同一地点或拥有共同兴趣的一群人。",
+      "es": "Un grupo de personas que viven en el mismo lugar o comparten un interés común.",
+      "pt-BR": "Um grupo de pessoas que vivem no mesmo lugar ou compartilham um interesse comum.",
+      "fr": "Un groupe de personnes vivant au même endroit ou partageant un intérêt commun.",
+      "de": "Eine Gruppe von Menschen, die am selben Ort leben oder ein gemeinsames Interesse teilen."
+    },
+    {
+      "id": 5,
+      "ja": "何かが起こる理由。",
+      "ko": "어떤 일이 일어나는 이유.",
+      "zh-Hans": "某事发生的原因。",
+      "es": "La razón por la que algo sucede.",
+      "pt-BR": "A razão pela qual algo acontece.",
+      "fr": "La raison pour laquelle quelque chose arrive.",
+      "de": "Der Grund, warum etwas passiert."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-13T07:25:03.897711+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

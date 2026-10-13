@@ -1,0 +1,189 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Hundreds of people have shown strong opposition to a proposed data centre.",
+      "Opponents are concerned about its potential effects on the local area.",
+      "A company wants to construct a complex on a 101-acre site in Gwynedd.",
+      "The proposed site is located between Caernarfon and Y Felinheli.",
+      "Canolfan Ddata Menai, the company, states the project could create more than 900 temporary construction roles and 200 permanent positions.",
+      "Approximately 300 individuals gathered for a rally in Caernarfon to express their disagreement.",
+      "Additionally, over 22,500 people have signed a document opposing the development.",
+      "Local resident Ernest Dyson believes the project would cause \"the destruction of the most beautiful part of the Menai Strait.\"",
+      "He also stated that \"The people of the area are custodians of it.\"",
+      "Plaid Cymru MP Liz Saville Roberts highlighted the need for proper regulations and community benefits from large-scale developments.",
+      "She also noted Wales has a history of extractive industries that often left little benefit for communities.",
+      "Canolfan Ddata Menai claims the project will have \"no undue impact\" on the Menai Strait."
+    ],
+    "vocabulary": [
+      {
+        "term": "opposition",
+        "part_of_speech": "noun",
+        "definition": "strong disagreement with something."
+      },
+      {
+        "term": "proposed",
+        "part_of_speech": "adjective",
+        "definition": "suggested for consideration or discussion."
+      },
+      {
+        "term": "complex",
+        "part_of_speech": "noun",
+        "definition": "a group of related buildings or facilities."
+      },
+      {
+        "term": "site",
+        "part_of_speech": "noun",
+        "definition": "a place where something is located or where an event takes place."
+      },
+      {
+        "term": "temporary",
+        "part_of_speech": "adjective",
+        "definition": "lasting for only a limited period of time; not permanent."
+      },
+      {
+        "term": "permanent",
+        "part_of_speech": "adjective",
+        "definition": "lasting for a long time or forever; not temporary."
+      },
+      {
+        "term": "gathered",
+        "part_of_speech": "verb",
+        "definition": "came together in one place."
+      },
+      {
+        "term": "rally",
+        "part_of_speech": "noun",
+        "definition": "a large public meeting, especially one held to show support for or opposition to something."
+      },
+      {
+        "term": "custodians",
+        "part_of_speech": "noun",
+        "definition": "people who are responsible for taking care of or protecting something."
+      },
+      {
+        "term": "regulations",
+        "part_of_speech": "noun",
+        "definition": "official rules or laws that control how something is done."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かに対する強い不同意。",
+      "ko": "어떤 것에 대한 강한 반대.",
+      "zh-Hans": "对某事物的强烈反对或不同意。",
+      "es": "Un desacuerdo fuerte con algo.",
+      "pt-BR": "Uma forte discordância com algo.",
+      "fr": "Un fort désaccord avec quelque chose.",
+      "de": "Eine starke Meinungsverschiedenheit über etwas."
+    },
+    {
+      "id": 1,
+      "ja": "検討または議論のために提案された。",
+      "ko": "고려하거나 논의하기 위해 제안된.",
+      "zh-Hans": "被提出来供考虑或讨论的。",
+      "es": "Sugerido para ser considerado o discutido.",
+      "pt-BR": "Sugerido para ser considerado ou discutido.",
+      "fr": "Suggéré pour être examiné ou discuté.",
+      "de": "Zur Prüfung oder Diskussion vorgeschlagen."
+    },
+    {
+      "id": 2,
+      "ja": "関連する建物や施設が集まったもの。",
+      "ko": "서로 관련된 건물이나 시설들의 집합.",
+      "zh-Hans": "一组相互关联的建筑物或设施。",
+      "es": "Un grupo de edificios o instalaciones relacionados.",
+      "pt-BR": "Um grupo de edifícios ou instalações relacionadas.",
+      "fr": "Un groupe de bâtiments ou d'installations liés.",
+      "de": "Eine Gruppe zusammenhängender Gebäude oder Einrichtungen."
+    },
+    {
+      "id": 3,
+      "ja": "何かが位置している場所、またはイベントが行われる場所。",
+      "ko": "어떤 것이 위치하거나 사건이 발생하는 장소.",
+      "zh-Hans": "某物所在的地方，或者某事件发生的地方。",
+      "es": "Un lugar donde algo está ubicado o donde ocurre un evento.",
+      "pt-BR": "Um lugar onde algo está localizado ou onde um evento acontece.",
+      "fr": "Un endroit où quelque chose est situé ou où un événement a lieu.",
+      "de": "Ein Ort, an dem sich etwas befindet oder an dem ein Ereignis stattfindet."
+    },
+    {
+      "id": 4,
+      "ja": "限られた期間だけ続くもので、永続的ではない。",
+      "ko": "제한된 기간 동안만 지속되고 영구적이지 않은.",
+      "zh-Hans": "只持续有限的一段时间，而非永久的。",
+      "es": "Que dura solo un período de tiempo limitado; no permanente.",
+      "pt-BR": "Que dura apenas por um período limitado de tempo; não permanente.",
+      "fr": "Qui dure seulement une période de temps limitée; non permanent.",
+      "de": "Nur für einen begrenzten Zeitraum andauernd; nicht dauerhaft."
+    },
+    {
+      "id": 5,
+      "ja": "長期間、または永遠に続くもので、一時的ではない。",
+      "ko": "오랫동안 또는 영원히 지속되고 일시적이지 않은.",
+      "zh-Hans": "持续很长时间或永远的；非暂时的。",
+      "es": "Que dura mucho tiempo o para siempre; no temporal.",
+      "pt-BR": "Que dura por muito tempo ou para sempre; não temporário.",
+      "fr": "Qui dure longtemps ou pour toujours; non temporaire.",
+      "de": "Für eine lange Zeit oder für immer andauernd; nicht vorübergehend."
+    },
+    {
+      "id": 6,
+      "ja": "一箇所に集まった。",
+      "ko": "한 장소에 모였다.",
+      "zh-Hans": "聚集到一起。",
+      "es": "Se juntaron en un mismo lugar.",
+      "pt-BR": "Reuniram-se em um só lugar.",
+      "fr": "S'est réuni en un seul endroit.",
+      "de": "Kam an einem Ort zusammen."
+    },
+    {
+      "id": 7,
+      "ja": "特に何かを支持または反対するために開催される大規模な公開会議。",
+      "ko": "특히 어떤 것을 지지하거나 반대하기 위해 열리는 대규모 공개 모임.",
+      "zh-Hans": "一次大型的公众集会，尤其是为了表达对某事物的支持或反对而举行的。",
+      "es": "Una gran reunión pública, especialmente una que se celebra para mostrar apoyo u oposición a algo.",
+      "pt-BR": "Uma grande reunião pública, especialmente uma realizada para mostrar apoio ou oposição a algo.",
+      "fr": "Un grand rassemblement public, notamment un rassemblement organisé pour manifester un soutien ou une opposition à quelque chose.",
+      "de": "Eine große öffentliche Versammlung, insbesondere eine, die abgehalten wird, um Unterstützung für oder Opposition gegen etwas zu zeigen."
+    },
+    {
+      "id": 8,
+      "ja": "何かを世話したり保護したりする責任がある人々。",
+      "ko": "어떤 것을 돌보거나 보호할 책임이 있는 사람들.",
+      "zh-Hans": "负责照看或保护某物的人。",
+      "es": "Personas que son responsables de cuidar o proteger algo.",
+      "pt-BR": "Pessoas que são responsáveis por cuidar ou proteger algo.",
+      "fr": "Des personnes responsables de prendre soin ou de protéger quelque chose.",
+      "de": "Personen, die für die Pflege oder den Schutz von etwas verantwortlich sind."
+    },
+    {
+      "id": 9,
+      "ja": "物事がどのように行われるかを管理する公式の規則や法律。",
+      "ko": "어떤 일이 어떻게 이루어져야 하는지를 통제하는 공식적인 규칙이나 법률.",
+      "zh-Hans": "控制某事如何进行的官方规则或法律。",
+      "es": "Reglas o leyes oficiales que controlan cómo se hace algo.",
+      "pt-BR": "Regras ou leis oficiais que controlam como algo é feito.",
+      "fr": "Des règles ou des lois officielles qui contrôlent la manière dont quelque chose est fait.",
+      "de": "Offizielle Regeln oder Gesetze, die festlegen, wie etwas getan wird."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-13T07:25:24.742469+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

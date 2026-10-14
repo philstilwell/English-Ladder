@@ -1,0 +1,124 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Many young people use technology to help with job applications.",
+      "They use it to write cover letters or CVs.",
+      "This helps candidates send multiple applications at the same time.",
+      "Now, companies receive large volumes of applications.",
+      "Some managers do not blame them because the jobs market is difficult.",
+      "However, some people use the technology to cheat on assessments.",
+      "Employers still want to see the real personality of each person."
+    ],
+    "vocabulary": [
+      {
+        "term": "technology",
+        "part_of_speech": "noun",
+        "definition": "computers, programs, and machines that help people do things."
+      },
+      {
+        "term": "CVs",
+        "part_of_speech": "noun",
+        "definition": "documents that show a person's education and work history."
+      },
+      {
+        "term": "candidates",
+        "part_of_speech": "noun",
+        "definition": "people who are trying to get a job."
+      },
+      {
+        "term": "jobs market",
+        "part_of_speech": "noun",
+        "definition": "the number of jobs available for people who need work."
+      },
+      {
+        "term": "cheat",
+        "part_of_speech": "verb",
+        "definition": "to do something dishonest to get an advantage."
+      },
+      {
+        "term": "personality",
+        "part_of_speech": "noun",
+        "definition": "the character and qualities that make a person who they are."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人が何かをするのに役立つコンピューター、プログラム、機械のこと。",
+      "ko": "사람들이 어떤 일을 하는 데 도움이 되는 컴퓨터, 프로그램, 기계.",
+      "zh-Hans": "帮助人们做事情的电脑、程序和机器。",
+      "es": "Computadoras, programas y máquinas que ayudan a las personas a hacer cosas.",
+      "pt-BR": "Computadores, programas e máquinas que ajudam as pessoas a fazer coisas.",
+      "fr": "Ordinateurs, programmes et machines qui aident les gens à faire des choses.",
+      "de": "Computer, Programme und Maschinen, die Menschen helfen, Dinge zu tun."
+    },
+    {
+      "id": 1,
+      "ja": "個人の学歴や職務経歴を示す書類。",
+      "ko": "개인의 학력과 경력을 보여주는 서류.",
+      "zh-Hans": "展示个人教育背景和工作经历的文件。",
+      "es": "Documentos que muestran la educación y el historial laboral de una persona.",
+      "pt-BR": "Documentos que mostram a formação educacional e o histórico profissional de uma pessoa.",
+      "fr": "Documents qui montrent le parcours scolaire et l'historique professionnel d'une personne.",
+      "de": "Dokumente, die die Ausbildung und Berufserfahrung einer Person zeigen."
+    },
+    {
+      "id": 2,
+      "ja": "仕事を得ようとしている人々。",
+      "ko": "일자리를 얻으려고 노력하는 사람들.",
+      "zh-Hans": "正在努力获得工作的人。",
+      "es": "Personas que intentan conseguir un trabajo.",
+      "pt-BR": "Pessoas que estão tentando conseguir um emprego.",
+      "fr": "Personnes qui essaient d'obtenir un emploi.",
+      "de": "Personen, die versuchen, eine Arbeitsstelle zu bekommen."
+    },
+    {
+      "id": 3,
+      "ja": "仕事が必要な人々に利用可能な仕事の数。",
+      "ko": "일자리가 필요한 사람들을 위해 이용 가능한 일자리의 수.",
+      "zh-Hans": "需要工作的人可以获得的工作岗位的数量。",
+      "es": "La cantidad de trabajos disponibles para personas que necesitan trabajar.",
+      "pt-BR": "O número de empregos disponíveis para pessoas que precisam trabalhar.",
+      "fr": "Le nombre d'emplois disponibles pour les personnes qui ont besoin de travailler.",
+      "de": "Die Anzahl der Arbeitsplätze, die für Menschen verfügbar sind, die Arbeit suchen."
+    },
+    {
+      "id": 4,
+      "ja": "有利な状況を得るために、不正直なことをすること。",
+      "ko": "이득을 얻기 위해 정직하지 않은 행동을 하는 것.",
+      "zh-Hans": "为了获得优势而做不诚实的事情。",
+      "es": "Hacer algo deshonesto para obtener una ventaja.",
+      "pt-BR": "Fazer algo desonesto para conseguir uma vantagem.",
+      "fr": "Faire quelque chose de malhonnête pour obtenir un avantage.",
+      "de": "Etwas Unehrliches tun, um einen Vorteil zu erlangen."
+    },
+    {
+      "id": 5,
+      "ja": "人それぞれをその人たらしめる性格や性質。",
+      "ko": "사람을 그 사람으로 만드는 성격과 특성.",
+      "zh-Hans": "构成一个人特点和品质的性格。",
+      "es": "El carácter y las cualidades que hacen que una persona sea quien es.",
+      "pt-BR": "O caráter e as qualidades que tornam uma pessoa quem ela é.",
+      "fr": "Le caractère et les qualités qui font qu'une personne est ce qu'elle est.",
+      "de": "Die Eigenschaften und Merkmale, die eine Person ausmachen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-14T07:25:40.303698+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

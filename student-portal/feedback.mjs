@@ -1,3 +1,5 @@
+import { validateAssessment, assessmentReferences } from './assessment.mjs';
+
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
 
 function text(value, max = 1500) {
@@ -50,6 +52,20 @@ export class FeedbackStore {
   async fetch(request) {
     const url = new URL(request.url);
     const id = url.pathname.slice(1);
+    if (id === 'assessment') {
+      if (request.method === 'GET') return json({ assessment: await this.storage.get('assessment:current') || null });
+      if (request.method !== 'PUT') return json({ error: 'Method not allowed.' }, 405);
+      let record;
+      try { record = validateAssessment(await request.json()); }
+      catch { return json({ error: 'Please check the assessment format and session references.' }, 400); }
+      const sources = new Map(await Promise.all(record.sourceSessions.map(async sessionId => [sessionId, await this.storage.get(`feedback:${sessionId}`)])));
+      if ([...sources.values()].some(source => !source?.source?.reviewedFullTranscript) || assessmentReferences(record).some(ref => {
+        const coverage = sources.get(ref.sessionId).source;
+        return ref.at < coverage.coverageStart || ref.at > coverage.coverageEnd;
+      })) return json({ error: 'Assessment evidence must refer to this student’s available session transcripts.' }, 400);
+      await this.storage.put({ 'assessment:current': record });
+      return json({ ok: true });
+    }
     if (request.method === 'GET' && !id) {
       const before = url.searchParams.get('before');
       if (before && !FEEDBACK_ID.test(before)) return json({ error: 'Invalid page.' }, 400);

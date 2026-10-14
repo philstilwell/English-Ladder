@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker from '../worker.mjs';
 import { FeedbackStore, validateFeedback } from '../feedback.mjs';
-import { feedback } from './fixture.mjs';
+import { feedback, assessment } from './fixture.mjs';
+import { validateAssessment } from '../assessment.mjs';
 const origin = 'https://ab26.englishladder.com';
 function env() {
  const objects = new Map();
@@ -49,7 +50,7 @@ test('all profile responses omit surnames and retain the chosen nickname',async(
 });
 test('feedback list, detail, and writes require a valid session',async()=>{
  const e=env();
- for(const path of ['/api/feedback','/api/feedback/'+feedback.id]){
+ for(const path of ['/api/feedback','/api/feedback/'+feedback.id,'/api/assessment']){
   for(const method of ['GET','HEAD','PUT']){
    const r=await call(e,path,{method});
    assert.equal(r.status,401);assert.equal(r.headers.get('Cache-Control'),'no-store');
@@ -65,7 +66,7 @@ test('teacher publishes private feedback; student can read but cannot write',asy
  const read=await (await call(e,'/api/feedback/'+feedback.id,{headers:{Cookie:student.cookie}})).json();
  assert.equal(read.title,feedback.title);assert.equal(read.source.noteId,undefined);
  const teacherRead=await (await call(e,'/api/feedback/'+feedback.id,{headers:{Cookie:teacher.cookie}})).json();
- assert.equal(teacherRead.source.noteId,feedback.source.noteId);
+ assert.equal(teacherRead.source.noteId,undefined);
  assert.equal((await call(e,'/api/feedback/2026-09-01-0900',{headers:{Cookie:student.cookie}})).status,404);
 });
 test('student storage is selected by host; neither IDs nor cookies cross accounts',async()=>{
@@ -114,4 +115,50 @@ test('index pagination returns every session once, newest first',async()=>{
  const second=await (await call(e,'/api/feedback?before='+first.nextCursor,{headers:{Cookie:cookie}})).json();
  assert.equal(second.sessions.length,3);assert.equal(second.nextCursor,null);
  assert.equal(new Set([...first.sessions,...second.sessions].map(s=>s.id)).size,103);
+});
+
+function putAssessment(e,cookie,record=assessment,host=origin,originHeader=host){
+ return call(e,'/api/assessment',{method:'PUT',headers:{Cookie:cookie,Origin:originHeader,'Content-Type':'application/json'},body:JSON.stringify(record)},host);
+}
+test('assessment publishing is teacher-only, private, same-origin, and replaces the current assessment',async()=>{
+ const e=env(),teacher=await login(e,'teacher-test'),student=await login(e);
+ assert.deepEqual(await (await call(e,'/api/assessment',{headers:{Cookie:student.cookie}})).json(),{assessment:null});
+ await put(e,teacher.cookie);
+ assert.equal((await putAssessment(e,student.cookie)).status,403);
+ assert.equal((await putAssessment(e,teacher.cookie,assessment,origin,'https://evil.test')).status,403);
+ assert.equal((await putAssessment(e,teacher.cookie)).status,200);
+ const response=await call(e,'/api/assessment',{headers:{Cookie:student.cookie}});
+ assert.equal(response.headers.get('Cache-Control'),'no-store');
+ assert.deepEqual(await response.json(),{assessment});
+ const revised={...assessment,title:'Updated assessment'};
+ assert.equal((await putAssessment(e,teacher.cookie,revised)).status,200);
+ assert.deepEqual(await (await call(e,'/api/assessment',{headers:{Cookie:student.cookie}})).json(),{assessment:revised});
+ assert.equal((await call(e,'/api/assessment',{method:'DELETE',headers:{Cookie:teacher.cookie}})).status,405);
+});
+test('assessments cannot reference another account or unavailable transcript evidence',async()=>{
+ const e=env(),teacher=await login(e,'teacher-test');
+ assert.equal((await putAssessment(e,teacher.cookie)).status,400);
+ await put(e,teacher.cookie);
+ for(const at of ['00:00:59','01:20:01']){
+  const invalid={...assessment,progress:{...assessment.progress,evidence:[{sessionId:feedback.id,at}]}};
+  assert.equal((await putAssessment(e,teacher.cookie,invalid)).status,400);
+ }
+ assert.equal((await putAssessment(e,teacher.cookie)).status,200);
+ const otherHost='https://cd26.englishladder.com',other=await login(e,'teacher-test',otherHost);
+ assert.equal((await call(e,'/api/assessment',{headers:{Cookie:teacher.cookie}},otherHost)).status,401);
+ assert.deepEqual(await (await call(e,'/api/assessment?student=ab26',{headers:{Cookie:other.cookie}},otherHost)).json(),{assessment:null});
+ assert.equal((await putAssessment(e,other.cookie,assessment,otherHost)).status,400);
+});
+test('assessment validation rejects invalid sources and strips unexpected private fields',async()=>{
+ const e=env(),{cookie}=await login(e,'teacher-test');await put(e,cookie);
+ for(const changes of [
+  {scope:'personal'},{assessedOn:'2026-02-30'},{assessedOn:'2026-09-01'},
+  {sourceSessions:[feedback.id,feedback.id]},{sourceSessions:[]},
+  {strengths:[{...assessment.strengths[0],evidence:[{sessionId:'2026-09-01-2057',at:'00:02:00'}]}]},
+  {plan:[]},{summary:'x'.repeat(70000)}
+ ])assert.equal((await putAssessment(e,cookie,{...assessment,...changes})).status,400);
+ const clean=validateAssessment({...assessment,transcript:'raw speech',noteUrl:'https://mynotes.zoom.us/example',studentId:'cd26'});
+ assert.deepEqual(clean,assessment);
+ delete e.FEEDBACK_STORE;
+ assert.equal((await call(e,'/api/assessment',{headers:{Cookie:cookie}})).status,503);
 });

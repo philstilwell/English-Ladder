@@ -162,6 +162,30 @@ summary { cursor:pointer; }
 .pager-link .session-topic { font-size:.68rem; }
 .feedback-message { padding:64px 0; text-align:center; color:var(--muted); font-size:.9rem; }
 .session-summaries { display:grid; gap:18px; }
+.assessment-outline { display:grid; padding:0 10px; }
+.assessment-outline a { display:flex; gap:12px; padding:14px 12px; border-radius:6px; text-decoration:none; color:var(--muted); font-size:.72rem; }
+.assessment-outline a span { color:var(--ink); font-weight:650; }
+.assessment-outline a:hover,.assessment-outline a[aria-current] { background:#edf2ff; color:var(--blue); }
+.assessment-outline a[aria-current] span { color:var(--blue); }
+.assessment-page h2,.assessment-page h3 { scroll-margin-top:24px; }
+.assessment-priority { background:#edf2ff; border-left:3px solid var(--blue); padding:18px 20px; margin-top:24px; }
+.assessment-priority>span { color:var(--blue); font-size:.6rem; letter-spacing:.1em; font-weight:750; }
+.assessment-priority p { font:1.12rem/1.6 Georgia,serif; margin:8px 0 0; color:#203e91; }
+.assessment-references { font-size:.66rem; color:#445e51; }
+.assessment-references>div { display:grid; gap:6px; padding-top:12px; }
+.assessment-evidence { display:inline-block; font-size:.67rem; color:#415d92; text-underline-offset:3px; }
+.assessment-progress { border-left:3px solid #80a78d; padding-left:22px; }
+.assessment-progress p,.assessment-plan-card p { font-size:.85rem; line-height:1.8; }
+.assessment-example { margin-top:22px; }
+.assessment-example .model-sentence { margin-top:10px; }
+.assessment-practice { background:#faf9f5; padding:16px 18px; border-radius:4px; }
+.assessment-plan-card { margin-top:18px; border:1px solid var(--line); border-radius:6px; padding:22px; }
+.assessment-plan-card h4 { color:var(--blue); }
+.assessment-target { margin-top:16px; padding-top:14px; border-top:1px solid var(--line); }
+.assessment-target strong { font-size:.7rem; }
+.assessment-target p { color:var(--muted); margin-bottom:0; font-size:.78rem; }
+.assessment-source-links { display:flex; flex-wrap:wrap; gap:8px 16px; }
+#assessment-sidebar[hidden]+.assessment-page { grid-column:1/-1; }
 .session-summary { background:#fff; border:1px solid var(--line); border-radius:8px; padding:24px; }
 .session-summary a { text-decoration:none; }
 .session-summary .session-topic { font-size:1.15rem; font-family:Georgia,serif; color:var(--ink); }
@@ -188,4 +212,7 @@ summary { cursor:pointer; }
   .feedback-next-step { padding:20px; }
   .dashboard-heading { margin-bottom:22px; }
   #profile-nickname { font-size:.67rem; }
+  .assessment-outline { grid-template-columns:1fr 1fr; padding:8px 0 0; }
+  .assessment-outline a { padding:12px 8px; gap:8px; font-size:.65rem; }
+  .assessment-plan-card { padding:18px; }
 }

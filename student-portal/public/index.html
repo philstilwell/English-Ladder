@@ -66,12 +66,26 @@
         <section class="next-step"><div><p class="eyebrow">YOUR NEXT STEP</p><h2 id="latest-title">Your learning notebook.</h2><p id="latest-summary">Open your session feedback to revisit useful language and find a short practice activity.</p><a id="latest-link" class="primary-button" href="#feedback">Open session feedback <span aria-hidden="true">→</span></a></div><div class="progress-art" aria-hidden="true"><span>ONE</span><span>STEP</span><span>AT A TIME.</span></div></section>
         <div class="section-heading"><h2>Your learning notebook</h2><span>Everything in one place</span></div>
         <div class="notebook-grid">
-          <a class="notebook-card" href="#assessments"><span class="notebook-number">01 / UNDERSTAND</span><h3>Assessments <span aria-hidden="true">↗</span></h3><p>See your strengths and the skills you’re developing.</p><span class="empty-label">No assessments yet</span></a>
+          <a class="notebook-card" href="#assessments"><span class="notebook-number">01 / UNDERSTAND</span><h3>Assessments <span aria-hidden="true">↗</span></h3><p>See your strengths and the skills you’re developing.</p><span id="assessment-count" class="empty-label">Loading assessment…</span></a>
           <a class="notebook-card" href="#sessions"><span class="notebook-number">02 / REFLECT</span><h3>Session summaries <span aria-hidden="true">↗</span></h3><p>Revisit lesson highlights and useful language.</p><span id="session-count" class="empty-label">Loading sessions…</span></a>
           <a class="notebook-card" href="#feedback"><span class="notebook-number">03 / GROW</span><h3>Feedback <span aria-hidden="true">↗</span></h3><p>Find personal guidance for your next steps.</p><span id="feedback-count" class="empty-label">Loading feedback…</span></a>
         </div>
       </div>
-      <section id="assessments" class="section-panel empty-state" aria-labelledby="assessments-title" hidden><span class="empty-symbol" aria-hidden="true">01</span><p class="eyebrow">ASSESSMENTS</p><h2 id="assessments-title">A starting point for your progress.</h2><p>No assessments have been added yet. Your teacher’s assessment of your English and areas to focus on will appear here.</p><a href="#overview" class="secondary-button">Back to overview</a></section>
+      <section id="assessments" class="section-panel" aria-label="Assessments" hidden>
+        <div class="feedback-layout">
+          <aside id="assessment-sidebar" class="session-sidebar assessment-sidebar" hidden>
+            <div class="session-browser-heading"><span class="eyebrow">THE BIGGER PICTURE</span><h2>Your English assessment</h2><p id="assessment-source-count"></p></div>
+            <nav class="assessment-outline" aria-label="Assessment sections">
+              <a href="#assessments/summary">01 <span>Overall picture</span></a>
+              <a href="#assessments/strengths">02 <span>Your strengths</span></a>
+              <a href="#assessments/patterns">03 <span>Recurring patterns</span></a>
+              <a href="#assessments/next">04 <span>What to focus on next</span></a>
+            </nav>
+            <p class="sidebar-note">Built from your session transcripts.<br> Focused on your English.</p>
+          </aside>
+          <article id="assessment-content" class="feedback-page assessment-page" aria-live="polite" aria-busy="false"></article>
+        </div>
+      </section>
       <section id="sessions" class="section-panel" aria-labelledby="sessions-title" hidden>
         <div class="section-heading"><h2 id="sessions-title">Your session summaries</h2><span>English learning highlights</span></div>
         <p class="section-intro">Revisit the language from each lesson. Open a session for examples, explanations, and practice.</p>

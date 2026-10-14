@@ -5,6 +5,7 @@
   const validId = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
   let authenticated = false, checking = false, identityRevision = 0, pageRevision = 0;
   let sessions = [], nextCursor = null, indexReady = false, indexLoading = false, currentPage = '';
+  let assessment = null, assessmentLoading = false;
 
   async function api(path, options = {}) {
     const response = await fetch(path, { credentials: 'same-origin', cache: 'no-store', ...options });
@@ -39,8 +40,11 @@
   function clearIdentity() {
     identityRevision++; pageRevision++;
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
+    assessment = null; assessmentLoading = false;
     for (const id of ['student-name', 'teacher-student-name', 'avatar', 'account-address', 'profile-nickname', 'account-status']) $(id).textContent = '';
-    for (const id of ['session-list', 'session-select', 'session-summaries', 'feedback-page']) $(id).replaceChildren();
+    for (const id of ['session-list', 'session-select', 'session-summaries', 'feedback-page', 'assessment-content', 'assessment-source-count']) $(id).replaceChildren();
+    $('assessment-sidebar').hidden = true;
+    $('assessment-count').textContent = 'Loading assessment…';
     $('latest-title').textContent = 'Your learning notebook.';
     $('latest-summary').textContent = 'Open your session feedback to revisit useful language and find a short practice activity.';
     $('latest-link').href = '#feedback';
@@ -94,7 +98,9 @@
     }
     if (selected !== 'feedback') {
       pageRevision++; currentPage = '';
-      document.title = 'My learning space · English Ladder'; return;
+      document.title = selected === 'assessments' ? 'My English assessment · English Ladder' : 'My learning space · English Ladder';
+      if (selected === 'assessments') focusAssessment(requested, focus);
+      return;
     }
     if (extra !== undefined || (requested && !validId.test(requested))) {
       pageRevision++; currentPage = ''; markCurrent('');
@@ -194,11 +200,6 @@
     sources.append(node('summary', 'About this feedback and its source'));
     sources.append(node('p', 'Prepared with AI from the complete available Zoom transcript (' + record.source.segmentCount.toLocaleString() + ' segments). Transcript coverage: ' + record.source.coverageStart + '–' + record.source.coverageEnd + '. References show elapsed time from the start of the session.'));
     sources.append(node('p', 'This is English language feedback only. Automatic transcripts can mishear speech. Teaching exchanges are distinguished from additional practice, and new examples are not quotes from the session. No pronunciation score is inferred from the transcript.'));
-    if (record.source.noteId) {
-      const source = node('a', 'Open the source in Zoom My Notes');
-      source.href = 'https://mynotes.zoom.us/' + encodeURIComponent(record.source.noteId);
-      source.target = '_blank'; source.rel = 'noopener noreferrer'; sources.append(source);
-    }
     fragment.append(sources);
     const position = sessions.findIndex(s => s.id === record.id), navigation = node('nav', '', 'feedback-pager');
     navigation.setAttribute('aria-label', 'Other feedback pages');
@@ -225,6 +226,127 @@
       currentPage = ''; messagePage(error.message, error.status === 404 ? null : () => loadPage(id, true));
     }
   }
+  function assessmentDate(day) {
+    return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(day + 'T12:00:00Z'));
+  }
+  function evidenceLink(ref) {
+    const el = node('a', assessmentDate(ref.sessionId.slice(0, 10)) + ' · ' + ref.at, 'assessment-evidence');
+    el.href = '#feedback/' + ref.sessionId;
+    el.setAttribute('aria-label', 'Open session feedback for ' + assessmentDate(ref.sessionId.slice(0, 10)) + ', transcript reference ' + ref.at);
+    return el;
+  }
+  function evidenceList(refs) {
+    const details = node('details', '', 'assessment-references');
+    details.append(node('summary', 'Session evidence (' + refs.length + ')'));
+    const list = node('div');
+    for (const ref of refs) list.append(evidenceLink(ref));
+    details.append(list); return details;
+  }
+  function focusAssessment(requested, focus) {
+    if (!assessment) return;
+    const key = ['summary', 'strengths', 'patterns', 'next'].includes(requested) ? requested : 'summary';
+    for (const el of document.querySelectorAll('.assessment-outline a')) {
+      if (el.hash === '#assessments/' + key) el.setAttribute('aria-current', 'location');
+      else el.removeAttribute('aria-current');
+    }
+    const heading = $('assessment-' + key);
+    if (focus) heading.focus({ preventScroll: true });
+    if (requested) heading.scrollIntoView?.({ block: 'start' });
+  }
+  function assessmentSection(title, key, className) {
+    const el = section(title, className), heading = el.querySelector('h3');
+    heading.id = 'assessment-' + key; heading.tabIndex = -1;
+    return el;
+  }
+  function assessmentMessage(message, retry) {
+    const content = node('div', '', 'feedback-message');
+    content.append(node('h2', 'Your English assessment'), node('p', message));
+    if (retry) {
+      const button = node('button', 'Try again', 'secondary-button');
+      button.addEventListener('click', loadAssessment); content.append(button);
+    }
+    $('assessment-content').replaceChildren(content);
+    $('assessment-content').setAttribute('aria-busy', String(assessmentLoading));
+  }
+  function renderAssessment(record) {
+    const fragment = document.createDocumentFragment(), header = node('header', '', 'feedback-header');
+    header.append(node('p', 'OVERALL ASSESSMENT / ENGLISH ONLY', 'eyebrow'));
+    const title = node('h2', record.title); title.id = 'assessment-summary'; title.tabIndex = -1;
+    const dates = node('div', '', 'feedback-dates');
+    dates.append(node('strong', 'Assessed ' + assessmentDate(record.assessedOn)), node('span', record.sourceSessions.length + ' sessions · ' + assessmentDate(record.sourceSessions[0].slice(0, 10)) + ' – ' + assessmentDate(record.sourceSessions.at(-1).slice(0, 10))));
+    header.append(title, dates, node('p', record.summary, 'session-reflection'));
+    const priority = node('div', '', 'assessment-priority');
+    priority.append(node('span', 'YOUR MAIN PRIORITY'), node('p', record.mainPriority)); header.append(priority); fragment.append(header);
+    const strengths = assessmentSection('Your strengths', 'strengths', 'feedback-strengths');
+    for (const item of record.strengths) {
+      const card = node('div', '', 'strength');
+      card.append(node('h4', item.title), node('p', item.detail), evidenceList(item.evidence)); strengths.append(card);
+    }
+    fragment.append(strengths);
+    const progress = section('What the later sessions show', 'assessment-progress');
+    progress.append(node('p', record.progress.detail), evidenceList(record.progress.evidence)); fragment.append(progress);
+    const patterns = assessmentSection('Recurring mistakes and patterns', 'patterns', 'feedback-focus');
+    patterns.append(node('p', 'These examples come from teaching exchanges in the transcripts. Model sentences include new practice examples.', 'section-intro'));
+    record.patterns.forEach((item, index) => {
+      const card = node('section', '', 'focus-card'), heading = node('div', '', 'focus-heading');
+      heading.append(node('span', String(index + 1).padStart(2, '0'), 'focus-number'), node('h4', item.title));
+      card.append(heading, node('p', item.detail));
+      for (const example of item.examples) {
+        const row = node('div', '', 'assessment-example');
+        row.append(evidenceLink(example), node('p', example.observed, 'observed'));
+        const model = node('div', '', 'model-sentence');
+        model.append(node('span', 'PATTERN TO PRACTICE'), node('p', example.model)); row.append(model); card.append(row);
+      }
+      const practice = node('p', '', 'assessment-practice');
+      practice.append(node('strong', 'Practice: '), document.createTextNode(item.practice)); card.append(practice); patterns.append(card);
+    });
+    fragment.append(patterns);
+    const plan = assessmentSection('What to focus on next', 'next', 'assessment-plan');
+    plan.append(node('p', 'A focused plan for the next three lessons. Targets below are goals for practice, not current scores.', 'section-intro'));
+    for (const item of record.plan) {
+      const card = node('section', '', 'assessment-plan-card');
+      card.append(node('h4', item.title), node('p', item.activity));
+      const target = node('div', '', 'assessment-target'); target.append(node('strong', 'What to look for'), node('p', item.target)); card.append(target); plan.append(card);
+    }
+    fragment.append(plan);
+    const next = section('A starting plan for the next lesson', 'feedback-next-step');
+    next.append(node('p', record.nextLesson)); fragment.append(next);
+    const source = node('details', '', 'feedback-source');
+    source.append(node('summary', 'About this assessment and its sources'), node('p', 'Prepared with AI after review of the complete available transcripts for the sessions below. References show elapsed transcript time; links open your session feedback. Dates are shown in New York time.'));
+    const list = node('div', '', 'assessment-source-links');
+    for (const id of record.sourceSessions) { const el = node('a', assessmentDate(id.slice(0, 10))); el.href = '#feedback/' + id; list.append(el); }
+    source.append(list, node('p', 'This descriptive assessment covers English language use only. Automatic transcripts can mishear speech, so recurring patterns are supported by teaching exchanges and balanced with successful examples. It does not assign a formal proficiency level or assess pronunciation, accent, or speaking speed from text.'));
+    fragment.append(source);
+    $('assessment-content').replaceChildren(fragment);
+    $('assessment-content').setAttribute('aria-busy', 'false');
+    $('assessment-sidebar').hidden = false;
+    $('assessment-source-count').textContent = record.sourceSessions.length + ' sessions reviewed';
+  }
+  async function loadAssessment() {
+    if (assessmentLoading || !authenticated) return;
+    assessmentLoading = true;
+    const revision = identityRevision;
+    assessmentMessage('Opening your assessment…');
+    try {
+      const data = await api('/api/assessment');
+      if (revision !== identityRevision) return;
+      assessment = data.assessment;
+      $('assessment-count').textContent = assessment ? 'Overall assessment · ' + assessmentDate(assessment.assessedOn) : 'No assessments yet';
+      if (assessment) {
+        renderAssessment(assessment);
+        if (location.hash.split('/')[0] === '#assessments') focusAssessment(location.hash.split('/')[1], false);
+      } else assessmentMessage('Your teacher’s assessment of your English and areas to focus on will appear here.');
+    } catch (error) {
+      if (revision !== identityRevision || expired(error)) return;
+      $('assessment-count').textContent = 'Assessment unavailable';
+      assessmentMessage('Your assessment could not be loaded. ' + error.message, true);
+    } finally {
+      if (revision === identityRevision) {
+        assessmentLoading = false;
+        $('assessment-content').setAttribute('aria-busy', 'false');
+      }
+    }
+  }
   function showDashboard(data, focus = false) {
     const initial = !authenticated; authenticated = true;
     const { name, nickname, id } = data.student, teacher = data.role === 'teacher';
@@ -234,7 +356,7 @@
     $('dashboard-title').textContent = teacher ? name + '’s learning space' : 'Welcome back, ' + name + '.';
     $('teacher-banner').hidden = !teacher; $('account-status').textContent = ''; $('password').value = '';
     show('dashboard-view');
-    if (initial) { loadIndex(); navigate(); }
+    if (initial) { loadIndex(); loadAssessment(); navigate(); }
     if (focus) $('dashboard-title').focus();
   }
   async function start() {

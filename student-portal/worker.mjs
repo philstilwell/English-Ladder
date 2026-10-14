@@ -1,4 +1,5 @@
 import { FEEDBACK_ID, validateFeedback } from './feedback.mjs';
+import { validateAssessment } from './assessment.mjs';
 export { FeedbackStore } from './feedback.mjs';
 
 const COOKIE = '__Host-el-session';
@@ -158,27 +159,31 @@ async function handle(request, env) {
     return json(profile(account, role), 200, { 'Set-Cookie': cookie(await issueSession(request, env, account, role)) });
   }
 
-  if (url.pathname === '/api/feedback' || url.pathname.startsWith('/api/feedback/')) {
+  const isAssessment = url.pathname === '/api/assessment';
+  if (isAssessment || url.pathname === '/api/feedback' || url.pathname.startsWith('/api/feedback/')) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);
-    const id = url.pathname === '/api/feedback' ? '' : url.pathname.slice('/api/feedback/'.length);
-    if ((id && !FEEDBACK_ID.test(id)) || (!id && url.pathname.endsWith('/'))) return json({ error: 'Session not found.' }, 404);
+    const id = isAssessment ? 'assessment' : url.pathname === '/api/feedback' ? '' : url.pathname.slice('/api/feedback/'.length);
+    if (!isAssessment && ((id && !FEEDBACK_ID.test(id)) || (!id && url.pathname.endsWith('/')))) return json({ error: 'Session not found.' }, 404);
     if (!['GET', 'HEAD', 'PUT'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
     let body;
     if (request.method === 'PUT') {
-      if (session.role !== 'teacher') return json({ error: 'Only your teacher can publish feedback.' }, 403);
+      if (session.role !== 'teacher') return json({ error: 'Only your teacher can publish learning records.' }, 403);
       if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload the page and try again.' }, 403);
-      try { body = validateFeedback(await smallJson(request, 65536), id); }
-      catch { return json({ error: 'Please check the feedback format and transcript references.' }, 400); }
+      try {
+        const input = await smallJson(request, 65536);
+        body = isAssessment ? validateAssessment(input) : validateFeedback(input, id);
+      }
+      catch { return json({ error: 'Please check the record format and transcript references.' }, 400); }
     }
-    if (!env.FEEDBACK_STORE) return json({ error: 'Session feedback is temporarily unavailable.' }, 503);
+    if (!env.FEEDBACK_STORE) return json({ error: 'Learning records are temporarily unavailable.' }, 503);
     const store = env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id));
     const internalUrl = new URL(`https://feedback.internal/${id}`);
     if (!id && url.searchParams.has('before')) internalUrl.searchParams.set('before', url.searchParams.get('before'));
     const response = await store.fetch(new Request(internalUrl, body ? { method: 'PUT', body: JSON.stringify(body) } : {}));
     const data = await response.json();
-    // Zoom notes belong to the teacher; student responses omit the source-note ID.
-    if (data.source && session.role !== 'teacher') delete data.source.noteId;
+    // Keep source-note identifiers on the server; neither role needs a Zoom link.
+    if (data.source) delete data.source.noteId;
     return json(data, response.status);
   }
 

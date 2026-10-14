@@ -78,6 +78,10 @@ def audit_blank_geometry(path, units, supplements):
 
 def audit(track, published=False):
     slug = track['slug']
+    from revised_book_records import stem as revised_stem
+    if (ROOT / 'output/pdf' / (revised_stem(slug) + '-manifest.json')).exists():
+        from audit_revised_books import audit as audit_revision
+        return audit_revision(slug, published=published)
     stem = 'cross-cultural-leadership' if slug == SLUG else slug
     path = ROOT / ('pdf/efsp' if published else 'output/pdf') / f'{stem}-english-book.pdf'
     units = book_data(track)

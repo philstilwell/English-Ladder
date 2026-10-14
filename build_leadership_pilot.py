@@ -29,6 +29,9 @@ LOGO = ROOT / 'assets/brand/ladder-mark.png'
 CSS = ROOT / 'books/leadership_pilot.css'
 PAGES = []
 LETTERS = 'ABCD'
+BOOK = None
+FOOTER_TITLE = 'Cross-Cultural Leadership'
+KEYWORDS = 'English Ladder, international managers, workplace English, cross-cultural leadership'
 
 
 def e(value):
@@ -67,7 +70,7 @@ def render_sheet(page):
         <span>{e(page['section'])}</span>
       </header>
       <div class="page-body">{page['content']}</div>
-      <footer aria-hidden="true"><span>Cross-Cultural Leadership</span>
+      <footer aria-hidden="true"><span>{e(FOOTER_TITLE)}</span>
         <a href="https://englishladder.com/">ENGLISHLADDER.COM</a>
         <span>Phil Stilwell <span class="footer-divider">|</span> <span class="page-number"></span></span>
       </footer>
@@ -109,6 +112,8 @@ def answer_strip(scene, target):
 
 
 def front():
+    if BOOK is not None:
+        return industry_front()
     cover = (f'<p class="eyebrow">English for Work / International managers</p>'
              f'<h1>Cross-Cultural<br/>Leadership <span>English</span></h1>'
              '<p class="subtitle">Clear decisions. Constructive disagreement.<br/>Trusted teams.</p>'
@@ -147,11 +152,42 @@ def front():
     sheet('culture', 'Cultural field notes', content)
 
 
+def industry_front():
+    art = '../../' + ART.relative_to(ROOT).as_posix()
+    cover = (f'<p class="eyebrow">English for Work / {e(BOOK["cover_label"])}</p>'
+             f'<h1>{e(BOOK["cover_title"]).replace(chr(10), "<br/>")} <span>English</span></h1>'
+             f'<p class="subtitle">{e(BOOK["tagline"])}</p>'
+             f'<img class="cover-art" src="{art}" alt="{e(BOOK["art_alt"])}"/>'
+             '<div class="cover-author"><p class="author">Phil Stilwell</p>'
+             f'<p class="copyright">{e(COPYRIGHT)}<br/>{e(NOTICE)}</p></div>'
+             '<p class="cover-description">Eight practical lessons. Eleven extended conversations.<br/>'
+             'Vocabulary, phrase banks, guided speaking, and explained answers.</p>'
+             f'<p class="edition">{e(EDITION)} / Upper-intermediate to advanced</p>')
+    sheet('cover', 'Learner book', cover, kind='cover industry-cover')
+    rows = ''.join(f'<li>{unit_ref(i, str(i).zfill(2) + "  " + u["title"])}<p>{e(u["skill"])}</p></li>'
+                   for i, u in enumerate(UNITS, 1))
+    content = '<h2>Your route through the book</h2><ol class="contents">' + rows + '</ol>'
+    content += '<div class="contents-extra">' + ''.join(ref(target, title) for target, title in [
+        ('culture', 'Professional communication notes'), ('additional-1', 'Three additional workplace cases'),
+        ('key-u1-a', 'Answers and explanations'), ('phrase-finder', 'Phrase finder'),
+        ('index', 'Vocabulary index'), ('sources', 'References and publication notes')]) + '</div>'
+    content += para('Suggested study range: B2-C1. This is an editorial study range, not a certified proficiency assessment.', 'small')
+    sheet('contents', 'Book map', content, kind='contents-page')
+    content = f'<h2>{e(BOOK["notes_title"])}</h2>' + para(BOOK['notes_intro'])
+    content += '<dl class="field-notes">' + ''.join(
+        f'<div><dt>{e(title)}</dt><dd>{e(explanation)}{para(example)}</dd></div>'
+        for title, explanation, example in BOOK['field_notes']) + '</dl>'
+    content += '<aside class="note"><h3>Professional boundaries</h3>' + para(BOOK['scope_note']) + '</aside>'
+    sheet('culture', 'Professional field notes', content)
+
+
 def case_page(u):
     n = u['number']
     rows = ''.join('<tr>' + ''.join(f'<td>{e(c)}</td>' for c in row) + '</tr>' for row in u['artifact_rows'])
     table = (f'<table class="artifact"><caption>{e(u["artifact_title"])}</caption><thead><tr>'
              + ''.join(f'<th scope="col">{e(c)}</th>' for c in u['artifact_headers']) + '</tr></thead><tbody>' + rows + '</tbody></table>')
+    if BOOK:
+        table = '<aside class="case-facts"><h3>' + e(u['scene']) + '</h3>' + para(u['brief']) + '</aside>'
     content = f'<p class="eyebrow">Lesson {n:02d} / {e(u["title"])}</p>' + label('A', 'Read the situation')
     content += para(u['skill'], 'lead') + table
     content += para('People: ' + '; '.join(f'{name}, {role}' for name, role in u['cast']) + '.', 'small')
@@ -171,7 +207,7 @@ def vocabulary_pages(u):
             f'<span class="collocation">{e(collocation)}</span></dd></div>'
             for i, (term, definition, collocation) in enumerate(terms)) + '</dl>'
         content += '<section class="stress"><h3>Say it in context</h3>'
-        content += para('Capitals show the stressed syllable, not a full pronunciation spelling.', 'small')
+        content += para(u.get('focus_instruction', 'Capitals show the stressed syllable, not a full pronunciation spelling.'), 'small')
         for term, stress, example, contrast in u['focus'][part * 2:(part + 1) * 2]:
             content += f'<div><h4>{e(term)} <span>{e(stress)}</span></h4>{para(example)}{para(contrast, "small")}</div>'
         content += '</section>'
@@ -183,7 +219,7 @@ def phrase_page(u):
     content = label('C', 'Phrases that move the work forward')
     content += '<dl class="phrases">' + ''.join(
         f'<div><dt>{e(function)}</dt><dd>{e(phrase)}</dd></div>' for function, phrase in u['phrases']) + '</dl>'
-    content += '<section class="register"><h3>Same purpose, different register</h3>'
+    content += '<section class="register"><h3>' + e(u.get('register_heading', 'Same purpose, different register')) + '</h3>'
     for a, b, c, d in u['registers']:
         content += f'<p><b>{e(a)}:</b> {e(b)}<br/><b>{e(c)}:</b> {e(d)}</p>'
     content += '</section>'
@@ -213,20 +249,20 @@ def dialogue_pages(scene, anchor, section, title, setup, key, unit=None):
 
 def transfer_pages(u):
     n = u['number']
-    content = label('F', 'Repair the message') + f'<h3 class="scene-title">{e(u["transfer_title"])}</h3>'
-    content += '<aside class="case-facts"><h3>New case / facts you can use</h3>' + para(u['transfer_facts']) + '</aside>'
-    content += para('Choose the correction that preserves the supplied facts. Say the complete corrected message aloud.', 'instruction')
+    content = label('F', 'Check accuracy and scope' if BOOK else 'Repair the message') + f'<h3 class="scene-title">{e(u.get("repair_title", u["transfer_title"]))}</h3>'
+    content += '<aside class="case-facts"><h3>' + ('Return to the case' if BOOK else 'New case / facts you can use') + '</h3>' + para(u.get('repair_facts', u['transfer_facts'])) + '</aside>'
+    content += para('Choose one answer per question. Use the case facts and keep any uncertainty or limits intact.' if BOOK else 'Choose the correction that preserves the supplied facts. Say the complete corrected message aloud.', 'instruction')
     content += mcqs(u['repair'], f'u{n}-f-q', f'key-u{n}-f')
     content += '<aside class="note"><h3>Listen for the distinction</h3>' + para(u['delivery']) + '</aside>'
     content += f'<aside class="note"><h3>{e(u["culture"][0])}</h3>{para(u["culture"][1])}</aside>'
     sheet(f'u{n}-f', f'Lesson {n:02d} / Repair', content, unit=n, kind='repair-page')
-    content = label('F', 'Say it / then change one fact')
+    content = label('F', 'Say it / transfer to a new case' if BOOK else 'Say it / then change one fact')
     content += para(u['transfer_title'], 'scene-title') + para(u['transfer_facts'], 'scene-setup')
     content += para('Complete the four gaps. With a partner, read alternate roles, then switch. Studying alone, read both roles and pause before each response.', 'instruction')
     content += bank(u['transfer'], f'u{n}-transfer') + turns(u['transfer'], 0, 6)
     content += answer_strip(u['transfer'], f'key-u{n}-transfer')
-    content += '<h3 class="second-take">Second take</h3>'
-    content += para('Choose the updated response, then say it without looking at the options. Retain every fact in the correct response.', 'instruction')
+    content += '<h3 class="second-take">' + ('Rebuild the exchange' if BOOK else 'Second take') + '</h3>'
+    content += para('Choose the missing response. Read the completed three-turn exchange aloud, changing roles on the second reading.' if BOOK else 'Choose the updated response, then say it without looking at the options. Retain every fact in the correct response.', 'instruction')
     content += mcqs([u['second_take']], f'u{n}-second-q', f'key-u{n}-second')
     sheet(f'u{n}-transfer', f'Lesson {n:02d} / Guided speaking', content, unit=n, kind='transfer-page')
 
@@ -240,12 +276,22 @@ def checkpoint(c, idx):
 
 def additional_pages():
     for i, s in enumerate(SUPPLEMENTS, 1):
+        if BOOK is not None:
+            content = '<h2>Language for the next case</h2>' + para(s['title'], 'scene-title')
+            content += '<dl class="vocabulary case-vocabulary">'
+            for j, gap in enumerate(s['gaps']):
+                speaker, line = s['dialogue'][gap['turn'] - 1]
+                complete = re.sub(r'\{\{(\d+)\}\}', lambda m: s['gaps'][int(m[1]) - 1]['answer'], line)
+                content += (f'<div id="term-additional-{i}-{j}"><dt>{e(gap["answer"])}</dt>'
+                            f'<dd>{e(gap["reason"])}<span class="collocation">{e(speaker)}: {e(complete)}</span></dd></div>')
+            content += '</dl>' + para('Read the phrases aloud. Then complete the conversation on the following pages using the word bank.', 'instruction')
+            sheet(f'additional-language-{i}', f'Additional case {i} / Language', content, kind='vocab-page')
         dialogue_pages(s, f'additional-{i}', f'Additional case {i}', s['title'], s['setup'], f'key-additional-{i}')
         content = f'<h2>{e(s["transfer"]["title"])}</h2>' + para(s['transfer']['setup'], 'scene-setup')
         content += para('Complete the exchange using each phrase once. Read both roles, then switch roles and repeat with the bank covered.', 'instruction')
         content += bank(s['pilot_transfer'], f'additional-transfer-{i}') + turns(s['pilot_transfer'], 0, 6)
         content += answer_strip(s['pilot_transfer'], f'key-additional-transfer-{i}')
-        content += '<aside class="note"><h3>Keep the boundary audible</h3>' + para([
+        content += '<aside class="note"><h3>Keep the distinction audible</h3>' + para(s.get('delivery') or [
             'Contrast adding a group with replacing one. Name the reduced Friday deliverable separately from the full analysis. Tuesday is a scheduling update, not a promised completion date.',
             'Separate accurate results from incomplete credit. Name each person\'s contribution. Do not make public praise a condition of receiving proper attribution.',
             'Contrast paused with canceled. Keep the new date open until the evidence and release criteria support a decision. Do not imply that all completed work is invalid.',
@@ -259,11 +305,13 @@ def key_questions(items, keyprefix, returnto, group, heading=''):
         correct = item['answer']
         rows = ''.join(f'<li><b>{LETTERS[j]} {"Correct" if j == correct else "Not here"}.</b> {e(reason)}</li>'
                        for j, reason in enumerate(item['reasons']))
+        explanation = ('<ul class="rationales">' + rows + '</ul>' if not item.get('shared_explanation')
+                       else para(item['shared_explanation']))
         intro = f'<h3 class="key-group" id="{keyprefix}">{e(heading)}</h3>' if i == 1 else ''
         blocks.append(f'<article class="key-entry flow-block" id="{keyprefix}-q{i}">{intro}'
                       f'<h3>{e(group)}{i}. {e(item["prompt"])}</h3>'
                       f'<p class="correct-response">{LETTERS[correct]}. {e(item["options"][correct])}</p>'
-                      f'<ul class="rationales">{rows}</ul>'
+                      f'{explanation}'
                       f'<p class="back-link">{ref(returnto, "Return to the exercise")}</p></article>')
     return ''.join(blocks)
 
@@ -295,17 +343,17 @@ def answers():
             target = f'key-u{n}-{group}'
             items += key_questions(u[key], target, f'u{n}-{group}', group.upper(), heading)
         items += key_gaps(u, f'key-u{n}-e', f'u{n}-e', heading='E / Conversation')
-        items += key_questions(u['repair'], f'key-u{n}-f', f'u{n}-f', 'F', 'F / Repair the message')
+        items += key_questions(u['repair'], f'key-u{n}-f', f'u{n}-f', 'F', 'F / Accuracy and scope' if BOOK else 'F / Repair the message')
         target = f'key-u{n}-transfer'
-        items += key_gaps(u['transfer'], target, f'u{n}-transfer', heading='F / Guided speaking')
-        items += key_questions([u['second_take']], f'key-u{n}-second', f'u{n}-transfer', '', 'F / Second take')
+        items += key_gaps(u['transfer'], target, f'u{n}-transfer', heading='F / Guided speaking', complete_lines=BOOK is not None)
+        items += key_questions([u['second_take']], f'key-u{n}-second', f'u{n}-transfer', '', 'F / Rebuild the exchange' if BOOK else 'F / Second take')
         flowing_page(f'key-u{n}', f'{n:02d} / Answers and explanations', items, unit=n)
     for i, c in enumerate(CHECKPOINTS, 1):
         flowing_page(f'key-review-section-{i}', f'Review {i} / Explanations',
                      key_questions(c['questions'], f'key-review-{i}', f'review-{i}', '', 'Cumulative review'))
     for i, s in enumerate(SUPPLEMENTS, 1):
         items = key_gaps(s, f'key-additional-{i}', f'additional-{i}', heading='Extended conversation')
-        items += key_gaps(s['pilot_transfer'], f'key-additional-transfer-{i}', f'additional-transfer-{i}', heading='Transfer exchange')
+        items += key_gaps(s['pilot_transfer'], f'key-additional-transfer-{i}', f'additional-transfer-{i}', heading='Transfer exchange', complete_lines=BOOK is not None)
         flowing_page(f'key-additional-section-{i}', f'Additional case {i} / Explanations', items)
 
 
@@ -322,10 +370,15 @@ def reference_pages():
     for u in UNITS:
         for i, (term, definition, collocation) in enumerate(u['vocabulary']):
             entries[term.casefold()].append((term, f'term-u{u["number"]}-{i}', u['number']))
+    if BOOK is not None:
+        for i, s in enumerate(SUPPLEMENTS, 1):
+            for j, gap in enumerate(s['gaps']):
+                term = gap['answer']
+                entries[term.casefold()].append((term, f'term-additional-{i}-{j}', f'Case {i}'))
     items = []
     for key in sorted(entries):
         term = entries[key][0][0]
-        refs = ', '.join(f'<a href="#{anchor}">Lesson {n:02d}<span class="print-reference">, p. <span data-page-ref="{anchor}"></span></span></a>'
+        refs = ', '.join(f'<a href="#{anchor}">{("Lesson " + str(n).zfill(2)) if isinstance(n, int) else n}<span class="print-reference">, p. <span data-page-ref="{anchor}"></span></span></a>'
                          for _, anchor, n in entries[key])
         items.append(f'<p class="index-entry flow-block"><b>{e(term)}</b><span>{refs}</span></p>')
     flowing_page('index', 'Vocabulary index', ''.join(items), kind='index-page', section='Vocabulary index')
@@ -340,20 +393,24 @@ def reference_pages():
          'https://dash.harvard.edu/entities/publication/13a7b031-0fdd-45ec-a7e0-2b80e2bc679f',
          'Background on interpersonal risk and team learning. This study does not establish national personality types or imply that effective teams never disagree.'),
     ]
+    if BOOK is not None:
+        references = [(str(i), s['title'], s['url'], s['note'] + ' Source checked ' + s['checked'] + '.')
+                      for i, s in enumerate(BOOK['sources'], 1)]
     content = '<h2>References and publication notes</h2>'
-    content += para('All cases, organizations, figures, and conversations are fictional teaching material, not transcripts. Communication practice does not replace qualified advice or current workplace procedures. References checked 14 October 2026.')
+    content += para('All cases, organizations, figures, and conversations are fictional teaching material, not transcripts. Communication practice does not replace qualified advice or current workplace procedures.' + ('' if BOOK else ' References checked 14 October 2026.'))
     for number, title, url, note in references:
         content += f'<section class="source"><h3>[{number}] {e(title)}</h3>{para(note)}<p><a href="{url}">{e(url)}</a></p></section>'
     content += '<aside class="note"><h3>Companion course</h3>' + para('The website offers the eight-lesson course and related practice. This book can be used independently. No audio access or external account is needed for its exercises.') + f'<p><a href="{COURSE_URL}">{COURSE_URL}</a></p></aside>'
     sheet('sources', 'References', content, kind='sources-page')
-    content = '<h2>Speak clearly. Keep the relationship.</h2>'
-    content += para('A strong leader can question an estimate, correct a record, refuse an unsupported promise, and still leave room for the other person to contribute. The language in this book makes those choices explicit.', 'lead')
-    content += '<div class="closing-grid">' + ''.join(f'<section><h3>{e(title)}</h3>{para(text)}</section>' for title, text in [
+    content = '<h2>' + e(BOOK['tagline'] if BOOK else 'Speak clearly. Keep the relationship.') + '</h2>'
+    content += para(BOOK['map_intro'] if BOOK else 'A strong leader can question an estimate, correct a record, refuse an unsupported promise, and still leave room for the other person to contribute. The language in this book makes those choices explicit.', 'lead')
+    closing_points = [(u['title'], u['precision']) for u in UNITS[:4]] if BOOK else [
         ('Name the claim', 'Ask which assumption or piece of evidence is being challenged.'),
         ('Keep the distinction', 'Separate understanding from approval, a target from a commitment, and a concern from a confirmed fault.'),
         ('Close the loop', 'Name the action, the owner, the deadline, and the next decision.'),
         ('Repair the record', 'Correct the same audience that received the mistake; do not require immediate reassurance.'),
-    ]) + '</div>'
+    ]
+    content += '<div class="closing-grid">' + ''.join(f'<section><h3>{e(title)}</h3>{para(text)}</section>' for title, text in closing_points) + '</div>'
     content += '<div class="publication"><p class="author">Phil Stilwell</p>' + para(COPYRIGHT) + para(NOTICE)
     content += para('English Ladder / English for Work / ' + EDITION)
     content += para('This publication includes AI-generated text and cover illustration, revised and checked during production. Brand artwork remains the English Ladder mark. This edition makes no claim of independent professional certification.')
@@ -389,11 +446,12 @@ def build_epub():
            '<head><title>Contents</title></head><body><nav epub:type="toc"><h1>Contents</h1><ol>'
            + ''.join(f'<li><a href="book.xhtml#{anchor}">{e(title)}</a></li>' for anchor, title in nav_items)
            + '</ol></nav></body></html>')
-    uid = 'urn:uuid:d152ec7e-a579-4208-96d2-5274f68a29cd'
+    import uuid
+    uid = 'urn:uuid:' + str(uuid.uuid5(uuid.NAMESPACE_URL, COURSE_URL + '/2026-book'))
     opf = f'''<?xml version="1.0" encoding="utf-8"?>
     <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id">
     <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-      <dc:identifier id="book-id">{uid}</dc:identifier><dc:title>{TITLE}</dc:title>
+      <dc:identifier id="book-id">{uid}</dc:identifier><dc:title>{e(TITLE)}</dc:title>
       <dc:creator>{AUTHOR}</dc:creator><dc:language>en-US</dc:language>
       <dc:publisher>English Ladder</dc:publisher><dc:rights>{e(COPYRIGHT + ' ' + NOTICE)}</dc:rights>
       <meta property="dcterms:modified">2026-10-14T00:00:00Z</meta>
@@ -402,7 +460,7 @@ def build_epub():
       <item id="book" href="book.xhtml" media-type="application/xhtml+xml"/>
       <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
       <item id="css" href="style.css" media-type="text/css"/>
-      <item id="cover-art" href="images/leadership-book-cover-2026.png" media-type="image/png" properties="cover-image"/>
+      <item id="cover-art" href="images/{ART.name}" media-type="image/png" properties="cover-image"/>
     </manifest><spine><itemref idref="book"/></spine></package>'''
     epub_css = '''body{font-family:serif;line-height:1.5;margin:1em;color:#202733}section{margin-bottom:2em}
     h1,h2,h3,h4,dt{font-family:sans-serif;line-height:1.25}h2{border-bottom:2px solid #245abe;padding-bottom:.3em}
@@ -439,6 +497,8 @@ def build():
     additional_pages()
     answers()
     reference_pages()
+    if BOOK is not None:
+        flow_industry_pages()
     OUT.mkdir(parents=True, exist_ok=True)
     html = (f'<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"/>'
             f'<title>{TITLE} | {EDITION}</title><meta name="author" content="{AUTHOR}"/>'
@@ -446,16 +506,74 @@ def build():
             f'<link rel="stylesheet" href="../../books/leadership_pilot.css"/></head><body><main>'
             + ''.join(render_sheet(p) for p in PAGES) + '</main></body></html>')
     (OUT / (STEM + '.html')).write_text(html)
-    manifest = dict(title=TITLE, edition=EDITION, source_hash=hashlib.sha256(Path(__file__).read_bytes() +
-                    (ROOT / 'books/leadership_pilot.py').read_bytes()).hexdigest(),
+    manifest = dict(title=TITLE, edition=EDITION, source_hash=source_hash(),
                     source_pages=len(PAGES), vocabulary_entries=sum(len(u['vocabulary']) for u in UNITS),
                     distinct_terms=len({v[0].casefold() for u in UNITS for v in u['vocabulary']}),
                     distinct_phrases=len({p[1] for u in UNITS for p in u['phrases']}),
+                    additional_language_entries=sum(len(s['gaps']) for s in SUPPLEMENTS) if BOOK else 0,
+                    illustration_asset=ART.relative_to(ROOT).as_posix(),
+                    illustration_sha256=hashlib.sha256(ART.read_bytes()).hexdigest(),
                     extended_dialogues=11, short_transfers=11, core_questions=80, cumulative_questions=16,
                     external_expert_review=False, learner_pilot=False, physical_proof=False)
     (OUT / (STEM + '-manifest.json')).write_text(json.dumps(manifest, indent=2) + '\n')
-    build_epub()
+    if BOOK is None:
+        build_epub()
     print(f'Built {len(PAGES)} source sections; print step will paginate answer keys and index.')
+
+
+def source_hash():
+    return hashlib.sha256(Path(__file__).read_bytes() + CSS.read_bytes() +
+                          (ROOT / 'print_leadership_pilot.cjs').read_bytes() + ART.read_bytes() +
+                          json.dumps([UNITS, SUPPLEMENTS, CHECKPOINTS, BOOK], sort_keys=True).encode()).hexdigest()
+
+
+def flow_industry_pages():
+    """Longer field-specific language earns space instead of smaller type."""
+    def markup(node):
+        text = ET.tostring(node, encoding='unicode', method='xml', short_empty_elements=False)
+        return re.sub(r'<(br|img)([^>]*)></\1>', r'<\1\2/>', text)
+
+    for page in PAGES:
+        if page['flow'] or page['anchor'] == 'cover':
+            continue
+        tree = ET.fromstring('<div>' + page['content'] + '</div>')
+        blocks = []
+        heading = None
+        for node in list(tree):
+            if heading is None and node.tag == 'h2':
+                node.set('class', (node.get('class', '') + ' flow-heading').strip())
+                heading = markup(node)
+            elif node.tag == 'ol' and node.get('class') == 'dialogue':
+                for turn in list(node):
+                    wrapper = ET.Element('ol', {'class': 'dialogue'})
+                    wrapper.append(turn)
+                    blocks.append(markup(wrapper))
+            elif node.tag == 'dl' and any(c in node.get('class', '').split() for c in ('vocabulary', 'phrases')):
+                children = list(node)
+                for offset in range(0, len(children), 2):
+                    wrapper = ET.Element('dl', node.attrib)
+                    wrapper.extend(children[offset:offset + 2])
+                    blocks.append(markup(wrapper))
+            elif node.tag == 'ol' and node.get('class') == 'contents':
+                for item in list(node):
+                    wrapper = ET.Element('ol', {'class': 'contents'})
+                    wrapper.append(item)
+                    blocks.append(markup(wrapper))
+            else:
+                blocks.append(markup(node))
+        if heading is None:
+            raise ValueError('No heading for flowing section: ' + page['anchor'])
+        grouped, pending = [], []
+        for block in blocks:
+            pending.append(block)
+            if re.match(r'<h[34]\b', block) or 'class="instruction"' in block or 'class="word-bank"' in block:
+                continue
+            grouped.append('<div class="flow-block">' + ''.join(pending) + '</div>')
+            pending = []
+        if pending:
+            grouped.append('<div class="flow-block">' + ''.join(pending) + '</div>')
+        page['content'] = heading + '<div class="flow-items">' + ''.join(grouped) + '</div>'
+        page['flow'] = True
 
 
 def finalize():
@@ -472,7 +590,7 @@ def finalize():
     writer = PdfWriter(clone_from=reader)
     writer.add_metadata({'/Title': TITLE + ' | ' + EDITION, '/Author': AUTHOR,
                          '/Creator': 'English Ladder', '/Subject': SUBTITLE,
-                         '/Keywords': 'English Ladder, international managers, workplace English, cross-cultural leadership'})
+                         '/Keywords': KEYWORDS})
     writer._root_object[NameObject('/Lang')] = TextStringObject('en-US')
     writer._root_object[NameObject('/ViewerPreferences')] = DictionaryObject({NameObject('/DisplayDocTitle'): BooleanObject(True)})
     writer._root_object.pop(NameObject('/Outlines'), None)
@@ -502,9 +620,10 @@ def finalize():
     writer.write(temporary)
     temporary.replace(pdf)
     with Image.open(ART) as image:
-        resolution = round(image.width / 4.65, 1)
+        resolution = round(max(image.width / 4.65, image.height / 3.1), 1)
     manifest.update(pdf_pages=len(reader.pages), tagged_pdf=True, document_language='en-US',
-                    cover_resolution_dpi=resolution, uniform_blank_width_points=100)
+                    cover_resolution_dpi=resolution, uniform_blank_width_points=100,
+                    sha256=hashlib.sha256(pdf.read_bytes()).hexdigest(), page_map=layout['anchors'])
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
     print(f'Finalized {len(reader.pages)} pages with author metadata and chapter bookmarks.')
 

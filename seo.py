@@ -104,10 +104,11 @@ def profile(path, soup):
         if path.stem in LEVELS: result['level'] = LEVELS[path.stem]
     elif relative.startswith('efsp-'):
         t = tracks()[path.stem.removeprefix('efsp-')]
+        pages = read_json('content/work/documents.json')['documents'][t['pdfs'][0][1]]['pages']
         result.update(kind='work', track=t, parent=category_url(t['category']), level='B1–C1',
                       title=t['title'] + ': Free Learner Book',
-                      description=(f'Learn English for {WORK_TOPICS[t["slug"]]}. Practice with workplace dialogues and a free 114-page learner book with vocabulary, phrases and explained answers.'
-                                   if t['slug'] in WORK_TOPICS else t['summary'] + ' Includes guided practice and a free 114-page learner book.'),
+                      description=(f'Learn English for {WORK_TOPICS[t["slug"]]}. Practice with workplace dialogues and a free {pages}-page learner book with vocabulary, phrases and explained answers.'
+                                   if t['slug'] in WORK_TOPICS else t['summary'] + f' Includes guided practice and a free {pages}-page learner book.'),
                       teaches=t['outcomes'], pdfs=[(label, href) for label, href in t['pdfs']])
     elif relative.startswith('english-for-work/'):
         name, category = next((n,c) for n,c in CATEGORIES.items() if c['slug'] == path.stem)

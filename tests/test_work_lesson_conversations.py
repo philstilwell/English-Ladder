@@ -56,21 +56,22 @@ class LessonConversationTests(unittest.TestCase):
 
     def test_learner_book_artwork_and_source_are_current(self):
         from work_books import book_source
+        from revised_book_records import record
         manifest = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
         for track in self.tracks:
             href = track['pdfs'][0][1]
             meta = manifest[href]
-            illustration_hash = hashlib.sha256((ROOT / icon_asset(track['slug'])[0]).read_bytes()).hexdigest()
+            revision = record(track['slug'])
+            self.assertEqual(meta['illustration_asset'], revision['illustration_asset'])
+            illustration_hash = hashlib.sha256((ROOT / revision['illustration_asset']).read_bytes()).hexdigest()
             self.assertEqual(meta['illustration_sha256'], illustration_hash)
-            standalone = icon_asset(track['slug'])[1:3] == (1, 1)
-            # Standalone native illustrations retain 300-dpi print detail.
-            self.assertLess(meta['bytes'], 1_300_000 if standalone else 1_000_000,
-                            'Embed the course illustration, not the entire atlas: ' + href)
+            self.assertGreaterEqual(revision['cover_resolution_dpi'], 300)
+            self.assertLess(meta['bytes'], 25 * 1024 * 1024,
+                            'Keep the complete book within the hosting file limit: ' + href)
             reader = PdfReader(ROOT / href)
             self.assertGreaterEqual(len(list(reader.pages[0].images)), 2, href)
-            if standalone:
-                self.assertTrue(all(max(image.image.size) <= 672 for image in reader.pages[0].images))
-            self.assertEqual(len(reader.pages), 114)
+            self.assertGreaterEqual(max(max(image.image.size) for image in reader.pages[0].images), 600)
+            self.assertEqual(len(reader.pages), revision['pdf_pages'])
             self.assertEqual((ROOT / href).read_bytes(), book_source(track['slug']).read_bytes())
             self.assertEqual(meta['kind'], 'Learner book')
             self.assertNotIn('lesson_conversation_hash', meta)

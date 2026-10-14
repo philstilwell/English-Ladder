@@ -1,6 +1,6 @@
 """Publish authored English for Work lessons. Offline; no paid service calls.
 
-Run generate_work_documents.py first after curriculum changes, then this file.
+Install the audited revised learner books before running this file.
 """
 import html
 import json
@@ -46,7 +46,7 @@ def pdf_metadata(track):
 def pdf_links(track):
     href, meta = pdf_metadata(track)
     size = f"{meta['bytes'] / 1024:.0f} KB"
-    return f'''<div class="work-book-download"><div><p class="work-kicker">PDF · {meta['pages']} pages · {size}</p><h3>{e(track['title'])}</h3><p id="learner-book-description">Follow the course's eight lessons, then explore three additional workplace scenarios. Includes {meta['dialogue_count']} extended, 20-turn cloze conversations, {meta['transfer_dialogue_count']} short follow-up exchanges, {meta['vocabulary_entries']} vocabulary entries and collocations, and {meta['phrase_count']} reusable phrases. Includes word banks, structured practice, and complete answer keys with explanations and page references.</p></div><a class="work-button work-download" href="{e(href)}" aria-describedby="learner-book-description">Open learner book (PDF) <span aria-hidden="true">↗</span></a></div>'''
+    return f'''<div class="work-book-download"><div><p class="work-kicker">PDF · {meta['pages']} pages · {size}</p><h3>{e(track['title'])}</h3><p id="learner-book-description">Follow the course's eight lessons, then explore three additional workplace scenarios. Includes {meta['dialogue_count']} extended, 20-turn cloze conversations, {meta['transfer_dialogue_count']} short follow-up exchanges, {meta['vocabulary_entries']} core vocabulary entries and collocations, and {meta['phrase_count']} reusable phrases. Four cumulative reviews revisit earlier language. Includes word banks, structured practice, and complete answer keys with explanations and page references.</p></div><a class="work-button work-download" href="{e(href)}" aria-describedby="learner-book-description">Open learner book (PDF) <span aria-hidden="true">↗</span></a></div>'''
 
 
 def render_module(track, module):

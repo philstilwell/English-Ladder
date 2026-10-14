@@ -1,20 +1,51 @@
 """Web views of the reviewed learner-book content, without changing print sources."""
 from copy import deepcopy
 from functools import lru_cache
-import importlib
+import json
 import re
 
-from books.supplements import load_supplements
-from work_books import book_units
-
-EDITION = '2026-10-10'
+EDITION = '2026-10-14'
 
 
 @lru_cache(maxsize=None)
 def course_book(slug):
+    from books.revised_edition import load_edition
     if slug == 'cultural-leadership-us-branches':
-        return dict(units=book_units(slug))
-    return importlib.import_module('books.' + slug.replace('-', '_') + '_content').BOOK
+        from books.leadership_pilot import UNITS, SUPPLEMENTS
+        book = dict(units=deepcopy(UNITS), supplements=deepcopy(SUPPLEMENTS))
+    else:
+        book = load_edition(slug)
+    for unit in book['units']:
+        unit['a'] = [web_question(q) for q in unit['checks']]
+        unit['d'] = [web_question(q) for q in unit['choices']]
+        if 'source_transfer' in unit:
+            unit['transfer'] = unit['source_transfer']
+        else:
+            unit['transfer'] = web_transfer(unit['transfer'], unit['transfer_title'], unit['transfer_facts'])
+    for scene in book['supplements']:
+        scene['transfer'] = web_transfer(scene['pilot_transfer'], scene['transfer']['title'], scene['transfer']['setup'])
+    return book
+
+
+def web_question(question):
+    return dict(question, reason=question.get('shared_explanation') or question['reasons'][question['answer']])
+
+
+def web_transfer(scene, title, setup):
+    answers = [g['answer'] for g in scene['gaps']]
+    lines = []
+    for i, gap in enumerate(scene['gaps']):
+        speaker, line = scene['dialogue'][gap['turn'] - 1]
+        line = re.sub(r'\{\{(\d+)\}\}', lambda m: '___' if int(m[1]) == i + 1 else answers[int(m[1]) - 1], line)
+        lines.append(dict(prompt=f'{speaker}: "{line}"', options=answers.copy(), answer=i, reason=gap['reason']))
+    return dict(title=title, setup=setup, lines=lines)
+
+
+@lru_cache(maxsize=1)
+def publication_pages():
+    from work_books import ROOT
+    manifest = json.loads((ROOT / 'content/work/documents.json').read_text())
+    return {m['course']: m['page_map'] for m in manifest['documents'].values()}
 
 
 def completed_turn(speech, gaps):
@@ -33,12 +64,16 @@ def web_track(track):
     result['revision'] = EDITION
     result['scope_note'] = book.get('scope_note', track['scope_note'])
     result['sources'] = book.get('sources', track['sources'])
-    result['supplemental_scenarios'] = load_supplements(track['slug'])
+    result['supplemental_scenarios'] = book['supplements']
+    pages = publication_pages()[track['slug']]
+    result['book_additional_pages'] = [pages[f'additional-{i}'] for i in range(1, 4)]
     glossary = []
     for index, (module, unit) in enumerate(zip(result['modules'], book['units'])):
         module['book_unit'] = unit
-        module['book_page'] = 4 + index * 9
-        module['book_key_page'] = 85 + index * 2
+        module['book_page'] = pages[f'u{index + 1}-a']
+        module['book_key_page'] = pages[f'key-u{index + 1}-d']
+        module['book_dialogue_page'] = pages[f'u{index + 1}-e']
+        module['book_conversation_key_page'] = pages[f'key-u{index + 1}-transfer']
         module['brief'] = unit['brief']
         module['vocabulary'] = [dict(term=term, definition=meaning, collocation=phrase)
                                 for term, meaning, phrase in unit['vocabulary']]

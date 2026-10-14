@@ -105,7 +105,8 @@ class SpecialistExpansionTests(unittest.TestCase):
             page = BeautifulSoup((ROOT / f'efsp-{slug}.html').read_text(), 'html.parser')
             href = f'pdf/efsp/{slug}-english-book.pdf'
             self.assertIn(href, [urlsplit(a['href']).path for a in page.select('#downloads a[href]')])
-            self.assertEqual(manifest[href]['pages'], 114)
+            from revised_book_records import record
+            self.assertEqual(manifest[href]['pages'], record(slug)['pdf_pages'])
             self.assertEqual(manifest[href]['dialogue_count'], 11)
             self.assertEqual(manifest[href]['illustration_asset'], icon_asset(slug)[0])
             self.assertEqual(len(page.select(f'[data-work-icon="{slug}"]')), 2)

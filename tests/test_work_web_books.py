@@ -23,14 +23,17 @@ class WebBookTests(unittest.TestCase):
         self.assertEqual({position for sequence in sequences for position in sequence}, {0, 1, 2, 3})
 
     def test_pdf_page_links_follow_the_print_layout(self):
-        from build_leadership_book import key_page, supplement_page, unit_page
+        from revised_book_records import record
         for track in load_tracks():
+            pages = record(track['slug'])['page_map']
             for index, module in enumerate(web_track(track)['modules']):
-                self.assertEqual(module['book_page'], unit_page(index))
-                self.assertEqual(module['book_key_page'], key_page(index))
-        self.assertEqual([supplement_page(i) for i in range(3)], [76, 79, 82])
+                self.assertEqual(module['book_page'], pages[f'u{index + 1}-a'])
+                self.assertEqual(module['book_key_page'], pages[f'key-u{index + 1}-d'])
+                self.assertEqual(module['book_dialogue_page'], pages[f'u{index + 1}-e'])
+            self.assertEqual(web_track(track)['book_additional_pages'], [pages[f'additional-{i}'] for i in range(1, 4)])
 
     def test_all_courses_preserve_every_reviewed_dialogue_answer_and_language_bank(self):
+        from revised_book_records import record
         fingerprints = set()
         total_questions = 0
         for original in load_tracks():
@@ -87,10 +90,12 @@ class WebBookTests(unittest.TestCase):
                 fingerprints.add(fingerprint)
             for quiz in soup.select('[data-work-quiz]'):
                 self.assertEqual(len(quiz.select('input[type=radio]')), 4)
-                self.assertGreaterEqual(len(quiz['data-explanation'].split()), 6)
+                # The approved pilot includes a complete five-word distinction:
+                # "It promises consideration, not approval."
+                self.assertGreaterEqual(len(quiz['data-explanation'].split()), 5)
                 total_questions += 1
             for link in soup.select('a[href*="#page="]'):
-                self.assertTrue(1 <= int(urlparse(link['href']).fragment.split('=')[1]) <= 114)
+                self.assertTrue(1 <= int(urlparse(link['href']).fragment.split('=')[1]) <= record(track['slug'])['pdf_pages'])
             for unwanted in ('write a 70-110 word', 'ask me to write my own sentence', 'draft a two-sentence response'):
                 self.assertNotIn(unwanted, soup.get_text().lower())
         self.assertEqual(len(fingerprints), 880)

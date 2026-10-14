@@ -112,15 +112,16 @@ class OccupationPublicationTests(unittest.TestCase):
                 self.assertNotIn(unwanted, page.get_text().lower())
 
     def test_new_pdf_collocations_and_no_composition_assignment(self):
-        from build_leadership_book import unit_page
+        from revised_book_records import record
         from work_books import book_units
         for track in self.tracks:
             href = track['pdfs'][0][1]
             reader = PdfReader(ROOT / href)
             self.assertIn('English Ladder', reader.pages[0].extract_text())
+            pages = record(track['slug'])['page_map']
             for i, unit in enumerate(book_units(track['slug'])):
-                text = ' '.join(' '.join(reader.pages[unit_page(i) + offset].extract_text().split())
-                                for offset in (0, 1))
+                text = ' '.join(' '.join(page.extract_text().split())
+                                for page in reader.pages[pages[f'u{i + 1}-b1'] - 1:pages[f'u{i + 1}-c'] - 1])
                 for term, definition, expression in unit['vocabulary']:
                     self.assertIn(expression, text)
                 rehearsal = ' '.join(unit['rehearsal']).lower()

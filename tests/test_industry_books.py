@@ -1,142 +1,53 @@
-"""Quality checks for the complete, authored learner books currently on disk."""
+"""Quality checks for every revised field-specific learner book."""
+import hashlib
+import json
 import unittest
 from pathlib import Path
-from types import SimpleNamespace
-from unittest.mock import MagicMock
 
-import pdfplumber
-from pypdf import PdfReader
-
-import build_leadership_book as design
-from build_industry_books import illustration, load_book, validate_book
-from books.cross_cultural_leadership_content import COPYRIGHT, REPRODUCTION_NOTICE
-from books.supplements import load_supplements
-from work_curriculum import load_tracks
-from work_icons import icon_bottom_trim, icon_right_trim
+from audit_revised_books import audit
+from books.revised_edition import inventory, load_edition
+from revised_book_records import record, stem
 
 ROOT = Path(__file__).resolve().parents[1]
-TRACKS = {t['slug']: t for t in load_tracks()[1:]}
-COMPLETE = sorted(p.name.removesuffix('-english-book.pdf') for p in (ROOT / 'output/pdf').glob('*-english-book.pdf')
-                  if p.name.removesuffix('-english-book.pdf') in TRACKS)
 
 
 class IndustryBookTests(unittest.TestCase):
-    def test_cover_uses_existing_illustration_crop_rules(self):
-        for slug in ('ai-development', 'hospitality-tourism', 'energy-utilities', 'banking-operations', 'consulting', 'medical-laboratory-technicians'):
-            with self.subTest(slug=slug):
-                canvas = MagicMock()
-                illustration(SimpleNamespace(slug=slug, c=canvas))
-                right = icon_right_trim(slug) * 160 / 104
-                bottom = icon_bottom_trim(slug) * 160 / 104
-                if right or bottom:
-                    canvas.beginPath.return_value.rect.assert_called_once_with(
-                        design.RIGHT - 163, 352 + bottom, 160 - right, 160 - bottom)
-                    canvas.clipPath.assert_called_once()
-                else:
-                    canvas.clipPath.assert_not_called()
-                canvas.drawImage.assert_called_once()
-                canvas.saveState.assert_called_once()
-                canvas.restoreState.assert_called_once()
+    def test_every_field_has_substantial_distinct_material(self):
+        fingerprints = set()
+        for slug in inventory():
+            book = load_edition(slug)
+            self.assertEqual(sum(len(u['vocabulary']) for u in book['units']), 192)
+            self.assertEqual(len({p[1] for u in book['units'] for p in u['phrases']}), 128)
+            for scene in book['units'] + book['supplements']:
+                self.assertEqual(len(scene['dialogue']), 20)
+                signature = tuple(scene['dialogue'])
+                self.assertNotIn(signature, fingerprints, slug)
+                fingerprints.add(signature)
+            for u in book['units']:
+                self.assertEqual(len(u['choices']), 4)
+                self.assertIn('Rebuild the exchange', u['second_take']['prompt'])
+                for scene in (u, u['transfer']):
+                    self.assertTrue(all(g['reason'] for g in scene['gaps']))
+        self.assertEqual(len(fingerprints), 79 * 11)
 
-    def test_complete_sources_and_rendered_content(self):
-        self.assertTrue(COMPLETE)
-        for slug in COMPLETE:
+    def test_complete_sources_fonts_links_and_rendered_content(self):
+        for slug in inventory():
             with self.subTest(slug=slug):
-                book = load_book(slug)
-                validate_book(book, TRACKS[slug])
-                reader = PdfReader(ROOT / f'output/pdf/{slug}-english-book.pdf')
-                pages = [' '.join(page.extract_text().split()) for page in reader.pages]
-                self.assertEqual(len(pages), 114)
-                self.assertIn(design.content_hash(book['units'], load_supplements(slug)), reader.metadata.subject)
-                self.assertEqual(reader.metadata.author, 'Phil Stilwell')
-                self.assertGreaterEqual(len(list(reader.pages[0].images)), 2)
-                for i, text in enumerate(pages, 1):
-                    self.assertIn('English Ladder', text)
-                    self.assertEqual(text.count('ENGLISHLADDER.COM'), 1)
-                    self.assertIn(f'Phil Stilwell | {i:02d}', text)
-                    self.assertNotRegex(text, r'\{\{\d+\}\}|\[\[|\ufffd')
-                for text in (pages[0], pages[-1]):
-                    self.assertNotRegex(text, r'review copy|approval draft')
-                    self.assertIn(COPYRIGHT, text)
-                    self.assertIn(REPRODUCTION_NOTICE, text)
-                for i, unit in enumerate(book['units']):
-                    start = design.unit_page(i) - 1
-                    key = pages[design.key_page(i) - 1]
-                    conversation_key = pages[design.key_page(i, True) - 1]
-                    for n, entry in enumerate(unit['vocabulary']):
-                        for value in entry:
-                            self.assertIn(' '.join(value.split()), pages[start + 1 + n // 12])
-                    for n, (label, phrase) in enumerate(unit['phrases']):
-                        self.assertIn(label.upper(), pages[start + 3 + n // 8])
-                        self.assertIn(phrase, pages[start + 3 + n // 8])
-                        if phrase.startswith('"') and phrase.endswith('"'):
-                            self.assertNotIn('"' + phrase + '"', pages[start + 3 + n // 8])
-                    for q in unit['a'] + unit['d']:
-                        self.assertIn(q['prompt'], key)
-                        self.assertIn(q['reason'], key)
-                    for n, g in enumerate(unit['gaps'], 1):
-                        self.assertIn(g['answer'], pages[start + 6])
-                        self.assertIn(f'{n}. {g["answer"]}', pages[start + 7])
-                        self.assertIn(g['reason'], conversation_key)
-                    for q in unit['transfer']['lines']:
-                        answer = q['options'][q['answer']]
-                        self.assertIn(q['prompt'].replace('___', answer), conversation_key)
-                        self.assertIn(q['reason'], conversation_key)
-                    for turn, (speaker, _) in enumerate(unit['dialogue'], 1):
-                        self.assertIn(f'{turn:02d} {speaker}:', pages[start + 6 + (turn > 10)])
+                result = audit(slug, geometry=False)
+                self.assertEqual(result['questions'], 96)
+                self.assertEqual(result['blanks'], 142)
+                self.assertGreater(result['internal_links'], 200)
+                self.assertGreaterEqual(record(slug)['cover_resolution_dpi'], 300)
 
-    def test_fonts_and_link_destinations(self):
-        for slug in COMPLETE:
-            with self.subTest(slug=slug):
-                reader = PdfReader(ROOT / f'output/pdf/{slug}-english-book.pdf')
-                seen = set()
-                page_ids = {p.indirect_reference.idnum for p in reader.pages}
-                for page in reader.pages:
-                    links = [ref.get_object().get('/A', {}).get('/URI') for ref in page.get('/Annots', [])]
-                    self.assertEqual(links.count('https://englishladder.com/'), 1)
-                    for ref in page['/Resources']['/Font'].values():
-                        font = ref.get_object()
-                        if str(font['/BaseFont']) in seen:
-                            continue
-                        seen.add(str(font['/BaseFont']))
-                        descriptor = font['/FontDescriptor'].get_object()
-                        self.assertTrue(any(k in descriptor for k in ('/FontFile', '/FontFile2', '/FontFile3')))
-                    for ref in page.get('/Annots', []):
-                        dest = ref.get_object().get('/Dest')
-                        if dest:
-                            self.assertIn(dest[0].idnum, page_ids)
-                for i in range(8):
-                    for offset in (0, 5, 7, 8):
-                        page = reader.pages[design.unit_page(i) + offset - 1]
-                        target = reader.pages[design.key_page(i, offset >= 7) - 1].indirect_reference.idnum
-                        self.assertIn(target, [a.get_object()['/Dest'][0].idnum for a in page.get('/Annots', []) if a.get_object().get('/Dest')])
-
-    def test_uniform_gaps_and_page_bounds(self):
-        for slug in COMPLETE:
-            with self.subTest(slug=slug), pdfplumber.open(ROOT / f'output/pdf/{slug}-english-book.pdf') as pdf:
-                widths = []
-                cloze_pages = {design.unit_page(i) + offset for i in range(8) for offset in (6, 7, 8)}
-                cloze_pages.update(design.supplement_page(i) + offset for i in range(3) for offset in range(3))
-                for page in pdf.pages:
-                    spans = []
-                    for char in page.chars:
-                        self.assertGreaterEqual(char['x0'], 0)
-                        self.assertLessEqual(char['x1'], page.width)
-                        self.assertGreaterEqual(char['top'], 0)
-                        self.assertLessEqual(char['bottom'], page.height)
-                        if char['text'] != '_' or page.page_number not in cloze_pages:
-                            continue
-                        if spans and abs(spans[-1][-1]['x1'] - char['x0']) < .1 and abs(spans[-1][-1]['top'] - char['top']) < .1:
-                            spans[-1].append(char)
-                        else:
-                            spans.append([char])
-                    for span in spans:
-                        self.assertEqual(len(span), design.CLOZE_UNDERSCORES)
-                        self.assertTrue(all(abs(c['size'] - design.CLOZE_FONT_SIZE) < .01 for c in span))
-                        widths.append(span[-1]['x1'] - span[0]['x0'])
-                    page.close()
-                self.assertEqual(len(widths), 142)
-                self.assertAlmostEqual(min(widths), max(widths), places=3)
+    def test_full_geometry_audit_matches_the_exact_delivered_files(self):
+        report = json.loads((ROOT / 'books/REVISED-2026-10-results.json').read_text())['automated_checks']
+        self.assertEqual(report['failures'], [])
+        passed = {r['slug']: r for r in report['results']}
+        self.assertEqual(len(passed), 80)
+        for slug in inventory():
+            pdf = ROOT / 'output/pdf' / (stem(slug) + '.pdf')
+            self.assertTrue(passed[slug]['geometry_checked'])
+            self.assertEqual(passed[slug]['sha256'], hashlib.sha256(pdf.read_bytes()).hexdigest())
 
 
 if __name__ == '__main__':

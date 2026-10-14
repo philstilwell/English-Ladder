@@ -5,7 +5,7 @@ const { pathToFileURL } = require('node:url');
 const { chromium } = require('playwright');
 
 const root = __dirname;
-const stem = 'cross-cultural-leadership-english-book-revised';
+const stem = process.argv[2] || 'cross-cultural-leadership-english-book-revised';
 const folder = path.join(root, 'output', 'pdf');
 
 async function main() {
@@ -41,6 +41,20 @@ async function main() {
             container.append(item);
             if (item.getBoundingClientRect().bottom > next.querySelector('.page-body').getBoundingClientRect().bottom + .5) {
               throw new Error(`Oversized individual key: ${item.id}`);
+            }
+          }
+        }
+        // Avoid a nearly empty continuation page after a single long block.
+        if (current !== original) {
+          const previous = current.previousElementSibling;
+          const lastItems = current.querySelector('.flow-items');
+          const previousItems = previous.querySelector('.flow-items');
+          while (lastItems.getBoundingClientRect().height < 240 && previousItems.children.length > 1) {
+            const candidate = previousItems.lastElementChild;
+            lastItems.prepend(candidate);
+            if (lastItems.getBoundingClientRect().bottom > current.querySelector('.page-body').getBoundingClientRect().bottom + .5) {
+              previousItems.append(candidate);
+              break;
             }
           }
         }
@@ -87,7 +101,9 @@ async function main() {
         return { page: +sheet.dataset.page, id: sheet.id, usedHeight: +(bottom - box.top).toFixed(1), availableHeight: +box.height.toFixed(1), words: body.innerText.split(/\s+/).length };
       });
       const blanks = [...document.querySelectorAll('.blank')].map(b => b.getBoundingClientRect().width);
-      return { pages: sheets.length, pageStats, overflows, invalidLinks, duplicateIds,
+      const anchors = Object.fromEntries([...document.querySelectorAll('[id]')]
+        .filter(el => el.closest('.sheet')).map(el => [el.id, +el.closest('.sheet').dataset.page]));
+      return { pages: sheets.length, pageStats, anchors, overflows, invalidLinks, duplicateIds,
         blankCount: blanks.length, minBlankWidth: Math.min(...blanks), maxBlankWidth: Math.max(...blanks) };
     });
     fs.writeFileSync(path.join(folder, `${stem}-layout.json`), JSON.stringify(report, null, 2) + '\n');
@@ -100,7 +116,7 @@ async function main() {
     fs.writeFileSync(path.join(folder, `${stem}.html`), await page.content());
     await page.pdf({ path: path.join(folder, `${stem}.pdf`), preferCSSPageSize: true,
       printBackground: true, tagged: true, outline: true });
-    const previewFolder = path.join(root, 'tmp', 'pdfs', 'leadership-pilot');
+    const previewFolder = path.join(root, 'tmp', 'pdfs', stem);
     fs.mkdirSync(previewFolder, { recursive: true });
     for (const id of ['cover', 'u1-a', 'u1-b1', 'u1-c', 'u2-e', 'u2-e-continued', 'u4-transfer', 'review-4', 'key-u1', 'index']) {
       await page.locator(`#${id}`).screenshot({ path: path.join(previewFolder, `${id}.png`) });

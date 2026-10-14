@@ -96,12 +96,12 @@ def render_practice(track, module):
 {heading('E', 'Conversations')}<h4>{e(unit['scene'])}</h4>
 <details class="work-extended-conversation" id="{module['id']}-conversation"><summary>Extended conversation · 20 turns · {len(unit['gaps'])} gaps</summary>
 {cloze(unit, module['id'] + '-cloze')}
-{book_link(track, module['book_page'] + 6, 'Dialogue in the book, page ' + str(module['book_page'] + 6))}</details>
+{book_link(track, module['book_dialogue_page'], 'Dialogue in the book, page ' + str(module['book_dialogue_page']))}</details>
 <h5 class="work-short-heading">Three more conversations at work</h5><p>Each short conversation has its own fictional situation and facts.</p>{''.join(conversations)}</section>
 <section class="work-speaking">{heading('F', 'Say it')}<h4>Two scenarios to practice</h4>
 <div class="work-speaking-scenario"><h5>{e(unit['scene'])}</h5><ol>{rehearsal}</ol><p class="work-support">On your own: read both roles. With a partner: swap roles after the first reading. Use the completed conversation to check any line you need to repeat.</p></div>
 <div class="work-speaking-scenario">{transfer(unit['transfer'], module['id'] + '-transfer')}<p>Read the completed exchange twice, switching roles. Keep the printed facts and professional responsibilities unchanged.</p></div>
-{book_link(track, module['book_key_page'] + 1, 'Conversation explanations in the book, page ' + str(module['book_key_page'] + 1))}</section></div>'''
+{book_link(track, module['book_conversation_key_page'], 'Speaking-exchange explanations in the book, page ' + str(module['book_conversation_key_page']))}</section></div>'''
 
 
 def render_module(track, module):
@@ -136,7 +136,7 @@ def render_additional(track):
     scenes = []
     for index, scene in enumerate(track['supplemental_scenarios']):
         key = f'additional-{index + 1}'
-        page = 76 + index * 3
+        page = track['book_additional_pages'][index]
         reference = ''
         if scene.get('reference'):
             title, url = scene['reference']

@@ -1,53 +1,81 @@
 # English for Work Learner Books
 
-The approved leadership book is the design and content-depth reference. New
-books are independently authored, not noun substitutions in a common scenario.
+The collection contains 80 courses. The approved Cross-Cultural Leadership
+pilot is the design reference for the October 14, 2026 edition.
 
-Each `<slug>_content.py` exports `BOOK`, containing the course metadata and eight
-units in the existing webpage order. `books.authoring.unit` accepts compact
-tables of explicitly authored material. It does not generate teaching prose.
+## Content
 
-Each unit contains 24 defined terms with natural collocations, 16 phrases,
-six language notes, three briefing questions, four language questions, a
-coherent 20-turn dialogue of 220-520 words with ten numbered cloze gaps, and
-a four-turn transfer cloze with a separate situation. Every question and gap
-has an explanation. Cloze answers use one shuffled bank and identical blanks.
+Each field has eight lessons in website order, 192 defined vocabulary entries
+with collocations, 128 distinct phrase examples, eleven 20-turn conversations,
+eleven short follow-up exchanges, 142 numbered cloze gaps, 96 multiple-choice
+questions, and four cumulative reviews. All questions and gaps have explained
+answers. Cloze blanks have equal widths, independent of answer length.
 
-Each book also has three separately authored scenarios in `books/additional/`,
-each with a 20-turn conversation, six gaps, a four-turn transfer and explained
-answers. `books.supplements` parses and validates these authored scenes.
-The expanded edition has eleven extended conversations and eleven transfers,
-a 37.5% increase over the original eight of each.
+The 79 industry editions retain their independently authored cases, terminology,
+and extended conversations. `books/revised_edition.py` adapts those sources to
+the approved design; `books/revisions/` holds targeted editorial revisions.
+New retrieval questions use that lesson's real terms and conversation turns,
+not a generic dialogue with profession names substituted. An additional 18
+language-in-context entries introduce the three supplemental conversations.
+Original professional scope limitations and reference-check dates are retained.
 
-Each complete book is 114 pages, including an illustrated cover, linked
-contents, professional communication notes, explained keys, quick phrases,
-linked vocabulary index, sources, and the author's copyright. Fonts are
-embedded. No teacher guide, open-ended writing task, or sea-green background
-is included. Primary references are checked during authoring.
+The Leadership pilot has separately authored cumulative reviews and changed-fact
+tasks. Industry reviews instead test terminology and reconstruction of exchanges
+using both neighboring turns. No open-ended writing tasks or teacher guide are
+included. The books are not professional practice instructions.
 
-Every page, including the cover and answer keys, has a centered, clickable
-`ENGLISHLADDER.COM` footer. The course title remains on the left, with the author
-and page number on the right. The shared `Book.new_page` template supplies this
-footer; the PDF audit checks its presence, position, link, and corner clearance
-on every page.
+## Design And Outputs
 
-Build: `python3 build_industry_books.py ai-development`
+The shared HTML print renderer uses white pages, blue/coral/gold accents,
+embedded Vera fonts, illustrations at 300 dpi or above, linked contents and
+indexes, tagged PDF structure, bookmarks, and live answer-page references.
+Pagination follows the length of each field's content rather than a fixed count.
+Every page includes English Ladder branding and a clickable website footer.
 
-Build all: `python3 build_leadership_book.py`, then
-`python3 build_industry_books.py --all`.
+Canonical PDFs and revision records are in `output/pdf/`. The site serves exact
+copies at stable `pdf/efsp/` addresses. `content/work/documents.json` records
+hashes, page counts, and actual section pages. Website links use those pages and
+a file-hash version parameter. The approved Leadership HTML/EPUB review assets
+remain available separately.
 
-Audit the rebuilt masters: `python3 audit_work_books.py`.
-Audit current public copies: `python3 audit_work_books.py --published`.
-The field-specific editorial record is `books/AUDIT-2026-10.md`.
+65 older cover illustrations were replaced with OpenAI native-generated PNGs
+in `assets/work/book-covers/`. The 14 recent medical/specialist illustrations
+and approved Leadership illustration were already print-ready. The print masters
+are embedded in the PDFs and excluded from the public assets package.
 
-Final books are in `output/pdf/`. Existing website downloads are not changed
-by this workflow. Incomplete sources must never be represented as completed
-books or published downloads. The complete inventory remains `load_tracks()`
-in `work_curriculum.py` (72 courses, including the approved leadership book).
+## Build And Publish
 
-The six medical-specialty courses added in October 2026 use their books as the
-single content source, connected through `work_medical.py`. Their separately
-authored short webpage conversations are in `books/<slug>_short.py`. Original
-native-generated illustrations are in `assets/work/medical/`; PNGs serve the
-books and lighter WebP copies serve the webpages. See
-`books/MEDICAL-COURSES-2026-10-10.md` for the specialty scope and review record.
+Use the project Python environment with pypdf, pdfplumber, ReportLab, Pillow,
+and the installed Playwright browser. No paid service is called by these steps.
+Set `BOOK_NODE` and `CHROMIUM_EXECUTABLE` if runtime discovery is unavailable.
+
+```sh
+python3 build_revised_collection.py --all --skip-current
+python3 audit_revised_books.py --staged
+python3 install_revised_books.py
+python3 generate_efsp_web_pages.py
+python3 audit_revised_books.py --published --quick
+```
+
+Pass one or more course slugs instead of `--all` for a targeted staged build.
+The installer requires a complete, current 80-book full-geometry audit before
+replacing the public collection. Editing source content, design, print code, or
+cover artwork invalidates the corresponding record. Build and audit again.
+
+The legacy `build_industry_books.py` and `build_leadership_book.py` remain for
+historical sources; do not use them to publish this edition.
+
+## Verification
+
+`audit_revised_books.py` checks all printed questions, alternatives, explanations,
+vocabulary and phrases; embedded fonts; page margins and text size; image
+resolution; consistent blank widths; navigation; and content/file freshness.
+`books/REVISED-2026-10-results.json` is the receipt for the exact delivered PDFs.
+The focused tests also preserve earlier technical corrections, including the
+Cardiology update-time versus review-time distinction.
+
+Automated checks and editorial inspection are not an independent subject-expert
+review, learner trial, certified accessibility assessment, or physical print
+proof. Those remain prerequisites for a commercial print release. Historical
+audit records are retained with their original dates rather than rewritten as
+new expert verification.

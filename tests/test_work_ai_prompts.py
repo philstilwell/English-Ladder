@@ -95,7 +95,7 @@ class WorkAIPromptTests(unittest.TestCase):
                 self.assertNotIn('ai_prompt_count', manifest[href])
                 reader = PdfReader(ROOT / href)
                 links = {str(a.get_object().get('/A', {}).get('/URI', ''))
-                         for a in reader.pages[-1].get('/Annots', [])}
+                         for pdf_page in reader.pages for a in pdf_page.get('/Annots', [])}
                 self.assertIn(f'https://englishladder.com/efsp-{t["slug"]}.html', links)
                 page = BeautifulSoup((ROOT / f'efsp-{t["slug"]}.html').read_text(), 'html.parser')
                 self.assertIsNotNone(page.select_one('#ai-practice'))

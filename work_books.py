@@ -10,7 +10,7 @@ from pathlib import Path
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parent
-EDITION = '2026-10-11'
+EDITION = '2026-10-14'
 
 
 def book_stem(slug):
@@ -33,22 +33,21 @@ def book_units(slug):
 
 
 def book_metadata(track, curriculum_hash):
-    from build_leadership_book import TOTAL_PAGES, content_hash, validate_content
-    from books.supplements import load_supplements
-    from work_icons import icon_asset
+    from revised_book_records import verify_record
+    from build_revised_books import configure
 
     slug = track['slug']
-    units = book_units(slug)
-    supplements = load_supplements(slug)
-    validate_content(units, [m['title'] for m in track['modules']])
+    revision = verify_record(slug, root=ROOT)
+    book = configure(slug)
+    units, supplements = book['units'], book['supplements']
+    if [u['title'] for u in units] != [m['title'] for m in track['modules']]:
+        raise ValueError('Book lesson order differs from its course: ' + slug)
     source = book_source(slug)
     reader = PdfReader(source)
-    book_hash = content_hash(units, supplements)
-    if book_hash not in (reader.metadata.subject or ''):
-        raise ValueError('Rebuild the learner book before publishing: ' + slug)
-    if len(reader.pages) != TOTAL_PAGES:
+    book_hash = revision['source_hash']
+    if len(reader.pages) != revision['pdf_pages']:
         raise ValueError('Unexpected learner-book page count: ' + slug)
-    illustration = icon_asset(slug)[0]
+    illustration = revision['illustration_asset']
     return dict(course=slug, kind='Learner book', revision=EDITION,
                 pages=len(reader.pages), bytes=source.stat().st_size,
                 sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
@@ -58,6 +57,9 @@ def book_metadata(track, curriculum_hash):
                 transfer_dialogue_count=len(units) + len(supplements),
                 vocabulary_entries=sum(len(u['vocabulary']) for u in units),
                 phrase_count=sum(len(u['phrases']) for u in units),
+                additional_language_entries=revision['additional_language_entries'],
+                page_map=revision['page_map'],
+                cumulative_reviews=4, tagged_pdf=True,
                 illustration_asset=illustration,
                 illustration_sha256=hashlib.sha256((ROOT / illustration).read_bytes()).hexdigest())
 
@@ -99,8 +101,7 @@ def publish_books(slugs=None):
 
 def validate_publication(tracks):
     from work_curriculum import content_hash
-    from build_leadership_book import content_hash as book_hash
-    from books.supplements import load_supplements
+    from revised_book_records import verify_record
 
     manifest = json.loads((ROOT / 'content/work/documents.json').read_text())
     if manifest['revision'] != EDITION:
@@ -111,7 +112,8 @@ def validate_publication(tracks):
     if set(manifest['documents']) != expected:
         raise ValueError('The download manifest must contain exactly one learner book per course.')
     for href, meta in manifest['documents'].items():
-        if meta['book_content_hash'] != book_hash(book_units(meta['course']), load_supplements(meta['course'])):
+        revision = verify_record(meta['course'], root=ROOT)
+        if meta['book_content_hash'] != revision['source_hash']:
             raise ValueError('Rebuild and republish the edited learner book: ' + href)
         if hashlib.sha256((ROOT / href).read_bytes()).hexdigest() != meta['sha256']:
             raise ValueError('Public learner book differs from its download record: ' + href)

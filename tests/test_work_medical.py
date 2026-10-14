@@ -107,7 +107,7 @@ class MedicalProfessionTests(unittest.TestCase):
             href = f'pdf/efsp/{slug}-english-book.pdf'
             self.assertTrue((ROOT / href).exists())
             self.assertIn(href, [urlsplit(link['href']).path for link in page.select('#downloads a[href]')])
-            self.assertEqual(manifest[href]['pages'], 114)
+            self.assertEqual(manifest[href]['pages'], len(PdfReader(ROOT / href).pages))
             self.assertEqual(manifest[href]['dialogue_count'], 11)
             self.assertEqual(manifest[href]['illustration_asset'], icon_asset(slug)[0])
             self.assertEqual(len(page.select(f'[data-work-icon="{slug}"]')), 2)
@@ -161,11 +161,13 @@ class MedicalProfessionTests(unittest.TestCase):
             self.assertIn(q['reason'], page.get_text())
 
         pdf = PdfReader(ROOT / 'pdf/efsp/cardiologists-english-book.pdf')
-        exercise = ' '.join(pdf.pages[11].extract_text().split())
-        key = ' '.join(pdf.pages[85].extract_text().split())
+        from revised_book_records import record
+        pages = record('cardiologists')['page_map']
+        exercise = ' '.join(' '.join(page.extract_text().split()) for page in pdf.pages[pages['u1-transfer'] - 1:pages['u2-a'] - 1])
+        key = ' '.join(' '.join(page.extract_text().split()) for page in pdf.pages[pages['key-u1-transfer'] - 1:pages['key-u2'] - 1])
         self.assertIn('previously reported onset time of', exercise)
-        self.assertIn('1. 09:10 | 2. 09:40', exercise)
-        self.assertIn(prompt.replace('___', '09:40'), key)
+        self.assertIn('1. 09:10 / 2. 09:40', exercise)
+        self.assertIn(prompt.replace('___', '09:40').replace('"', ''), key)
         for q in lines[:2]:
             self.assertIn(q['reason'], key)
 

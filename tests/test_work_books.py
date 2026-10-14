@@ -41,12 +41,15 @@ class WorkBookPublicationTests(unittest.TestCase):
                 self.assertEqual(urlparse(links[0]['href']).path, book_href(track['slug']))
                 self.assertIn('v=', links[0]['href'])
                 description = page.find(id=links[0]['aria-describedby']).get_text()
-                for phrase in ('20-turn', '192 vocabulary', '128 reusable phrases',
+                for phrase in ('20-turn', '192 core vocabulary', '128 reusable phrases',
                                'word banks', 'answer keys with explanations', 'page references',
+                               'Four cumulative reviews',
                                'three additional workplace scenarios', '11 extended',
                                '11 short follow-up exchanges'):
                     self.assertIn(phrase.lower(), description.lower())
-                self.assertIn('114 pages', section.get_text())
+                self.assertIn(str(self.manifest['documents'][book_href(track['slug'])]['pages']) + ' pages', section.get_text())
+                self.assertIn(str(self.manifest['documents'][book_href(track['slug'])]['pages']) + '-page learner book',
+                              page.select_one('meta[name="description"]')['content'])
                 for selector in ('.work-study-card', '#lessons'):
                     self.assertTrue(any(urlparse(a['href']).path == book_href(track['slug'])
                                         for a in page.select(selector + ' a[href]')))
@@ -87,9 +90,9 @@ class WorkBookPublicationTests(unittest.TestCase):
 
     def test_edited_additional_dialogue_requires_republication(self):
         from books.supplements import load_supplements
-        changed = [dict(item) for item in load_supplements(self.tracks[0]['slug'])]
+        changed = [dict(item) for item in load_supplements('ai-development')]
         changed[0]['brief'] += ' Newly edited material.'
-        with patch('books.supplements.load_supplements', return_value=changed):
+        with patch('books.revised_edition.load_supplements', return_value=changed):
             with self.assertRaisesRegex(ValueError, 'Rebuild and republish'):
                 validate_publication(self.tracks)
 

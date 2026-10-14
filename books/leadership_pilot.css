@@ -33,6 +33,9 @@ a { color: #244f9a; text-decoration: underline; }
 .instruction { font-size: 9.5pt; color: #505867; line-height: 1.4; margin-bottom: 11pt; }
 .section-letter { display: inline-flex; align-items: center; justify-content: center; vertical-align: 2pt; width: 27pt; height: 27pt; border-radius: 50%; background: var(--accent); color: #fff; font-size: 15pt; }
 .cover .eyebrow { margin-top: 11pt; margin-bottom: 18pt; }
+.industry-cover h1 { font-size: 32pt; }
+.industry-cover .eyebrow { margin-bottom: 12pt; }
+.industry-cover .subtitle { font-size: 15pt; }
 .subtitle { margin: 14pt 0 9pt; font-size: 16pt; line-height: 1.4; max-width: 450pt; }
 .cover-art { display: block; width: 4.65in; height: 3.1in; object-fit: contain; margin: 8pt auto 13pt; }
 .cover-author { padding-top: 11pt; border-top: 2pt solid var(--accent); }
@@ -71,6 +74,8 @@ a { color: #244f9a; text-decoration: underline; }
 .answer-link { margin: 10pt 0 0; font-size: 9pt; }
 .vocabulary { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22pt; row-gap: 11pt; }
 .vocabulary div { break-inside: avoid; }
+.flow-items > .vocabulary, .flow-block > .vocabulary { margin-bottom: 11pt; }
+.flow-items > .phrases, .flow-block > .phrases { margin-bottom: 10pt; }
 .vocabulary dt { font-size: 11pt; font-weight: bold; color: var(--accent); margin-bottom: 3pt; }
 .vocabulary dd { font-size: 9.8pt; line-height: 1.4; }
 .collocation { display: block; font-style: italic; margin-top: 3pt; }

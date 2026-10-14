@@ -12,8 +12,9 @@ from work_ready_prompts import dialogue_prompts, write_prompt_packs
 from work_icons import card_icon, directory_collage
 from work_lesson_conversations import load_course
 from work_books import validate_publication
-from work_web_content import web_track
-from work_web_lessons import render_additional
+from work_web_content import web_track, publication_documents
+from work_web_lessons import render_additional, render_checkpoint, render_field_notes
+from work_web_art import course_illustration, build_art
 
 
 def e(value):
@@ -37,9 +38,8 @@ def page(title, content, current):
 
 
 def pdf_metadata(track):
-    path = ROOT / 'content/work/documents.json'
     href = track['pdfs'][0][1]
-    meta = json.loads(path.read_text())['documents'][href]
+    meta = publication_documents()[track['slug']]
     return f"{href}?v={meta['sha256'][:12]}", meta
 
 
@@ -57,7 +57,13 @@ def render_module(track, module):
 def render_industry_page(t, tracks):
     t = web_track(t)
     book_url, _ = pdf_metadata(t)
-    modules = ''.join(render_module(t, m) for m in t['modules'])
+    modules = ''
+    for module in t['modules']:
+        modules += render_module(t, module)
+        for index, checkpoint in enumerate(t['book_checkpoints'], 1):
+            if checkpoint['after'] == module['number']:
+                modules += render_checkpoint(t, checkpoint, index)
+    review_links = ''.join(f'<a href="#review-{i}">Review {i}</a>' for i in range(1, 5))
     jump = ''.join(f'<a href="#{m["id"]}" title="{e(m["title"])}">{m["number"]:02d}<span class="sr-only"> {e(m["title"])}</span></a>' for m in t['modules'])
     glossary = ''.join(f'<div data-work-term><dt>{e(j["term"])}</dt><dd>{e(j["definition"])}<span class="work-collocation">{e(j["collocation"])}</span><a href="#{j["lesson_id"]}">Lesson {j["lesson"]:02d}</a></dd></div>' for j in sorted(t['web_glossary'], key=lambda j:j['term'].casefold()))
     related = ''.join(f'<a href="efsp-{r["slug"]}.html">{e(r["title"])} <span aria-hidden="true">↗</span></a>' for r in related_tracks(t, tracks))
@@ -68,11 +74,13 @@ def render_industry_page(t, tracks):
     sources = ''.join(f'<li><a href="{e(s["url"])}">{e(s["title"])}</a></li>' for s in t['sources'])
     content = f'''<div data-work-course="{e(t['slug'])}">
 <nav class="work-breadcrumb" aria-label="Breadcrumb"><a href="efsp.html">English for Work</a><span aria-hidden="true">/</span><span>{e(t['category'])}</span></nav>
-<section class="work-hero"><div>{card_icon(t)}<p class="work-kicker">English for Work · {e(t['category'])}</p><h1>{e(t['title'])}</h1><p class="work-intro">{e(t['summary'])}</p><div class="work-meta"><span>8 practical lessons</span><span>Intermediate to advanced</span><span>1 complete learner book</span></div><a class="work-button" href="#lessons">Start practicing <span aria-hidden="true">→</span></a></div>
-<aside class="work-study-card"><p class="work-kicker">Words into action</p><p class="work-study-phrase">Read the situation.<br>Find your words.<br>Make yourself clear.</p><p>For {e(t['roles']).rstrip('.')}.</p><a href="{e(book_url)}">Open learner book (PDF) ↗</a><p><a href="#finished-dialogue-prompts">Copy complete AI prompts ↓</a></p></aside></section>
+<section class="work-hero"><div>{card_icon(t)}<p class="work-kicker">English for Work · {e(t['category'])}</p><h1>{e(t['title'])}</h1><p class="work-intro">{e(t['summary'])}</p><div class="work-meta"><span>8 practical lessons</span><span>Upper-intermediate to advanced</span><span>1 complete learner book</span></div><a class="work-button" href="#lessons">Start practicing <span aria-hidden="true">→</span></a></div>
+{course_illustration(t, book_url)}</section>
 <details class="work-orientation"><summary>What you will practice · Choose your pace</summary><div class="work-two-column"><div><h2>What you will practice</h2>{ul(t['outcomes'][:5])}</div><div><h2>Choose your pace</h2><p><strong>Quick practice · 15 minutes:</strong> complete one short exchange, check the explanations, and read both roles aloud.</p><p><strong>Extended practice · two or three sittings:</strong> check the case facts, study the vocabulary and phrases, complete the longer conversation, then rehearse the follow-up exchange.</p><p><strong>Level guide:</strong> designed for intermediate to advanced learners. B1 learners can start with the short exchanges and supplied phrases; B2 learners can complete the cloze conversations; C1 learners can focus on the distinctions in the language checks. These are teaching suggestions, not a certified level assessment.</p></div></div></details>
 <section id="downloads" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Take the lesson with you</p><h2>Your complete learner book</h2></div><span>October 2026 edition</span></div><div class="work-downloads">{pdf_links(t)}</div></section>
+{render_field_notes(t)}
 <div id="lessons" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Practice, reflect, repeat</p><h2>Your eight lessons</h2></div><a class="work-book-inline" href="{e(book_url)}">Open the learner book (PDF) ↗</a></div></div><div class="work-lesson-tools"><span class="work-lesson-icon" aria-hidden="true">{card_icon(t)}</span><nav class="work-jump" aria-label="Jump to lesson or prompts"><div class="work-lesson-links">{jump}</div><a class="work-prompts-link" href="#finished-dialogue-prompts">Prompts</a></nav></div><button type="button" class="work-text-button" data-expand-lessons hidden>Open all lessons</button><p class="work-scope">{e(t['scope_note'])}</p>
+<nav class="work-resource-links" aria-label="Reviews and reference"><a href="#professional-notes">Communication notes</a>{review_links}<a href="#additional-conversations">Additional scenarios</a><a href="#vocabulary">Vocabulary</a></nav>
 {modules}
 {render_additional(t)}
 <details id="vocabulary" class="work-section work-glossary-disclosure"><summary>Explore 192 vocabulary entries and collocations</summary><div class="work-section-heading"><div><p class="work-kicker">Keep the meaning close</p><h2>Your field vocabulary</h2></div><label data-vocabulary-filter hidden>Find a term<input type="search" data-vocabulary-search placeholder="Search words and meanings"></label></div><p data-vocabulary-count role="status">{len(t['web_glossary'])} vocabulary entries</p><dl class="work-vocabulary work-glossary">{glossary}</dl></details>
@@ -105,6 +113,7 @@ def main():
     for track in tracks:
         load_course(track['slug'])
     validate_publication(tracks)
+    print('Prepared course illustrations:', len(build_art()), flush=True)
     print('Published complete prompts:', write_prompt_packs(tracks))
     (ROOT / 'efsp.html').write_text(render_directory(tracks))
     for t in tracks:

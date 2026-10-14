@@ -201,7 +201,7 @@ test('all 80 course pages initialize every quiz and preserve completed dialogue 
   assert.equal(files.length,80);
   for(const file of files){
     const dom=setup(file),d=dom.window.document;
-    assert.equal(d.querySelectorAll('[data-check-answer]:not([hidden])').length,100,file);
+    assert.equal(d.querySelectorAll('[data-check-answer]:not([hidden])').length,140,file);
     assert.equal(d.querySelectorAll('.work-completed-script').length,11,file);
     assert.equal(d.querySelectorAll('[data-check-cloze]').length,11,file);
     assert.equal(d.querySelectorAll('.work-jump a .work-section-dots').length,8,file);
@@ -232,4 +232,21 @@ test('all 80 course pages initialize every quiz and preserve completed dialogue 
     dom.window.close();
     await new Promise(resolve => setImmediate(resolve));
   }
+});
+
+test('revised questions explain the selected option and review links reveal the review', () => {
+  const dom=setup('efsp-cultural-leadership-us-branches.html'),w=dom.window,d=w.document;
+  const question=d.querySelector('#review-1 [data-work-quiz]');
+  const reasons=[...question.querySelectorAll('.work-answer-reasons li span')].map(n=>n.textContent);
+  assert.equal(reasons.length,4);
+  for(let i=0;i<4;i++){
+    question.querySelectorAll('input')[i].click();
+    question.querySelector('[data-check-answer]').click();
+    assert.equal(question.querySelector('[data-quiz-feedback]').textContent,
+      `${i===Number(question.dataset.correct)?'Correct.':'Try again.'} ${reasons[i]}`);
+  }
+  assert.equal(d.querySelector('#review-1').open,false);
+  w.location.hash='#review-1';w.dispatchEvent(new w.Event('hashchange'));
+  assert.equal(d.querySelector('#review-1').open,true);
+  dom.window.close();
 });

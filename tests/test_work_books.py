@@ -50,7 +50,7 @@ class WorkBookPublicationTests(unittest.TestCase):
                 self.assertIn(str(self.manifest['documents'][book_href(track['slug'])]['pages']) + ' pages', section.get_text())
                 self.assertIn(str(self.manifest['documents'][book_href(track['slug'])]['pages']) + '-page learner book',
                               page.select_one('meta[name="description"]')['content'])
-                for selector in ('.work-study-card', '#lessons'):
+                for selector in ('.work-book-art', '#lessons'):
                     self.assertTrue(any(urlparse(a['href']).path == book_href(track['slug'])
                                         for a in page.select(selector + ' a[href]')))
                 for a in page.select('a[href]'):

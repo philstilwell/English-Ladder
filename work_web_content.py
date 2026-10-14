@@ -4,26 +4,42 @@ from functools import lru_cache
 import json
 import re
 
-EDITION = '2026-10-14'
+EDITION = '2026-10-14-web2'
 
 
 @lru_cache(maxsize=None)
 def course_book(slug):
     from books.revised_edition import load_edition
     if slug == 'cultural-leadership-us-branches':
-        from books.leadership_pilot import UNITS, SUPPLEMENTS
-        book = dict(units=deepcopy(UNITS), supplements=deepcopy(SUPPLEMENTS))
+        from books.leadership_pilot import UNITS, SUPPLEMENTS, CHECKPOINTS
+        book = dict(units=deepcopy(UNITS), supplements=deepcopy(SUPPLEMENTS), checkpoints=deepcopy(CHECKPOINTS))
     else:
         book = load_edition(slug)
     for unit in book['units']:
         unit['a'] = [web_question(q) for q in unit['checks']]
         unit['d'] = [web_question(q) for q in unit['choices']]
+        unit['repair'] = [web_question(q) for q in unit['repair']]
+        unit['second_take'] = web_question(unit['second_take'])
+        script = deepcopy(unit['transfer'])
         if 'source_transfer' in unit:
-            unit['transfer'] = unit['source_transfer']
+            unit['transfer'] = deepcopy(unit['source_transfer'])
         else:
             unit['transfer'] = web_transfer(unit['transfer'], unit['transfer_title'], unit['transfer_facts'])
+        unit['transfer']['script'] = script
     for scene in book['supplements']:
+        scene['scene'] = scene['title']
+        scene['brief'] = scene['setup']
         scene['transfer'] = web_transfer(scene['pilot_transfer'], scene['transfer']['title'], scene['transfer']['setup'])
+        scene['transfer']['script'] = deepcopy(scene['pilot_transfer'])
+    if slug == 'cultural-leadership-us-branches':
+        for scene, delivery in zip(book['supplements'], [
+            'Contrast adding a group with replacing one. Name the reduced Friday deliverable separately from the full analysis. Tuesday is a scheduling update, not a promised completion date.',
+            'Separate accurate results from incomplete credit. Name each person\'s contribution. Do not make public praise a condition of receiving proper attribution.',
+            'Contrast paused with canceled. Keep the new date open until the evidence and release criteria support a decision. Do not imply that all completed work is invalid.',
+        ], strict=True):
+            scene['delivery'] = delivery
+    for checkpoint in book['checkpoints']:
+        checkpoint['questions'] = [web_question(q) for q in checkpoint['questions']]
     return book
 
 
@@ -42,10 +58,14 @@ def web_transfer(scene, title, setup):
 
 
 @lru_cache(maxsize=1)
-def publication_pages():
+def publication_documents():
     from work_books import ROOT
     manifest = json.loads((ROOT / 'content/work/documents.json').read_text())
-    return {m['course']: m['page_map'] for m in manifest['documents'].values()}
+    return {m['course']: m for m in manifest['documents'].values()}
+
+
+def publication_pages():
+    return {slug: m['page_map'] for slug, m in publication_documents().items()}
 
 
 def completed_turn(speech, gaps):
@@ -61,11 +81,14 @@ def web_track(track):
     if [m['title'] for m in result['modules']] != [u['title'] for u in book['units']]:
         raise ValueError('Web lesson order differs from the learner book: ' + track['slug'])
     result['web_book_edition'] = EDITION
-    result['revision'] = EDITION
+    result['revision'] = '2026-10-14'
     result['scope_note'] = book.get('scope_note', track['scope_note'])
     result['sources'] = book.get('sources', track['sources'])
     result['supplemental_scenarios'] = book['supplements']
     pages = publication_pages()[track['slug']]
+    result['book_page_map'] = pages
+    result['book_checkpoints'] = book['checkpoints']
+    result['book_field_notes'] = {key: book[key] for key in ('notes_title', 'notes_intro', 'field_notes') if key in book}
     result['book_additional_pages'] = [pages[f'additional-{i}'] for i in range(1, 4)]
     glossary = []
     for index, (module, unit) in enumerate(zip(result['modules'], book['units'])):
@@ -74,6 +97,8 @@ def web_track(track):
         module['book_key_page'] = pages[f'key-u{index + 1}-d']
         module['book_dialogue_page'] = pages[f'u{index + 1}-e']
         module['book_conversation_key_page'] = pages[f'key-u{index + 1}-transfer']
+        module['book_repair_page'] = pages[f'u{index + 1}-f']
+        module['book_repair_key_page'] = pages[f'key-u{index + 1}-f']
         module['brief'] = unit['brief']
         module['vocabulary'] = [dict(term=term, definition=meaning, collocation=phrase)
                                 for term, meaning, phrase in unit['vocabulary']]

@@ -96,7 +96,7 @@ class OccupationPublicationTests(unittest.TestCase):
             page = BeautifulSoup((ROOT / f'efsp-{track["slug"]}.html').read_text(), 'html.parser')
             self.assertIsNotNone(page.select_one('.work-hero .work-occupation-icon'))
             self.assertIn('English Ladder', page.get_text())
-            self.assertEqual(len(page.select('.work-quiz')), 100)
+            self.assertEqual(len(page.select('.work-quiz')), 140)
             for quiz in page.select('.work-quiz'):
                 self.assertEqual(len(quiz.select('input[type="radio"]')), 4)
             for module in track['modules']:

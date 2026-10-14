@@ -9,13 +9,14 @@ const medical = ['general-practitioners', 'oncologists', 'cardiologists', 'x-ray
 const medicalPages = medical.map(slug => `efsp-${slug}.html`);
 const specialists = ['nutrition-dietetics', 'sports-medicine', 'international-law', 'patent-law', 'university-professors', 'investment-management-banking', 'cross-border-ma-integration', 'localization-qa'];
 const illustratedPages = [...medicalPages, ...specialists.map(slug => `efsp-${slug}.html`)];
+const bookProofPages = ['cultural-leadership-us-branches', 'ai-development', 'pharmaceutical', 'cybersecurity', 'baristas-cafe-staff'].map(slug => `efsp-${slug}.html`);
 const courses = fs.readdirSync('.').filter(name => /^efsp-.*\.html$/.test(name)).sort();
 const categories = fs.readdirSync('english-for-work').filter(name => name.endsWith('.html')).map(name => `english-for-work/${name}`);
 const paths = ['efsp.html', ...categories, ...courses];
 const report = {
   date: new Date().toISOString().slice(0, 10), pages: paths.length,
   widths: [320, 390, 768, 1280], layouts: 0, expandedLayouts: 0,
-  courseInteractions: 0, clozeInteractions: 0, noScriptPages: 0, medicalArtChecks: 0, titleSizes: [], errors: [],
+  courseInteractions: 0, clozeInteractions: 0, noScriptPages: 0, medicalArtChecks: 0, bookArtChecks: 0, reviewInteractions: 0, titleSizes: [], errors: [],
   scope: 'All work pages at four widths, all lesson disclosures expanded, course interaction samples, keyboard navigation, deep links, and no-JavaScript reading. External requests blocked. Not a full accessibility or professional-content certification.',
 };
 fs.mkdirSync(output, {recursive: true});
@@ -87,10 +88,21 @@ async function geometry(page, path, width, expanded) {
           report.medicalArtChecks += art.length;
           assert.equal(await page.locator('.work-conversation[open]').count(), 0);
         }
-        if (['efsp.html', 'english-for-work/health-life-sciences.html', ...illustratedPages].includes(path) && [390,1280].includes(width)) {
+        if (['efsp.html', 'english-for-work/health-life-sciences.html', ...illustratedPages, ...bookProofPages].includes(path) && [390,1280].includes(width)) {
           await page.screenshot({path: `${output}/after-${path.replaceAll('/', '-')}-${width}.png`});
         }
         if (!courses.includes(path)) continue;
+        const cover = page.locator('.work-book-art img');
+        await cover.evaluate(image => image.decode());
+        assert.ok(await cover.evaluate(image => {
+          const box = image.getBoundingClientRect();
+          // srcset reports density-corrected natural dimensions, not file pixels.
+          return image.naturalWidth > 0 && box.width > 150 && Math.abs(box.width / box.height - image.naturalWidth / image.naturalHeight) < .01;
+        }), 'Book artwork loads without stretching or cropping');
+        report.bookArtChecks++;
+        assert.equal(await page.locator('[data-work-quiz]').count(), 140);
+        assert.equal(await page.locator('.work-review[open]').count(), 0);
+        assert.equal(await page.locator('.work-accuracy[open],.work-second-take[open],.work-context-focus[open]').count(), 0);
         await page.locator('[data-expand-lessons]').click();
         assert.equal(await page.locator('.work-module[open]').count(), 8);
         // Reveal nested conversations, models, and complete prompt text too.
@@ -106,6 +118,17 @@ async function geometry(page, path, width, expanded) {
           }), 'Lesson menu remains visible at the prompts');
         }
         if (width === 390) {
+          for (const selector of ['#review-1', '#module-1 .work-accuracy', '#module-1 .work-second-take']) {
+            const question = page.locator(`${selector} [data-work-quiz]`).first();
+            await question.locator(`input[value="${await question.getAttribute('data-correct')}"]`).check();
+            await question.locator('[data-check-answer]').click();
+            assert.equal(await question.locator('[data-quiz-feedback]').getAttribute('data-result'), 'correct');
+            report.reviewInteractions++;
+          }
+          if (bookProofPages.includes(path)) {
+            await page.locator('#review-1').evaluate(node => node.scrollIntoView({block: 'start'}));
+            await page.screenshot({path: `${output}/review-${path}-${width}.png`});
+          }
           const quiz = page.locator('[data-work-quiz]').first();
           const correct = await quiz.getAttribute('data-correct');
           await quiz.locator('[data-check-answer]').click();
@@ -155,15 +178,17 @@ async function geometry(page, path, width, expanded) {
     await page.locator('.work-lesson-links a[href="#module-4"]').focus();
     await page.keyboard.press('Enter');
     assert.equal(await page.locator('#module-4').getAttribute('open'), '');
-    for (const id of ['module-8', 'module-4-cloze', 'additional-2', 'vocabulary', 'finished-module-4-roleplay', 'finished-dialogue-prompts', 'ai-practice']) {
+    for (const id of ['module-8', 'module-4-cloze', 'review-1', 'review-4', 'professional-notes', 'additional-2', 'vocabulary', 'finished-module-4-roleplay', 'finished-dialogue-prompts', 'ai-practice']) {
       await page.goto(`${base}/efsp-manufacturing.html#${id}`);
       await page.evaluate(() => document.fonts.ready);
       await page.waitForFunction(id => {
         const node = document.getElementById(id);
         const top = node.getBoundingClientRect().top;
         const toolbar = document.querySelector('.work-lesson-tools').getBoundingClientRect();
-        return node.checkVisibility() && top >= toolbar.bottom && top < innerHeight;
-      }, id);
+        const masthead = document.querySelector('.site-masthead').getBoundingClientRect().bottom;
+        const obstruction = toolbar.top <= masthead + 1 ? toolbar.bottom : masthead;
+        return node.checkVisibility() && top >= obstruction && top < innerHeight;
+      }, id).catch(error => { throw new Error(`Deep link #${id}: ${error.message}`); });
       if (id === 'vocabulary') assert.equal(await page.locator('#vocabulary').getAttribute('open'), '');
       if (id.startsWith('finished-module')) assert.equal(await page.locator('#module-4').getAttribute('open'), '');
     }
@@ -200,6 +225,9 @@ async function geometry(page, path, width, expanded) {
         await staticPage.locator('#vocabulary > summary').click();
         assert.equal(await staticPage.locator('[data-vocabulary-search]').isVisible(), false);
         assert.ok(await staticPage.locator('[data-work-term]:visible').count());
+        await staticPage.locator('#review-1 > summary').click();
+        await staticPage.locator('#review-1 .work-answer > summary').first().click();
+        assert.equal(await staticPage.locator('#review-1 .work-answer p').first().isVisible(), true);
       }
       report.noScriptPages++;
     }

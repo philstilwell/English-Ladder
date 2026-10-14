@@ -112,7 +112,7 @@ class MedicalProfessionTests(unittest.TestCase):
             self.assertEqual(manifest[href]['illustration_asset'], icon_asset(slug)[0])
             self.assertEqual(len(page.select(f'[data-work-icon="{slug}"]')), 2)
             self.assertEqual(len(page.select('.work-module')), 8)
-            self.assertEqual(len(page.select('[data-work-quiz]')), 100)
+            self.assertEqual(len(page.select('[data-work-quiz]')), 140)
             self.assertEqual(len(page.select('[data-cloze-gap]')), 98)
             self.assertIsNone(page.select_one('textarea:not([readonly])'))
             self.assertIsNone(page.select_one('input[type="checkbox"]'))

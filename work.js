@@ -157,7 +157,7 @@
       if (!selected) { feedback.textContent = 'Choose an answer first.'; delete feedback.dataset.result; return; }
       const correct = selected.value === quiz.dataset.correct;
       const reason = quiz.querySelectorAll('.work-answer-reasons li')[Number(selected.value)];
-      const explanation = quiz.dataset.explanation || [...reason.childNodes].filter(n => n.nodeType === Node.TEXT_NODE).map(n => n.textContent).join('').trim();
+      const explanation = reason?.querySelector('span')?.textContent || quiz.dataset.explanation || '';
       feedback.textContent = `${correct ? 'Correct.' : 'Try again.'} ${explanation}`;
       feedback.dataset.result = correct ? 'correct' : 'retry';
     });

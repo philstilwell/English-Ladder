@@ -60,7 +60,7 @@ class WorkCurriculumTests(unittest.TestCase):
             with self.subTest(course=t['slug']):
                 soup = BeautifulSoup((ROOT/f'efsp-{t["slug"]}.html').read_text(), 'html.parser')
                 self.assertEqual(len(soup.select('.work-module')),8)
-                self.assertEqual(len(soup.select('.work-quiz')),100)
+                self.assertEqual(len(soup.select('.work-quiz')),140)
                 self.assertEqual(len(soup.select('textarea[data-work-note]')),0)
                 self.assertIsNone(soup.select_one('input[type="checkbox"], [data-work-progress], [data-storage-controls]'))
                 orientation = soup.select_one('details.work-orientation')

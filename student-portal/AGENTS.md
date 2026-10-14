@@ -1,5 +1,7 @@
 # Student feedback rules
 
+- Write all student-facing assessments, feedback, summaries, headings, and practice instructions in short, clear English suitable for A1–A2 readers. Use common words and one idea per sentence. Explain necessary grammar terms with a simple example. This is a reading-register preference, not a claim about a student's assessed level. Keep the tone respectful and adult. Harder vocabulary being taught may remain, with an easy explanation.
+- Put words and phrases being discussed inside quotation marks or italics, including in headings and practice instructions. For example: “Phil showed two ways to use ‘access’.” Clearly distinguish actual lesson quotations from new practice examples; never turn a paraphrase or new example into a claimed transcript quote.
 - Use only a student's first name in prose. An explicitly chosen nickname may be used as a profile label. Never display or publish full names.
 - Every student's session feedback must focus exclusively on English as a second language: usage, vocabulary, grammar, comprehension, conversational skills, and language practice. Do not summarize or evaluate personal lives, work performance, beliefs, health, or unrelated conversation topics.
 - Find every matching session in the requested period, including known display-name variants. Read the complete available transcript for each session, not just Zoom's generated summary. Record its coverage and identify missing transcripts honestly.

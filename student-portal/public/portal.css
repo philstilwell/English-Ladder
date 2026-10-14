@@ -147,6 +147,7 @@ input { width:100%; min-height:50px; border:1px solid #a9b1bf; border-radius:6px
 .vocabulary-row { padding:18px 0; border-top:1px solid var(--line); }
 .vocabulary-row p { font-size:.83rem; margin:5px 0 10px; }
 .vocabulary-example { color:#435777; font-style:italic; }
+.vocabulary-term,.model-sentence p { font-style:italic; }
 .practice-item { margin:12px 0; padding:17px 20px; border:1px solid var(--line); border-radius:6px; }
 .practice-item p { font-size:.85rem; margin:0 0 12px; }
 summary { cursor:pointer; }

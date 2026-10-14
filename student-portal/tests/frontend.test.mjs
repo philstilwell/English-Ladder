@@ -73,7 +73,7 @@ test('assessment shows strengths, patterns, next priorities, and only internal e
  const dom=setup(null,'https://ab26.englishladder.com/#assessments');await flush();
  const d=dom.window.document,content=d.getElementById('assessment-content');
  assert.equal(d.getElementById('assessments').hidden,false);
- for(const text of ['Your strengths','Recurring mistakes and patterns','What to focus on next',assessment.summary,assessment.nextLesson])assert.ok(content.textContent.includes(text));
+ for(const text of ['What you do well','Things to practice','Your next steps',assessment.summary,assessment.nextLesson])assert.ok(content.textContent.includes(text));
  assert.equal(d.getElementById('assessment-count').textContent,'Overall assessment · Oct 14, 2026');
  assert.equal(d.querySelectorAll('.assessment-evidence').length,3);
  assert.ok([...d.querySelectorAll('.assessment-evidence')].every(a=>a.hash==='#feedback/'+feedback.id));

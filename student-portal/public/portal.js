@@ -162,7 +162,7 @@
   function section(title, className) {
     const el = node('section', '', className); el.append(node('h3', title)); return el;
   }
-  function reference(at) { return node('span', 'Transcript ' + at, 'evidence-time'); }
+  function reference(at) { return node('span', 'Lesson time: ' + at, 'evidence-time'); }
   function renderPage(record, focus) {
     const fragment = document.createDocumentFragment();
     const header = node('header', '', 'feedback-header');
@@ -177,36 +177,36 @@
       card.append(node('h4', item.title), node('p', item.detail), reference(item.at)); strengths.append(card);
     }
     fragment.append(strengths);
-    const points = section('Language to focus on', 'feedback-focus');
+    const points = section('Things to practice', 'feedback-focus');
     record.focus.forEach((item, i) => {
       const card = node('section', '', 'focus-card'), heading = node('div', '', 'focus-heading');
       heading.append(node('span', String(i + 1).padStart(2, '0'), 'focus-number'), node('h4', item.title));
-      card.append(heading, node('p', item.kind === 'teacher-feedback' ? 'Discussed in the lesson' : 'Additional practice from the transcript', 'evidence-label'), node('p', item.observed, 'observed'), reference(item.at));
+      card.append(heading, node('p', item.kind === 'teacher-feedback' ? 'From this lesson' : 'Extra practice', 'evidence-label'), node('p', item.observed, 'observed'), reference(item.at));
       const model = node('div', '', 'model-sentence');
-      model.append(node('span', 'PATTERN TO PRACTICE'), node('p', item.model));
+      model.append(node('span', 'TRY SAYING THIS'), node('p', item.model));
       card.append(model, node('p', item.explanation)); points.append(card);
     });
     fragment.append(points);
     const words = section('Useful language', 'feedback-vocabulary');
-    words.append(node('p', 'Examples below are new practice sentences.', 'section-intro'));
+    words.append(node('p', 'These are new sentences for you to practice.', 'section-intro'));
     for (const item of record.vocabulary) {
       const row = node('div', '', 'vocabulary-row');
-      row.append(node('h4', item.term), node('p', item.meaning), node('p', item.example, 'vocabulary-example'), reference(item.at)); words.append(row);
+      row.append(node('h4', item.term, 'vocabulary-term'), node('p', item.meaning), node('p', item.example, 'vocabulary-example'), reference(item.at)); words.append(row);
     }
     fragment.append(words);
     const practice = section('A few minutes of practice', 'feedback-practice');
     record.practice.forEach((item, i) => {
       const row = node('div', '', 'practice-item'), answer = node('details');
       row.append(node('p', (i + 1) + '. ' + item.prompt));
-      answer.append(node('summary', 'Show a suggested answer'), node('p', item.answer));
+      answer.append(node('summary', 'Show an example answer'), node('p', item.answer));
       row.append(answer); practice.append(row);
     });
     fragment.append(practice);
     const next = section('Your next step', 'feedback-next-step'); next.append(node('p', record.nextStep)); fragment.append(next);
     const sources = node('details', '', 'feedback-source');
-    sources.append(node('summary', 'About this feedback and its source'));
-    sources.append(node('p', 'Prepared with AI from the complete available Zoom transcript (' + record.source.segmentCount.toLocaleString() + ' segments). Transcript coverage: ' + record.source.coverageStart + '–' + record.source.coverageEnd + '. References show elapsed time from the start of the session.'));
-    sources.append(node('p', 'This is English language feedback only. Automatic transcripts can mishear speech. Teaching exchanges are distinguished from additional practice, and new examples are not quotes from the session. No pronunciation score is inferred from the transcript.'));
+    sources.append(node('summary', 'How we made this feedback'));
+    sources.append(node('p', 'AI helped write this page. We used all the available lesson text (' + record.source.segmentCount.toLocaleString() + ' parts). The text covers ' + record.source.coverageStart + '–' + record.source.coverageEnd + '. Each time shows a point in the lesson, counted from the start.'));
+    sources.append(node('p', 'This page is only about your English. The lesson text was made by a computer, so some words may be wrong. We show what you practiced with Phil and label extra practice. The example sentences are for practice; they may be new. We cannot check how you say words from text alone.'));
     fragment.append(sources);
     const position = sessions.findIndex(s => s.id === record.id), navigation = node('nav', '', 'feedback-pager');
     navigation.setAttribute('aria-label', 'Other feedback pages');
@@ -239,12 +239,12 @@
   function evidenceLink(ref) {
     const el = node('a', assessmentDate(ref.sessionId.slice(0, 10)) + ' · ' + ref.at, 'assessment-evidence');
     el.href = '#feedback/' + ref.sessionId;
-    el.setAttribute('aria-label', 'Open session feedback for ' + assessmentDate(ref.sessionId.slice(0, 10)) + ', transcript reference ' + ref.at);
+    el.setAttribute('aria-label', 'Open lesson feedback for ' + assessmentDate(ref.sessionId.slice(0, 10)) + ', lesson time ' + ref.at);
     return el;
   }
   function evidenceList(refs) {
     const details = node('details', '', 'assessment-references');
-    details.append(node('summary', 'Session evidence (' + refs.length + ')'));
+    details.append(node('summary', 'Examples from your lessons (' + refs.length + ')'));
     const list = node('div');
     for (const ref of refs) list.append(evidenceLink(ref));
     details.append(list); return details;
@@ -304,17 +304,17 @@
     dates.append(node('strong', 'Assessed ' + assessmentDate(record.assessedOn)), node('span', record.sourceSessions.length + ' sessions · ' + assessmentDate(record.sourceSessions[0].slice(0, 10)) + ' – ' + assessmentDate(record.sourceSessions.at(-1).slice(0, 10))));
     header.append(title, dates, node('p', record.summary, 'session-reflection'));
     const priority = node('div', '', 'assessment-priority');
-    priority.append(node('span', 'YOUR MAIN PRIORITY'), node('p', record.mainPriority)); header.append(priority); fragment.append(header);
-    const strengths = assessmentSection('Your strengths', 'strengths', 'feedback-strengths');
+    priority.append(node('span', 'START HERE'), node('p', record.mainPriority)); header.append(priority); fragment.append(header);
+    const strengths = assessmentSection('What you do well', 'strengths', 'feedback-strengths');
     for (const item of record.strengths) {
       const card = node('div', '', 'strength');
       card.append(node('h4', item.title), node('p', item.detail), evidenceList(item.evidence)); strengths.append(card);
     }
     fragment.append(strengths);
-    const progress = section('What the later sessions show', 'assessment-progress');
+    const progress = section('Your progress', 'assessment-progress');
     progress.append(node('p', record.progress.detail), evidenceList(record.progress.evidence)); fragment.append(progress);
-    const patterns = assessmentSection('Recurring mistakes and patterns', 'patterns', 'feedback-focus');
-    patterns.append(node('p', 'These examples come from teaching exchanges in the transcripts. Model sentences include new practice examples.', 'section-intro'));
+    const patterns = assessmentSection('Things to practice', 'patterns', 'feedback-focus');
+    patterns.append(node('p', 'These are things you practiced with Phil. The sentences under “Try saying this” are for practice; some are new.', 'section-intro'));
     record.patterns.forEach((item, index) => {
       const card = node('section', '', 'focus-card'), heading = node('div', '', 'focus-heading');
       heading.append(node('span', String(index + 1).padStart(2, '0'), 'focus-number'), node('h4', item.title));
@@ -323,32 +323,32 @@
         const row = node('div', '', 'assessment-example');
         row.append(evidenceLink(example), node('p', example.observed, 'observed'));
         const model = node('div', '', 'model-sentence');
-        model.append(node('span', 'PATTERN TO PRACTICE'), node('p', example.model)); row.append(model); card.append(row);
+        model.append(node('span', 'TRY SAYING THIS'), node('p', example.model)); row.append(model); card.append(row);
       }
       const practice = node('p', '', 'assessment-practice');
       practice.append(node('strong', 'Practice: '), document.createTextNode(item.practice)); card.append(practice); patterns.append(card);
     });
     fragment.append(patterns);
-    const plan = assessmentSection('What to focus on next', 'next', 'assessment-plan');
-    plan.append(node('p', 'A focused plan for the next three lessons. Targets below are goals for practice, not current scores.', 'section-intro'));
+    const plan = assessmentSection('Your next steps', 'next', 'assessment-plan');
+    plan.append(node('p', 'Here is a plan for your next three lessons. These are goals to work toward, not scores you have now.', 'section-intro'));
     for (const item of record.plan) {
       const card = node('section', '', 'assessment-plan-card');
       card.append(node('h4', item.title), node('p', item.activity));
-      const target = node('div', '', 'assessment-target'); target.append(node('strong', 'What to look for'), node('p', item.target)); card.append(target); plan.append(card);
+      const target = node('div', '', 'assessment-target'); target.append(node('strong', 'Your goal'), node('p', item.target)); card.append(target); plan.append(card);
     }
     fragment.append(plan);
-    const next = section('A starting plan for the next lesson', 'feedback-next-step');
+    const next = section('Our next lesson', 'feedback-next-step');
     next.append(node('p', record.nextLesson)); fragment.append(next);
     const source = node('details', '', 'feedback-source');
-    source.append(node('summary', 'About this assessment and its sources'), node('p', 'Prepared with AI after review of the complete available transcripts for the sessions below. References show elapsed transcript time; links open your session feedback. Dates are shown in New York time.'));
+    source.append(node('summary', 'How we made this assessment'), node('p', 'AI helped write this page. We used all the available text from each lesson below. Each time shows a point in the lesson, counted from the start. Links open your lesson feedback. Dates use New York time.'));
     const list = node('div', '', 'assessment-source-links');
     for (const id of record.sourceSessions) { const el = node('a', assessmentDate(id.slice(0, 10))); el.href = '#feedback/' + id; list.append(el); }
-    source.append(list, node('p', 'This descriptive assessment covers English language use only. Automatic transcripts can mishear speech, so recurring patterns are supported by teaching exchanges and balanced with successful examples. It does not assign a formal proficiency level or assess pronunciation, accent, or speaking speed from text.'));
+    source.append(list, node('p', 'This page is only about your English. The lesson text was made by a computer, so some words may be wrong. We checked what you practiced with Phil and what you did well. This is not a test score or an official English level. We cannot check your pronunciation or speaking speed from text alone.'));
     fragment.append(source);
     $('assessment-content').replaceChildren(fragment);
     $('assessment-content').setAttribute('aria-busy', 'false');
     $('assessment-sidebar').hidden = false;
-    $('assessment-source-count').textContent = record.sourceSessions.length + ' sessions reviewed';
+    $('assessment-source-count').textContent = 'Based on ' + record.sourceSessions.length + ' lessons';
     assessmentResizeObserver?.observe($('assessment-content'));
   }
   async function loadAssessment() {

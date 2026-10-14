@@ -158,6 +158,75 @@ class EditorialCorrectionTests(unittest.TestCase):
             self.assertNotIn('supporting its military operations',
                              current['advanced']['brief'])
 
+    def test_october_13_advanced_quiz_labels_clause_and_post_mortem_purpose(self):
+        edition = self.edition('2026-10-13')
+        lesson = edition['levels']['advanced']['lesson']
+
+        clause_item = lesson['quiz'][5]
+        self.assertEqual(0, clause_item['correct_option_index'])
+        self.assertEqual(
+            'Incorrect. This is a non-defining relative clause adding information about '
+            'friendship. It does not explain when Cranston felt despair.',
+            clause_item['option_feedback'][2],
+        )
+        self.assert_rendered_quiz_item('2026-10-13', 'advanced', 5, clause_item)
+
+        post_mortem_item = lesson['quiz'][9]
+        self.assertEqual(
+            'What is the purpose of the post-mortem examination mentioned in the reading?',
+            post_mortem_item['question'],
+        )
+        self.assertEqual(0, post_mortem_item['correct_option_index'])
+        self.assertEqual(
+            "To medically determine the exact circumstances surrounding Mitte's death.",
+            post_mortem_item['options'][post_mortem_item['correct_option_index']],
+        )
+        self.assertIn('adding that a post-mortem examination would be performed',
+                      edition['source']['evidence_text'])
+        self.assert_rendered_quiz_item('2026-10-13', 'advanced', 9, post_mortem_item)
+
+        for path, node in self.lesson_nodes('2026-10-13', 'advanced'):
+            rendered = str(node)
+            self.assertNotIn('functions as an adjective phrase modifying', rendered, str(path))
+            self.assertNotIn('Why did the local justice of the peace order', rendered, str(path))
+            prompts = node.select('.ai-prompt-text')
+            self.assertEqual(3, len(prompts), str(path))
+            for prompt in prompts:
+                prompt_text = prompt.get_text(' ', strip=True)
+                self.assertNotIn('functions as an adjective phrase modifying', prompt_text,
+                                 f'{path}: {prompt.get("id")}')
+                self.assertNotIn('Why did the local justice of the peace order', prompt_text,
+                                 f'{path}: {prompt.get("id")}')
+
+    def test_october_14_advanced_q5_keeps_92_percent_statistic_broad(self):
+        edition = self.edition('2026-10-14')
+        lesson = edition['levels']['advanced']['lesson']
+        item = lesson['quiz'][4]
+
+        self.assertEqual("What did the survey's 92% figure describe?", item['question'])
+        self.assertEqual(0, item['correct_option_index'])
+        self.assertEqual(
+            'Employers who had encountered or suspected AI misconduct in the job selection '
+            'process.',
+            item['options'][item['correct_option_index']],
+        )
+        self.assertEqual(
+            'Correct. The 92% figure covers employers who had encountered or suspected AI '
+            'misconduct across the job selection process; real-time interview assistance and '
+            'completing online assessments were common examples.',
+            item['option_feedback'][item['correct_option_index']],
+        )
+        evidence = edition['source']['evidence_text']
+        self.assertIn('92% of employers had encountered or suspected AI "misconduct"', evidence)
+        self.assertIn('during online video interviews or to complete online assessments', evidence)
+        self.assert_rendered_quiz_item('2026-10-14', 'advanced', 4, item)
+        self.assert_prompts_contain(
+            '2026-10-14', 'advanced',
+            ['Nevertheless, 92% of these employers suspected unethical practices'],
+            ['What "unethical practice" did 92% of surveyed employers suspect?',
+             '92% of employers suspected individuals of using real-time generative assistants'],
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

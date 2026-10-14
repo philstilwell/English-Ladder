@@ -2,10 +2,13 @@
   'use strict';
   const $ = id => document.getElementById(id);
   const sections = ['overview', 'assessments', 'sessions', 'feedback'];
+  const assessmentSections = ['summary', 'strengths', 'patterns', 'next'];
   const validId = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
   let authenticated = false, checking = false, identityRevision = 0, pageRevision = 0;
   let sessions = [], nextCursor = null, indexReady = false, indexLoading = false, currentPage = '';
   let assessment = null, assessmentLoading = false;
+  let assessmentScrollFrame = 0;
+  const assessmentResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(scheduleAssessmentHighlight);
 
   async function api(path, options = {}) {
     const response = await fetch(path, { credentials: 'same-origin', cache: 'no-store', ...options });
@@ -41,6 +44,10 @@
     identityRevision++; pageRevision++;
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
+    assessmentResizeObserver?.disconnect();
+    if (assessmentScrollFrame) cancelAnimationFrame(assessmentScrollFrame);
+    assessmentScrollFrame = 0;
+    markAssessmentSection(null);
     for (const id of ['student-name', 'teacher-student-name', 'avatar', 'account-address', 'profile-nickname', 'account-status']) $(id).textContent = '';
     for (const id of ['session-list', 'session-select', 'session-summaries', 'feedback-page', 'assessment-content', 'assessment-source-count']) $(id).replaceChildren();
     $('assessment-sidebar').hidden = true;
@@ -242,16 +249,37 @@
     for (const ref of refs) list.append(evidenceLink(ref));
     details.append(list); return details;
   }
-  function focusAssessment(requested, focus) {
-    if (!assessment) return;
-    const key = ['summary', 'strengths', 'patterns', 'next'].includes(requested) ? requested : 'summary';
+  function markAssessmentSection(key) {
     for (const el of document.querySelectorAll('.assessment-outline a')) {
       if (el.hash === '#assessments/' + key) el.setAttribute('aria-current', 'location');
       else el.removeAttribute('aria-current');
     }
+  }
+  function scheduleAssessmentHighlight() {
+    if (assessmentScrollFrame || !authenticated || !assessment || $('assessments').hidden) return;
+    assessmentScrollFrame = requestAnimationFrame(() => {
+      assessmentScrollFrame = 0;
+      if (!authenticated || !assessment || $('assessments').hidden) return;
+      // Follow the section at the reading line, including long sections whose
+      // headings have already scrolled off screen. Do not move focus or history.
+      const readingLine = Math.min(160, window.innerHeight * 0.2);
+      let current = assessmentSections[0];
+      for (const key of assessmentSections) {
+        if ($('assessment-' + key).getBoundingClientRect().top <= readingLine) current = key;
+      }
+      // A short final section may never reach the reading line.
+      if (window.scrollY > 0 && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) current = assessmentSections.at(-1);
+      markAssessmentSection(current);
+    });
+  }
+  function focusAssessment(requested, focus) {
+    if (!assessment) return;
+    const key = assessmentSections.includes(requested) ? requested : 'summary';
+    markAssessmentSection(key);
     const heading = $('assessment-' + key);
     if (focus) heading.focus({ preventScroll: true });
     if (requested) heading.scrollIntoView?.({ block: 'start' });
+    scheduleAssessmentHighlight();
   }
   function assessmentSection(title, key, className) {
     const el = section(title, className), heading = el.querySelector('h3');
@@ -321,6 +349,7 @@
     $('assessment-content').setAttribute('aria-busy', 'false');
     $('assessment-sidebar').hidden = false;
     $('assessment-source-count').textContent = record.sourceSessions.length + ' sessions reviewed';
+    assessmentResizeObserver?.observe($('assessment-content'));
   }
   async function loadAssessment() {
     if (assessmentLoading || !authenticated) return;
@@ -412,6 +441,15 @@
   window.addEventListener('pageshow', event => { if (event.persisted) { clearIdentity(); start(); } });
   document.addEventListener('visibilitychange', checkSession);
   window.addEventListener('hashchange', () => navigate(true));
+  window.addEventListener('scroll', scheduleAssessmentHighlight, { passive: true });
+  window.addEventListener('resize', scheduleAssessmentHighlight);
+  document.querySelector('.assessment-outline').addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    // Clicking the original anchor again after manually scrolling does not fire
+    // hashchange, so handle that case without adding a duplicate history entry.
+    if (link.hash === location.hash) { event.preventDefault(); focusAssessment(link.hash.split('/')[1], true); }
+  });
   $('session-select').addEventListener('change', event => { location.hash = 'feedback/' + event.target.value; });
   $('more-sessions').addEventListener('click', () => loadIndex(true));
   $('retry-feedback').addEventListener('click', () => loadIndex(Boolean(sessions.length)));

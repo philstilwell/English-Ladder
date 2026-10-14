@@ -165,7 +165,8 @@ summary { cursor:pointer; }
 .assessment-outline { display:grid; padding:0 10px; }
 .assessment-outline a { display:flex; gap:12px; padding:14px 12px; border-radius:6px; text-decoration:none; color:var(--muted); font-size:.72rem; }
 .assessment-outline a span { color:var(--ink); font-weight:650; }
-.assessment-outline a:hover,.assessment-outline a[aria-current] { background:#edf2ff; color:var(--blue); }
+.assessment-outline a:hover { background:#f5f7fc; }
+.assessment-outline a[aria-current] { background:#edf2ff; color:var(--blue); }
 .assessment-outline a[aria-current] span { color:var(--blue); }
 .assessment-page h2,.assessment-page h3 { scroll-margin-top:24px; }
 .assessment-priority { background:#edf2ff; border-left:3px solid var(--blue); padding:18px 20px; margin-top:24px; }

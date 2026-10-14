@@ -10,7 +10,7 @@ const profile={student:{id:'ab26',name:'Alex',nickname:'Alex the Explorer'},role
 const reply=data=>new Response(JSON.stringify(data));
 const flush=async()=>{for(let i=0;i<8;i++)await new Promise(resolve=>setImmediate(resolve));};
 function setup(custom,url='https://ab26.englishladder.com/'){
- const dom=new JSDOM(html,{url,runScripts:'outside-only'});
+ const dom=new JSDOM(html,{url,runScripts:'outside-only',pretendToBeVisual:true});
  const w=dom.window;w.setInterval=()=>0;
  w.fetch=async(path,options)=>{
   const customResult=custom?.(path,options);if(customResult)return customResult;

@@ -1,0 +1,150 @@
+@font-face { font-family: Vera; src: url('../assets/fonts/Vera.ttf'); font-weight: 400; }
+@font-face { font-family: Vera; src: url('../assets/fonts/VeraBd.ttf'); font-weight: 700; }
+@font-face { font-family: Vera; src: url('../assets/fonts/VeraIt.ttf'); font-style: italic; }
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Vera, sans-serif; color: #242a35; font-size: 10.5pt; line-height: 1.4; }
+.sheet { --accent: #245abe; width: 8.5in; height: 11in; position: relative; padding: .78in .65in .72in .8in; break-after: page; background: white; }
+.sheet.even { padding-left: .65in; padding-right: .8in; }
+.sheet:last-child { break-after: auto; }
+.sheet.coral { --accent: #a54330; }
+.sheet.gold { --accent: #80600c; }
+.sheet.plum { --accent: #824467; }
+.page-body { height: 9.5in; }
+.running-head { position: absolute; top: .34in; left: .8in; right: .65in; display: flex; align-items: center; justify-content: space-between; gap: 12pt; height: 22pt; font-size: 8pt; border-bottom: 1px solid #d4d9e1; padding-bottom: 8pt; }
+.even .running-head, .even footer { left: .65in; right: .8in; }
+.brand { display: flex; align-items: center; gap: 6pt; font-weight: bold; font-size: 9pt; white-space: nowrap; }
+.brand img { width: 18pt; height: 18pt; }
+footer { position: absolute; bottom: .34in; left: .8in; right: .65in; border-top: 1px solid #d4d9e1; padding-top: 7pt; display: flex; justify-content: space-between; gap: 10pt; font-size: 7.5pt; color: #525b6b; }
+footer a { color: #525b6b; text-decoration: none; }
+.footer-divider { padding: 0 3pt; }
+h1, h2, h3, h4, p, dl, dd, ol, ul { margin: 0; }
+h1 { font-size: 37pt; line-height: 1.13; letter-spacing: 0; font-weight: 700; }
+h1 span { color: var(--accent); }
+h2 { font-size: 23pt; line-height: 1.2; margin: 0 0 15pt; }
+h3 { font-size: 11pt; line-height: 1.35; margin: 12pt 0 6pt; }
+h4 { font-size: 10.5pt; margin: 0 0 3pt; }
+p { margin-bottom: 8pt; }
+a { color: #244f9a; text-decoration: underline; }
+.eyebrow { color: var(--accent); text-transform: uppercase; font-size: 8.5pt; line-height: 1.4; font-weight: bold; margin-bottom: 9pt; }
+.lead { font-size: 12pt; line-height: 1.45; margin-bottom: 14pt; }
+.small { font-size: 9pt; line-height: 1.45; color: #505867; }
+.instruction { font-size: 9.5pt; color: #505867; line-height: 1.4; margin-bottom: 11pt; }
+.section-letter { display: inline-flex; align-items: center; justify-content: center; vertical-align: 2pt; width: 27pt; height: 27pt; border-radius: 50%; background: var(--accent); color: #fff; font-size: 15pt; }
+.cover .eyebrow { margin-top: 11pt; margin-bottom: 18pt; }
+.subtitle { margin: 14pt 0 9pt; font-size: 16pt; line-height: 1.4; max-width: 450pt; }
+.cover-art { display: block; width: 4.65in; height: 3.1in; object-fit: contain; margin: 8pt auto 13pt; }
+.cover-author { padding-top: 11pt; border-top: 2pt solid var(--accent); }
+.author { font-size: 15pt; font-weight: bold; margin-bottom: 5pt; }
+.copyright { font-size: 8.5pt; line-height: 1.4; margin-bottom: 14pt; }
+.cover-description { font-size: 11pt; line-height: 1.55; }
+.edition { font-size: 9pt; color: #505867; margin-top: 13pt; }
+.contents { list-style: none; padding: 0; }
+.contents li { margin-bottom: 10pt; }
+.contents a { font-weight: bold; font-size: 11pt; }
+.contents li p { font-size: 9pt; line-height: 1.4; margin: 4pt 0 0; }
+.contents-extra { border-top: 1pt solid #d4d9e1; padding-top: 12pt; display: grid; grid-template-columns: 1fr 1fr; gap: 8pt 16pt; font-size: 9pt; margin-bottom: 14pt; }
+.field-notes div { border-top: 1pt solid #d4d9e1; padding-top: 10pt; margin-bottom: 10pt; }
+.field-notes dt { color: var(--accent); font-weight: bold; margin-bottom: 4pt; }
+.field-notes dd { font-size: 10pt; }
+.note, .case-facts { border-left: 3pt solid var(--accent); background: #f2f3f7; padding: 10pt 13pt; margin: 12pt 0; }
+.note h3, .case-facts h3 { margin: 0 0 5pt; font-size: 10pt; color: var(--accent); }
+.note p { font-size: 9.5pt; line-height: 1.45; }
+.note p:last-child, .case-facts p:last-child { margin-bottom: 0; }
+.case-page .note { margin: 10pt 0; padding: 8pt 11pt; }
+.case-page .note p { font-size: 9pt; line-height: 1.35; }
+.artifact { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-bottom: 10pt; }
+.artifact caption { text-align: left; padding: 8pt 10pt; background: #edf1fb; color: #253f72; font-weight: bold; border-top: 2pt solid var(--accent); }
+.artifact th, .artifact td { text-align: left; padding: 5pt 9pt; border-bottom: 1px solid #d4d9e1; vertical-align: top; }
+.artifact th { font-size: 8pt; text-transform: uppercase; color: #505867; }
+.artifact td:first-child { width: 29%; font-weight: bold; }
+.question { margin-bottom: 14pt; break-inside: avoid; }
+.question h3 { margin: 0 0 7pt; font-size: 10.5pt; }
+.options { list-style: none; padding: 0; }
+.options li { position: relative; padding-left: 18pt; margin: 0 0 4pt; line-height: 1.35; }
+.option-letter { position: absolute; left: 0; font-weight: bold; color: var(--accent); }
+.case-page .question { margin-bottom: 9pt; }
+.case-page .question h3 { font-size: 9.6pt; margin-bottom: 5pt; }
+.case-page .options { font-size: 9.5pt; }
+.case-page .options li { margin-bottom: 3pt; }
+.answer-link { margin: 10pt 0 0; font-size: 9pt; }
+.vocabulary { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22pt; row-gap: 11pt; }
+.vocabulary div { break-inside: avoid; }
+.vocabulary dt { font-size: 11pt; font-weight: bold; color: var(--accent); margin-bottom: 3pt; }
+.vocabulary dd { font-size: 9.8pt; line-height: 1.4; }
+.collocation { display: block; font-style: italic; margin-top: 3pt; }
+.stress { border-top: 2pt solid var(--accent); padding-top: 6pt; margin-top: 12pt; }
+.stress h3 { margin-top: 0; }
+.stress > div { margin-top: 8pt; }
+.stress h4 span { font-size: 9pt; font-weight: normal; color: var(--accent); padding-left: 8pt; }
+.stress p { font-size: 9.5pt; margin-bottom: 3pt; }
+.stress p.small { font-size: 8.8pt; }
+.phrases { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt 22pt; }
+.phrases dt { font-size: 8.2pt; color: var(--accent); font-weight: bold; margin-bottom: 3pt; }
+.phrases dd { font-size: 10pt; line-height: 1.4; }
+.register { border-top: 2pt solid var(--accent); padding-top: 7pt; margin-top: 14pt; }
+.register h3 { margin-top: 0; }
+.register p { font-size: 9pt; line-height: 1.4; margin-bottom: 7pt; }
+.scene-title { font-size: 13pt; color: var(--accent); margin-top: 0; }
+.scene-setup { font-size: 10pt; line-height: 1.4; margin-bottom: 10pt; }
+.word-bank { background: #edf1fb; border-top: 2pt solid var(--accent); padding: 9pt 11pt; margin: 10pt 0 14pt; }
+.word-bank h3 { margin: 0 0 5pt; font-size: 8.5pt; text-transform: uppercase; color: var(--accent); }
+.word-bank p { font-size: 10pt; line-height: 1.65; margin: 0; }
+.word-bank .separator { color: #687181; padding: 0 4pt; }
+.word-bank .bank-entry { display: inline-block; white-space: nowrap; }
+.dialogue { list-style: none; padding: 0; }
+.dialogue li { display: flex; align-items: flex-start; gap: 10pt; margin-bottom: 11pt; break-inside: avoid; }
+.dialogue li p { flex: 1; font-size: 10.5pt; line-height: 1.55; margin: 0; }
+.dialogue strong { color: var(--accent); }
+.turn-number { flex: 0 0 15pt; color: #687181; font-size: 8pt; padding-top: 3pt; }
+.cloze { display: inline-flex; align-items: baseline; white-space: nowrap; gap: 3pt; }
+.cloze sup { font-size: 7.5pt; color: #445571; position: relative; top: -3pt; }
+.blank { display: inline-block; width: 100pt; border-bottom: .8pt solid #273e60; height: 10pt; }
+.answer-strip { border-top: 1pt solid #d4d9e1; margin-top: 15pt; padding-top: 9pt; }
+.answer-strip h3 { font-size: 8.5pt; color: #505867; text-transform: uppercase; margin: 0 0 5pt; }
+.answer-strip p { font-size: 9pt; line-height: 1.65; margin-bottom: 5pt; }
+.answer-strip .xref { font-size: 9pt; }
+.continuation { margin-top: 10pt; }
+.second-take { margin-top: 19pt; border-top: 2pt solid var(--accent); padding-top: 10pt; }
+.transfer-page .dialogue li { margin-bottom: 8pt; }
+.transfer-page .dialogue li p { font-size: 10pt; line-height: 1.45; }
+.transfer-page .question h3 { font-size: 10pt; }
+.transfer-page .options { font-size: 9.5pt; }
+.transfer-page .answer-strip { margin-top: 10pt; }
+.review-page .question { margin-bottom: 17pt; }
+.key-page h2 { font-size: 20pt; }
+.key-entry { margin-bottom: 8pt; padding-bottom: 8pt; border-bottom: 1pt solid #d4d9e1; break-inside: avoid; }
+.key-entry h3 { font-size: 10.5pt; margin: 0 0 5pt; }
+.key-entry h3.key-group { font-size: 12pt; color: var(--accent); border-top: 2pt solid var(--accent); padding-top: 9pt; margin: 0 0 12pt; }
+.key-entry p, .rationales { font-size: 9.7pt; line-height: 1.45; }
+.key-entry p { margin-bottom: 5pt; }
+.rationales { list-style: none; padding: 0; }
+.rationales li { margin-bottom: 3pt; }
+.correct-response { color: #244f9a; font-weight: bold; }
+.key-entry .back-link, .back-link { font-size: 8.5pt; margin: 5pt 0 0; }
+.gap-key { margin-bottom: 6pt; padding-bottom: 6pt; }
+.gap-key h3 { margin-bottom: 4pt; }
+.gap-key p { margin-bottom: 3pt; }
+.complete-line { color: #505867; }
+.finder-entry { padding-bottom: 15pt; margin-bottom: 15pt; border-bottom: 1pt solid #d4d9e1; }
+.finder-entry h3 { color: var(--accent); margin-top: 0; }
+.finder-entry p { font-size: 10pt; }
+.finder-entry .xref { font-size: 9pt; }
+.index-entry { display: flex; justify-content: space-between; gap: 12pt; font-size: 10pt; line-height: 1.3; padding: 4pt 0; margin: 0; border-bottom: 1px solid #e3e5eb; }
+.index-entry > span { text-align: right; font-size: 9pt; }
+.index-page .flow-items { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24pt; }
+.index-entry { display: block; font-size: 9.5pt; padding: 2pt 0; }
+.index-entry > span { display: block; text-align: left; font-size: 8.5pt; }
+.sources-page .source { margin: 15pt 0; }
+.sources-page h3 { font-size: 10pt; }
+.sources-page p { font-size: 9.5pt; line-height: 1.45; }
+.sources-page a { overflow-wrap: anywhere; font-size: 8.5pt; }
+.closing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt 25pt; margin: 20pt 0 32pt; }
+.closing-grid h3 { color: var(--accent); }
+.closing-grid p { font-size: 10.5pt; }
+.publication { border-top: 2pt solid var(--accent); padding-top: 16pt; }
+.publication p { font-size: 9.5pt; }
+.publication .author { font-size: 14pt; }
+@media screen { body { background: #e7e8ed; } .sheet { margin: 18px auto; box-shadow: 0 2px 12px #0002; } }
+@media print { body { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }

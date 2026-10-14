@@ -53,7 +53,7 @@
     <section id="dashboard-view" class="dashboard" aria-labelledby="dashboard-title" hidden>
       <div id="teacher-banner" class="teacher-banner" hidden><strong>Teacher view</strong><span>You’re viewing <span id="teacher-student-name"></span>’s learning space.</span></div>
       <div class="dashboard-heading">
-        <div><p class="eyebrow">YOUR LEARNING JOURNEY</p><h1 id="dashboard-title" tabindex="-1">Welcome back.</h1><p id="dashboard-intro">A little practice. A clearer next step. Keep moving forward.</p></div>
+        <div><p id="profile-nickname" class="eyebrow">YOUR LEARNING JOURNEY</p><h1 id="dashboard-title" tabindex="-1">Welcome back.</h1><p id="dashboard-intro">A little practice. A clearer next step. Keep moving forward.</p></div>
         <div class="student-badge"><span id="avatar" class="avatar" aria-hidden="true"></span><div><strong id="student-name"></strong><span id="account-address"></span></div></div>
       </div>
       <nav class="section-nav" aria-label="Student space sections">
@@ -63,17 +63,35 @@
         <a href="#feedback">Feedback</a>
       </nav>
       <div id="overview" class="section-panel">
-        <section class="next-step"><div><p class="eyebrow">A FRESH START</p><h2>Your next chapter starts here.</h2><p>Your learning space is ready. As your teacher adds assessments, lesson notes, and feedback, you’ll find them here.</p><a class="primary-button" href="https://englishladder.com">Explore English lessons <span aria-hidden="true">↗</span></a></div><div class="progress-art" aria-hidden="true"><span>ONE</span><span>STEP</span><span>AT A TIME.</span></div></section>
+        <section class="next-step"><div><p class="eyebrow">YOUR NEXT STEP</p><h2 id="latest-title">Your learning notebook.</h2><p id="latest-summary">Open your session feedback to revisit useful language and find a short practice activity.</p><a id="latest-link" class="primary-button" href="#feedback">Open session feedback <span aria-hidden="true">→</span></a></div><div class="progress-art" aria-hidden="true"><span>ONE</span><span>STEP</span><span>AT A TIME.</span></div></section>
         <div class="section-heading"><h2>Your learning notebook</h2><span>Everything in one place</span></div>
         <div class="notebook-grid">
           <a class="notebook-card" href="#assessments"><span class="notebook-number">01 / UNDERSTAND</span><h3>Assessments <span aria-hidden="true">↗</span></h3><p>See your strengths and the skills you’re developing.</p><span class="empty-label">No assessments yet</span></a>
-          <a class="notebook-card" href="#sessions"><span class="notebook-number">02 / REFLECT</span><h3>Session summaries <span aria-hidden="true">↗</span></h3><p>Revisit lesson highlights and useful language.</p><span class="empty-label">No sessions yet</span></a>
-          <a class="notebook-card" href="#feedback"><span class="notebook-number">03 / GROW</span><h3>Feedback <span aria-hidden="true">↗</span></h3><p>Find personal guidance for your next steps.</p><span class="empty-label">No feedback yet</span></a>
+          <a class="notebook-card" href="#sessions"><span class="notebook-number">02 / REFLECT</span><h3>Session summaries <span aria-hidden="true">↗</span></h3><p>Revisit lesson highlights and useful language.</p><span id="session-count" class="empty-label">Loading sessions…</span></a>
+          <a class="notebook-card" href="#feedback"><span class="notebook-number">03 / GROW</span><h3>Feedback <span aria-hidden="true">↗</span></h3><p>Find personal guidance for your next steps.</p><span id="feedback-count" class="empty-label">Loading feedback…</span></a>
         </div>
       </div>
       <section id="assessments" class="section-panel empty-state" aria-labelledby="assessments-title" hidden><span class="empty-symbol" aria-hidden="true">01</span><p class="eyebrow">ASSESSMENTS</p><h2 id="assessments-title">A starting point for your progress.</h2><p>No assessments have been added yet. Your teacher’s assessment of your English and areas to focus on will appear here.</p><a href="#overview" class="secondary-button">Back to overview</a></section>
-      <section id="sessions" class="section-panel empty-state" aria-labelledby="sessions-title" hidden><span class="empty-symbol" aria-hidden="true">02</span><p class="eyebrow">SESSION SUMMARIES</p><h2 id="sessions-title">Keep the useful moments.</h2><p>No session summaries have been added yet. Come back after your teacher shares the highlights, language, and next steps from a lesson.</p><a href="#overview" class="secondary-button">Back to overview</a></section>
-      <section id="feedback" class="section-panel empty-state" aria-labelledby="feedback-title" hidden><span class="empty-symbol" aria-hidden="true">03</span><p class="eyebrow">PERSONAL FEEDBACK</p><h2 id="feedback-title">Small changes. Real progress.</h2><p>No feedback has been added yet. Your teacher’s personal suggestions and encouragement will appear here.</p><a href="#overview" class="secondary-button">Back to overview</a></section>
+      <section id="sessions" class="section-panel" aria-labelledby="sessions-title" hidden>
+        <div class="section-heading"><h2 id="sessions-title">Your session summaries</h2><span>English learning highlights</span></div>
+        <p class="section-intro">Revisit the language from each lesson. Open a session for examples, explanations, and practice.</p>
+        <div id="session-summaries" class="session-summaries"></div>
+      </section>
+      <section id="feedback" class="section-panel" aria-label="Session feedback" hidden>
+        <div class="feedback-layout">
+          <aside class="session-sidebar" aria-labelledby="session-browser-title">
+            <div class="session-browser-heading"><span class="eyebrow">YOUR NOTEBOOK</span><h2 id="session-browser-title">Session feedback</h2><p id="session-list-status" role="status">Loading sessions…</p></div>
+            <label class="mobile-session-label" for="session-select">Jump to a session</label>
+            <select id="session-select" class="mobile-session-select" aria-label="Choose a session"></select>
+            <nav id="session-list" aria-label="Feedback by session date"></nav>
+            <button id="more-sessions" class="text-button" hidden>Earlier sessions ↓</button>
+            <button id="retry-feedback" class="text-button" hidden>Try loading sessions again</button>
+            <p class="sidebar-note">Dates shown in New York time.<br>Japan time appears on each page.</p>
+            <div class="sidebar-footer"><span aria-hidden="true">↗</span><p>A little reflection.<br>A useful next step.</p></div>
+          </aside>
+          <article id="feedback-page" class="feedback-page" aria-live="polite" aria-busy="false"></article>
+        </div>
+      </section>
       <p id="account-status" class="account-status" role="status"></p>
     </section>
     <section id="unavailable-view" class="empty-state" hidden><p class="eyebrow">ENGLISH LADDER</p><h1>Let’s try that again.</h1><p id="unavailable-message"></p><button id="retry" class="primary-button">Try again</button></section>

@@ -2,7 +2,7 @@
 
 The student portal is a separate Cloudflare Worker, `englishladder-students`, in the existing Cloudflare account. It serves the student subdomains without changing the public lesson site's Worker or publishing schedule. The first registered address is `kh26.englishladder.com`.
 
-This first stage implements login and the responsive frontend. Assessments, session summaries, and feedback have honest empty states. It does not yet store or edit learning records. Teacher access is clearly labeled and uses the same student dashboard.
+The portal provides login, private dated session feedback, ESL session summaries, a session sidebar, and a mobile session picker. Each session has a bookmarkable `#feedback/YYYY-MM-DD-HHMM` address; the time suffix allows multiple sessions on one day. The newest feedback opens after login. Assessments still have an empty state. Teacher access is clearly labeled.
 
 ## Account addresses
 
@@ -14,7 +14,7 @@ Each configured subdomain points to the same Worker. For this pilot, domains are
 
 Provision these through Cloudflare's encrypted Worker secrets. Do not commit actual names, passwords, signing keys, `.dev.vars`, or provisioning inputs:
 
-- `STUDENT_ACCOUNTS`: JSON object keyed by student ID, each with `name` and `password` string properties.
+- `STUDENT_ACCOUNTS`: JSON object keyed by student ID, each with first-name-only `name`, optional chosen `nickname`, and `password` string properties. The API also reduces legacy full-name records to their first word before responding.
 - `TEACHER_PASSWORD`: the universal teacher password.
 - `SESSION_SECRET`: at least 32 characters of cryptographically random signing material.
 
@@ -33,7 +33,7 @@ npm run test:students
 npm run dev:students
 ```
 
-Tests cover student and teacher credentials, mixed case, cross-account isolation, tampering, expiry, credential rotation, cross-origin rejection, rate limits, missing secrets, source-file isolation, and public-bundle privacy. Use only fictional credentials in automated tests.
+Tests cover credentials, account isolation, tampering, expiry, rotation, cross-origin rejection, rate limits, private storage, teacher-only publishing, transcript validation, pagination, deep links, stale responses, sign-out cleanup, and safe text rendering. Use only fictional credentials and records in automated tests.
 
 ## Publishing
 
@@ -45,4 +45,16 @@ npm run deploy:students
 
 For the initial deployment, the Worker returns 503 until all secrets are configured. Supply secret values to `wrangler secret bulk --config student-portal/wrangler.jsonc` through standard input, without putting them in shell arguments, logs, or tracked files. Verify both student and teacher login after provisioning. Subsequent deployments retain existing secrets.
 
-Do not place future student records in `public/`, the public lesson repository assets, or browser storage. The next stage needs authenticated server storage with account checks on every read and write. The public site's existing local completion markers are separate from this portal and do not transfer automatically.
+## Private session storage
+
+`FEEDBACK_STORE` binds the `FeedbackStore` Durable Object class, using a private SQLite database for each student. The Worker selects the database from the registered account hostname after checking the signed session. The database has no public URL. The `feedback-v1` migration creates the SQLite-backed namespace. Never remove or rename this migration or class to reset a deployment; that can affect stored records.
+
+`GET /api/feedback` returns up to 100 newest session entries with a `nextCursor`; pass `?before=<cursor>` for older entries. `GET /api/feedback/<id>` returns a session. Both require login. `PUT /api/feedback/<id>` requires the teacher role and exact same origin, validates a maximum 64 KiB JSON body, and atomically updates the record and its index. Repeating a PUT replaces that session, without duplicates. There is no deletion endpoint. Student responses omit the Zoom note identifier; teacher responses include a source link. All responses prohibit caching. The browser stores no records persistently and clears private content on sign-out, expiry, and restoration from the browser's page cache.
+
+Follow [AGENTS.md](AGENTS.md) for every student's feedback. The `scope: "esl"` value and transcript metadata are required, but they do not replace a human/agent content review. Read full available transcripts, separate teacher feedback from extra practice, use first names, and omit unrelated personal conversation. New exercises are clearly labeled. Show both New York and Japan dates to avoid confusion across midnight.
+
+Keep authoring inputs under ignored `student-portal/private/`, with directory permission 700 and file permission 600. Actual records, transcripts, and credentials must never enter Git, public assets, or browser storage. `tests/fixture.mjs` shows the schema with fictional data. Source transcript offsets and segment counts document the available coverage; raw transcripts are not stored on the portal.
+
+Publish a reviewed JSON array using `node student-portal/publish-feedback.mjs <student-origin> <private-file>`. Supply the existing teacher password on standard input through a private pipe or a terminal with echo disabled, never as a command argument. The publisher validates all records before connecting, verifies teacher access, uploads each record, compares every saved record with its input, and signs out. It supports HTTPS student subdomains and HTTP localhost for development. The SQLite-backed service is available on Cloudflare's free plan; this small text library is expected to remain within included quotas. See [Cloudflare pricing](https://developers.cloudflare.com/durable-objects/platform/pricing/).
+
+The public lesson site's existing local completion markers are separate from this portal and do not transfer automatically.

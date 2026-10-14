@@ -40,7 +40,7 @@ test('student password accepts uppercase and mixed case; session is signed and p
   for (const password of [pass, pass.toUpperCase(), 'Student-Example-Only']) {
     const response = await login(env, password);
     assert.equal(response.status, 200);
-    assert.deepEqual(await response.json(), { student: { id: 'ab26', name: 'Alex Brown' }, role: 'student' });
+    assert.deepEqual(await response.json(), { student: { id: 'ab26', name: 'Alex', nickname: 'Alex' }, role: 'student' });
     const cookie = response.headers.get('Set-Cookie');
     for (const flag of ['__Host-el-session=', 'HttpOnly', 'Secure', 'SameSite=Strict', 'Path=/']) assert.ok(cookie.includes(flag));
     assert.ok(!cookie.includes('Domain='));

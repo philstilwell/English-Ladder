@@ -70,6 +70,10 @@ historical sources; do not use them to publish this edition.
 `audit_revised_books.py` checks all printed questions, alternatives, explanations,
 vocabulary and phrases; embedded fonts; page margins and text size; image
 resolution; consistent blank widths; navigation; and content/file freshness.
+Continuation headings retain their original inline formatting, including the
+colored section-letter circle. The renderer compares each continued heading
+with its source, and the PDF audit checks the printed circle, color, and white
+letter against the recorded layout.
 `books/REVISED-2026-10-results.json` is the receipt for the exact delivered PDFs.
 The focused tests also preserve earlier technical corrections, including the
 Cardiology update-time versus review-time distinction.

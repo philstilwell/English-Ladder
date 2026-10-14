@@ -84,3 +84,21 @@ Independent subject-specialist review, learner trials, an accessibility
 assessment with assistive technology, and a physical print proof have not been
 performed. Those checks, plus final trim/bleed and rights review, remain
 necessary before a commercial print-book release.
+
+## Continuation-heading correction
+
+The shared paginator previously flattened automatically continued headings to
+plain text. This removed the colored circle from 1,079 B, D, E, and F section
+letters, including Financial Advice's lesson 03 guided-speaking continuation
+on page 41. Continuation pages now preserve the source heading's markup and
+append the continuation suffix without replacing that markup.
+
+All 80 books were rebuilt and passed the full content, font, link, and geometry
+audit. The audit additionally verified all 6,199 printed circular section
+letters, their white lettering, and their colors. All 5,357 automatically
+continued headings were checked against their originals, including headings
+without a section letter. Visual PDF samples covered B, D, E, and F across
+Financial Advice, Cardiology, and AI Development, in all four accent colors.
+Page counts and section-page references are unchanged across the collection;
+the teaching content and artwork are unchanged. Download version parameters
+were refreshed to distinguish the corrected PDFs from cached copies.

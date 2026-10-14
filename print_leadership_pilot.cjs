@@ -33,8 +33,10 @@ async function main() {
             const next = original.cloneNode(true);
             next.id = `${original.id}-continued-${++part}`;
             next.removeAttribute('data-flow');
+            next.dataset.continuedFrom = original.id;
             next.querySelector('.flow-items').replaceChildren();
-            next.querySelector('.flow-heading').textContent = original.querySelector('.flow-heading').textContent + ' / continued';
+            // Keep the cloned heading's circular letter and other inline formatting.
+            next.querySelector('.flow-heading').append(' / continued');
             current.after(next);
             current = next;
             container = next.querySelector('.flow-items');
@@ -72,6 +74,28 @@ async function main() {
       }
       const duplicateIds = [...document.querySelectorAll('[id]')].map(x => x.id).filter((x, i, all) => all.indexOf(x) !== i);
       const invalidLinks = [...document.querySelectorAll('a[href^="#"]')].filter(a => !document.getElementById(a.hash.slice(1))).map(a => a.hash);
+      const headingErrors = [];
+      const continuationHeadings = [...document.querySelectorAll('[data-continued-from]')].map(sheet => {
+        const source = document.getElementById(sheet.dataset.continuedFrom);
+        const heading = sheet.querySelector('.flow-heading');
+        const expected = source.querySelector('.flow-heading').cloneNode(true);
+        expected.append(' / continued');
+        if (heading.innerHTML !== expected.innerHTML) headingErrors.push(sheet.id);
+        return { id: sheet.id, source: source.id, page: +sheet.dataset.page,
+          letter: heading.querySelector('.section-letter')?.textContent || null };
+      });
+      const sectionLetters = [...document.querySelectorAll('.page-body h2 .section-letter')].map(letter => {
+        const sheet = letter.closest('.sheet');
+        const rect = letter.getBoundingClientRect();
+        const pageRect = sheet.getBoundingClientRect();
+        const style = getComputedStyle(letter);
+        if (style.borderRadius !== '50%' || style.color !== 'rgb(255, 255, 255)' ||
+            Math.abs(rect.width - 36) > .1 || Math.abs(rect.height - 36) > .1 ||
+            style.backgroundColor === 'rgba(0, 0, 0, 0)') headingErrors.push(sheet.id);
+        return { id: sheet.id, page: +sheet.dataset.page, letter: letter.textContent,
+          x: +(rect.left - pageRect.left).toFixed(3), y: +(rect.top - pageRect.top).toFixed(3),
+          width: rect.width, height: rect.height, color: style.backgroundColor };
+      });
       const overflows = [];
       const pageStats = sheets.map(sheet => {
         const body = sheet.querySelector('.page-body');
@@ -104,11 +128,12 @@ async function main() {
       const anchors = Object.fromEntries([...document.querySelectorAll('[id]')]
         .filter(el => el.closest('.sheet')).map(el => [el.id, +el.closest('.sheet').dataset.page]));
       return { pages: sheets.length, pageStats, anchors, overflows, invalidLinks, duplicateIds,
+        continuationHeadings, sectionLetters, headingErrors,
         blankCount: blanks.length, minBlankWidth: Math.min(...blanks), maxBlankWidth: Math.max(...blanks) };
     });
     fs.writeFileSync(path.join(folder, `${stem}-layout.json`), JSON.stringify(report, null, 2) + '\n');
-    if (report.overflows.length || report.invalidLinks.length || report.duplicateIds.length) {
-      console.error(JSON.stringify({ overflows: report.overflows, invalidLinks: report.invalidLinks, duplicateIds: report.duplicateIds }, null, 2));
+    if (report.overflows.length || report.invalidLinks.length || report.duplicateIds.length || report.headingErrors.length) {
+      console.error(JSON.stringify({ overflows: report.overflows, invalidLinks: report.invalidLinks, duplicateIds: report.duplicateIds, headingErrors: report.headingErrors }, null, 2));
       throw new Error('Layout validation failed; PDF was not replaced.');
     }
     // Save the paginated HTML so the review copy has working page references too.

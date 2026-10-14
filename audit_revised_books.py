@@ -19,6 +19,39 @@ def normalized(text):
     return ' '.join(re.sub(r'(?<=\w)-\s+(?=\w)', '-', text).split())
 
 
+def audit_heading_records(layout):
+    assert layout['headingErrors'] == [], 'Continuation heading formatting changed'
+    letters = {item['id']: item for item in layout['sectionLetters']}
+    assert len(letters) == len(layout['sectionLetters'])
+    assert letters, 'No section-letter styling records'
+    for item in layout['continuationHeadings']:
+        source = letters.get(item['source'])
+        expected = source['letter'] if source else None
+        assert item['letter'] == expected, (item['id'], 'Missing continuation letter')
+        if source:
+            current = letters[item['id']]
+            assert current['page'] == item['page']
+            for key in ('letter', 'width', 'height', 'color'):
+                assert current[key] == source[key], (item['id'], 'Changed letter styling', key)
+    return letters
+
+
+def audit_printed_letter(page, letter):
+    # Browser coordinates are CSS pixels; PDF coordinates are points (3/4 px).
+    x, y, width, height = (letter[key] * .75 for key in ('x', 'y', 'width', 'height'))
+    color = tuple(int(n) / 255 for n in re.findall(r'\d+', letter['color']))
+    circles = [curve for curve in page.curves if curve['fill'] and
+               all(abs(curve[key] - value) < .8 for key, value in
+                   [('x0', x), ('top', y), ('width', width), ('height', height)])]
+    assert any(len(curve.get('non_stroking_color', ())) == 3 and
+               all(abs(a - b) < .001 for a, b in zip(curve['non_stroking_color'], color))
+               for curve in circles), (letter['id'], 'Missing printed circle')
+    chars = [char for char in page.chars if x <= char['x0'] <= char['x1'] <= x + width and
+             y <= char['top'] <= char['bottom'] <= y + height]
+    assert ''.join(char['text'] for char in chars) == letter['letter'], (letter['id'], 'Missing printed letter')
+    assert all(char['non_stroking_color'] == (1, 1, 1) for char in chars), (letter['id'], 'Letter is not white')
+
+
 def audit(slug, staged=False, published=False, geometry=True):
     meta = verify_record(slug, staged)
     book = configure(slug)
@@ -28,6 +61,7 @@ def audit(slug, staged=False, published=False, geometry=True):
     assert hashlib.sha256(pdf.read_bytes()).hexdigest() == meta['sha256'], (slug, 'published bytes')
     layout = json.loads((ROOT / 'output/pdf' / (name + '-layout.json')).read_text())
     assert not any(layout[key] for key in ('overflows', 'invalidLinks', 'duplicateIds')), slug
+    letters = audit_heading_records(layout)
     reader = PdfReader(pdf)
     assert len(reader.pages) == meta['pdf_pages'] == layout['pages']
     assert reader.metadata.author == 'Phil Stilwell'
@@ -98,8 +132,11 @@ def audit(slug, staged=False, published=False, geometry=True):
     printed('No part of this publication may be reproduced')
     if geometry:
         blanks = 0
+        letters_by_page = {item['page']: item for item in letters.values()}
         with pdfplumber.open(pdf) as document:
             for page in document.pages:
+                if page.page_number in letters_by_page:
+                    audit_printed_letter(page, letters_by_page[page.page_number])
                 for char in page.chars:
                     assert 36 <= char['x0'] <= char['x1'] <= 576, (slug, page.page_number, 'horizontal bounds', char['text'])
                     assert 18 <= char['top'] <= char['bottom'] <= 774, (slug, page.page_number, 'vertical bounds', char['text'])
@@ -116,6 +153,7 @@ def audit(slug, staged=False, published=False, geometry=True):
         assert blanks == expected_gaps, (slug, 'drawn blank count', blanks, expected_gaps)
     return dict(slug=slug, pages=len(pages), sha256=meta['sha256'], questions=96,
                 extended_dialogues=11, dialogue_turns=220, blanks=expected_gaps,
+                section_letters=len(letters), continuation_headings=len(layout['continuationHeadings']),
                 embedded_fonts=len(fonts), internal_links=links, geometry_checked=geometry, status='passed')
 
 

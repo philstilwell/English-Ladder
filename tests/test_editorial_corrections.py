@@ -198,6 +198,35 @@ class EditorialCorrectionTests(unittest.TestCase):
                 self.assertNotIn('Why did the local justice of the peace order', prompt_text,
                                  f'{path}: {prompt.get("id")}')
 
+    def test_october_14_advanced_q5_keeps_92_percent_statistic_broad(self):
+        edition = self.edition('2026-10-14')
+        lesson = edition['levels']['advanced']['lesson']
+        item = lesson['quiz'][4]
+
+        self.assertEqual("What did the survey's 92% figure describe?", item['question'])
+        self.assertEqual(0, item['correct_option_index'])
+        self.assertEqual(
+            'Employers who had encountered or suspected AI misconduct in the job selection '
+            'process.',
+            item['options'][item['correct_option_index']],
+        )
+        self.assertEqual(
+            'Correct. The 92% figure covers employers who had encountered or suspected AI '
+            'misconduct across the job selection process; real-time interview assistance and '
+            'completing online assessments were common examples.',
+            item['option_feedback'][item['correct_option_index']],
+        )
+        evidence = edition['source']['evidence_text']
+        self.assertIn('92% of employers had encountered or suspected AI "misconduct"', evidence)
+        self.assertIn('during online video interviews or to complete online assessments', evidence)
+        self.assert_rendered_quiz_item('2026-10-14', 'advanced', 4, item)
+        self.assert_prompts_contain(
+            '2026-10-14', 'advanced',
+            ['Nevertheless, 92% of these employers suspected unethical practices'],
+            ['What "unethical practice" did 92% of surveyed employers suspect?',
+             '92% of employers suspected individuals of using real-time generative assistants'],
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

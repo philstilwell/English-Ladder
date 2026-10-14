@@ -551,17 +551,17 @@
             ]
           },
           {
-            "question": "What \"unethical practice\" did 92% of surveyed employers suspect?",
+            "question": "What did the survey's 92% figure describe?",
             "options": [
-              "Candidates relying on real-time generative assistants during online interviews.",
+              "Employers who had encountered or suspected AI misconduct in the job selection process.",
               "Applicants submitting cover letters that were completely written by AI.",
               "Recruiters using algorithms to automatically reject diverse candidates."
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "Correct. The reading explicitly states that 92% of employers suspected individuals of using real-time generative assistants during video interviews.",
-              "Incorrect. Using AI for preliminary stages like cover letters is increasingly tolerated, not cited as the primary unethical practice.",
-              "Incorrect. The \"unethical practices\" refers to the actions of the applicants, not the automated screening by recruiters."
+              "Correct. The 92% figure covers employers who had encountered or suspected AI misconduct across the job selection process; real-time interview assistance and completing online assessments were common examples.",
+              "Incorrect. The source says writing cover letters or CVs was the most commonly accepted use of AI; the 92% statistic concerns broader suspected misconduct.",
+              "Incorrect. The 92% statistic concerns AI misconduct by candidates during selection, not recruiters' automated screening."
             ]
           },
           {
@@ -660,33 +660,41 @@
           "She says the use of AI in job applications is a \"moral dilemma\" that employers and employees will continue to grapple with. But she stresses it cannot replace what her firm is looking for in new recruits."
         ],
         "editorial_check": {
-          "date": "2026-10-14T07:21:11.379839+00:00",
-          "model": "gemini-3.1-pro-preview",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets, including 'discrepancy', 'simultaneous', and 'tightrope', are precise C1-level terms that avoid reserved elementary words and offer strong contextual learning value."
+          "date": "2026-10-14",
+          "status": "revised",
+          "method": "Codex editorial correction against the saved BBC source evidence; no new independent model approval",
+          "changes": [
+            "Corrected advanced Q5 so the 92% statistic covers suspected AI misconduct across the job selection process, with interview assistance and online assessments identified as examples."
+          ],
+          "previous_review": {
+            "date": "2026-10-14T07:21:11.379839+00:00",
+            "model": "gemini-3.1-pro-preview",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets, including 'discrepancy', 'simultaneous', and 'tightrope', are precise C1-level terms that avoid reserved elementary words and offer strong contextual learning value."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The text maintains a polished, neutral reporting register suitable for advanced news analysis, utilising professional phrasing such as 'overwhelming influx' and 'rigid parameters'."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The grammar explanation concisely and accurately breaks down the advanced use of 'while' with a participle clause, and the quiz feedback clarifies subtle nuances between the distractors."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The quiz provides substantial challenge by testing contextual vocabulary, supported inferences, and reading comprehension without resorting to overly convoluted wording or unsupported external facts."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The text maintains a polished, neutral reporting register suitable for advanced news analysis, utilising professional phrasing such as 'overwhelming influx' and 'rigid parameters'."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The grammar explanation concisely and accurately breaks down the advanced use of 'while' with a participle clause, and the quiz feedback clarifies subtle nuances between the distractors."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The quiz provides substantial challenge by testing contextual vocabulary, supported inferences, and reading comprehension without resorting to overly convoluted wording or unsupported external facts."
-            }
-          },
-          "content_digest": "fa937e9a43050eeed3bdad7b1c2be37f287c2ac3728ebc9c2a9852ee7b91174d"
+            "content_digest": "fa937e9a43050eeed3bdad7b1c2be37f287c2ac3728ebc9c2a9852ee7b91174d"
+          }
         }
       }
     }

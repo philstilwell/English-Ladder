@@ -210,6 +210,10 @@ python3 update_site.py --refresh-pages
 
 ## Hosting and publishing
 
+### Private student portal
+
+The separate `englishladder-students` Worker serves student subdomains, starting with `kh26.englishladder.com`. It provides case-insensitive student/teacher sign-in and a responsive dashboard with empty assessment, session-summary, and feedback sections. Credentials and student names are Cloudflare secrets, never public assets. The public lesson site's publishing remains independent. See [student portal setup, checks, and publishing](student-portal/README.md).
+
 Cloudflare Web Analytics uses **Automatic setup** for the public domain. Cloudflare injects the beacon as pages are served; do not embed it in HTML or page generators. The earlier manual analytics record is retained for historical traffic, while new visits appear in the automatic record.
 
 Cloudflare Workers Static Assets serves `englishladder.com`. Namecheap remains the registrar, GitHub stores the source, and the existing daily GitHub Actions schedule continues to create lessons. Static hosting adds $0/month at the current scale; existing Gemini generation and domain renewals remain separate.

@@ -1,0 +1,97 @@
+:root { color-scheme:light; --blue:#234deb; --ink:#20242b; --muted:#596171; --line:#dce0e7; --paper:#faf9f6; }
+* { box-sizing:border-box; }
+[hidden] { display:none !important; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:"Avenir Next","Segoe UI",Arial,sans-serif; line-height:1.6; }
+button,input { font:inherit; }
+a { color:var(--blue); text-underline-offset:4px; }
+button,a,input { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
+button { cursor:pointer; }
+button:disabled { cursor:wait; opacity:.65; }
+.skip-link { position:absolute; top:-80px; left:20px; z-index:10; background:white; padding:12px; }
+.skip-link:focus { top:10px; }
+.masthead { min-height:86px; border-bottom:1px solid var(--line); max-width:1280px; margin:0 auto; padding:20px 48px; display:flex; align-items:center; gap:24px; }
+.brand { display:inline-flex; align-items:center; gap:10px; color:var(--blue); font-weight:750; font-size:1.22rem; letter-spacing:-.045em; text-decoration:none; }
+.brand img { display:block; border-radius:7px; }
+.masthead-label { margin-left:auto; color:var(--muted); font-size:.85rem; }
+.text-button { background:transparent; border:0; color:var(--blue); font-weight:650; min-height:44px; padding:8px 0 8px 12px; }
+.text-button span { margin-left:8px; }
+main { max-width:1280px; margin:auto; padding:0 48px; min-height:calc(100svh - 180px); }
+.login-layout { display:grid; grid-template-columns:1.15fr 1fr; gap:70px; align-items:center; max-width:1080px; margin:0 auto; padding:78px 0 86px; }
+.eyebrow { font-size:.73rem; letter-spacing:.16em; color:var(--blue); font-weight:750; margin:0 0 20px; }
+.welcome-copy h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.8rem,4.5vw,4.1rem); font-weight:400; line-height:1.13; letter-spacing:-.045em; margin:0 0 22px; }
+.welcome-copy h1 em { color:var(--blue); font-style:normal; }
+.intro { color:var(--muted); line-height:1.8; margin:0 0 34px; font-size:1.02rem; }
+.feature-list { list-style:none; margin:0; padding:0; display:grid; gap:22px; }
+.feature-list li { display:flex; align-items:start; gap:17px; }
+.step-number { font-size:.7rem; color:var(--blue); border:1px solid #cbd5fc; background:#f0f3ff; border-radius:50%; width:30px; height:30px; display:grid; place-items:center; flex-shrink:0; margin-top:2px; }
+.feature-list strong { display:block; font-size:.9rem; font-weight:650; }
+.feature-list div>span { display:block; font-size:.8rem; color:var(--muted); margin-top:2px; }
+.login-card { background:#fff; border:1px solid var(--line); border-top:4px solid var(--blue); border-radius:12px; padding:36px 36px 0; box-shadow:0 12px 40px #233b6210; }
+.card-kicker { display:flex; align-items:center; gap:8px; font-size:.65rem; font-weight:750; letter-spacing:.13em; color:var(--muted); }
+.status-dot { width:7px; height:7px; border-radius:50%; background:#2e8060; }
+.login-card h2 { font-size:1.8rem; letter-spacing:-.04em; margin:24px 0 6px; line-height:1.2; }
+.login-card>p { color:var(--muted); font-size:.9rem; margin:0 0 28px; }
+label { display:block; font-size:.8rem; font-weight:650; margin:0 0 8px; }
+input { width:100%; min-height:50px; border:1px solid #a9b1bf; border-radius:6px; padding:11px 14px; color:var(--ink); background:#fff; font-size:1rem; }
+.student-id { margin-bottom:22px; background:#f5f6f9; border-color:#e3e6ed; color:#50596b; font-size:.92rem; letter-spacing:.05em; }
+.password-wrap { position:relative; }
+.password-wrap input { padding-right:68px; }
+.password-wrap button { position:absolute; right:5px; top:4px; min-height:42px; background:transparent; border:0; color:#4c5c81; padding:8px 11px; font-size:.78rem; font-weight:650; }
+.field-hint { color:var(--muted); font-size:.72rem; margin:8px 0 22px; }
+.primary-button { display:inline-flex; justify-content:space-between; align-items:center; gap:24px; min-height:48px; padding:12px 20px; background:var(--blue); color:#fff; border:1px solid var(--blue); border-radius:6px; text-decoration:none; font-size:.88rem; font-weight:650; }
+.primary-button:hover { background:#183cc8; }
+#login-submit { width:100%; }
+.login-card .help-note { text-align:center; font-size:.76rem; margin:19px 0 27px; }
+.card-footer { margin:0 -36px; border-top:1px solid #e8ebf0; padding:17px 18px; text-align:center; background:#fcfcfd; font-size:.7rem; color:var(--muted); border-radius:0 0 12px 12px; }
+.lock-icon { margin-right:5px; color:#6c7891; }
+.error-message { background:#fff0ef; color:#992b25; border-radius:6px; padding:11px 13px; font-size:.82rem; margin:0 0 16px; }
+.page-footer { max-width:1184px; margin:0 auto; padding:24px 0; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; color:var(--muted); font-size:.75rem; }
+.page-footer a { color:var(--muted); text-decoration:none; }
+.page-footer a:hover { color:var(--blue); }
+.loading,.noscript { padding:100px 0; text-align:center; color:var(--muted); }
+.dashboard { padding:44px 0 60px; }
+.teacher-banner { display:flex; align-items:center; gap:16px; flex-wrap:wrap; background:#fff3d5; border:1px solid #e4d2a5; color:#685225; padding:12px 18px; border-radius:6px; font-size:.85rem; margin:0 0 30px; }
+.teacher-banner strong { text-transform:uppercase; font-size:.66rem; letter-spacing:.1em; }
+.dashboard-heading { display:flex; align-items:center; justify-content:space-between; gap:24px; margin:10px 0 32px; }
+.dashboard-heading .eyebrow { margin-bottom:12px; }
+.dashboard-heading h1 { font-family:Georgia,serif; font-size:clamp(2rem,3.6vw,3rem); line-height:1.2; font-weight:400; letter-spacing:-.04em; margin:0; }
+.dashboard-heading p:last-child { font-size:.9rem; color:var(--muted); margin:12px 0 0; }
+.student-badge { display:flex; gap:12px; align-items:center; flex-shrink:0; }
+.avatar { width:46px; height:46px; background:#e9eefe; color:var(--blue); border-radius:50%; display:grid; place-items:center; font-size:.85rem; font-weight:700; }
+.student-badge strong,.student-badge div>span { display:block; }
+.student-badge strong { font-size:.85rem; }
+.student-badge div>span { font-size:.7rem; color:var(--muted); margin-top:2px; }
+.section-nav { display:flex; gap:32px; flex-wrap:wrap; border-bottom:1px solid var(--line); margin-bottom:32px; }
+.section-nav a { text-decoration:none; color:var(--muted); padding:12px 0; font-size:.85rem; font-weight:650; border-bottom:3px solid transparent; margin-bottom:-1px; }
+.section-nav a[aria-current] { border-color:var(--blue); color:var(--blue); }
+.next-step { display:grid; grid-template-columns:1.6fr 1fr; align-items:center; gap:32px; background:#eef2fc; border:1px solid #dbe2f6; border-radius:10px; padding:38px 40px; }
+.next-step .eyebrow { margin-bottom:14px; }
+.next-step h2 { font-family:Georgia,serif; font-size:clamp(1.7rem,2.8vw,2.5rem); font-weight:400; letter-spacing:-.035em; line-height:1.2; margin:0 0 14px; }
+.next-step p:not(.eyebrow) { color:#52607a; max-width:53ch; font-size:.88rem; margin:0 0 24px; line-height:1.8; }
+.progress-art { justify-self:end; display:grid; gap:8px; min-width:210px; }
+.progress-art span { font-size:.6rem; font-weight:750; letter-spacing:.15em; padding:12px 14px; color:var(--blue); background:#d5dffd; border-radius:3px; }
+.progress-art span:nth-child(1) { margin-left:80px; background:#234deb; color:white; }
+.progress-art span:nth-child(2) { margin-left:40px; background:#adbff8; color:#173487; }
+.section-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; margin:34px 0 16px; }
+.section-heading h2 { font-size:1.1rem; letter-spacing:-.02em; margin:0; }
+.section-heading>span { color:var(--muted); font-size:.75rem; }
+.notebook-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.notebook-card { display:block; color:var(--ink); text-decoration:none; padding:24px; background:#fff; border:1px solid var(--line); border-radius:8px; }
+.notebook-card:hover { border-color:#9aadeb; box-shadow:0 4px 16px #234deb08; }
+.notebook-number { font-size:.62rem; font-weight:700; letter-spacing:.12em; color:var(--blue); }
+.notebook-card h3 { display:flex; justify-content:space-between; gap:8px; margin:16px 0 8px; font-size:1.05rem; letter-spacing:-.02em; }
+.notebook-card h3>span { color:var(--blue); }
+.notebook-card p { color:var(--muted); font-size:.8rem; margin:0 0 24px; min-height:42px; }
+.empty-label { display:block; padding-top:14px; border-top:1px solid #edf0f4; color:#707889; font-size:.72rem; }
+.empty-state { text-align:center; padding:64px 24px; background:#fff; border:1px solid var(--line); border-radius:8px; }
+.empty-symbol { display:grid; place-items:center; margin:0 auto 24px; width:60px; height:60px; color:var(--blue); background:#eef2fe; border-radius:50%; font-family:Georgia,serif; font-size:1.5rem; }
+.empty-state .eyebrow { margin-bottom:12px; }
+.empty-state h2,.empty-state h1 { font-family:Georgia,serif; font-weight:400; font-size:2rem; letter-spacing:-.03em; margin:0 0 16px; line-height:1.25; }
+.empty-state>p:not(.eyebrow) { color:var(--muted); max-width:52ch; margin:0 auto 28px; font-size:.9rem; }
+.secondary-button { display:inline-block; min-height:44px; padding:10px 18px; border:1px solid #b7c3e5; border-radius:6px; color:var(--blue); text-decoration:none; font-size:.85rem; font-weight:650; }
+.account-status { font-size:.8rem; color:var(--muted); }
+#unavailable-view { margin:70px auto; max-width:600px; }
+@media(max-width:1000px) { .login-layout { gap:40px; } .login-card { padding:28px 26px 0; } .card-footer { margin:0 -26px; } .page-footer { margin:0 48px; } .notebook-card { padding:20px; } .student-badge { display:none; } }
+@media(max-width:740px) { .masthead { padding:16px 24px; min-height:76px; gap:12px; } .brand { font-size:1.05rem; } .brand img { width:30px; height:30px; } .masthead-label { font-size:.7rem; } main { padding:0 24px; } .login-layout { grid-template-columns:1fr; gap:30px; padding:40px 0 48px; max-width:480px; } .welcome-copy .eyebrow { margin-bottom:12px; } .welcome-copy h1 { font-size:2.65rem; } .welcome-copy h1 br { display:none; } .welcome-copy h1 br::after { content:' '; } .welcome-copy h1 em { display:block; } .intro { font-size:.9rem; margin-bottom:0; } .desktop-break { display:none; } .feature-list { display:none; } .login-card { padding-top:28px; } .page-footer { margin:0 24px; font-size:.7rem; padding:20px 0; } .dashboard { padding-top:28px; } .dashboard-heading { margin-top:0; } .dashboard-heading h1 { font-size:2.25rem; } .section-nav { gap:4px 22px; } .section-nav a { font-size:.77rem; } .next-step { grid-template-columns:1fr; padding:28px; } .progress-art { display:none; } .notebook-grid { grid-template-columns:1fr; } .notebook-card p { min-height:0; margin-bottom:16px; } .section-heading>span { display:none; } .empty-state { padding:40px 20px; } .teacher-banner { gap:6px; display:grid; } }
+@media(prefers-reduced-motion:no-preference) { button,a { transition:background-color .15s,border-color .15s; } }

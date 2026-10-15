@@ -50,9 +50,9 @@
     exercise, validItems,
     create({ root, api, expired }) {
       let revision = 0, active = false, items = [], page = 0, progress = new Map(), teacher = false, saving = false;
-      let listOpen = false, listPage = 0;
+      let listOpen = false, listPage = 0, hideFinished = false;
       function clear() {
-        revision++; active = false; items = []; page = 0; progress.clear(); saving = false; listOpen = false; listPage = 0;
+        revision++; active = false; items = []; page = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false;
         root.replaceChildren(); root.hidden = true; root.removeAttribute('aria-busy');
       }
       function readProgress(data) {
@@ -61,9 +61,17 @@
           !Number.isSafeInteger(entry.revision) || entry.revision < 0)) throw new Error('Invalid saved choices');
         progress = new Map(data.entries.map(entry => [entry.number, entry]));
       }
-      function render(focus = false, focusNumber = null) {
-        const start = page * PAGE_SIZE, end = Math.min(start + PAGE_SIZE, items.length);
-        const range = index => `${index * PAGE_SIZE + 1}–${Math.min((index + 1) * PAGE_SIZE, items.length)}`;
+      const visibleItems = () => hideFinished ? items.filter(item => !progress.get(item.number)?.finished) : items;
+      function render(focus = false, focusNumber = null, message = '') {
+        const visible = visibleItems();
+        page = Math.max(0, Math.min(page, Math.ceil(visible.length / PAGE_SIZE) - 1));
+        const start = page * PAGE_SIZE, end = Math.min(start + PAGE_SIZE, visible.length);
+        const range = index => `${visible[index * PAGE_SIZE].number}–${visible[Math.min((index + 1) * PAGE_SIZE, visible.length) - 1].number}`;
+        const filter = element('label', '', 'practice-filter');
+        const checkbox = element('input'); checkbox.type = 'checkbox'; checkbox.id = 'grammar-hide-finished'; checkbox.checked = hideFinished; checkbox.autocomplete = 'off';
+        checkbox.addEventListener('change', () => { hideFinished = checkbox.checked; page = 0; render(); root.querySelector('#grammar-hide-finished').focus(); });
+        filter.append(checkbox, element('span', 'Hide finished items'));
+        const filterStatus = element('p', message, 'field-hint'); filterStatus.setAttribute('role', 'status');
         const intro = element('p', `${items.length} items. Later questions are harder. Choose any group.`, 'field-hint');
         const help = element('p', teacher ? 'Teacher view: you can see saved choices. Only the student can change them.' : 'Choose “Finish” when you are done. Choose “Questions” to ask your teacher about an item. Click a button again to undo it. These choices are saved.', 'field-hint');
         const questions = element('details', '', 'grammar-questions'); questions.open = listOpen;
@@ -79,7 +87,12 @@
           for (const item of selected.slice(listPage * 20, (listPage + 1) * 20)) {
             const row = element('li'), button = element('button', `Item ${item.number} · “${item.prompt}”` + (progress.get(item.number)?.finished ? ' · Finished' : ''), 'secondary-button');
             button.type = 'button'; button.disabled = saving;
-            button.addEventListener('click', () => { page = Math.floor(items.findIndex(entry => entry.number === item.number) / PAGE_SIZE); listOpen = false; render(true, item.number); });
+            button.addEventListener('click', () => {
+              const showAll = hideFinished && progress.get(item.number)?.finished;
+              if (showAll) hideFinished = false;
+              page = Math.floor(visibleItems().findIndex(entry => entry.number === item.number) / PAGE_SIZE); listOpen = false;
+              render(true, item.number, showAll ? 'Showing all items so you can view this question.' : '');
+            });
             row.append(button); links.append(row);
           }
           questionList.append(links);
@@ -91,17 +104,24 @@
             paging.append(back, element('span', `Page ${listPage + 1} of ${Math.ceil(selected.length / 20)}`), forward); questionList.append(paging);
           }
         }
+        if (!visible.length) {
+          updateList();
+          const empty = element('p', 'All items are finished. Uncheck “Hide finished items” to see them again.', 'practice-empty'); empty.tabIndex = -1;
+          root.replaceChildren(intro, help, filter, filterStatus, questions, empty);
+          if (focus) empty.focus();
+          return;
+        }
         const picker = element('div', '', 'grammar-picker');
         const label = element('label', 'Choose items'); label.htmlFor = 'grammar-group';
         const select = element('select'); select.id = 'grammar-group';
-        for (let index = 0; index < Math.ceil(items.length / PAGE_SIZE); index++) {
+        for (let index = 0; index < Math.ceil(visible.length / PAGE_SIZE); index++) {
           const option = element('option', range(index)); option.value = String(index); select.append(option);
         }
         select.value = String(page);
         select.addEventListener('change', () => { page = Number(select.value); render(true); });
         picker.append(label, select);
         const heading = element('h4', `Items ${range(page)}`, 'grammar-heading'); heading.tabIndex = -1;
-        const list = element('ol', '', 'grammar-items'); list.start = start + 1;
+        const list = element('ol', '', 'grammar-items'); list.start = visible[start].number;
         const rows = new Map();
         function updateRows() {
           for (const [number, {row, finished, question, status}] of rows) {
@@ -121,21 +141,23 @@
           if (saving || teacher) return;
           const current = revision, entry = progress.get(number), {status} = rows.get(number);
           const body = { number, field, value: !entry?.[field], revision: entry?.revision || 0 };
+          let refreshFiltered = false, filterMessage = '';
           saving = true;
-          const controls = [...root.querySelectorAll('button, select')].map(el => [el, el.disabled]);
+          const controls = [...root.querySelectorAll('button, select, #grammar-hide-finished')].map(el => [el, el.disabled]);
           for (const [el] of controls) el.disabled = true;
           status.textContent = 'Saving…';
           try {
             const data = await api('/api/grammar-practice/state', {method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
             if (current !== revision) return;
             progress.set(number, data.entry); updateRows();
+            refreshFiltered = field === 'finished'; filterMessage = 'Item ' + number + ' is finished.';
           } catch (error) {
             if (current !== revision || expired(error)) return;
             if (error.status === 409) {
               try {
                 const data = await api('/api/grammar-practice/state');
                 if (current !== revision) return;
-                readProgress(data); updateRows();
+                readProgress(data); updateRows(); refreshFiltered = true; filterMessage = 'Your saved choices have changed. The list is now up to date.';
               } catch (reloadError) {
                 if (current !== revision || expired(reloadError)) return;
                 status.textContent = 'Your choices could not reload. Leave this activity and open it again.'; return;
@@ -147,11 +169,12 @@
               saving = false;
               for (const [el, disabled] of controls) el.disabled = disabled;
               updateList();
+              if (hideFinished && refreshFiltered) render(true, null, filterMessage);
             }
           }
         }
-        for (const item of items.slice(start, end)) {
-          const row = exercise(item), actions = element('div', '', 'grammar-actions');
+        for (const item of visible.slice(start, end)) {
+          const row = exercise(item), actions = element('div', '', 'grammar-actions'); row.value = item.number;
           const finished = element('button', 'Finish', 'secondary-button'), question = element('button', 'Questions', 'secondary-button question-button');
           finished.type = question.type = 'button';
           const status = element('p', '', 'grammar-save-status field-hint'); status.setAttribute('role', 'status');
@@ -162,11 +185,11 @@
         updateRows();
         const controls = element('div', '', 'grammar-controls');
         const previous = element('button', 'Previous 10', 'secondary-button'); previous.type = 'button'; previous.disabled = page === 0;
-        const next = element('button', 'Next 10', 'secondary-button'); next.type = 'button'; next.disabled = end === items.length;
+        const next = element('button', 'Next 10', 'secondary-button'); next.type = 'button'; next.disabled = end === visible.length;
         previous.addEventListener('click', () => { if (page > 0) { page--; render(true); } });
-        next.addEventListener('click', () => { if (end < items.length) { page++; render(true); } });
+        next.addEventListener('click', () => { if (end < visible.length) { page++; render(true); } });
         controls.append(previous, next);
-        root.replaceChildren(intro, help, questions, picker, heading, list, controls);
+        root.replaceChildren(intro, help, filter, filterStatus, questions, picker, heading, list, controls);
         if (focus) { const target = focusNumber ? rows.get(focusNumber).row : heading; target.focus(); target.scrollIntoView?.({ block: 'start' }); }
       }
       async function open(teacherView = false) {

@@ -418,3 +418,8 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-menu-height,56px
 .save-message:empty { display:none; }
 #reload-settings { margin-bottom:20px; }
 @media(max-width:740px) { .account-grid { grid-template-columns:1fr; gap:20px; } .account-card { padding:18px 20px; } .account-card h3 { margin:-18px -20px 18px; padding:12px 20px; } }
+
+.account-card .practice-filter { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; margin:12px 0; font-size:.94rem; font-weight:400; cursor:pointer; }
+.practice-filter input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }
+.practice-filter span { font-size:inherit; color:inherit; margin:0; }
+.practice-empty { padding:16px; background:#f1f3f8; border-radius:6px; }

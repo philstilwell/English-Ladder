@@ -324,10 +324,9 @@
     $('student-activities').replaceChildren();
     const selected = student?.visibleActivities ?? activityTools.map(activity => activity.id);
     for (const activity of activityTools) {
-      const label = element('label', null, 'activity-choice'), input = element('input'), description = element('span');
+      const label = element('label', null, 'activity-choice'), input = element('input');
       input.type = 'checkbox'; input.name = 'visibleActivities'; input.value = activity.id; input.checked = selected.includes(activity.id);
-      description.append(element('strong', activity.name), element('span', activity.description));
-      label.append(input, description); $('student-activities').append(label);
+      label.append(input, element('span', activity.name)); $('student-activities').append(label);
     }
 
     for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(student?.deletionPending);

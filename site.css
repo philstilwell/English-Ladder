@@ -114,7 +114,7 @@ button,a,input,textarea,select,summary { scroll-margin:30px; }
 
 /* Search-friendly navigation uses the same restrained teaching layout. */
 .home-intro { max-width:960px; padding:28px 0 30px; }
-.home-intro h1 { font-size:clamp(1.8rem,3.2vw,2.6rem); line-height:1.15; letter-spacing:.02em; margin:0 0 14px; }
+.home-intro h1 { font-size:clamp(1.8rem,3.2vw,2.6rem); line-height:1.15; letter-spacing:.01em; margin:0 0 14px; }
 .home-intro p { max-width:78ch; margin:0; color:#4f5965; line-height:1.75; }
 .home-intro a { text-underline-offset:3px; }
 .search-breadcrumb { padding:22px 0 0; font-size:.82rem; line-height:1.55; color:#536273; }
@@ -168,7 +168,7 @@ body { --level-tint:#fff; }
 .lesson-completion-mark[data-completed-level="beginner"] { background:#efca58; color:#332900; }
 .lesson-completion-mark[data-completed-level="intermediate"] { background:#236b51; }
 .reading-page .page-hero.reading-heading { max-width:100%; padding:22px 0 12px; margin:0; }
-.reading-page .reading-heading h1 { max-width:950px; margin:0 0 8px; font-size:clamp(1.65rem,3.1vw,2.5rem); line-height:1.18; letter-spacing:.02em; }
+.reading-page .reading-heading h1 { max-width:950px; margin:0 0 8px; font-size:clamp(1.65rem,3.1vw,2.5rem); line-height:1.18; letter-spacing:.01em; }
 .reading-page .reading-heading>p { margin:6px 0; font-size:.97rem; line-height:1.6; }
 .reading-page .reading-heading>.eyebrow { margin:0 0 7px; font-size:.75rem; }
 .daily-feed .page-hero.reading-heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:4px 20px; padding:18px 0 4px; }

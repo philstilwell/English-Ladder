@@ -407,12 +407,6 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-menu-height,56px
 .account-card fieldset { border:0; padding:0; margin:0; min-width:0; }
 .account-card label { display:block; margin:14px 0 6px; }
 .account-card .field-hint { font-size:.85rem; line-height:1.55; margin:8px 0 18px; }
-.account-card .activity-options { border-top:1px solid var(--line); padding-top:16px; margin:8px 0 20px; }
-.activity-options legend { font-weight:700; padding:0 12px 0 0; }
-.account-card .activity-choice { display:flex; align-items:flex-start; gap:12px; padding:12px; margin:8px 0; border:1px solid var(--line); border-radius:6px; cursor:pointer; }
-.activity-choice input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:3px 0 0; accent-color:var(--blue); }
-.activity-choice strong,.activity-choice span span { display:block; }
-.activity-choice span span { font-size:.82rem; color:var(--muted); margin-top:4px; line-height:1.5; }
 .save-message { font-size:.9rem; line-height:1.5; overflow-wrap:anywhere; }
 .save-message:empty { display:none; }
 #reload-settings { margin-bottom:20px; }

@@ -9,6 +9,7 @@
   const menuResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateMenuHeight);
   menuResizeObserver?.observe(adminMenu);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
+  let activityTools = [];
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
@@ -187,7 +188,8 @@
     }
   }
   function clearPrivate() {
-    epoch++; signedIn = false; students = []; current = null; importRows = null;
+    epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = [];
+    $('student-activities').replaceChildren();
     clearRoad(); clearTerms();
     clearLoginDetails();
     clearCefr(); cefrRequest++; cefrStatuses = {};
@@ -259,6 +261,8 @@
     const version = epoch;
     const data = await api('/api/admin/students');
     if (!signedIn || version !== epoch) return;
+    if (!Array.isArray(data.activities) || !data.activities.length || data.activities.some(a => !a || typeof a.id !== 'string' || typeof a.name !== 'string' || typeof a.description !== 'string')) throw new Error('The activity list could not load. Please refresh before editing a student.');
+    activityTools = data.activities;
     students = data.students; quizStatuses = {}; cefrStatuses = {}; showList(); route();
     void refreshQuizStatuses();
     void refreshCefrStatuses();
@@ -308,6 +312,15 @@
   function editStudent(student) {
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); $('save-state').textContent = '';
+    $('student-activities').replaceChildren();
+    const selected = student?.visibleActivities ?? activityTools.map(activity => activity.id);
+    for (const activity of activityTools) {
+      const label = element('label', null, 'activity-choice'), input = element('input'), description = element('span');
+      input.type = 'checkbox'; input.name = 'visibleActivities'; input.value = activity.id; input.checked = selected.includes(activity.id);
+      description.append(element('strong', activity.name), element('span', activity.description));
+      label.append(input, description); $('student-activities').append(label);
+    }
+
     for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(student?.deletionPending);
     $('save-student').disabled = Boolean(student?.deletionPending) || saving;
     $('delete-account-panel').hidden = !student;
@@ -341,6 +354,7 @@
     clearRoad(); clearTerms();
     closeDelete();
     clearLoginDetails(); current = null;
+    $('student-activities').replaceChildren();
     clearCefr();
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
@@ -449,8 +463,9 @@
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
   $('student-form').addEventListener('submit', async event => {
     event.preventDefault(); const version = epoch, editing = current;
-    if (saving || deleting || editing?.deletionPending) return;
+    if (!signedIn || !activityTools.length || saving || deleting || editing?.deletionPending) return;
     const input = Object.fromEntries(fields.map(field => [field,$(field).value]));
+    input.visibleActivities = [...$('student-activities').querySelectorAll('input:checked')].map(box => box.value);
     input.zoomNames = $('zoomNames').value.split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
     if ($('newPassword').value || $('confirmPassword').value) {
       if ($('newPassword').value.toLowerCase() !== $('confirmPassword').value.toLowerCase()) { message('The two student passwords do not match.', true); return; }

@@ -395,21 +395,20 @@ test('repeated assessment references to one lesson show one date and no elapsed 
 
 const settingsFixture = { nickname: 'Alex the Explorer', revision: 1, visibleActivities: ['placeholder-1', 'placeholder-2', 'placeholder-3'], activities: [1, 2, 3].map(n => ({ id: 'placeholder-' + n, name: 'Activity ' + n, description: 'A sample activity.' })) };
 const submitForm = (dom, id) => dom.window.document.getElementById(id).dispatchEvent(new dom.window.Event('submit', { bubbles: true, cancelable: true }));
-test('Account menu loads saved choices, saves a nickname and empty selection, and keeps teacher preview read-only', async () => {
+test('Account saves only a nickname, has no activity picker, and keeps teacher preview read-only', async () => {
   let saved = structuredClone(settingsFixture), writes = 0;
   const mock = (path, options) => {
     if (path !== '/api/account') return null;
-    if (options.method === 'PUT') { const body = JSON.parse(options.body); writes++; saved = { ...saved, ...body, revision: saved.revision + 1 }; }
+    if (options.method === 'PUT') { const body = JSON.parse(options.body); assert.deepEqual(Object.keys(body).sort(), ['nickname', 'revision']); writes++; saved = { ...saved, ...body, revision: saved.revision + 1 }; }
     return reply(saved);
   };
   const dom = setup(mock, 'https://ab26.englishladder.com/#account'); await flush(); const d = dom.window.document;
   assert.equal(d.querySelector('.section-nav [aria-current]').hash, '#account');
   assert.equal(d.querySelector('.section-nav a[href="#activities"]'), null);
-  assert.equal(d.getElementById('account').hidden, false); assert.equal(d.querySelectorAll('#activity-options input:checked').length, 3);
+  assert.equal(d.getElementById('account').hidden, false); assert.equal(d.getElementById('activity-options'), null);
   d.getElementById('nickname').value = '<b>New nickname</b>';
-  for (const box of d.querySelectorAll('#activity-options input')) box.checked = false;
   submitForm(dom, 'settings-form'); await flush(); assert.equal(writes, 1);
-  assert.deepEqual(saved.visibleActivities, []); assert.equal(d.getElementById('profile-nickname').textContent, '<b>New nickname</b>');
+  assert.deepEqual(saved.visibleActivities, settingsFixture.visibleActivities); assert.equal(d.getElementById('profile-nickname').textContent, '<b>New nickname</b>');
   assert.equal(d.querySelector('#profile-nickname b'), null); assert.match(d.getElementById('settings-message').textContent, /saved/);
   dom.window.location.hash = 'overview'; await flush(); assert.equal(d.getElementById('nickname').value, '');
   dom.window.location.hash = 'account'; await flush(); assert.equal(d.getElementById('nickname').value, '<b>New nickname</b>');
@@ -465,45 +464,35 @@ test('account load failures can retry, stale saves request a reload, and expiry 
   assert.equal(d.getElementById('login-view').hidden, false); assert.equal(d.getElementById('nickname').value, ''); dom.window.close();
 });
 
-test('Activities uses saved choices before visiting Account and updates only after a successful save', async () => {
+test('Activities follows administrator selections when reopened, including none, without a student picker', async () => {
   let saved = { ...settingsFixture, visibleActivities: ['placeholder-1', 'placeholder-3'] };
-  const mock = (path, options) => {
-    if (path !== '/api/account') return null;
-    if (options.method === 'PUT') saved = { ...saved, ...JSON.parse(options.body), revision: saved.revision + 1 };
-    return reply(saved);
-  };
+  const mock = path => path === '/api/account' ? reply(saved) : null;
   const dom = setup(mock, 'https://ab26.englishladder.com/#activities/placeholder-3'); await flush();
-  const d = dom.window.document;
-  const labels = () => [...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent);
+  const d = dom.window.document, labels = () => [...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent);
   assert.deepEqual(labels(), ['Activity 1', 'Activity 3']);
   assert.equal(d.getElementById('activity-title').textContent, 'Activity 3');
-  assert.match(d.getElementById('activity-message').textContent, /sample activity/);
-  dom.window.location.hash = 'account'; await flush();
-  for (const input of d.querySelectorAll('#activity-options input')) input.checked = input.value === 'placeholder-2';
-  assert.deepEqual(labels(), ['Activity 1', 'Activity 3']);
-  submitForm(dom, 'settings-form'); await flush(); assert.deepEqual(labels(), ['Activity 2']);
-  dom.window.location.hash = 'activities/placeholder-1'; await flush();
+  saved = { ...saved, revision: 2, visibleActivities: ['placeholder-2'] };
+  d.getElementById('activities-toggle').click(); await flush();
+  assert.deepEqual(labels(), ['Activity 2']);
   assert.equal(d.getElementById('activity-title').textContent, 'Activities');
-  assert.match(d.getElementById('activity-message').textContent, /not selected/);
+  assert.match(d.getElementById('activity-message').textContent, /teacher has not selected/);
+  saved = { ...saved, revision: 3, visibleActivities: [] };
+  d.getElementById('activities-toggle').click(); d.getElementById('activities-toggle').click(); await flush();
+  assert.equal(d.querySelectorAll('#activities-submenu a').length, 0);
+  assert.match(d.getElementById('activities-submenu').textContent, /ask your teacher/);
   dom.window.location.hash = 'account'; await flush();
-  for (const input of d.querySelectorAll('#activity-options input')) input.checked = false;
-  submitForm(dom, 'settings-form'); await flush();
-  assert.equal(d.querySelectorAll('#activities-submenu a[href^="#activities/"]').length, 0);
-  assert.match(d.getElementById('activities-submenu').textContent, /No activities selected/);
-  assert.equal(d.querySelector('#activities-submenu a').hash, '#account'); dom.window.close();
+  assert.equal(d.querySelectorAll('#account input[type="checkbox"]').length, 0); dom.window.close();
   const preview = setup(mock, 'https://ab26.englishladder.com/#overview', 'teacher'); await flush();
-  assert.match(preview.window.document.getElementById('activities-submenu').textContent, /No activities selected/); preview.window.close();
+  assert.match(preview.window.document.getElementById('activities-submenu').textContent, /ask your teacher/); preview.window.close();
 });
-test('a delayed activity read cannot replace a newer saved choice or restore choices after sign-out', async () => {
+test('a delayed activity read cannot replace a newer administrator choice or restore choices after sign-out', async () => {
   let complete, reads = 0;
   const dom = setup((path, options) => {
     if (path !== '/api/account') return null;
-    if (options.method === 'PUT') return reply({ ...settingsFixture, ...JSON.parse(options.body), revision: 2 });
     if (++reads === 1) return new Promise(resolve => { complete = resolve; });
-    return reply(settingsFixture);
+    return reply({ ...settingsFixture, revision: 2, visibleActivities: ['placeholder-2'] });
   }, 'https://ab26.englishladder.com/#account'); await flush(); const d = dom.window.document;
-  for (const input of d.querySelectorAll('#activity-options input')) input.checked = input.value === 'placeholder-2';
-  submitForm(dom, 'settings-form'); await flush(); complete(reply(settingsFixture)); await flush();
+  complete(reply(settingsFixture)); await flush();
   assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Activity 2']);
   d.getElementById('logout').click(); await flush(); assert.equal(d.getElementById('activities-submenu').textContent, ''); dom.window.close();
   let late;

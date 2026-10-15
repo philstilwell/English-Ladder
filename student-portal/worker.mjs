@@ -316,6 +316,7 @@ async function handle(request, env) {
     if (!attempts.success || !accountAttempts.success) return json({ error: 'Too many changes. Please wait one minute and try again.' }, 429, { 'Retry-After': '60' });
     const input = await smallJson(request, 4096);
     if (!input || !Number.isInteger(input.revision)) return json({ error: 'Please reload the account page and try again.' }, 400);
+    if (Object.hasOwn(input, 'visibleActivities')) return json({ error: 'Your teacher chooses the activities in your menu.' }, 403);
     if (passwordChange) {
       if (typeof input.currentPassword !== 'string' || !input.currentPassword || input.currentPassword.length > 128)
         return json({ error: 'Enter your current password.' }, 400);
@@ -327,7 +328,7 @@ async function handle(request, env) {
     // Choose the target from the authenticated host. Never forward extra fields.
     const body = { revision: input.revision, expectedAccountRevision: account.directoryRevision,
       ...(passwordChange ? { newPassword: input.newPassword, confirmPassword: input.confirmPassword }
-        : { nickname: input.nickname, visibleActivities: input.visibleActivities }) };
+        : { nickname: input.nickname }) };
     const response = await directoryRequest(env, '/self/' + account.id + (passwordChange ? '/password' : ''), body, request.method);
     return json(await response.json(), response.status, passwordChange && response.ok ? { 'Set-Cookie': cookie('', 0) } : {});
   }

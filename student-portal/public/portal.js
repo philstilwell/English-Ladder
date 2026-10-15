@@ -10,6 +10,14 @@
   let quizState = null, quizRevision = 0;
   let teacherMode = false, resultRows = [], resultCursor = null, resultsLoading = false, resultsRevision = 0;
   let assessmentScrollFrame = 0;
+  const sectionMenu = document.querySelector('.section-nav');
+  function updateMenuHeight() {
+    const height = sectionMenu.getBoundingClientRect().height;
+    if (height) document.documentElement.style.setProperty('--student-menu-height', height + 'px');
+    scheduleAssessmentHighlight();
+  }
+  const menuResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateMenuHeight);
+  menuResizeObserver?.observe(sectionMenu);
   const assessmentResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(scheduleAssessmentHighlight);
 
   async function api(path, options = {}) {
@@ -41,6 +49,7 @@
   function show(view) {
     for (const id of ['loading', 'login-view', 'dashboard-view', 'unavailable-view']) $(id).hidden = id !== view;
     $('logout').hidden = view !== 'dashboard-view';
+    if (view === 'dashboard-view') updateMenuHeight();
   }
   function clearIdentity() {
     identityRevision++; pageRevision++;
@@ -48,7 +57,6 @@
     assessment = null; assessmentLoading = false;
     quizState = null; quizRevision++;
     teacherMode = false; resultRows = []; resultCursor = null; resultsLoading = false; resultsRevision++;
-    $('quiz-results-nav').hidden = true;
     $('quiz-nav').hidden = true;
     $('quiz-history').replaceChildren();
     $('quiz-results-status').textContent = ''; $('more-quiz-results').hidden = true;
@@ -280,7 +288,7 @@
       if (!authenticated || !assessment || $('assessments').hidden) return;
       // Follow the section at the reading line, including long sections whose
       // headings have already scrolled off screen. Do not move focus or history.
-      const readingLine = Math.min(160, window.innerHeight * 0.2);
+      const readingLine = Math.max(sectionMenu.getBoundingClientRect().height + 24, Math.min(160, window.innerHeight * 0.2));
       let current = assessmentSections[0];
       for (const key of assessmentSections) {
         if ($('assessment-' + key).getBoundingClientRect().top <= readingLine) current = key;
@@ -713,7 +721,7 @@
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();
     const initial = !authenticated; authenticated = true;
     const { name, nickname, id } = data.student, teacher = data.role === 'teacher';
-    teacherMode = teacher; $('quiz-results-nav').hidden = !teacher;
+    teacherMode = teacher;
     $('student-name').textContent = nickname; $('profile-nickname').textContent = nickname;
     $('teacher-student-name').textContent = name; $('avatar').textContent = name[0].toUpperCase();
     $('account-address').textContent = id + '.englishladder.com';
@@ -777,7 +785,7 @@
   document.addEventListener('visibilitychange', checkSession);
   window.addEventListener('hashchange', () => navigate(true));
   window.addEventListener('scroll', scheduleAssessmentHighlight, { passive: true });
-  window.addEventListener('resize', scheduleAssessmentHighlight);
+  window.addEventListener('resize', updateMenuHeight);
   document.querySelector('.assessment-outline').addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

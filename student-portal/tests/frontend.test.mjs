@@ -277,7 +277,7 @@ test('teacher sees saved first answers and dated progress; teacher preview creat
  const seed=await seedQuiz(),id=crypto.randomUUID();
  for(const [questionIndex,choiceIndex] of [[0,1],[0,0],[1,1]])await call(seed.e,'/api/quiz/answer',{method:'POST',headers:{Cookie:seed.student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({attemptId:id,version:seed.state.version,questionIndex,choiceIndex})});
  const dom=savedSetup(seed,'teacher',null,'quiz-results');await flush();const d=dom.window.document;
- assert.equal(d.getElementById('quiz-results-nav').hidden,false);
+ assert.equal(d.querySelector('.section-nav a[href="#quiz-results"]'),null);
  assert.match(d.getElementById('quiz-history').textContent,/Progress over time/);
  assert.match(d.getElementById('quiz-history').textContent,/Wrong on the first try: Q1/);
  assert.equal(d.querySelector('.quiz-trend-list progress').value,1);
@@ -289,7 +289,7 @@ test('teacher sees saved first answers and dated progress; teacher preview creat
  d.querySelectorAll('.quiz-option')[0].click();d.querySelector('.quiz-next').click();d.querySelectorAll('.quiz-option')[1].click();d.querySelector('.quiz-next').click();
  const history=await (await call(seed.e,'/api/quiz/results',{headers:{Cookie:seed.teacher.cookie}})).json();assert.equal(history.attempts.length,1);
  d.getElementById('logout').click();await flush();
- assert.equal(d.getElementById('quiz-history').textContent,'');assert.equal(d.getElementById('quiz-results-nav').hidden,true);dom.window.close();
+ assert.equal(d.getElementById('quiz-history').textContent,'');assert.equal(d.querySelector('.section-nav a[href="#quiz-results"]'),null);dom.window.close();
 });
 test('Quiz is hidden from the menu until a quiz is available, including accounts without enough lesson material',async()=>{
  for(const role of ['student','teacher']){
@@ -301,7 +301,7 @@ test('Quiz is hidden from the menu until a quiz is available, including accounts
 test('history stays teacher-only, handles load failure, and ignores a response after sign-out',async()=>{
  const seed=await seedQuiz();let calls=0;
  const student=savedSetup(seed,'student',path=>{if(path.startsWith('/api/quiz/results'))calls++;return null;},'quiz-results');await flush();
- assert.equal(student.window.document.getElementById('quiz-results-nav').hidden,true);assert.equal(calls,0);student.window.close();
+ assert.equal(student.window.document.querySelector('.section-nav a[href="#quiz-results"]'),null);assert.equal(calls,0);student.window.close();
  let fail=true;
  const teacher=savedSetup(seed,'teacher',path=>path==='/api/quiz/results'&&fail?new Response(JSON.stringify({error:'Unavailable.'}),{status:503}):null,'quiz-results');await flush();
  assert.match(teacher.window.document.getElementById('quiz-results-status').textContent,/could not be loaded/);

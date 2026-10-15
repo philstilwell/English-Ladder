@@ -92,9 +92,11 @@ test('first answers persist across requests and logins; scores and dates are com
 });
 
 test('concurrent answers and competing tabs preserve exactly one active attempt',async()=>{
- const {e,student,state}=await seedQuiz(),data=input(state);
- const starts=await Promise.all([answer(e,student.cookie,data),answer(e,student.cookie,input(state))]);
+ const {e,student,state}=await seedQuiz(),competing=[input(state),input(state)];
+ const starts=await Promise.all(competing.map(data=>answer(e,student.cookie,data)));
  assert.deepEqual(starts.map(r=>r.status).sort(),[200,409]);
+ // Either simultaneous request may win; continue the attempt that was saved.
+ const data=competing[starts.findIndex(r=>r.status===200)];
  const responses=await Promise.all([answer(e,student.cookie,{...data,choiceIndex:0}),answer(e,student.cookie,{...data,choiceIndex:0})]);
  assert.ok(responses.every(r=>r.status===200));
  const record=(await (await get(e,student.cookie)).json()).attempt;

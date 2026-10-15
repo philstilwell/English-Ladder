@@ -5311,6 +5311,131 @@
         "https://dictionary.cambridge.org/grammar/british-grammar/countability-one-of",
         "https://www.languagecouncils.sg/goodenglish/resources/grammar-rules/subject-verb-agreement"
       ]
+    },
+    {
+      "number": 47,
+      "title": "Don't or doesn't?",
+      "level": "A1–A2",
+      "category": "Time and verbs",
+      "goal": "Choose don't or doesn't and keep the following verb in its base form.",
+      "rules": [
+        "For present-simple negatives with verbs such as “drive”, “work”, and “open”, use “don’t” with “I”, “you”, “we”, and “they”. Use “doesn’t” with “he”, “she”, and “it”. A singular noun follows the “it” pattern: “This shop doesn’t open on Sundays”. A plural noun follows “they”: “These shops don’t open on Sundays”. These are the standard-English forms taught in this lesson.",
+        "After “don’t” or “doesn’t”, use the base verb: the plain form, such as “drive”, “work”, or “open”. Compare “She drives” with “She doesn’t drive”. Do not add -s or -es to the main verb after “doesn’t”. The same pattern gives “doesn’t have” and “doesn’t go”, not “doesn’t has” or “doesn’t goes”. The full forms are “do not” and “does not”.",
+        "This pattern does not apply to every negative sentence. With “be”, put “not” after “am”, “is”, or “are”: “I am not late”, “The printer isn’t ready”, “They aren’t tired”. Compare “The printer doesn’t work” with “The printer isn’t ready”. The first uses the verb “work”; the second uses “be” with the describing word “ready”."
+      ],
+      "cards": [
+        {
+          "label": "I / YOU / WE / THEY: DON'T",
+          "example": "I don’t drive. They don’t work on Sundays.",
+          "note": "“Don’t” means “do not”. The following verb stays in its plain form."
+        },
+        {
+          "label": "HE / SHE / IT: DOESN'T",
+          "example": "She doesn’t drive. This shop doesn’t open on Sundays.",
+          "note": "“This shop” is singular, so it follows the same pattern as “it”."
+        },
+        {
+          "label": "KEEP THE BASE VERB",
+          "example": "She drives. / She doesn’t drive. He has a ticket. / He doesn’t have a ticket.",
+          "note": "“Doesn’t” carries the subject agreement. The next verb is “drive” or “have”, without a third-person ending."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Complete in standard English: “My neighbors ___ own a car.”",
+          "options": [
+            {
+              "text": "doesn’t",
+              "correct": false,
+              "feedback": "“My neighbors” means more than one person and follows the “they” pattern. Use “don’t”."
+            },
+            {
+              "text": "don’t",
+              "correct": true,
+              "feedback": "“My neighbors” is plural. Use “don’t” followed by the base verb “own”."
+            },
+            {
+              "text": "aren’t",
+              "correct": false,
+              "feedback": "“Own” is the main verb here. Make its present-simple negative with “don’t”, not “aren’t”."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete: “The museum doesn’t ___ until ten.”",
+          "options": [
+            {
+              "text": "opens",
+              "correct": false,
+              "feedback": "After “doesn’t”, use the base verb “open” without -s."
+            },
+            {
+              "text": "opening",
+              "correct": false,
+              "feedback": "The form after “doesn’t” is the base verb “open”, not “opening”."
+            },
+            {
+              "text": "open",
+              "correct": true,
+              "feedback": "“Doesn’t” is followed by the base form: “doesn’t open”."
+            }
+          ]
+        },
+        {
+          "prompt": "Which sentence correctly says that the printer is not ready?",
+          "options": [
+            {
+              "text": "The printer isn’t ready.",
+              "correct": true,
+              "feedback": "“Ready” describes a state. Use “is not” or “isn’t” with it."
+            },
+            {
+              "text": "The printer doesn’t ready.",
+              "correct": false,
+              "feedback": "“Ready” is a describing word in this sentence. Use “isn’t ready”."
+            },
+            {
+              "text": "The printer don’t ready.",
+              "correct": false,
+              "feedback": "Use “isn’t ready”. “Don’t” cannot replace “isn’t” before the describing word “ready”."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "A friend asks whether your sister owns a bicycle. She owns none. Which reply is correct in standard English?",
+        "options": [
+          {
+            "text": "She doesn’t has a bicycle.",
+            "correct": false,
+            "feedback": "After “doesn’t”, the base verb is “have”, not “has”."
+          },
+          {
+            "text": "She doesn’t have a bicycle.",
+            "correct": true,
+            "feedback": "Use “doesn’t” with “she”, then the base form “have”."
+          },
+          {
+            "text": "She don’t have a bicycle.",
+            "correct": false,
+            "feedback": "In standard English, “she” takes “doesn’t”, not “don’t”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-47-dont-or-doesnt-student-workbook.pdf",
+        "concept-47-dont-or-doesnt-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-15",
+      "related": [
+        25,
+        46,
+        6
+      ],
+      "sources": [
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/questions-negatives"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

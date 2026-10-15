@@ -341,6 +341,42 @@ test('self-study prompts copy exactly, stay plain text, and offer a manual-copy 
  dom.window.close();
 });
 
+test('AI study actions use each exact prompt, safe new tabs, and a Gemini copy fallback',async()=>{
+ const aiPrompt='Explain “a & an”, “50%” and “#1”.\nAsk: Is 2 + 2 = 4? <b>Use simple English.</b>';
+ const record={...assessment,plan:[{...assessment.plan[0],title:'First topic',aiPrompt},{...assessment.plan[0],title:'Second topic'}]};
+ const dom=setup(path=>path==='/api/assessment'?reply({assessment:record}):null,origin+'/#assessments/next');await flush();
+ const d=dom.window.document;let copied;
+ Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
+ const boxes=[...d.querySelectorAll('.study-prompt')];
+ for(const box of boxes){
+  const links=[...box.querySelectorAll('a')];assert.equal(links.length,2);
+  const url=new URL(links[0].href);
+  assert.equal(url.origin,'https://chatgpt.com');assert.equal(url.pathname,'/');
+  assert.deepEqual([...url.searchParams.keys()],['q']);
+  assert.equal(url.searchParams.get('q'),box.querySelector('.study-prompt-text').textContent);
+  assert.equal(links[1].href,'https://gemini.google.com/app');
+  for(const link of links){
+   assert.equal(link.target,'_blank');assert.equal(link.rel,'noopener noreferrer');
+   assert.equal(link.referrerPolicy,'no-referrer');assert.match(link.getAttribute('aria-label'),/new tab/);
+   link.addEventListener('click',event=>event.preventDefault());
+  }
+ }
+ assert.equal(copied,undefined);
+ assert.equal(new URL(boxes[0].querySelector('a').href).searchParams.get('q'),aiPrompt);
+ assert.match(boxes[1].querySelector('.study-prompt-text').textContent,/Second topic/);
+ const gemini=boxes[0].querySelectorAll('a')[1];
+ gemini.click();await flush();
+ assert.equal(copied,aiPrompt);assert.equal(boxes[0].querySelector('.study-prompt-status').textContent,'Copied. Paste the prompt in Gemini.');
+ assert.equal(boxes[1].querySelector('.study-prompt-status').textContent,'');
+ dom.window.navigator.clipboard.writeText=async()=>{throw Error('Denied');};
+ gemini.click();await flush();assert.match(boxes[0].querySelector('.study-prompt-status').textContent,/Select the prompt above/);
+ let finish;dom.window.navigator.clipboard.writeText=()=>new Promise(resolve=>{finish=resolve;});
+ gemini.click();d.getElementById('logout').click();await flush();finish();await flush();
+ assert.equal(d.querySelectorAll('.study-prompt-actions').length,0);
+ assert.equal(d.getElementById('assessment-content').textContent,'');
+ dom.window.close();
+});
+
 test('repeated assessment references to one lesson show one date and no elapsed time',async()=>{
  const record={...assessment,strengths:[{...assessment.strengths[0],evidence:[{sessionId:feedback.id,at:'00:02:00'},{sessionId:feedback.id,at:'00:03:00'}]}]};
  const dom=setup(path=>path==='/api/assessment'?reply({assessment:record}):null,origin+'/#assessments');await flush();

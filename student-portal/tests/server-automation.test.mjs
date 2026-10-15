@@ -12,7 +12,7 @@ const note = { transcript: { speakers: [{ speaker_id: 'a', display_name: 'Alex05
     end_time: '00:' + String(i + 1).padStart(2, '0') + ':30.000', text: 'We can practice English.' })) } };
 const meeting = { start_time: '2026-10-15T00:57:01Z', end_time: '2026-10-15T02:00:00Z' };
 const session = '2026-10-14-2057';
-const draft = { sufficientEvidence: true, feedback, assessment: { ...assessment, summary: 'You can use “can” in a short sentence.', progress: { detail: 'Keep using “can” in new sentences.', evidence: [{ sessionId: session, at: '00:02:00' }] } }, quiz: { ...quiz, patternTitles: ['Use “can”'],
+const draft = { sufficientEvidence: true, feedback, assessment: { ...assessment, plan: assessment.plan.map(item => ({ ...item, aiPrompt: 'Teach me how to use “can” in simple English. Explain it and give three examples. Ask five questions, one at a time. Wait for each answer and explain any mistake.' })), summary: 'You can use “can” in a short sentence.', progress: { detail: 'Keep using “can” in new sentences.', evidence: [{ sessionId: session, at: '00:02:00' }] } }, quiz: { ...quiz, patternTitles: ['Use “can”'],
   questions: Array.from({ length: 7 }, (_, i) => quiz.questions[i % quiz.questions.length]) },
   evidence: [0, 1, 2, 3, 4, 5, 6].map(questionIndex => ({ questionIndex, segments: [questionIndex], reviewRefs: [] })) };
 function memory() {
@@ -293,4 +293,10 @@ test('new quiz authoring rejects any question count other than seven before edit
     await assert.rejects(authorQuiz({ run: async () => { calls++; return { response: invalid }; } }, transcript, meeting, 'fictional-note-123', { assessment, attempts: [] }), /invalid_evidence/);
     assert.equal(calls, 1);
   }
+});
+
+test('automatic assessments require a self-study AI prompt for every study topic',async()=>{
+ const transcript=readTranscript(note,{ab26:student}),missing=structuredClone(draft);
+ delete missing.assessment.plan[0].aiPrompt;
+ await assert.rejects(authorQuiz({run:async()=>({response:missing})},transcript,meeting,'fictional-note-123',{assessment,attempts:[]}),/invalid_evidence/);
 });

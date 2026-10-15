@@ -32,6 +32,7 @@ test('deep links open the selected page and show only student-safe content',asyn
  assert.match(d.getElementById('profile-nickname').textContent,/Alex the Explorer/);
  assert.equal(d.querySelectorAll('#session-list a').length,2);
  assert.match(d.getElementById('feedback-page').textContent,/Japan:/);
+ assert.doesNotMatch(d.getElementById('feedback-page').textContent,/Lesson time|\d{2}:\d{2}:\d{2}|text covers|Each time shows/);
  assert.equal(d.querySelectorAll('.practice-item details').length,1);
  dom.window.close();
 });
@@ -75,9 +76,13 @@ test('assessment shows strengths, patterns, next priorities, and only internal e
  const dom=setup(null,'https://ab26.englishladder.com/#assessments');await flush();
  const d=dom.window.document,content=d.getElementById('assessment-content');
  assert.equal(d.getElementById('assessments').hidden,false);
- for(const text of ['What you do well','Things to practice','Your next steps',assessment.summary,assessment.nextLesson])assert.ok(content.textContent.includes(text));
+ for(const text of ['What you do well','Things to practice','Study on your own',assessment.summary])assert.ok(content.textContent.includes(text));
  assert.equal(d.getElementById('assessment-count').textContent,'Overall assessment · Oct 14, 2026');
  assert.equal(d.querySelectorAll('.assessment-evidence').length,3);
+ assert.doesNotMatch(content.textContent,/Lesson time|\d{2}:\d{2}:\d{2}|next three lessons|Our next lesson/);
+ assert.ok(!content.textContent.includes(assessment.nextLesson));
+ assert.ok([...d.querySelectorAll('.assessment-evidence')].every(a=>a.textContent==='Oct 1, 2026' && !a.getAttribute('aria-label').includes('time')));
+ assert.equal(d.querySelectorAll('.study-prompt').length,assessment.plan.length);
  assert.ok([...d.querySelectorAll('.assessment-evidence')].every(a=>a.hash==='#feedback/'+feedback.id));
  assert.equal(d.querySelectorAll('a[href*="mynotes.zoom.us"]').length,0);
  d.querySelector('.assessment-evidence').click();await new Promise(r=>setTimeout(r,10));await flush();
@@ -315,4 +320,32 @@ test('history stays teacher-only, handles load failure, and ignores a response a
  const late=savedSetup(seed,'teacher',path=>path==='/api/quiz/results'?new Promise(r=>{resolve=r;}):null,'quiz-results');await flush();
  late.window.document.getElementById('logout').click();await flush();resolve(reply({attempts:[],nextCursor:null}));await flush();
  assert.equal(late.window.document.getElementById('quiz-history').textContent,'');assert.equal(late.window.document.getElementById('quiz-results-status').textContent,'');late.window.close();
+});
+
+test('self-study prompts copy exactly, stay plain text, and offer a manual-copy fallback',async()=>{
+ const aiPrompt='Teach me “access a file” and “have access to a file”. <img src=x> Explain them simply, then ask one question at a time.';
+ const record={...assessment,plan:[{...assessment.plan[0],aiPrompt}]};
+ const dom=setup(path=>path==='/api/assessment'?reply({assessment:record}):null,origin+'/#assessments/next');await flush();
+ const d=dom.window.document;let copied;
+ Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
+ const button=d.querySelector('.study-prompt button');
+ button.click();await flush();
+ assert.equal(copied,aiPrompt);assert.match(d.querySelector('.study-prompt-status').textContent,/Copied/);
+ assert.equal(d.querySelector('.study-prompt img'),null);
+ dom.window.navigator.clipboard.writeText=async()=>{throw Error('Denied');};
+ button.click();await flush();
+ assert.match(d.querySelector('.study-prompt-status').textContent,/Select the prompt above/);
+ let finish;dom.window.navigator.clipboard.writeText=()=>new Promise(resolve=>{finish=resolve;});
+ button.click();d.getElementById('logout').click();await flush();finish();await flush();
+ assert.equal(d.getElementById('assessment-content').textContent,'');
+ dom.window.close();
+});
+
+test('repeated assessment references to one lesson show one date and no elapsed time',async()=>{
+ const record={...assessment,strengths:[{...assessment.strengths[0],evidence:[{sessionId:feedback.id,at:'00:02:00'},{sessionId:feedback.id,at:'00:03:00'}]}]};
+ const dom=setup(path=>path==='/api/assessment'?reply({assessment:record}):null,origin+'/#assessments');await flush();
+ const links=dom.window.document.querySelectorAll('.feedback-strengths .assessment-evidence');
+ assert.equal(links.length,1);assert.equal(links[0].textContent,'Oct 1, 2026');
+ assert.doesNotMatch(links[0].getAttribute('aria-label'),/00:02|00:03|time/);
+ dom.window.close();
 });

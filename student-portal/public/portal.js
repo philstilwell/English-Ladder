@@ -188,7 +188,6 @@
   function section(title, className) {
     const el = node('section', '', className); el.append(node('h3', title)); return el;
   }
-  function reference(at) { return node('span', 'Lesson time: ' + at, 'evidence-time'); }
   function renderPage(record, focus) {
     const fragment = document.createDocumentFragment();
     const header = node('header', '', 'feedback-header');
@@ -200,14 +199,14 @@
     const strengths = section('What worked well', 'feedback-strengths');
     for (const item of record.strengths) {
       const card = node('div', '', 'strength');
-      card.append(node('h4', item.title), node('p', item.detail), reference(item.at)); strengths.append(card);
+      card.append(node('h4', item.title), node('p', item.detail)); strengths.append(card);
     }
     fragment.append(strengths);
     const points = section('Things to practice', 'feedback-focus');
     record.focus.forEach((item, i) => {
       const card = node('section', '', 'focus-card'), heading = node('div', '', 'focus-heading');
       heading.append(node('span', String(i + 1).padStart(2, '0'), 'focus-number'), node('h4', item.title));
-      card.append(heading, node('p', item.kind === 'teacher-feedback' ? 'From this lesson' : 'Extra practice', 'evidence-label'), node('p', item.observed, 'observed'), reference(item.at));
+      card.append(heading, node('p', item.kind === 'teacher-feedback' ? 'From this lesson' : 'Extra practice', 'evidence-label'), node('p', item.observed, 'observed'));
       const model = node('div', '', 'model-sentence');
       model.append(node('span', 'TRY SAYING THIS'), node('p', item.model));
       card.append(model, node('p', item.explanation)); points.append(card);
@@ -217,7 +216,7 @@
     words.append(node('p', 'These are new sentences for you to practice.', 'section-intro'));
     for (const item of record.vocabulary) {
       const row = node('div', '', 'vocabulary-row');
-      row.append(node('h4', item.term, 'vocabulary-term'), node('p', item.meaning), node('p', item.example, 'vocabulary-example'), reference(item.at)); words.append(row);
+      row.append(node('h4', item.term, 'vocabulary-term'), node('p', item.meaning), node('p', item.example, 'vocabulary-example')); words.append(row);
     }
     fragment.append(words);
     const practice = section('A few minutes of practice', 'feedback-practice');
@@ -231,7 +230,7 @@
     const next = section('Your next step', 'feedback-next-step'); next.append(node('p', record.nextStep)); fragment.append(next);
     const sources = node('details', '', 'feedback-source');
     sources.append(node('summary', 'How we made this feedback'));
-    sources.append(node('p', 'AI helped write this page. We used all the available lesson text (' + record.source.segmentCount.toLocaleString() + ' parts). The text covers ' + record.source.coverageStart + '–' + record.source.coverageEnd + '. Each time shows a point in the lesson, counted from the start.'));
+    sources.append(node('p', 'AI helped write this page. We used all the available text from this lesson.'));
     sources.append(node('p', 'This page is only about your English. The lesson text was made by a computer, so some words may be wrong. We show what you practiced with Phil and label extra practice. The example sentences are for practice; they may be new. We cannot check how you say words from text alone.'));
     fragment.append(sources);
     const position = sessions.findIndex(s => s.id === record.id), navigation = node('nav', '', 'feedback-pager');
@@ -263,16 +262,17 @@
     return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(day + 'T12:00:00Z'));
   }
   function evidenceLink(ref) {
-    const el = node('a', assessmentDate(ref.sessionId.slice(0, 10)) + ' · ' + ref.at, 'assessment-evidence');
+    const el = node('a', assessmentDate(ref.sessionId.slice(0, 10)), 'assessment-evidence');
     el.href = '#feedback/' + ref.sessionId;
-    el.setAttribute('aria-label', 'Open lesson feedback for ' + assessmentDate(ref.sessionId.slice(0, 10)) + ', lesson time ' + ref.at);
+    el.setAttribute('aria-label', 'Open lesson feedback for ' + assessmentDate(ref.sessionId.slice(0, 10)));
     return el;
   }
   function evidenceList(refs) {
     const details = node('details', '', 'assessment-references');
-    details.append(node('summary', 'Examples from your lessons (' + refs.length + ')'));
+    const sessions = [...new Map(refs.map(ref => [ref.sessionId, ref])).values()];
+    details.append(node('summary', 'From your ' + (sessions.length === 1 ? 'lesson' : 'lessons')));
     const list = node('div');
-    for (const ref of refs) list.append(evidenceLink(ref));
+    for (const ref of sessions) list.append(evidenceLink(ref));
     details.append(list); return details;
   }
   function markAssessmentSection(key) {
@@ -322,6 +322,25 @@
     $('assessment-content').replaceChildren(content);
     $('assessment-content').setAttribute('aria-busy', String(assessmentLoading));
   }
+  function studyPrompt(item) {
+    const box = node('div', '', 'study-prompt');
+    const prompt = item.aiPrompt || 'Help me study this English topic: “' + item.title + '”. Use short, simple English. First, explain the topic and give three easy examples. Then give me five practice questions, one at a time. Wait for my answer. Explain any mistake and let me try again.';
+    const button = node('button', 'Copy AI prompt', 'secondary-button'); button.type = 'button';
+    button.setAttribute('aria-label', 'Copy AI prompt: ' + item.title);
+    const status = node('p', '', 'study-prompt-status'); status.setAttribute('role', 'status');
+    box.append(node('h5', 'Study with AI'), node('p', prompt, 'study-prompt-text'), button, status);
+    button.addEventListener('click', async () => {
+      const identity = identityRevision;
+      button.disabled = true;
+      try {
+        await navigator.clipboard.writeText(prompt);
+        if (authenticated && identity === identityRevision && box.isConnected) status.textContent = 'Copied. Paste it into an AI chat.';
+      } catch {
+        if (authenticated && identity === identityRevision && box.isConnected) status.textContent = 'Select the prompt above and copy it.';
+      } finally { button.disabled = false; }
+    });
+    return box;
+  }
   function renderAssessment(record) {
     const fragment = document.createDocumentFragment(), header = node('header', '', 'feedback-header');
     header.append(node('p', 'OVERALL ASSESSMENT / ENGLISH ONLY', 'eyebrow'));
@@ -360,18 +379,16 @@
       practice.append(node('strong', 'Practice: '), document.createTextNode(item.practice)); card.append(practice); patterns.append(card);
     });
     fragment.append(patterns);
-    const plan = assessmentSection('Your next steps', 'next', 'assessment-plan');
-    plan.append(node('p', 'Here is a plan for your next three lessons. These are goals to work toward, not scores you have now.', 'section-intro'));
+    const plan = assessmentSection('Study on your own', 'next', 'assessment-plan');
+    plan.append(node('p', 'Choose a topic to study. Copy its prompt into an AI chat to learn and practice.', 'section-intro'));
     for (const item of record.plan) {
       const card = node('section', '', 'assessment-plan-card');
       card.append(node('h4', item.title), node('p', item.activity));
-      const target = node('div', '', 'assessment-target'); target.append(node('strong', 'Your goal'), node('p', item.target)); card.append(target); plan.append(card);
+      const target = node('div', '', 'assessment-target'); target.append(node('strong', 'Try this'), node('p', item.target)); card.append(target, studyPrompt(item)); plan.append(card);
     }
     fragment.append(plan);
-    const next = section('Our next lesson', 'feedback-next-step');
-    next.append(node('p', record.nextLesson)); fragment.append(next);
     const source = node('details', '', 'feedback-source');
-    source.append(node('summary', 'How we made this assessment'), node('p', 'AI helped write this page. We used all the available text from each lesson below. Each time shows a point in the lesson, counted from the start. Links open your lesson feedback. Dates use New York time.'));
+    source.append(node('summary', 'How we made this assessment'), node('p', 'AI helped write this page. We used all the available text from each lesson below. Dates link to your lesson feedback.'));
     const list = node('div', '', 'assessment-source-links');
     for (const id of record.sourceSessions) { const el = node('a', assessmentDate(id.slice(0, 10))); el.href = '#feedback/' + id; list.append(el); }
     source.append(list, node('p', 'This page is only about your English. The lesson text was made by a computer, so some words may be wrong. We checked what you practiced with Phil and what you did well. This is not a test score or an official English level. We cannot check your pronunciation or speaking speed from text alone.'));

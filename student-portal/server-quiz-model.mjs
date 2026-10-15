@@ -72,7 +72,11 @@ feedback fields: title, summary, nextStep; strengths:[{title,detail,at}]; focus:
 vocabulary:[{term,meaning,example,at}]; practice:[{prompt,answer}]. Include only useful well-grounded entries; use transcript HH:MM:SS at values.
 assessment fields: title, summary, mainPriority, strengths:[{title,detail,evidence:[{sessionId,at}]}],
 progress:{detail,evidence:[{sessionId,at}]}, patterns:[{title,detail,practice,examples:[{sessionId,at,observed,model}]}],
-plan:[{title,activity,target}], nextLesson.
+plan:[{title,activity,target,aiPrompt}], nextLesson.
+The plan contains optional self-study suggestions, not a schedule. Never promise what Phil will cover in a future lesson or assign a task to him.
+Give each plan item a copyable aiPrompt that introduces that specific English topic. Include the target words or patterns, a simple explanation, three examples, and five practice questions one at a time. Tell the AI to wait for each answer, explain mistakes simply, and allow another try.
+Keep prompts short and self-contained, with no learner names, private life details, transcript quotations, timestamps, or links. Use only neutral language-learning examples.
+Write nextLesson as a brief independent-study suggestion for legacy storage; it is not a student-facing promise. Do not mention lesson numbers, next sessions, or a teacher-led schedule in plan titles, activities, or targets.
 If there is no prior assessment, create an initial assessment from this lesson only. Label patterns as practice targets; do not claim repeated mistakes across sessions or measured progress.
 Update the prior assessment carefully using this new lesson. Keep earlier supported strengths and patterns unless the new evidence changes them.
 Earlier assessment references may be reused, but never invent older observations or timestamps. New references use newSessionId and exact transcript timestamps.
@@ -139,9 +143,10 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   const references = assessmentReferences(assessment);
   if (!references.some(ref => ref.sessionId === id) || references.some(ref => ref.sessionId === id ? !times.has(ref.at) : !allowed.has(ref.sessionId + ':' + ref.at))) throw new Error('invalid_evidence');
   const quiz = assessment.quiz;
+  if (assessment.plan.some(item => !item.aiPrompt)) throw new Error('invalid_evidence');
   if (/https?:\/\/|mynotes\.zoom|<\/?[a-z]/i.test(JSON.stringify({ feedback, assessment }))) throw new Error('unsafe_content');
   const reviewResult = await generate(ai,
-    RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Reject ambiguous answers or unsupported claims. Return {"approved":true} only if all checks pass, otherwise {"approved":false}.',
+    RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Check that study suggestions make no promises about future sessions and that each AI prompt introduces the specific topic with examples and guided practice. Reject ambiguous answers or unsupported claims. Return {"approved":true} only if all checks pass, otherwise {"approved":false}.',
     { ...input, proposed: { feedback, assessment, evidence: draft.evidence } }, 1000);
   if (reviewResult.approved !== true) throw new Error('content_review_failed');
   return { feedback, assessment, quiz, priorAssessment: context.assessment || null, evidence: draft.evidence };

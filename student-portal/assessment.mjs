@@ -63,7 +63,8 @@ export function validateAssessment(value) {
       title: text(p.title, 120), detail: text(p.detail), practice: text(p.practice),
       examples: list(p.examples, e => ({ ...reference(e), observed: text(e.observed), model: text(e.model) })),
     })),
-    plan: list(value.plan, p => ({ title: text(p.title, 120), activity: text(p.activity), target: text(p.target) })),
+    plan: list(value.plan, p => ({ title: text(p.title, 120), activity: text(p.activity), target: text(p.target),
+      ...(p.aiPrompt === undefined ? {} : { aiPrompt: text(p.aiPrompt) }) })),
     nextLesson: text(value.nextLesson),
     ...(value.quiz === undefined ? {} : { quiz: validateQuiz(value.quiz, value.patterns.length) }),
   };

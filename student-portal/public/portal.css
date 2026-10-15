@@ -131,7 +131,6 @@ input { width:100%; min-height:50px; border:1px solid #a9b1bf; border-radius:6px
 .strength { background:#f3f7f4; border-top:2px solid #80a78d; padding:18px; border-radius:4px; }
 .strength h4 { color:#315f43; }
 .strength p { font-size:.8rem; margin:0 0 12px; line-height:1.75; }
-.evidence-time { display:block; font-size:.65rem; font-variant-numeric:tabular-nums; color:var(--muted); }
 .focus-card { padding:24px 0; border-bottom:1px solid var(--line); }
 .focus-card:last-child { border-bottom:0; padding-bottom:0; }
 .focus-heading { display:flex; align-items:baseline; gap:14px; }
@@ -186,6 +185,11 @@ summary { cursor:pointer; }
 .assessment-target { margin-top:16px; padding-top:14px; border-top:1px solid var(--line); }
 .assessment-target strong { font-size:.7rem; }
 .assessment-target p { color:var(--muted); margin-bottom:0; font-size:.78rem; }
+.study-prompt { margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
+.study-prompt h5 { margin:0 0 10px; font-size:.85rem; }
+.study-prompt .study-prompt-text { padding:16px; border-radius:6px; background:#f3f6ff; white-space:pre-wrap; overflow-wrap:anywhere; user-select:text; }
+.study-prompt .study-prompt-status { margin:10px 0 0; font-size:.75rem; color:var(--muted); }
+.study-prompt-status:empty { display:none; }
 .assessment-source-links { display:flex; flex-wrap:wrap; gap:8px 16px; }
 #assessment-sidebar[hidden]+.assessment-page { grid-column:1/-1; }
 .session-summary { background:#fff; border:1px solid var(--line); border-radius:8px; padding:24px; }

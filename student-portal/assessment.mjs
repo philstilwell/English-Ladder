@@ -12,6 +12,22 @@ function date(value) {
   return value;
 }
 
+function validateQuiz(value, patternCount) {
+  return {
+    title: text(value?.title, 120), instructions: text(value?.instructions, 300),
+    questions: list(value?.questions, question => {
+      if (!Number.isInteger(question.patternIndex) || question.patternIndex < 0 || question.patternIndex >= patternCount) throw new Error('Invalid quiz source');
+      const options = list(question.options, option => ({ text: text(option.text, 250), feedback: text(option.feedback, 400) }), 4);
+      if (options.length < 2 || new Set(options.map(option => option.text.toLowerCase())).size !== options.length) throw new Error('Invalid quiz choices');
+      if (!Number.isInteger(question.correctIndex) || question.correctIndex < 0 || question.correctIndex >= options.length) throw new Error('Invalid quiz answer');
+      return {
+        patternIndex: question.patternIndex, prompt: text(question.prompt, 300), options,
+        correctIndex: question.correctIndex, model: text(question.model, 300),
+      };
+    }, 10),
+  };
+}
+
 // Keep the assessment structured and private, with references to this student's
 // existing session records. Content review still enforces the ESL-only scope.
 export function validateAssessment(value) {
@@ -38,6 +54,7 @@ export function validateAssessment(value) {
     })),
     plan: list(value.plan, p => ({ title: text(p.title, 120), activity: text(p.activity), target: text(p.target) })),
     nextLesson: text(value.nextLesson),
+    ...(value.quiz === undefined ? {} : { quiz: validateQuiz(value.quiz, value.patterns.length) }),
   };
 }
 

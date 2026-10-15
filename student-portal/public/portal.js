@@ -1,12 +1,13 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const sections = ['overview', 'assessments', 'sessions', 'feedback'];
+  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz'];
   const assessmentSections = ['summary', 'strengths', 'patterns', 'next'];
   const validId = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
   let authenticated = false, checking = false, identityRevision = 0, pageRevision = 0;
   let sessions = [], nextCursor = null, indexReady = false, indexLoading = false, currentPage = '';
   let assessment = null, assessmentLoading = false;
+  let quizState = null, quizRevision = 0;
   let assessmentScrollFrame = 0;
   const assessmentResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(scheduleAssessmentHighlight);
 
@@ -44,12 +45,13 @@
     identityRevision++; pageRevision++;
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
+    quizState = null; quizRevision++;
     assessmentResizeObserver?.disconnect();
     if (assessmentScrollFrame) cancelAnimationFrame(assessmentScrollFrame);
     assessmentScrollFrame = 0;
     markAssessmentSection(null);
     for (const id of ['student-name', 'teacher-student-name', 'avatar', 'account-address', 'profile-nickname', 'account-status']) $(id).textContent = '';
-    for (const id of ['session-list', 'session-select', 'session-summaries', 'feedback-page', 'assessment-content', 'assessment-source-count']) $(id).replaceChildren();
+    for (const id of ['session-list', 'session-select', 'session-summaries', 'feedback-page', 'assessment-content', 'assessment-source-count', 'quiz-content']) $(id).replaceChildren();
     $('assessment-sidebar').hidden = true;
     $('assessment-count').textContent = 'Loading assessment…';
     $('latest-title').textContent = 'Your learning notebook.';
@@ -107,6 +109,10 @@
       pageRevision++; currentPage = '';
       document.title = selected === 'assessments' ? 'My English assessment · English Ladder' : 'My learning space · English Ladder';
       if (selected === 'assessments') focusAssessment(requested, focus);
+      if (selected === 'quiz') {
+        document.title = 'My English quiz · English Ladder';
+        if (focus) $('quiz-question-title')?.focus();
+      }
       return;
     }
     if (extra !== undefined || (requested && !validId.test(requested))) {
@@ -304,7 +310,12 @@
     dates.append(node('strong', 'Assessed ' + assessmentDate(record.assessedOn)), node('span', record.sourceSessions.length + ' sessions · ' + assessmentDate(record.sourceSessions[0].slice(0, 10)) + ' – ' + assessmentDate(record.sourceSessions.at(-1).slice(0, 10))));
     header.append(title, dates, node('p', record.summary, 'session-reflection'));
     const priority = node('div', '', 'assessment-priority');
-    priority.append(node('span', 'START HERE'), node('p', record.mainPriority)); header.append(priority); fragment.append(header);
+    priority.append(node('span', 'START HERE'), node('p', record.mainPriority)); header.append(priority);
+    if (record.quiz) {
+      const quizLink = node('a', 'Try the ' + record.quiz.questions.length + '-question quiz →', 'secondary-button assessment-quiz-link');
+      quizLink.href = '#quiz'; header.append(quizLink);
+    }
+    fragment.append(header);
     const strengths = assessmentSection('What you do well', 'strengths', 'feedback-strengths');
     for (const item of record.strengths) {
       const card = node('div', '', 'strength');
@@ -356,10 +367,13 @@
     assessmentLoading = true;
     const revision = identityRevision;
     assessmentMessage('Opening your assessment…');
+    quizMessage('Opening your quiz…');
+    $('quiz-content').setAttribute('aria-busy', 'true');
     try {
       const data = await api('/api/assessment');
       if (revision !== identityRevision) return;
       assessment = data.assessment;
+      resetQuiz();
       $('assessment-count').textContent = assessment ? 'Overall assessment · ' + assessmentDate(assessment.assessedOn) : 'No assessments yet';
       if (assessment) {
         renderAssessment(assessment);
@@ -369,12 +383,108 @@
       if (revision !== identityRevision || expired(error)) return;
       $('assessment-count').textContent = 'Assessment unavailable';
       assessmentMessage('Your assessment could not be loaded. ' + error.message, true);
+      quizMessage('Your quiz could not be loaded. Please try again.', true);
     } finally {
       if (revision === identityRevision) {
         assessmentLoading = false;
         $('assessment-content').setAttribute('aria-busy', 'false');
+        $('quiz-content').setAttribute('aria-busy', 'false');
       }
     }
+  }
+  function quizMessage(message, retry = false) {
+    const heading = node('h2', 'Your English quiz'); heading.id = 'quiz-question-title'; heading.tabIndex = -1;
+    $('quiz-content').replaceChildren(heading, node('p', message, 'section-intro'));
+    if (retry) {
+      const button = node('button', 'Try again', 'secondary-button');
+      button.addEventListener('click', () => loadAssessment()); $('quiz-content').append(button);
+    }
+  }
+  function resetQuiz(focus = false) {
+    quizRevision++;
+    quizState = assessment?.quiz ? { index: 0, answers: assessment.quiz.questions.map(() => []), finished: false } : null;
+    if (quizState) renderQuiz(focus);
+    else quizMessage('Your teacher can add a quiz here.');
+  }
+  function renderQuiz(focus = false) {
+    if (!authenticated || !assessment?.quiz || !quizState) return;
+    const quiz = assessment.quiz, run = quizRevision, identity = identityRevision, index = quizState.index;
+    const currentRun = () => authenticated && run === quizRevision && identity === identityRevision;
+    const fragment = document.createDocumentFragment();
+    const header = node('header', '', 'quiz-header');
+    header.append(node('p', 'A LITTLE PRACTICE', 'eyebrow'), node('h2', quiz.title));
+    const back = node('a', 'Read your assessment', 'quiz-back'); back.href = '#assessments/patterns';
+    header.append(node('p', quiz.instructions), node('p', 'These are new practice questions.', 'section-intro'), back); fragment.append(header);
+    if (quizState.finished) {
+      const complete = node('section', '', 'quiz-complete');
+      const heading = node('h3', 'You finished!'); heading.id = 'quiz-question-title'; heading.tabIndex = -1;
+      const correct = quizState.answers.filter((answers, i) => answers[0] === quiz.questions[i].correctIndex).length;
+      complete.append(heading, node('p', correct + ' of ' + quiz.questions.length, 'quiz-score'), node('p', 'You got ' + correct + ' out of ' + quiz.questions.length + ' right on your first try.'));
+      complete.append(node('p', 'You practiced every question. You can try the quiz again.', 'section-intro'));
+      const review = [...new Set(quiz.questions.filter((q, i) => quizState.answers[i][0] !== q.correctIndex).map(q => q.patternIndex))];
+      if (review.length) {
+        complete.append(node('h4', 'Practice these again'));
+        const list = node('ul');
+        for (const patternIndex of review) list.append(node('li', assessment.patterns[patternIndex].title));
+        complete.append(list);
+      }
+      const restart = node('button', 'Try the quiz again', 'primary-button');
+      restart.addEventListener('click', () => { if (currentRun()) resetQuiz(true); });
+      complete.append(restart); fragment.append(complete);
+      $('quiz-content').replaceChildren(fragment);
+      if (focus) heading.focus();
+      return;
+    }
+    const question = quiz.questions[index], tried = quizState.answers[index];
+    const complete = tried.includes(question.correctIndex);
+    const counter = node('p', 'Question ' + (index + 1) + ' of ' + quiz.questions.length, 'quiz-counter');
+    const progress = node('progress'); progress.max = quiz.questions.length; progress.value = index + 1;
+    progress.setAttribute('aria-label', counter.textContent);
+    const heading = node('h3', question.prompt, 'quiz-prompt'); heading.id = 'quiz-question-title'; heading.tabIndex = -1;
+    const choices = node('div', '', 'quiz-choices'); choices.setAttribute('role', 'group'); choices.setAttribute('aria-labelledby', heading.id);
+    const result = node('div', '', 'quiz-result'); result.id = 'quiz-result'; result.setAttribute('role', 'status'); result.setAttribute('aria-live', 'polite'); result.setAttribute('aria-atomic', 'true');
+    const next = node('button', index === quiz.questions.length - 1 ? 'See my results' : 'Next question →', 'primary-button quiz-next');
+    next.hidden = !complete;
+    const buttons = question.options.map((option, choice) => {
+      const button = node('button', '', 'quiz-option'); button.type = 'button';
+      const letter = node('span', String.fromCharCode(65 + choice), 'quiz-letter'); letter.setAttribute('aria-hidden', 'true');
+      button.append(letter, node('em', option.text), node('span', '', 'quiz-option-status'));
+      button.addEventListener('click', () => {
+        if (!currentRun() || quizState.finished || quizState.index !== index || tried.includes(choice) || tried.includes(question.correctIndex)) return;
+        tried.push(choice); updateAnswer();
+        (tried.includes(question.correctIndex) ? next : result).scrollIntoView?.({ block: 'nearest' });
+      });
+      choices.append(button); return button;
+    });
+    function updateAnswer() {
+      const solved = tried.includes(question.correctIndex), choice = tried.at(-1);
+      const hadChoiceFocus = buttons.includes(document.activeElement);
+      buttons.forEach((button, i) => {
+        const chosen = tried.includes(i), right = chosen && i === question.correctIndex;
+        button.disabled = solved || chosen;
+        button.classList.toggle('is-correct', right); button.classList.toggle('is-wrong', chosen && !right);
+        button.querySelector('.quiz-option-status').textContent = chosen ? (right ? 'Correct' : 'Try again') : '';
+      });
+      next.hidden = !solved;
+      if (choice === undefined) return;
+      result.className = 'quiz-result ' + (solved ? 'is-correct' : 'is-wrong');
+      result.replaceChildren(node('strong', solved ? 'That’s right!' : 'Not yet. Try again.'), node('p', question.options[choice].feedback));
+      if (solved) result.append(node('p', question.model, 'quiz-model'));
+      // Keep keyboard users in the quiz after their answer button is disabled.
+      if (hadChoiceFocus) {
+        if (solved) next.focus({ preventScroll: true });
+        else buttons.find(button => !button.disabled)?.focus({ preventScroll: true });
+      }
+    }
+    next.addEventListener('click', () => {
+      if (!currentRun() || quizState.finished || quizState.index !== index || !tried.includes(question.correctIndex)) return;
+      if (index === quiz.questions.length - 1) quizState.finished = true;
+      else quizState.index++;
+      renderQuiz(true);
+    });
+    fragment.append(counter, progress, heading, node('p', 'Choose one answer.', 'quiz-hint'), choices, result, next);
+    $('quiz-content').replaceChildren(fragment); updateAnswer();
+    if (focus) heading.focus();
   }
   function showDashboard(data, focus = false) {
     const initial = !authenticated; authenticated = true;

@@ -63,4 +63,8 @@ Publish a reviewed JSON array using `node student-portal/publish-feedback.mjs <s
 
 The public lesson site's existing local completion markers are separate from this portal and do not transfer automatically.
 
+An assessment may include an optional private `quiz` with a title, simple instructions, and up to ten multiple-choice questions. Each question references one assessment pattern by `patternIndex`, provides two to four distinct options with individual feedback, identifies `correctIndex`, and includes a correct model sentence. The same teacher-only assessment publisher validates and saves it. Older assessments without a quiz continue to work.
+
+The `#quiz` page shows one question at a time with immediate feedback, retries, progress, and a first-try result at the end. Attempts are held only in page memory and clear on reload, sign-out, or session expiry; they are not sent to the server or stored in browser storage. This is learning practice, not a secure exam or proficiency score. The assessment links directly to its quiz. Tests cover invalid answers and pattern references, account isolation, retry scoring, restart, navigation, safe text rendering, and sign-out cleanup.
+
 Publish a reviewed assessment JSON object with `node student-portal/publish-feedback.mjs <student-origin> <private-file> --assessment`, supplying the teacher password privately on standard input as above. Publish its source session records first. Use the full transcripts to identify repeated patterns, include successful uses and evidence of progress, and distinguish future practice targets from measured performance. Do not infer a formal proficiency level or pronunciation score from transcript text.

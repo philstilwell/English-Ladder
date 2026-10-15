@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker from '../worker.mjs';
 import { FeedbackStore, validateFeedback } from '../feedback.mjs';
-import { feedback, assessment } from './fixture.mjs';
+import { feedback, assessment, quiz } from './fixture.mjs';
 import { validateAssessment } from '../assessment.mjs';
 const origin = 'https://ab26.englishladder.com';
 function env() {
@@ -161,4 +161,27 @@ test('assessment validation rejects invalid sources and strips unexpected privat
  assert.deepEqual(clean,assessment);
  delete e.FEEDBACK_STORE;
  assert.equal((await call(e,'/api/assessment',{headers:{Cookie:cookie}})).status,503);
+});
+
+test('quiz stays inside the private assessment, requires teacher writes, and has valid answer and pattern references',async()=>{
+ const e=env(),teacher=await login(e,'teacher-test'),student=await login(e);
+ await put(e,teacher.cookie);
+ const record={...assessment,quiz};
+ assert.equal((await putAssessment(e,student.cookie,record)).status,403);
+ assert.equal((await putAssessment(e,teacher.cookie,record)).status,200);
+ assert.deepEqual(await (await call(e,'/api/assessment',{headers:{Cookie:student.cookie}})).json(),{assessment:record});
+ const otherHost='https://cd26.englishladder.com',other=await login(e,'teacher-test',otherHost);
+ assert.deepEqual(await (await call(e,'/api/assessment',{headers:{Cookie:other.cookie}},otherHost)).json(),{assessment:null});
+ assert.equal((await call(e,'/api/assessment')).status,401);
+ for(const changes of [
+  {correctIndex:-1},{correctIndex:2},{correctIndex:0.5},{patternIndex:-1},{patternIndex:1},
+  {options:[quiz.questions[0].options[0]]},
+  {options:[quiz.questions[0].options[0],quiz.questions[0].options[0]]},
+  {model:''},{prompt:'x'.repeat(301)}
+ ]){
+  const invalid={...record,quiz:{...quiz,questions:[{...quiz.questions[0],...changes}]}};
+  assert.equal((await putAssessment(e,teacher.cookie,invalid)).status,400);
+ }
+ const clean=validateAssessment({...record,quiz:{...quiz,studentName:'Private Name',questions:quiz.questions.map(q=>({...q,rawTranscript:'private',options:q.options.map(o=>({...o,password:'secret'}))}))}});
+ assert.deepEqual(clean,record);
 });

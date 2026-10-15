@@ -17,3 +17,17 @@ export const assessment = {
  plan:[{title:'Recall familiar patterns',activity:'Use them in new sentences.',target:'Eight of ten sentences without prompting.'}],
  nextLesson:'Review, practice, then explain a new example.'
 };
+
+export const quiz = {
+ title:'A short practice quiz', instructions:'Choose one answer. You can try again.',
+ questions:[
+  {patternIndex:0,prompt:'Choose the right sentence.',options:[
+   {text:'I can open this file.',feedback:'After “can,” use “open.”'},
+   {text:'I can opens this file.',feedback:'Do not add “-s” after “can.”'}
+  ],correctIndex:0,model:'I can open this file.'},
+  {patternIndex:0,prompt:'Fill the gap: “I want to ___ English.”',options:[
+   {text:'reading',feedback:'Use “read” after “want to.”'},
+   {text:'read',feedback:'Use “read” with no “-ing.”'}
+  ],correctIndex:1,model:'I want to read English.'}
+ ]
+};

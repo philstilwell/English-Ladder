@@ -1,6 +1,7 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { handleRoad } from './english-road.mjs';
+import { activitySummary } from './activity-summary.mjs';
 import { handleBusinessTerms } from './business-terms.mjs';
 import { handleGrammarPractice } from './grammar-practice.mjs';
 import { groundCefrWindow, cefrOverview } from './cefr.mjs';
@@ -123,6 +124,7 @@ export class FeedbackStore {
     if (id === 'admin/delete-account' && request.method === 'POST') return this.removeAccount();
     if (await this.storage.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
+    if (id === 'admin/activity-summary' && request.method === 'GET') return this.activeTransaction(async txn => json(await activitySummary(txn)));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
     if (id === 'admin/cefr' && request.method === 'GET') return this.activeTransaction(async txn => {
       const context = await cefrReviewContext(txn);

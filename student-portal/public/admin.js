@@ -14,6 +14,7 @@
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
   let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
+  let activityOverviewRequest = 0;
   let deleting = null, deleteBusy = false, saving = false;
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
@@ -62,7 +63,7 @@
       finally { if (valid()) $('load-' + id + '-questions').disabled = false; }
     }
     $('load-' + id + '-questions').addEventListener('click', load);
-    return { clear, show(student) { clear(); $(id + '-questions-panel').hidden = !student?.activated || Boolean(student?.deletionPending); } };
+    return { clear, load, show(student) { clear(); $(id + '-questions-panel').hidden = !student?.activated || Boolean(student?.deletionPending); } };
   }
   const termsPanel = createQuestionsPanel('terms', 'business-terms', () => window.BusinessTerms, item => `Item ${item.number} · “${item.term}”`);
   const grammarPanel = createQuestionsPanel('grammar', 'grammar-practice', () => ({
@@ -70,6 +71,56 @@
     exercise: item => ({ card: window.GrammarPractice.exercise(item, 'article') }),
   }), item => `Item ${item.number} · “${item.prompt}”`);
   function clearQuestions() { termsPanel.clear(); grammarPanel.clear(); }
+  function clearActivityOverview() {
+    activityOverviewRequest++;
+    $('activity-overview-panel').hidden = true;
+    $('activity-overview-content').replaceChildren(); $('activity-overview-status').textContent = '';
+    $('refresh-activity-overview').disabled = false;
+  }
+  async function loadActivityOverview() {
+    if (!signedIn || !current?.activated || current.deletionPending) return;
+    const student = current, version = epoch, request = ++activityOverviewRequest;
+    const valid = () => signedIn && version === epoch && request === activityOverviewRequest && current?.key === student.key;
+    $('activity-overview-panel').hidden = false; $('activity-overview-content').replaceChildren();
+    $('activity-overview-status').textContent = 'Loading saved activity…'; $('refresh-activity-overview').disabled = true;
+    try {
+      const data = await api('/api/admin/students/' + student.key + '/activity-summary');
+      if (!valid()) return;
+      const ids = ['english-road', 'grammar-practice', 'business-terms'];
+      const count = value => Number.isSafeInteger(value) && value >= 0;
+      if (!Array.isArray(data.activities) || data.activities.length !== ids.length || data.activities.some((item, index) =>
+        !item || item.id !== ids[index] || item.lastActivityAt !== null && !Number.isFinite(Date.parse(item.lastActivityAt)) ||
+        !(index ? ['total', 'finished', 'questions'] : ['setsStarted', 'setsCompleted', 'answered', 'correct']).every(key => count(item[key]))))
+        throw new Error('Activity records could not load. Please try again.');
+      for (const item of data.activities) {
+        const tool = activityTools.find(tool => tool.id === item.id), card = element('article', null, 'activity-overview-card');
+        card.append(element('h3', tool?.name || item.id));
+        if (!student.visibleActivities.includes(item.id)) card.append(element('p', 'Hidden from student menu', 'field-note'));
+        if (item.id === 'english-road') {
+          card.append(element('p', item.setsCompleted + ' of ' + item.setsStarted + ' sets completed'),
+            element('p', item.correct + ' correct / ' + item.answered + ' answers saved'));
+          if (item.latestSet) card.append(element('p', 'Latest set: ' + ({ completed: 'Completed', ended: 'Ended early', in_progress: 'In progress' }[item.latestSet.state] || 'Saved') + ' · ' + item.latestSet.answered + '/' + item.latestSet.total + ' answered', 'field-note'));
+        } else {
+          card.append(element('p', item.finished + ' of ' + item.total + ' items marked finished'),
+            element('p', item.questions + (item.questions === 1 ? ' question' : ' questions') + ' to discuss'));
+          if (item.savedPlace !== null) card.append(element('p', 'Saved place: item ' + item.savedPlace, 'field-note'));
+        }
+        card.append(element('p', item.lastActivityAt ? 'Last saved activity: ' + displayTime(item.lastActivityAt) : 'No saved activity yet.', 'field-note'));
+        const review = element('button', item.id === 'english-road' ? 'View practice results' : 'View questions', 'secondary-button');
+        review.type = 'button'; review.addEventListener('click', () => {
+          if (!valid()) return;
+          const id = item.id === 'english-road' ? 'road-results-panel' : item.id === 'grammar-practice' ? 'grammar-questions-panel' : 'terms-questions-panel';
+          if (item.id === 'english-road') void loadRoad(); else void (item.id === 'grammar-practice' ? grammarPanel : termsPanel).load();
+          $(id).scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+          const heading = $(id).querySelector('h2'); heading.tabIndex = -1; heading.focus({ preventScroll: true });
+        });
+        card.append(review); $('activity-overview-content').append(card);
+      }
+      $('activity-overview-status').textContent = '';
+    } catch (error) { if (valid()) $('activity-overview-status').textContent = error.message; }
+    finally { if (valid()) $('refresh-activity-overview').disabled = false; }
+  }
+  $('refresh-activity-overview').addEventListener('click', loadActivityOverview);
   function clearRoad() {
     roadEpoch++; roadRows = []; roadCursor = null; roadLoading = false;
     $('road-results-panel').hidden = true; $('road-results').replaceChildren(); $('road-results-status').textContent = '';
@@ -199,7 +250,7 @@
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = [];
     $('student-activities').replaceChildren();
-    clearRoad(); clearQuestions();
+    clearRoad(); clearQuestions(); clearActivityOverview();
     clearLoginDetails();
     clearCefr(); cefrRequest++; cefrStatuses = {};
     closeDelete();
@@ -355,11 +406,12 @@
     void loadCefr(student);
     clearRoad(); $('road-results-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
     termsPanel.show(student); grammarPanel.show(student);
+    clearActivityOverview(); void loadActivityOverview();
   }
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
   function route() {
     if (!signedIn) return;
-    clearRoad(); clearQuestions();
+    clearRoad(); clearQuestions(); clearActivityOverview();
     closeDelete();
     clearLoginDetails(); current = null;
     $('student-activities').replaceChildren();

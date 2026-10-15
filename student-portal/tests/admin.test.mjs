@@ -833,3 +833,99 @@ test('administrator grammar Questions list reveals sentences safely, refreshes, 
   delayed=true;d.getElementById('load-grammar-questions').click();await flush();w.location.hash='students';await flush();resolve(Response.json(content));await flush();
   assert.equal(d.getElementById('grammar-questions-content').textContent,'');assert.equal(d.getElementById('grammar-questions-panel').hidden,true);w.close();
 });
+
+test('activity overview reads existing work only for the selected administrator account',async()=>{
+  const {e}=environment(),adminCookie=await access(e),records=await list(e,adminCookie),student=await login(e),teacher=await login(e,'teacher-test');
+  const record=records.find(s=>s.studentId==='ab26'),other=records.find(s=>s.studentId==='cd26');
+  const path='/api/admin/students/'+record.key+'/activity-summary';
+  const get=(p=path,headers={Cookie:adminCookie})=>adminCall(e,p,{headers});
+  const empty=await(await get()).json();
+  assert.deepEqual(empty.activities.map(a=>[a.id,a.lastActivityAt]),[['english-road',null],['grammar-practice',null],['business-terms',null]]);
+  for(const cookie of ['',student.cookie,teacher.cookie])assert.equal((await get(path,{Cookie:cookie})).status,401);
+  assert.equal((await call(e,path,{headers:{Cookie:teacher.cookie}})).status,404);
+  assert.equal((await call(e,'/api/activity-summary',{headers:{Cookie:student.cookie}})).status,404);
+  assert.equal((await get(path,{Cookie:adminCookie,Origin:'https://evil.test'})).status,403);
+  assert.equal((await get(path,{Cookie:adminCookie,'Sec-Fetch-Site':'cross-site'})).status,403);
+  assert.equal((await adminCall(e,path,write(adminCookie,{},'PUT'))).status,404);
+  const change=(p,body)=>call(e,p,{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(body)});
+  assert.equal((await change('/api/grammar-practice/state',{number:1,field:'finished',value:true,revision:0})).status,200);
+  assert.equal((await change('/api/grammar-practice/state',{number:1,field:'question',value:true,revision:1})).status,200);
+  assert.equal((await change('/api/grammar-practice/state',{field:'position',value:21,revision:0})).status,200);
+  assert.equal((await change('/api/business-terms/state',{number:2,field:'question',value:true,revision:0})).status,200);
+  const attemptId='22222222-2222-4222-8222-222222222222';
+  const road=(p,body)=>call(e,p,{method:'POST',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(body)});
+  assert.equal((await road('/api/road/start',{attemptId,previousAttemptId:null,band:'A1',topic:'Articles'})).status,201);
+  const storage=e.FEEDBACK_STORE.get('ab26').storage;
+  const attempt=await storage.get('road:attempt:'+attemptId);
+  assert.equal((await road('/api/road/answer',{attemptId,revision:0,questionIndex:0,choiceIndex:attempt.questions[0].correctIndex})).status,200);
+  const before=await storage.list();
+  const response=await get();assert.equal(response.headers.get('Cache-Control'),'no-store');
+  const data=await response.json(),[r,g,t]=data.activities;
+  assert.deepEqual([r.setsStarted,r.setsCompleted,r.answered,r.correct,r.latestSet.state],[1,0,1,1,'in_progress']);
+  assert.deepEqual([g.finished,g.questions,g.savedPlace],[1,1,21]);assert.equal(g.total,grammarBank.items.length);
+  assert.deepEqual([t.finished,t.questions,t.savedPlace],[0,1,null]);assert.equal(t.total,termsBank.items.length);
+  for(const a of data.activities)assert(Number.isFinite(Date.parse(a.lastActivityAt)));
+  assert.doesNotMatch(JSON.stringify(data),/sourceCommit|correctIndex|password|zoomNames|explanation|feedback/);
+  assert.deepEqual(await storage.list(),before);
+  const otherData=await(await get('/api/admin/students/'+other.key+'/activity-summary')).json();assert(otherData.activities.every(a=>a.lastActivityAt===null));
+  await adminCall(e,'/api/admin/students/'+record.key,write(adminCookie,{...record,status:'paused'},'PUT'));
+  assert.equal((await get()).status,200);
+  await e.FEEDBACK_STORE.get('ab26').fetch(new Request('https://feedback.internal/admin/delete-account',{method:'POST'}));
+  assert.equal((await get()).status,410);
+});
+
+test('activity overview rejects missing or pending accounts and reports unavailable storage',async()=>{
+  const {e,directory}=environment(),cookie=await access(e),record=(await list(e,cookie))[0];
+  const request=key=>adminCall(e,'/api/admin/students/'+key+'/activity-summary',{headers:{Cookie:cookie}});
+  assert.equal((await request('00000000-0000-4000-8000-000000000000')).status,404);
+  const draft=await adminCall(e,'/api/admin/students',write(cookie,{firstName:'New',lastName:'Student',status:'draft',zoomNames:[]}));
+  assert.equal((await request((await draft.json()).student.key)).status,404);
+  const saved=await directory.storage.get('student:'+record.key);
+  await directory.storage.put({['student:'+record.key]:{...saved,deletionPending:true}});
+  assert.equal((await request(record.key)).status,404);
+  await directory.storage.put({['student:'+record.key]:saved});
+  e.FEEDBACK_STORE={idFromName:id=>id,get(){throw Error('Offline');}};
+  assert.equal((await request(record.key)).status,503);
+});
+
+const activityOverviewFixture={activities:[
+  {id:'english-road',setsStarted:3,setsCompleted:1,answered:28,correct:21,latestSet:{state:'in_progress',answered:8,total:20},lastActivityAt:'2026-10-15T10:00:00Z'},
+  {id:'grammar-practice',total:900,finished:12,questions:2,savedPlace:31,lastActivityAt:'2026-10-15T12:00:00Z'},
+  {id:'business-terms',total:2958,finished:0,questions:0,savedPlace:null,lastActivityAt:null},
+]};
+test('activity overview loads automatically, refreshes and opens details without writing student work',async()=>{
+  let reads=0,writes=0,roadReads=0,questionsReads=0;
+  const dom=browser((path,opts)=>{
+    if(opts?.method&&opts.method!=='GET')writes++;
+    if(path.endsWith('/activity-summary')){reads++;return Response.json(activityOverviewFixture);}
+    if(path.endsWith('/road')){roadReads++;return Response.json({attempts:[],nextCursor:null});}
+    if(path.endsWith('/grammar-practice')){questionsReads++;return Response.json({questions:[]});}
+  });
+  const w=dom.window,d=w.document;await flush();w.location.hash='students/'+fixture.key;await flush();
+  const content=d.getElementById('activity-overview-content');assert.equal(content.children.length,3);
+  assert.match(content.textContent,/1 of 3 sets completed/);assert.match(content.textContent,/21 correct \/ 28 answers saved/);
+  assert.match(content.textContent,/12 of 900 items marked finished/);assert.match(content.textContent,/2 questions to discuss/);
+  assert.match(content.textContent,/Saved place: item 31/);assert.match(content.textContent,/No saved activity yet/);assert.match(content.textContent,/Hidden from student menu/);
+  assert.equal(d.getElementById('activity-overview-panel').hidden,false);
+  content.querySelectorAll('button')[0].click();await flush();assert.equal(roadReads,1);
+  content.querySelectorAll('button')[1].click();await flush();assert.equal(questionsReads,1);
+  d.getElementById('refresh-activity-overview').click();await flush();assert.equal(reads,2);assert.equal(writes,0);
+  w.location.hash='register';await flush();assert.equal(content.textContent,'');assert.equal(d.getElementById('activity-overview-panel').hidden,true);w.close();
+});
+
+test('activity overview clears stale reads on navigation, logout and page hide; failures can retry',async()=>{
+  for(const action of ['navigate','logout','pagehide']){
+    let resolve;
+    const dom=browser(path=>path.endsWith('/activity-summary')?new Promise(r=>{resolve=r;}):null);
+    const w=dom.window,d=w.document;await flush();w.location.hash='students/'+fixture.key;await flush();
+    if(action==='navigate')w.location.hash='students';else if(action==='logout')d.getElementById('sign-out').click();else w.dispatchEvent(new w.Event('pagehide'));
+    await flush();resolve(Response.json(activityOverviewFixture));await flush();
+    assert.equal(d.getElementById('activity-overview-content').textContent,'');assert.equal(d.getElementById('activity-overview-panel').hidden,true);w.close();
+  }
+  let state='failed';
+  const dom=browser(path=>path.endsWith('/activity-summary')?state==='failed'?Response.json({error:'Unavailable'},{status:503}):state==='expired'?Response.json({error:'Please sign in'},{status:401}):Response.json(activityOverviewFixture):null);
+  const w=dom.window,d=w.document;await flush();w.location.hash='students/'+fixture.key;await flush();
+  assert.match(d.getElementById('activity-overview-status').textContent,/Unavailable/);assert.equal(d.getElementById('refresh-activity-overview').disabled,false);
+  state='ready';d.getElementById('refresh-activity-overview').click();await flush();assert.equal(d.getElementById('activity-overview-content').children.length,3);
+  state='expired';d.getElementById('refresh-activity-overview').click();await flush();assert.equal(d.getElementById('login-view').hidden,false);assert.equal(d.getElementById('activity-overview-content').textContent,'');w.close();
+});

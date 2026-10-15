@@ -187,7 +187,7 @@ async function handleAdmin(request, env) {
       }
       return json({ statuses, nextCursor: records.length > 20 ? page.at(-1).key : null });
     }
-    const selfCheckAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/(business-terms|grammar-practice)$/.exec(url.pathname);
+    const selfCheckAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/(business-terms|grammar-practice|activity-summary)$/.exec(url.pathname);
     if (selfCheckAccount && request.method === 'GET') {
       if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
       const response = await directoryRequest(env, '/students');
@@ -195,7 +195,10 @@ async function handleAdmin(request, env) {
       const student = (await response.json()).students.find(s => s.key === selfCheckAccount[1]);
       if (!student || student.deletionPending || !student.activated || !student.studentId) return json({ error: 'Student not found.' }, 404);
       if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable.' }, 503);
-      return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/' + (selfCheckAccount[2] === 'grammar-practice' ? 'grammar' : 'terms') + '/questions'));
+      const internalPath = selfCheckAccount[2] === 'activity-summary' ? 'admin/activity-summary' : (selfCheckAccount[2] === 'grammar-practice' ? 'grammar' : 'terms') + '/questions';
+      try {
+        return await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/' + internalPath));
+      } catch { return json({ error: 'Activity records are temporarily unavailable. Please try again.' }, 503); }
     }
     const roadAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/road(?:\/([0-9a-f-]{36}))?$/.exec(url.pathname);
     if (roadAccount && request.method === 'GET') {

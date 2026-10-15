@@ -67,8 +67,14 @@
             <li><a href="#feedback">Feedback</a></li>
           </ul>
         </div>
-        <a id="account-nav" href="#account">Account</a>
-        <button id="logout" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button>
+        <div id="activities-menu" class="overview-menu">
+          <button id="activities-toggle" class="overview-toggle activities-toggle" type="button" aria-label="Show Activities" aria-expanded="false" aria-controls="activities-submenu">Activities <span aria-hidden="true">▾</span></button>
+          <ul id="activities-submenu" class="overview-submenu" hidden></ul>
+        </div>
+        <div class="account-menu">
+          <a id="account-nav" href="#account">Account</a>
+          <button id="logout" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button>
+        </div>
       </nav>
       <div id="overview" class="section-panel">
         <section class="next-step"><div><p class="eyebrow">YOUR NEXT STEP</p><h2 id="latest-title">Your learning notebook.</h2><p id="latest-summary">Open your session feedback to revisit useful language and find a short practice activity.</p><a id="latest-link" class="primary-button" href="#feedback">Open session feedback <span aria-hidden="true">→</span></a></div><div class="progress-art" aria-hidden="true"><span>ONE</span><span>STEP</span><span>AT A TIME.</span></div></section>
@@ -125,6 +131,13 @@
         <div id="quiz-history"></div>
         <button id="more-quiz-results" class="secondary-button" hidden>Earlier attempts</button>
       </section>
+      <section id="activities" class="section-panel" aria-labelledby="activity-title" hidden>
+        <article class="account-card activity-page">
+          <h3 id="activity-title" tabindex="-1">Activities</h3>
+          <p id="activity-message" role="status"></p>
+          <a class="secondary-button" href="#account">Choose activities in Account</a>
+        </article>
+      </section>
       <section id="account" class="section-panel" aria-labelledby="account-title" hidden>
         <div class="section-heading"><h2 id="account-title" tabindex="-1">Your account</h2></div>
         <p class="section-intro">Choose your nickname and activities. You can change your password here too.</p>
@@ -139,7 +152,7 @@
               <input id="nickname" name="nickname" autocomplete="nickname" required maxlength="100" aria-describedby="nickname-hint">
               <p id="nickname-hint" class="field-hint">This name appears at the top of your student page. Your sign-in address stays the same.</p>
               <fieldset class="activity-options"><legend>Show in Activities</legend>
-                <p class="field-hint">Activities is coming soon. These are sample activities for now. Check the ones you want to see. You can change your choices later.</p>
+                <p class="field-hint">These are sample activities for now. Check the ones you want in the Activities menu. Then choose “Save my choices”.</p>
                 <div id="activity-options"></div>
               </fieldset>
               <button class="primary-button" type="submit">Save my choices</button>

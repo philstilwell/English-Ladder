@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz', 'quiz-results', 'account'];
+  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz', 'quiz-results', 'account', 'activities'];
   const assessmentSections = ['summary', 'strengths', 'patterns', 'next'];
   const validId = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
   let authenticated = false, checking = false, identityRevision = 0, pageRevision = 0;
@@ -12,40 +12,61 @@
   let assessmentScrollFrame = 0;
   let settings = null, settingsLoading = false, settingsSaving = false, settingsRevision = 0, profileRevision = 0;
   const sectionMenu = document.querySelector('.section-nav');
-  const overviewMenu = $('overview-menu'), overviewToggle = $('overview-toggle'), overviewSubmenu = $('overview-submenu');
-  function showOverviewLinks(open) {
-    overviewSubmenu.hidden = !open;
-    overviewToggle.setAttribute('aria-expanded', String(open));
-    overviewToggle.setAttribute('aria-label', (open ? 'Hide' : 'Show') + ' Overview links');
+  let activityChoices = null, activitiesLoading = false, activitiesRevision = 0, activitiesError = false;
+  const dropdowns = ['overview', 'activities'].map(id => ({
+    group: $(id + '-menu'), toggle: $(id + '-toggle'), list: $(id + '-submenu'),
+    label: id === 'overview' ? 'Overview links' : 'Activities',
+  }));
+  const [overviewDropdown, activitiesDropdown] = dropdowns;
+  const overviewMenu = overviewDropdown.group;
+  function positionDropdown(menu) {
+    const left = menu.group.getBoundingClientRect().left;
+    const width = menu.list.getBoundingClientRect().width;
+    menu.list.style.left = Math.max(24, Math.min(left, document.documentElement.clientWidth - 24 - width)) - left + 'px';
   }
-  overviewMenu.addEventListener('pointerenter', event => {
-    if (event.pointerType === 'mouse' || event.pointerType === 'pen') showOverviewLinks(true);
-  });
-  overviewMenu.addEventListener('pointerleave', event => {
-    if ((event.pointerType === 'mouse' || event.pointerType === 'pen') && !overviewSubmenu.contains(document.activeElement)) showOverviewLinks(false);
-  });
-  overviewToggle.addEventListener('click', () => showOverviewLinks(overviewSubmenu.hidden));
-  overviewMenu.addEventListener('keydown', event => {
-    if (event.key === 'ArrowDown' && (event.target === overviewToggle || event.target === $('overview-link'))) {
-      event.preventDefault(); showOverviewLinks(true); overviewSubmenu.querySelector('a:not([hidden])').focus();
+  function showDropdown(menu, open) {
+    if (open) for (const other of dropdowns) if (other !== menu) showDropdown(other, false);
+    menu.list.hidden = !open;
+    menu.toggle.setAttribute('aria-expanded', String(open));
+    menu.toggle.setAttribute('aria-label', (open ? 'Hide ' : 'Show ') + menu.label);
+    if (open) positionDropdown(menu);
+  }
+  function closeDropdowns() { for (const menu of dropdowns) showDropdown(menu, false); }
+  for (const menu of dropdowns) {
+    menu.group.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse' || event.pointerType === 'pen') showDropdown(menu, true);
+    });
+    menu.group.addEventListener('pointerleave', event => {
+      if ((event.pointerType === 'mouse' || event.pointerType === 'pen') && !menu.list.contains(document.activeElement)) showDropdown(menu, false);
+    });
+    menu.toggle.addEventListener('click', () => showDropdown(menu, menu.list.hidden));
+    menu.group.addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown' && !menu.list.contains(event.target)) {
+        event.preventDefault(); showDropdown(menu, true);
+        menu.list.querySelector('a:not([hidden]), button:not([disabled])')?.focus();
+      }
+    });
+  }
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    for (const menu of dropdowns) if (!menu.list.hidden) {
+      event.preventDefault(); showDropdown(menu, false);
+      if (menu.group.contains(document.activeElement)) menu.toggle.focus();
     }
   });
-  document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape' || overviewSubmenu.hidden) return;
-    event.preventDefault(); showOverviewLinks(false);
-    if (overviewMenu.contains(document.activeElement)) overviewToggle.focus();
+  for (const type of ['pointerdown', 'focusin']) document.addEventListener(type, event => {
+    for (const menu of dropdowns) if (!menu.group.contains(event.target)) showDropdown(menu, false);
   });
-  document.addEventListener('pointerdown', event => { if (!overviewMenu.contains(event.target)) showOverviewLinks(false); });
-  document.addEventListener('focusin', event => { if (!overviewMenu.contains(event.target)) showOverviewLinks(false); });
   sectionMenu.addEventListener('click', event => {
     if (!event.target.closest('a')) return;
-    if (overviewSubmenu.contains(document.activeElement)) overviewToggle.focus({ preventScroll:true });
-    showOverviewLinks(false);
+    for (const menu of dropdowns) if (menu.list.contains(document.activeElement)) menu.toggle.focus({ preventScroll:true });
+    closeDropdowns();
   });
   function updateMenuHeight() {
     const height = sectionMenu.getBoundingClientRect().height;
     if (height) document.documentElement.style.setProperty('--student-menu-height', height + 'px');
     scheduleAssessmentHighlight();
+    for (const menu of dropdowns) if (!menu.list.hidden) positionDropdown(menu);
   }
   const menuResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateMenuHeight);
   menuResizeObserver?.observe(sectionMenu);
@@ -84,8 +105,10 @@
   }
   function clearIdentity() {
     identityRevision++; pageRevision++;
-    showOverviewLinks(false);
+    closeDropdowns();
     clearSettings();
+    activityChoices = null; activitiesLoading = false; activitiesError = false; activitiesRevision++;
+    activitiesDropdown.list.replaceChildren(); $('activity-title').textContent = 'Activities'; $('activity-message').textContent = '';
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
     quizState = null; quizRevision++;
@@ -152,9 +175,10 @@
     if (selected !== 'account') clearSettings();
     for (const id of sections) $(id).hidden = selected !== id;
     for (const el of document.querySelectorAll('.section-nav a')) {
-      if (el.hash === '#' + selected) el.setAttribute('aria-current', 'page');
+      if (el.hash === '#' + selected || selected === 'activities' && el.hash === '#activities/' + requested) el.setAttribute('aria-current', 'page');
       else el.removeAttribute('aria-current');
     }
+    activitiesDropdown.group.classList.toggle('is-current', selected === 'activities');
     overviewMenu.classList.toggle('is-current', ['overview', 'assessments', 'quiz', 'sessions', 'feedback'].includes(selected));
     if (selected !== 'feedback') {
       pageRevision++; currentPage = '';
@@ -169,6 +193,7 @@
         loadQuizResults();
         if (focus) $('quiz-results-title').focus();
       }
+      if (selected === 'activities') { renderActivityPage(); if (focus) $('activity-title').focus(); }
       if (selected === 'account') {
         document.title = 'My account · English Ladder';
         loadSettings();
@@ -800,6 +825,67 @@
     }
     $('quiz-history').replaceChildren(fragment);
   }
+  function applyActivityChoices(data) {
+    if (!Number.isInteger(data.revision) || !Array.isArray(data.activities) || !Array.isArray(data.visibleActivities) ||
+        data.activities.some(a => !a || !/^[a-z0-9-]{1,60}$/.test(a.id) || typeof a.name !== 'string' || typeof a.description !== 'string'))
+      throw new Error('Your activities could not be loaded. Please try again.');
+    // An earlier read can finish after a save. Never restore the older choices.
+    if (activityChoices && data.revision < activityChoices.revision) return;
+    activityChoices = { revision: data.revision, activities: data.activities.map(({ id, name, description }) => ({ id, name, description })),
+      visibleActivities: data.visibleActivities.filter(id => data.activities.some(a => a.id === id)) };
+    activitiesError = false; renderActivities();
+  }
+  function renderActivities() {
+    const list = activitiesDropdown.list;
+    const selected = activityChoices?.activities.filter(a => activityChoices.visibleActivities.includes(a.id));
+    list.replaceChildren();
+    if (selected?.length) {
+      for (const activity of selected) {
+        const item = node('li'), link = node('a', activity.name);
+        link.href = '#activities/' + activity.id;
+        if (link.hash === location.hash) link.setAttribute('aria-current', 'page');
+        item.append(link); list.append(item);
+      }
+    } else {
+      const item = node('li', '', 'submenu-message');
+      item.append(node('p', selected ? 'No activities selected.' : activitiesError ? 'Your activities could not be loaded.' : 'Loading your activities…'));
+      if (selected) {
+        const link = node('a', 'Choose in Account'); link.href = '#account'; item.append(link);
+      } else if (activitiesError) {
+        const retry = node('button', 'Try again'); retry.type = 'button'; retry.addEventListener('click', loadActivities); item.append(retry);
+      }
+      list.append(item);
+    }
+    if (!list.hidden) positionDropdown(activitiesDropdown);
+    renderActivityPage();
+  }
+  function renderActivityPage() {
+    const [part, id, extra] = location.hash.slice(1).split('/');
+    if (!authenticated || part !== 'activities') return;
+    const activity = extra === undefined && activityChoices?.visibleActivities.includes(id) && activityChoices.activities.find(a => a.id === id);
+    $('activity-title').textContent = activity ? activity.name : 'Activities';
+    $('activity-message').textContent = activity ? activity.description : !activityChoices
+      ? (activitiesError ? 'Your activities could not be loaded. Open the Activities menu to try again.' : 'Loading your activities…')
+      : id ? 'This activity is not selected. You can change your choices in Account.'
+      : activityChoices.visibleActivities.length ? 'Choose an activity from the Activities menu.' : 'No activities selected. You can choose some in Account.';
+    document.title = (activity ? activity.name : 'My activities') + ' · English Ladder';
+  }
+  async function loadActivities() {
+    if (!authenticated || activitiesLoading) return;
+    const identity = identityRevision, revision = ++activitiesRevision;
+    activitiesLoading = true; activitiesError = false;
+    if (!activityChoices) renderActivities();
+    try {
+      const data = await api('/api/account');
+      if (identity !== identityRevision || revision !== activitiesRevision) return;
+      applyActivityChoices(data);
+    } catch (error) {
+      if (identity !== identityRevision || revision !== activitiesRevision || expired(error)) return;
+      activitiesError = true; renderActivities();
+    } finally {
+      if (identity === identityRevision && revision === activitiesRevision) activitiesLoading = false;
+    }
+  }
   function clearSettings() {
     settingsRevision++; settings = null; settingsLoading = false; settingsSaving = false;
     $('settings-form').reset(); $('password-form').reset(); $('activity-options').replaceChildren();
@@ -822,6 +908,7 @@
     try {
       const data = await api('/api/account');
       if (identity !== identityRevision || revision !== settingsRevision) return;
+      applyActivityChoices(data);
       settings = data; $('nickname').value = data.nickname; $('activity-options').replaceChildren();
       for (const activity of data.activities) {
         const label = node('label', '', 'activity-choice'), input = node('input');
@@ -858,6 +945,7 @@
         showLogin(); $('login-notice').textContent = 'Your password has changed. Sign in with your new password.';
         $('login-notice').hidden = false; $('password').focus(); return;
       }
+      applyActivityChoices(data);
       profileRevision++;
       $('student-name').textContent = data.nickname; $('profile-nickname').textContent = data.nickname;
       if (revision !== settingsRevision) return;
@@ -873,7 +961,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { clearSettings(); showOverviewLinks(false); });
+  window.addEventListener('pagehide', () => { clearSettings(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();
@@ -886,7 +974,7 @@
     $('dashboard-title').textContent = teacher ? name + '’s learning space' : 'Welcome back, ' + name + '.';
     $('teacher-banner').hidden = !teacher; $('account-status').textContent = ''; $('password').value = '';
     show('dashboard-view');
-    if (initial) { loadIndex(); loadAssessment(); navigate(); }
+    if (initial) { loadActivities(); loadIndex(); loadAssessment(); navigate(); }
     if (focus) $('dashboard-title').focus();
   }
   async function start() {
@@ -934,7 +1022,7 @@
     if (!authenticated || checking || document.hidden) return;
     checking = true; const revision = identityRevision, profile = profileRevision;
     try {
-      const data = await api('/api/session'); if (revision === identityRevision && profile === profileRevision) showDashboard(data);
+      const data = await api('/api/session'); if (revision === identityRevision && profile === profileRevision) { showDashboard(data); loadActivities(); }
     } catch (error) {
       if (revision !== identityRevision) return;
       if (!expired(error)) { clearIdentity(); $('unavailable-message').textContent = error.message; show('unavailable-view'); }
@@ -942,7 +1030,7 @@
   }
   window.addEventListener('pageshow', event => { if (event.persisted) { clearIdentity(); start(); } });
   document.addEventListener('visibilitychange', checkSession);
-  window.addEventListener('hashchange', () => { showOverviewLinks(false); navigate(true); });
+  window.addEventListener('hashchange', () => { closeDropdowns(); navigate(true); });
   window.addEventListener('scroll', scheduleAssessmentHighlight, { passive: true });
   window.addEventListener('resize', updateMenuHeight);
   document.querySelector('.assessment-outline').addEventListener('click', event => {

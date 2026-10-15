@@ -459,3 +459,60 @@ test('account load failures can retry, stale saves request a reload, and expiry 
   d.getElementById('reload-settings').click(); await flush(); state = 'expired'; submitForm(dom, 'settings-form'); await flush();
   assert.equal(d.getElementById('login-view').hidden, false); assert.equal(d.getElementById('nickname').value, ''); dom.window.close();
 });
+
+test('Activities uses saved choices before visiting Account and updates only after a successful save', async () => {
+  let saved = { ...settingsFixture, visibleActivities: ['placeholder-1', 'placeholder-3'] };
+  const mock = (path, options) => {
+    if (path !== '/api/account') return null;
+    if (options.method === 'PUT') saved = { ...saved, ...JSON.parse(options.body), revision: saved.revision + 1 };
+    return reply(saved);
+  };
+  const dom = setup(mock, 'https://ab26.englishladder.com/#activities/placeholder-3'); await flush();
+  const d = dom.window.document;
+  const labels = () => [...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent);
+  assert.deepEqual(labels(), ['Activity 1', 'Activity 3']);
+  assert.equal(d.getElementById('activity-title').textContent, 'Activity 3');
+  assert.match(d.getElementById('activity-message').textContent, /sample activity/);
+  dom.window.location.hash = 'account'; await flush();
+  for (const input of d.querySelectorAll('#activity-options input')) input.checked = input.value === 'placeholder-2';
+  assert.deepEqual(labels(), ['Activity 1', 'Activity 3']);
+  submitForm(dom, 'settings-form'); await flush(); assert.deepEqual(labels(), ['Activity 2']);
+  dom.window.location.hash = 'activities/placeholder-1'; await flush();
+  assert.equal(d.getElementById('activity-title').textContent, 'Activities');
+  assert.match(d.getElementById('activity-message').textContent, /not selected/);
+  dom.window.location.hash = 'account'; await flush();
+  for (const input of d.querySelectorAll('#activity-options input')) input.checked = false;
+  submitForm(dom, 'settings-form'); await flush();
+  assert.equal(d.querySelectorAll('#activities-submenu a[href^="#activities/"]').length, 0);
+  assert.match(d.getElementById('activities-submenu').textContent, /No activities selected/);
+  assert.equal(d.querySelector('#activities-submenu a').hash, '#account'); dom.window.close();
+  const preview = setup(mock, 'https://ab26.englishladder.com/#overview', 'teacher'); await flush();
+  assert.match(preview.window.document.getElementById('activities-submenu').textContent, /No activities selected/); preview.window.close();
+});
+test('a delayed activity read cannot replace a newer saved choice or restore choices after sign-out', async () => {
+  let complete, reads = 0;
+  const dom = setup((path, options) => {
+    if (path !== '/api/account') return null;
+    if (options.method === 'PUT') return reply({ ...settingsFixture, ...JSON.parse(options.body), revision: 2 });
+    if (++reads === 1) return new Promise(resolve => { complete = resolve; });
+    return reply(settingsFixture);
+  }, 'https://ab26.englishladder.com/#account'); await flush(); const d = dom.window.document;
+  for (const input of d.querySelectorAll('#activity-options input')) input.checked = input.value === 'placeholder-2';
+  submitForm(dom, 'settings-form'); await flush(); complete(reply(settingsFixture)); await flush();
+  assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Activity 2']);
+  d.getElementById('logout').click(); await flush(); assert.equal(d.getElementById('activities-submenu').textContent, ''); dom.window.close();
+  let late;
+  const signedOut = setup(path => path === '/api/account' ? new Promise(resolve => { late = resolve; }) : null, 'https://ab26.englishladder.com/#overview'); await flush();
+  signedOut.window.document.getElementById('logout').click(); await flush(); late(reply(settingsFixture)); await flush();
+  assert.equal(signedOut.window.document.getElementById('activities-submenu').textContent, ''); signedOut.window.close();
+});
+test('failed activity loading never substitutes defaults and can retry; expiry clears activities', async () => {
+  let unavailable = true;
+  const dom = setup(path => path === '/api/account' ? unavailable ? new Response(JSON.stringify({ error: 'Unavailable' }), { status: 503 }) : reply({ ...settingsFixture, visibleActivities: ['placeholder-3'] }) : null, 'https://ab26.englishladder.com/#overview');
+  await flush(); const d = dom.window.document;
+  assert.equal(d.querySelectorAll('#activities-submenu a').length, 0); assert.match(d.getElementById('activities-submenu').textContent, /could not be loaded/);
+  unavailable = false; d.querySelector('#activities-submenu button').click(); await flush();
+  assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Activity 3']); dom.window.close();
+  const expired = setup(path => path === '/api/account' ? new Response(JSON.stringify({ error: 'Please sign in.' }), { status: 401 }) : null, 'https://ab26.englishladder.com/#overview');
+  await flush(); assert.equal(expired.window.document.getElementById('login-view').hidden, false); assert.equal(expired.window.document.getElementById('activities-submenu').textContent, ''); expired.window.close();
+});

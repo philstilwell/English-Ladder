@@ -41,7 +41,10 @@
     menu.list.hidden = !open;
     menu.toggle.setAttribute('aria-expanded', String(open));
     menu.toggle.setAttribute('aria-label', (open ? 'Hide ' : 'Show ') + menu.label);
-    if (open) positionDropdown(menu);
+    if (open) {
+      positionDropdown(menu);
+      if (menu === activitiesDropdown && authenticated) void loadActivities();
+    }
   }
   function closeDropdowns() { for (const menu of dropdowns) showDropdown(menu, false); }
   for (const menu of dropdowns) {
@@ -866,10 +869,8 @@
       }
     } else {
       const item = node('li', '', 'submenu-message');
-      item.append(node('p', selected ? 'No activities selected.' : activitiesError ? 'Your activities could not be loaded.' : 'Loading your activities…'));
-      if (selected) {
-        const link = node('a', 'Choose in Account'); link.href = '#account'; item.append(link);
-      } else if (activitiesError) {
+      item.append(node('p', selected ? 'No activities yet. Please ask your teacher.' : activitiesError ? 'Your activities could not be loaded.' : 'Loading your activities…'));
+      if (!selected && activitiesError) {
         const retry = node('button', 'Try again'); retry.type = 'button'; retry.addEventListener('click', loadActivities); item.append(retry);
       }
       list.append(item);
@@ -887,8 +888,8 @@
     $('activity-title').textContent = activity ? activity.name : 'Activities';
     $('activity-message').textContent = activity ? activity.description : !activityChoices
       ? (activitiesError ? 'Your activities could not be loaded. Open the Activities menu to try again.' : 'Loading your activities…')
-      : id ? 'This activity is not selected. You can change your choices in Account.'
-      : activityChoices.visibleActivities.length ? 'Choose an activity from the Activities menu.' : 'No activities selected. You can choose some in Account.';
+      : id ? 'Your teacher has not selected this activity for your menu.'
+      : activityChoices.visibleActivities.length ? 'Choose an activity from the Activities menu.' : 'No activities yet. Please ask your teacher.';
     document.title = (activity ? activity.name : 'My activities') + ' · English Ladder';
   }
   async function loadActivities() {
@@ -909,7 +910,7 @@
   }
   function clearSettings() {
     settingsRevision++; settings = null; settingsLoading = false; settingsSaving = false;
-    $('settings-form').reset(); $('password-form').reset(); $('activity-options').replaceChildren();
+    $('settings-form').reset(); $('password-form').reset();
     for (const id of ['settings-status', 'settings-message', 'password-message']) $(id).textContent = '';
     $('reload-settings').hidden = true; $('settings-teacher-note').hidden = true;
     $('settings-fields').disabled = true; $('password-fields').disabled = true;
@@ -930,15 +931,7 @@
       const data = await api('/api/account');
       if (identity !== identityRevision || revision !== settingsRevision) return;
       applyActivityChoices(data);
-      settings = data; $('nickname').value = data.nickname; $('activity-options').replaceChildren();
-      for (const activity of data.activities) {
-        const label = node('label', '', 'activity-choice'), input = node('input');
-        input.type = 'checkbox'; input.name = 'visibleActivities'; input.value = activity.id;
-        input.checked = data.visibleActivities.includes(activity.id);
-        const description = node('span');
-        description.append(node('strong', activity.name), node('span', activity.description));
-        label.append(input, description); $('activity-options').append(label);
-      }
+      settings = data; $('nickname').value = data.nickname;
       $('settings-status').textContent = '';
     } catch (error) {
       if (identity !== identityRevision || revision !== settingsRevision || expired(error)) return;
@@ -954,8 +947,7 @@
     const message = $(passwordChange ? 'password-message' : 'settings-message');
     const body = { revision: settings.revision, ...(passwordChange ? {
       currentPassword: $('current-password').value, newPassword: $('new-password').value, confirmPassword: $('confirm-password').value,
-    } : { nickname: $('nickname').value,
-      visibleActivities: [...$('activity-options').querySelectorAll('input:checked')].map(input => input.value) }) };
+    } : { nickname: $('nickname').value }) };
     settingsSaving = true; lockSettings(true); message.textContent = 'Saving…'; message.classList.remove('error-message');
     try {
       const data = await api('/api/account' + (passwordChange ? '/password' : ''), {
@@ -970,7 +962,7 @@
       profileRevision++;
       $('student-name').textContent = data.nickname; $('profile-nickname').textContent = data.nickname;
       if (revision !== settingsRevision) return;
-      settings = data; $('nickname').value = data.nickname; message.textContent = 'Your choices are saved.';
+      settings = data; $('nickname').value = data.nickname; message.textContent = 'Your nickname is saved.';
     } catch (error) {
       if (identity !== identityRevision || revision !== settingsRevision || expired(error)) return;
       message.textContent = error.message; message.classList.add('error-message');

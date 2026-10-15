@@ -6,6 +6,47 @@ const headers=cookie=>({Cookie:cookie,Origin:origin,'Content-Type':'application/
 const get=(e,cookie,path='/api/quiz/state')=>call(e,path,{headers:{Cookie:cookie}});
 const answer=(e,cookie,input,extra={})=>call(e,'/api/quiz/answer',{method:'POST',headers:headers(cookie),body:JSON.stringify(input),...extra});
 const input=(state,id=crypto.randomUUID(),questionIndex=0,choiceIndex=1)=>({attemptId:id,version:state.version,questionIndex,choiceIndex});
+const status=async e=>(await e.FEEDBACK_STORE.get('ab26').fetch(new Request('https://feedback.internal/admin/quiz-status'))).json();
+
+test('latest quiz status distinguishes no quiz, untouched, started, and completed; teacher previews do not count',async()=>{
+ assert.deepEqual(await status(env()),{state:'no_quiz'});
+ const {e,student,teacher,state}=await seedQuiz(),data=input(state);
+ assert.equal((await status(e)).state,'not_started');
+ await get(e,teacher.cookie,'/api/assessment');
+ assert.equal((await answer(e,teacher.cookie,data)).status,403);
+ assert.equal((await status(e)).state,'not_started');
+ await answer(e,student.cookie,data);
+ assert.deepEqual(await status(e),{state:'in_progress',title:quiz.title,total:2,answered:1});
+ await answer(e,student.cookie,{...data,choiceIndex:0});
+ await answer(e,student.cookie,{...data,questionIndex:1,choiceIndex:1});
+ const completed=await status(e);assert.equal(completed.state,'completed');assert.ok(completed.completedAt);
+ assert.doesNotMatch(JSON.stringify(completed),/answers|correctIndex|missedQuestions|sourceSessions|noteId/);
+ // An unfinished repeat does not undo an already completed assignment.
+ await answer(e,student.cookie,input(state));assert.equal((await status(e)).state,'completed');
+});
+test('latest quiz status ignores old attempts, including an unfinished quiz the student is still answering',async()=>{
+ const {e,student,state,publish}=await seedQuiz(),data=input(state);
+ await answer(e,student.cookie,data);
+ const changed=structuredClone(quiz);changed.questions[0].prompt='The newly assigned quiz.';
+ await publish('/api/assessment',{...assessment,quiz:changed});
+ assert.equal((await status(e)).state,'not_started');
+ // Finishing the preserved old attempt cannot complete the new assignment.
+ await answer(e,student.cookie,{...data,choiceIndex:0});await answer(e,student.cookie,{...data,questionIndex:1,choiceIndex:1});
+ assert.equal((await status(e)).state,'not_started');
+ const next=await(await get(e,student.cookie)).json();
+ await answer(e,student.cookie,input(next));assert.equal((await status(e)).state,'in_progress');
+ await publish('/api/assessment',assessment);assert.deepEqual(await status(e),{state:'no_quiz'});
+});
+test('latest quiz status finds legacy completions beyond the first history page without changing attempts',async()=>{
+ const {e,state}=await seedQuiz(),storage=e.FEEDBACK_STORE.get('ab26').storage;
+ const oldKey='quiz:index:2026-01-01T00:00:00.000_'+crypto.randomUUID();
+ const older={version:state.version,completedAt:'2026-01-01T01:00:00.000Z',answered:2};
+ await storage.put({[oldKey]:older});
+ for(let i=0;i<105;i++)await storage.put({['quiz:index:2026-09-01T00:00:00.000_'+crypto.randomUUID()]:{version:i===0?state.version:'0'.repeat(64),completedAt:null,answered:1}});
+ const before=await storage.list({prefix:'quiz:',limit:200});
+ assert.equal((await status(e)).completedAt,older.completedAt);
+ assert.deepEqual(await storage.list({prefix:'quiz:',limit:200}),before);
+});
 
 test('quiz results require the right account and role; writes reject cross-origin and malformed requests',async()=>{
  const {e,student,teacher,state}=await seedQuiz(),data=input(state);

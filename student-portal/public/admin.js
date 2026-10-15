@@ -2,6 +2,7 @@
 (() => {
   const $ = id => document.getElementById(id);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
+  let quizRequest = 0, quizStatuses = {};
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
   const displayTime = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(value)) + ' Eastern' : '';
@@ -9,6 +10,7 @@
   function message(text, error = false) { $('message').textContent = text; $('message').hidden = !text; $('message').classList.toggle('error', error); }
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null;
+    quizRequest++; quizStatuses = {};
     $('admin-view').hidden = true; $('login-view').hidden = false; $('sign-out').hidden = true;
     $('student-rows').replaceChildren(); $('import-names').replaceChildren(); $('student-form').reset();
     $('sheet-paste').value = ''; $('password').value = ''; $('search').value = ''; $('filter').value = 'all';
@@ -39,7 +41,7 @@
     $('list-count').textContent = shown.length + ' of ' + students.length + ' students';
     $('empty-list').hidden = shown.length > 0;
     for (const student of shown) {
-      const row = element('tr'), name = element('td'), site = element('td'), course = element('td'), status = element('td'), action = element('td');
+      const row = element('tr'), name = element('td'), site = element('td'), course = element('td'), status = element('td'), latestQuiz = element('td', null, 'latest-quiz'), action = element('td');
       const link = element('a', [student.firstName,student.lastName].filter(Boolean).join(' '), 'student-name'); link.href = '#students/' + student.key; name.append(link);
       if (student.nickname) name.append(element('span', student.nickname, 'detail'));
       site.append(element('span', student.studentId ? student.studentId + '.englishladder.com' : 'Site not activated'));
@@ -47,21 +49,44 @@
       course.append(element('span', student.hoursRemaining != null ? student.hoursRemaining + ' hours remaining' : student.course || 'Course details not added'));
       if (student.endsOn) course.append(element('span', 'Ends ' + displayDate(student.endsOn), 'detail'));
       status.append(element('span', {active:'Active',draft:'Draft',paused:'Paused'}[student.status], 'status-pill ' + student.status));
+      const quiz = quizStatuses[student.key] || { state: 'loading' };
+      latestQuiz.append(element('span', 'Latest quiz: ', 'quiz-mobile-label'));
+      latestQuiz.append(element('span', {completed:'Done',in_progress:'In progress',not_started:'Not started',no_quiz:'No quiz yet',unavailable:'Unable to check',loading:'Checking…'}[quiz.state] || 'Unable to check', 'quiz-pill ' + quiz.state));
+      if (quiz.state === 'completed') latestQuiz.append(element('span', 'Finished ' + displayTime(quiz.completedAt), 'detail'));
+      if (quiz.state === 'in_progress') latestQuiz.append(element('span', quiz.answered + ' of ' + quiz.total + ' questions answered', 'detail'));
       const edit = element('a', 'Edit account →', 'edit-link'); edit.href = link.href; edit.setAttribute('aria-label', 'Edit account for ' + student.firstName + ' ' + student.lastName); action.append(edit);
-      row.append(name,site,course,status,action); $('student-rows').append(row);
+      row.append(name,site,course,status,latestQuiz,action); $('student-rows').append(row);
     }
   }
   async function refresh() {
+    quizRequest++;
     const version = epoch;
     const data = await api('/api/admin/students');
     if (!signedIn || version !== epoch) return;
-    students = data.students; showList(); route();
+    students = data.students; quizStatuses = {}; showList(); route();
+    void refreshQuizStatuses();
     try {
       const status = await api('/api/admin/automation');
       if (!signedIn || version !== epoch) return;
       $('schedule-state').textContent = status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
       $('last-check').textContent = status.lastCheck ? 'Last check: ' + displayTime(status.lastCheck) + (status.needsAttention ? ' · ' + status.needsAttention + ' sessions need attention' : '') : 'The first nightly check is still ahead.';
     } catch (error) { if (signedIn && version === epoch) $('schedule-state').textContent = 'Server status is temporarily unavailable.'; }
+  }
+  async function refreshQuizStatuses() {
+    const version = epoch, request = ++quizRequest;
+    let cursor;
+    try {
+      do {
+        const data = await api('/api/admin/quiz-status' + (cursor ? '?after=' + encodeURIComponent(cursor) : ''));
+        if (!signedIn || version !== epoch || request !== quizRequest) return;
+        Object.assign(quizStatuses, data.statuses); showList();
+        cursor = data.nextCursor;
+      } while (cursor);
+    } catch {
+      if (!signedIn || version !== epoch || request !== quizRequest) return;
+      for (const student of students) if (!quizStatuses[student.key]) quizStatuses[student.key] = { state: 'unavailable' };
+      showList();
+    }
   }
   function suggestedAddress() {
     const first = $('firstName').value.trim().normalize('NFKD').replace(/[^a-z]/gi, ''), last = $('lastName').value.trim().split(/\s+/).at(-1)?.normalize('NFKD').replace(/[^a-z]/gi, '');
@@ -139,6 +164,7 @@
       history.replaceState(null, '', '#students/' + data.student.key); route();
       message(data.student.status === 'active' ? 'Saved. This student’s site is active and linked to the nightly updates.' : 'Saved. This account is ' + data.student.status + '.');
       $('save-state').textContent = 'Saved';
+      void refreshQuizStatuses();
     } catch(error) { if(signedIn && version===epoch){message(error.message,true);$('save-state').textContent='Not saved';} }
     finally { $('save-student').disabled=false; }
   });

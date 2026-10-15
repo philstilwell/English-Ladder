@@ -25,6 +25,29 @@ export function attemptSummary(attempt) {
   };
 }
 
+// Read the assigned quiz and its history together. A completed earlier attempt
+// still counts when the learner starts a retry of that same quiz. Older quiz
+// versions and teacher previews never count toward the current assignment.
+export async function latestQuizStatus(storage) {
+  return storage.transaction(async txn => {
+    const current = await currentQuiz(txn);
+    if (!current) return { state: 'no_quiz' };
+    const quiz = { title: current.quiz.title, total: current.quiz.questions.length };
+    let end, started;
+    while (true) {
+      const page = [...await txn.list({ prefix: 'quiz:index:', reverse: true, limit: 100, ...(end ? { end } : {}) })];
+      for (const [, attempt] of page) {
+        if (attempt.version !== current.version) continue;
+        if (attempt.completedAt) return { ...quiz, state: 'completed', completedAt: attempt.completedAt };
+        if (!started) started = attempt;
+      }
+      if (page.length < 100) break;
+      end = page.at(-1)[0];
+    }
+    return started ? { ...quiz, state: 'in_progress', answered: started.answered } : { ...quiz, state: 'not_started' };
+  });
+}
+
 export async function handleQuiz(storage, request) {
   const url = new URL(request.url), route = url.pathname;
   if (route === '/quiz/state' && request.method === 'GET') {

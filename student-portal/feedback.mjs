@@ -1,5 +1,5 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
-import { handleQuiz } from './quiz-results.mjs';
+import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
 
@@ -54,6 +54,7 @@ export class FeedbackStore {
     const url = new URL(request.url);
     const id = url.pathname.slice(1);
     // Internal-only routes: the public Worker never forwards arbitrary paths here.
+    if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'automation/context' && request.method === 'GET') {
       const attempts = [], publishedSessions = [], sourceNotes = [];
       for (const [prefix, target] of [['quiz:attempt:', attempts], ['quiz:published:', publishedSessions], ['feedback:', sourceNotes]]) {

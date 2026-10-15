@@ -6,6 +6,7 @@ import worker from '../worker.mjs';
 import { StudentDirectory, directoryStudents, parseStudentRows, inspectStudentRows, validateStudent } from '../student-directory.mjs';
 import { QuizAutomation } from '../server-quiz-automation.mjs';
 import { env as baseEnv, login, call, origin } from './harness.mjs';
+import { assessment, quiz } from './fixture.mjs';
 
 const admin = 'https://phil.englishladder.com';
 const example = { firstName:'Morgan', lastName:'Testperson', nickname:'Morgan the Explorer', studentId:'mt26', status:'active', zoomNames:['Morgan-Zoom'], timeZone:'Asia/Tokyo', email:'private@example.test', notes:'Private administrative note', hoursAuthorized:40 };
@@ -25,6 +26,33 @@ const adminCall=(e,path,options={})=>call(e,path,options,admin);
 async function access(e){return (await login(e,'teacher-test',admin)).cookie;}
 const write=(cookie,body,method='POST')=>({method,headers:{Cookie:cookie,Origin:admin,'Content-Type':'application/json'},body:JSON.stringify(body)});
 async function list(e,cookie){return (await (await adminCall(e,'/api/admin/students',{headers:{Cookie:cookie}})).json()).students;}
+
+test('administrator quiz overview is private, reads each account separately, and does not expose answers',async()=>{
+  const {e}=environment(),cookie=await access(e),records=await list(e,cookie),student=await login(e),teacher=await login(e,'teacher-test');
+  const store=e.FEEDBACK_STORE.get('ab26');await store.storage.put({'assessment:current':{...assessment,quiz}});
+  const response=await adminCall(e,'/api/admin/quiz-status',{headers:{Cookie:cookie}});assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');
+  const result=await response.json();assert.equal(result.statuses[records.find(s=>s.studentId==='ab26').key].state,'not_started');
+  assert.equal(result.statuses[records.find(s=>s.studentId==='cd26').key].state,'no_quiz');
+  assert.doesNotMatch(JSON.stringify(result),/correctIndex|answers|password|sourceSessions|noteId/);
+  assert.equal((await adminCall(e,'/api/admin/quiz-status')).status,401);
+  for(const c of [student.cookie,teacher.cookie]){
+    assert.equal((await adminCall(e,'/api/admin/quiz-status',{headers:{Cookie:c}})).status,401);
+    for(const path of ['/api/admin/quiz-status','/admin/quiz-status','/api/quiz/admin/quiz-status'])assert.equal((await call(e,path,{headers:{Cookie:c}})).status,404);
+  }
+});
+test('quiz overview pages bound storage calls and report a failing account without hiding other students',async()=>{
+  const {e,directory}=environment(),cookie=await access(e),records=await list(e,cookie);
+  for(let i=0;i<23;i++)await directory.storage.put({['student:00000000-0000-4000-8000-'+String(i).padStart(12,'0')]:{...example,key:'00000000-0000-4000-8000-'+String(i).padStart(12,'0'),studentId:'fictional'+i,activated:true,revision:1}});
+  const binding=e.FEEDBACK_STORE;let calls=0;
+  e.FEEDBACK_STORE={...binding,get(id){calls++;if(id==='fictional0')throw Error('Temporarily offline');return binding.get(id);}};
+  const first=await(await adminCall(e,'/api/admin/quiz-status',{headers:{Cookie:cookie}})).json();assert.equal(Object.keys(first.statuses).length,20);assert.ok(first.nextCursor);assert.equal(calls,20);
+  assert.equal(first.statuses['00000000-0000-4000-8000-000000000000'].state,'unavailable');
+  assert.equal(first.statuses['00000000-0000-4000-8000-000000000001'].state,'no_quiz');
+  const next=await(await adminCall(e,'/api/admin/quiz-status?after='+first.nextCursor,{headers:{Cookie:cookie}})).json();assert.equal(Object.keys(next.statuses).length,5);assert.equal(next.nextCursor,null);
+  assert.equal(new Set([...Object.keys(first.statuses),...Object.keys(next.statuses)]).size,25);
+  assert.equal((await adminCall(e,'/api/admin/quiz-status?after=bad',{headers:{Cookie:cookie}})).status,400);
+  assert.equal((await adminCall(e,'/api/admin/quiz-status',{method:'POST',headers:{Cookie:cookie}})).status,404);
+});
 
 test('administrator host accepts only teacher credentials; cookies cannot cross hosts',async()=>{
   const {e}=environment();
@@ -160,7 +188,7 @@ const fixture={...example,key:'11111111-1111-4111-8111-111111111111',revision:1,
 const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1));};
 function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
-  return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{students:[fixture]}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
+  return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
 };dom.window.eval(script);return dom;}
 test('administrator list links to editable accounts and has a separate registration form',async()=>{
   const dom=browser();await flush();const w=dom.window,d=w.document;
@@ -168,6 +196,24 @@ test('administrator list links to editable accounts and has a separate registrat
   d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('lastName').value,'Testperson');assert.equal(d.getElementById('studentId').readOnly,true);
   w.location.hash='#register';await flush();assert.equal(d.getElementById('edit-title').textContent,'Register new student');assert.equal(d.getElementById('lastName').value,'');assert.equal(d.getElementById('studentId').readOnly,false);
   assert.equal(d.querySelectorAll('input[type="password"]').length,3);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
+});
+test('student list shows latest quiz states, updates after Refresh, and treats lookup failures separately',async()=>{
+  let state={state:'in_progress',answered:1,total:2},fail=false;
+  const dom=browser(path=>path==='/api/admin/quiz-status'?(fail?Response.json({error:'Unavailable'},{status:503}):Response.json({statuses:{[fixture.key]:state},nextCursor:null})):null);
+  await flush();const d=dom.window.document;
+  assert.match(d.querySelector('.latest-quiz').textContent,/In progress.*1 of 2 questions answered/);
+  state={state:'completed',completedAt:'2026-10-14T14:00:00.000Z'};d.getElementById('refresh').click();await flush();
+  assert.match(d.querySelector('.latest-quiz').textContent,/Done.*Finished Oct 14, 2026, 10:00 AM Eastern/);
+  for(const [status,label] of [['not_started','Not started'],['no_quiz','No quiz yet']]){state={state:status};d.getElementById('refresh').click();await flush();assert.match(d.querySelector('.latest-quiz').textContent,new RegExp(label));}
+  fail=true;d.getElementById('refresh').click();await flush();assert.match(d.querySelector('.latest-quiz').textContent,/Unable to check/);assert.match(d.getElementById('student-rows').textContent,/Morgan Testperson/);
+  dom.window.close();
+});
+test('quiz status follows subsequent pages and a response after sign-out cannot restore the list',async()=>{
+  let pending;
+  const dom=browser(path=>path==='/api/admin/quiz-status'?Response.json({statuses:{},nextCursor:fixture.key}):path.startsWith('/api/admin/quiz-status?')?new Promise(r=>{pending=r;}):null);
+  await flush();const d=dom.window.document;assert.match(d.querySelector('.latest-quiz').textContent,/Checking/);
+  d.getElementById('sign-out').click();await flush();pending(Response.json({statuses:{[fixture.key]:{state:'completed',completedAt:'2026-10-14T14:00:00Z'}},nextCursor:null}));await flush();
+  assert.equal(d.getElementById('student-rows').textContent,'');assert.equal(d.getElementById('admin-view').hidden,true);dom.window.close();
 });
 test('sign-out clears form fields and directory; delayed responses cannot restore private data',async()=>{
   let pending;const dom=browser(path=>path==='/api/admin/automation'?new Promise(r=>{pending=r;}):null);await flush();const d=dom.window.document;

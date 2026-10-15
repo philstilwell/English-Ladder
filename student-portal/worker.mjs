@@ -162,6 +162,28 @@ async function handleAdmin(request, env) {
     const session = await readSession(request, env, account);
     if (!session || session.role !== 'teacher') return json({ error: 'Please sign in with your teacher password.' }, 401);
     if (url.pathname === '/api/session' && request.method === 'GET') return json({ role: 'teacher', administrator: true });
+    if (url.pathname === '/api/admin/quiz-status' && request.method === 'GET') {
+      const after = url.searchParams.get('after');
+      if (after && !/^[0-9a-f-]{36}$/.test(after)) return json({ error: 'Invalid page.' }, 400);
+      const directory = await directoryRequest(env, '/students');
+      if (!directory.ok) return json({ error: 'Quiz status is temporarily unavailable.' }, 503);
+      const records = (await directory.json()).students.sort((a, b) => a.key.localeCompare(b.key)).filter(s => !after || s.key > after);
+      // Bound each request's fan-out, including on Workers' free plan. Keep the
+      // student list usable if one account's private history is unavailable.
+      const page = records.slice(0, 20), statuses = {};
+      for (let offset = 0; offset < page.length; offset += 4) {
+        await Promise.all(page.slice(offset, offset + 4).map(async student => {
+          if (!student.activated || !student.studentId) { statuses[student.key] = { state: 'no_quiz' }; return; }
+          try {
+            if (!env.FEEDBACK_STORE) throw new Error('Store unavailable');
+            const response = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/quiz-status'));
+            if (!response.ok) throw new Error('Status unavailable');
+            statuses[student.key] = await response.json();
+          } catch { statuses[student.key] = { state: 'unavailable' }; }
+        }));
+      }
+      return json({ statuses, nextCursor: records.length > 20 ? page.at(-1).key : null });
+    }
     if (url.pathname === '/api/admin/automation' && request.method === 'GET') {
       if (!env.QUIZ_AUTOMATION) return json({ enabled: false, connected: false });
       return env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/admin-status'));

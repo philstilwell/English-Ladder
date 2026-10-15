@@ -324,6 +324,7 @@
   }
   function studyPrompt(item) {
     const box = node('details', '', 'study-prompt');
+    box.setAttribute('name', 'assessment-ai-prompts');
     const toggle = node('summary', 'AI prompt');
     toggle.setAttribute('aria-label', 'AI prompt: ' + item.title);
     const prompt = item.aiPrompt || 'Help me study this English topic: “' + item.title + '”. Use short, simple English. First, explain the topic and give three easy examples. Then give me five practice questions, one at a time. Wait for my answer. Explain any mistake and let me try again.';

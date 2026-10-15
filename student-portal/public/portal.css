@@ -169,6 +169,11 @@ summary { cursor:pointer; }
 .assessment-outline a[aria-current] { background:#edf2ff; color:var(--blue); }
 .assessment-outline a[aria-current] span { color:var(--blue); }
 .assessment-page h2,.assessment-page h3 { scroll-margin-top:24px; }
+.assessment-page>section>h3,.assessment-page .focus-heading,.assessment-page .assessment-plan-card>h4 { background:var(--ink); color:#fff; padding:14px 18px; border-radius:4px; }
+.assessment-page>section>h3 { margin-bottom:20px; }
+.assessment-page .focus-heading h4 { color:inherit; margin:0; }
+.assessment-page .focus-number { color:inherit; }
+.assessment-page .assessment-plan-card>h4 { margin:-22px -22px 18px; border-radius:5px 5px 0 0; }
 .assessment-priority { background:#edf2ff; border-left:3px solid var(--blue); padding:18px 20px; margin-top:24px; }
 .assessment-priority>span { color:var(--blue); font-size:.6rem; letter-spacing:.1em; font-weight:750; }
 .assessment-priority p { font:1.12rem/1.6 Georgia,serif; margin:8px 0 0; color:#203e91; }
@@ -229,6 +234,7 @@ summary { cursor:pointer; }
   .assessment-outline { grid-template-columns:1fr 1fr; padding:8px 0 0; }
   .assessment-outline a { padding:12px 8px; gap:8px; font-size:.65rem; }
   .assessment-plan-card { padding:18px; }
+  .assessment-page .assessment-plan-card>h4 { margin:-18px -18px 18px; }
 }
 
 .assessment-quiz-link { margin-top:22px; }

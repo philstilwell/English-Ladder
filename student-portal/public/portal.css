@@ -199,13 +199,6 @@ summary { cursor:pointer; }
 .study-prompt { margin-top:12px; border-top:1px solid var(--line); }
 .study-prompt>summary { min-height:44px; padding:10px 0; font-size:.85rem; font-weight:650; color:var(--blue); }
 .study-prompt .study-prompt-text { padding:10px 16px; border-radius:6px; background:#f3f6ff; white-space:pre-wrap; overflow-wrap:anywhere; user-select:text; }
-.study-prompt-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px 18px; }
-.study-prompt-actions .secondary-button { display:inline-flex; align-items:center; justify-content:center; background:#fff; text-align:center; }
-.study-prompt-actions .secondary-button:hover { background:#eef2ff; border-color:var(--blue); }
-.study-ai-sites { display:flex; gap:6px; }
-.ai-site-link { display:grid; place-items:center; width:44px; height:44px; border-radius:6px; }
-.ai-site-link:hover { background:#eef2ff; }
-.ai-site-link img { display:block; width:32px; height:32px; object-fit:contain; }
 .study-prompt .study-prompt-hint { margin:12px 0; font-size:.75rem; color:var(--muted); }
 .study-prompt .study-prompt-status { margin:10px 0 0; font-size:.75rem; color:var(--muted); }
 .study-prompt-status:empty { display:none; }

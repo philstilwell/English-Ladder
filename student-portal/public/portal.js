@@ -441,47 +441,10 @@
     const toggle = node('summary', 'AI prompt');
     toggle.setAttribute('aria-label', 'AI prompt: ' + item.title);
     const prompt = item.aiPrompt || 'Help me study this English topic: “' + item.title + '”. Use short, simple English. First, explain the topic and give three easy examples. Then give me five practice questions, one at a time. Wait for my answer. Explain any mistake and let me try again.';
-    const button = node('button', 'Copy AI prompt', 'secondary-button'); button.type = 'button';
-    button.setAttribute('aria-label', 'Copy AI prompt: ' + item.title);
-    const actions = node('div', '', 'study-prompt-actions');
-    const sites = node('div', '', 'study-ai-sites');
-    sites.setAttribute('role', 'group');
-    sites.setAttribute('aria-label', 'Choose an AI site');
-    for (const [name, href, logo] of [
-      ['ChatGPT', 'https://chatgpt.com/', '/chatgpt-logo.svg'],
-      ['Gemini', 'https://gemini.google.com/app', '/gemini-logo.png'],
-      ['Claude', 'https://claude.ai/', '/claude-logo.png'],
-      ['Microsoft Copilot', 'https://copilot.microsoft.com/', '/copilot-logo.svg'],
-    ]) {
-      const link = node('a', '', 'ai-site-link');
-      link.href = href;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.referrerPolicy = 'no-referrer';
-      link.title = name + ' (new tab)';
-      link.setAttribute('aria-label', 'Open ' + name + ' (new tab)');
-      const image = node('img');
-      image.src = logo; image.alt = ''; image.width = 32; image.height = 32;
-      link.append(image); sites.append(link);
-    }
-    actions.append(button, sites);
-    const status = node('p', '', 'study-prompt-status'); status.setAttribute('role', 'status');
+    const ai = window.PracticePrompt.create({ prompt, label: ': ' + item.title });
+    ai.controls.classList.add('study-prompt-actions'); ai.status.classList.add('study-prompt-status');
     box.append(toggle, node('p', prompt, 'study-prompt-text'),
-      node('p', 'Copy the prompt. Choose an AI site below, then paste it into the chat.', 'study-prompt-hint'), actions, status);
-    async function copyPrompt(message) {
-      const identity = identityRevision;
-      try {
-        await navigator.clipboard.writeText(prompt);
-        if (authenticated && identity === identityRevision && box.isConnected) status.textContent = message;
-      } catch {
-        if (authenticated && identity === identityRevision && box.isConnected) status.textContent = 'Select the prompt above and copy it.';
-      }
-    }
-    button.addEventListener('click', async () => {
-      button.disabled = true;
-      try { await copyPrompt('Copied. Paste it into an AI chat.'); }
-      finally { button.disabled = false; }
-    });
+      node('p', 'Copy the prompt. Choose an AI chat, then paste it there.', 'study-prompt-hint'), ai.controls, ai.status);
     return box;
   }
   function renderAssessment(record) {

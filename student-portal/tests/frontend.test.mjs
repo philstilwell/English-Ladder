@@ -505,11 +505,17 @@ test('self-study prompts copy exactly, stay plain text, and offer a manual-copy 
  d.querySelector('.study-prompt summary').click();
  const button=d.querySelector('.study-prompt button');
  button.click();await flush();
- assert.equal(copied,aiPrompt);assert.match(d.querySelector('.study-prompt-status').textContent,/Copied/);
+ assert.equal(copied,aiPrompt);assert.equal(button.textContent,'AI prompt copied');
+ assert.match(d.querySelector('.study-prompt-status').textContent,/Choose an AI chat/);
  assert.equal(d.querySelector('.study-prompt-text img'),null);
  dom.window.navigator.clipboard.writeText=async()=>{throw Error('Denied');};
+ copied=null;d.execCommand=()=>{copied=d.querySelector('.practice-copy-buffer').value;return true;};
  button.click();await flush();
- assert.match(d.querySelector('.study-prompt-status').textContent,/Select the prompt above/);
+ assert.equal(copied,aiPrompt);assert.equal(button.textContent,'AI prompt copied');assert.equal(d.querySelector('.practice-copy-buffer'),null);
+ d.execCommand=()=>false;button.click();await flush();
+ assert.equal(button.textContent,'Copy AI prompt');
+ assert.match(d.querySelector('.study-prompt-status').textContent,/could not be copied/);
+ assert.equal(d.querySelector('.study-prompt-text').textContent,aiPrompt);
  let finish;dom.window.navigator.clipboard.writeText=()=>new Promise(resolve=>{finish=resolve;});
  button.click();d.getElementById('logout').click();await flush();finish();await flush();
  assert.equal(d.getElementById('assessment-content').textContent,'');
@@ -534,6 +540,7 @@ test('AI study logos open four sites without sending prompts or changing the cli
    assert.equal(link.referrerPolicy,'no-referrer');assert.match(link.getAttribute('aria-label'),/new tab/);
    assert.ok(link.title);assert.equal(link.textContent,'');
    const image=link.querySelector('img');assert.ok(image);assert.equal(image.alt,'');
+   assert.equal(image.width,14);assert.equal(image.height,14);
    assert.equal(new URL(image.src).origin,new URL(origin).origin);
    link.addEventListener('click',event=>event.preventDefault());
    link.click();

@@ -33,6 +33,9 @@ test('public shell and context never return a personal name or password', async 
   assert.match(home.headers.get('X-Robots-Tag'), /noindex/);
   assert.deepEqual(await (await worker.fetch(request('/api/context'), env)).json(), { id: 'ab26' });
   assert.equal((await worker.fetch(request('/api/session'), env)).status, 401);
+  for (const path of ['/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg']) {
+    assert.equal((await worker.fetch(request(path), env)).status, 200);
+  }
 });
 
 test('student password accepts uppercase and mixed case; session is signed and private', async () => {

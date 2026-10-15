@@ -328,20 +328,30 @@
     const button = node('button', 'Copy AI prompt', 'secondary-button'); button.type = 'button';
     button.setAttribute('aria-label', 'Copy AI prompt: ' + item.title);
     const actions = node('div', '', 'study-prompt-actions');
-    const chatGPT = node('a', 'Open ChatGPT', 'secondary-button');
-    chatGPT.href = 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
-    const gemini = node('a', 'Copy & open Gemini', 'secondary-button');
-    gemini.href = 'https://gemini.google.com/app';
-    for (const link of [chatGPT, gemini]) {
+    const sites = node('div', '', 'study-ai-sites');
+    sites.setAttribute('role', 'group');
+    sites.setAttribute('aria-label', 'Choose an AI site');
+    for (const [name, href, logo] of [
+      ['ChatGPT', 'https://chatgpt.com/', '/chatgpt-logo.svg'],
+      ['Gemini', 'https://gemini.google.com/app', '/gemini-logo.png'],
+      ['Claude', 'https://claude.ai/', '/claude-logo.png'],
+      ['Microsoft Copilot', 'https://copilot.microsoft.com/', '/copilot-logo.svg'],
+    ]) {
+      const link = node('a', '', 'ai-site-link');
+      link.href = href;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.referrerPolicy = 'no-referrer';
-      link.setAttribute('aria-label', link.textContent + ': ' + item.title + ' (new tab)');
+      link.title = name + ' (new tab)';
+      link.setAttribute('aria-label', 'Open ' + name + ' (new tab)');
+      const image = node('img');
+      image.src = logo; image.alt = ''; image.width = 32; image.height = 32;
+      link.append(image); sites.append(link);
     }
-    actions.append(button, chatGPT, gemini);
+    actions.append(button, sites);
     const status = node('p', '', 'study-prompt-status'); status.setAttribute('role', 'status');
-    box.append(node('h5', 'Study with AI'), node('p', prompt, 'study-prompt-text'), actions,
-      node('p', 'ChatGPT fills in the prompt. For Gemini, paste the copied prompt. Both open in a new tab.', 'study-prompt-hint'), status);
+    box.append(node('h5', 'Study with AI'), node('p', prompt, 'study-prompt-text'),
+      node('p', 'Copy the prompt. Choose an AI site below, then paste it into the chat.', 'study-prompt-hint'), actions, status);
     async function copyPrompt(message) {
       const identity = identityRevision;
       try {
@@ -356,8 +366,6 @@
       try { await copyPrompt('Copied. Paste it into an AI chat.'); }
       finally { button.disabled = false; }
     });
-    // Start copying during the click; normal link navigation avoids popup blockers.
-    gemini.addEventListener('click', () => copyPrompt('Copied. Paste the prompt in Gemini.'));
     return box;
   }
   function renderAssessment(record) {
@@ -399,7 +407,7 @@
     });
     fragment.append(patterns);
     const plan = assessmentSection('Study on your own', 'next', 'assessment-plan');
-    plan.append(node('p', 'Choose a topic to study. Use a button below its prompt to open an AI chat.', 'section-intro'));
+    plan.append(node('p', 'Choose a topic to study. Use its prompt to learn and practice with AI.', 'section-intro'));
     for (const item of record.plan) {
       const card = node('section', '', 'assessment-plan-card');
       card.append(node('h4', item.title), node('p', item.activity));

@@ -169,10 +169,11 @@ summary { cursor:pointer; }
 .assessment-outline a[aria-current] { background:#edf2ff; color:var(--blue); }
 .assessment-outline a[aria-current] span { color:var(--blue); }
 .assessment-page h2,.assessment-page h3 { scroll-margin-top:24px; }
-.assessment-page>section>h3,.assessment-page .focus-heading,.assessment-page .assessment-plan-card>h4 { background:var(--ink); color:#fff; padding:14px 18px; border-radius:4px; }
-.assessment-page>section>h3 { margin-bottom:20px; }
-.assessment-page .focus-heading h4 { color:inherit; margin:0; }
-.assessment-page .focus-number { color:inherit; }
+.feedback-page>section>h3,.feedback-page .focus-heading,.assessment-page .assessment-plan-card>h4 { background:var(--ink); color:#fff; padding:14px 18px; border-radius:4px; }
+.feedback-page>section>h3 { margin-bottom:20px; }
+.feedback-page .focus-heading,.assessment-page .assessment-plan-card>h4 { background:#555; }
+.feedback-page .focus-heading h4 { color:inherit; margin:0; }
+.feedback-page .focus-number { color:inherit; }
 .assessment-page .assessment-plan-card>h4 { margin:-22px -22px 18px; border-radius:5px 5px 0 0; }
 .assessment-priority { background:#edf2ff; border-left:3px solid var(--blue); padding:18px 20px; margin-top:24px; }
 .assessment-priority>span { color:var(--blue); font-size:.6rem; letter-spacing:.1em; font-weight:750; }

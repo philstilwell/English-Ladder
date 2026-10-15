@@ -65,7 +65,7 @@
         const start = page * PAGE_SIZE, end = Math.min(start + PAGE_SIZE, items.length);
         const range = index => `${index * PAGE_SIZE + 1}–${Math.min((index + 1) * PAGE_SIZE, items.length)}`;
         const intro = element('p', `${items.length} items. Later questions are harder. Choose any group.`, 'field-hint');
-        const help = element('p', teacher ? 'Teacher view: you can see saved choices. Only the student can change them.' : 'Choose “Finished” when you are done. Choose “Questions” to ask your teacher about an item. Click a button again to undo it. These choices are saved.', 'field-hint');
+        const help = element('p', teacher ? 'Teacher view: you can see saved choices. Only the student can change them.' : 'Choose “Finish” when you are done. Choose “Questions” to ask your teacher about an item. Click a button again to undo it. These choices are saved.', 'field-hint');
         const questions = element('details', '', 'grammar-questions'); questions.open = listOpen;
         questions.addEventListener('toggle', () => { listOpen = questions.open; });
         const summary = element('summary'), questionList = element('div'); questions.append(summary, questionList);
@@ -74,7 +74,7 @@
           summary.textContent = 'Questions list (' + selected.length + ')'; questionList.replaceChildren();
           if (!selected.length) { questionList.append(element('p', 'No questions yet. Use “Questions” on an item to add it here.', 'field-hint')); return; }
           listPage = Math.min(listPage, Math.floor((selected.length - 1) / 20));
-          questionList.append(element('p', 'Open an item to talk about it with your teacher. After you talk, click “Questions” again to remove it.', 'field-hint'));
+          questionList.append(element('p', 'Open an item to talk about it with your teacher. After you talk, click “Saved to Questions” to remove it.', 'field-hint'));
           const links = element('ul', '', 'grammar-question-links');
           for (const item of selected.slice(listPage * 20, (listPage + 1) * 20)) {
             const row = element('li'), button = element('button', `Item ${item.number} · “${item.prompt}”` + (progress.get(item.number)?.finished ? ' · Finished' : ''), 'secondary-button');
@@ -107,6 +107,10 @@
           for (const [number, {row, finished, question, status}] of rows) {
             const entry = progress.get(number);
             row.classList.toggle('is-finished', Boolean(entry?.finished));
+            finished.textContent = entry?.finished ? 'Finished' : 'Finish';
+            question.textContent = entry?.question ? 'Saved to Questions' : 'Questions';
+            finished.setAttribute('aria-label', finished.textContent + ' for item ' + number);
+            question.setAttribute('aria-label', question.textContent + ' for item ' + number);
             finished.setAttribute('aria-pressed', String(Boolean(entry?.finished))); question.setAttribute('aria-pressed', String(Boolean(entry?.question)));
             finished.disabled = question.disabled = teacher || saving;
             status.textContent = [entry?.finished ? 'Marked as finished.' : '', entry?.question ? 'In your Questions list.' : ''].filter(Boolean).join(' ');
@@ -148,9 +152,8 @@
         }
         for (const item of items.slice(start, end)) {
           const row = exercise(item), actions = element('div', '', 'grammar-actions');
-          const finished = element('button', 'Finished', 'secondary-button'), question = element('button', 'Questions', 'secondary-button');
+          const finished = element('button', 'Finish', 'secondary-button'), question = element('button', 'Questions', 'secondary-button question-button');
           finished.type = question.type = 'button';
-          finished.setAttribute('aria-label', 'Finished for item ' + item.number); question.setAttribute('aria-label', 'Questions for item ' + item.number);
           const status = element('p', '', 'grammar-save-status field-hint'); status.setAttribute('role', 'status');
           finished.addEventListener('click', () => save(item.number, 'finished')); question.addEventListener('click', () => save(item.number, 'question'));
           actions.append(finished, question); row.append(actions, status); list.append(row);

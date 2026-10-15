@@ -81,10 +81,10 @@
         });
         const { card, title } = exercise(item);
         const actions = node('div', '', 'terms-actions');
-        const finished = node('button', 'Finished', 'secondary-button'); finished.type = 'button';
-        const question = node('button', 'Questions', 'secondary-button'); question.type = 'button';
+        const finished = node('button', 'Finish', 'secondary-button'); finished.type = 'button';
+        const question = node('button', 'Questions', 'secondary-button question-button'); question.type = 'button';
         const saved = node('p', '', 'field-hint'); saved.setAttribute('role', 'status'); saved.id = 'terms-save-status';
-        const help = node('p', teacher ? 'Teacher view: you can see saved choices. Only the student can change them.' : 'Choose “Finished” when you are done. Choose “Questions” to ask your teacher about this item. Click a button again to undo it. These choices are saved.', 'field-hint');
+        const help = node('p', teacher ? 'Teacher view: you can see saved choices. Only the student can change them.' : 'Choose “Finish” when you are done. Choose “Questions” to ask your teacher about this item. Click a button again to undo it. These choices are saved.', 'field-hint');
         const questions = node('details', '', 'terms-questions'); questions.open = listOpen;
         questions.addEventListener('toggle', () => { listOpen = questions.open; });
         const summary = node('summary'), list = node('div'); questions.append(summary, list);
@@ -93,7 +93,7 @@
           summary.textContent = 'Questions list (' + selected.length + ')'; list.replaceChildren();
           if (!selected.length) { list.append(node('p', 'No questions yet. Use “Questions” on an item to add it here.', 'field-hint')); return; }
           listPage = Math.min(listPage, Math.floor((selected.length - 1) / 20));
-          list.append(node('p', 'Open an item to talk about it with your teacher. After you talk, click “Questions” again to remove it.', 'field-hint'));
+          list.append(node('p', 'Open an item to talk about it with your teacher. After you talk, click “Saved to Questions” to remove it.', 'field-hint'));
           const entries = node('ul', '', 'terms-question-links');
           for (const entry of selected.slice(listPage * 20, (listPage + 1) * 20)) {
             const row = node('li'), link = node('button', `Item ${entry.number} · “${entry.term}”` + (progress.get(entry.number)?.finished ? ' · Finished' : ''), 'secondary-button');
@@ -113,6 +113,8 @@
         function updateStatus() {
           const entry = progress.get(item.number);
           card.classList.toggle('is-finished', Boolean(entry?.finished));
+          finished.textContent = entry?.finished ? 'Finished' : 'Finish';
+          question.textContent = entry?.question ? 'Saved to Questions' : 'Questions';
           finished.setAttribute('aria-pressed', String(Boolean(entry?.finished)));
           question.setAttribute('aria-pressed', String(Boolean(entry?.question)));
           finished.disabled = question.disabled = teacher || saving;

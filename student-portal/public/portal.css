@@ -348,8 +348,13 @@ summary { cursor:pointer; }
 .terms-item { padding:16px; border:1px solid var(--line); border-radius:6px; margin:12px 0; }
 .terms-item .terms-heading { margin-top:0; }
 .terms-item.is-finished { background:#eeeeef; border-color:#b8b8bf; }
-.terms-actions,.grammar-actions { display:flex; flex-wrap:wrap; gap:12px; margin:12px 0; }
+.terms-actions,.grammar-actions { display:flex; flex-wrap:wrap; gap:8.4px; margin:12px 0; }
+.terms-actions .secondary-button,.grammar-actions .secondary-button { min-height:30.8px; padding:7px 12.6px; border-radius:4.2px; font-size:.595rem; }
 .terms-actions [aria-pressed="true"],.grammar-actions [aria-pressed="true"] { background:var(--blue); color:#fff; border-color:var(--blue); }
+.terms-actions .question-button,.grammar-actions .question-button { background:#fff3c4; color:#563c00; border-color:#bd8b00; }
+.terms-actions .question-button:hover,.grammar-actions .question-button:hover { background:#ffe69a; }
+.terms-actions .question-button[aria-pressed="true"],.grammar-actions .question-button[aria-pressed="true"] { background:#f4c542; color:#332600; border-color:#a27600; }
+.terms-actions .question-button[aria-pressed="true"]:hover,.grammar-actions .question-button[aria-pressed="true"]:hover { background:#e9b52c; }
 .terms-questions,.grammar-questions { border:1px solid var(--line); border-radius:6px; padding:12px; margin:16px 0; }
 .terms-questions summary,.grammar-questions summary { cursor:pointer; min-height:32px; font-weight:650; overflow-wrap:anywhere; }
 .terms-question-links,.grammar-question-links { list-style:none; padding:0; display:grid; gap:8px; }

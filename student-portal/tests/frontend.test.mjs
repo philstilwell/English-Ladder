@@ -715,15 +715,15 @@ test('Business terms saves Finished and Questions, restores them on return, and 
   const button=name=>[...root.querySelectorAll('button')].find(b=>b.textContent===name);
   assert.match(root.textContent,/Later questions are harder/);
   w.Storage.prototype.setItem=()=>{throw Error('Do not save private choices in browser storage');};
-  button('Finished').click();await flush();assert(root.querySelector('.terms-item').classList.contains('is-finished'));assert.equal(button('Finished').getAttribute('aria-pressed'),'true');
+  button('Finish').click();await flush();assert(root.querySelector('.terms-item').classList.contains('is-finished'));assert.equal(button('Finished').getAttribute('aria-pressed'),'true');
   button('Questions').click();await flush();assert.equal(root.querySelector('.terms-questions summary').textContent,'Questions list (1)');
   root.querySelector('[type=checkbox]').click();assert.equal(root.querySelectorAll('.terms-answer').length,6);
-  button('Next').click();assert.equal(button('Finished').getAttribute('aria-pressed'),'false');
+  button('Next').click();assert.equal(button('Finish').getAttribute('aria-pressed'),'false');
   root.querySelector('.terms-question-links button').click();assert.match(root.querySelector('h4').textContent,/Item 1/);assert(root.querySelector('.terms-item').classList.contains('is-finished'));
   w.location.hash='overview';await flush();w.location.hash='activities/business-terms';await flush();
-  assert.equal(button('Questions').getAttribute('aria-pressed'),'true');assert.equal(button('Finished').getAttribute('aria-pressed'),'true');assert.equal(root.querySelector('[type=checkbox]').checked,false);
-  button('Finished').click();await flush();assert(!root.querySelector('.terms-item').classList.contains('is-finished'));assert.equal(button('Questions').getAttribute('aria-pressed'),'true');
-  button('Questions').click();await flush();assert.equal(root.querySelector('.terms-questions summary').textContent,'Questions list (0)');
+  assert.equal(button('Saved to Questions').getAttribute('aria-pressed'),'true');assert.equal(button('Finished').getAttribute('aria-pressed'),'true');assert.equal(root.querySelector('[type=checkbox]').checked,false);
+  button('Finished').click();await flush();assert(!root.querySelector('.terms-item').classList.contains('is-finished'));assert.equal(button('Saved to Questions').getAttribute('aria-pressed'),'true');
+  button('Saved to Questions').click();await flush();assert.equal(root.querySelector('.terms-questions summary').textContent,'Questions list (0)');
   w.document.getElementById('logout').click();await flush();assert.equal(root.textContent,'');w.close();
 });
 
@@ -731,7 +731,7 @@ test('Business terms never pretend a failed save succeeded, recover conflicts, a
   let fail=true,reads=0;
   const entry={number:1,finished:true,question:false,revision:1,updatedAt:'2026-10-15T12:00:00Z'};
   const dom=setup((path,options)=>path==='/api/business-terms/state'?(options?.method?new Response(JSON.stringify({error:'This item changed. Try again.'}),{status:fail?503:409}):reply({entries:reads++?[entry]:[]})):termsMock(path),termsRoute);
-  await flush();const root=dom.window.document.getElementById('business-terms'),finished=[...root.querySelectorAll('button')].find(b=>b.textContent==='Finished');
+  await flush();const root=dom.window.document.getElementById('business-terms'),finished=[...root.querySelectorAll('button')].find(b=>b.textContent==='Finish');
   finished.click();await flush();assert.equal(finished.getAttribute('aria-pressed'),'false');assert.match(root.querySelector('#terms-save-status').textContent,/could not be saved/);assert(!finished.disabled);
   fail=false;finished.click();await flush();assert.equal(finished.getAttribute('aria-pressed'),'true');assert.match(root.querySelector('#terms-save-status').textContent,/changed/);dom.window.close();
   let writes=0;const teacher=setup((path,options)=>path==='/api/business-terms/state'?(options?.method?(writes++,reply({})):reply({entries:[{...entry,question:true}]})):termsMock(path),termsRoute,'teacher');
@@ -759,16 +759,16 @@ test('Grammar saves and independently undoes choices, restores them on return, a
   const button=(number,name)=>[...d.getElementById('grammar-item-'+number).querySelectorAll('button')].find(b=>b.textContent===name);
   const group=page=>{const picker=d.getElementById('grammar-group');picker.value=String(page);picker.dispatchEvent(new w.Event('change'));};
   w.Storage.prototype.setItem=()=>{throw Error('Choices must not enter browser storage');};
-  button(1,'Finished').click();await flush();assert(d.getElementById('grammar-item-1').classList.contains('is-finished'));assert(!d.getElementById('grammar-item-2').classList.contains('is-finished'));
-  group(1);button(12,'Questions').click();await flush();button(12,'Finished').click();await flush();
+  button(1,'Finish').click();await flush();assert(d.getElementById('grammar-item-1').classList.contains('is-finished'));assert(!d.getElementById('grammar-item-2').classList.contains('is-finished'));
+  group(1);button(12,'Questions').click();await flush();button(12,'Finish').click();await flush();
   group(0);root.querySelector('.grammar-question-links button').click();assert.equal(d.activeElement.id,'grammar-item-12');assert.equal(d.getElementById('grammar-group').value,'1');
-  assert.equal(button(12,'Questions').getAttribute('aria-pressed'),'true');assert.equal(button(12,'Finished').getAttribute('aria-pressed'),'true');
+  assert.equal(button(12,'Saved to Questions').getAttribute('aria-pressed'),'true');assert.equal(button(12,'Finished').getAttribute('aria-pressed'),'true');
   d.querySelector('#grammar-item-12 input').click();assert(d.querySelector('#grammar-item-12 .grammar-prompt').classList.contains('is-revealed'));
   w.location.hash='overview';await flush();w.location.hash='activities/grammar-practice';await flush();
   assert.equal(button(1,'Finished').getAttribute('aria-pressed'),'true');assert.equal(root.querySelectorAll('input:checked').length,0);assert.equal(d.getElementById('grammar-group').value,'0');
   root.querySelector('.grammar-question-links button').click();button(12,'Finished').click();await flush();
-  assert(!d.getElementById('grammar-item-12').classList.contains('is-finished'));assert.equal(button(12,'Questions').getAttribute('aria-pressed'),'true');
-  button(12,'Questions').click();await flush();assert.equal(root.querySelector('.grammar-questions summary').textContent,'Questions list (0)');
+  assert(!d.getElementById('grammar-item-12').classList.contains('is-finished'));assert.equal(button(12,'Saved to Questions').getAttribute('aria-pressed'),'true');
+  button(12,'Saved to Questions').click();await flush();assert.equal(root.querySelector('.grammar-questions summary').textContent,'Questions list (0)');
   assert.equal(w.localStorage.length,0);assert.equal(w.sessionStorage.length,0);w.close();
 });
 

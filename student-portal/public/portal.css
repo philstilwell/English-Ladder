@@ -196,10 +196,7 @@ summary { cursor:pointer; }
 .assessment-plan-card h4 { color:var(--blue); }
 .assessment-plan-card .assessment-target { margin:12px 0 0; padding-top:10px; border-top:1px solid var(--line); color:var(--muted); font-size:.78rem; }
 .assessment-target strong { color:var(--ink); }
-.study-prompt { margin-top:12px; border-top:1px solid var(--line); }
-.study-prompt>summary { min-height:44px; padding:10px 0; font-size:.85rem; font-weight:650; color:var(--blue); }
-.study-prompt .study-prompt-text { padding:10px 16px; border-radius:6px; background:#f3f6ff; white-space:pre-wrap; overflow-wrap:anywhere; user-select:text; }
-.study-prompt .study-prompt-hint { margin:12px 0; font-size:.75rem; color:var(--muted); }
+.study-prompt { margin-top:12px; }
 .study-prompt .study-prompt-status { margin:10px 0 0; font-size:.75rem; color:var(--muted); }
 .study-prompt-status:empty { display:none; }
 .assessment-source-links { display:flex; flex-wrap:wrap; gap:8px 16px; }

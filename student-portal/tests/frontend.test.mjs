@@ -224,7 +224,7 @@ test('assessment practice prompts include their own model sentences without stud
   }
   assert.ok(!copied[0].includes(data.patterns[1].practice)&&!copied[1].includes(data.patterns[0].practice));
   assert.equal(d.querySelectorAll('#assessment-content .focus-card .practice-ai-link').length,8);
-  assert.ok([...d.querySelectorAll('.study-prompt')].every(el=>!el.open));
+  assert.equal(d.querySelector('details.study-prompt, .study-prompt summary'),null);
   assert.ok([...d.querySelectorAll('#assessment-content .assessment-example .assessment-evidence')].every(a=>a.hash==='#feedback/'+feedback.id));
   assert.equal(writes.length,0);
   let finishCopy;w.navigator.clipboard.writeText=()=>new Promise(resolve=>{finishCopy=resolve;});
@@ -509,18 +509,20 @@ test('history stays teacher-only, handles load failure, and ignores a response a
  assert.equal(late.window.document.getElementById('quiz-history').textContent,'');assert.equal(late.window.document.getElementById('quiz-results-status').textContent,'');late.window.close();
 });
 
-test('self-study prompts copy exactly, stay plain text, and offer a manual-copy fallback',async()=>{
+test('self-study controls are directly available and copy the hidden prompt exactly with a clipboard fallback',async()=>{
  const aiPrompt='Teach me “access a file” and “have access to a file”. <img src=x> Explain them simply, then ask one question at a time.';
  const record={...assessment,plan:[{...assessment.plan[0],aiPrompt}]};
  const dom=setup(path=>path==='/api/assessment'?reply({assessment:record}):null,origin+'/#assessments/next');await flush();
  const d=dom.window.document;let copied;
  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
- d.querySelector('.study-prompt summary').click();
+ assert.equal(d.querySelector('details.study-prompt, .study-prompt summary'),null);
+ assert.equal(d.querySelector('.study-prompt').tagName,'DIV');
  const button=d.querySelector('.study-prompt button');
  button.click();await flush();
  assert.equal(copied,aiPrompt);assert.equal(button.textContent,'AI prompt copied');
  assert.match(d.querySelector('.study-prompt-status').textContent,/Choose an AI chat/);
- assert.equal(d.querySelector('.study-prompt-text img'),null);
+ assert.equal(d.querySelector('.study-prompt-text'),null);
+ assert.ok(!d.getElementById('assessment-content').textContent.includes(aiPrompt));
  dom.window.navigator.clipboard.writeText=async()=>{throw Error('Denied');};
  copied=null;d.execCommand=()=>{copied=d.querySelector('.practice-copy-buffer').value;return true;};
  button.click();await flush();
@@ -528,7 +530,7 @@ test('self-study prompts copy exactly, stay plain text, and offer a manual-copy 
  d.execCommand=()=>false;button.click();await flush();
  assert.equal(button.textContent,'Copy AI prompt');
  assert.match(d.querySelector('.study-prompt-status').textContent,/could not be copied/);
- assert.equal(d.querySelector('.study-prompt-text').textContent,aiPrompt);
+ assert.ok(!d.getElementById('assessment-content').textContent.includes(aiPrompt));
  let finish;dom.window.navigator.clipboard.writeText=()=>new Promise(resolve=>{finish=resolve;});
  button.click();d.getElementById('logout').click();await flush();finish();await flush();
  assert.equal(d.getElementById('assessment-content').textContent,'');
@@ -543,7 +545,7 @@ test('AI study logos open four sites without sending prompts or changing the cli
  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
  const boxes=[...d.querySelectorAll('.study-prompt')];
  for(const box of boxes){
-  box.querySelector('summary').click();
+  assert.equal(box.querySelector('summary, details, .study-prompt-text'),null);
   assert.equal(box.querySelectorAll('button').length,1);
   assert.equal(box.querySelector('button').textContent,'Copy AI prompt');
   const links=[...box.querySelectorAll('a')];assert.equal(links.length,4);
@@ -563,7 +565,7 @@ test('AI study logos open four sites without sending prompts or changing the cli
  assert.equal(copied,undefined);
  boxes[0].querySelector('button').click();await flush();assert.equal(copied,aiPrompt);
  boxes[1].querySelector('button').click();await flush();
- assert.equal(copied,boxes[1].querySelector('.study-prompt-text').textContent);
+ assert.ok(!boxes[1].textContent.includes(copied));
  assert.match(copied,/Second topic/);
  d.getElementById('logout').click();await flush();
  assert.equal(d.querySelectorAll('.study-prompt-actions').length,0);

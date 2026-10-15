@@ -437,15 +437,11 @@
     $('assessment-content').setAttribute('aria-busy', String(assessmentLoading));
   }
   function studyPrompt(item) {
-    const box = node('details', '', 'study-prompt');
-    box.setAttribute('name', 'assessment-ai-prompts');
-    const toggle = node('summary', 'AI prompt');
-    toggle.setAttribute('aria-label', 'AI prompt: ' + item.title);
+    const box = node('div', '', 'study-prompt');
     const prompt = item.aiPrompt || 'Help me study this English topic: “' + item.title + '”. Use short, simple English. First, explain the topic and give three easy examples. Then give me five practice questions, one at a time. Wait for my answer. Explain any mistake and let me try again.';
     const ai = window.PracticePrompt.create({ prompt, label: ': ' + item.title });
     ai.controls.classList.add('study-prompt-actions'); ai.status.classList.add('study-prompt-status');
-    box.append(toggle, node('p', prompt, 'study-prompt-text'),
-      node('p', 'Copy the prompt. Choose an AI chat, then paste it there.', 'study-prompt-hint'), ai.controls, ai.status);
+    box.append(ai.controls, ai.status);
     return box;
   }
   function renderAssessment(record) {
@@ -499,7 +495,7 @@
     });
     fragment.append(patterns);
     const plan = assessmentSection('Study on your own', 'next', 'assessment-plan');
-    plan.append(node('p', 'Your lessons showed which parts of your English need more practice. We chose these topics to help you improve. Choose a topic. Open its AI prompt to learn and practice.', 'section-intro'));
+    plan.append(node('p', 'Your lessons showed which parts of your English need more practice. We chose these topics to help you improve. Choose a topic. Copy its AI prompt and paste it into an AI chat.', 'section-intro'));
     for (const item of record.plan) {
       const card = node('section', '', 'assessment-plan-card');
       card.append(node('h4', item.title), node('p', item.activity));

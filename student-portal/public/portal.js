@@ -371,17 +371,19 @@
   function renderAssessment(record) {
     const fragment = document.createDocumentFragment(), header = node('header', '', 'feedback-header');
     header.append(node('p', 'OVERALL ASSESSMENT / ENGLISH ONLY', 'eyebrow'));
-    const title = node('h2', record.title); title.id = 'assessment-summary'; title.tabIndex = -1;
+    const title = node('h2', record.title); title.id = 'assessment-title';
     const dates = node('div', '', 'feedback-dates');
     dates.append(node('strong', 'Assessed ' + assessmentDate(record.assessedOn)), node('span', record.sourceSessions.length + ' sessions · ' + assessmentDate(record.sourceSessions[0].slice(0, 10)) + ' – ' + assessmentDate(record.sourceSessions.at(-1).slice(0, 10))));
-    header.append(title, dates, node('p', record.summary, 'session-reflection'));
+    header.append(title, dates);
+    const summary = assessmentSection('Your English now', 'summary', 'assessment-overview');
+    summary.append(node('p', record.summary, 'session-reflection'));
     const priority = node('div', '', 'assessment-priority');
-    priority.append(node('span', 'START HERE'), node('p', record.mainPriority)); header.append(priority);
+    priority.append(node('span', 'START HERE'), node('p', record.mainPriority)); summary.append(priority);
     if (record.quiz) {
       const quizLink = node('a', 'Try the ' + record.quiz.questions.length + '-question quiz →', 'secondary-button assessment-quiz-link');
-      quizLink.href = '#quiz'; header.append(quizLink);
+      quizLink.href = '#quiz'; summary.append(quizLink);
     }
-    fragment.append(header);
+    fragment.append(header, summary);
     const strengths = assessmentSection('What you do well', 'strengths', 'feedback-strengths');
     for (const item of record.strengths) {
       const card = node('div', '', 'strength');

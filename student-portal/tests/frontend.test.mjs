@@ -110,7 +110,8 @@ test('empty assessment and failed requests have distinct states and errors can b
  await flush();
  assert.equal(dom.window.document.getElementById('assessment-count').textContent,'Assessment unavailable');
  fail=false;dom.window.document.querySelector('#assessment-content button').click();await flush();
- assert.equal(dom.window.document.getElementById('assessment-summary').textContent,assessment.title);
+ assert.equal(dom.window.document.getElementById('assessment-title').textContent,assessment.title);
+ assert.equal(dom.window.document.getElementById('assessment-summary').textContent,'Your English now');
  dom.window.close();
 });
 test('assessment expiry clears records and assessment text cannot inject markup',async()=>{
@@ -120,9 +121,9 @@ test('assessment expiry clears records and assessment text cannot inject markup'
  expired.window.close();
  const title='<img src=x onerror=alert(1)>';
  const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,title}}):null);await flush();
- assert.equal(dom.window.document.querySelector('#assessment-summary img'),null);
+ assert.equal(dom.window.document.querySelector('#assessment-title img'),null);
  assert.equal(dom.window.document.querySelector('#assessment-content [onerror]'),null);
- assert.equal(dom.window.document.getElementById('assessment-summary').textContent,title);
+ assert.equal(dom.window.document.getElementById('assessment-title').textContent,title);
  dom.window.close();
 });
 
@@ -211,7 +212,7 @@ test('teacher preview shows plain source dates without links and keeps quiz topi
  d.querySelectorAll('.quiz-option')[1].click();d.querySelectorAll('.quiz-option')[0].click();
  d.querySelector('.quiz-next').click();d.querySelectorAll('.quiz-option')[1].click();d.querySelector('.quiz-next').click();
  assert.equal(d.querySelector('.quiz-complete li').textContent,'Use “can”');
- assert.equal(d.querySelector('#assessment-summary').textContent,assessment.title);
+ assert.equal(d.querySelector('#assessment-title').textContent,assessment.title);
  dom.window.close();
 });
 test('automatic quiz setup is teacher-only and late status responses clear on sign-out',async()=>{

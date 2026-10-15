@@ -3,7 +3,7 @@
 export const ACTIVITY_TOOLS = Object.freeze([
   { id: 'english-road', name: 'English Road Practice', description: 'Practice grammar and words. Choose a topic and a practice band. Your answers are saved in your account.' },
   { id: 'grammar-practice', name: 'Grammar practice', description: 'Read each item. Think of an answer. Check “Show answer” to see the full sentence in blue. Uncheck it to try again. Your practice is not saved.' },
-  { id: 'business-terms', name: 'Business terms', description: 'Use the six choices to complete the three sentences. Check “Show answers” to fill the blanks. The answers appear in blue. Your practice is not saved.' },
+  { id: 'business-terms', name: 'Business terms', description: 'Use the six choices to complete the three sentences. Check “Show answers” to fill the blanks. The answers appear in blue. Save finished items and questions to discuss with your teacher.' },
   { id: 'placeholder-1', name: 'Activity 1', description: 'A sample activity. The real activity will be added later.' },
   { id: 'placeholder-2', name: 'Activity 2', description: 'A sample activity. The real activity will be added later.' },
   { id: 'placeholder-3', name: 'Activity 3', description: 'A sample activity. The real activity will be added later.' },

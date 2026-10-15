@@ -187,6 +187,16 @@ async function handleAdmin(request, env) {
       }
       return json({ statuses, nextCursor: records.length > 20 ? page.at(-1).key : null });
     }
+    const termsAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/business-terms$/.exec(url.pathname);
+    if (termsAccount && request.method === 'GET') {
+      if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
+      const response = await directoryRequest(env, '/students');
+      if (!response.ok) return json({ error: 'Student records are temporarily unavailable.' }, 503);
+      const student = (await response.json()).students.find(s => s.key === termsAccount[1]);
+      if (!student || student.deletionPending || !student.activated || !student.studentId) return json({ error: 'Student not found.' }, 404);
+      if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable.' }, 503);
+      return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/terms/questions'));
+    }
     const roadAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/road(?:\/([0-9a-f-]{36}))?$/.exec(url.pathname);
     if (roadAccount && request.method === 'GET') {
       if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
@@ -232,7 +242,7 @@ async function handleAdmin(request, env) {
     return directoryRequest(env, path, body, request.method);
   }
   if (!['GET', 'HEAD'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
-  const assets = new Set(['/', '/admin.html', '/admin.js', '/admin.css', '/portal.css', '/ladder-mark.png', '/favicon.png', '/robots.txt']);
+  const assets = new Set(['/', '/admin.html', '/admin.js', '/admin.css', '/portal.css', '/business-terms.js', '/ladder-mark.png', '/favicon.png', '/robots.txt']);
   if (!assets.has(url.pathname)) return json({ error: 'Page not found.' }, 404);
   if (url.pathname === '/robots.txt') return new Response('User-agent: *\nDisallow: /\n');
   if (url.pathname === '/') url.pathname = '/admin.html';
@@ -340,6 +350,25 @@ async function handle(request, env) {
     if (request.method !== 'GET') return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET' });
     // Shared exercise content only. No learner answers, attempts, or progress writes.
     return json({ items: url.pathname === '/api/business-terms' ? businessTermsBank.items : grammarBank.items });
+  }
+
+  if (url.pathname === '/api/business-terms/state') {
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    if (!['GET', 'PATCH'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET, PATCH' });
+    let body;
+    if (request.method === 'PATCH') {
+      if (session.role !== 'student') return json({ error: 'Only the student can change these choices. Teacher view is read-only.' }, 403);
+      if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload the page and try again.' }, 403);
+      const limit = await (env.PRACTICE_LIMITER || env.ACCOUNT_LIMITER).limit({ key: account.id });
+      if (!limit.success) return json({ error: 'Please wait a minute, then try saving again.' }, 429, { 'Retry-After': '60' });
+      body = await smallJson(request, 1024);
+      if (!body) return json({ error: 'Please check your choice.' }, 400);
+    } else if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Please open this from your student page.' }, 403);
+    if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable. Please try again.' }, 503);
+    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/terms/state', {
+      method: request.method, ...(body ? { body: JSON.stringify(body) } : {}),
+    }));
   }
 
   if (url.pathname.startsWith('/api/road/')) {

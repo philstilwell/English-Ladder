@@ -50,3 +50,47 @@ test('business terms visibility preserves all prior explicit activity choices', 
   assert.deepEqual(visibleActivities({visibleActivities:[]}),[]);
   assert.deepEqual(validateActivities(['business-terms']),['business-terms']);
 });
+
+const statePath='/api/business-terms/state';
+const change=(cookie,body,extra={})=>({method:'PATCH',headers:{Cookie:cookie,Origin:origin,'Content-Type':'application/json',...extra},body:JSON.stringify(body)});
+test('saved Business terms choices require student writes, exact origin, known items and isolated sessions', async()=>{
+  const e=env(),student=await login(e),teacher=await login(e,'teacher-test'),other=await login(e,'other-test','https://cd26.englishladder.com');
+  const input={number:1,field:'finished',value:true,revision:0};
+  assert.equal((await call(e,statePath)).status,401);
+  assert.equal((await call(e,statePath,change(teacher.cookie,input))).status,403);
+  assert.equal((await call(e,statePath,change(student.cookie,input,{Origin:'https://evil.test'}))).status,403);
+  assert.equal((await call(e,statePath,{headers:{Cookie:student.cookie}},'https://cd26.englishladder.com')).status,401);
+  assert.equal((await call(e,statePath,{headers:{Cookie:student.cookie,Origin:'https://evil.test'}})).status,403);
+  assert.equal((await call(e,statePath,{method:'DELETE',headers:{Cookie:student.cookie}})).status,405);
+  for(const body of [{...input,number:18},{...input,number:'1'},{...input,field:'answers'},{...input,value:'true'},{...input,revision:-1},{...input,studentId:'cd26'}]) {
+    assert.equal((await call(e,statePath,change(student.cookie,body))).status,400);
+  }
+  const saved=await call(e,statePath,change(student.cookie,input));assert.equal(saved.status,200);assert.equal(saved.headers.get('cache-control'),'no-store');
+  const entry=(await saved.json()).entry;assert.equal(entry.finished,true);assert.equal(entry.question,false);assert.equal(entry.revision,1);assert(!Number.isNaN(Date.parse(entry.updatedAt)));
+  assert.deepEqual((await(await call(e,statePath,{headers:{Cookie:teacher.cookie}})).json()).entries,[entry]);
+  assert.deepEqual((await(await call(e,statePath,{headers:{Cookie:other.cookie}},'https://cd26.englishladder.com')).json()).entries,[]);
+  e.PRACTICE_LIMITER={limit:async()=>({success:false})};assert.equal((await call(e,statePath,change(student.cookie,{...input,value:false,revision:1}))).status,429);
+});
+
+test('Business terms saves retry safely, reject conflicting updates, undo independently, and delete with the account', async()=>{
+  const e=env(),student=await login(e),store=e.FEEDBACK_STORE.get('ab26');
+  const input={number:1,field:'finished',value:true,revision:0};
+  const saved=(await(await call(e,statePath,change(student.cookie,input))).json()).entry;
+  assert.deepEqual((await(await call(e,statePath,change(student.cookie,input))).json()).entry,saved);
+  assert.equal((await call(e,statePath,change(student.cookie,{...input,field:'question'}))).status,409);
+  const outcomes=await Promise.all([false,true].map(value=>call(e,statePath,change(student.cookie,{...input,field:value?'question':'finished',value,revision:1}))));
+  assert.deepEqual(outcomes.map(r=>r.status).sort(),[200,409]);
+  let entry=(await(await call(e,statePath,{headers:{Cookie:student.cookie}})).json()).entries[0];
+  for(const field of ['finished','question']) {
+    entry=(await(await call(e,statePath,change(student.cookie,{number:1,field,value:true,revision:entry.revision}))).json()).entry;
+  }
+  let questions=(await(await store.fetch(new Request('https://feedback.internal/terms/questions'))).json()).questions;
+  assert.equal(questions.length,1);assert.deepEqual(questions[0].sentences,bank.items[0].sentences);assert.equal(questions[0].progress.finished,true);
+  entry=(await(await call(e,statePath,change(student.cookie,{number:1,field:'question',value:false,revision:entry.revision}))).json()).entry;
+  assert.equal(entry.finished,true);assert.equal(entry.question,false);
+  assert.deepEqual((await(await store.fetch(new Request('https://feedback.internal/terms/questions'))).json()).questions,[]);
+  await store.fetch(new Request('https://feedback.internal/admin/delete-account',{method:'POST'}));
+  assert.equal((await store.storage.list({prefix:'terms:'})).size,0);
+  assert.equal((await call(e,statePath,change(student.cookie,input))).status,410);
+  assert.equal((await call(e,statePath,{headers:{Cookie:student.cookie}})).status,410);
+});

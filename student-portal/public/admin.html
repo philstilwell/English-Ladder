@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive"><title>Phil’s students · English Ladder</title>
   <link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/portal.css"><link rel="stylesheet" href="/admin.css">
-  <script src="/admin.js" defer></script>
+  <script src="/business-terms.js" defer></script><script src="/admin.js" defer></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -56,6 +56,13 @@
         <p id="road-results-status" role="status"></p>
         <div id="road-results"></div>
         <button id="more-road-results" class="secondary-button" type="button" hidden>Earlier practice sets</button>
+      </section>
+      <section id="terms-questions-panel" class="cefr-panel" aria-labelledby="terms-questions-title" hidden>
+        <h2 id="terms-questions-title">Business terms · Questions list</h2>
+        <p class="field-note">Open an item to discuss it during a lesson. These are the student’s saved questions. Only the student can mark items finished or remove them from the list.</p>
+        <button id="load-terms-questions" class="secondary-button" type="button">Load questions list</button>
+        <p id="terms-questions-status" role="status"></p>
+        <div id="terms-questions-content"></div>
       </section>
       <form id="student-form">
         <fieldset><legend>Student &amp; site</legend><p class="field-note">Students see their first name and nickname. Their last name stays here.</p><div class="form-grid">
@@ -147,8 +154,9 @@
         <article class="technical-card"><h2>Business terms</h2><dl>
           <div><dt>Question source</dt><dd>Imported October 15, 2026 from the template spreadsheet’s New BTs tab. The activity uses 2,958 complete exercises, preserving their original order and item numbers. Each has three sentences, six numbered blanks, and six alphabetical options. Repeated words stay repeated, and the answer key keeps the correct capitalization.</dd></div>
           <div><dt>Items held for correction</dt><dd>Three of the 2,961 source exercises are incomplete: item 18, “street”; item 155, “molecule”; and item 1563, “privacy”. The first two have only five filled answers. “Privacy” also has an unfinished sentence. They are omitted from student practice until corrected and imported again. The original spreadsheet is unchanged.</dd></div>
-          <div><dt>Self-check and navigation</dt><dd>One exercise appears at a time. Students think through the placements and check one “Show answers” box to fill all three sentences. Only the six inserted answers appear in logo blue; the surrounding words keep their normal color. Unchecking restores the numbered blanks. Previous and Next follow the source order and skip incomplete items; students can also jump to an item number.</dd></div>
-          <div><dt>Privacy and cost</dt><dd>No answers, scores, revealed states, or position are saved. Practice interactions do not send requests to the server, Google, or AI. The exercise bank loads after sign-in; only the Account visibility preference persists. Student notes, questions, completion checkboxes, and other sheet tabs are not imported. Leaving the activity, reloading, signing out, or session expiry clears it. No new paid service or AI call is required.</dd></div>
+          <div><dt>Self-check and navigation</dt><dd>One exercise appears at a time. Students think through the placements and check one “Show answers” box to fill all three sentences. Only the six inserted answers appear in logo blue; the surrounding words keep their normal color. Unchecking restores the numbered blanks. Previous and Next follow the source order and skip incomplete items; students can also jump to an item number. A note explains that later questions are harder.</dd></div>
+          <div><dt>Finished and Questions</dt><dd>Finished gives the exercise a grey background. Questions adds it to a shared Questions list for discussion during lessons. Students can undo either choice. Both choices are saved privately by student and item; they return on the next visit. The administrator account page has a Questions list panel with the same exercises and answer reveals, including for paused students. Teacher views can read these choices but cannot change them.</dd></div>
+          <div><dt>Privacy and cost</dt><dd>Only Finished and Questions choices, update times, and save revisions are stored. No answers, scores, revealed states, or position are saved. Choices are kept separate from CEFR and lesson quizzes. Student notes, questions, completion checkboxes, and other sheet tabs are not imported. Loaded content clears when leaving the activity, reloading, signing out, or the session expires; saved choices remain until changed or the account is deleted. No records go to browser storage, Google, or AI. No new paid service or AI call is required; ordinary hosting and storage allowances apply.</dd></div>
         </dl></article>
         <article class="technical-card technical-wide"><h2>AI costs and spending safeguards</h2>
           <p>The server uses Cloudflare Workers AI with the <span class="technical-model">gpt-oss-120b</span> model. New transcript privacy processing uses two calls. Ordinary lesson authoring and review use two calls. A due CEFR review has its own two calls.</p>

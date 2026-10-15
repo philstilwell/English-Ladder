@@ -1,6 +1,7 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { handleRoad } from './english-road.mjs';
+import { handleBusinessTerms } from './business-terms.mjs';
 import { groundCefrWindow, cefrOverview } from './cefr.mjs';
 import { cefrReviewContext, cefrScheduleSummary } from './cefr-schedule.mjs';
 import { validNoteId, saveTranscriptCache, readTranscriptCache, validateTranscriptCache, pruneTranscriptCache } from './transcript-cache.mjs';
@@ -268,6 +269,7 @@ export class FeedbackStore {
         return json({ ok: true });
       });
     }
+    if (id.startsWith('terms/')) return handleBusinessTerms(this.storage, request);
     if (id.startsWith('road/')) return handleRoad(this.storage, request);
     if (id.startsWith('quiz/')) return handleQuiz(this.storage, request);
     if (id === 'assessment') {

@@ -7,6 +7,7 @@ import { StudentDirectory, directoryStudents, parseStudentRows, inspectStudentRo
 import { QuizAutomation } from '../server-quiz-automation.mjs';
 import { env as baseEnv, login, call, origin } from './harness.mjs';
 import { feedback, assessment, quiz } from './fixture.mjs';
+import termsBank from '../business-terms-bank.json' with { type: 'json' };
 
 const admin = 'https://phil.englishladder.com';
 const example = { firstName:'Morgan', lastName:'Testperson', nickname:'Morgan the Explorer', studentId:'mt26', status:'active', zoomNames:['Morgan-Zoom'], timeZone:'Asia/Tokyo', email:'private@example.test', notes:'Private administrative note', hoursAuthorized:40 };
@@ -201,7 +202,7 @@ const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1))
 function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
   return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
-};dom.window.eval(script);return dom;}
+};dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
 test('administrator list links to editable accounts and has a separate registration form',async()=>{
   const dom=browser();await flush();const w=dom.window,d=w.document;
   assert.match(d.getElementById('student-rows').textContent,/Morgan Testperson/);
@@ -700,4 +701,31 @@ test('administrator practice panel shows original choices safely and discards la
   const details=d.querySelector('#road-results details');details.open=true;await flush();w.location.hash='students';await flush();
   resolveDetail(Response.json({attempt:{questions:[{setup:'Read this.',prompt:'<img src=x onerror=alert(1)>',topic:'Articles',options:['a','an','the','some'],correctIndex:1,feedback:['Try an.','Correct.','',''],explanation:'Use an.'}],answers:[{choiceIndex:0,answeredAt:row.startedAt}]}}));await flush();
   assert.equal(d.getElementById('road-results').textContent,'');assert.equal(d.querySelector('#road-results img'),null);dom.window.close();
+});
+
+test('Business terms Questions list is private to the administrator and selected student, including paused accounts',async()=>{
+  const {e}=environment(),adminCookie=await access(e),records=await list(e,adminCookie),student=await login(e),teacher=await login(e,'teacher-test');
+  const record=records.find(s=>s.studentId==='ab26'),other=records.find(s=>s.studentId==='cd26');
+  const saved=await call(e,'/api/business-terms/state',{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({number:1,field:'question',value:true,revision:0})});assert.equal(saved.status,200);
+  const path='/api/admin/students/'+record.key+'/business-terms';
+  for(const cookie of ['',student.cookie,teacher.cookie])assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,401);
+  assert.equal((await call(e,path,{headers:{Cookie:teacher.cookie}})).status,404);
+  assert.equal((await adminCall(e,path,{headers:{Cookie:adminCookie,Origin:'https://evil.test'}})).status,403);
+  const response=await adminCall(e,path,{headers:{Cookie:adminCookie}});assert.equal(response.headers.get('Cache-Control'),'no-store');
+  const {questions}=await response.json();assert.equal(questions.length,1);assert.equal(questions[0].number,1);assert.equal(questions[0].progress.question,true);assert.deepEqual(questions[0].answers,termsBank.items[0].answers);
+  assert.deepEqual((await(await adminCall(e,'/api/admin/students/'+other.key+'/business-terms',{headers:{Cookie:adminCookie}})).json()).questions,[]);
+  await adminCall(e,'/api/admin/students/'+record.key,write(adminCookie,{...record,status:'paused'},'PUT'));
+  assert.equal((await adminCall(e,path,{headers:{Cookie:adminCookie}})).status,200);assert.equal((await call(e,'/api/business-terms/state',{headers:{Cookie:student.cookie}})).status,404);
+});
+
+test('administrator Questions list reveals answer terms safely, refreshes, and clears late responses',async()=>{
+  let delayed=false,resolve;const content={questions:[{...termsBank.items[0],progress:{finished:true}}]};
+  const dom=browser(path=>path.endsWith('/business-terms')?(delayed?new Promise(r=>{resolve=r;}):Response.json(content)):null);
+  const w=dom.window,d=w.document;await flush();w.location.hash='students/'+fixture.key;await flush();
+  d.getElementById('load-terms-questions').click();await flush();
+  assert.match(d.getElementById('terms-questions-content').textContent,/Item 1.*Finished/);
+  assert(d.querySelector('#terms-questions-content .terms-item').classList.contains('is-finished'));
+  d.querySelector('#terms-questions-content [type=checkbox]').click();assert.equal(d.querySelectorAll('#terms-questions-content .terms-answer').length,6);
+  delayed=true;d.getElementById('load-terms-questions').click();await flush();w.location.hash='students';await flush();resolve(Response.json(content));await flush();
+  assert.equal(d.getElementById('terms-questions-content').textContent,'');assert.equal(d.getElementById('terms-questions-panel').hidden,true);w.close();
 });

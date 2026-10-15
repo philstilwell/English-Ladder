@@ -13,6 +13,7 @@
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
   let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
+  let termsEpoch = 0, termsQuestions = [], termsPage = 0;
   let deleting = null, deleteBusy = false, saving = false;
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
@@ -22,6 +23,43 @@
   const cefrLabel = record => record?.state === 'estimated' ? (record.lower === record.upper ? record.lower : record.lower + '–' + record.upper) :
     { pending: 'Not assessed yet', insufficient: 'More evidence needed', unavailable: 'Unable to check', loading: 'Checking…' }[record?.state] || 'Not assessed yet';
   function clearCefr() { cefrDetailRequest++; $('cefr-panel').hidden = true; $('cefr-content').replaceChildren(); }
+  function clearTerms() {
+    termsEpoch++; termsQuestions = []; termsPage = 0;
+    $('terms-questions-panel').hidden = true; $('terms-questions-content').replaceChildren(); $('terms-questions-status').textContent = '';
+    $('load-terms-questions').disabled = false; $('load-terms-questions').textContent = 'Load questions list';
+  }
+  function renderTerms() {
+    const content = $('terms-questions-content'); content.replaceChildren();
+    for (const item of termsQuestions.slice(termsPage * 20, (termsPage + 1) * 20)) {
+      const details = element('details', null, 'terms-questions'), summary = element('summary', `Item ${item.number} · “${item.term}”` + (item.progress.finished ? ' · Finished' : ''));
+      const { card } = window.BusinessTerms.exercise(item); card.classList.toggle('is-finished', item.progress.finished);
+      details.append(summary, card); content.append(details);
+    }
+    if (termsQuestions.length > 20) {
+      const controls = element('div', null, 'terms-controls');
+      const back = element('button', 'Previous questions', 'secondary-button'), next = element('button', 'More questions', 'secondary-button');
+      back.type = next.type = 'button'; back.disabled = termsPage === 0; next.disabled = (termsPage + 1) * 20 >= termsQuestions.length;
+      back.addEventListener('click', () => { termsPage--; renderTerms(); }); next.addEventListener('click', () => { termsPage++; renderTerms(); });
+      controls.append(back, element('span', `Page ${termsPage + 1} of ${Math.ceil(termsQuestions.length / 20)}`), next); content.append(controls);
+    }
+  }
+  async function loadTerms() {
+    if (!signedIn || !current?.activated || current.deletionPending) return;
+    const student = current, version = epoch, request = ++termsEpoch;
+    const valid = () => signedIn && epoch === version && request === termsEpoch && current?.key === student.key;
+    $('load-terms-questions').disabled = true; $('terms-questions-content').replaceChildren(); termsQuestions = []; termsPage = 0;
+    $('terms-questions-status').textContent = 'Loading questions…';
+    try {
+      const data = await api('/api/admin/students/' + student.key + '/business-terms');
+      if (!valid()) return;
+      if (!Array.isArray(data.questions) || data.questions.length && !window.BusinessTerms.validItems(data.questions)) throw new Error('Questions could not load. Please try again.');
+      termsQuestions = data.questions; renderTerms();
+      $('terms-questions-status').textContent = termsQuestions.length ? termsQuestions.length + (termsQuestions.length === 1 ? ' item' : ' items') + ' to discuss. Refresh the list to see new choices.' : 'No items in this student’s Questions list.';
+      $('load-terms-questions').textContent = 'Refresh questions list';
+    } catch (error) { if (valid()) $('terms-questions-status').textContent = error.message; }
+    finally { if (valid()) $('load-terms-questions').disabled = false; }
+  }
+  $('load-terms-questions').addEventListener('click', loadTerms);
   function clearRoad() {
     roadEpoch++; roadRows = []; roadCursor = null; roadLoading = false;
     $('road-results-panel').hidden = true; $('road-results').replaceChildren(); $('road-results-status').textContent = '';
@@ -150,7 +188,7 @@
   }
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null;
-    clearRoad();
+    clearRoad(); clearTerms();
     clearLoginDetails();
     clearCefr(); cefrRequest++; cefrStatuses = {};
     closeDelete();
@@ -295,11 +333,12 @@
     void loadLoginDetails(student);
     void loadCefr(student);
     clearRoad(); $('road-results-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
+    clearTerms(); $('terms-questions-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
   }
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
   function route() {
     if (!signedIn) return;
-    clearRoad();
+    clearRoad(); clearTerms();
     closeDelete();
     clearLoginDetails(); current = null;
     clearCefr();

@@ -22,6 +22,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/logout')return reply({ok:true});
   if(path==='/api/assessment')return reply({assessment});
   if(path==='/api/quiz/state')return reply({attempt:null});
+  if(path==='/api/business-terms/state')return reply({entries:[]});
   if(path==='/api/feedback')return reply({sessions:[feedback,second],nextCursor:null});
   return reply(path.endsWith(second.id)?second:feedback);
  };
@@ -528,7 +529,7 @@ const termsSettings={...settingsFixture,activities:[{id:'business-terms',name:'B
 const termsRoute=origin+'/#activities/business-terms';
 const termsMock=path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:termsBank.items}):null;
 
-test('business terms show six choices and highlight only inserted answers with no saved interactions', async () => {
+test('business terms preserve answer highlights and do not save reveals or navigation', async () => {
   const calls=[];const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET'});return termsMock(path);},termsRoute);
   await flush();const w=dom.window,d=w.document,root=d.getElementById('business-terms');
   w.Storage.prototype.setItem=()=>{throw Error('Self-check must not use browser storage');};
@@ -716,4 +717,47 @@ test('English Road clears late responses on navigation, sign-out and expiry and 
   const teacher=setup(path=>{if(path==='/api/account')return reply(roadSettings);if(path.startsWith('/api/road/')){requests++;return reply({});}},roadRoute,'teacher');await flush();
   assert.match(teacher.window.document.getElementById('road-practice').textContent,/Teacher view does not save/);assert.equal(requests,0);teacher.window.close();
   const hidden=setup(path=>path==='/api/account'?reply({...roadSettings,visibleActivities:[]}):null,roadRoute);await flush();assert.equal(hidden.window.document.getElementById('road-practice').hidden,true);hidden.window.close();
+});
+
+test('Business terms saves Finished and Questions, restores them on return, and permits independent undo', async()=>{
+  const {e,student}=await seedQuiz();
+  const dom=setup((path,options={})=>path==='/api/business-terms/state'?call(e,path,{...options,headers:{...options.headers,Cookie:student.cookie,...(options.method?{Origin:origin}:{})}}):termsMock(path),termsRoute);
+  await flush();const w=dom.window,root=w.document.getElementById('business-terms');
+  const button=name=>[...root.querySelectorAll('button')].find(b=>b.textContent===name);
+  assert.match(root.textContent,/Later questions are harder/);
+  w.Storage.prototype.setItem=()=>{throw Error('Do not save private choices in browser storage');};
+  button('Finished').click();await flush();assert(root.querySelector('.terms-item').classList.contains('is-finished'));assert.equal(button('Finished').getAttribute('aria-pressed'),'true');
+  button('Questions').click();await flush();assert.equal(root.querySelector('.terms-questions summary').textContent,'Questions list (1)');
+  root.querySelector('[type=checkbox]').click();assert.equal(root.querySelectorAll('.terms-answer').length,6);
+  button('Next').click();assert.equal(button('Finished').getAttribute('aria-pressed'),'false');
+  root.querySelector('.terms-question-links button').click();assert.match(root.querySelector('h4').textContent,/Item 1/);assert(root.querySelector('.terms-item').classList.contains('is-finished'));
+  w.location.hash='overview';await flush();w.location.hash='activities/business-terms';await flush();
+  assert.equal(button('Questions').getAttribute('aria-pressed'),'true');assert.equal(button('Finished').getAttribute('aria-pressed'),'true');assert.equal(root.querySelector('[type=checkbox]').checked,false);
+  button('Finished').click();await flush();assert(!root.querySelector('.terms-item').classList.contains('is-finished'));assert.equal(button('Questions').getAttribute('aria-pressed'),'true');
+  button('Questions').click();await flush();assert.equal(root.querySelector('.terms-questions summary').textContent,'Questions list (0)');
+  w.document.getElementById('logout').click();await flush();assert.equal(root.textContent,'');w.close();
+});
+
+test('Business terms never pretend a failed save succeeded, recover conflicts, and keep teacher choices read-only', async()=>{
+  let fail=true,reads=0;
+  const entry={number:1,finished:true,question:false,revision:1,updatedAt:'2026-10-15T12:00:00Z'};
+  const dom=setup((path,options)=>path==='/api/business-terms/state'?(options?.method?new Response(JSON.stringify({error:'This item changed. Try again.'}),{status:fail?503:409}):reply({entries:reads++?[entry]:[]})):termsMock(path),termsRoute);
+  await flush();const root=dom.window.document.getElementById('business-terms'),finished=[...root.querySelectorAll('button')].find(b=>b.textContent==='Finished');
+  finished.click();await flush();assert.equal(finished.getAttribute('aria-pressed'),'false');assert.match(root.querySelector('#terms-save-status').textContent,/could not be saved/);assert(!finished.disabled);
+  fail=false;finished.click();await flush();assert.equal(finished.getAttribute('aria-pressed'),'true');assert.match(root.querySelector('#terms-save-status').textContent,/changed/);dom.window.close();
+  let writes=0;const teacher=setup((path,options)=>path==='/api/business-terms/state'?(options?.method?(writes++,reply({})):reply({entries:[{...entry,question:true}]})):termsMock(path),termsRoute,'teacher');
+  await flush();const teacherRoot=teacher.window.document.getElementById('business-terms');
+  assert.equal(teacherRoot.querySelector('.terms-questions summary').textContent,'Questions list (1)');
+  for(const button of teacherRoot.querySelectorAll('.terms-actions button')){assert(button.disabled);button.click();}assert.equal(writes,0);teacher.window.close();
+});
+
+test('Business terms discards pending saved choices on leaving, logout, page hide and expiry', async()=>{
+  for(const action of ['navigation','sign-out','pagehide','expiry']) {
+    let resolve;const dom=setup((path,options)=>path==='/api/business-terms/state'?(options?.method?new Promise(r=>{resolve=r;}):reply({entries:[]})):termsMock(path),termsRoute);
+    await flush();const w=dom.window,root=w.document.getElementById('business-terms');
+    [...root.querySelectorAll('button')].find(b=>b.textContent==='Questions').click();await flush();
+    if(action==='navigation')w.location.hash='overview';else if(action==='sign-out')w.document.getElementById('logout').click();else if(action==='pagehide')w.dispatchEvent(new w.Event('pagehide'));
+    await flush();resolve(action==='expiry'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):reply({entry:{number:1,question:true,finished:false,revision:1}}));await flush();
+    assert.equal(root.textContent,'');assert.equal(root.hidden,true);w.close();
+  }
 });

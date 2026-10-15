@@ -341,9 +341,19 @@ summary { cursor:pointer; }
 .terms-sentences { padding-left:24px; margin:20px 0 8px; }
 .terms-sentences li { padding:8px 0; line-height:1.75; overflow-wrap:anywhere; }
 .terms-answer { color:var(--blue); }
-#business-terms .terms-reveal { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
+.terms-item .terms-reveal { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
+.terms-item .terms-reveal span { font-size:inherit; color:inherit; margin:0; }
 .terms-reveal input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }
 .terms-controls { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:20px 0; }
+.terms-item { padding:16px; border:1px solid var(--line); border-radius:6px; margin:12px 0; }
+.terms-item .terms-heading { margin-top:0; }
+.terms-item.is-finished { background:#eeeeef; border-color:#b8b8bf; }
+.terms-actions { display:flex; flex-wrap:wrap; gap:12px; margin:12px 0; }
+.terms-actions [aria-pressed="true"] { background:var(--blue); color:#fff; border-color:var(--blue); }
+.terms-questions { border:1px solid var(--line); border-radius:6px; padding:12px; margin:16px 0; }
+.terms-questions summary { cursor:pointer; min-height:32px; font-weight:650; overflow-wrap:anywhere; }
+.terms-question-links { list-style:none; padding:0; display:grid; gap:8px; }
+.terms-question-links button { text-align:left; white-space:normal; overflow-wrap:anywhere; max-width:100%; }
 .grammar-picker { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:16px 0; }
 .grammar-picker select { min-height:44px; max-width:100%; padding:8px 12px; font:inherit; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:5px; }
 .grammar-heading { font-size:1rem; margin:20px 0 8px; scroll-margin-top:calc(var(--student-menu-height,56px) + 20px); }

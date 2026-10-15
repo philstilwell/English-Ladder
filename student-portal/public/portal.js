@@ -633,6 +633,17 @@
     const heading = node('h3', question.prompt, 'quiz-prompt'); heading.id = 'quiz-question-title'; heading.tabIndex = -1;
     const choices = node('div', '', 'quiz-choices'); choices.setAttribute('role', 'group'); choices.setAttribute('aria-labelledby', heading.id);
     const result = node('div', '', 'quiz-result'); result.id = 'quiz-result'; result.setAttribute('role', 'status'); result.setAttribute('aria-live', 'polite'); result.setAttribute('aria-atomic', 'true');
+    const answer = question.options[question.correctIndex];
+    const ai = window.PracticePrompt.create({
+      label: ' for question ' + (index + 1),
+      prompt: window.PracticePrompt.text(
+        'English quiz exercise:\n' + question.prompt + '\n\nChoices:\n' +
+        question.options.map((option, i) => String.fromCharCode(65 + i) + '. “' + option.text + '”').join('\n') +
+        '\n\nAnswer key: “' + answer.text + '”\nExplanation: ' + answer.feedback + '\nModel sentence: “' + question.model + '”',
+        'Explain why the answer fits and why the other choices do not. Explain the model sentence. Focus only on the English in this exercise.'
+      ),
+    });
+    const promptControls = node('div', '', 'practice-prompt-controls'); promptControls.append(ai.controls, ai.status);
     const next = node('button', index === quiz.questions.length - 1 ? 'See my results' : 'Next question →', 'primary-button quiz-next');
     const saveStatus = node('p', '', 'quiz-save-status'); saveStatus.setAttribute('role', 'status');
     const retrySave = node('button', 'Save my answer again', 'secondary-button'); retrySave.hidden = true;
@@ -705,7 +716,7 @@
       else quizState.index++;
       renderQuiz(true);
     });
-    fragment.append(counter, progress, heading, node('p', quiz.instructions, 'quiz-hint'), choices, result, saveStatus, retrySave, next);
+    fragment.append(counter, progress, heading, node('p', quiz.instructions, 'quiz-hint'), choices, result, saveStatus, retrySave, promptControls, next);
     $('quiz-content').replaceChildren(fragment); updateAnswer();
     if (focus) heading.focus();
   }

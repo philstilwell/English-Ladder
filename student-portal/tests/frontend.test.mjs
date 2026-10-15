@@ -200,7 +200,7 @@ test('quiz handles empty and failed loads, and renders authored text without mar
  assert.equal(d.getElementById('quiz-question-title').textContent,q.questions[0].prompt);
  d.querySelector('.quiz-option').click();
  assert.ok(d.getElementById('quiz-result').textContent.includes(q.questions[0].options[0].feedback));
- assert.equal(d.querySelector('#quiz-content img, #quiz-content script'),null);
+ assert.equal(d.querySelector('.quiz-prompt img, .quiz-choices img, #quiz-result img, #quiz-content script, #quiz-content [onerror]'),null);
  safe.window.close();
 });
 test('late quiz data cannot appear after sign-out',async()=>{
@@ -216,6 +216,46 @@ function savedSetup(seed,role='student',custom=null,hash='quiz'){
  const cookie=seed[role].cookie;
  return setup((path,options={})=>custom?.(path,options)||call(seed.e,path,{...options,headers:{...options.headers,Cookie:cookie,Origin:origin}}),origin+'/#'+hash,role);
 }
+test('quiz AI prompts copy only the current exercise without saving choices or changing first-try results',async()=>{
+ for(const role of ['student','teacher']){
+  const seed=await seedQuiz(),copied=[];let answerWrites=0;
+  const dom=savedSetup(seed,role,(path,options)=>{if(path==='/api/quiz/answer'&&options.method==='POST')answerWrites++;return null;});
+  const w=dom.window,d=w.document;
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async text=>copied.push(text)}});
+  await flush();
+  const oldCopy=d.querySelector('#quiz-content .practice-copy-button');
+  oldCopy.click();await flush();
+  assert.equal(oldCopy.textContent,'AI prompt copied');
+  assert.ok(copied[0].includes(quiz.questions[0].prompt));
+  for(const option of quiz.questions[0].options)assert.ok(copied[0].includes(option.text));
+  assert.ok(copied[0].includes(quiz.questions[0].options[0].feedback));
+  assert.ok(copied[0].includes(quiz.questions[0].model));
+  assert.doesNotMatch(copied[0],/Alex|ab26|2026-10-01|fictional-note-id-only|first try|score|https?:/i);
+  assert.equal(d.querySelector('#quiz-result').textContent,'');
+  assert.ok([...d.querySelectorAll('.quiz-option')].every(b=>!b.disabled));
+  assert.equal(answerWrites,0);
+  assert.equal((await (await call(seed.e,'/api/quiz/state',{headers:{Cookie:seed.student.cookie}})).json()).attempt,null);
+  const links=[...d.querySelectorAll('#quiz-content .practice-ai-link')];
+  assert.deepEqual(links.map(a=>a.href),['https://chatgpt.com/','https://gemini.google.com/app','https://claude.ai/','https://copilot.microsoft.com/']);
+  assert.ok(links.every(a=>a.target==='_blank'&&a.rel==='noopener noreferrer'&&a.referrerPolicy==='no-referrer'&&a.getAttribute('aria-label')));
+  d.querySelectorAll('.quiz-option')[0].click();await flush();d.querySelector('.quiz-next').click();
+  const nextCopy=d.querySelector('#quiz-content .practice-copy-button');
+  assert.equal(nextCopy.textContent,'Copy AI prompt');
+  nextCopy.click();await flush();
+  assert.ok(copied[1].includes(quiz.questions[1].prompt));
+  assert.ok(!copied[1].includes(quiz.questions[0].prompt));
+  oldCopy.click();await flush();assert.equal(copied.length,2);
+  assert.equal(answerWrites,role==='student'?1:0);
+  d.querySelectorAll('.quiz-option')[1].click();await flush();d.querySelector('.quiz-next').click();
+  assert.match(d.querySelector('.quiz-complete').textContent,/2 out of 2 right on your first try/);
+  d.querySelector('.quiz-complete button').click();await flush();
+  const afterRestart=d.querySelector('#quiz-content .practice-copy-button');
+  assert.equal(afterRestart.textContent,'Copy AI prompt');
+  d.getElementById('logout').click();await flush();afterRestart.click();await flush();
+  assert.equal(copied.length,2);assert.equal(d.getElementById('quiz-content').textContent,'');
+  w.close();
+ }
+});
 test('teacher preview shows plain source dates without links and keeps quiz topic labels',async()=>{
  const next={...quiz,sourceSessions:[second.id],patternTitles:['Use “can”'],generatedForSession:second.id};
  const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz:next}}):null,origin+'/#quiz','teacher');

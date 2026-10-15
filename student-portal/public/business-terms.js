@@ -53,8 +53,18 @@
         function showAnswers(revealed) {
           sentences.replaceChildren(); sentences.classList.toggle('is-revealed', revealed);
           for (const sentence of item.sentences) {
-            const text = sentence.replace(blanks, (_, id) => revealed ? item.answers[Number(id) - 1] : `____ (${id})`);
-            const line = node('li'); line.append(node('q', text)); sentences.append(line);
+            const quote = node('q');
+            if (revealed) {
+              let offset = 0;
+              for (const match of sentence.matchAll(blanks)) {
+                quote.append(sentence.slice(offset, match.index), node('span', item.answers[Number(match[1]) - 1], 'terms-answer'));
+                offset = match.index + match[0].length;
+              }
+              quote.append(sentence.slice(offset));
+            } else {
+              quote.textContent = sentence.replace(blanks, (_, id) => `____ (${id})`);
+            }
+            const line = node('li'); line.append(quote); sentences.append(line);
           }
         }
         showAnswers(false);

@@ -528,7 +528,7 @@ const termsSettings={...settingsFixture,activities:[{id:'business-terms',name:'B
 const termsRoute=origin+'/#activities/business-terms';
 const termsMock=path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:termsBank.items}):null;
 
-test('business terms show six choices and three blue answer sentences with no saved interactions', async () => {
+test('business terms show six choices and highlight only inserted answers with no saved interactions', async () => {
   const calls=[];const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET'});return termsMock(path);},termsRoute);
   await flush();const w=dom.window,d=w.document,root=d.getElementById('business-terms');
   w.Storage.prototype.setItem=()=>{throw Error('Self-check must not use browser storage');};
@@ -537,10 +537,13 @@ test('business terms show six choices and three blue answer sentences with no sa
   const before=root.querySelector('.terms-sentences').textContent,count=calls.length;
   root.querySelector('[type=checkbox]').click();
   assert(root.querySelector('.terms-sentences').classList.contains('is-revealed'));
+  assert.deepEqual([...root.querySelectorAll('.terms-answer')].map(el=>el.textContent),termsBank.items[0].answers);
+  assert.equal(root.querySelector('.terms-sentences q').firstChild.nodeType,w.Node.TEXT_NODE);
   assert.deepEqual([...root.querySelectorAll('.terms-sentences q')].map(q=>q.textContent),[
     'She organized the plates in a neat stack.','A stack of reports awaited his review.','The library featured a stack of classic novels.'
   ]);
   root.querySelector('[type=checkbox]').click();assert.equal(root.querySelector('.terms-sentences').textContent,before);
+  assert.equal(root.querySelectorAll('.terms-answer').length,0);
   assert(!root.querySelector('.terms-sentences').classList.contains('is-revealed'));
   const jump=value=>{d.getElementById('terms-number').value=String(value);root.querySelector('form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));};
   jump(4);assert.equal([...root.querySelectorAll('.terms-words q')].filter(q=>q.textContent==='are').length,2);

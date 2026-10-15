@@ -1,0 +1,124 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Drones hit a ship near the coast of Romania.",
+      "The ship reported a fire on Thursday morning.",
+      "Four crew members are alive.",
+      "However, eight people are still missing.",
+      "Two helicopters and two boats are looking for them.",
+      "The rescue teams are working in very high waves.",
+      "The ship was travelling from Tunisia to Romania."
+    ],
+    "vocabulary": [
+      {
+        "term": "coast",
+        "part_of_speech": "noun",
+        "definition": "The land next to the ocean or sea."
+      },
+      {
+        "term": "fire",
+        "part_of_speech": "noun",
+        "definition": "Heat and light from burning things."
+      },
+      {
+        "term": "crew",
+        "part_of_speech": "noun",
+        "definition": "The group of people working on a ship or plane."
+      },
+      {
+        "term": "missing",
+        "part_of_speech": "adjective",
+        "definition": "Lost and not found yet."
+      },
+      {
+        "term": "helicopters",
+        "part_of_speech": "noun",
+        "definition": "Flying vehicles with long blades turning on top."
+      },
+      {
+        "term": "waves",
+        "part_of_speech": "noun",
+        "definition": "Raised lines of moving water on the sea."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "海や海のそばにある陸地。",
+      "ko": "바다나 대양 옆에 있는 땅.",
+      "zh-Hans": "靠近海洋或大海的陆地。",
+      "es": "La tierra que está al lado del océano o del mar.",
+      "pt-BR": "A terra que fica ao lado do oceano ou do mar.",
+      "fr": "La terre qui est à côté de l'océan ou de la mer.",
+      "de": "Das Land, das an den Ozean oder das Meer grenzt."
+    },
+    {
+      "id": 1,
+      "ja": "物が燃えるときに発生する熱と光。",
+      "ko": "물건이 탈 때 생기는 열과 빛.",
+      "zh-Hans": "东西燃烧时产生的热量和光。",
+      "es": "El calor y la luz que provienen de cosas que se queman.",
+      "pt-BR": "O calor e a luz que vêm de coisas que estão queimando.",
+      "fr": "La chaleur et la lumière produites par des choses qui brûlent.",
+      "de": "Wärme und Licht, die von brennenden Dingen ausgehen."
+    },
+    {
+      "id": 2,
+      "ja": "船や飛行機で働く人々の集団。",
+      "ko": "배나 비행기에서 일하는 사람들의 무리.",
+      "zh-Hans": "在船上或飞机上工作的一群人。",
+      "es": "El grupo de personas que trabajan en un barco o un avión.",
+      "pt-BR": "O grupo de pessoas que trabalham em um navio ou avião.",
+      "fr": "Le groupe de personnes qui travaillent sur un navire ou un avion.",
+      "de": "Die Gruppe von Personen, die auf einem Schiff oder Flugzeug arbeiten."
+    },
+    {
+      "id": 3,
+      "ja": "行方不明になっていて、まだ見つかっていないこと。",
+      "ko": "길을 잃거나 사라져서 아직 찾지 못한.",
+      "zh-Hans": "迷失了，还没有被找到。",
+      "es": "Perdido y aún no encontrado.",
+      "pt-BR": "Perdido e ainda não encontrado.",
+      "fr": "Perdu et pas encore retrouvé.",
+      "de": "Verloren und noch nicht gefunden."
+    },
+    {
+      "id": 4,
+      "ja": "上部に長い羽根が回る、空を飛ぶ乗り物。",
+      "ko": "위에 긴 날개가 돌아가면서 나는 비행 기구.",
+      "zh-Hans": "顶部有长叶片旋转的飞行器。",
+      "es": "Vehículos voladores con largas palas girando en la parte superior.",
+      "pt-BR": "Veículos voadores com pás longas girando no topo.",
+      "fr": "Véhicules volants avec de longues pales qui tournent au-dessus.",
+      "de": "Fliegende Fahrzeuge mit langen, sich oben drehenden Rotorblättern."
+    },
+    {
+      "id": 5,
+      "ja": "海上で動く水の盛り上がった線。",
+      "ko": "바다에서 움직이는 물이 위로 솟아오른 선.",
+      "zh-Hans": "海上移动的水形成的凸起线条。",
+      "es": "Líneas elevadas de agua en movimiento en el mar.",
+      "pt-BR": "Linhas elevadas de água em movimento no mar.",
+      "fr": "Des lignes élevées d'eau en mouvement sur la mer.",
+      "de": "Erhobene Linien von sich bewegendem Wasser auf dem Meer."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-15T14:15:41.878185+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

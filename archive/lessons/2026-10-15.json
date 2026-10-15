@@ -1,0 +1,698 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-15",
+  "release_iso": "2026-10-15T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Thu, 15 Oct 2026 11:12:54 GMT",
+    "retrieved_at": "2026-10-15T13:12:16.684579+00:00",
+    "title": "Eight crew missing after drone attack leaves tanker ablaze off Romania's coast",
+    "summary": "A search and rescue operation is under way in the Black Sea after the latest attack in the area.",
+    "evidence_text": "Eight of 12 crew members are missing after a drone attack left a tanker ablaze off Romania's coast, naval authorities say.\nThe San Marino-flagged Wine Trader was 13 nautical miles (24km) east of the mouth of the River Danube at Sulina, when it reported blasts and a fire on Thursday morning. Romanian President Nicușor Dan later confirmed it was struck by drones.\nThe priority is now to reach the four crew members confirmed to be alive, while ensuring the safety of rescue teams with very high waves reported in the area.\nA search and rescue operation for the eight missing members of the Wine Trader continues, Romania's authorities have said. Two Black Hawk helicopters and two rescue boats have been deployed.\nThe tanker, which was sailing from Tunisia to Romania, reported several explosions on board at about 07:00 local time (05:00 GMT).\nThe west coast of the Black Sea has recently seen a spate of drone attacks. A swarm of Russian drones was detected overnight not far from the scene, near Ukraine's Snake Island.\nThe leaders of Romania and Bulgaria are due to discuss shortly whether Article 4 of the Nato treaty should be invoked.\nThis allows any member of the military alliance to request consultations with its allies if it believes its territorial integrity or security is threatened.\nMoscow says it is targeting ships delivering weapons and dual-use cargo to Ukrainian ports.\nKyiv and its European allies say merchant vessels carrying grain and other civilian cargo are being attacked.\nA search and rescue operation is under way in the Black Sea after the latest attack in the area.\nOn Tuesday, two merchant ships were struck by drones further south along the coast of Bulgaria, Romania's neighbour, and one of the vessels sank, leaving 11 crew members missing.\nBulgaria said it suspected Russia was behind that attack, summoning the country's envoy.\nOn Tuesday, European Commission President Ursula von der Leyen spoke of the Black Sea becoming \"another front of escalation of the Russian war in Ukraine. This is unacceptable\".",
+    "evidence_retrieved_at": "2026-10-15T13:12:16.684579+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c60qkgpp592yo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why is it difficult to rescue people in the sea? Use this frame: \"I think it is difficult because ...\"",
+          "Imagine you are on a rescue team in bad weather. How would you feel? You can talk about yourself, or imagine a rescuer named Sam. \"Sam would feel ...\""
+        ],
+        "editorial_check": {
+          "content_digest": "e55d17f255d2f819dd5fe0544cacea53d5f5c8966b8062731fe3122fbc851dff",
+          "date": "2026-10-15T13:14:35.150987+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively tests main ideas, details, vocabulary, and grammar with clear, plausible distractors, avoiding dense reasoning or trick questions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading and explanations use neutral, straightforward everyday English without idioms, maintaining an appropriate tone for adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Grammar explanations and instructions use short clauses and simple language. The discussion prompts include accessible sentence frames and a hypothetical option."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The selected words like 'missing' and 'waves' are concrete, useful everyday terms with simple, clear definitions suitable for A1-A2 learners."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Simple Past Tense (Regular Verbs)",
+          "example_quote": "The ship reported a fire on Thursday morning.",
+          "explanation": "We use the simple past tense to talk about actions that are finished. We usually add \"-ed\" to the end of a regular verb. In the example, the verb \"report\" becomes \"reported\"."
+        },
+        "news_brief_sentences": [
+          "Drones hit a ship near the coast of Romania.",
+          "The ship reported a fire on Thursday morning.",
+          "Four crew members are alive.",
+          "However, eight people are still missing.",
+          "Two helicopters and two boats are looking for them.",
+          "The rescue teams are working in very high waves.",
+          "The ship was travelling from Tunisia to Romania."
+        ],
+        "overview": "A ship caught fire after a drone attack near Romania, leaving eight workers missing.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "This is correct. A ship was hit by drones, and eight workers are lost.",
+              "The story does not say Romania is building new ships.",
+              "Eight people are missing, not eight helicopters."
+            ],
+            "options": [
+              "Drones attacked a ship and people are missing.",
+              "Romania is building new ships for the sea.",
+              "Eight helicopters are missing in the sea."
+            ],
+            "question": "What is the main idea of this story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "This is correct. The reading says four people from the ship are alive.",
+              "Eight is the number of people who are missing.",
+              "The story mentions two helicopters and two boats, but four people are alive."
+            ],
+            "options": [
+              "Four",
+              "Eight",
+              "Two"
+            ],
+            "question": "How many crew members are alive?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "This is correct. High waves make the water dangerous for rescue teams.",
+              "The text mentions two boats looking for the people, not making it difficult.",
+              "The fire happened on the ship, but high waves make the rescue hard for the teams."
+            ],
+            "options": [
+              "Very high waves",
+              "Two boats",
+              "A fire on Thursday morning"
+            ],
+            "question": "What is making the rescue difficult?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "This is correct. The eight people are lost.",
+              "\"Missing\" does not mean going on a trip.",
+              "\"Crew\" means people working on a ship, not \"missing\"."
+            ],
+            "options": [
+              "Lost and not found yet",
+              "Going on a trip",
+              "Working on a ship"
+            ],
+            "question": "What does \"missing\" mean in this story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "This is correct. The simple past tense uses \"-ed\" for finished actions.",
+              "For actions happening now, we use the present continuous tense, like \"are working\".",
+              "For future actions, we do not use \"-ed\"."
+            ],
+            "options": [
+              "Because the action is already finished",
+              "Because the action is happening right now",
+              "Because the action will happen tomorrow"
+            ],
+            "question": "In the sentence about Thursday morning, why does \"report\" end in \"-ed\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "This is correct. The story says the attack happened near Romania.",
+              "The ship was travelling from Tunisia, but the attack did not happen there.",
+              "The drones hit the ship, not a helicopter."
+            ],
+            "options": [
+              "Near the coast of Romania",
+              "Near the coast of Tunisia",
+              "Inside a helicopter"
+            ],
+            "question": "Where did the drones hit the ship?"
+          }
+        ],
+        "sentence_evidence": [
+          "Eight of 12 crew members are missing after a drone attack left a tanker ablaze off Romania's coast, naval authorities say.",
+          "The San Marino-flagged Wine Trader was 13 nautical miles (24km) east of the mouth of the River Danube at Sulina, when it reported blasts and a fire on Thursday morning. Romanian President Nicușor Dan later confirmed it was struck by drones.",
+          "The priority is now to reach the four crew members confirmed to be alive, while ensuring the safety of rescue teams with very high waves reported in the area.",
+          "A search and rescue operation for the eight missing members of the Wine Trader continues, Romania's authorities have said. Two Black Hawk helicopters and two rescue boats have been deployed.",
+          "A search and rescue operation for the eight missing members of the Wine Trader continues, Romania's authorities have said. Two Black Hawk helicopters and two rescue boats have been deployed.",
+          "The priority is now to reach the four crew members confirmed to be alive, while ensuring the safety of rescue teams with very high waves reported in the area.",
+          "The tanker, which was sailing from Tunisia to Romania, reported several explosions on board at about 07:00 local time (05:00 GMT)."
+        ],
+        "title": "Drone Attack Leaves Eight Crew Missing in Black Sea",
+        "topic": "World News",
+        "vocabulary": [
+          {
+            "definition": "The land next to the ocean or sea.",
+            "part_of_speech": "noun",
+            "term": "coast"
+          },
+          {
+            "definition": "Heat and light from burning things.",
+            "part_of_speech": "noun",
+            "term": "fire"
+          },
+          {
+            "definition": "The group of people working on a ship or plane.",
+            "part_of_speech": "noun",
+            "term": "crew"
+          },
+          {
+            "definition": "Lost and not found yet.",
+            "part_of_speech": "adjective",
+            "term": "missing"
+          },
+          {
+            "definition": "Flying vehicles with long blades turning on top.",
+            "part_of_speech": "noun",
+            "term": "helicopters"
+          },
+          {
+            "definition": "Raised lines of moving water on the sea.",
+            "part_of_speech": "noun",
+            "term": "waves"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think attacks on civilian ships in the Black Sea cause such strong international reactions? Explain your ideas.",
+          "How would you feel if your job required you to work in dangerous conditions like a rescue team? You can start with: \"I think it would be frightening because...\""
+        ],
+        "editorial_check": {
+          "content_digest": "b75c6698959361a35756f2aaf9369d3c611d6b64c3eabd405f2ee6c2f8c7003a",
+          "date": "2026-10-15T13:18:42.565010+00:00",
+          "generation_attempts": 3,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz items require learners to engage with specific details from the reading, understand vocabulary from context, and apply grammatical understanding, offering an appropriate level of challenge for B1-B2."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a neutral, formal news-reporting tone appropriate for an article detailing an attack and rescue operation."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation for the present continuous passive is clear, uses manageable language, and specifically references how it functions within the quoted reading sentence."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items like 'spate', 'invoked', and 'ablaze' are highly appropriate for the B1-B2 level and are defined clearly without relying on circular explanations or jargon."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Passive Voice in the Present Continuous",
+          "example_quote": "Kyiv and its European allies say merchant vessels carrying grain and other civilian cargo are being attacked.",
+          "explanation": "We use the present continuous passive to talk about ongoing actions happening around now when the focus is on the person or thing receiving the action. It is formed using 'am/is/are' + 'being' + the past participle. In this example, the phrase 'are being attacked' puts the focus on the civilian ships receiving the strikes rather than who is launching them."
+        },
+        "news_brief_sentences": [
+          "Eight of 12 crew members are missing after a drone attack left a tanker ablaze off Romania's coast.",
+          "The vessel, named the Wine Trader, reported blasts and a fire on Thursday morning.",
+          "A search and rescue operation for the missing members of the Wine Trader continues.",
+          "The priority is now to reach the four crew members confirmed to be alive.",
+          "The west coast of the Black Sea has recently seen a spate of drone attacks.",
+          "The leaders of Romania and Bulgaria are due to discuss shortly whether Article 4 of the Nato treaty should be invoked.",
+          "This allows any member of the military alliance to request consultations with its allies if it believes its security is threatened.",
+          "Moscow says it is targeting ships delivering weapons and dual-use cargo to Ukrainian ports.",
+          "Kyiv and its European allies say merchant vessels carrying grain and other civilian cargo are being attacked."
+        ],
+        "overview": "A search and rescue operation is underway in the Black Sea after a drone attack caused a large fire on a commercial ship.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading states that the tanker was left ablaze following a drone strike.",
+              "Incorrect. The text does not mention the ship sinking in a storm; it caught fire.",
+              "Incorrect. The ship was attacked by drones, but the text does not say it was captured."
+            ],
+            "options": [
+              "It was left ablaze after a drone attack.",
+              "It sank completely during a severe storm.",
+              "It was captured by military forces."
+            ],
+            "question": "What happened to the tanker off the coast of Romania?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text notes that reaching the four living sailors is the current priority.",
+              "Incorrect. The rescue teams are searching for missing sailors, not recovering drones.",
+              "Incorrect. The focus is on reaching the crew members, not towing the ship."
+            ],
+            "options": [
+              "Reaching the four crew members who are confirmed to be alive.",
+              "Recovering the drones that crashed into the water.",
+              "Towing the damaged merchant vessel back to the port."
+            ],
+            "question": "What is the current priority for the rescue teams?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. A \"spate\" refers to a large number of similar things occurring in rapid succession.",
+              "Incorrect. The attacks have increased recently; they have not come to an end.",
+              "Incorrect. A formal agreement to stop fighting would be a ceasefire or treaty."
+            ],
+            "options": [
+              "A sudden series of similar events happening over a short period.",
+              "A complete end or conclusion to a dangerous situation.",
+              "A formal agreement to stop fighting and negotiate."
+            ],
+            "question": "What does \"spate\" mean in the phrase \"seen a spate of drone attacks\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Article 4 allows members to request consultations when they believe their security is at risk.",
+              "Incorrect. The treaty rule is for discussing security threats, not planning unprovoked attacks.",
+              "Incorrect. The article is not about leaving the alliance."
+            ],
+            "options": [
+              "If a member believes its security is threatened.",
+              "If a member wants to launch an unprovoked attack.",
+              "If a member decides to leave the military alliance."
+            ],
+            "question": "Under what condition does Article 4 allow NATO members to request consultations?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Civilian\" refers to people or things that are not military.",
+              "Incorrect. An \"alliance\" is an agreement to work together, not a term for non-military cargo.",
+              "Incorrect. A \"priority\" is the most important task to do first."
+            ],
+            "options": [
+              "Civilian.",
+              "Alliance.",
+              "Priority."
+            ],
+            "question": "Which word describes ordinary people or cargo that are not part of the military?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Moscow states it is targeting ships delivering weapons and dual-use cargo.",
+              "Incorrect. Ukraine claims grain ships are being hit, but Moscow says it targets weapons.",
+              "Incorrect. There is no evidence in the text that Moscow claims to target rescue teams."
+            ],
+            "options": [
+              "Ships delivering weapons and dual-use cargo to Ukrainian ports.",
+              "Merchant vessels carrying grain and food to Europe.",
+              "Rescue teams working near the coast of Romania."
+            ],
+            "question": "What does Moscow claim to be targeting in the Black Sea?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Invoking\" a treaty means applying its rules to initiate a specific process.",
+              "Incorrect. If a law is canceled, it is revoked or abolished, not invoked.",
+              "Incorrect. Invoking a rule is the opposite of ignoring it."
+            ],
+            "options": [
+              "It is used or put into effect to take action.",
+              "It is permanently canceled or thrown away.",
+              "It is ignored by the people involved."
+            ],
+            "question": "What does it mean if a treaty or law is \"invoked\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Are being attacked\" is the present continuous passive, highlighting an action currently happening to the ships.",
+              "Incorrect. If the attacks were finished, the text would use the past tense.",
+              "Incorrect. The present continuous focuses on ongoing actions, not future predictions."
+            ],
+            "options": [
+              "To emphasize an ongoing action received by the merchant vessels.",
+              "To show that the attacks happened in the past and are completely finished.",
+              "To describe a future event that the countries expect to happen soon."
+            ],
+            "question": "Why does the author use the phrase \"are being attacked\"?"
+          }
+        ],
+        "sentence_evidence": [
+          "Eight of 12 crew members are missing after a drone attack left a tanker ablaze off Romania's coast, naval authorities say.",
+          "The San Marino-flagged Wine Trader was 13 nautical miles (24km) east of the mouth of the River Danube at Sulina, when it reported blasts and a fire on Thursday morning. Romanian President Nicușor Dan later confirmed it was struck by drones.",
+          "A search and rescue operation for the eight missing members of the Wine Trader continues, Romania's authorities have said. Two Black Hawk helicopters and two rescue boats have been deployed.",
+          "The priority is now to reach the four crew members confirmed to be alive, while ensuring the safety of rescue teams with very high waves reported in the area.",
+          "The west coast of the Black Sea has recently seen a spate of drone attacks. A swarm of Russian drones was detected overnight not far from the scene, near Ukraine's Snake Island.",
+          "The leaders of Romania and Bulgaria are due to discuss shortly whether Article 4 of the Nato treaty should be invoked.",
+          "This allows any member of the military alliance to request consultations with its allies if it believes its territorial integrity or security is threatened.",
+          "Moscow says it is targeting ships delivering weapons and dual-use cargo to Ukrainian ports.",
+          "Kyiv and its European allies say merchant vessels carrying grain and other civilian cargo are being attacked."
+        ],
+        "title": "Eight Missing After Drone Attack on Black Sea Tanker",
+        "topic": "Black Sea drone attacks and rescue efforts",
+        "vocabulary": [
+          {
+            "definition": "Burning very fiercely or strongly with large flames.",
+            "part_of_speech": "adjective",
+            "term": "ablaze"
+          },
+          {
+            "definition": "The most important task or goal that needs to be dealt with first.",
+            "part_of_speech": "noun",
+            "term": "priority"
+          },
+          {
+            "definition": "A sudden series of similar events happening over a short period.",
+            "part_of_speech": "noun",
+            "term": "spate"
+          },
+          {
+            "definition": "Used or applied a specific law, rule, or agreement in order to take action.",
+            "part_of_speech": "verb",
+            "term": "invoked"
+          },
+          {
+            "definition": "Formal meetings where people discuss a situation to make a decision.",
+            "part_of_speech": "noun",
+            "term": "consultations"
+          },
+          {
+            "definition": "A formal agreement between countries or groups to support and protect each other.",
+            "part_of_speech": "noun",
+            "term": "alliance"
+          },
+          {
+            "definition": "Directing an attack or action at a specific person or thing.",
+            "part_of_speech": "verb",
+            "term": "targeting"
+          },
+          {
+            "definition": "Involving ordinary people who are not members of the military or police forces.",
+            "part_of_speech": "adjective",
+            "term": "civilian"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Based on the story, why might defining cargo as \"dual-use\" complicate efforts to protect civilian shipping during a conflict?",
+          "Do you think triggering NATO's Article 4 is an effective step to prevent further maritime attacks? I believe it is (effective / risky) because..."
+        ],
+        "editorial_check": {
+          "content_digest": "5e0a20892b23c90d09fbb722f787eb8d8efee4636605ad571f31b2aef4fc372e",
+          "date": "2026-10-15T13:22:45.334392+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson challenges learners by testing nuanced definitions in context, assessing cause and effect (e.g., the purpose of summoning the envoy), and applying grammatical insight to sentence structures."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The text maintains a polished, neutral journalistic tone suitable for Advanced learners reading about international security issues."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Grammar and vocabulary explanations are clear and use controlled complex sentences without overcomplicating definitions or talking down to the learner."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets sophisticated C1-level geopolitical terms like 'dual-use', 'envoy', 'deliberate', and 'territorial integrity', which are highly appropriate for the context and level."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "C1-Higher"
+        },
+        "grammar": {
+          "concept": "Participle clauses after conjunctions",
+          "example_quote": "The immediate focus is to reach the four personnel confirmed alive, while safeguarding rescue teams against hazardous conditions, including very high waves.",
+          "explanation": "In Advanced English, writers frequently reduce a time clause by combining a conjunction like \"while\" with an -ing participle (e.g., \"while safeguarding\"). This concise structure shows two simultaneous actions occurring, keeping the sentence flowing without repeating the subject."
+        },
+        "news_brief_sentences": [
+          "Naval authorities state that eight of twelve crew members are unaccounted for after a drone strike left a tanker severely damaged off Romania's coast.",
+          "A substantial search and rescue operation is currently underway in the Black Sea following this latest attack in the region.",
+          "The immediate focus is to reach the four personnel confirmed alive, while safeguarding rescue teams against hazardous conditions, including very high waves.",
+          "Romania's authorities have deployed Black Hawk helicopters and marine rescue boats to assist the stricken vessel.",
+          "The western portion of the Black Sea has witnessed numerous incidents, and a Russian drone swarm was detected overnight near Ukraine's Snake Island.",
+          "Earlier in the week, another commercial ship sank further south along the Bulgarian coast following a drone strike, leaving eleven additional sailors missing.",
+          "In response to that suspected attack, Bulgaria officially summoned the Russian envoy to address the mounting crisis.",
+          "Consequently, Romanian and Bulgarian leaders are scheduled to deliberate shortly on whether to trigger Article 4 of the NATO treaty.",
+          "This diplomatic mechanism permits any member state to demand formal discussions if its territorial integrity or national security is perceived to be under threat.",
+          "Meanwhile, Moscow maintains that it strikes vessels delivering weaponry or dual-use cargo to Ukrainian ports.",
+          "Conversely, European leaders emphatically condemn the strikes, warning that the Black Sea is becoming another front of escalation in the conflict."
+        ],
+        "overview": "A drone strike off the Romanian coast has severely damaged a merchant ship and left eight crew members missing, intensifying regional security concerns.",
+        "quiz": [
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The rescue operation is already underway; the leaders are meeting for diplomatic discussions regarding NATO.",
+              "The text explicitly states that the leaders are scheduled to \"deliberate shortly on whether to trigger Article 4 of the NATO treaty.\"",
+              "There is no mention of establishing a joint military offensive against Russian bases in the text."
+            ],
+            "options": [
+              "To organize a coordinated maritime search and rescue operation for the damaged vessel.",
+              "To deliberate on whether they should trigger Article 4 of the NATO treaty.",
+              "To establish a joint military offensive against Russian drone bases near the Black Sea."
+            ],
+            "question": "What is the primary reason Romanian and Bulgarian leaders are scheduling talks, according to the text?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "To be \"unaccounted for\" means that authorities do not yet know where they are or if they are safe.",
+              "They are referred to as known crew members of the ship, so they were on the manifest.",
+              "The reading notes the immediate focus is to reach the four personnel confirmed alive; the others are missing, not refusing to speak."
+            ],
+            "options": [
+              "Their current location and physical safety remain unknown following the strike.",
+              "They were not officially listed on the ship's passenger manifest prior to the attack.",
+              "They have been successfully rescued but are currently refusing to speak with naval authorities."
+            ],
+            "question": "In the reading, what does it mean that eight of the twelve crew members are \"unaccounted for\"?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The participle \"safeguarding\" after \"while\" indicates an ongoing, simultaneous action, not a completed one.",
+              "Using \"while safeguarding\" concisely demonstrates that protecting the rescue teams happens concurrently with reaching the survivors.",
+              "The hazardous conditions (like very high waves) are environmental factors, not consequences of the rescue teams' actions."
+            ],
+            "options": [
+              "To emphasize that the rescue teams have already completed their primary mission successfully.",
+              "To show that the act of protecting the teams must happen at the same time as reaching the survivors.",
+              "To indicate that the hazardous conditions were directly caused by the rescue teams themselves."
+            ],
+            "question": "Look at the phrase \"while safeguarding rescue teams\". Why is the -ing participle used here?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The term refers to the nature of the cargo on board, not the flag or registration of the vessel.",
+              "Agricultural goods are purely civilian; \"dual-use\" means the cargo has potential military utility as well.",
+              "\"Dual-use\" refers to items that have both peaceful commercial applications and potential military utility, which Moscow uses to justify its strikes."
+            ],
+            "options": [
+              "Vessels that are formally registered and jointly operated by two different allied nations.",
+              "Agricultural exports that are being traded back and forth between two specific countries.",
+              "Goods or equipment that can serve both commercial civilian applications and military purposes."
+            ],
+            "question": "Moscow claims it targets ships carrying \"dual-use\" cargo. What does \"dual-use\" imply?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text explains Bulgaria summoned the envoy \"in response to that suspected attack\" that sank a commercial ship earlier in the week.",
+              "The drone swarm was detected near Ukraine's Snake Island, not above Bulgaria's capital city.",
+              "The envoy was summoned specifically in response to the suspected attack, not to assist with a Romanian rescue operation."
+            ],
+            "options": [
+              "Because they suspected Russian involvement in an attack that sank a commercial ship near their coast.",
+              "Because a Russian drone swarm was detected directly above Bulgaria's capital city overnight.",
+              "Because Romania requested diplomatic assistance to extract the four surviving crew members."
+            ],
+            "question": "Why did Bulgaria officially summon the Russian envoy?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text mentions drone swarms in the area overnight, but does not claim they are actively firing on the rescue helicopters.",
+              "The reading notes the need to safeguard teams against \"hazardous conditions, including very high waves.\"",
+              "The text does not mention freezing temperatures limiting the operational time of the rescue boats."
+            ],
+            "options": [
+              "Persistent drone swarms that are actively firing upon the Black Hawk helicopters.",
+              "Hazardous conditions, including very high waves in the area.",
+              "Freezing overnight temperatures that limit the operational time of the marine rescue boats."
+            ],
+            "question": "According to the text, what environmental factor complicates the ongoing rescue efforts?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A \"swarm\" refers to a large group of objects—in this case, drones—moving closely together.",
+              "A swarm implies many individual units, not a single advanced aircraft.",
+              "The term \"swarm\" is used for the drones, not for the diplomatic gathering of leaders."
+            ],
+            "options": [
+              "A large, dense group of small, coordinated vehicles moving together.",
+              "A single, highly advanced reconnaissance aircraft patrolling an area.",
+              "A diplomatic gathering of military leaders discussing regional security."
+            ],
+            "question": "What is a \"swarm\" in the context of the Russian drone sighting?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The mechanism only permits \"formal discussions,\" it is not an automatic trigger for a retaliatory military strike.",
+              "The text does not mention Article 4 being used to enforce a mandatory naval ceasefire.",
+              "Article 4 is clearly defined as a \"diplomatic mechanism\" that allows states to \"demand formal discussions\" when threatened."
+            ],
+            "options": [
+              "It automatically launches a retaliatory military strike to protect a member's territorial integrity.",
+              "It enforces an immediate naval ceasefire whenever a commercial ship is targeted in the Black Sea.",
+              "It permits a member state to demand formal discussions if its national security is perceived to be under threat."
+            ],
+            "question": "What is the function of the \"diplomatic mechanism\" mentioned in relation to Article 4?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Stricken\" describes something severely affected by damage or disaster, making it the correct term for the damaged tanker.",
+              "\"Substantial\" means of considerable size or importance, which describes the rescue operation, not the damage.",
+              "\"Deliberate\" means to think about an issue carefully, which is an action taken by the leaders, not a description of the ship."
+            ],
+            "options": [
+              "Stricken.",
+              "Substantial.",
+              "Deliberate."
+            ],
+            "question": "Which term best describes a vessel that is severely damaged and requires immediate assistance?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Escalation\" implies a worsening situation, which contradicts the idea of stabilizing toward peaceful negotiations.",
+              "An \"escalation\" means a rapid or sudden increase in the intensity and seriousness of the conflict.",
+              "The text shows that the dispute involves military strikes and security threats, so it is not remaining isolated to agricultural disputes."
+            ],
+            "options": [
+              "Stabilizing as both sides shift toward formal diplomatic negotiations rather than military strikes.",
+              "Growing rapidly worse and becoming more intensely dangerous in the region.",
+              "Remaining isolated strictly to agricultural disputes rather than military engagement."
+            ],
+            "question": "European leaders warned about an \"escalation\" in the conflict. This suggests they believe the situation is:"
+          }
+        ],
+        "sentence_evidence": [
+          "Eight of 12 crew members are missing after a drone attack left a tanker ablaze off Romania's coast, naval authorities say.",
+          "A search and rescue operation is under way in the Black Sea after the latest attack in the area.",
+          "The priority is now to reach the four crew members confirmed to be alive, while ensuring the safety of rescue teams with very high waves reported in the area.",
+          "A search and rescue operation for the eight missing members of the Wine Trader continues, Romania's authorities have said. Two Black Hawk helicopters and two rescue boats have been deployed.",
+          "The west coast of the Black Sea has recently seen a spate of drone attacks. A swarm of Russian drones was detected overnight not far from the scene, near Ukraine's Snake Island.",
+          "On Tuesday, two merchant ships were struck by drones further south along the coast of Bulgaria, Romania's neighbour, and one of the vessels sank, leaving 11 crew members missing.",
+          "Bulgaria said it suspected Russia was behind that attack, summoning the country's envoy.",
+          "The leaders of Romania and Bulgaria are due to discuss shortly whether Article 4 of the Nato treaty should be invoked.",
+          "This allows any member of the military alliance to request consultations with its allies if it believes its territorial integrity or security is threatened.",
+          "Moscow says it is targeting ships delivering weapons and dual-use cargo to Ukrainian ports.",
+          "On Tuesday, European Commission President Ursula von der Leyen spoke of the Black Sea becoming \"another front of escalation of the Russian war in Ukraine. This is unacceptable\"."
+        ],
+        "title": "Drone Attack on Black Sea Tanker Prompts Regional NATO Talks",
+        "topic": "Geopolitics and Security",
+        "vocabulary": [
+          {
+            "definition": "Describing people whose location and physical safety remain unknown following a disaster or accident.",
+            "part_of_speech": "adjective phrase",
+            "term": "unaccounted for"
+          },
+          {
+            "definition": "Of considerable importance, size, scale, or worth.",
+            "part_of_speech": "adjective",
+            "term": "substantial"
+          },
+          {
+            "definition": "Protecting someone or something from harm, damage, or dangerous conditions.",
+            "part_of_speech": "verb",
+            "term": "safeguarding"
+          },
+          {
+            "definition": "Seriously affected by an undesirable condition, extensive damage, or a disaster.",
+            "part_of_speech": "adjective",
+            "term": "stricken"
+          },
+          {
+            "definition": "A large number of objects, such as drones or insects, moving together in a dense and coordinated group.",
+            "part_of_speech": "noun",
+            "term": "swarm"
+          },
+          {
+            "definition": "A representative or messenger, often diplomatic, sent by a government to deal with another state.",
+            "part_of_speech": "noun",
+            "term": "envoy"
+          },
+          {
+            "definition": "To think about or discuss an issue carefully and thoroughly before making a decision.",
+            "part_of_speech": "verb",
+            "term": "deliberate"
+          },
+          {
+            "definition": "The state of being whole, undivided, and securely established, particularly regarding a nation's territorial borders.",
+            "part_of_speech": "noun",
+            "term": "integrity"
+          },
+          {
+            "definition": "Designed or suitable to be used for both civilian commercial applications and military purposes.",
+            "part_of_speech": "adjective",
+            "term": "dual-use"
+          },
+          {
+            "definition": "A rapid or sudden increase in intensity, seriousness, or scale, particularly in conflicts.",
+            "part_of_speech": "noun",
+            "term": "escalation"
+          }
+        ]
+      }
+    }
+  }
+}

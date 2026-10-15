@@ -188,11 +188,10 @@ summary { cursor:pointer; }
 .assessment-practice { background:#faf9f5; padding:10px 18px; border-radius:4px; }
 .assessment-plan-card { margin-top:14px; border:1px solid var(--line); border-radius:6px; padding:12px 22px; }
 .assessment-plan-card h4 { color:var(--blue); }
-.assessment-target { margin-top:12px; padding-top:10px; border-top:1px solid var(--line); }
-.assessment-target strong { font-size:.7rem; }
-.assessment-target p { color:var(--muted); margin-bottom:0; font-size:.78rem; }
-.study-prompt { margin-top:12px; padding-top:10px; border-top:1px solid var(--line); }
-.study-prompt h5 { margin:0 0 10px; font-size:.85rem; }
+.assessment-plan-card .assessment-target { margin:12px 0 0; padding-top:10px; border-top:1px solid var(--line); color:var(--muted); font-size:.78rem; }
+.assessment-target strong { color:var(--ink); }
+.study-prompt { margin-top:12px; border-top:1px solid var(--line); }
+.study-prompt>summary { min-height:44px; padding:10px 0; font-size:.85rem; font-weight:650; color:var(--blue); }
 .study-prompt .study-prompt-text { padding:10px 16px; border-radius:6px; background:#f3f6ff; white-space:pre-wrap; overflow-wrap:anywhere; user-select:text; }
 .study-prompt-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px 18px; }
 .study-prompt-actions .secondary-button { display:inline-flex; align-items:center; justify-content:center; background:#fff; text-align:center; }

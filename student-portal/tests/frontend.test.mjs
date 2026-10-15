@@ -330,6 +330,7 @@ test('self-study prompts copy exactly, stay plain text, and offer a manual-copy 
  const dom=setup(path=>path==='/api/assessment'?reply({assessment:record}):null,origin+'/#assessments/next');await flush();
  const d=dom.window.document;let copied;
  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
+ d.querySelector('.study-prompt summary').click();
  const button=d.querySelector('.study-prompt button');
  button.click();await flush();
  assert.equal(copied,aiPrompt);assert.match(d.querySelector('.study-prompt-status').textContent,/Copied/);
@@ -351,6 +352,7 @@ test('AI study logos open four sites without sending prompts or changing the cli
  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
  const boxes=[...d.querySelectorAll('.study-prompt')];
  for(const box of boxes){
+  box.querySelector('summary').click();
   assert.equal(box.querySelectorAll('button').length,1);
   assert.equal(box.querySelector('button').textContent,'Copy AI prompt');
   const links=[...box.querySelectorAll('a')];assert.equal(links.length,4);

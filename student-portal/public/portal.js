@@ -323,7 +323,9 @@
     $('assessment-content').setAttribute('aria-busy', String(assessmentLoading));
   }
   function studyPrompt(item) {
-    const box = node('div', '', 'study-prompt');
+    const box = node('details', '', 'study-prompt');
+    const toggle = node('summary', 'AI prompt');
+    toggle.setAttribute('aria-label', 'AI prompt: ' + item.title);
     const prompt = item.aiPrompt || 'Help me study this English topic: “' + item.title + '”. Use short, simple English. First, explain the topic and give three easy examples. Then give me five practice questions, one at a time. Wait for my answer. Explain any mistake and let me try again.';
     const button = node('button', 'Copy AI prompt', 'secondary-button'); button.type = 'button';
     button.setAttribute('aria-label', 'Copy AI prompt: ' + item.title);
@@ -350,7 +352,7 @@
     }
     actions.append(button, sites);
     const status = node('p', '', 'study-prompt-status'); status.setAttribute('role', 'status');
-    box.append(node('h5', 'Study with AI'), node('p', prompt, 'study-prompt-text'),
+    box.append(toggle, node('p', prompt, 'study-prompt-text'),
       node('p', 'Copy the prompt. Choose an AI site below, then paste it into the chat.', 'study-prompt-hint'), actions, status);
     async function copyPrompt(message) {
       const identity = identityRevision;
@@ -409,11 +411,11 @@
     });
     fragment.append(patterns);
     const plan = assessmentSection('Study on your own', 'next', 'assessment-plan');
-    plan.append(node('p', 'Your lessons showed which parts of your English need more practice. We chose these topics to help you improve. Choose a topic. Use its AI prompt to learn and practice.', 'section-intro'));
+    plan.append(node('p', 'Your lessons showed which parts of your English need more practice. We chose these topics to help you improve. Choose a topic. Open its AI prompt to learn and practice.', 'section-intro'));
     for (const item of record.plan) {
       const card = node('section', '', 'assessment-plan-card');
       card.append(node('h4', item.title), node('p', item.activity));
-      const target = node('div', '', 'assessment-target'); target.append(node('strong', 'Try this'), node('p', item.target)); card.append(target, studyPrompt(item)); plan.append(card);
+      const target = node('p', '', 'assessment-target'); target.append(node('strong', 'Try this: '), document.createTextNode(item.target)); card.append(target, studyPrompt(item)); plan.append(card);
     }
     fragment.append(plan);
     const source = node('details', '', 'feedback-source');

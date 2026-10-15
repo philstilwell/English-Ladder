@@ -60,7 +60,8 @@ export class FeedbackStore {
       let record;
       try { record = validateAssessment(await request.json()); }
       catch { return json({ error: 'Please check the assessment format and session references.' }, 400); }
-      const sources = new Map(await Promise.all(record.sourceSessions.map(async sessionId => [sessionId, await this.storage.get(`feedback:${sessionId}`)])));
+      const sourceIds = [...new Set([...record.sourceSessions, ...(record.quiz?.sourceSessions || [])])];
+      const sources = new Map(await Promise.all(sourceIds.map(async sessionId => [sessionId, await this.storage.get(`feedback:${sessionId}`)])));
       if ([...sources.values()].some(source => !source?.source?.reviewedFullTranscript) || assessmentReferences(record).some(ref => {
         const coverage = sources.get(ref.sessionId).source;
         return ref.at < coverage.coverageStart || ref.at > coverage.coverageEnd;

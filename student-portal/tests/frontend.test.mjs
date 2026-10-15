@@ -194,6 +194,18 @@ function savedSetup(seed,role='student',custom=null,hash='quiz'){
  const cookie=seed[role].cookie;
  return setup((path,options={})=>custom?.(path,options)||call(seed.e,path,{...options,headers:{...options.headers,Cookie:cookie,Origin:origin}}),origin+'/#'+hash,role);
 }
+test('teacher preview uses the new quiz lesson links and topic labels without changing the assessment',async()=>{
+ const next={...quiz,sourceSessions:[second.id],patternTitles:['Use “can”'],generatedForSession:second.id};
+ const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz:next}}):null,origin+'/#quiz','teacher');
+ await flush();const d=dom.window.document;
+ assert.equal(d.querySelector('.quiz-sources a').getAttribute('href'),'#feedback/'+second.id);
+ assert.match(d.querySelector('.quiz-sources').textContent,/Practice from these lessons/);
+ d.querySelectorAll('.quiz-option')[1].click();d.querySelectorAll('.quiz-option')[0].click();
+ d.querySelector('.quiz-next').click();d.querySelectorAll('.quiz-option')[1].click();d.querySelector('.quiz-next').click();
+ assert.equal(d.querySelector('.quiz-complete li').textContent,'Use “can”');
+ assert.equal(d.querySelector('#assessment-summary').textContent,assessment.title);
+ dom.window.close();
+});
 test('student answers save immediately, resume after reopening, and finish with a saved first-try score',async()=>{
  const seed=await seedQuiz();let dom=savedSetup(seed);await flush();let d=dom.window.document;
  assert.match(d.getElementById('quiz-content').textContent,/saved for Phil/);

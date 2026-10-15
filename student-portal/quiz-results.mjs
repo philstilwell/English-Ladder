@@ -9,7 +9,7 @@ const conflict = () => json({ error: 'Your saved quiz has changed. Load it again
 async function currentQuiz(storage) {
   const assessment = await storage.get('assessment:current');
   if (!assessment?.quiz) return null;
-  const quiz = assessment.quiz, patternTitles = assessment.patterns.map(p => p.title), sourceSessions = assessment.sourceSessions;
+  const quiz = assessment.quiz, patternTitles = quiz.patternTitles || assessment.patterns.map(p => p.title), sourceSessions = quiz.sourceSessions || assessment.sourceSessions;
   const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify({ quiz, patternTitles, sourceSessions })));
   const version = Array.from(new Uint8Array(bytes), byte => byte.toString(16).padStart(2, '0')).join('');
   return { version, quiz, patternTitles, sourceSessions };
@@ -32,10 +32,11 @@ export async function handleQuiz(storage, request) {
     const attempt = activeId ? await storage.get(`quiz:attempt:${activeId}`) : null;
     // An unfinished attempt keeps its original questions even if the teacher
     // publishes a new quiz. A new attempt uses the current assessment.
-    if (attempt && (!attempt.completedAt || url.searchParams.get('new') !== '1')) {
+    const current = await currentQuiz(storage);
+    if (attempt && (!attempt.completedAt || (url.searchParams.get('new') !== '1' && (!current || current.version === attempt.version)))) {
       return json({ version: attempt.version, quiz: attempt.quiz, patternTitles: attempt.patternTitles, sourceSessions: attempt.sourceSessions, attempt });
     }
-    return json({ ...await currentQuiz(storage), attempt: null });
+    return json({ ...current, attempt: null });
   }
   if (route === '/quiz/results' && request.method === 'GET') {
     const before = url.searchParams.get('before');

@@ -12,11 +12,26 @@ function date(value) {
   return value;
 }
 
+function sessionIds(value) {
+  const ids = list(value, id => {
+    if (typeof id !== 'string' || !SESSION_ID.test(id)) throw new Error('Invalid source session');
+    return id;
+  }, 100);
+  if (new Set(ids).size !== ids.length) throw new Error('Duplicate sources');
+  return ids;
+}
+
 function validateQuiz(value, patternCount) {
+  const sourceSessions = value?.sourceSessions === undefined ? undefined : sessionIds(value.sourceSessions);
+  const patternTitles = value?.patternTitles === undefined ? undefined : list(value.patternTitles, title => text(title, 120));
+  if (value?.generatedForSession !== undefined && !sourceSessions?.includes(value.generatedForSession)) throw new Error('Invalid quiz session');
   return {
     title: text(value?.title, 120), instructions: text(value?.instructions, 300),
+    ...(sourceSessions ? { sourceSessions } : {}),
+    ...(patternTitles ? { patternTitles } : {}),
+    ...(value?.generatedForSession === undefined ? {} : { generatedForSession: value.generatedForSession }),
     questions: list(value?.questions, question => {
-      if (!Number.isInteger(question.patternIndex) || question.patternIndex < 0 || question.patternIndex >= patternCount) throw new Error('Invalid quiz source');
+      if (!Number.isInteger(question.patternIndex) || question.patternIndex < 0 || question.patternIndex >= (patternTitles?.length || patternCount)) throw new Error('Invalid quiz source');
       const options = list(question.options, option => ({ text: text(option.text, 250), feedback: text(option.feedback, 400) }), 4);
       if (options.length < 2 || new Set(options.map(option => option.text.toLowerCase())).size !== options.length) throw new Error('Invalid quiz choices');
       if (!Number.isInteger(question.correctIndex) || question.correctIndex < 0 || question.correctIndex >= options.length) throw new Error('Invalid quiz answer');
@@ -32,11 +47,7 @@ function validateQuiz(value, patternCount) {
 // existing session records. Content review still enforces the ESL-only scope.
 export function validateAssessment(value) {
   if (!value || value.scope !== 'esl') throw new Error('Invalid assessment');
-  const sourceSessions = list(value.sourceSessions, id => {
-    if (typeof id !== 'string' || !SESSION_ID.test(id)) throw new Error('Invalid source session');
-    return id;
-  }, 100);
-  if (new Set(sourceSessions).size !== sourceSessions.length) throw new Error('Duplicate sources');
+  const sourceSessions = sessionIds(value.sourceSessions);
   const reference = item => {
     if (!sourceSessions.includes(item.sessionId) || typeof item.at !== 'string' || !/^\d{2}:[0-5]\d:[0-5]\d$/.test(item.at)) throw new Error('Invalid evidence');
     return { sessionId: item.sessionId, at: item.at };

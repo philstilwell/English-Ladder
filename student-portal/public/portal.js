@@ -414,7 +414,7 @@
   function resetQuiz(focus = false) {
     if (!teacherMode) { loadSavedQuiz(false, focus); return; }
     quizRevision++;
-    quizState = assessment?.quiz ? { quiz: assessment.quiz, patternTitles: assessment.patterns.map(p => p.title), sourceSessions: assessment.sourceSessions, index: 0, answers: assessment.quiz.questions.map(() => []), finished: false } : null;
+    quizState = assessment?.quiz ? { quiz: assessment.quiz, patternTitles: assessment.quiz.patternTitles || assessment.patterns.map(p => p.title), sourceSessions: assessment.quiz.sourceSessions || assessment.sourceSessions, index: 0, answers: assessment.quiz.questions.map(() => []), finished: false } : null;
     $('quiz-nav').hidden = !quizState;
     if (quizState) renderQuiz(focus);
     else quizMessage('Your teacher can add a quiz here.');
@@ -446,7 +446,7 @@
   }
   function quizSources(sourceSessions) {
     const sources = node('div', '', 'quiz-sources');
-    sources.append(node('p', 'This quiz is based on your assessment of these lessons:'));
+    sources.append(node('p', 'Practice from these lessons:'));
     const links = node('div', '', 'assessment-source-links');
     for (const id of sourceSessions || []) {
       const link = node('a', assessmentDate(id.slice(0, 10)));

@@ -409,7 +409,7 @@
     });
     fragment.append(patterns);
     const plan = assessmentSection('Study on your own', 'next', 'assessment-plan');
-    plan.append(node('p', 'Choose a topic to study. Use its prompt to learn and practice with AI.', 'section-intro'));
+    plan.append(node('p', 'Your lessons showed which parts of your English need more practice. We chose these topics to help you improve. Choose a topic. Use its AI prompt to learn and practice.', 'section-intro'));
     for (const item of record.plan) {
       const card = node('section', '', 'assessment-plan-card');
       card.append(node('h4', item.title), node('p', item.activity));

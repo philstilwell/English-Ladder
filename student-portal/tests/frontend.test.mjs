@@ -15,7 +15,8 @@ const reply=data=>new Response(JSON.stringify(data));
 const flush=async()=>{for(let i=0;i<12;i++)await new Promise(resolve=>setTimeout(resolve,1));};
 function setup(custom,url='https://ab26.englishladder.com/',role='student'){
  const dom=new JSDOM(html,{url,runScripts:'outside-only',pretendToBeVisual:true});
- const w=dom.window;w.setInterval=()=>0;
+ const w=dom.window;w.setInterval=()=>0;w.AbortController=AbortController;
+ const positions=new Map();
  w.fetch=async(path,options)=>{
   const customResult=custom?.(path,options);if(customResult)return customResult;
   if(path==='/api/context')return reply({id:'ab26'});
@@ -23,11 +24,18 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/logout')return reply({ok:true});
   if(path==='/api/assessment')return reply({assessment});
   if(path==='/api/quiz/state')return reply({attempt:null});
-  if(['/api/business-terms/state','/api/grammar-practice/state'].includes(path))return reply({entries:[]});
+  if(['/api/business-terms/state','/api/grammar-practice/state'].includes(path)) {
+   let position=positions.get(path)||{number:null,revision:0};
+   if(options?.method==='PATCH'&&JSON.parse(options.body).field==='position') {
+    position={number:JSON.parse(options.body).value,revision:position.revision+1};positions.set(path,position);return reply({position});
+   }
+   return reply({entries:[],position});
+  }
   if(path==='/api/feedback')return reply({sessions:[feedback,second],nextCursor:null});
   return reply(path.endsWith(second.id)?second:feedback);
  };
  w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));
+ w.eval(readFileSync(new URL('../public/practice-position.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));w.eval(script);return dom;
 }
@@ -519,8 +527,8 @@ const termsSettings={...settingsFixture,visibleActivities:['business-terms']};
 const termsRoute=origin+'/#activities/business-terms';
 const termsMock=path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:termsBank.items}):null;
 
-test('business terms preserve answer highlights and do not save reveals or navigation', async () => {
-  const calls=[];const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET'});return termsMock(path);},termsRoute);
+test('business terms preserve answer highlights and save navigation without saving reveals', async () => {
+  const calls=[];const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET',body:options?.body&&JSON.parse(options.body)});return termsMock(path);},termsRoute);
   await flush();const w=dom.window,d=w.document,root=d.getElementById('business-terms');
   w.Storage.prototype.setItem=()=>{throw Error('Self-check must not use browser storage');};
   assert.equal(d.querySelector('#activities-submenu a[aria-current]').textContent,'Business terms');
@@ -535,7 +543,7 @@ test('business terms preserve answer highlights and do not save reveals or navig
   ]);
   root.querySelector('.terms-reveal input').click();assert.equal(root.querySelector('.terms-sentences').textContent,before);
   assert.equal(root.querySelectorAll('.terms-answer').length,0);
-  assert(!root.querySelector('.terms-sentences').classList.contains('is-revealed'));
+  assert(!root.querySelector('.terms-sentences').classList.contains('is-revealed'));assert.equal(calls.length,count);
   const jump=value=>{d.getElementById('terms-number').value=String(value);root.querySelector('form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));};
   jump(4);assert.equal([...root.querySelectorAll('.terms-words q')].filter(q=>q.textContent==='are').length,2);
   root.querySelector('.terms-reveal input').click();assert.match(root.querySelectorAll('.terms-sentences q')[1].textContent,/"Do Not Enter\."/);
@@ -543,9 +551,9 @@ test('business terms preserve answer highlights and do not save reveals or navig
   jump(17);jump(18);assert.match(d.getElementById('terms-jump-status').textContent,/not available/);assert.match(root.querySelector('h4').textContent,/Item 17/);
   [...root.querySelectorAll('button')].find(b=>b.textContent==='Next').click();assert.match(root.querySelector('h4').textContent,/Item 19/);assert.equal(root.querySelector('.terms-reveal input').checked,false);
   jump(2961);assert.equal([...root.querySelectorAll('button')].find(b=>b.textContent==='Next').disabled,true);
-  assert.equal(d.activeElement.className,'terms-heading');assert.equal(calls.length,count);assert(calls.every(c=>c.method==='GET'));
+  assert.equal(d.activeElement.className,'terms-heading');await flush();assert(calls.filter(c=>c.method!=='GET').every(c=>c.body.field==='position'));assert.equal(calls.at(-1).body.value,2961);
   root.querySelector('.terms-reveal input').click();w.location.hash='overview';await flush();assert.equal(root.textContent,'');
-  w.location.hash='activities/business-terms';await flush();assert.match(root.querySelector('h4').textContent,/Item 1 ·/);assert.equal(root.querySelector('.terms-reveal input').checked,false);
+  w.location.hash='activities/business-terms';await flush();assert.match(root.querySelector('h4').textContent,/Item 2961 ·/);assert.equal(root.querySelector('.terms-reveal input').checked,false);
   assert.equal(w.localStorage.length,0);assert.equal(w.sessionStorage.length,0);w.close();
 });
 
@@ -578,9 +586,9 @@ test('business terms retry bad content without exposing incomplete keys and clea
   await flush();assert.equal(expiredDom.window.document.getElementById('login-view').hidden,false);assert.equal(expiredDom.window.document.getElementById('business-terms').textContent,'');expiredDom.window.close();
 });
 
-test('grammar preserves unsaved reveals and navigation across every item', async () => {
+test('grammar preserves unsaved reveals and remembers the selected group', async () => {
   const calls=[];
-  const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET'});return path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?reply({items:grammarBank.items}):null;},grammarRoute);
+  const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET',body:options?.body&&JSON.parse(options.body)});return path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?reply({items:grammarBank.items}):null;},grammarRoute);
   await flush();const w=dom.window,d=w.document,root=d.getElementById('grammar-practice');
   w.Storage.prototype.setItem=()=>{throw Error('Practice must not write browser storage');};
   assert.equal(d.querySelector('#activities-submenu a[aria-current]').textContent,'Grammar practice');
@@ -589,16 +597,16 @@ test('grammar preserves unsaved reveals and navigation across every item', async
   const count=calls.length,checkbox=root.querySelector('.grammar-reveal input'),answer=d.getElementById(checkbox.getAttribute('aria-controls'));
   assert.equal(answer.textContent,grammarBank.items[0].prompt);
   checkbox.click();assert.equal(answer.textContent,'Tom is much more intelligent than Mike.');assert(answer.parentElement.classList.contains('is-revealed'));
-  checkbox.click();assert.equal(answer.textContent,grammarBank.items[0].prompt);assert(!answer.parentElement.classList.contains('is-revealed'));
+  checkbox.click();assert.equal(answer.textContent,grammarBank.items[0].prompt);assert(!answer.parentElement.classList.contains('is-revealed'));assert.equal(calls.length,count);
   const picker=d.getElementById('grammar-group');picker.value='89';picker.dispatchEvent(new w.Event('change'));
   assert.equal(root.querySelector('ol').start,891);assert.equal(root.querySelectorAll('.grammar-item').length,10);
   assert.equal(root.querySelector('.grammar-item:last-child .grammar-prompt q').textContent,grammarBank.items[899].prompt);
   assert.equal([...root.querySelectorAll('button')].find(b=>b.textContent==='Next 10').disabled,true);
   assert.equal(d.activeElement.className,'grammar-heading');
   [...root.querySelectorAll('button')].find(b=>b.textContent==='Previous 10').click();assert.equal(root.querySelector('ol').start,881);
-  assert.equal(calls.length,count);assert(calls.every(c=>c.method==='GET'));
+  await flush();assert(calls.filter(c=>c.method!=='GET').every(c=>c.body.field==='position'));assert.equal(calls.at(-1).body.value,881);
   root.querySelector('.grammar-reveal input').click();w.location.hash='overview';await flush();assert.equal(root.textContent,'');
-  w.location.hash='activities/grammar-practice';await flush();assert.equal(root.querySelector('ol').start,1);assert.equal(root.querySelectorAll('input:checked').length,0);
+  w.location.hash='activities/grammar-practice';await flush();assert.equal(root.querySelector('ol').start,881);assert.equal(root.querySelectorAll('input:checked').length,0);
   root.querySelector('.grammar-reveal input').click();w.dispatchEvent(new w.Event('pagehide'));assert.equal(root.textContent,'');assert.equal(root.hidden,true);
   assert.equal(w.localStorage.length,0);assert.equal(w.sessionStorage.length,0);dom.window.close();
 });
@@ -766,7 +774,8 @@ test('Grammar saves and independently undoes choices, restores them on return, a
   assert.equal(button(12,'Saved to Questions').getAttribute('aria-pressed'),'true');assert.equal(button(12,'Finished').getAttribute('aria-pressed'),'true');
   d.querySelector('#grammar-item-12 input').click();assert(d.querySelector('#grammar-item-12 .grammar-prompt').classList.contains('is-revealed'));
   w.location.hash='overview';await flush();w.location.hash='activities/grammar-practice';await flush();
-  assert.equal(button(1,'Finished').getAttribute('aria-pressed'),'true');assert.equal(root.querySelectorAll('input:checked').length,0);assert.equal(d.getElementById('grammar-group').value,'0');
+  assert.equal(button(12,'Finished').getAttribute('aria-pressed'),'true');assert.equal(root.querySelectorAll('input:checked').length,0);assert.equal(d.getElementById('grammar-group').value,'1');
+  group(0);assert.equal(button(1,'Finished').getAttribute('aria-pressed'),'true');
   root.querySelector('.grammar-question-links button').click();button(12,'Finished').click();await flush();
   assert(!d.getElementById('grammar-item-12').classList.contains('is-finished'));assert.equal(button(12,'Saved to Questions').getAttribute('aria-pressed'),'true');
   button(12,'Saved to Questions').click();await flush();assert.equal(root.querySelector('.grammar-questions summary').textContent,'Questions list (0)');
@@ -817,13 +826,14 @@ test('Grammar discards pending saves on navigation, sign-out, page hide and sess
 
 function filteredPractice(kind, bank, entries, saveOverride) {
   const grammar=kind==='grammar',activity=grammar?'grammar-practice':'business-terms',prefix=grammar?'grammar':'terms';
-  const saved=new Map(entries.map(entry=>[entry.number,{revision:1,question:false,...entry}]));let writes=0,preferences={hideFinished:false,revision:0};
+  const saved=new Map(entries.map(entry=>[entry.number,{revision:1,question:false,...entry}]));let writes=0,preferences={hideFinished:false,revision:0},position={number:null,revision:0};
   const dom=setup((path,options)=>{
     if(path==='/api/account')return reply(grammar?grammarSettings:termsSettings);
     if(path==='/api/'+activity)return reply({items:bank});
     if(path==='/api/'+activity+'/state') {
-      if(!options?.method)return reply({entries:[...saved.values()],preferences});
+      if(!options?.method)return reply({entries:[...saved.values()],preferences,position});
       const body=JSON.parse(options.body);
+      if(body.field==='position'){position={number:body.value,revision:position.revision+1};return reply({position});}
       if(body.field==='hideFinished'){preferences={hideFinished:body.value,revision:preferences.revision+1};return reply({preferences});}
       writes++;
       if(saveOverride)return saveOverride(body,saved);
@@ -929,5 +939,41 @@ for(const [activity,prefix,bank,settings] of [['grammar-practice','grammar',gram
     await flush();resolve(action==='expiry'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):reply({preferences:{hideFinished:false,revision:2}}));await flush();
     assert.equal(r.textContent,'');assert(r.hidden);w.close();
   }
+ });
+}
+
+for(const [activity,prefix,bank,settings] of [['grammar-practice','grammar',grammarBank,grammarSettings],['business-terms','terms',termsBank,termsSettings]]) {
+ test(activity+' restores its private place on a new page, respects hidden items, and leaves teacher navigation unsaved',async()=>{
+  const {e,student}=await seedQuiz(),path='/api/'+activity+'/state',route=origin+'/#activities/'+activity,grammar=prefix==='grammar';let writes=0;
+  const read=async()=>(await(await call(e,path,{headers:{Cookie:student.cookie}})).json());
+  const save=async body=>{const r=await call(e,path,{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(body)});assert.equal(r.status,200);};
+  const mock=(url,options={})=>{
+   if(url==='/api/account')return reply(settings);
+   if(url==='/api/'+activity)return reply({items:bank.items.slice(0,60)});
+   if(url===path){if(options.method)writes++;return call(e,path,{...options,headers:{...options.headers,Cookie:student.cookie,...(options.method?{Origin:origin}:{})}});}
+  };
+  const number=dom=>grammar?dom.window.document.querySelector('.grammar-item').value:Number(dom.window.document.getElementById('terms-number').value);
+  const go=(dom,value)=>{
+   const d=dom.window.document;
+   if(grammar){const picker=d.getElementById('grammar-group');picker.value=String((value-1)/10);picker.dispatchEvent(new dom.window.Event('change'));}
+   else {const input=d.getElementById('terms-number');input.value=String(value);input.form.dispatchEvent(new dom.window.Event('submit',{bubbles:true,cancelable:true}));}
+  };
+  await save({number:31,field:'question',value:true,revision:0});
+  const first=setup(mock,route);await flush();assert.equal(writes,0);assert.equal(number(first),1);
+  const firstRoot=first.window.document.getElementById(activity);
+  firstRoot.querySelector('.'+prefix+'-reveal input').click();await flush();assert.equal(writes,0);
+  firstRoot.querySelector('.'+prefix+'-question-links button').click();await flush();assert.equal((await read()).position.number,31);
+  go(first,21);await flush();assert.equal((await read()).position.number,21);
+  first.window.location.hash='overview';await flush();first.window.location.hash='activities/'+activity;await flush();assert.equal(number(first),21);
+  assert.equal(first.window.document.querySelector('.'+prefix+'-reveal input').checked,false);first.window.close();
+  const before=writes,second=setup(mock,route);await flush();assert.equal(number(second),21);assert.equal(writes,before);second.window.close();
+  for(const item of bank.items.filter(item=>item.number<=21))await save({number:item.number,field:'finished',value:true,revision:0});
+  await save({field:'hideFinished',value:true,revision:0});
+  const hidden=setup(mock,route);await flush();assert.equal(number(hidden),22);assert.equal(writes,before);assert.equal((await read()).position.number,21);hidden.window.close();
+  const teacher=setup(mock,route,'teacher');await flush();const teacherRoot=teacher.window.document.getElementById(activity);
+  [...teacherRoot.querySelectorAll('button')].find(b=>b.textContent===(grammar?'Next 10':'Next')).click();await flush();assert.equal(writes,before);assert.equal((await read()).position.number,21);teacher.window.close();
+  const last=setup(mock,route);await flush();const lastRoot=last.window.document.getElementById(activity);
+  [...lastRoot.querySelectorAll('button')].find(b=>b.textContent===(grammar?'Next 10':'Next')).click();await flush();
+  assert.equal((await read()).position.number,number(last));assert.equal((await read()).preferences.hideFinished,true);last.window.close();
  });
 }

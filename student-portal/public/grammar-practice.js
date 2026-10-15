@@ -49,9 +49,11 @@
   window.GrammarPractice = {
     exercise, validItems,
     create({ root, api, expired }) {
+      const bookmark = window.PracticePosition.create({ api, expired, path: '/api/grammar-practice/state' });
       let revision = 0, active = false, items = [], page = 0, progress = new Map(), teacher = false, saving = false;
       let listOpen = false, listPage = 0, hideFinished = false, preferenceRevision = 0;
       function clear() {
+        bookmark.clear();
         revision++; active = false; items = []; page = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false; preferenceRevision = 0;
         root.replaceChildren(); root.hidden = true; root.removeAttribute('aria-busy');
       }
@@ -67,7 +69,7 @@
         readPreferences(data.preferences);
       }
       const visibleItems = () => hideFinished ? items.filter(item => !progress.get(item.number)?.finished) : items;
-      function render(focus = false, focusNumber = null, message = '') {
+      function render(focus = false, focusNumber = null, message = '', remember = true) {
         const visible = visibleItems();
         page = Math.max(0, Math.min(page, Math.ceil(visible.length / PAGE_SIZE) - 1));
         const start = page * PAGE_SIZE, end = Math.min(start + PAGE_SIZE, visible.length);
@@ -154,7 +156,7 @@
         if (!visible.length) {
           updateList();
           const empty = element('p', 'All items are finished. Uncheck “Hide finished items” to see them again.', 'practice-empty'); empty.tabIndex = -1;
-          root.replaceChildren(intro, help, filter, filterStatus, questions, empty);
+          root.replaceChildren(intro, help, filter, filterStatus, bookmark.notice, questions, empty);
           if (focus) empty.focus();
           return;
         }
@@ -236,7 +238,8 @@
         previous.addEventListener('click', () => { if (page > 0) { page--; render(true); } });
         next.addEventListener('click', () => { if (end < visible.length) { page++; render(true); } });
         controls.append(previous, next);
-        root.replaceChildren(intro, help, filter, filterStatus, questions, picker, heading, list, controls);
+        root.replaceChildren(intro, help, filter, filterStatus, bookmark.notice, questions, picker, heading, list, controls);
+        if (remember) bookmark.remember(visible[start].number);
         if (focus) { const target = focusNumber ? rows.get(focusNumber).row : heading; target.focus(); target.scrollIntoView?.({ block: 'start' }); }
       }
       async function open(teacherView = false) {
@@ -245,10 +248,16 @@
         root.hidden = false; root.setAttribute('aria-busy', 'true');
         const loading = element('p', 'Loading grammar practice…'); loading.setAttribute('role', 'status'); root.replaceChildren(loading);
         try {
+          await bookmark.settled();
+          if (current !== revision) return;
           const [data, state] = await Promise.all([api('/api/grammar-practice'), api('/api/grammar-practice/state')]);
           if (current !== revision) return;
           if (!validItems(data.items) || data.items.some((item, index) => item.number !== index + 1)) throw new Error('Invalid practice items');
-          readProgress(state); items = data.items; page = 0; root.removeAttribute('aria-busy'); render();
+          readProgress(state); items = data.items;
+          const number = bookmark.read(state.position, !teacher), visible = visibleItems();
+          let index = number === null ? 0 : visible.findIndex(item => item.number >= number);
+          if (index === -1) index = Math.max(0, visible.length - 1);
+          page = Math.floor(index / PAGE_SIZE); root.removeAttribute('aria-busy'); render(false, null, '', false);
         } catch (error) {
           if (current !== revision || expired(error)) return;
           root.removeAttribute('aria-busy');

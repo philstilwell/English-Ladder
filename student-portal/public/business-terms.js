@@ -56,13 +56,15 @@
   window.BusinessTerms = {
     exercise, validItems,
     create({ root, api, expired }) {
+      const bookmark = window.PracticePosition.create({ api, expired, path: '/api/business-terms/state' });
       let revision = 0, active = false, items = [], position = 0, progress = new Map(), teacher = false, saving = false;
       let listOpen = false, listPage = 0, hideFinished = false, preferenceRevision = 0;
       function clear() {
+        bookmark.clear();
         revision++; active = false; items = []; position = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false; preferenceRevision = 0;
         root.replaceChildren(); root.hidden = true; root.removeAttribute('aria-busy');
       }
-      function render(focus = false, message = '') {
+      function render(focus = false, message = '', remember = true) {
         const visible = items.map((item, index) => !hideFinished || !progress.get(item.number)?.finished ? index : -1).filter(index => index !== -1);
         if (!visible.includes(position)) position = visible.find(index => index > position) ?? visible.at(-1) ?? 0;
         const visiblePosition = visible.indexOf(position);
@@ -148,7 +150,7 @@
         updateList();
         if (!visible.length) {
           const empty = node('p', 'All items are finished. Uncheck “Hide finished items” to see them again.', 'practice-empty'); empty.tabIndex = -1;
-          root.replaceChildren(intro, filter, filterStatus, questions, empty);
+          root.replaceChildren(intro, filter, filterStatus, bookmark.notice, questions, empty);
           if (focus) empty.focus();
           return;
         }
@@ -231,7 +233,8 @@
         previous.addEventListener('click', () => { if (visiblePosition > 0) { position = visible[visiblePosition - 1]; render(true); } });
         next.addEventListener('click', () => { if (visiblePosition < visible.length - 1) { position = visible[visiblePosition + 1]; render(true); } });
         controls.append(previous, next);
-        root.replaceChildren(intro, filter, filterStatus, questions, jump, status, card, controls);
+        root.replaceChildren(intro, filter, filterStatus, bookmark.notice, questions, jump, status, card, controls);
+        if (remember) bookmark.remember(item.number);
         if (focus) { title.focus(); title.scrollIntoView?.({ block: 'start' }); }
       }
       function readPreferences(preferences = { hideFinished: false, revision: 0 }) {
@@ -249,10 +252,16 @@
         root.hidden = false; root.setAttribute('aria-busy', 'true');
         const loading = node('p', 'Loading business terms…'); loading.setAttribute('role', 'status'); root.replaceChildren(loading);
         try {
+          await bookmark.settled();
+          if (current !== revision) return;
           const [data, state] = await Promise.all([api('/api/business-terms'), api('/api/business-terms/state')]);
           if (current !== revision) return;
           if (!validItems(data.items)) throw new Error('Incomplete practice content');
-          readProgress(state); items = data.items; position = 0; root.removeAttribute('aria-busy'); render();
+          readProgress(state); items = data.items;
+          const number = bookmark.read(state.position, !teacher);
+          position = number === null ? 0 : items.findIndex(item => item.number >= number);
+          if (position === -1) position = items.length - 1;
+          root.removeAttribute('aria-busy'); render(false, '', false);
         } catch (error) {
           if (current !== revision || expired(error)) return;
           root.removeAttribute('aria-busy');

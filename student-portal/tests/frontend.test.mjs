@@ -62,6 +62,19 @@ test('late page responses cannot overwrite a newer selection',async()=>{
  assert.equal(dom.window.document.getElementById('feedback-title').textContent,second.title);
  dom.window.close();
 });
+test('assessment highlighting includes the section reached below the combined header',async()=>{
+ const dom=setup(null,'https://ab26.englishladder.com/#assessments/patterns');await flush();
+ const w=dom.window,d=w.document;
+ Object.defineProperty(w,'innerHeight',{value:720,configurable:true});
+ d.querySelector('.masthead-band').getBoundingClientRect=()=>({height:110});
+ for(const [key,top] of Object.entries({summary:-1000,strengths:-500,patterns:150,next:900})) {
+  d.getElementById('assessment-'+key).getBoundingClientRect=()=>({top});
+ }
+ w.dispatchEvent(new w.Event('scroll'));
+ await new Promise(resolve=>setTimeout(resolve,30));
+ assert.equal(d.querySelector('.assessment-outline [aria-current]').hash,'#assessments/patterns');
+ w.close();
+});
 test('sign-out clears profile, records, summaries, and late responses',async()=>{
  let resolveFirst;
  const dom=setup(path=>path.endsWith('/'+feedback.id)?new Promise(resolve=>{resolveFirst=resolve;}):null);await flush();

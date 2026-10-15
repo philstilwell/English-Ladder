@@ -3,21 +3,23 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM} from 'jsdom';
 import {feedback,assessment,quiz} from './fixture.mjs';
+import {seedQuiz,call,origin} from './harness.mjs';
 const html=readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
 const script=readFileSync(new URL('../public/portal.js',import.meta.url),'utf8');
 const second={...feedback,id:'2026-09-01-2057',startedAt:'2026-09-02T00:57:01Z',title:'Earlier English lesson'};
 const profile={student:{id:'ab26',name:'Alex',nickname:'Alex the Explorer'},role:'student'};
 const reply=data=>new Response(JSON.stringify(data));
-const flush=async()=>{for(let i=0;i<8;i++)await new Promise(resolve=>setImmediate(resolve));};
-function setup(custom,url='https://ab26.englishladder.com/'){
+const flush=async()=>{for(let i=0;i<12;i++)await new Promise(resolve=>setTimeout(resolve,1));};
+function setup(custom,url='https://ab26.englishladder.com/',role='student'){
  const dom=new JSDOM(html,{url,runScripts:'outside-only',pretendToBeVisual:true});
  const w=dom.window;w.setInterval=()=>0;
  w.fetch=async(path,options)=>{
   const customResult=custom?.(path,options);if(customResult)return customResult;
   if(path==='/api/context')return reply({id:'ab26'});
-  if(path==='/api/session'||path==='/api/login')return reply(profile);
+  if(path==='/api/session'||path==='/api/login')return reply({...profile,role});
   if(path==='/api/logout')return reply({ok:true});
   if(path==='/api/assessment')return reply({assessment});
+  if(path==='/api/quiz/state')return reply({attempt:null});
   if(path==='/api/feedback')return reply({sessions:[feedback,second],nextCursor:null});
   return reply(path.endsWith(second.id)?second:feedback);
  };
@@ -119,7 +121,7 @@ test('assessment expiry clears records and assessment text cannot inject markup'
 });
 
 test('quiz gives feedback for every choice, waits for a correct answer, and counts first tries only',async()=>{
- const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz}}):null,'https://ab26.englishladder.com/#quiz');
+ const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz}}):null,'https://ab26.englishladder.com/#quiz','teacher');
  await flush();const d=dom.window.document;
  const options=()=>[...d.querySelectorAll('.quiz-option')];
  assert.equal(d.getElementById('quiz').hidden,false);
@@ -148,7 +150,7 @@ test('quiz gives feedback for every choice, waits for a correct answer, and coun
  dom.window.close();
 });
 test('quiz progress survives section navigation but sign-out clears it and invalidates old controls',async()=>{
- const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz}}):null,'https://ab26.englishladder.com/#quiz');
+ const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz}}):null,'https://ab26.englishladder.com/#quiz','teacher');
  await flush();const d=dom.window.document;
  const oldButton=d.querySelector('.quiz-option');
  oldButton.click();d.querySelector('.quiz-next').click();
@@ -162,16 +164,16 @@ test('quiz progress survives section navigation but sign-out clears it and inval
  dom.window.close();
 });
 test('quiz handles empty and failed loads, and renders authored text without markup',async()=>{
- const empty=setup(null,'https://ab26.englishladder.com/#quiz');await flush();
+ const empty=setup(null,'https://ab26.englishladder.com/#quiz','teacher');await flush();
  assert.match(empty.window.document.getElementById('quiz-content').textContent,/Your teacher can add a quiz/);
  empty.window.close();
- const failed=setup(path=>path==='/api/assessment'?new Response(JSON.stringify({error:'Try again.'}),{status:503}):null,'https://ab26.englishladder.com/#quiz');await flush();
+ const failed=setup(path=>path==='/api/assessment'?new Response(JSON.stringify({error:'Try again.'}),{status:503}):null,'https://ab26.englishladder.com/#quiz','teacher');await flush();
  assert.match(failed.window.document.getElementById('quiz-content').textContent,/could not be loaded/);
  assert.equal(failed.window.document.querySelector('#quiz-content button').textContent,'Try again');
  failed.window.close();
  const q=structuredClone(quiz);q.questions[0].prompt='<img src=x onerror=alert(1)>';
  q.questions[0].options[0].feedback='<script>alert(1)</script>';
- const safe=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz:q}}):null,'https://ab26.englishladder.com/#quiz');
+ const safe=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz:q}}):null,'https://ab26.englishladder.com/#quiz','teacher');
  await flush();const d=safe.window.document;
  assert.equal(d.getElementById('quiz-question-title').textContent,q.questions[0].prompt);
  d.querySelector('.quiz-option').click();
@@ -181,9 +183,106 @@ test('quiz handles empty and failed loads, and renders authored text without mar
 });
 test('late quiz data cannot appear after sign-out',async()=>{
  let resolve;
- const dom=setup(path=>path==='/api/assessment'?new Promise(r=>{resolve=r;}):null,'https://ab26.englishladder.com/#quiz');
+ const dom=setup(path=>path==='/api/assessment'?new Promise(r=>{resolve=r;}):null,'https://ab26.englishladder.com/#quiz','teacher');
  await flush();dom.window.document.getElementById('logout').click();await flush();
  resolve(reply({assessment:{...assessment,quiz}}));await flush();
  assert.equal(dom.window.document.getElementById('quiz-content').textContent,'');
  dom.window.close();
+});
+
+function savedSetup(seed,role='student',custom=null,hash='quiz'){
+ const cookie=seed[role].cookie;
+ return setup((path,options={})=>custom?.(path,options)||call(seed.e,path,{...options,headers:{...options.headers,Cookie:cookie,Origin:origin}}),origin+'/#'+hash,role);
+}
+test('student answers save immediately, resume after reopening, and finish with a saved first-try score',async()=>{
+ const seed=await seedQuiz();let dom=savedSetup(seed);await flush();let d=dom.window.document;
+ assert.match(d.getElementById('quiz-content').textContent,/saved for Phil/);
+ assert.equal(d.getElementById('quiz-nav').hidden,false);
+ assert.equal(d.querySelector('.quiz-sources a').getAttribute('href'),'#feedback/'+feedback.id);
+ assert.match(d.querySelector('.quiz-sources').textContent,/Oct 1, 2026/);
+ d.querySelectorAll('.quiz-option')[1].click();
+ assert.match(d.getElementById('quiz-result').textContent,/Not yet/);
+ assert.ok([...d.querySelectorAll('.quiz-option')].every(b=>b.disabled));
+ await flush();assert.equal(d.querySelector('.quiz-save-status').textContent,'Saved.');
+ dom.window.close();dom=savedSetup(seed);await flush();d=dom.window.document;
+ assert.match(d.getElementById('quiz-result').textContent,/Not yet/);
+ assert.equal(d.querySelectorAll('.quiz-option')[1].disabled,true);
+ d.querySelectorAll('.quiz-option')[0].click();await flush();d.querySelector('.quiz-next').click();
+ assert.match(d.querySelector('.quiz-counter').textContent,/Question 2/);
+ dom.window.close();dom=savedSetup(seed);await flush();d=dom.window.document;
+ assert.match(d.querySelector('.quiz-counter').textContent,/Question 2/);
+ d.querySelectorAll('.quiz-option')[1].click();await flush();d.querySelector('.quiz-next').click();
+ assert.match(d.querySelector('.quiz-complete').textContent,/1 out of 2 right on your first try/);
+ assert.match(d.querySelector('.quiz-complete').textContent,/Saved. Phil can see/);
+ d.querySelector('.quiz-complete button').click();await flush();
+ assert.match(d.querySelector('.quiz-counter').textContent,/Question 1/);
+ assert.ok([...d.querySelectorAll('.quiz-option')].every(b=>!b.disabled));
+ dom.window.close();
+});
+test('a lost save response blocks advancement and safely retries the same first answer',async()=>{
+ const seed=await seedQuiz();let loseResponse=true;
+ const dom=savedSetup(seed,'student',(path,options)=>{
+  if(path!=='/api/quiz/answer'||!loseResponse)return null;
+  loseResponse=false;
+  return call(seed.e,path,{...options,headers:{...options.headers,Cookie:seed.student.cookie,Origin:origin}}).then(()=>{throw new Error('Network interrupted');});
+ });await flush();const d=dom.window.document;
+ d.querySelectorAll('.quiz-option')[1].click();await flush();
+ assert.match(d.querySelector('.quiz-save-status').textContent,/may not be saved/);
+ assert.ok([...d.querySelectorAll('.quiz-option')].every(b=>b.disabled));
+ [...d.querySelectorAll('#quiz-content button')].find(b=>b.textContent==='Save my answer again').click();await flush();
+ assert.equal(d.querySelector('.quiz-save-status').textContent,'Saved.');
+ const state=await (await call(seed.e,'/api/quiz/state',{headers:{Cookie:seed.student.cookie}})).json();
+ assert.deepEqual(state.attempt.answers,[[1],[]]);
+ dom.window.close();
+});
+test('expired quiz saves clear private content; late writes cannot restore it after sign-out',async()=>{
+ const seed=await seedQuiz();
+ const expired=savedSetup(seed,'student',path=>path==='/api/quiz/answer'?new Response(JSON.stringify({error:'Sign in.'}),{status:401}):null);
+ await flush();expired.window.document.querySelector('.quiz-option').click();await flush();
+ assert.equal(expired.window.document.getElementById('quiz-content').textContent,'');
+ assert.equal(expired.window.document.getElementById('login-view').hidden,false);expired.window.close();
+ let resolve;
+ const dom=savedSetup(seed,'student',path=>path==='/api/quiz/answer'?new Promise(r=>{resolve=r;}):null);await flush();const d=dom.window.document;
+ d.querySelector('.quiz-option').click();d.getElementById('logout').click();await flush();
+ resolve(reply({attempt:{answers:[[0],[]]}}));await flush();
+ assert.equal(d.getElementById('quiz-content').textContent,'');dom.window.close();
+});
+test('teacher sees saved first answers and dated progress; teacher preview creates no attempts',async()=>{
+ const seed=await seedQuiz(),id=crypto.randomUUID();
+ for(const [questionIndex,choiceIndex] of [[0,1],[0,0],[1,1]])await call(seed.e,'/api/quiz/answer',{method:'POST',headers:{Cookie:seed.student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({attemptId:id,version:seed.state.version,questionIndex,choiceIndex})});
+ const dom=savedSetup(seed,'teacher',null,'quiz-results');await flush();const d=dom.window.document;
+ assert.equal(d.getElementById('quiz-results-nav').hidden,false);
+ assert.match(d.getElementById('quiz-history').textContent,/Progress over time/);
+ assert.match(d.getElementById('quiz-history').textContent,/Wrong on the first try: Q1/);
+ assert.equal(d.querySelector('.quiz-trend-list progress').value,1);
+ d.querySelector('#quiz-history details').open=true;await new Promise(r=>setTimeout(r,10));await flush();
+ assert.match(d.querySelector('.quiz-answer-history').textContent,/First answer: I can opens this file./);
+ assert.match(d.querySelector('.quiz-answer-history').textContent,/Later choices: I can open this file./);
+ dom.window.location.hash='quiz';await new Promise(r=>setTimeout(r,10));await flush();
+ assert.match(d.getElementById('quiz-content').textContent,/Teacher practice/);
+ d.querySelectorAll('.quiz-option')[0].click();d.querySelector('.quiz-next').click();d.querySelectorAll('.quiz-option')[1].click();d.querySelector('.quiz-next').click();
+ const history=await (await call(seed.e,'/api/quiz/results',{headers:{Cookie:seed.teacher.cookie}})).json();assert.equal(history.attempts.length,1);
+ d.getElementById('logout').click();await flush();
+ assert.equal(d.getElementById('quiz-history').textContent,'');assert.equal(d.getElementById('quiz-results-nav').hidden,true);dom.window.close();
+});
+test('Quiz is hidden from the menu until a quiz is available, including accounts without enough lesson material',async()=>{
+ for(const role of ['student','teacher']){
+  const dom=setup(null,origin+'/#overview',role);await flush();
+  assert.equal(dom.window.document.getElementById('quiz-nav').hidden,true);
+  assert.equal(dom.window.document.querySelector('.assessment-quiz-link'),null);dom.window.close();
+ }
+});
+test('history stays teacher-only, handles load failure, and ignores a response after sign-out',async()=>{
+ const seed=await seedQuiz();let calls=0;
+ const student=savedSetup(seed,'student',path=>{if(path.startsWith('/api/quiz/results'))calls++;return null;},'quiz-results');await flush();
+ assert.equal(student.window.document.getElementById('quiz-results-nav').hidden,true);assert.equal(calls,0);student.window.close();
+ let fail=true;
+ const teacher=savedSetup(seed,'teacher',path=>path==='/api/quiz/results'&&fail?new Response(JSON.stringify({error:'Unavailable.'}),{status:503}):null,'quiz-results');await flush();
+ assert.match(teacher.window.document.getElementById('quiz-results-status').textContent,/could not be loaded/);
+ fail=false;teacher.window.document.getElementById('refresh-quiz-results').click();await flush();
+ assert.match(teacher.window.document.getElementById('quiz-results-status').textContent,/No saved attempts/);teacher.window.close();
+ let resolve;
+ const late=savedSetup(seed,'teacher',path=>path==='/api/quiz/results'?new Promise(r=>{resolve=r;}):null,'quiz-results');await flush();
+ late.window.document.getElementById('logout').click();await flush();resolve(reply({attempts:[],nextCursor:null}));await flush();
+ assert.equal(late.window.document.getElementById('quiz-history').textContent,'');assert.equal(late.window.document.getElementById('quiz-results-status').textContent,'');late.window.close();
 });

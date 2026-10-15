@@ -159,6 +159,28 @@ async function handle(request, env) {
     return json(profile(account, role), 200, { 'Set-Cookie': cookie(await issueSession(request, env, account, role)) });
   }
 
+  if (url.pathname.startsWith('/api/quiz/')) {
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    const route = url.pathname.slice('/api'.length);
+    const history = route === '/quiz/results' || route.startsWith('/quiz/results/');
+    if (!history && !['/quiz/state', '/quiz/answer'].includes(route)) return json({ error: 'Page not found.' }, 404);
+    if (history ? session.role !== 'teacher' : session.role !== 'student') return json({ error: history ? 'Only your teacher can open quiz history.' : 'Teacher practice does not save student results.' }, 403);
+    const method = route === '/quiz/answer' ? 'POST' : 'GET';
+    if (request.method !== method) return json({ error: 'Method not allowed.' }, 405, { Allow: method });
+    let body;
+    if (method === 'POST') {
+      if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload the page and try again.' }, 403);
+      body = await smallJson(request, 1024);
+      if (!body) return json({ error: 'Please choose an answer.' }, 400);
+    }
+    if (!env.FEEDBACK_STORE) return json({ error: 'Quiz results are temporarily unavailable.' }, 503);
+    const store = env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id));
+    const internalUrl = new URL('https://feedback.internal' + route);
+    for (const name of ['before', 'new']) if (url.searchParams.has(name)) internalUrl.searchParams.set(name, url.searchParams.get(name));
+    return store.fetch(new Request(internalUrl, { method, ...(body ? { body: JSON.stringify(body) } : {}) }));
+  }
+
   const isAssessment = url.pathname === '/api/assessment';
   if (isAssessment || url.pathname === '/api/feedback' || url.pathname.startsWith('/api/feedback/')) {
     const session = await readSession(request, env, account);

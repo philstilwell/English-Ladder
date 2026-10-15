@@ -59,7 +59,8 @@
       <nav class="section-nav" aria-label="Student space sections">
         <a href="#overview" aria-current="page">Overview</a>
         <a href="#assessments">Assessments</a>
-        <a href="#quiz">Quiz</a>
+        <a id="quiz-nav" href="#quiz" hidden>Quiz</a>
+        <a id="quiz-results-nav" href="#quiz-results" hidden>Quiz results</a>
         <a href="#sessions">Session summaries</a>
         <a href="#feedback">Feedback</a>
       </nav>
@@ -109,6 +110,13 @@
       </section>
       <section id="quiz" class="section-panel" aria-label="English quiz" hidden>
         <article id="quiz-content" class="quiz-card" aria-busy="false"></article>
+      </section>
+      <section id="quiz-results" class="section-panel" aria-labelledby="quiz-results-title" hidden>
+        <div class="section-heading"><h2 id="quiz-results-title" tabindex="-1">Quiz results</h2><button id="refresh-quiz-results" class="secondary-button">Refresh results</button></div>
+        <p class="section-intro">First answers stay recorded, even after a retry. Open an attempt to see each answer. Dates are in New York time.</p>
+        <p id="quiz-results-status" role="status"></p>
+        <div id="quiz-history"></div>
+        <button id="more-quiz-results" class="secondary-button" hidden>Earlier attempts</button>
       </section>
       <p id="account-status" class="account-status" role="status"></p>
     </section>

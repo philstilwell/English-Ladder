@@ -1,13 +1,14 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz'];
+  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz', 'quiz-results'];
   const assessmentSections = ['summary', 'strengths', 'patterns', 'next'];
   const validId = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
   let authenticated = false, checking = false, identityRevision = 0, pageRevision = 0;
   let sessions = [], nextCursor = null, indexReady = false, indexLoading = false, currentPage = '';
   let assessment = null, assessmentLoading = false;
   let quizState = null, quizRevision = 0;
+  let teacherMode = false, resultRows = [], resultCursor = null, resultsLoading = false, resultsRevision = 0;
   let assessmentScrollFrame = 0;
   const assessmentResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(scheduleAssessmentHighlight);
 
@@ -46,6 +47,11 @@
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
     quizState = null; quizRevision++;
+    teacherMode = false; resultRows = []; resultCursor = null; resultsLoading = false; resultsRevision++;
+    $('quiz-results-nav').hidden = true;
+    $('quiz-nav').hidden = true;
+    $('quiz-history').replaceChildren();
+    $('quiz-results-status').textContent = ''; $('more-quiz-results').hidden = true;
     assessmentResizeObserver?.disconnect();
     if (assessmentScrollFrame) cancelAnimationFrame(assessmentScrollFrame);
     assessmentScrollFrame = 0;
@@ -99,7 +105,7 @@
   function navigate(focus = false) {
     if (!authenticated) return;
     const [part, requested, extra] = location.hash.slice(1).split('/');
-    const selected = sections.includes(part) ? part : 'feedback';
+    const selected = part === 'quiz-results' && !teacherMode ? 'quiz' : sections.includes(part) ? part : 'feedback';
     for (const id of sections) $(id).hidden = selected !== id;
     for (const el of document.querySelectorAll('.section-nav a')) {
       if (el.hash === '#' + selected) el.setAttribute('aria-current', 'page');
@@ -112,6 +118,11 @@
       if (selected === 'quiz') {
         document.title = 'My English quiz · English Ladder';
         if (focus) $('quiz-question-title')?.focus();
+      }
+      if (selected === 'quiz-results') {
+        document.title = 'Quiz results · English Ladder';
+        loadQuizResults();
+        if (focus) $('quiz-results-title').focus();
       }
       return;
     }
@@ -401,35 +412,76 @@
     }
   }
   function resetQuiz(focus = false) {
+    if (!teacherMode) { loadSavedQuiz(false, focus); return; }
     quizRevision++;
-    quizState = assessment?.quiz ? { index: 0, answers: assessment.quiz.questions.map(() => []), finished: false } : null;
+    quizState = assessment?.quiz ? { quiz: assessment.quiz, patternTitles: assessment.patterns.map(p => p.title), sourceSessions: assessment.sourceSessions, index: 0, answers: assessment.quiz.questions.map(() => []), finished: false } : null;
+    $('quiz-nav').hidden = !quizState;
     if (quizState) renderQuiz(focus);
     else quizMessage('Your teacher can add a quiz here.');
   }
+  function useSavedQuiz(data, focus = false) {
+    const attempt = data.attempt, quiz = data.quiz;
+    $('quiz-nav').hidden = !quiz;
+    if (!quiz) { quizState = null; quizMessage('Your teacher can add a quiz here.'); return; }
+    const answers = attempt?.answers || quiz.questions.map(() => []);
+    const pending = answers.findIndex((a, i) => !a.includes(quiz.questions[i].correctIndex));
+    quizState = {
+      quiz, patternTitles: data.patternTitles, sourceSessions: data.sourceSessions, version: data.version, id: attempt?.id || crypto.randomUUID(),
+      answers, index: pending < 0 ? quiz.questions.length - 1 : pending, finished: Boolean(attempt?.completedAt),
+      pending: null, saving: false, saveError: null, saved: Boolean(attempt),
+    };
+    renderQuiz(focus);
+  }
+  async function loadSavedQuiz(fresh = false, focus = false) {
+    const run = ++quizRevision, identity = identityRevision;
+    quizState = null; $('quiz-nav').hidden = true; quizMessage('Opening your saved quiz…');
+    try {
+      const data = await api('/api/quiz/state' + (fresh ? '?new=1' : ''));
+      if (!authenticated || run !== quizRevision || identity !== identityRevision) return;
+      useSavedQuiz(data, focus);
+    } catch (error) {
+      if (run !== quizRevision || identity !== identityRevision || expired(error)) return;
+      quizMessage('Your quiz could not be loaded. Please try again.', true);
+    }
+  }
+  function quizSources(sourceSessions) {
+    const sources = node('div', '', 'quiz-sources');
+    sources.append(node('p', 'This quiz is based on your assessment of these lessons:'));
+    const links = node('div', '', 'assessment-source-links');
+    for (const id of sourceSessions || []) {
+      const link = node('a', assessmentDate(id.slice(0, 10)));
+      link.href = '#feedback/' + id; link.setAttribute('aria-label', 'Open lesson feedback for ' + assessmentDate(id.slice(0, 10))); links.append(link);
+    }
+    sources.append(links); return sources;
+  }
   function renderQuiz(focus = false) {
-    if (!authenticated || !assessment?.quiz || !quizState) return;
-    const quiz = assessment.quiz, run = quizRevision, identity = identityRevision, index = quizState.index;
+    if (!authenticated || !quizState) return;
+    const quiz = quizState.quiz, run = quizRevision, identity = identityRevision, index = quizState.index;
     const currentRun = () => authenticated && run === quizRevision && identity === identityRevision;
     const fragment = document.createDocumentFragment();
     const header = node('header', '', 'quiz-header');
     header.append(node('p', 'A LITTLE PRACTICE', 'eyebrow'), node('h2', quiz.title));
     const back = node('a', 'Read your assessment', 'quiz-back'); back.href = '#assessments/patterns';
     header.append(node('p', quiz.instructions), node('p', 'These are new practice questions.', 'section-intro'), back); fragment.append(header);
+    header.append(quizSources(quizState.sourceSessions));
+    header.append(node('p', teacherMode ? 'Teacher practice: answers here do not count as student results.' : 'Your answers are saved for Phil. If you stop, you can come back later.', 'quiz-save-note'));
+    if (teacherMode) { const historyLink = node('a', 'See saved quiz results', 'quiz-history-link'); historyLink.href = '#quiz-results'; header.append(historyLink); }
     if (quizState.finished) {
       const complete = node('section', '', 'quiz-complete');
       const heading = node('h3', 'You finished!'); heading.id = 'quiz-question-title'; heading.tabIndex = -1;
       const correct = quizState.answers.filter((answers, i) => answers[0] === quiz.questions[i].correctIndex).length;
       complete.append(heading, node('p', correct + ' of ' + quiz.questions.length, 'quiz-score'), node('p', 'You got ' + correct + ' out of ' + quiz.questions.length + ' right on your first try.'));
       complete.append(node('p', 'You practiced every question. You can try the quiz again.', 'section-intro'));
+      if (!teacherMode) complete.append(node('p', 'Saved. Phil can see your results.', 'quiz-save-note'));
       const review = [...new Set(quiz.questions.filter((q, i) => quizState.answers[i][0] !== q.correctIndex).map(q => q.patternIndex))];
       if (review.length) {
         complete.append(node('h4', 'Practice these again'));
         const list = node('ul');
-        for (const patternIndex of review) list.append(node('li', assessment.patterns[patternIndex].title));
+        for (const patternIndex of review) list.append(node('li', quizState.patternTitles[patternIndex]));
         complete.append(list);
       }
       const restart = node('button', 'Try the quiz again', 'primary-button');
-      restart.addEventListener('click', () => { if (currentRun()) resetQuiz(true); });
+      restart.addEventListener('click', () => { if (currentRun()) teacherMode ? resetQuiz(true) : loadSavedQuiz(true, true); });
       complete.append(restart); fragment.append(complete);
       $('quiz-content').replaceChildren(fragment);
       if (focus) heading.focus();
@@ -444,28 +496,61 @@
     const choices = node('div', '', 'quiz-choices'); choices.setAttribute('role', 'group'); choices.setAttribute('aria-labelledby', heading.id);
     const result = node('div', '', 'quiz-result'); result.id = 'quiz-result'; result.setAttribute('role', 'status'); result.setAttribute('aria-live', 'polite'); result.setAttribute('aria-atomic', 'true');
     const next = node('button', index === quiz.questions.length - 1 ? 'See my results' : 'Next question →', 'primary-button quiz-next');
+    const saveStatus = node('p', '', 'quiz-save-status'); saveStatus.setAttribute('role', 'status');
+    const retrySave = node('button', 'Save my answer again', 'secondary-button'); retrySave.hidden = true;
+    retrySave.addEventListener('click', () => {
+      if (!currentRun() || quizState.saving) return;
+      if (quizState.saveError?.status === 409) loadSavedQuiz(false, true);
+      else saveAnswer();
+    });
     next.hidden = !complete;
     const buttons = question.options.map((option, choice) => {
       const button = node('button', '', 'quiz-option'); button.type = 'button';
       const letter = node('span', String.fromCharCode(65 + choice), 'quiz-letter'); letter.setAttribute('aria-hidden', 'true');
       button.append(letter, node('em', option.text), node('span', '', 'quiz-option-status'));
       button.addEventListener('click', () => {
-        if (!currentRun() || quizState.finished || quizState.index !== index || tried.includes(choice) || tried.includes(question.correctIndex)) return;
-        tried.push(choice); updateAnswer();
+        if (!currentRun() || quizState.finished || quizState.pending || quizState.index !== index || tried.includes(choice) || tried.includes(question.correctIndex)) return;
+        tried.push(choice);
+        if (!teacherMode) {
+          quizState.pending = { attemptId: quizState.id, version: quizState.version, questionIndex: index, choiceIndex: choice };
+          saveAnswer();
+        } else updateAnswer();
         (tried.includes(question.correctIndex) ? next : result).scrollIntoView?.({ block: 'nearest' });
       });
       choices.append(button); return button;
     });
+    async function saveAnswer() {
+      if (!currentRun() || !quizState.pending || quizState.saving) return;
+      quizState.saving = true; quizState.saveError = null; updateAnswer();
+      try {
+        const data = await api('/api/quiz/answer', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(quizState.pending) });
+        if (!currentRun()) return;
+        quizState.saving = false; quizState.pending = null; quizState.saved = true;
+        if (JSON.stringify(data.attempt.answers) !== JSON.stringify(quizState.answers)) {
+          useSavedQuiz({ ...data.attempt, attempt: data.attempt }, true); return;
+        }
+        updateAnswer();
+        (tried.includes(question.correctIndex) ? next : buttons.find(b => !b.disabled))?.focus({ preventScroll: true });
+      } catch (error) {
+        if (!currentRun() || expired(error)) return;
+        quizState.saving = false; quizState.saveError = error; updateAnswer();
+        retrySave.focus({ preventScroll: true }); retrySave.scrollIntoView?.({ block: 'nearest' });
+      }
+    }
     function updateAnswer() {
       const solved = tried.includes(question.correctIndex), choice = tried.at(-1);
       const hadChoiceFocus = buttons.includes(document.activeElement);
       buttons.forEach((button, i) => {
         const chosen = tried.includes(i), right = chosen && i === question.correctIndex;
-        button.disabled = solved || chosen;
+        button.disabled = solved || chosen || Boolean(quizState.pending);
         button.classList.toggle('is-correct', right); button.classList.toggle('is-wrong', chosen && !right);
         button.querySelector('.quiz-option-status').textContent = chosen ? (right ? 'Correct' : 'Try again') : '';
       });
       next.hidden = !solved;
+      next.disabled = Boolean(quizState.pending);
+      saveStatus.textContent = teacherMode ? '' : quizState.saving ? 'Saving your answer…' : quizState.saveError ? (quizState.saveError.status === 409 ? 'Your quiz changed in another tab. Load your saved quiz to continue.' : 'Your answer may not be saved yet. Keep this page open and try saving again.') : quizState.saved ? 'Saved.' : '';
+      retrySave.hidden = !quizState.saveError;
+      retrySave.textContent = quizState.saveError?.status === 409 ? 'Load my saved quiz' : 'Save my answer again';
       if (choice === undefined) return;
       result.className = 'quiz-result ' + (solved ? 'is-correct' : 'is-wrong');
       result.replaceChildren(node('strong', solved ? 'That’s right!' : 'Not yet. Try again.'), node('p', question.options[choice].feedback));
@@ -477,18 +562,117 @@
       }
     }
     next.addEventListener('click', () => {
-      if (!currentRun() || quizState.finished || quizState.index !== index || !tried.includes(question.correctIndex)) return;
+      if (!currentRun() || quizState.finished || quizState.pending || quizState.index !== index || !tried.includes(question.correctIndex)) return;
       if (index === quiz.questions.length - 1) quizState.finished = true;
       else quizState.index++;
       renderQuiz(true);
     });
-    fragment.append(counter, progress, heading, node('p', 'Choose one answer.', 'quiz-hint'), choices, result, next);
+    fragment.append(counter, progress, heading, node('p', 'Choose one answer.', 'quiz-hint'), choices, result, saveStatus, retrySave, next);
     $('quiz-content').replaceChildren(fragment); updateAnswer();
     if (focus) heading.focus();
   }
+  function quizDate(value) {
+    return new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(new Date(value));
+  }
+  async function loadQuizResults(append = false) {
+    if (!authenticated || !teacherMode || resultsLoading) return;
+    resultsLoading = true;
+    const revision = ++resultsRevision, identity = identityRevision;
+    $('quiz-results-status').textContent = 'Loading saved results…';
+    $('refresh-quiz-results').disabled = true; $('more-quiz-results').disabled = true;
+    try {
+      const data = await api('/api/quiz/results' + (append && resultCursor ? '?before=' + encodeURIComponent(resultCursor) : ''));
+      if (!teacherMode || identity !== identityRevision || revision !== resultsRevision) return;
+      resultRows = append ? [...resultRows, ...data.attempts] : data.attempts;
+      resultCursor = data.nextCursor;
+      renderQuizResults();
+      $('quiz-results-status').textContent = resultRows.length ? resultRows.length + ' saved attempts shown.' : 'No saved attempts yet. Results will appear after the student answers a question. Earlier quizzes were not saved.';
+    } catch (error) {
+      if (identity !== identityRevision || revision !== resultsRevision || expired(error)) return;
+      $('quiz-results-status').textContent = 'Results could not be loaded. Use “Refresh results” to try again.';
+    } finally {
+      if (identity === identityRevision && revision === resultsRevision) {
+        resultsLoading = false; $('refresh-quiz-results').disabled = false; $('more-quiz-results').disabled = false;
+        $('more-quiz-results').hidden = !resultCursor;
+      }
+    }
+  }
+  function renderQuizResults() {
+    const fragment = document.createDocumentFragment(), groups = new Map();
+    for (const row of [...resultRows].reverse()) {
+      if (!groups.has(row.version)) groups.set(row.version, []);
+      groups.get(row.version).push(row);
+    }
+    if (resultRows.some(row => row.completedAt)) {
+      const trends = node('section', '', 'quiz-trends');
+      trends.append(node('h3', 'Progress over time'), node('p', 'First-try scores for completed attempts shown below. Each set uses the same questions. Repeating a quiz is practice, not a measure of overall English level.', 'section-intro'));
+      let set = 0;
+      for (const rows of groups.values()) {
+        set++;
+        const completed = rows.filter(row => row.completedAt);
+        if (!completed.length) continue;
+        trends.append(node('h4', 'Set ' + set + ' · ' + rows[0].title));
+        const list = node('ol', '', 'quiz-trend-list');
+        for (const row of completed) {
+          const item = node('li'), label = quizDate(row.startedAt), score = row.firstTryCorrect + ' / ' + row.total;
+          const progress = node('progress'); progress.max = row.total; progress.value = row.firstTryCorrect; progress.setAttribute('aria-label', label + ': ' + score + ' on the first try');
+          item.append(node('span', label), progress, node('strong', score)); list.append(item);
+        }
+        trends.append(list);
+      }
+      fragment.append(trends);
+    }
+    const heading = node('h3', 'Attempts · newest first'); if (resultRows.length) fragment.append(heading);
+    for (const row of resultRows) {
+      const card = node('article', '', 'quiz-attempt-card');
+      card.append(node('h4', quizDate(row.startedAt)), node('p', row.title, 'section-intro'));
+      card.append(node('p', row.completedAt ? 'Finished · ' + row.firstTryCorrect + ' of ' + row.total + ' right on the first try' : 'In progress · ' + row.answered + ' of ' + row.total + ' questions tried · ' + row.firstTryCorrect + ' right on the first try', 'quiz-attempt-score'));
+      card.append(node('p', row.missedQuestions.length ? 'Wrong on the first try: ' + row.missedQuestions.map(n => 'Q' + n).join(', ') : row.answered ? 'No first-try mistakes so far.' : 'No answers yet.'));
+      const details = node('details'), content = node('div', '', 'quiz-answer-history');
+      details.append(node('summary', 'See each answer'), content); card.append(details);
+      let loaded = false, loading = false;
+      const revision = resultsRevision, identity = identityRevision;
+      const current = () => teacherMode && authenticated && identity === identityRevision && revision === resultsRevision;
+      const load = async () => {
+        if (!current() || loaded || loading || !details.open) return;
+        loading = true; content.replaceChildren(node('p', 'Loading answers…'));
+        try {
+          const data = await api('/api/quiz/results/' + row.id);
+          if (!current()) return;
+          const attempt = data.attempt; content.replaceChildren();
+          content.append(quizSources(attempt.sourceSessions));
+          content.append(node('p', 'Started ' + quizDate(attempt.startedAt) + (attempt.completedAt ? ' · Finished ' + quizDate(attempt.completedAt) : ' · Last saved ' + quizDate(attempt.updatedAt)), 'section-intro'));
+          attempt.quiz.questions.forEach((question, i) => {
+            const answers = attempt.answers[i], first = answers[0], wrong = first !== undefined && first !== question.correctIndex;
+            const item = node('section', '', 'quiz-history-question' + (wrong ? ' first-try-wrong' : ''));
+            item.append(node('h5', 'Question ' + (i + 1) + ' · ' + (first === undefined ? 'Not answered yet' : wrong ? 'Wrong on first try' : 'Right on first try')));
+            item.append(node('p', question.prompt), node('p', attempt.patternTitles[question.patternIndex], 'section-intro'));
+            if (first !== undefined) {
+              const firstLine = node('p', 'First answer: '); firstLine.append(node('em', question.options[first].text)); item.append(firstLine);
+              const correct = node('p', 'Correct answer: '); correct.append(node('em', question.options[question.correctIndex].text)); item.append(correct);
+              if (answers.length > 1) {
+                const retries = node('p', 'Later choices: ');
+                answers.slice(1).forEach((choice, n) => { if (n) retries.append(document.createTextNode(' → ')); retries.append(node('em', question.options[choice].text)); }); item.append(retries);
+              }
+            }
+            content.append(item);
+          });
+          loaded = true;
+        } catch (error) {
+          if (!current() || expired(error)) return;
+          const retry = node('button', 'Try loading answers again', 'secondary-button'); retry.addEventListener('click', load);
+          content.replaceChildren(node('p', 'Answers could not be loaded.'), retry);
+        } finally { loading = false; }
+      };
+      details.addEventListener('toggle', load); fragment.append(card);
+    }
+    $('quiz-history').replaceChildren(fragment);
+  }
   function showDashboard(data, focus = false) {
+    if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();
     const initial = !authenticated; authenticated = true;
     const { name, nickname, id } = data.student, teacher = data.role === 'teacher';
+    teacherMode = teacher; $('quiz-results-nav').hidden = !teacher;
     $('student-name').textContent = nickname; $('profile-nickname').textContent = nickname;
     $('teacher-student-name').textContent = name; $('avatar').textContent = name[0].toUpperCase();
     $('account-address').textContent = id + '.englishladder.com';
@@ -563,6 +747,8 @@
   $('session-select').addEventListener('change', event => { location.hash = 'feedback/' + event.target.value; });
   $('more-sessions').addEventListener('click', () => loadIndex(true));
   $('retry-feedback').addEventListener('click', () => loadIndex(Boolean(sessions.length)));
+  $('refresh-quiz-results').addEventListener('click', () => loadQuizResults());
+  $('more-quiz-results').addEventListener('click', () => loadQuizResults(true));
   $('retry').addEventListener('click', start);
   setInterval(checkSession, 60_000); start();
 })();

@@ -1,4 +1,5 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
+import { handleQuiz } from './quiz-results.mjs';
 
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
 
@@ -52,6 +53,7 @@ export class FeedbackStore {
   async fetch(request) {
     const url = new URL(request.url);
     const id = url.pathname.slice(1);
+    if (id.startsWith('quiz/')) return handleQuiz(this.storage, request);
     if (id === 'assessment') {
       if (request.method === 'GET') return json({ assessment: await this.storage.get('assessment:current') || null });
       if (request.method !== 'PUT') return json({ error: 'Method not allowed.' }, 405);

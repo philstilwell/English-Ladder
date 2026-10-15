@@ -1,43 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import worker from '../worker.mjs';
-import { FeedbackStore, validateFeedback } from '../feedback.mjs';
+import { validateFeedback } from '../feedback.mjs';
 import { feedback, assessment, quiz } from './fixture.mjs';
 import { validateAssessment } from '../assessment.mjs';
-const origin = 'https://ab26.englishladder.com';
-function env() {
- const objects = new Map();
- return {
-  STUDENT_ACCOUNTS:JSON.stringify({ab26:{name:'Alex Brown',nickname:'Alex the Explorer',password:'student-test'},cd26:{name:'Casey Drew',password:'other-test'}}),
-  TEACHER_PASSWORD:'teacher-test',SESSION_SECRET:'test-session-key-'.repeat(4),
-  LOGIN_LIMITER:{limit:async()=>({success:true})},ACCOUNT_LIMITER:{limit:async()=>({success:true})},
-  ASSETS:{fetch:async()=>new Response('public shell')},
-  FEEDBACK_STORE:{
-   idFromName:id=>id,
-   get(id){
-    if(!objects.has(id)){
-     const values = new Map();
-     const storage = {
-      async get(key){return structuredClone(values.get(key));},
-      async put(data){for(const [key,value] of Object.entries(data)) values.set(key,structuredClone(value));},
-      async list({prefix,reverse,limit,end}){
-       let keys=[...values.keys()].filter(k=>k.startsWith(prefix)&&(!end||k<end)).sort();
-       if(reverse)keys.reverse();
-       return new Map(keys.slice(0,limit).map(k=>[k,structuredClone(values.get(k))]));
-      }
-     };
-     objects.set(id,new FeedbackStore({storage}));
-    }
-    return objects.get(id);
-   }
-  }
- };
-}
-function call(e,path,options={},host=origin){return worker.fetch(new Request(host+path,options),e);}
-async function login(e,password='student-test',host=origin) {
- const r=await call(e,'/api/login',{method:'POST',headers:{Origin:host,'Content-Type':'application/json'},body:JSON.stringify({password})},host);
- return {response:r,cookie:r.headers.get('set-cookie').split(';')[0]};
-}
+import {env,call,login,origin} from './harness.mjs';
 function put(e,cookie,record=feedback,originHeader=origin){
  return call(e,'/api/feedback/'+feedback.id,{method:'PUT',headers:{Cookie:cookie,Origin:originHeader,'Content-Type':'application/json'},body:JSON.stringify(record)});
 }

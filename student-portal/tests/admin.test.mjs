@@ -86,6 +86,7 @@ test('registration and edits take effect without redeployment; private fields ne
   const {e}=environment(),cookie=await access(e);
   const response=await adminCall(e,'/api/admin/students',write(cookie,example));assert.equal(response.status,201);
   const saved=(await response.json()).student;assert.equal(saved.lastName,'Testperson');assert.ok(saved.startAfter);
+  assert.deepEqual(saved.visibleActivities,['english-road','grammar-practice','business-terms']);
   const host='https://mt26.englishladder.com',student=await login(e,'DEFAULT-TEST-ONLY',host);
   assert.equal(student.response.status,200);
   for(const path of ['/api/session','/api/context','/api/feedback','/api/assessment']){
@@ -235,7 +236,7 @@ test('administrator checkboxes load saved tools, save subsets and none, and clea
   for (const box of d.querySelectorAll('#student-activities input')) box.checked = false;
   d.getElementById('student-form').dispatchEvent(new w.Event('submit', { bubbles: true, cancelable: true })); await flush();
   assert.deepEqual(body.visibleActivities, []); assert.deepEqual(chosen(), []);
-  d.getElementById('register-nav').click(); await flush(); assert.deepEqual(chosen(), ACTIVITY_TOOLS.map(a => a.id));
+  d.getElementById('register-nav').click(); await flush(); assert.deepEqual(chosen(), ['english-road', 'grammar-practice', 'business-terms']);
   d.getElementById('sign-out').click(); await flush(); assert.equal(d.getElementById('student-activities').textContent, '');
   w.close();
 });
@@ -646,15 +647,15 @@ test('only the administrator changes activity selections; nickname edits preserv
   const storage = e.FEEDBACK_STORE.get('ab26').storage;
   await storage.put({ 'road:sample-history': { answers: [1, 0] }, 'terms:item:1': { finished: true, questions: true } });
   const learningBefore = await storage.list({ limit: 100 });
-  const edited = await adminCall(e, '/api/admin/students/' + record.key, write(adminCookie, { ...record, lastName: 'Brown', visibleActivities: ['placeholder-2'] }, 'PUT'));
+  const edited = await adminCall(e, '/api/admin/students/' + record.key, write(adminCookie, { ...record, lastName: 'Brown', visibleActivities: ['grammar-practice'] }, 'PUT'));
   assert.equal(edited.status, 200);
-  assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, ['placeholder-2']);
+  assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, ['grammar-practice']);
   let updated = (await edited.json()).student;
-  assert.deepEqual(updated.visibleActivities, ['placeholder-2']);
+  assert.deepEqual(updated.visibleActivities, ['grammar-practice']);
   const { visibleActivities, ...unrelated } = updated;
   const courseEdit = await adminCall(e, '/api/admin/students/' + updated.key, write(adminCookie, { ...unrelated, course: 'Updated course' }, 'PUT'));
   assert.equal(courseEdit.status, 200); updated = (await courseEdit.json()).student;
-  assert.deepEqual(updated.visibleActivities, ['placeholder-2']);
+  assert.deepEqual(updated.visibleActivities, ['grammar-practice']);
   const empty = await adminCall(e, '/api/admin/students/' + updated.key, write(adminCookie, { ...updated, visibleActivities: [] }, 'PUT'));
   assert.equal(empty.status, 200); assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, []);
   assert.deepEqual(await storage.list({ limit: 100 }), learningBefore);

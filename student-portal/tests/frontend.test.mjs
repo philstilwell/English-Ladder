@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM} from 'jsdom';
+import {ACTIVITY_TOOLS} from '../activities.mjs';
 import {feedback,assessment,quiz} from './fixture.mjs';
 import {seedQuiz,call,origin} from './harness.mjs';
 import grammarBank from '../grammar-bank.json' with { type: 'json' };
@@ -393,7 +394,7 @@ test('repeated assessment references to one lesson show one date and no elapsed 
  dom.window.close();
 });
 
-const settingsFixture = { nickname: 'Alex the Explorer', revision: 1, visibleActivities: ['placeholder-1', 'placeholder-2', 'placeholder-3'], activities: [1, 2, 3].map(n => ({ id: 'placeholder-' + n, name: 'Activity ' + n, description: 'A sample activity.' })) };
+const settingsFixture = { nickname: 'Alex the Explorer', revision: 1, visibleActivities: ACTIVITY_TOOLS.map(a => a.id), activities: ACTIVITY_TOOLS };
 const submitForm = (dom, id) => dom.window.document.getElementById(id).dispatchEvent(new dom.window.Event('submit', { bubbles: true, cancelable: true }));
 test('Account saves only a nickname, has no activity picker, and keeps teacher preview read-only', async () => {
   let saved = structuredClone(settingsFixture), writes = 0;
@@ -465,15 +466,15 @@ test('account load failures can retry, stale saves request a reload, and expiry 
 });
 
 test('Activities follows administrator selections when reopened, including none, without a student picker', async () => {
-  let saved = { ...settingsFixture, visibleActivities: ['placeholder-1', 'placeholder-3'] };
-  const mock = path => path === '/api/account' ? reply(saved) : null;
-  const dom = setup(mock, 'https://ab26.englishladder.com/#activities/placeholder-3'); await flush();
+  let saved = { ...settingsFixture, visibleActivities: ['english-road', 'business-terms'] };
+  const mock = path => path === '/api/account' ? reply(saved) : path === '/api/business-terms' ? reply({items:termsBank.items}) : null;
+  const dom = setup(mock, 'https://ab26.englishladder.com/#activities/business-terms'); await flush();
   const d = dom.window.document, labels = () => [...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent);
-  assert.deepEqual(labels(), ['Activity 1', 'Activity 3']);
-  assert.equal(d.getElementById('activity-title').textContent, 'Activity 3');
-  saved = { ...saved, revision: 2, visibleActivities: ['placeholder-2'] };
+  assert.deepEqual(labels(), ['English Road Practice', 'Business terms']);
+  assert.equal(d.getElementById('activity-title').textContent, 'Business terms');
+  saved = { ...saved, revision: 2, visibleActivities: ['grammar-practice'] };
   d.getElementById('activities-toggle').click(); await flush();
-  assert.deepEqual(labels(), ['Activity 2']);
+  assert.deepEqual(labels(), ['Grammar practice']);
   assert.equal(d.getElementById('activity-title').textContent, 'Activities');
   assert.match(d.getElementById('activity-message').textContent, /teacher has not selected/);
   saved = { ...saved, revision: 3, visibleActivities: [] };
@@ -490,10 +491,10 @@ test('a delayed activity read cannot replace a newer administrator choice or res
   const dom = setup((path, options) => {
     if (path !== '/api/account') return null;
     if (++reads === 1) return new Promise(resolve => { complete = resolve; });
-    return reply({ ...settingsFixture, revision: 2, visibleActivities: ['placeholder-2'] });
+    return reply({ ...settingsFixture, revision: 2, visibleActivities: ['grammar-practice'] });
   }, 'https://ab26.englishladder.com/#account'); await flush(); const d = dom.window.document;
   complete(reply(settingsFixture)); await flush();
-  assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Activity 2']);
+  assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Grammar practice']);
   d.getElementById('logout').click(); await flush(); assert.equal(d.getElementById('activities-submenu').textContent, ''); dom.window.close();
   let late;
   const signedOut = setup(path => path === '/api/account' ? new Promise(resolve => { late = resolve; }) : null, 'https://ab26.englishladder.com/#overview'); await flush();
@@ -502,19 +503,19 @@ test('a delayed activity read cannot replace a newer administrator choice or res
 });
 test('failed activity loading never substitutes defaults and can retry; expiry clears activities', async () => {
   let unavailable = true;
-  const dom = setup(path => path === '/api/account' ? unavailable ? new Response(JSON.stringify({ error: 'Unavailable' }), { status: 503 }) : reply({ ...settingsFixture, visibleActivities: ['placeholder-3'] }) : null, 'https://ab26.englishladder.com/#overview');
+  const dom = setup(path => path === '/api/account' ? unavailable ? new Response(JSON.stringify({ error: 'Unavailable' }), { status: 503 }) : reply({ ...settingsFixture, visibleActivities: ['business-terms'] }) : null, 'https://ab26.englishladder.com/#overview');
   await flush(); const d = dom.window.document;
   assert.equal(d.querySelectorAll('#activities-submenu a').length, 0); assert.match(d.getElementById('activities-submenu').textContent, /could not be loaded/);
   unavailable = false; d.querySelector('#activities-submenu button').click(); await flush();
-  assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Activity 3']); dom.window.close();
+  assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Business terms']); dom.window.close();
   const expired = setup(path => path === '/api/account' ? new Response(JSON.stringify({ error: 'Please sign in.' }), { status: 401 }) : null, 'https://ab26.englishladder.com/#overview');
   await flush(); assert.equal(expired.window.document.getElementById('login-view').hidden, false); assert.equal(expired.window.document.getElementById('activities-submenu').textContent, ''); expired.window.close();
 });
 
-const roadSettings = { ...settingsFixture, activities: [{ id:'english-road', name:'English Road Practice', description:'Practice grammar and words.' }, ...settingsFixture.activities], visibleActivities:['english-road'] };
-const grammarSettings = { ...settingsFixture, activities: [{ id:'grammar-practice', name:'Grammar practice', description:'Your practice is not saved.' }, ...settingsFixture.activities], visibleActivities:['grammar-practice'] };
+const roadSettings = { ...settingsFixture, visibleActivities:['english-road'] };
+const grammarSettings = { ...settingsFixture, visibleActivities:['grammar-practice'] };
 const grammarRoute = origin + '/#activities/grammar-practice';
-const termsSettings={...settingsFixture,activities:[{id:'business-terms',name:'Business terms',description:'Your practice is not saved.'},...settingsFixture.activities],visibleActivities:['business-terms']};
+const termsSettings={...settingsFixture,visibleActivities:['business-terms']};
 const termsRoute=origin+'/#activities/business-terms';
 const termsMock=path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:termsBank.items}):null;
 

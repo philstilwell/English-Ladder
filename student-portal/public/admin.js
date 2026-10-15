@@ -29,11 +29,14 @@
     const request = cefrDetailRequest, version = epoch;
     const stillCurrent = () => signedIn && version === epoch && request === cefrDetailRequest && current?.key === student.key && location.hash === '#students/' + student.key;
     try {
-      const { cefr } = await api('/api/admin/students/' + student.key + '/cefr');
+      const { cefr, schedule } = await api('/api/admin/students/' + student.key + '/cefr');
       if (!stillCurrent()) return;
       const content = $('cefr-content'); content.replaceChildren();
       content.append(element('strong', cefrLabel(cefr), 'cefr-level'));
-      if (!cefr) { content.append(element('p', 'An estimate can be added during the next eligible nightly lesson update. Existing lessons have not been reprocessed.', 'field-note')); return; }
+      content.append(element('p', 'First estimate after two recorded sessions. Monthly reviews use the latest four available transcripts, with at least two required.', 'field-note'));
+      if (schedule?.nextReviewOn) content.append(element('p', 'Next review from ' + displayDate(schedule.nextReviewOn) + ', when new session evidence is available.', 'field-note'));
+      if (schedule?.lastReviewState === 'insufficient' && cefr?.state === 'estimated') content.append(element('p', 'The latest review had too little reliable evidence. The earlier estimate is retained.', 'field-note'));
+      if (!cefr) { content.append(element('p', 'An estimate can be added during the next eligible nightly check after two usable redacted transcripts are saved. Existing lessons have not been reprocessed.', 'field-note')); return; }
       content.append(element('p', 'Reviewed ' + displayDate(cefr.assessedOn) + ' · Latest lesson ' + displayDate(cefr.latestSessionId.slice(0, 10)), 'field-note'));
       content.append(element('p', cefr.rationale));
       if (cefr.state !== 'estimated') return;
@@ -162,7 +165,7 @@
     try {
       const status = await api('/api/admin/automation');
       if (!signedIn || version !== epoch) return;
-      $('schedule-state').textContent = status.retentionError ? 'Transcript cleanup needs attention. Older cached copies could not be removed.' : status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
+      $('schedule-state').textContent = status.retentionError ? 'Transcript cleanup needs attention. Older cached copies could not be removed.' : status.cefrNeedsAttention ? 'CEFR review needs attention. Existing estimates have been kept.' : status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
       $('last-check').textContent = status.lastCheck ? 'Last check: ' + displayTime(status.lastCheck) + (status.needsAttention ? ' · ' + status.needsAttention + ' sessions need attention' : '') : 'The first nightly check is still ahead.';
     } catch (error) { if (signedIn && version === epoch) $('schedule-state').textContent = 'Server status is temporarily unavailable.'; }
   }
@@ -238,8 +241,8 @@
     clearCefr();
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
-    for (const id of ['list-view','edit-view','import-view']) $(id).hidden = true;
-    for (const id of ['list-nav','register-nav','import-nav']) $(id).removeAttribute('aria-current');
+    for (const id of ['list-view','edit-view','import-view','technical-view']) $(id).hidden = true;
+    for (const id of ['list-nav','register-nav','import-nav','technical-nav']) $(id).removeAttribute('aria-current');
     if (hash === '#register') { $('edit-view').hidden = false; $('register-nav').setAttribute('aria-current','page'); editStudent(null); }
     else if (hash.startsWith('#students/')) {
       const student = students.find(s => s.key === hash.slice(10));
@@ -247,6 +250,7 @@
       else { $('edit-view').hidden = false; editStudent(student); }
       $('list-nav').setAttribute('aria-current','page');
     } else if (hash === '#import') { $('import-view').hidden = false; $('import-nav').setAttribute('aria-current','page'); }
+    else if (hash === '#technical-notes') { $('technical-view').hidden = false; $('technical-nav').setAttribute('aria-current','page'); }
     else { $('list-view').hidden = false; $('list-nav').setAttribute('aria-current','page'); $('paused-students').open = $('filter').value === 'paused' || Boolean($('search').value.trim()); showList(); }
   }
   function closeDelete() {

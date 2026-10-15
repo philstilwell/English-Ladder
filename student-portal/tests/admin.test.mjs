@@ -209,6 +209,24 @@ test('administrator list links to editable accounts and has a separate registrat
   w.location.hash='#register';await flush();assert.equal(d.getElementById('edit-title').textContent,'Register new student');assert.equal(d.getElementById('lastName').value,'');assert.equal(d.getElementById('studentId').readOnly,false);
   assert.equal(d.querySelectorAll('input[type="password"]').length,4);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
 });
+
+test('Technical notes supports direct navigation, clears account details, and stays behind the signed-in view',async()=>{
+  const dom=browser(),w=dom.window,d=w.document;
+  w.location.hash='#technical-notes';await flush();
+  assert.equal(d.getElementById('technical-view').hidden,false);
+  assert.equal(d.getElementById('technical-nav').getAttribute('aria-current'),'page');
+  assert.equal(d.getElementById('list-view').hidden,true);
+  d.getElementById('list-nav').click();await flush();
+  assert.equal(d.getElementById('technical-view').hidden,true);
+  d.querySelector('.student-name').click();await flush();
+  d.getElementById('technical-nav').click();await flush();
+  assert.equal(d.getElementById('edit-view').hidden,true);
+  assert.equal(d.getElementById('current-password').value,'');
+  assert.equal(d.getElementById('cefr-content').textContent,'');
+  d.getElementById('sign-out').click();await flush();
+  assert.equal(d.getElementById('admin-view').hidden,true);
+  assert.equal(d.getElementById('login-view').hidden,false);w.close();
+});
 test('student list shows latest quiz states, updates after Refresh, and treats lookup failures separately',async()=>{
   let state={state:'in_progress',answered:1,total:2},fail=false;
   const dom=browser(path=>path==='/api/admin/quiz-status'?(fail?Response.json({error:'Unavailable'},{status:503}):Response.json({statuses:{[fixture.key]:state},nextCursor:null})):null);
@@ -541,8 +559,11 @@ test('CEFR details render safely, clear on navigation and logout, and ignore del
   let resolveDetail;
   const dom=browser(path=>path==='/api/admin/cefr-status'?Response.json({statuses:{[fixture.key]:cefr},nextCursor:null}):path.endsWith('/cefr')?new Promise(resolve=>{resolveDetail=resolve;}):null);
   await flush();const w=dom.window,d=w.document;assert.match(d.querySelector('.cefr-cell').textContent,/B1–B2/);
-  d.querySelector('.student-name').click();await flush();resolveDetail(Response.json({cefr}));await flush();
+  d.querySelector('.student-name').click();await flush();resolveDetail(Response.json({cefr,schedule:{nextReviewOn:'2026-11-14',lastReviewState:'insufficient'}}));await flush();
   assert.match(d.getElementById('cefr-content').textContent,/Low confidence/);assert.equal(d.querySelector('#cefr-content img'),null);
+  assert.match(d.getElementById('cefr-content').textContent,/after two recorded sessions/);
+  assert.match(d.getElementById('cefr-content').textContent,/Nov 14, 2026/);
+  assert.match(d.getElementById('cefr-content').textContent,/earlier estimate is retained/);
   assert.match(d.getElementById('cefr-content').textContent,/<img/);
   w.location.hash='#students';await flush();assert.equal(d.getElementById('cefr-content').textContent,'');
   d.querySelector('.student-name').click();await flush();w.location.hash='#register';await flush();resolveDetail(Response.json({cefr}));await flush();assert.equal(d.getElementById('cefr-content').textContent,'');

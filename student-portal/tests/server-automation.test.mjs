@@ -307,19 +307,16 @@ test('automatic assessments require a self-study AI prompt for every study topic
 });
 
 
-test('nightly CEFR uses the same two calls, verifies learner quotes and needs separate editor approval',async()=>{
-  const transcript=readTranscript(note,{ab26:student});
-  const cefr={state:'estimated',lower:'A2',upper:'B1',confidence:'moderate',rationale:'This is a provisional conversation estimate.',
-    aspects:['range','accuracy','coherence','interaction'].map(area=>({area,detail:'Further independent evidence is needed.'})),
-    evidence:transcript.segments.filter(s=>s.speaker===student.firstName).slice(0,2).map(s=>({sessionId:session,at:s.at,quote:s.text,note:'Learner language from this lesson.'}))};
-  async function run(candidate,approved){let calls=0;const ai={run:async(_model,input)=>{calls++;assert.match(input.messages[0].content,/CEFR/);return{response:calls===1?{...structuredClone(draft),cefr:candidate}:{approved:true,cefrApproved:approved}};}};
-    const result=await authorQuiz(ai,transcript,meeting,'fictional-note-123',{assessment,attempts:[]});assert.equal(calls,2);return result;}
-  const result=await run(cefr,true);assert.equal(result.cefr.state,'estimated');assert.equal(result.cefr.confidence,'low');assert.equal(result.assessment.cefr,undefined);assert.equal(result.cefr.latestSessionId,session);
-  assert.equal((await run(cefr,false)).cefr.state,'insufficient');
-  assert.equal((await run({...cefr,evidence:cefr.evidence.map(e=>({...e,quote:'An invented quote.'}))},true)).cefr.state,'insufficient');
-  assert.equal((await run(undefined,true)).cefr.state,'insufficient');
+test('daily lesson authoring omits CEFR inputs and cannot overwrite the monthly estimate',async()=>{
+  const transcript=readTranscript(note,{ab26:student});let calls=0;
+  const ai={run:async(_model,input)=>{
+    calls++;const data=JSON.parse(input.messages[1].content);
+    assert.equal(data.priorCefr,undefined);assert.equal(data.sessions,undefined);
+    return{response:calls===1?{...structuredClone(draft),cefr:{state:'estimated',lower:'C2'}}:{approved:true}};
+  }};
+  const result=await authorQuiz(ai,transcript,meeting,'fictional-note-123',{assessment,attempts:[],cefr:{state:'estimated',lower:'B1'}});
+  assert.equal(calls,2);assert.equal(result.cefr,undefined);
 });
-
 
 test('CEFR labels accidentally placed in student content are rejected before publication',async()=>{
   const transcript=readTranscript(note,{ab26:student});

@@ -2,6 +2,7 @@ import { directoryStudents, directoryRequest } from './student-directory.mjs';
 import { authorQuiz, readTranscript, sessionId } from './server-quiz-model.mjs';
 import { anonymizeTranscript } from './transcript-privacy.mjs';
 import { TRANSCRIPT_PRIVACY_VERSION, reusableTranscript } from './transcript-cache.mjs';
+import { authorCefr, cefrModelInput } from './server-cefr-model.mjs';
 
 const json = (data, status = 200) => Response.json(data, { status });
 const encoder = new TextEncoder();
@@ -13,6 +14,7 @@ const safeError = error => [
   'insufficient_evidence', 'invalid_evidence', 'content_review_failed', 'assessment_required', 'unsafe_content',
   'invalid_model_response', 'monthly_limit', 'daily_limit', 'meeting_pending', 'publish_failed', 'meeting_reference_missing', 'discovery_incomplete',
   'transcript_privacy_failed', 'source_changed', 'student_changed',
+  'cefr_window_too_large', 'invalid_cefr_evidence', 'cefr_review_failed', 'cefr_limit',
 ].includes(error.message) ? error.message : 'generation_failed';
 
 export function studentsFor(env) {
@@ -253,15 +255,16 @@ export class QuizAutomation {
     if (!response.ok) throw new Error('publish_failed');
     return response.json();
   }
-  async reserveGeneration(studentId) {
+  async reserveGeneration(studentId, kind = 'lesson') {
     await this.storage.transaction(async txn => {
-      const day = new Date().toISOString().slice(0, 10), month = day.slice(0, 7);
-      const key = 'usage:' + studentId;
+      const day = new Date().toISOString().slice(0, 10), month = day.slice(0, 7), isCefr = kind === 'cefr';
+      const key = (isCefr ? 'cefr-usage:' : 'usage:') + studentId;
       const usage = await txn.get(key) || {};
       const daily = usage.day === day ? usage.daily : 0, monthly = usage.month === month ? usage.monthly : 0;
-      if (monthly >= 12) throw new Error('monthly_limit');
-      if (daily >= 2) throw new Error('daily_limit');
-      // Reserve before AI calls; a crash cannot bypass the limit.
+      if (monthly >= (isCefr ? 2 : 12)) throw new Error(isCefr ? 'cefr_limit' : 'monthly_limit');
+      if (daily >= (isCefr ? 1 : 2)) throw new Error(isCefr ? 'cefr_limit' : 'daily_limit');
+      // Reserve before AI calls. Monthly CEFR has its own small retry allowance
+      // and cannot consume the existing allowance for ordinary lesson updates.
       await txn.put({ [key]: { day, month, daily: daily + 1, monthly: monthly + 1 } });
     });
   }
@@ -374,6 +377,27 @@ export class QuizAutomation {
     if (failed.length) throw new Error('transcript_retention_failed');
     await this.storage.put({ 'last-retention': new Date().toISOString() });
   }
+  async reviewCefr(deadline) {
+    if (this.env.AUTOMATION_ENABLED !== 'true' || !this.env.AI || !this.env.FEEDBACK_STORE) return;
+    let failures = 0;
+    for (const [studentId, student] of Object.entries(await this.students())) {
+      if (Date.now() > deadline) break;
+      try {
+        const context = await this.portal(studentId, '/automation/cefr-context', { timeZone: student.timeZone });
+        if (!context.due) continue;
+        cefrModelInput(context); // Reject oversized windows before reserving paid work.
+        await this.reserveGeneration(studentId, 'cefr');
+        const cefr = await authorCefr(this.env.AI, context);
+        if (JSON.stringify((await this.students())[studentId]) !== JSON.stringify(student)) throw new Error('student_changed');
+        await this.portal(studentId, '/automation/cefr-publish', { timeZone: student.timeZone, windowHash: context.windowHash, cefr });
+        await this.storage.delete('cefr-error:' + studentId);
+      } catch (error) {
+        failures++;
+        await this.storage.put({ ['cefr-error:' + studentId]: safeError(error) });
+      }
+    }
+    await this.storage.put({ 'cefr-errors': failures });
+  }
   async run(scheduledTime) {
     const lease = crypto.randomUUID(), deadline = Date.now() + 480000;
     const acquired = await this.storage.transaction(async txn => {
@@ -415,6 +439,10 @@ export class QuizAutomation {
       await this.storage.put({ 'last-check': new Date().toISOString(), 'connection-error': null });
     } catch (error) { await this.storage.put({ 'connection-error': safeError(error) }); }
     finally {
+      // Monthly reviews use saved sources and can proceed without a new lesson
+      // or a working Zoom connection. Daily lesson publishing stays independent.
+      try { await this.reviewCefr(deadline); }
+      catch { await this.storage.put({ 'cefr-errors': 1 }); }
       await this.storage.transaction(async txn => {
         if ((await txn.get('run-lock'))?.lease === lease) await txn.delete('run-lock');
       });
@@ -430,6 +458,7 @@ export class QuizAutomation {
       const jobs = [...await this.storage.list({ prefix: 'job:' })].map(([, j]) => j);
       return json({ enabled: this.env.AUTOMATION_ENABLED === 'true', connected: Boolean(await this.storage.get('oauth')),
         lastRetention: await this.storage.get('last-retention') || null, retentionError: await this.storage.get('retention-error') || null,
+        cefrNeedsAttention: await this.storage.get('cefr-errors') || 0,
         lastCheck: await this.storage.get('last-check') || null, connectionError: await this.storage.get('connection-error') || null,
         pending: jobs.filter(j => j.status === 'pending').length,
         needsAttention: jobs.filter(j => j.status === 'needs_attention').length,

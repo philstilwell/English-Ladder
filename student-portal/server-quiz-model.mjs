@@ -1,6 +1,7 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { validateFeedback } from './feedback.mjs';
-import { CEFR_RULES, groundCefr, insufficientCefr } from './cefr.mjs';
+import { sessionId } from './lesson-time.mjs';
+export { sessionId } from './lesson-time.mjs';
 
 export const MODEL = '@cf/openai/gpt-oss-120b';
 const STAMP = /^\d{2}:[0-5]\d:[0-5]\d\.\d{3}$/;
@@ -50,12 +51,6 @@ export function firstTryReview(attempts) {
   return [...topics.values()].sort((a, b) => b.versions.size - a.versions.size || b.misses - a.misses)
     .slice(0, 6).map(row => ({ topic: row.topic, differentQuizzes: row.versions.size, misses: row.misses,
       examples: row.examples.sort((a, b) => b.startedAt.localeCompare(a.startedAt)).slice(0, 2) }));
-}
-
-export function sessionId(startedAt, timeZone) {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit',
-    hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date(startedAt)).map(p => [p.type, p.value]));
-  return `${parts.year}-${parts.month}-${parts.day}-${parts.hour}${parts.minute}`;
 }
 
 const RULES = `You write private English as a second language practice for an adult.
@@ -110,10 +105,10 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   const learner = transcript.learnerLabel || student.firstName;
   const review = firstTryReview(context.attempts);
   const { quiz: oldQuiz, ...priorAssessment } = context.assessment || {};
-  const input = { learner, segments, firstTryReview: review, newSessionId: id, priorAssessment, priorCefr: context.cefr || null,
+  const input = { learner, segments, firstTryReview: review, newSessionId: id, priorAssessment,
     assessmentPatterns: (context.assessment?.patterns || []).map(p => ({ title: p.title, detail: p.detail, practice: p.practice })),
   };
-  const draft = await generate(ai, RULES + '\n' + CEFR_RULES, input, 12000);
+  const draft = await generate(ai, RULES, input, 12000);
   if (draft.sufficientEvidence !== true) throw new Error('insufficient_evidence');
   const questions = draft.quiz?.questions;
   if (!Array.isArray(questions) || questions.length !== 7 ||
@@ -153,13 +148,9 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   if (assessment.plan.some(item => !item.aiPrompt)) throw new Error('invalid_evidence');
   const studentContent = JSON.stringify({ feedback, assessment });
   if (/https?:\/\/|mynotes\.zoom|<\/?[a-z]/i.test(studentContent) || /\bCEFR\b|\b[ABC][12]\b/.test(studentContent)) throw new Error('unsafe_content');
-  let cefr;
-  try { cefr = groundCefr(draft.cefr, id, assessment.assessedOn, segments, learner, context.cefr); }
-  catch { cefr = insufficientCefr(id, assessment.assessedOn); }
   const reviewResult = await generate(ai,
-    RULES + '\n' + CEFR_RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Compare each feedback practice task AND answer with all focus models and vocabulary examples. Reject copied examples, gap-fill copies, trivial rewrites, or tasks without a fresh situation. Check that study suggestions make no promises about future sessions and that each AI prompt introduces the specific topic with examples and guided practice. Reject ambiguous answers or unsupported claims. Return {"approved":true,"cefrApproved":true}. Set approved true only if the student feedback, assessment and quiz pass all checks. Independently set cefrApproved true only if the CEFR estimate follows the rubric and all its evidence, privacy, attribution, confidence and scope rules. A weak CEFR estimate must not reject otherwise valid student work. Reject any CEFR level claimed in student-facing content.',
-    { ...input, proposed: { feedback, assessment, cefr, evidence: draft.evidence } }, 1000);
+    RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Compare each feedback practice task AND answer with all focus models and vocabulary examples. Reject copied examples, gap-fill copies, trivial rewrites, or tasks without a fresh situation. Check that study suggestions make no promises about future sessions and that each AI prompt introduces the specific topic with examples and guided practice. Reject ambiguous answers or unsupported claims. Return {"approved":true}. Set approved true only if the student feedback, assessment and quiz pass all checks. Reject any CEFR level claimed in student-facing content.',
+    { ...input, proposed: { feedback, assessment, evidence: draft.evidence } }, 1000);
   if (reviewResult.approved !== true) throw new Error('content_review_failed');
-  if (reviewResult.cefrApproved !== true) cefr = insufficientCefr(id, assessment.assessedOn);
-  return { feedback, assessment, quiz, cefr, priorAssessment: context.assessment || null, evidence: draft.evidence };
+  return { feedback, assessment, quiz, priorAssessment: context.assessment || null, evidence: draft.evidence };
 }

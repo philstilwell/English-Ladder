@@ -1,6 +1,7 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
-import { validateCefr, cefrOverview } from './cefr.mjs';
+import { groundCefrWindow, cefrOverview } from './cefr.mjs';
+import { cefrReviewContext, cefrScheduleSummary } from './cefr-schedule.mjs';
 import { validNoteId, saveTranscriptCache, readTranscriptCache, validateTranscriptCache, pruneTranscriptCache } from './transcript-cache.mjs';
 
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
@@ -120,8 +121,36 @@ export class FeedbackStore {
     if (await this.storage.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
-    if (id === 'admin/cefr' && request.method === 'GET') return json({ cefr: await this.storage.get('cefr:current') || null });
+    if (id === 'admin/cefr' && request.method === 'GET') return this.activeTransaction(async txn => {
+      const context = await cefrReviewContext(txn);
+      return json({ cefr: context.current, schedule: cefrScheduleSummary(context) });
+    });
     if (id === 'automation/prune-transcripts' && request.method === 'POST') return this.activeTransaction(async txn => json(await pruneTranscriptCache(txn)));
+    if (id === 'automation/cefr-context' && request.method === 'POST') {
+      const { timeZone } = await request.json();
+      try { new Intl.DateTimeFormat('en', { timeZone }); } catch { return json({ error: 'Invalid lesson time zone.' }, 400); }
+      return this.activeTransaction(async txn => json(await cefrReviewContext(txn, timeZone)));
+    }
+    if (id === 'automation/cefr-publish' && request.method === 'POST') {
+      const input = await request.json();
+      return this.activeTransaction(async txn => {
+        let context, cefr;
+        try {
+          context = await cefrReviewContext(txn, input.timeZone);
+          // Recheck the date, minimum, most recent sessions and retention in the
+          // same transaction as the write. Late/duplicate results cannot win.
+          if (!context.due || input.windowHash !== context.windowHash) return json({ error: 'CEFR source window changed or is not due.' }, 409);
+          cefr = groundCefrWindow(input.cefr, context.sessions, context.today);
+        } catch { return json({ error: 'Invalid CEFR evidence.' }, 400); }
+        const update = {
+          ['cefr:history:' + context.today + ':' + context.windowHash]: cefr,
+          'cefr:review': { completedOn: context.today, state: cefr.state, windowHash: context.windowHash, references: context.references },
+        };
+        if (cefr.state === 'estimated' || context.current?.state !== 'estimated') update['cefr:current'] = cefr;
+        await txn.put(update);
+        return json({ ok: true });
+      });
+    }
     if (id.startsWith('automation/transcript/')) {
       const noteId = id.slice('automation/transcript/'.length);
       if (!validNoteId(noteId)) return json({ error: 'Invalid transcript reference.' }, 400);
@@ -210,21 +239,17 @@ export class FeedbackStore {
         const current = await txn.get('assessment:current') || null;
         if (await txn.get('quiz:published:' + sessionId) || current?.quiz?.generatedForSession === sessionId) return json({ ok: true, duplicate: true });
         if (JSON.stringify(input.priorAssessment) !== JSON.stringify(current)) return json({ error: 'Assessment changed. Retry with the latest record.' }, 409);
-        let record, feedback, cefr;
+        if (input.cefr !== undefined) return json({ error: 'CEFR updates use the separate monthly review.' }, 400);
+        let record, feedback;
         try {
           feedback = validateFeedback(input.feedback, sessionId);
           record = validateAssessment({ ...input.assessment, quiz: input.quiz });
           if (!record.sourceSessions.includes(sessionId)) throw new Error('Missing latest session');
-          if (input.cefr !== undefined) {
-            cefr = validateCefr(input.cefr);
-            if (cefr.latestSessionId !== sessionId || cefr.assessedOn !== record.assessedOn ||
-                cefr.sourceSessions?.some(id => !record.sourceSessions.includes(id))) throw new Error('Invalid CEFR source');
-          }
         } catch { return json({ error: 'Invalid learning record.' }, 400); }
         for (const sourceId of new Set([...record.sourceSessions, ...record.quiz.sourceSessions])) {
           if (sourceId !== sessionId && !(await txn.get('feedback:' + sourceId))?.source?.reviewedFullTranscript) return json({ error: 'Source unavailable.' }, 400);
         }
-        for (const ref of [...assessmentReferences(record), ...(cefr?.evidence || [])]) {
+        for (const ref of assessmentReferences(record)) {
           const source = ref.sessionId === sessionId ? feedback.source : (await txn.get('feedback:' + ref.sessionId)).source;
           if (ref.at < source.coverageStart || ref.at > source.coverageEnd) return json({ error: 'Invalid assessment evidence.' }, 400);
         }
@@ -238,11 +263,6 @@ export class FeedbackStore {
         };
         // An older delayed event is archived without replacing a newer lesson quiz.
         if (!current?.quiz?.generatedForSession || sessionId > current.quiz.generatedForSession) update['assessment:current'] = record;
-        if (cefr) {
-          const previousCefr = await txn.get('cefr:current') || null;
-          update['cefr:history:' + sessionId] = cefr;
-          if (!previousCefr || sessionId > previousCefr.latestSessionId) update['cefr:current'] = cefr;
-        }
         await txn.put(update);
         return json({ ok: true });
       });

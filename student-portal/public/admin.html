@@ -15,7 +15,7 @@
     <form id="login-form" class="login-card"><p class="eyebrow">ADMINISTRATOR SIGN-IN</p><h2>Welcome, Phil.</h2><label for="password">Administrator password</label><input id="password" type="password" autocomplete="current-password" required maxlength="128"><p class="field-note">Capital letters are automatically made lowercase.</p><button class="primary-button" type="submit">Open administrator page</button><p id="login-message" role="status"></p></form>
   </section>
   <div id="admin-view" hidden>
-    <nav class="admin-nav" aria-label="Administrator sections"><a href="#students" id="list-nav">Students</a><a href="#register" id="register-nav">Register new student</a><a href="#import" id="import-nav">Import from spreadsheet</a><button id="sign-out" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button></nav>
+    <nav class="admin-nav" aria-label="Administrator sections"><a href="#students" id="list-nav">Students</a><a href="#register" id="register-nav">Register new student</a><a href="#import" id="import-nav">Import from spreadsheet</a><a href="#technical-notes" id="technical-nav">Technical notes</a><button id="sign-out" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button></nav>
     <div class="admin-content">
     <p id="message" class="message" role="status" hidden></p>
     <section id="list-view">
@@ -86,6 +86,50 @@
       <p class="privacy-note">Checked rows and courses that ended before today (Eastern time) are excluded. Imports create private drafts. They do not activate sites, guess Zoom names, or overwrite existing students. This is a copy; later edits here do not change the spreadsheet.</p>
       <label for="sheet-paste">Copied spreadsheet cells</label><textarea id="sheet-paste" rows="8" maxlength="250000" placeholder="Paste the header row and up to 200 student rows"></textarea><button id="preview-import" class="secondary-button">Review import</button>
       <div id="import-preview" hidden><h2 id="import-count"></h2><ul id="import-names"></ul><p>Review first and last names on each account before activation, especially names with several parts.</p><button id="confirm-import" class="primary-button">Import as drafts</button></div>
+    </section>
+    <section id="technical-view" hidden aria-labelledby="technical-title">
+      <div class="page-heading"><div><p class="eyebrow">HOW YOUR STUDENT PORTAL WORKS</p><h1 id="technical-title">Technical notes</h1><p>A reference for the current rules, timing, privacy measures, and limits.</p></div></div>
+      <p class="field-note">Specifications updated <time datetime="2026-10-15">October 15, 2026</time>. These notes describe the system’s behavior; student details and passwords belong on individual account pages.</p>
+      <div class="technical-grid">
+        <article class="technical-card"><h2>CEFR estimates</h2><dl>
+          <div><dt>First estimate</dt><dd>After two distinct usable, redacted transcripts have been saved. The review uses the latest two sessions.</dd></div>
+          <div><dt>Monthly review</dt><dd>No sooner than one calendar month after the previous review. It uses the latest four available sessions within the retention period. If only two or three remain, it uses those. Fewer than two means it waits.</dd></div>
+          <div><dt>Evidence and limits</dt><dd>CEFR means Common European Framework of Reference for Languages. The estimate covers conversational language visible in transcripts, from A1 to C2. It is not a formal test result or an independent assessment of pronunciation, pace, listening, reading, or writing.</dd></div>
+          <div><dt>What keeps the level stable</dt><dd>Every selected transcript is read in full, with learner quotations checked against each session. Teacher examples and quiz scores do not establish the level. Unchanged evidence does not trigger another review. Failed or inconclusive monthly reviews keep the earlier estimate.</dd></div>
+        </dl><p>Estimates and supporting examples appear only in the administrator interface. Each account shows its next eligible review date.</p></article>
+        <article class="technical-card"><h2>Transcript privacy</h2><dl>
+          <div><dt>Before saving</dt><dd>Speaker identities are matched first. Names, contact information, and identifying personal details are then redacted and separately reviewed. A failed privacy review prevents storage and publication from that transcript.</dd></div>
+          <div><dt>Speaker roles</dt><dd>Student and Instructor labels stay distinct. Other speakers receive separate anonymous labels. Timestamps and the remaining wording are preserved, including language mistakes.</dd></div>
+          <div><dt>Purpose</dt><dd>Saved transcripts are used for language assessment. Personal lives, work performance, beliefs, and health are not assessed.</dd></div>
+        </dl><p>Automated redaction cannot guarantee complete anonymity. Raw Zoom responses and the name-to-role mapping are not saved by the portal.</p></article>
+        <article class="technical-card"><h2>Storage and retention</h2><dl>
+          <div><dt>Where copies live</dt><dd>In the website’s private server storage, separated by student account. Full cached transcripts are not sent to browser pages or saved in browser storage.</dd></div>
+          <div><dt>Three-month limit</dt><dd>Nightly cleanup deletes cached copies older than three calendar months, using Eastern lesson dates. It includes all saved versions and paused students, and still runs when publishing is disabled or Zoom is disconnected.</dd></div>
+          <div><dt>Records that remain</dt><dd>Feedback, assessments, brief CEFR evidence, quizzes, and first-choice answer history remain. This cleanup does not delete original Zoom records.</dd></div>
+        </dl><p>Account deletion removes that account’s cached transcripts and learning records together. The retired student address cannot be reused.</p></article>
+        <article class="technical-card"><h2>Nightly updates and Zoom</h2><dl>
+          <div><dt>Schedule</dt><dd>1 a.m. New York time, with daylight saving handled automatically. The website’s server does the work; your Mac and Codex can be off.</dd></div>
+          <div><dt>Finding a lesson</dt><dd>The job checks Zoom for new or changed notes, matches an exact configured speaker name, and confirms the meeting date. It requires the complete transcript and allows time for a newly finished meeting to settle.</dd></div>
+          <div><dt>Reusing saved copies</dt><dd>Completed lessons are skipped. Pending retries use the reviewed server copy while the source and speaker mapping are unchanged. A changed source is fetched again; a pending copy without a source revision is refreshed after seven days.</dd></div>
+        </dl><p>Monthly CEFR reviews can run from saved copies even if Zoom is unavailable. Historical lessons are imported separately; a software update does not automatically backfill old recordings.</p></article>
+        <article class="technical-card"><h2>Feedback and quizzes</h2><dl>
+          <div><dt>Each eligible lesson</dt><dd>Produces reviewed language feedback, an updated assessment, and seven new practice questions when the evidence is sufficient. Failed generation keeps the existing useful pages.</dd></div>
+          <div><dt>Original answers</dt><dd>The first choice is kept even after a successful retry. Teacher previews do not count as student attempts. Older quiz wording and saved attempts are preserved.</dd></div>
+          <div><dt>Student-facing language</dt><dd>Instructions use short, clear English. This reading style and quiz performance are not treated as proof of a CEFR level. Study plans suggest independent practice.</dd></div>
+        </dl></article>
+        <article class="technical-card"><h2>Accounts and access</h2><dl>
+          <div><dt>Private administration</dt><dd>Full names, contact details, course records, and account controls stay in the administrator area. Student pages use first names and chosen nicknames.</dd></div>
+          <div><dt>Paused accounts</dt><dd>Student access and new lesson/CEFR updates stop. Saved learning history remains, and transcript retention cleanup continues.</dd></div>
+          <div><dt>Sessions and passwords</dt><dd>Sign-in sessions last up to eight hours. Changing a student password ends that student’s existing sessions. Signing out clears loaded private information from the page.</dd></div>
+          <div><dt>Course records</dt><dd>Course end dates and hours are manually maintained; they do not automatically pause an account or decrease after a Zoom meeting.</dd></div>
+        </dl></article>
+        <article class="technical-card technical-wide"><h2>AI costs and spending safeguards</h2>
+          <p>The server uses Cloudflare Workers AI with the <span class="technical-model">gpt-oss-120b</span> model. New transcript privacy processing uses two calls. Ordinary lesson authoring and review use two calls. A due CEFR review has its own two calls.</p>
+          <dl class="technical-limits"><div><dt>Ordinary lesson updates</dt><dd>At most two attempts per student per UTC day and twelve per calendar month.</dd></div><div><dt>CEFR reviews</dt><dd>A separate allowance of one attempt per student per UTC day and two per calendar month, including retries. It does not use up the lesson-update allowance.</dd></div><div><dt>Estimated additional AI cost</dt><dd>About $0.01–$0.05 to redact and review a new transcript, and $0.02–$0.10 per CEFR review, before free allowances. Actual cost depends on transcript length. Failed attempts count toward limits; these limits are not a fixed dollar cap.</dd></div></dl>
+          <p>UTC is the time standard used for spending counters; the nightly schedule and monthly CEFR eligibility use New York dates. Stored copies are expected to fit the existing storage allowance. Simply opening these pages does not trigger paid AI work.</p>
+          <p class="field-note">Pricing references: <a href="https://developers.cloudflare.com/workers-ai/models/gpt-oss-120b/" target="_blank" rel="noopener noreferrer">Cloudflare model pricing ↗</a> · <a href="https://developers.cloudflare.com/durable-objects/platform/pricing/" target="_blank" rel="noopener noreferrer">Private storage pricing ↗</a>. Estimates checked October 15, 2026.</p>
+        </article>
+      </div>
     </section>
     </div>
   </div>

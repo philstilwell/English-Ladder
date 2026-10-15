@@ -57,9 +57,9 @@
     exercise, validItems,
     create({ root, api, expired }) {
       let revision = 0, active = false, items = [], position = 0, progress = new Map(), teacher = false, saving = false;
-      let listOpen = false, listPage = 0, hideFinished = false;
+      let listOpen = false, listPage = 0, hideFinished = false, preferenceRevision = 0;
       function clear() {
-        revision++; active = false; items = []; position = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false;
+        revision++; active = false; items = []; position = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false; preferenceRevision = 0;
         root.replaceChildren(); root.hidden = true; root.removeAttribute('aria-busy');
       }
       function render(focus = false, message = '') {
@@ -68,9 +68,51 @@
         const visiblePosition = visible.indexOf(position);
         const filter = node('label', '', 'practice-filter');
         const checkbox = node('input'); checkbox.type = 'checkbox'; checkbox.id = 'terms-hide-finished'; checkbox.checked = hideFinished; checkbox.autocomplete = 'off';
-        checkbox.addEventListener('change', () => { hideFinished = checkbox.checked; render(); root.querySelector('#terms-hide-finished').focus(); });
+        checkbox.addEventListener('change', () => saveFilter(checkbox.checked));
         filter.append(checkbox, node('span', 'Hide finished items'));
         const filterStatus = node('p', message, 'field-hint'); filterStatus.setAttribute('role', 'status');
+        async function saveFilter(value) {
+          checkbox.checked = hideFinished;
+          if (saving) return;
+          if (teacher) {
+            hideFinished = value;
+            render();
+            root.querySelector('#terms-hide-finished').focus();
+            return;
+          }
+          const current = revision;
+          const controls = [...root.querySelectorAll('button, input, select')].map(el => [el, el.disabled]);
+          let refresh = false, feedback = '';
+          saving = true;
+          for (const [el] of controls) el.disabled = true;
+          filterStatus.textContent = 'Saving your choice…';
+          try {
+            const data = await api('/api/business-terms/state', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ field: 'hideFinished', value, revision: preferenceRevision }) });
+            if (current !== revision) return;
+            if (!data.preferences) throw new Error('Missing saved preference');
+            readPreferences(data.preferences); refresh = true; feedback = 'Your choice is saved.';
+          } catch (error) {
+            if (current !== revision || expired(error)) return;
+            if (error.status === 409) {
+              try {
+                const data = await api('/api/business-terms/state');
+                if (current !== revision) return;
+                readProgress(data); refresh = true; feedback = 'Your choice changed on another page. Your saved choice is shown.';
+              } catch (reloadError) {
+                if (current !== revision || expired(reloadError)) return;
+                filterStatus.textContent = 'Your choice could not reload. Leave this activity and open it again.';
+                return;
+              }
+            } else filterStatus.textContent = 'Your choice could not be saved. Please try again.';
+          } finally {
+            if (current === revision) {
+              saving = false;
+              for (const [el, disabled] of controls) el.disabled = disabled;
+              if (refresh) { render(false, feedback); root.querySelector('#terms-hide-finished').focus(); }
+            }
+          }
+        }
+
         const item = items[position];
         const intro = node('p', `${items.length.toLocaleString('en')} exercises. Later questions are harder. Start with an easy item and move on when you are ready.`, 'field-hint');
         const questions = node('details', '', 'terms-questions'); questions.open = listOpen;
@@ -192,9 +234,14 @@
         root.replaceChildren(intro, filter, filterStatus, questions, jump, status, card, controls);
         if (focus) { title.focus(); title.scrollIntoView?.({ block: 'start' }); }
       }
+      function readPreferences(preferences = { hideFinished: false, revision: 0 }) {
+        if (typeof preferences?.hideFinished !== 'boolean' || !Number.isSafeInteger(preferences.revision) || preferences.revision < 0) throw new Error('Invalid saved preference');
+        hideFinished = preferences.hideFinished; preferenceRevision = preferences.revision;
+      }
       function readProgress(data) {
         if (!Array.isArray(data.entries) || data.entries.some(entry => !Number.isInteger(entry.number) || typeof entry.finished !== 'boolean' || typeof entry.question !== 'boolean' || !Number.isSafeInteger(entry.revision) || entry.revision < 0)) throw new Error('Invalid saved choices');
         progress = new Map(data.entries.map(entry => [entry.number, entry]));
+        readPreferences(data.preferences);
       }
       async function open(teacherView = false) {
         if (active) return;

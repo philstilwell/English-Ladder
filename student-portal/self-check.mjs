@@ -1,4 +1,5 @@
 const json = (data, status = 200) => Response.json(data, { status });
+const defaultPreferences = () => ({ hideFinished: false, revision: 0, updatedAt: null });
 const empty = number => ({ number, finished: false, question: false, revision: 0, updatedAt: null });
 
 export function createSelfCheckHandler(prefix, bank) {
@@ -10,7 +11,7 @@ export function createSelfCheckHandler(prefix, bank) {
         if (await txn.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
         const entries = [...(await txn.list({ prefix: prefix + ':item:' })).values()]
           .filter(entry => items.has(entry.number)).sort((a, b) => a.number - b.number);
-        return json(route === '/' + prefix + '/state' ? { entries } : {
+        return json(route === '/' + prefix + '/state' ? { entries, preferences: await txn.get(prefix + ':preferences') || defaultPreferences() } : {
           questions: entries.filter(entry => entry.question).map(entry => ({ ...items.get(entry.number), progress: entry })),
         });
       });
@@ -18,6 +19,19 @@ export function createSelfCheckHandler(prefix, bank) {
     if (route !== '/' + prefix + '/state' || request.method !== 'PATCH') return json({ error: 'Page not found.' }, 404);
     let input;
     try { input = await request.json(); } catch { return json({ error: 'Please check your choice.' }, 400); }
+    if (input?.field === 'hideFinished') {
+      if (typeof input.value !== 'boolean' || !Number.isSafeInteger(input.revision) || input.revision < 0 ||
+          Object.keys(input).some(key => !['field', 'value', 'revision'].includes(key))) return json({ error: 'Please check your choice.' }, 400);
+      return storage.transaction(async txn => {
+        if (await txn.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
+        const key = prefix + ':preferences', preferences = await txn.get(key) || defaultPreferences();
+        if (preferences.hideFinished === input.value) return json({ preferences });
+        if (preferences.revision !== input.revision) return json({ error: 'Your choice changed on another page. Your saved choice is shown. Please try again.' }, 409);
+        const updated = { hideFinished: input.value, revision: preferences.revision + 1, updatedAt: new Date().toISOString() };
+        await txn.put({ [key]: updated });
+        return json({ preferences: updated });
+      });
+    }
     if (!input || !items.has(input.number) || !['finished', 'question'].includes(input.field) ||
         typeof input.value !== 'boolean' || !Number.isSafeInteger(input.revision) || input.revision < 0 ||
         Object.keys(input).some(key => !['number', 'field', 'value', 'revision'].includes(key))) {

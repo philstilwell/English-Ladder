@@ -817,13 +817,15 @@ test('Grammar discards pending saves on navigation, sign-out, page hide and sess
 
 function filteredPractice(kind, bank, entries, saveOverride) {
   const grammar=kind==='grammar',activity=grammar?'grammar-practice':'business-terms',prefix=grammar?'grammar':'terms';
-  const saved=new Map(entries.map(entry=>[entry.number,{revision:1,question:false,...entry}]));let writes=0;
+  const saved=new Map(entries.map(entry=>[entry.number,{revision:1,question:false,...entry}]));let writes=0,preferences={hideFinished:false,revision:0};
   const dom=setup((path,options)=>{
     if(path==='/api/account')return reply(grammar?grammarSettings:termsSettings);
     if(path==='/api/'+activity)return reply({items:bank});
     if(path==='/api/'+activity+'/state') {
-      if(!options?.method)return reply({entries:[...saved.values()]});
-      writes++;const body=JSON.parse(options.body);
+      if(!options?.method)return reply({entries:[...saved.values()],preferences});
+      const body=JSON.parse(options.body);
+      if(body.field==='hideFinished'){preferences={hideFinished:body.value,revision:preferences.revision+1};return reply({preferences});}
+      writes++;
       if(saveOverride)return saveOverride(body,saved);
       const entry={finished:false,question:false,...saved.get(body.number),number:body.number,[body.field]:body.value,revision:(saved.get(body.number)?.revision||0)+1};
       saved.set(body.number,entry);return reply({entry});
@@ -836,13 +838,13 @@ function filteredPractice(kind, bank, entries, saveOverride) {
 test('Grammar filters before grouping while retaining original numbers and finished discussion links',async()=>{
   const f=filteredPractice('grammar',grammarBank.items.slice(0,23),[1,4,13].map(number=>({number,finished:true,question:number===13})));await flush();
   const numbers=()=>[...f.root.querySelectorAll('.grammar-item')].map(row=>row.value);
-  f.filter().click();assert.deepEqual(numbers(),[2,3,5,6,7,8,9,10,11,12]);assert.equal(f.d.activeElement,f.filter());
+  f.filter().click();await flush();assert.deepEqual(numbers(),[2,3,5,6,7,8,9,10,11,12]);assert.equal(f.d.activeElement,f.filter());
   assert.deepEqual([...f.d.getElementById('grammar-group').options].map(o=>o.textContent),['2–12','14–23']);
   f.button('Next 10').click();assert.deepEqual(numbers(),[14,15,16,17,18,19,20,21,22,23]);assert(f.button('Next 10').disabled);
   f.button('Previous 10').click();assert.equal(numbers()[0],2);
   f.root.querySelector('.grammar-question-links button').click();assert(!f.filter().checked);assert.equal(f.d.activeElement.id,'grammar-item-13');assert.match(f.root.textContent,/Showing all items/);
   assert.equal(f.writes(),0);f.dom.window.close();
-  const last=filteredPractice('grammar',grammarBank.items.slice(0,12),[]);await flush();last.filter().click();last.button('Next 10').click();
+  const last=filteredPractice('grammar',grammarBank.items.slice(0,12),[]);await flush();last.filter().click();await flush();last.button('Next 10').click();
   last.button('Finish').click();await flush();assert.equal(last.d.querySelector('.grammar-item').value,12);
   last.button('Finish').click();await flush();assert.equal(last.d.getElementById('grammar-group').value,'0');assert.equal(last.root.querySelectorAll('.grammar-item').length,10);assert(last.button('Next 10').disabled);last.dom.window.close();
 });
@@ -850,26 +852,26 @@ test('Grammar filters before grouping while retaining original numbers and finis
 test('Business terms skips finished items in both directions and restores requested finished items',async()=>{
   const f=filteredPractice('terms',termsBank.items.slice(0,4),[{number:1,finished:true},{number:3,finished:true,question:true}]);await flush();
   const current=()=>Number(f.d.getElementById('terms-number').value);
-  f.filter().click();assert.equal(current(),2);assert(f.button('Previous').disabled);
+  f.filter().click();await flush();assert.equal(current(),2);assert(f.button('Previous').disabled);
   f.button('Next').click();assert.equal(current(),4);assert(f.button('Next').disabled);
   f.button('Previous').click();assert.equal(current(),2);
   f.button('Finish').click();await flush();assert.equal(current(),4);
   const number=f.d.getElementById('terms-number');number.value='1';number.form.dispatchEvent(new f.dom.window.Event('submit',{bubbles:true,cancelable:true}));
   assert.equal(current(),1);assert(!f.filter().checked);assert.match(f.root.textContent,/Showing all items/);
-  f.filter().click();f.root.querySelector('.terms-question-links button').click();assert.equal(current(),3);assert(!f.filter().checked);
+  f.filter().click();await flush();f.root.querySelector('.terms-question-links button').click();assert.equal(current(),3);assert(!f.filter().checked);
   assert.equal(f.writes(),1);f.dom.window.close();
 });
 
-test('Both filters advance after saved completion, handle the final item, and reset without changing saved choices',async()=>{
+test('Both filters advance after saved completion, handle the final item, and remember the filter without changing item choices',async()=>{
   for(const kind of ['grammar','terms']) {
     const bank=(kind==='grammar'?grammarBank:termsBank).items.slice(0,11);
     const f=filteredPractice(kind,bank,bank.slice(0,10).map(item=>({number:item.number,finished:true,question:item.number===1})));await flush();
-    f.filter().click();f.button('Finish').click();await flush();
+    f.filter().click();await flush();f.button('Finish').click();await flush();
     assert.equal(f.saved.get(11).finished,true);assert(f.filter().checked);assert.match(f.root.querySelector('.practice-empty').textContent,/All items are finished/);
     assert.equal(f.root.querySelectorAll('.grammar-item,.terms-item').length,0);assert.match(f.root.querySelector('summary').textContent,/Questions list \(1\)/);
-    f.filter().click();assert(f.button('Finished'));assert.equal(f.writes(),1);
-    f.filter().click();f.dom.window.location.hash='overview';await flush();f.dom.window.location.hash='activities/'+(kind==='grammar'?'grammar-practice':'business-terms');await flush();
-    assert(!f.filter().checked);assert(f.button('Finished'));assert.equal(f.saved.size,11);assert.equal(f.dom.window.localStorage.length,0);assert.equal(f.dom.window.sessionStorage.length,0);f.dom.window.close();
+    f.filter().click();await flush();assert(f.button('Finished'));assert.equal(f.writes(),1);
+    f.filter().click();await flush();f.dom.window.location.hash='overview';await flush();f.dom.window.location.hash='activities/'+(kind==='grammar'?'grammar-practice':'business-terms');await flush();
+    assert(f.filter().checked);assert(f.root.querySelector('.practice-empty'));assert.equal(f.saved.size,11);assert.equal(f.dom.window.localStorage.length,0);assert.equal(f.dom.window.sessionStorage.length,0);f.dom.window.close();
   }
 });
 
@@ -878,7 +880,7 @@ test('Neither filter hides unsaved work and both recover when a concurrent saved
     let resolve;
     const bank=(kind==='grammar'?grammarBank:termsBank).items.slice(0,2);
     const f=filteredPractice(kind,bank,[],()=>new Promise(r=>{resolve=r;}));await flush();
-    f.filter().click();f.button('Finish').click();await flush();assert(f.filter().disabled);
+    f.filter().click();await flush();f.button('Finish').click();await flush();assert(f.filter().disabled);
     resolve(new Response(JSON.stringify({error:'Unavailable'}),{status:503}));await flush();
     assert(!f.filter().disabled);assert(f.button('Finish'));assert.match(f.root.textContent,/could not be saved/);assert.equal(f.saved.size,0);
     f.button('Finish').click();await flush();f.saved.set(1,{number:1,finished:true,question:false,revision:1});
@@ -888,3 +890,44 @@ test('Neither filter hides unsaved work and both recover when a concurrent saved
     f.dom.window.close();
   }
 });
+
+for(const [activity,prefix,bank,settings] of [['grammar-practice','grammar',grammarBank,grammarSettings],['business-terms','terms',termsBank,termsSettings]]) {
+ test(activity+' remembers the filter across visits and page loads without letting teacher previews change it',async()=>{
+  const {e,student}=await seedQuiz();const path='/api/'+activity+'/state';let writes=0,drop=true;
+  await call(e,path,{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({number:1,field:'finished',value:true,revision:0})});
+  const mock=(url,options={})=>{
+    if(url==='/api/account')return reply(settings);
+    if(url==='/api/'+activity)return reply({items:bank.items.slice(0,2)});
+    if(url===path)return(async()=>{
+      if(options.method)writes++;
+      const response=await call(e,path,{...options,headers:{...options.headers,Cookie:student.cookie,...(options.method?{Origin:origin}:{})}});
+      if(options.method&&drop){drop=false;throw Error('Response lost');}return response;
+    })();
+  };
+  const route='https://ab26.englishladder.com/#activities/'+activity;
+  const first=setup(mock,route);await flush();const root=first.window.document.getElementById(activity),filter=()=>root.querySelector('.practice-filter input');
+  assert(!filter().checked);filter().click();await flush();assert(!filter().checked);assert.match(root.textContent,/could not be saved/);
+  filter().click();await flush();assert(filter().checked);
+  first.window.location.hash='overview';await flush();first.window.location.hash='activities/'+activity;await flush();assert(filter().checked);
+  assert.equal(first.window.localStorage.length,0);assert.equal(first.window.sessionStorage.length,0);first.window.close();
+  const next=setup(mock,route);await flush();assert(next.window.document.getElementById(prefix+'-hide-finished').checked);next.window.close();
+  const teacher=setup(mock,route,'teacher');await flush();const teacherFilter=()=>teacher.window.document.getElementById(prefix+'-hide-finished');
+  const before=writes;teacherFilter().click();await flush();assert(!teacherFilter().checked);assert.equal(writes,before);teacher.window.close();
+  const last=setup(mock,route);await flush();const lastFilter=()=>last.window.document.getElementById(prefix+'-hide-finished');assert(lastFilter().checked);lastFilter().click();await flush();assert(!lastFilter().checked);last.window.close();
+  assert.equal((await(await call(e,path,{headers:{Cookie:student.cookie}})).json()).preferences.hideFinished,false);
+ });
+ test(activity+' keeps the saved filter on failure, reloads conflicts, and discards late preference responses',async()=>{
+  const path='/api/'+activity+'/state';let resolve,preferences={hideFinished:false,revision:0};
+  const mock=(url,options)=>url==='/api/account'?reply(settings):url==='/api/'+activity?reply({items:bank.items.slice(0,2)}):url===path?(options?.method?new Promise(r=>{resolve=r;}):reply({entries:[{number:1,finished:true,question:false,revision:1}],preferences})):null;
+  const route='https://ab26.englishladder.com/#activities/'+activity;
+  const dom=setup(mock,route);await flush();const root=dom.window.document.getElementById(activity),filter=()=>root.querySelector('.practice-filter input');
+  filter().click();await flush();assert(filter().disabled);resolve(new Response(JSON.stringify({error:'Unavailable'}),{status:503}));await flush();assert(!filter().checked);assert(!filter().disabled);assert.match(root.textContent,/could not be saved/);
+  filter().click();await flush();preferences={hideFinished:true,revision:1};resolve(new Response(JSON.stringify({error:'Changed elsewhere'}),{status:409}));await flush();assert(filter().checked);assert.match(root.textContent,/saved choice is shown/);dom.window.close();
+  for(const action of ['navigation','sign-out','pagehide','expiry']) {
+    const late=setup(mock,route);await flush();const w=late.window,r=w.document.getElementById(activity);r.querySelector('.practice-filter input').click();await flush();
+    if(action==='navigation')w.location.hash='overview';else if(action==='sign-out')w.document.getElementById('logout').click();else if(action==='pagehide')w.dispatchEvent(new w.Event('pagehide'));
+    await flush();resolve(action==='expiry'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):reply({preferences:{hideFinished:false,revision:2}}));await flush();
+    assert.equal(r.textContent,'');assert(r.hidden);w.close();
+  }
+ });
+}

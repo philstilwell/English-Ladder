@@ -50,16 +50,21 @@
     exercise, validItems,
     create({ root, api, expired }) {
       let revision = 0, active = false, items = [], page = 0, progress = new Map(), teacher = false, saving = false;
-      let listOpen = false, listPage = 0, hideFinished = false;
+      let listOpen = false, listPage = 0, hideFinished = false, preferenceRevision = 0;
       function clear() {
-        revision++; active = false; items = []; page = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false;
+        revision++; active = false; items = []; page = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false; preferenceRevision = 0;
         root.replaceChildren(); root.hidden = true; root.removeAttribute('aria-busy');
+      }
+      function readPreferences(preferences = { hideFinished: false, revision: 0 }) {
+        if (typeof preferences?.hideFinished !== 'boolean' || !Number.isSafeInteger(preferences.revision) || preferences.revision < 0) throw new Error('Invalid saved preference');
+        hideFinished = preferences.hideFinished; preferenceRevision = preferences.revision;
       }
       function readProgress(data) {
         if (!Array.isArray(data.entries) || data.entries.length > 1000 || data.entries.some(entry =>
           !Number.isInteger(entry.number) || typeof entry.finished !== 'boolean' || typeof entry.question !== 'boolean' ||
           !Number.isSafeInteger(entry.revision) || entry.revision < 0)) throw new Error('Invalid saved choices');
         progress = new Map(data.entries.map(entry => [entry.number, entry]));
+        readPreferences(data.preferences);
       }
       const visibleItems = () => hideFinished ? items.filter(item => !progress.get(item.number)?.finished) : items;
       function render(focus = false, focusNumber = null, message = '') {
@@ -69,9 +74,51 @@
         const range = index => `${visible[index * PAGE_SIZE].number}–${visible[Math.min((index + 1) * PAGE_SIZE, visible.length) - 1].number}`;
         const filter = element('label', '', 'practice-filter');
         const checkbox = element('input'); checkbox.type = 'checkbox'; checkbox.id = 'grammar-hide-finished'; checkbox.checked = hideFinished; checkbox.autocomplete = 'off';
-        checkbox.addEventListener('change', () => { hideFinished = checkbox.checked; page = 0; render(); root.querySelector('#grammar-hide-finished').focus(); });
+        checkbox.addEventListener('change', () => saveFilter(checkbox.checked));
         filter.append(checkbox, element('span', 'Hide finished items'));
         const filterStatus = element('p', message, 'field-hint'); filterStatus.setAttribute('role', 'status');
+        async function saveFilter(value) {
+          checkbox.checked = hideFinished;
+          if (saving) return;
+          if (teacher) {
+            hideFinished = value;
+            page = 0; render();
+            root.querySelector('#grammar-hide-finished').focus();
+            return;
+          }
+          const current = revision;
+          const controls = [...root.querySelectorAll('button, input, select')].map(el => [el, el.disabled]);
+          let refresh = false, feedback = '';
+          saving = true;
+          for (const [el] of controls) el.disabled = true;
+          filterStatus.textContent = 'Saving your choice…';
+          try {
+            const data = await api('/api/grammar-practice/state', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ field: 'hideFinished', value, revision: preferenceRevision }) });
+            if (current !== revision) return;
+            if (!data.preferences) throw new Error('Missing saved preference');
+            readPreferences(data.preferences); refresh = true; feedback = 'Your choice is saved.';
+          } catch (error) {
+            if (current !== revision || expired(error)) return;
+            if (error.status === 409) {
+              try {
+                const data = await api('/api/grammar-practice/state');
+                if (current !== revision) return;
+                readProgress(data); refresh = true; feedback = 'Your choice changed on another page. Your saved choice is shown.';
+              } catch (reloadError) {
+                if (current !== revision || expired(reloadError)) return;
+                filterStatus.textContent = 'Your choice could not reload. Leave this activity and open it again.';
+                return;
+              }
+            } else filterStatus.textContent = 'Your choice could not be saved. Please try again.';
+          } finally {
+            if (current === revision) {
+              saving = false;
+              for (const [el, disabled] of controls) el.disabled = disabled;
+              if (refresh) { page = 0; render(false, null, feedback); root.querySelector('#grammar-hide-finished').focus(); }
+            }
+          }
+        }
+
         const intro = element('p', `${items.length} items. Later questions are harder. Choose any group.`, 'field-hint');
         const help = element('p', teacher ? 'Teacher view: you can see saved choices. Only the student can change them.' : 'Choose “Finish” when you are done. Choose “Questions” to ask your teacher about an item. Click a button again to undo it. These choices are saved.', 'field-hint');
         const questions = element('details', '', 'grammar-questions'); questions.open = listOpen;

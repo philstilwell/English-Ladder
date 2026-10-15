@@ -159,7 +159,7 @@ async function handle(request, env) {
     if (route === '/webhook') for (const name of ['x-zm-signature', 'x-zm-request-timestamp']) {
       if (request.headers.has(name)) headers.set(name, request.headers.get(name));
     }
-    return coordinator.fetch(new Request('https://automation.internal' + route, { method, headers,
+    return coordinator.fetch(new Request('https://automation.internal' + route, { method, headers, redirect: 'manual',
       ...(route === '/webhook' ? { body: request.body, duplex: 'half' } : {}) }));
   }
 

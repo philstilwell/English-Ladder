@@ -64,12 +64,15 @@ export class QuizAutomation {
   }
   async tokenRequest(params) {
     const response = await fetch('https://zoom.us/oauth/token', {
-      method: 'POST', redirect: 'error', signal: AbortSignal.timeout(30000),
+      method: 'POST', redirect: 'manual', signal: AbortSignal.timeout(30000),
       headers: { Authorization: 'Basic ' + btoa(this.env.ZOOM_CLIENT_ID + ':' + this.env.ZOOM_CLIENT_SECRET),
         'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(params),
     });
-    if (!response.ok) throw new Error(response.status === 400 || response.status === 401 ? 'zoom_reconnect' : 'zoom_unavailable');
+    if (!response.ok) {
+      let code; try { code = JSON.parse(await boundedText(response, 16384)).error; } catch {}
+      throw Object.assign(new Error('zoom_reconnect'), { httpStatus: response.status, apiCode: /^[a-z_]{1,40}$/.test(code || '') ? code : 'token_error' });
+    }
     const tokens = JSON.parse(await boundedText(response, 16384));
     if (!tokens.access_token || !tokens.refresh_token || !Number.isFinite(tokens.expires_in)) throw new Error('zoom_reconnect');
     return { access: tokens.access_token, refresh: tokens.refresh_token, expiresAt: Date.now() + tokens.expires_in * 1000 };
@@ -90,9 +93,12 @@ export class QuizAutomation {
     const response = await fetch('https://api.zoom.us/v2' + path, {
       headers: { Authorization: 'Bearer ' + (token || await this.accessToken()), ...(body ? { 'Content-Type': 'application/json' } : {}) },
       ...(body ? { method: 'POST', body: JSON.stringify(body) } : {}),
-      signal: AbortSignal.timeout(30000), redirect: 'error',
+      signal: AbortSignal.timeout(30000), redirect: 'manual',
     });
-    if (!response.ok) throw new Error(response.status === 401 || response.status === 403 ? 'zoom_reconnect' : 'zoom_unavailable');
+    if (!response.ok) {
+      let code; try { code = JSON.parse(await boundedText(response, 16384)).code; } catch {}
+      throw Object.assign(new Error(response.status === 401 || response.status === 403 ? 'zoom_reconnect' : 'zoom_unavailable'), { httpStatus: response.status, apiCode: Number.isInteger(code) ? code : 'api_error' });
+    }
     return JSON.parse(await boundedText(response, 2000000));
   }
   async connect(origin, studentId) {
@@ -114,13 +120,19 @@ export class QuizAutomation {
       await txn.delete(key); return item;
     });
     if (!pending) return json({ error: 'This Zoom connection link has expired or was already used.' }, 400);
+    let stage = 'token_exchange';
     try {
       const tokens = await this.tokenRequest({ grant_type: 'authorization_code', code, redirect_uri: pending.origin + '/api/automation/callback' });
+      stage = 'user_profile';
       const owner = await this.zoom('/users/me', tokens.access), prior = await this.storage.get('oauth');
+      stage = 'owner_check';
       if (!owner.id || !owner.account_id || prior && prior.userId !== owner.id) throw new Error('zoom_reconnect');
-      await this.storage.put({ oauth: { ...tokens, userId: owner.id, accountId: owner.account_id, pmi: owner.pmi }, 'connection-error': null });
+      await this.storage.put({ oauth: { ...tokens, userId: owner.id, accountId: owner.account_id, pmi: owner.pmi }, 'connection-error': null, 'connection-detail': null });
       return new Response(null, { status: 303, headers: { Location: pending.origin + '/#quiz-results' } });
-    } catch { return json({ error: 'Zoom could not be connected. Check the app permissions and try again from Quiz results.' }, 400); }
+    } catch (error) {
+      await this.storage.put({ 'connection-error': safeError(error), 'connection-detail': { stage, httpStatus: error.httpStatus || null, apiCode: error.apiCode || null, errorType: ['TypeError','SyntaxError','ReferenceError','Error'].includes(error.name) ? error.name : 'Other', hints: ['AbortSignal', 'timeout', 'redirect', 'fetch', 'JSON', 'Invalid character', 'not defined', 'not a function', 'network', 'canceled', 'refused'].filter(word => String(error.message).includes(word)) } });
+      return json({ error: 'Zoom could not be connected. Check the app permissions and try again from Quiz results.' }, 400);
+    }
   }
   async webhook(request) {
     let body;
@@ -215,21 +227,25 @@ export class QuizAutomation {
     if (!response.ok) throw new Error('publish_failed');
     return response.json();
   }
-  async reserveGeneration() {
+  async reserveGeneration(studentId) {
     await this.storage.transaction(async txn => {
       const day = new Date().toISOString().slice(0, 10), month = day.slice(0, 7);
-      const usage = await txn.get('usage') || {};
+      const key = 'usage:' + studentId;
+      const usage = await txn.get(key) || {};
       const daily = usage.day === day ? usage.daily : 0, monthly = usage.month === month ? usage.monthly : 0;
       if (monthly >= 12) throw new Error('monthly_limit');
       if (daily >= 2) throw new Error('daily_limit');
       // Reserve before AI calls; a crash cannot bypass the limit.
-      await txn.put({ usage: { day, month, daily: daily + 1, monthly: monthly + 1 } });
+      await txn.put({ [key]: { day, month, daily: daily + 1, monthly: monthly + 1 } });
     });
   }
   async process(key, job) {
     const note = await this.zoom('/my_notes/notes/' + encodeURIComponent(job.noteId) + '/content?include=transcript');
     const transcript = readTranscript(note, studentsFor(this.env));
     job.studentId = transcript.studentId;
+    const context = await this.portal(job.studentId, '/automation/context');
+    const known = context.sourceNotes?.find(source => source.noteId === job.noteId);
+    if (known && Date.parse(known.startedAt) < Date.parse(transcript.student.startAfter)) { job.status = 'skipped'; return; }
     if (!job.meetingId) throw new Error('meeting_reference_missing');
     const uuid = job.meetingId.startsWith('/') || job.meetingId.includes('//') ? encodeURIComponent(encodeURIComponent(job.meetingId)) : encodeURIComponent(job.meetingId);
     const meeting = await this.zoom('/past_meetings/' + uuid);
@@ -240,12 +256,11 @@ export class QuizAutomation {
       job.status = 'skipped'; return;
     }
     const id = sessionId(meeting.start_time, transcript.student.timeZone);
-    const context = await this.portal(job.studentId, '/automation/context');
     if (context.publishedSessions.includes(id) || context.assessment?.quiz?.generatedForSession === id) {
       job.status = 'published'; job.sessionId = id; return;
     }
     const fingerprint = await hash(JSON.stringify(note.transcript));
-    await this.reserveGeneration();
+    await this.reserveGeneration(job.studentId);
     const output = await authorQuiz(this.env.AI, transcript, meeting, job.noteId, context);
     const saved = await this.portal(job.studentId, '/automation/publish', { ...output, fingerprint });
     if (!saved.ok) throw new Error('publish_failed');
@@ -274,7 +289,7 @@ export class QuizAutomation {
         if (Date.now() > deadline) break;
         try { await this.process(key, job); }
         catch (error) {
-          if (error.message === 'other_student') job.status = 'skipped';
+          if (error.message === 'other_student') { job.status = 'needs_attention'; job.lastError = 'student_not_matched'; }
           else {
             job.lastError = safeError(error); job.tries++;
             job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing'].includes(job.lastError) ? 'needs_attention' : 'pending';
@@ -303,15 +318,18 @@ export class QuizAutomation {
     if (path === '/verify' && request.method === 'POST') {
       try {
         await this.accessToken(); await this.discover();
+        const probes = [...await this.storage.list({ prefix: 'job:' })].slice(0, 5);
+        for (const [, job] of probes) await this.zoom('/my_notes/notes/' + encodeURIComponent(job.noteId) + '/content?include=transcript');
         await this.storage.put({ 'last-check': new Date().toISOString(), 'connection-error': null });
         return json({ ok: true });
-      } catch (error) { return json({ error: safeError(error) }, 502); }
+      } catch (error) { return json({ error: safeError(error), httpStatus: error.httpStatus || null, apiCode: error.apiCode || null }, 502); }
     }
     if (path === '/status' && request.method === 'GET') {
       const jobs = [...await this.storage.list({ prefix: 'job:' })].map(([, j]) => j).filter(j => !j.studentId || j.studentId === studentId);
       return json({ configured: configuredAutomation(this.env), connected: Boolean(await this.storage.get('oauth')),
         enabled: this.env.AUTOMATION_ENABLED === 'true', lastCheck: await this.storage.get('last-check') || null,
         connectionError: await this.storage.get('connection-error') || null,
+        connectionDetail: await this.storage.get('connection-detail') || null,
         costLimitReached: jobs.some(j => ['daily_limit', 'monthly_limit'].includes(j.lastError)),
         pending: jobs.filter(j => j.status === 'pending').length,
         needsAttention: jobs.filter(j => j.status === 'needs_attention').length,

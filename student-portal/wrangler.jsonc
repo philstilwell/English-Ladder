@@ -15,7 +15,7 @@
     { "tag": "quiz-automation-v1", "new_sqlite_classes": ["QuizAutomation"] }
   ],
   "ai": { "binding": "AI" },
-  "vars": { "AUTOMATION_ENABLED": "false" },
+  "vars": { "AUTOMATION_ENABLED": "true" },
   "triggers": { "crons": ["0 5,6 * * *"] },
   "assets": {
     "directory": "./public",

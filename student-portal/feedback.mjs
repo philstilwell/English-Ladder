@@ -55,17 +55,17 @@ export class FeedbackStore {
     const id = url.pathname.slice(1);
     // Internal-only routes: the public Worker never forwards arbitrary paths here.
     if (id === 'automation/context' && request.method === 'GET') {
-      const attempts = [], publishedSessions = [];
-      for (const [prefix, target] of [['quiz:attempt:', attempts], ['quiz:published:', publishedSessions]]) {
+      const attempts = [], publishedSessions = [], sourceNotes = [];
+      for (const [prefix, target] of [['quiz:attempt:', attempts], ['quiz:published:', publishedSessions], ['feedback:', sourceNotes]]) {
         let end;
         while (true) {
           const page = [...await this.storage.list({ prefix, reverse: true, limit: 100, ...(end ? { end } : {}) })];
-          target.push(...page.map(([key, value]) => prefix === 'quiz:published:' ? key.slice(prefix.length) : value));
+          target.push(...page.map(([key, value]) => prefix === 'quiz:published:' ? key.slice(prefix.length) : prefix === 'feedback:' ? { noteId: value.source.noteId, id: value.id, startedAt: value.startedAt } : value));
           if (page.length < 100) break;
           end = page.at(-1)[0];
         }
       }
-      return json({ assessment: await this.storage.get('assessment:current') || null, attempts, publishedSessions });
+      return json({ assessment: await this.storage.get('assessment:current') || null, attempts, publishedSessions, sourceNotes });
     }
     if (id === 'automation/publish' && request.method === 'POST') {
       const input = await request.json();

@@ -89,7 +89,8 @@ test('OAuth state is single-use, expires, and is tied to the originating student
   const state = link.searchParams.get('state');
   assert.equal((await object.callback(new URL('https://other.englishladder.com/api/automation/callback?code=test&state=' + state))).status, 400);
   const oldFetch = globalThis.fetch; let exchanges = 0;
-  globalThis.fetch = async url => {
+  globalThis.fetch = async (url, options) => {
+    assert.equal(options.redirect, 'manual');
     if (String(url).includes('/oauth/token')) { exchanges++; return Response.json({ access_token: 'secret-access', refresh_token: 'secret-refresh', expires_in: 3600 }); }
     return Response.json({ id: 'owner-1', account_id: 'account-1' });
   };
@@ -175,11 +176,12 @@ test('nightly server run publishes all pages atomically and does not regenerate 
 
 test('generation reservations survive retries and enforce daily and monthly limits before AI use', async () => {
   const { object, storage } = coordinator();
-  await Promise.all([object.reserveGeneration(), object.reserveGeneration()]);
-  await assert.rejects(object.reserveGeneration(), /daily_limit/);
+  await Promise.all([object.reserveGeneration('ab26'), object.reserveGeneration('ab26')]);
+  await assert.rejects(object.reserveGeneration('ab26'), /daily_limit/);
   const day = new Date().toISOString().slice(0, 10);
-  await storage.put({ usage: { day, month: day.slice(0, 7), daily: 0, monthly: 12 } });
-  await assert.rejects(object.reserveGeneration(), /monthly_limit/);
+  await storage.put({ 'usage:ab26': { day, month: day.slice(0, 7), daily: 0, monthly: 12 } });
+  await assert.rejects(object.reserveGeneration('ab26'), /monthly_limit/);
+  await object.reserveGeneration('cd26'); // One student's cap cannot block another account.
 });
 
 
@@ -220,7 +222,7 @@ test('nightly discovery follows every search page, resolves dates, overlaps late
 
 test('unmatched student notes cannot be published under a guessed date', async () => {
   const {object,env} = coordinator(); let aiCalls = 0;
-  object.zoom = async () => note; env.AI.run = async () => { aiCalls++; };
+  object.zoom = async () => note; object.portal = async () => ({sourceNotes:[]}); env.AI.run = async () => { aiCalls++; };
   await assert.rejects(object.process('job:test',{noteId:'fictional-note-123'}),/meeting_reference_missing/);
   assert.equal(aiCalls,0);
 });
@@ -238,4 +240,26 @@ test('publication rejects stale assessment inputs and cannot reference another s
   assert.equal((await store.storage.get('assessment:current')).summary,'A teacher edit.');
   const other = seed.e.FEEDBACK_STORE.get('cd26');
   assert.equal((await other.fetch(new Request('https://feedback.internal/automation/publish',{method:'POST',body:JSON.stringify(input)}))).status,400);
+});
+
+
+test('the worker returns the OAuth browser redirect instead of following it inside the private service', async () => {
+  const {e}=await seedQuiz();
+  e.QUIZ_AUTOMATION={idFromName:id=>id,get:()=>({fetch:async request=>{
+    assert.equal(request.redirect,'manual');
+    return new Response(null,{status:303,headers:{Location:origin+'/#quiz-results'}});
+  }})};
+  const response=await call(e,'/api/automation/callback?code=example&state=example');
+  assert.equal(response.status,303);assert.equal(response.headers.get('Location'),origin+'/#quiz-results');
+});
+
+
+test('notes for unregistered students are flagged for the teacher without guessing or publishing', async () => {
+ const {object,storage}=coordinator();
+ object.accessToken=async()=> 'test'; object.discover=async()=> {};
+ object.zoom=async()=>({...note,transcript:{...note.transcript,speakers:[{speaker_id:'a',display_name:'Unknown student'},{speaker_id:'t',display_name:'Teacher'}]}});
+ await storage.put({'job:unmatched':{noteId:'fictional-note-123',status:'pending',nextAt:0,tries:0}});
+ await object.run();
+ const job=await storage.get('job:unmatched');
+ assert.equal(job.status,'needs_attention');assert.equal(job.lastError,'student_not_matched');
 });

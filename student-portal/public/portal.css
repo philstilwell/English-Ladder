@@ -320,7 +320,7 @@ summary { cursor:pointer; }
 .overview-submenu { position:absolute; top:100%; left:0; z-index:6; list-style:none; margin:0; padding:8px 0; width:240px; max-width:calc(100vw - 48px); max-height:calc(100dvh - var(--student-menu-height,56px) - 16px); overflow-y:auto; background:#20242b; border:1px solid #343b46; border-radius:0 0 6px 6px; box-shadow:0 12px 24px #10172533; }
 .student-main .overview-submenu a { padding:12px 20px; margin:0; white-space:normal; }
 .student-main .overview-submenu a:hover,.student-main .overview-submenu a:focus-visible { background:#343b46; }
-.student-main #overview-submenu a[aria-current] { background:var(--blue); color:#fff; border-bottom-color:transparent; box-shadow:none; }
+.student-main #overview-submenu a[aria-current],.student-main #activities-submenu a[aria-current] { background:var(--blue); color:#fff; border-bottom-color:transparent; box-shadow:none; }
 .activities-toggle { font-size:.85rem; font-weight:650; padding:15px 0 12px; border-bottom:3px solid transparent; }
 .activities-toggle span { margin-left:8px; }
 .student-main #activities-menu.is-current>.activities-toggle { border-bottom-color:var(--blue); box-shadow:inset 0 -1px 0 #fff; }

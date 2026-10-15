@@ -14,8 +14,10 @@ button:disabled { cursor:wait; opacity:.65; }
 .skip-link { position:absolute; top:-80px; left:20px; z-index:10; background:white; padding:12px; }
 .skip-link:focus { top:10px; }
 .masthead { min-height:86px; border-bottom:1px solid var(--line); max-width:1280px; margin:0 auto; padding:20px 48px; display:flex; align-items:center; gap:24px; }
-.brand { display:inline-flex; align-items:center; gap:10px; color:var(--blue); font-weight:700; font-size:1.586rem; letter-spacing:.01em; text-decoration:none; }
-.brand img { display:block; border-radius:7px; }
+/* Match the public site's logo and title at both shared screen sizes. */
+.brand { display:inline-flex; align-items:center; gap:9px; min-height:44px; color:var(--blue); font-weight:700; font-size:1.4625rem; line-height:1.65; letter-spacing:.01em; text-decoration:none; }
+.brand img { display:block; width:32px; height:32px; flex:0 0 32px; border-radius:7px; }
+@media(max-width:700px) { .brand { font-size:1.365rem; } .brand img { width:28px; height:28px; flex-basis:28px; } }
 .masthead-label { margin-left:auto; color:var(--muted); font-size:.85rem; }
 .text-button { background:transparent; border:0; color:var(--blue); font-weight:650; min-height:44px; padding:8px 0 8px 12px; }
 .text-button span { margin-left:8px; }
@@ -96,7 +98,7 @@ input { width:100%; min-height:50px; border:1px solid #a9b1bf; border-radius:6px
 .account-status { font-size:.8rem; color:var(--muted); }
 #unavailable-view { margin:70px auto; max-width:600px; }
 @media(max-width:1000px) { .login-layout { gap:40px; } .login-card { padding:20px 26px 0; } .card-footer { margin:0 -26px; } .page-footer { margin:0 48px; } .notebook-card { padding:14px 20px; } .student-badge { display:none; } }
-@media(max-width:740px) { .masthead { padding:16px 24px; min-height:76px; gap:12px; } .brand { font-size:1.365rem; } .brand img { width:30px; height:30px; } .masthead-label { font-size:.7rem; } main { padding:0 24px; } .login-layout { grid-template-columns:1fr; gap:30px; padding:28px 0 36px; max-width:480px; } .welcome-copy .eyebrow { margin-bottom:12px; } .welcome-copy h1 { font-size:2.65rem; } .welcome-copy h1 br { display:none; } .welcome-copy h1 br::after { content:' '; } .welcome-copy h1 em { display:block; } .intro { font-size:.9rem; margin-bottom:0; } .desktop-break { display:none; } .feature-list { display:none; } .login-card { padding-top:20px; } .page-footer { margin:0 24px; font-size:.7rem; padding:16px 0; } .dashboard { padding-top:20px; } .dashboard-heading { margin-top:0; } .dashboard-heading h1 { font-size:2.25rem; } .section-nav { gap:4px 22px; } .section-nav a { font-size:.77rem; } .next-step { grid-template-columns:1fr; padding:20px 28px; } .progress-art { display:none; } .notebook-grid { grid-template-columns:1fr; } .notebook-card p { min-height:0; margin-bottom:16px; } .section-heading>span { display:none; } .empty-state { padding:28px 20px; } .teacher-banner { gap:6px; display:grid; } }
+@media(max-width:740px) { .masthead { padding:16px 24px; min-height:76px; gap:12px; } .masthead-label { font-size:.7rem; } main { padding:0 24px; } .login-layout { grid-template-columns:1fr; gap:30px; padding:28px 0 36px; max-width:480px; } .welcome-copy .eyebrow { margin-bottom:12px; } .welcome-copy h1 { font-size:2.65rem; } .welcome-copy h1 br { display:none; } .welcome-copy h1 br::after { content:' '; } .welcome-copy h1 em { display:block; } .intro { font-size:.9rem; margin-bottom:0; } .desktop-break { display:none; } .feature-list { display:none; } .login-card { padding-top:20px; } .page-footer { margin:0 24px; font-size:.7rem; padding:16px 0; } .dashboard { padding-top:20px; } .dashboard-heading { margin-top:0; } .dashboard-heading h1 { font-size:2.25rem; } .section-nav { gap:4px 22px; } .section-nav a { font-size:.77rem; } .next-step { grid-template-columns:1fr; padding:20px 28px; } .progress-art { display:none; } .notebook-grid { grid-template-columns:1fr; } .notebook-card p { min-height:0; margin-bottom:16px; } .section-heading>span { display:none; } .empty-state { padding:28px 20px; } .teacher-banner { gap:6px; display:grid; } }
 @media(prefers-reduced-motion:no-preference) { button,a { transition:background-color .15s,border-color .15s; } }
 
 .feedback-layout { display:grid; grid-template-columns:254px minmax(0,1fr); gap:34px; align-items:start; }

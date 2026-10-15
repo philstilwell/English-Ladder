@@ -70,6 +70,8 @@ Otherwise return {"sufficientEvidence":true,"feedback":{...},"assessment":{...},
 feedback fields: title, summary, nextStep; strengths:[{title,detail,at}]; focus:[{title,kind,at,observed,model,explanation}]
 (kind is teacher-feedback only for actual in-session teaching, otherwise practice-extension);
 vocabulary:[{term,meaning,example,at}]; practice:[{prompt,answer}]. Include only useful well-grounded entries; use transcript HH:MM:SS at values.
+For feedback.practice, apply the lesson's English in a fresh, neutral situation. Give a self-contained task and a clear example answer.
+Do not repeat a focus.model or vocabulary.example in either the task or its answer, including one sentence from a longer example. Do not just add blanks, change punctuation, or swap one noun in a teaching example. Do not ask the learner to copy or make a similar version of the model above. Reuse the target language, not the example situation. Keep instructions short and quote the words being studied.
 assessment fields: title, summary, mainPriority, strengths:[{title,detail,evidence:[{sessionId,at}]}],
 progress:{detail,evidence:[{sessionId,at}]}, patterns:[{title,detail,practice,examples:[{sessionId,at,observed,model}]}],
 plan:[{title,activity,target,aiPrompt}], nextLesson.
@@ -146,7 +148,7 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   if (assessment.plan.some(item => !item.aiPrompt)) throw new Error('invalid_evidence');
   if (/https?:\/\/|mynotes\.zoom|<\/?[a-z]/i.test(JSON.stringify({ feedback, assessment }))) throw new Error('unsafe_content');
   const reviewResult = await generate(ai,
-    RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Check that study suggestions make no promises about future sessions and that each AI prompt introduces the specific topic with examples and guided practice. Reject ambiguous answers or unsupported claims. Return {"approved":true} only if all checks pass, otherwise {"approved":false}.',
+    RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Compare each feedback practice task AND answer with all focus models and vocabulary examples. Reject copied examples, gap-fill copies, trivial rewrites, or tasks without a fresh situation. Check that study suggestions make no promises about future sessions and that each AI prompt introduces the specific topic with examples and guided practice. Reject ambiguous answers or unsupported claims. Return {"approved":true} only if all checks pass, otherwise {"approved":false}.',
     { ...input, proposed: { feedback, assessment, evidence: draft.evidence } }, 1000);
   if (reviewResult.approved !== true) throw new Error('content_review_failed');
   return { feedback, assessment, quiz, priorAssessment: context.assessment || null, evidence: draft.evidence };

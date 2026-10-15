@@ -36,6 +36,8 @@ Validate structure, exact new timestamp references, earlier assessment reference
 
 ## Save safely
 
+Feedback practice must use fresh situations to apply the lesson's language. Neither tasks nor example answers may copy the focus models or vocabulary examples, turn them into gaps, or make only a trivial word swap. Both the author and independent editor check this. Publishing also rejects normalized duplicate examples, including complete sentences embedded in a longer answer. This check does not replace the editor's review of meaning and usefulness.
+
 Publish feedback, session-list summary, current assessment, and quiz in one private database transaction. Check that the current assessment still matches the version used for authoring; if a teacher edited it meanwhile, retry from the latest version. Save the prior assessment and the authored quiz/evidence privately. Never alter student attempts. Duplicate note events and retries cannot create another update for an already published session. Delayed older sessions are archived without replacing a newer current quiz.
 
 The latest quiz introduction shows only plain source lesson dates, without links. Short instructions appear beside the questions. Unfinished attempts keep their original questions. Completed attempts retain original first answers and dated progress. Accounts without any reviewed quiz omit the Quiz menu. Failed generation never removes a useful existing quiz.

@@ -16,6 +16,48 @@ function offset(value) {
   return value;
 }
 
+function normalizedWords(value) {
+  return value.normalize('NFKC').toLowerCase().replace(/[’‘']/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+}
+
+export function validateFeedbackPractice(value, feedback = {}) {
+  const practice = items(value, p => ({ prompt: text(p.prompt), answer: text(p.answer) }));
+  const models = [...new Set([...(feedback.focus || []).map(f => f.model), ...(feedback.vocabulary || []).map(v => v.example)]
+    .flatMap(example => [example, ...example.split(/[.!?]+/u)])
+    .map(normalizedWords).filter(example => example.split(' ').length >= 2))];
+  for (const exercise of practice) {
+    for (const part of [exercise.prompt, exercise.answer]) {
+      const words = normalizedWords(part);
+      // Short target phrases may recur. Complete examples (including a sentence
+      // inside a longer answer) must be new; punctuation changes do not count.
+      if (models.some(model => words === model || model.split(' ').length >= 4 && ` ${words} `.includes(` ${model} `))) {
+        throw new Error('Practice must use a new example, not repeat a teaching example');
+      }
+    }
+    const tasks = exercise.prompt.replace(/_{2,}|\.{3}|…/gu, ' practicegap ').split(/[.!?;:\n“”"]/u)
+      .map(part => ` ${normalizedWords(part)} `).filter(part => part.includes(' practicegap '));
+    if (!tasks.length) continue;
+    // Catch a copied gap-fill even when its answer contains only the missing word.
+    for (const model of models) {
+      const words = model.split(' ');
+      for (let start = 0; start < words.length; start++) {
+        for (let count = 1; count <= Math.min(8, words.length - start, words.length - 3); count++) {
+          const gap = ` ${[...words.slice(0, start), 'practicegap', ...words.slice(start + count)].join(' ')} `;
+          if (tasks.some(task => task.includes(gap) && (start > 0 || task.startsWith(gap)) &&
+              (start + count < words.length || task.endsWith(gap)))) throw new Error('Practice must use a new example, not a gap in a teaching example');
+        }
+      }
+    }
+  }
+  return practice;
+}
+
+export function validatePracticeEdit(value) {
+  if (!value || Object.keys(value).some(key => !['practice', 'priorFeedback'].includes(key)) ||
+      !value.priorFeedback || typeof value.priorFeedback !== 'object' || Array.isArray(value.priorFeedback)) throw new Error('Invalid practice edit');
+  return { practice: validateFeedbackPractice(value.practice), priorFeedback: value.priorFeedback };
+}
+
 // Whitelist fields: never persist a transcript, credential, or arbitrary profile field.
 // The scope is a publishing contract; the author must also review the language-only content.
 export function validateFeedback(value, id) {
@@ -30,7 +72,7 @@ export function validateFeedback(value, id) {
   const coverageEnd = offset(source.coverageEnd);
   if (coverageEnd <= coverageStart) throw new Error('Invalid coverage');
   const at = stamp => { const result = offset(stamp); if (result < coverageStart || result > coverageEnd) throw new Error('Evidence outside transcript'); return result; };
-  return {
+  const record = {
     id, scope: 'esl', startedAt: value.startedAt, timeZone,
     title: text(value.title, 120), summary: text(value.summary), nextStep: text(value.nextStep),
     strengths: items(value.strengths, s => ({ title: text(s.title, 120), detail: text(s.detail), at: at(s.at) })),
@@ -39,9 +81,10 @@ export function validateFeedback(value, id) {
       return { title: text(f.title, 120), kind: f.kind, at: at(f.at), observed: text(f.observed), model: text(f.model), explanation: text(f.explanation) };
     }),
     vocabulary: items(value.vocabulary, v => ({ term: text(v.term, 120), meaning: text(v.meaning), example: text(v.example), at: at(v.at) })),
-    practice: items(value.practice, p => ({ prompt: text(p.prompt), answer: text(p.answer) })),
     source: { noteId: source.noteId, coverageStart, coverageEnd, segmentCount: source.segmentCount, reviewedFullTranscript: true },
   };
+  record.practice = validateFeedbackPractice(value.practice, record);
+  return record;
 }
 
 const json = (data, status = 200) => new Response(JSON.stringify(data), { status, headers: { 'Content-Type': 'application/json' } });
@@ -214,6 +257,26 @@ export class FeedbackStore {
     if (request.method === 'GET') {
       const record = await this.storage.get(`feedback:${id}`);
       return record ? json(record) : json({ error: 'Session not found.' }, 404);
+    }
+    if (request.method === 'PATCH') {
+      let input;
+      try { input = validatePracticeEdit(await request.json()); }
+      catch { return json({ error: 'Please check the practice edit.' }, 400); }
+      return this.activeTransaction(async txn => {
+        const current = await txn.get(`feedback:${id}`);
+        if (!current) return json({ error: 'Session not found.' }, 404);
+        const visible = { ...current, source: { ...current.source } };
+        delete visible.source.noteId;
+        if (JSON.stringify(input.priorFeedback) !== JSON.stringify(visible)) return json({ error: 'The feedback changed. Review the latest version before saving.' }, 409);
+        let practice;
+        try { practice = validateFeedbackPractice(input.practice, current); }
+        catch { return json({ error: 'Use fresh practice examples based on this lesson.' }, 400); }
+        await txn.put({
+          ['practice:before:' + id + ':' + crypto.randomUUID()]: current.practice,
+          [`feedback:${id}`]: { ...current, practice },
+        });
+        return json({ ok: true, id });
+      });
     }
     if (request.method === 'PUT') {
       let record;

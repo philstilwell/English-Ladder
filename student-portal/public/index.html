@@ -141,27 +141,22 @@
           <div id="road-practice" hidden></div>
           <div id="grammar-practice" hidden></div>
           <div id="business-terms" hidden></div>
-          <a class="secondary-button" href="#account">Choose activities in Account</a>
         </article>
       </section>
       <section id="account" class="section-panel" aria-labelledby="account-title" hidden>
         <div class="section-heading"><h2 id="account-title" tabindex="-1">Your account</h2></div>
-        <p class="section-intro">Choose your nickname and activities. You can change your password here too.</p>
+        <p class="section-intro">Change your nickname or password here. Your teacher chooses the tools in your Activities menu.</p>
         <p id="settings-status" role="status"></p>
         <button id="reload-settings" class="secondary-button" type="button" hidden>Reload account</button>
         <p id="settings-teacher-note" class="field-hint" hidden>Teacher view. Sign in as the student to change these settings.</p>
         <div class="account-grid">
           <form id="settings-form" class="account-card">
-            <h3>Your nickname and activities</h3>
+            <h3>Your nickname</h3>
             <fieldset id="settings-fields" disabled>
               <label for="nickname">Your nickname</label>
               <input id="nickname" name="nickname" autocomplete="nickname" required maxlength="100" aria-describedby="nickname-hint">
               <p id="nickname-hint" class="field-hint">This name appears at the top of your student page. Your sign-in address stays the same.</p>
-              <fieldset class="activity-options"><legend>Show in Activities</legend>
-                <p class="field-hint">Check the activities you want in the Activities menu. Then choose “Save my choices”. Activity 1–3 are samples for now.</p>
-                <div id="activity-options"></div>
-              </fieldset>
-              <button class="primary-button" type="submit">Save my choices</button>
+              <button class="primary-button" type="submit">Save nickname</button>
             </fieldset>
             <p id="settings-message" class="save-message" role="status"></p>
           </form>

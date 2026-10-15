@@ -8,6 +8,7 @@ import { QuizAutomation } from '../server-quiz-automation.mjs';
 import { env as baseEnv, login, call, origin } from './harness.mjs';
 import { feedback, assessment, quiz } from './fixture.mjs';
 import termsBank from '../business-terms-bank.json' with { type: 'json' };
+import { ACTIVITY_TOOLS } from '../activities.mjs';
 
 const admin = 'https://phil.englishladder.com';
 const example = { firstName:'Morgan', lastName:'Testperson', nickname:'Morgan the Explorer', studentId:'mt26', status:'active', zoomNames:['Morgan-Zoom'], timeZone:'Asia/Tokyo', email:'private@example.test', notes:'Private administrative note', hoursAuthorized:40 };
@@ -197,11 +198,11 @@ test('directory changes retry unmatched notes and use new Zoom names on the next
 });
 
 const html=readFileSync(new URL('../public/admin.html',import.meta.url),'utf8'),script=readFileSync(new URL('../public/admin.js',import.meta.url),'utf8');
-const fixture={...example,key:'11111111-1111-4111-8111-111111111111',revision:1,activated:true,startAfter:'2026-10-14T12:00:00Z'};
+const fixture={...example,visibleActivities:['english-road','grammar-practice'],key:'11111111-1111-4111-8111-111111111111',revision:1,activated:true,startAfter:'2026-10-14T12:00:00Z'};
 const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1));};
 function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
-  return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
+  return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{activities:ACTIVITY_TOOLS,students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
 };dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
 test('administrator list links to editable accounts and has a separate registration form',async()=>{
   const dom=browser();await flush();const w=dom.window,d=w.document;
@@ -209,6 +210,45 @@ test('administrator list links to editable accounts and has a separate registrat
   d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('lastName').value,'Testperson');assert.equal(d.getElementById('studentId').readOnly,true);
   w.location.hash='#register';await flush();assert.equal(d.getElementById('edit-title').textContent,'Register new student');assert.equal(d.getElementById('lastName').value,'');assert.equal(d.getElementById('studentId').readOnly,false);
   assert.equal(d.querySelectorAll('input[type="password"]').length,4);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
+});
+
+test('administrator checkboxes load saved tools, save subsets and none, and clear on navigation and sign-out', async () => {
+  let saved = structuredClone(fixture), body;
+  const dom = browser((path, options) => {
+    if (path === '/api/admin/students') return Response.json({ activities: ACTIVITY_TOOLS, students: [saved] });
+    if (path === '/api/admin/students/' + fixture.key && options?.method === 'PUT') {
+      body = JSON.parse(options.body); saved = { ...saved, ...body, revision: saved.revision + 1 };
+      return Response.json({ student: saved });
+    }
+  });
+  await flush(); const w = dom.window, d = w.document;
+  d.querySelector('.student-name').click(); await flush();
+  const chosen = () => [...d.querySelectorAll('#student-activities input:checked')].map(box => box.value);
+  assert.deepEqual(chosen(), ['english-road', 'grammar-practice']);
+  assert.equal(d.querySelectorAll('#student-activities input').length, ACTIVITY_TOOLS.length);
+  for (const box of d.querySelectorAll('#student-activities input')) box.checked = box.value === 'business-terms';
+  d.getElementById('student-form').dispatchEvent(new w.Event('submit', { bubbles: true, cancelable: true })); await flush();
+  assert.deepEqual(body.visibleActivities, ['business-terms']); assert.deepEqual(chosen(), ['business-terms']);
+  d.getElementById('list-nav').click(); await flush(); assert.equal(d.getElementById('student-activities').textContent, '');
+  d.querySelector('.student-name').click(); await flush(); assert.deepEqual(chosen(), ['business-terms']);
+  for (const box of d.querySelectorAll('#student-activities input')) box.checked = false;
+  d.getElementById('student-form').dispatchEvent(new w.Event('submit', { bubbles: true, cancelable: true })); await flush();
+  assert.deepEqual(body.visibleActivities, []); assert.deepEqual(chosen(), []);
+  d.getElementById('register-nav').click(); await flush(); assert.deepEqual(chosen(), ACTIVITY_TOOLS.map(a => a.id));
+  d.getElementById('sign-out').click(); await flush(); assert.equal(d.getElementById('student-activities').textContent, '');
+  w.close();
+});
+
+test('a missing activity catalog cannot silently clear selections through an administrator save', async () => {
+  let writes = 0;
+  const dom = browser((path, options) => {
+    if (options?.method === 'PUT' || options?.method === 'POST') writes++;
+    if (path === '/api/admin/students') return Response.json({ students: [fixture] });
+  });
+  await flush(); const w = dom.window, d = w.document;
+  d.getElementById('student-form').dispatchEvent(new w.Event('submit', { bubbles: true, cancelable: true })); await flush();
+  assert.equal(writes, 0); assert.equal(d.querySelectorAll('#student-activities input').length, 0);
+  w.close();
 });
 
 test('Technical notes supports direct navigation, clears account details, and stays behind the signed-in view',async()=>{
@@ -256,7 +296,7 @@ test('sign-out clears form fields and directory; delayed responses cannot restor
   assert.doesNotMatch(d.getElementById('admin-view').textContent,/Testperson|private@example/);dom.window.close();
 });
 test('expired administrator sessions clear private data and imported text renders safely',async()=>{
-  let expired=false;const dom=browser(path=>path==='/api/admin/students'?(expired?Response.json({error:'Expired'},{status:401}):Response.json({students:[{...fixture,firstName:'<img src=x onerror=alert(1)>'}]})):null);await flush();const d=dom.window.document;
+  let expired=false;const dom=browser(path=>path==='/api/admin/students'?(expired?Response.json({error:'Expired'},{status:401}):Response.json({activities:ACTIVITY_TOOLS,students:[{...fixture,firstName:'<img src=x onerror=alert(1)>'}]})):null);await flush();const d=dom.window.document;
   assert.equal(d.querySelector('#student-rows img'),null);expired=true;d.getElementById('refresh').click();await flush();assert.equal(d.getElementById('admin-view').hidden,true);assert.equal(d.getElementById('student-rows').textContent,'');dom.window.close();
 });
 
@@ -414,7 +454,7 @@ test('manual copy fallback stays private and clears on leaving; inactive or unav
 
 test('paused accounts are collapsed below the main list, remain editable, and are found by search',async()=>{
   const paused={...fixture,key:'22222222-2222-4222-8222-222222222222',firstName:'Taylor',studentId:'tt26',status:'paused'};
-  const dom=browser(path=>path==='/api/admin/students'?Response.json({students:[fixture,paused]}):undefined);await flush();const w=dom.window,d=w.document;
+  const dom=browser(path=>path==='/api/admin/students'?Response.json({activities:ACTIVITY_TOOLS,students:[fixture,paused]}):undefined);await flush();const w=dom.window,d=w.document;
   const section=d.getElementById('paused-students');assert.equal(section.open,false);assert.equal(section.hidden,false);
   assert.match(d.getElementById('student-rows').textContent,/Morgan/);assert.doesNotMatch(d.getElementById('student-rows').textContent,/Taylor/);
   assert.match(d.getElementById('paused-student-rows').textContent,/Taylor/);assert.equal(d.getElementById('paused-count').textContent,'1');
@@ -585,37 +625,72 @@ test('CEFR overview distinguishes missing evidence from failures and clears afte
 
 const selfWrite = (cookie, body, method = 'PUT') => ({ method, headers: { Cookie: cookie, Origin: origin, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 const selfProfile = async (e, cookie) => (await call(e, '/api/account', { headers: { Cookie: cookie } })).json();
-test('student account preferences are private, isolated, and preserved by administrator edits', async () => {
-  const { e } = environment(), student = await login(e), teacher = await login(e, 'teacher-test'), adminCookie = await access(e);
+test('only the administrator changes activity selections; nickname edits preserve them and learning progress', async () => {
+  const { e, directory } = environment(), student = await login(e), teacher = await login(e, 'teacher-test'), adminCookie = await access(e);
   assert.equal((await call(e, '/api/account')).status, 401);
   const initial = await selfProfile(e, student.cookie);
-  assert.deepEqual(initial.visibleActivities, ['english-road', 'grammar-practice', 'business-terms', 'placeholder-1', 'placeholder-2', 'placeholder-3']);
+  assert.deepEqual(initial.visibleActivities, ACTIVITY_TOOLS.map(a => a.id));
   assert.deepEqual(Object.keys(initial).sort(), ['activities', 'nickname', 'revision', 'visibleActivities']);
-  const response = await call(e, '/api/account', selfWrite(student.cookie, { ...initial, nickname: 'New nickname', visibleActivities: [], studentId: 'cd26', status: 'paused', firstName: 'Changed', newPassword: 'injected-test' }));
+  for (const visibleActivities of [[], ['english-road'], ['unknown'], 'all']) {
+    assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { revision: initial.revision, nickname: 'Blocked', visibleActivities }))).status, 403);
+  }
+  const direct = await directory.selfAccount('ab26', { ...initial, expectedAccountRevision: initial.revision, nickname: 'Blocked' });
+  assert.equal(direct.status, 403);
+  const response = await call(e, '/api/account', selfWrite(student.cookie, { revision: initial.revision, nickname: 'New nickname', studentId: 'cd26', status: 'paused', firstName: 'Changed', newPassword: 'injected-test' }));
   assert.equal(response.status, 200);
-  const saved = await response.json(); assert.deepEqual(saved.visibleActivities, []);
+  const saved = await response.json(); assert.deepEqual(saved.visibleActivities, initial.visibleActivities);
   const session = await (await call(e, '/api/session', { headers: { Cookie: student.cookie } })).json();
   assert.equal(session.student.nickname, 'New nickname'); assert.equal(session.student.name, 'Alex');
-  assert.equal((await login(e)).response.status, 200);
+  const record = (await list(e, adminCookie)).find(s => s.studentId === 'ab26');
+  const storage = e.FEEDBACK_STORE.get('ab26').storage;
+  await storage.put({ 'road:sample-history': { answers: [1, 0] }, 'terms:item:1': { finished: true, questions: true } });
+  const learningBefore = await storage.list({ limit: 100 });
+  const edited = await adminCall(e, '/api/admin/students/' + record.key, write(adminCookie, { ...record, lastName: 'Brown', visibleActivities: ['placeholder-2'] }, 'PUT'));
+  assert.equal(edited.status, 200);
+  assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, ['placeholder-2']);
+  let updated = (await edited.json()).student;
+  assert.deepEqual(updated.visibleActivities, ['placeholder-2']);
+  const { visibleActivities, ...unrelated } = updated;
+  const courseEdit = await adminCall(e, '/api/admin/students/' + updated.key, write(adminCookie, { ...unrelated, course: 'Updated course' }, 'PUT'));
+  assert.equal(courseEdit.status, 200); updated = (await courseEdit.json()).student;
+  assert.deepEqual(updated.visibleActivities, ['placeholder-2']);
+  const empty = await adminCall(e, '/api/admin/students/' + updated.key, write(adminCookie, { ...updated, visibleActivities: [] }, 'PUT'));
+  assert.equal(empty.status, 200); assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, []);
+  assert.deepEqual(await storage.list({ limit: 100 }), learningBefore);
   const another = await login(e, 'other-test', 'https://cd26.englishladder.com');
   const other = await (await call(e, '/api/account', { headers: { Cookie: another.cookie } }, 'https://cd26.englishladder.com')).json();
-  assert.equal(other.nickname, 'Casey'); assert.equal(other.visibleActivities.length, 6);
-  const records = await list(e, adminCookie), record = records.find(s => s.studentId === 'ab26');
-  const edited = await adminCall(e, '/api/admin/students/' + record.key, write(adminCookie, { ...record, lastName: 'Brown', course: 'Updated course', visibleActivities: ['placeholder-2'] }, 'PUT'));
-  assert.equal(edited.status, 200); assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, []);
-  assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { ...saved, nickname: 'Stale' }))).status, 409);
-  assert.equal((await call(e, '/api/account', selfWrite(teacher.cookie, saved))).status, 403);
+  assert.equal(other.nickname, 'Casey'); assert.equal(other.visibleActivities.length, ACTIVITY_TOOLS.length);
+  assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { revision: saved.revision, nickname: 'Stale' }))).status, 409);
+  assert.equal((await call(e, '/api/account', selfWrite(teacher.cookie, { revision: saved.revision, nickname: 'Blocked' }))).status, 403);
   for (const path of ['/self/ab26', '/api/self/ab26', '/api/account/cd26']) assert.equal((await call(e, path, { headers: { Cookie: student.cookie } })).status, 404);
 });
 
-test('student settings reject foreign origins, cookies, invalid choices, oversized input and limits', async () => {
-  const { e } = environment(), student = await login(e), initial = await selfProfile(e, student.cookie);
+test('administrator activity saves reject invalid selections, stale records and untrusted callers', async () => {
+  const { e } = environment(), cookie = await access(e), student = await login(e), teacher = await login(e, 'teacher-test');
+  const record = (await list(e, cookie)).find(s => s.studentId === 'ab26'), path = '/api/admin/students/' + record.key;
+  const input = { ...record, lastName: 'Brown', visibleActivities: ['grammar-practice'] };
+  for (const caller of ['', student.cookie, teacher.cookie]) assert.equal((await adminCall(e, path, write(caller, input, 'PUT'))).status, 401);
+  const foreign = write(cookie, input, 'PUT'); foreign.headers.Origin = origin;
+  assert.equal((await adminCall(e, path, foreign)).status, 403);
+  assert.equal((await call(e, path, selfWrite(teacher.cookie, input))).status, 405);
+  for (const visibleActivities of [['unknown'], ['grammar-practice', 'grammar-practice'], 'all', null]) {
+    assert.equal((await adminCall(e, path, write(cookie, { ...input, visibleActivities }, 'PUT'))).status, 400);
+  }
+  const saves = await Promise.all([adminCall(e, path, write(cookie, input, 'PUT')), adminCall(e, path, write(cookie, { ...input, visibleActivities: [] }, 'PUT'))]);
+  assert.deepEqual(saves.map(r => r.status).sort(), [200, 409]);
+  const fresh = await adminCall(e, '/api/admin/students', write(cookie, { ...example, visibleActivities: ['business-terms'] }));
+  assert.equal(fresh.status, 201); assert.deepEqual((await fresh.json()).student.visibleActivities, ['business-terms']);
+});
+
+test('student nickname settings reject foreign origins, cookies, invalid input and limits', async () => {
+  const { e } = environment(), student = await login(e), profile = await selfProfile(e, student.cookie);
+  const initial = { revision: profile.revision, nickname: profile.nickname };
   for (const fake of [null, 'https://cd26.englishladder.com', 'https://evil.test']) {
     const options = selfWrite(student.cookie, initial); if (fake) options.headers.Origin = fake; else delete options.headers.Origin;
     assert.equal((await call(e, '/api/account', options)).status, 403);
   }
   assert.equal((await call(e, '/api/account', { headers: { Cookie: student.cookie } }, 'https://cd26.englishladder.com')).status, 401);
-  for (const changes of [{ visibleActivities: ['unknown'] }, { visibleActivities: ['placeholder-1', 'placeholder-1'] }, { visibleActivities: 'all' }, { nickname: '' }, { nickname: 'x'.repeat(101) }, { nickname: 'Two\nlines' }, { revision: null }]) {
+  for (const changes of [{ nickname: '' }, { nickname: 'x'.repeat(101) }, { nickname: 'Two\nlines' }, { revision: null }]) {
     assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { ...initial, ...changes }))).status, 400);
   }
   assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { ...initial, extra: 'x'.repeat(5000) }))).status, 400);
@@ -666,7 +741,7 @@ test('account saves recheck authenticated revision, pause and deletion inside th
       }
       return directory.fetch(request);
     } }) };
-    const response = await call(e, '/api/account', selfWrite(student.cookie, { ...initial, nickname: 'Must not save' }));
+    const response = await call(e, '/api/account', selfWrite(student.cookie, { revision: initial.revision, nickname: 'Must not save' }));
     assert.equal(response.status, change === 'revision' ? 409 : 404);
     assert.notEqual((await directory.records()).find(r => r.studentId === 'ab26').nickname, 'Must not save');
   }

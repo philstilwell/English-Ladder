@@ -3,7 +3,7 @@
 import { makeStudentPassword, matchesStudentPassword, encryptStudentPassword, decryptStudentPassword } from './student-password.mjs';
 import { ACTIVITY_TOOLS, visibleActivities, validateActivities } from './activities.mjs';
 const json = (value, status = 200) => Response.json(value, { status });
-const adminRecord = ({ passwordCredential, passwordCopy, ...record }) => ({ ...record, hasCustomPassword: Boolean(passwordCredential) });
+const adminRecord = ({ passwordCredential, passwordCopy, ...record }) => ({ ...record, visibleActivities: visibleActivities(record), hasCustomPassword: Boolean(passwordCredential) });
 export const STUDENT_ID = /^[a-z]{2,8}\d{2}(?:-[a-z0-9]{1,12})?$/;
 const RESERVED = new Set(['phil', 'www', 'admin', 'students', 'mail', 'api']);
 const norm = value => String(value || '').trim().toLowerCase();
@@ -40,6 +40,7 @@ export function validateStudent(input) {
   try { new Intl.DateTimeFormat('en', { timeZone }); } catch { fail('Choose a valid time zone.'); }
   if (status === 'active' && (!lastName || !studentId || !zoomNames.length)) fail('To activate the site, enter both names, a student address, and at least one exact Zoom name.');
   return { firstName, lastName, studentId, status, zoomNames, timeZone,
+    ...(Object.hasOwn(input, 'visibleActivities') ? { visibleActivities: validateActivities(input.visibleActivities) } : {}),
     nickname: text(input.nickname, 100), course: text(input.course), fileNumber: text(input.fileNumber, 60),
     staff: text(input.staff, 100), email: text(input.email, 254), otherEmail: text(input.otherEmail, 254),
     endsOn: date(input.endsOn), contactedOn: date(input.contactedOn),
@@ -150,7 +151,7 @@ export class StudentDirectory {
         activated, startAfter: previous?.startAfter || (activated ? now : null),
         lessonTimeZone: previous?.lessonTimeZone || 'America/New_York', createdAt: previous?.createdAt || now, updatedAt: now,
         ...(previous?.source ? { source: previous.source } : {}), ...(passwordCredential ? { passwordCredential } : {}), ...(passwordCopy ? { passwordCopy } : {}),
-        ...(previous?.visibleActivities ? { visibleActivities: previous.visibleActivities } : {}) };
+        ...(!Object.hasOwn(values, 'visibleActivities') && Array.isArray(previous?.visibleActivities) ? { visibleActivities: previous.visibleActivities } : {}) };
       await txn.put({ ['student:' + record.key]: record, revision: (await txn.get('revision') || 0) + 1 });
       return json({ student: adminRecord(record) }, previous ? 200 : 201);
     });
@@ -184,6 +185,7 @@ export class StudentDirectory {
       const record = (await this.records(txn)).find(r => r.studentId === id && r.status === 'active' && !r.deletionPending);
       if (!record) return json({ error: 'This account is not available.' }, 404);
       if (!input) return json(this.selfProfile(record));
+      if (Object.hasOwn(input, 'visibleActivities')) return json({ error: 'Your teacher chooses the activities in your menu.' }, 403);
       // The Worker supplies the revision from the account used to authenticate.
       // Recheck it here so a pause, deletion or password reset cannot race a save.
       if (input.expectedAccountRevision !== record.revision || input.revision !== record.revision)
@@ -199,7 +201,7 @@ export class StudentDirectory {
       } else {
         const nickname = text(input.nickname, 100);
         if (!nickname || /[\r\n\t]/.test(nickname)) return json({ error: 'Enter a nickname on one line, using up to 100 characters.' }, 400);
-        changes = { nickname, visibleActivities: validateActivities(input.visibleActivities) };
+        changes = { nickname };
       }
       const updated = { ...record, ...changes, revision: record.revision + 1, updatedAt: new Date().toISOString() };
       await txn.put({ ['student:' + record.key]: updated, revision: (await txn.get('revision') || 0) + 1 });
@@ -259,7 +261,7 @@ export class StudentDirectory {
     await this.initialize();
     const url = new URL(request.url), path = url.pathname;
     try {
-      if (path === '/students' && request.method === 'GET') return json({ students: (await this.records()).map(adminRecord).sort((a,b) => (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName)) });
+      if (path === '/students' && request.method === 'GET') return json({ activities: ACTIVITY_TOOLS, students: (await this.records()).map(adminRecord).sort((a,b) => (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName)) });
       const loginDetails = path.match(/^\/students\/([\w-]{36})\/login-details$/);
       if (loginDetails && request.method === 'GET') return await this.loginDetails(loginDetails[1]);
       if (loginDetails && request.method === 'PUT') return await this.restorePasswordCopy(loginDetails[1], await request.json());

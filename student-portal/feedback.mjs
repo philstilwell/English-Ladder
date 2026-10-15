@@ -55,6 +55,63 @@ export class FeedbackStore {
     const id = url.pathname.slice(1);
     // Internal-only routes: the public Worker never forwards arbitrary paths here.
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
+    if (id === 'learning-import' && request.method === 'POST') {
+      const input = await request.json();
+      let feedback, assessment, quizzes;
+      try {
+        if (!Array.isArray(input.feedback) || !input.feedback.length || input.feedback.length > 100 ||
+            !Array.isArray(input.quizzes) || input.quizzes.length !== input.feedback.length) throw new Error('Invalid import');
+        feedback = input.feedback.map(f => validateFeedback(f, f.id));
+        if (new Set(feedback.map(f => f.id)).size !== feedback.length || new Set(feedback.map(f => f.source.noteId)).size !== feedback.length) throw new Error('Duplicate session');
+        assessment = validateAssessment(input.assessment);
+        quizzes = input.quizzes.map(q => {
+          const quiz = validateAssessment({ ...assessment, quiz: q.quiz }).quiz;
+          if (!feedback.some(f => f.id === quiz.generatedForSession) || !quiz.sourceSessions?.includes(quiz.generatedForSession) ||
+              !Array.isArray(q.evidence) || q.evidence.length !== quiz.questions.length) throw new Error('Invalid quiz');
+          const evidence = q.evidence.map((e, i) => {
+            if (e.questionIndex !== i || !Array.isArray(e.references) || !e.references.length || e.references.length > 12) throw new Error('Invalid quiz evidence');
+            return { questionIndex: i, references: e.references.map(ref => {
+              if (!quiz.sourceSessions.includes(ref.sessionId) || !FEEDBACK_ID.test(ref.sessionId) || !/^\d{2}:[0-5]\d:[0-5]\d$/.test(ref.at)) throw new Error('Invalid reference');
+              return { sessionId: ref.sessionId, at: ref.at };
+            }) };
+          });
+          return { quiz, evidence };
+        });
+        if (new Set(quizzes.map(q => q.quiz.generatedForSession)).size !== quizzes.length || feedback.some(f => !assessment.sourceSessions.includes(f.id))) throw new Error('Missing session');
+        const latest = [...quizzes].sort((a,b) => a.quiz.generatedForSession.localeCompare(b.quiz.generatedForSession)).at(-1).quiz;
+        if (JSON.stringify(assessment.quiz) !== JSON.stringify(latest)) throw new Error('Latest quiz differs');
+      } catch { return json({ error: 'Please check the learning records and source references.' }, 400); }
+      const canonical = JSON.stringify({ feedback, assessment, quizzes });
+      const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical)))].map(x => x.toString(16).padStart(2,'0')).join('');
+      return this.storage.transaction(async txn => {
+        if (await txn.get('import:history:' + digest)) return json({ ok: true, duplicate: true });
+        const current = await txn.get('assessment:current') || null;
+        if (JSON.stringify(input.priorAssessment ?? null) !== JSON.stringify(current)) return json({ error: 'The assessment changed. Review the latest account before importing.' }, 409);
+        const sources = new Map(feedback.map(f => [f.id, f]));
+        for (const record of feedback) {
+          const existing = await txn.get('feedback:' + record.id);
+          if (existing && JSON.stringify(existing) !== JSON.stringify(record)) return json({ error: 'An existing session differs. It has been preserved.' }, 409);
+          if (await txn.get('quiz:published:' + record.id)) return json({ error: 'A quiz for this session already exists. It has been preserved.' }, 409);
+        }
+        const allIds = new Set([...assessment.sourceSessions, ...quizzes.flatMap(q => q.quiz.sourceSessions)]);
+        for (const sourceId of allIds) if (!sources.has(sourceId)) sources.set(sourceId, await txn.get('feedback:' + sourceId));
+        if ([...sources.values()].some(s => !s?.source?.reviewedFullTranscript)) return json({ error: 'A source session is unavailable in this account.' }, 400);
+        const refs = [...assessmentReferences(assessment), ...quizzes.flatMap(q => q.evidence.flatMap(e => e.references))];
+        if (refs.some(ref => ref.at < sources.get(ref.sessionId).source.coverageStart || ref.at > sources.get(ref.sessionId).source.coverageEnd)) return json({ error: 'Evidence is outside its source transcript.' }, 400);
+        const importedAt = new Date().toISOString(), update = {};
+        for (const f of feedback) {
+          update['feedback:' + f.id] = f;
+          update['index:' + f.id] = { id: f.id, title: f.title, summary: f.summary, startedAt: f.startedAt, timeZone: f.timeZone };
+        }
+        for (const q of quizzes) update['quiz:published:' + q.quiz.generatedForSession] = { ...q, historicalImport: true, publishedAt: importedAt };
+        update['assessment:before:import:' + digest] = current;
+        const currentLatest = current?.sourceSessions?.slice().sort().at(-1);
+        if (!currentLatest || assessment.sourceSessions.slice().sort().at(-1) >= currentLatest) update['assessment:current'] = assessment;
+        update['import:history:' + digest] = { importedAt, sessions: feedback.length, quizzes: quizzes.length };
+        await txn.put(update);
+        return json({ ok: true, sessions: feedback.length, quizzes: quizzes.length, currentUpdated: Boolean(update['assessment:current']) });
+      });
+    }
     if (id === 'automation/context' && request.method === 'GET') {
       const attempts = [], publishedSessions = [], sourceNotes = [];
       for (const [prefix, target] of [['quiz:attempt:', attempts], ['quiz:published:', publishedSessions], ['feedback:', sourceNotes]]) {

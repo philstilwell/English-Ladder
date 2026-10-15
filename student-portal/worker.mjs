@@ -259,6 +259,18 @@ async function handle(request, env) {
     return json(profile(account, role), 200, { 'Set-Cookie': cookie(await issueSession(request, env, account, role)) });
   }
 
+  if (url.pathname === '/api/learning-import') {
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    if (session.role !== 'teacher') return json({ error: 'Only your teacher can import learning records.' }, 403);
+    if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
+    if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload and try again.' }, 403);
+    const body = await smallJson(request, 524288);
+    if (!body) return json({ error: 'Please check the learning records.' }, 400);
+    if (!env.FEEDBACK_STORE) return json({ error: 'Learning records are temporarily unavailable.' }, 503);
+    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/learning-import', { method: 'POST', body: JSON.stringify(body) }));
+  }
+
   if (url.pathname.startsWith('/api/quiz/')) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);

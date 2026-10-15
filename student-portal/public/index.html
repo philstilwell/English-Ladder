@@ -57,12 +57,17 @@
         <div class="student-badge"><span id="avatar" class="avatar" aria-hidden="true"></span><div><strong id="student-name"></strong><span id="account-address"></span></div></div>
       </div>
       <nav class="section-nav" aria-label="Student space sections">
-        <a href="#overview" aria-current="page">Overview</a>
-        <a href="#assessments">Assessments</a>
-        <a id="quiz-nav" href="#quiz" hidden>Quiz</a>
-        <a href="#sessions">Session summaries</a>
-        <a href="#feedback">Feedback</a>
-        <a href="#account">Account</a>
+        <div id="overview-menu" class="overview-menu">
+          <a id="overview-link" href="#overview" aria-current="page">Overview</a>
+          <button id="overview-toggle" class="overview-toggle" type="button" aria-label="Show Overview links" aria-expanded="false" aria-controls="overview-submenu"><span aria-hidden="true">▾</span></button>
+          <ul id="overview-submenu" class="overview-submenu" hidden>
+            <li><a href="#assessments">Assessments</a></li>
+            <li><a id="quiz-nav" href="#quiz" hidden>Quiz</a></li>
+            <li><a href="#sessions">Session summaries</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+          </ul>
+        </div>
+        <a id="account-nav" href="#account">Account</a>
         <button id="logout" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button>
       </nav>
       <div id="overview" class="section-panel">

@@ -12,6 +12,36 @@
   let assessmentScrollFrame = 0;
   let settings = null, settingsLoading = false, settingsSaving = false, settingsRevision = 0, profileRevision = 0;
   const sectionMenu = document.querySelector('.section-nav');
+  const overviewMenu = $('overview-menu'), overviewToggle = $('overview-toggle'), overviewSubmenu = $('overview-submenu');
+  function showOverviewLinks(open) {
+    overviewSubmenu.hidden = !open;
+    overviewToggle.setAttribute('aria-expanded', String(open));
+    overviewToggle.setAttribute('aria-label', (open ? 'Hide' : 'Show') + ' Overview links');
+  }
+  overviewMenu.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse' || event.pointerType === 'pen') showOverviewLinks(true);
+  });
+  overviewMenu.addEventListener('pointerleave', event => {
+    if ((event.pointerType === 'mouse' || event.pointerType === 'pen') && !overviewSubmenu.contains(document.activeElement)) showOverviewLinks(false);
+  });
+  overviewToggle.addEventListener('click', () => showOverviewLinks(overviewSubmenu.hidden));
+  overviewMenu.addEventListener('keydown', event => {
+    if (event.key === 'ArrowDown' && (event.target === overviewToggle || event.target === $('overview-link'))) {
+      event.preventDefault(); showOverviewLinks(true); overviewSubmenu.querySelector('a:not([hidden])').focus();
+    }
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || overviewSubmenu.hidden) return;
+    event.preventDefault(); showOverviewLinks(false);
+    if (overviewMenu.contains(document.activeElement)) overviewToggle.focus();
+  });
+  document.addEventListener('pointerdown', event => { if (!overviewMenu.contains(event.target)) showOverviewLinks(false); });
+  document.addEventListener('focusin', event => { if (!overviewMenu.contains(event.target)) showOverviewLinks(false); });
+  sectionMenu.addEventListener('click', event => {
+    if (!event.target.closest('a')) return;
+    if (overviewSubmenu.contains(document.activeElement)) overviewToggle.focus({ preventScroll:true });
+    showOverviewLinks(false);
+  });
   function updateMenuHeight() {
     const height = sectionMenu.getBoundingClientRect().height;
     if (height) document.documentElement.style.setProperty('--student-menu-height', height + 'px');
@@ -54,6 +84,7 @@
   }
   function clearIdentity() {
     identityRevision++; pageRevision++;
+    showOverviewLinks(false);
     clearSettings();
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
@@ -124,6 +155,7 @@
       if (el.hash === '#' + selected) el.setAttribute('aria-current', 'page');
       else el.removeAttribute('aria-current');
     }
+    overviewMenu.classList.toggle('is-current', ['overview', 'assessments', 'quiz', 'sessions', 'feedback'].includes(selected));
     if (selected !== 'feedback') {
       pageRevision++; currentPage = '';
       document.title = selected === 'assessments' ? 'My English assessment · English Ladder' : 'My learning space · English Ladder';
@@ -841,7 +873,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', clearSettings);
+  window.addEventListener('pagehide', () => { clearSettings(); showOverviewLinks(false); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();
@@ -910,7 +942,7 @@
   }
   window.addEventListener('pageshow', event => { if (event.persisted) { clearIdentity(); start(); } });
   document.addEventListener('visibilitychange', checkSession);
-  window.addEventListener('hashchange', () => navigate(true));
+  window.addEventListener('hashchange', () => { showOverviewLinks(false); navigate(true); });
   window.addEventListener('scroll', scheduleAssessmentHighlight, { passive: true });
   window.addEventListener('resize', updateMenuHeight);
   document.querySelector('.assessment-outline').addEventListener('click', event => {

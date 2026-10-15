@@ -50,10 +50,29 @@ const json = (data, status = 200) => new Response(JSON.stringify(data), { status
 // outer Worker can reach this class; no public URL or client-selected student ID.
 export class FeedbackStore {
   constructor(state) { this.storage = state.storage; }
+  activeTransaction(fn) {
+    return this.storage.transaction(async txn => await txn.get('account:deleted') ? json({ error: 'This account was deleted.' }, 410) : fn(txn));
+  }
+  async removeAccount() {
+    // Commit a permanent write barrier before bounded cleanup. Retries resume
+    // cleanup; queued quiz answers or publishing calls cannot recreate records.
+    await this.storage.transaction(async txn => { await txn.put({ 'account:deleted': true }); });
+    let remaining;
+    do {
+      remaining = await this.storage.transaction(async txn => {
+        const keys = [...(await txn.list({ prefix: '', limit: 128 })).keys()].filter(key => key !== 'account:deleted');
+        for (const key of keys) await txn.delete(key);
+        return keys.length;
+      });
+    } while (remaining);
+    return json({ deleted: true });
+  }
   async fetch(request) {
     const url = new URL(request.url);
     const id = url.pathname.slice(1);
     // Internal-only routes: the public Worker never forwards arbitrary paths here.
+    if (id === 'admin/delete-account' && request.method === 'POST') return this.removeAccount();
+    if (await this.storage.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'learning-import' && request.method === 'POST') {
       const input = await request.json();
@@ -83,7 +102,7 @@ export class FeedbackStore {
       } catch { return json({ error: 'Please check the learning records and source references.' }, 400); }
       const canonical = JSON.stringify({ feedback, assessment, quizzes });
       const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical)))].map(x => x.toString(16).padStart(2,'0')).join('');
-      return this.storage.transaction(async txn => {
+      return this.activeTransaction(async txn => {
         if (await txn.get('import:history:' + digest)) return json({ ok: true, duplicate: true });
         const current = await txn.get('assessment:current') || null;
         if (JSON.stringify(input.priorAssessment ?? null) !== JSON.stringify(current)) return json({ error: 'The assessment changed. Review the latest account before importing.' }, 409);
@@ -127,7 +146,7 @@ export class FeedbackStore {
     }
     if (id === 'automation/publish' && request.method === 'POST') {
       const input = await request.json();
-      return this.storage.transaction(async txn => {
+      return this.activeTransaction(async txn => {
         const sessionId = input.quiz?.generatedForSession;
         if (!FEEDBACK_ID.test(sessionId || '') || !Array.isArray(input.quiz?.sourceSessions) || !Array.isArray(input.quiz?.patternTitles)) return json({ error: 'Invalid session.' }, 400);
         const current = await txn.get('assessment:current') || null;
@@ -173,8 +192,10 @@ export class FeedbackStore {
         const coverage = sources.get(ref.sessionId).source;
         return ref.at < coverage.coverageStart || ref.at > coverage.coverageEnd;
       })) return json({ error: 'Assessment evidence must refer to this student’s available session transcripts.' }, 400);
-      await this.storage.put({ 'assessment:current': record });
-      return json({ ok: true });
+      return this.activeTransaction(async txn => {
+        await txn.put({ 'assessment:current': record });
+        return json({ ok: true });
+      });
     }
     if (request.method === 'GET' && !id) {
       const before = url.searchParams.get('before');
@@ -194,9 +215,10 @@ export class FeedbackStore {
       try { record = validateFeedback(await request.json(), id); }
       catch { return json({ error: 'Please check the feedback format and transcript references.' }, 400); }
       const { title, summary, startedAt, timeZone } = record;
-      // A multi-key put commits both values atomically, including replacements.
-      await this.storage.put({ [`feedback:${id}`]: record, [`index:${id}`]: { id, title, summary, startedAt, timeZone } });
-      return json({ ok: true, id });
+      return this.activeTransaction(async txn => {
+        await txn.put({ [`feedback:${id}`]: record, [`index:${id}`]: { id, title, summary, startedAt, timeZone } });
+        return json({ ok: true, id });
+      });
     }
     return json({ error: 'Method not allowed.' }, 405);
   }

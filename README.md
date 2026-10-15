@@ -277,3 +277,11 @@ The September 8 audit and prioritized next steps are recorded in [the site audit
 ### Reading-page stability
 
 Dated lesson links open during parsing, and the publisher includes the reading controls before deferred scripts enable them. This prevents large load-time jumps while keeping the full lesson available without JavaScript. See [the September 15 layout-shift review](docs/layout-shift-fix-2026-09-15.md) for measurements and the repeatable browser audit.
+
+### Paused accounts and deletion
+
+On the private administrator page, paused students appear in a closed section below the main list. Searching or choosing the paused filter opens matching accounts.
+
+Each saved account has a Delete student account button. Its confirmation window names the student, explains the permanent changes, and requires the saved student ID (or full name for drafts without an address). Cancellation leaves records unchanged. Only an administrator session on `phil.englishladder.com` can submit deletion; student sessions, other hosts, stale revisions, and mismatched confirmation are rejected.
+
+Deletion first closes the site and stops automatic updates, then removes the private profile, password, feedback, assessments, quizzes, and quiz history. Original Zoom transcripts and spreadsheet rows remain unchanged. A failed cleanup leaves a paused “Deletion pending” account that can be retried. Minimal deletion receipts, retired addresses, and import fingerprints prevent duplicate requests, delayed publishing, and future spreadsheet imports from restoring a deleted account. Retired student addresses cannot be reused. All destructive verification uses fictional accounts in the automated tests.

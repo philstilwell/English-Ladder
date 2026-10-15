@@ -25,7 +25,8 @@ export function env() {
       },
       async get(key){return structuredClone(values.get(key));},
       async put(data){for(const [key,value] of Object.entries(data)) values.set(key,structuredClone(value));},
-      async list({prefix,reverse,limit,end}){
+      async delete(key){return values.delete(key);},
+      async list({prefix='',reverse,limit,end}={}){
        let keys=[...values.keys()].filter(k=>k.startsWith(prefix)&&(!end||k<end)).sort();
        if(reverse)keys.reverse();
        return new Map(keys.slice(0,limit).map(k=>[k,structuredClone(values.get(k))]));

@@ -4,6 +4,7 @@
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let quizRequest = 0, quizStatuses = {};
   let loginRequest = 0, loginDetails = null;
+  let deleting = null, deleteBusy = false, saving = false;
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
   const displayTime = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(value)) + ' Eastern' : '';
@@ -19,7 +20,7 @@
   }
   async function loadLoginDetails(student) {
     clearLoginDetails();
-    if (!student) return null;
+    if (!student || student.deletionPending) return null;
     $('login-details-panel').hidden = false; $('login-details-status').textContent = 'Loading saved login details…';
     const request = loginRequest, version = epoch;
     const stillCurrent = () => signedIn && epoch === version && request === loginRequest && current?.key === student.key && location.hash === '#students/' + student.key;
@@ -41,9 +42,12 @@
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null;
     clearLoginDetails();
+    closeDelete();
     quizRequest++; quizStatuses = {};
     $('admin-view').hidden = true; $('login-view').hidden = false; $('sign-out').hidden = true;
     $('student-rows').replaceChildren(); $('import-names').replaceChildren(); $('student-form').reset();
+    $('paused-student-rows').replaceChildren(); $('paused-students').open = false; $('paused-students').hidden = true; $('paused-count').textContent = '0';
+    $('delete-account-panel').hidden = true;
     $('sheet-paste').value = ''; $('password').value = ''; $('search').value = ''; $('filter').value = 'all';
     $('edit-title').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href');
     $('activation-note').textContent = ''; $('save-state').textContent = ''; $('import-preview').hidden = true;
@@ -60,13 +64,18 @@
     const data = await response.json();
     if (version !== epoch) throw new Error('Session changed.');
     if (response.status === 401 && path !== '/api/login') { const expired = signedIn; clearPrivate(); $('login-message').textContent = expired ? 'Please sign in again.' : ''; }
-    if (!response.ok) throw new Error(data.error || 'The request could not be saved. Please try again.');
+    if (!response.ok) throw Object.assign(new Error(data.error || 'The request could not be saved. Please try again.'), { deletionPending: data.deletionPending });
     return data;
   }
   function showList() {
     const query = $('search').value.trim().toLowerCase(), filter = $('filter').value;
     const shown = students.filter(s => (filter === 'all' || s.status === filter) && [s.firstName,s.lastName,s.studentId,...s.zoomNames].join(' ').toLowerCase().includes(query));
     $('student-rows').replaceChildren();
+    $('paused-student-rows').replaceChildren();
+    const paused = shown.filter(s => s.status === 'paused');
+    $('paused-count').textContent = paused.length;
+    $('paused-students').hidden = !paused.length;
+    $('main-student-table').hidden = shown.length === paused.length;
     $('active-count').textContent = students.filter(s => s.status === 'active').length;
     $('draft-count').textContent = students.filter(s => s.status === 'draft').length;
     $('list-count').textContent = shown.length + ' of ' + students.length + ' students';
@@ -79,14 +88,14 @@
       site.append(element('span', student.zoomNames.length ? 'Zoom: ' + student.zoomNames.join(' · ') : 'Add a Zoom name to connect lessons', 'detail'));
       course.append(element('span', student.hoursRemaining != null ? student.hoursRemaining + ' hours remaining' : student.course || 'Course details not added'));
       if (student.endsOn) course.append(element('span', 'Ends ' + displayDate(student.endsOn), 'detail'));
-      status.append(element('span', {active:'Active',draft:'Draft',paused:'Paused'}[student.status], 'status-pill ' + student.status));
+      status.append(element('span', student.deletionPending ? 'Deletion pending' : {active:'Active',draft:'Draft',paused:'Paused'}[student.status], 'status-pill ' + student.status));
       const quiz = quizStatuses[student.key] || { state: 'loading' };
       latestQuiz.append(element('span', 'Latest quiz: ', 'quiz-mobile-label'));
       latestQuiz.append(element('span', {completed:'Done',in_progress:'In progress',not_started:'Not started',no_quiz:'No quiz yet',unavailable:'Unable to check',loading:'Checking…'}[quiz.state] || 'Unable to check', 'quiz-pill ' + quiz.state));
       if (quiz.state === 'completed') latestQuiz.append(element('span', 'Finished ' + displayTime(quiz.completedAt), 'detail'));
       if (quiz.state === 'in_progress') latestQuiz.append(element('span', quiz.answered + ' of ' + quiz.total + ' questions answered', 'detail'));
       const edit = element('a', 'Edit account →', 'edit-link'); edit.href = link.href; edit.setAttribute('aria-label', 'Edit account for ' + student.firstName + ' ' + student.lastName); action.append(edit);
-      row.append(name,site,course,status,latestQuiz,action); $('student-rows').append(row);
+      row.append(name,site,course,status,latestQuiz,action); $(student.status === 'paused' ? 'paused-student-rows' : 'student-rows').append(row);
     }
   }
   async function refresh() {
@@ -126,6 +135,11 @@
   function editStudent(student) {
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); $('save-state').textContent = '';
+    for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(student?.deletionPending);
+    $('save-student').disabled = Boolean(student?.deletionPending) || saving;
+    $('delete-account-panel').hidden = !student;
+    $('open-delete').disabled = saving;
+    $('delete-account-note').textContent = student?.deletionPending ? 'The site is closed. Deletion is not finished. Use Delete student account again to finish removing the saved records.' : 'Permanently remove this account and its saved learning records. To keep the records and stop access, choose “Paused” above instead.';
     $('password-status').textContent = student?.hasCustomPassword ? 'This student has a personal password. You can view and copy it in Student login details above.' : 'This account uses the existing default student password until you assign a personal one.';
     for (const field of fields) $(field).value = student?.[field] ?? (field === 'status' ? 'active' : field === 'timeZone' ? 'America/New_York' : '');
     $('zoomNames').value = student?.zoomNames.join('\n') || '';
@@ -146,6 +160,7 @@
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
   function route() {
     if (!signedIn) return;
+    closeDelete();
     clearLoginDetails(); current = null;
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
@@ -158,8 +173,53 @@
       else { $('edit-view').hidden = false; editStudent(student); }
       $('list-nav').setAttribute('aria-current','page');
     } else if (hash === '#import') { $('import-view').hidden = false; $('import-nav').setAttribute('aria-current','page'); }
-    else { $('list-view').hidden = false; $('list-nav').setAttribute('aria-current','page'); showList(); }
+    else { $('list-view').hidden = false; $('list-nav').setAttribute('aria-current','page'); $('paused-students').open = $('filter').value === 'paused' || Boolean($('search').value.trim()); showList(); }
   }
+  function closeDelete() {
+    deleting = null; deleteBusy = false;
+    if ($('delete-dialog').open) $('delete-dialog').close();
+    $('delete-confirmation').value = ''; $('delete-confirmation').disabled = false;
+    $('delete-student-name').textContent = ''; $('delete-confirmation-label').textContent = ''; $('delete-error').textContent = '';
+    $('confirm-delete').disabled = true; $('confirm-delete').textContent = 'Delete account permanently'; $('cancel-delete').disabled = false;
+  }
+  function matchesDeletion() { return deleting && $('delete-confirmation').value.trim().toLowerCase() === deleting.confirmation.toLowerCase(); }
+  $('open-delete').addEventListener('click', () => {
+    if (!signedIn || !current || saving) return;
+    clearLoginDetails();
+    deleting = { ...current, confirmation: current.studentId || [current.firstName,current.lastName].filter(Boolean).join(' ') };
+    $('delete-student-name').textContent = [current.firstName,current.lastName].filter(Boolean).join(' ');
+    $('delete-confirmation-label').textContent = deleting.confirmation;
+    $('delete-dialog').showModal();
+  });
+  const cancelDelete = () => { closeDelete(); if (signedIn) void loadLoginDetails(current); };
+  $('cancel-delete').addEventListener('click', cancelDelete);
+  $('delete-dialog').addEventListener('cancel', event => { event.preventDefault(); if (!deleteBusy) cancelDelete(); });
+  $('delete-confirmation').addEventListener('input', () => { $('confirm-delete').disabled = deleteBusy || !matchesDeletion(); });
+  $('delete-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!signedIn || deleteBusy || !matchesDeletion()) return;
+    const target = deleting, version = epoch;
+    deleteBusy = true; $('confirm-delete').disabled = true; $('cancel-delete').disabled = true; $('delete-confirmation').disabled = true;
+    $('confirm-delete').textContent = 'Deleting…'; $('delete-error').textContent = '';
+    const stillCurrent = () => signedIn && epoch === version && deleting === target;
+    try {
+      await api('/api/admin/students/' + target.key, { method: 'DELETE', body: JSON.stringify({ revision: target.revision, confirmation: $('delete-confirmation').value }) });
+      if (!signedIn || epoch !== version) return;
+      students = students.filter(student => student.key !== target.key); quizRequest++; delete quizStatuses[target.key]; showList();
+      if (!stillCurrent()) return;
+      closeDelete(); current = null; $('student-form').reset();
+      history.replaceState(null, '', '#students'); route(); message('Student account and saved learning records deleted.');
+    } catch (error) {
+      if (!stillCurrent()) return;
+      if (error.deletionPending) {
+        const student = students.find(s => s.key === target.key);
+        if (student) { student.deletionPending = true; student.status = 'paused'; editStudent(student); showList(); }
+      }
+      $('delete-error').textContent = error.message;
+    } finally {
+      if (stillCurrent()) { deleteBusy = false; $('confirm-delete').disabled = !matchesDeletion(); $('cancel-delete').disabled = false; $('delete-confirmation').disabled = false; $('confirm-delete').textContent = 'Delete account permanently'; }
+    }
+  });
   async function enter() { signedIn = true; $('login-view').hidden = true; $('admin-view').hidden = false; $('sign-out').hidden = false; $('password').value = ''; await refresh(); }
   $('login-form').addEventListener('submit', async event => {
     event.preventDefault(); const button = event.submitter; button.disabled = true; $('login-message').textContent = '';
@@ -175,7 +235,8 @@
     catch { $('login-message').textContent = 'The page is cleared. Sign-out could not reach the server; close this browser window to finish.'; }
   });
   $('refresh').addEventListener('click', async () => { try { await refresh(); message('Student list refreshed.'); } catch (error) { if (signedIn) message(error.message,true); } });
-  $('search').addEventListener('input',showList); $('filter').addEventListener('change',showList);
+  const filterList = () => { $('paused-students').open = $('filter').value === 'paused' || Boolean($('search').value.trim()); showList(); };
+  $('search').addEventListener('input',filterList); $('filter').addEventListener('change',filterList);
   $('firstName').addEventListener('input',suggestedAddress); $('lastName').addEventListener('input',suggestedAddress);
   $('studentId').addEventListener('input', () => { addressEdited = true; $('studentId').value = $('studentId').value.toLowerCase(); });
   $('status').addEventListener('change',updateSaveLabel);
@@ -206,6 +267,7 @@
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
   $('student-form').addEventListener('submit', async event => {
     event.preventDefault(); const version = epoch, editing = current;
+    if (saving || deleting || editing?.deletionPending) return;
     const input = Object.fromEntries(fields.map(field => [field,$(field).value]));
     input.zoomNames = $('zoomNames').value.split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
     if ($('newPassword').value || $('confirmPassword').value) {
@@ -213,7 +275,7 @@
       input.newPassword = $('newPassword').value.toLowerCase(); input.confirmPassword = $('confirmPassword').value.toLowerCase();
     }
     if (editing) input.revision = editing.revision;
-    $('save-student').disabled = true; $('save-state').textContent = 'Saving…'; message('');
+    saving = true; $('open-delete').disabled = true; $('save-student').disabled = true; $('save-state').textContent = 'Saving…'; message('');
     try {
       const data = await api('/api/admin/students' + (editing ? '/' + editing.key : ''), {method:editing?'PUT':'POST',body:JSON.stringify(input)});
       if (!signedIn || version !== epoch) return;
@@ -223,7 +285,7 @@
       $('save-state').textContent = 'Saved';
       void refreshQuizStatuses();
     } catch(error) { if(signedIn && version===epoch){message(error.message,true);$('save-state').textContent='Not saved';} }
-    finally { $('save-student').disabled=false; }
+    finally { saving = false; $('save-student').disabled = Boolean(current?.deletionPending); $('open-delete').disabled = false; }
   });
   $('sheet-paste').addEventListener('input',()=>{importRows=null;$('import-preview').hidden=true;$('import-names').replaceChildren();});
   $('preview-import').addEventListener('click',async()=>{

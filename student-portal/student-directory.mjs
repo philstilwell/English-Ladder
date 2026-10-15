@@ -6,6 +6,7 @@ const adminRecord = ({ passwordCredential, passwordCopy, ...record }) => ({ ...r
 export const STUDENT_ID = /^[a-z]{2,8}\d{2}(?:-[a-z0-9]{1,12})?$/;
 const RESERVED = new Set(['phil', 'www', 'admin', 'students', 'mail', 'api']);
 const norm = value => String(value || '').trim().toLowerCase();
+const fingerprint = async value => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(norm(value))))].map(b => b.toString(16).padStart(2, '0')).join('');
 const fail = message => { throw new Error(message); };
 const text = (value, limit = 200) => {
   if (value == null) return '';
@@ -129,8 +130,10 @@ export class StudentDirectory {
     return this.storage.transaction(async txn => {
       const records = await this.records(txn), previous = key ? records.find(r => r.key === key) : null;
       if (key && !previous) return json({ error: 'Student not found.' }, 404);
+      if (previous?.deletionPending) return json({ error: 'Deletion is pending. Retry deleting this account to finish.' }, 409);
       if (previous && input.revision !== previous.revision) return json({ error: 'This record changed in another window. Reload it before saving.' }, 409);
       const values = validateStudent(input);
+      if (values.studentId && await txn.get('deleted-id:' + values.studentId)) return json({ error: 'That student address was retired after deletion. Use a new address.' }, 409);
       if (previous?.activated && (previous.studentId !== values.studentId || values.status === 'draft')) return json({ error: 'An activated student keeps the same address. Use “Paused” to stop access and updates.' }, 400);
       const others = records.filter(r => r.key !== key);
       if (values.studentId && others.some(r => r.studentId === values.studentId)) return json({ error: 'That address is already assigned. Add a distinct suffix.' }, 409);
@@ -152,7 +155,7 @@ export class StudentDirectory {
   }
   async loginDetails(key) {
     const record = await this.storage.get('student:' + key);
-    if (!record) return json({ error:'Student not found.' }, 404);
+    if (!record || record.deletionPending) return json({ error:'Student not found.' }, 404);
     let password = null;
     if (record.passwordCredential) {
       if (record.passwordCopy) {
@@ -176,6 +179,7 @@ export class StudentDirectory {
     return this.storage.transaction(async txn => {
       const record = await txn.get('student:' + key);
       if (!record) return json({ error:'Student not found.' }, 404);
+      if (record.deletionPending) return json({ error:'Deletion is pending. Retry deleting this account to finish.' }, 409);
       if (input.revision !== record.revision) return json({ error:'This record changed. Reload it before saving.' }, 409);
       if (!record.passwordCredential || typeof input.password !== 'string' || input.password.length > 128 || !input.password || !await matchesStudentPassword(this.env, record.passwordCredential, key, input.password)) return json({ error:'The password does not match the current student login.' }, 400);
       if (input.password.toLowerCase() === this.env.TEACHER_PASSWORD?.toLowerCase()) return json({ error:'Use a separate student password.' }, 400);
@@ -183,6 +187,40 @@ export class StudentDirectory {
       await txn.put({ ['student:' + key]:{ ...record, passwordCopy, revision:record.revision + 1, updatedAt:new Date().toISOString() }, revision:(await txn.get('revision') || 0) + 1 });
       return json({ saved:true });
     });
+  }
+  async remove(key, input) {
+    if (!Number.isInteger(input?.revision) || typeof input.confirmation !== 'string' || input.confirmation.length > 220) return json({ error: 'Type the student ID shown in the confirmation window.' }, 400);
+    const confirmationHash = await fingerprint(input.confirmation);
+    const prepared = await this.storage.transaction(async txn => {
+      const record = await txn.get('student:' + key);
+      if (!record) {
+        const deleted = await txn.get('deleted-student:' + key);
+        return deleted?.revision === input.revision && deleted.confirmationHash === confirmationHash ? json({ deleted: true }) : json({ error: 'Student not found.' }, 404);
+      }
+      if (record.revision !== input.revision) return json({ error: 'This account changed in another window. Close this window and refresh the student list before deleting.' }, 409);
+      if (norm(input.confirmation) !== norm(record.studentId || record.firstName + ' ' + record.lastName)) return json({ error: 'The confirmation does not match. Type the student ID or name shown.' }, 400);
+      // Close access first. A failed cleanup remains visible and can be retried.
+      await txn.put({ ['student:' + key]: { ...record, status: 'paused', deletionPending: true }, revision: (await txn.get('revision') || 0) + 1 });
+      return record;
+    });
+    if (prepared instanceof Response) return prepared;
+    try {
+      if (prepared.studentId) {
+        if (!this.env.FEEDBACK_STORE) throw new Error('Unavailable');
+        const response = await this.env.FEEDBACK_STORE.get(this.env.FEEDBACK_STORE.idFromName(prepared.studentId)).fetch(new Request('https://feedback.internal/admin/delete-account', { method: 'POST' }));
+        if (!response.ok) throw new Error('Cleanup failed');
+      }
+      return await this.storage.transaction(async txn => {
+        // Keep only deletion receipts and fingerprints: no names or credentials.
+        await txn.put({ ['deleted-student:' + key]: { revision: input.revision, confirmationHash, deletedAt: new Date().toISOString() },
+          ...(prepared.studentId ? { ['deleted-id:' + prepared.studentId]: true } : {}),
+          ['deleted-import:' + await fingerprint(prepared.firstName + ' ' + prepared.lastName)]: true,
+          ...(prepared.source?.key ? { ['deleted-import:' + await fingerprint(prepared.source.key)]: true } : {}),
+          revision: (await txn.get('revision') || 0) + 1 });
+        await txn.delete('student:' + key);
+        return json({ deleted: true });
+      });
+    } catch { return json({ error: 'The site is closed, but deletion is not finished. Please retry Delete student account to finish removing its saved records.', deletionPending: true }, 503); }
   }
   async fetch(request) {
     await this.initialize();
@@ -194,17 +232,18 @@ export class StudentDirectory {
       if (loginDetails && request.method === 'PUT') return await this.restorePasswordCopy(loginDetails[1], await request.json());
       if ((path.startsWith('/account/') || path.startsWith('/integration-account/')) && request.method === 'GET') {
         const integration = path.startsWith('/integration-account/'), id = path.slice(integration ? 21 : 9);
-        const record = (await this.records()).find(r => r.studentId === id && (r.status === 'active' || integration && r.activated));
+        const record = (await this.records()).find(r => !r.deletionPending && r.studentId === id && (r.status === 'active' || integration && r.activated));
         return record ? json({ id: record.studentId, name: record.firstName.split(/\s+/)[0], nickname: record.nickname || record.firstName.split(/\s+/)[0],
           ...(record.passwordCredential ? { passwordCredential: record.passwordCredential, credentialAccountKey: record.key } : {}) }) : json({ error: 'Unknown account.' }, 404);
       }
       if (path === '/automation' && request.method === 'GET') {
-        const records = (await this.records()).filter(r => r.status === 'active' && r.zoomNames.length && r.startAfter);
+        const records = (await this.records()).filter(r => !r.deletionPending && r.status === 'active' && r.zoomNames.length && r.startAfter);
         return json({ revision: await this.storage.get('revision'), students: Object.fromEntries(records.map(r => [r.studentId,
           { firstName: r.firstName.split(/\s+/)[0], zoomNames: r.zoomNames, timeZone: r.lessonTimeZone, startAfter: r.startAfter }])) });
       }
       if (path === '/students' && request.method === 'POST') return await this.save(await request.json());
       if (/^\/students\/[\w-]{36}$/.test(path) && request.method === 'PUT') return await this.save(await request.json(), path.slice(10));
+      if (/^\/students\/[\w-]{36}$/.test(path) && request.method === 'DELETE') return await this.remove(path.slice(10), await request.json());
       if (['/import/preview', '/import'].includes(path) && request.method === 'POST') {
         const { rows, reconcileExcluded } = await request.json(), inspected = inspectStudentRows(rows), parsed = inspected.students;
         if (path === '/import/preview') return json({ students: parsed, excluded: inspected.excluded.length });
@@ -224,7 +263,12 @@ export class StudentDirectory {
           }
           const keys = new Set(existing.map(r => r.source?.key).filter(Boolean));
           const names = new Set(existing.map(r => norm(r.firstName + ' ' + r.lastName)));
-          const additions = parsed.filter(r => { if (keys.has(r.source.key) || names.has(norm(r.firstName + ' ' + r.lastName))) return false; keys.add(r.source.key); names.add(norm(r.firstName + ' ' + r.lastName)); return true; });
+          const additions = [];
+          for (const r of parsed) {
+            const name = norm(r.firstName + ' ' + r.lastName);
+            if (keys.has(r.source.key) || names.has(name) || await txn.get('deleted-import:' + await fingerprint(name)) || await txn.get('deleted-import:' + await fingerprint(r.source.key))) continue;
+            keys.add(r.source.key); names.add(name); additions.push(r);
+          }
           if (existing.length + additions.length > 1000) return json({ error: 'Too many students.' }, 400);
           const records = additions.map(r => ({ ...r, key: crypto.randomUUID(), revision: 1, activated: false, startAfter: null,
             lessonTimeZone: 'America/New_York', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() }));

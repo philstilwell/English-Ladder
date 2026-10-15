@@ -6,7 +6,7 @@ import worker from '../worker.mjs';
 import { StudentDirectory, directoryStudents, parseStudentRows, inspectStudentRows, validateStudent } from '../student-directory.mjs';
 import { QuizAutomation } from '../server-quiz-automation.mjs';
 import { env as baseEnv, login, call, origin } from './harness.mjs';
-import { assessment, quiz } from './fixture.mjs';
+import { feedback, assessment, quiz } from './fixture.mjs';
 
 const admin = 'https://phil.englishladder.com';
 const example = { firstName:'Morgan', lastName:'Testperson', nickname:'Morgan the Explorer', studentId:'mt26', status:'active', zoomNames:['Morgan-Zoom'], timeZone:'Asia/Tokyo', email:'private@example.test', notes:'Private administrative note', hoursAuthorized:40 };
@@ -186,7 +186,7 @@ test('directory changes retry unmatched notes and use new Zoom names on the next
 const html=readFileSync(new URL('../public/admin.html',import.meta.url),'utf8'),script=readFileSync(new URL('../public/admin.js',import.meta.url),'utf8');
 const fixture={...example,key:'11111111-1111-4111-8111-111111111111',revision:1,activated:true,startAfter:'2026-10-14T12:00:00Z'};
 const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1));};
-function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.fetch=async(path,opts)=>{
+function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
   return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
 };dom.window.eval(script);return dom;}
@@ -379,4 +379,110 @@ test('manual copy fallback stays private and clears on leaving; inactive or unav
   w.location.hash='#students';await flush();assert.equal(d.getElementById('copy-login-text').value,'');assert.equal(d.getElementById('copy-fallback').hidden,true);
   data={...loginFixture,active:false};d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('copy-login-details').disabled,true);
   data={...loginFixture,password:null,message:'No copy available.'};d.getElementById('refresh-login-details').click();await flush();assert.equal(d.getElementById('copy-login-details').disabled,true);assert.equal(d.getElementById('reveal-password').disabled,true);assert.match(d.getElementById('login-details-status').textContent,/No copy available/);dom.window.close();
+});
+
+test('paused accounts are collapsed below the main list, remain editable, and are found by search',async()=>{
+  const paused={...fixture,key:'22222222-2222-4222-8222-222222222222',firstName:'Taylor',studentId:'tt26',status:'paused'};
+  const dom=browser(path=>path==='/api/admin/students'?Response.json({students:[fixture,paused]}):undefined);await flush();const w=dom.window,d=w.document;
+  const section=d.getElementById('paused-students');assert.equal(section.open,false);assert.equal(section.hidden,false);
+  assert.match(d.getElementById('student-rows').textContent,/Morgan/);assert.doesNotMatch(d.getElementById('student-rows').textContent,/Taylor/);
+  assert.match(d.getElementById('paused-student-rows').textContent,/Taylor/);assert.equal(d.getElementById('paused-count').textContent,'1');
+  section.open=true;await flush();assert.equal(section.open,true);
+  const search=d.getElementById('search');search.value='Taylor';search.dispatchEvent(new w.Event('input'));
+  assert.equal(section.open,true);assert.equal(d.getElementById('main-student-table').hidden,true);
+  d.querySelector('#paused-student-rows .student-name').click();await flush();assert.equal(d.getElementById('status').value,'paused');
+  d.getElementById('sign-out').click();await flush();assert.equal(section.open,false);assert.equal(d.getElementById('paused-student-rows').textContent,'');dom.window.close();
+});
+
+test('deletion requires a current administrator session, exact origin, revision, and typed confirmation',async()=>{
+  const {e}=environment(),cookie=await access(e),saved=(await list(e,cookie)).find(s=>s.studentId==='ab26');
+  const path='/api/admin/students/'+saved.key,body={revision:saved.revision,confirmation:'ab26'};
+  const student=await login(e),teacher=await login(e,'teacher-test');
+  for(const unauthorized of ['',student.cookie,teacher.cookie])assert.equal((await adminCall(e,path,write(unauthorized,body,'DELETE'))).status,401);
+  const cross=write(cookie,body,'DELETE');cross.headers.Origin='https://elsewhere.test';assert.equal((await adminCall(e,path,cross)).status,403);
+  assert.equal((await call(e,path,{...write(student.cookie,body,'DELETE'),headers:{Cookie:student.cookie,Origin:origin}})).status,405);
+  for(const invalid of [{revision:1},{revision:1,confirmation:'wrong'},null])assert.equal((await adminCall(e,path,write(cookie,invalid,'DELETE'))).status,400);
+  assert.equal((await adminCall(e,path,write(cookie,{...body,revision:999},'DELETE'))).status,409);
+  assert.equal((await list(e,cookie)).length,2);
+});
+
+test('deletion removes only the confirmed account and all its saved learning records, blocks old sessions, and retires the address',async()=>{
+  const {e,directory}=environment(),cookie=await access(e);
+  const created=await adminCall(e,'/api/admin/students',write(cookie,{...example,newPassword:'fictional-test',confirmPassword:'fictional-test'}));
+  const saved=(await created.json()).student,path='/api/admin/students/'+saved.key,body={revision:saved.revision,confirmation:' MT26 '};
+  const student=await login(e,'fictional-test','https://mt26.englishladder.com'),teacher=await login(e,'teacher-test','https://mt26.englishladder.com');
+  const store=e.FEEDBACK_STORE.get('mt26'),other=e.FEEDBACK_STORE.get('ab26');
+  await store.storage.put({'assessment:current':{...assessment,quiz},'feedback:one':feedback,'quiz:attempt:one':{private:'answers'},'quiz:active':'one',...Object.fromEntries(Array.from({length:270},(_,i)=>['archive:'+i,{private:'history'}]))});
+  await other.storage.put({'untouched':{private:'other student'}});
+  const response=await adminCall(e,path,write(cookie,body,'DELETE'));assert.equal(response.status,200);assert.deepEqual(await response.json(),{deleted:true});
+  assert.equal(await directory.storage.get('student:'+saved.key),undefined);
+  assert.deepEqual([...await store.storage.list()], [['account:deleted',true]]);
+  assert.deepEqual(await other.storage.get('untouched'),{private:'other student'});
+  assert.equal((await list(e,cookie)).length,2);assert.equal((await adminCall(e,path+'/login-details',{headers:{Cookie:cookie}})).status,404);
+  for(const session of [student,teacher])assert.equal((await call(e,'/api/session',{headers:{Cookie:session.cookie}},'https://mt26.englishladder.com')).status,404);
+  assert.equal((await directory.fetch(new Request('https://directory.internal/integration-account/mt26'))).status,404);
+  assert.equal((await directoryStudents(e)).students.mt26,undefined);
+  assert.equal((await adminCall(e,path,write(cookie,body,'DELETE'))).status,200,'lost response can be retried safely');
+  assert.equal((await adminCall(e,path,write(cookie,{...body,confirmation:'someone-else'},'DELETE'))).status,404);
+  assert.equal((await adminCall(e,'/api/admin/students',write(cookie,example))).status,409,'address cannot be reused');
+  assert.doesNotMatch(JSON.stringify([...await directory.storage.list({prefix:'deleted-'})]),/Testperson|private@example|fictional-test|passwordCredential/);
+  for(const [route,method]of [['/learning-import','POST'],['/automation/publish','POST'],['/assessment','PUT'],['/'+feedback.id,'PUT'],['/quiz/answer','POST'],['/automation/context','GET']]){
+    assert.equal((await store.fetch(new Request('https://feedback.internal'+route,{method,...(method!=='GET'?{body:'{}'}:{})}))).status,410);
+  }
+  const rows=[['','Course Name','Learner/Group Name','Name','Ends On'],['FALSE','English','Morgan Testperson','Morgan Testperson','']];
+  const imported=await adminCall(e,'/api/admin/import',write(cookie,{rows}));assert.equal(imported.status,200);assert.equal((await imported.json()).imported,0,'spreadsheet cannot resurrect a deleted account');
+});
+
+test('failed deletion closes access, blocks edits, stays visible as paused, and safely resumes cleanup',async()=>{
+  const {e,directory}=environment(),cookie=await access(e),saved=(await list(e,cookie)).find(s=>s.studentId==='ab26');
+  const store=e.FEEDBACK_STORE.get('ab26'),original=store.storage.delete;let fail=true;
+  await store.storage.put({'feedback:one':feedback});store.storage.delete=async key=>{if(fail)throw Error('Fictional storage outage');return original(key);};
+  const path='/api/admin/students/'+saved.key,body={revision:saved.revision,confirmation:'ab26'};
+  const first=await adminCall(e,path,write(cookie,body,'DELETE'));assert.equal(first.status,503);assert.equal((await first.json()).deletionPending,true);
+  const pending=(await list(e,cookie)).find(s=>s.key===saved.key);assert.equal(pending.status,'paused');assert.equal(pending.deletionPending,true);
+  assert.equal((await directory.fetch(new Request('https://directory.internal/account/ab26'))).status,404);
+  assert.equal((await directory.fetch(new Request('https://directory.internal/integration-account/ab26'))).status,404);
+  assert.equal((await adminCall(e,path,write(cookie,{...pending,lastName:'Brown'},'PUT'))).status,409);
+  assert.equal((await adminCall(e,path+'/login-details',write(cookie,{revision:pending.revision,password:'student-test'},'PUT'))).status,409);
+  assert.equal((await adminCall(e,path+'/login-details',{headers:{Cookie:cookie}})).status,404);
+  assert.equal((await directoryStudents(e)).students.ab26,undefined);
+  fail=false;assert.equal((await adminCall(e,path,write(cookie,body,'DELETE'))).status,200);assert.deepEqual([...await store.storage.list()],[['account:deleted',true]]);
+});
+
+test('drafts without an address require their name and can be removed without accessing learning storage',async()=>{
+  const {e}=environment(),cookie=await access(e);const saved=(await (await adminCall(e,'/api/admin/students',write(cookie,{...example,studentId:'',status:'draft',zoomNames:[]}))).json()).student;
+  e.FEEDBACK_STORE.get=()=>{throw Error('Draft has no learning store');};
+  assert.equal((await adminCall(e,'/api/admin/students/'+saved.key,write(cookie,{revision:saved.revision,confirmation:'Morgan Testperson'},'DELETE'))).status,200);
+});
+
+test('queued publishing cannot restore records after deletion begins',async()=>{
+  const e=baseEnv(),store=e.FEEDBACK_STORE.get('fictional'),original=store.storage.transaction;
+  let release,entered;const waiting=new Promise(r=>entered=r);let hold=true;
+  store.storage.transaction=async fn=>{if(hold){hold=false;entered();await new Promise(r=>release=r);}return original(fn);};
+  const publish=store.fetch(new Request('https://feedback.internal/'+feedback.id,{method:'PUT',body:JSON.stringify(feedback)}));
+  await waiting;assert.equal((await store.fetch(new Request('https://feedback.internal/admin/delete-account',{method:'POST'}))).status,200);
+  release();assert.equal((await publish).status,410);assert.deepEqual([...await store.storage.list()],[['account:deleted',true]]);
+});
+
+test('delete window requires typed confirmation, cancels without requests, prevents double submission, and clears after success',async()=>{
+  let deletes=0,resolveDelete;
+  const dom=browser((path,opts)=>{if(opts?.method==='DELETE'){deletes++;assert.equal(path,'/api/admin/students/'+fixture.key);assert.deepEqual(JSON.parse(opts.body),{revision:1,confirmation:'MT26'});return new Promise(r=>resolveDelete=r);}});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+  $('open-delete').click();assert.equal($('delete-dialog').open,true);assert.match($('delete-student-name').textContent,/Morgan Testperson/);assert.equal($('confirm-delete').disabled,true);
+  $('delete-form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.equal(deletes,0);
+  $('cancel-delete').click();assert.equal($('delete-dialog').open,false);assert.equal(deletes,0);
+  $('open-delete').click();$('delete-dialog').dispatchEvent(new w.Event('cancel',{cancelable:true}));assert.equal($('delete-dialog').open,false);
+  $('open-delete').click();$('delete-confirmation').value='wrong';$('delete-confirmation').dispatchEvent(new w.Event('input'));assert.equal($('confirm-delete').disabled,true);
+  $('delete-confirmation').value='MT26';$('delete-confirmation').dispatchEvent(new w.Event('input'));assert.equal($('confirm-delete').disabled,false);
+  $('confirm-delete').click();$('delete-form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.equal(deletes,1);assert.equal($('cancel-delete').disabled,true);
+  resolveDelete(Response.json({deleted:true}));await flush();assert.equal($('delete-dialog').open,false);assert.equal($('delete-confirmation').value,'');assert.equal($('delete-student-name').textContent,'');assert.equal(d.querySelectorAll('.student-name').length,0);assert.match($('message').textContent,/deleted/);
+  w.location.hash='#register';await flush();assert.equal($('delete-account-panel').hidden,true);w.close();
+});
+
+test('unfinished deletion can be retried, and session expiry clears the confirmation window',async()=>{
+  let tries=0;const dom=browser((path,opts)=>opts?.method==='DELETE'?Response.json(++tries===1?{error:'Cleanup not finished. Retry.',deletionPending:true}:{error:'Please sign in.'},{status:tries===1?503:401}):undefined);
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();$('open-delete').click();
+  $('delete-confirmation').value='mt26';$('delete-confirmation').dispatchEvent(new w.Event('input'));$('confirm-delete').click();await flush();
+  assert.match($('delete-error').textContent,/Retry/);assert.equal($('save-student').disabled,true);assert.equal($('confirm-delete').disabled,false);assert.equal($('status').value,'paused');
+  $('confirm-delete').click();await flush();assert.equal(tries,2);assert.equal($('delete-dialog').open,false);assert.equal($('delete-student-name').textContent,'');assert.equal($('delete-confirmation').value,'');assert.equal($('admin-view').hidden,true);w.close();
 });

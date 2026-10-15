@@ -82,6 +82,7 @@ export async function handleQuiz(storage, request) {
   // Transactions prevent simultaneous tabs and network retries from replacing
   // a first answer or creating two active attempts.
   return storage.transaction(async txn => {
+    if (await txn.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     let attempt = await txn.get(`quiz:attempt:${attemptId}`);
     if (!attempt) {
       if (questionIndex !== 0) return conflict();

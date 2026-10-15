@@ -173,7 +173,7 @@ async function handleAdmin(request, env) {
       const page = records.slice(0, 20), statuses = {};
       for (let offset = 0; offset < page.length; offset += 4) {
         await Promise.all(page.slice(offset, offset + 4).map(async student => {
-          if (!student.activated || !student.studentId) { statuses[student.key] = { state: 'no_quiz' }; return; }
+          if (student.deletionPending || !student.activated || !student.studentId) { statuses[student.key] = { state: 'no_quiz' }; return; }
           try {
             if (!env.FEEDBACK_STORE) throw new Error('Store unavailable');
             const response = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/quiz-status'));
@@ -192,7 +192,7 @@ async function handleAdmin(request, env) {
     const loginDetails = /^\/students\/[\w-]{36}\/login-details$/.test(path);
     if (!url.pathname.startsWith('/api/admin/') || !['/students', '/import', '/import/preview'].includes(path) && !/^\/students\/[\w-]{36}$/.test(path) && !loginDetails) return json({ error: 'Page not found.' }, 404);
     if (loginDetails && (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site')) return json({ error:'Please open this account from your administrator page.' }, 403);
-    const method = loginDetails ? ['GET', 'PUT'] : path === '/students' ? ['GET', 'POST'] : path.startsWith('/students/') ? ['PUT'] : ['POST'];
+    const method = loginDetails ? ['GET', 'PUT'] : path === '/students' ? ['GET', 'POST'] : path.startsWith('/students/') ? ['PUT', 'DELETE'] : ['POST'];
     if (!method.includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
     let body;
     if (request.method !== 'GET') {

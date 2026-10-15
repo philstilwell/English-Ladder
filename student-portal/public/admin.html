@@ -22,9 +22,10 @@
       <div class="summary-grid"><article><span class="summary-label">Active sites</span><strong id="active-count">0</strong></article><article><span class="summary-label">Draft accounts</span><strong id="draft-count">0</strong></article><article class="schedule-card"><span class="summary-label">Automatic lesson updates</span><strong>1 a.m. Eastern</strong><span id="schedule-state">Checking server status…</span><span id="last-check"></span></article></div>
       <div class="list-tools"><div><label for="search">Find a student</label><input id="search" type="search" placeholder="Name, Zoom name, or student address"></div><div><label for="filter">Show</label><select id="filter"><option value="all">All students</option><option value="active">Active sites</option><option value="draft">Draft accounts</option><option value="paused">Paused accounts</option></select></div><button id="refresh" class="secondary-button">Refresh</button></div>
       <p class="field-note" id="list-count"></p>
-      <div class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="student-rows"></tbody></table></div>
+      <div id="main-student-table" class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="student-rows"></tbody></table></div>
       <p id="empty-list" class="empty-list" hidden>No students match this view.</p>
       <p class="directory-note">Latest quiz shows the student’s progress on the quiz currently assigned. Teacher previews do not count. Use Refresh to check for new answers. Full names, course records, and quiz status stay private here.</p>
+      <details id="paused-students" class="paused-students" hidden><summary>Paused students <span id="paused-count" class="status-pill">0</span><span class="accordion-hint">Open to view or edit</span></summary><div class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="paused-student-rows"></tbody></table></div></details>
     </section>
     <section id="edit-view" hidden>
       <a href="#students" class="back-link">← All students</a>
@@ -67,6 +68,11 @@
         <fieldset><legend>Your private notes</legend><label for="notes" class="visually-hidden">Private notes</label><textarea id="notes" name="notes" rows="4" maxlength="4000"></textarea></fieldset>
         <div class="form-actions"><button id="save-student" class="primary-button" type="submit">Save student</button><a href="#students" class="secondary-button">Back to students</a><span id="save-state" role="status"></span></div>
       </form>
+      <section id="delete-account-panel" class="delete-account-panel" aria-labelledby="delete-account-title" hidden>
+        <h2 id="delete-account-title">Delete student account</h2>
+        <p id="delete-account-note">Permanently remove this account and its saved learning records. To keep the records and stop access, choose “Paused” above instead.</p>
+        <button id="open-delete" class="danger-button" type="button">Delete student account…</button>
+      </section>
     </section>
     <section id="import-view" hidden>
       <a href="#students" class="back-link">← All students</a><div class="page-heading"><div><p class="eyebrow">PRIVATE SPREADSHEET IMPORT</p><h1>Bring in student details</h1><p>Copy columns C–Q from “New-Students”, including the headings and the checkbox column, then paste them below.</p></div></div>
@@ -75,5 +81,17 @@
       <div id="import-preview" hidden><h2 id="import-count"></h2><ul id="import-names"></ul><p>Review first and last names on each account before activation, especially names with several parts.</p><button id="confirm-import" class="primary-button">Import as drafts</button></div>
     </section>
   </div>
-</main><footer class="page-footer"><span>English Ladder · Private administration</span><span>phil.englishladder.com</span></footer>
+</main>
+<dialog id="delete-dialog" aria-labelledby="delete-dialog-title" aria-describedby="delete-description">
+  <form id="delete-form">
+    <p class="eyebrow">PERMANENT CHANGE</p><h2 id="delete-dialog-title">Delete student account?</h2>
+    <p id="delete-student-name" class="delete-student-name"></p>
+    <p id="delete-description">This removes the account, password, feedback, assessments, quizzes, and saved quiz results. The student’s site closes and its address cannot be reused. This cannot be undone here. Original Zoom transcripts and your spreadsheet stay in place.</p>
+    <label for="delete-confirmation">To confirm, type <strong id="delete-confirmation-label"></strong></label>
+    <input id="delete-confirmation" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="220" required>
+    <p id="delete-error" role="alert"></p>
+    <div class="delete-actions"><button id="cancel-delete" class="secondary-button" type="button" autofocus>Cancel</button><button id="confirm-delete" class="danger-button" type="submit" disabled>Delete account permanently</button></div>
+  </form>
+</dialog>
+<footer class="page-footer"><span>English Ladder · Private administration</span><span>phil.englishladder.com</span></footer>
 </body></html>

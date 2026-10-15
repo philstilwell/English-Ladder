@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive"><title>Phil’s students · English Ladder</title>
   <link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/portal.css"><link rel="stylesheet" href="/admin.css">
-  <script src="/business-terms.js" defer></script><script src="/admin.js" defer></script>
+  <script src="/business-terms.js" defer></script><script src="/grammar-practice.js" defer></script><script src="/admin.js" defer></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -63,6 +63,13 @@
         <button id="load-terms-questions" class="secondary-button" type="button">Load questions list</button>
         <p id="terms-questions-status" role="status"></p>
         <div id="terms-questions-content"></div>
+      </section>
+      <section id="grammar-questions-panel" class="cefr-panel" aria-labelledby="grammar-questions-title" hidden>
+        <h2 id="grammar-questions-title">Grammar practice · Questions list</h2>
+        <p class="field-note">Open an item to discuss it during a lesson. These are the student’s saved questions. Only the student can mark items finished or remove them from the list.</p>
+        <button id="load-grammar-questions" class="secondary-button" type="button">Load questions list</button>
+        <p id="grammar-questions-status" role="status"></p>
+        <div id="grammar-questions-content"></div>
       </section>
       <form id="student-form">
         <fieldset><legend>Student &amp; site</legend><p class="field-note">Students see their first name and nickname. Their last name stays here.</p><div class="form-grid">
@@ -148,8 +155,9 @@
         </dl></article>
         <article class="technical-card"><h2>Grammar practice</h2><dl>
           <div><dt>Question source</dt><dd>A copy of the 900 ranked items from the template spreadsheet’s Grammar tab, imported October 15, 2026. The original order, questions, choices, and answer key are preserved. Student comments, learned-item checkboxes, and AI responses are not imported. The sheet is not fetched during practice; future content changes need a new import.</dd></div>
-          <div><dt>Simple self-study</dt><dd>Students see ten items at a time and can jump to any group. Checking “Show answer” replaces the blanks with the source answer and shows the completed sentence in the logo’s blue. Unchecking restores the original item and normal text color. This activity has no score, submission, or saved results. Teacher previews can use it too.</dd></div>
-          <div><dt>Privacy and cost</dt><dd>Exercise content is available after sign-in. Answer reveals and the selected group stay only on the open page and reset when leaving the activity, reloading, or signing out. They are never sent to the server, Google, or an AI service, and are not saved in browser storage. Only the Account menu-visibility preference is saved. No new paid service or AI call is required.</dd></div>
+          <div><dt>Simple self-study</dt><dd>Students see ten items at a time and can jump to any group. Checking “Show answer” replaces the blanks with the source answer and shows the completed sentence in the logo’s blue. Unchecking restores the original item and normal text color. This activity has no score or answer submission. Teacher previews can use it too.</dd></div>
+          <div><dt>Finished and Questions</dt><dd>Each item has two buttons. Finished gives it a grey background. Questions adds it to the student’s Questions list, with links back to the exact items. Both choices are saved privately and can be undone independently. The same list is available in the Grammar practice panel on the administrator account page, including for paused students. Teacher views can read choices but cannot change them. Grammar choices are separate from Business terms.</dd></div>
+          <div><dt>Privacy and cost</dt><dd>Only Finished and Questions choices, update times, and save revisions are stored, alongside existing menu visibility preferences. Answers, answer reveals, and the selected group are not saved. Loaded content clears when leaving, reloading, signing out, or the session expires. Saved choices remain until changed or the account is deleted. No records go to browser storage, Google, or AI, and these choices do not affect CEFR or lesson quizzes. No new paid service or AI call is required; ordinary hosting and storage allowances apply.</dd></div>
         </dl></article>
         <article class="technical-card"><h2>Business terms</h2><dl>
           <div><dt>Question source</dt><dd>Imported October 15, 2026 from the template spreadsheet’s New BTs tab. The activity uses 2,958 complete exercises, preserving their original order and item numbers. Each has three sentences, six numbered blanks, and six alphabetical options. Repeated words stay repeated, and the answer key keeps the correct capitalization.</dd></div>

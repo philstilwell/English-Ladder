@@ -882,7 +882,7 @@
     if (!authenticated || part !== 'activities') return;
     const activity = extra === undefined && activityChoices?.visibleActivities.includes(id) && activityChoices.activities.find(a => a.id === id);
     if (activity?.id === 'english-road') roadPractice.open(teacherMode); else roadPractice.clear();
-    if (activity?.id === 'grammar-practice') grammarPractice.open(); else grammarPractice.clear();
+    if (activity?.id === 'grammar-practice') grammarPractice.open(teacherMode); else grammarPractice.clear();
     if (activity?.id === 'business-terms') businessTerms.open(teacherMode); else businessTerms.clear();
     $('activity-title').textContent = activity ? activity.name : 'Activities';
     $('activity-message').textContent = activity ? activity.description : !activityChoices

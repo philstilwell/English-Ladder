@@ -5,12 +5,13 @@ import { nightlyDate } from './server-quiz-automation.mjs';
 export { QuizAutomation } from './server-quiz-automation.mjs';
 import { directoryRequest } from './student-directory.mjs';
 import { matchesStudentPassword } from './student-password.mjs';
+import grammarBank from './grammar-bank.json' with { type: 'json' };
 export { StudentDirectory } from './student-directory.mjs';
 
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
-const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/road-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
+const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/road-practice.js', '/grammar-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
 const SECURITY_HEADERS = {
   'Cache-Control': 'no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -330,6 +331,14 @@ async function handle(request, env) {
     if (!body) return json({ error: 'Please check the learning records.' }, 400);
     if (!env.FEEDBACK_STORE) return json({ error: 'Learning records are temporarily unavailable.' }, 503);
     return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/learning-import', { method: 'POST', body: JSON.stringify(body) }));
+  }
+
+  if (url.pathname === '/api/grammar-practice') {
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    if (request.method !== 'GET') return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET' });
+    // Shared exercise content only. No learner answers, attempts, or progress writes.
+    return json({ items: grammarBank.items });
   }
 
   if (url.pathname.startsWith('/api/road/')) {

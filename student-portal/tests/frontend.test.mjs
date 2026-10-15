@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {JSDOM} from 'jsdom';
 import {feedback,assessment,quiz} from './fixture.mjs';
 import {seedQuiz,call,origin} from './harness.mjs';
+import grammarBank from '../grammar-bank.json' with { type: 'json' };
 const html=readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
 const script=readFileSync(new URL('../public/portal.js',import.meta.url),'utf8');
 const second={...feedback,id:'2026-09-01-2057',startedAt:'2026-09-02T00:57:01Z',title:'Earlier English lesson'};
@@ -23,7 +24,8 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/feedback')return reply({sessions:[feedback,second],nextCursor:null});
   return reply(path.endsWith(second.id)?second:feedback);
  };
- w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
+ w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));
+ w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
 }
 test('deep links open the selected page and show only student-safe content',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#feedback/'+second.id);await flush();
@@ -518,6 +520,89 @@ test('failed activity loading never substitutes defaults and can retry; expiry c
 });
 
 const roadSettings = { ...settingsFixture, activities: [{ id:'english-road', name:'English Road Practice', description:'Practice grammar and words.' }, ...settingsFixture.activities], visibleActivities:['english-road'] };
+const grammarSettings = { ...settingsFixture, activities: [{ id:'grammar-practice', name:'Grammar practice', description:'Your practice is not saved.' }, ...settingsFixture.activities], visibleActivities:['grammar-practice'] };
+const grammarRoute = origin + '/#activities/grammar-practice';
+
+test('grammar reveals and hides answers, reaches every item and never saves practice', async () => {
+  const calls=[];
+  const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET'});return path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?reply({items:grammarBank.items}):null;},grammarRoute);
+  await flush();const w=dom.window,d=w.document,root=d.getElementById('grammar-practice');
+  w.Storage.prototype.setItem=()=>{throw Error('Practice must not write browser storage');};
+  assert.equal(d.querySelector('#activities-submenu a[aria-current]').textContent,'Grammar practice');
+  assert.equal(root.querySelectorAll('.grammar-item').length,10);
+  assert.equal(root.querySelectorAll('input:checked').length,0);
+  const count=calls.length,checkbox=root.querySelector('input'),answer=d.getElementById(checkbox.getAttribute('aria-controls'));
+  assert.equal(answer.textContent,grammarBank.items[0].prompt);
+  checkbox.click();assert.equal(answer.textContent,'Tom is much more intelligent than Mike.');assert(answer.parentElement.classList.contains('is-revealed'));
+  checkbox.click();assert.equal(answer.textContent,grammarBank.items[0].prompt);assert(!answer.parentElement.classList.contains('is-revealed'));
+  const picker=d.getElementById('grammar-group');picker.value='89';picker.dispatchEvent(new w.Event('change'));
+  assert.equal(root.querySelector('ol').start,891);assert.equal(root.querySelectorAll('.grammar-item').length,10);
+  assert.equal(root.querySelector('.grammar-item:last-child .grammar-prompt q').textContent,grammarBank.items[899].prompt);
+  assert.equal([...root.querySelectorAll('button')].find(b=>b.textContent==='Next 10').disabled,true);
+  assert.equal(d.activeElement.className,'grammar-heading');
+  [...root.querySelectorAll('button')].find(b=>b.textContent==='Previous 10').click();assert.equal(root.querySelector('ol').start,881);
+  assert.equal(calls.length,count);assert(calls.every(c=>c.method==='GET'));
+  root.querySelector('input').click();w.location.hash='overview';await flush();assert.equal(root.textContent,'');
+  w.location.hash='activities/grammar-practice';await flush();assert.equal(root.querySelector('ol').start,1);assert.equal(root.querySelectorAll('input:checked').length,0);
+  root.querySelector('input').click();w.dispatchEvent(new w.Event('pagehide'));assert.equal(root.textContent,'');assert.equal(root.hidden,true);
+  assert.equal(w.localStorage.length,0);assert.equal(w.sessionStorage.length,0);dom.window.close();
+});
+
+test('grammar completes single blanks, multiple blanks and sentence items, and restores all 900 originals', async () => {
+  const dom=setup(path=>path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?reply({items:grammarBank.items}):null,grammarRoute);
+  await flush();const w=dom.window,d=w.document;
+  const examples=new Map([
+    [5,'This is the end of my speech. Are there any questions?'],
+    [116,'It is almost 2 pm now.'],
+    [134,'I used to live in Osaka several years ago.'],
+    [249,'I hope to live a long life.'],
+    [316,'If your parents want you to clean your room, you had better do it.'],
+    [463,'I will have been working here ten years come Monday.'],
+  ]);
+  let checked=0;
+  for(let group=0;group<90;group++){
+    const picker=d.getElementById('grammar-group');picker.value=String(group);picker.dispatchEvent(new w.Event('change'));
+    for(const checkbox of d.querySelectorAll('#grammar-practice input')){
+      const item=grammarBank.items[checked++],sentence=d.getElementById(checkbox.getAttribute('aria-controls'));
+      checkbox.click();assert.doesNotMatch(sentence.textContent,/_+|undefined|\{|\}/);assert(sentence.parentElement.classList.contains('is-revealed'));
+      if(examples.has(item.number))assert.equal(sentence.textContent,examples.get(item.number));
+      checkbox.click();assert.equal(sentence.textContent,item.prompt);assert(!sentence.parentElement.classList.contains('is-revealed'));
+    }
+  }
+  assert.equal(checked,900);w.close();
+});
+
+test('grammar obeys saved visibility and renders source strings safely in student and teacher views', async () => {
+  let requests=0;
+  const hidden=setup(path=>path==='/api/account'?reply({...grammarSettings,visibleActivities:[]}):path==='/api/grammar-practice'?(requests++,reply({items:grammarBank.items})):null,grammarRoute);
+  await flush();assert.equal(requests,0);assert.equal(hidden.window.document.getElementById('grammar-practice').hidden,true);hidden.window.close();
+  const text='<img src=x onerror=alert(1)>',item={number:1,prompt:text,answer:text,options:[text,'two','three','four']};
+  const teacher=setup(path=>path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?reply({items:[item]}):null,grammarRoute,'teacher');
+  await flush();const root=teacher.window.document.getElementById('grammar-practice');root.querySelector('input').click();
+  assert(root.textContent.includes(text));assert.equal(root.querySelector('img'),null);assert.equal(root.querySelector('[onerror]'),null);teacher.window.close();
+});
+
+test('grammar discards late loads after navigation, sign-out and page hide', async () => {
+  for (const action of ['navigation','sign-out','pagehide']) {
+    let resolve;
+    const dom=setup(path=>path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?new Promise(r=>{resolve=r;}):null,grammarRoute);
+    await flush();const w=dom.window;
+    if(action==='navigation')w.location.hash='account';
+    else if(action==='sign-out')w.document.getElementById('logout').click();
+    else w.dispatchEvent(new w.Event('pagehide'));
+    await flush();resolve(reply({items:grammarBank.items}));await flush();
+    assert.equal(w.document.getElementById('grammar-practice').textContent,'');assert.equal(w.document.getElementById('grammar-practice').hidden,true);w.close();
+  }
+});
+
+test('grammar load errors can retry, empty data fails clearly, and expiry clears the view', async () => {
+  let failure=true;
+  const dom=setup(path=>path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?(failure?reply({items:[]}):reply({items:grammarBank.items})):null,grammarRoute);
+  await flush();const root=dom.window.document.getElementById('grammar-practice');assert.match(root.textContent,/could not load/);
+  failure=false;root.querySelector('button').click();await flush();assert.equal(root.querySelectorAll('.grammar-item').length,10);dom.window.close();
+  const expiredDom=setup(path=>path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):null,grammarRoute);
+  await flush();assert.equal(expiredDom.window.document.getElementById('login-view').hidden,false);assert.equal(expiredDom.window.document.getElementById('grammar-practice').textContent,'');expiredDom.window.close();
+});
 const roadRoute = 'https://ab26.englishladder.com/#activities/english-road';
 const roadSubmit = dom => dom.window.document.querySelector('#road-practice form').dispatchEvent(new dom.window.Event('submit', { bubbles:true, cancelable:true }));
 const roadButton = (d, text) => [...d.querySelectorAll('#road-practice button')].find(b => b.textContent === text);

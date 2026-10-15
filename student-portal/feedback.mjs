@@ -1,5 +1,6 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
+import { validateCefr, cefrOverview } from './cefr.mjs';
 
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
 
@@ -117,6 +118,8 @@ export class FeedbackStore {
     if (id === 'admin/delete-account' && request.method === 'POST') return this.removeAccount();
     if (await this.storage.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
+    if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
+    if (id === 'admin/cefr' && request.method === 'GET') return json({ cefr: await this.storage.get('cefr:current') || null });
     if (id === 'learning-import' && request.method === 'POST') {
       const input = await request.json();
       let feedback, assessment, quizzes;
@@ -185,7 +188,7 @@ export class FeedbackStore {
           end = page.at(-1)[0];
         }
       }
-      return json({ assessment: await this.storage.get('assessment:current') || null, attempts, publishedSessions, sourceNotes });
+      return json({ assessment: await this.storage.get('assessment:current') || null, cefr: await this.storage.get('cefr:current') || null, attempts, publishedSessions, sourceNotes });
     }
     if (id === 'automation/publish' && request.method === 'POST') {
       const input = await request.json();
@@ -195,16 +198,21 @@ export class FeedbackStore {
         const current = await txn.get('assessment:current') || null;
         if (await txn.get('quiz:published:' + sessionId) || current?.quiz?.generatedForSession === sessionId) return json({ ok: true, duplicate: true });
         if (JSON.stringify(input.priorAssessment) !== JSON.stringify(current)) return json({ error: 'Assessment changed. Retry with the latest record.' }, 409);
-        let record, feedback;
+        let record, feedback, cefr;
         try {
           feedback = validateFeedback(input.feedback, sessionId);
           record = validateAssessment({ ...input.assessment, quiz: input.quiz });
           if (!record.sourceSessions.includes(sessionId)) throw new Error('Missing latest session');
+          if (input.cefr !== undefined) {
+            cefr = validateCefr(input.cefr);
+            if (cefr.latestSessionId !== sessionId || cefr.assessedOn !== record.assessedOn ||
+                cefr.sourceSessions?.some(id => !record.sourceSessions.includes(id))) throw new Error('Invalid CEFR source');
+          }
         } catch { return json({ error: 'Invalid learning record.' }, 400); }
         for (const sourceId of new Set([...record.sourceSessions, ...record.quiz.sourceSessions])) {
           if (sourceId !== sessionId && !(await txn.get('feedback:' + sourceId))?.source?.reviewedFullTranscript) return json({ error: 'Source unavailable.' }, 400);
         }
-        for (const ref of assessmentReferences(record)) {
+        for (const ref of [...assessmentReferences(record), ...(cefr?.evidence || [])]) {
           const source = ref.sessionId === sessionId ? feedback.source : (await txn.get('feedback:' + ref.sessionId)).source;
           if (ref.at < source.coverageStart || ref.at > source.coverageEnd) return json({ error: 'Invalid assessment evidence.' }, 400);
         }
@@ -218,6 +226,11 @@ export class FeedbackStore {
         };
         // An older delayed event is archived without replacing a newer lesson quiz.
         if (!current?.quiz?.generatedForSession || sessionId > current.quiz.generatedForSession) update['assessment:current'] = record;
+        if (cefr) {
+          const previousCefr = await txn.get('cefr:current') || null;
+          update['cefr:history:' + sessionId] = cefr;
+          if (!previousCefr || sessionId > previousCefr.latestSessionId) update['cefr:current'] = cefr;
+        }
         await txn.put(update);
         return json({ ok: true });
       });

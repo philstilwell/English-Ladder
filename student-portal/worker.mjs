@@ -162,27 +162,42 @@ async function handleAdmin(request, env) {
     const session = await readSession(request, env, account);
     if (!session || session.role !== 'teacher') return json({ error: 'Please sign in with your teacher password.' }, 401);
     if (url.pathname === '/api/session' && request.method === 'GET') return json({ role: 'teacher', administrator: true });
-    if (url.pathname === '/api/admin/quiz-status' && request.method === 'GET') {
+    if (['/api/admin/quiz-status', '/api/admin/cefr-status'].includes(url.pathname) && request.method === 'GET') {
+      const isCefr = url.pathname.endsWith('/cefr-status');
       const after = url.searchParams.get('after');
       if (after && !/^[0-9a-f-]{36}$/.test(after)) return json({ error: 'Invalid page.' }, 400);
       const directory = await directoryRequest(env, '/students');
-      if (!directory.ok) return json({ error: 'Quiz status is temporarily unavailable.' }, 503);
+      if (!directory.ok) return json({ error: 'Student status is temporarily unavailable.' }, 503);
       const records = (await directory.json()).students.sort((a, b) => a.key.localeCompare(b.key)).filter(s => !after || s.key > after);
       // Bound each request's fan-out, including on Workers' free plan. Keep the
       // student list usable if one account's private history is unavailable.
       const page = records.slice(0, 20), statuses = {};
       for (let offset = 0; offset < page.length; offset += 4) {
         await Promise.all(page.slice(offset, offset + 4).map(async student => {
-          if (student.deletionPending || !student.activated || !student.studentId) { statuses[student.key] = { state: 'no_quiz' }; return; }
+          if (student.deletionPending || !student.activated || !student.studentId) { statuses[student.key] = { state: isCefr ? 'pending' : 'no_quiz' }; return; }
           try {
             if (!env.FEEDBACK_STORE) throw new Error('Store unavailable');
-            const response = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/quiz-status'));
+            const response = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/' + (isCefr ? 'cefr-status' : 'quiz-status')));
             if (!response.ok) throw new Error('Status unavailable');
             statuses[student.key] = await response.json();
           } catch { statuses[student.key] = { state: 'unavailable' }; }
         }));
       }
       return json({ statuses, nextCursor: records.length > 20 ? page.at(-1).key : null });
+    }
+    const cefrAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/cefr$/.exec(url.pathname);
+    if (cefrAccount && request.method === 'GET') {
+      if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
+      const response = await directoryRequest(env, '/students');
+      if (!response.ok) return json({ error: 'Student records are temporarily unavailable.' }, 503);
+      const student = (await response.json()).students.find(s => s.key === cefrAccount[1]);
+      if (!student || student.deletionPending) return json({ error: 'Student not found.' }, 404);
+      if (!student.activated || !student.studentId) return json({ cefr: null });
+      try {
+        const result = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/cefr'));
+        if (!result.ok) throw new Error('Unavailable');
+        return json(await result.json());
+      } catch { return json({ error: 'The CEFR estimate is temporarily unavailable. Please try again.' }, 503); }
     }
     if (url.pathname === '/api/admin/automation' && request.method === 'GET') {
       if (!env.QUIZ_AUTOMATION) return json({ enabled: false, connected: false });

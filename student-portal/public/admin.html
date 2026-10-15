@@ -23,10 +23,10 @@
       <div class="summary-grid"><article><span class="summary-label">Active sites</span><strong id="active-count">0</strong></article><article><span class="summary-label">Draft accounts</span><strong id="draft-count">0</strong></article><article class="schedule-card"><span class="summary-label">Automatic lesson updates</span><strong>1 a.m. Eastern</strong><span id="schedule-state">Checking server status…</span><span id="last-check"></span></article></div>
       <div class="list-tools"><div><label for="search">Find a student</label><input id="search" type="search" placeholder="Name, Zoom name, or student address"></div><div><label for="filter">Show</label><select id="filter"><option value="all">All students</option><option value="active">Active sites</option><option value="draft">Draft accounts</option><option value="paused">Paused accounts</option></select></div><button id="refresh" class="secondary-button">Refresh</button></div>
       <p class="field-note" id="list-count"></p>
-      <div id="main-student-table" class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="student-rows"></tbody></table></div>
+      <div id="main-student-table" class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th>CEFR estimate</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="student-rows"></tbody></table></div>
       <p id="empty-list" class="empty-list" hidden>No students match this view.</p>
-      <p class="directory-note">Latest quiz shows the student’s progress on the quiz currently assigned. Teacher previews do not count. Use Refresh to check for new answers. Full names, course records, and quiz status stay private here.</p>
-      <details id="paused-students" class="paused-students" hidden><summary>Paused students <span id="paused-count" class="status-pill">0</span><span class="accordion-hint">Open to view or edit</span></summary><div class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="paused-student-rows"></tbody></table></div></details>
+      <p class="directory-note">Latest quiz shows the student’s progress on the quiz currently assigned. Teacher previews do not count. Use Refresh to check for new answers. CEFR estimates describe conversational English observed in transcripts; open a student’s account for the evidence and limits. These estimates and all directory records stay private here.</p>
+      <details id="paused-students" class="paused-students" hidden><summary>Paused students <span id="paused-count" class="status-pill">0</span><span class="accordion-hint">Open to view or edit</span></summary><div class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th>CEFR estimate</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="paused-student-rows"></tbody></table></div></details>
     </section>
     <section id="edit-view" hidden>
       <a href="#students" class="back-link">← All students</a>
@@ -42,6 +42,12 @@
         <div class="login-details-actions"><button id="copy-login-details" class="primary-button" type="button" disabled>Copy login details</button><button id="refresh-login-details" class="secondary-button" type="button">Refresh login details</button></div>
         <p id="login-details-status" class="field-note" role="status"></p>
         <div id="copy-fallback" hidden><label for="copy-login-text">Select and copy these login details</label><textarea id="copy-login-text" rows="5" readonly autocomplete="off" spellcheck="false"></textarea></div>
+      </section>
+      <section id="cefr-panel" class="cefr-panel" aria-labelledby="cefr-title" hidden>
+        <h2 id="cefr-title">Estimated CEFR level <span class="private-label">Administrator only</span></h2>
+        <p class="field-note">CEFR is the Common European Framework of Reference for Languages, from A1 to C2. This is an AI-assisted estimate of conversational English from lesson transcripts, not a formal test result. It does not assess pronunciation, spoken pace, reading, writing, or listening independently.</p>
+        <div id="cefr-content" aria-live="polite"></div>
+        <p class="field-note">Use your own teaching judgment alongside the estimate. <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-3-cefr-3.3-common-reference-levels-qualitative-aspects-of-spoken-language-use" target="_blank" rel="noopener noreferrer">CEFR spoken-language descriptors ↗</a></p>
       </section>
       <form id="student-form">
         <fieldset><legend>Student &amp; site</legend><p class="field-note">Students see their first name and nickname. Their last name stays here.</p><div class="form-grid">

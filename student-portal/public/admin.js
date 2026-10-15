@@ -10,6 +10,7 @@
   menuResizeObserver?.observe(adminMenu);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let quizRequest = 0, quizStatuses = {};
+  let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
   let deleting = null, deleteBusy = false, saving = false;
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
@@ -17,6 +18,43 @@
   const displayTime = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(value)) + ' Eastern' : '';
   const element = (tag, text, className) => { const node = document.createElement(tag); if (text != null) node.textContent = text; if (className) node.className = className; return node; };
   function message(text, error = false) { $('message').textContent = text; $('message').hidden = !text; $('message').classList.toggle('error', error); }
+  const cefrLabel = record => record?.state === 'estimated' ? (record.lower === record.upper ? record.lower : record.lower + '–' + record.upper) :
+    { pending: 'Not assessed yet', insufficient: 'More evidence needed', unavailable: 'Unable to check', loading: 'Checking…' }[record?.state] || 'Not assessed yet';
+  function clearCefr() { cefrDetailRequest++; $('cefr-panel').hidden = true; $('cefr-content').replaceChildren(); }
+  async function loadCefr(student) {
+    clearCefr();
+    if (!student || student.deletionPending) return;
+    $('cefr-panel').hidden = false;
+    $('cefr-content').append(element('p', 'Loading the estimate…', 'field-note'));
+    const request = cefrDetailRequest, version = epoch;
+    const stillCurrent = () => signedIn && version === epoch && request === cefrDetailRequest && current?.key === student.key && location.hash === '#students/' + student.key;
+    try {
+      const { cefr } = await api('/api/admin/students/' + student.key + '/cefr');
+      if (!stillCurrent()) return;
+      const content = $('cefr-content'); content.replaceChildren();
+      content.append(element('strong', cefrLabel(cefr), 'cefr-level'));
+      if (!cefr) { content.append(element('p', 'An estimate can be added during the next eligible nightly lesson update. Existing lessons have not been reprocessed.', 'field-note')); return; }
+      content.append(element('p', 'Reviewed ' + displayDate(cefr.assessedOn) + ' · Latest lesson ' + displayDate(cefr.latestSessionId.slice(0, 10)), 'field-note'));
+      content.append(element('p', cefr.rationale));
+      if (cefr.state !== 'estimated') return;
+      content.append(element('p', (cefr.confidence === 'moderate' ? 'Moderate' : 'Low') + ' confidence · Evidence from ' + cefr.sourceSessions.length + (cefr.sourceSessions.length === 1 ? ' lesson' : ' lessons'), 'field-note'));
+      const aspects = element('dl', null, 'cefr-aspects');
+      const labels = { range: 'Vocabulary and sentence range', accuracy: 'Grammar control', coherence: 'Connecting ideas', interaction: 'Conversation skills' };
+      for (const aspect of cefr.aspects) { const item = element('div'); item.append(element('dt', labels[aspect.area]), element('dd', aspect.detail)); aspects.append(item); }
+      content.append(aspects);
+      const evidence = element('details', null, 'cefr-evidence'); evidence.append(element('summary', 'Supporting learner examples'));
+      for (const ref of cefr.evidence) {
+        const item = element('div', null, 'cefr-example');
+        item.append(element('p', displayDate(ref.sessionId.slice(0, 10)) + ' · Transcript ' + ref.at, 'field-note'), element('blockquote', '“' + ref.quote + '”'), element('p', ref.note));
+        evidence.append(item);
+      }
+      content.append(evidence);
+    } catch (error) {
+      if (!stillCurrent()) return;
+      const retry = element('button', 'Try again', 'secondary-button'); retry.type = 'button'; retry.addEventListener('click', () => loadCefr(student));
+      $('cefr-content').replaceChildren(element('p', error.message), retry);
+    }
+  }
   function clearLoginDetails() {
     loginRequest++; loginDetails = null;
     $('login-details-panel').hidden = true;
@@ -49,6 +87,7 @@
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null;
     clearLoginDetails();
+    clearCefr(); cefrRequest++; cefrStatuses = {};
     closeDelete();
     quizRequest++; quizStatuses = {};
     $('admin-view').hidden = true; $('login-view').hidden = false; $('sign-out').hidden = true;
@@ -88,7 +127,7 @@
     $('list-count').textContent = shown.length + ' of ' + students.length + ' students';
     $('empty-list').hidden = shown.length > 0;
     for (const student of shown) {
-      const row = element('tr'), name = element('td'), site = element('td'), course = element('td'), status = element('td'), latestQuiz = element('td', null, 'latest-quiz'), action = element('td');
+      const row = element('tr'), name = element('td'), site = element('td'), course = element('td'), status = element('td'), latestQuiz = element('td', null, 'latest-quiz'), cefrCell = element('td', null, 'cefr-cell'), action = element('td');
       const link = element('a', [student.firstName,student.lastName].filter(Boolean).join(' '), 'student-name'); link.href = '#students/' + student.key; name.append(link);
       if (student.nickname) name.append(element('span', student.nickname, 'detail'));
       site.append(element('span', student.studentId ? student.studentId + '.englishladder.com' : 'Site not activated'));
@@ -101,17 +140,25 @@
       latestQuiz.append(element('span', {completed:'Done',in_progress:'In progress',not_started:'Not started',no_quiz:'No quiz yet',unavailable:'Unable to check',loading:'Checking…'}[quiz.state] || 'Unable to check', 'quiz-pill ' + quiz.state));
       if (quiz.state === 'completed') latestQuiz.append(element('span', 'Finished ' + displayTime(quiz.completedAt), 'detail'));
       if (quiz.state === 'in_progress') latestQuiz.append(element('span', quiz.answered + ' of ' + quiz.total + ' questions answered', 'detail'));
+      const cefr = cefrStatuses[student.key] || { state: 'loading' };
+      const cefrLink = element('a', cefrLabel(cefr), 'cefr-badge ' + cefr.state); cefrLink.href = link.href;
+      cefrLink.setAttribute('aria-label', 'CEFR estimate for ' + student.firstName + ': ' + cefrLabel(cefr));
+      cefrCell.append(element('span', 'CEFR estimate: ', 'quiz-mobile-label'), cefrLink);
+      if (cefr.state === 'estimated') cefrCell.append(element('span', (cefr.confidence === 'moderate' ? 'Moderate' : 'Low') + ' confidence', 'detail'));
+      if (cefr.latestSessionId) cefrCell.append(element('span', 'Lesson ' + displayDate(cefr.latestSessionId.slice(0, 10)), 'detail'));
       const edit = element('a', 'Edit account →', 'edit-link'); edit.href = link.href; edit.setAttribute('aria-label', 'Edit account for ' + student.firstName + ' ' + student.lastName); action.append(edit);
-      row.append(name,site,course,status,latestQuiz,action); $(student.status === 'paused' ? 'paused-student-rows' : 'student-rows').append(row);
+      row.append(name,site,course,status,latestQuiz,cefrCell,action); $(student.status === 'paused' ? 'paused-student-rows' : 'student-rows').append(row);
     }
   }
   async function refresh() {
     quizRequest++;
+    cefrRequest++;
     const version = epoch;
     const data = await api('/api/admin/students');
     if (!signedIn || version !== epoch) return;
-    students = data.students; quizStatuses = {}; showList(); route();
+    students = data.students; quizStatuses = {}; cefrStatuses = {}; showList(); route();
     void refreshQuizStatuses();
+    void refreshCefrStatuses();
     try {
       const status = await api('/api/admin/automation');
       if (!signedIn || version !== epoch) return;
@@ -132,6 +179,22 @@
     } catch {
       if (!signedIn || version !== epoch || request !== quizRequest) return;
       for (const student of students) if (!quizStatuses[student.key]) quizStatuses[student.key] = { state: 'unavailable' };
+      showList();
+    }
+  }
+  async function refreshCefrStatuses() {
+    const version = epoch, request = ++cefrRequest;
+    let cursor;
+    try {
+      do {
+        const data = await api('/api/admin/cefr-status' + (cursor ? '?after=' + encodeURIComponent(cursor) : ''));
+        if (!signedIn || version !== epoch || request !== cefrRequest) return;
+        if (!data.statuses) throw new Error('Unavailable');
+        Object.assign(cefrStatuses, data.statuses); showList(); cursor = data.nextCursor;
+      } while (cursor);
+    } catch {
+      if (!signedIn || version !== epoch || request !== cefrRequest) return;
+      for (const student of students) if (!cefrStatuses[student.key]) cefrStatuses[student.key] = { state: 'unavailable' };
       showList();
     }
   }
@@ -165,12 +228,14 @@
     if (student && !student.studentId) suggestedAddress();
     updateSaveLabel();
     void loadLoginDetails(student);
+    void loadCefr(student);
   }
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
   function route() {
     if (!signedIn) return;
     closeDelete();
     clearLoginDetails(); current = null;
+    clearCefr();
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
     for (const id of ['list-view','edit-view','import-view']) $(id).hidden = true;
@@ -215,6 +280,7 @@
       await api('/api/admin/students/' + target.key, { method: 'DELETE', body: JSON.stringify({ revision: target.revision, confirmation: $('delete-confirmation').value }) });
       if (!signedIn || epoch !== version) return;
       students = students.filter(student => student.key !== target.key); quizRequest++; delete quizStatuses[target.key]; showList();
+      cefrRequest++; delete cefrStatuses[target.key]; clearCefr();
       if (!stillCurrent()) return;
       closeDelete(); current = null; $('student-form').reset();
       history.replaceState(null, '', '#students'); route(); message('Student account and saved learning records deleted.');

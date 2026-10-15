@@ -500,3 +500,51 @@ test('quiz results open from the private administrator account and clear for new
   assert.equal(d.getElementById('open-quiz-results').hasAttribute('href'),false);
   dom.window.close();
 });
+
+
+test('CEFR overview and evidence require the admin host session and isolate student records',async()=>{
+  const {e}=environment(),cookie=await access(e),records=await list(e,cookie),account=records.find(s=>s.studentId==='ab26');
+  const cefr={state:'estimated',lower:'B1',upper:'B2',confidence:'low',assessedOn:'2026-10-14',latestSessionId:feedback.id,sourceSessions:[feedback.id],rationale:'Private language evidence',evidence:[{quote:'Private learner quote'}],aspects:[]};
+  await e.FEEDBACK_STORE.get('ab26').storage.put({'cefr:current':cefr});
+  const paths=['/api/admin/cefr-status','/api/admin/students/'+account.key+'/cefr'];
+  for(const path of paths){
+    const response=await adminCall(e,path,{headers:{Cookie:cookie}});assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');
+    assert.equal((await adminCall(e,path)).status,401);
+    for(const password of ['student-test','teacher-test']){
+      const other=await login(e,password);assert.equal((await adminCall(e,path,{headers:{Cookie:other.cookie}})).status,401);
+      assert.equal((await call(e,path,{headers:{Cookie:other.cookie}})).status,404);
+    }
+  }
+  const result=await(await adminCall(e,paths[0],{headers:{Cookie:cookie}})).json();
+  assert.equal(result.statuses[account.key].lower,'B1');assert.equal(result.statuses[records.find(s=>s.studentId==='cd26').key].state,'pending');
+  assert.doesNotMatch(JSON.stringify(result),/quote|rationale|Private/);
+  assert.deepEqual((await(await adminCall(e,paths[1],{headers:{Cookie:cookie}})).json()).cefr,cefr);
+  assert.equal((await adminCall(e,paths[1],{headers:{Cookie:cookie,Origin:origin}})).status,403);
+  assert.equal((await adminCall(e,'/api/admin/students/00000000-0000-4000-8000-000000000000/cefr',{headers:{Cookie:cookie}})).status,404);
+  assert.equal((await adminCall(e,'/api/admin/cefr-status?after=invalid',{headers:{Cookie:cookie}})).status,400);
+});
+
+test('CEFR details render safely, clear on navigation and logout, and ignore delayed responses',async()=>{
+  const cefr={state:'estimated',lower:'B1',upper:'B2',confidence:'low',assessedOn:'2026-10-14',latestSessionId:feedback.id,sourceSessions:[feedback.id],rationale:'A provisional estimate.',aspects:[{area:'range',detail:'Uses connected explanations.'}],evidence:[{sessionId:feedback.id,at:'00:02:00',quote:'<img src=x onerror=alert(1)>',note:'Learner evidence.'}]};
+  let resolveDetail;
+  const dom=browser(path=>path==='/api/admin/cefr-status'?Response.json({statuses:{[fixture.key]:cefr},nextCursor:null}):path.endsWith('/cefr')?new Promise(resolve=>{resolveDetail=resolve;}):null);
+  await flush();const w=dom.window,d=w.document;assert.match(d.querySelector('.cefr-cell').textContent,/B1–B2/);
+  d.querySelector('.student-name').click();await flush();resolveDetail(Response.json({cefr}));await flush();
+  assert.match(d.getElementById('cefr-content').textContent,/Low confidence/);assert.equal(d.querySelector('#cefr-content img'),null);
+  assert.match(d.getElementById('cefr-content').textContent,/<img/);
+  w.location.hash='#students';await flush();assert.equal(d.getElementById('cefr-content').textContent,'');
+  d.querySelector('.student-name').click();await flush();w.location.hash='#register';await flush();resolveDetail(Response.json({cefr}));await flush();assert.equal(d.getElementById('cefr-content').textContent,'');
+  w.location.hash='#students/'+fixture.key;await flush();resolveDetail(Response.json({cefr}));await flush();d.getElementById('sign-out').click();await flush();
+  assert.equal(d.getElementById('cefr-content').textContent,'');assert.equal(d.getElementById('cefr-panel').hidden,true);assert.equal(d.getElementById('student-rows').textContent,'');w.close();
+});
+
+test('CEFR overview distinguishes missing evidence from failures and clears after session expiry',async()=>{
+  let state={state:'pending'},fail=false,expire=false;
+  const dom=browser(path=>path==='/api/admin/cefr-status'?(fail?Response.json({error:'Unavailable'},{status:503}):Response.json({statuses:{[fixture.key]:state},nextCursor:null})):path.endsWith('/cefr')?(expire?Response.json({error:'Expired'},{status:401}):Response.json({cefr:null})):null);
+  await flush();const d=dom.window.document;assert.match(d.querySelector('.cefr-cell').textContent,/Not assessed yet/);
+  state={state:'insufficient'};d.getElementById('refresh').click();await flush();assert.match(d.querySelector('.cefr-cell').textContent,/More evidence needed/);
+  fail=true;d.getElementById('refresh').click();await flush();assert.match(d.querySelector('.cefr-cell').textContent,/Unable to check/);
+  d.querySelector('.student-name').click();await flush();assert.match(d.getElementById('cefr-content').textContent,/next eligible nightly/);
+  dom.window.location.hash='#students';await flush();expire=true;d.querySelector('.student-name').click();await flush();
+  assert.equal(d.getElementById('admin-view').hidden,true);assert.equal(d.getElementById('cefr-content').textContent,'');dom.window.close();
+});

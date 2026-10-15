@@ -60,3 +60,10 @@ Tests use fictional records and mocked model/Zoom calls. Run `npm run test:stude
 ### Administrator-managed students
 
 The private StudentDirectory now supplies the active roster at runtime. Manage it at phil.englishladder.com with the existing teacher credential. STUDENT_ACCOUNTS and QUIZ_STUDENTS seed the initial directory only; new accounts and Zoom-name edits require no deployment. Draft or paused students are excluded. Activation sets the transcript cutoff; exact names are unique across the directory. Old unmatched jobs are reconsidered after a mapping change, and mappings are rechecked immediately before publication. Empty new accounts can receive a first assessment from their first usable full transcript, with single-lesson practice targets clearly distinguished from recurring patterns. Keep full names, emails, staff details, course hours, and private notes out of AI authoring inputs and every student response.
+
+
+### Provisional CEFR conversation estimates
+
+Each eligible nightly update can also produce an administrator-only CEFR estimate, using the full new transcript and previously verified learner quotations. The same two model calls author and independently review it. Invalid or rejected CEFR evidence does not block otherwise valid student content; it records insufficient evidence. Student-facing schemas never include CEFR. See README.md and `cefr.mjs` for evidence validation, scope, storage, and endpoints.
+
+The author output ceiling is 12,000 tokens (previously 10,000); the editor remains at 1,000. Existing two-per-day and twelve-per-month per-student reservation limits are unchanged. Estimated incremental AI cost is about $0.001–$0.005 per update, or $0.12–$0.60 for ten students at twelve updates each, before free allowances, using Cloudflare's October 15, 2026 published $0.35/million input and $0.75/million output token rates. This is an estimate, not a dollar-enforced limit; actual usage varies. No paid inference is run for deployment validation and no historical lessons are automatically reprocessed.

@@ -125,7 +125,7 @@ test('first-try review retains misses after successful retries and ignores unans
   assert.equal(firstTryReview(attempts)[0].examples[0].firstChoice, quiz.questions[0].options[1].text);
 });
 
-test('AI authoring requires valid evidence and a second approval; no transcript text is saved in output', async () => {
+test('AI authoring requires valid evidence and a second approval; no full transcript is saved in output', async () => {
   const transcript = readTranscript(note, { ab26: student }); let calls = 0;
   const ai = { run: async (_model, input) => {
     calls++; assert.ok(JSON.parse(input.messages[1].content).segments.length === 10);
@@ -299,4 +299,25 @@ test('automatic assessments require a self-study AI prompt for every study topic
  const transcript=readTranscript(note,{ab26:student}),missing=structuredClone(draft);
  delete missing.assessment.plan[0].aiPrompt;
  await assert.rejects(authorQuiz({run:async()=>({response:missing})},transcript,meeting,'fictional-note-123',{assessment,attempts:[]}),/invalid_evidence/);
+});
+
+
+test('nightly CEFR uses the same two calls, verifies learner quotes and needs separate editor approval',async()=>{
+  const transcript=readTranscript(note,{ab26:student});
+  const cefr={state:'estimated',lower:'A2',upper:'B1',confidence:'moderate',rationale:'This is a provisional conversation estimate.',
+    aspects:['range','accuracy','coherence','interaction'].map(area=>({area,detail:'Further independent evidence is needed.'})),
+    evidence:transcript.segments.filter(s=>s.speaker===student.firstName).slice(0,2).map(s=>({sessionId:session,at:s.at,quote:s.text,note:'Learner language from this lesson.'}))};
+  async function run(candidate,approved){let calls=0;const ai={run:async(_model,input)=>{calls++;assert.match(input.messages[0].content,/CEFR/);return{response:calls===1?{...structuredClone(draft),cefr:candidate}:{approved:true,cefrApproved:approved}};}};
+    const result=await authorQuiz(ai,transcript,meeting,'fictional-note-123',{assessment,attempts:[]});assert.equal(calls,2);return result;}
+  const result=await run(cefr,true);assert.equal(result.cefr.state,'estimated');assert.equal(result.cefr.confidence,'low');assert.equal(result.assessment.cefr,undefined);assert.equal(result.cefr.latestSessionId,session);
+  assert.equal((await run(cefr,false)).cefr.state,'insufficient');
+  assert.equal((await run({...cefr,evidence:cefr.evidence.map(e=>({...e,quote:'An invented quote.'}))},true)).cefr.state,'insufficient');
+  assert.equal((await run(undefined,true)).cefr.state,'insufficient');
+});
+
+
+test('CEFR labels accidentally placed in student content are rejected before publication',async()=>{
+  const transcript=readTranscript(note,{ab26:student});
+  const ai={run:async()=>({response:{...structuredClone(draft),assessment:{...draft.assessment,summary:'Your CEFR level is B1.'}}})};
+  await assert.rejects(authorQuiz(ai,transcript,meeting,'fictional-note-123',{assessment,attempts:[]}),/unsafe_content/);
 });

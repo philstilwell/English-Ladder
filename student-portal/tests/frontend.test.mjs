@@ -136,7 +136,7 @@ test('Feedback topic and vocabulary prompts omit lesson evidence and copy indepe
   const w=dom.window,d=w.document;
   Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async text=>copied.push(text)}});
   await flush();
-  const buttons=[...d.querySelectorAll('.focus-card .practice-copy-button, .vocabulary-row .practice-copy-button')];
+  const buttons=[...d.querySelectorAll('#feedback-page .focus-card .practice-copy-button, #feedback-page .vocabulary-row .practice-copy-button')];
   assert.equal(buttons.length,4);
   const expected=[
    [feedback.focus[0].title,feedback.focus[0].model,feedback.focus[0].explanation],
@@ -151,12 +151,12 @@ test('Feedback topic and vocabulary prompts omit lesson evidence and copy indepe
    assert.doesNotMatch(copied[i],/Alex|ab26|2026-10-01|fictional-note-id-only|Your teacher modeled|PRIVATE LESSON REMARK|Clear explanations|00:03:00|https?:/);
   }
   assert.ok(!copied[0].includes(topic.model)&&!copied[2].includes(word.example));
-  assert.equal(d.querySelectorAll('.focus-card .practice-ai-link, .vocabulary-row .practice-ai-link').length,16);
+  assert.equal(d.querySelectorAll('#feedback-page .focus-card .practice-ai-link, #feedback-page .vocabulary-row .practice-ai-link').length,16);
   assert.equal(d.querySelector('.practice-item .practice-copy-button').textContent,'Copy AI prompt');
   assert.equal(writes.length,0);
   w.location.hash='feedback/'+second.id;await flush();
   buttons[0].click();await flush();assert.equal(copied.length,4);
-  const current=[...d.querySelectorAll('.focus-card .practice-copy-button, .vocabulary-row .practice-copy-button')];
+  const current=[...d.querySelectorAll('#feedback-page .focus-card .practice-copy-button, #feedback-page .vocabulary-row .practice-copy-button')];
   assert.ok(current.every(button=>button.textContent==='Copy AI prompt'));
   let finishCopy;w.navigator.clipboard.writeText=()=>new Promise(resolve=>{finishCopy=resolve;});
   current[0].click();d.getElementById('logout').click();await flush();finishCopy();await flush();
@@ -183,6 +183,41 @@ test('assessment shows strengths, patterns, next priorities, and only internal e
  assert.equal(d.getElementById('feedback-title').textContent,feedback.title);
  assert.equal(d.querySelectorAll('a[href*="mynotes.zoom.us"]').length,0);
  dom.window.close();
+});
+test('assessment practice prompts include their own model sentences without student evaluations or lesson evidence',async()=>{
+ const data=structuredClone(assessment);
+ data.patterns[0].detail='PRIVATE STUDENT EVALUATION';
+ data.patterns[0].examples.push({...data.patterns[0].examples[0],model:'We can check the list.',observed:'PRIVATE LESSON QUOTE'});
+ data.patterns.push({title:'Polite requests',detail:'PRIVATE STUDENT EVALUATION',practice:'Ask for help politely.',examples:[{...data.patterns[0].examples[0],model:'Could you carry this bag?'}]});
+ for(const role of ['student','teacher']){
+  const copied=[],writes=[];
+  const dom=setup((path,options={})=>{
+   if(options.method&&options.method!=='GET')writes.push(path);
+   return path==='/api/assessment'?reply({assessment:data}):null;
+  },origin+'/#assessments/patterns',role);
+  const w=dom.window,d=w.document;
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async text=>copied.push(text)}});
+  await flush();
+  const buttons=[...d.querySelectorAll('#assessment-content .focus-card .practice-copy-button')];
+  assert.equal(buttons.length,2);
+  for(const [i,item] of data.patterns.entries()){
+   buttons[i].click();await flush();
+   assert.equal(buttons[i].textContent,'AI prompt copied');
+   for(const text of [item.title,item.practice,...item.examples.map(example=>example.model)])assert.ok(copied[i].includes(text));
+   assert.doesNotMatch(copied[i],/PRIVATE|Alex|ab26|2026-10|Your teacher modeled|00:03:00|Your overall English assessment|https?:|#feedback/);
+  }
+  assert.ok(!copied[0].includes(data.patterns[1].practice)&&!copied[1].includes(data.patterns[0].practice));
+  assert.equal(d.querySelectorAll('#assessment-content .focus-card .practice-ai-link').length,8);
+  assert.ok([...d.querySelectorAll('.study-prompt')].every(el=>!el.open));
+  assert.ok([...d.querySelectorAll('#assessment-content .assessment-example .assessment-evidence')].every(a=>a.hash==='#feedback/'+feedback.id));
+  assert.equal(writes.length,0);
+  let finishCopy;w.navigator.clipboard.writeText=()=>new Promise(resolve=>{finishCopy=resolve;});
+  buttons[0].click();d.getElementById('logout').click();await flush();finishCopy();await flush();
+  assert.equal(buttons[0].textContent,'Copy AI prompt');
+  assert.equal(d.getElementById('assessment-content').textContent,'');
+  buttons[1].click();await flush();assert.equal(copied.length,2);
+  w.close();
+ }
 });
 test('late assessment responses cannot restore private content after sign-out',async()=>{
  let resolveAssessment;

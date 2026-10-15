@@ -519,7 +519,17 @@
         model.append(node('span', 'TRY SAYING THIS'), node('p', example.model)); row.append(model); card.append(row);
       }
       const practice = node('p', '', 'assessment-practice');
-      practice.append(node('strong', 'Practice: '), document.createTextNode(item.practice)); card.append(practice); patterns.append(card);
+      practice.append(node('strong', 'Practice: '), document.createTextNode(item.practice));
+      const ai = window.PracticePrompt.create({
+        label: ' for assessment practice topic ' + (index + 1),
+        prompt: window.PracticePrompt.text(
+          'English practice topic: ' + item.title + '\nModel sentences:\n' +
+          item.examples.map(example => '• “' + example.model + '”').join('\n') + '\n\nPractice suggestion: ' + item.practice,
+          'Explain the language pattern and how the model sentences use it. Show how to follow the practice suggestion. Focus only on the English, not on assessing the learner.'
+        ),
+      });
+      const promptControls = node('div', '', 'practice-prompt-controls'); promptControls.append(ai.controls, ai.status);
+      card.append(practice, promptControls); patterns.append(card);
     });
     fragment.append(patterns);
     const plan = assessmentSection('Study on your own', 'next', 'assessment-plan');

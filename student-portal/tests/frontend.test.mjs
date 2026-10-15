@@ -80,11 +80,48 @@ test('expired feedback sessions return to sign-in and clear private content',asy
  dom.window.close();
 });
 test('feedback strings render as text, never executable markup',async()=>{
- const data={...feedback,title:'<img src=x onerror=alert(1)>'};
+ const data={...feedback,title:'<img src=x onerror=alert(1)>',practice:[{prompt:'<img src=x onerror=alert(1)>',answer:'<script>alert(1)</script>'}]};
  const dom=setup(path=>path.endsWith('/'+feedback.id)?reply(data):null);await flush();
- assert.equal(dom.window.document.querySelector('#feedback-page img'),null);
+ assert.equal(dom.window.document.querySelector('#feedback-title img, .practice-item > p img, .practice-item details img, #feedback-page script, #feedback-page [onerror]'),null);
  assert.equal(dom.window.document.getElementById('feedback-title').textContent,data.title);
+ assert.equal(dom.window.document.querySelector('.practice-item details p').textContent,data.practice[0].answer);
  dom.window.close();
+});
+test('Feedback practice prompts copy only their own exercise without revealing answers, writing records, or surviving a session change',async()=>{
+ const extra={prompt:'New practice. Ask for help with a heavy bag.',answer:'Could you help me carry this bag?'};
+ for(const role of ['student','teacher']){
+  const copied=[],writes=[];
+  const dom=setup((path,options={})=>{
+   if(options.method&&options.method!=='GET')writes.push(path);
+   if(path.endsWith('/'+feedback.id))return reply({...feedback,practice:[...feedback.practice,extra]});
+   if(path.endsWith('/'+second.id))return reply({...second,practice:[extra]});
+   return null;
+  },origin+'/#feedback/'+feedback.id,role);
+  const w=dom.window,d=w.document;
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async text=>copied.push(text)}});
+  await flush();
+  const buttons=[...d.querySelectorAll('.practice-item .practice-copy-button')];
+  assert.equal(buttons.length,2);
+  buttons[0].click();await flush();buttons[1].click();await flush();
+  for(const [i,item] of [...feedback.practice,extra].entries()){
+   assert.equal(buttons[i].textContent,'AI prompt copied');
+   assert.ok(copied[i].includes(item.prompt)&&copied[i].includes(item.answer));
+   assert.doesNotMatch(copied[i],/Alex|ab26|2026-10-01|fictional-note-id-only|Your teacher modeled|Clear explanations|00:03:00|https?:/);
+  }
+  assert.ok(!copied[0].includes(extra.prompt)&&!copied[1].includes(feedback.practice[0].prompt));
+  assert.ok([...d.querySelectorAll('.practice-item details')].every(el=>!el.open));
+  assert.equal(d.querySelectorAll('.practice-item .practice-ai-link').length,8);
+  assert.equal(writes.length,0);
+  w.location.hash='feedback/'+second.id;await flush();
+  const current=d.querySelector('.practice-item .practice-copy-button');
+  assert.equal(current.textContent,'Copy AI prompt');
+  buttons[0].click();await flush();assert.equal(copied.length,2);
+  current.click();await flush();assert.ok(copied[2].includes(extra.prompt));
+  assert.equal(writes.length,0);
+  d.getElementById('logout').click();await flush();current.click();await flush();
+  assert.equal(copied.length,3);assert.equal(d.getElementById('feedback-page').textContent,'');
+  w.close();
+ }
 });
 
 test('assessment shows strengths, patterns, next priorities, and only internal evidence links',async()=>{

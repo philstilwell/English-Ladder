@@ -311,7 +311,15 @@
       const row = node('div', '', 'practice-item'), answer = node('details');
       row.append(node('p', (i + 1) + '. ' + item.prompt));
       answer.append(node('summary', 'Show an example answer'), node('p', item.answer));
-      row.append(answer); practice.append(row);
+      const ai = window.PracticePrompt.create({
+        label: ' for practice item ' + (i + 1),
+        prompt: window.PracticePrompt.text(
+          'English practice exercise:\n' + item.prompt + '\n\nExample answer: “' + item.answer + '”',
+          'Explain how to do this exercise and why the example answer works. It is one possible answer; other answers may also work. Focus only on the English in this exercise.'
+        ),
+      });
+      const promptControls = node('div', '', 'practice-prompt-controls'); promptControls.append(ai.controls, ai.status);
+      row.append(answer, promptControls); practice.append(row);
     });
     fragment.append(practice);
     const next = section('Your next step', 'feedback-next-step'); next.append(node('p', record.nextStep)); fragment.append(next);

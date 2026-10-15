@@ -23,7 +23,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/feedback')return reply({sessions:[feedback,second],nextCursor:null});
   return reply(path.endsWith(second.id)?second:feedback);
  };
- w.eval(script);return dom;
+ w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
 }
 test('deep links open the selected page and show only student-safe content',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#feedback/'+second.id);await flush();
@@ -515,4 +515,56 @@ test('failed activity loading never substitutes defaults and can retry; expiry c
   assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Activity 3']); dom.window.close();
   const expired = setup(path => path === '/api/account' ? new Response(JSON.stringify({ error: 'Please sign in.' }), { status: 401 }) : null, 'https://ab26.englishladder.com/#overview');
   await flush(); assert.equal(expired.window.document.getElementById('login-view').hidden, false); assert.equal(expired.window.document.getElementById('activities-submenu').textContent, ''); expired.window.close();
+});
+
+const roadSettings = { ...settingsFixture, activities: [{ id:'english-road', name:'English Road Practice', description:'Practice grammar and words.' }, ...settingsFixture.activities], visibleActivities:['english-road'] };
+const roadRoute = 'https://ab26.englishladder.com/#activities/english-road';
+const roadSubmit = dom => dom.window.document.querySelector('#road-practice form').dispatchEvent(new dom.window.Event('submit', { bubbles:true, cancelable:true }));
+const roadButton = (d, text) => [...d.querySelectorAll('#road-practice button')].find(b => b.textContent === text);
+
+test('English Road saves actual student answers and resumes the next question on a new page', async () => {
+  const {e,student} = await seedQuiz();
+  const mock = (path, options={}) => path === '/api/account' ? reply(roadSettings) : path.startsWith('/api/road/') ? call(e,path,{...options,headers:{...options.headers,Cookie:student.cookie,...(options.method ? {Origin:origin}: {})}}) : null;
+  const dom=setup(mock,roadRoute);await flush();const d=dom.window.document;
+  assert.equal(d.querySelector('#activities-submenu a').textContent,'English Road Practice');
+  d.getElementById('road-topic').value='Articles';roadSubmit(dom);await flush();
+  assert.equal(d.querySelector('#road-question-title').textContent,'Question 1 of 20');
+  const option=d.querySelector('.road-options input');option.checked=true;option.dispatchEvent(new dom.window.Event('change',{bubbles:true}));roadSubmit(dom);await flush();
+  assert.match(d.querySelector('.road-answer').textContent,/Your answer:/);
+  assert.equal(dom.window.localStorage.length,0);assert.equal(dom.window.sessionStorage.length,0);
+  const saved=await(await call(e,'/api/road/state',{headers:{Cookie:student.cookie}})).json();assert.equal(saved.attempt.answered,1);
+  dom.window.close();const resumed=setup(mock,roadRoute);await flush();
+  assert.equal(resumed.window.document.querySelector('#road-question-title').textContent,'Question 2 of 20');
+  resumed.window.document.getElementById('logout').click();await flush();assert.equal(resumed.window.document.getElementById('road-practice').textContent,'');
+  resumed.window.close();
+});
+
+test('failed English Road saves retry the identical answer; only confirmed saves reveal feedback', async () => {
+  const {e,student} = await seedQuiz();let drop=false,bodySeen=null;
+  const dom=setup((path,options={})=>{
+    if(path==='/api/account')return reply(roadSettings);
+    if(!path.startsWith('/api/road/'))return null;
+    if(path==='/api/road/answer' && drop) {drop=false;bodySeen=options.body;return Promise.reject(new Error('Connection lost'));}
+    if(path==='/api/road/answer' && bodySeen)assert.equal(options.body,bodySeen);
+    return call(e,path,{...options,headers:{...options.headers,Cookie:student.cookie,...(options.method?{Origin:origin}:{})}});
+  },roadRoute);await flush();roadSubmit(dom);await flush();const d=dom.window.document;
+  drop=true;const option=d.querySelector('.road-options input');option.checked=true;option.dispatchEvent(new dom.window.Event('change'));roadSubmit(dom);await flush();
+  assert.match(d.getElementById('road-practice').textContent,/Not saved yet/);assert.equal(d.querySelector('.road-answer'),null);
+  roadButton(d,'Try saving again').click();await flush();assert.ok(d.querySelector('.road-answer'));
+  assert.equal((await(await call(e,'/api/road/state',{headers:{Cookie:student.cookie}})).json()).attempt.answered,1);
+  dom.window.close();
+});
+
+test('English Road clears late responses on navigation, sign-out and expiry and teacher previews never write', async () => {
+  let resolve;
+  const dom=setup(path=>path==='/api/account'?reply(roadSettings):path==='/api/road/state'?new Promise(r=>{resolve=r;}):null,roadRoute);
+  await flush();dom.window.location.hash='account';await flush();
+  resolve(reply({catalog:{levels:['A1'],topics:['Articles']},attempt:null}));await flush();
+  assert.equal(dom.window.document.getElementById('road-practice').textContent,'');dom.window.close();
+  const expiredDom=setup(path=>path==='/api/account'?reply(roadSettings):path==='/api/road/state'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):null,roadRoute);
+  await flush();assert.equal(expiredDom.window.document.getElementById('login-view').hidden,false);assert.equal(expiredDom.window.document.getElementById('road-practice').textContent,'');expiredDom.window.close();
+  let requests=0;
+  const teacher=setup(path=>{if(path==='/api/account')return reply(roadSettings);if(path.startsWith('/api/road/')){requests++;return reply({});}},roadRoute,'teacher');await flush();
+  assert.match(teacher.window.document.getElementById('road-practice').textContent,/Teacher view does not save/);assert.equal(requests,0);teacher.window.close();
+  const hidden=setup(path=>path==='/api/account'?reply({...roadSettings,visibleActivities:[]}):null,roadRoute);await flush();assert.equal(hidden.window.document.getElementById('road-practice').hidden,true);hidden.window.close();
 });

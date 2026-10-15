@@ -12,6 +12,7 @@
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
+  let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
   let deleting = null, deleteBusy = false, saving = false;
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
@@ -21,6 +22,66 @@
   const cefrLabel = record => record?.state === 'estimated' ? (record.lower === record.upper ? record.lower : record.lower + '–' + record.upper) :
     { pending: 'Not assessed yet', insufficient: 'More evidence needed', unavailable: 'Unable to check', loading: 'Checking…' }[record?.state] || 'Not assessed yet';
   function clearCefr() { cefrDetailRequest++; $('cefr-panel').hidden = true; $('cefr-content').replaceChildren(); }
+  function clearRoad() {
+    roadEpoch++; roadRows = []; roadCursor = null; roadLoading = false;
+    $('road-results-panel').hidden = true; $('road-results').replaceChildren(); $('road-results-status').textContent = '';
+    $('more-road-results').hidden = true; $('more-road-results').disabled = false;
+    $('load-road-results').disabled = false; $('load-road-results').textContent = 'Load practice results';
+  }
+  async function loadRoad(append = false) {
+    if (!signedIn || !current?.activated || current.deletionPending || roadLoading) return;
+    if (!append) { roadEpoch++; roadRows = []; roadCursor = null; $('road-results').replaceChildren(); $('more-road-results').hidden = true; }
+    const student = current, version = epoch, request = roadEpoch;
+    const valid = () => signedIn && version === epoch && request === roadEpoch && current?.key === student.key;
+    roadLoading = true; $('load-road-results').disabled = true; $('more-road-results').disabled = true;
+    $('road-results-status').textContent = 'Loading saved practice…';
+    try {
+      const data = await api('/api/admin/students/' + student.key + '/road' + (append && roadCursor ? '?before=' + encodeURIComponent(roadCursor) : ''));
+      if (!valid()) return;
+      roadRows.push(...data.attempts); roadCursor = data.nextCursor;
+      $('road-results-status').textContent = roadRows.length ? 'Open a set to see each original answer. Dates use New York time.' : 'No English Road practice has been started yet.';
+      $('load-road-results').textContent = 'Refresh practice results';
+      for (const row of data.attempts) {
+        const details = element('details', null, 'road-result-set'), summary = element('summary');
+        const state = row.completedAt ? 'Completed' : row.endedAt ? 'Ended early' : 'In progress';
+        summary.append(element('strong', row.band + ' · ' + (row.topic || 'All topics')),
+          element('span', state + ' · ' + row.correct + ' correct out of ' + row.answered + ' answered · ' + row.answered + '/' + row.total + ' questions', 'detail'),
+          element('span', 'Started ' + displayTime(row.startedAt), 'detail'));
+        if (row.completedAt || row.endedAt) summary.append(element('span', 'Finished ' + displayTime(row.completedAt || row.endedAt), 'detail'));
+        const content = element('div'); details.append(summary, content); $('road-results').append(details);
+        let loaded = false, loading = false;
+        async function loadDetail() {
+          if (loaded || loading || !valid() || !details.isConnected) return;
+          loading = true; content.replaceChildren(element('p', 'Loading answers…'));
+          try {
+            const data = await api('/api/admin/students/' + student.key + '/road/' + row.id);
+            if (!valid() || !details.isConnected) return;
+            loaded = true; content.replaceChildren();
+            const attempt = data.attempt;
+            if (!attempt.answers.length) content.append(element('p', 'No answers submitted.'));
+            attempt.answers.forEach((answer, i) => {
+              const q = attempt.questions[i], box = element('article', null, 'road-review');
+              box.append(element('h3', 'Question ' + (i + 1) + ' · ' + q.topic), element('p', q.setup), element('p', '“' + q.prompt + '”', 'road-prompt'));
+              const options = element('ol'); q.options.forEach(option => options.append(element('li', option))); box.append(options);
+              box.append(element('p', 'Original answer: “' + q.options[answer.choiceIndex] + '”'),
+                element('strong', answer.choiceIndex === q.correctIndex ? 'Correct' : 'Incorrect'),
+                element('p', 'Correct answer: “' + q.options[q.correctIndex] + '”'), element('p', q.feedback[answer.choiceIndex]), element('p', q.explanation),
+                element('p', 'Answered ' + displayTime(answer.answeredAt), 'field-note')); content.append(box);
+            });
+          } catch (error) {
+            if (!valid() || !details.isConnected) return;
+            const retry = element('button', 'Try again', 'secondary-button'); retry.type = 'button'; retry.addEventListener('click', loadDetail);
+            content.replaceChildren(element('p', error.message), retry);
+          } finally { loading = false; }
+        }
+        details.addEventListener('toggle', () => { if (details.open) loadDetail(); });
+      }
+      $('more-road-results').hidden = !roadCursor;
+    } catch (error) { if (valid()) $('road-results-status').textContent = error.message; }
+    finally { if (valid()) { roadLoading = false; $('load-road-results').disabled = false; $('more-road-results').disabled = false; } }
+  }
+  $('load-road-results').addEventListener('click', () => loadRoad());
+  $('more-road-results').addEventListener('click', () => loadRoad(true));
   async function loadCefr(student) {
     clearCefr();
     if (!student || student.deletionPending) return;
@@ -89,6 +150,7 @@
   }
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null;
+    clearRoad();
     clearLoginDetails();
     clearCefr(); cefrRequest++; cefrStatuses = {};
     closeDelete();
@@ -232,10 +294,12 @@
     updateSaveLabel();
     void loadLoginDetails(student);
     void loadCefr(student);
+    clearRoad(); $('road-results-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
   }
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
   function route() {
     if (!signedIn) return;
+    clearRoad();
     closeDelete();
     clearLoginDetails(); current = null;
     clearCefr();

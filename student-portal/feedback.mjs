@@ -1,5 +1,6 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
+import { handleRoad } from './english-road.mjs';
 import { groundCefrWindow, cefrOverview } from './cefr.mjs';
 import { cefrReviewContext, cefrScheduleSummary } from './cefr-schedule.mjs';
 import { validNoteId, saveTranscriptCache, readTranscriptCache, validateTranscriptCache, pruneTranscriptCache } from './transcript-cache.mjs';
@@ -267,6 +268,7 @@ export class FeedbackStore {
         return json({ ok: true });
       });
     }
+    if (id.startsWith('road/')) return handleRoad(this.storage, request);
     if (id.startsWith('quiz/')) return handleQuiz(this.storage, request);
     if (id === 'assessment') {
       if (request.method === 'GET') return json({ assessment: await this.storage.get('assessment:current') || null });

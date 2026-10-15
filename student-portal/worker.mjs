@@ -10,7 +10,7 @@ export { StudentDirectory } from './student-directory.mjs';
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
-const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
+const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/road-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
 const SECURITY_HEADERS = {
   'Cache-Control': 'no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -185,6 +185,18 @@ async function handleAdmin(request, env) {
       }
       return json({ statuses, nextCursor: records.length > 20 ? page.at(-1).key : null });
     }
+    const roadAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/road(?:\/([0-9a-f-]{36}))?$/.exec(url.pathname);
+    if (roadAccount && request.method === 'GET') {
+      if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
+      const response = await directoryRequest(env, '/students');
+      if (!response.ok) return json({ error: 'Student records are temporarily unavailable.' }, 503);
+      const student = (await response.json()).students.find(s => s.key === roadAccount[1]);
+      if (!student || student.deletionPending || !student.activated || !student.studentId) return json({ error: 'Student not found.' }, 404);
+      if (!env.FEEDBACK_STORE) return json({ error: 'Practice results are temporarily unavailable.' }, 503);
+      const target = new URL('https://feedback.internal/road/results' + (roadAccount[2] ? '/' + roadAccount[2] : ''));
+      if (url.searchParams.has('before')) target.searchParams.set('before', url.searchParams.get('before'));
+      return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request(target));
+    }
     const cefrAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/cefr$/.exec(url.pathname);
     if (cefrAccount && request.method === 'GET') {
       if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
@@ -320,6 +332,26 @@ async function handle(request, env) {
     return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/learning-import', { method: 'POST', body: JSON.stringify(body) }));
   }
 
+  if (url.pathname.startsWith('/api/road/')) {
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    const route = url.pathname.slice('/api'.length);
+    if (!['/road/state', '/road/start', '/road/answer', '/road/end'].includes(route)) return json({ error: 'Page not found.' }, 404);
+    if (session.role !== 'student') return json({ error: 'Open English Road results from the administrator account page. Teacher previews do not save student practice.' }, 403);
+    const method = route === '/road/state' ? 'GET' : 'POST';
+    if (request.method !== method) return json({ error: 'Method not allowed.' }, 405, { Allow: method });
+    let body;
+    if (method === 'POST') {
+      if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload the page and try again.' }, 403);
+      const limit = await (env.PRACTICE_LIMITER || env.ACCOUNT_LIMITER).limit({ key: account.id });
+      if (!limit.success) return json({ error: 'Please wait a minute, then try saving again.' }, 429, { 'Retry-After': '60' });
+      body = await smallJson(request);
+      if (!body) return json({ error: 'Please check your choice.' }, 400);
+    }
+    if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable. Please try again.' }, 503);
+    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal' + route,
+      { method, ...(body ? { body: JSON.stringify(body) } : {}) }));
+  }
   if (url.pathname.startsWith('/api/quiz/')) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);

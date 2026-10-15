@@ -8,6 +8,7 @@
   <title>Your student space · English Ladder</title>
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/portal.css">
+  <script defer src="/road-practice.js"></script>
   <script defer src="/portal.js"></script>
 </head>
 <body>
@@ -135,6 +136,7 @@
         <article class="account-card activity-page">
           <h3 id="activity-title" tabindex="-1">Activities</h3>
           <p id="activity-message" role="status"></p>
+          <div id="road-practice" hidden></div>
           <a class="secondary-button" href="#account">Choose activities in Account</a>
         </article>
       </section>
@@ -152,7 +154,7 @@
               <input id="nickname" name="nickname" autocomplete="nickname" required maxlength="100" aria-describedby="nickname-hint">
               <p id="nickname-hint" class="field-hint">This name appears at the top of your student page. Your sign-in address stays the same.</p>
               <fieldset class="activity-options"><legend>Show in Activities</legend>
-                <p class="field-hint">These are sample activities for now. Check the ones you want in the Activities menu. Then choose “Save my choices”.</p>
+                <p class="field-hint">Check the activities you want in the Activities menu. Then choose “Save my choices”. Activity 1–3 are samples for now.</p>
                 <div id="activity-options"></div>
               </fieldset>
               <button class="primary-button" type="submit">Save my choices</button>

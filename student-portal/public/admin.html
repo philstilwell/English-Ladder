@@ -49,6 +49,14 @@
         <div id="cefr-content" aria-live="polite"></div>
         <p class="field-note">Use your own teaching judgment alongside the estimate. <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-3-cefr-3.3-common-reference-levels-qualitative-aspects-of-spoken-language-use" target="_blank" rel="noopener noreferrer">CEFR spoken-language descriptors ↗</a></p>
       </section>
+      <section id="road-results-panel" class="cefr-panel" aria-labelledby="road-results-title" hidden>
+        <h2 id="road-results-title">English Road Practice <span class="private-label">Administrator only</span></h2>
+        <p class="field-note">Review saved practice sets and original answers. These are grammar and vocabulary practice results, separate from lesson quizzes and the CEFR estimate.</p>
+        <button id="load-road-results" class="secondary-button" type="button">Load practice results</button>
+        <p id="road-results-status" role="status"></p>
+        <div id="road-results"></div>
+        <button id="more-road-results" class="secondary-button" type="button" hidden>Earlier practice sets</button>
+      </section>
       <form id="student-form">
         <fieldset><legend>Student &amp; site</legend><p class="field-note">Students see their first name and nickname. Their last name stays here.</p><div class="form-grid">
           <div><label for="firstName">First name</label><input id="firstName" name="firstName" required maxlength="80" autocomplete="off"></div>
@@ -120,10 +128,16 @@
         <article class="technical-card"><h2>Accounts and access</h2><dl>
           <div><dt>Private administration</dt><dd>Full names, contact details, course records, and account management stay in the administrator area. Student pages use first names and chosen nicknames.</dd></div>
           <div><dt>Student Account page</dt><dd>Students can change their nickname and password from Account in their main menu. A password change requires the current password and ends their existing sessions on all devices. Passwords remain case-insensitive, and Phil’s private login-details panel can retrieve the updated password. Teacher previews cannot submit student settings.</dd></div>
-          <div><dt>Activities choices</dt><dd>The Activities dropdown beside Overview shows only the activities saved as checked in Account. All three sample activities are checked at first; students can save any selection, including none. Saving updates the menu immediately. Choices stay in private server storage across devices and survive administrator edits. The sample items open placeholder pages until the real activities are specified. No AI calls are used.</dd></div>
+          <div><dt>Activities choices</dt><dd>The Activities dropdown shows only the items saved as checked in Account. English Road Practice and three sample activities are available. Accounts without saved choices start with all items checked; existing saved selections, including an empty selection, are preserved. Students can enable English Road in Account. Saving updates the menu across devices. Hiding practice does not delete its saved progress.</dd></div>
           <div><dt>Paused accounts</dt><dd>Student access and new lesson/CEFR updates stop. Saved learning history remains, and transcript retention cleanup continues.</dd></div>
           <div><dt>Sessions and passwords</dt><dd>Sign-in sessions last up to eight hours. Changing a student password ends that student’s existing sessions. Signing out clears loaded private information from the page.</dd></div>
           <div><dt>Course records</dt><dd>Course end dates and hours are manually maintained; they do not automatically pause an account or decrease after a Zoom meeting.</dd></div>
+        </dl></article>
+        <article class="technical-card"><h2>English Road Practice</h2><dl>
+          <div><dt>Question source</dt><dd>A reviewed copy of 4,200 English Road questions across 35 topics and six practice bands. Mixed sets use 25 distinct topics; focused sets use 20 questions. Updates are imported deliberately, without fetching English Road during student practice.</dd></div>
+          <div><dt>Saving and review</dt><dd>Starting a set and checking each answer saves it to private storage for that student. Original choices, question wording, explanations, and server dates are preserved. Students can resume on another device. Ended and completed sets remain available in the English Road Practice panel on the administrator’s student account page.</dd></div>
+          <div><dt>Separation and privacy</dt><dd>Practice is separate from lesson quizzes and CEFR estimates. Teacher previews cannot submit student answers. Answers are not saved in browser storage or sent to English Road. Unsubmitted choices are not saved. Account deletion removes practice records; the three-month transcript rule does not delete practice history.</dd></div>
+          <div><dt>Cost and limits</dt><dd>No AI calls or new paid service are required. Practice uses existing private storage and hosting. Each account is limited to 90 practice changes per minute. Future hosting charges depend on total usage and the account’s allowances.</dd></div>
         </dl></article>
         <article class="technical-card technical-wide"><h2>AI costs and spending safeguards</h2>
           <p>The server uses Cloudflare Workers AI with the <span class="technical-model">gpt-oss-120b</span> model. New transcript privacy processing uses two calls. Ordinary lesson authoring and review use two calls. A due CEFR review has its own two calls.</p>

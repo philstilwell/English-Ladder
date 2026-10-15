@@ -1,6 +1,7 @@
-// Replace this catalog when the owner supplies the real activities. Settings
+// Keep dummy entries until the owner supplies their replacements. Settings
 // control menu visibility only; they never grant access or change learning data.
 export const ACTIVITY_TOOLS = Object.freeze([
+  { id: 'english-road', name: 'English Road Practice', description: 'Practice grammar and words. Choose a topic and a practice band. Your answers are saved in your account.' },
   { id: 'placeholder-1', name: 'Activity 1', description: 'A sample activity. The real activity will be added later.' },
   { id: 'placeholder-2', name: 'Activity 2', description: 'A sample activity. The real activity will be added later.' },
   { id: 'placeholder-3', name: 'Activity 3', description: 'A sample activity. The real activity will be added later.' },

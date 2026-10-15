@@ -16,7 +16,7 @@
     "build:grammar": "python3 grammar_curriculum.py && python3 grammar_documents.py",
     "build:cloudflare": "npm run check:js && npm run check:site && node cloudflare/build.cjs",
     "deploy:cloudflare": "node cloudflare/deploy.cjs",
-    "test:students": "node --check student-portal/worker.mjs && node --check student-portal/public/portal.js && node --check student-portal/public/admin.js && node --test student-portal/tests/*.test.mjs",
+    "test:students": "node --check student-portal/worker.mjs && node --check student-portal/public/portal.js && node --check student-portal/public/road-practice.js && node --check student-portal/public/admin.js && node --test student-portal/tests/*.test.mjs",
     "dev:students": "wrangler dev --config student-portal/wrangler.jsonc",
     "deploy:students": "npm run test:students && wrangler deploy --config student-portal/wrangler.jsonc"
   },

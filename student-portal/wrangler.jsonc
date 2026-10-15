@@ -75,6 +75,11 @@
   ],
   "ratelimits": [
     {
+      "name": "PRACTICE_LIMITER",
+      "namespace_id": "2026101501",
+      "simple": { "limit": 90, "period": 60 }
+    },
+    {
       "name": "LOGIN_LIMITER",
       "namespace_id": "2026101401",
       "simple": {

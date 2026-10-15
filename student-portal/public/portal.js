@@ -13,6 +13,10 @@
   let settings = null, settingsLoading = false, settingsSaving = false, settingsRevision = 0, profileRevision = 0;
   const sectionMenu = document.querySelector('.section-nav');
   let activityChoices = null, activitiesLoading = false, activitiesRevision = 0, activitiesError = false;
+  const roadPractice = window.EnglishRoadPractice?.create({ root: $('road-practice'), api, expired }) || {
+    clear() { $('road-practice').replaceChildren(); $('road-practice').hidden = true; },
+    open() { $('road-practice').hidden = false; $('road-practice').textContent = 'Practice could not load. Reload this page to try again.'; },
+  };
   const dropdowns = ['overview', 'activities'].map(id => ({
     group: $(id + '-menu'), toggle: $(id + '-toggle'), list: $(id + '-submenu'),
     label: id === 'overview' ? 'Overview links' : 'Activities',
@@ -105,6 +109,7 @@
   }
   function clearIdentity() {
     identityRevision++; pageRevision++;
+    roadPractice.clear();
     closeDropdowns();
     clearSettings();
     activityChoices = null; activitiesLoading = false; activitiesError = false; activitiesRevision++;
@@ -172,6 +177,7 @@
     if (!authenticated) return;
     const [part, requested, extra] = location.hash.slice(1).split('/');
     const selected = part === 'quiz-results' && !teacherMode ? 'quiz' : sections.includes(part) ? part : 'feedback';
+    if (selected !== 'activities' || requested !== 'english-road' || extra !== undefined) roadPractice.clear();
     if (selected !== 'account') clearSettings();
     for (const id of sections) $(id).hidden = selected !== id;
     for (const el of document.querySelectorAll('.section-nav a')) {
@@ -863,6 +869,7 @@
     const [part, id, extra] = location.hash.slice(1).split('/');
     if (!authenticated || part !== 'activities') return;
     const activity = extra === undefined && activityChoices?.visibleActivities.includes(id) && activityChoices.activities.find(a => a.id === id);
+    if (activity?.id === 'english-road') roadPractice.open(teacherMode); else roadPractice.clear();
     $('activity-title').textContent = activity ? activity.name : 'Activities';
     $('activity-message').textContent = activity ? activity.description : !activityChoices
       ? (activitiesError ? 'Your activities could not be loaded. Open the Activities menu to try again.' : 'Loading your activities…')
@@ -961,7 +968,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { clearSettings(); closeDropdowns(); });
+  window.addEventListener('pagehide', () => { clearSettings(); roadPractice.clear(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();

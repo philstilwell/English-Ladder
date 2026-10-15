@@ -588,7 +588,7 @@ test('student account preferences are private, isolated, and preserved by admini
   const { e } = environment(), student = await login(e), teacher = await login(e, 'teacher-test'), adminCookie = await access(e);
   assert.equal((await call(e, '/api/account')).status, 401);
   const initial = await selfProfile(e, student.cookie);
-  assert.deepEqual(initial.visibleActivities, ['placeholder-1', 'placeholder-2', 'placeholder-3']);
+  assert.deepEqual(initial.visibleActivities, ['english-road', 'placeholder-1', 'placeholder-2', 'placeholder-3']);
   assert.deepEqual(Object.keys(initial).sort(), ['activities', 'nickname', 'revision', 'visibleActivities']);
   const response = await call(e, '/api/account', selfWrite(student.cookie, { ...initial, nickname: 'New nickname', visibleActivities: [], studentId: 'cd26', status: 'paused', firstName: 'Changed', newPassword: 'injected-test' }));
   assert.equal(response.status, 200);
@@ -598,7 +598,7 @@ test('student account preferences are private, isolated, and preserved by admini
   assert.equal((await login(e)).response.status, 200);
   const another = await login(e, 'other-test', 'https://cd26.englishladder.com');
   const other = await (await call(e, '/api/account', { headers: { Cookie: another.cookie } }, 'https://cd26.englishladder.com')).json();
-  assert.equal(other.nickname, 'Casey'); assert.equal(other.visibleActivities.length, 3);
+  assert.equal(other.nickname, 'Casey'); assert.equal(other.visibleActivities.length, 4);
   const records = await list(e, adminCookie), record = records.find(s => s.studentId === 'ab26');
   const edited = await adminCall(e, '/api/admin/students/' + record.key, write(adminCookie, { ...record, lastName: 'Brown', course: 'Updated course', visibleActivities: ['placeholder-2'] }, 'PUT'));
   assert.equal(edited.status, 200); assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, []);
@@ -669,4 +669,35 @@ test('account saves recheck authenticated revision, pause and deletion inside th
     assert.equal(response.status, change === 'revision' ? 409 : 404);
     assert.notEqual((await directory.records()).find(r => r.studentId === 'ab26').nickname, 'Must not save');
   }
+});
+
+test('English Road results are available only on the administrator host and remain isolated by student', async () => {
+  const {e}=environment(),adminCookie=await access(e),records=await list(e,adminCookie),student=await login(e),teacher=await login(e,'teacher-test');
+  const id=crypto.randomUUID(), record=records.find(s=>s.studentId==='ab26'), other=records.find(s=>s.studentId==='cd26');
+  const started=await call(e,'/api/road/start',{method:'POST',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({attemptId:id,previousAttemptId:null,band:'A1',topic:'Articles'})});assert.equal(started.status,201);
+  const path='/api/admin/students/'+record.key+'/road';
+  for(const cookie of ['',student.cookie,teacher.cookie])assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,401);
+  assert.equal((await call(e,path,{headers:{Cookie:teacher.cookie}})).status,404);
+  assert.equal((await adminCall(e,path,{headers:{Cookie:adminCookie,Origin:'https://evil.test'}})).status,403);
+  const results=await adminCall(e,path,{headers:{Cookie:adminCookie}});assert.equal(results.headers.get('Cache-Control'),'no-store');
+  const rows=(await results.json()).attempts;assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].answered,0);
+  const detail=await adminCall(e,path+'/'+id,{headers:{Cookie:adminCookie}});assert.equal(detail.status,200);assert.equal((await detail.json()).attempt.questions.length,20);
+  const otherPath='/api/admin/students/'+other.key+'/road';
+  assert.deepEqual((await(await adminCall(e,otherPath,{headers:{Cookie:adminCookie}})).json()).attempts,[]);
+  assert.equal((await adminCall(e,otherPath+'/'+id,{headers:{Cookie:adminCookie}})).status,404);
+  await adminCall(e,'/api/admin/students/'+record.key,write(adminCookie,{...record,status:'paused'},'PUT'));
+  assert.equal((await adminCall(e,path,{headers:{Cookie:adminCookie}})).status,200);
+  assert.equal((await call(e,'/api/road/state',{headers:{Cookie:student.cookie}})).status,404);
+});
+
+test('administrator practice panel shows original choices safely and discards late detail after navigation', async () => {
+  const id='22222222-2222-4222-8222-222222222222';let resolveDetail;
+  const row={id,band:'A1',topic:'Articles',startedAt:'2026-10-15T10:00:00Z',completedAt:null,endedAt:null,answered:1,total:20,correct:0};
+  const dom=browser(path=>path==='/api/admin/students/'+fixture.key+'/road'?Response.json({attempts:[row],nextCursor:null}):path.endsWith('/road/'+id)?new Promise(r=>{resolveDetail=r;}):null);
+  const w=dom.window,d=w.document;await flush();w.location.hash='students/'+fixture.key;await flush();
+  assert.equal(d.getElementById('road-results-panel').hidden,false);d.getElementById('load-road-results').click();await flush();
+  assert.match(d.getElementById('road-results').textContent,/In progress.*0 correct out of 1 answered/);
+  const details=d.querySelector('#road-results details');details.open=true;await flush();w.location.hash='students';await flush();
+  resolveDetail(Response.json({attempt:{questions:[{setup:'Read this.',prompt:'<img src=x onerror=alert(1)>',topic:'Articles',options:['a','an','the','some'],correctIndex:1,feedback:['Try an.','Correct.','',''],explanation:'Use an.'}],answers:[{choiceIndex:0,answeredAt:row.startedAt}]}}));await flush();
+  assert.equal(d.getElementById('road-results').textContent,'');assert.equal(d.querySelector('#road-results img'),null);dom.window.close();
 });

@@ -21,6 +21,10 @@
     clear() { $('grammar-practice').replaceChildren(); $('grammar-practice').hidden = true; },
     open() { $('grammar-practice').hidden = false; $('grammar-practice').textContent = 'Practice could not load. Reload this page to try again.'; },
   };
+  const businessTerms = window.BusinessTerms?.create({ root: $('business-terms'), api, expired }) || {
+    clear() { $('business-terms').replaceChildren(); $('business-terms').hidden = true; },
+    open() { $('business-terms').hidden = false; $('business-terms').textContent = 'Practice could not load. Reload this page to try again.'; },
+  };
   const dropdowns = ['overview', 'activities'].map(id => ({
     group: $(id + '-menu'), toggle: $(id + '-toggle'), list: $(id + '-submenu'),
     label: id === 'overview' ? 'Overview links' : 'Activities',
@@ -115,6 +119,7 @@
     identityRevision++; pageRevision++;
     roadPractice.clear();
     grammarPractice.clear();
+    businessTerms.clear();
     closeDropdowns();
     clearSettings();
     activityChoices = null; activitiesLoading = false; activitiesError = false; activitiesRevision++;
@@ -184,6 +189,7 @@
     const selected = part === 'quiz-results' && !teacherMode ? 'quiz' : sections.includes(part) ? part : 'feedback';
     if (selected !== 'activities' || requested !== 'english-road' || extra !== undefined) roadPractice.clear();
     if (selected !== 'activities' || requested !== 'grammar-practice' || extra !== undefined) grammarPractice.clear();
+    if (selected !== 'activities' || requested !== 'business-terms' || extra !== undefined) businessTerms.clear();
     if (selected !== 'account') clearSettings();
     for (const id of sections) $(id).hidden = selected !== id;
     for (const el of document.querySelectorAll('.section-nav a')) {
@@ -877,6 +883,7 @@
     const activity = extra === undefined && activityChoices?.visibleActivities.includes(id) && activityChoices.activities.find(a => a.id === id);
     if (activity?.id === 'english-road') roadPractice.open(teacherMode); else roadPractice.clear();
     if (activity?.id === 'grammar-practice') grammarPractice.open(); else grammarPractice.clear();
+    if (activity?.id === 'business-terms') businessTerms.open(); else businessTerms.clear();
     $('activity-title').textContent = activity ? activity.name : 'Activities';
     $('activity-message').textContent = activity ? activity.description : !activityChoices
       ? (activitiesError ? 'Your activities could not be loaded. Open the Activities menu to try again.' : 'Loading your activities…')
@@ -975,7 +982,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { clearSettings(); roadPractice.clear(); grammarPractice.clear(); closeDropdowns(); });
+  window.addEventListener('pagehide', () => { clearSettings(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();

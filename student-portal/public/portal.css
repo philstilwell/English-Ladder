@@ -330,6 +330,20 @@ summary { cursor:pointer; }
 .account-menu { display:flex; gap:32px; margin-left:auto; align-items:stretch; }
 .activity-page { max-width:680px; }
 #grammar-practice { margin-bottom:20px; }
+#business-terms { margin-bottom:20px; }
+.terms-jump { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:16px 0 8px; }
+.terms-jump input { width:110px; min-height:44px; padding:8px 12px; font:inherit; }
+.terms-jump label { margin:0; }
+.terms-heading { font-size:1.1rem; margin:20px 0 16px; overflow-wrap:anywhere; scroll-margin-top:calc(var(--student-menu-height,56px) + 20px); }
+.terms-label { margin:0 0 8px; font-weight:650; }
+.terms-words { display:flex; flex-wrap:wrap; gap:8px 12px; padding:0; margin:0 0 8px; list-style:none; }
+.terms-words li { padding:4px 10px; border:1px solid var(--line); border-radius:4px; overflow-wrap:anywhere; max-width:100%; }
+.terms-sentences { padding-left:24px; margin:20px 0 8px; }
+.terms-sentences li { padding:8px 0; line-height:1.75; overflow-wrap:anywhere; }
+.terms-sentences.is-revealed { color:var(--blue); }
+#business-terms .terms-reveal { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
+.terms-reveal input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }
+.terms-controls { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:20px 0; }
 .grammar-picker { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:16px 0; }
 .grammar-picker select { min-height:44px; max-width:100%; padding:8px 12px; font:inherit; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:5px; }
 .grammar-heading { font-size:1rem; margin:20px 0 8px; scroll-margin-top:calc(var(--student-menu-height,56px) + 20px); }

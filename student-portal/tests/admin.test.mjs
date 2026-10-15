@@ -588,7 +588,7 @@ test('student account preferences are private, isolated, and preserved by admini
   const { e } = environment(), student = await login(e), teacher = await login(e, 'teacher-test'), adminCookie = await access(e);
   assert.equal((await call(e, '/api/account')).status, 401);
   const initial = await selfProfile(e, student.cookie);
-  assert.deepEqual(initial.visibleActivities, ['english-road', 'grammar-practice', 'placeholder-1', 'placeholder-2', 'placeholder-3']);
+  assert.deepEqual(initial.visibleActivities, ['english-road', 'grammar-practice', 'business-terms', 'placeholder-1', 'placeholder-2', 'placeholder-3']);
   assert.deepEqual(Object.keys(initial).sort(), ['activities', 'nickname', 'revision', 'visibleActivities']);
   const response = await call(e, '/api/account', selfWrite(student.cookie, { ...initial, nickname: 'New nickname', visibleActivities: [], studentId: 'cd26', status: 'paused', firstName: 'Changed', newPassword: 'injected-test' }));
   assert.equal(response.status, 200);
@@ -598,7 +598,7 @@ test('student account preferences are private, isolated, and preserved by admini
   assert.equal((await login(e)).response.status, 200);
   const another = await login(e, 'other-test', 'https://cd26.englishladder.com');
   const other = await (await call(e, '/api/account', { headers: { Cookie: another.cookie } }, 'https://cd26.englishladder.com')).json();
-  assert.equal(other.nickname, 'Casey'); assert.equal(other.visibleActivities.length, 5);
+  assert.equal(other.nickname, 'Casey'); assert.equal(other.visibleActivities.length, 6);
   const records = await list(e, adminCookie), record = records.find(s => s.studentId === 'ab26');
   const edited = await adminCall(e, '/api/admin/students/' + record.key, write(adminCookie, { ...record, lastName: 'Brown', course: 'Updated course', visibleActivities: ['placeholder-2'] }, 'PUT'));
   assert.equal(edited.status, 200); assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, []);

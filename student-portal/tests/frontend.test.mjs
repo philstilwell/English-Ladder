@@ -5,6 +5,7 @@ import {JSDOM} from 'jsdom';
 import {feedback,assessment,quiz} from './fixture.mjs';
 import {seedQuiz,call,origin} from './harness.mjs';
 import grammarBank from '../grammar-bank.json' with { type: 'json' };
+import termsBank from '../business-terms-bank.json' with { type: 'json' };
 const html=readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
 const script=readFileSync(new URL('../public/portal.js',import.meta.url),'utf8');
 const second={...feedback,id:'2026-09-01-2057',startedAt:'2026-09-02T00:57:01Z',title:'Earlier English lesson'};
@@ -25,7 +26,8 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   return reply(path.endsWith(second.id)?second:feedback);
  };
  w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));
- w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
+ w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
+ w.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));w.eval(script);return dom;
 }
 test('deep links open the selected page and show only student-safe content',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#feedback/'+second.id);await flush();
@@ -522,6 +524,65 @@ test('failed activity loading never substitutes defaults and can retry; expiry c
 const roadSettings = { ...settingsFixture, activities: [{ id:'english-road', name:'English Road Practice', description:'Practice grammar and words.' }, ...settingsFixture.activities], visibleActivities:['english-road'] };
 const grammarSettings = { ...settingsFixture, activities: [{ id:'grammar-practice', name:'Grammar practice', description:'Your practice is not saved.' }, ...settingsFixture.activities], visibleActivities:['grammar-practice'] };
 const grammarRoute = origin + '/#activities/grammar-practice';
+const termsSettings={...settingsFixture,activities:[{id:'business-terms',name:'Business terms',description:'Your practice is not saved.'},...settingsFixture.activities],visibleActivities:['business-terms']};
+const termsRoute=origin+'/#activities/business-terms';
+const termsMock=path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:termsBank.items}):null;
+
+test('business terms show six choices and three blue answer sentences with no saved interactions', async () => {
+  const calls=[];const dom=setup((path,options)=>{calls.push({path,method:options?.method||'GET'});return termsMock(path);},termsRoute);
+  await flush();const w=dom.window,d=w.document,root=d.getElementById('business-terms');
+  w.Storage.prototype.setItem=()=>{throw Error('Self-check must not use browser storage');};
+  assert.equal(d.querySelector('#activities-submenu a[aria-current]').textContent,'Business terms');
+  assert.equal(root.querySelectorAll('.terms-words li').length,6);assert.equal(root.querySelectorAll('.terms-sentences li').length,3);
+  const before=root.querySelector('.terms-sentences').textContent,count=calls.length;
+  root.querySelector('[type=checkbox]').click();
+  assert(root.querySelector('.terms-sentences').classList.contains('is-revealed'));
+  assert.deepEqual([...root.querySelectorAll('.terms-sentences q')].map(q=>q.textContent),[
+    'She organized the plates in a neat stack.','A stack of reports awaited his review.','The library featured a stack of classic novels.'
+  ]);
+  root.querySelector('[type=checkbox]').click();assert.equal(root.querySelector('.terms-sentences').textContent,before);
+  assert(!root.querySelector('.terms-sentences').classList.contains('is-revealed'));
+  const jump=value=>{d.getElementById('terms-number').value=String(value);root.querySelector('form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));};
+  jump(4);assert.equal([...root.querySelectorAll('.terms-words q')].filter(q=>q.textContent==='are').length,2);
+  root.querySelector('[type=checkbox]').click();assert.match(root.querySelectorAll('.terms-sentences q')[1].textContent,/"Do Not Enter\."/);
+  jump(5);root.querySelector('[type=checkbox]').click();assert.equal(root.querySelectorAll('.terms-sentences q')[1].textContent,'An electrical receptacle is another term for an outlet.');
+  jump(17);jump(18);assert.match(d.getElementById('terms-jump-status').textContent,/not available/);assert.match(root.querySelector('h4').textContent,/Item 17/);
+  [...root.querySelectorAll('button')].find(b=>b.textContent==='Next').click();assert.match(root.querySelector('h4').textContent,/Item 19/);assert.equal(root.querySelector('[type=checkbox]').checked,false);
+  jump(2961);assert.equal([...root.querySelectorAll('button')].find(b=>b.textContent==='Next').disabled,true);
+  assert.equal(d.activeElement.className,'terms-heading');assert.equal(calls.length,count);assert(calls.every(c=>c.method==='GET'));
+  root.querySelector('[type=checkbox]').click();w.location.hash='overview';await flush();assert.equal(root.textContent,'');
+  w.location.hash='activities/business-terms';await flush();assert.match(root.querySelector('h4').textContent,/Item 1 ·/);assert.equal(root.querySelector('[type=checkbox]').checked,false);
+  assert.equal(w.localStorage.length,0);assert.equal(w.sessionStorage.length,0);w.close();
+});
+
+test('business terms respect visibility, allow teacher previews and safely display source text', async () => {
+  let calls=0;
+  const hidden=setup(path=>path==='/api/account'?reply({...termsSettings,visibleActivities:[]}):path==='/api/business-terms'?(calls++,reply({items:termsBank.items})):null,termsRoute);
+  await flush();assert.equal(calls,0);assert.equal(hidden.window.document.getElementById('business-terms').hidden,true);hidden.window.close();
+  const text='<img src=x onerror=alert(1)>',item={...termsBank.items[0],term:text,answers:[text,...termsBank.items[0].answers.slice(1)],options:[text,...termsBank.items[0].answers.slice(1)]};
+  const teacher=setup(path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:[item]}):null,termsRoute,'teacher');
+  await flush();const root=teacher.window.document.getElementById('business-terms');root.querySelector('[type=checkbox]').click();
+  assert(root.textContent.includes(text));assert.equal(root.querySelector('img'),null);assert.equal(root.querySelector('[onerror]'),null);teacher.window.close();
+});
+
+test('business terms clear late loads after leaving the activity, sign-out and page hide', async () => {
+  for(const action of ['navigation','sign-out','pagehide']) {
+    let resolve;const dom=setup(path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?new Promise(r=>{resolve=r;}):null,termsRoute);
+    await flush();const w=dom.window;
+    if(action==='navigation')w.location.hash='account';else if(action==='sign-out')w.document.getElementById('logout').click();else w.dispatchEvent(new w.Event('pagehide'));
+    await flush();resolve(reply({items:termsBank.items}));await flush();
+    assert.equal(w.document.getElementById('business-terms').textContent,'');assert.equal(w.document.getElementById('business-terms').hidden,true);w.close();
+  }
+});
+
+test('business terms retry bad content without exposing incomplete keys and clear on session expiry', async () => {
+  let invalid=true;
+  const dom=setup(path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:invalid?[{...termsBank.items[0],answers:['incomplete']}]:termsBank.items}):null,termsRoute);
+  await flush();const root=dom.window.document.getElementById('business-terms');assert.match(root.textContent,/could not load/);assert.equal(root.querySelector('.terms-sentences'),null);
+  invalid=false;root.querySelector('button').click();await flush();assert.equal(root.querySelectorAll('.terms-sentences li').length,3);dom.window.close();
+  const expiredDom=setup(path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):null,termsRoute);
+  await flush();assert.equal(expiredDom.window.document.getElementById('login-view').hidden,false);assert.equal(expiredDom.window.document.getElementById('business-terms').textContent,'');expiredDom.window.close();
+});
 
 test('grammar reveals and hides answers, reaches every item and never saves practice', async () => {
   const calls=[];

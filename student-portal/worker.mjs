@@ -353,7 +353,7 @@ async function handle(request, env) {
 
 export default {
   async scheduled(event, env) {
-    if (env.AUTOMATION_ENABLED !== 'true' || !env.QUIZ_AUTOMATION || !nightlyDate(event.scheduledTime)) return;
+    if (!env.QUIZ_AUTOMATION || !nightlyDate(event.scheduledTime)) return;
     await env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/run', { method: 'POST', body: JSON.stringify({ scheduledTime: event.scheduledTime }) }));
   },
   async fetch(request, env) {

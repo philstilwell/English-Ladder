@@ -241,6 +241,9 @@ export class StudentDirectory {
         return json({ revision: await this.storage.get('revision'), students: Object.fromEntries(records.map(r => [r.studentId,
           { firstName: r.firstName.split(/\s+/)[0], zoomNames: r.zoomNames, timeZone: r.lessonTimeZone, startAfter: r.startAfter }])) });
       }
+      if (path === '/retention-accounts' && request.method === 'GET') {
+        return json({ studentIds: (await this.records()).filter(r => r.activated && r.studentId).map(r => r.studentId) });
+      }
       if (path === '/students' && request.method === 'POST') return await this.save(await request.json());
       if (/^\/students\/[\w-]{36}$/.test(path) && request.method === 'PUT') return await this.save(await request.json(), path.slice(10));
       if (/^\/students\/[\w-]{36}$/.test(path) && request.method === 'DELETE') return await this.remove(path.slice(10), await request.json());

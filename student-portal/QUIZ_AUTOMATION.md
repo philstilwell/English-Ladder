@@ -26,6 +26,18 @@ Require the full My Notes transcript with every returned segment, a confirmed co
 
 Missing/empty/growing transcripts, very recent meetings, uncertain identity, oversized transcripts, or unclear language evidence do not produce invented records. Retry transient failures on later nights; flag persistent problems in the teacher view. Full transcript responses exceeding the safe model input size are rejected, never silently truncated. Zoom summaries are never substitutes.
 
+## Private transcript cache and retention
+
+Cache eligible new transcripts in the existing private per-student server store, after anonymization and independent privacy review. Match the student from configured Zoom names before removing identities. Trusted instructor names default to `Phil` and `Phil Stilwell`; the optional private `ZOOM_INSTRUCTOR_NAMES` JSON array can override these. Preserve `Student`, `Instructor`, and separate `Speaker N` roles, every turn, and elapsed timestamps. Unknown speakers must not be guessed to be the instructor. Conflicting speaker identities prevent processing.
+
+Known speaker names and direct contact patterns are removed before the first privacy model call. That call selects exact spans containing remaining proper names, identifying details, or sensitive personal information. Code replaces those spans with neutral placeholders without rewriting or correcting other language. A second model pass reviews the entire result. Only reviewed text may be saved or used for language assessment. Raw Zoom responses and name mappings are transient in server memory; they are not saved, logged, exposed in browser APIs, or committed. The privacy service uses the existing Cloudflare AI model; this is automated redaction, not a guarantee that all contextual identifying details are detected. A failed privacy review is flagged for attention and no transcript is cached or used for publishing.
+
+The cache contains anonymous segments, meeting times, internal source references, revision metadata, and hashes. Size-bounded chunks and a content hash preserve the complete text and detect incomplete reads. Public Worker routes never expose cache reads or writes, even to a logged-in teacher. Ordinary assessment/context exports omit the full cache. A deleted account's permanent write barrier covers cache writes too.
+
+Completed lessons remain skipped. Pending retries reuse a matching reviewed copy, avoiding both the transcript download and the two privacy calls. New source notifications, newer modification times, speaker-mapping changes, or a privacy-version change invalidate reuse. Without a source revision, pending copies are refreshed after seven days. Discovery still checks Zoom metadata for new or changed notes. Matching source hashes can reuse the reviewed text after a refresh. No historical cache backfill is triggered by deployment.
+
+Nightly cleanup removes every cached version whose Eastern lesson date is earlier than the date three calendar months ago; a month-end boundary is clamped to the last day of the target month. The cutoff day is retained until the following night. Expired copies are also refused on read/save. Cleanup covers paused accounts and runs even when publishing is disabled, no students are active, or Zoom is disconnected. It makes no AI call. Failures appear in the administrator's nightly status and retry on the next night. This deletes the portal's cached transcripts only; feedback, assessment/CEFR history, quizzes, first choices, and original Zoom records remain.
+
 ## Create the student pages
 
 Read the student's current assessment and **all** saved quiz attempts, including unfinished ones. Use the original first choice in `answers[i][0]`; unanswered questions are not errors and later retries never erase a first mistake. Rank review by repeated quizzes, recency, and frequency. If no misses exist, use relevant assessment patterns without claiming quiz errors.
@@ -44,7 +56,7 @@ The latest quiz introduction shows only plain source lesson dates, without links
 
 ## Cost and operation
 
-The model is Cloudflare Workers AI `@cf/openai/gpt-oss-120b`, using two calls per eligible update. The initial estimate for Koji is under $1/month in AI usage before free allowances. No paid plan is enabled automatically. Initial safeguards reserve at most two generations per UTC day and twelve per month for each configured student; failed attempts count toward the cap. Reaching the cap keeps jobs pending and shows a teacher message. Adjust limits and estimate costs before expanding the student roster.
+The model is Cloudflare Workers AI `@cf/openai/gpt-oss-120b`, using two author/editor calls per eligible update, plus two privacy calls when a new sanitized transcript is needed. The initial estimate for Koji was under $1/month in AI usage before free allowances; privacy processing adds an estimated $0.01–$0.05 per newly cached transcript, depending on length and redactions. Private storage is expected to fit the existing allowance (5 GB included, then $0.20/GB-month at the October 15, 2026 published SQLite-backed Durable Object rates). No new service or paid plan is enabled. Reserve at most two generation attempts per UTC day and twelve per month for each configured student before any privacy or authoring call; failed attempts count toward the cap. These are attempt limits, not a dollar-enforced ceiling. Reaching the cap keeps jobs pending and shows a teacher message. Adjust limits and estimate costs before expanding the student roster.
 
 Tests use fictional records and mocked model/Zoom calls. Run `npm run test:students`, then `npm run deploy:students`. Verify live teacher-only connection status and student isolation. Once OAuth is connected, verify a real read-only discovery pass before enabling publishing. Do not run paid inference just to test setup or regenerate the baseline five quizzes. Keep checkpoints, secrets, and student records private. Remove temporary credential files and preview state, and close temporary browser tabs/dialogs.
 
@@ -55,6 +67,7 @@ Tests use fictional records and mocked model/Zoom calls. Run `npm run test:stude
 - [Zoom meeting API](https://developers.zoom.us/docs/api/meetings/)
 - [Cloudflare cron triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/)
 - [Cloudflare model pricing](https://developers.cloudflare.com/workers-ai/models/gpt-oss-120b/)
+- [Cloudflare private storage pricing](https://developers.cloudflare.com/durable-objects/platform/pricing/)
 
 
 ### Administrator-managed students

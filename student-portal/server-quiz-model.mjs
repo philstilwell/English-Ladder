@@ -9,6 +9,8 @@ const fail = () => { throw new Error('transcript_unusable'); };
 export function readTranscript(note, students) {
   const items = note?.transcript?.items, speakers = note?.transcript?.speakers;
   if (!Array.isArray(items) || !items.length || !Array.isArray(speakers)) fail();
+  if (speakers.some(s => !(typeof s.speaker_id === 'string' && s.speaker_id || Number.isSafeInteger(s.speaker_id)) || typeof s.display_name !== 'string') ||
+      new Set(speakers.map(s => s.speaker_id)).size !== speakers.length) fail();
   const matches = Object.entries(students).filter(([, student]) => speakers.some(s =>
     student.zoomNames.some(name => name.toLowerCase() === s.display_name?.toLowerCase())));
   if (matches.length !== 1) throw new Error(matches.length ? 'ambiguous_student' : 'other_student');
@@ -62,6 +64,7 @@ Use short A1-A2 English: common words, one idea per sentence, respectful adult t
 Use only the learner's first name. Do not repeat unrelated personal/work/belief/health details or assess them.
 Focus on English usage, grammar, vocabulary, comprehension, and conversation skills. No formal level or pronunciation claims.
 Be cautious about automatic transcription errors. Distinguish actual teaching from extra practice. Never invent an actual quotation.
+An anonymized transcript uses immutable Student, Instructor and other Speaker labels. Attribute learner performance only to Student (or the provided learner label); never to Instructor or another speaker. Bracketed placeholders replace names or private details: do not score them as language errors, infer their contents, or reconstruct identities. Prefer quotations without placeholders; label any retained placeholder as anonymized. If too little independent learner language remains, return insufficientEvidence rather than guess.
 Create exactly 7 NEW multiple-choice practice questions, usually 5 from the new lesson and 2 reviewing the supplied real first-try misses.
 If no first-try misses exist, use relevant assessment patterns without claiming quiz errors. Prefer recent and repeated misses.
 Every choice needs a short accurate explanation. One clear best answer; realistic distractors. New examples must be called practice.
@@ -104,9 +107,10 @@ async function generate(ai, instructions, input, maxTokens) {
 
 export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   const { student, segments } = transcript, id = sessionId(meeting.start_time, student.timeZone);
+  const learner = transcript.learnerLabel || student.firstName;
   const review = firstTryReview(context.attempts);
   const { quiz: oldQuiz, ...priorAssessment } = context.assessment || {};
-  const input = { learner: student.firstName, segments, firstTryReview: review, newSessionId: id, priorAssessment, priorCefr: context.cefr || null,
+  const input = { learner, segments, firstTryReview: review, newSessionId: id, priorAssessment, priorCefr: context.cefr || null,
     assessmentPatterns: (context.assessment?.patterns || []).map(p => ({ title: p.title, detail: p.detail, practice: p.practice })),
   };
   const draft = await generate(ai, RULES + '\n' + CEFR_RULES, input, 12000);
@@ -150,7 +154,7 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   const studentContent = JSON.stringify({ feedback, assessment });
   if (/https?:\/\/|mynotes\.zoom|<\/?[a-z]/i.test(studentContent) || /\bCEFR\b|\b[ABC][12]\b/.test(studentContent)) throw new Error('unsafe_content');
   let cefr;
-  try { cefr = groundCefr(draft.cefr, id, assessment.assessedOn, segments, student.firstName, context.cefr); }
+  try { cefr = groundCefr(draft.cefr, id, assessment.assessedOn, segments, learner, context.cefr); }
   catch { cefr = insufficientCefr(id, assessment.assessedOn); }
   const reviewResult = await generate(ai,
     RULES + '\n' + CEFR_RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Compare each feedback practice task AND answer with all focus models and vocabulary examples. Reject copied examples, gap-fill copies, trivial rewrites, or tasks without a fresh situation. Check that study suggestions make no promises about future sessions and that each AI prompt introduces the specific topic with examples and guided practice. Reject ambiguous answers or unsupported claims. Return {"approved":true,"cefrApproved":true}. Set approved true only if the student feedback, assessment and quiz pass all checks. Independently set cefrApproved true only if the CEFR estimate follows the rubric and all its evidence, privacy, attribution, confidence and scope rules. A weak CEFR estimate must not reject otherwise valid student work. Reject any CEFR level claimed in student-facing content.',

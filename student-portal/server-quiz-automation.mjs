@@ -1,5 +1,7 @@
-import { directoryStudents } from './student-directory.mjs';
+import { directoryStudents, directoryRequest } from './student-directory.mjs';
 import { authorQuiz, readTranscript, sessionId } from './server-quiz-model.mjs';
+import { anonymizeTranscript } from './transcript-privacy.mjs';
+import { TRANSCRIPT_PRIVACY_VERSION, reusableTranscript } from './transcript-cache.mjs';
 
 const json = (data, status = 200) => Response.json(data, { status });
 const encoder = new TextEncoder();
@@ -10,6 +12,7 @@ const safeError = error => [
   'zoom_reconnect', 'zoom_unavailable', 'transcript_unusable', 'transcript_too_large', 'ambiguous_student',
   'insufficient_evidence', 'invalid_evidence', 'content_review_failed', 'assessment_required', 'unsafe_content',
   'invalid_model_response', 'monthly_limit', 'daily_limit', 'meeting_pending', 'publish_failed', 'meeting_reference_missing', 'discovery_incomplete',
+  'transcript_privacy_failed', 'source_changed', 'student_changed',
 ].includes(error.message) ? error.message : 'generation_failed';
 
 export function studentsFor(env) {
@@ -173,6 +176,7 @@ export class QuizAutomation {
       const existing = await txn.get(key);
       if (existing) {
         existing.meetingId = object.meeting_id;
+        existing.sourceEventAt = Math.max(existing.sourceEventAt || 0, Number(request.headers.get('x-zm-request-timestamp')) * 1000);
         if (event.event === 'my_notes.transcript_generated' && existing.status === 'needs_attention' &&
             ['transcript_unusable', 'meeting_pending', 'meeting_reference_missing', 'zoom_unavailable'].includes(existing.lastError)) {
           existing.status = 'pending'; existing.tries = 0; existing.nextAt = 0;
@@ -181,6 +185,7 @@ export class QuizAutomation {
         return;
       }
       await txn.put({ [key]: { noteId: object.note_id, meetingId: object.meeting_id, receivedAt: Date.now(),
+        sourceEventAt: Number(request.headers.get('x-zm-request-timestamp')) * 1000,
         nextAt: Date.now() + 60000, status: 'pending', tries: 0 } });
     });
     return json({ accepted: true });
@@ -233,8 +238,9 @@ export class QuizAutomation {
         for (const note of notes.notes) {
           if (!noteIdValid(note.note_id)) throw new Error('discovery_incomplete');
           const key = 'job:' + await hash(note.note_id), prior = await this.storage.get(key);
+          const modifiedAt = Number.isFinite(Date.parse(note.modified_time)) && (!prior?.modifiedAt || Date.parse(note.modified_time) > Date.parse(prior.modifiedAt)) ? note.modified_time : prior?.modifiedAt;
           await this.storage.put({ [key]: { receivedAt: Date.now(), nextAt: 0, status: 'pending', tries: 0, ...prior,
-            noteId: note.note_id, meetingId: instance.uuid, startedAt: instance.start_time, modifiedAt: note.modified_time } });
+            noteId: note.note_id, meetingId: instance.uuid, startedAt: instance.start_time, modifiedAt } });
         }
       }
     }
@@ -260,18 +266,47 @@ export class QuizAutomation {
     });
   }
   async process(key, job) {
-    const note = await this.zoom('/my_notes/notes/' + encodeURIComponent(job.noteId) + '/content?include=transcript');
-    const transcript = readTranscript(note, await this.students());
-    job.studentId = transcript.studentId;
-    const context = await this.portal(job.studentId, '/automation/context');
-    const known = context.sourceNotes?.find(source => source.noteId === job.noteId);
-    if (known && Date.parse(known.startedAt) < Date.parse(transcript.student.startAfter)) { job.status = 'skipped'; return; }
-    if (!job.meetingId) throw new Error('meeting_reference_missing');
-    const uuid = job.meetingId.startsWith('/') || job.meetingId.includes('//') ? encodeURIComponent(encodeURIComponent(job.meetingId)) : encodeURIComponent(job.meetingId);
-    const meeting = await this.zoom('/past_meetings/' + uuid);
+    const students = await this.students();
+    if (job.studentId && !students[job.studentId]) throw new Error('other_student');
+    const instructorNames = JSON.parse(this.env.ZOOM_INSTRUCTOR_NAMES || '["Phil","Phil Stilwell"]');
+    if (!Array.isArray(instructorNames) || instructorNames.length > 20 || instructorNames.some(n => typeof n !== 'string' || !n.trim() || n.length > 200)) throw new Error('Invalid instructor names');
+    const mappingHash = await hash(JSON.stringify({ students, instructorNames }));
+    let context = job.studentId ? await this.portal(job.studentId, '/automation/context') : null;
+    const alreadyPublished = () => {
+      const known = context?.sourceNotes?.find(source => source.noteId === job.noteId);
+      const id = known?.id || job.sessionId;
+      if (id && (context?.publishedSessions.includes(id) || context?.assessment?.quiz?.generatedForSession === id)) {
+        job.status = 'published'; job.sessionId = id; return true;
+      }
+      return false;
+    };
+    // Completed jobs and retries whose publication already committed need no
+    // transcript or meeting download, including after a coordinator restart.
+    if (alreadyPublished()) return;
+    const cached = job.studentId ? (await this.portal(job.studentId, '/automation/transcript/' + job.noteId)).transcript : null;
+    let note, transcript, meeting, sourceHash;
+    const reusable = reusableTranscript(cached, job, mappingHash);
+    if (reusable) {
+      transcript = { studentId: job.studentId, student: students[job.studentId], learnerLabel: 'Student', segments: cached.segments };
+      meeting = cached.meeting; sourceHash = cached.sourceHash;
+    } else {
+      note = await this.zoom('/my_notes/notes/' + encodeURIComponent(job.noteId) + '/content?include=transcript');
+      transcript = readTranscript(note, students);
+      if (job.studentId && job.studentId !== transcript.studentId) throw new Error('ambiguous_student');
+      job.studentId = transcript.studentId;
+      context ||= await this.portal(job.studentId, '/automation/context');
+      if (alreadyPublished()) return;
+      const known = context.sourceNotes?.find(source => source.noteId === job.noteId);
+      if (known && Date.parse(known.startedAt) < Date.parse(transcript.student.startAfter)) { job.status = 'skipped'; return; }
+      if (!job.meetingId) throw new Error('meeting_reference_missing');
+      const uuid = job.meetingId.startsWith('/') || job.meetingId.includes('//') ? encodeURIComponent(encodeURIComponent(job.meetingId)) : encodeURIComponent(job.meetingId);
+      meeting = await this.zoom('/past_meetings/' + uuid);
+      sourceHash = await hash(JSON.stringify(note.transcript));
+    }
     if (!meeting.start_time || !meeting.end_time || Date.parse(meeting.end_time) > Date.now() - 900000 ||
         !Number.isFinite(Date.parse(meeting.start_time)) || !Number.isFinite(Date.parse(meeting.end_time))) throw new Error('meeting_pending');
     if (job.modifiedAt && Date.parse(job.modifiedAt) > Date.now() - 900000) throw new Error('meeting_pending');
+    if (job.sourceEventAt && job.sourceEventAt > Date.now() - 900000) throw new Error('meeting_pending');
     if (Date.parse(meeting.start_time) < Date.parse(transcript.student.startAfter)) {
       job.status = 'skipped'; return;
     }
@@ -279,19 +314,67 @@ export class QuizAutomation {
     if (context.publishedSessions.includes(id) || context.assessment?.quiz?.generatedForSession === id) {
       job.status = 'published'; job.sessionId = id; return;
     }
-    const fingerprint = await hash(JSON.stringify(note.transcript));
     await this.reserveGeneration(job.studentId);
+    if (!reusable) {
+      const sameContent = cached?.privacyVersion === TRANSCRIPT_PRIVACY_VERSION && cached.mappingHash === mappingHash && cached.sourceHash === sourceHash;
+      const segments = sameContent ? cached.segments : await anonymizeTranscript(this.env.AI, note, transcript, instructorNames);
+      if (JSON.stringify(await this.students()) !== JSON.stringify(students)) throw new Error('student_changed');
+      await this.checkSource(key, job);
+      await this.portal(job.studentId, '/automation/transcript/' + job.noteId, {
+        privacyVersion: TRANSCRIPT_PRIVACY_VERSION, privacyReviewed: true, noteId: job.noteId, meetingId: job.meetingId,
+        mappingHash, sourceHash, savedAt: new Date().toISOString(), modifiedAt: job.modifiedAt || null,
+        sourceEventAt: job.sourceEventAt || null, meeting, segments,
+      });
+      // Retain only the pointer in the coordinator, even if authoring later fails.
+      await this.saveJob(key, job);
+      transcript = { ...transcript, learnerLabel: 'Student', segments };
+      note = null;
+    }
     const output = await authorQuiz(this.env.AI, transcript, meeting, job.noteId, context);
     // Recheck the mapping after generation: a pause or name edit must take effect
     // before any content reaches the student's account.
     const currentStudent = (await this.students())[job.studentId];
     if (JSON.stringify(currentStudent) !== JSON.stringify(transcript.student)) throw new Error('student_changed');
-    const saved = await this.portal(job.studentId, '/automation/publish', { ...output, fingerprint });
+    await this.checkSource(key, job);
+    const saved = await this.portal(job.studentId, '/automation/publish', { ...output, fingerprint: sourceHash });
     if (!saved.ok) throw new Error('publish_failed');
     job.status = 'published'; job.sessionId = id; job.publishedAt = new Date().toISOString(); job.lastError = null;
   }
+  sourceChanged(current, job) {
+    return current && ((current.sourceEventAt || 0) > (job.sourceEventAt || 0) ||
+      Date.parse(current.modifiedAt) > (Date.parse(job.modifiedAt) || 0) || current.meetingId && current.meetingId !== job.meetingId);
+  }
+  async checkSource(key, job) {
+    if (this.sourceChanged(await this.storage.get(key), job)) throw new Error('source_changed');
+  }
+  async saveJob(key, job) {
+    await this.storage.transaction(async txn => {
+      const current = await txn.get(key);
+      const next = this.sourceChanged(current, job) ? { ...job, modifiedAt: current.modifiedAt || job.modifiedAt,
+        sourceEventAt: current.sourceEventAt || job.sourceEventAt, meetingId: current.meetingId || job.meetingId,
+        ...(job.status === 'published' ? {} : { status: 'pending', nextAt: 0, tries: 0 }) } : job;
+      await txn.put({ [key]: next });
+    });
+  }
+  async pruneTranscripts() {
+    let studentIds;
+    if (this.env.STUDENT_DIRECTORY) {
+      const response = await directoryRequest(this.env, '/retention-accounts');
+      if (!response.ok) throw new Error('transcript_retention_failed');
+      studentIds = (await response.json()).studentIds;
+    } else studentIds = [...new Set([...Object.keys(JSON.parse(this.env.STUDENT_ACCOUNTS || '{}')), ...Object.keys(studentsFor(this.env))])];
+    if (!this.env.FEEDBACK_STORE) return;
+    const failed = [];
+    for (const id of studentIds) {
+      try {
+        const response = await this.env.FEEDBACK_STORE.get(this.env.FEEDBACK_STORE.idFromName(id)).fetch(new Request('https://feedback.internal/automation/prune-transcripts', { method: 'POST' }));
+        if (!response.ok && response.status !== 410) throw new Error('cleanup_failed');
+      } catch { failed.push(id); }
+    }
+    if (failed.length) throw new Error('transcript_retention_failed');
+    await this.storage.put({ 'last-retention': new Date().toISOString() });
+  }
   async run(scheduledTime) {
-    if (this.env.AUTOMATION_ENABLED !== 'true' || !await this.isConfigured()) return;
     const lease = crypto.randomUUID(), deadline = Date.now() + 480000;
     const acquired = await this.storage.transaction(async txn => {
       const lock = await txn.get('run-lock');
@@ -305,6 +388,11 @@ export class QuizAutomation {
     });
     if (!acquired) return;
     try {
+      // Privacy retention runs even when publishing is disabled, all accounts
+      // are paused, or Zoom is disconnected. It never needs an AI call.
+      try { await this.pruneTranscripts(); await this.storage.put({ 'retention-error': null }); }
+      catch { await this.storage.put({ 'retention-error': 'transcript_retention_failed' }); }
+      if (this.env.AUTOMATION_ENABLED !== 'true' || !await this.isConfigured()) return;
       await this.accessToken(); // Keep the rotating refresh token alive even between lessons.
       await this.refreshDirectory();
       await this.discover();
@@ -317,12 +405,12 @@ export class QuizAutomation {
           if (error.message === 'other_student') { job.status = 'needs_attention'; job.lastError = 'student_not_matched'; }
           else {
             job.lastError = safeError(error); job.tries++;
-            job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing'].includes(job.lastError) ? 'needs_attention' : 'pending';
+            job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing', 'transcript_privacy_failed'].includes(job.lastError) ? 'needs_attention' : 'pending';
             job.nextAt = Date.now() + 3600000;
             if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; }
           }
         }
-        await this.storage.put({ [key]: job });
+        await this.saveJob(key, job);
       }
       await this.storage.put({ 'last-check': new Date().toISOString(), 'connection-error': null });
     } catch (error) { await this.storage.put({ 'connection-error': safeError(error) }); }
@@ -341,6 +429,7 @@ export class QuizAutomation {
     if (path === '/admin-status' && request.method === 'GET') {
       const jobs = [...await this.storage.list({ prefix: 'job:' })].map(([, j]) => j);
       return json({ enabled: this.env.AUTOMATION_ENABLED === 'true', connected: Boolean(await this.storage.get('oauth')),
+        lastRetention: await this.storage.get('last-retention') || null, retentionError: await this.storage.get('retention-error') || null,
         lastCheck: await this.storage.get('last-check') || null, connectionError: await this.storage.get('connection-error') || null,
         pending: jobs.filter(j => j.status === 'pending').length,
         needsAttention: jobs.filter(j => j.status === 'needs_attention').length,

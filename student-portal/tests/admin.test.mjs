@@ -27,6 +27,18 @@ async function access(e){return (await login(e,'teacher-test',admin)).cookie;}
 const write=(cookie,body,method='POST')=>({method,headers:{Cookie:cookie,Origin:admin,'Content-Type':'application/json'},body:JSON.stringify(body)});
 async function list(e,cookie){return (await (await adminCall(e,'/api/admin/students',{headers:{Cookie:cookie}})).json()).students;}
 
+test('private retention roster includes paused accounts without sharing names or contacts',async()=>{
+  const {e,directory}=environment(),cookie=await access(e),records=await list(e,cookie);
+  for(const record of records) await adminCall(e,'/api/admin/students/'+record.key,write(cookie,{...record,status:'paused'},'PUT'));
+  assert.deepEqual((await directoryStudents(e)).students,{});
+  const response=await directory.fetch(new Request('https://directory.internal/retention-accounts'));
+  assert.deepEqual((await response.json()).studentIds.sort(),['ab26','cd26']);
+  assert.equal((await adminCall(e,'/api/admin/retention-accounts',{headers:{Cookie:cookie}})).status,404);
+  const automation=new QuizAutomation({storage:memory()},e);const seen=[];
+  e.FEEDBACK_STORE={idFromName:id=>id,get:id=>({fetch:async()=>{seen.push(id);return Response.json({ok:true});}})};
+  await automation.run();assert.deepEqual(seen.sort(),['ab26','cd26']);
+});
+
 test('administrator quiz overview is private, reads each account separately, and does not expose answers',async()=>{
   const {e}=environment(),cookie=await access(e),records=await list(e,cookie),student=await login(e),teacher=await login(e,'teacher-test');
   const store=e.FEEDBACK_STORE.get('ab26');await store.storage.put({'assessment:current':{...assessment,quiz}});

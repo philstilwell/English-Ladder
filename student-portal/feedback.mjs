@@ -1,6 +1,7 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { validateCefr, cefrOverview } from './cefr.mjs';
+import { validNoteId, saveTranscriptCache, readTranscriptCache, validateTranscriptCache, pruneTranscriptCache } from './transcript-cache.mjs';
 
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
 
@@ -120,6 +121,17 @@ export class FeedbackStore {
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
     if (id === 'admin/cefr' && request.method === 'GET') return json({ cefr: await this.storage.get('cefr:current') || null });
+    if (id === 'automation/prune-transcripts' && request.method === 'POST') return this.activeTransaction(async txn => json(await pruneTranscriptCache(txn)));
+    if (id.startsWith('automation/transcript/')) {
+      const noteId = id.slice('automation/transcript/'.length);
+      if (!validNoteId(noteId)) return json({ error: 'Invalid transcript reference.' }, 400);
+      if (request.method === 'GET') return this.activeTransaction(async txn => json({ transcript: await readTranscriptCache(txn, noteId) }));
+      if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
+      let record;
+      try { record = validateTranscriptCache(await request.json()); if (record.noteId !== noteId) throw new Error('Wrong transcript'); }
+      catch { return json({ error: 'Only a reviewed anonymized transcript can be saved.' }, 400); }
+      return this.activeTransaction(async txn => json(await saveTranscriptCache(txn, record)));
+    }
     if (id === 'learning-import' && request.method === 'POST') {
       const input = await request.json();
       let feedback, assessment, quizzes;

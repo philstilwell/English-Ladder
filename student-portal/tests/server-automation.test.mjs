@@ -151,10 +151,15 @@ test('nightly server run publishes all pages atomically and does not regenerate 
   const oldFetch = globalThis.fetch; let calls = 0;
   object.discover = async () => {};
   globalThis.fetch = async url => Response.json(String(url).includes('/past_meetings/') ? meeting : note);
-  env.AI = { run: async () => ({ response: ++calls % 2 ? structuredClone(draft) : { approved: true } }) };
+  env.AI = { run: async (_model, input) => {
+    calls++;
+    const rules = input.messages[0].content;
+    if (rules.includes('You anonymize')) return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
+    return { response: rules.includes('independent editor') ? { approved: true } : structuredClone(draft) };
+  } };
   try {
     await object.run(); let job = await storage.get(key);
-    assert.equal(job.status, 'published'); assert.equal(calls, 2);
+    assert.equal(job.status, 'published'); assert.equal(calls, 4);
     const saved = await (await call(seed.e, '/api/assessment', { headers: { Cookie: seed.teacher.cookie } })).json();
     assert.equal(saved.assessment.quiz.generatedForSession, session);
     assert.equal(saved.assessment.summary, draft.assessment.summary);
@@ -165,10 +170,10 @@ test('nightly server run publishes all pages atomically and does not regenerate 
     const conflict = await object.portal('ab26', '/automation/context');
     const duplicate = await object.portal('ab26', '/automation/publish', { quiz: saved.assessment.quiz });
     assert.equal(duplicate.duplicate, true);
-    await object.run(); assert.equal(calls, 2);
+    await object.run(); assert.equal(calls, 4);
     // A repeated Zoom note for the same meeting also cannot regenerate the quiz.
     await storage.put({ ['job:second']: { ...job, status: 'pending', nextAt: 0 } });
-    await object.run(); assert.equal(calls, 2);
+    await object.run(); assert.equal(calls, 4);
     const history = await (await call(seed.e, '/api/quiz/results', { headers: { Cookie: seed.teacher.cookie } })).json();
     assert.equal(history.attempts.length, 0);
     assert.doesNotMatch(JSON.stringify([...await storage.list({ prefix: 'job:' })]), /We can practice English/);
@@ -320,4 +325,94 @@ test('CEFR labels accidentally placed in student content are rejected before pub
   const transcript=readTranscript(note,{ab26:student});
   const ai={run:async()=>({response:{...structuredClone(draft),assessment:{...draft.assessment,summary:'Your CEFR level is B1.'}}})};
   await assert.rejects(authorQuiz(ai,transcript,meeting,'fictional-note-123',{assessment,attempts:[]}),/unsafe_content/);
+});
+
+test('a failed authoring retry uses the reviewed cache without another Zoom download or privacy call', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-10-16T12:00:00Z') });
+  const seed = await seedQuiz(), { object, storage, env } = coordinator(seed.e);
+  const job = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', nextAt: 0, status: 'pending', tries: 0 };
+  let downloads = 0, privacyCalls = 0, authorCalls = 0, rejectAuthor = true;
+  object.zoom = async path => { downloads++; return path.includes('past_meetings') ? meeting : note; };
+  env.AI.run = async (_model, input) => {
+    const rules = input.messages[0].content, data = JSON.parse(input.messages[1].content);
+    assert.ok(data.segments.every(s => ['Student', 'Speaker 1'].includes(s.speaker)));
+    assert.doesNotMatch(input.messages[1].content, /Private Teacher Name|Alex0529/);
+    if (rules.includes('You anonymize')) {
+      privacyCalls++; return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
+    }
+    authorCalls++;
+    if (rejectAuthor) throw new Error('mock author unavailable');
+    return { response: rules.includes('independent editor') ? { approved: true } : structuredClone(draft) };
+  };
+  await assert.rejects(object.process('job:cache', job), /mock author unavailable/);
+  assert.equal(downloads, 2); assert.equal(privacyCalls, 2); assert.equal(authorCalls, 1);
+  const storedJob = await storage.get('job:cache'); assert.equal(storedJob.studentId, 'ab26');
+  assert.ok((await object.portal('ab26', '/automation/transcript/' + job.noteId)).transcript);
+  rejectAuthor = false;
+  await object.process('job:cache', storedJob);
+  assert.equal(downloads, 2); assert.equal(privacyCalls, 2); assert.equal(authorCalls, 3); assert.equal(storedJob.status, 'published');
+});
+
+test('changed source revisions refresh the download and never reuse obsolete anonymous text', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-10-16T12:00:00Z') });
+  const seed = await seedQuiz(), { object, storage, env } = coordinator(seed.e);
+  const job = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', nextAt: 0, status: 'pending', tries: 0 };
+  let downloads = 0, privacyCalls = 0, currentNote = note;
+  object.zoom = async path => { downloads++; return path.includes('past_meetings') ? meeting : currentNote; };
+  env.AI.run = async (_model, input) => {
+    const rules = input.messages[0].content;
+    if (!rules.includes('You anonymize')) throw new Error('mock author unavailable');
+    privacyCalls++; return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
+  };
+  await assert.rejects(object.process('job:cache', job), /mock author unavailable/);
+  currentNote = structuredClone(note); currentNote.transcript.items[0].text = 'Now I can use a different word.';
+  job.modifiedAt = '2026-10-16T10:00:00Z';
+  await storage.put({ 'job:cache': job });
+  await assert.rejects(object.process('job:cache', job), /mock author unavailable/);
+  assert.equal(downloads, 4); assert.equal(privacyCalls, 4);
+  assert.equal((await object.portal('ab26', '/automation/transcript/' + job.noteId)).transcript.segments[0].text, currentNote.transcript.items[0].text);
+});
+
+test('privacy failures and exhausted budgets cannot save raw text or publish learner pages', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-10-16T12:00:00Z') });
+  const seed = await seedQuiz(), { object, storage, env } = coordinator(seed.e);
+  object.zoom = async path => path.includes('past_meetings') ? meeting : note;
+  const job = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', nextAt: 0, status: 'pending', tries: 0 };
+  let calls = 0;
+  env.AI.run = async () => ({ response: ++calls === 1 ? { redactions: [] } : { approved: false } });
+  await assert.rejects(object.process('job:cache', job), /transcript_privacy_failed/);
+  assert.equal(calls, 2);
+  assert.equal((await seed.e.FEEDBACK_STORE.get('ab26').storage.list({ prefix: 'transcript:' })).size, 0);
+  await storage.put({ 'usage:ab26': { day: '2026-10-16', month: '2026-10', daily: 2, monthly: 2 } });
+  await assert.rejects(object.process('job:cache', job), /daily_limit/);
+  assert.equal(calls, 2);
+  assert.equal((await seed.e.FEEDBACK_STORE.get('ab26').storage.get('assessment:current')).summary, assessment.summary);
+});
+
+test('new notifications during processing are preserved and block publication from an outdated source', async () => {
+  const { object, storage } = coordinator();
+  const original = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', sourceEventAt: 1000, status: 'pending', tries: 1, nextAt: 1000 };
+  await storage.put({ 'job:cache': { ...original, sourceEventAt: 2000 } });
+  await assert.rejects(object.checkSource('job:cache', original), /source_changed/);
+  await object.saveJob('job:cache', original);
+  assert.equal((await storage.get('job:cache')).sourceEventAt, 2000);
+  assert.equal((await storage.get('job:cache')).nextAt, 0);
+});
+
+test('retention runs with publishing disabled or Zoom disconnected and reports cleanup failures', async () => {
+  const { object, storage, env } = coordinator(emptyEnv()); let cleaned = [], zoomCalls = 0;
+  const stores = env.FEEDBACK_STORE;
+  env.FEEDBACK_STORE = { ...stores, get(id) { const store = stores.get(id); return { fetch(request) { if (new URL(request.url).pathname === '/automation/prune-transcripts') cleaned.push(id); return store.fetch(request); } }; } };
+  env.AUTOMATION_ENABLED = 'false'; object.accessToken = async () => { zoomCalls++; throw Error('zoom_reconnect'); };
+  await object.run();
+  assert.deepEqual(cleaned.sort(), ['ab26', 'cd26']); assert.equal(zoomCalls, 0); assert.ok(await storage.get('last-retention'));
+  env.AUTOMATION_ENABLED = 'true'; cleaned = []; await object.run();
+  assert.deepEqual(cleaned.sort(), ['ab26', 'cd26']); assert.equal(zoomCalls, 1);
+  env.FEEDBACK_STORE.get = () => ({ fetch: async () => new Response('', { status: 503 }) });
+  await object.run();
+  const status = await (await object.fetch(new Request('https://automation.internal/admin-status'))).json();
+  assert.equal(status.retentionError, 'transcript_retention_failed');
+  let dispatched = 0;
+  await worker.scheduled({ scheduledTime: Date.parse('2026-10-16T05:00:00Z') }, { AUTOMATION_ENABLED: 'false', QUIZ_AUTOMATION: { idFromName: id => id, get: () => ({ fetch: async () => { dispatched++; return Response.json({ ok: true }); } }) } });
+  assert.equal(dispatched, 1);
 });

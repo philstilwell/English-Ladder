@@ -13,6 +13,7 @@ button { cursor:pointer; }
 button:disabled { cursor:wait; opacity:.65; }
 .skip-link { position:absolute; top:-80px; left:20px; z-index:10; background:white; padding:12px; }
 .skip-link:focus { top:10px; }
+.masthead-band { background:#fff; }
 .masthead { min-height:56px; border-bottom:1px solid var(--line); max-width:1200px; margin:0 auto; padding:8px 32px 4px; display:flex; align-items:center; gap:12px 24px; }
 /* Match the public site's logo and title at both shared screen sizes. */
 .brand { display:inline-flex; align-items:center; gap:9px; min-height:44px; color:var(--blue); font-weight:700; font-size:1.4625rem; line-height:1.65; letter-spacing:.01em; text-decoration:none; }

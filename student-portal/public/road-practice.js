@@ -50,7 +50,18 @@
         box.append(node('p', 'Your answer: “' + question.options[answer.choiceIndex] + '”'));
         box.append(node('p', (answer.choiceIndex === question.correctIndex ? 'Correct. ' : 'Correct answer: “' + question.options[question.correctIndex] + '”. ') + question.explanation));
         if (answer.choiceIndex !== question.correctIndex) box.append(node('p', question.feedback[answer.choiceIndex]));
+        box.append(promptControls(question));
         return box;
+      }
+      function promptControls(question) {
+        // Copy only exercise wording and any answer key already released by the server.
+        let exercise = 'English practice exercise:\n' + question.setup + '\n“' + question.prompt + '”\nChoices:\n' +
+          question.options.map(option => '• “' + option + '”').join('\n');
+        if (Number.isInteger(question.correctIndex)) exercise += '\nAnswer key: “' + question.options[question.correctIndex] + '”\nExercise explanation: ' + question.explanation;
+        const ai = window.PracticePrompt.create({ prompt: window.PracticePrompt.text(exercise,
+          'Choose the best answer and explain the grammar or vocabulary step by step. Explain why the other choices do not fit, or when they could fit a different sentence.') });
+        ai.button.disabled = busy;
+        const controls = node('div', null, 'practice-prompt-controls'); controls.append(ai.button, ai.status); return controls;
       }
       function setup() {
         if (!catalog) return;
@@ -127,6 +138,7 @@
             if (choice && !busy && !pending && !conflict) send('answer', { attemptId: attempt.id, questionIndex: index, choiceIndex: Number(choice.value) });
           });
         }
+        root.append(promptControls(question));
         if (!attempt.completedAt && !attempt.endedAt && !pending && !conflict) root.append(button('End this set', () => {
           if (window.confirm('End this set? Your saved answers will stay in your account. You can then start a new set.')) send('end', { attemptId: attempt.id, revision: attempt.revision });
         }));

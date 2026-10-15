@@ -12,7 +12,7 @@ export { StudentDirectory } from './student-directory.mjs';
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
-const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
+const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
 const SECURITY_HEADERS = {
   'Cache-Control': 'no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',

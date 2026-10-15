@@ -227,8 +227,14 @@
           const finished = element('button', 'Finish', 'secondary-button'), question = element('button', 'Questions', 'secondary-button question-button');
           finished.type = question.type = 'button';
           const status = element('p', '', 'grammar-save-status field-hint'); status.setAttribute('role', 'status');
+          const ai = window.PracticePrompt.create({
+            label: ' for item ' + item.number,
+            prompt: window.PracticePrompt.text('Grammar exercise:\n“' + item.prompt + '”\nChoices:\n' + item.options.map(option => '• “' + option + '”').join('\n') +
+              '\nAnswer key: “' + item.answer + '”\nCompleted sentence: “' + answerSentence(item) + '”',
+              'Explain the correct answer and the grammar step by step. Explain why the other choices do not fit, or when they could fit a different sentence.'),
+          });
           finished.addEventListener('click', () => save(item.number, 'finished')); question.addEventListener('click', () => save(item.number, 'question'));
-          actions.append(finished, question); row.append(actions, status); list.append(row);
+          actions.append(finished, question, ai.button); row.append(actions, status, ai.status); list.append(row);
           rows.set(item.number, {row, finished, question, status});
         }
         updateRows();

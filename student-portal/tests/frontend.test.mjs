@@ -34,6 +34,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/feedback')return reply({sessions:[feedback,second],nextCursor:null});
   return reply(path.endsWith(second.id)?second:feedback);
  };
+ w.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/practice-position.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
@@ -746,7 +747,7 @@ test('Business terms never pretend a failed save succeeded, recover conflicts, a
   let writes=0;const teacher=setup((path,options)=>path==='/api/business-terms/state'?(options?.method?(writes++,reply({})):reply({entries:[{...entry,question:true}]})):termsMock(path),termsRoute,'teacher');
   await flush();const teacherRoot=teacher.window.document.getElementById('business-terms');
   assert.equal(teacherRoot.querySelector('.terms-questions summary').textContent,'Questions list (1)');
-  for(const button of teacherRoot.querySelectorAll('.terms-actions button')){assert(button.disabled);button.click();}assert.equal(writes,0);teacher.window.close();
+  for(const button of teacherRoot.querySelectorAll('.terms-actions button[aria-pressed]')){assert(button.disabled);button.click();}assert.equal(writes,0);teacher.window.close();
 });
 
 test('Business terms discards pending saved choices on leaving, logout, page hide and expiry', async()=>{
@@ -787,7 +788,7 @@ test('Grammar Questions lists page through saved items and teacher views cannot 
   const dom=setup((path,options)=>path==='/api/grammar-practice/state'?(options?.method?(writes++,reply({})):reply({entries})):grammarMock(path),grammarRoute,'teacher');
   await flush();const d=dom.window.document,root=d.getElementById('grammar-practice');
   assert.equal(root.querySelectorAll('.grammar-question-links button').length,20);
-  for(const button of root.querySelectorAll('.grammar-actions button')) {assert(button.disabled);button.click();}
+  for(const button of root.querySelectorAll('.grammar-actions button[aria-pressed]')) {assert(button.disabled);button.click();}
   [...root.querySelectorAll('button')].find(b=>b.textContent==='More questions').click();assert.equal(root.querySelectorAll('.grammar-question-links button').length,1);
   root.querySelector('.grammar-question-links button').click();assert.equal(d.activeElement.id,'grammar-item-900');assert.equal(d.getElementById('grammar-group').value,'89');
   d.querySelector('#grammar-item-900 input').click();assert(d.querySelector('#grammar-item-900 .grammar-prompt').classList.contains('is-revealed'));assert.equal(writes,0);dom.window.close();
@@ -977,3 +978,60 @@ for(const [activity,prefix,bank,settings] of [['grammar-practice','grammar',gram
   assert.equal((await read()).position.number,number(last));assert.equal((await read()).preferences.hideFinished,true);last.window.close();
  });
 }
+
+for(const [activity,prefix,settings,bank] of [['grammar-practice','grammar',grammarSettings,grammarBank],['business-terms','terms',termsSettings,termsBank]]) {
+ test(activity+' copies only its exercise into a hidden explanation prompt without saving or revealing answers',async()=>{
+  const calls=[],copies=[];
+  const dom=setup((path,options)=>{
+   calls.push({path,method:options?.method||'GET'});
+   if(path==='/api/account')return reply(settings);
+   if(path==='/api/'+activity)return reply({items:bank.items});
+  },origin+'/#activities/'+activity);await flush();
+  const w=dom.window,d=w.document,root=d.getElementById(activity);
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async text=>copies.push(text)}});
+  const initial=calls.length,button=root.querySelector('.practice-copy-button');
+  assert.equal(button.textContent,'Copy AI prompt');assert(!root.textContent.includes('Help me understand this English practice item'));
+  assert.equal(copies.length,0);button.click();await flush();
+  assert.equal(button.textContent,'AI prompt copied');assert.equal(button.getAttribute('aria-label'),'AI prompt copied for item 1');
+  assert.equal(calls.length,initial);assert.equal(root.querySelector('.'+prefix+'-reveal input').checked,false);assert.equal(copies.length,1);
+  assert.match(copies[0],/short, simple English/);assert.match(copies[0],/Wait for my reply/);assert.match(copies[0],/Answer key/);
+  for(const option of bank.items[0].options)assert(copies[0].includes(option));
+  if(prefix==='grammar')assert(copies[0].includes('Completed sentence: “Tom is much more intelligent than Mike.”'));
+  else {assert.match(copies[0],/1: “plates”/);assert.match(copies[0],/6: “novels”/);assert.match(copies[0],/____ \(6\)/);}
+  assert.doesNotMatch(copies[0],/Alex|ab26|student-test|https:|Finished|Saved to Questions/);
+  assert.equal(root.querySelectorAll('.practice-copy-buffer,textarea').length,0);assert.equal(w.localStorage.length,0);assert.equal(w.sessionStorage.length,0);
+  [...root.querySelectorAll('button')].find(b=>b.textContent===(prefix==='grammar'?'Next 10':'Next')).click();await flush();
+  const next=root.querySelector('.practice-copy-button');assert.equal(next.textContent,'Copy AI prompt');next.click();await flush();assert.notEqual(copies[0],copies[1]);w.close();
+ });
+}
+
+test('English Road explanation prompts work before answering, after feedback, and in review without altering attempts',async()=>{
+ const {e,student}=await seedQuiz();let writes=0,copied='';
+ const dom=setup((path,options={})=>{
+  if(path==='/api/account')return reply(roadSettings);
+  if(path.startsWith('/api/road/')){if(options.method)writes++;return call(e,path,{...options,headers:{...options.headers,Cookie:student.cookie,...(options.method?{Origin:origin}:{})}});}
+ },roadRoute);await flush();const w=dom.window,d=w.document,root=d.getElementById('road-practice');
+ Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
+ roadSubmit(dom);await flush();const before=writes;
+ const read=async()=>(await(await call(e,'/api/road/state',{headers:{Cookie:student.cookie}})).json()).attempt;
+ const original=await read();root.querySelector('.practice-copy-button').click();await flush();
+ assert.equal(root.querySelector('.practice-copy-button').textContent,'AI prompt copied');assert.equal(writes,before);assert.deepEqual(await read(),original);
+ assert(copied.includes(original.questions[0].prompt));assert.doesNotMatch(copied,/Answer key:|Exercise explanation:|Your answer:|Alex|ab26|student-test/);
+ const option=d.querySelector('.road-options input');option.checked=true;option.dispatchEvent(new w.Event('change'));roadSubmit(dom);await flush();
+ const answered=await read(),answeredWrites=writes;root.querySelector('.practice-copy-button').click();await flush();
+ assert.equal(writes,answeredWrites);assert.deepEqual(await read(),answered);assert(copied.includes(answered.questions[0].explanation));assert.match(copied,/Answer key:/);assert.doesNotMatch(copied,/Your answer:|correct out of/);
+ roadButton(d,'Next question').click();assert.equal(root.querySelector('.practice-copy-button').textContent,'Copy AI prompt');
+ w.confirm=()=>true;roadButton(d,'End this set').click();await flush();const ended=await read(),endedWrites=writes;
+ root.querySelector('.road-review .practice-copy-button').click();await flush();assert.equal(writes,endedWrites);assert.deepEqual(await read(),ended);assert(copied.includes(answered.questions[0].prompt));w.close();
+});
+
+test('practice copy buttons fall back safely, report failure honestly, and ignore clipboard results after navigation',async()=>{
+ const dom=setup(grammarMock,grammarRoute);await flush();const w=dom.window,d=w.document,root=d.getElementById('grammar-practice');
+ let copied='';d.execCommand=command=>{assert.equal(command,'copy');copied=d.querySelector('.practice-copy-buffer').value;return true;};
+ let button=root.querySelector('.practice-copy-button');button.focus();button.click();await flush();
+ assert.match(copied,/Tom _______/);assert.equal(button.textContent,'AI prompt copied');assert.equal(d.activeElement,button);assert.equal(d.querySelector('.practice-copy-buffer'),null);
+ d.execCommand=()=>false;button.click();await flush();assert.equal(button.textContent,'Copy AI prompt');assert.match(root.querySelector('.practice-copy-status').textContent,/could not be copied/);assert.equal(d.querySelector('.practice-copy-buffer'),null);
+ let finish;Object.defineProperty(w.navigator,'clipboard',{value:{writeText:()=>new Promise(resolve=>{finish=resolve;})}});
+ button.click();w.location.hash='overview';await flush();assert.equal(root.textContent,'');finish();await flush();assert.equal(root.textContent,'');
+ w.location.hash='activities/grammar-practice';await flush();button=root.querySelector('.practice-copy-button');assert.equal(button.textContent,'Copy AI prompt');assert(root.querySelector('.practice-copy-status').hidden);w.close();
+});

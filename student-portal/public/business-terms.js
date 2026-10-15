@@ -226,7 +226,15 @@
           }
         }
         finished.addEventListener('click', () => save('finished')); question.addEventListener('click', () => save('question'));
-        actions.append(finished, question); card.append(actions, help, saved); updateStatus();
+        const ai = window.PracticePrompt.create({
+          label: ' for item ' + item.number,
+          prompt: window.PracticePrompt.text('Business terms exercise: “' + item.term + '”\nSentences:\n' +
+            item.sentences.map((sentence, index) => (index + 1) + '. “' + sentence.replace(blanks, (_, id) => `____ (${id})`) + '”').join('\n') +
+            '\nChoices (use each once, including repeated choices):\n' + item.options.map(option => '• “' + option + '”').join('\n') +
+            '\nAnswer key by blank number:\n' + item.answers.map((answer, index) => (index + 1) + ': “' + answer + '”').join('\n'),
+            'Show the three completed sentences. Explain why each term fits its numbered blank. Explain the meaning of useful words and phrases in these sentences.'),
+        });
+        actions.append(finished, question, ai.button); card.append(actions, ai.status, help, saved); updateStatus();
         const controls = node('div', '', 'terms-controls');
         const previous = node('button', 'Previous', 'secondary-button'); previous.type = 'button'; previous.disabled = visiblePosition === 0;
         const next = node('button', 'Next', 'secondary-button'); next.type = 'button'; next.disabled = visiblePosition === visible.length - 1;

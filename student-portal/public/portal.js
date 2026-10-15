@@ -52,6 +52,7 @@
     $('quiz-nav').hidden = true;
     $('quiz-history').replaceChildren();
     $('quiz-results-status').textContent = ''; $('more-quiz-results').hidden = true;
+    $('quiz-automation').replaceChildren(); $('quiz-automation').hidden = true;
     assessmentResizeObserver?.disconnect();
     if (assessmentScrollFrame) cancelAnimationFrame(assessmentScrollFrame);
     assessmentScrollFrame = 0;
@@ -574,8 +575,48 @@
   function quizDate(value) {
     return new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(new Date(value));
   }
+  async function loadAutomationStatus() {
+    const identity = identityRevision;
+    try {
+      const data = await api('/api/automation/status');
+      if (!authenticated || !teacherMode || identity !== identityRevision) return;
+      const panel = $('quiz-automation'); panel.hidden = false;
+      const message = !data.configured ? 'The server setup is waiting for its Zoom app connection.'
+        : data.connectionError === 'zoom_reconnect' ? 'Zoom needs attention. Please connect it again.'
+        : data.connectionError ? 'The last Zoom check could not finish. It will try again tomorrow.'
+        : !data.connected ? 'Connect Zoom for nightly lesson updates. Your computer can be off.'
+        : !data.enabled ? 'Zoom is connected. Nightly updates are waiting to be switched on.'
+        : 'Nightly updates are on. Your computer can be off.';
+      panel.replaceChildren(node('h3', 'Nightly lesson updates'), node('p', message));
+      panel.append(node('p', 'Every night at 1 a.m. Eastern time. The time adjusts for daylight saving.'));
+      if (data.lastCheck) panel.append(node('p', 'Last check: ' + quizDate(data.lastCheck), 'section-intro'));
+      if (data.costLimitReached) panel.append(node('p', 'The spending limit has been reached. More updates are waiting.'));
+      if (data.needsAttention) panel.append(node('p', 'Some lessons need a check before their pages can be updated.'));
+      if (data.latestPublication) panel.append(node('p', 'Latest update: ' + quizDate(data.latestPublication), 'section-intro'));
+      if (data.configured && (!data.connected || data.connectionError === 'zoom_reconnect')) {
+        const connect = node('button', 'Connect Zoom', 'secondary-button'); panel.append(connect);
+        connect.addEventListener('click', async () => {
+          connect.disabled = true;
+          try {
+            const result = await api('/api/automation/connect', { method: 'POST', body: '{}' });
+            if (!authenticated || !teacherMode || identity !== identityRevision) return;
+            const destination = new URL(result.url);
+            if (destination.origin !== 'https://zoom.us' || destination.pathname !== '/oauth/authorize') throw new Error('Invalid Zoom link');
+            location.assign(destination.href);
+          } catch (error) {
+            if (identity !== identityRevision || expired(error)) return;
+            connect.disabled = false; panel.append(node('p', 'Zoom could not be opened. Please try again.'));
+          }
+        });
+      }
+    } catch (error) {
+      if (identity !== identityRevision || expired(error)) return;
+      $('quiz-automation').hidden = true;
+    }
+  }
   async function loadQuizResults(append = false) {
     if (!authenticated || !teacherMode || resultsLoading) return;
+    if (!append) loadAutomationStatus();
     resultsLoading = true;
     const revision = ++resultsRevision, identity = identityRevision;
     $('quiz-results-status').textContent = 'Loading saved results…';

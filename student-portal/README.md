@@ -76,3 +76,7 @@ The teacher-only `#quiz-results` page shows dated attempts, first-try mistakes, 
 No answers are stored in browser persistent storage. Private page state clears on sign-out or expiry, while saved server records remain available. This is learning practice, not a secure exam or proficiency score: authenticated students can see answer keys, and repeated exposure affects scores. Tests cover private access, roles, account isolation, ordering, invalid answers, concurrent tabs, duplicate requests, version snapshots, pagination, save failure, resuming, teacher preview, source links, and logout cleanup.
 
 Publish a reviewed assessment JSON object with `node student-portal/publish-feedback.mjs <student-origin> <private-file> --assessment`, supplying the teacher password privately on standard input as above. Publish its source session records first. Use the full transcripts to identify repeated patterns, include successful uses and evidence of progress, and distinguish future practice targets from measured performance. Do not infer a formal proficiency level or pronunciation score from transcript text.
+
+## Nightly server updates
+
+See [QUIZ_AUTOMATION.md](QUIZ_AUTOMATION.md) for the 1 a.m. Eastern server schedule, Zoom authorization, private storage, cost limits, discovery boundaries, and failure handling. The coordinator is a separate SQLite Durable Object; retain the `quiz-automation-v1` migration. Student content remains in the existing per-student stores. The teacher-only Quiz results page shows connection status and the last successful check.

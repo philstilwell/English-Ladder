@@ -1,6 +1,8 @@
 import { FEEDBACK_ID, validateFeedback } from './feedback.mjs';
 import { validateAssessment } from './assessment.mjs';
 export { FeedbackStore } from './feedback.mjs';
+import { nightlyDate } from './server-quiz-automation.mjs';
+export { QuizAutomation } from './server-quiz-automation.mjs';
 
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
@@ -138,6 +140,29 @@ async function handle(request, env) {
   const account = accountFor(request, env);
   if (!account) return json({ error: 'This student space could not be found.' }, 404);
 
+  if (url.pathname.startsWith('/api/automation/')) {
+    const route = url.pathname.slice('/api/automation'.length);
+    if (!['/status', '/connect', '/verify', '/callback', '/webhook'].includes(route)) return json({ error: 'Page not found.' }, 404);
+    const method = ['/connect', '/verify', '/webhook'].includes(route) ? 'POST' : 'GET';
+    if (request.method !== method) return json({ error: 'Method not allowed.' }, 405);
+    if (!['/callback', '/webhook'].includes(route)) {
+      const session = await readSession(request, env, account);
+      if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+      if (session.role !== 'teacher') return json({ error: 'Only your teacher can manage automatic quizzes.' }, 403);
+      if (method === 'POST' && request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload and try again.' }, 403);
+    }
+    if (!env.QUIZ_AUTOMATION) return json({ configured: false, connected: false, enabled: false }, route === '/status' ? 200 : 503);
+    const coordinator = env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom'));
+    const headers = new Headers();
+    headers.set('X-Student-ID', account.id); headers.set('X-Student-Origin', url.origin);
+    if (route === '/callback') headers.set('X-Callback-URL', url.href);
+    if (route === '/webhook') for (const name of ['x-zm-signature', 'x-zm-request-timestamp']) {
+      if (request.headers.has(name)) headers.set(name, request.headers.get(name));
+    }
+    return coordinator.fetch(new Request('https://automation.internal' + route, { method, headers,
+      ...(route === '/webhook' ? { body: request.body, duplex: 'half' } : {}) }));
+  }
+
   if (url.pathname === '/api/login' || url.pathname === '/api/logout') {
     if (request.method !== 'POST') return json({ error: 'Please use the sign-in form.' }, 405, { Allow: 'POST' });
     // Exact-origin checks also reject requests from another student subdomain.
@@ -222,6 +247,10 @@ async function handle(request, env) {
 }
 
 export default {
+  async scheduled(event, env) {
+    if (env.AUTOMATION_ENABLED !== 'true' || !env.QUIZ_AUTOMATION || !nightlyDate(event.scheduledTime)) return;
+    await env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/run', { method: 'POST', body: JSON.stringify({ scheduledTime: event.scheduledTime }) }));
+  },
   async fetch(request, env) {
     try { return protect(await handle(request, env)); }
     catch {

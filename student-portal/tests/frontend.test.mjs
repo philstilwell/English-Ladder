@@ -206,6 +206,20 @@ test('teacher preview uses the new quiz lesson links and topic labels without ch
  assert.equal(d.querySelector('#assessment-summary').textContent,assessment.title);
  dom.window.close();
 });
+test('automatic quiz setup is teacher-only and late status responses clear on sign-out',async()=>{
+ let resolve;
+ const seed=await seedQuiz();
+ const dom=savedSetup(seed,'teacher',path=>path==='/api/automation/status'?new Promise(r=>{resolve=r;}):null,'quiz-results');
+ await flush();const d=dom.window.document;
+ d.getElementById('logout').click();await flush();
+ resolve(reply({configured:true,connected:true,enabled:true}));await flush();
+ assert.equal(d.getElementById('quiz-automation').textContent,'');
+ assert.equal(d.getElementById('quiz-automation').hidden,true);dom.window.close();
+ const teacher=savedSetup(seed,'teacher',path=>path==='/api/automation/status'?reply({configured:true,connected:true,enabled:true}):null,'quiz-results');
+ await flush();assert.match(teacher.window.document.getElementById('quiz-automation').textContent,/Your computer can be off/);teacher.window.close();
+ const student=savedSetup(seed,'student',null,'quiz-results');await flush();
+ assert.equal(student.window.document.getElementById('quiz-automation').hidden,true);student.window.close();
+});
 test('student answers save immediately, resume after reopening, and finish with a saved first-try score',async()=>{
  const seed=await seedQuiz();let dom=savedSetup(seed);await flush();let d=dom.window.document;
  assert.match(d.getElementById('quiz-content').textContent,/saved for Phil/);

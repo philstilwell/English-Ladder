@@ -53,6 +53,56 @@ export class FeedbackStore {
   async fetch(request) {
     const url = new URL(request.url);
     const id = url.pathname.slice(1);
+    // Internal-only routes: the public Worker never forwards arbitrary paths here.
+    if (id === 'automation/context' && request.method === 'GET') {
+      const attempts = [], publishedSessions = [];
+      for (const [prefix, target] of [['quiz:attempt:', attempts], ['quiz:published:', publishedSessions]]) {
+        let end;
+        while (true) {
+          const page = [...await this.storage.list({ prefix, reverse: true, limit: 100, ...(end ? { end } : {}) })];
+          target.push(...page.map(([key, value]) => prefix === 'quiz:published:' ? key.slice(prefix.length) : value));
+          if (page.length < 100) break;
+          end = page.at(-1)[0];
+        }
+      }
+      return json({ assessment: await this.storage.get('assessment:current') || null, attempts, publishedSessions });
+    }
+    if (id === 'automation/publish' && request.method === 'POST') {
+      const input = await request.json();
+      return this.storage.transaction(async txn => {
+        const sessionId = input.quiz?.generatedForSession;
+        if (!FEEDBACK_ID.test(sessionId || '') || !Array.isArray(input.quiz?.sourceSessions) || !Array.isArray(input.quiz?.patternTitles)) return json({ error: 'Invalid session.' }, 400);
+        const current = await txn.get('assessment:current');
+        if (!current) return json({ error: 'Assessment required.' }, 400);
+        if (await txn.get('quiz:published:' + sessionId) || current.quiz?.generatedForSession === sessionId) return json({ ok: true, duplicate: true });
+        if (JSON.stringify(input.priorAssessment) !== JSON.stringify(current)) return json({ error: 'Assessment changed. Retry with the latest record.' }, 409);
+        let record, feedback;
+        try {
+          feedback = validateFeedback(input.feedback, sessionId);
+          record = validateAssessment({ ...input.assessment, quiz: input.quiz });
+          if (!record.sourceSessions.includes(sessionId)) throw new Error('Missing latest session');
+        } catch { return json({ error: 'Invalid learning record.' }, 400); }
+        for (const sourceId of new Set([...record.sourceSessions, ...record.quiz.sourceSessions])) {
+          if (sourceId !== sessionId && !(await txn.get('feedback:' + sourceId))?.source?.reviewedFullTranscript) return json({ error: 'Source unavailable.' }, 400);
+        }
+        for (const ref of assessmentReferences(record)) {
+          const source = ref.sessionId === sessionId ? feedback.source : (await txn.get('feedback:' + ref.sessionId)).source;
+          if (ref.at < source.coverageStart || ref.at > source.coverageEnd) return json({ error: 'Invalid assessment evidence.' }, 400);
+        }
+        const existing = await txn.get('feedback:' + sessionId);
+        const savedFeedback = existing || feedback;
+        const { title, summary, startedAt, timeZone } = savedFeedback;
+        const update = {
+          ['feedback:' + sessionId]: savedFeedback, ['index:' + sessionId]: { id: sessionId, title, summary, startedAt, timeZone },
+          ['assessment:before:' + sessionId]: current,
+          ['quiz:published:' + sessionId]: { quiz: record.quiz, assessment: record, evidence: input.evidence, fingerprint: input.fingerprint, publishedAt: new Date().toISOString() },
+        };
+        // An older delayed event is archived without replacing a newer lesson quiz.
+        if (!current.quiz?.generatedForSession || sessionId > current.quiz.generatedForSession) update['assessment:current'] = record;
+        await txn.put(update);
+        return json({ ok: true });
+      });
+    }
     if (id.startsWith('quiz/')) return handleQuiz(this.storage, request);
     if (id === 'assessment') {
       if (request.method === 'GET') return json({ assessment: await this.storage.get('assessment:current') || null });

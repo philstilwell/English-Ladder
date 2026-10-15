@@ -6,8 +6,17 @@
   "compatibility_date": "2026-10-08",
   "workers_dev": false,
   "preview_urls": false,
-  "durable_objects": { "bindings": [{ "name": "FEEDBACK_STORE", "class_name": "FeedbackStore" }] },
-  "migrations": [{ "tag": "feedback-v1", "new_sqlite_classes": ["FeedbackStore"] }],
+  "durable_objects": { "bindings": [
+    { "name": "FEEDBACK_STORE", "class_name": "FeedbackStore" },
+    { "name": "QUIZ_AUTOMATION", "class_name": "QuizAutomation" }
+  ] },
+  "migrations": [
+    { "tag": "feedback-v1", "new_sqlite_classes": ["FeedbackStore"] },
+    { "tag": "quiz-automation-v1", "new_sqlite_classes": ["QuizAutomation"] }
+  ],
+  "ai": { "binding": "AI" },
+  "vars": { "AUTOMATION_ENABLED": "false" },
+  "triggers": { "crons": ["0 5,6 * * *"] },
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",

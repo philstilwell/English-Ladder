@@ -23,6 +23,23 @@
       button.type = 'button'; button.className = 'secondary-button practice-copy-button';
       button.title = 'Copy a prompt, then paste it into an AI chat.';
       status.className = 'field-hint practice-copy-status'; status.setAttribute('role', 'status'); status.hidden = true;
+      const controls = document.createElement('span'), sites = document.createElement('span');
+      controls.className = 'practice-prompt-actions'; sites.className = 'practice-ai-sites';
+      sites.setAttribute('role', 'group'); sites.setAttribute('aria-label', 'Choose an AI chat');
+      for (const [name, href, logo] of [
+        ['ChatGPT', 'https://chatgpt.com/', '/chatgpt-logo.svg'],
+        ['Gemini', 'https://gemini.google.com/app', '/gemini-logo.png'],
+        ['Claude', 'https://claude.ai/', '/claude-logo.png'],
+        ['Microsoft Copilot', 'https://copilot.microsoft.com/', '/copilot-logo.svg'],
+      ]) {
+        const link = document.createElement('a'), image = document.createElement('img');
+        link.className = 'practice-ai-link'; link.href = href; link.target = '_blank';
+        link.rel = 'noopener noreferrer'; link.referrerPolicy = 'no-referrer';
+        link.title = name + ' (new tab)'; link.setAttribute('aria-label', 'Open ' + name + ' (new tab)');
+        image.src = logo; image.alt = ''; image.width = 14; image.height = 14;
+        link.append(image); sites.append(link);
+      }
+      controls.append(button, sites);
       let copying = false;
       function setCopied(copied) {
         button.textContent = copied ? 'AI prompt copied' : 'Copy AI prompt';
@@ -38,7 +55,7 @@
             catch (error) { if (!button.isConnected) return; copyFallback(prompt); }
           } else copyFallback(prompt);
           if (!button.isConnected) return;
-          setCopied(true); status.textContent = 'Paste it into an AI chat.'; status.hidden = false;
+          setCopied(true); status.textContent = 'Choose an AI chat. Paste the prompt there.'; status.hidden = false;
         } catch {
           if (!button.isConnected) return;
           status.textContent = 'The prompt could not be copied. Please try again.'; status.hidden = false;
@@ -46,7 +63,7 @@
           copying = false; button.removeAttribute('aria-busy');
         }
       });
-      return { button, status };
+      return { button, status, controls };
     },
   };
 })();

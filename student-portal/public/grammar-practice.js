@@ -234,7 +234,7 @@
               'Explain the correct answer and the grammar step by step. Explain why the other choices do not fit, or when they could fit a different sentence.'),
           });
           finished.addEventListener('click', () => save(item.number, 'finished')); question.addEventListener('click', () => save(item.number, 'question'));
-          actions.append(finished, question, ai.button); row.append(actions, status, ai.status); list.append(row);
+          actions.append(finished, question, ai.controls); row.append(actions, status, ai.status); list.append(row);
           rows.set(item.number, {row, finished, question, status});
         }
         updateRows();

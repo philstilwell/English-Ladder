@@ -61,7 +61,7 @@
         const ai = window.PracticePrompt.create({ prompt: window.PracticePrompt.text(exercise,
           'Choose the best answer and explain the grammar or vocabulary step by step. Explain why the other choices do not fit, or when they could fit a different sentence.') });
         ai.button.disabled = busy;
-        const controls = node('div', null, 'practice-prompt-controls'); controls.append(ai.button, ai.status); return controls;
+        const controls = node('div', null, 'practice-prompt-controls'); controls.append(ai.controls, ai.status); return controls;
       }
       function setup() {
         if (!catalog) return;

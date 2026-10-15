@@ -234,7 +234,7 @@
             '\nAnswer key by blank number:\n' + item.answers.map((answer, index) => (index + 1) + ': “' + answer + '”').join('\n'),
             'Show the three completed sentences. Explain why each term fits its numbered blank. Explain the meaning of useful words and phrases in these sentences.'),
         });
-        actions.append(finished, question, ai.button); card.append(actions, ai.status, help, saved); updateStatus();
+        actions.append(finished, question, ai.controls); card.append(actions, ai.status, help, saved); updateStatus();
         const controls = node('div', '', 'terms-controls');
         const previous = node('button', 'Previous', 'secondary-button'); previous.type = 'button'; previous.disabled = visiblePosition === 0;
         const next = node('button', 'Next', 'secondary-button'); next.type = 'button'; next.disabled = visiblePosition === visible.length - 1;

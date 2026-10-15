@@ -565,7 +565,7 @@ test('business terms respect visibility, allow teacher previews and safely displ
   const text='<img src=x onerror=alert(1)>',item={...termsBank.items[0],term:text,answers:[text,...termsBank.items[0].answers.slice(1)],options:[text,...termsBank.items[0].answers.slice(1)]};
   const teacher=setup(path=>path==='/api/account'?reply(termsSettings):path==='/api/business-terms'?reply({items:[item]}):null,termsRoute,'teacher');
   await flush();const root=teacher.window.document.getElementById('business-terms');root.querySelector('.terms-reveal input').click();
-  assert(root.textContent.includes(text));assert.equal(root.querySelector('img'),null);assert.equal(root.querySelector('[onerror]'),null);teacher.window.close();
+  assert(root.textContent.includes(text));assert.equal(root.querySelector('.terms-heading img,.terms-words img,.terms-sentences img'),null);assert.equal(root.querySelector('[onerror]'),null);teacher.window.close();
 });
 
 test('business terms clear late loads after leaving the activity, sign-out and page hide', async () => {
@@ -643,7 +643,7 @@ test('grammar obeys saved visibility and renders source strings safely in studen
   const text='<img src=x onerror=alert(1)>',item={number:1,prompt:text,answer:text,options:[text,'two','three','four']};
   const teacher=setup(path=>path==='/api/account'?reply(grammarSettings):path==='/api/grammar-practice'?reply({items:[item]}):null,grammarRoute,'teacher');
   await flush();const root=teacher.window.document.getElementById('grammar-practice');root.querySelector('.grammar-reveal input').click();
-  assert(root.textContent.includes(text));assert.equal(root.querySelector('img'),null);assert.equal(root.querySelector('[onerror]'),null);teacher.window.close();
+  assert(root.textContent.includes(text));assert.equal(root.querySelector('.grammar-prompt img,.grammar-options img'),null);assert.equal(root.querySelector('[onerror]'),null);teacher.window.close();
 });
 
 test('grammar discards late loads after navigation, sign-out and page hide', async () => {

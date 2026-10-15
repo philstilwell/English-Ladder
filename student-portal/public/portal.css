@@ -425,4 +425,10 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-menu-height,56px
 .practice-empty { padding:16px; background:#f1f3f8; border-radius:6px; }
 
 .practice-prompt-controls { margin:12px 0; }
+.practice-prompt-actions { display:inline-flex; align-items:center; flex-wrap:wrap; gap:4px; max-width:100%; }
+.practice-ai-sites { display:inline-flex; align-items:center; }
+.practice-ai-link { display:grid; place-items:center; width:24px; height:30.8px; border-radius:4px; }
+.practice-ai-link img { display:block; width:14px; height:14px; object-fit:contain; }
+.practice-ai-link:hover { background:#eef2ff; }
+.practice-ai-link:focus-visible { outline:2px solid var(--blue); outline-offset:1px; }
 .practice-copy-buffer { position:fixed; left:-10000px; top:0; width:1px; height:1px; opacity:0; }

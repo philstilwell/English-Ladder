@@ -9,13 +9,14 @@
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 <header class="masthead"><a class="brand" href="#students"><img src="/ladder-mark.png" width="36" height="36" alt="">English Ladder</a><span class="masthead-label">Phil’s administrator space</span><button id="sign-out" class="text-button" hidden>Sign out ↗</button></header>
-<main id="main">
+<main id="main" class="admin-main">
   <section id="login-view" class="admin-login">
     <div><p class="eyebrow">JUST FOR YOU</p><h1>Your students.<br>Your teaching space.</h1><p>Manage student accounts, link Zoom names, and keep lesson updates moving.</p><p class="privacy-note">Student names, contact details, and course records stay private here.</p></div>
     <form id="login-form" class="login-card"><p class="eyebrow">ADMINISTRATOR SIGN-IN</p><h2>Welcome, Phil.</h2><label for="password">Administrator password</label><input id="password" type="password" autocomplete="current-password" required maxlength="128"><p class="field-note">Capital letters are automatically made lowercase.</p><button class="primary-button" type="submit">Open administrator page</button><p id="login-message" role="status"></p></form>
   </section>
   <div id="admin-view" hidden>
     <nav class="admin-nav" aria-label="Administrator sections"><a href="#students" id="list-nav">Students</a><a href="#register" id="register-nav">Register new student</a><a href="#import" id="import-nav">Import from spreadsheet</a></nav>
+    <div class="admin-content">
     <p id="message" class="message" role="status" hidden></p>
     <section id="list-view">
       <div class="page-heading"><div><p class="eyebrow">YOUR PRIVATE DIRECTORY</p><h1>Students</h1><p>Open a name to edit the account and link its Zoom names.</p></div><a href="#register" class="primary-link">+ Register new student</a></div>
@@ -80,6 +81,7 @@
       <label for="sheet-paste">Copied spreadsheet cells</label><textarea id="sheet-paste" rows="8" maxlength="250000" placeholder="Paste the header row and up to 200 student rows"></textarea><button id="preview-import" class="secondary-button">Review import</button>
       <div id="import-preview" hidden><h2 id="import-count"></h2><ul id="import-names"></ul><p>Review first and last names on each account before activation, especially names with several parts.</p><button id="confirm-import" class="primary-button">Import as drafts</button></div>
     </section>
+    </div>
   </div>
 </main>
 <dialog id="delete-dialog" aria-labelledby="delete-dialog-title" aria-describedby="delete-description">

@@ -1,6 +1,13 @@
 'use strict';
 (() => {
   const $ = id => document.getElementById(id);
+  const adminMenu = document.querySelector('.admin-nav');
+  function updateMenuHeight() {
+    const height = adminMenu.getBoundingClientRect().height;
+    if (height) document.documentElement.style.setProperty('--admin-menu-height', height + 'px');
+  }
+  const menuResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateMenuHeight);
+  menuResizeObserver?.observe(adminMenu);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let quizRequest = 0, quizStatuses = {};
   let loginRequest = 0, loginDetails = null;
@@ -220,7 +227,7 @@
       if (stillCurrent()) { deleteBusy = false; $('confirm-delete').disabled = !matchesDeletion(); $('cancel-delete').disabled = false; $('delete-confirmation').disabled = false; $('confirm-delete').textContent = 'Delete account permanently'; }
     }
   });
-  async function enter() { signedIn = true; $('login-view').hidden = true; $('admin-view').hidden = false; $('sign-out').hidden = false; $('password').value = ''; await refresh(); }
+  async function enter() { signedIn = true; $('login-view').hidden = true; $('admin-view').hidden = false; $('sign-out').hidden = false; $('password').value = ''; updateMenuHeight(); await refresh(); }
   $('login-form').addEventListener('submit', async event => {
     event.preventDefault(); const button = event.submitter; button.disabled = true; $('login-message').textContent = '';
     try { await api('/api/login', { method:'POST', body:JSON.stringify({password:$('password').value.toLowerCase()}) }); await enter(); }
@@ -309,6 +316,7 @@
     }catch(error){if(signedIn&&version===epoch)message(error.message,true);}finally{$('confirm-import').disabled=false;}
   });
   window.addEventListener('hashchange',()=>{message('');route();});
+  window.addEventListener('resize',updateMenuHeight);
   window.addEventListener('pagehide',clearPrivate);
   window.addEventListener('pageshow',event=>{if(event.persisted)restore();});
   const common = {'America/New_York':'Eastern time — New York','America/Chicago':'Central time — Chicago','America/Denver':'Mountain time — Denver','America/Los_Angeles':'Pacific time — Los Angeles','Asia/Tokyo':'Japan — Tokyo','Europe/Berlin':'Central Europe — Berlin','Europe/London':'United Kingdom — London','Asia/Kolkata':'India — Kolkata'};

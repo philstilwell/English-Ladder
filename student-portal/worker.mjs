@@ -276,6 +276,38 @@ async function handle(request, env) {
     return json(profile(account, role), 200, { 'Set-Cookie': cookie(await issueSession(request, env, account, role)) });
   }
 
+  if (['/api/account', '/api/account/password'].includes(url.pathname)) {
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    const passwordChange = url.pathname.endsWith('/password');
+    if (!(passwordChange ? ['POST'] : ['GET', 'PUT']).includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
+    if (!env.STUDENT_DIRECTORY) return json({ error: 'Account settings are not available. Please try again later.' }, 503);
+    if (request.method === 'GET') return directoryRequest(env, '/self/' + account.id);
+    if (session.role !== 'student') return json({ error: 'Sign in as the student to change these settings.' }, 403);
+    if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload the page and try again.' }, 403);
+    const ip = request.headers.get('CF-Connecting-IP') || 'local';
+    const [attempts, accountAttempts] = await Promise.all([
+      env.LOGIN_LIMITER.limit({ key: `${account.id}:${ip}` }), env.ACCOUNT_LIMITER.limit({ key: account.id }),
+    ]);
+    if (!attempts.success || !accountAttempts.success) return json({ error: 'Too many changes. Please wait one minute and try again.' }, 429, { 'Retry-After': '60' });
+    const input = await smallJson(request, 4096);
+    if (!input || !Number.isInteger(input.revision)) return json({ error: 'Please reload the account page and try again.' }, 400);
+    if (passwordChange) {
+      if (typeof input.currentPassword !== 'string' || !input.currentPassword || input.currentPassword.length > 128)
+        return json({ error: 'Enter your current password.' }, 400);
+      const matches = account.passwordCredential
+        ? await matchesStudentPassword(env, account.passwordCredential, account.credentialAccountKey, input.currentPassword)
+        : await passwordMatches(env.SESSION_SECRET, account.password, input.currentPassword);
+      if (!matches) return json({ error: 'Your current password did not match. Please try again.' }, 400);
+    }
+    // Choose the target from the authenticated host. Never forward extra fields.
+    const body = { revision: input.revision, expectedAccountRevision: account.directoryRevision,
+      ...(passwordChange ? { newPassword: input.newPassword, confirmPassword: input.confirmPassword }
+        : { nickname: input.nickname, visibleActivities: input.visibleActivities }) };
+    const response = await directoryRequest(env, '/self/' + account.id + (passwordChange ? '/password' : ''), body, request.method);
+    return json(await response.json(), response.status, passwordChange && response.ok ? { 'Set-Cookie': cookie('', 0) } : {});
+  }
+
   if (url.pathname === '/api/learning-import') {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);

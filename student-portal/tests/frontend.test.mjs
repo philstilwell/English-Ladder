@@ -387,3 +387,75 @@ test('repeated assessment references to one lesson show one date and no elapsed 
  assert.doesNotMatch(links[0].getAttribute('aria-label'),/00:02|00:03|time/);
  dom.window.close();
 });
+
+const settingsFixture = { nickname: 'Alex the Explorer', revision: 1, visibleActivities: ['placeholder-1', 'placeholder-2', 'placeholder-3'], activities: [1, 2, 3].map(n => ({ id: 'placeholder-' + n, name: 'Activity ' + n, description: 'A sample activity.' })) };
+const submitForm = (dom, id) => dom.window.document.getElementById(id).dispatchEvent(new dom.window.Event('submit', { bubbles: true, cancelable: true }));
+test('Account menu loads saved choices, saves a nickname and empty selection, and keeps teacher preview read-only', async () => {
+  let saved = structuredClone(settingsFixture), writes = 0;
+  const mock = (path, options) => {
+    if (path !== '/api/account') return null;
+    if (options.method === 'PUT') { const body = JSON.parse(options.body); writes++; saved = { ...saved, ...body, revision: saved.revision + 1 }; }
+    return reply(saved);
+  };
+  const dom = setup(mock, 'https://ab26.englishladder.com/#account'); await flush(); const d = dom.window.document;
+  assert.equal(d.querySelector('.section-nav [aria-current]').hash, '#account');
+  assert.equal(d.querySelector('.section-nav a[href="#activities"]'), null);
+  assert.equal(d.getElementById('account').hidden, false); assert.equal(d.querySelectorAll('#activity-options input:checked').length, 3);
+  d.getElementById('nickname').value = '<b>New nickname</b>';
+  for (const box of d.querySelectorAll('#activity-options input')) box.checked = false;
+  submitForm(dom, 'settings-form'); await flush(); assert.equal(writes, 1);
+  assert.deepEqual(saved.visibleActivities, []); assert.equal(d.getElementById('profile-nickname').textContent, '<b>New nickname</b>');
+  assert.equal(d.querySelector('#profile-nickname b'), null); assert.match(d.getElementById('settings-message').textContent, /saved/);
+  dom.window.location.hash = 'overview'; await flush(); assert.equal(d.getElementById('nickname').value, '');
+  dom.window.location.hash = 'account'; await flush(); assert.equal(d.getElementById('nickname').value, '<b>New nickname</b>');
+  assert.equal(d.querySelectorAll('#activity-options input:checked').length, 0); dom.window.close();
+  const preview = setup(mock, 'https://ab26.englishladder.com/#account', 'teacher'); await flush();
+  assert.equal(preview.window.document.getElementById('settings-fields').disabled, true);
+  assert.equal(preview.window.document.getElementById('password-form').hidden, true);
+  submitForm(preview, 'settings-form'); await flush(); assert.equal(writes, 1); preview.window.close();
+});
+test('password form signs out after success and clears secrets on navigation and sign-out', async () => {
+  let sent;
+  const dom = setup((path, options) => path === '/api/account' ? reply(settingsFixture) : path === '/api/account/password' ? (sent = JSON.parse(options.body), reply({ saved: true })) : null, 'https://ab26.englishladder.com/#account');
+  await flush(); const d = dom.window.document;
+  d.getElementById('current-password').value = 'current-test'; d.getElementById('new-password').value = 'new-test'; d.getElementById('confirm-password').value = 'new-test';
+  submitForm(dom, 'password-form'); await flush();
+  assert.equal(sent.currentPassword, 'current-test'); assert.equal(d.getElementById('login-view').hidden, false);
+  assert.match(d.getElementById('login-notice').textContent, /password has changed/);
+  for (const id of ['nickname', 'current-password', 'new-password', 'confirm-password']) assert.equal(d.getElementById(id).value, '');
+  assert.equal(d.querySelectorAll('#activity-options input').length, 0); dom.window.close();
+  for (const action of ['navigate', 'logout', 'pagehide']) {
+    const page = setup(path => path === '/api/account' ? reply(settingsFixture) : null, 'https://ab26.englishladder.com/#account'); await flush();
+    const doc = page.window.document; doc.getElementById('new-password').value = 'private-test';
+    if (action === 'navigate') page.window.location.hash = 'feedback';
+    else if (action === 'logout') doc.getElementById('logout').click();
+    else page.window.dispatchEvent(new page.window.Event('pagehide'));
+    await flush(); assert.equal(doc.getElementById('new-password').value, ''); assert.equal(doc.getElementById('nickname').value, ''); page.window.close();
+  }
+});
+test('late account reads and writes cannot restore fields after navigation or logout', async () => {
+  for (const operation of ['read', 'write']) for (const leave of ['navigation', 'logout']) {
+    let complete;
+    const dom = setup((path, options) => {
+      if (path !== '/api/account') return null;
+      if (operation === 'read' || options.method === 'PUT') return new Promise(resolve => { complete = resolve; });
+      return reply(settingsFixture);
+    }, 'https://ab26.englishladder.com/#account'); await flush();
+    if (operation === 'write') submitForm(dom, 'settings-form');
+    await flush();
+    if (leave === 'navigation') dom.window.location.hash = 'feedback'; else dom.window.document.getElementById('logout').click();
+    await flush(); complete(reply(settingsFixture)); await flush();
+    assert.equal(dom.window.document.getElementById('nickname').value, ''); assert.equal(dom.window.document.querySelectorAll('#activity-options input').length, 0);
+    if (leave === 'logout') assert.equal(dom.window.document.getElementById('profile-nickname').textContent, '');
+    dom.window.close();
+  }
+});
+test('account load failures can retry, stale saves request a reload, and expiry clears private forms', async () => {
+  let state = 'fail';
+  const dom = setup((path, options) => path === '/api/account' ? (state === 'fail' ? new Response(JSON.stringify({ error: 'Please try again.' }), { status: 503 }) : options.method === 'PUT' ? new Response(JSON.stringify({ error: 'Reload your account.' }), { status: state === 'expired' ? 401 : 409 }) : reply(settingsFixture)) : null, 'https://ab26.englishladder.com/#account');
+  await flush(); const d = dom.window.document; assert.equal(d.getElementById('reload-settings').hidden, false);
+  state = 'ready'; d.getElementById('reload-settings').click(); await flush(); assert.equal(d.getElementById('settings-fields').disabled, false);
+  submitForm(dom, 'settings-form'); await flush(); assert.equal(d.getElementById('settings-fields').disabled, true); assert.equal(d.getElementById('reload-settings').hidden, false);
+  d.getElementById('reload-settings').click(); await flush(); state = 'expired'; submitForm(dom, 'settings-form'); await flush();
+  assert.equal(d.getElementById('login-view').hidden, false); assert.equal(d.getElementById('nickname').value, ''); dom.window.close();
+});

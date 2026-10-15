@@ -1,6 +1,7 @@
 // This database is reachable only through the Worker binding. Public routes never
 // expose it; the administrator API uses a host-bound teacher session.
 import { makeStudentPassword, matchesStudentPassword, encryptStudentPassword, decryptStudentPassword } from './student-password.mjs';
+import { ACTIVITY_TOOLS, visibleActivities, validateActivities } from './activities.mjs';
 const json = (value, status = 200) => Response.json(value, { status });
 const adminRecord = ({ passwordCredential, passwordCopy, ...record }) => ({ ...record, hasCustomPassword: Boolean(passwordCredential) });
 export const STUDENT_ID = /^[a-z]{2,8}\d{2}(?:-[a-z0-9]{1,12})?$/;
@@ -148,7 +149,8 @@ export class StudentDirectory {
       const record = { ...values, key: recordKey, revision: (previous?.revision || 0) + 1,
         activated, startAfter: previous?.startAfter || (activated ? now : null),
         lessonTimeZone: previous?.lessonTimeZone || 'America/New_York', createdAt: previous?.createdAt || now, updatedAt: now,
-        ...(previous?.source ? { source: previous.source } : {}), ...(passwordCredential ? { passwordCredential } : {}), ...(passwordCopy ? { passwordCopy } : {}) };
+        ...(previous?.source ? { source: previous.source } : {}), ...(passwordCredential ? { passwordCredential } : {}), ...(passwordCopy ? { passwordCopy } : {}),
+        ...(previous?.visibleActivities ? { visibleActivities: previous.visibleActivities } : {}) };
       await txn.put({ ['student:' + record.key]: record, revision: (await txn.get('revision') || 0) + 1 });
       return json({ student: adminRecord(record) }, previous ? 200 : 201);
     });
@@ -172,6 +174,37 @@ export class StudentDirectory {
       url:record.studentId ? 'https://' + record.studentId + '.englishladder.com/' : null,
       active:record.status === 'active', password,
       message:password ? null : record.passwordCredential ? 'This older password has no saved copy. Assign a new password below to make it available here.' : 'Assign a student password below.' });
+  }
+  selfProfile(record) {
+    return { nickname: record.nickname || record.firstName.split(/\s+/)[0], revision: record.revision,
+      visibleActivities: visibleActivities(record), activities: ACTIVITY_TOOLS };
+  }
+  async selfAccount(id, input, passwordChange = false) {
+    return this.storage.transaction(async txn => {
+      const record = (await this.records(txn)).find(r => r.studentId === id && r.status === 'active' && !r.deletionPending);
+      if (!record) return json({ error: 'This account is not available.' }, 404);
+      if (!input) return json(this.selfProfile(record));
+      // The Worker supplies the revision from the account used to authenticate.
+      // Recheck it here so a pause, deletion or password reset cannot race a save.
+      if (input.expectedAccountRevision !== record.revision || input.revision !== record.revision)
+        return json({ error: 'Your account changed. Reload this page before saving.' }, 409);
+      let changes;
+      if (passwordChange) {
+        if (!input.newPassword) return json({ error: 'Enter your new password in both boxes.' }, 400);
+        if (typeof input.newPassword === 'string' && input.newPassword.toLowerCase() === this.env.TEACHER_PASSWORD?.toLowerCase())
+          return json({ error: 'Please choose a different password.' }, 400);
+        const passwordCredential = await makeStudentPassword(this.env, input, record.key);
+        const passwordCopy = await encryptStudentPassword(this.env, input.newPassword, record.key, passwordCredential);
+        changes = { passwordCredential, passwordCopy };
+      } else {
+        const nickname = text(input.nickname, 100);
+        if (!nickname || /[\r\n\t]/.test(nickname)) return json({ error: 'Enter a nickname on one line, using up to 100 characters.' }, 400);
+        changes = { nickname, visibleActivities: validateActivities(input.visibleActivities) };
+      }
+      const updated = { ...record, ...changes, revision: record.revision + 1, updatedAt: new Date().toISOString() };
+      await txn.put({ ['student:' + record.key]: updated, revision: (await txn.get('revision') || 0) + 1 });
+      return json(passwordChange ? { saved: true } : this.selfProfile(updated));
+    });
   }
   async restorePasswordCopy(key, input) {
     // Restore only a known, verified current password. This does not rotate the
@@ -230,10 +263,13 @@ export class StudentDirectory {
       const loginDetails = path.match(/^\/students\/([\w-]{36})\/login-details$/);
       if (loginDetails && request.method === 'GET') return await this.loginDetails(loginDetails[1]);
       if (loginDetails && request.method === 'PUT') return await this.restorePasswordCopy(loginDetails[1], await request.json());
+      const selfAccount = path.match(/^\/self\/([a-z0-9-]+)(\/password)?$/);
+      if (selfAccount && (request.method === 'GET' && !selfAccount[2] || request.method === (selfAccount[2] ? 'POST' : 'PUT')))
+        return await this.selfAccount(selfAccount[1], request.method === 'GET' ? null : await request.json(), Boolean(selfAccount[2]));
       if ((path.startsWith('/account/') || path.startsWith('/integration-account/')) && request.method === 'GET') {
         const integration = path.startsWith('/integration-account/'), id = path.slice(integration ? 21 : 9);
         const record = (await this.records()).find(r => !r.deletionPending && r.studentId === id && (r.status === 'active' || integration && r.activated));
-        return record ? json({ id: record.studentId, name: record.firstName.split(/\s+/)[0], nickname: record.nickname || record.firstName.split(/\s+/)[0],
+        return record ? json({ id: record.studentId, directoryRevision: record.revision, name: record.firstName.split(/\s+/)[0], nickname: record.nickname || record.firstName.split(/\s+/)[0],
           ...(record.passwordCredential ? { passwordCredential: record.passwordCredential, credentialAccountKey: record.key } : {}) }) : json({ error: 'Unknown account.' }, 404);
       }
       if (path === '/automation' && request.method === 'GET') {

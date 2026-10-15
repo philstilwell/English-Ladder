@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz', 'quiz-results'];
+  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz', 'quiz-results', 'account'];
   const assessmentSections = ['summary', 'strengths', 'patterns', 'next'];
   const validId = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
   let authenticated = false, checking = false, identityRevision = 0, pageRevision = 0;
@@ -10,6 +10,7 @@
   let quizState = null, quizRevision = 0;
   let teacherMode = false, resultRows = [], resultCursor = null, resultsLoading = false, resultsRevision = 0;
   let assessmentScrollFrame = 0;
+  let settings = null, settingsLoading = false, settingsSaving = false, settingsRevision = 0, profileRevision = 0;
   const sectionMenu = document.querySelector('.section-nav');
   function updateMenuHeight() {
     const height = sectionMenu.getBoundingClientRect().height;
@@ -53,6 +54,7 @@
   }
   function clearIdentity() {
     identityRevision++; pageRevision++;
+    clearSettings();
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
     quizState = null; quizRevision++;
@@ -82,6 +84,7 @@
   }
   function showLogin(message = '') {
     clearIdentity();
+    $('login-notice').textContent = ''; $('login-notice').hidden = true;
     $('password').value = ''; $('password').type = 'password';
     $('show-password').textContent = 'Show';
     $('show-password').setAttribute('aria-label', 'Show password');
@@ -115,6 +118,7 @@
     if (!authenticated) return;
     const [part, requested, extra] = location.hash.slice(1).split('/');
     const selected = part === 'quiz-results' && !teacherMode ? 'quiz' : sections.includes(part) ? part : 'feedback';
+    if (selected !== 'account') clearSettings();
     for (const id of sections) $(id).hidden = selected !== id;
     for (const el of document.querySelectorAll('.section-nav a')) {
       if (el.hash === '#' + selected) el.setAttribute('aria-current', 'page');
@@ -132,6 +136,11 @@
         document.title = 'Quiz results · English Ladder';
         loadQuizResults();
         if (focus) $('quiz-results-title').focus();
+      }
+      if (selected === 'account') {
+        document.title = 'My account · English Ladder';
+        loadSettings();
+        if (focus) $('account-title').focus();
       }
       return;
     }
@@ -759,6 +768,81 @@
     }
     $('quiz-history').replaceChildren(fragment);
   }
+  function clearSettings() {
+    settingsRevision++; settings = null; settingsLoading = false; settingsSaving = false;
+    $('settings-form').reset(); $('password-form').reset(); $('activity-options').replaceChildren();
+    for (const id of ['settings-status', 'settings-message', 'password-message']) $(id).textContent = '';
+    $('reload-settings').hidden = true; $('settings-teacher-note').hidden = true;
+    $('settings-fields').disabled = true; $('password-fields').disabled = true;
+  }
+  function lockSettings(busy) {
+    $('settings-fields').disabled = busy || teacherMode || !settings;
+    $('password-fields').disabled = busy || teacherMode || !settings;
+  }
+  async function loadSettings(force = false) {
+    if (!authenticated || settingsLoading || settingsSaving || settings && !force) return;
+    settingsLoading = true; lockSettings(true);
+    const identity = identityRevision, revision = ++settingsRevision;
+    $('settings-message').textContent = ''; $('password-message').textContent = '';
+    if (force) $('password-form').reset();
+    $('settings-status').textContent = 'Loading your account…'; $('reload-settings').hidden = true;
+    $('password-form').hidden = teacherMode; $('settings-teacher-note').hidden = !teacherMode;
+    try {
+      const data = await api('/api/account');
+      if (identity !== identityRevision || revision !== settingsRevision) return;
+      settings = data; $('nickname').value = data.nickname; $('activity-options').replaceChildren();
+      for (const activity of data.activities) {
+        const label = node('label', '', 'activity-choice'), input = node('input');
+        input.type = 'checkbox'; input.name = 'visibleActivities'; input.value = activity.id;
+        input.checked = data.visibleActivities.includes(activity.id);
+        const description = node('span');
+        description.append(node('strong', activity.name), node('span', activity.description));
+        label.append(input, description); $('activity-options').append(label);
+      }
+      $('settings-status').textContent = '';
+    } catch (error) {
+      if (identity !== identityRevision || revision !== settingsRevision || expired(error)) return;
+      settings = null; $('settings-status').textContent = error.message; $('reload-settings').hidden = false;
+    } finally {
+      if (identity === identityRevision && revision === settingsRevision) { settingsLoading = false; lockSettings(false); }
+    }
+  }
+  async function saveSettings(event, passwordChange) {
+    event.preventDefault();
+    if (!authenticated || teacherMode || !settings || settingsLoading || settingsSaving) return;
+    const identity = identityRevision, revision = settingsRevision;
+    const message = $(passwordChange ? 'password-message' : 'settings-message');
+    const body = { revision: settings.revision, ...(passwordChange ? {
+      currentPassword: $('current-password').value, newPassword: $('new-password').value, confirmPassword: $('confirm-password').value,
+    } : { nickname: $('nickname').value,
+      visibleActivities: [...$('activity-options').querySelectorAll('input:checked')].map(input => input.value) }) };
+    settingsSaving = true; lockSettings(true); message.textContent = 'Saving…'; message.classList.remove('error-message');
+    try {
+      const data = await api('/api/account' + (passwordChange ? '/password' : ''), {
+        method: passwordChange ? 'POST' : 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+      });
+      if (identity !== identityRevision) return;
+      if (passwordChange) {
+        showLogin(); $('login-notice').textContent = 'Your password has changed. Sign in with your new password.';
+        $('login-notice').hidden = false; $('password').focus(); return;
+      }
+      profileRevision++;
+      $('student-name').textContent = data.nickname; $('profile-nickname').textContent = data.nickname;
+      if (revision !== settingsRevision) return;
+      settings = data; $('nickname').value = data.nickname; message.textContent = 'Your choices are saved.';
+    } catch (error) {
+      if (identity !== identityRevision || revision !== settingsRevision || expired(error)) return;
+      message.textContent = error.message; message.classList.add('error-message');
+      if (error.status === 409) { settings = null; $('reload-settings').hidden = false; }
+    } finally {
+      if (identity === identityRevision && revision === settingsRevision) { settingsSaving = false; lockSettings(false); }
+    }
+  }
+  $('settings-form').addEventListener('submit', event => saveSettings(event, false));
+  $('password-form').addEventListener('submit', event => saveSettings(event, true));
+  $('reload-settings').addEventListener('click', () => loadSettings(true));
+  window.addEventListener('pagehide', clearSettings);
+
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();
     const initial = !authenticated; authenticated = true;
@@ -806,6 +890,7 @@
     } finally { $('login-submit').disabled = false; $('login-submit').textContent = 'Open my space →'; }
   });
   $('logout').addEventListener('click', async () => {
+    clearSettings();
     $('logout').disabled = true;
     try {
       await api('/api/logout', { method: 'POST' }); history.replaceState(null, '', location.pathname);
@@ -815,9 +900,9 @@
   });
   async function checkSession() {
     if (!authenticated || checking || document.hidden) return;
-    checking = true; const revision = identityRevision;
+    checking = true; const revision = identityRevision, profile = profileRevision;
     try {
-      const data = await api('/api/session'); if (revision === identityRevision) showDashboard(data);
+      const data = await api('/api/session'); if (revision === identityRevision && profile === profileRevision) showDashboard(data);
     } catch (error) {
       if (revision !== identityRevision) return;
       if (!expired(error)) { clearIdentity(); $('unavailable-message').textContent = error.message; show('unavailable-view'); }

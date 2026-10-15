@@ -328,3 +328,20 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-menu-height,56px
   .student-main .section-nav { display:grid; grid-template-columns:repeat(3,max-content); justify-content:space-between; column-gap:14px; }
   .student-main .menu-sign-out { grid-column:3; }
 }
+
+.account-grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:24px; align-items:start; }
+.account-card { min-width:0; background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px 24px; }
+.account-card h3 { background:#20242b; color:#fff; margin:-20px -24px 20px; padding:12px 24px; border-radius:9px 9px 0 0; font-size:1.05rem; }
+.account-card fieldset { border:0; padding:0; margin:0; min-width:0; }
+.account-card label { display:block; margin:14px 0 6px; }
+.account-card .field-hint { font-size:.85rem; line-height:1.55; margin:8px 0 18px; }
+.account-card .activity-options { border-top:1px solid var(--line); padding-top:16px; margin:8px 0 20px; }
+.activity-options legend { font-weight:700; padding:0 12px 0 0; }
+.account-card .activity-choice { display:flex; align-items:flex-start; gap:12px; padding:12px; margin:8px 0; border:1px solid var(--line); border-radius:6px; cursor:pointer; }
+.activity-choice input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:3px 0 0; accent-color:var(--blue); }
+.activity-choice strong,.activity-choice span span { display:block; }
+.activity-choice span span { font-size:.82rem; color:var(--muted); margin-top:4px; line-height:1.5; }
+.save-message { font-size:.9rem; line-height:1.5; overflow-wrap:anywhere; }
+.save-message:empty { display:none; }
+#reload-settings { margin-bottom:20px; }
+@media(max-width:740px) { .account-grid { grid-template-columns:1fr; gap:20px; } .account-card { padding:18px 20px; } .account-card h3 { margin:-18px -20px 18px; padding:12px 20px; } }

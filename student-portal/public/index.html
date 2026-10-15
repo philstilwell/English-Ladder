@@ -43,6 +43,7 @@
           </div>
           <p id="password-hint" class="field-hint">Capital letters are automatically made lowercase.</p>
           <p id="login-error" class="error-message" role="alert" hidden></p>
+          <p id="login-notice" class="save-message" role="status" hidden></p>
           <button id="login-submit" class="primary-button" type="submit">Open my space <span aria-hidden="true">→</span></button>
         </form>
         <p class="help-note">Need your password? Please ask Phil.</p>
@@ -61,6 +62,7 @@
         <a id="quiz-nav" href="#quiz" hidden>Quiz</a>
         <a href="#sessions">Session summaries</a>
         <a href="#feedback">Feedback</a>
+        <a href="#account">Account</a>
         <button id="logout" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button>
       </nav>
       <div id="overview" class="section-panel">
@@ -117,6 +119,44 @@
         <div id="quiz-automation" class="quiz-attempt-card" hidden></div>
         <div id="quiz-history"></div>
         <button id="more-quiz-results" class="secondary-button" hidden>Earlier attempts</button>
+      </section>
+      <section id="account" class="section-panel" aria-labelledby="account-title" hidden>
+        <div class="section-heading"><h2 id="account-title" tabindex="-1">Your account</h2></div>
+        <p class="section-intro">Choose your nickname and activities. You can change your password here too.</p>
+        <p id="settings-status" role="status"></p>
+        <button id="reload-settings" class="secondary-button" type="button" hidden>Reload account</button>
+        <p id="settings-teacher-note" class="field-hint" hidden>Teacher view. Sign in as the student to change these settings.</p>
+        <div class="account-grid">
+          <form id="settings-form" class="account-card">
+            <h3>Your nickname and activities</h3>
+            <fieldset id="settings-fields" disabled>
+              <label for="nickname">Your nickname</label>
+              <input id="nickname" name="nickname" autocomplete="nickname" required maxlength="100" aria-describedby="nickname-hint">
+              <p id="nickname-hint" class="field-hint">This name appears at the top of your student page. Your sign-in address stays the same.</p>
+              <fieldset class="activity-options"><legend>Show in Activities</legend>
+                <p class="field-hint">Activities is coming soon. These are sample activities for now. Check the ones you want to see. You can change your choices later.</p>
+                <div id="activity-options"></div>
+              </fieldset>
+              <button class="primary-button" type="submit">Save my choices</button>
+            </fieldset>
+            <p id="settings-message" class="save-message" role="status"></p>
+          </form>
+          <form id="password-form" class="account-card">
+            <h3>Change your password</h3>
+            <fieldset id="password-fields" disabled>
+              <label for="current-password">Current password</label>
+              <input id="current-password" name="currentPassword" type="password" autocomplete="current-password" required maxlength="128" autocapitalize="none" spellcheck="false">
+              <label for="new-password">New password</label>
+              <input id="new-password" name="newPassword" type="password" autocomplete="new-password" required minlength="6" maxlength="128" autocapitalize="none" spellcheck="false" aria-describedby="new-password-hint">
+              <p id="new-password-hint" class="field-hint">Use 6 to 128 characters. Capital letters become lowercase. Spaces count.</p>
+              <label for="confirm-password">New password again</label>
+              <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required minlength="6" maxlength="128" autocapitalize="none" spellcheck="false">
+              <p class="field-hint">After this change, sign in again with your new password on each device.</p>
+              <button class="primary-button" type="submit">Change my password</button>
+            </fieldset>
+            <p id="password-message" class="save-message" role="status"></p>
+          </form>
+        </div>
       </section>
       <p id="account-status" class="account-status" role="status"></p>
     </section>

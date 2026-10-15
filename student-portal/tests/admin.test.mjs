@@ -581,3 +581,92 @@ test('CEFR overview distinguishes missing evidence from failures and clears afte
   dom.window.location.hash='#students';await flush();expire=true;d.querySelector('.student-name').click();await flush();
   assert.equal(d.getElementById('admin-view').hidden,true);assert.equal(d.getElementById('cefr-content').textContent,'');dom.window.close();
 });
+
+const selfWrite = (cookie, body, method = 'PUT') => ({ method, headers: { Cookie: cookie, Origin: origin, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+const selfProfile = async (e, cookie) => (await call(e, '/api/account', { headers: { Cookie: cookie } })).json();
+test('student account preferences are private, isolated, and preserved by administrator edits', async () => {
+  const { e } = environment(), student = await login(e), teacher = await login(e, 'teacher-test'), adminCookie = await access(e);
+  assert.equal((await call(e, '/api/account')).status, 401);
+  const initial = await selfProfile(e, student.cookie);
+  assert.deepEqual(initial.visibleActivities, ['placeholder-1', 'placeholder-2', 'placeholder-3']);
+  assert.deepEqual(Object.keys(initial).sort(), ['activities', 'nickname', 'revision', 'visibleActivities']);
+  const response = await call(e, '/api/account', selfWrite(student.cookie, { ...initial, nickname: 'New nickname', visibleActivities: [], studentId: 'cd26', status: 'paused', firstName: 'Changed', newPassword: 'injected-test' }));
+  assert.equal(response.status, 200);
+  const saved = await response.json(); assert.deepEqual(saved.visibleActivities, []);
+  const session = await (await call(e, '/api/session', { headers: { Cookie: student.cookie } })).json();
+  assert.equal(session.student.nickname, 'New nickname'); assert.equal(session.student.name, 'Alex');
+  assert.equal((await login(e)).response.status, 200);
+  const another = await login(e, 'other-test', 'https://cd26.englishladder.com');
+  const other = await (await call(e, '/api/account', { headers: { Cookie: another.cookie } }, 'https://cd26.englishladder.com')).json();
+  assert.equal(other.nickname, 'Casey'); assert.equal(other.visibleActivities.length, 3);
+  const records = await list(e, adminCookie), record = records.find(s => s.studentId === 'ab26');
+  const edited = await adminCall(e, '/api/admin/students/' + record.key, write(adminCookie, { ...record, lastName: 'Brown', course: 'Updated course', visibleActivities: ['placeholder-2'] }, 'PUT'));
+  assert.equal(edited.status, 200); assert.deepEqual((await selfProfile(e, student.cookie)).visibleActivities, []);
+  assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { ...saved, nickname: 'Stale' }))).status, 409);
+  assert.equal((await call(e, '/api/account', selfWrite(teacher.cookie, saved))).status, 403);
+  for (const path of ['/self/ab26', '/api/self/ab26', '/api/account/cd26']) assert.equal((await call(e, path, { headers: { Cookie: student.cookie } })).status, 404);
+});
+
+test('student settings reject foreign origins, cookies, invalid choices, oversized input and limits', async () => {
+  const { e } = environment(), student = await login(e), initial = await selfProfile(e, student.cookie);
+  for (const fake of [null, 'https://cd26.englishladder.com', 'https://evil.test']) {
+    const options = selfWrite(student.cookie, initial); if (fake) options.headers.Origin = fake; else delete options.headers.Origin;
+    assert.equal((await call(e, '/api/account', options)).status, 403);
+  }
+  assert.equal((await call(e, '/api/account', { headers: { Cookie: student.cookie } }, 'https://cd26.englishladder.com')).status, 401);
+  for (const changes of [{ visibleActivities: ['unknown'] }, { visibleActivities: ['placeholder-1', 'placeholder-1'] }, { visibleActivities: 'all' }, { nickname: '' }, { nickname: 'x'.repeat(101) }, { nickname: 'Two\nlines' }, { revision: null }]) {
+    assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { ...initial, ...changes }))).status, 400);
+  }
+  assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { ...initial, extra: 'x'.repeat(5000) }))).status, 400);
+  for (const binding of ['LOGIN_LIMITER', 'ACCOUNT_LIMITER']) {
+    const old = e[binding]; e[binding] = { limit: async () => ({ success: false }) };
+    assert.equal((await call(e, '/api/account', selfWrite(student.cookie, initial))).status, 429); e[binding] = old;
+  }
+  assert.equal((await selfProfile(e, student.cookie)).revision, initial.revision);
+});
+
+test('own-password change requires current password and revokes only student sessions with recoverable updated copy', async () => {
+  const { e } = environment(), student = await login(e), teacher = await login(e, 'teacher-test'), adminCookie = await access(e);
+  const other = await login(e, 'other-test', 'https://cd26.englishladder.com'), initial = await selfProfile(e, student.cookie);
+  const body = { revision: initial.revision, currentPassword: 'STUDENT-TEST', newPassword: 'New-Test-Password', confirmPassword: 'new-test-password' };
+  for (const changes of [{ currentPassword: 'wrong' }, { currentPassword: 'teacher-test' }, { newPassword: '' }, { newPassword: 'short', confirmPassword: 'short' }, { confirmPassword: 'different' }, { newPassword: 'teacher-test', confirmPassword: 'teacher-test' }]) {
+    assert.equal((await call(e, '/api/account/password', selfWrite(student.cookie, { ...body, ...changes }, 'POST'))).status, 400);
+  }
+  assert.equal((await call(e, '/api/account/password', selfWrite(teacher.cookie, body, 'POST'))).status, 403);
+  const options = selfWrite(student.cookie, body, 'POST'); options.headers.Origin = 'https://cd26.englishladder.com';
+  assert.equal((await call(e, '/api/account/password', options)).status, 403);
+  const limiter = e.ACCOUNT_LIMITER; e.ACCOUNT_LIMITER = { limit: async () => ({ success: false }) };
+  assert.equal((await call(e, '/api/account/password', selfWrite(student.cookie, body, 'POST'))).status, 429); e.ACCOUNT_LIMITER = limiter;
+  const result = await call(e, '/api/account/password', selfWrite(student.cookie, body, 'POST'));
+  assert.equal(result.status, 200); assert.deepEqual(await result.json(), { saved: true }); assert.match(result.headers.get('set-cookie'), /Max-Age=0/);
+  assert.equal((await call(e, '/api/session', { headers: { Cookie: student.cookie } })).status, 401);
+  assert.equal((await call(e, '/api/session', { headers: { Cookie: teacher.cookie } })).status, 200);
+  assert.equal((await call(e, '/api/session', { headers: { Cookie: other.cookie } }, 'https://cd26.englishladder.com')).status, 200);
+  assert.equal((await call(e, '/api/login', selfWrite('', { password: 'student-test' }, 'POST'))).status, 401);
+  const fresh = await login(e, 'NEW-TEST-PASSWORD'); assert.equal(fresh.response.status, 200);
+  const row = (await list(e, adminCookie)).find(s => s.studentId === 'ab26');
+  const details = await (await adminCall(e, '/api/admin/students/' + row.key + '/login-details', { headers: { Cookie: adminCookie } })).json();
+  assert.equal(details.password, 'new-test-password');
+  assert.doesNotMatch(JSON.stringify(await selfProfile(e, fresh.cookie)), /password|salt|ciphertext|credential|Brown|AlexZoom/);
+  // Exercise the custom-password verification path as well as the original legacy path.
+  const next = await selfProfile(e, fresh.cookie);
+  assert.equal((await call(e, '/api/account/password', selfWrite(fresh.cookie, { ...body, revision: next.revision, currentPassword: 'new-test-password' }, 'POST'))).status, 200);
+  assert.equal((await call(e, '/api/session', { headers: { Cookie: fresh.cookie } })).status, 401);
+});
+
+test('account saves recheck authenticated revision, pause and deletion inside the directory', async () => {
+  for (const change of ['revision', 'paused', 'deletionPending']) {
+    const { e, directory } = environment(), student = await login(e), initial = await selfProfile(e, student.cookie), binding = e.STUDENT_DIRECTORY;
+    e.STUDENT_DIRECTORY = { ...binding, get: () => ({ fetch: async request => {
+      if (new URL(request.url).pathname === '/self/ab26' && request.method === 'PUT') {
+        const row = (await directory.records()).find(r => r.studentId === 'ab26');
+        const changed = change === 'revision' ? { revision: row.revision + 1 } : change === 'paused' ? { status: 'paused' } : { deletionPending: true };
+        await directory.storage.put({ ['student:' + row.key]: { ...row, ...changed } });
+      }
+      return directory.fetch(request);
+    } }) };
+    const response = await call(e, '/api/account', selfWrite(student.cookie, { ...initial, nickname: 'Must not save' }));
+    assert.equal(response.status, change === 'revision' ? 409 : 404);
+    assert.notEqual((await directory.records()).find(r => r.studentId === 'ab26').nickname, 'Must not save');
+  }
+});

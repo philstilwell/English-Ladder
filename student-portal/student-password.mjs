@@ -1,6 +1,6 @@
 // Custom passwords are salted and stretched, then protected by a separate
-// Worker secret. Neither plaintext nor a reusable password digest is returned
-// to the administrator browser. 100,000 is Workers' Web Crypto iteration cap.
+// Worker secret. 100,000 is Workers' Web Crypto iteration cap.
+// A separately encrypted copy supports the owner's private login-details view.
 const encoder = new TextEncoder();
 const SCHEME = 'pbkdf2-sha256-hmac-v1';
 const encode = bytes => btoa(String.fromCharCode(...new Uint8Array(bytes)));
@@ -31,4 +31,24 @@ export async function makeStudentPassword(env, input, accountKey) {
 export async function matchesStudentPassword(env, credential, accountKey, password) {
   if (!credential || credential.scheme !== SCHEME) return false;
   return crypto.subtle.verify('HMAC', await pepperKey(env.STUDENT_PASSWORD_PEPPER), decode(credential.hash), await material(password, credential.salt, accountKey));
+}
+
+const COPY_SCHEME = 'aes-256-gcm-v1';
+async function copyKey(env) {
+  const secret = env.STUDENT_PASSWORD_ENCRYPTION_KEY;
+  if (typeof secret !== 'string' || !/^[0-9a-f]{64}$/i.test(secret)) throw new Error('Private password storage is unavailable. Please try again later.');
+  return crypto.subtle.importKey('raw', Uint8Array.from(secret.match(/../g), x => parseInt(x, 16)), 'AES-GCM', false, ['encrypt', 'decrypt']);
+}
+const copyContext = (accountKey, credential) => encoder.encode(JSON.stringify([COPY_SCHEME, accountKey, credential.scheme, credential.salt, credential.hash]));
+export async function encryptStudentPassword(env, password, accountKey, credential) {
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ciphertext = await crypto.subtle.encrypt({ name:'AES-GCM', iv, additionalData:copyContext(accountKey, credential), tagLength:128 }, await copyKey(env), encoder.encode(normalized(password)));
+  return { scheme:COPY_SCHEME, iv:encode(iv), ciphertext:encode(ciphertext) };
+}
+export async function decryptStudentPassword(env, copy, accountKey, credential) {
+  try {
+    if (copy?.scheme !== COPY_SCHEME || !credential) throw new Error('Invalid copy');
+    const plaintext = await crypto.subtle.decrypt({ name:'AES-GCM', iv:decode(copy.iv), additionalData:copyContext(accountKey, credential), tagLength:128 }, await copyKey(env), decode(copy.ciphertext));
+    return new TextDecoder().decode(plaintext);
+  } catch { throw new Error('The saved password could not be opened. Please try again later.'); }
 }

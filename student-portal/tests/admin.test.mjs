@@ -17,7 +17,7 @@ function memory() {
   return store;
 }
 function environment() {
-  const e={...baseEnv(),STUDENT_PASSWORD:'default-test-only',STUDENT_PASSWORD_PEPPER:'fictional-pepper-for-password-tests-only',QUIZ_STUDENTS:JSON.stringify({ab26:{firstName:'Alex',zoomNames:['AlexZoom'],timeZone:'America/New_York',startAfter:'2026-10-14T00:00:00Z'}})};
+  const e={...baseEnv(),STUDENT_PASSWORD:'default-test-only',STUDENT_PASSWORD_PEPPER:'fictional-pepper-for-password-tests-only',STUDENT_PASSWORD_ENCRYPTION_KEY:'ab'.repeat(32),QUIZ_STUDENTS:JSON.stringify({ab26:{firstName:'Alex',zoomNames:['AlexZoom'],timeZone:'America/New_York',startAfter:'2026-10-14T00:00:00Z'}})};
   const directory=new StudentDirectory({storage:memory()},e);
   e.STUDENT_DIRECTORY={idFromName:id=>id,get:()=>directory};
   return {e,directory};
@@ -195,7 +195,7 @@ test('administrator list links to editable accounts and has a separate registrat
   assert.match(d.getElementById('student-rows').textContent,/Morgan Testperson/);
   d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('lastName').value,'Testperson');assert.equal(d.getElementById('studentId').readOnly,true);
   w.location.hash='#register';await flush();assert.equal(d.getElementById('edit-title').textContent,'Register new student');assert.equal(d.getElementById('lastName').value,'');assert.equal(d.getElementById('studentId').readOnly,false);
-  assert.equal(d.querySelectorAll('input[type="password"]').length,3);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
+  assert.equal(d.querySelectorAll('input[type="password"]').length,4);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
 });
 test('student list shows latest quiz states, updates after Refresh, and treats lookup failures separately',async()=>{
   let state={state:'in_progress',answered:1,total:2},fail=false;
@@ -276,4 +276,107 @@ test('pausing the original student does not disable the signed Zoom notification
   let forwarded=false;e.QUIZ_AUTOMATION={idFromName:id=>id,get:()=>({fetch:async req=>{forwarded=new URL(req.url).pathname==='/webhook';return Response.json({error:'Invalid signature'},{status:401});}})};
   assert.equal((await call(e,'/api/automation/webhook',{method:'POST',body:'{}'})).status,401);assert.equal(forwarded,true);
   assert.equal((await call(e,'/api/context')).status,404);
+});
+
+test('login details reveal only on the administrator host, with encrypted storage and no cached responses',async()=>{
+  const {e,directory}=environment(),cookie=await access(e);
+  const saved=(await(await adminCall(e,'/api/admin/students',write(cookie,{...example,newPassword:'Copy-TEST-Only',confirmPassword:'copy-test-only'}))).json()).student;
+  const path='/api/admin/students/'+saved.key+'/login-details';
+  const r=await adminCall(e,path,{headers:{Cookie:cookie}});assert.equal(r.status,200);assert.equal(r.headers.get('Cache-Control'),'no-store');assert.equal(r.headers.get('Access-Control-Allow-Origin'),null);
+  assert.deepEqual(await r.json(),{firstName:'Morgan',studentId:'mt26',url:'https://mt26.englishladder.com/',active:true,password:'copy-test-only',message:null});
+  const raw=(await directory.records()).find(x=>x.key===saved.key);assert.equal(raw.passwordCopy.scheme,'aes-256-gcm-v1');assert.doesNotMatch(JSON.stringify(raw),/copy-test-only/i);
+  assert.doesNotMatch(JSON.stringify(await list(e,cookie)),/copy-test-only|passwordCopy|ciphertext|passwordCredential|salt|hash/i);
+  assert.doesNotMatch(JSON.stringify(await directoryStudents(e)),/password|ciphertext/i);
+  const account=await(await directory.fetch(new Request('https://directory.internal/account/mt26'))).json();assert.equal(account.passwordCopy,undefined);
+  assert.equal((await adminCall(e,path)).status,401);
+  const student=await login(e,'copy-test-only','https://mt26.englishladder.com'),teacher=await login(e,'teacher-test','https://mt26.englishladder.com');
+  for(const c of [student.cookie,teacher.cookie]){
+    assert.equal((await adminCall(e,path,{headers:{Cookie:c}})).status,401);
+    assert.equal((await call(e,path,{headers:{Cookie:c}},'https://mt26.englishladder.com')).status,404);
+  }
+  for(const headers of [{Origin:origin},{Origin:'https://outside.example'},{'Sec-Fetch-Site':'cross-site'}])assert.equal((await adminCall(e,path,{headers:{Cookie:cookie,...headers}})).status,403);
+  e.TEACHER_PASSWORD='changed-teacher-test';assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,401);
+});
+
+test('known existing passwords can gain an encrypted copy without changing student sessions; stale or wrong copies are rejected',async()=>{
+  const {e,directory}=environment(),cookie=await access(e),host='https://mt26.englishladder.com';
+  const saved=(await(await adminCall(e,'/api/admin/students',write(cookie,{...example,newPassword:'Known-test-only',confirmPassword:'known-test-only'}))).json()).student;
+  const raw=(await directory.records()).find(x=>x.key===saved.key);delete raw.passwordCopy;
+  await directory.storage.put({['student:'+saved.key]:raw});
+  const student=await login(e,'known-test-only',host),path='/api/admin/students/'+saved.key+'/login-details';
+  const missing=await(await adminCall(e,path,{headers:{Cookie:cookie}})).json();assert.equal(missing.password,null);assert.match(missing.message,/older password/);
+  assert.equal((await adminCall(e,path,write(cookie,{revision:saved.revision,password:'wrong-test'},'PUT'))).status,400);
+  const badOrigin=write(cookie,{revision:saved.revision,password:'known-test-only'},'PUT');badOrigin.headers.Origin=origin;assert.equal((await adminCall(e,path,badOrigin)).status,403);
+  assert.equal((await adminCall(e,path,write(cookie,{revision:saved.revision-1,password:'known-test-only'},'PUT'))).status,409);
+  const restore=await adminCall(e,path,write(cookie,{revision:saved.revision,password:'KNOWN-TEST-ONLY'},'PUT'));assert.equal(restore.status,200);assert.deepEqual(await restore.json(),{saved:true});
+  const updated=(await directory.records()).find(x=>x.key===saved.key);assert.deepEqual(updated.passwordCredential,raw.passwordCredential);assert.ok(updated.passwordCopy);assert.equal(updated.revision,saved.revision+1);
+  assert.equal((await call(e,'/api/session',{headers:{Cookie:student.cookie}},host)).status,200);
+  assert.equal((await(await adminCall(e,path,{headers:{Cookie:cookie}})).json()).password,'known-test-only');
+  const record=(await list(e,cookie)).find(s=>s.key===saved.key);
+  await adminCall(e,'/api/admin/students/'+saved.key,write(cookie,{...record,notes:'Other edit'},'PUT'));
+  assert.deepEqual((await directory.records()).find(x=>x.key===saved.key).passwordCopy,updated.passwordCopy);
+});
+
+test('password copies are bound to account and credential; missing encryption settings cannot partially change a password',async()=>{
+  const {e,directory}=environment(),cookie=await access(e);
+  const make=async values=>(await(await adminCall(e,'/api/admin/students',write(cookie,{...values,newPassword:'Same-test-only',confirmPassword:'same-test-only'}))).json()).student;
+  const a=await make(example),b=await make({...example,studentId:'mn26',zoomNames:['OtherZoom']});
+  const records=await directory.records(),rawA=records.find(s=>s.key===a.key),rawB=records.find(s=>s.key===b.key);
+  const path='/api/admin/students/'+b.key+'/login-details';
+  await directory.storage.put({['student:'+b.key]:{...rawB,passwordCopy:rawA.passwordCopy}});
+  assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,503);
+  await directory.storage.put({['student:'+b.key]:{...rawB,passwordCredential:rawA.passwordCredential}});
+  assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,503);
+  await directory.storage.put({['student:'+b.key]:rawB});
+  delete e.STUDENT_PASSWORD_ENCRYPTION_KEY;
+  assert.equal((await adminCall(e,'/api/admin/students/'+b.key,write(cookie,{...b,newPassword:'Changed-test-only',confirmPassword:'changed-test-only'},'PUT'))).status,400);
+  assert.deepEqual((await directory.records()).find(s=>s.key===b.key),rawB);
+  assert.equal((await login(e,'same-test-only','https://mn26.englishladder.com')).response.status,200);
+  assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,503);
+});
+
+test('default and legacy passwords are visible only in login details, with inactive sites and universal credentials handled safely',async()=>{
+  const {e}=environment(),cookie=await access(e);
+  const legacy=(await list(e,cookie)).find(s=>s.studentId==='ab26');
+  const get=async key=>adminCall(e,'/api/admin/students/'+key+'/login-details',{headers:{Cookie:cookie}});
+  assert.equal((await(await get(legacy.key)).json()).password,'student-test');
+  const draft=(await(await adminCall(e,'/api/admin/students',write(cookie,{...example,status:'draft',studentId:'',zoomNames:[]}))).json()).student;
+  assert.deepEqual(await(await get(draft.key)).json(),{firstName:'Morgan',studentId:'',url:null,active:false,password:'default-test-only',message:null});
+  e.STUDENT_PASSWORD=e.TEACHER_PASSWORD;assert.equal((await get(draft.key)).status,409);
+  assert.equal((await get('00000000-0000-4000-8000-000000000000')).status,404);
+});
+
+const loginFixture={firstName:'Morgan',studentId:'mt26',url:'https://mt26.englishladder.com/',active:true,password:'fictional-copy-secret',message:null};
+test('administrator can reveal and copy fresh login details; navigation and sign-out clear every secret field',async()=>{
+  let password=loginFixture.password,copied;
+  const dom=browser(path=>path.endsWith('/login-details')?Response.json({...loginFixture,password}):null);await flush();const w=dom.window,d=w.document;
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async value=>{copied=value;}}});
+  d.querySelector('.student-name').click();await flush();
+  assert.equal(d.getElementById('current-password').value,password);assert.equal(d.getElementById('current-password').type,'password');
+  d.getElementById('reveal-password').click();assert.equal(d.getElementById('current-password').type,'text');assert.equal(d.getElementById('reveal-password').getAttribute('aria-pressed'),'true');
+  password='newer-fictional-secret';d.getElementById('copy-login-details').click();await flush();
+  assert.equal(copied,'English Ladder — Morgan\nSign in: https://mt26.englishladder.com/\nStudent ID: mt26\nPassword: newer-fictional-secret');assert.match(d.getElementById('login-details-status').textContent,/copied/);
+  w.location.hash='#students';await flush();assert.equal(d.getElementById('current-password').value,'');assert.equal(d.getElementById('current-password').type,'password');assert.equal(d.getElementById('login-url').value,'');
+  d.querySelector('.student-name').click();await flush();d.getElementById('sign-out').click();await flush();
+  for(const id of ['current-password','login-url','copy-login-text'])assert.equal(d.getElementById(id).value,'');assert.equal(d.getElementById('login-details-panel').hidden,true);dom.window.close();
+});
+
+test('late login-detail responses cannot restore passwords after navigation or expiry, or copy another account',async()=>{
+  let pending,copyCount=0;
+  const dom=browser(path=>path.endsWith('/login-details')?new Promise(r=>{pending=r;}):null);await flush();const w=dom.window,d=w.document;
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async()=>{copyCount++;}}});
+  d.querySelector('.student-name').click();await flush();w.location.hash='#register';await flush();pending(Response.json(loginFixture));await flush();assert.equal(d.getElementById('current-password').value,'');
+  w.location.hash='#students/'+fixture.key;await flush();pending(Response.json(loginFixture));await flush();
+  d.getElementById('copy-login-details').click();await flush();w.location.hash='#register';await flush();pending(Response.json(loginFixture));await flush();assert.equal(copyCount,0);
+  w.location.hash='#students/'+fixture.key;await flush();pending(Response.json({error:'Expired'},{status:401}));await flush();assert.equal(d.getElementById('admin-view').hidden,true);assert.equal(d.getElementById('current-password').value,'');assert.equal(copyCount,0);dom.window.close();
+});
+
+test('manual copy fallback stays private and clears on leaving; inactive or unavailable passwords cannot be copied',async()=>{
+  let data=loginFixture;
+  const dom=browser(path=>path.endsWith('/login-details')?Response.json(data):null);await flush();const w=dom.window,d=w.document;
+  d.querySelector('.student-name').click();await flush();d.getElementById('copy-login-details').click();await flush();
+  assert.equal(d.getElementById('copy-fallback').hidden,false);assert.match(d.getElementById('copy-login-text').value,/fictional-copy-secret/);
+  w.location.hash='#students';await flush();assert.equal(d.getElementById('copy-login-text').value,'');assert.equal(d.getElementById('copy-fallback').hidden,true);
+  data={...loginFixture,active:false};d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('copy-login-details').disabled,true);
+  data={...loginFixture,password:null,message:'No copy available.'};d.getElementById('refresh-login-details').click();await flush();assert.equal(d.getElementById('copy-login-details').disabled,true);assert.equal(d.getElementById('reveal-password').disabled,true);assert.match(d.getElementById('login-details-status').textContent,/No copy available/);dom.window.close();
 });

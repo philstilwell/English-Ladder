@@ -1,8 +1,8 @@
 // This database is reachable only through the Worker binding. Public routes never
 // expose it; the administrator API uses a host-bound teacher session.
-import { makeStudentPassword } from './student-password.mjs';
+import { makeStudentPassword, matchesStudentPassword, encryptStudentPassword, decryptStudentPassword } from './student-password.mjs';
 const json = (value, status = 200) => Response.json(value, { status });
-const adminRecord = ({ passwordCredential, ...record }) => ({ ...record, hasCustomPassword: Boolean(passwordCredential) });
+const adminRecord = ({ passwordCredential, passwordCopy, ...record }) => ({ ...record, hasCustomPassword: Boolean(passwordCredential) });
 export const STUDENT_ID = /^[a-z]{2,8}\d{2}(?:-[a-z0-9]{1,12})?$/;
 const RESERVED = new Set(['phil', 'www', 'admin', 'students', 'mail', 'api']);
 const norm = value => String(value || '').trim().toLowerCase();
@@ -137,15 +137,51 @@ export class StudentDirectory {
       if (values.zoomNames.some(n => others.some(r => r.zoomNames.some(other => norm(other) === norm(n))))) return json({ error: 'That Zoom name belongs to another student. Each Zoom name must identify one student.' }, 409);
       if (!previous && records.length >= 1000) return json({ error: 'The directory is full. Please contact support.' }, 400);
       const recordKey = previous?.key || crypto.randomUUID();
-      const passwordCredential = await makeStudentPassword(this.env, input, recordKey) || previous?.passwordCredential;
+      const newCredential = await makeStudentPassword(this.env, input, recordKey);
+      const passwordCredential = newCredential || previous?.passwordCredential;
+      const passwordCopy = newCredential ? await encryptStudentPassword(this.env, input.newPassword, recordKey, newCredential) : previous?.passwordCopy;
       if (values.status === 'active' && !passwordCredential && !this.env.STUDENT_PASSWORD && !JSON.parse(this.env.STUDENT_ACCOUNTS || '{}')[values.studentId]) return json({ error: 'Assign a student password before activating this account.' }, 503);
       const now = new Date().toISOString(), activated = previous?.activated || values.status === 'active';
       const record = { ...values, key: recordKey, revision: (previous?.revision || 0) + 1,
         activated, startAfter: previous?.startAfter || (activated ? now : null),
         lessonTimeZone: previous?.lessonTimeZone || 'America/New_York', createdAt: previous?.createdAt || now, updatedAt: now,
-        ...(previous?.source ? { source: previous.source } : {}), ...(passwordCredential ? { passwordCredential } : {}) };
+        ...(previous?.source ? { source: previous.source } : {}), ...(passwordCredential ? { passwordCredential } : {}), ...(passwordCopy ? { passwordCopy } : {}) };
       await txn.put({ ['student:' + record.key]: record, revision: (await txn.get('revision') || 0) + 1 });
       return json({ student: adminRecord(record) }, previous ? 200 : 201);
+    });
+  }
+  async loginDetails(key) {
+    const record = await this.storage.get('student:' + key);
+    if (!record) return json({ error:'Student not found.' }, 404);
+    let password = null;
+    if (record.passwordCredential) {
+      if (record.passwordCopy) {
+        try { password = await decryptStudentPassword(this.env, record.passwordCopy, key, record.passwordCredential); }
+        catch { return json({ error:'The saved password could not be opened. Please try again later.' }, 503); }
+      }
+    } else {
+      password = JSON.parse(this.env.STUDENT_ACCOUNTS || '{}')[record.studentId]?.password || this.env.STUDENT_PASSWORD || null;
+      if (password) password = password.toLowerCase();
+    }
+    // Never disclose the universal credential, even after a configuration error.
+    if (password && password === this.env.TEACHER_PASSWORD?.toLowerCase()) return json({ error:'Assign a separate student password before sharing login details.' }, 409);
+    return json({ firstName:record.firstName.split(/\s+/)[0], studentId:record.studentId,
+      url:record.studentId ? 'https://' + record.studentId + '.englishladder.com/' : null,
+      active:record.status === 'active', password,
+      message:password ? null : record.passwordCredential ? 'This older password has no saved copy. Assign a new password below to make it available here.' : 'Assign a student password below.' });
+  }
+  async restorePasswordCopy(key, input) {
+    // Restore only a known, verified current password. This does not rotate the
+    // verifier or revoke student sessions; concurrent account changes conflict.
+    return this.storage.transaction(async txn => {
+      const record = await txn.get('student:' + key);
+      if (!record) return json({ error:'Student not found.' }, 404);
+      if (input.revision !== record.revision) return json({ error:'This record changed. Reload it before saving.' }, 409);
+      if (!record.passwordCredential || typeof input.password !== 'string' || input.password.length > 128 || !input.password || !await matchesStudentPassword(this.env, record.passwordCredential, key, input.password)) return json({ error:'The password does not match the current student login.' }, 400);
+      if (input.password.toLowerCase() === this.env.TEACHER_PASSWORD?.toLowerCase()) return json({ error:'Use a separate student password.' }, 400);
+      const passwordCopy = await encryptStudentPassword(this.env, input.password, key, record.passwordCredential);
+      await txn.put({ ['student:' + key]:{ ...record, passwordCopy, revision:record.revision + 1, updatedAt:new Date().toISOString() }, revision:(await txn.get('revision') || 0) + 1 });
+      return json({ saved:true });
     });
   }
   async fetch(request) {
@@ -153,6 +189,9 @@ export class StudentDirectory {
     const url = new URL(request.url), path = url.pathname;
     try {
       if (path === '/students' && request.method === 'GET') return json({ students: (await this.records()).map(adminRecord).sort((a,b) => (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName)) });
+      const loginDetails = path.match(/^\/students\/([\w-]{36})\/login-details$/);
+      if (loginDetails && request.method === 'GET') return await this.loginDetails(loginDetails[1]);
+      if (loginDetails && request.method === 'PUT') return await this.restorePasswordCopy(loginDetails[1], await request.json());
       if ((path.startsWith('/account/') || path.startsWith('/integration-account/')) && request.method === 'GET') {
         const integration = path.startsWith('/integration-account/'), id = path.slice(integration ? 21 : 9);
         const record = (await this.records()).find(r => r.studentId === id && (r.status === 'active' || integration && r.activated));

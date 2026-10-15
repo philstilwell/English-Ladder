@@ -30,6 +30,17 @@
       <a href="#students" class="back-link">← All students</a>
       <div class="page-heading"><div><p class="eyebrow" id="edit-kicker">STUDENT ACCOUNT</p><h1 id="edit-title">Register new student</h1><p id="edit-description">Add the student’s details and exact Zoom display name.</p></div><a id="open-site" class="secondary-button" target="_blank" rel="noopener" hidden>Open student site ↗</a></div>
       <p id="source-note" class="source-note" hidden></p>
+      <section id="login-details-panel" class="login-details-panel" aria-labelledby="login-details-title" hidden>
+        <h2 id="login-details-title">Student login details <span class="private-label">Only in your administrator account</span></h2>
+        <p class="field-note">Copy the student’s website, ID, and password together. This never includes your administrator password.</p>
+        <div class="form-grid">
+          <div><label for="login-url">Sign-in website</label><input id="login-url" type="url" readonly autocomplete="off"></div>
+          <div><label for="current-password">Current student password</label><div class="saved-password-field"><input id="current-password" type="password" readonly autocomplete="off" spellcheck="false"><button id="reveal-password" class="secondary-button" type="button" aria-controls="current-password" aria-pressed="false" disabled>Show password</button></div></div>
+        </div>
+        <div class="login-details-actions"><button id="copy-login-details" class="primary-button" type="button" disabled>Copy login details</button><button id="refresh-login-details" class="secondary-button" type="button">Refresh login details</button></div>
+        <p id="login-details-status" class="field-note" role="status"></p>
+        <div id="copy-fallback" hidden><label for="copy-login-text">Select and copy these login details</label><textarea id="copy-login-text" rows="5" readonly autocomplete="off" spellcheck="false"></textarea></div>
+      </section>
       <form id="student-form">
         <fieldset><legend>Student &amp; site</legend><p class="field-note">Students see their first name and nickname. Their last name stays here.</p><div class="form-grid">
           <div><label for="firstName">First name</label><input id="firstName" name="firstName" required maxlength="80" autocomplete="off"></div>

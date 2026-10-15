@@ -189,8 +189,10 @@ async function handleAdmin(request, env) {
       return env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/admin-status'));
     }
     const path = url.pathname.slice('/api/admin'.length);
-    if (!url.pathname.startsWith('/api/admin/') || !['/students', '/import', '/import/preview'].includes(path) && !/^\/students\/[\w-]{36}$/.test(path)) return json({ error: 'Page not found.' }, 404);
-    const method = path === '/students' ? ['GET', 'POST'] : path.startsWith('/students/') ? ['PUT'] : ['POST'];
+    const loginDetails = /^\/students\/[\w-]{36}\/login-details$/.test(path);
+    if (!url.pathname.startsWith('/api/admin/') || !['/students', '/import', '/import/preview'].includes(path) && !/^\/students\/[\w-]{36}$/.test(path) && !loginDetails) return json({ error: 'Page not found.' }, 404);
+    if (loginDetails && (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site')) return json({ error:'Please open this account from your administrator page.' }, 403);
+    const method = loginDetails ? ['GET', 'PUT'] : path === '/students' ? ['GET', 'POST'] : path.startsWith('/students/') ? ['PUT'] : ['POST'];
     if (!method.includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
     let body;
     if (request.method !== 'GET') {

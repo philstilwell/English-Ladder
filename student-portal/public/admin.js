@@ -3,13 +3,44 @@
   const $ = id => document.getElementById(id);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let quizRequest = 0, quizStatuses = {};
+  let loginRequest = 0, loginDetails = null;
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
   const displayTime = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(value)) + ' Eastern' : '';
   const element = (tag, text, className) => { const node = document.createElement(tag); if (text != null) node.textContent = text; if (className) node.className = className; return node; };
   function message(text, error = false) { $('message').textContent = text; $('message').hidden = !text; $('message').classList.toggle('error', error); }
+  function clearLoginDetails() {
+    loginRequest++; loginDetails = null;
+    $('login-details-panel').hidden = true;
+    $('login-url').value = ''; $('current-password').value = ''; $('current-password').type = 'password';
+    $('reveal-password').textContent = 'Show password'; $('reveal-password').setAttribute('aria-pressed', 'false');
+    $('reveal-password').disabled = true; $('copy-login-details').disabled = true;
+    $('login-details-status').textContent = ''; $('copy-login-text').value = ''; $('copy-fallback').hidden = true;
+  }
+  async function loadLoginDetails(student) {
+    clearLoginDetails();
+    if (!student) return null;
+    $('login-details-panel').hidden = false; $('login-details-status').textContent = 'Loading saved login details…';
+    const request = loginRequest, version = epoch;
+    const stillCurrent = () => signedIn && epoch === version && request === loginRequest && current?.key === student.key && location.hash === '#students/' + student.key;
+    try {
+      const data = await api('/api/admin/students/' + student.key + '/login-details');
+      if (!stillCurrent()) return null;
+      loginDetails = data;
+      $('login-url').value = data.url || '';
+      $('current-password').value = data.password || '';
+      $('reveal-password').disabled = !data.password;
+      $('copy-login-details').disabled = !data.password || !data.url || !data.active;
+      $('login-details-status').textContent = data.message || (data.active ? 'Ready to copy. Capital letters also work when the student signs in.' : 'This site is not active. You can view its password here; copying login details is available when the site is active.');
+      return data;
+    } catch (error) {
+      if (stillCurrent()) $('login-details-status').textContent = error.message;
+      return null;
+    }
+  }
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null;
+    clearLoginDetails();
     quizRequest++; quizStatuses = {};
     $('admin-view').hidden = true; $('login-view').hidden = false; $('sign-out').hidden = true;
     $('student-rows').replaceChildren(); $('import-names').replaceChildren(); $('student-form').reset();
@@ -95,7 +126,7 @@
   function editStudent(student) {
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); $('save-state').textContent = '';
-    $('password-status').textContent = student?.hasCustomPassword ? 'This student has a personal password. Saved passwords cannot be displayed.' : 'This account uses the existing default student password until you assign a personal one.';
+    $('password-status').textContent = student?.hasCustomPassword ? 'This student has a personal password. You can view and copy it in Student login details above.' : 'This account uses the existing default student password until you assign a personal one.';
     for (const field of fields) $(field).value = student?.[field] ?? (field === 'status' ? 'active' : field === 'timeZone' ? 'America/New_York' : '');
     $('zoomNames').value = student?.zoomNames.join('\n') || '';
     $('studentId').readOnly = Boolean(student?.activated);
@@ -110,10 +141,12 @@
     if (student?.status === 'active') $('open-site').href = 'https://' + student.studentId + '.englishladder.com/'; else $('open-site').removeAttribute('href');
     if (student && !student.studentId) suggestedAddress();
     updateSaveLabel();
+    void loadLoginDetails(student);
   }
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
   function route() {
     if (!signedIn) return;
+    clearLoginDetails(); current = null;
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
     for (const id of ['list-view','edit-view','import-view']) $(id).hidden = true;
@@ -146,6 +179,30 @@
   $('firstName').addEventListener('input',suggestedAddress); $('lastName').addEventListener('input',suggestedAddress);
   $('studentId').addEventListener('input', () => { addressEdited = true; $('studentId').value = $('studentId').value.toLowerCase(); });
   $('status').addEventListener('change',updateSaveLabel);
+  $('reveal-password').addEventListener('click', () => {
+    if (!signedIn || !loginDetails?.password) return;
+    const show = $('current-password').type === 'password';
+    $('current-password').type = show ? 'text' : 'password';
+    $('reveal-password').textContent = show ? 'Hide password' : 'Show password';
+    $('reveal-password').setAttribute('aria-pressed', String(show));
+  });
+  $('refresh-login-details').addEventListener('click', () => { if (signedIn) void loadLoginDetails(current); });
+  $('copy-login-details').addEventListener('click', async () => {
+    if (!signedIn || !current) return;
+    // Read again so a password changed in another window is not copied stale.
+    const data = await loadLoginDetails(current), request = loginRequest;
+    if (!data?.password || !data.url || !data.active) return;
+    const text = 'English Ladder — ' + data.firstName + '\nSign in: ' + data.url + '\nStudent ID: ' + data.studentId + '\nPassword: ' + data.password;
+    try {
+      await navigator.clipboard.writeText(text);
+      if (signedIn && request === loginRequest) $('login-details-status').textContent = 'Login details copied. You can paste them into your message to the student.';
+    } catch {
+      if (!signedIn || request !== loginRequest) return;
+      $('copy-login-text').value = text; $('copy-fallback').hidden = false;
+      $('copy-login-text').focus(); $('copy-login-text').select();
+      $('login-details-status').textContent = 'Automatic copy is unavailable. Copy the selected details below.';
+    }
+  });
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
   $('student-form').addEventListener('submit', async event => {
     event.preventDefault(); const version = epoch, editing = current;

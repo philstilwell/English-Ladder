@@ -11,7 +11,7 @@ button:disabled { cursor:wait; opacity:.65; }
 .skip-link { position:absolute; top:-80px; left:20px; z-index:10; background:white; padding:12px; }
 .skip-link:focus { top:10px; }
 .masthead { min-height:86px; border-bottom:1px solid var(--line); max-width:1280px; margin:0 auto; padding:20px 48px; display:flex; align-items:center; gap:24px; }
-.brand { display:inline-flex; align-items:center; gap:10px; color:var(--blue); font-weight:750; font-size:1.22rem; letter-spacing:-.045em; text-decoration:none; }
+.brand { display:inline-flex; align-items:center; gap:10px; color:var(--blue); font-weight:750; font-size:1.22rem; letter-spacing:.02em; text-decoration:none; }
 .brand img { display:block; border-radius:7px; }
 .masthead-label { margin-left:auto; color:var(--muted); font-size:.85rem; }
 .text-button { background:transparent; border:0; color:var(--blue); font-weight:650; min-height:44px; padding:8px 0 8px 12px; }

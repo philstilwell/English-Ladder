@@ -4,6 +4,7 @@ export { FeedbackStore } from './feedback.mjs';
 import { nightlyDate } from './server-quiz-automation.mjs';
 export { QuizAutomation } from './server-quiz-automation.mjs';
 import { directoryRequest } from './student-directory.mjs';
+import { matchesStudentPassword } from './student-password.mjs';
 export { StudentDirectory } from './student-directory.mjs';
 
 const COOKIE = '__Host-el-session';
@@ -70,7 +71,7 @@ async function accountFor(request, env, allowPausedIntegration = false) {
     if (!response.ok) throw new Error('Directory unavailable');
     account = { ...await response.json(), password: account?.password || env.STUDENT_PASSWORD };
   }
-  if (!account || typeof account.name !== 'string' || typeof account.password !== 'string' || !account.password) return null;
+  if (!account || typeof account.name !== 'string' || !account.passwordCredential && (typeof account.password !== 'string' || !account.password)) return null;
   return { ...account, id };
 }
 
@@ -81,6 +82,7 @@ function configured(env) {
 }
 
 async function credentialVersion(env, account, role) {
+  if (role === 'student' && account.passwordCredential) return base64url(await signature(env.SESSION_SECRET, JSON.stringify([account.id, role, account.passwordCredential])));
   const credential = role === 'teacher' ? env.TEACHER_PASSWORD : account.password;
   return base64url(await signature(env.SESSION_SECRET, JSON.stringify([account.id, role, normalizePassword(credential)])));
 }
@@ -228,7 +230,7 @@ async function handle(request, env) {
     // Always check both credentials. The universal password selects teacher access.
     const [teacher, student] = await Promise.all([
       passwordMatches(env.SESSION_SECRET, env.TEACHER_PASSWORD, body.password),
-      passwordMatches(env.SESSION_SECRET, account.password, body.password),
+      account.passwordCredential ? matchesStudentPassword(env, account.passwordCredential, account.credentialAccountKey, body.password) : passwordMatches(env.SESSION_SECRET, account.password, body.password),
     ]);
     if (!teacher && !student) return json({ error: 'That password did not match. Please try again.' }, 401);
     const role = teacher ? 'teacher' : 'student';

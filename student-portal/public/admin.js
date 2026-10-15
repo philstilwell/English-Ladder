@@ -14,6 +14,7 @@
     $('sheet-paste').value = ''; $('password').value = ''; $('search').value = ''; $('filter').value = 'all';
     $('edit-title').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href');
     $('activation-note').textContent = ''; $('save-state').textContent = ''; $('import-preview').hidden = true;
+    $('password-status').textContent = '';
     $('active-count').textContent = '0'; $('draft-count').textContent = '0'; $('list-count').textContent = '';
     $('last-check').textContent = ''; $('schedule-state').textContent = ''; message('');
     document.title = 'Phil’s students · English Ladder';
@@ -69,6 +70,7 @@
   function editStudent(student) {
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); $('save-state').textContent = '';
+    $('password-status').textContent = student?.hasCustomPassword ? 'This student has a personal password. Saved passwords cannot be displayed.' : 'This account uses the existing default student password until you assign a personal one.';
     for (const field of fields) $(field).value = student?.[field] ?? (field === 'status' ? 'active' : field === 'timeZone' ? 'America/New_York' : '');
     $('zoomNames').value = student?.zoomNames.join('\n') || '';
     $('studentId').readOnly = Boolean(student?.activated);
@@ -87,6 +89,7 @@
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
   function route() {
     if (!signedIn) return;
+    $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
     for (const id of ['list-view','edit-view','import-view']) $(id).hidden = true;
     for (const id of ['list-nav','register-nav','import-nav']) $(id).removeAttribute('aria-current');
@@ -118,10 +121,15 @@
   $('firstName').addEventListener('input',suggestedAddress); $('lastName').addEventListener('input',suggestedAddress);
   $('studentId').addEventListener('input', () => { addressEdited = true; $('studentId').value = $('studentId').value.toLowerCase(); });
   $('status').addEventListener('change',updateSaveLabel);
+  for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
   $('student-form').addEventListener('submit', async event => {
     event.preventDefault(); const version = epoch, editing = current;
     const input = Object.fromEntries(fields.map(field => [field,$(field).value]));
     input.zoomNames = $('zoomNames').value.split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
+    if ($('newPassword').value || $('confirmPassword').value) {
+      if ($('newPassword').value.toLowerCase() !== $('confirmPassword').value.toLowerCase()) { message('The two student passwords do not match.', true); return; }
+      input.newPassword = $('newPassword').value.toLowerCase(); input.confirmPassword = $('confirmPassword').value.toLowerCase();
+    }
     if (editing) input.revision = editing.revision;
     $('save-student').disabled = true; $('save-state').textContent = 'Saving…'; message('');
     try {

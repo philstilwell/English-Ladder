@@ -1,6 +1,8 @@
 // This database is reachable only through the Worker binding. Public routes never
 // expose it; the administrator API uses a host-bound teacher session.
+import { makeStudentPassword } from './student-password.mjs';
 const json = (value, status = 200) => Response.json(value, { status });
+const adminRecord = ({ passwordCredential, ...record }) => ({ ...record, hasCustomPassword: Boolean(passwordCredential) });
 export const STUDENT_ID = /^[a-z]{2,8}\d{2}(?:-[a-z0-9]{1,12})?$/;
 const RESERVED = new Set(['phil', 'www', 'admin', 'students', 'mail', 'api']);
 const norm = value => String(value || '').trim().toLowerCase();
@@ -130,29 +132,32 @@ export class StudentDirectory {
       if (previous && input.revision !== previous.revision) return json({ error: 'This record changed in another window. Reload it before saving.' }, 409);
       const values = validateStudent(input);
       if (previous?.activated && (previous.studentId !== values.studentId || values.status === 'draft')) return json({ error: 'An activated student keeps the same address. Use “Paused” to stop access and updates.' }, 400);
-      if (values.status === 'active' && !this.env.STUDENT_PASSWORD && !JSON.parse(this.env.STUDENT_ACCOUNTS || '{}')[values.studentId]) return json({ error: 'The default student password is not configured yet.' }, 503);
       const others = records.filter(r => r.key !== key);
       if (values.studentId && others.some(r => r.studentId === values.studentId)) return json({ error: 'That address is already assigned. Add a distinct suffix.' }, 409);
       if (values.zoomNames.some(n => others.some(r => r.zoomNames.some(other => norm(other) === norm(n))))) return json({ error: 'That Zoom name belongs to another student. Each Zoom name must identify one student.' }, 409);
       if (!previous && records.length >= 1000) return json({ error: 'The directory is full. Please contact support.' }, 400);
+      const recordKey = previous?.key || crypto.randomUUID();
+      const passwordCredential = await makeStudentPassword(this.env, input, recordKey) || previous?.passwordCredential;
+      if (values.status === 'active' && !passwordCredential && !this.env.STUDENT_PASSWORD && !JSON.parse(this.env.STUDENT_ACCOUNTS || '{}')[values.studentId]) return json({ error: 'Assign a student password before activating this account.' }, 503);
       const now = new Date().toISOString(), activated = previous?.activated || values.status === 'active';
-      const record = { ...values, key: previous?.key || crypto.randomUUID(), revision: (previous?.revision || 0) + 1,
+      const record = { ...values, key: recordKey, revision: (previous?.revision || 0) + 1,
         activated, startAfter: previous?.startAfter || (activated ? now : null),
         lessonTimeZone: previous?.lessonTimeZone || 'America/New_York', createdAt: previous?.createdAt || now, updatedAt: now,
-        ...(previous?.source ? { source: previous.source } : {}) };
+        ...(previous?.source ? { source: previous.source } : {}), ...(passwordCredential ? { passwordCredential } : {}) };
       await txn.put({ ['student:' + record.key]: record, revision: (await txn.get('revision') || 0) + 1 });
-      return json({ student: record }, previous ? 200 : 201);
+      return json({ student: adminRecord(record) }, previous ? 200 : 201);
     });
   }
   async fetch(request) {
     await this.initialize();
     const url = new URL(request.url), path = url.pathname;
     try {
-      if (path === '/students' && request.method === 'GET') return json({ students: (await this.records()).sort((a,b) => (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName)) });
+      if (path === '/students' && request.method === 'GET') return json({ students: (await this.records()).map(adminRecord).sort((a,b) => (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName)) });
       if ((path.startsWith('/account/') || path.startsWith('/integration-account/')) && request.method === 'GET') {
         const integration = path.startsWith('/integration-account/'), id = path.slice(integration ? 21 : 9);
         const record = (await this.records()).find(r => r.studentId === id && (r.status === 'active' || integration && r.activated));
-        return record ? json({ id: record.studentId, name: record.firstName.split(/\s+/)[0], nickname: record.nickname || record.firstName.split(/\s+/)[0] }) : json({ error: 'Unknown account.' }, 404);
+        return record ? json({ id: record.studentId, name: record.firstName.split(/\s+/)[0], nickname: record.nickname || record.firstName.split(/\s+/)[0],
+          ...(record.passwordCredential ? { passwordCredential: record.passwordCredential, credentialAccountKey: record.key } : {}) }) : json({ error: 'Unknown account.' }, 404);
       }
       if (path === '/automation' && request.method === 'GET') {
         const records = (await this.records()).filter(r => r.status === 'active' && r.zoomNames.length && r.startAfter);

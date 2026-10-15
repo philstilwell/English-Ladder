@@ -16,7 +16,7 @@ function memory() {
   return store;
 }
 function environment() {
-  const e={...baseEnv(),STUDENT_PASSWORD:'default-test-only',QUIZ_STUDENTS:JSON.stringify({ab26:{firstName:'Alex',zoomNames:['AlexZoom'],timeZone:'America/New_York',startAfter:'2026-10-14T00:00:00Z'}})};
+  const e={...baseEnv(),STUDENT_PASSWORD:'default-test-only',STUDENT_PASSWORD_PEPPER:'fictional-pepper-for-password-tests-only',QUIZ_STUDENTS:JSON.stringify({ab26:{firstName:'Alex',zoomNames:['AlexZoom'],timeZone:'America/New_York',startAfter:'2026-10-14T00:00:00Z'}})};
   const directory=new StudentDirectory({storage:memory()},e);
   e.STUDENT_DIRECTORY={idFromName:id=>id,get:()=>directory};
   return {e,directory};
@@ -87,6 +87,55 @@ test('drafts are private and cannot sign in or run automation; activation requir
 const sheetRows=[['Expired','Course Name','Learner/Group Name','Learner Time Zone','Ends On','File No.','Hours Authorized','Hours Used','Hours Upcoming/Pending','Unscheduled Hours','Name','Staff','Gmail','Other EM','Contacted'],
  ['FALSE','Training','Morgan Testperson','Osaka, Sapporo, Tokyo','31-Jan-2027','shared-file','40','2','1','37','Morgan Testperson','Pat','private@example.test','','10/14/2026'],
  ['FALSE','Training','Casey Example','Eastern Time (US & Canada)','31-Jan-2027','shared-file','40','2','1','37','Casey Example']];
+
+test('personal passwords replace the default, revoke only student sessions, and never leave the private account projection',async()=>{
+  const {e,directory}=environment(),cookie=await access(e),host='https://mt26.englishladder.com';
+  const saved=(await (await adminCall(e,'/api/admin/students',write(cookie,example))).json()).student;
+  const oldStudent=await login(e,'default-test-only',host),teacher=await login(e,'teacher-test',host),other=await login(e,'student-test');
+  const result=await adminCall(e,'/api/admin/students/'+saved.key,write(cookie,{...saved,newPassword:'Unique-TEST-Secret',confirmPassword:'unique-test-secret'},'PUT'));
+  assert.equal(result.status,200);const responseText=await result.text();assert.doesNotMatch(responseText,/unique-test-secret|passwordCredential|"salt"|"hash"/i);
+  const updated=JSON.parse(responseText).student;assert.equal(updated.hasCustomPassword,true);
+  const raw=(await directory.records()).find(s=>s.key===saved.key);
+  assert.ok(raw.passwordCredential.salt);assert.ok(raw.passwordCredential.hash);assert.doesNotMatch(JSON.stringify(raw),/unique-test-secret/i);
+  assert.equal((await call(e,'/api/login',{method:'POST',headers:{Origin:host,'Content-Type':'application/json'},body:JSON.stringify({password:'default-test-only'})},host)).status,401);
+  const fresh=await login(e,'UNIQUE-TEST-SECRET',host);assert.equal(fresh.response.status,200);
+  assert.equal((await call(e,'/api/session',{headers:{Cookie:oldStudent.cookie}},host)).status,401);
+  assert.equal((await call(e,'/api/session',{headers:{Cookie:teacher.cookie}},host)).status,200);
+  assert.equal((await call(e,'/api/session',{headers:{Cookie:other.cookie}})).status,200);
+  for(const path of ['/api/session','/api/context','/api/feedback','/api/assessment']){
+    const r=await call(e,path,{headers:{Cookie:fresh.cookie}},host);assert.equal(r.status,200);assert.doesNotMatch(await r.text(),/passwordCredential|credentialAccountKey|salt|unique-test-secret/i);
+  }
+  assert.doesNotMatch(JSON.stringify(await list(e,cookie)),/passwordCredential|"salt"|"hash"/);
+  assert.doesNotMatch(JSON.stringify(await directoryStudents(e)),/password|salt|hash/i);
+  // Empty password fields preserve the verifier, including through other edits.
+  const blank=(await (await adminCall(e,'/api/admin/students/'+updated.key,write(cookie,{...updated,newPassword:'',confirmPassword:'',notes:'Changed note'},'PUT'))).json()).student;
+  assert.deepEqual((await directory.records()).find(s=>s.key===saved.key).passwordCredential,raw.passwordCredential);
+  assert.equal((await call(e,'/api/session',{headers:{Cookie:fresh.cookie}},host)).status,200);
+  // Reassigning even the same password issues a fresh salt and revokes old sessions.
+  await adminCall(e,'/api/admin/students/'+blank.key,write(cookie,{...blank,newPassword:'unique-test-secret',confirmPassword:'unique-test-secret'},'PUT'));
+  assert.equal((await call(e,'/api/session',{headers:{Cookie:fresh.cookie}},host)).status,401);
+  assert.notEqual((await directory.records()).find(s=>s.key===saved.key).passwordCredential.salt,raw.passwordCredential.salt);
+});
+test('password validation is atomic, rejects the teacher password, and permits a custom password without a shared default',async()=>{
+  const {e}=environment(),cookie=await access(e);
+  for(const patch of [{newPassword:'short',confirmPassword:'short'},{newPassword:'long-enough',confirmPassword:'different'},{newPassword:'TEACHER-TEST',confirmPassword:'teacher-test'},{confirmPassword:'lonely-confirm'},{newPassword:123456,confirmPassword:'123456'},{newPassword:'x'.repeat(129),confirmPassword:'x'.repeat(129)}]){
+    assert.equal((await adminCall(e,'/api/admin/students',write(cookie,{...example,...patch}))).status,400);
+    assert.ok(!(await list(e,cookie)).some(s=>s.studentId==='mt26'));
+  }
+  delete e.STUDENT_PASSWORD;
+  const response=await adminCall(e,'/api/admin/students',write(cookie,{...example,newPassword:'personal-test',confirmPassword:'personal-test'}));assert.equal(response.status,201);
+  assert.equal((await login(e,'personal-test','https://mt26.englishladder.com')).response.status,200);
+});
+test('password assignment cannot be performed from a student host or with a stale record',async()=>{
+  const {e}=environment(),cookie=await access(e),student=await login(e,'student-test');
+  const saved=(await (await adminCall(e,'/api/admin/students',write(cookie,example))).json()).student;
+  const payload={...saved,newPassword:'private-test',confirmPassword:'private-test'};
+  assert.equal((await adminCall(e,'/api/admin/students/'+saved.key,write(student.cookie,payload,'PUT'))).status,401);
+  const cross=write(cookie,payload,'PUT');cross.headers.Origin=origin;assert.equal((await adminCall(e,'/api/admin/students/'+saved.key,cross)).status,403);
+  await adminCall(e,'/api/admin/students/'+saved.key,write(cookie,{...saved,notes:'New version'},'PUT'));
+  assert.equal((await adminCall(e,'/api/admin/students/'+saved.key,write(cookie,payload,'PUT'))).status,409);
+  assert.equal((await login(e,'default-test-only','https://mt26.englishladder.com')).response.status,200);
+});
 test('spreadsheet imports preserve separate students sharing a file number, create drafts, and never overwrite edits',async()=>{
   const {e}=environment(),cookie=await access(e);
   const parsed=parseStudentRows(sheetRows);assert.equal(parsed.length,2);assert.equal(parsed[0].timeZone,'Asia/Tokyo');assert.equal(parsed[0].endsOn,'2027-01-31');
@@ -118,19 +167,37 @@ test('administrator list links to editable accounts and has a separate registrat
   assert.match(d.getElementById('student-rows').textContent,/Morgan Testperson/);
   d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('lastName').value,'Testperson');assert.equal(d.getElementById('studentId').readOnly,true);
   w.location.hash='#register';await flush();assert.equal(d.getElementById('edit-title').textContent,'Register new student');assert.equal(d.getElementById('lastName').value,'');assert.equal(d.getElementById('studentId').readOnly,false);
-  assert.equal(d.querySelectorAll('input[type="password"]').length,1);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
+  assert.equal(d.querySelectorAll('input[type="password"]').length,3);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
 });
 test('sign-out clears form fields and directory; delayed responses cannot restore private data',async()=>{
   let pending;const dom=browser(path=>path==='/api/admin/automation'?new Promise(r=>{pending=r;}):null);await flush();const d=dom.window.document;
   d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('email').value,'private@example.test');
+  d.getElementById('newPassword').value='unsaved-test-secret';d.getElementById('confirmPassword').value='unsaved-test-secret';
   d.getElementById('sign-out').click();await flush();pending(Response.json({enabled:true,connected:true}));await flush();
   assert.equal(d.getElementById('admin-view').hidden,true);assert.equal(d.getElementById('student-rows').textContent,'');
-  for(const field of ['email','notes','firstName','lastName','zoomNames'])assert.equal(d.getElementById(field).value,'');
+  for(const field of ['email','notes','firstName','lastName','zoomNames','newPassword','confirmPassword'])assert.equal(d.getElementById(field).value,'');
   assert.doesNotMatch(d.getElementById('admin-view').textContent,/Testperson|private@example/);dom.window.close();
 });
 test('expired administrator sessions clear private data and imported text renders safely',async()=>{
   let expired=false;const dom=browser(path=>path==='/api/admin/students'?(expired?Response.json({error:'Expired'},{status:401}):Response.json({students:[{...fixture,firstName:'<img src=x onerror=alert(1)>'}]})):null);await flush();const d=dom.window.document;
   assert.equal(d.querySelector('#student-rows img'),null);expired=true;d.getElementById('refresh').click();await flush();assert.equal(d.getElementById('admin-view').hidden,true);assert.equal(d.getElementById('student-rows').textContent,'');dom.window.close();
+});
+
+test('account form checks password confirmation, lowercases input, and clears it after save or navigation',async()=>{
+  let body,writes=0;
+  const dom=browser((path,opts)=>opts?.method==='PUT'?(writes++,body=JSON.parse(opts.body),Response.json({student:{...fixture,revision:2,hasCustomPassword:true}})):null);
+  await flush();const w=dom.window,d=w.document;
+  d.querySelector('.student-name').click();await flush();
+  const first=d.getElementById('newPassword'),second=d.getElementById('confirmPassword');
+  first.value='ABCdef-TEST';first.dispatchEvent(new w.Event('input'));assert.equal(first.value,'abcdef-test');
+  second.value='different-test';d.getElementById('student-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await flush();
+  assert.equal(writes,0);assert.match(d.getElementById('message').textContent,/do not match/);
+  second.value='ABCDEF-TEST';second.dispatchEvent(new w.Event('input'));
+  d.getElementById('student-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await flush();
+  assert.equal(writes,1);assert.equal(body.newPassword,'abcdef-test');assert.equal(body.confirmPassword,'abcdef-test');
+  assert.equal(first.value,'');assert.equal(second.value,'');assert.match(d.getElementById('password-status').textContent,/personal password/);
+  first.value='unsaved-test';w.location.hash='#students';await flush();assert.equal(first.value,'');
+  dom.window.close();
 });
 
 test('imports exclude checked rows and expired course dates, using Eastern calendar dates inclusively',()=>{

@@ -401,7 +401,8 @@
       if (!authenticated || !assessment || $('assessments').hidden) return;
       // Follow the section at the reading line, including long sections whose
       // headings have already scrolled off screen. Do not move focus or history.
-      const readingLine = Math.max(stickyHeader.getBoundingClientRect().height + 24, Math.min(160, window.innerHeight * 0.2));
+      // Section jumps leave 16px of scroll padding and 24px of heading margin.
+      const readingLine = Math.max(stickyHeader.getBoundingClientRect().height + 48, Math.min(160, window.innerHeight * 0.2));
       let current = assessmentSections[0];
       for (const key of assessmentSections) {
         if ($('assessment-' + key).getBoundingClientRect().top <= readingLine) current = key;

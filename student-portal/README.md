@@ -8,14 +8,15 @@ The portal provides login, private dated session feedback, an overall ESL assess
 
 Use the student's initials followed by the last two digits of the year the account is created, for example `ab26`. Keep that address permanently; do not recalculate it in January. If an address is already assigned, explicitly choose a distinct suffix before registering another account. Never overwrite an existing student to resolve a collision.
 
-Each configured subdomain points to the same Worker. For this pilot, domains are registered explicitly in `wrangler.jsonc`. Adding an account requires both its secret record and a corresponding custom-domain route. The universal teacher credential works on every configured account; a teacher signs in separately on each subdomain. No public student directory is exposed.
+Each active registered subdomain points to the same Worker. A proxied wildcard DNS record and Worker route make new addresses available automatically. The www host has a more-specific route exclusion and remains on the public lesson site. The explicit original student and administrator custom domains remain in wrangler.jsonc. Add and manage accounts from phil.englishladder.com; a deployment is no longer needed for each account. The universal teacher credential works on every configured account; a teacher signs in separately on each subdomain. No public student directory is exposed.
 
 ## Runtime secrets
 
 Provision these through Cloudflare's encrypted Worker secrets. Do not commit actual names, passwords, signing keys, `.dev.vars`, or provisioning inputs:
 
 - `STUDENT_ACCOUNTS`: JSON object keyed by student ID, each with first-name-only `name`, optional chosen `nickname`, and `password` string properties. The API also reduces legacy full-name records to their first word before responding.
-- `TEACHER_PASSWORD`: the universal teacher password.
+- `TEACHER_PASSWORD`: the universal teacher password, also used for the administrator page.
+- `STUDENT_PASSWORD`: the default shared password for newly registered accounts. Legacy per-account passwords in STUDENT_ACCOUNTS continue to work.
 - `SESSION_SECRET`: at least 32 characters of cryptographically random signing material.
 
 Passwords are lowercased in the browser and again on the server, including teacher passwords. Spaces are significant. Passwords are read only on the server and never embedded in the public bundle. They are stored as encrypted Cloudflare secrets; verification uses a keyed, constant-time HMAC comparison. This pilot follows the requested shared/static password model rather than providing password recovery or individual teacher identities.
@@ -26,7 +27,7 @@ Login permits five attempts per student/IP per minute and twenty per student per
 
 ## Development and checks
 
-Use the repository's locked dependencies (`npm ci`). Set test-only credentials in an ignored `student-portal/.dev.vars` file and include `LOCAL_STUDENT_ID` for the account to preview. The local override is accepted only for `localhost` and `127.0.0.1`.
+Use the repository's locked dependencies (`npm ci`). For local previews, pass `--host localhost:8790 --port 8790` so production custom-domain routing does not replace the localhost host. Set test-only credentials in an ignored `student-portal/.dev.vars` file and include `LOCAL_STUDENT_ID` for the account to preview. The local override is accepted only for `localhost` and `127.0.0.1`.
 
 ```sh
 npm run test:students
@@ -80,3 +81,22 @@ Publish a reviewed assessment JSON object with `node student-portal/publish-feed
 ## Nightly server updates
 
 See [QUIZ_AUTOMATION.md](QUIZ_AUTOMATION.md) for the 1 a.m. Eastern server schedule, Zoom authorization, private storage, cost limits, discovery boundaries, and failure handling. The coordinator is a separate SQLite Durable Object; retain the `quiz-automation-v1` migration. Student content remains in the existing per-student stores. The teacher-only Quiz results page shows connection status and the last successful check.
+
+
+## Private administrator directory
+
+`https://phil.englishladder.com` serves a separate administrator login and UI. It accepts only `TEACHER_PASSWORD`, uses the same eight-hour signed host-only cookie, and requires exact same-origin headers for writes. Student and teacher cookies from student subdomains cannot be reused on this host. No directory data appears before authentication, in public assets, or in student APIs. The static administrator form itself contains no student information.
+
+The home page lists students with links to editable account pages, a search and status filter, and a separate registration form. Accounts have first and last names, a student-visible nickname, a permanent subdomain, exact Zoom display-name aliases, a private time zone, optional contact/course fields, and private notes. All imported names must be reviewed: a spreadsheet cannot reliably tell where a compound given name or family name starts. Importing copies columns C–Q (including headings and the checkbox column) from New-Students as drafts. Checked rows and course end dates earlier than today in America/New_York are excluded; a course ending today remains eligible through today. The preview reports the exclusion count. Importing it does not synchronize or edit the source sheet. Re-importing skips existing source-name/file-number pairs and existing full-name matches, never silently overwriting administrator edits. A shared file number alone is not a student identity.
+
+`STUDENT_DIRECTORY` is a private singleton SQLite Durable Object using the `student-directory-v1` migration. On first use it migrates existing account and Zoom metadata from secrets, preserving IDs, the initial transcript cutoff, and existing passwords. No learning records are moved. The dictionary is authoritative thereafter: no fallback can reactivate a paused account. Private full names and course/contact data are returned only through `/api/admin/students` on the administrator host. The internal account projection includes only a first name and nickname; the internal automation projection includes only a first name, Zoom aliases, stable lesson time zone, and start time. Neither projection is a public endpoint.
+
+Registration reserves unique student IDs and case-insensitive Zoom names in a transaction. A student’s permanent ID is locked after activation. Concurrent stale edits return 409 instead of overwriting a later change. Drafts have no login or automated updates; activation enables both, starting with meetings held after the activation time. Pausing disables access and removes the account from nightly matching while preserving all learning data. Changing an active Zoom mapping takes effect on the next nightly check; unmatched/ambiguous queued notes are reconsidered after directory changes. The automation rechecks the mapping before publication. Student time zones are administrative information; lesson identifiers continue to use their established time zone (America/New_York for new accounts), preventing duplicate histories when a student moves.
+
+The nightly worker now supports an empty new account: its first usable full transcript can create an initial assessment, feedback, summary, and short quiz. It must not claim recurring patterns across multiple lessons until that evidence exists. Empty-account publication is atomic and checks for concurrent assessment changes just like subsequent updates. Generation still requires the independent editor approval and existing evidence/cost limits.
+
+Course hours and dates are manually maintained records. They do not automatically pause access or decrement based on Zoom duration. Importing or registering a draft does not make any AI calls. Tests use fictional records and cover administrator authentication, cross-host isolation, private-field exclusion, registration, activation, pausing, duplicate matches, concurrent edits, import deduplication, first-lesson publication, and browser state cleanup.
+
+DNS setup: proxied A record `*.englishladder.com` to the documentation-only placeholder `192.0.2.1`; all registered-host traffic is handled by the Worker. Keep the more-specific `www.englishladder.com/*` route with `script: null`, managed separately through the zone API, so the wildcard does not intercept the existing public custom domain. Unknown/unregistered subdomains return 404 without names or content. Keep all three Durable Object migrations and their class names intact.
+
+An explicit exclusion reconciliation can remove only untouched, never-activated imported drafts whose source keys appear in the checked/expired input rows. It preserves a private recovery copy and cannot remove an activated account or a record the owner has edited. The original signed Zoom webhook and OAuth callback remain reachable even if that host’s student account is paused; normal student access remains disabled.

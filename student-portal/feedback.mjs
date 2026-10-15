@@ -72,9 +72,8 @@ export class FeedbackStore {
       return this.storage.transaction(async txn => {
         const sessionId = input.quiz?.generatedForSession;
         if (!FEEDBACK_ID.test(sessionId || '') || !Array.isArray(input.quiz?.sourceSessions) || !Array.isArray(input.quiz?.patternTitles)) return json({ error: 'Invalid session.' }, 400);
-        const current = await txn.get('assessment:current');
-        if (!current) return json({ error: 'Assessment required.' }, 400);
-        if (await txn.get('quiz:published:' + sessionId) || current.quiz?.generatedForSession === sessionId) return json({ ok: true, duplicate: true });
+        const current = await txn.get('assessment:current') || null;
+        if (await txn.get('quiz:published:' + sessionId) || current?.quiz?.generatedForSession === sessionId) return json({ ok: true, duplicate: true });
         if (JSON.stringify(input.priorAssessment) !== JSON.stringify(current)) return json({ error: 'Assessment changed. Retry with the latest record.' }, 409);
         let record, feedback;
         try {
@@ -98,7 +97,7 @@ export class FeedbackStore {
           ['quiz:published:' + sessionId]: { quiz: record.quiz, assessment: record, evidence: input.evidence, fingerprint: input.fingerprint, publishedAt: new Date().toISOString() },
         };
         // An older delayed event is archived without replacing a newer lesson quiz.
-        if (!current.quiz?.generatedForSession || sessionId > current.quiz.generatedForSession) update['assessment:current'] = record;
+        if (!current?.quiz?.generatedForSession || sessionId > current.quiz.generatedForSession) update['assessment:current'] = record;
         await txn.put(update);
         return json({ ok: true });
       });

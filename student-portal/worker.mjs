@@ -3,6 +3,8 @@ import { validateAssessment } from './assessment.mjs';
 export { FeedbackStore } from './feedback.mjs';
 import { nightlyDate } from './server-quiz-automation.mjs';
 export { QuizAutomation } from './server-quiz-automation.mjs';
+import { directoryRequest } from './student-directory.mjs';
+export { StudentDirectory } from './student-directory.mjs';
 
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
@@ -54,14 +56,20 @@ async function passwordMatches(secret, expected, provided) {
   return crypto.subtle.verify('HMAC', await keyFor(secret), digest, encoder.encode(normalizePassword(provided)));
 }
 
-function accountFor(request, env) {
+async function accountFor(request, env, allowPausedIntegration = false) {
   const host = new URL(request.url).hostname;
   const local = host === 'localhost' || host === '127.0.0.1';
   const match = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.englishladder\.com$/.exec(host);
   const id = local ? env.LOCAL_STUDENT_ID : match?.[1];
-  if (!id || ['www', 'students', 'admin'].includes(id)) return null;
+  if (!id || ['www', 'students', 'admin', 'phil'].includes(id)) return null;
   const accounts = JSON.parse(env.STUDENT_ACCOUNTS || '{}');
-  const account = Object.hasOwn(accounts, id) ? accounts[id] : null;
+  let account = Object.hasOwn(accounts, id) ? accounts[id] : null;
+  if (env.STUDENT_DIRECTORY) {
+    const response = await directoryRequest(env, (allowPausedIntegration ? '/integration-account/' : '/account/') + encodeURIComponent(id));
+    if (response.status === 404) return null;
+    if (!response.ok) throw new Error('Directory unavailable');
+    account = { ...await response.json(), password: account?.password || env.STUDENT_PASSWORD };
+  }
   if (!account || typeof account.name !== 'string' || typeof account.password !== 'string' || !account.password) return null;
   return { ...account, id };
 }
@@ -134,10 +142,53 @@ async function smallJson(request, maxBytes = 1024) {
   try { return JSON.parse(new TextDecoder().decode(bytes)); } catch { return null; }
 }
 
+async function handleAdmin(request, env) {
+  const url = new URL(request.url), account = { id: 'phil' };
+  if (['/api/login', '/api/logout'].includes(url.pathname)) {
+    if (request.method !== 'POST') return json({ error: 'Please use the sign-in form.' }, 405);
+    if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload and try again.' }, 403);
+    if (url.pathname === '/api/logout') return json({ ok: true }, 200, { 'Set-Cookie': cookie('', 0) });
+    const ip = request.headers.get('CF-Connecting-IP') || 'local';
+    const [perIP, perAccount] = await Promise.all([env.LOGIN_LIMITER.limit({ key: 'phil:' + ip }), env.ACCOUNT_LIMITER.limit({ key: 'phil' })]);
+    if (!perIP.success || !perAccount.success) return json({ error: 'Too many attempts. Please wait one minute.' }, 429, { 'Retry-After': '60' });
+    const input = await smallJson(request);
+    if (typeof input?.password !== 'string' || !input.password || input.password.length > 128) return json({ error: 'Enter your teacher password.' }, 400);
+    if (!await passwordMatches(env.SESSION_SECRET, env.TEACHER_PASSWORD, input.password)) return json({ error: 'That password did not match.' }, 401);
+    return json({ role: 'teacher', administrator: true }, 200, { 'Set-Cookie': cookie(await issueSession(request, env, account, 'teacher')) });
+  }
+  if (url.pathname.startsWith('/api/')) {
+    const session = await readSession(request, env, account);
+    if (!session || session.role !== 'teacher') return json({ error: 'Please sign in with your teacher password.' }, 401);
+    if (url.pathname === '/api/session' && request.method === 'GET') return json({ role: 'teacher', administrator: true });
+    if (url.pathname === '/api/admin/automation' && request.method === 'GET') {
+      if (!env.QUIZ_AUTOMATION) return json({ enabled: false, connected: false });
+      return env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/admin-status'));
+    }
+    const path = url.pathname.slice('/api/admin'.length);
+    if (!url.pathname.startsWith('/api/admin/') || !['/students', '/import', '/import/preview'].includes(path) && !/^\/students\/[\w-]{36}$/.test(path)) return json({ error: 'Page not found.' }, 404);
+    const method = path === '/students' ? ['GET', 'POST'] : path.startsWith('/students/') ? ['PUT'] : ['POST'];
+    if (!method.includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
+    let body;
+    if (request.method !== 'GET') {
+      if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload and try again.' }, 403);
+      body = await smallJson(request, path.startsWith('/import') ? 250000 : 16384);
+      if (!body) return json({ error: 'Please check the form.' }, 400);
+    }
+    return directoryRequest(env, path, body, request.method);
+  }
+  if (!['GET', 'HEAD'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
+  const assets = new Set(['/', '/admin.html', '/admin.js', '/admin.css', '/portal.css', '/ladder-mark.png', '/favicon.png', '/robots.txt']);
+  if (!assets.has(url.pathname)) return json({ error: 'Page not found.' }, 404);
+  if (url.pathname === '/robots.txt') return new Response('User-agent: *\nDisallow: /\n');
+  if (url.pathname === '/') url.pathname = '/admin.html';
+  return env.ASSETS.fetch(new Request(url, request));
+}
+
 async function handle(request, env) {
   const url = new URL(request.url);
   if (!configured(env)) return json({ error: 'This student space is being set up. Please try again later.' }, 503);
-  const account = accountFor(request, env);
+  if (url.hostname === 'phil.englishladder.com' || ['localhost', '127.0.0.1'].includes(url.hostname) && env.LOCAL_STUDENT_ID === 'phil') return handleAdmin(request, env);
+  const account = await accountFor(request, env, ['/api/automation/webhook', '/api/automation/callback'].includes(url.pathname));
   if (!account) return json({ error: 'This student space could not be found.' }, 404);
 
   if (url.pathname.startsWith('/api/automation/')) {

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import worker from '../worker.mjs';
 import { QuizAutomation, hash, nightlyDate, zoomSignatureValid } from '../server-quiz-automation.mjs';
 import { readTranscript, authorQuiz, firstTryReview } from '../server-quiz-model.mjs';
-import { seedQuiz, call, origin } from './harness.mjs';
+import { seedQuiz, call, origin, env as emptyEnv } from './harness.mjs';
 import { feedback, assessment, quiz } from './fixture.mjs';
 
 const student = { firstName: 'Alex', zoomNames: ['Alex0529'], timeZone: 'America/New_York', startAfter: '2026-10-14T00:00:00Z' };
@@ -239,7 +239,7 @@ test('publication rejects stale assessment inputs and cannot reference another s
   assert.equal(await store.storage.get('feedback:'+session),undefined);
   assert.equal((await store.storage.get('assessment:current')).summary,'A teacher edit.');
   const other = seed.e.FEEDBACK_STORE.get('cd26');
-  assert.equal((await other.fetch(new Request('https://feedback.internal/automation/publish',{method:'POST',body:JSON.stringify(input)}))).status,400);
+  assert.equal((await other.fetch(new Request('https://feedback.internal/automation/publish',{method:'POST',body:JSON.stringify(input)}))).status,409);
 });
 
 
@@ -262,4 +262,22 @@ test('notes for unregistered students are flagged for the teacher without guessi
  await object.run();
  const job=await storage.get('job:unmatched');
  assert.equal(job.status,'needs_attention');assert.equal(job.lastError,'student_not_matched');
+});
+
+
+test('a first full lesson can create the initial assessment and quiz in an empty account', async () => {
+  const initial = JSON.parse(JSON.stringify(draft).replaceAll(feedback.id, session));
+  let calls = 0;
+  const ai = { run: async (_model, input) => {
+    assert.match(input.messages[0].content, /initial assessment/);
+    return { response: ++calls % 2 ? structuredClone(initial) : { approved: true } };
+  } };
+  const result = await authorQuiz(ai, readTranscript(note, { ab26: student }), meeting, 'fictional-note-first', { assessment: null, attempts: [] });
+  assert.equal(result.priorAssessment, null);
+  assert.deepEqual(result.assessment.sourceSessions, [session]);
+  const e = emptyEnv(), store = e.FEEDBACK_STORE.get('ab26');
+  const response = await store.fetch(new Request('https://feedback.internal/automation/publish', { method: 'POST', body: JSON.stringify(result) }));
+  assert.equal(response.status, 200);
+  assert.equal((await store.storage.get('assessment:current')).quiz.generatedForSession, session);
+  assert.equal((await store.storage.get('feedback:' + session)).source.reviewedFullTranscript, true);
 });

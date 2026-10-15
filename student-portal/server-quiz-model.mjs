@@ -73,6 +73,7 @@ vocabulary:[{term,meaning,example,at}]; practice:[{prompt,answer}]. Include only
 assessment fields: title, summary, mainPriority, strengths:[{title,detail,evidence:[{sessionId,at}]}],
 progress:{detail,evidence:[{sessionId,at}]}, patterns:[{title,detail,practice,examples:[{sessionId,at,observed,model}]}],
 plan:[{title,activity,target}], nextLesson.
+If there is no prior assessment, create an initial assessment from this lesson only. Label patterns as practice targets; do not claim repeated mistakes across sessions or measured progress.
 Update the prior assessment carefully using this new lesson. Keep earlier supported strengths and patterns unless the new evidence changes them.
 Earlier assessment references may be reused, but never invent older observations or timestamps. New references use newSessionId and exact transcript timestamps.
 Show a balanced picture. One new error is not a recurring pattern. Support recurring claims from two or more sessions.
@@ -95,12 +96,11 @@ async function generate(ai, instructions, input, maxTokens) {
 }
 
 export async function authorQuiz(ai, transcript, meeting, noteId, context) {
-  if (!context.assessment) throw new Error('assessment_required');
   const { student, segments } = transcript, id = sessionId(meeting.start_time, student.timeZone);
   const review = firstTryReview(context.attempts);
-  const { quiz: oldQuiz, ...priorAssessment } = context.assessment;
+  const { quiz: oldQuiz, ...priorAssessment } = context.assessment || {};
   const input = { learner: student.firstName, segments, firstTryReview: review, newSessionId: id, priorAssessment,
-    assessmentPatterns: context.assessment.patterns.map(p => ({ title: p.title, detail: p.detail, practice: p.practice })),
+    assessmentPatterns: (context.assessment?.patterns || []).map(p => ({ title: p.title, detail: p.detail, practice: p.practice })),
   };
   const draft = await generate(ai, RULES, input, 10000);
   if (draft.sufficientEvidence !== true) throw new Error('insufficient_evidence');
@@ -125,7 +125,7 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   }
   if (lessonQuestions < Math.ceil(questions.length / 2)) throw new Error('invalid_evidence');
   // When there are no saved mistakes, assessment review can cite its own lessons.
-  if (!review.length) context.assessment.sourceSessions.forEach(source => sources.add(source));
+  if (!review.length) (context.assessment?.sourceSessions || []).forEach(source => sources.add(source));
   const feedback = validateFeedback({ ...draft.feedback, id, scope: 'esl',
     startedAt: new Date(meeting.start_time).toISOString().replace('.000Z', 'Z'), timeZone: student.timeZone,
     source: { noteId, coverageStart: segments[0].at, coverageEnd: segments.reduce((max, s) => s.end > max ? s.end : max, ''),
@@ -133,9 +133,9 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   const times = new Set(segments.map(s => s.at));
   if ([...feedback.strengths, ...feedback.focus, ...feedback.vocabulary].some(item => !times.has(item.at))) throw new Error('invalid_evidence');
   const assessment = validateAssessment({ ...draft.assessment, scope: 'esl', assessedOn: sessionId(new Date().toISOString(), student.timeZone).slice(0, 10),
-    sourceSessions: [...new Set([...context.assessment.sourceSessions, id])].sort(),
+    sourceSessions: [...new Set([...(context.assessment?.sourceSessions || []), id])].sort(),
     quiz: { ...draft.quiz, sourceSessions: [...sources].sort(), generatedForSession: id } });
-  const allowed = new Set(assessmentReferences(context.assessment).map(ref => ref.sessionId + ':' + ref.at));
+  const allowed = new Set((context.assessment ? assessmentReferences(context.assessment) : []).map(ref => ref.sessionId + ':' + ref.at));
   const references = assessmentReferences(assessment);
   if (!references.some(ref => ref.sessionId === id) || references.some(ref => ref.sessionId === id ? !times.has(ref.at) : !allowed.has(ref.sessionId + ':' + ref.at))) throw new Error('invalid_evidence');
   const quiz = assessment.quiz;
@@ -144,5 +144,5 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
     RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Reject ambiguous answers or unsupported claims. Return {"approved":true} only if all checks pass, otherwise {"approved":false}.',
     { ...input, proposed: { feedback, assessment, evidence: draft.evidence } }, 1000);
   if (reviewResult.approved !== true) throw new Error('content_review_failed');
-  return { feedback, assessment, quiz, priorAssessment: context.assessment, evidence: draft.evidence };
+  return { feedback, assessment, quiz, priorAssessment: context.assessment || null, evidence: draft.evidence };
 }

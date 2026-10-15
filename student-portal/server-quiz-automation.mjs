@@ -1,3 +1,4 @@
+import { directoryStudents } from './student-directory.mjs';
 import { authorQuiz, readTranscript, sessionId } from './server-quiz-model.mjs';
 
 const json = (data, status = 200) => Response.json(data, { status });
@@ -62,6 +63,25 @@ export class QuizAutomation {
   constructor(state, env) {
     this.storage = state.storage; this.env = env; this.authWork = null;
   }
+  async students() {
+    return this.env.STUDENT_DIRECTORY ? (await directoryStudents(this.env)).students : studentsFor(this.env);
+  }
+  async isConfigured() {
+    return Boolean(this.env.ZOOM_CLIENT_ID && this.env.ZOOM_CLIENT_SECRET && this.env.AI && Object.keys(await this.students()).length);
+  }
+  async refreshDirectory() {
+    if (!this.env.STUDENT_DIRECTORY) return;
+    const directory = await directoryStudents(this.env);
+    if (await this.storage.get('directory-revision') === directory.revision) return;
+    for (const [key, job] of await this.storage.list({ prefix: 'job:' })) {
+      if (job.status === 'needs_attention' && ['student_not_matched', 'ambiguous_student'].includes(job.lastError)) {
+        await this.storage.put({ [key]: { ...job, status: 'pending', tries: 0, nextAt: 0 } });
+      }
+    }
+    const dates = Object.values(directory.students).map(s => Date.parse(s.startAfter));
+    if (dates.length) await this.storage.put({ 'discovery-since': new Date(Math.min(...dates)).toISOString() });
+    await this.storage.put({ 'directory-revision': directory.revision });
+  }
   async tokenRequest(params) {
     const response = await fetch('https://zoom.us/oauth/token', {
       method: 'POST', redirect: 'manual', signal: AbortSignal.timeout(30000),
@@ -102,7 +122,7 @@ export class QuizAutomation {
     return JSON.parse(await boundedText(response, 2000000));
   }
   async connect(origin, studentId) {
-    if (!configuredAutomation(this.env) || !studentsFor(this.env)[studentId]) return json({ error: 'The Zoom app still needs to be set up.' }, 503);
+    if (!await this.isConfigured() || !(await this.students())[studentId]) return json({ error: 'The Zoom app still needs to be set up.' }, 503);
     const state = crypto.randomUUID() + crypto.randomUUID();
     await this.storage.put({ ['state:' + await hash(state)]: { origin, studentId, expiresAt: Date.now() + 600000 } });
     const url = new URL('https://zoom.us/oauth/authorize');
@@ -167,7 +187,7 @@ export class QuizAutomation {
   }
   async discover() {
     const owner = await this.storage.get('oauth');
-    const cutoff = new Date(Math.min(...Object.values(studentsFor(this.env)).map(s => Date.parse(s.startAfter)))).toISOString();
+    const cutoff = new Date(Math.min(...Object.values(await this.students()).map(s => Date.parse(s.startAfter)))).toISOString();
     const since = await this.storage.get('discovery-since') || cutoff;
     const until = new Date().toISOString();
     // Search notes by modification time: this catches transcripts that arrive late.
@@ -241,7 +261,7 @@ export class QuizAutomation {
   }
   async process(key, job) {
     const note = await this.zoom('/my_notes/notes/' + encodeURIComponent(job.noteId) + '/content?include=transcript');
-    const transcript = readTranscript(note, studentsFor(this.env));
+    const transcript = readTranscript(note, await this.students());
     job.studentId = transcript.studentId;
     const context = await this.portal(job.studentId, '/automation/context');
     const known = context.sourceNotes?.find(source => source.noteId === job.noteId);
@@ -262,12 +282,16 @@ export class QuizAutomation {
     const fingerprint = await hash(JSON.stringify(note.transcript));
     await this.reserveGeneration(job.studentId);
     const output = await authorQuiz(this.env.AI, transcript, meeting, job.noteId, context);
+    // Recheck the mapping after generation: a pause or name edit must take effect
+    // before any content reaches the student's account.
+    const currentStudent = (await this.students())[job.studentId];
+    if (JSON.stringify(currentStudent) !== JSON.stringify(transcript.student)) throw new Error('student_changed');
     const saved = await this.portal(job.studentId, '/automation/publish', { ...output, fingerprint });
     if (!saved.ok) throw new Error('publish_failed');
     job.status = 'published'; job.sessionId = id; job.publishedAt = new Date().toISOString(); job.lastError = null;
   }
   async run(scheduledTime) {
-    if (this.env.AUTOMATION_ENABLED !== 'true' || !configuredAutomation(this.env)) return;
+    if (this.env.AUTOMATION_ENABLED !== 'true' || !await this.isConfigured()) return;
     const lease = crypto.randomUUID(), deadline = Date.now() + 480000;
     const acquired = await this.storage.transaction(async txn => {
       const lock = await txn.get('run-lock');
@@ -282,6 +306,7 @@ export class QuizAutomation {
     if (!acquired) return;
     try {
       await this.accessToken(); // Keep the rotating refresh token alive even between lessons.
+      await this.refreshDirectory();
       await this.discover();
       const jobs = [...await this.storage.list({ prefix: 'job:' })];
       const pending = jobs.filter(([, j]) => j.status === 'pending' && j.nextAt <= Date.now()).sort((a, b) => (a[1].startedAt || '').localeCompare(b[1].startedAt || '') || a[1].receivedAt - b[1].receivedAt);
@@ -313,7 +338,19 @@ export class QuizAutomation {
     if (path === '/callback' && request.method === 'GET') return this.callback(new URL(request.headers.get('X-Callback-URL')));
     if (path === '/run' && request.method === 'POST') { const input = await request.json(); await this.run(input.scheduledTime); return json({ ok: true }); }
     const studentId = request.headers.get('X-Student-ID'), origin = request.headers.get('X-Student-Origin');
-    if (!studentsFor(this.env)[studentId]) return json({ configured: false, connected: false, enabled: false });
+    if (path === '/admin-status' && request.method === 'GET') {
+      const jobs = [...await this.storage.list({ prefix: 'job:' })].map(([, j]) => j);
+      return json({ enabled: this.env.AUTOMATION_ENABLED === 'true', connected: Boolean(await this.storage.get('oauth')),
+        lastCheck: await this.storage.get('last-check') || null, connectionError: await this.storage.get('connection-error') || null,
+        pending: jobs.filter(j => j.status === 'pending').length,
+        needsAttention: jobs.filter(j => j.status === 'needs_attention').length,
+        students: Object.fromEntries(Object.keys(await this.students()).map(id => [id, {
+          latestPublication: jobs.filter(j => j.studentId === id && j.publishedAt).map(j => j.publishedAt).sort().at(-1) || null,
+          pending: jobs.filter(j => j.studentId === id && j.status === 'pending').length,
+          needsAttention: jobs.filter(j => j.studentId === id && j.status === 'needs_attention').length,
+        }])) });
+    }
+    if (!(await this.students())[studentId]) return json({ configured: false, connected: false, enabled: false });
     if (path === '/connect' && request.method === 'POST') return this.connect(origin, studentId);
     if (path === '/verify' && request.method === 'POST') {
       try {
@@ -326,7 +363,7 @@ export class QuizAutomation {
     }
     if (path === '/status' && request.method === 'GET') {
       const jobs = [...await this.storage.list({ prefix: 'job:' })].map(([, j]) => j).filter(j => !j.studentId || j.studentId === studentId);
-      return json({ configured: configuredAutomation(this.env), connected: Boolean(await this.storage.get('oauth')),
+      return json({ configured: await this.isConfigured(), connected: Boolean(await this.storage.get('oauth')),
         enabled: this.env.AUTOMATION_ENABLED === 'true', lastCheck: await this.storage.get('last-check') || null,
         connectionError: await this.storage.get('connection-error') || null,
         connectionDetail: await this.storage.get('connection-detail') || null,

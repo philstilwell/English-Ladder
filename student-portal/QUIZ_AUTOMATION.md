@@ -53,3 +53,8 @@ Tests use fictional records and mocked model/Zoom calls. Run `npm run test:stude
 - [Zoom meeting API](https://developers.zoom.us/docs/api/meetings/)
 - [Cloudflare cron triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/)
 - [Cloudflare model pricing](https://developers.cloudflare.com/workers-ai/models/gpt-oss-120b/)
+
+
+### Administrator-managed students
+
+The private StudentDirectory now supplies the active roster at runtime. Manage it at phil.englishladder.com with the existing teacher credential. STUDENT_ACCOUNTS and QUIZ_STUDENTS seed the initial directory only; new accounts and Zoom-name edits require no deployment. Draft or paused students are excluded. Activation sets the transcript cutoff; exact names are unique across the directory. Old unmatched jobs are reconsidered after a mapping change, and mappings are rechecked immediately before publication. Empty new accounts can receive a first assessment from their first usable full transcript, with single-lesson practice targets clearly distinguished from recurring patterns. Keep full names, emails, staff details, course hours, and private notes out of AI authoring inputs and every student response.

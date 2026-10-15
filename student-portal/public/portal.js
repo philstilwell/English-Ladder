@@ -296,14 +296,30 @@
       card.append(heading, node('p', item.kind === 'teacher-feedback' ? 'From this lesson' : 'Extra practice', 'evidence-label'), node('p', item.observed, 'observed'));
       const model = node('div', '', 'model-sentence');
       model.append(node('span', 'TRY SAYING THIS'), node('p', item.model));
-      card.append(model, node('p', item.explanation)); points.append(card);
+      const ai = window.PracticePrompt.create({
+        label: ' for practice topic ' + (i + 1),
+        prompt: window.PracticePrompt.text(
+          'English practice topic: ' + item.title + '\nModel sentence: “' + item.model + '”\nExplanation: ' + item.explanation,
+          'Explain the language pattern and how the model sentence uses it. Focus only on the English, not on the learner.'
+        ),
+      });
+      const promptControls = node('div', '', 'practice-prompt-controls'); promptControls.append(ai.controls, ai.status);
+      card.append(model, node('p', item.explanation), promptControls); points.append(card);
     });
     fragment.append(points);
     const words = section('Useful language', 'feedback-vocabulary');
     words.append(node('p', 'These are new sentences for you to practice.', 'section-intro'));
     for (const item of record.vocabulary) {
       const row = node('div', '', 'vocabulary-row');
-      row.append(node('h4', item.term, 'vocabulary-term'), node('p', item.meaning), node('p', item.example, 'vocabulary-example')); words.append(row);
+      const ai = window.PracticePrompt.create({
+        label: ' for “' + item.term + '”',
+        prompt: window.PracticePrompt.text(
+          'English word or phrase: “' + item.term + '”\nMeaning: ' + item.meaning + '\nExample sentence: “' + item.example + '”',
+          'Explain the meaning and how to use this word or phrase. Explain its use in the example sentence and common mistakes to avoid.'
+        ),
+      });
+      const promptControls = node('div', '', 'practice-prompt-controls'); promptControls.append(ai.controls, ai.status);
+      row.append(node('h4', item.term, 'vocabulary-term'), node('p', item.meaning), node('p', item.example, 'vocabulary-example'), promptControls); words.append(row);
     }
     fragment.append(words);
     const practice = section('A few minutes of practice', 'feedback-practice');

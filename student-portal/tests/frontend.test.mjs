@@ -123,6 +123,48 @@ test('Feedback practice prompts copy only their own exercise without revealing a
   w.close();
  }
 });
+test('Feedback topic and vocabulary prompts omit lesson evidence and copy independently in student and teacher views',async()=>{
+ const topic={...feedback.focus[0],title:'Polite requests',model:'Could you open the window?',explanation:'Use “could you” to ask politely.',observed:'PRIVATE LESSON REMARK'};
+ const word={...feedback.vocabulary[0],term:'borrow',meaning:'Use something and return it.',example:'Can I borrow a pencil?'};
+ for(const role of ['student','teacher']){
+  const copied=[],writes=[];
+  const dom=setup((path,options={})=>{
+   if(options.method&&options.method!=='GET')writes.push(path);
+   if(path.endsWith('/'+feedback.id))return reply({...feedback,focus:[...feedback.focus,topic],vocabulary:[...feedback.vocabulary,word]});
+   return null;
+  },origin+'/#feedback/'+feedback.id,role);
+  const w=dom.window,d=w.document;
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async text=>copied.push(text)}});
+  await flush();
+  const buttons=[...d.querySelectorAll('.focus-card .practice-copy-button, .vocabulary-row .practice-copy-button')];
+  assert.equal(buttons.length,4);
+  const expected=[
+   [feedback.focus[0].title,feedback.focus[0].model,feedback.focus[0].explanation],
+   [topic.title,topic.model,topic.explanation],
+   [feedback.vocabulary[0].term,feedback.vocabulary[0].meaning,feedback.vocabulary[0].example],
+   [word.term,word.meaning,word.example]
+  ];
+  for(const [i,button] of buttons.entries()){
+   assert.equal(button.textContent,'Copy AI prompt');button.click();await flush();
+   assert.equal(button.textContent,'AI prompt copied');
+   for(const text of expected[i])assert.ok(copied[i].includes(text));
+   assert.doesNotMatch(copied[i],/Alex|ab26|2026-10-01|fictional-note-id-only|Your teacher modeled|PRIVATE LESSON REMARK|Clear explanations|00:03:00|https?:/);
+  }
+  assert.ok(!copied[0].includes(topic.model)&&!copied[2].includes(word.example));
+  assert.equal(d.querySelectorAll('.focus-card .practice-ai-link, .vocabulary-row .practice-ai-link').length,16);
+  assert.equal(d.querySelector('.practice-item .practice-copy-button').textContent,'Copy AI prompt');
+  assert.equal(writes.length,0);
+  w.location.hash='feedback/'+second.id;await flush();
+  buttons[0].click();await flush();assert.equal(copied.length,4);
+  const current=[...d.querySelectorAll('.focus-card .practice-copy-button, .vocabulary-row .practice-copy-button')];
+  assert.ok(current.every(button=>button.textContent==='Copy AI prompt'));
+  let finishCopy;w.navigator.clipboard.writeText=()=>new Promise(resolve=>{finishCopy=resolve;});
+  current[0].click();d.getElementById('logout').click();await flush();finishCopy();await flush();
+  assert.equal(current[0].textContent,'Copy AI prompt');
+  assert.equal(d.getElementById('feedback-page').textContent,'');
+  w.close();
+ }
+});
 
 test('assessment shows strengths, patterns, next priorities, and only internal evidence links',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#assessments');await flush();

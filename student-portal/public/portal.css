@@ -171,7 +171,7 @@ summary { cursor:pointer; }
 .assessment-page h2,.assessment-page h3 { scroll-margin-top:24px; }
 .feedback-page>section>h3,.feedback-page .focus-heading,.assessment-page .assessment-plan-card>h4 { background:var(--ink); color:#fff; padding:14px 18px; border-radius:4px; }
 .feedback-page>section>h3 { margin-bottom:20px; }
-.feedback-page .focus-heading,.assessment-page .assessment-plan-card>h4 { background:#666; }
+.feedback-page .focus-heading,.assessment-page .assessment-plan-card>h4,.assessment-page .assessment-progress>h3 { background:#666; }
 .feedback-page .focus-heading h4 { color:inherit; margin:0; }
 .feedback-page .focus-number { color:inherit; }
 .assessment-page .assessment-plan-card>h4 { margin:-22px -22px 18px; border-radius:5px 5px 0 0; }

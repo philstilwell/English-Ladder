@@ -30,7 +30,7 @@ Missing/empty/growing transcripts, very recent meetings, uncertain identity, ove
 
 Read the student's current assessment and **all** saved quiz attempts, including unfinished ones. Use the original first choice in `answers[i][0]`; unanswered questions are not errors and later retries never erase a first mistake. Rank review by repeated quizzes, recency, and frequency. If no misses exist, use relevant assessment patterns without claiming quiz errors.
 
-The server model reads the entire new transcript, earlier reviewed assessment, and actual first-try mistakes. Create a short ESL session summary and feedback, update the assessment with new timestamped evidence, and author 4–6 new practice questions mixing this lesson and useful review. Apply AGENTS.md: A1–A2 reading register, respectful adult tone, first name only, quoted target English, simple feedback for each answer, ESL only, no unrelated personal details or external note links. Do not call text-based practice scores proficiency levels or infer pronunciation quality.
+The server model reads the entire new transcript, earlier reviewed assessment, and actual first-try mistakes. Create a short ESL session summary and feedback, update the assessment with new timestamped evidence, and author exactly seven new practice questions mixing this lesson and useful review. Apply AGENTS.md: A1–A2 reading register, respectful adult tone, first name only, quoted target English, simple feedback for each answer, ESL only, no unrelated personal details or external note links. Do not call text-based practice scores proficiency levels or infer pronunciation quality.
 
 Validate structure, exact new timestamp references, earlier assessment references, source ownership, answer indexes, and question evidence. A second model pass checks the full transcript against all proposed content before publication. This reduces errors but is not a guarantee of perfect pedagogy. Reject failed checks and retain existing content.
 
@@ -38,7 +38,7 @@ Validate structure, exact new timestamp references, earlier assessment reference
 
 Publish feedback, session-list summary, current assessment, and quiz in one private database transaction. Check that the current assessment still matches the version used for authoring; if a teacher edited it meanwhile, retry from the latest version. Save the prior assessment and the authored quiz/evidence privately. Never alter student attempts. Duplicate note events and retries cannot create another update for an already published session. Delayed older sessions are archived without replacing a newer current quiz.
 
-The latest quiz shows its source lesson links. Unfinished attempts keep their original questions. Completed attempts retain original first answers and dated progress. Accounts without any reviewed quiz omit the Quiz menu. Failed generation never removes a useful existing quiz.
+The latest quiz introduction shows only plain source lesson dates, without links. Short instructions appear beside the questions. Unfinished attempts keep their original questions. Completed attempts retain original first answers and dated progress. Accounts without any reviewed quiz omit the Quiz menu. Failed generation never removes a useful existing quiz.
 
 ## Cost and operation
 

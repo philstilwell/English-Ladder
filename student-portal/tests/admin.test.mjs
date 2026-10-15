@@ -486,3 +486,17 @@ test('unfinished deletion can be retried, and session expiry clears the confirma
   assert.match($('delete-error').textContent,/Retry/);assert.equal($('save-student').disabled,true);assert.equal($('confirm-delete').disabled,false);assert.equal($('status').value,'paused');
   $('confirm-delete').click();await flush();assert.equal(tries,2);assert.equal($('delete-dialog').open,false);assert.equal($('delete-student-name').textContent,'');assert.equal($('delete-confirmation').value,'');assert.equal($('admin-view').hidden,true);w.close();
 });
+
+test('quiz results open from the private administrator account and clear for new accounts and sign-out', async () => {
+  const dom=browser(); await flush(); const w=dom.window,d=w.document;
+  d.querySelector('.student-name').click(); await flush();
+  assert.equal(d.getElementById('open-quiz-results').hidden,false);
+  assert.equal(d.getElementById('open-quiz-results').href,'https://mt26.englishladder.com/#quiz-results');
+  w.location.hash='#register'; await flush();
+  assert.equal(d.getElementById('open-quiz-results').hidden,true);
+  assert.equal(d.getElementById('open-quiz-results').hasAttribute('href'),false);
+  w.location.hash='#students/'+fixture.key; await flush();
+  d.getElementById('sign-out').click(); await flush();
+  assert.equal(d.getElementById('open-quiz-results').hasAttribute('href'),false);
+  dom.window.close();
+});

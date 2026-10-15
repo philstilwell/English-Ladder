@@ -183,8 +183,8 @@ export class FeedbackStore {
     if (id === 'assessment') {
       if (request.method === 'GET') return json({ assessment: await this.storage.get('assessment:current') || null });
       if (request.method !== 'PUT') return json({ error: 'Method not allowed.' }, 405);
-      let record;
-      try { record = validateAssessment(await request.json()); }
+      let record, input;
+      try { input = await request.json(); record = validateAssessment(input); }
       catch { return json({ error: 'Please check the assessment format and session references.' }, 400); }
       const sourceIds = [...new Set([...record.sourceSessions, ...(record.quiz?.sourceSessions || [])])];
       const sources = new Map(await Promise.all(sourceIds.map(async sessionId => [sessionId, await this.storage.get(`feedback:${sessionId}`)])));
@@ -193,6 +193,11 @@ export class FeedbackStore {
         return ref.at < coverage.coverageStart || ref.at > coverage.coverageEnd;
       })) return json({ error: 'Assessment evidence must refer to this student’s available session transcripts.' }, 400);
       return this.activeTransaction(async txn => {
+        if (Object.hasOwn(input, 'priorAssessment')) {
+          const current = await txn.get('assessment:current') || null;
+          if (JSON.stringify(input.priorAssessment) !== JSON.stringify(current)) return json({ error: 'The assessment changed. Review the latest version before saving.' }, 409);
+          if (current) await txn.put({ ['assessment:before:edit:' + crypto.randomUUID()]: current });
+        }
         await txn.put({ 'assessment:current': record });
         return json({ ok: true });
       });

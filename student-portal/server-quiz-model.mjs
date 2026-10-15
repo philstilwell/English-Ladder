@@ -61,7 +61,7 @@ Use short A1-A2 English: common words, one idea per sentence, respectful adult t
 Use only the learner's first name. Do not repeat unrelated personal/work/belief/health details or assess them.
 Focus on English usage, grammar, vocabulary, comprehension, and conversation skills. No formal level or pronunciation claims.
 Be cautious about automatic transcription errors. Distinguish actual teaching from extra practice. Never invent an actual quotation.
-Create 4-6 NEW multiple-choice practice questions, usually 3-4 from the new lesson and 1-2 reviewing the supplied real first-try misses.
+Create exactly 7 NEW multiple-choice practice questions, usually 5 from the new lesson and 2 reviewing the supplied real first-try misses.
 If no first-try misses exist, use relevant assessment patterns without claiming quiz errors. Prefer recent and repeated misses.
 Every choice needs a short accurate explanation. One clear best answer; realistic distractors. New examples must be called practice.
 Avoid specialist grammar language; explain with examples. No external links, full names, credentials, HTML, or Markdown links.
@@ -105,7 +105,7 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   const draft = await generate(ai, RULES, input, 10000);
   if (draft.sufficientEvidence !== true) throw new Error('insufficient_evidence');
   const questions = draft.quiz?.questions;
-  if (!Array.isArray(questions) || questions.length < 4 || questions.length > 6 ||
+  if (!Array.isArray(questions) || questions.length !== 7 ||
       !Array.isArray(draft.evidence) || draft.evidence.length !== questions.length) throw new Error('invalid_evidence');
   const reviewMap = new Map(review.flatMap(t => t.examples.map(e => [e.attemptId + ':' + e.questionIndex, e])));
   const sources = new Set([id]), seen = new Set();

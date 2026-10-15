@@ -80,3 +80,24 @@ test('context export reads every history page, including first-try mistakes in u
   assert.equal(context.history.filter(h => !h.attempt.completedAt).length, 1);
   assert.ok(context.history.every(h => !h.firstTryMistakes.some(m => m.questionNumber === 2)));
 });
+
+test('expanding a current quiz preserves original attempts, archives the prior assessment, and rejects stale edits', async () => {
+  const { e, teacher, student, state } = await seedQuiz();
+  const studentApi = apiFor(e, student.cookie), teacherApi = apiFor(e, teacher.cookie);
+  const attemptId = crypto.randomUUID();
+  const answer = (questionIndex, choiceIndex) => studentApi('/api/quiz/answer', 'POST', { attemptId, version: state.version, questionIndex, choiceIndex });
+  await answer(0, 1);
+  const prior = (await teacherApi('/api/assessment')).assessment;
+  const expanded = { ...prior, quiz: { ...prior.quiz, questions: Array.from({ length: 7 }, (_, i) => prior.quiz.questions[i % 2]) } };
+  await teacherApi('/api/assessment', 'PUT', { ...expanded, priorAssessment: prior });
+  assert.deepEqual((await studentApi('/api/quiz/state')).quiz, prior.quiz);
+  const archives = [...await e.FEEDBACK_STORE.get('ab26').storage.list({ prefix: 'assessment:before:edit:' })];
+  assert.equal(archives.length, 1); assert.deepEqual(archives[0][1], prior);
+  await assert.rejects(teacherApi('/api/assessment', 'PUT', { ...prior, priorAssessment: prior }), /409/);
+  assert.deepEqual((await teacherApi('/api/assessment')).assessment, expanded);
+  await answer(0, 0); await answer(1, 1);
+  const next = await studentApi('/api/quiz/state');
+  assert.equal(next.quiz.questions.length, 7); assert.equal(next.attempt, null);
+  const saved = (await teacherApi('/api/quiz/results/' + attemptId)).attempt;
+  assert.deepEqual(saved.quiz, prior.quiz); assert.deepEqual(saved.answers, [[1, 0], [1]]);
+});

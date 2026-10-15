@@ -194,12 +194,14 @@ function savedSetup(seed,role='student',custom=null,hash='quiz'){
  const cookie=seed[role].cookie;
  return setup((path,options={})=>custom?.(path,options)||call(seed.e,path,{...options,headers:{...options.headers,Cookie:cookie,Origin:origin}}),origin+'/#'+hash,role);
 }
-test('teacher preview uses the new quiz lesson links and topic labels without changing the assessment',async()=>{
+test('teacher preview shows plain source dates without links and keeps quiz topic labels',async()=>{
  const next={...quiz,sourceSessions:[second.id],patternTitles:['Use “can”'],generatedForSession:second.id};
  const dom=setup(path=>path==='/api/assessment'?reply({assessment:{...assessment,quiz:next}}):null,origin+'/#quiz','teacher');
  await flush();const d=dom.window.document;
- assert.equal(d.querySelector('.quiz-sources a').getAttribute('href'),'#feedback/'+second.id);
- assert.match(d.querySelector('.quiz-sources').textContent,/Practice from these lessons/);
+ assert.equal(d.querySelector('.quiz-header a'),null);
+ assert.equal(d.querySelector('.quiz-header').textContent.includes('Teacher practice'),false);
+ assert.match(d.querySelector('.quiz-sources').textContent,/Sep 1, 2026/);
+ assert.match(d.querySelector('.quiz-sources').textContent,/Based on your lesson:/);
  d.querySelectorAll('.quiz-option')[1].click();d.querySelectorAll('.quiz-option')[0].click();
  d.querySelector('.quiz-next').click();d.querySelectorAll('.quiz-option')[1].click();d.querySelector('.quiz-next').click();
  assert.equal(d.querySelector('.quiz-complete li').textContent,'Use “can”');
@@ -222,9 +224,10 @@ test('automatic quiz setup is teacher-only and late status responses clear on si
 });
 test('student answers save immediately, resume after reopening, and finish with a saved first-try score',async()=>{
  const seed=await seedQuiz();let dom=savedSetup(seed);await flush();let d=dom.window.document;
- assert.match(d.getElementById('quiz-content').textContent,/saved for Phil/);
+ assert.equal(d.querySelector('.quiz-header a'),null);
+ assert.equal(d.querySelector('.quiz-header .quiz-save-note'),null);
  assert.equal(d.getElementById('quiz-nav').hidden,false);
- assert.equal(d.querySelector('.quiz-sources a').getAttribute('href'),'#feedback/'+feedback.id);
+ assert.equal(d.querySelector('.quiz-sources a'),null);
  assert.match(d.querySelector('.quiz-sources').textContent,/Oct 1, 2026/);
  d.querySelectorAll('.quiz-option')[1].click();
  assert.match(d.getElementById('quiz-result').textContent,/Not yet/);
@@ -285,7 +288,8 @@ test('teacher sees saved first answers and dated progress; teacher preview creat
  assert.match(d.querySelector('.quiz-answer-history').textContent,/First answer: I can opens this file./);
  assert.match(d.querySelector('.quiz-answer-history').textContent,/Later choices: I can open this file./);
  dom.window.location.hash='quiz';await new Promise(r=>setTimeout(r,10));await flush();
- assert.match(d.getElementById('quiz-content').textContent,/Teacher practice/);
+ assert.equal(d.getElementById('teacher-banner').hidden,false);
+ assert.equal(d.querySelector('.quiz-header a'),null);
  d.querySelectorAll('.quiz-option')[0].click();d.querySelector('.quiz-next').click();d.querySelectorAll('.quiz-option')[1].click();d.querySelector('.quiz-next').click();
  const history=await (await call(seed.e,'/api/quiz/results',{headers:{Cookie:seed.teacher.cookie}})).json();assert.equal(history.attempts.length,1);
  d.getElementById('logout').click();await flush();

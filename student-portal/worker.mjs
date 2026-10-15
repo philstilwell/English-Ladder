@@ -309,6 +309,7 @@ async function handle(request, env) {
       try {
         const input = await smallJson(request, 65536);
         body = isAssessment ? validateAssessment(input) : validateFeedback(input, id);
+        if (isAssessment && Object.hasOwn(input, 'priorAssessment')) body.priorAssessment = input.priorAssessment === null ? null : validateAssessment(input.priorAssessment);
       }
       catch { return json({ error: 'Please check the record format and transcript references.' }, 400); }
     }

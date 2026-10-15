@@ -56,7 +56,7 @@
     $('paused-student-rows').replaceChildren(); $('paused-students').open = false; $('paused-students').hidden = true; $('paused-count').textContent = '0';
     $('delete-account-panel').hidden = true;
     $('sheet-paste').value = ''; $('password').value = ''; $('search').value = ''; $('filter').value = 'all';
-    $('edit-title').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href');
+    $('edit-title').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href'); $('open-quiz-results').removeAttribute('href'); $('open-quiz-results').hidden = true;
     $('activation-note').textContent = ''; $('save-state').textContent = ''; $('import-preview').hidden = true;
     $('password-status').textContent = '';
     $('active-count').textContent = '0'; $('draft-count').textContent = '0'; $('list-count').textContent = '';
@@ -160,6 +160,8 @@
     $('activation-note').textContent = student?.activated ? 'Includes sessions held after ' + displayTime(student.startAfter) + '. Pausing stops access and updates; saved learning records stay in place.' : 'Activation includes sessions held after you activate this account. Updates arrive after the nightly check.';
     $('open-site').hidden = student?.status !== 'active';
     if (student?.status === 'active') $('open-site').href = 'https://' + student.studentId + '.englishladder.com/'; else $('open-site').removeAttribute('href');
+    $('open-quiz-results').hidden = student?.status !== 'active';
+    if (student?.status === 'active') $('open-quiz-results').href = 'https://' + student.studentId + '.englishladder.com/#quiz-results'; else $('open-quiz-results').removeAttribute('href');
     if (student && !student.studentId) suggestedAddress();
     updateSaveLabel();
     void loadLoginDetails(student);

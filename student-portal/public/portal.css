@@ -224,8 +224,6 @@ summary { cursor:pointer; }
 .quiz-card h2 { font:400 2.25rem/1.15 Georgia,serif; letter-spacing:-.025em; margin:12px 0 18px; }
 .quiz-header { padding-bottom:24px; border-bottom:1px solid var(--line); }
 .quiz-header>p:not(.eyebrow) { font-size:.9rem; color:var(--muted); line-height:1.7; }
-.quiz-back { font-size:.77rem; text-underline-offset:3px; }
-.quiz-history-link { display:block; margin-top:16px; font-size:.85rem; }
 .quiz-save-status,.quiz-save-note { font-size:.8rem; color:var(--muted); }
 .quiz-save-status:empty { display:none; }
 .quiz-sources { margin-top:18px; font-size:.8rem; color:var(--muted); }

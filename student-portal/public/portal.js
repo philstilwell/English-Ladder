@@ -455,13 +455,9 @@
   }
   function quizSources(sourceSessions) {
     const sources = node('div', '', 'quiz-sources');
-    sources.append(node('p', 'Practice from these lessons:'));
-    const links = node('div', '', 'assessment-source-links');
-    for (const id of sourceSessions || []) {
-      const link = node('a', assessmentDate(id.slice(0, 10)));
-      link.href = '#feedback/' + id; link.setAttribute('aria-label', 'Open lesson feedback for ' + assessmentDate(id.slice(0, 10))); links.append(link);
-    }
-    sources.append(links); return sources;
+    const dates = [...new Set((sourceSessions || []).map(id => id.slice(0, 10)))].sort();
+    sources.append(node('p', 'Based on your ' + (sourceSessions?.length === 1 ? 'lesson' : 'lessons') + ': ' + dates.map(assessmentDate).join(' · ')));
+    return sources;
   }
   function renderQuiz(focus = false) {
     if (!authenticated || !quizState) return;
@@ -469,12 +465,9 @@
     const currentRun = () => authenticated && run === quizRevision && identity === identityRevision;
     const fragment = document.createDocumentFragment();
     const header = node('header', '', 'quiz-header');
-    header.append(node('p', 'A LITTLE PRACTICE', 'eyebrow'), node('h2', quiz.title));
-    const back = node('a', 'Read your assessment', 'quiz-back'); back.href = '#assessments/patterns';
-    header.append(node('p', quiz.instructions), node('p', 'These are new practice questions.', 'section-intro'), back); fragment.append(header);
+    header.append(node('p', 'NEW PRACTICE', 'eyebrow'), node('h2', quiz.title));
     header.append(quizSources(quizState.sourceSessions));
-    header.append(node('p', teacherMode ? 'Teacher practice: answers here do not count as student results.' : 'Your answers are saved for Phil. If you stop, you can come back later.', 'quiz-save-note'));
-    if (teacherMode) { const historyLink = node('a', 'See saved quiz results', 'quiz-history-link'); historyLink.href = '#quiz-results'; header.append(historyLink); }
+    fragment.append(header);
     if (quizState.finished) {
       const complete = node('section', '', 'quiz-complete');
       const heading = node('h3', 'You finished!'); heading.id = 'quiz-question-title'; heading.tabIndex = -1;
@@ -576,7 +569,7 @@
       else quizState.index++;
       renderQuiz(true);
     });
-    fragment.append(counter, progress, heading, node('p', 'Choose one answer.', 'quiz-hint'), choices, result, saveStatus, retrySave, next);
+    fragment.append(counter, progress, heading, node('p', quiz.instructions, 'quiz-hint'), choices, result, saveStatus, retrySave, next);
     $('quiz-content').replaceChildren(fragment); updateAnswer();
     if (focus) heading.focus();
   }

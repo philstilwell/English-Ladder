@@ -20,3 +20,5 @@
 html:has(.admin-main){scroll-padding-top:calc(var(--admin-menu-height,56px) + 16px)}
 @media(max-width:740px){.admin-content{padding-inline:24px}.admin-main>.admin-login{width:calc(100% - 48px)}.admin-nav{padding-inline:24px;gap:0 24px}}
 @media(max-width:600px){.admin-nav a{font-size:.77rem;padding-top:13px;padding-bottom:10px}}
+
+.account-page-links { display:flex; flex-wrap:wrap; gap:12px; }

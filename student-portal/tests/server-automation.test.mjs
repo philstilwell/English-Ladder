@@ -13,8 +13,8 @@ const note = { transcript: { speakers: [{ speaker_id: 'a', display_name: 'Alex05
 const meeting = { start_time: '2026-10-15T00:57:01Z', end_time: '2026-10-15T02:00:00Z' };
 const session = '2026-10-14-2057';
 const draft = { sufficientEvidence: true, feedback, assessment: { ...assessment, summary: 'You can use “can” in a short sentence.', progress: { detail: 'Keep using “can” in new sentences.', evidence: [{ sessionId: session, at: '00:02:00' }] } }, quiz: { ...quiz, patternTitles: ['Use “can”'],
-  questions: [...quiz.questions, ...quiz.questions] },
-  evidence: [0, 1, 2, 3].map(questionIndex => ({ questionIndex, segments: [questionIndex], reviewRefs: [] })) };
+  questions: Array.from({ length: 7 }, (_, i) => quiz.questions[i % quiz.questions.length]) },
+  evidence: [0, 1, 2, 3, 4, 5, 6].map(questionIndex => ({ questionIndex, segments: [questionIndex], reviewRefs: [] })) };
 function memory() {
   const values = new Map(); let queue = Promise.resolve();
   return {
@@ -133,6 +133,7 @@ test('AI authoring requires valid evidence and a second approval; no transcript 
   } };
   const output = await authorQuiz(ai, transcript, meeting, 'fictional-note-123', { assessment, attempts: [] });
   assert.equal(calls, 2); assert.equal(output.quiz.generatedForSession, session);
+  assert.equal(output.quiz.questions.length, 7);
   assert.ok(output.quiz.sourceSessions.includes(feedback.id));
   assert.equal(output.feedback.source.segmentCount, 10);
   assert.equal(output.transcript, undefined);
@@ -280,4 +281,16 @@ test('a first full lesson can create the initial assessment and quiz in an empty
   assert.equal(response.status, 200);
   assert.equal((await store.storage.get('assessment:current')).quiz.generatedForSession, session);
   assert.equal((await store.storage.get('feedback:' + session)).source.reviewedFullTranscript, true);
+});
+
+test('new quiz authoring rejects any question count other than seven before editorial review', async () => {
+  const transcript = readTranscript(note, { ab26: student });
+  for (const count of [4, 6, 8]) {
+    const invalid = structuredClone(draft);
+    invalid.quiz.questions = Array.from({ length: count }, (_, i) => draft.quiz.questions[i % 7]);
+    invalid.evidence = Array.from({ length: count }, (_, questionIndex) => ({ questionIndex, segments: [0], reviewRefs: [] }));
+    let calls = 0;
+    await assert.rejects(authorQuiz({ run: async () => { calls++; return { response: invalid }; } }, transcript, meeting, 'fictional-note-123', { assessment, attempts: [] }), /invalid_evidence/);
+    assert.equal(calls, 1);
+  }
 });

@@ -12,6 +12,7 @@
   let assessmentScrollFrame = 0;
   let settings = null, settingsLoading = false, settingsSaving = false, settingsRevision = 0, profileRevision = 0;
   const sectionMenu = document.querySelector('.section-nav');
+  const stickyHeader = document.querySelector('.masthead-band');
   let activityChoices = null, activitiesLoading = false, activitiesRevision = 0, activitiesError = false;
   const roadPractice = window.EnglishRoadPractice?.create({ root: $('road-practice'), api, expired }) || {
     clear() { $('road-practice').replaceChildren(); $('road-practice').hidden = true; },
@@ -77,14 +78,14 @@
     for (const menu of dropdowns) if (menu.list.contains(document.activeElement)) menu.toggle.focus({ preventScroll:true });
     closeDropdowns();
   });
-  function updateMenuHeight() {
-    const height = sectionMenu.getBoundingClientRect().height;
-    if (height) document.documentElement.style.setProperty('--student-menu-height', height + 'px');
+  function updateHeaderHeight() {
+    const height = stickyHeader.getBoundingClientRect().height;
+    if (height) document.documentElement.style.setProperty('--student-header-height', height + 'px');
     scheduleAssessmentHighlight();
     for (const menu of dropdowns) if (!menu.list.hidden) positionDropdown(menu);
   }
-  const menuResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateMenuHeight);
-  menuResizeObserver?.observe(sectionMenu);
+  const headerResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateHeaderHeight);
+  headerResizeObserver?.observe(stickyHeader);
   const assessmentResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(scheduleAssessmentHighlight);
 
   async function api(path, options = {}) {
@@ -116,7 +117,8 @@
   function show(view) {
     for (const id of ['loading', 'login-view', 'dashboard-view', 'unavailable-view']) $(id).hidden = id !== view;
     $('logout').hidden = view !== 'dashboard-view';
-    if (view === 'dashboard-view') updateMenuHeight();
+    sectionMenu.hidden = view !== 'dashboard-view';
+    updateHeaderHeight();
   }
   function clearIdentity() {
     identityRevision++; pageRevision++;
@@ -399,7 +401,7 @@
       if (!authenticated || !assessment || $('assessments').hidden) return;
       // Follow the section at the reading line, including long sections whose
       // headings have already scrolled off screen. Do not move focus or history.
-      const readingLine = Math.max(sectionMenu.getBoundingClientRect().height + 24, Math.min(160, window.innerHeight * 0.2));
+      const readingLine = Math.max(stickyHeader.getBoundingClientRect().height + 24, Math.min(160, window.innerHeight * 0.2));
       let current = assessmentSections[0];
       for (const key of assessmentSections) {
         if ($('assessment-' + key).getBoundingClientRect().top <= readingLine) current = key;
@@ -1090,7 +1092,7 @@
   document.addEventListener('visibilitychange', checkSession);
   window.addEventListener('hashchange', () => { closeDropdowns(); navigate(true); });
   window.addEventListener('scroll', scheduleAssessmentHighlight, { passive: true });
-  window.addEventListener('resize', updateMenuHeight);
+  window.addEventListener('resize', updateHeaderHeight);
   document.querySelector('.assessment-outline').addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

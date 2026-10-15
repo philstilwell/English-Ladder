@@ -43,6 +43,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
 test('deep links open the selected page and show only student-safe content',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#feedback/'+second.id);await flush();
  const d=dom.window.document;
+ assert.equal(d.querySelector('.masthead-band .section-nav').hidden,false);
  assert.equal(d.getElementById('feedback-title').textContent,second.title);
  assert.match(d.getElementById('profile-nickname').textContent,/Alex the Explorer/);
  assert.equal(d.querySelectorAll('#session-list a').length,2);
@@ -68,6 +69,7 @@ test('sign-out clears profile, records, summaries, and late responses',async()=>
  resolveFirst(reply(feedback));await flush();
  const d=dom.window.document;
  assert.equal(d.getElementById('login-view').hidden,false);
+ assert.equal(d.querySelector('.section-nav').hidden,true);
  for(const id of ['feedback-page','session-list','session-select','session-summaries','profile-nickname','assessment-content','assessment-source-count','quiz-content'])assert.equal(d.getElementById(id).textContent,'');
  assert.doesNotMatch(d.getElementById('dashboard-view').textContent,/Alex|Clear explanations|Earlier English lesson/);
  dom.window.close();
@@ -76,6 +78,7 @@ test('expired feedback sessions return to sign-in and clear private content',asy
  const dom=setup(path=>path.startsWith('/api/feedback/')?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):null);
  await flush();
  assert.equal(dom.window.document.getElementById('login-view').hidden,false);
+ assert.equal(dom.window.document.querySelector('.section-nav').hidden,true);
  assert.equal(dom.window.document.getElementById('session-list').textContent,'');
  dom.window.close();
 });

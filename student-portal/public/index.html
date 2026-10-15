@@ -22,6 +22,26 @@
     <a class="brand" href="https://englishladder.com"><img src="/ladder-mark.png" width="32" height="32" alt="">English Ladder</a>
     <span class="masthead-label">Your student space</span>
   </header>
+    <nav class="section-nav" hidden aria-label="Student space sections">
+      <div id="overview-menu" class="overview-menu">
+        <a id="overview-link" href="#overview" aria-current="page">Overview</a>
+        <button id="overview-toggle" class="overview-toggle" type="button" aria-label="Show Overview links" aria-expanded="false" aria-controls="overview-submenu"><span aria-hidden="true">▾</span></button>
+        <ul id="overview-submenu" class="overview-submenu" hidden>
+          <li><a href="#assessments">Assessments</a></li>
+          <li><a id="quiz-nav" href="#quiz" hidden>Quiz</a></li>
+          <li><a href="#sessions">Session summaries</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+        </ul>
+      </div>
+      <div id="activities-menu" class="overview-menu">
+        <button id="activities-toggle" class="overview-toggle activities-toggle" type="button" aria-label="Show Activities" aria-expanded="false" aria-controls="activities-submenu">Activities <span aria-hidden="true">▾</span></button>
+        <ul id="activities-submenu" class="overview-submenu" hidden></ul>
+      </div>
+      <div class="account-menu">
+        <a id="account-nav" href="#account">Account</a>
+        <button id="logout" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button>
+      </div>
+    </nav>
   </div>
   <main id="main-content" class="student-main">
     <div id="loading" class="loading" role="status">Opening your student space…</div>
@@ -63,26 +83,6 @@
         <div><p id="profile-nickname" class="eyebrow">YOUR LEARNING JOURNEY</p><h1 id="dashboard-title" tabindex="-1">Welcome back.</h1><p id="dashboard-intro">A little practice. A clearer next step. Keep moving forward.</p></div>
         <div class="student-badge"><span id="avatar" class="avatar" aria-hidden="true"></span><div><strong id="student-name"></strong><span id="account-address"></span></div></div>
       </div>
-      <nav class="section-nav" aria-label="Student space sections">
-        <div id="overview-menu" class="overview-menu">
-          <a id="overview-link" href="#overview" aria-current="page">Overview</a>
-          <button id="overview-toggle" class="overview-toggle" type="button" aria-label="Show Overview links" aria-expanded="false" aria-controls="overview-submenu"><span aria-hidden="true">▾</span></button>
-          <ul id="overview-submenu" class="overview-submenu" hidden>
-            <li><a href="#assessments">Assessments</a></li>
-            <li><a id="quiz-nav" href="#quiz" hidden>Quiz</a></li>
-            <li><a href="#sessions">Session summaries</a></li>
-            <li><a href="#feedback">Feedback</a></li>
-          </ul>
-        </div>
-        <div id="activities-menu" class="overview-menu">
-          <button id="activities-toggle" class="overview-toggle activities-toggle" type="button" aria-label="Show Activities" aria-expanded="false" aria-controls="activities-submenu">Activities <span aria-hidden="true">▾</span></button>
-          <ul id="activities-submenu" class="overview-submenu" hidden></ul>
-        </div>
-        <div class="account-menu">
-          <a id="account-nav" href="#account">Account</a>
-          <button id="logout" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button>
-        </div>
-      </nav>
       <div id="overview" class="section-panel">
         <section class="next-step"><div><p class="eyebrow">YOUR NEXT STEP</p><h2 id="latest-title">Your learning notebook.</h2><p id="latest-summary">Open your session feedback to revisit useful language and find a short practice activity.</p><a id="latest-link" class="primary-button" href="#feedback">Open session feedback <span aria-hidden="true">→</span></a></div><div class="progress-art" aria-hidden="true"><span>ONE</span><span>STEP</span><span>AT A TIME.</span></div></section>
         <div class="section-heading"><h2>Your learning notebook</h2><span>Everything in one place</span></div>

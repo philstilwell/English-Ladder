@@ -208,6 +208,7 @@ function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScr
 };dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
 test('administrator list links to editable accounts and has a separate registration form',async()=>{
   const dom=browser();await flush();const w=dom.window,d=w.document;
+  assert.equal(d.querySelector('.masthead-band .admin-nav').hidden,false);
   assert.match(d.getElementById('student-rows').textContent,/Morgan Testperson/);
   d.querySelector('.student-name').click();await flush();assert.equal(d.getElementById('lastName').value,'Testperson');assert.equal(d.getElementById('studentId').readOnly,true);
   w.location.hash='#register';await flush();assert.equal(d.getElementById('edit-title').textContent,'Register new student');assert.equal(d.getElementById('lastName').value,'');assert.equal(d.getElementById('studentId').readOnly,false);
@@ -238,6 +239,7 @@ test('administrator checkboxes load saved tools, save subsets and none, and clea
   assert.deepEqual(body.visibleActivities, []); assert.deepEqual(chosen(), []);
   d.getElementById('register-nav').click(); await flush(); assert.deepEqual(chosen(), ['english-road', 'grammar-practice', 'business-terms']);
   d.getElementById('sign-out').click(); await flush(); assert.equal(d.getElementById('student-activities').textContent, '');
+  assert.equal(d.querySelector('.admin-nav').hidden,true);
   w.close();
 });
 

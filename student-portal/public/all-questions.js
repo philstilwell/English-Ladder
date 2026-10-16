@@ -35,10 +35,16 @@
         if (!Number.isSafeInteger(data.count) || data.count < 0 || !Array.isArray(data.questions) || data.questions.length > 20 ||
             data.nextCursor !== null && typeof data.nextCursor !== 'string') throw new Error('Your questions could not load. Please try again.');
         const fragment = document.createDocumentFragment();
+        if (data.activityCounts?.length) {
+          const summary = node('div', null, 'question-sources'), list = node('ul');
+          summary.append(node('p', 'Saved questions by activity'));
+          for (const activity of data.activityCounts) list.append(node('li', activity.label + ': ' + activity.count));
+          summary.append(list); fragment.append(summary);
+        }
         for (const row of data.questions) {
           const card = node('article', null, 'all-question-card');
           const itemLabel = Number.isInteger(row.item?.number) ? ' · Item ' + row.item.number : '';
-          card.append(node('h3', row.label + itemLabel), exercise(row));
+          card.append(node('h3', 'Activity: ' + row.label + itemLabel), exercise(row));
           if (row.item.progress?.finished) card.append(node('p', 'Marked as finished', 'field-note'));
           fragment.append(card);
         }

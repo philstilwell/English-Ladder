@@ -27,6 +27,9 @@ test('All Questions combines every source, preserves old snapshots and pages rea
     const response=await get(e,user.cookie);assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');
     const first=await response.json(),second=await(await get(e,user.cookie,'?after='+encodeURIComponent(first.nextCursor))).json();
     assert.equal(first.count,32);assert.equal(first.questions.length,20);assert.equal(second.questions.length,12);assert.equal(second.nextCursor,null);
+    assert.equal(first.activityCounts.length,10);assert.equal(first.activityCounts.reduce((sum,activity)=>sum+activity.count,0),32);
+    assert.deepEqual(first.activityCounts.find(activity=>activity.id==='grammar-practice'),{id:'grammar-practice',label:'Grammar practice',count:23});
+    assert.deepEqual(second.activityCounts,first.activityCounts);
     const all=[...first.questions,...second.questions];assert.equal(new Set(all.map(row=>row.id)).size,32);
     assert.equal(new Set(all.map(row=>row.source)).size,10);
     assert.equal(all.find(row=>row.source==='study-practice').item.current,false);
@@ -38,9 +41,11 @@ test('All Questions combines every source, preserves old snapshots and pages rea
   assert.deepEqual(await store.storage.list(),before);
   const other=await login(e,'other-test','https://cd26.englishladder.com');
   const empty=await(await get(e,other.cookie,'','https://cd26.englishladder.com')).json();assert.equal(empty.count,0);assert.deepEqual(empty.questions,[]);
+  assert.deepEqual(empty.activityCounts,[]);
   const resolved=await store.fetch(new Request('https://feedback.internal/admin/questions/resolve',{method:'POST',body:JSON.stringify({id:'grammar-practice:00000001',revision:1})}));
   assert.equal(resolved.status,200);
   const refreshed=await(await get(e,student.cookie)).json();assert.equal(refreshed.count,31);assert.equal(refreshed.counts['grammar-practice'],22);
+  assert.equal(refreshed.activityCounts.find(activity=>activity.id==='grammar-practice').count,22);
   assert(!refreshed.questions.some(row=>row.id==='grammar-practice:00000001'));
   assert.equal((await store.storage.get('grammar:item:1')).finished,true);
 });

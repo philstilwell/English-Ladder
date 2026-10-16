@@ -118,10 +118,17 @@
       if (!valid()) return;
       if (!Number.isSafeInteger(data.count) || !Array.isArray(data.questions) || data.questions.length > 20) throw new Error('Questions could not load. Please try again.');
       if (!data.questions.length && pages.length > 1) return await loadCombinedQuestions(pages.slice(0, -1), notice);
+      if (data.activityCounts?.length) {
+        const summary = element('div', null, 'question-sources'), list = element('ul');
+        summary.append(element('p', 'Saved questions by activity'));
+        for (const activity of data.activityCounts) list.append(element('li', activity.label + ': ' + activity.count));
+        summary.append(list); $('all-questions-content').append(summary);
+      }
       let resolving = false;
       for (const row of data.questions) {
         const item = row.item, card = element('article', null, 'combined-question');
-        card.append(element('h2', row.label));
+        const itemLabel = Number.isInteger(item.number) ? ' · Item ' + item.number : '';
+        card.append(element('h2', 'Activity: ' + row.label + itemLabel));
         if (row.source === 'grammar-practice') card.append(window.GrammarPractice.exercise(item, 'article'));
         else if (row.source === 'business-terms') card.append(window.BusinessTerms.exercise(item).card);
         else if (row.source === 'study-practice') card.append(window.StudyPractice.review(item));
@@ -165,7 +172,7 @@
       more.addEventListener('click', () => loadCombinedQuestions([...pages, data.nextCursor]));
       if (pages.length > 1 || data.nextCursor) { controls.append(back, more); $('all-questions-content').append(controls); }
       $('all-questions-status').textContent = (notice ? notice + ' ' : '') + (data.count ? data.count + ' saved questions · Page ' + pages.length : 'No saved questions for this student.');
-      questionStatuses[student.key] = { state: 'ready', count: data.count }; showList();
+      questionStatuses[student.key] = { state: 'ready', count: data.count, activityCounts: data.activityCounts }; showList();
     } catch (error) { if (valid()) { $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = error.message; } }
     finally { if (valid()) $('refresh-all-questions').disabled = false; }
   }
@@ -422,6 +429,7 @@
         const all = element('a', questions.count + (questions.count === 1 ? ' question →' : ' questions →'), 'questions-badge');
         all.href = '#students/' + student.key + '/questions'; all.setAttribute('aria-label', questions.count + ' saved questions for ' + student.firstName);
         questionsCell.append(all);
+        for (const activity of questions.activityCounts || []) questionsCell.append(element('span', activity.label + ': ' + activity.count, 'detail'));
       } else questionsCell.append(element('span', questions.state === 'ready' ? '—' : questions.state === 'loading' ? 'Checking…' : 'Unable to check', 'field-note'));
       const edit = element('a', 'Edit account →', 'edit-link'); edit.href = link.href; edit.setAttribute('aria-label', 'Edit account for ' + student.firstName + ' ' + student.lastName); action.append(edit);
       row.append(name,site,course,status,latestQuiz,cefrCell,questionsCell,action); $(student.status === 'paused' ? 'paused-student-rows' : 'student-rows').append(row);

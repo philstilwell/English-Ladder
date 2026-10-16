@@ -502,3 +502,6 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-header-height,11
 .all-question-card .assessment-plan-card { padding:0; }
 
 #all-questions [role="status"] { scroll-margin-top:calc(var(--student-header-height,114px) + 20px); }
+.question-sources { margin:16px 0; padding:12px 16px; border:1px solid #dbe2f6; border-radius:6px; background:#f0f3ff; overflow-wrap:anywhere; }
+.question-sources>p { margin:0 0 6px; font-size:.9rem; font-weight:650; }
+.question-sources>ul { display:flex; flex-wrap:wrap; gap:6px 24px; margin:0; padding:0; list-style:none; font-size:.9rem; }

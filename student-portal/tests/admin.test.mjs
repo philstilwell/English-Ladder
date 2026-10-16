@@ -1087,6 +1087,10 @@ test('combined Questions counts and lists include every source, private answers 
  }
  const statuses=await(await adminCall(e,statusPath,{headers:{Cookie:cookie}})).json();assert.equal(statuses.statuses[record.key].count,29);assert.equal(statuses.statuses[other.key].count,0);assert.doesNotMatch(JSON.stringify(statuses),/fictional|sentence|recruiter/);
  const response=await adminCall(e,path,{headers:{Cookie:cookie}});assert.equal(response.headers.get('cache-control'),'no-store');const first=await response.json();assert.equal(first.questions.length,20);assert.equal(first.count,29);assert.ok(first.nextCursor);
+ assert.deepEqual(statuses.statuses[record.key].activityCounts,first.activityCounts);
+ assert.deepEqual(first.activityCounts.find(activity=>activity.id==='grammar-practice'),{id:'grammar-practice',label:'Grammar practice',count:25});
+ assert.equal(first.activityCounts.reduce((sum,activity)=>sum+activity.count,0),29);
+ assert.deepEqual(statuses.statuses[other.key].activityCounts,[]);
  const last=await(await adminCall(e,path+'?after='+first.nextCursor,{headers:{Cookie:cookie}})).json();assert.equal(last.questions.length,9);assert.equal(last.nextCursor,null);
  const all=[...first.questions,...last.questions];assert.equal(new Set(all.map(q=>q.id)).size,29);assert.equal(all.find(q=>q.source==='vocabulary-practice').item.studentAnswer,'recruiter');assert.equal(all.find(q=>q.source==='study-practice').item.current,true);
  assert.equal(all.find(q=>q.source==='english-road').item.attemptId,attemptId);
@@ -1110,8 +1114,12 @@ test('combined Questions table links open full exercises, handle empty/error sta
   {source:'study-practice',label:'Study on your own',item:{...topic,current:true,progress:{...progress,id:topic.id}}},
   {source:'vocabulary-practice',label:'Vocabulary practice',item:{...vocabularyBank.items[0],studentAnswer:'recruiter',studentSentence:'<img src=x onerror=alert(1)>',progress}},
  ]};
- const dom=browser((p)=>p==='/api/admin/questions-status'?fail?Response.json({error:'Unavailable'},{status:503}):Response.json({statuses:{[fixture.key]:{state:'ready',count}},nextCursor:null}):p.endsWith('/questions')?delay?new Promise(r=>{release=r;}):Response.json(content):null);
+ content.activityCounts=content.questions.map(row=>({id:row.source,label:row.label,count:1}));
+ const dom=browser((p)=>p==='/api/admin/questions-status'?fail?Response.json({error:'Unavailable'},{status:503}):Response.json({statuses:{[fixture.key]:{state:'ready',count,activityCounts:count?content.activityCounts:[]}},nextCursor:null}):p.endsWith('/questions')?delay?new Promise(r=>{release=r;}):Response.json(content):null);
  const w=dom.window,d=w.document;await flush();assert.match(d.querySelector('.questions-cell').textContent,/5 questions/);d.querySelector('.questions-badge').click();await flush();assert.equal(d.getElementById('questions-view').hidden,false);assert.equal(d.querySelectorAll('.combined-question').length,5);assert.match(d.getElementById('all-questions-content').textContent,/recruiter/);assert.equal(d.querySelectorAll('#all-questions-content img[src=x]').length,0);
+ assert.match(d.querySelector('.questions-cell').textContent,/Grammar practice: 1/);assert.match(d.querySelector('.questions-cell').textContent,/Study on your own: 1/);
+ assert.equal(d.querySelectorAll('.question-sources li').length,5);assert.match(d.querySelector('.question-sources').textContent,/English Road Practice: 1/);
+ assert.deepEqual([...d.querySelectorAll('.combined-question>h2')].map(h=>h.textContent),content.questions.map(row=>'Activity: '+row.label+(Number.isInteger(row.item.number)?' · Item '+row.item.number:'')));
  delay=true;d.getElementById('refresh-all-questions').click();await flush();w.location.hash='students';await flush();release(Response.json(content));await flush();assert.equal(d.getElementById('all-questions-content').textContent,'');
  count=0;d.getElementById('refresh').click();await flush();assert.equal(d.querySelector('.questions-badge'),null);
  fail=true;d.getElementById('refresh').click();await flush();assert.match(d.querySelector('.questions-cell').textContent,/Unable to check/);
@@ -1201,11 +1209,12 @@ test('Resolved clears a combined Questions item and count, handles failures and 
  let rows=Array.from({length:21},(_,i)=>({id:'grammar-practice:'+String(i+1).padStart(8,'0'),revision:2,source:'grammar-practice',label:'Grammar practice',item:{...grammarBank.items[i],progress:{finished:true,question:true,revision:2}}})),fail=true,writes=[];
  const dom=browser((path,options)=>{
   if(path.endsWith('/questions/resolve')){writes.push(JSON.parse(options.body));if(fail)return Response.json({error:'Please refresh before trying again.'},{status:409});rows=rows.filter(r=>r.id!==writes.at(-1).id);return Response.json({resolved:true,id:writes.at(-1).id});}
-  if(path.includes('/questions')){const after=new URL(path,admin).searchParams.get('after'),selected=rows.filter(r=>!after||r.id>after);return Response.json({count:rows.length,questions:selected.slice(0,20),nextCursor:selected.length>20?selected[19].id:null});}
+  if(path.includes('/questions')){const after=new URL(path,admin).searchParams.get('after'),selected=rows.filter(r=>!after||r.id>after);return Response.json({count:rows.length,activityCounts:rows.length?[{id:'grammar-practice',label:'Grammar practice',count:rows.length}]:[],questions:selected.slice(0,20),nextCursor:selected.length>20?selected[19].id:null});}
  });await flush();const w=dom.window,d=w.document;w.location.hash='students/'+fixture.key+'/questions';await flush();
  [...d.querySelectorAll('button')].find(b=>b.textContent==='More questions').click();await flush();assert.equal(d.querySelectorAll('.resolve-question').length,1);
  d.querySelector('.resolve-question').click();await flush();assert.match(d.querySelector('.resolve-status').textContent,/refresh/);assert.equal(d.querySelector('.resolve-question').disabled,false);assert.equal(rows.length,21);
  fail=false;d.querySelector('.resolve-question').click();await flush();assert.equal(rows.length,20);assert.equal(d.querySelectorAll('.combined-question').length,20);assert.match(d.getElementById('all-questions-status').textContent,/Resolved.*Finished.*unchanged.*Page 1/);assert.match(d.querySelector('.questions-cell').textContent,/20 questions/);assert.ok(rows.every(r=>r.item.progress.finished));assert.deepEqual(Object.keys(writes[0]).sort(),['id','revision']);
+ assert.match(d.querySelector('.questions-cell').textContent,/Grammar practice: 20/);assert.match(d.querySelector('.question-sources').textContent,/Grammar practice: 20/);
  rows=rows.slice(0,1);d.getElementById('refresh-all-questions').click();await flush();d.querySelector('.resolve-question').click();await flush();assert.match(d.getElementById('all-questions-status').textContent,/No saved questions/);assert.equal(d.querySelector('.questions-badge'),null);w.close();
 });
 

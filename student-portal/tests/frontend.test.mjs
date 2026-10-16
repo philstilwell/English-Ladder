@@ -851,12 +851,13 @@ test('All Questions opens from Activities, includes every saved source and pages
     {source:'english-road',label:'English Road Practice',item:{questionIndex:0,band:'A1',topic:'Articles',startedAt:'2026-10-15T10:00:00Z',exercise:{setup:'Choose an article.',prompt:'I see ___ apple.',options:['an','a','the','some']},answer:null,progress}},
     ...COMMUNICATION_ACTIVITIES.map(activity=>({source:activity.id,label:activity.name,item:{...activity.items[0],progress:{...progress,firstChoice:0,choice:0}}})),
   ];
+  const activityCounts=items.map(row=>({id:row.source,label:row.label,count:row.source==='grammar-practice'?12:1}));
   for(const role of ['student','teacher']){
     let writes=0,reads=0;
     const dom=setup((path,options)=>{
       if(options?.method&&options.method!=='GET')writes++;
       if(path==='/api/account')return reply({...settingsFixture,visibleActivities:[]});
-      if(path.startsWith('/api/activities/questions')){reads++;return reply({count:21,questions:path.includes('?after=')?items.slice(0,1):items,nextCursor:path.includes('?after=')?null:'grammar-practice:00000020'});}
+      if(path.startsWith('/api/activities/questions')){reads++;return reply({count:21,activityCounts,questions:path.includes('?after=')?items.slice(0,1):items,nextCursor:path.includes('?after=')?null:'grammar-practice:00000020'});}
     },origin+'/#activities',role);
     await flush();const w=dom.window,d=w.document;
     assert.equal(d.getElementById('all-questions-toolbar').hidden,false);
@@ -865,11 +866,14 @@ test('All Questions opens from Activities, includes every saved source and pages
     assert.equal(w.location.hash,'#activities/questions');assert.equal(d.getElementById('activity-title').textContent,'All Questions');
     assert.equal(d.querySelectorAll('.all-question-card').length,10);
     const root=d.getElementById('all-questions');assert.match(root.textContent,/Your answer: recruiter/);assert.match(root.textContent,/From an earlier assessment/);
+    assert.match(root.querySelector('.question-sources').textContent,/Grammar practice: 12/);assert.equal(root.querySelectorAll('.question-sources li').length,10);
+    assert.deepEqual([...root.querySelectorAll('.all-question-card>h3')].map(h=>h.textContent),items.map(row=>'Activity: '+row.label+(Number.isInteger(row.item.number)?' · Item '+row.item.number:'')));
     assert.doesNotMatch(root.textContent,/Teacher view:/);assert.equal(root.querySelectorAll('img[src=x]').length,0);
     assert.equal(root.querySelectorAll('.road-review details').length,0);
     assert([...root.querySelectorAll('.communication-option')].every(button=>button.disabled));
     root.querySelector('.grammar-reveal input').click();await flush();assert.equal(writes,0);
     [...root.querySelectorAll('button')].find(b=>b.textContent==='More questions').click();await flush();assert.equal(d.querySelectorAll('.all-question-card').length,1);
+    assert.match(root.querySelector('.question-sources').textContent,/Grammar practice: 12/);assert.equal(root.querySelectorAll('.question-sources li').length,10);
     [...root.querySelectorAll('button')].find(b=>b.textContent==='Previous questions').click();await flush();assert.equal(d.querySelectorAll('.all-question-card').length,10);
     assert.equal(writes,0);assert.equal(reads,3);
     root.querySelector('a[href="#activities"]').click();await flush();assert.equal(root.textContent,'');assert.equal(root.hidden,true);assert.equal(d.getElementById('all-questions-toolbar').hidden,false);w.close();

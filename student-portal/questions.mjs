@@ -51,8 +51,9 @@ export async function questionsOverview(storage, { after = null, statusOnly = fa
       if (selected.length > 21) selected.pop();
     }
   }
-  return Response.json(statusOnly ? { state: 'ready', count } : {
-    count, counts, questions: await Promise.all(selected.slice(0, 20).map(async row => row.source === 'english-road' ? { ...row, item: await roadQuestionItem(storage, row.item) } : row)), nextCursor: selected.length > 20 ? selected[19].id : null,
+  const activityCounts = sources.filter(source => counts[source.id] > 0).map(source => ({ id: source.id, label: source.label, count: counts[source.id] }));
+  return Response.json(statusOnly ? { state: 'ready', count, activityCounts } : {
+    count, counts, activityCounts, questions: await Promise.all(selected.slice(0, 20).map(async row => row.source === 'english-road' ? { ...row, item: await roadQuestionItem(storage, row.item) } : row)), nextCursor: selected.length > 20 ? selected[19].id : null,
   });
 }
 

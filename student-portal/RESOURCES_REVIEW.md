@@ -17,7 +17,7 @@ The 15 destinations in `public/index.html` were opened and checked for relevant 
 | YouGlish | Add; the live search and official About page explain word/phrase lookup in real video clips. No unlimited-free-use claim. |
 | News in Levels | Retain once; duplicate removed. October 15, 2026 stories and three versions were visible. Site levels are not labelled as CEFR levels. |
 | Breaking News English | Retain; October 15, 2026 lesson visible, with easier/harder versions and levels 0–6. Site levels are not labelled as CEFR levels. |
-| British Council A1–A2 grammar | Add; current free-resource route has explanations and topic exercises. One later automated fetch timed out; the initial content read succeeded. |
+| British Council A1–A2 grammar | Add; current free-resource route has explanations and topic exercises, also confirmed in a normal browser. |
 | Cambridge English activities | Add; live skill, time and A1–C2 filters, including Basic (A1–A2) exercises. |
 | ManyThings Sentences with Audio | Retain and narrow to the sentence collection. English audio and multilingual translations include Japanese. The homepage records February/May 2026 updates. |
 | Cambridge Write & Improve | Add the free learner page; official material confirms automatic feedback and use without registration, with a profile needed to save work there. |
@@ -33,6 +33,8 @@ The 15 destinations in `public/index.html` were opened and checked for relevant 
 - BBC and the old Phil grammar page could not be confirmed through the web reader during this review. They were omitted rather than labelled as broken. Other unselected spreadsheet links were not certified dead.
 
 ## Maintenance and boundaries
+
+An additional direct HTTP check returned 200 for ten destinations. British Council and Randall's reject the automated client with 403 responses, while their pages loaded through the web reader; normal-browser checks also confirmed the grammar and Easy listening collections. These automated refusals were not treated as dead links.
 
 This is an intentionally curated snapshot, not a live spreadsheet import or an automatic link-monitoring job. Recheck destination content, redirects and access requirements before changing the displayed review date. A site loading today does not guarantee future availability or every audio/video working in every region.
 

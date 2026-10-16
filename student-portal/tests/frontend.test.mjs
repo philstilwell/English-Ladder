@@ -58,7 +58,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student',omitC
  w.eval(readFileSync(new URL('../public/practice-position.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));
- w.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));if(!omitCommunication)w.eval(readFileSync(new URL('../public/communication-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
+ w.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));if(!omitCommunication)w.eval(readFileSync(new URL('../public/communication-practice.js',import.meta.url),'utf8'));w.eval(readFileSync(new URL('../public/all-questions.js',import.meta.url),'utf8'));w.eval(script);return dom;
 }
 test('deep links open the selected page and show only student-safe content',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#feedback/'+second.id);await flush();
@@ -840,6 +840,56 @@ test('Activities shows personal totals and direct Questions links, and refreshes
     assert.match(box('grammar-practice').textContent,/12 of 900 items finished/);
     assert.equal(writes,0);dom.window.close();
   }
+});
+test('All Questions opens from Activities, includes every saved source and pages without saving choices',async()=>{
+  const progress={finished:true,question:true,revision:1}, topic=studyFixture[0];
+  const items=[
+    {source:'grammar-practice',label:'Grammar practice',item:{...grammarBank.items[0],progress}},
+    {source:'business-terms',label:'Business terms',item:{...termsBank.items[0],progress}},
+    {source:'vocabulary-practice',label:'Vocabulary practice',item:{...vocabularyBank.items[0],studentAnswer:'recruiter',studentSentence:'<img src=x onerror=alert(1)>',progress}},
+    {source:'study-practice',label:'Study on your own',item:{...topic,current:false}},
+    {source:'english-road',label:'English Road Practice',item:{questionIndex:0,band:'A1',topic:'Articles',startedAt:'2026-10-15T10:00:00Z',exercise:{setup:'Choose an article.',prompt:'I see ___ apple.',options:['an','a','the','some']},answer:null,progress}},
+    ...COMMUNICATION_ACTIVITIES.map(activity=>({source:activity.id,label:activity.name,item:{...activity.items[0],progress:{...progress,firstChoice:0,choice:0}}})),
+  ];
+  for(const role of ['student','teacher']){
+    let writes=0,reads=0;
+    const dom=setup((path,options)=>{
+      if(options?.method&&options.method!=='GET')writes++;
+      if(path==='/api/account')return reply({...settingsFixture,visibleActivities:[]});
+      if(path.startsWith('/api/activities/questions')){reads++;return reply({count:21,questions:path.includes('?after=')?items.slice(0,1):items,nextCursor:path.includes('?after=')?null:'grammar-practice:00000020'});}
+    },origin+'/#activities',role);
+    await flush();const w=dom.window,d=w.document;
+    assert.equal(d.getElementById('all-questions-toolbar').hidden,false);
+    assert.equal(d.getElementById('all-questions-link').textContent,'All Questions');
+    d.getElementById('all-questions-link').click();await flush();
+    assert.equal(w.location.hash,'#activities/questions');assert.equal(d.getElementById('activity-title').textContent,'All Questions');
+    assert.equal(d.querySelectorAll('.all-question-card').length,10);
+    const root=d.getElementById('all-questions');assert.match(root.textContent,/Your answer: recruiter/);assert.match(root.textContent,/From an earlier assessment/);
+    assert.doesNotMatch(root.textContent,/Teacher view:/);assert.equal(root.querySelectorAll('img[src=x]').length,0);
+    assert.equal(root.querySelectorAll('.road-review details').length,0);
+    assert([...root.querySelectorAll('.communication-option')].every(button=>button.disabled));
+    root.querySelector('.grammar-reveal input').click();await flush();assert.equal(writes,0);
+    [...root.querySelectorAll('button')].find(b=>b.textContent==='More questions').click();await flush();assert.equal(d.querySelectorAll('.all-question-card').length,1);
+    [...root.querySelectorAll('button')].find(b=>b.textContent==='Previous questions').click();await flush();assert.equal(d.querySelectorAll('.all-question-card').length,10);
+    assert.equal(writes,0);assert.equal(reads,3);
+    root.querySelector('a[href="#activities"]').click();await flush();assert.equal(root.textContent,'');assert.equal(root.hidden,true);assert.equal(d.getElementById('all-questions-toolbar').hidden,false);w.close();
+  }
+});
+
+test('All Questions handles empty/error states and clears loaded or delayed content on leaving, page hide, logout and expiry',async()=>{
+  for(const action of ['navigate','pagehide','logout','expiry']){
+    let release;
+    const dom=setup(path=>path==='/api/activities/questions'?new Promise(resolve=>{release=resolve;}):null,origin+'/#activities/questions');
+    await flush();const w=dom.window,d=w.document;
+    if(action==='navigate')w.location.hash='#activities';else if(action==='pagehide')w.dispatchEvent(new w.Event('pagehide'));else if(action==='logout')d.getElementById('logout').click();
+    await flush();release(action==='expiry'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):reply({count:1,questions:[{source:'grammar-practice',label:'Grammar practice',item:grammarBank.items[0]}],nextCursor:null}));await flush();
+    assert.equal(d.getElementById('all-questions').textContent,'');assert.equal(d.getElementById('all-questions-toolbar').hidden,action!=='navigate');w.close();
+  }
+  let failure=true;
+  const dom=setup(path=>path==='/api/activities/questions'?failure?new Response(JSON.stringify({error:'Unavailable'}),{status:503}):reply({count:0,questions:[],nextCursor:null}):null,origin+'/#activities/questions');
+  await flush();const root=dom.window.document.getElementById('all-questions');assert.match(root.textContent,/Unavailable/);assert.doesNotMatch(root.textContent,/No saved questions/);
+  failure=false;root.querySelector('button').click();await flush();assert.match(root.textContent,/No saved questions yet/);
+  dom.window.document.getElementById('logout').click();await flush();assert.equal(root.textContent,'');dom.window.close();
 });
 test('Activities progress distinguishes failure from zero and ignores reads after leaving or sign-out',async()=>{
   let mode='failure',resolveRead;

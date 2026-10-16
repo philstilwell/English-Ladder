@@ -12,9 +12,9 @@
     phrases.append(el('em', item.phrases)); forms.append(el('em', item.forms)); card.append(examples, phrases, forms);
     return card;
   }
-  function review(item) {
+  function review(item, teacherView = true) {
     const card = teaching(item);
-    card.append(el('p', 'Quick practice: “' + item.prompt + '”'), el('p', 'Student answer: ' + (item.studentAnswer || 'Not answered')), el('p', 'Answer guide: ' + item.answer), el('p', item.task), el('p', 'Student sentence: ' + (item.studentSentence || 'Not written')));
+    card.append(el('p', 'Quick practice: “' + item.prompt + '”'), el('p', (teacherView ? 'Student answer: ' : 'Your answer: ') + (item.studentAnswer || 'Not answered')), el('p', 'Answer guide: ' + item.answer), el('p', item.task), el('p', (teacherView ? 'Student sentence: ' : 'Your sentence: ') + (item.studentSentence || 'Not written')));
     return card;
   }
   function batchPrompt(items, drafts) {

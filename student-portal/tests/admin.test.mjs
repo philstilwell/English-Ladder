@@ -1169,9 +1169,11 @@ test('administrator resolves every Questions source without changing finished st
  }
  const active=(await list(e,cookie)).find(s=>s.key===record.key);assert.equal(active.status,'paused');
  await adminCall(e,'/api/admin/students/'+record.key,write(cookie,{...active,status:'active',lastName:'Testperson',zoomNames:['AlexZoom']},'PUT'));
+ assert.equal((await(await call(e,'/api/activities/questions',{headers:{Cookie:student.cookie}})).json()).count,0);
  const added=await call(e,'/api/grammar-practice/state',{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({number:1,field:'question',value:true,revision:5})});assert.equal(added.status,200);
  assert.equal((await adminCall(e,root+'/resolve',write(cookie,{id:choices[0].id,revision:4}))).status,409);
  assert.equal((await store.storage.get('grammar:item:1')).question,true);
+ const studentQuestions=await(await call(e,'/api/activities/questions',{headers:{Cookie:student.cookie}})).json();assert.equal(studentQuestions.count,1);assert.equal(studentQuestions.questions[0].item.progress.finished,true);
 });
 
 test('Questions resolution rejects other hosts, forged requests, stale revisions and deleted accounts', async()=>{

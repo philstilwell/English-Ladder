@@ -29,13 +29,13 @@
     }
     return {card,actions,buttons,showChoice};
   }
-  function review(item){
-    const view=exercise(item);view.buttons.forEach((button,index)=>button.addEventListener('click',()=>view.showChoice(index)));
+  function review(item, teacherView=true){
+    const view=exercise(item);view.buttons.forEach((button,index)=>{button.disabled=!teacherView;if(teacherView)button.addEventListener('click',()=>view.showChoice(index));});
     view.card.classList.toggle('is-finished',Boolean(item.progress?.finished));
     const saved=el('div','','communication-saved');
     if(Number.isInteger(item.progress?.firstChoice))saved.append(el('p','First saved choice: “'+item.options[item.progress.firstChoice]+'” · '+(item.progress.firstCorrect?'Correct':'Needs practice')));
     if(Number.isInteger(item.progress?.choice))saved.append(el('p','Latest saved choice: “'+item.options[item.progress.choice]+'”'));
-    saved.append(el('p','Teacher view: trying the choices here does not change the student’s saved work.','field-hint'));view.card.prepend(saved);
+    if(teacherView)saved.append(el('p','Teacher view: trying the choices here does not change the student’s saved work.','field-hint'));view.card.prepend(saved);
     return view.card;
   }
   window.CommunicationPractice={ids,validItems,review,create({root,api,expired}){

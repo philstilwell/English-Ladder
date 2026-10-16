@@ -135,6 +135,7 @@ export class FeedbackStore {
     }
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'admin/activity-summary' && request.method === 'GET') return this.activeTransaction(async txn => json(await activitySummary(txn)));
+    if (id === 'activities/questions' && request.method === 'GET') return this.activeTransaction(txn => questionsOverview(txn, { after: url.searchParams.get('after') }));
     if (id === 'activities/progress' && request.method === 'GET') return this.activeTransaction(async txn => json(await studentActivityProgress(txn)));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
     if (id === 'admin/cefr' && request.method === 'GET') return this.activeTransaction(async txn => {

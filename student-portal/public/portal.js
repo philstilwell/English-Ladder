@@ -18,6 +18,8 @@
   const questionActivities = [...(window.CommunicationPractice?.ids || []), 'english-road', 'grammar-practice', 'business-terms', 'vocabulary-practice'];
   const activityRoute = (id, extra) => location.hash.slice(1).split('/').length <= 3 && (extra === undefined || extra === 'questions' && questionActivities.includes(id));
   const activityOverview = () => authenticated && ['#activities', '#activities/'].includes(location.hash);
+  const allQuestionsRoute = () => authenticated && location.hash === '#activities/questions';
+  const allQuestions = window.AllQuestions.create({ root: $('all-questions'), api, expired });
   let resourceChoices = null, resourcesLoading = false, resourcesRevision = 0, resourcesError = false;
   const roadPractice = window.EnglishRoadPractice?.create({ root: $('road-practice'), api, expired }) || {
     clear() { $('road-practice').replaceChildren(); $('road-practice').hidden = true; },
@@ -147,6 +149,7 @@
     activitiesDropdown.list.replaceChildren(); $('activity-title').textContent = 'Activities'; $('activity-message').textContent = '';
     clearActivityCatalog();
     clearActivityProgress();
+    allQuestions.clear();
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
     quizState = null; quizRevision++;
@@ -265,6 +268,7 @@
     if (selected !== 'activities' || requested !== 'vocabulary-practice' || !activityRoute(requested, extra)) vocabularyPractice.clear(true);
     if (selected !== 'activities' || !communicationIds.includes(requested) || !activityRoute(requested, extra)) communicationPractice.clear();
     if (!activityOverview()) clearActivityProgress();
+    if (!allQuestionsRoute()) allQuestions.clear();
     if (selected !== 'account') clearSettings();
     if (selected !== 'activities') clearActivityCatalog();
     if (selected !== 'resources') clearResources();
@@ -957,6 +961,7 @@
     $('retry-activities').hidden = true;
     $('activity-title').parentElement.classList.remove('is-overview');
     $('activity-progress-toolbar').hidden = true;
+    $('all-questions-toolbar').hidden = true;
   }
   function clearActivityProgress() {
     activityProgressRevision++; activityProgress = null; activityProgressLoading = false; activityProgressError = false;
@@ -1022,6 +1027,13 @@
     if (activity?.id === 'business-terms') businessTerms.open(teacherMode, extra === 'questions'); else businessTerms.clear();
     if (activity?.id === 'vocabulary-practice') vocabularyPractice.open(teacherMode, extra === 'questions'); else vocabularyPractice.clear(true);
     if (activity && communicationIds.includes(activity.id)) communicationPractice.open(activity.id, teacherMode, extra === 'questions'); else communicationPractice.clear();
+    if (allQuestionsRoute()) {
+      $('activity-title').textContent = 'All Questions';
+      $('activity-message').textContent = 'Your saved questions from every activity and Study on your own. Review them here. Open an activity to change your saved choices.';
+      document.title = 'All Questions · English Ladder'; allQuestions.open(); return;
+    }
+    allQuestions.clear();
+    $('all-questions-toolbar').hidden = !activityOverview();
     $('activity-title').textContent = activity ? activity.name : 'Activities';
     $('activity-message').textContent = activity ? activity.description : !activityChoices
       ? (activitiesError ? 'Your activities could not be loaded. Please try again.' : 'Loading your activities…')
@@ -1131,7 +1143,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); clearResources(); clearActivityCatalog(); clearActivityProgress(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); vocabularyPractice.clear(); communicationPractice.clear(); closeDropdowns(); });
+  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); clearResources(); clearActivityCatalog(); clearActivityProgress(); allQuestions.clear(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); vocabularyPractice.clear(); communicationPractice.clear(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();

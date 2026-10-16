@@ -39,8 +39,22 @@ export function prepareAnonymousTranscript(note, transcript, instructorNames = [
 export function applyTranscriptRedactions(segments, output) {
   if (!Array.isArray(output?.redactions) || output.redactions.length > 2000) fail('transcript_redaction_format');
   const bySegment = new Map();
-  for (const r of output.redactions) {
-    if (!Number.isInteger(r?.segmentIndex) || !segments[r.segmentIndex]) fail('transcript_redaction_index');
+  const words = value => value.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  let normalizedSegments;
+  const removals = output.redactions.flatMap(r => {
+    const index = typeof r?.segmentIndex === 'string' && /^\d{1,6}$/.test(r.segmentIndex) ? Number(r.segmentIndex) : r?.segmentIndex;
+    if (Number.isInteger(index) && segments[index]) return [{ ...r, segmentIndex: index }];
+    // Resolve an incorrect turn number only from words actually present in the
+    // source. Punctuation/case differences are allowed for locating a turn, never
+    // for rewriting it. Redact every matching whole turn conservatively.
+    const quote = typeof r?.text === 'string' && r.text.length <= 10000 ? words(r.text) : '';
+    if (!quote) fail('transcript_redaction_index');
+    normalizedSegments ||= segments.map(s => ' ' + words(s.text) + ' ');
+    const matches = segments.filter((s, i) => normalizedSegments[i].includes(' ' + quote + ' '));
+    if (!matches.length) fail('transcript_redaction_index');
+    return matches.map(s => ({ segmentIndex: s.index, text: s.text, category: 'PRIVATE_DETAIL', entity: 1 }));
+  });
+  for (const r of removals) {
     const source = segments[r.segmentIndex].text, intervals = bySegment.get(r.segmentIndex) || [];
     const removeTurn = () => { intervals.push({ start: 0, end: source.length, marker: '[PRIVATE_DETAIL]' }); bySegment.set(r.segmentIndex, intervals); };
     // A model can identify a sensitive turn but misquote its punctuation or words.

@@ -172,3 +172,15 @@ test('a misquoted removal hides the whole identified turn and still cannot bypas
     assert.equal(calls,2);
   }
 });
+
+
+test('numeric turn strings and wrong turn numbers resolve only against real transcript text',()=>{
+  const segments=anonymous();segments[2].text='I met Renée in Riverton.';segments[7].text='I met Renée in Riverton, yesterday.';
+  const exact=applyTranscriptRedactions(segments,{redactions:[{segmentIndex:'2',text:'Renée',category:'PERSON',entity:1}]});
+  assert.equal(exact[2].text,'I met [PERSON_1] in Riverton.');
+  const resolved=applyTranscriptRedactions(segments,{redactions:[{segmentIndex:99999,text:'I met Renée in Riverton!',category:'PERSON',entity:1}]});
+  assert.equal(resolved[2].text,'[PRIVATE_DETAIL_1]');assert.equal(resolved[7].text,'[PRIVATE_DETAIL_1]');
+  assert.deepEqual(resolved[0],segments[0]);assert.equal(resolved.length,segments.length);
+  assert.throws(()=>applyTranscriptRedactions(segments,{redactions:[{segmentIndex:99999,text:'An invented quote',category:'PERSON',entity:1}]}),/transcript_redaction_index/);
+  assert.throws(()=>applyTranscriptRedactions(segments,{redactions:[{segmentIndex:-1,text:'!!!',category:'PERSON',entity:1}]}),/transcript_redaction_index/);
+});

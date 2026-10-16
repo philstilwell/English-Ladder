@@ -1,3 +1,4 @@
+import vocabularyBank from './vocabulary-bank.json' with { type: 'json' };
 import grammarBank from './grammar-bank.json' with { type: 'json' };
 import termsBank from './business-terms-bank.json' with { type: 'json' };
 
@@ -16,6 +17,7 @@ const latest = (...values) => values.filter(value => typeof value === 'string' &
 const banks = [
   { id: 'grammar-practice', prefix: 'grammar', numbers: new Set(grammarBank.items.map(item => item.number)) },
   { id: 'business-terms', prefix: 'terms', numbers: new Set(termsBank.items.map(item => item.number)) },
+  { id: 'vocabulary-practice', prefix: 'vocabulary', numbers: new Set(vocabularyBank.items.map(item => item.number)) },
 ];
 
 export async function activitySummary(storage) {

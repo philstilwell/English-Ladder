@@ -5,6 +5,7 @@ import { nightlyDate } from './server-quiz-automation.mjs';
 export { QuizAutomation } from './server-quiz-automation.mjs';
 import { directoryRequest } from './student-directory.mjs';
 import { matchesStudentPassword } from './student-password.mjs';
+import vocabularyBank from './vocabulary-bank.json' with { type: 'json' };
 import grammarBank from './grammar-bank.json' with { type: 'json' };
 import businessTermsBank from './business-terms-bank.json' with { type: 'json' };
 export { StudentDirectory } from './student-directory.mjs';
@@ -12,7 +13,7 @@ export { StudentDirectory } from './student-directory.mjs';
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
-const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
+const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/vocabulary-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
 const SECURITY_HEADERS = {
   'Cache-Control': 'no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -164,7 +165,9 @@ async function handleAdmin(request, env) {
     const session = await readSession(request, env, account);
     if (!session || session.role !== 'teacher') return json({ error: 'Please sign in with your teacher password.' }, 401);
     if (url.pathname === '/api/session' && request.method === 'GET') return json({ role: 'teacher', administrator: true });
-    if (['/api/admin/quiz-status', '/api/admin/cefr-status'].includes(url.pathname) && request.method === 'GET') {
+    if (['/api/admin/quiz-status', '/api/admin/cefr-status', '/api/admin/questions-status'].includes(url.pathname) && request.method === 'GET') {
+      if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
+      const isQuestions = url.pathname.endsWith('/questions-status');
       const isCefr = url.pathname.endsWith('/cefr-status');
       const after = url.searchParams.get('after');
       if (after && !/^[0-9a-f-]{36}$/.test(after)) return json({ error: 'Invalid page.' }, 400);
@@ -176,10 +179,10 @@ async function handleAdmin(request, env) {
       const page = records.slice(0, 20), statuses = {};
       for (let offset = 0; offset < page.length; offset += 4) {
         await Promise.all(page.slice(offset, offset + 4).map(async student => {
-          if (student.deletionPending || !student.activated || !student.studentId) { statuses[student.key] = { state: isCefr ? 'pending' : 'no_quiz' }; return; }
+          if (student.deletionPending || !student.activated || !student.studentId) { statuses[student.key] = isQuestions ? { state: 'ready', count: 0 } : { state: isCefr ? 'pending' : 'no_quiz' }; return; }
           try {
             if (!env.FEEDBACK_STORE) throw new Error('Store unavailable');
-            const response = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/' + (isCefr ? 'cefr-status' : 'quiz-status')));
+            const response = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/' + (isQuestions ? 'questions-status' : isCefr ? 'cefr-status' : 'quiz-status')));
             if (!response.ok) throw new Error('Status unavailable');
             statuses[student.key] = await response.json();
           } catch { statuses[student.key] = { state: 'unavailable' }; }
@@ -187,7 +190,7 @@ async function handleAdmin(request, env) {
       }
       return json({ statuses, nextCursor: records.length > 20 ? page.at(-1).key : null });
     }
-    const selfCheckAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/(business-terms|grammar-practice|study-practice|activity-summary)$/.exec(url.pathname);
+    const selfCheckAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/(business-terms|grammar-practice|study-practice|activity-summary|questions)$/.exec(url.pathname);
     if (selfCheckAccount && request.method === 'GET') {
       if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
       const response = await directoryRequest(env, '/students');
@@ -195,7 +198,7 @@ async function handleAdmin(request, env) {
       const student = (await response.json()).students.find(s => s.key === selfCheckAccount[1]);
       if (!student || student.deletionPending || !student.activated || !student.studentId) return json({ error: 'Student not found.' }, 404);
       if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable.' }, 503);
-      const internalPath = selfCheckAccount[2] === 'activity-summary' ? 'admin/activity-summary' : (selfCheckAccount[2] === 'study-practice' ? 'study' : selfCheckAccount[2] === 'grammar-practice' ? 'grammar' : 'terms') + '/questions';
+      const internalPath = ['activity-summary', 'questions'].includes(selfCheckAccount[2]) ? 'admin/' + selfCheckAccount[2] : (selfCheckAccount[2] === 'study-practice' ? 'study' : selfCheckAccount[2] === 'grammar-practice' ? 'grammar' : 'terms') + '/questions';
       try {
         const internalUrl = new URL('https://feedback.internal/' + internalPath);
         if (url.searchParams.has('after')) internalUrl.searchParams.set('after', url.searchParams.get('after'));
@@ -247,7 +250,7 @@ async function handleAdmin(request, env) {
     return directoryRequest(env, path, body, request.method);
   }
   if (!['GET', 'HEAD'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
-  const assets = new Set(['/', '/admin.html', '/admin.js', '/admin.css', '/portal.css', '/practice-prompt.js', '/study-practice.js', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/business-terms.js', '/grammar-practice.js', '/ladder-mark.png', '/favicon.png', '/robots.txt']);
+  const assets = new Set(['/', '/admin.html', '/admin.js', '/admin.css', '/portal.css', '/practice-prompt.js', '/study-practice.js', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/business-terms.js', '/vocabulary-practice.js', '/grammar-practice.js', '/ladder-mark.png', '/favicon.png', '/robots.txt']);
   if (!assets.has(url.pathname)) return json({ error: 'Page not found.' }, 404);
   if (url.pathname === '/robots.txt') return new Response('User-agent: *\nDisallow: /\n');
   if (url.pathname === '/') url.pathname = '/admin.html';
@@ -351,15 +354,15 @@ async function handle(request, env) {
     return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/learning-import', { method: 'POST', body: JSON.stringify(body) }));
   }
 
-  if (['/api/grammar-practice', '/api/business-terms'].includes(url.pathname)) {
+  if (['/api/grammar-practice', '/api/business-terms', '/api/vocabulary-practice'].includes(url.pathname)) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);
     if (request.method !== 'GET') return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET' });
     // Shared exercise content only. No learner answers, attempts, or progress writes.
-    return json({ items: url.pathname === '/api/business-terms' ? businessTermsBank.items : grammarBank.items });
+    return json({ items: url.pathname === '/api/vocabulary-practice' ? vocabularyBank.items : url.pathname === '/api/business-terms' ? businessTermsBank.items : grammarBank.items });
   }
 
-  if (['/api/business-terms/state', '/api/grammar-practice/state', '/api/study/state', '/api/study/questions'].includes(url.pathname)) {
+  if (['/api/vocabulary-practice/state', '/api/business-terms/state', '/api/grammar-practice/state', '/api/study/state', '/api/study/questions'].includes(url.pathname)) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);
     if (url.pathname === '/api/study/questions' && request.method !== 'GET') return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET' });
@@ -370,11 +373,11 @@ async function handle(request, env) {
       if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload the page and try again.' }, 403);
       const limit = await (env.PRACTICE_LIMITER || env.ACCOUNT_LIMITER).limit({ key: account.id });
       if (!limit.success) return json({ error: 'Please wait a minute, then try saving again.' }, 429, { 'Retry-After': '60' });
-      body = await smallJson(request, 1024);
+      body = await smallJson(request, url.pathname === '/api/vocabulary-practice/state' ? 65536 : 1024);
       if (!body) return json({ error: 'Please check your choice.' }, 400);
     } else if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Please open this from your student page.' }, 403);
     if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable. Please try again.' }, 503);
-    const internalUrl = new URL('https://feedback.internal/' + (url.pathname.startsWith('/api/study/') ? url.pathname.slice(5) : (url.pathname === '/api/grammar-practice/state' ? 'grammar' : 'terms') + '/state'));
+    const internalUrl = new URL('https://feedback.internal/' + (url.pathname.startsWith('/api/study/') ? url.pathname.slice(5) : (url.pathname === '/api/vocabulary-practice/state' ? 'vocabulary' : url.pathname === '/api/grammar-practice/state' ? 'grammar' : 'terms') + '/state'));
     if (url.searchParams.has('after')) internalUrl.searchParams.set('after', url.searchParams.get('after'));
     return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request(internalUrl, {
       method: request.method, ...(body ? { body: JSON.stringify(body) } : {}),

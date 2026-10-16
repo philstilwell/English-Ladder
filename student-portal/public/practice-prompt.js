@@ -40,7 +40,7 @@
         link.append(image); sites.append(link);
       }
       controls.append(button, sites);
-      let copying = false;
+      let copying = false, revision = 0;
       function setCopied(copied) {
         button.textContent = copied ? 'AI prompt copied' : 'Copy AI prompt';
         button.setAttribute('aria-label', button.textContent + label); button.classList.toggle('is-copied', copied);
@@ -48,22 +48,25 @@
       setCopied(false);
       button.addEventListener('click', async () => {
         if (copying || !button.isConnected) return;
+        const current = revision;
         copying = true; button.setAttribute('aria-busy', 'true'); setCopied(false); status.hidden = true;
         try {
+          const text = typeof prompt === 'function' ? prompt() : prompt;
+          if (typeof text !== 'string' || !text.trim()) throw new Error('Empty prompt');
           if (navigator.clipboard?.writeText) {
-            try { await navigator.clipboard.writeText(prompt); }
-            catch (error) { if (!button.isConnected) return; copyFallback(prompt); }
-          } else copyFallback(prompt);
-          if (!button.isConnected) return;
+            try { await navigator.clipboard.writeText(text); }
+            catch (error) { if (!button.isConnected || current !== revision) return; copyFallback(text); }
+          } else copyFallback(text);
+          if (!button.isConnected || current !== revision) return;
           setCopied(true); status.textContent = 'Choose an AI chat. Paste the prompt there.'; status.hidden = false;
         } catch {
-          if (!button.isConnected) return;
+          if (!button.isConnected || current !== revision) return;
           status.textContent = 'The prompt could not be copied. Please try again.'; status.hidden = false;
         } finally {
           copying = false; button.removeAttribute('aria-busy');
         }
       });
-      return { button, status, controls };
+      return { button, status, controls, reset() { revision++; setCopied(false); status.hidden = true; status.textContent = ''; } };
     },
   };
 })();

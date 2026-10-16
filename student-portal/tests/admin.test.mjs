@@ -1310,3 +1310,30 @@ test('Undo prevents duplicates and clears notices or late responses on navigatio
   release(exit==='expiry'?Response.json({error:'Sign in again.'},{status:401}):Response.json({restored:true,id:row.id}));await flush();assert.equal(d.getElementById('questions-undo').textContent,'');assert.equal(d.getElementById('all-questions-content').textContent,'');if(exit==='expiry')assert.equal(d.getElementById('login-view').hidden,false);w.close();
  }
 });
+
+
+test('manual lesson retry requires administrator authentication, same origin and a bounded job identifier', async () => {
+  const {e}=environment(),cookie=await access(e),id='a'.repeat(64);let calls=0;
+  e.QUIZ_AUTOMATION={idFromName:x=>x,get:()=>({fetch:async request=>{calls++;assert.equal(new URL(request.url).pathname,'/retry');assert.deepEqual(await request.json(),{id});return Response.json({ok:true,status:'published'});}})};
+  const path='/api/admin/automation/retry';
+  assert.equal((await adminCall(e,path,write('',{id}))).status,401);
+  assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,405);
+  for(const origin of [undefined,'https://evil.test']){const options=write(cookie,{id});if(origin)options.headers.Origin=origin;else delete options.headers.Origin;assert.equal((await adminCall(e,path,options)).status,403);}
+  for(const body of [{id:'bad'},{id,studentId:'ab26'},{}])assert.equal((await adminCall(e,path,write(cookie,body))).status,400);
+  const student=(await login(e)).cookie;
+  assert.equal((await call(e,path,write(student,{id}))).status,405);
+  assert.equal(calls,0);assert.equal((await adminCall(e,path,write(cookie,{id}))).status,200);assert.equal(calls,1);
+});
+
+test('administrator retry identifies one failed lesson, prevents double clicks and clears late replies on navigation',async()=>{
+  const id='a'.repeat(64);let requests=0,finish;
+  const dom=browser((path,opts)=>{
+    if(path==='/api/admin/automation')return Response.json({enabled:true,connected:true,problems:[{id,studentId:fixture.studentId,startedAt:'2026-10-15T20:00:00Z',error:'invalid_model_response'}]});
+    if(path==='/api/admin/automation/retry'){requests++;assert.deepEqual(JSON.parse(opts.body),{id});return new Promise(resolve=>{finish=resolve;});}
+  });await flush();const d=dom.window.document;
+  assert.match(d.getElementById('automation-problem-items').textContent,/Morgan.*Oct 15.*AI reply could not be read/s);
+  const button=d.querySelector('#automation-problem-items button');button.click();button.click();await flush();assert.equal(requests,1);assert.equal(button.disabled,true);
+  d.getElementById('technical-nav').click();await flush();finish(Response.json({ok:true,status:'published'}));await flush();
+  assert.equal(d.getElementById('automation-problems').hidden,true);assert.equal(d.getElementById('automation-retry-status').textContent,'');
+  dom.window.close();
+});

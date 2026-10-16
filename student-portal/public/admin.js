@@ -12,6 +12,7 @@
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let activityTools = [], resourceTools = [];
   let questionsRequest = 0, questionStatuses = {}, combinedRequest = 0;
+  let automationRequest = 0, retryingUpdate = false;
   let resolvedQuestions = [], questionActionPending = false;
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
@@ -23,6 +24,62 @@
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
   const displayTime = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(value)) + ' Eastern' : '';
   const element = (tag, text, className) => { const node = document.createElement(tag); if (text != null) node.textContent = text; if (className) node.className = className; return node; };
+  const updateError = code => ({
+    transcript_privacy_failed: 'The transcript privacy check did not pass.',
+    transcript_redaction_invalid: 'The AI’s proposed removals did not match the transcript. Nothing was published.',
+    transcript_privacy_rejected: 'The privacy reviewer found information that still needs removal. Nothing was published.',
+    invalid_model_response: 'The AI reply could not be read. No update was published.',
+    student_not_matched: 'No active student matches the Zoom speaker name.',
+    ambiguous_student: 'The Zoom speaker name matches more than one student.',
+    transcript_unusable: 'Zoom has not supplied a usable full transcript.',
+    transcript_too_large: 'The full transcript exceeds the processing limit.',
+    meeting_pending: 'The meeting or transcript is not ready yet.',
+    meeting_reference_missing: 'The note could not be linked to a completed meeting.',
+    content_review_failed: 'The lesson content check did not pass.',
+    invalid_evidence: 'The proposed lesson evidence could not be verified.',
+    daily_limit: 'The daily AI attempt limit has been reached.',
+    monthly_limit: 'The monthly AI attempt limit has been reached.',
+    zoom_reconnect: 'Reconnect Zoom from a student’s Quiz results page.',
+    publish_failed: 'The lesson could not be saved.',
+  }[code] || 'The update could not finish. Existing feedback was kept.');
+  function clearAutomation() {
+    automationRequest++; retryingUpdate = false;
+    $('automation-problem-items').replaceChildren(); $('automation-problems').hidden = true; $('automation-retry-status').textContent = '';
+  }
+  async function refreshAutomation(notice = '') {
+    const version = epoch, request = ++automationRequest;
+    const valid = () => signedIn && epoch === version && request === automationRequest && ['','#students'].includes(location.hash);
+    try {
+      const status = await api('/api/admin/automation');
+      if (!valid()) return;
+      $('schedule-state').textContent = status.retentionError ? 'Transcript cleanup needs attention. Older cached copies could not be removed.' : status.cefrNeedsAttention ? 'CEFR review needs attention. Existing estimates have been kept.' : status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
+      $('last-check').textContent = status.lastCheck ? 'Last check: ' + displayTime(status.lastCheck) + (status.needsAttention ? ' · ' + status.needsAttention + ' sessions need attention' : '') : 'The first nightly check is still ahead.';
+      $('automation-problem-items').replaceChildren(); $('automation-retry-status').textContent = notice;
+      $('automation-problems').hidden = !status.problems?.length && !notice;
+      for (const problem of status.problems || []) {
+        const student = students.find(s => s.studentId === problem.studentId), row = element('article');
+        row.append(element('h3', (student?.firstName || 'Unmatched session') + (problem.startedAt ? ' · ' + displayTime(problem.startedAt) : '')),
+          element('p', updateError(problem.error), 'field-note'));
+        if (student?.status === 'active' && /^[a-f0-9]{64}$/.test(problem.id)) {
+          const button = element('button', 'Retry update for ' + student.firstName, 'secondary-button'); button.type = 'button'; button.disabled = retryingUpdate;
+          button.addEventListener('click', async () => {
+            if (!valid() || retryingUpdate) return;
+            retryingUpdate = true;
+            for (const control of $('automation-problem-items').querySelectorAll('button')) control.disabled = true;
+            $('automation-retry-status').textContent = 'Updating ' + student.firstName + '’s lesson. This may take a few minutes. Keep this page open.';
+            try {
+              const result = await api('/api/admin/automation/retry', { method: 'POST', body: JSON.stringify({ id: problem.id }) });
+              if (valid()) { retryingUpdate = false; await refreshAutomation(result.ok ? student.firstName + '’s lesson update is published.' : updateError(result.errorCode)); }
+            } catch (error) {
+              if (valid()) { retryingUpdate = false; await refreshAutomation(error.message); }
+            }
+          });
+          row.append(button);
+        }
+        $('automation-problem-items').append(row);
+      }
+    } catch (error) { if (valid()) $('schedule-state').textContent = 'Server status is temporarily unavailable.'; }
+  }
   function message(text, error = false) { $('message').textContent = text; $('message').hidden = !text; $('message').classList.toggle('error', error); }
   const cefrLabel = record => record?.state === 'estimated' ? (record.lower === record.upper ? record.lower : record.lower + '–' + record.upper) :
     { pending: 'Not assessed yet', insufficient: 'More evidence needed', unavailable: 'Unable to check', loading: 'Checking…' }[record?.state] || 'Not assessed yet';
@@ -404,6 +461,7 @@
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     clearRoad(); clearQuestions(); clearActivityOverview();
+    clearAutomation();
     clearLoginDetails();
     clearCefr(); cefrRequest++; cefrStatuses = {};
     closeDelete();
@@ -495,12 +553,6 @@
     void refreshQuizStatuses();
     void refreshCefrStatuses();
     void refreshQuestionStatuses();
-    try {
-      const status = await api('/api/admin/automation');
-      if (!signedIn || version !== epoch) return;
-      $('schedule-state').textContent = status.retentionError ? 'Transcript cleanup needs attention. Older cached copies could not be removed.' : status.cefrNeedsAttention ? 'CEFR review needs attention. Existing estimates have been kept.' : status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
-      $('last-check').textContent = status.lastCheck ? 'Last check: ' + displayTime(status.lastCheck) + (status.needsAttention ? ' · ' + status.needsAttention + ' sessions need attention' : '') : 'The first nightly check is still ahead.';
-    } catch (error) { if (signedIn && version === epoch) $('schedule-state').textContent = 'Server status is temporarily unavailable.'; }
   }
   async function refreshQuizStatuses() {
     const version = epoch, request = ++quizRequest;
@@ -612,6 +664,7 @@
   function route() {
     if (!signedIn) return;
     clearRoad(); clearQuestions(); clearActivityOverview();
+    clearAutomation();
     closeDelete();
     clearLoginDetails(); current = null;
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
@@ -634,7 +687,7 @@
       $('list-nav').setAttribute('aria-current','page');
     } else if (hash === '#import') { $('import-view').hidden = false; $('import-nav').setAttribute('aria-current','page'); }
     else if (hash === '#technical-notes') { $('technical-view').hidden = false; $('technical-nav').setAttribute('aria-current','page'); }
-    else { $('list-view').hidden = false; $('list-nav').setAttribute('aria-current','page'); $('paused-students').open = $('filter').value === 'paused' || Boolean($('search').value.trim()); showList(); }
+    else { $('list-view').hidden = false; $('list-nav').setAttribute('aria-current','page'); $('paused-students').open = $('filter').value === 'paused' || Boolean($('search').value.trim()); showList(); void refreshAutomation(); }
   }
   function closeDelete() {
     deleting = null; deleteBusy = false;

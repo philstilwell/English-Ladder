@@ -248,7 +248,16 @@ async function handleAdmin(request, env) {
         return json(await result.json());
       } catch { return json({ error: 'The CEFR estimate is temporarily unavailable. Please try again.' }, 503); }
     }
+    if (url.pathname === '/api/admin/automation/retry') {
+      if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405, { Allow: 'POST' });
+      if (request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
+      const input = await smallJson(request, 1024);
+      if (!input || Object.keys(input).length !== 1 || typeof input.id !== 'string' || !/^[a-f0-9]{64}$/.test(input.id)) return json({ error: 'Choose an update from the list.' }, 400);
+      if (!env.QUIZ_AUTOMATION) return json({ error: 'Automatic updates are unavailable.' }, 503);
+      return env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/retry', { method: 'POST', body: JSON.stringify(input) }));
+    }
     if (url.pathname === '/api/admin/automation' && request.method === 'GET') {
+      if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
       if (!env.QUIZ_AUTOMATION) return json({ enabled: false, connected: false });
       return env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/admin-status'));
     }

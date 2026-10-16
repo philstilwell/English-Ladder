@@ -107,6 +107,38 @@ test('OAuth state is single-use, expires, and is tied to the originating student
   } finally { globalThis.fetch = oldFetch; }
 });
 
+test('administrator nightly diagnostics show bounded safe failure details without source or credential contents', async () => {
+  const { object, storage } = coordinator();
+  await storage.put({ oauth: { access_token: 'private-token' }, ['job:' + 'a'.repeat(64)]: {
+    studentId: 'ab26', noteId: 'private-note', meetingId: 'private-meeting', transcript: 'private-transcript',
+    status: 'needs_attention', lastError: 'transcript_privacy_failed', tries: 1, startedAt: '2026-10-15T20:00:00Z',
+  }, ['job:' + 'b'.repeat(64)]: { status: 'pending', lastError: 'private-provider-error', tries: 2 } });
+  const status = await (await object.fetch(new Request('https://automation.internal/admin-status'))).json();
+  assert.equal(status.problems[0].error, 'transcript_privacy_failed');
+  assert.equal(status.problems[0].studentId, 'ab26'); assert.equal(status.problems[0].attempts, 1);
+  assert.equal(status.problems[1].error, 'generation_failed');
+  assert.doesNotMatch(JSON.stringify(status), /private-token|private-note|private-meeting|private-transcript|private-provider-error/);
+});
+
+test('manual retry is one job, locked against concurrent runs, and still enforces the existing cost limit', async () => {
+  const { object, storage } = coordinator(), id = 'a'.repeat(64), key = 'job:' + id;
+  await storage.put({ [key]: { noteId: 'fictional-note-123', studentId: 'ab26', status: 'needs_attention', lastError: 'transcript_privacy_failed', tries: 1 } });
+  let finish, calls = 0;
+  object.process = async (_key, job) => { calls++; await new Promise(resolve => { finish = resolve; }); job.status = 'published'; job.sessionId = '2026-10-15-2200'; job.lastError = null; };
+  const pending = object.retry(id);
+  while (!finish) await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal((await object.retry(id)).status, 409); assert.equal(calls, 1);
+  finish(); assert.equal((await (await pending).json()).ok, true);
+  assert.equal((await (await object.retry(id)).json()).ok, true); assert.equal(calls, 1);
+  assert.equal(await storage.get('run-lock'), undefined);
+  await storage.put({ [key]: { noteId: 'fictional-note-123', studentId: 'ab26', status: 'needs_attention', tries: 1 } });
+  await object.reserveGeneration('ab26'); await object.reserveGeneration('ab26');
+  object.process = () => object.reserveGeneration('ab26');
+  const limited = await (await object.retry(id)).json(); assert.equal(limited.ok, false); assert.equal(limited.errorCode, 'daily_limit');
+  assert.equal((await storage.get(key)).tries, 1); assert.equal(await storage.get('run-lock'), undefined);
+  assert.equal((await object.retry('bad')).status, 400);
+});
+
 test('full transcripts are identified by speaker, never silently truncated, and redact display names', () => {
   const read = readTranscript(note, { ab26: student });
   assert.equal(read.segments.length, 10); assert.equal(read.studentId, 'ab26');
@@ -128,7 +160,7 @@ test('first-try review retains misses after successful retries and ignores unans
 test('AI authoring requires valid evidence and a second approval; no full transcript is saved in output', async () => {
   const transcript = readTranscript(note, { ab26: student }); let calls = 0;
   const ai = { run: async (_model, input) => {
-    calls++; assert.ok(JSON.parse(input.messages[1].content).segments.length === 10);
+    calls++; assert.ok(JSON.parse(input.input[1].content).segments.length === 10);
     return { response: calls === 1 ? structuredClone(draft) : { approved: true } };
   } };
   const output = await authorQuiz(ai, transcript, meeting, 'fictional-note-123', { assessment, attempts: [] });
@@ -153,9 +185,9 @@ test('nightly server run publishes all pages atomically and does not regenerate 
   globalThis.fetch = async url => Response.json(String(url).includes('/past_meetings/') ? meeting : note);
   env.AI = { run: async (_model, input) => {
     calls++;
-    const rules = input.messages[0].content;
-    if (rules.includes('You anonymize')) return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
-    return { response: rules.includes('independent editor') ? { approved: true } : structuredClone(draft) };
+    const rules = input.input[0].content;
+    const response = rules.includes('You anonymize') ? (rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] }) : (rules.includes('independent editor') ? { approved: true } : structuredClone(draft));
+    return { status: 'completed', output: [{ type: 'reasoning', content: [] }, { type: 'message', role: 'assistant', status: 'completed', content: [{ type: 'output_text', text: JSON.stringify(response) }] }] };
   } };
   try {
     await object.run(); let job = await storage.get(key);
@@ -275,7 +307,7 @@ test('a first full lesson can create the initial assessment and quiz in an empty
   const initial = JSON.parse(JSON.stringify(draft).replaceAll(feedback.id, session));
   let calls = 0;
   const ai = { run: async (_model, input) => {
-    assert.match(input.messages[0].content, /initial assessment/);
+    assert.match(input.input[0].content, /initial assessment/);
     return { response: ++calls % 2 ? structuredClone(initial) : { approved: true } };
   } };
   const result = await authorQuiz(ai, readTranscript(note, { ab26: student }), meeting, 'fictional-note-first', { assessment: null, attempts: [] });
@@ -310,7 +342,7 @@ test('automatic assessments require a self-study AI prompt for every study topic
 test('daily lesson authoring omits CEFR inputs and cannot overwrite the monthly estimate',async()=>{
   const transcript=readTranscript(note,{ab26:student});let calls=0;
   const ai={run:async(_model,input)=>{
-    calls++;const data=JSON.parse(input.messages[1].content);
+    calls++;const data=JSON.parse(input.input[1].content);
     assert.equal(data.priorCefr,undefined);assert.equal(data.sessions,undefined);
     return{response:calls===1?{...structuredClone(draft),cefr:{state:'estimated',lower:'C2'}}:{approved:true}};
   }};
@@ -331,9 +363,9 @@ test('a failed authoring retry uses the reviewed cache without another Zoom down
   let downloads = 0, privacyCalls = 0, authorCalls = 0, rejectAuthor = true;
   object.zoom = async path => { downloads++; return path.includes('past_meetings') ? meeting : note; };
   env.AI.run = async (_model, input) => {
-    const rules = input.messages[0].content, data = JSON.parse(input.messages[1].content);
+    const rules = input.input[0].content, data = JSON.parse(input.input[1].content);
     assert.ok(data.segments.every(s => ['Student', 'Speaker 1'].includes(s.speaker)));
-    assert.doesNotMatch(input.messages[1].content, /Private Teacher Name|Alex0529/);
+    assert.doesNotMatch(input.input[1].content, /Private Teacher Name|Alex0529/);
     if (rules.includes('You anonymize')) {
       privacyCalls++; return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
     }
@@ -357,7 +389,7 @@ test('changed source revisions refresh the download and never reuse obsolete ano
   let downloads = 0, privacyCalls = 0, currentNote = note;
   object.zoom = async path => { downloads++; return path.includes('past_meetings') ? meeting : currentNote; };
   env.AI.run = async (_model, input) => {
-    const rules = input.messages[0].content;
+    const rules = input.input[0].content;
     if (!rules.includes('You anonymize')) throw new Error('mock author unavailable');
     privacyCalls++; return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
   };
@@ -377,7 +409,7 @@ test('privacy failures and exhausted budgets cannot save raw text or publish lea
   const job = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', nextAt: 0, status: 'pending', tries: 0 };
   let calls = 0;
   env.AI.run = async () => ({ response: ++calls === 1 ? { redactions: [] } : { approved: false } });
-  await assert.rejects(object.process('job:cache', job), /transcript_privacy_failed/);
+  await assert.rejects(object.process('job:cache', job), /transcript_privacy_rejected/);
   assert.equal(calls, 2);
   assert.equal((await seed.e.FEEDBACK_STORE.get('ab26').storage.list({ prefix: 'transcript:' })).size, 0);
   await storage.put({ 'usage:ab26': { day: '2026-10-16', month: '2026-10', daily: 2, monthly: 2 } });
@@ -412,4 +444,21 @@ test('retention runs with publishing disabled or Zoom disconnected and reports c
   let dispatched = 0;
   await worker.scheduled({ scheduledTime: Date.parse('2026-10-16T05:00:00Z') }, { AUTOMATION_ENABLED: 'false', QUIZ_AUTOMATION: { idFromName: id => id, get: () => ({ fetch: async () => { dispatched++; return Response.json({ ok: true }); } }) } });
   assert.equal(dispatched, 1);
+});
+
+
+test('an approved recovery grant permits only one extra attempt for one job on one UTC day',async()=>{
+  const {object,storage,env}=coordinator(),id='a'.repeat(64),day=new Date().toISOString().slice(0,10);
+  await object.reserveGeneration('ab26');await object.reserveGeneration('ab26');
+  await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day:'2000-01-01'});
+  await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day});
+  await assert.rejects(object.reserveGeneration('ab26','lesson','b'.repeat(64)),/daily_limit/);
+  await object.reserveGeneration('ab26','lesson',id);
+  assert.equal((await storage.get('usage:ab26')).daily,3);assert.equal((await storage.get('usage:ab26')).monthly,3);
+  await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  await storage.put({'usage:ab26':{day,month:day.slice(0,7),daily:2,monthly:12}});
+  await assert.rejects(object.reserveGeneration('ab26','lesson',id),/monthly_limit/);
+  delete env.LESSON_RECOVERY_GRANT;
 });

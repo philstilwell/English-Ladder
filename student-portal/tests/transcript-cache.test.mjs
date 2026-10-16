@@ -23,7 +23,7 @@ test('known identities are removed before AI and trusted roles survive every tur
   assert.deepEqual(prepared.segments.slice(0, 4).map(s => [s.role, s.speaker]), [['student', 'Student'], ['instructor', 'Instructor'], ['other', 'Speaker 1'], ['other', 'Speaker 2']]);
   let calls = 0;
   const result = await anonymizeTranscript({ run: async (_model, input) => {
-    calls++; assert.doesNotMatch(input.messages[1].content, /Alex|Brown|Phil|Casey|Morgan|example|555/);
+    calls++; assert.doesNotMatch(input.input[1].content, /Alex|Brown|Phil|Casey|Morgan|example|555/);
     return { response: calls === 1 ? { redactions: [] } : { approved: true } };
   } }, input, readTranscript(input, { ab26: student }));
   assert.equal(calls, 2); assert.deepEqual(result, prepared.segments);
@@ -38,15 +38,15 @@ test('redaction removes exact sensitive spans without fixing language or changin
   ] });
   assert.equal(result[0].text, 'Yesterday I go to [PLACE_1]. I meet [PERSON_2] in [PLACE_1].');
   assert.deepEqual(result.map(({ text, ...rest }) => rest), segments.map(({ text, ...rest }) => rest));
-  assert.throws(() => applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'invented', category: 'PERSON', entity: 1 }] }), /privacy_failed/);
-  assert.throws(() => applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'Ren', category: 'PERSON', entity: 1 }] }), /privacy_failed/);
-  assert.throws(() => applyTranscriptRedactions(segments, { segments: [] }), /privacy_failed/);
+  assert.throws(() => applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'invented', category: 'PERSON', entity: 1 }] }), /transcript_redaction_invalid/);
+  assert.throws(() => applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'Ren', category: 'PERSON', entity: 1 }] }), /transcript_redaction_invalid/);
+  assert.throws(() => applyTranscriptRedactions(segments, { segments: [] }), /transcript_redaction_invalid/);
 });
 
 test('failed or malformed privacy review never yields a storable transcript', async () => {
   for (const result of [{ approved: false }, { approved: 'true' }, 'invalid JSON']) {
     let calls = 0;
-    await assert.rejects(anonymizeTranscript({ run: async () => ({ response: ++calls === 1 ? { redactions: [] } : result }) }, note, readTranscript(note, { ab26: student })), /privacy_failed/);
+    await assert.rejects(anonymizeTranscript({ run: async () => ({ response: ++calls === 1 ? { redactions: [] } : result }) }, note, readTranscript(note, { ab26: student })), /transcript_privacy_rejected|invalid_model_response/);
   }
   const duplicate = structuredClone(note); duplicate.transcript.speakers[1].speaker_id = 'a';
   assert.throws(() => readTranscript(duplicate, { ab26: student }), /transcript_unusable/);
@@ -129,4 +129,30 @@ test('transcript routes stay internal and account deletion prevents delayed cach
   assert.equal((await request(store, '/automation/transcript/' + input.noteId, input)).status, 410);
   assert.equal((await request(store, '/automation/transcript/' + input.noteId)).status, 410);
   assert.equal((await store.storage.list({ prefix: 'transcript:' })).size, 0);
+});
+
+
+test('privacy review can request one exact repair but a fresh approval is still required',async()=>{
+  const input=structuredClone(note);input.transcript.items[0].text='I go to Riverton.';
+  const removal={segmentIndex:0,text:'Riverton',category:'PLACE',entity:1};
+  for(const approved of [true,false]){
+    let calls=0;const ai={run:async(_model,request)=>{
+      calls++;const segments=JSON.parse(request.input[1].content).segments;
+      if(calls===1)return {response:{redactions:[]}};
+      if(calls===2)return {response:{approved:false,redactions:[removal]}};
+      assert.equal(segments[0].text,'I go to [PLACE_1].');return {response:{approved,redactions:[removal]}};
+    }};
+    const result=anonymizeTranscript(ai,input,readTranscript(input,{ab26:student}));
+    if(approved)assert.equal((await result)[0].text,'I go to [PLACE_1].');else await assert.rejects(result,/transcript_privacy_rejected/);
+    assert.equal(calls,3);
+  }
+});
+
+test('invalid redaction plans get only one repair and still require a separate review',async()=>{
+  for(const fixed of [true,false]){
+    let calls=0;const ai={run:async()=>({response:++calls===1||calls===2&&!fixed?{redactions:[{segmentIndex:99,text:'invented',category:'PERSON',entity:1}]}:calls===2?{redactions:[]}:{approved:true}})};
+    const result=anonymizeTranscript(ai,note,readTranscript(note,{ab26:student}));
+    if(fixed)assert.deepEqual(await result,anonymous());else await assert.rejects(result,/transcript_redaction_invalid/);
+    assert.equal(calls,fixed?3:2);
+  }
 });

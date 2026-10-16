@@ -13,7 +13,7 @@ const safeError = error => [
   'zoom_reconnect', 'zoom_unavailable', 'transcript_unusable', 'transcript_too_large', 'ambiguous_student',
   'insufficient_evidence', 'invalid_evidence', 'content_review_failed', 'assessment_required', 'unsafe_content',
   'invalid_model_response', 'monthly_limit', 'daily_limit', 'meeting_pending', 'publish_failed', 'meeting_reference_missing', 'discovery_incomplete',
-  'transcript_privacy_failed', 'source_changed', 'student_changed',
+  'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_privacy_rejected', 'source_changed', 'student_changed', 'student_not_matched',
   'cefr_window_too_large', 'invalid_cefr_evidence', 'cefr_review_failed', 'cefr_limit',
 ].includes(error.message) ? error.message : 'generation_failed';
 
@@ -255,14 +255,22 @@ export class QuizAutomation {
     if (!response.ok) throw new Error('publish_failed');
     return response.json();
   }
-  async reserveGeneration(studentId, kind = 'lesson') {
+  async reserveGeneration(studentId, kind = 'lesson', recoveryJobId = null) {
     await this.storage.transaction(async txn => {
       const day = new Date().toISOString().slice(0, 10), month = day.slice(0, 7), isCefr = kind === 'cefr';
       const key = (isCefr ? 'cefr-usage:' : 'usage:') + studentId;
       const usage = await txn.get(key) || {};
       const daily = usage.day === day ? usage.daily : 0, monthly = usage.month === month ? usage.monthly : 0;
       if (monthly >= (isCefr ? 2 : 12)) throw new Error(isCefr ? 'cefr_limit' : 'monthly_limit');
-      if (daily >= (isCefr ? 1 : 2)) throw new Error(isCefr ? 'cefr_limit' : 'daily_limit');
+      if (daily >= (isCefr ? 1 : 2)) {
+        // An explicitly owner-approved recovery is scoped to one job and UTC day.
+        // It never resets counters, changes monthly limits, or enables other jobs.
+        let grant; try { grant = JSON.parse(this.env.LESSON_RECOVERY_GRANT || 'null'); } catch {}
+        const grantKey = 'recovery-used:' + day + ':' + recoveryJobId;
+        if (isCefr || daily !== 2 || !/^[a-f0-9]{64}$/.test(recoveryJobId || '') ||
+            grant?.day !== day || grant?.jobId !== recoveryJobId || await txn.get(grantKey)) throw new Error(isCefr ? 'cefr_limit' : 'daily_limit');
+        await txn.put({ [grantKey]: true });
+      }
       // Reserve before AI calls. Monthly CEFR has its own small retry allowance
       // and cannot consume the existing allowance for ordinary lesson updates.
       await txn.put({ [key]: { day, month, daily: daily + 1, monthly: monthly + 1 } });
@@ -317,7 +325,7 @@ export class QuizAutomation {
     if (context.publishedSessions.includes(id) || context.assessment?.quiz?.generatedForSession === id) {
       job.status = 'published'; job.sessionId = id; return;
     }
-    await this.reserveGeneration(job.studentId);
+    await this.reserveGeneration(job.studentId, 'lesson', key.slice(4));
     if (!reusable) {
       const sameContent = cached?.privacyVersion === TRANSCRIPT_PRIVACY_VERSION && cached.mappingHash === mappingHash && cached.sourceHash === sourceHash;
       const segments = sameContent ? cached.segments : await anonymizeTranscript(this.env.AI, note, transcript, instructorNames);
@@ -429,7 +437,7 @@ export class QuizAutomation {
           if (error.message === 'other_student') { job.status = 'needs_attention'; job.lastError = 'student_not_matched'; }
           else {
             job.lastError = safeError(error); job.tries++;
-            job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing', 'transcript_privacy_failed'].includes(job.lastError) ? 'needs_attention' : 'pending';
+            job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing', 'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_privacy_rejected'].includes(job.lastError) ? 'needs_attention' : 'pending';
             job.nextAt = Date.now() + 3600000;
             if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; }
           }
@@ -448,20 +456,52 @@ export class QuizAutomation {
       });
     }
   }
+  async retry(id) {
+    if (typeof id !== 'string' || !/^[a-f0-9]{64}$/.test(id)) return json({ error: 'Choose an update from the list.' }, 400);
+    if (this.env.AUTOMATION_ENABLED !== 'true' || !await this.isConfigured()) return json({ error: 'Automatic updates are not enabled.' }, 409);
+    const key = 'job:' + id, lease = crypto.randomUUID();
+    const acquired = await this.storage.transaction(async txn => {
+      if ((await txn.get('run-lock'))?.until > Date.now()) return false;
+      await txn.put({ 'run-lock': { lease, until: Date.now() + 900000 } }); return true;
+    });
+    if (!acquired) return json({ error: 'An update is already running. Please try again when it finishes.' }, 409);
+    try {
+      const job = await this.storage.get(key);
+      if (!job?.studentId || !(await this.students())[job.studentId]) return json({ error: 'This update needs an active student with a matching Zoom name.' }, 409);
+      if (job.status === 'published') return json({ ok: true, status: 'published', sessionId: job.sessionId });
+      if (!['pending', 'needs_attention'].includes(job.status)) return json({ error: 'This update cannot be retried.' }, 409);
+      try { await this.process(key, job); }
+      catch (error) {
+        job.lastError = safeError(error); job.tries = (job.tries || 0) + 1;
+        job.status = 'needs_attention';
+        if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; job.nextAt = Date.now() + 3600000; }
+      }
+      await this.saveJob(key, job);
+      const saved = await this.storage.get(key);
+      return json({ ok: saved.status === 'published', status: saved.status, sessionId: saved.sessionId || null, errorCode: saved.lastError || null });
+    } finally {
+      await this.storage.transaction(async txn => { if ((await txn.get('run-lock'))?.lease === lease) await txn.delete('run-lock'); });
+    }
+  }
   async fetch(request) {
     const url = new URL(request.url), path = url.pathname;
     if (path === '/webhook' && request.method === 'POST') return this.webhook(request);
     if (path === '/callback' && request.method === 'GET') return this.callback(new URL(request.headers.get('X-Callback-URL')));
     if (path === '/run' && request.method === 'POST') { const input = await request.json(); await this.run(input.scheduledTime); return json({ ok: true }); }
+    if (path === '/retry' && request.method === 'POST') { const input = await request.json(); return this.retry(input.id); }
     const studentId = request.headers.get('X-Student-ID'), origin = request.headers.get('X-Student-Origin');
     if (path === '/admin-status' && request.method === 'GET') {
-      const jobs = [...await this.storage.list({ prefix: 'job:' })].map(([, j]) => j);
+      const entries = [...await this.storage.list({ prefix: 'job:' })], jobs = entries.map(([, j]) => j);
       return json({ enabled: this.env.AUTOMATION_ENABLED === 'true', connected: Boolean(await this.storage.get('oauth')),
         lastRetention: await this.storage.get('last-retention') || null, retentionError: await this.storage.get('retention-error') || null,
         cefrNeedsAttention: await this.storage.get('cefr-errors') || 0,
         lastCheck: await this.storage.get('last-check') || null, connectionError: await this.storage.get('connection-error') || null,
         pending: jobs.filter(j => j.status === 'pending').length,
         needsAttention: jobs.filter(j => j.status === 'needs_attention').length,
+        problems: entries.filter(([, j]) => ['pending', 'needs_attention'].includes(j.status) && j.lastError)
+          .sort(([, a], [, b]) => (b.startedAt || '').localeCompare(a.startedAt || '')).slice(0, 20)
+          .map(([key, j]) => ({ id: key.slice(4), studentId: j.studentId || null, startedAt: j.startedAt || null,
+            status: j.status, error: safeError(new Error(j.lastError)), attempts: j.tries || 0, retryAt: j.status === 'pending' && j.nextAt ? new Date(j.nextAt).toISOString() : null })),
         students: Object.fromEntries(Object.keys(await this.students()).map(id => [id, {
           latestPublication: jobs.filter(j => j.studentId === id && j.publishedAt).map(j => j.publishedAt).sort().at(-1) || null,
           pending: jobs.filter(j => j.studentId === id && j.status === 'pending').length,

@@ -23,6 +23,7 @@
     <section id="list-view">
       <div class="page-heading"><div><p class="eyebrow">YOUR PRIVATE DIRECTORY</p><h1>Students</h1><p>Open a name to edit the account and link its Zoom names.</p></div><a href="#register" class="primary-link">+ Register new student</a></div>
       <div class="summary-grid"><article><span class="summary-label">Active sites</span><strong id="active-count">0</strong></article><article><span class="summary-label">Draft accounts</span><strong id="draft-count">0</strong></article><article class="schedule-card"><span class="summary-label">Automatic lesson updates</span><strong>1 a.m. Eastern</strong><span id="schedule-state">Checking server status…</span><span id="last-check"></span></article></div>
+      <section id="automation-problems" class="automation-problems" hidden><h2>Lesson updates needing attention</h2><p class="field-note">Retry runs the privacy and lesson checks again for one session. A typical update costs about $0.05–$0.20 in AI usage before free allowances. Existing daily and monthly limits still apply.</p><div id="automation-problem-items"></div><p id="automation-retry-status" role="status" class="field-note"></p></section>
       <div class="list-tools"><div><label for="search">Find a student</label><input id="search" type="search" placeholder="Name, Zoom name, or student address"></div><div><label for="filter">Show</label><select id="filter"><option value="all">All students</option><option value="active">Active sites</option><option value="draft">Draft accounts</option><option value="paused">Paused accounts</option></select></div><button id="refresh" class="secondary-button">Refresh</button></div>
       <p class="field-note" id="list-count"></p>
       <div id="main-student-table" class="student-table-wrap"><table class="student-table"><thead><tr><th>Student</th><th>Site &amp; Zoom</th><th>Course</th><th>Status</th><th>Latest quiz</th><th>CEFR estimate</th><th>Questions</th><th><span class="visually-hidden">Edit account</span></th></tr></thead><tbody id="student-rows"></tbody></table></div>
@@ -146,7 +147,7 @@
     </section>
     <section id="technical-view" hidden aria-labelledby="technical-title">
       <div class="page-heading"><div><p class="eyebrow">HOW YOUR STUDENT PORTAL WORKS</p><h1 id="technical-title">Technical notes</h1><p>A reference for the current rules, timing, privacy measures, and limits.</p></div></div>
-      <p class="field-note">Specifications updated <time datetime="2026-10-15">October 15, 2026</time>. These notes describe the system’s behavior; student details and passwords belong on individual account pages.</p>
+      <p class="field-note">Specifications updated <time datetime="2026-10-16">October 16, 2026</time>. These notes describe the system’s behavior; student details and passwords belong on individual account pages.</p>
       <div class="technical-grid">
         <article class="technical-card"><h2>Conversation and meaning activities</h2><dl>
           <div><dt>Content</dt><dd>Conversation Rescue, Meaning Switch, Ask the right question, Story builder, and Missing Details each have 60 original multiple-choice items in six sets of ten: 300 items altogether. Later sets use more demanding language or situations. Start, Build, and Stretch describe the sets, not a CEFR level.</dd></div>
@@ -182,7 +183,7 @@
           <div><dt>Privacy and cost</dt><dd>Choices stay in private server storage, are removed when the account is deleted, and are not used as CEFR or quiz evidence. Saving and viewing them makes no AI calls. The AI prompt text stays hidden; its copy button and icons remain directly available.</dd></div>
         </dl></article>
         <article class="technical-card"><h2>Transcript privacy</h2><dl>
-          <div><dt>Before saving</dt><dd>Speaker identities are matched first. Names, contact information, and identifying personal details are then redacted and separately reviewed. A failed privacy review prevents storage and publication from that transcript.</dd></div>
+          <div><dt>Before saving</dt><dd>Speaker identities are matched first. Names, contact information, and identifying personal details are then redacted and separately reviewed. One repair is allowed, followed by a fresh independent review when removals change. A failed privacy review prevents storage and publication from that transcript.</dd></div>
           <div><dt>Speaker roles</dt><dd>Student and Instructor labels stay distinct. Other speakers receive separate anonymous labels. Timestamps and the remaining wording are preserved, including language mistakes.</dd></div>
           <div><dt>Purpose</dt><dd>Saved transcripts are used for language assessment. Personal lives, work performance, beliefs, and health are not assessed.</dd></div>
         </dl><p>Automated redaction cannot guarantee complete anonymity. Raw Zoom responses and the name-to-role mapping are not saved by the portal.</p></article>
@@ -194,6 +195,7 @@
         <article class="technical-card"><h2>Nightly updates and Zoom</h2><dl>
           <div><dt>Schedule</dt><dd>1 a.m. New York time, with daylight saving handled automatically. The website’s server does the work; your Mac and Codex can be off.</dd></div>
           <div><dt>Finding a lesson</dt><dd>The job checks Zoom for new or changed notes, matches an exact configured speaker name, and confirms the meeting date. It requires the complete transcript and allows time for a newly finished meeting to settle.</dd></div>
+          <div><dt>Updates needing attention</dt><dd>The student list shows failed lesson updates and their reasons. Retry update processes only that lesson, using the same privacy checks, independent content review, and daily and monthly attempt limits. A retry normally costs about $0.05–$0.20 before free allowances; longer transcripts can cost more. Completed lessons cannot be generated twice.</dd></div>
           <div><dt>Reusing saved copies</dt><dd>Completed lessons are skipped. Pending retries use the reviewed server copy while the source and speaker mapping are unchanged. A changed source is fetched again; a pending copy without a source revision is refreshed after seven days.</dd></div>
         </dl><p>Monthly CEFR reviews can run from saved copies even if Zoom is unavailable. Historical lessons are imported separately; a software update does not automatically backfill old recordings.</p></article>
         <article class="technical-card"><h2>Feedback and quizzes</h2><dl>

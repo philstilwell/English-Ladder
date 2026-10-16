@@ -114,9 +114,9 @@ test('CEFR evidence requires exact Student quotes from every selected session an
   assert.throws(() => groundCefrWindow(valid, context.sessions.slice(1), context.today));
   let calls = 0;
   const result = await authorCefr({ run: async (_model, input) => {
-    calls++; const data = JSON.parse(input.messages[1].content);
+    calls++; const data = JSON.parse(input.input[1].content);
     assert.equal(data.sessions.length, 2); assert.ok(data.sessions.every(s => s.segments.length === 10));
-    assert.equal(data.priorCefr, undefined); assert.doesNotMatch(input.messages[1].content, /sourceHash|noteId|mappingHash/);
+    assert.equal(data.priorCefr, undefined); assert.doesNotMatch(input.input[1].content, /sourceHash|noteId|mappingHash/);
     return { response: calls === 1 ? { cefr: valid } : { approved: true } };
   } }, context);
   assert.equal(calls, 2); assert.equal(result.confidence, 'low');

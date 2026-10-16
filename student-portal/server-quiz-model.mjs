@@ -3,7 +3,8 @@ import { validateFeedback } from './feedback.mjs';
 import { sessionId } from './lesson-time.mjs';
 export { sessionId } from './lesson-time.mjs';
 
-export const MODEL = '@cf/openai/gpt-oss-120b';
+import { modelJson } from './server-ai-json.mjs';
+export { MODEL } from './server-ai-json.mjs';
 const STAMP = /^\d{2}:[0-5]\d:[0-5]\d\.\d{3}$/;
 const fail = () => { throw new Error('transcript_unusable'); };
 
@@ -90,14 +91,7 @@ Each question needs at least one source: valid segments or supplied reviewRefs. 
 Use reviewRefs only for actual first-try misses in supplied history. Never claim new model sentences are transcript quotations.`;
 
 async function generate(ai, instructions, input, maxTokens) {
-  const result = await ai.run(MODEL, {
-    messages: [{ role: 'system', content: instructions }, { role: 'user', content: JSON.stringify(input) }],
-    response_format: { type: 'json_object' }, max_tokens: maxTokens, temperature: 0.2,
-  });
-  const output = result?.response;
-  if (typeof output === 'string') return JSON.parse(output);
-  if (!output || typeof output !== 'object') throw new Error('invalid_model_response');
-  return output;
+  return modelJson(ai, instructions, input, maxTokens);
 }
 
 export async function authorQuiz(ai, transcript, meeting, noteId, context) {
@@ -150,7 +144,7 @@ export async function authorQuiz(ai, transcript, meeting, noteId, context) {
   if (/https?:\/\/|mynotes\.zoom|<\/?[a-z]/i.test(studentContent) || /\bCEFR\b|\b[ABC][12]\b/.test(studentContent)) throw new Error('unsafe_content');
   const reviewResult = await generate(ai,
     RULES + '\nNow act as an independent editor. Do not rewrite. Check the proposed feedback, assessment, and quiz against the entire transcript and first-try review. Check source attribution, ESL-only scope, privacy, A1-A2 clarity, quoted target English, and every answer and tip for accuracy. Compare each feedback practice task AND answer with all focus models and vocabulary examples. Reject copied examples, gap-fill copies, trivial rewrites, or tasks without a fresh situation. Check that study suggestions make no promises about future sessions and that each AI prompt introduces the specific topic with examples and guided practice. Reject ambiguous answers or unsupported claims. Return {"approved":true}. Set approved true only if the student feedback, assessment and quiz pass all checks. Reject any CEFR level claimed in student-facing content.',
-    { ...input, proposed: { feedback, assessment, evidence: draft.evidence } }, 1000);
+    { ...input, proposed: { feedback, assessment, evidence: draft.evidence } }, 4000);
   if (reviewResult.approved !== true) throw new Error('content_review_failed');
   return { feedback, assessment, quiz, priorAssessment: context.assessment || null, evidence: draft.evidence };
 }

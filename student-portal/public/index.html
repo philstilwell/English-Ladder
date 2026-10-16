@@ -36,7 +36,8 @@
         </ul>
       </div>
       <div id="activities-menu" class="overview-menu">
-        <button id="activities-toggle" class="overview-toggle activities-toggle" type="button" aria-label="Show Activities" aria-expanded="false" aria-controls="activities-submenu">Activities <span aria-hidden="true">▾</span></button>
+        <a id="activities-link" href="#activities">Activities</a>
+        <button id="activities-toggle" class="overview-toggle" type="button" aria-label="Show Activities links" aria-expanded="false" aria-controls="activities-submenu"><span aria-hidden="true">▾</span></button>
         <ul id="activities-submenu" class="overview-submenu" hidden></ul>
       </div>
       <a id="resources-nav" href="#resources">Resources</a>
@@ -143,8 +144,10 @@
       </section>
       <section id="activities" class="section-panel" aria-labelledby="activity-title" hidden>
         <article class="account-card activity-page">
-          <h3 id="activity-title" tabindex="-1">Activities</h3>
+          <h2 id="activity-title" tabindex="-1">Activities</h2>
           <p id="activity-message" role="status"></p>
+          <button id="retry-activities" class="secondary-button" type="button" hidden>Try again</button>
+          <div id="activity-catalog" class="activity-catalog" hidden></div>
           <div id="road-practice" hidden></div>
           <div id="grammar-practice" hidden></div>
           <div id="business-terms" hidden></div>

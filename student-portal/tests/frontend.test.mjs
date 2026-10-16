@@ -703,7 +703,7 @@ test('Account saves only a nickname, has no activity picker, and keeps teacher p
   };
   const dom = setup(mock, 'https://ab26.englishladder.com/#account'); await flush(); const d = dom.window.document;
   assert.equal(d.querySelector('.section-nav [aria-current]').hash, '#account');
-  assert.equal(d.querySelector('.section-nav a[href="#activities"]'), null);
+  assert.equal(d.querySelector('.section-nav a[href="#activities"]').textContent, 'Activities');
   assert.equal(d.getElementById('account').hidden, false); assert.equal(d.getElementById('activity-options'), null);
   d.getElementById('nickname').value = '<b>New nickname</b>';
   submitForm(dom, 'settings-form'); await flush(); assert.equal(writes, 1);
@@ -763,6 +763,46 @@ test('account load failures can retry, stale saves request a reload, and expiry 
   assert.equal(d.getElementById('login-view').hidden, false); assert.equal(d.getElementById('nickname').value, ''); dom.window.close();
 });
 
+test('Activities main link opens a guide to selected tools without starting practice or writing progress', async () => {
+  for (const role of ['student', 'teacher']) {
+    let saved = { ...settingsFixture }, writes = 0; const calls = [];
+    const dom = setup((path, options) => {
+      calls.push(path); if (options?.method && options.method !== 'GET') writes++;
+      if (path === '/api/account') return reply(saved);
+    }, 'https://ab26.englishladder.com/#overview', role);
+    await flush(); const d = dom.window.document;
+    d.getElementById('activities-toggle').click(); await flush();
+    assert.equal(dom.window.location.hash, '#overview');
+    d.getElementById('activities-link').click(); await flush();
+    assert.equal(dom.window.location.hash, '#activities');
+    assert.equal(d.getElementById('activities-submenu').hidden, true);
+    assert.equal(d.getElementById('activities').hidden, false);
+    assert.equal(d.getElementById('activity-title').textContent, 'Activities');
+    assert.deepEqual([...d.querySelectorAll('.activity-guide h3')].map(n => n.textContent), ACTIVITY_TOOLS.map(a => a.name));
+    for (const card of d.querySelectorAll('.activity-guide')) {
+      assert.match(card.textContent, /Why try it\?/); assert(card.querySelectorAll('ol li').length >= 3);
+      assert.match(card.querySelector('a').hash, /^#activities\//);
+    }
+    assert.equal(calls.some(p => /^\/api\/(road|grammar-practice|business-terms|vocabulary-practice)/.test(p)), false);
+    assert.equal(writes, 0);
+    dom.window.location.hash = '#overview'; await flush();
+    assert.equal(d.getElementById('activity-catalog').textContent, '');
+    saved = { ...saved, revision: 2, visibleActivities: ['vocabulary-practice'] };
+    d.getElementById('activities-link').click(); await flush();
+    assert.deepEqual([...d.querySelectorAll('.activity-guide h3')].map(n => n.textContent), ['Vocabulary practice']);
+    d.querySelector('.activity-guide a').click(); await flush();
+    assert.equal(dom.window.location.hash, '#activities/vocabulary-practice');
+    assert.equal(d.getElementById('activity-catalog').hidden, true);
+    d.getElementById('activities-link').click(); await flush();
+    saved = { ...saved, revision: 3, visibleActivities: [] };
+    d.getElementById('activities-toggle').click(); await flush();
+    assert.equal(d.getElementById('activity-catalog').textContent, '');
+    assert.match(d.getElementById('activity-message').textContent, /ask your teacher/);
+    d.getElementById('logout').click(); await flush();
+    assert.equal(d.getElementById('activity-catalog').textContent, '');
+    dom.window.close();
+  }
+});
 test('Activities follows administrator selections when reopened, including none, without a student picker', async () => {
   let saved = { ...settingsFixture, visibleActivities: ['english-road', 'business-terms'] };
   const mock = path => path === '/api/account' ? reply(saved) : path === '/api/business-terms' ? reply({items:termsBank.items}) : null;
@@ -801,10 +841,12 @@ test('a delayed activity read cannot replace a newer administrator choice or res
 });
 test('failed activity loading never substitutes defaults and can retry; expiry clears activities', async () => {
   let unavailable = true;
-  const dom = setup(path => path === '/api/account' ? unavailable ? new Response(JSON.stringify({ error: 'Unavailable' }), { status: 503 }) : reply({ ...settingsFixture, visibleActivities: ['business-terms'] }) : null, 'https://ab26.englishladder.com/#overview');
+  const dom = setup(path => path === '/api/account' ? unavailable ? new Response(JSON.stringify({ error: 'Unavailable' }), { status: 503 }) : reply({ ...settingsFixture, visibleActivities: ['business-terms'] }) : null, 'https://ab26.englishladder.com/#activities');
   await flush(); const d = dom.window.document;
   assert.equal(d.querySelectorAll('#activities-submenu a').length, 0); assert.match(d.getElementById('activities-submenu').textContent, /could not be loaded/);
-  unavailable = false; d.querySelector('#activities-submenu button').click(); await flush();
+  assert.equal(d.getElementById('activity-catalog').hidden, true); assert.equal(d.getElementById('retry-activities').hidden, false);
+  unavailable = false; d.getElementById('retry-activities').click(); await flush();
+  assert.deepEqual([...d.querySelectorAll('.activity-guide h3')].map(n => n.textContent), ['Business terms']);
   assert.deepEqual([...d.querySelectorAll('#activities-submenu a')].map(a => a.textContent), ['Business terms']); dom.window.close();
   const expired = setup(path => path === '/api/account' ? new Response(JSON.stringify({ error: 'Please sign in.' }), { status: 401 }) : null, 'https://ab26.englishladder.com/#overview');
   await flush(); assert.equal(expired.window.document.getElementById('login-view').hidden, false); assert.equal(expired.window.document.getElementById('activities-submenu').textContent, ''); expired.window.close();

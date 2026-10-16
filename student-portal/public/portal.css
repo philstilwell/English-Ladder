@@ -335,9 +335,7 @@ summary { cursor:pointer; }
 .masthead-band .overview-submenu a { padding:12px 20px; margin:0; white-space:normal; }
 .masthead-band .overview-submenu a:hover,.masthead-band .overview-submenu a:focus-visible { background:#343b46; }
 .masthead-band #overview-submenu a[aria-current],.masthead-band #activities-submenu a[aria-current] { background:var(--blue); color:#fff; border-bottom-color:transparent; box-shadow:none; }
-.activities-toggle { font-size:.85rem; font-weight:650; padding:15px 0 12px; border-bottom:3px solid transparent; }
-.activities-toggle span { margin-left:8px; }
-.masthead-band #activities-menu.is-current>.activities-toggle { border-bottom-color:var(--blue); box-shadow:inset 0 -1px 0 #fff; }
+.masthead-band #activities-menu.is-current>#activities-link { border-bottom-color:var(--blue); box-shadow:inset 0 -1px 0 #fff; }
 .submenu-message { color:#fff; padding:10px 20px; font-size:.85rem; line-height:1.5; }
 .submenu-message p { margin:0 0 10px; }
 .submenu-message button { background:transparent; color:#fff; border:1px solid #a8b7d2; border-radius:4px; padding:8px 12px; }
@@ -420,18 +418,27 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-header-height,11
   .menu-sign-out span { margin-left:4px; }
   .masthead-band .menu-sign-out { font-size:.72rem; }
   .account-menu { gap:24px; }
-  .activities-toggle { padding-top:13px; padding-bottom:10px; font-size:.72rem; }
 }
 .account-grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:24px; align-items:start; }
 .account-card { min-width:0; background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px 24px; }
-.account-card h3 { background:#20242b; color:#fff; margin:-20px -24px 20px; padding:12px 24px; border-radius:9px 9px 0 0; font-size:1.05rem; }
+.account-card h3,.activity-page>h2 { background:#20242b; color:#fff; margin:-20px -24px 20px; padding:12px 24px; border-radius:9px 9px 0 0; font-size:1.05rem; }
 .account-card fieldset { border:0; padding:0; margin:0; min-width:0; }
 .account-card label { display:block; margin:14px 0 6px; }
 .account-card .field-hint { font-size:.85rem; line-height:1.55; margin:8px 0 18px; }
 .save-message { font-size:.9rem; line-height:1.5; overflow-wrap:anywhere; }
 .save-message:empty { display:none; }
 #reload-settings { margin-bottom:20px; }
-@media(max-width:740px) { .account-grid { grid-template-columns:1fr; gap:20px; } .account-card { padding:18px 20px; } .account-card h3 { margin:-18px -20px 18px; padding:12px 20px; } }
+@media(max-width:740px) { .account-grid { grid-template-columns:1fr; gap:20px; } .account-card { padding:18px 20px; } .account-card h3,.activity-page>h2 { margin:-18px -20px 18px; padding:12px 20px; } }
+.activity-page.is-overview { max-width:none; }
+.activity-catalog { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin-top:20px; }
+.activity-guide { display:flex; flex-direction:column; min-width:0; padding:18px 20px; border:1px solid var(--line); border-radius:8px; }
+.activity-guide h3 { margin:-18px -20px 14px; padding:10px 20px; background:#3c434e; border-radius:7px 7px 0 0; }
+.activity-guide p { margin:0 0 12px; line-height:1.6; }
+.activity-guide .activity-guide-label { margin:0 0 4px; }
+.activity-guide ol { margin:0 0 16px; padding-left:22px; line-height:1.6; }
+.activity-guide li+li { margin-top:8px; }
+.activity-guide>.secondary-button { align-self:flex-start; margin-top:auto; }
+@media(max-width:740px) { .activity-catalog { grid-template-columns:1fr; gap:16px; } }
 
 .account-card .practice-filter { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; margin:12px 0; font-size:.94rem; font-weight:400; cursor:pointer; }
 .practice-filter input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }

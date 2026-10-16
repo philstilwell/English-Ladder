@@ -801,7 +801,7 @@
         : !data.enabled ? 'Zoom is connected. Nightly updates are waiting to be switched on.'
         : 'Nightly updates are on. Your computer can be off.';
       panel.replaceChildren(node('h3', 'Nightly lesson updates'), node('p', message));
-      panel.append(node('p', 'Every night at 1 a.m. Eastern time. The time adjusts for daylight saving.'));
+      panel.append(node('p', data.processor === 'codex' ? 'Every night at 11:30 p.m. Eastern time. The time adjusts for daylight saving.' : 'Every night at 1 a.m. Eastern time. The time adjusts for daylight saving.'));
       if (data.lastCheck) panel.append(node('p', 'Last check: ' + quizDate(data.lastCheck), 'section-intro'));
       if (data.costLimitReached) panel.append(node('p', 'The spending limit has been reached. More updates are waiting.'));
       if (data.needsAttention) panel.append(node('p', 'Some lessons need a check before their pages can be updated.'));

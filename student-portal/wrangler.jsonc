@@ -42,11 +42,9 @@
       ]
     }
   ],
-  "ai": {
-    "binding": "AI"
-  },
   "vars": {
-    "AUTOMATION_ENABLED": "true"
+    "AUTOMATION_ENABLED": "false",
+    "LESSON_PROCESSOR": "codex"
   },
   "triggers": {
     "crons": [

@@ -3,6 +3,7 @@ import { authorQuiz, readTranscript, sessionId } from './server-quiz-model.mjs';
 import { prepareAnonymousTranscript } from './transcript-privacy.mjs';
 import { TRANSCRIPT_PRIVACY_VERSION, reusableTranscript } from './transcript-cache.mjs';
 import { authorCefr, cefrModelInput } from './server-cefr-model.mjs';
+import { codexHandoff } from './codex-handoff.mjs';
 
 const json = (data, status = 200) => Response.json(data, { status });
 const encoder = new TextEncoder();
@@ -30,7 +31,7 @@ export function studentsFor(env) {
   return students;
 }
 export function configuredAutomation(env) {
-  return Boolean(env.ZOOM_CLIENT_ID && env.ZOOM_CLIENT_SECRET && env.AI && Object.keys(studentsFor(env)).length);
+  return Boolean(env.ZOOM_CLIENT_ID && env.ZOOM_CLIENT_SECRET && (env.AI || env.LESSON_PROCESSOR === 'codex') && Object.keys(studentsFor(env)).length);
 }
 export async function zoomSignatureValid(secret, request, body, now = Date.now()) {
   const timestamp = request.headers.get('x-zm-request-timestamp'), signature = request.headers.get('x-zm-signature');
@@ -74,7 +75,7 @@ export class QuizAutomation {
     return this.env.STUDENT_DIRECTORY ? (await directoryStudents(this.env)).students : studentsFor(this.env);
   }
   async isConfigured() {
-    return Boolean(this.env.ZOOM_CLIENT_ID && this.env.ZOOM_CLIENT_SECRET && this.env.AI && Object.keys(await this.students()).length);
+    return Boolean(this.env.ZOOM_CLIENT_ID && this.env.ZOOM_CLIENT_SECRET && (this.env.AI || this.env.LESSON_PROCESSOR === 'codex') && Object.keys(await this.students()).length);
   }
   async refreshDirectory() {
     if (!this.env.STUDENT_DIRECTORY) return;
@@ -532,6 +533,7 @@ export class QuizAutomation {
   }
   async fetch(request) {
     const url = new URL(request.url), path = url.pathname;
+    if (path.startsWith('/codex/') && request.method === 'POST') return codexHandoff(this, path.slice('/codex/'.length), await request.json());
     if (path === '/webhook' && request.method === 'POST') return this.webhook(request);
     if (path === '/callback' && request.method === 'GET') return this.callback(new URL(request.headers.get('X-Callback-URL')));
     if (path === '/run' && request.method === 'POST') { const input = await request.json(); await this.run(input.scheduledTime); return json({ ok: true }); }
@@ -540,7 +542,7 @@ export class QuizAutomation {
     const studentId = request.headers.get('X-Student-ID'), origin = request.headers.get('X-Student-Origin');
     if (path === '/admin-status' && request.method === 'GET') {
       const entries = [...await this.storage.list({ prefix: 'job:' })], jobs = entries.map(([, j]) => j);
-      return json({ enabled: this.env.AUTOMATION_ENABLED === 'true', connected: Boolean(await this.storage.get('oauth')),
+      return json({ enabled: this.env.AUTOMATION_ENABLED === 'true' || this.env.LESSON_PROCESSOR === 'codex', processor: this.env.LESSON_PROCESSOR === 'codex' ? 'codex' : 'cloudflare', connected: Boolean(await this.storage.get('oauth')),
         lastRetention: await this.storage.get('last-retention') || null, retentionError: await this.storage.get('retention-error') || null,
         cefrNeedsAttention: await this.storage.get('cefr-errors') || 0,
         lastCheck: await this.storage.get('last-check') || null, connectionError: await this.storage.get('connection-error') || null,
@@ -570,7 +572,8 @@ export class QuizAutomation {
     if (path === '/status' && request.method === 'GET') {
       const jobs = [...await this.storage.list({ prefix: 'job:' })].map(([, j]) => j).filter(j => !j.studentId || j.studentId === studentId);
       return json({ configured: await this.isConfigured(), connected: Boolean(await this.storage.get('oauth')),
-        enabled: this.env.AUTOMATION_ENABLED === 'true', lastCheck: await this.storage.get('last-check') || null,
+        enabled: this.env.AUTOMATION_ENABLED === 'true' || this.env.LESSON_PROCESSOR === 'codex',
+        processor: this.env.LESSON_PROCESSOR === 'codex' ? 'codex' : 'cloudflare', lastCheck: await this.storage.get('last-check') || null,
         connectionError: await this.storage.get('connection-error') || null,
         connectionDetail: await this.storage.get('connection-detail') || null,
         costLimitReached: jobs.some(j => ['daily_limit', 'monthly_limit'].includes(j.lastError)),

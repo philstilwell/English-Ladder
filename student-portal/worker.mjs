@@ -1,4 +1,5 @@
 import { COMMUNICATION_ACTIVITIES } from './communication-practice.mjs';
+import { codexAuthorized } from './codex-handoff.mjs';
 import { FEEDBACK_ID, validateFeedback, validatePracticeEdit } from './feedback.mjs';
 import { validateAssessment } from './assessment.mjs';
 export { FeedbackStore } from './feedback.mjs';
@@ -150,6 +151,16 @@ async function smallJson(request, maxBytes = 1024) {
 
 async function handleAdmin(request, env) {
   const url = new URL(request.url), account = { id: 'phil' };
+  if (url.pathname.startsWith('/api/codex/')) {
+    if (!await codexAuthorized(request, env)) return json({ error: 'Operator authorization required.' }, 401);
+    if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
+    const action = url.pathname.slice('/api/codex/'.length);
+    if (!['discover','queue','prepare','publish'].includes(action)) return json({ error: 'Page not found.' }, 404);
+    const body = await smallJson(request, action === 'publish' ? 524288 : 1024);
+    if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'Invalid input.' }, 400);
+    if (!env.QUIZ_AUTOMATION) return json({ error: 'Updates are unavailable.' }, 503);
+    return env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/codex/' + action, { method: 'POST', body: JSON.stringify(body) }));
+  }
   if (['/api/login', '/api/logout'].includes(url.pathname)) {
     if (request.method !== 'POST') return json({ error: 'Please use the sign-in form.' }, 405);
     if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload and try again.' }, 403);
@@ -287,6 +298,7 @@ async function handle(request, env) {
   const url = new URL(request.url);
   if (!configured(env)) return json({ error: 'This student space is being set up. Please try again later.' }, 503);
   if (url.hostname === 'phil.englishladder.com' || ['localhost', '127.0.0.1'].includes(url.hostname) && env.LOCAL_STUDENT_ID === 'phil') return handleAdmin(request, env);
+  if (url.pathname.startsWith('/api/codex/')) return json({ error: 'Page not found.' }, 404);
   const account = await accountFor(request, env, ['/api/automation/webhook', '/api/automation/callback'].includes(url.pathname));
   if (!account) return json({ error: 'This student space could not be found.' }, 404);
 

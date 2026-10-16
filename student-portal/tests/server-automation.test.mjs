@@ -544,3 +544,79 @@ test('free-account AI quota exhaustion stops later jobs and monthly work but kee
   assert.equal((await storage.get(key)).modelIssue,'provider_quota');
   assert.equal((await storage.get('job:other')).tries,0);
 });
+
+// Codex never receives a server transcript or calls a Worker AI binding.
+async function codexFixture() {
+  const base = emptyEnv(), c = coordinator(base);
+  c.env.LESSON_PROCESSOR = 'codex'; c.env.AUTOMATION_ENABLED = 'false';
+  c.env.AI = { run() { throw Error('Unexpected Cloudflare AI call'); } };
+  c.storage.deleteAlarm = async () => { c.storage.alarmAt = null; };
+  c.object.zoom = async path => path.startsWith('/my_notes/') ? structuredClone(note) : structuredClone(meeting);
+  const id = await hash('fictional-note-123');
+  await c.storage.put({ ['job:' + id]: { noteId: 'fictional-note-123', meetingId: 'meeting-123', status: 'pending', tries: 7 },
+    'recovery-once': { id, at: Date.now()+10000, status: 'queued' } });
+  const dispatch = (action, body = {}) => c.object.fetch(new Request('https://automation.internal/codex/' + action, { method: 'POST', body: JSON.stringify(body) }));
+  const p = await (await dispatch('prepare', { id })).json();
+  const f = { ...feedback, id: session, startedAt: meeting.start_time, source: { ...feedback.source, noteId:'fictional-note-123', coverageStart:'00:01:00', coverageEnd:'00:10:30', segmentCount:10 } };
+  const q = { ...draft.quiz, sourceSessions:[session], generatedForSession:session };
+  const a = { ...draft.assessment, sourceSessions:[session], quiz:q,
+    strengths:assessment.strengths.map(s=>({...s,evidence:s.evidence.map(e=>({...e,sessionId:session}))})),
+    patterns:assessment.patterns.map(p=>({...p,examples:p.examples.map(e=>({...e,sessionId:session}))})) };
+  const records={feedback:[f],assessment:a,quizzes:[{quiz:q,evidence:q.questions.map((_,i)=>({questionIndex:i,references:[{sessionId:session,at:'00:03:00'}]}))}]};
+  const {digest}=await import('../codex-handoff.mjs');
+  const payload=async value=>({id,snapshotHash:p.snapshotHash,records:value,review:{approved:true,fullTranscript:true,independent:true,recordsHash:await digest(value)}});
+  return {...c,id,p,records,dispatch,payload};
+}
+
+test('Codex handoff publishes an exact reviewed bundle, verifies it, cancels recovery and safely repeats', async()=>{
+  const {object,storage,id,p,records,dispatch,payload}=await codexFixture();
+  assert.equal(p.source.segmentCount,10);assert.deepEqual(p.speakerRoles.learnerIds,['a']);
+  assert.doesNotMatch(JSON.stringify(p),/We can practice English|test-secret|test-client/);
+  assert.equal((await storage.get('recovery-once')).status,'cancelled');
+  const result=await dispatch('publish',await payload(records));
+  assert.equal(result.status,200);assert.equal((await result.json()).verified,true);
+  assert.equal((await storage.get('job:'+id)).publisher,'codex');
+  assert.equal((await (await dispatch('publish',await payload(records))).json()).duplicate,true);
+  assert.equal(await storage.get('usage:lesson:ab26'),undefined);
+});
+
+test('Codex rejects changed, unreviewed and wrongly grounded results before saving', async()=>{
+  const {id,p,records,dispatch,payload,env}=await codexFixture();
+  const body=await payload(records);body.records.feedback[0].summary='Changed after review.';
+  assert.equal((await (await dispatch('publish',body)).json()).error,'reviewed_content_changed');
+  const unreviewed=await payload(records);unreviewed.review.independent=false;
+  assert.equal((await (await dispatch('publish',unreviewed)).json()).error,'content_review_failed');
+  const bad=structuredClone(records);bad.feedback[0].focus[0].at='00:03:01';
+  assert.equal((await (await dispatch('publish',await payload(bad))).json()).error,'invalid_evidence');
+  const stale=await payload(records);stale.snapshotHash='f'.repeat(64);
+  assert.equal((await (await dispatch('publish',stale)).json()).error,'source_or_history_changed');
+  const store=env.FEEDBACK_STORE.get('ab26');
+  assert.equal(await store.storage.get('feedback:'+session),undefined);
+});
+
+test('Codex never restores ignored or inactive students and rejects a changed source', async()=>{
+  const {storage,env,id,p,records,dispatch,payload,object}=await codexFixture();
+  await storage.put({['job:'+id]:{...await storage.get('job:'+id),status:'ignored'}});
+  assert.equal((await (await dispatch('prepare',{id})).json()).error,'job_unavailable');
+  await storage.put({['job:'+id]:{...await storage.get('job:'+id),status:'pending'}});
+  const config=env.QUIZ_STUDENTS;env.QUIZ_STUDENTS='{}';
+  assert.equal((await (await dispatch('prepare',{id})).json()).error,'student_changed');
+  env.QUIZ_STUDENTS=config;
+  const changed=structuredClone(note);changed.transcript.items[0].text='A new source revision.';
+  object.zoom=async path=>path.startsWith('/my_notes/')?changed:meeting;
+  assert.equal((await (await dispatch('publish',await payload(records))).json()).error,'source_or_history_changed');
+});
+
+test('Codex handoff requires its narrow credential on the administrator host, never a browser session', async()=>{
+  const e=emptyEnv();e.LESSON_PROCESSOR='codex';e.AUTOMATION_ENABLED='false';e.CODEX_HANDOFF_SECRET='a'.repeat(64);
+  let calls=0;e.QUIZ_AUTOMATION={idFromName:x=>x,get:()=>({fetch:async()=>{calls++;return Response.json({ok:true});}})};
+  const options={method:'POST',headers:{Authorization:'Bearer '+'a'.repeat(64),'Content-Type':'application/json'},body:'{}'};
+  const admin='https://phil.englishladder.com';
+  assert.equal((await call(e,'/api/codex/queue',{...options,headers:{'Content-Type':'application/json'}},admin)).status,401);
+  assert.equal((await call(e,'/api/codex/queue',{...options,headers:{...options.headers,Authorization:'Bearer '+'b'.repeat(64)}},admin)).status,401);
+  assert.equal((await call(e,'/api/codex/queue',{...options,headers:{...options.headers,Origin:admin}},admin)).status,401);
+  assert.equal((await call(e,'/api/codex/queue',options,origin)).status,404);
+  assert.equal((await call(e,'/api/codex/queue',options,admin)).status,200);assert.equal(calls,1);
+  assert.equal((await call(e,'/api/codex/delete-account',options,admin)).status,404);
+  e.LESSON_PROCESSOR='cloudflare';assert.equal((await call(e,'/api/codex/queue',options,admin)).status,401);
+});

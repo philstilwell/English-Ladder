@@ -55,7 +55,7 @@
     try {
       const status = await api('/api/admin/automation');
       if (!valid()) return;
-      $('schedule-state').textContent = status.retentionError ? 'Transcript cleanup needs attention. Older cached copies could not be removed.' : status.cefrNeedsAttention ? 'CEFR review needs attention. Existing estimates have been kept.' : status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
+      $('schedule-state').textContent = status.retentionError ? 'Transcript cleanup needs attention. Older cached copies could not be removed.' : status.cefrNeedsAttention ? 'CEFR review needs attention. Existing estimates have been kept.' : status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.processor === 'codex' ? 'Codex · keep your Mac awake and Codex open' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
       $('last-check').textContent = status.lastCheck ? 'Last check: ' + displayTime(status.lastCheck) + (status.needsAttention ? ' · ' + status.needsAttention + ' sessions need attention' : '') : 'The first nightly check is still ahead.';
       $('automation-problem-items').replaceChildren(); $('automation-retry-status').textContent = notice;
       $('automation-problems').hidden = !status.problems?.length && !notice;
@@ -69,7 +69,7 @@
         const stage = { privacy_plan: 'Selecting private details to remove.', privacy_plan_repair: 'Correcting the removal instructions.', privacy_review: 'Reviewing the complete private transcript.', privacy_review_final: 'Checking the repaired transcript.', lesson_author: 'Writing the lesson update.', lesson_editor: 'Reviewing the lesson update.' }[problem.modelStage];
         if (stage) row.append(element('p', stage, 'field-note'));
         if (replyIssue) row.append(element('p', replyIssue, 'field-note'));
-        if (student?.status === 'active' && /^[a-f0-9]{64}$/.test(problem.id)) {
+        if (status.processor !== 'codex' && student?.status === 'active' && /^[a-f0-9]{64}$/.test(problem.id)) {
           const button = element('button', 'Retry update for ' + student.firstName, 'secondary-button'); button.type = 'button'; button.disabled = retryingUpdate;
           button.addEventListener('click', async () => {
             if (!valid() || retryingUpdate) return;

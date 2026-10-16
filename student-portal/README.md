@@ -255,3 +255,8 @@ The separate `transcript-privacy.mjs` utility is retained for explicitly request
 Failure diagnostics expose only a fixed processing stage and allowlisted reply issue (for example, incomplete output or invalid JSON); no generated text, prompt, transcript, or provider error body is returned. Account pages show the count of privacy-reviewed cached transcripts so completed privacy work can be distinguished from lesson generation. A complete JSON object enclosed only in a Markdown JSON code fence is accepted; surrounding prose and incomplete replies remain invalid.
 
 Cloudflare free-allowance exhaustion now has its own safe diagnostic and leaves the lesson pending. A nightly run stops further AI requests for that run. Explicitly requested one-time recoveries can be queued with the temporary `LESSON_RECOVERY_SCHEDULE` setting and the authenticated retry control; a server alarm runs the same one-job method at the specified time, with no additional recurring publisher or plan change. See QUIZ_AUTOMATION.md for scope, cleanup, and limits.
+
+
+## Codex transcript handoff (October 16, 2026)
+
+The active nightly author is now Codex at 1 a.m. New York time. Cloudflare AI is unbound and server lesson generation is disabled; server cron only maintains transcript retention. The separate operator credential and source-checked atomic handoff preserve all student records without an expiring browser session. See [CODEX_UPDATES.md](CODEX_UPDATES.md) for the exact workflow, independent review, private helper files, failure handling and Mac availability requirements. This supersedes earlier server-AI schedule and cost descriptions above.

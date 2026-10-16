@@ -796,7 +796,8 @@
       const message = !data.configured ? 'The server setup is waiting for its Zoom app connection.'
         : data.connectionError === 'zoom_reconnect' ? 'Zoom needs attention. Please connect it again.'
         : data.connectionError ? 'The last Zoom check could not finish. It will try again tomorrow.'
-        : !data.connected ? 'Connect Zoom for nightly lesson updates. Your computer can be off.'
+        : !data.connected ? 'Connect Zoom for nightly lesson updates.'
+        : data.processor === 'codex' ? 'Nightly updates run through Codex. Keep your Mac awake, online, and Codex open.'
         : !data.enabled ? 'Zoom is connected. Nightly updates are waiting to be switched on.'
         : 'Nightly updates are on. Your computer can be off.';
       panel.replaceChildren(node('h3', 'Nightly lesson updates'), node('p', message));

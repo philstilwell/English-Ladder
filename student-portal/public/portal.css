@@ -490,3 +490,15 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-header-height,11
 .communication-save-status:empty { display:none; }
 .communication-saved { border-bottom:1px solid var(--line); margin-bottom:14px; font-size:.85rem; }
 #communication-practice select { min-width:0; max-width:100%; }
+
+#all-questions-toolbar { margin:0 0 16px; }
+.all-questions-button { display:inline-flex; align-items:center; background:#fff3c4; color:#563c00; border-color:#bd8b00; text-decoration:none; }
+.all-questions-button:hover { background:#ffe69a; }
+#all-questions>.activity-questions-link { display:inline-flex; align-items:center; min-height:44px; }
+.all-question-card { border:1px solid var(--line); border-radius:7px; margin:18px 0; padding:16px; overflow-wrap:anywhere; }
+.all-question-card>h3 { margin:-16px -16px 14px; padding:8px 16px; background:#666; color:white; border-radius:6px 6px 0 0; }
+.all-question-card .communication-heading { margin:0 0 12px; padding:8px 12px; border-radius:4px; }
+.all-question-card .grammar-item,.all-question-card .terms-item,.all-question-card .vocabulary-item,.all-question-card .road-review { margin-bottom:0; }
+.all-question-card .assessment-plan-card { padding:0; }
+
+#all-questions [role="status"] { scroll-margin-top:calc(var(--student-header-height,114px) + 20px); }

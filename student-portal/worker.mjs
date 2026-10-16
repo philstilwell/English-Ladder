@@ -14,7 +14,7 @@ export { StudentDirectory } from './student-directory.mjs';
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
-const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/road-questions.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/vocabulary-practice.js', '/communication-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
+const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/road-questions.js', '/all-questions.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/vocabulary-practice.js', '/communication-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
 const SECURITY_HEADERS = {
   'Cache-Control': 'no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -355,13 +355,15 @@ async function handle(request, env) {
     return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/learning-import', { method: 'POST', body: JSON.stringify(body) }));
   }
 
-  if (url.pathname === '/api/activities/progress') {
+  if (['/api/activities/progress', '/api/activities/questions'].includes(url.pathname)) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);
     if (request.method !== 'GET') return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET' });
     if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Please open this from your student page.' }, 403);
     if (!env.FEEDBACK_STORE) return json({ error: 'Progress is temporarily unavailable. Please try again.' }, 503);
-    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/activities/progress'));
+    const internal = new URL('https://feedback.internal' + url.pathname.slice(4));
+    if (url.searchParams.has('after')) internal.searchParams.set('after', url.searchParams.get('after'));
+    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request(internal));
   }
 
   const communication = /^\/api\/communication\/([a-z-]+)(?:\/(state))?$/.exec(url.pathname);

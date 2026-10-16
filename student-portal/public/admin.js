@@ -822,10 +822,14 @@
   });
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
   for (const id of ['student-activities', 'student-resources']) $(id).addEventListener('change', updateSelectionCounts);
-  for (const [id, checked] of [['select-all-resources', true], ['clear-all-resources', false]]) {
+  for (const [id, target, checked] of [
+    ['select-all-activities', 'student-activities', true], ['clear-all-activities', 'student-activities', false],
+    ['select-all-resources', 'student-resources', true], ['clear-all-resources', 'student-resources', false]
+  ]) {
     $(id).addEventListener('click', () => {
-      if (!signedIn || !resourceTools.length || saving || deleting || current?.deletionPending) return;
-      for (const box of $('student-resources').querySelectorAll('input[type="checkbox"]')) box.checked = checked;
+      const available = target === 'student-activities' ? activityTools : resourceTools;
+      if (!signedIn || !available.length || saving || deleting || current?.deletionPending) return;
+      for (const box of $(target).querySelectorAll('input[type="checkbox"]')) box.checked = checked;
       updateSelectionCounts();
     });
   }

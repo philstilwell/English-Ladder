@@ -496,7 +496,7 @@
     $('delete-account-panel').hidden = true;
     $('sheet-paste').value = ''; $('password').value = ''; $('search').value = ''; $('filter').value = 'all';
     $('edit-title').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href'); $('open-quiz-results').removeAttribute('href'); $('open-quiz-results').hidden = true;
-    $('activation-note').textContent = ''; $('save-state').textContent = ''; $('import-preview').hidden = true;
+    $('activation-note').textContent = ''; setSaveState(''); $('import-preview').hidden = true;
     $('password-status').textContent = '';
     $('active-count').textContent = '0'; $('draft-count').textContent = '0'; $('list-count').textContent = '';
     $('last-check').textContent = ''; $('schedule-state').textContent = ''; message('');
@@ -631,7 +631,7 @@
   }
   function editStudent(student) {
     current = student; addressEdited = Boolean(student?.studentId);
-    $('student-form').reset(); $('save-state').textContent = '';
+    $('student-form').reset(); setSaveState('');
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     const selected = student?.visibleActivities ?? activityTools.map(activity => activity.id);
     for (const activity of activityTools) {
@@ -655,7 +655,6 @@
     }
 
     for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(student?.deletionPending);
-    $('save-student').disabled = Boolean(student?.deletionPending) || saving;
     $('delete-account-panel').hidden = !student;
     $('open-delete').disabled = saving;
     $('delete-account-note').textContent = student?.deletionPending ? 'The site is closed. Deletion is not finished. Use Delete student account again to finish removing the saved records.' : 'Permanently remove this account and its saved learning records. To keep the records and stop access, choose “Paused” above instead.';
@@ -683,7 +682,16 @@
     clearStudyQuestions(); $('study-questions-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
     clearActivityOverview(); void loadActivityOverview();
   }
-  function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }
+  function setSaveState(text) {
+    for (const id of ['save-state', 'save-state-top']) $(id).textContent = text;
+  }
+  function updateSaveLabel() {
+    const label = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes';
+    for (const id of ['save-student', 'save-student-top']) {
+      $(id).textContent = label;
+      $(id).disabled = Boolean(current?.deletionPending) || saving;
+    }
+  }
   function route() {
     if (!signedIn) return;
     clearRoad(); clearQuestions(); clearActivityOverview();
@@ -821,17 +829,17 @@
       input.newPassword = $('newPassword').value.toLowerCase(); input.confirmPassword = $('confirmPassword').value.toLowerCase();
     }
     if (editing) input.revision = editing.revision;
-    saving = true; $('open-delete').disabled = true; $('save-student').disabled = true; $('save-state').textContent = 'Saving…'; message('');
+    saving = true; $('open-delete').disabled = true; updateSaveLabel(); setSaveState('Saving…'); message('');
     try {
       const data = await api('/api/admin/students' + (editing ? '/' + editing.key : ''), {method:editing?'PUT':'POST',body:JSON.stringify(input)});
       if (!signedIn || version !== epoch) return;
       students = students.filter(s=>s.key!==data.student.key).concat(data.student).sort((a,b)=>(a.firstName+a.lastName).localeCompare(b.firstName+b.lastName));
       history.replaceState(null, '', '#students/' + data.student.key); route();
       message(data.student.status === 'active' ? 'Saved. This student’s site is active and linked to the nightly updates.' : 'Saved. This account is ' + data.student.status + '.');
-      $('save-state').textContent = 'Saved';
+      setSaveState('Saved');
       void refreshQuizStatuses();
-    } catch(error) { if(signedIn && version===epoch){message(error.message,true);$('save-state').textContent='Not saved';} }
-    finally { saving = false; $('save-student').disabled = Boolean(current?.deletionPending); $('open-delete').disabled = false; }
+    } catch(error) { if(signedIn && version===epoch){message(error.message,true);setSaveState('Not saved');} }
+    finally { saving = false; updateSaveLabel(); $('open-delete').disabled = false; }
   });
   $('sheet-paste').addEventListener('input',()=>{importRows=null;$('import-preview').hidden=true;$('import-names').replaceChildren();});
   $('preview-import').addEventListener('click',async()=>{

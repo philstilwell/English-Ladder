@@ -1,18 +1,27 @@
 (() => {
   'use strict';
   const PAGE_SIZE = 10;
-  function answerSentence({ prompt, answer }) {
+  function answerParts({ prompt, answer }) {
     // Braces hold source instructions, not part of the sentence. Multi-gap
     // answers use slash-separated words in the same order as the blanks.
     const sentence = prompt.replace(/\{[^}]*\}/g, '').trim();
-    const gaps = sentence.match(/_+/g) || [];
+    const gaps = [...sentence.matchAll(/_+/g)], result = [];
     if (gaps.length) {
       const parts = gaps.length > 1 ? answer.split(/\s*\/\s*/) : [answer];
-      let index = 0;
-      return sentence.replace(/_+/g, () => parts[index++]).replace(/\s+([.,!?;:])/g, '$1');
+      let offset = 0;
+      gaps.forEach((gap, index) => {
+        result.push({ text: sentence.slice(offset, gap.index) }, { text: parts[index], answer: true });
+        offset = gap.index + gap[0].length;
+      });
+      result.push({ text: sentence.slice(offset) });
+    } else {
+      result.push({ text: sentence ? sentence + ' ' : '' }, { text: answer, answer: true });
+      if (!/[.!?]$/.test(answer)) result.push({ text: '.' });
     }
-    const completed = sentence ? sentence + ' ' + answer : answer;
-    return /[.!?]$/.test(completed) ? completed : completed + '.';
+    return result.map(part => ({ ...part, text: part.text.replace(/\s+([.,!?;:])/g, '$1') }));
+  }
+  function answerSentence(item) {
+    return answerParts(item).map(part => part.text).join('');
   }
   function element(tag, text, className) {
     const node = document.createElement(tag);
@@ -32,14 +41,22 @@
     row.id = 'grammar-item-' + item.number; row.tabIndex = -1; row.setAttribute('aria-label', 'Item ' + item.number);
     const prompt = element('p', '', 'grammar-prompt'); prompt.setAttribute('aria-live', 'polite');
     const sentence = element('q', item.prompt); sentence.id = 'grammar-sentence-' + item.number; prompt.append(sentence);
-    const options = element('ul', '', 'grammar-options'); options.setAttribute('aria-label', 'Choices for item ' + item.number);
+    const options = element('ol', '', 'grammar-options'); options.type = 'A'; options.setAttribute('aria-label', 'Choices for item ' + item.number);
     for (const text of item.options) { const option = element('li'); option.append(element('q', text)); options.append(option); }
     const reveal = element('label', '', 'grammar-reveal');
     const checkbox = element('input'); checkbox.type = 'checkbox'; checkbox.autocomplete = 'off';
     checkbox.setAttribute('aria-label', 'Show answer for item ' + item.number);
     checkbox.setAttribute('aria-controls', sentence.id);
     checkbox.addEventListener('change', () => {
-      sentence.textContent = checkbox.checked ? answerSentence(item) : item.prompt;
+      sentence.replaceChildren();
+      if (checkbox.checked) {
+        for (const part of answerParts(item)) {
+          if (part.answer) {
+            const term = part.text.replace(/[.,!?;:]+$/, '');
+            sentence.append(element('span', term, 'grammar-answer'), part.text.slice(term.length));
+          } else sentence.append(part.text);
+        }
+      } else sentence.textContent = item.prompt;
       prompt.classList.toggle('is-revealed', checkbox.checked);
     });
     reveal.append(checkbox, element('span', 'Show answer'));

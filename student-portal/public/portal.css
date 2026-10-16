@@ -379,8 +379,8 @@ summary { cursor:pointer; }
 .grammar-item.is-finished { background:#eeeeef; border-color:#b8b8bf; }
 .grammar-item::marker { color:var(--muted); font-size:.9rem; }
 .grammar-prompt { font-weight:650; margin:0 0 10px; }
-.grammar-prompt.is-revealed { color:var(--blue); }
-.grammar-options { padding-left:20px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 24px; margin:0 0 8px; font-size:.94rem; }
+.grammar-answer { color:var(--blue); }
+.grammar-options { padding-left:28px; list-style-type:upper-alpha; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 24px; margin:0 0 8px; font-size:.94rem; }
 .grammar-item .grammar-reveal { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
 .grammar-item .grammar-reveal span { font-size:inherit; color:inherit; margin:0; }
 .grammar-reveal input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }

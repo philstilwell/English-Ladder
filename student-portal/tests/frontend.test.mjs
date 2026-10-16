@@ -1060,6 +1060,8 @@ test('grammar preserves unsaved reveals and remembers the selected group', async
   const count=calls.length,checkbox=root.querySelector('.grammar-reveal input'),answer=d.getElementById(checkbox.getAttribute('aria-controls'));
   assert.equal(answer.textContent,grammarBank.items[0].prompt);
   checkbox.click();assert.equal(answer.textContent,'Tom is much more intelligent than Mike.');assert(answer.parentElement.classList.contains('is-revealed'));
+  assert.equal(answer.querySelector('.grammar-answer').textContent,'is much more intelligent');
+  assert.equal(root.querySelector('.grammar-options').tagName,'OL');assert.equal(root.querySelector('.grammar-options').type,'A');
   checkbox.click();assert.equal(answer.textContent,grammarBank.items[0].prompt);assert(!answer.parentElement.classList.contains('is-revealed'));assert.equal(calls.length,count);
   const picker=d.getElementById('grammar-group');picker.value='89';picker.dispatchEvent(new w.Event('change'));
   assert.equal(root.querySelector('ol').start,891);assert.equal(root.querySelectorAll('.grammar-item').length,10);
@@ -1091,8 +1093,11 @@ test('grammar completes single blanks, multiple blanks and sentence items, and r
     for(const checkbox of d.querySelectorAll('#grammar-practice .grammar-reveal input')){
       const item=grammarBank.items[checked++],sentence=d.getElementById(checkbox.getAttribute('aria-controls'));
       checkbox.click();assert.doesNotMatch(sentence.textContent,/_+|undefined|\{|\}/);assert(sentence.parentElement.classList.contains('is-revealed'));
+      const terms=(item.prompt.match(/_+/g)||[]).length>1?item.answer.split(/\s*\/\s*/):[item.answer];
+      assert.deepEqual([...sentence.querySelectorAll('.grammar-answer')].map(el=>el.textContent),terms.map(term=>term.replace(/[.,!?;:]+$/,'')));
       if(examples.has(item.number))assert.equal(sentence.textContent,examples.get(item.number));
       checkbox.click();assert.equal(sentence.textContent,item.prompt);assert(!sentence.parentElement.classList.contains('is-revealed'));
+      assert.equal(sentence.querySelector('.grammar-answer'),null);
     }
   }
   assert.equal(checked,900);w.close();

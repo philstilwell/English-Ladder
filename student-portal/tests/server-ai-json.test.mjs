@@ -23,7 +23,7 @@ test('partial, refused, malformed and non-object model replies fail closed', asy
     { output: [{ ...message, status: 'incomplete' }] }, { output: [message, message] },
     { output: [{ ...message, content: [{ type: 'refusal', refusal: 'No.' }] }] },
     { output: [{ ...message, content: [{ type: 'output_text', text: 'not JSON' }] }] },
-    { output: [] }, { response: [] }, { response: 'null' }, { error: 'failed', response: { approved: true } },
+    { output: [{ ...message, content: {} }] }, { output: [] }, { response: [] }, { response: 'null' }, { error: 'failed', response: { approved: true } },
   ]) await assert.rejects(modelJson({ run: async () => reply }, '', {}, 4000), /invalid_model_response/);
 });
 
@@ -33,4 +33,11 @@ test('model diagnostics distinguish truncation without exposing content and acce
   await assert.rejects(modelJson(ai,'',{},10),error=>error.message==='invalid_model_response'&&error.modelIssue==='output_limit');
   assert.deepEqual(await modelJson({run:async()=>({response:'```json\n{"approved":true}\n```'})},'',{},4000),{approved:true});
   await assert.rejects(modelJson({run:async()=>({response:'Extra text ```json\n{"approved":true}\n```'})},'',{},4000),error=>error.modelIssue==='invalid_json');
+});
+
+
+test('provider exceptions expose only safe categories and never source text',async()=>{
+  for(const [message,issue] of [['3036 You have used up your daily free allocation PRIVATE','provider_quota'],['request timeout PRIVATE','provider_timeout'],['429 too many requests PRIVATE','provider_rate_limit'],['context length exceeded PRIVATE','provider_context_limit'],['model failed PRIVATE','provider_error']]) {
+    await assert.rejects(modelJson({run:async()=>{throw Error(message)}},'',{},4000),error=>error.message==='invalid_model_response'&&error.modelIssue===issue&&!JSON.stringify(error).includes('PRIVATE'));
+  }
 });

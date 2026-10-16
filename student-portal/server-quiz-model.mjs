@@ -92,7 +92,8 @@ Each question needs at least one source: valid segments or supplied reviewRefs. 
 Use reviewRefs only for actual first-try misses in supplied history. Never claim new model sentences are transcript quotations.`;
 
 async function generate(ai, instructions, input, maxTokens) {
-  return modelJson(ai, instructions, input, maxTokens);
+  try { return await modelJson(ai, instructions, input, maxTokens); }
+  catch (error) { error.modelStage = instructions.includes('independent editor') ? 'lesson_editor' : 'lesson_author'; throw error; }
 }
 
 export async function authorQuiz(ai, transcript, meeting, noteId, context) {

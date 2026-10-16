@@ -39,6 +39,7 @@
     meeting_reference_missing: 'The note could not be linked to a completed meeting.',
     content_review_failed: 'The lesson content check did not pass.',
     invalid_evidence: 'The proposed lesson evidence could not be verified.',
+    recovery_scheduled: 'A one-time lesson update is scheduled.',
     daily_limit: 'The daily AI attempt limit has been reached.',
     monthly_limit: 'The monthly AI attempt limit has been reached.',
     zoom_reconnect: 'Reconnect Zoom from a student’s Quiz results page.',
@@ -62,9 +63,11 @@
         const student = students.find(s => s.studentId === problem.studentId), row = element('article');
         row.append(element('h3', (student?.firstName || 'Unmatched session') + (problem.startedAt ? ' · ' + displayTime(problem.startedAt) : '')),
           element('p', updateError(problem.error), 'field-note'));
-        if (problem.status === 'pending') row.append(element('p', 'Queued for the next eligible nightly check.', 'field-note'));
+        if (problem.status === 'pending') row.append(element('p', problem.recoveryAt ? 'One-time server retry: ' + displayTime(problem.recoveryAt) + '. Your computer can be off.' : 'Queued for the next eligible nightly check.', 'field-note'));
         if (problem.phase) row.append(element('p', problem.phase === 'privacy' ? 'Stopped while preparing the private transcript.' : 'Stopped while writing or reviewing lesson feedback.', 'field-note'));
-        const replyIssue = { output_limit: 'The AI reply reached its length limit.', incomplete: 'The AI reply was incomplete.', missing_output: 'The AI returned no final answer.', refused: 'The AI declined the request.', invalid_json: 'The AI reply did not use the required format.', provider_error: 'The AI service returned an error.' }[problem.modelIssue];
+        const replyIssue = { output_limit: 'The AI reply reached its length limit.', incomplete: 'The AI reply was incomplete.', missing_output: 'The AI returned no final answer.', refused: 'The AI declined the request.', invalid_json: 'The AI reply did not use the required format.', provider_quota: 'Cloudflare’s free daily AI allowance is exhausted. It resets at 00:00 UTC.', provider_error: 'The AI service returned an error.', provider_timeout: 'The AI service took too long to respond.', provider_rate_limit: 'The AI service is temporarily limiting requests.', provider_context_limit: 'The AI service could not accept this much input.' }[problem.modelIssue];
+        const stage = { privacy_plan: 'Selecting private details to remove.', privacy_plan_repair: 'Correcting the removal instructions.', privacy_review: 'Reviewing the complete private transcript.', privacy_review_final: 'Checking the repaired transcript.', lesson_author: 'Writing the lesson update.', lesson_editor: 'Reviewing the lesson update.' }[problem.modelStage];
+        if (stage) row.append(element('p', stage, 'field-note'));
         if (replyIssue) row.append(element('p', replyIssue, 'field-note'));
         if (student?.status === 'active' && /^[a-f0-9]{64}$/.test(problem.id)) {
           const button = element('button', 'Retry update for ' + student.firstName, 'secondary-button'); button.type = 'button'; button.disabled = retryingUpdate;
@@ -75,7 +78,7 @@
             $('automation-retry-status').textContent = 'Updating ' + student.firstName + '’s lesson. This may take a few minutes. Keep this page open.';
             try {
               const result = await api('/api/admin/automation/retry', { method: 'POST', body: JSON.stringify({ id: problem.id }) });
-              if (valid()) { retryingUpdate = false; await refreshAutomation(result.ok ? student.firstName + '’s lesson update is published.' : updateError(result.errorCode) + (result.status === 'pending' ? ' The lesson remains queued for the next eligible nightly check.' : '')); }
+              if (valid()) { retryingUpdate = false; await refreshAutomation(result.ok ? student.firstName + '’s lesson update is published.' : result.recoveryAt ? 'One-time server retry scheduled for ' + displayTime(result.recoveryAt) + '.' : updateError(result.errorCode) + (result.status === 'pending' ? ' The lesson remains queued for the next eligible nightly check.' : '')); }
             } catch (error) {
               if (valid()) { retryingUpdate = false; await refreshAutomation(error.message); }
             }

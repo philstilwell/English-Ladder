@@ -1,6 +1,6 @@
 import { directoryStudents, directoryRequest } from './student-directory.mjs';
 import { authorQuiz, readTranscript, sessionId } from './server-quiz-model.mjs';
-import { anonymizeTranscript } from './transcript-privacy.mjs';
+import { prepareAnonymousTranscript } from './transcript-privacy.mjs';
 import { TRANSCRIPT_PRIVACY_VERSION, reusableTranscript } from './transcript-cache.mjs';
 import { authorCefr, cefrModelInput } from './server-cefr-model.mjs';
 
@@ -9,13 +9,14 @@ const encoder = new TextEncoder();
 const hex = bytes => [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, '0')).join('');
 export const hash = async value => hex(await crypto.subtle.digest('SHA-256', encoder.encode(value)));
 const noteIdValid = id => typeof id === 'string' && /^[\w-]{10,80}$/.test(id);
-const safeModelIssue = error => ['provider_error','output_limit','incomplete','missing_output','refused','invalid_json','invalid_object','invalid_message'].includes(error.modelIssue) ? error.modelIssue : null;
+const safeModelIssue = error => ['provider_error','provider_quota','provider_timeout','provider_rate_limit','provider_context_limit','output_limit','incomplete','missing_output','refused','invalid_json','invalid_object','invalid_message'].includes(error.modelIssue) ? error.modelIssue : null;
+const safeModelStage = error => ['privacy_plan','privacy_plan_repair','privacy_review','privacy_review_final','lesson_author','lesson_editor'].includes(error.modelStage) ? error.modelStage : null;
 const safeError = error => [
   'zoom_reconnect', 'zoom_unavailable', 'transcript_unusable', 'transcript_too_large', 'ambiguous_student',
   'insufficient_evidence', 'invalid_evidence', 'content_review_failed', 'assessment_required', 'unsafe_content',
   'invalid_model_response', 'monthly_limit', 'daily_limit', 'meeting_pending', 'publish_failed', 'meeting_reference_missing', 'discovery_incomplete',
   'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_redaction_format', 'transcript_redaction_index', 'transcript_privacy_rejected', 'source_changed', 'student_changed', 'student_not_matched',
-  'cefr_window_too_large', 'invalid_cefr_evidence', 'cefr_review_failed', 'cefr_limit',
+  'recovery_scheduled', 'cefr_window_too_large', 'invalid_cefr_evidence', 'cefr_review_failed', 'cefr_limit',
 ].includes(error.message) ? error.message : 'generation_failed';
 
 export function studentsFor(env) {
@@ -269,7 +270,7 @@ export class QuizAutomation {
         let grant; try { grant = JSON.parse(this.env.LESSON_RECOVERY_GRANT || 'null'); } catch {}
         const attempt = grant?.attempt ?? 3;
         const grantKey = 'recovery-used:' + day + ':' + recoveryJobId + ':' + attempt;
-        if (isCefr || !Number.isInteger(attempt) || attempt < 3 || attempt > 5 || daily !== attempt - 1 || !/^[a-f0-9]{64}$/.test(recoveryJobId || '') ||
+        if (isCefr || !Number.isInteger(attempt) || attempt < 3 || attempt > 12 || daily !== attempt - 1 || !/^[a-f0-9]{64}$/.test(recoveryJobId || '') ||
             grant?.day !== day || grant?.jobId !== recoveryJobId || await txn.get(grantKey)) throw new Error(isCefr ? 'cefr_limit' : 'daily_limit');
         await txn.put({ [grantKey]: true });
       }
@@ -329,18 +330,13 @@ export class QuizAutomation {
     }
     await this.reserveGeneration(job.studentId, 'lesson', key.slice(4));
     if (!reusable) {
-      job.phase = 'privacy'; await this.saveJob(key, job);
+      // Owner instruction (2026-10-16): automatic lessons do not run an AI
+      // transcript-privacy stage. Basic name/contact removal is deterministic.
+      // Unreviewed full text stays transient; never label or cache it as reviewed.
       const sameContent = cached?.privacyVersion === TRANSCRIPT_PRIVACY_VERSION && cached.mappingHash === mappingHash && cached.sourceHash === sourceHash;
-      const segments = sameContent ? cached.segments : await anonymizeTranscript(this.env.AI, note, transcript, instructorNames);
+      const segments = sameContent ? cached.segments : prepareAnonymousTranscript(note, transcript, instructorNames).segments;
       if (JSON.stringify(await this.students()) !== JSON.stringify(students)) throw new Error('student_changed');
       await this.checkSource(key, job);
-      await this.portal(job.studentId, '/automation/transcript/' + job.noteId, {
-        privacyVersion: TRANSCRIPT_PRIVACY_VERSION, privacyReviewed: true, noteId: job.noteId, meetingId: job.meetingId,
-        mappingHash, sourceHash, savedAt: new Date().toISOString(), modifiedAt: job.modifiedAt || null,
-        sourceEventAt: job.sourceEventAt || null, meeting, segments,
-      });
-      // Retain only the pointer in the coordinator, even if authoring later fails.
-      await this.saveJob(key, job);
       transcript = { ...transcript, learnerLabel: 'Student', segments };
       note = null;
     }
@@ -353,7 +349,7 @@ export class QuizAutomation {
     await this.checkSource(key, job);
     const saved = await this.portal(job.studentId, '/automation/publish', { ...output, fingerprint: sourceHash });
     if (!saved.ok) throw new Error('publish_failed');
-    job.status = 'published'; job.sessionId = id; job.publishedAt = new Date().toISOString(); job.lastError = null; job.modelIssue = null; job.phase = null;
+    job.status = 'published'; job.sessionId = id; job.publishedAt = new Date().toISOString(); job.lastError = null; job.modelIssue = null; job.modelStage = null; job.phase = null;
   }
   sourceChanged(current, job) {
     return current && ((current.sourceEventAt || 0) > (job.sourceEventAt || 0) ||
@@ -412,6 +408,7 @@ export class QuizAutomation {
   }
   async run(scheduledTime) {
     const lease = crypto.randomUUID(), deadline = Date.now() + 480000;
+    let quotaExhausted = false;
     const acquired = await this.storage.transaction(async txn => {
       const lock = await txn.get('run-lock');
       if (lock?.until > Date.now()) return false;
@@ -440,20 +437,22 @@ export class QuizAutomation {
         catch (error) {
           if (error.message === 'other_student') { job.status = 'needs_attention'; job.lastError = 'student_not_matched'; }
           else {
-            job.lastError = safeError(error); job.modelIssue = safeModelIssue(error); job.tries++;
+            job.lastError = safeError(error); job.modelIssue = safeModelIssue(error); job.modelStage = safeModelStage(error); job.tries++;
             job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing', 'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_redaction_format', 'transcript_redaction_index', 'transcript_privacy_rejected'].includes(job.lastError) ? 'needs_attention' : 'pending';
             job.nextAt = Date.now() + 3600000;
+            if (job.modelIssue === 'provider_quota') { job.status = 'pending'; quotaExhausted = true; }
             if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; }
           }
         }
         await this.saveJob(key, job);
+        if (quotaExhausted) break;
       }
       await this.storage.put({ 'last-check': new Date().toISOString(), 'connection-error': null });
     } catch (error) { await this.storage.put({ 'connection-error': safeError(error) }); }
     finally {
       // Monthly reviews use saved sources and can proceed without a new lesson
       // or a working Zoom connection. Daily lesson publishing stays independent.
-      try { await this.reviewCefr(deadline); }
+      try { if (!quotaExhausted) await this.reviewCefr(deadline); }
       catch { await this.storage.put({ 'cefr-errors': 1 }); }
       await this.storage.transaction(async txn => {
         if ((await txn.get('run-lock'))?.lease === lease) await txn.delete('run-lock');
@@ -471,6 +470,23 @@ export class QuizAutomation {
       return json({ ok: true });
     });
   }
+  async alarm() {
+    const recovery = await this.storage.get('recovery-once');
+    if (!recovery || recovery.status !== 'queued') return;
+    if (Date.now() < recovery.at) { await this.storage.setAlarm(recovery.at); return; }
+    if (Date.now() > recovery.at + 3600000) {
+      await this.storage.put({ 'recovery-once': { ...recovery, status: 'expired', completedAt: new Date().toISOString() } }); return;
+    }
+    // The same authenticated-service processing method enforces the shared lock,
+    // active roster, spending reservations, source checks and duplicate protection.
+    const response = await this.retry(recovery.id);
+    const result = await response.json();
+    if (response.status === 409 && (await this.storage.get('run-lock'))?.until > Date.now()) {
+      await this.storage.setAlarm(Date.now() + 60000); return;
+    }
+    await this.storage.put({ 'recovery-once': { ...recovery, status: 'finished', completedAt: new Date().toISOString(),
+      published: result.ok === true, errorCode: result.errorCode || (response.ok ? null : 'recovery_not_available') } });
+  }
   async retry(id) {
     if (typeof id !== 'string' || !/^[a-f0-9]{64}$/.test(id)) return json({ error: 'Choose an update from the list.' }, 400);
     if (this.env.AUTOMATION_ENABLED !== 'true' || !await this.isConfigured()) return json({ error: 'Automatic updates are not enabled.' }, 409);
@@ -485,10 +501,26 @@ export class QuizAutomation {
       if (!job?.studentId || !(await this.students())[job.studentId]) return json({ error: 'This update needs an active student with a matching Zoom name.' }, 409);
       if (job.status === 'published') return json({ ok: true, status: 'published', sessionId: job.sessionId });
       if (!['pending', 'needs_attention'].includes(job.status)) return json({ error: 'This update cannot be retried.' }, 409);
+      // A temporary operator setting queues one owner-authorized recovery only.
+      // Scheduling itself makes no AI calls and never bypasses usage limits.
+      let schedule; try { schedule = JSON.parse(this.env.LESSON_RECOVERY_SCHEDULE || 'null'); } catch {}
+      const at = Date.parse(schedule?.at);
+      if (schedule?.jobId === id && Number.isFinite(at) && at > Date.now() && at <= Date.now() + 86400000) {
+        const existing = await this.storage.get('recovery-once');
+        if (existing?.status === 'queued' && (existing.id !== id || existing.at !== at)) return json({ error: 'A different one-time update is already scheduled.' }, 409);
+        await this.storage.transaction(async txn => {
+          await txn.put({ [key]: { ...job, status: 'pending', nextAt: at, recoveryAt: new Date(at).toISOString(), lastError: 'recovery_scheduled', phase: null, modelIssue: null, modelStage: null },
+            'recovery-once': { id, at, status: 'queued' } });
+          await txn.setAlarm(at);
+        });
+        return json({ ok: false, status: 'pending', errorCode: 'recovery_scheduled', recoveryAt: new Date(at).toISOString() });
+      }
+      job.recoveryAt = null;
       try { await this.process(key, job); }
       catch (error) {
-        job.lastError = safeError(error); job.modelIssue = safeModelIssue(error); job.tries = (job.tries || 0) + 1;
+        job.lastError = safeError(error); job.modelIssue = safeModelIssue(error); job.modelStage = safeModelStage(error); job.tries = (job.tries || 0) + 1;
         job.status = 'needs_attention';
+        if (job.modelIssue === 'provider_quota') { job.status = 'pending'; job.nextAt = Date.now() + 3600000; }
         if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; job.nextAt = Date.now() + 3600000; }
       }
       await this.saveJob(key, job);
@@ -517,7 +549,7 @@ export class QuizAutomation {
         problems: entries.filter(([, j]) => ['pending', 'needs_attention'].includes(j.status) && j.lastError)
           .sort(([, a], [, b]) => (b.startedAt || '').localeCompare(a.startedAt || '')).slice(0, 20)
           .map(([key, j]) => ({ id: key.slice(4), studentId: j.studentId || null, startedAt: j.startedAt || null,
-            status: j.status, error: safeError(new Error(j.lastError)), modelIssue: safeModelIssue(j), phase: ['privacy','lesson'].includes(j.phase) ? j.phase : null, attempts: j.tries || 0, retryAt: j.status === 'pending' && j.nextAt ? new Date(j.nextAt).toISOString() : null })),
+            status: j.status, recoveryAt: typeof j.recoveryAt === 'string' && Number.isFinite(Date.parse(j.recoveryAt)) ? j.recoveryAt : null, error: safeError(new Error(j.lastError)), modelIssue: safeModelIssue(j), modelStage: safeModelStage(j), phase: ['privacy','lesson'].includes(j.phase) ? j.phase : null, attempts: j.tries || 0, retryAt: j.status === 'pending' && j.nextAt ? new Date(j.nextAt).toISOString() : null })),
         students: Object.fromEntries(Object.keys(await this.students()).map(id => [id, {
           latestPublication: jobs.filter(j => j.studentId === id && j.publishedAt).map(j => j.publishedAt).sort().at(-1) || null,
           pending: jobs.filter(j => j.studentId === id && j.status === 'pending').length,

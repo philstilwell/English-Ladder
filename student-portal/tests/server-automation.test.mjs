@@ -186,12 +186,13 @@ test('nightly server run publishes all pages atomically and does not regenerate 
   env.AI = { run: async (_model, input) => {
     calls++;
     const rules = input.input[0].content;
+    assert.doesNotMatch(rules, /You anonymize|independent privacy reviewer/);
     const response = rules.includes('You anonymize') ? (rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] }) : (rules.includes('independent editor') ? { approved: true } : structuredClone(draft));
     return { status: 'completed', output: [{ type: 'reasoning', content: [] }, { type: 'message', role: 'assistant', status: 'completed', content: [{ type: 'output_text', text: JSON.stringify(response) }] }] };
   } };
   try {
     await object.run(); let job = await storage.get(key);
-    assert.equal(job.status, 'published'); assert.equal(calls, 4);
+    assert.equal(job.status, 'published'); assert.equal(calls, 2);
     const saved = await (await call(seed.e, '/api/assessment', { headers: { Cookie: seed.teacher.cookie } })).json();
     assert.equal(saved.assessment.quiz.generatedForSession, session);
     assert.equal(saved.assessment.summary, draft.assessment.summary);
@@ -202,10 +203,10 @@ test('nightly server run publishes all pages atomically and does not regenerate 
     const conflict = await object.portal('ab26', '/automation/context');
     const duplicate = await object.portal('ab26', '/automation/publish', { quiz: saved.assessment.quiz });
     assert.equal(duplicate.duplicate, true);
-    await object.run(); assert.equal(calls, 4);
+    await object.run(); assert.equal(calls, 2);
     // A repeated Zoom note for the same meeting also cannot regenerate the quiz.
     await storage.put({ ['job:second']: { ...job, status: 'pending', nextAt: 0 } });
-    await object.run(); assert.equal(calls, 4);
+    await object.run(); assert.equal(calls, 2);
     const history = await (await call(seed.e, '/api/quiz/results', { headers: { Cookie: seed.teacher.cookie } })).json();
     assert.equal(history.attempts.length, 0);
     assert.doesNotMatch(JSON.stringify([...await storage.list({ prefix: 'job:' })]), /We can practice English/);
@@ -356,7 +357,7 @@ test('CEFR labels accidentally placed in student content are rejected before pub
   await assert.rejects(authorQuiz(ai,transcript,meeting,'fictional-note-123',{assessment,attempts:[]}),/unsafe_content/);
 });
 
-test('a failed authoring retry uses the reviewed cache without another Zoom download or privacy call', async t => {
+test('lesson retries use basic removal without privacy AI or saving unreviewed transcript text', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-10-16T12:00:00Z') });
   const seed = await seedQuiz(), { object, storage, env } = coordinator(seed.e);
   const job = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', nextAt: 0, status: 'pending', tries: 0 };
@@ -364,7 +365,8 @@ test('a failed authoring retry uses the reviewed cache without another Zoom down
   object.zoom = async path => { downloads++; return path.includes('past_meetings') ? meeting : note; };
   env.AI.run = async (_model, input) => {
     const rules = input.input[0].content, data = JSON.parse(input.input[1].content);
-    assert.ok(data.segments.every(s => ['Student', 'Speaker 1'].includes(s.speaker)));
+    assert.ok(data.segments.every(s => ['student', 'other'].includes(s.role)));
+    if (!rules.includes('You anonymize')) assert.ok(data.segments.every(s => ['Student', 'Speaker 1'].includes(s.speaker)));
     assert.doesNotMatch(input.input[1].content, /Private Teacher Name|Alex0529/);
     if (rules.includes('You anonymize')) {
       privacyCalls++; return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
@@ -373,16 +375,16 @@ test('a failed authoring retry uses the reviewed cache without another Zoom down
     if (rejectAuthor) throw new Error('mock author unavailable');
     return { response: rules.includes('independent editor') ? { approved: true } : structuredClone(draft) };
   };
-  await assert.rejects(object.process('job:cache', job), /mock author unavailable/);
-  assert.equal(downloads, 2); assert.equal(privacyCalls, 2); assert.equal(authorCalls, 1);
+  await assert.rejects(object.process('job:cache', job), error => error.message === 'invalid_model_response' && error.modelIssue === 'provider_error');
+  assert.equal(downloads, 2); assert.equal(privacyCalls, 0); assert.equal(authorCalls, 1);
   const storedJob = await storage.get('job:cache'); assert.equal(storedJob.studentId, 'ab26');
-  assert.ok((await object.portal('ab26', '/automation/transcript/' + job.noteId)).transcript);
+  assert.equal((await object.portal('ab26', '/automation/transcript/' + job.noteId)).transcript, null);
   rejectAuthor = false;
   await object.process('job:cache', storedJob);
-  assert.equal(downloads, 2); assert.equal(privacyCalls, 2); assert.equal(authorCalls, 3); assert.equal(storedJob.status, 'published');
+  assert.equal(downloads, 4); assert.equal(privacyCalls, 0); assert.equal(authorCalls, 3); assert.equal(storedJob.status, 'published');
 });
 
-test('changed source revisions refresh the download and never reuse obsolete anonymous text', async t => {
+test('changed source revisions are downloaded and never saved as privacy-reviewed text', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-10-16T12:00:00Z') });
   const seed = await seedQuiz(), { object, storage, env } = coordinator(seed.e);
   const job = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', nextAt: 0, status: 'pending', tries: 0 };
@@ -393,23 +395,23 @@ test('changed source revisions refresh the download and never reuse obsolete ano
     if (!rules.includes('You anonymize')) throw new Error('mock author unavailable');
     privacyCalls++; return { response: rules.includes('independent privacy reviewer') ? { approved: true } : { redactions: [] } };
   };
-  await assert.rejects(object.process('job:cache', job), /mock author unavailable/);
+  await assert.rejects(object.process('job:cache', job), error => error.message === 'invalid_model_response' && error.modelIssue === 'provider_error');
   currentNote = structuredClone(note); currentNote.transcript.items[0].text = 'Now I can use a different word.';
   job.modifiedAt = '2026-10-16T10:00:00Z';
   await storage.put({ 'job:cache': job });
-  await assert.rejects(object.process('job:cache', job), /mock author unavailable/);
-  assert.equal(downloads, 4); assert.equal(privacyCalls, 4);
-  assert.equal((await object.portal('ab26', '/automation/transcript/' + job.noteId)).transcript.segments[0].text, currentNote.transcript.items[0].text);
+  await assert.rejects(object.process('job:cache', job), error => error.message === 'invalid_model_response' && error.modelIssue === 'provider_error');
+  assert.equal(downloads, 4); assert.equal(privacyCalls, 0);
+  assert.equal((await object.portal('ab26', '/automation/transcript/' + job.noteId)).transcript, null);
 });
 
-test('privacy failures and exhausted budgets cannot save raw text or publish learner pages', async t => {
+test('editor rejection and exhausted budgets cannot save raw text or publish learner pages', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-10-16T12:00:00Z') });
   const seed = await seedQuiz(), { object, storage, env } = coordinator(seed.e);
   object.zoom = async path => path.includes('past_meetings') ? meeting : note;
   const job = { noteId: 'fictional-note-cache', meetingId: 'meeting-123', nextAt: 0, status: 'pending', tries: 0 };
   let calls = 0;
-  env.AI.run = async () => ({ response: ++calls === 1 ? { redactions: [] } : { approved: false } });
-  await assert.rejects(object.process('job:cache', job), /transcript_privacy_rejected/);
+  env.AI.run = async () => ({ response: ++calls === 1 ? structuredClone(draft) : { approved: false } });
+  await assert.rejects(object.process('job:cache', job), /content_review_failed/);
   assert.equal(calls, 2);
   assert.equal((await seed.e.FEEDBACK_STORE.get('ab26').storage.list({ prefix: 'transcript:' })).size, 0);
   await storage.put({ 'usage:ab26': { day: '2026-10-16', month: '2026-10', daily: 2, monthly: 2 } });
@@ -488,4 +490,57 @@ test('a later recovery requires a new explicit attempt number and cannot skip or
   await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
   assert.equal((await storage.get('usage:ab26')).daily,4);
   env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day,attempt:6});await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  for (const attempt of [5,6]) {
+    env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day,attempt});
+    await object.reserveGeneration('ab26','lesson',id);
+    await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  }
+  assert.equal((await storage.get('usage:ab26')).daily,6);
+  assert.equal((await storage.get('usage:ab26')).monthly,6);
+  env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day,attempt:13});
+  await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+});
+
+test('one-time server recovery waits without AI, publishes only its job after reset, and ignores duplicate alarms', async t => {
+  t.mock.timers.enable({apis:['Date'],now:new Date('2026-10-16T13:00:00Z')});
+  const seed=await seedQuiz(),{object,storage,env}=coordinator(seed.e),id='c'.repeat(64),key='job:'+id;
+  const at='2026-10-17T00:05:00Z';
+  const job={studentId:'ab26',noteId:'fictional-note-recovery',meetingId:'meeting-123',status:'needs_attention',tries:7,lastError:'invalid_model_response'};
+  await storage.put({[key]:job,'job:unrelated':{...job,noteId:'fictional-other-note',status:'pending',nextAt:0}});
+  env.LESSON_RECOVERY_SCHEDULE=JSON.stringify({jobId:id,at});
+  object.zoom=async path=>path.includes('past_meetings')?meeting:note;
+  let calls=0;env.AI.run=async(_model,input)=>{calls++;assert.doesNotMatch(input.input[0].content,/You anonymize/);return {response:input.input[0].content.includes('independent editor')?{approved:true}:structuredClone(draft)}};
+  const queued=await(await object.retry(id)).json();assert.equal(Date.parse(queued.recoveryAt),Date.parse(at));assert.equal(calls,0);
+  assert.equal(storage.alarmAt,Date.parse(at));assert.equal((await storage.get(key)).tries,7);
+  await object.alarm();assert.equal(calls,0);assert.equal((await storage.get('recovery-once')).status,'queued');
+  delete env.LESSON_RECOVERY_SCHEDULE;
+  t.mock.timers.setTime(Date.parse(at));await object.alarm();
+  assert.equal(calls,2);assert.equal((await storage.get(key)).status,'published');
+  assert.equal((await storage.get('job:unrelated')).status,'pending');
+  assert.equal((await storage.get('recovery-once')).published,true);
+  assert.equal((await storage.get('usage:ab26')).daily,1);
+  assert.equal((await seed.e.FEEDBACK_STORE.get('ab26').storage.list({prefix:'transcript:'})).size,0);
+  await object.alarm();assert.equal(calls,2);
+});
+
+test('one-time recovery respects a busy lease and cannot generate for a paused account',async t=>{
+  t.mock.timers.enable({apis:['Date'],now:new Date('2026-10-17T00:05:00Z')});
+  const {object,storage,env}=coordinator(),id='d'.repeat(64),at=Date.now();
+  await storage.put({'recovery-once':{id,at,status:'queued'},['job:'+id]:{studentId:'ab26',status:'pending',nextAt:at},'run-lock':{until:at+10000}});
+  object.process=()=>assert.fail('Must not generate');
+  await object.alarm();assert.equal(storage.alarmAt,at+60000);assert.equal((await storage.get('recovery-once')).status,'queued');
+  await storage.delete('run-lock');env.QUIZ_STUDENTS='{}';
+  await object.alarm();assert.equal((await storage.get('recovery-once')).published,false);
+  assert.equal((await storage.get('recovery-once')).status,'finished');
+});
+
+test('free-account AI quota exhaustion stops later jobs and monthly work but keeps the job pending',async()=>{
+  const {object,storage}=coordinator(),key='job:'+ 'e'.repeat(64);
+  await storage.put({[key]:{studentId:'ab26',status:'pending',nextAt:0,tries:7},'job:other':{studentId:'ab26',status:'pending',nextAt:0,tries:0}});
+  object.pruneTranscripts=async()=>{};object.accessToken=async()=>{};object.discover=async()=>{};
+  let calls=0;object.process=async()=>{calls++;throw Object.assign(Error('invalid_model_response'),{modelIssue:'provider_quota',modelStage:'lesson_author'})};
+  object.reviewCefr=()=>assert.fail('Do not spend another request after account quota failure');
+  await object.run();assert.equal(calls,1);assert.equal((await storage.get(key)).status,'pending');
+  assert.equal((await storage.get(key)).modelIssue,'provider_quota');
+  assert.equal((await storage.get('job:other')).tries,0);
 });

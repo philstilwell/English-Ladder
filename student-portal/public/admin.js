@@ -20,6 +20,7 @@
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
+  let studentIdCopyRequest = 0, studentIdCopyTimer = null;
   let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
   let activityOverviewRequest = 0;
   let deleting = null, deleteBusy = false, saving = false;
@@ -506,7 +507,7 @@
     $('paused-student-rows').replaceChildren(); $('paused-students').open = false; $('paused-students').hidden = true; $('paused-count').textContent = '0';
     $('delete-account-panel').hidden = true;
     $('sheet-paste').value = ''; $('password').value = ''; $('search').value = ''; $('filter').value = 'all';
-    $('edit-title').textContent = ''; $('student-editor-name').textContent = ''; $('student-editor-id').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href'); $('open-quiz-results').removeAttribute('href'); $('open-quiz-results').hidden = true;
+    $('edit-title').textContent = ''; $('student-editor-name').textContent = ''; clearStudentIdCopy(); $('source-note').textContent = ''; $('open-site').removeAttribute('href'); $('open-quiz-results').removeAttribute('href'); $('open-quiz-results').hidden = true;
     $('activation-note').textContent = ''; setSaveState(''); $('import-preview').hidden = true;
     $('password-status').textContent = '';
     $('active-count').textContent = '0'; $('draft-count').textContent = '0'; $('list-count').textContent = '';
@@ -642,6 +643,7 @@
   }
   function editStudent(student) {
     clearDiscardUndo();
+    clearStudentIdCopy();
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); setSaveState('');
     for (const id of ['student-activities-panel', 'student-resources-panel']) $(id).open = false;
@@ -679,6 +681,8 @@
     $('edit-title').textContent = student ? student.firstName + ' ' + student.lastName : 'Register new student';
     $('student-editor-name').textContent = student ? $('edit-title').textContent : 'New student';
     $('student-editor-id').textContent = student?.studentId ? 'ID: ' + student.studentId : '';
+    $('student-editor-id').hidden = !student?.studentId;
+    if (student?.studentId) $('student-editor-id').setAttribute('aria-label', 'Copy student ID ' + student.studentId);
     $('edit-kicker').textContent = student ? 'EDIT STUDENT ACCOUNT' : 'A NEW LEARNING SPACE';
     $('edit-description').textContent = student ? 'Update the account details. Changes take effect when you save.' : 'Add the student’s details and exact Zoom display name.';
     $('source-note').hidden = !student?.source;
@@ -874,7 +878,7 @@
     clearRoad(); clearQuestions(); clearActivityOverview();
     clearAutomation();
     closeDelete();
-    clearLoginDetails(); current = null; $('student-editor-name').textContent = ''; $('student-editor-id').textContent = '';
+    clearLoginDetails(); current = null; $('student-editor-name').textContent = ''; clearStudentIdCopy();
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     updateSelectionCounts();
     clearCefr();
@@ -965,6 +969,49 @@
   $('firstName').addEventListener('input',suggestedAddress); $('lastName').addEventListener('input',suggestedAddress);
   $('studentId').addEventListener('input', () => { addressEdited = true; $('studentId').value = $('studentId').value.toLowerCase(); });
   $('status').addEventListener('change',updateSaveLabel);
+  function clearStudentIdCopy() {
+    studentIdCopyRequest++; clearTimeout(studentIdCopyTimer); studentIdCopyTimer = null;
+    const button = $('student-editor-id');
+    button.textContent = ''; button.hidden = true; button.disabled = false;
+    button.removeAttribute('aria-busy'); button.setAttribute('aria-label', 'Copy student ID');
+    $('student-id-copy-status').textContent = '';
+  }
+  function copyStudentIdFallback(id) {
+    const previous = document.activeElement, buffer = element('textarea', null, 'practice-copy-buffer');
+    buffer.value = id; buffer.readOnly = true; buffer.tabIndex = -1;
+    buffer.setAttribute('aria-hidden', 'true'); document.body.append(buffer);
+    try {
+      buffer.select();
+      if (!document.execCommand('copy')) throw new Error('Copy unavailable');
+    } finally {
+      buffer.remove();
+      if (previous?.isConnected) previous.focus({ preventScroll: true });
+    }
+  }
+  $('student-editor-id').addEventListener('click', async () => {
+    const button = $('student-editor-id');
+    if (!signedIn || !current?.studentId || $('edit-view').hidden || button.disabled) return;
+    const id = current.studentId, key = current.key, version = epoch, editor = editGeneration, request = ++studentIdCopyRequest;
+    const stillCurrent = () => signedIn && version === epoch && editor === editGeneration && request === studentIdCopyRequest && current?.key === key && current.studentId === id && !$('edit-view').hidden;
+    clearTimeout(studentIdCopyTimer); studentIdCopyTimer = null;
+    $('student-id-copy-status').textContent = ''; button.disabled = true; button.setAttribute('aria-busy', 'true');
+    try {
+      if (navigator.clipboard?.writeText) {
+        try { await navigator.clipboard.writeText(id); }
+        catch { if (!stillCurrent()) return; copyStudentIdFallback(id); }
+      } else copyStudentIdFallback(id);
+      if (!stillCurrent()) return;
+      $('student-id-copy-status').textContent = 'Copied';
+      studentIdCopyTimer = setTimeout(() => {
+        if (!stillCurrent()) return;
+        $('student-id-copy-status').textContent = ''; studentIdCopyTimer = null; updateStickyHeights();
+      }, 2000);
+    } catch {
+      if (stillCurrent()) $('student-id-copy-status').textContent = 'Could not copy. Try again.';
+    } finally {
+      if (stillCurrent()) { button.disabled = false; button.removeAttribute('aria-busy'); updateStickyHeights(); }
+    }
+  });
   $('reveal-password').addEventListener('click', () => {
     if (!signedIn || !loginDetails?.password) return;
     const show = $('current-password').type === 'password';

@@ -219,6 +219,51 @@ test('administrator list links to editable accounts and has a separate registrat
   assert.equal(d.querySelectorAll('input[type="password"]').length,4);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
 });
 
+test('sticky ID copies only the saved ID, confirms success briefly, and preserves unsaved edits',async()=>{
+  let copied=[],finishCopy,writes=0;
+  const dom=browser((path,options)=>{if(options?.method&&options.method!=='GET')writes++;});await flush();const w=dom.window,d=w.document;
+  const button=d.getElementById('student-editor-id'),status=d.getElementById('student-id-copy-status');
+  assert.equal(button.hidden,true);assert.equal(button.type,'button');
+  Object.defineProperty(w.navigator,'clipboard',{value:{writeText:value=>{copied.push(value);return new Promise(resolve=>{finishCopy=resolve;});}}});
+  d.querySelector('.student-name').click();await flush();
+  d.getElementById('nickname').value='Unsaved nickname';d.getElementById('nickname').dispatchEvent(new w.Event('input',{bubbles:true}));
+  assert.equal(button.hidden,false);assert.equal(button.textContent,'ID: mt26');assert.match(button.getAttribute('aria-label'),/Copy student ID mt26/);
+  button.click();button.click();await flush();assert.deepEqual(copied,['mt26']);assert.equal(button.disabled,true);assert.equal(status.textContent,'');
+  finishCopy();await flush();assert.equal(status.textContent,'Copied');assert.equal(status.getAttribute('role'),'status');assert.equal(button.disabled,false);
+  assert.equal(d.getElementById('nickname').value,'Unsaved nickname');assert.equal(d.getElementById('save-state-top').textContent,'Unsaved changes');assert.equal(writes,0);
+  await new Promise(resolve=>w.setTimeout(resolve,2100));assert.equal(status.textContent,'');assert.equal(button.textContent,'ID: mt26');dom.window.close();
+});
+
+test('sticky ID copy falls back safely, reports failures honestly, and can be retried',async()=>{
+  for(const mode of ['unavailable','rejected']){
+    const dom=browser();await flush();const w=dom.window,d=w.document;let canCopy=true,copied=[];
+    Object.defineProperty(w.navigator,'clipboard',{configurable:true,value:mode==='rejected'?{writeText:async()=>{throw new Error('Clipboard denied');}}:undefined});
+    d.execCommand=command=>{assert.equal(command,'copy');copied.push(d.querySelector('.practice-copy-buffer').value);return canCopy;};
+    d.querySelector('.student-name').click();await flush();const button=d.getElementById('student-editor-id'),status=d.getElementById('student-id-copy-status');
+    button.focus();button.click();await flush();assert.deepEqual(copied,['mt26']);assert.equal(status.textContent,'Copied');assert.equal(d.querySelector('.practice-copy-buffer'),null);assert.equal(d.activeElement,button);
+    canCopy=false;button.click();await flush();assert.equal(status.textContent,'Could not copy. Try again.');assert.equal(button.disabled,false);assert.equal(d.querySelector('.practice-copy-buffer'),null);
+    Object.defineProperty(w.navigator,'clipboard',{value:{writeText:async value=>{copied.push(value);}}});
+    button.click();await flush();assert.equal(status.textContent,'Copied');assert.deepEqual(copied,['mt26','mt26','mt26']);dom.window.close();
+  }
+});
+
+test('pending sticky ID copies cannot restore notices or trigger fallback after leaving the account',async()=>{
+  for(const exit of ['navigation','return','logout','expiry','pagehide'])for(const rejected of [false,true]){
+    let expired=false,finishCopy,fallbackCalls=0;
+    const dom=browser(path=>expired&&path==='/api/admin/students'?Response.json({error:'Expired'},{status:401}):null);await flush();const w=dom.window,d=w.document;
+    Object.defineProperty(w.navigator,'clipboard',{value:{writeText:()=>new Promise((resolve,reject)=>{finishCopy=rejected?()=>reject(new Error('Denied')):resolve;})}});
+    d.execCommand=()=>{fallbackCalls++;return true;};
+    d.querySelector('.student-name').click();await flush();d.getElementById('student-editor-id').click();await flush();
+    if(exit==='navigation'||exit==='return'){w.location.hash='#register';await flush();if(exit==='return'){w.location.hash='#students/'+fixture.key;await flush();}}
+    else if(exit==='logout')d.getElementById('sign-out').click();
+    else if(exit==='expiry'){expired=true;d.getElementById('refresh').click();}
+    else w.dispatchEvent(new w.Event('pagehide'));
+    await flush();finishCopy();await flush();
+    assert.equal(d.getElementById('student-id-copy-status').textContent,'');assert.equal(fallbackCalls,0);assert.equal(d.querySelector('.practice-copy-buffer'),null);
+    assert.equal(d.getElementById('student-editor-id').textContent,exit==='return'?'ID: mt26':'');assert.equal(d.getElementById('student-editor-id').hidden,exit!=='return');dom.window.close();
+  }
+});
+
 test('both save buttons and notices track edits, reverts, selections, and successful saves',async()=>{
   let saved=structuredClone(fixture),body,finishSave;
   const dom=browser((path,options)=>{

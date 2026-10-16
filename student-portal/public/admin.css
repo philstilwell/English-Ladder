@@ -58,8 +58,11 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 .student-editor-actions{position:sticky;top:var(--admin-header-height,114px);z-index:9;background:var(--paper);padding:12px 0;border-bottom:1px solid var(--line);box-shadow:0 8px 12px -12px #20242b66;gap:8px 12px}
 .student-editor-identity{min-width:0;max-width:min(30ch,100%);font-size:1.05rem;line-height:1.4;overflow-wrap:anywhere}
 .student-editor-name{display:block;color:var(--blue)}
-.student-editor-id{display:block;margin-top:2px;font-size:.75rem;font-weight:400;color:var(--muted)}
-.student-editor-id:empty{display:none}
+.student-editor-id-row{display:flex;align-items:center;flex-wrap:wrap;gap:0 8px;margin-top:3px}
+.student-editor-id{min-height:24px;padding:2px 0;border:0;background:transparent;font-size:.75rem;font-weight:400;line-height:1.4;color:var(--muted);text-align:left;overflow-wrap:anywhere}
+.student-editor-id:hover{text-decoration:underline;text-underline-offset:3px}
+.student-editor-id:focus-visible{outline-offset:0}
+.student-id-copy-status{font-size:.75rem;font-weight:400;color:var(--muted)}
 .student-editor-actions a.student-editor-back{margin-inline-start:auto;flex:0 0 auto}
 #save-state-top:empty{display:none}
 html:has(#edit-view:not([hidden])){scroll-padding-top:calc(var(--admin-header-height,114px) + var(--admin-editor-actions-height,76px) + 16px)}

@@ -29,6 +29,7 @@
     create({ root, api, expired }) {
       const bookmark = window.PracticePosition?.create({ api, expired, path });
       let active = false, generation = 0, items = [], progress = new Map(), drafts = new Map(), batch = 0, teacher = false, saving = null, conflict = false, hideFinished = false, preferenceRevision = 0;
+      let questionView = false, questionsPending = false, questionsOpen = false;
       const group = () => items.slice(batch * 10, (batch + 1) * 10);
       const dirty = () => group().some(item => { const d = drafts.get(item.number) || empty(item.number), p = progress.get(item.number) || empty(item.number); return d.answer !== (p.answer || '') || d.sentence !== (p.sentence || ''); });
       let status, saveButton, copy, controls = [];
@@ -70,6 +71,7 @@
         if (saveDraft && active && !conflict && dirty()) void saveBatch();
         generation++; active = false; items = []; progress.clear(); drafts.clear(); saving = null; controls = []; conflict = false;
         bookmark?.clear(); root.replaceChildren(); root.hidden = true;
+        questionView = false; questionsPending = false; questionsOpen = false;
       }
       async function changeBatch(next, focusNumber = null) {
         const current = generation;
@@ -124,6 +126,10 @@
         for (const [field, name] of [['question', 'Questions'], ['review', 'Practice again']]) {
           const selected = items.filter(item => progress.get(item.number)?.[field]);
           const details = el('details'), summary = el('summary', name + ' (' + selected.length + ')'); details.append(summary);
+          if (field === 'question') {
+            details.className = 'vocabulary-questions'; details.open = questionsOpen;
+            details.addEventListener('toggle', () => { if (details.isConnected) questionsOpen = details.open; });
+          }
           if (!selected.length) details.append(el('p', 'No words saved here yet.', 'field-hint'));
           for (const item of selected) { const button = el('button', item.number + '. “' + item.term + '”', 'secondary-button'); button.type = 'button'; button.addEventListener('click', () => changeBatch(Math.floor((item.number - 1) / 10), item.number)); details.append(button); controls.push(button); }
           lists.append(details);
@@ -162,8 +168,16 @@
         footer.append(saveButton, copy.controls); root.replaceChildren(intro, picker, heading, lists, filterLabel, list, footer, status, help, copy.status, pager);
         if (bookmark) root.append(bookmark.notice);
       }
-      async function open(isTeacher = false) {
-        if (active) return;
+      function focusQuestions() {
+        const list = root.querySelector('.vocabulary-questions');
+        if (!questionsPending || !list) return;
+        questionsPending = false; questionsOpen = true; list.open = true;
+        const heading = list.querySelector('summary'); heading.focus(); heading.scrollIntoView?.({ block: 'start' });
+      }
+      async function open(isTeacher = false, showQuestions = false) {
+        if (showQuestions && !questionView) { questionsPending = true; questionsOpen = true; }
+        questionView = showQuestions;
+        if (active) { focusQuestions(); return; }
         active = true; teacher = isTeacher; const current = ++generation;
         root.hidden = false; root.replaceChildren(el('p', 'Loading Vocabulary practice…'));
         try {
@@ -173,9 +187,10 @@
           if (!Array.isArray(content.items) || !content.items.length || content.items.length % 10 || content.items.some((item, i) => item.number !== i + 1 || !Array.isArray(item.examples) || !item.term || !item.task)) throw new Error('Invalid words');
           items = content.items; readState(state); const place = bookmark?.read(state.position, !teacher);
           batch = Math.min(Math.floor(((place || 1) - 1) / 10), Math.ceil(items.length / 10) - 1); render();
+          focusQuestions();
         } catch (error) {
           if (current !== generation || expired(error)) return;
-          const retry = el('button', 'Try again', 'secondary-button'); retry.type = 'button'; retry.addEventListener('click', () => { active = false; open(teacher); });
+          const retry = el('button', 'Try again', 'secondary-button'); retry.type = 'button'; retry.addEventListener('click', () => { active = false; open(teacher, questionView); });
           root.replaceChildren(el('p', 'Vocabulary practice could not load. Please try again.'), retry);
         }
       }

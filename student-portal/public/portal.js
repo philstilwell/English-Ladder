@@ -14,6 +14,10 @@
   const sectionMenu = document.querySelector('.section-nav');
   const stickyHeader = document.querySelector('.masthead-band');
   let activityChoices = null, activitiesLoading = false, activitiesRevision = 0, activitiesError = false;
+  let activityProgress = null, activityProgressLoading = false, activityProgressError = false, activityProgressRevision = 0;
+  const questionActivities = ['grammar-practice', 'business-terms', 'vocabulary-practice'];
+  const activityRoute = (id, extra) => location.hash.slice(1).split('/').length <= 3 && (extra === undefined || extra === 'questions' && questionActivities.includes(id));
+  const activityOverview = () => authenticated && ['#activities', '#activities/'].includes(location.hash);
   let resourceChoices = null, resourcesLoading = false, resourcesRevision = 0, resourcesError = false;
   const roadPractice = window.EnglishRoadPractice?.create({ root: $('road-practice'), api, expired }) || {
     clear() { $('road-practice').replaceChildren(); $('road-practice').hidden = true; },
@@ -136,6 +140,7 @@
     activityChoices = null; activitiesLoading = false; activitiesError = false; activitiesRevision++;
     activitiesDropdown.list.replaceChildren(); $('activity-title').textContent = 'Activities'; $('activity-message').textContent = '';
     clearActivityCatalog();
+    clearActivityProgress();
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
     assessment = null; assessmentLoading = false;
     quizState = null; quizRevision++;
@@ -249,9 +254,10 @@
     const [part, requested, extra] = location.hash.slice(1).split('/');
     const selected = part === 'quiz-results' && !teacherMode ? 'quiz' : sections.includes(part) ? part : 'feedback';
     if (selected !== 'activities' || requested !== 'english-road' || extra !== undefined) roadPractice.clear();
-    if (selected !== 'activities' || requested !== 'grammar-practice' || extra !== undefined) grammarPractice.clear();
-    if (selected !== 'activities' || requested !== 'business-terms' || extra !== undefined) businessTerms.clear();
-    if (selected !== 'activities' || requested !== 'vocabulary-practice' || extra !== undefined) vocabularyPractice.clear(true);
+    if (selected !== 'activities' || requested !== 'grammar-practice' || !activityRoute(requested, extra)) grammarPractice.clear();
+    if (selected !== 'activities' || requested !== 'business-terms' || !activityRoute(requested, extra)) businessTerms.clear();
+    if (selected !== 'activities' || requested !== 'vocabulary-practice' || !activityRoute(requested, extra)) vocabularyPractice.clear(true);
+    if (!activityOverview()) clearActivityProgress();
     if (selected !== 'account') clearSettings();
     if (selected !== 'activities') clearActivityCatalog();
     if (selected !== 'resources') clearResources();
@@ -277,7 +283,7 @@
         loadQuizResults();
         if (focus) $('quiz-results-title').focus();
       }
-      if (selected === 'activities') { renderActivityPage(); void loadActivities(); if (focus) $('activity-title').focus(); }
+      if (selected === 'activities') { renderActivityPage(); void loadActivities(); if (activityOverview()) void loadActivityProgress(); if (focus && extra !== 'questions') $('activity-title').focus(); }
       if (selected === 'resources') { renderResources(extra === undefined ? requested : '', focus); void loadResources(); }
       if (selected === 'account') {
         document.title = 'My account · English Ladder';
@@ -925,7 +931,7 @@
       for (const activity of selected) {
         const item = node('li'), link = node('a', activity.name);
         link.href = '#activities/' + activity.id;
-        if (link.hash === location.hash) link.setAttribute('aria-current', 'page');
+        if (link.hash === location.hash || location.hash === link.hash + '/questions') link.setAttribute('aria-current', 'page');
         item.append(link); list.append(item);
       }
     } else {
@@ -943,17 +949,72 @@
     $('activity-catalog').replaceChildren(); $('activity-catalog').hidden = true;
     $('retry-activities').hidden = true;
     $('activity-title').parentElement.classList.remove('is-overview');
+    $('activity-progress-toolbar').hidden = true;
   }
+  function clearActivityProgress() {
+    activityProgressRevision++; activityProgress = null; activityProgressLoading = false; activityProgressError = false;
+    $('activity-progress-status').textContent = '';
+  }
+  function renderActivityProgress() {
+    if (!activityOverview()) return;
+    $('refresh-activity-progress').disabled = activityProgressLoading;
+    $('refresh-activity-progress').textContent = activityProgressError ? 'Try loading progress again' : 'Refresh progress';
+    $('activity-progress-status').textContent = activityProgressLoading ? 'Loading your progress…' : activityProgressError ? 'Your progress could not load. Please try again.' : activityProgress ? 'Progress is up to date.' : '';
+    for (const box of $('activity-catalog').querySelectorAll('[data-activity-progress]')) {
+      box.replaceChildren(node('h4', 'Your progress'));
+      const row = activityProgress?.find(item => item.id === box.dataset.activityProgress);
+      if (!row) { box.append(node('p', activityProgressError || activityProgress ? 'Progress unavailable.' : 'Loading your progress…')); continue; }
+      if (row.id === 'english-road') {
+        box.append(node('p', row.setsCompleted + ' of ' + row.setsStarted + ' practice sets completed.'),
+          node('p', row.answered + ' answers saved.'));
+        if (row.currentSet) box.append(node('p', 'Current set: ' + row.currentSet.answered + ' of ' + row.currentSet.total + ' answered.'));
+        if (!row.setsStarted) box.append(node('p', 'No practice saved yet.'));
+        box.append(node('p', 'This activity has no saved Questions list.', 'field-hint'));
+      } else {
+        const unit = row.id === 'vocabulary-practice' ? 'words' : 'items';
+        box.append(node('p', row.finished + ' of ' + row.total + ' ' + unit + ' finished.'));
+        const bar = node('progress'); bar.max = row.total; bar.value = row.finished;
+        bar.setAttribute('aria-label', row.finished + ' of ' + row.total + ' ' + unit + ' finished'); box.append(bar);
+        const link = node('a', 'Saved Questions (' + row.questions + ')', 'activity-questions-link');
+        link.href = '#activities/' + row.id + '/questions';
+        link.setAttribute('aria-label', 'Saved Questions for ' + activityChoices.activities.find(tool => tool.id === row.id).name + ' (' + row.questions + ')');
+        box.append(link);
+      }
+    }
+  }
+  async function loadActivityProgress() {
+    if (!activityOverview() || activityProgressLoading) return;
+    const identity = identityRevision, revision = ++activityProgressRevision;
+    activityProgressLoading = true; activityProgressError = false; activityProgress = null; renderActivityProgress();
+    try {
+      const data = await api('/api/activities/progress');
+      if (identity !== identityRevision || revision !== activityProgressRevision || !activityOverview()) return;
+      const count = value => Number.isSafeInteger(value) && value >= 0;
+      if (!Array.isArray(data.activities) || !data.activities.length || data.activities.length > 50 || new Set(data.activities.map(row => row?.id)).size !== data.activities.length ||
+          data.activities.some(row => !row || !/^[a-z0-9-]{1,60}$/.test(row.id) || (row.id === 'english-road'
+            ? ![row.setsStarted, row.setsCompleted, row.answered].every(count) || row.setsCompleted > row.setsStarted ||
+              row.currentSet !== null && (!row.currentSet || ![row.currentSet.answered, row.currentSet.total].every(count) || row.currentSet.answered > row.currentSet.total)
+            : ![row.total, row.finished, row.questions].every(count) || !row.total || row.finished > row.total || row.questions > row.total)))
+        throw new Error('Invalid activity progress');
+      activityProgress = data.activities;
+    } catch (error) {
+      if (identity !== identityRevision || revision !== activityProgressRevision || expired(error)) return;
+      activityProgressError = true;
+    } finally {
+      if (identity === identityRevision && revision === activityProgressRevision) { activityProgressLoading = false; renderActivityProgress(); }
+    }
+  }
+  $('refresh-activity-progress').addEventListener('click', loadActivityProgress);
   $('retry-activities').addEventListener('click', loadActivities);
   function renderActivityPage() {
     const [part, id, extra] = location.hash.slice(1).split('/');
     if (!authenticated || part !== 'activities') return;
     clearActivityCatalog();
-    const activity = extra === undefined && activityChoices?.visibleActivities.includes(id) && activityChoices.activities.find(a => a.id === id);
+    const activity = activityRoute(id, extra) && activityChoices?.visibleActivities.includes(id) && activityChoices.activities.find(a => a.id === id);
     if (activity?.id === 'english-road') roadPractice.open(teacherMode); else roadPractice.clear();
-    if (activity?.id === 'grammar-practice') grammarPractice.open(teacherMode); else grammarPractice.clear();
-    if (activity?.id === 'business-terms') businessTerms.open(teacherMode); else businessTerms.clear();
-    if (activity?.id === 'vocabulary-practice') vocabularyPractice.open(teacherMode); else vocabularyPractice.clear(true);
+    if (activity?.id === 'grammar-practice') grammarPractice.open(teacherMode, extra === 'questions'); else grammarPractice.clear();
+    if (activity?.id === 'business-terms') businessTerms.open(teacherMode, extra === 'questions'); else businessTerms.clear();
+    if (activity?.id === 'vocabulary-practice') vocabularyPractice.open(teacherMode, extra === 'questions'); else vocabularyPractice.clear(true);
     $('activity-title').textContent = activity ? activity.name : 'Activities';
     $('activity-message').textContent = activity ? activity.description : !activityChoices
       ? (activitiesError ? 'Your activities could not be loaded. Please try again.' : 'Loading your activities…')
@@ -969,12 +1030,15 @@
         const how = node('p', '', 'activity-guide-label'); how.append(node('strong', 'How it works'));
         const steps = node('ol');
         for (const step of tool.steps.length ? tool.steps : [tool.description]) steps.append(node('li', step));
-        const link = node('a', 'Open activity →', 'secondary-button');
+        const progress = node('div', '', 'activity-guide-progress'); progress.dataset.activityProgress = tool.id;
+        const link = node('a', 'Open activity →', 'secondary-button activity-open-link');
         link.href = '#activities/' + tool.id; link.setAttribute('aria-label', 'Open ' + tool.name);
-        card.append(heading, why, node('p', tool.benefit || tool.description), how, steps, link); catalog.append(card);
+        card.append(heading, why, node('p', tool.benefit || tool.description), how, steps, progress, link); catalog.append(card);
       }
       catalog.hidden = !catalog.children.length;
+      $('activity-progress-toolbar').hidden = catalog.hidden;
       $('activity-title').parentElement.classList.add('is-overview');
+      renderActivityProgress();
     }
     document.title = (activity ? activity.name : 'My activities') + ' · English Ladder';
   }
@@ -1060,7 +1124,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); clearResources(); clearActivityCatalog(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); vocabularyPractice.clear(); closeDropdowns(); });
+  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); clearResources(); clearActivityCatalog(); clearActivityProgress(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); vocabularyPractice.clear(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();
@@ -1121,7 +1185,7 @@
     if (!authenticated || checking || document.hidden) return;
     checking = true; const revision = identityRevision, profile = profileRevision;
     try {
-      const data = await api('/api/session'); if (revision === identityRevision && profile === profileRevision) { showDashboard(data); loadActivities(); void loadResources(true); }
+      const data = await api('/api/session'); if (revision === identityRevision && profile === profileRevision) { showDashboard(data); loadActivities(); void loadResources(true); if (activityOverview()) void loadActivityProgress(); }
     } catch (error) {
       if (revision !== identityRevision) return;
       if (!expired(error)) { clearIdentity(); $('unavailable-message').textContent = error.message; show('unavailable-view'); }

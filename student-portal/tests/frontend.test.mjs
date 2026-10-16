@@ -9,6 +9,13 @@ import {feedback,assessment,quiz} from './fixture.mjs';
 import {seedQuiz,call,origin} from './harness.mjs';
 import grammarBank from '../grammar-bank.json' with { type: 'json' };
 import termsBank from '../business-terms-bank.json' with { type: 'json' };
+import vocabularyBank from '../vocabulary-bank.json' with { type: 'json' };
+const activityProgressFixture={activities:[
+ {id:'english-road',setsStarted:3,setsCompleted:1,answered:21,currentSet:{answered:1,total:20}},
+ {id:'grammar-practice',total:900,finished:9,questions:2},
+ {id:'business-terms',total:2958,finished:5,questions:1},
+ {id:'vocabulary-practice',total:50,finished:10,questions:1},
+]};
 const html=readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
 const script=readFileSync(new URL('../public/portal.js',import.meta.url),'utf8');
 const studyFixture=(await studyTopics(assessment)).map(topic=>({...topic,progress:{id:topic.id,finished:false,question:false,revision:0,updatedAt:null}}));
@@ -26,6 +33,9 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/session'||path==='/api/login')return reply({...profile,role});
   if(path==='/api/logout')return reply({ok:true});
   if(path==='/api/account')return reply(settingsFixture);
+  if(path==='/api/activities/progress')return reply(activityProgressFixture);
+  if(path==='/api/vocabulary-practice')return reply({items:vocabularyBank.items});
+  if(path==='/api/vocabulary-practice/state')return reply({entries:[]});
   if(path==='/api/study/state')return reply({topics:studyFixture});
   if(path.startsWith('/api/study/questions'))return reply({questions:[],nextCursor:null});
   if(path==='/api/assessment')return reply({assessment});
@@ -45,7 +55,8 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
  w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/practice-position.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
- w.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));w.eval(script);return dom;
+ w.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));
+ w.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
 }
 test('deep links open the selected page and show only student-safe content',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#feedback/'+second.id);await flush();
@@ -790,7 +801,7 @@ test('Activities main link opens a guide to selected tools without starting prac
     saved = { ...saved, revision: 2, visibleActivities: ['vocabulary-practice'] };
     d.getElementById('activities-link').click(); await flush();
     assert.deepEqual([...d.querySelectorAll('.activity-guide h3')].map(n => n.textContent), ['Vocabulary practice']);
-    d.querySelector('.activity-guide a').click(); await flush();
+    d.querySelector('.activity-guide .activity-open-link').click(); await flush();
     assert.equal(dom.window.location.hash, '#activities/vocabulary-practice');
     assert.equal(d.getElementById('activity-catalog').hidden, true);
     d.getElementById('activities-link').click(); await flush();
@@ -800,6 +811,70 @@ test('Activities main link opens a guide to selected tools without starting prac
     assert.match(d.getElementById('activity-message').textContent, /ask your teacher/);
     d.getElementById('logout').click(); await flush();
     assert.equal(d.getElementById('activity-catalog').textContent, '');
+    dom.window.close();
+  }
+});
+test('Activities shows personal totals and direct Questions links, and refreshes when reopened',async()=>{
+  for(const role of ['student','teacher']){
+    let progress=structuredClone(activityProgressFixture),writes=0;
+    const dom=setup((path,options)=>{
+      if(options?.method&&options.method!=='GET')writes++;
+      if(path==='/api/activities/progress')return reply(progress);
+    },origin+'/#activities',role);await flush();const d=dom.window.document;
+    const box=id=>d.querySelector('[data-activity-progress="'+id+'"]');
+    assert.match(box('english-road').textContent,/1 of 3 practice sets completed/);
+    assert.match(box('english-road').textContent,/Current set: 1 of 20 answered/);
+    assert.match(box('english-road').textContent,/no saved Questions list/);
+    assert.equal(box('english-road').querySelector('a'),null);
+    assert.match(box('grammar-practice').textContent,/9 of 900 items finished/);
+    assert.equal(box('grammar-practice').querySelector('progress').value,9);
+    assert.match(box('vocabulary-practice').textContent,/10 of 50 words finished/);
+    assert.equal(box('grammar-practice').querySelector('a').hash,'#activities/grammar-practice/questions');
+    assert.equal(box('grammar-practice').querySelector('a').textContent,'Saved Questions (2)');
+    dom.window.location.hash='#overview';await flush();
+    assert.equal(d.getElementById('activity-catalog').textContent,'');
+    progress.activities[1].finished=12;
+    d.getElementById('activities-link').click();await flush();
+    assert.match(box('grammar-practice').textContent,/12 of 900 items finished/);
+    assert.equal(writes,0);dom.window.close();
+  }
+});
+test('Activities progress distinguishes failure from zero and ignores reads after leaving or sign-out',async()=>{
+  let mode='failure',resolveRead;
+  const dom=setup(path=>path==='/api/activities/progress'
+    ? mode==='failure'?new Response(JSON.stringify({error:'Unavailable'}),{status:503})
+    : mode==='waiting'?new Promise(resolve=>{resolveRead=resolve;})
+    :reply({...activityProgressFixture,activities:activityProgressFixture.activities.map(row=>row.id==='english-road'?{...row,setsStarted:0,setsCompleted:0,answered:0,currentSet:null}:{...row,finished:0,questions:0})})
+    :null,origin+'/#activities');
+  await flush();const d=dom.window.document;
+  assert.match(d.getElementById('activity-progress-status').textContent,/could not load/);
+  assert.equal(d.querySelectorAll('.activity-guide-progress progress,.activity-questions-link').length,0);
+  mode='ready';d.getElementById('refresh-activity-progress').click();await flush();
+  assert.match(d.querySelector('[data-activity-progress="vocabulary-practice"]').textContent,/0 of 50 words finished/);
+  assert.match(d.querySelector('.activity-questions-link').textContent,/Saved Questions \(0\)/);
+  mode='waiting';d.getElementById('refresh-activity-progress').click();await flush();
+  dom.window.location.hash='#overview';await flush();resolveRead(reply(activityProgressFixture));await flush();
+  assert.equal(d.getElementById('activity-catalog').textContent,'');
+  d.getElementById('activities-link').click();await flush();
+  d.getElementById('logout').click();await flush();resolveRead(reply(activityProgressFixture));await flush();
+  assert.equal(d.getElementById('activity-catalog').textContent,'');assert.equal(d.getElementById('activity-progress-status').textContent,'');
+  dom.window.close();
+});
+test('Questions links open the saved list including finished items without saving or moving the bookmark',async()=>{
+  for(const role of ['student','teacher'])for(const [id,prefix,bank] of [
+    ['grammar-practice','grammar',grammarBank],['business-terms','terms',termsBank],['vocabulary-practice','vocabulary',vocabularyBank]]){
+    let writes=0;
+    const dom=setup((path,options)=>{
+      if(options?.method&&options.method!=='GET')writes++;
+      if(path==='/api/'+id)return reply({items:bank.items});
+      if(path==='/api/'+id+'/state')return reply({entries:[{number:1,finished:true,question:true,revision:1}],preferences:{hideFinished:true,revision:1},position:{number:11,revision:1}});
+    },origin+'/#activities',role);await flush();const d=dom.window.document;
+    d.querySelector('[data-activity-progress="'+id+'"] .activity-questions-link').click();await flush();
+    const list=d.querySelector('.'+prefix+'-questions');
+    assert(list.open);assert.equal(d.activeElement,list.querySelector('summary'));
+    assert.match(list.textContent,/1/);assert.equal(writes,0);
+    assert.equal(d.getElementById('activity-catalog').textContent,'');
+    assert.equal(d.querySelector('#activities-submenu a[aria-current]').hash,'#activities/'+id);
     dom.window.close();
   }
 });

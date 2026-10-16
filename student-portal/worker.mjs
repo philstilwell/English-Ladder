@@ -354,6 +354,15 @@ async function handle(request, env) {
     return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/learning-import', { method: 'POST', body: JSON.stringify(body) }));
   }
 
+  if (url.pathname === '/api/activities/progress') {
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    if (request.method !== 'GET') return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET' });
+    if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Please open this from your student page.' }, 403);
+    if (!env.FEEDBACK_STORE) return json({ error: 'Progress is temporarily unavailable. Please try again.' }, 503);
+    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/activities/progress'));
+  }
+
   if (['/api/grammar-practice', '/api/business-terms', '/api/vocabulary-practice'].includes(url.pathname)) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);

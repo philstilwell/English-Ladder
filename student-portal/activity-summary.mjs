@@ -54,3 +54,13 @@ export async function activitySummary(storage) {
   }
   return { activities };
 }
+
+// Student pages receive counts for their own account, without administrator
+// dates, saved positions, answer content, or transcript information.
+export async function studentActivityProgress(storage) {
+  const { activities } = await activitySummary(storage);
+  return { activities: activities.map(row => row.id === 'english-road'
+    ? { id: row.id, setsStarted: row.setsStarted, setsCompleted: row.setsCompleted, answered: row.answered,
+      currentSet: row.latestSet?.state === 'in_progress' ? { answered: row.latestSet.answered, total: row.latestSet.total } : null }
+    : { id: row.id, total: row.total, finished: row.finished, questions: row.questions }) };
+}

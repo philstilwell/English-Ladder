@@ -2,7 +2,7 @@ import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { handleRoad } from './english-road.mjs';
 import { questionsOverview } from './questions.mjs';
-import { activitySummary } from './activity-summary.mjs';
+import { activitySummary, studentActivityProgress } from './activity-summary.mjs';
 import { handleBusinessTerms } from './business-terms.mjs';
 import { handleStudyProgress } from './study-progress.mjs';
 import { handleVocabulary } from './vocabulary-practice.mjs';
@@ -129,6 +129,7 @@ export class FeedbackStore {
     if (['admin/questions', 'admin/questions-status'].includes(id) && request.method === 'GET') return this.activeTransaction(txn => questionsOverview(txn, { after: url.searchParams.get('after'), statusOnly: id.endsWith('-status') }));
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'admin/activity-summary' && request.method === 'GET') return this.activeTransaction(async txn => json(await activitySummary(txn)));
+    if (id === 'activities/progress' && request.method === 'GET') return this.activeTransaction(async txn => json(await studentActivityProgress(txn)));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
     if (id === 'admin/cefr' && request.method === 'GET') return this.activeTransaction(async txn => {
       const context = await cefrReviewContext(txn);

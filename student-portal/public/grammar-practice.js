@@ -52,10 +52,12 @@
       const bookmark = window.PracticePosition.create({ api, expired, path: '/api/grammar-practice/state' });
       let revision = 0, active = false, items = [], page = 0, progress = new Map(), teacher = false, saving = false;
       let listOpen = false, listPage = 0, hideFinished = false, preferenceRevision = 0;
+      let questionView = false, questionsPending = false;
       function clear() {
         bookmark.clear();
         revision++; active = false; items = []; page = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false; preferenceRevision = 0;
         root.replaceChildren(); root.hidden = true; root.removeAttribute('aria-busy');
+        questionView = false; questionsPending = false;
       }
       function readPreferences(preferences = { hideFinished: false, revision: 0 }) {
         if (typeof preferences?.hideFinished !== 'boolean' || !Number.isSafeInteger(preferences.revision) || preferences.revision < 0) throw new Error('Invalid saved preference');
@@ -248,8 +250,16 @@
         if (remember) bookmark.remember(visible[start].number);
         if (focus) { const target = focusNumber ? rows.get(focusNumber).row : heading; target.focus(); target.scrollIntoView?.({ block: 'start' }); }
       }
-      async function open(teacherView = false) {
-        if (active) return;
+      function focusQuestions() {
+        const list = root.querySelector('.grammar-questions');
+        if (!questionsPending || !list) return;
+        questionsPending = false; listOpen = true; list.open = true;
+        const heading = list.querySelector('summary'); heading.focus(); heading.scrollIntoView?.({ block: 'start' });
+      }
+      async function open(teacherView = false, showQuestions = false) {
+        if (showQuestions && !questionView) { questionsPending = true; listOpen = true; }
+        questionView = showQuestions;
+        if (active) { focusQuestions(); return; }
         active = true; teacher = teacherView; const current = ++revision;
         root.hidden = false; root.setAttribute('aria-busy', 'true');
         const loading = element('p', 'Loading grammar practice…'); loading.setAttribute('role', 'status'); root.replaceChildren(loading);
@@ -264,12 +274,13 @@
           let index = number === null ? 0 : visible.findIndex(item => item.number >= number);
           if (index === -1) index = Math.max(0, visible.length - 1);
           page = Math.floor(index / PAGE_SIZE); root.removeAttribute('aria-busy'); render(false, null, '', false);
+          focusQuestions();
         } catch (error) {
           if (current !== revision || expired(error)) return;
           root.removeAttribute('aria-busy');
           const message = element('p', 'Grammar practice could not load. Please try again.'); message.setAttribute('role', 'alert');
           const retry = element('button', 'Try again', 'secondary-button'); retry.type = 'button';
-          retry.addEventListener('click', () => { active = false; open(teacher); });
+          retry.addEventListener('click', () => { active = false; open(teacher, questionView); });
           root.replaceChildren(message, retry);
         }
       }

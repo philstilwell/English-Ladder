@@ -59,10 +59,12 @@
       const bookmark = window.PracticePosition.create({ api, expired, path: '/api/business-terms/state' });
       let revision = 0, active = false, items = [], position = 0, progress = new Map(), teacher = false, saving = false;
       let listOpen = false, listPage = 0, hideFinished = false, preferenceRevision = 0;
+      let questionView = false, questionsPending = false;
       function clear() {
         bookmark.clear();
         revision++; active = false; items = []; position = 0; progress.clear(); saving = false; listOpen = false; listPage = 0; hideFinished = false; preferenceRevision = 0;
         root.replaceChildren(); root.hidden = true; root.removeAttribute('aria-busy');
+        questionView = false; questionsPending = false;
       }
       function render(focus = false, message = '', remember = true) {
         const visible = items.map((item, index) => !hideFinished || !progress.get(item.number)?.finished ? index : -1).filter(index => index !== -1);
@@ -254,8 +256,16 @@
         progress = new Map(data.entries.map(entry => [entry.number, entry]));
         readPreferences(data.preferences);
       }
-      async function open(teacherView = false) {
-        if (active) return;
+      function focusQuestions() {
+        const list = root.querySelector('.terms-questions');
+        if (!questionsPending || !list) return;
+        questionsPending = false; listOpen = true; list.open = true;
+        const heading = list.querySelector('summary'); heading.focus(); heading.scrollIntoView?.({ block: 'start' });
+      }
+      async function open(teacherView = false, showQuestions = false) {
+        if (showQuestions && !questionView) { questionsPending = true; listOpen = true; }
+        questionView = showQuestions;
+        if (active) { focusQuestions(); return; }
         active = true; teacher = teacherView; const current = ++revision;
         root.hidden = false; root.setAttribute('aria-busy', 'true');
         const loading = node('p', 'Loading business terms…'); loading.setAttribute('role', 'status'); root.replaceChildren(loading);
@@ -270,12 +280,13 @@
           position = number === null ? 0 : items.findIndex(item => item.number >= number);
           if (position === -1) position = items.length - 1;
           root.removeAttribute('aria-busy'); render(false, '', false);
+          focusQuestions();
         } catch (error) {
           if (current !== revision || expired(error)) return;
           root.removeAttribute('aria-busy');
           const message = node('p', 'Business terms could not load. Please try again.'); message.setAttribute('role', 'alert');
           const retry = node('button', 'Try again', 'secondary-button'); retry.type = 'button';
-          retry.addEventListener('click', () => { active = false; open(teacher); }); root.replaceChildren(message, retry);
+          retry.addEventListener('click', () => { active = false; open(teacher, questionView); }); root.replaceChildren(message, retry);
         }
       }
       return { open, clear };

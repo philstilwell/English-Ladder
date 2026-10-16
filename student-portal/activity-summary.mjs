@@ -21,7 +21,7 @@ const banks = [
 ];
 
 export async function activitySummary(storage) {
-  const road = { id: 'english-road', setsStarted: 0, setsCompleted: 0, answered: 0, correct: 0, latestSet: null, lastActivityAt: null };
+  const road = { id: 'english-road', questions: 0, setsStarted: 0, setsCompleted: 0, answered: 0, correct: 0, latestSet: null, lastActivityAt: null };
   for await (const row of records(storage, 'road:index:')) {
     road.setsStarted++;
     if (row.completedAt) road.setsCompleted++;
@@ -33,6 +33,10 @@ export async function activitySummary(storage) {
         state: row.completedAt ? 'completed' : row.endedAt ? 'ended' : 'in_progress' };
     }
     road.lastActivityAt = latest(road.lastActivityAt, at);
+  }
+  for await (const row of records(storage, 'road:item:')) {
+    if (row.question) road.questions++;
+    road.lastActivityAt = latest(road.lastActivityAt, row.updatedAt);
   }
   const activities = [road];
   for (const bank of banks) {
@@ -60,7 +64,7 @@ export async function activitySummary(storage) {
 export async function studentActivityProgress(storage) {
   const { activities } = await activitySummary(storage);
   return { activities: activities.map(row => row.id === 'english-road'
-    ? { id: row.id, setsStarted: row.setsStarted, setsCompleted: row.setsCompleted, answered: row.answered,
+    ? { id: row.id, setsStarted: row.setsStarted, setsCompleted: row.setsCompleted, answered: row.answered, questions: row.questions,
       currentSet: row.latestSet?.state === 'in_progress' ? { answered: row.latestSet.answered, total: row.latestSet.total } : null }
     : { id: row.id, total: row.total, finished: row.finished, questions: row.questions }) };
 }

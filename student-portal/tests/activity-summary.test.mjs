@@ -15,7 +15,7 @@ test('students and teacher previews read only their own activity totals without 
     const response=await call(e,'/api/activities/progress',{headers:{Cookie:user.cookie}});
     assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');
     const data=await response.json();
-    assert.deepEqual(data.activities[0],{id:'english-road',setsStarted:1,setsCompleted:0,answered:5,currentSet:{answered:5,total:20}});
+    assert.deepEqual(data.activities[0],{id:'english-road',setsStarted:1,setsCompleted:0,answered:5,questions:0,currentSet:{answered:5,total:20}});
     assert.deepEqual(data.activities[1],{id:'grammar-practice',total:900,finished:1,questions:1});
     assert.deepEqual(data.activities[3],{id:'vocabulary-practice',total:50,finished:1,questions:1});
     assert.doesNotMatch(JSON.stringify(data),/Private|updatedAt|lastActivityAt|savedPlace|topic|band|2026/);

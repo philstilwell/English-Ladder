@@ -15,7 +15,7 @@
   const stickyHeader = document.querySelector('.masthead-band');
   let activityChoices = null, activitiesLoading = false, activitiesRevision = 0, activitiesError = false;
   let activityProgress = null, activityProgressLoading = false, activityProgressError = false, activityProgressRevision = 0;
-  const questionActivities = ['grammar-practice', 'business-terms', 'vocabulary-practice'];
+  const questionActivities = ['english-road', 'grammar-practice', 'business-terms', 'vocabulary-practice'];
   const activityRoute = (id, extra) => location.hash.slice(1).split('/').length <= 3 && (extra === undefined || extra === 'questions' && questionActivities.includes(id));
   const activityOverview = () => authenticated && ['#activities', '#activities/'].includes(location.hash);
   let resourceChoices = null, resourcesLoading = false, resourcesRevision = 0, resourcesError = false;
@@ -253,7 +253,7 @@
     if (!authenticated) return;
     const [part, requested, extra] = location.hash.slice(1).split('/');
     const selected = part === 'quiz-results' && !teacherMode ? 'quiz' : sections.includes(part) ? part : 'feedback';
-    if (selected !== 'activities' || requested !== 'english-road' || extra !== undefined) roadPractice.clear();
+    if (selected !== 'activities' || requested !== 'english-road' || !activityRoute(requested, extra)) roadPractice.clear();
     if (selected !== 'activities' || requested !== 'grammar-practice' || !activityRoute(requested, extra)) grammarPractice.clear();
     if (selected !== 'activities' || requested !== 'business-terms' || !activityRoute(requested, extra)) businessTerms.clear();
     if (selected !== 'activities' || requested !== 'vocabulary-practice' || !activityRoute(requested, extra)) vocabularyPractice.clear(true);
@@ -969,17 +969,16 @@
           node('p', row.answered + ' answers saved.'));
         if (row.currentSet) box.append(node('p', 'Current set: ' + row.currentSet.answered + ' of ' + row.currentSet.total + ' answered.'));
         if (!row.setsStarted) box.append(node('p', 'No practice saved yet.'));
-        box.append(node('p', 'This activity has no saved Questions list.', 'field-hint'));
       } else {
         const unit = row.id === 'vocabulary-practice' ? 'words' : 'items';
         box.append(node('p', row.finished + ' of ' + row.total + ' ' + unit + ' finished.'));
         const bar = node('progress'); bar.max = row.total; bar.value = row.finished;
         bar.setAttribute('aria-label', row.finished + ' of ' + row.total + ' ' + unit + ' finished'); box.append(bar);
-        const link = node('a', 'Saved Questions (' + row.questions + ')', 'activity-questions-link');
+      }
+      const link = node('a', 'Saved Questions (' + row.questions + ')', 'activity-questions-link');
         link.href = '#activities/' + row.id + '/questions';
         link.setAttribute('aria-label', 'Saved Questions for ' + activityChoices.activities.find(tool => tool.id === row.id).name + ' (' + row.questions + ')');
-        box.append(link);
-      }
+      box.append(link);
     }
   }
   async function loadActivityProgress() {
@@ -992,7 +991,7 @@
       const count = value => Number.isSafeInteger(value) && value >= 0;
       if (!Array.isArray(data.activities) || !data.activities.length || data.activities.length > 50 || new Set(data.activities.map(row => row?.id)).size !== data.activities.length ||
           data.activities.some(row => !row || !/^[a-z0-9-]{1,60}$/.test(row.id) || (row.id === 'english-road'
-            ? ![row.setsStarted, row.setsCompleted, row.answered].every(count) || row.setsCompleted > row.setsStarted ||
+            ? ![row.setsStarted, row.setsCompleted, row.answered, row.questions].every(count) || row.setsCompleted > row.setsStarted ||
               row.currentSet !== null && (!row.currentSet || ![row.currentSet.answered, row.currentSet.total].every(count) || row.currentSet.answered > row.currentSet.total)
             : ![row.total, row.finished, row.questions].every(count) || !row.total || row.finished > row.total || row.questions > row.total)))
         throw new Error('Invalid activity progress');
@@ -1011,7 +1010,7 @@
     if (!authenticated || part !== 'activities') return;
     clearActivityCatalog();
     const activity = activityRoute(id, extra) && activityChoices?.visibleActivities.includes(id) && activityChoices.activities.find(a => a.id === id);
-    if (activity?.id === 'english-road') roadPractice.open(teacherMode); else roadPractice.clear();
+    if (activity?.id === 'english-road') roadPractice.open(teacherMode, extra === 'questions'); else roadPractice.clear();
     if (activity?.id === 'grammar-practice') grammarPractice.open(teacherMode, extra === 'questions'); else grammarPractice.clear();
     if (activity?.id === 'business-terms') businessTerms.open(teacherMode, extra === 'questions'); else businessTerms.clear();
     if (activity?.id === 'vocabulary-practice') vocabularyPractice.open(teacherMode, extra === 'questions'); else vocabularyPractice.clear(true);

@@ -1,4 +1,5 @@
 import bank from './english-road-bank.json' with { type: 'json' };
+import { handleRoadQuestions, roadChoice, roadQuestionId } from './road-questions.mjs';
 import { ATTEMPT_ID } from './quiz-results.mjs';
 
 const CURSOR = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z_[0-9a-f-]{36}$/;
@@ -30,23 +31,25 @@ export function roadSummary(a) {
     completedAt: a.completedAt, endedAt: a.endedAt, total: a.questions.length, answered: a.answers.length,
     correct: a.answers.filter((answer, i) => answer.choiceIndex === a.questions[i].correctIndex).length };
 }
-function studentAttempt(a) {
+async function studentAttempt(a, txn) {
   if (!a) return null;
   return { ...roadSummary(a), version: a.version, revision: a.revision, answers: a.answers,
-    questions: a.questions.map((q, i) => {
+    questions: await Promise.all(a.questions.map(async (q, i) => {
       const { correctIndex, explanation, feedback, ...visible } = q;
+      visible.progress = await roadChoice(txn, roadQuestionId(a.id, i));
       return i < a.answers.length ? { ...visible, correctIndex, explanation, feedback } : visible;
-    }) };
+    })) };
 }
 async function save(txn, a) {
   await txn.put({ [`road:attempt:${a.id}`]: a, [`road:index:${a.startedAt}_${a.id}`]: roadSummary(a), 'road:active': a.id });
 }
 export async function handleRoad(storage, request) {
   const url = new URL(request.url), route = url.pathname;
+  if (route === '/road/questions') return handleRoadQuestions(storage, request);
   if (route === '/road/state' && request.method === 'GET') return storage.transaction(async txn => {
     if (await txn.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     const id = await txn.get('road:active');
-    return json({ catalog: roadCatalog, attempt: studentAttempt(id ? await txn.get(`road:attempt:${id}`) : null) });
+    return json({ catalog: roadCatalog, attempt: await studentAttempt(id ? await txn.get(`road:attempt:${id}`) : null, txn) });
   });
   if (route === '/road/results' && request.method === 'GET') {
     const before = url.searchParams.get('before');
@@ -73,7 +76,7 @@ export async function handleRoad(storage, request) {
           input.previousAttemptId !== null && !ATTEMPT_ID.test(input.previousAttemptId)) return json({ error: 'Choose a practice band and topic.' }, 400);
       if (activeId === input.attemptId) {
         if (active.band !== input.band || active.topic !== input.topic) return conflict();
-        return json({ attempt: studentAttempt(active) }); // A lost response must not start another set.
+        return json({ attempt: await studentAttempt(active, txn) }); // A lost response must not start another set.
       }
       if (input.previousAttemptId !== activeId || active && !active.completedAt && !active.endedAt || await txn.get('road:attempt:' + input.attemptId)) return conflict();
       const now = new Date().toISOString();
@@ -81,11 +84,11 @@ export async function handleRoad(storage, request) {
         sourceCommit: bank.sourceCommit, startedAt: now, updatedAt: now, completedAt: null, endedAt: null,
         revision: 0, questions: chooseQuestions(input.band, input.topic), answers: [] };
       await save(txn, attempt);
-      return json({ attempt: studentAttempt(attempt) }, 201);
+      return json({ attempt: await studentAttempt(attempt, txn) }, 201);
     }
     if (!active || active.id !== input.attemptId) return conflict();
     if (route === '/road/end') {
-      if (active.completedAt || active.endedAt) return json({ attempt: studentAttempt(active) });
+      if (active.completedAt || active.endedAt) return json({ attempt: await studentAttempt(active, txn) });
       if (input.revision !== active.revision) return conflict();
       active.endedAt = active.updatedAt = new Date().toISOString(); active.revision++;
     } else {
@@ -93,13 +96,13 @@ export async function handleRoad(storage, request) {
       if (!Number.isInteger(questionIndex) || questionIndex < 0 || questionIndex >= active.questions.length ||
           !Number.isInteger(choiceIndex) || choiceIndex < 0 || choiceIndex > 3) return json({ error: 'Choose an answer.' }, 400);
       if (active.answers[questionIndex]) return active.answers[questionIndex].choiceIndex === choiceIndex
-        ? json({ attempt: studentAttempt(active) }) : conflict();
+        ? json({ attempt: await studentAttempt(active, txn) }) : conflict();
       if (active.completedAt || active.endedAt || questionIndex !== active.answers.length) return conflict();
       const now = new Date().toISOString();
       active.answers.push({ choiceIndex, answeredAt: now }); active.updatedAt = now; active.revision++;
       if (active.answers.length === active.questions.length) active.completedAt = now;
     }
     await save(txn, active);
-    return json({ attempt: studentAttempt(active) });
+    return json({ attempt: await studentAttempt(active, txn) });
   });
 }

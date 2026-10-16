@@ -123,6 +123,7 @@
         if (row.source === 'grammar-practice') card.append(window.GrammarPractice.exercise(item, 'article'));
         else if (row.source === 'business-terms') card.append(window.BusinessTerms.exercise(item).card);
         else if (row.source === 'study-practice') card.append(window.StudyPractice.review(item));
+        else if (row.source === 'english-road') card.append(window.RoadQuestions.review(item));
         else if (row.source === 'vocabulary-practice') card.append(window.VocabularyPractice.review(item));
         else throw new Error('This question type could not load. Please reload the page.');
         if (item.progress.finished) card.append(element('p', 'Marked as finished', 'field-note'));
@@ -160,7 +161,7 @@
       const count = value => Number.isSafeInteger(value) && value >= 0;
       if (!Array.isArray(data.activities) || data.activities.length !== ids.length || data.activities.some((item, index) =>
         !item || item.id !== ids[index] || item.lastActivityAt !== null && !Number.isFinite(Date.parse(item.lastActivityAt)) ||
-        !(index ? ['total', 'finished', 'questions'] : ['setsStarted', 'setsCompleted', 'answered', 'correct']).every(key => count(item[key]))))
+        !(index ? ['total', 'finished', 'questions'] : ['setsStarted', 'setsCompleted', 'answered', 'correct', 'questions']).every(key => count(item[key]))))
         throw new Error('Activity records could not load. Please try again.');
       for (const item of data.activities) {
         const tool = activityTools.find(tool => tool.id === item.id), card = element('article', null, 'activity-overview-card');
@@ -168,7 +169,8 @@
         if (!student.visibleActivities.includes(item.id)) card.append(element('p', 'Hidden from student menu', 'field-note'));
         if (item.id === 'english-road') {
           card.append(element('p', item.setsCompleted + ' of ' + item.setsStarted + ' sets completed'),
-            element('p', item.correct + ' correct / ' + item.answered + ' answers saved'));
+            element('p', item.correct + ' correct / ' + item.answered + ' answers saved'), element('p', item.questions + ' saved Questions'));
+          const questions = element('a', 'View saved Questions'); questions.href = '#students/' + student.key + '/questions'; card.append(questions);
           if (item.latestSet) card.append(element('p', 'Latest set: ' + ({ completed: 'Completed', ended: 'Ended early', in_progress: 'In progress' }[item.latestSet.state] || 'Saved') + ' · ' + item.latestSet.answered + '/' + item.latestSet.total + ' answered', 'field-note'));
         } else {
           card.append(element('p', item.finished + ' of ' + item.total + ' items marked finished'),

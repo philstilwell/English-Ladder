@@ -11,7 +11,7 @@ import grammarBank from '../grammar-bank.json' with { type: 'json' };
 import termsBank from '../business-terms-bank.json' with { type: 'json' };
 import vocabularyBank from '../vocabulary-bank.json' with { type: 'json' };
 const activityProgressFixture={activities:[
- {id:'english-road',setsStarted:3,setsCompleted:1,answered:21,currentSet:{answered:1,total:20}},
+ {id:'english-road',setsStarted:3,setsCompleted:1,answered:21,questions:2,currentSet:{answered:1,total:20}},
  {id:'grammar-practice',total:900,finished:9,questions:2},
  {id:'business-terms',total:2958,finished:5,questions:1},
  {id:'vocabulary-practice',total:50,finished:10,questions:1},
@@ -52,6 +52,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
  };
  w.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/study-practice.js',import.meta.url),'utf8'));
+ w.eval(readFileSync(new URL('../public/road-questions.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/practice-position.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
@@ -824,8 +825,8 @@ test('Activities shows personal totals and direct Questions links, and refreshes
     const box=id=>d.querySelector('[data-activity-progress="'+id+'"]');
     assert.match(box('english-road').textContent,/1 of 3 practice sets completed/);
     assert.match(box('english-road').textContent,/Current set: 1 of 20 answered/);
-    assert.match(box('english-road').textContent,/no saved Questions list/);
-    assert.equal(box('english-road').querySelector('a'),null);
+    assert.equal(box('english-road').querySelector('a').hash,'#activities/english-road/questions');
+    assert.equal(box('english-road').querySelector('a').textContent,'Saved Questions (2)');
     assert.match(box('grammar-practice').textContent,/9 of 900 items finished/);
     assert.equal(box('grammar-practice').querySelector('progress').value,9);
     assert.match(box('vocabulary-practice').textContent,/10 of 50 words finished/);
@@ -844,7 +845,7 @@ test('Activities progress distinguishes failure from zero and ignores reads afte
   const dom=setup(path=>path==='/api/activities/progress'
     ? mode==='failure'?new Response(JSON.stringify({error:'Unavailable'}),{status:503})
     : mode==='waiting'?new Promise(resolve=>{resolveRead=resolve;})
-    :reply({...activityProgressFixture,activities:activityProgressFixture.activities.map(row=>row.id==='english-road'?{...row,setsStarted:0,setsCompleted:0,answered:0,currentSet:null}:{...row,finished:0,questions:0})})
+    :reply({...activityProgressFixture,activities:activityProgressFixture.activities.map(row=>row.id==='english-road'?{...row,setsStarted:0,setsCompleted:0,answered:0,questions:0,currentSet:null}:{...row,finished:0,questions:0})})
     :null,origin+'/#activities');
   await flush();const d=dom.window.document;
   assert.match(d.getElementById('activity-progress-status').textContent,/could not load/);
@@ -1076,6 +1077,56 @@ test('grammar load errors can retry, empty data fails clearly, and expiry clears
 const roadRoute = 'https://ab26.englishladder.com/#activities/english-road';
 const roadSubmit = dom => dom.window.document.querySelector('#road-practice form').dispatchEvent(new dom.window.Event('submit', { bubbles:true, cancelable:true }));
 const roadButton = (d, text) => [...d.querySelectorAll('#road-practice button')].find(b => b.textContent === text);
+
+test('Road Questions saves independently without losing an unsubmitted answer, retries safely and opens from Activities', async () => {
+  const {e,student} = await seedQuiz(); let drop = false, writes = 0;
+  const mock = (path, options={}) => {
+    if (path === '/api/account') return reply(roadSettings);
+    if (path.startsWith('/api/road/') || path === '/api/activities/progress') {
+      if (options.method) writes++;
+      const result = call(e,path,{...options,headers:{...options.headers,Cookie:student.cookie,...(options.method ? {Origin:origin}: {})}});
+      if (drop && options.method === 'PATCH') { drop=false; return result.then(()=>{throw new Error('Connection lost');}); }
+      return result;
+    }
+  };
+  const dom=setup(mock,roadRoute); await flush(); const w=dom.window,d=w.document;
+  d.getElementById('road-topic').value='Articles'; roadSubmit(dom); await flush();
+  const read=()=>e.FEEDBACK_STORE.get('ab26').storage.list({prefix:'road:attempt:'});
+  const before=await read(),radio=d.querySelector('.road-options input'); radio.checked=true; radio.dispatchEvent(new w.Event('change'));
+  drop=true; roadButton(d,'Questions').click(); await flush();
+  assert.match(d.getElementById('road-practice').textContent,/try saving again/);
+  assert.equal(radio.isConnected,true); assert.equal(radio.checked,true); assert.deepEqual(await read(),before);
+  roadButton(d,'Questions').click(); await flush(); assert.ok(roadButton(d,'Saved to Questions')); assert.equal(radio.checked,true);
+  const savedWrites=writes; d.getElementById('activities-link').click(); await flush();
+  const link=d.querySelector('[data-activity-progress="english-road"] a'); assert.equal(link.textContent,'Saved Questions (1)'); link.click(); await flush();
+  assert.equal(w.location.hash,'#activities/english-road/questions'); assert.equal(d.querySelectorAll('.road-questions .road-review').length,1);
+  assert.match(d.querySelector('.road-questions').textContent,/No answer saved/); assert.equal(writes,savedWrites);
+  roadButton(d,'Saved to Questions').click(); await flush(); assert.deepEqual(await read(),before);
+  w.close();
+});
+
+test('Road Questions conflicts reload before changing again and late responses clear on navigation, logout, pagehide and expiry', async () => {
+  const item={id:'11111111-1111-4111-8111-111111111111_00',attemptId:'11111111-1111-4111-8111-111111111111',questionIndex:0,startedAt:'2026-10-15T10:00:00Z',band:'A1',topic:'Articles',exercise:{setup:'Choose an article.',prompt:'I see ___ apple.',options:['an','a','the','some']},answer:null,progress:{id:'11111111-1111-4111-8111-111111111111_00',question:true,revision:1}};
+  let conflicts=true,patches=0;
+  const dom=setup((path,options)=>path==='/api/account'?reply(roadSettings):path.startsWith('/api/road/questions')?
+    options?.method==='PATCH'?(patches++,conflicts?new Response(JSON.stringify({error:'Choice changed'}),{status:409}):reply({entry:{...item.progress,question:false,revision:4}})):
+    path.includes('?id=')?reply({entry:{...item.progress,revision:3}}):reply({questions:[item],nextCursor:null}):null,roadRoute+'/questions');
+  await flush(); const d=dom.window.document;
+  roadButton(d,'Saved to Questions').click();await flush();assert.match(d.getElementById('road-practice').textContent,/load the saved choice/);
+  conflicts=false;roadButton(d,'Saved to Questions').click();await flush();assert.equal(patches,1);
+  roadButton(d,'Saved to Questions').click();await flush();assert.equal(patches,2);assert.ok(roadButton(d,'Questions'));dom.window.close();
+  for(const action of ['navigate','logout','pagehide','expiry']){
+    let release;
+    const late=setup((path)=>path==='/api/account'?reply(roadSettings):path==='/api/road/questions'?new Promise(resolve=>{release=resolve;}):null,roadRoute+'/questions');
+    await flush();const w=late.window,d=w.document;
+    if(action==='navigate')w.location.hash='#overview';else if(action==='logout')d.getElementById('logout').click();else if(action==='pagehide')w.dispatchEvent(new w.Event('pagehide'));
+    await flush();release(action==='expiry'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):reply({questions:[item],nextCursor:null}));await flush();
+    assert.equal(d.getElementById('road-practice').textContent,'');w.close();
+  }
+  let writes=0;
+  const teacher=setup((path,options)=>path==='/api/account'?reply(roadSettings):path==='/api/road/questions'?(options?.method&&writes++,reply({questions:[item],nextCursor:null})):null,roadRoute+'/questions','teacher');
+  await flush();assert.equal(teacher.window.document.querySelectorAll('.road-questions .question-button').length,0);assert.equal(writes,0);teacher.window.close();
+});
 
 test('English Road saves actual student answers and resumes the next question on a new page', async () => {
   const {e,student} = await seedQuiz();

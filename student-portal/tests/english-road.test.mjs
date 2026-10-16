@@ -11,6 +11,68 @@ const startInput = (previousAttemptId = null, topic = 'Articles') => ({ attemptI
 async function start(e, cookie, input = startInput()) { const response = await post(e, cookie, 'start', input); assert.equal(response.status, 201); return (await response.json()).attempt; }
 const privateAttempt = (e, id) => e.FEEDBACK_STORE.get('ab26').storage.get('road:attempt:' + id);
 const history = (e, path = '/road/results') => e.FEEDBACK_STORE.get('ab26').fetch(new Request('https://feedback.internal' + path));
+const flag = (e, cookie, body, host = origin) => call(e, '/api/road/questions', { method: 'PATCH', headers: { Cookie: cookie, Origin: host, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }, host);
+
+test('Road Questions preserves attempts, hides unanswered keys, survives new sets and supports safe revisioned undo', async () => {
+  const e = env(), student = await login(e), a = await start(e, student.cookie), original = await privateAttempt(e, a.id);
+  const input = { attemptId: a.id, questionIndex: 0, value: true, revision: 0 };
+  let response = await flag(e, student.cookie, input); assert.equal(response.status, 200);
+  const entry = (await response.json()).entry; assert.equal(entry.question, true); assert.equal(entry.revision, 1);
+  assert.deepEqual(await privateAttempt(e, a.id), original);
+  assert.deepEqual((await (await flag(e, student.cookie, input)).json()).entry, entry);
+  let list = await (await get(e, student.cookie, '/api/road/questions')).json();
+  assert.equal(list.questions.length, 1); assert.equal(list.questions[0].exercise.prompt, a.questions[0].prompt);
+  assert.equal(list.questions[0].exercise.correctIndex, undefined); assert.equal(list.questions[0].exercise.feedback, undefined); assert.equal(list.questions[0].exercise.explanation, undefined);
+  assert.equal((await (await get(e, student.cookie)).json()).attempt.questions[0].progress.question, true);
+  await post(e, student.cookie, 'answer', { attemptId: a.id, questionIndex: 0, choiceIndex: 0 });
+  await post(e, student.cookie, 'end', { attemptId: a.id, revision: 1 });
+  const ended = await privateAttempt(e, a.id), next = await start(e, student.cookie, startInput(a.id));
+  list = await (await get(e, student.cookie, '/api/road/questions')).json();
+  assert.deepEqual(list.questions[0].exercise, original.questions[0]); assert.equal(list.questions[0].answer.choiceIndex, 0);
+  assert.equal((await flag(e, student.cookie, { ...input, value: false })).status, 409);
+  assert.equal((await flag(e, student.cookie, { ...input, value: false, revision: 1 })).status, 200);
+  assert.equal((await flag(e, student.cookie, input)).status, 409);
+  assert.deepEqual((await (await get(e, student.cookie, '/api/road/questions')).json()).questions, []);
+  assert.equal((await flag(e, student.cookie, { ...input, revision: 2 })).status, 200);
+  assert.deepEqual(await privateAttempt(e, a.id), ended); assert.equal((await (await get(e, student.cookie)).json()).attempt.id, next.id);
+  const totals = await (await get(e, student.cookie, '/api/activities/progress')).json(); assert.equal(totals.activities[0].questions, 1);
+});
+
+test('Road Questions enforces authentication, account isolation, teacher read-only access, input checks and deletion', async () => {
+  const e = env(), student = await login(e), teacher = await login(e, 'teacher-test'), a = await start(e, student.cookie);
+  const input = { attemptId: a.id, questionIndex: 0, value: true, revision: 0 };
+  assert.equal((await call(e, '/api/road/questions')).status, 401);
+  assert.equal((await flag(e, teacher.cookie, input)).status, 403);
+  assert.equal((await get(e, teacher.cookie, '/api/road/questions')).status, 200);
+  const other = await login(e, 'other-test', 'https://cd26.englishladder.com');
+  assert.equal((await flag(e, other.cookie, input, 'https://cd26.englishladder.com')).status, 404);
+  assert.equal((await get(e, student.cookie, '/api/road/questions', 'https://cd26.englishladder.com')).status, 401);
+  for (const method of ['GET', 'PATCH']) assert.equal((await call(e, '/api/road/questions', { method, headers: { Cookie: student.cookie, Origin: 'https://evil.test' }, ...(method === 'PATCH' ? { body: JSON.stringify(input) } : {}) })).status, 403);
+  for (const change of [{ questionIndex: -1 }, { questionIndex: 25 }, { value: 'yes' }, { revision: -1 }, { exercise: { prompt: 'Forged' } }]) assert.equal((await flag(e, student.cookie, { ...input, ...change })).status, 400);
+  assert.equal((await flag(e, student.cookie, { ...input, questionIndex: 2 })).status, 404);
+  assert.equal((await get(e, student.cookie, '/api/road/questions?after=bad')).status, 400);
+  assert.equal((await get(e, student.cookie, '/api/road/questions?id=bad')).status, 400);
+  await flag(e, student.cookie, input);
+  assert.equal((await (await get(e, teacher.cookie, '/api/road/questions')).json()).questions.length, 1);
+  assert.equal((await (await get(e, other.cookie, '/api/road/questions', 'https://cd26.englishladder.com')).json()).questions.length, 0);
+  const store = e.FEEDBACK_STORE.get('ab26'); await store.fetch(new Request('https://feedback.internal/admin/delete-account', { method: 'POST' }));
+  assert.equal((await store.storage.list({ prefix: 'road:' })).size, 0);
+  assert.equal((await flag(e, student.cookie, input)).status, 410); assert.equal((await get(e, student.cookie, '/api/road/questions')).status, 410);
+});
+
+test('Road Questions lists use stable twenty-item pages and never write on reads', async () => {
+  const e = env(), student = await login(e), a = await start(e, student.cookie, startInput(null, ''));
+  for (let i = 0; i < 23; i++) {
+    await flag(e, student.cookie, { attemptId: a.id, questionIndex: i, value: true, revision: 0 });
+    await post(e, student.cookie, 'answer', { attemptId: a.id, questionIndex: i, choiceIndex: 0 });
+  }
+  const store = e.FEEDBACK_STORE.get('ab26'), before = await store.storage.list();
+  const first = await (await get(e, student.cookie, '/api/road/questions')).json();
+  const last = await (await get(e, student.cookie, '/api/road/questions?after=' + first.nextCursor)).json();
+  assert.equal(first.questions.length, 20); assert.equal(last.questions.length, 3); assert.equal(last.nextCursor, null);
+  assert.equal(new Set([...first.questions, ...last.questions].map(q => q.id)).size, 23);
+  assert.deepEqual(await store.storage.list(), before);
+});
 
 test('reviewed snapshot is complete, consistent, unique and bounded for private attempt storage', () => {
   assert.equal(bank.questions.length, 4200); assert.equal(bank.topics.length, 35);

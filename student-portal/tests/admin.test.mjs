@@ -208,7 +208,7 @@ const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1))
 function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
   return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
-};dom.window.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/study-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
+};dom.window.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/study-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/road-questions.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
 test('administrator list links to editable accounts and has a separate registration form',async()=>{
   const dom=browser();await flush();const w=dom.window,d=w.document;
   assert.equal(d.querySelector('.masthead-band .admin-nav').hidden,false);
@@ -984,7 +984,7 @@ test('activity overview rejects missing or pending accounts and reports unavaila
 });
 
 const activityOverviewFixture={activities:[
-  {id:'english-road',setsStarted:3,setsCompleted:1,answered:28,correct:21,latestSet:{state:'in_progress',answered:8,total:20},lastActivityAt:'2026-10-15T10:00:00Z'},
+  {id:'english-road',setsStarted:3,setsCompleted:1,answered:28,correct:21,questions:1,latestSet:{state:'in_progress',answered:8,total:20},lastActivityAt:'2026-10-15T10:00:00Z'},
   {id:'grammar-practice',total:900,finished:12,questions:2,savedPlace:31,lastActivityAt:'2026-10-15T12:00:00Z'},
   {id:'business-terms',total:2958,finished:0,questions:0,savedPlace:null,lastActivityAt:null},
   {id:'vocabulary-practice',total:50,finished:0,questions:0,savedPlace:null,lastActivityAt:null},
@@ -1071,7 +1071,11 @@ test('combined Questions counts and lists include every source, private answers 
  saved['terms:item:1']={number:1,question:true,finished:true,revision:1};
  saved['vocabulary:item:1']={number:1,question:true,finished:false,revision:1,answer:'recruiter',sentence:'Our fictional café will recruit two people.'};
  saved['study:question:'+topic.id]={id:topic.id,question:true,finished:true,revision:1,topic};
- saved['assessment:current']=assessment;await store.storage.put(saved);const before=await store.storage.list();
+ saved['assessment:current']=assessment;await store.storage.put(saved);
+ const attemptId=crypto.randomUUID();
+ await call(e,'/api/road/start',{method:'POST',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({attemptId,previousAttemptId:null,band:'A1',topic:'Articles'})});
+ await call(e,'/api/road/questions',{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({attemptId,questionIndex:0,value:true,revision:0})});
+ const before=await store.storage.list();
  const statusPath='/api/admin/questions-status',path='/api/admin/students/'+record.key+'/questions';
  for(const p of [statusPath,path]){
   for(const c of ['',student.cookie,teacher.cookie])assert.equal((await adminCall(e,p,{headers:{Cookie:c}})).status,401);
@@ -1079,10 +1083,13 @@ test('combined Questions counts and lists include every source, private answers 
   assert.equal((await adminCall(e,p,{headers:{Cookie:cookie,Origin:'https://evil.test'}})).status,403);
   assert.equal((await adminCall(e,p,{method:'PATCH',headers:{Cookie:cookie}})).status,404);
  }
- const statuses=await(await adminCall(e,statusPath,{headers:{Cookie:cookie}})).json();assert.equal(statuses.statuses[record.key].count,28);assert.equal(statuses.statuses[other.key].count,0);assert.doesNotMatch(JSON.stringify(statuses),/fictional|sentence|recruiter/);
- const response=await adminCall(e,path,{headers:{Cookie:cookie}});assert.equal(response.headers.get('cache-control'),'no-store');const first=await response.json();assert.equal(first.questions.length,20);assert.equal(first.count,28);assert.ok(first.nextCursor);
- const last=await(await adminCall(e,path+'?after='+first.nextCursor,{headers:{Cookie:cookie}})).json();assert.equal(last.questions.length,8);assert.equal(last.nextCursor,null);
- const all=[...first.questions,...last.questions];assert.equal(new Set(all.map(q=>q.id)).size,28);assert.equal(all.find(q=>q.source==='vocabulary-practice').item.studentAnswer,'recruiter');assert.equal(all.find(q=>q.source==='study-practice').item.current,true);
+ const statuses=await(await adminCall(e,statusPath,{headers:{Cookie:cookie}})).json();assert.equal(statuses.statuses[record.key].count,29);assert.equal(statuses.statuses[other.key].count,0);assert.doesNotMatch(JSON.stringify(statuses),/fictional|sentence|recruiter/);
+ const response=await adminCall(e,path,{headers:{Cookie:cookie}});assert.equal(response.headers.get('cache-control'),'no-store');const first=await response.json();assert.equal(first.questions.length,20);assert.equal(first.count,29);assert.ok(first.nextCursor);
+ const last=await(await adminCall(e,path+'?after='+first.nextCursor,{headers:{Cookie:cookie}})).json();assert.equal(last.questions.length,9);assert.equal(last.nextCursor,null);
+ const all=[...first.questions,...last.questions];assert.equal(new Set(all.map(q=>q.id)).size,29);assert.equal(all.find(q=>q.source==='vocabulary-practice').item.studentAnswer,'recruiter');assert.equal(all.find(q=>q.source==='study-practice').item.current,true);
+ assert.equal(all.find(q=>q.source==='english-road').item.attemptId,attemptId);
+ assert.equal(all.find(q=>q.source==='english-road').item.exercise.correctIndex,undefined);
+ assert.equal(first.counts['english-road'],1);
  assert.deepEqual(await store.storage.list(),before);
  assert.deepEqual((await(await adminCall(e,'/api/admin/students/'+other.key+'/questions',{headers:{Cookie:cookie}})).json()).questions,[]);
  assert.equal((await adminCall(e,path+'?after=bad',{headers:{Cookie:cookie}})).status,400);
@@ -1092,16 +1099,17 @@ test('combined Questions counts and lists include every source, private answers 
 });
 
 test('combined Questions table links open full exercises, handle empty/error states and clear stale content',async()=>{
- let count=4,fail=false,delay=false,release;
+ let count=5,fail=false,delay=false,release;
  const [topic]=await studyTopics(assessment),progress={finished:false,question:true,revision:1};
- const content={count:4,counts:{},nextCursor:null,questions:[
+ const content={count:5,counts:{},nextCursor:null,questions:[
+  {source:'english-road',label:'English Road Practice',item:{id:'road-question',attemptId:'attempt',questionIndex:0,startedAt:'2026-10-15T10:00:00Z',band:'A1',topic:'Articles',exercise:{setup:'Choose an article.',prompt:'I see ___ apple.',options:['a','an','the','some']},answer:null,progress}},
   {source:'grammar-practice',label:'Grammar practice',item:{...grammarBank.items[0],progress}},
   {source:'business-terms',label:'Business terms',item:{...termsBank.items[0],progress}},
   {source:'study-practice',label:'Study on your own',item:{...topic,current:true,progress:{...progress,id:topic.id}}},
   {source:'vocabulary-practice',label:'Vocabulary practice',item:{...vocabularyBank.items[0],studentAnswer:'recruiter',studentSentence:'<img src=x onerror=alert(1)>',progress}},
  ]};
  const dom=browser((p)=>p==='/api/admin/questions-status'?fail?Response.json({error:'Unavailable'},{status:503}):Response.json({statuses:{[fixture.key]:{state:'ready',count}},nextCursor:null}):p.endsWith('/questions')?delay?new Promise(r=>{release=r;}):Response.json(content):null);
- const w=dom.window,d=w.document;await flush();assert.match(d.querySelector('.questions-cell').textContent,/4 questions/);d.querySelector('.questions-badge').click();await flush();assert.equal(d.getElementById('questions-view').hidden,false);assert.equal(d.querySelectorAll('.combined-question').length,4);assert.match(d.getElementById('all-questions-content').textContent,/recruiter/);assert.equal(d.querySelectorAll('#all-questions-content img[src=x]').length,0);
+ const w=dom.window,d=w.document;await flush();assert.match(d.querySelector('.questions-cell').textContent,/5 questions/);d.querySelector('.questions-badge').click();await flush();assert.equal(d.getElementById('questions-view').hidden,false);assert.equal(d.querySelectorAll('.combined-question').length,5);assert.match(d.getElementById('all-questions-content').textContent,/recruiter/);assert.equal(d.querySelectorAll('#all-questions-content img[src=x]').length,0);
  delay=true;d.getElementById('refresh-all-questions').click();await flush();w.location.hash='students';await flush();release(Response.json(content));await flush();assert.equal(d.getElementById('all-questions-content').textContent,'');
  count=0;d.getElementById('refresh').click();await flush();assert.equal(d.querySelector('.questions-badge'),null);
  fail=true;d.getElementById('refresh').click();await flush();assert.match(d.querySelector('.questions-cell').textContent,/Unable to check/);

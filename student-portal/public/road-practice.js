@@ -4,7 +4,8 @@
   window.EnglishRoadPractice = {
     create({ root, api, expired }) {
       let epoch = 0, mounted = false, teacher = false, busy = false, catalog = null, attempt = null;
-      let viewing = null, pending = null, error = '', conflict = false;
+      let viewing = null, pending = null, error = '', conflict = false, questionsOnly = false;
+      const questions = window.RoadQuestions.create({ api, expired });
       const node = (tag, text, className) => {
         const el = document.createElement(tag); if (text != null) el.textContent = text;
         if (className) el.className = className; return el;
@@ -14,7 +15,7 @@
         el.addEventListener('click', action); return el;
       };
       function clear() {
-        epoch++; mounted = false; busy = false; catalog = null; attempt = null; viewing = null;
+        epoch++; questions.clear(); mounted = false; busy = false; catalog = null; attempt = null; viewing = null;
         pending = null; error = ''; conflict = false; root.replaceChildren(); root.hidden = true;
       }
       function focusQuestion() { root.querySelector('#road-question-title, #road-summary-title')?.focus(); }
@@ -44,13 +45,16 @@
           if (e.status === 409) { pending = null; conflict = true; }
         } finally { if (mounted && version === epoch) { busy = false; render(); focusQuestion(); } }
       }
-      function reviewQuestion(question, answer) {
+      function questionButton(question, index) {
+        return questions.toggle({ attemptId: attempt.id, questionIndex: index, progress: question.progress || { id: attempt.id + '_' + String(index).padStart(2, '0'), question: false, revision: 0 } });
+      }
+      function reviewQuestion(question, answer, index) {
         const box = node('div', null, 'road-review');
         box.append(node('p', question.setup), node('p', '“' + question.prompt + '”', 'road-prompt'));
         box.append(node('p', 'Your answer: “' + question.options[answer.choiceIndex] + '”'));
         box.append(node('p', (answer.choiceIndex === question.correctIndex ? 'Correct. ' : 'Correct answer: “' + question.options[question.correctIndex] + '”. ') + question.explanation));
         if (answer.choiceIndex !== question.correctIndex) box.append(node('p', question.feedback[answer.choiceIndex]));
-        box.append(promptControls(question));
+        box.append(questionButton(question, index), promptControls(question));
         return box;
       }
       function promptControls(question) {
@@ -86,6 +90,11 @@
       function render() {
         root.replaceChildren(); root.hidden = !mounted;
         if (!mounted) return;
+        const link = node('a', questionsOnly ? 'Back to practice' : 'Saved Questions', 'activity-questions-link');
+        link.href = '#activities/english-road' + (questionsOnly ? '' : '/questions'); root.append(link);
+        if (questionsOnly) {
+          const list = node('div', null, 'road-questions'); root.append(list); questions.list(list, teacher); return;
+        }
         if (teacher) {
           root.append(node('p', 'Teacher view does not save student practice. Open this student’s account on your administrator page to review English Road results.'));
           return;
@@ -107,7 +116,7 @@
           if (attempt.endedAt) root.append(node('p', 'You answered ' + attempt.answered + ' of ' + attempt.total + ' questions.'));
           if (attempt.answers.length) {
             const details = node('details'); details.append(node('summary', 'Review your answers'));
-            attempt.answers.forEach((a, i) => details.append(reviewQuestion(attempt.questions[i], a))); root.append(details);
+            attempt.answers.forEach((a, i) => details.append(reviewQuestion(attempt.questions[i], a, i))); root.append(details);
           }
           setup(); return;
         }
@@ -138,12 +147,12 @@
             if (choice && !busy && !pending && !conflict) send('answer', { attemptId: attempt.id, questionIndex: index, choiceIndex: Number(choice.value) });
           });
         }
-        root.append(promptControls(question));
+        root.append(questionButton(question, index), promptControls(question));
         if (!attempt.completedAt && !attempt.endedAt && !pending && !conflict) root.append(button('End this set', () => {
           if (window.confirm('End this set? Your saved answers will stay in your account. You can then start a new set.')) send('end', { attemptId: attempt.id, revision: attempt.revision });
         }));
       }
-      return { clear, open(isTeacher) { if (mounted && teacher === isTeacher) return; clear(); mounted = true; teacher = isTeacher; render(); if (!teacher) load(); } };
+      return { clear, open(isTeacher, showQuestions = false) { if (mounted && teacher === isTeacher && questionsOnly === showQuestions) return; clear(); mounted = true; teacher = isTeacher; questionsOnly = showQuestions; render(); if (!teacher && !questionsOnly) load(); } };
     },
   };
 })();

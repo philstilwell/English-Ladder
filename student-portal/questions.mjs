@@ -1,9 +1,11 @@
+import { roadQuestionItem } from './road-questions.mjs';
 import { studyTopics } from './study-progress.mjs';
 import vocabularyBank from './vocabulary-bank.json' with { type: 'json' };
 import grammarBank from './grammar-bank.json' with { type: 'json' };
 import termsBank from './business-terms-bank.json' with { type: 'json' };
 
 const sources = [
+  { id: 'english-road', label: 'English Road Practice', prefix: 'road:question:' },
   { id: 'vocabulary-practice', label: 'Vocabulary practice', prefix: 'vocabulary:item:', bank: vocabularyBank },
   { id: 'grammar-practice', label: 'Grammar practice', prefix: 'grammar:item:', bank: grammarBank },
   { id: 'business-terms', label: 'Business terms', prefix: 'terms:item:', bank: termsBank },
@@ -24,7 +26,7 @@ async function* records(storage, prefix) {
 // Derive the combined list from existing choices. Reading it never writes or
 // changes completion, questions, or assessment history.
 export async function questionsOverview(storage, { after = null, statusOnly = false } = {}) {
-  if (after !== null && !/^(grammar-practice|business-terms|study-practice|vocabulary-practice):(?:\d{8}|[a-f0-9]{64})$/.test(after)) {
+  if (after !== null && !/^(?:(grammar-practice|business-terms|study-practice|vocabulary-practice):(?:\d{8}|[a-f0-9]{64})|english-road:[0-9a-f-]{36}_\d{2})$/.test(after)) {
     return Response.json({ error: 'Please check the page.' }, { status: 400 });
   }
   const counts = {}, selected = [];
@@ -34,20 +36,20 @@ export async function questionsOverview(storage, { after = null, statusOnly = fa
     counts[source.id] = 0;
     for await (const entry of records(storage, source.prefix)) {
       if (!entry.question) continue;
-      const item = source.items ? source.items.get(entry.number) : entry.topic;
+      const item = source.items ? source.items.get(entry.number) : source.id === 'english-road' ? entry.exercise : entry.topic;
       if (!item) continue;
       counts[source.id]++; count++;
       if (statusOnly) continue;
       const id = source.id + ':' + (source.items ? String(entry.number).padStart(8, '0') : entry.id);
       if (after && id <= after) continue;
       const progress = { ...(source.id === 'study-practice' ? { id: entry.id, revision: entry.revision } : {}), finished: Boolean(entry.finished), question: true, updatedAt: entry.updatedAt || null };
-      selected.push({ id, source: source.id, label: source.label, item: { ...item, progress, ...(source.id === 'study-practice' ? { current: currentTopics.has(entry.id) } : {}), ...(source.id === 'vocabulary-practice' ? { studentAnswer: entry.answer || '', studentSentence: entry.sentence || '' } : {}) } });
+      selected.push({ id, source: source.id, label: source.label, item: source.id === 'english-road' ? entry : { ...item, progress, ...(source.id === 'study-practice' ? { current: currentTopics.has(entry.id) } : {}), ...(source.id === 'vocabulary-practice' ? { studentAnswer: entry.answer || '', studentSentence: entry.sentence || '' } : {}) } });
       // Keep only the next page and one sentinel while scanning bounded pages.
       selected.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
       if (selected.length > 21) selected.pop();
     }
   }
   return Response.json(statusOnly ? { state: 'ready', count } : {
-    count, counts, questions: selected.slice(0, 20), nextCursor: selected.length > 20 ? selected[19].id : null,
+    count, counts, questions: await Promise.all(selected.slice(0, 20).map(async row => row.source === 'english-road' ? { ...row, item: await roadQuestionItem(storage, row.item) } : row)), nextCursor: selected.length > 20 ? selected[19].id : null,
   });
 }

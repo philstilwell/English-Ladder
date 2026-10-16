@@ -397,20 +397,21 @@ async function handle(request, env) {
     const session = await readSession(request, env, account);
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);
     const route = url.pathname.slice('/api'.length);
-    if (!['/road/state', '/road/start', '/road/answer', '/road/end'].includes(route)) return json({ error: 'Page not found.' }, 404);
-    if (session.role !== 'student') return json({ error: 'Open English Road results from the administrator account page. Teacher previews do not save student practice.' }, 403);
-    const method = route === '/road/state' ? 'GET' : 'POST';
+    if (!['/road/state', '/road/start', '/road/answer', '/road/end', '/road/questions'].includes(route)) return json({ error: 'Page not found.' }, 404);
+    if (session.role !== 'student' && !(route === '/road/questions' && request.method === 'GET')) return json({ error: 'Open English Road results from the administrator account page. Teacher previews do not save student practice.' }, 403);
+    const method = route === '/road/questions' ? (request.method === 'GET' ? 'GET' : 'PATCH') : route === '/road/state' ? 'GET' : 'POST';
     if (request.method !== method) return json({ error: 'Method not allowed.' }, 405, { Allow: method });
     let body;
-    if (method === 'POST') {
+    if (method !== 'GET') {
       if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload the page and try again.' }, 403);
       const limit = await (env.PRACTICE_LIMITER || env.ACCOUNT_LIMITER).limit({ key: account.id });
       if (!limit.success) return json({ error: 'Please wait a minute, then try saving again.' }, 429, { 'Retry-After': '60' });
       body = await smallJson(request);
       if (!body) return json({ error: 'Please check your choice.' }, 400);
     }
+    if (method === 'GET' && (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site')) return json({ error: 'Please open this from your student page.' }, 403);
     if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable. Please try again.' }, 503);
-    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal' + route,
+    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal' + route + (route === '/road/questions' ? url.search : ''),
       { method, ...(body ? { body: JSON.stringify(body) } : {}) }));
   }
   if (url.pathname.startsWith('/api/quiz/')) {

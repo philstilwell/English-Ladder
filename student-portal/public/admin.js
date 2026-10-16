@@ -483,6 +483,7 @@
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
+    updateSelectionCounts();
     clearRoad(); clearQuestions(); clearActivityOverview();
     clearAutomation();
     clearLoginDetails();
@@ -654,6 +655,7 @@
       input.type = 'checkbox'; input.name = 'visibleResources'; input.value = resource.id; input.checked = selectedResources.includes(resource.id);
       label.append(input, element('span', resource.name)); groups.get(resource.group).append(label);
     }
+    updateSelectionCounts();
 
     for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(student?.deletionPending);
     $('delete-account-panel').hidden = !student;
@@ -683,6 +685,12 @@
     clearStudyQuestions(); $('study-questions-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
     clearActivityOverview(); void loadActivityOverview();
   }
+  function updateSelectionCounts() {
+    for (const id of ['student-activities', 'student-resources']) {
+      const boxes = [...$(id).querySelectorAll('input[type="checkbox"]')];
+      $(id + '-count').textContent = boxes.length ? boxes.filter(box => box.checked).length + ' selected' : '';
+    }
+  }
   function setSaveState(text) {
     for (const id of ['save-state', 'save-state-top']) $(id).textContent = text;
   }
@@ -700,6 +708,7 @@
     closeDelete();
     clearLoginDetails(); current = null;
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
+    updateSelectionCounts();
     clearCefr();
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
@@ -812,10 +821,12 @@
     }
   });
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
+  for (const id of ['student-activities', 'student-resources']) $(id).addEventListener('change', updateSelectionCounts);
   for (const [id, checked] of [['select-all-resources', true], ['clear-all-resources', false]]) {
     $(id).addEventListener('click', () => {
       if (!signedIn || !resourceTools.length || saving || deleting || current?.deletionPending) return;
       for (const box of $('student-resources').querySelectorAll('input[type="checkbox"]')) box.checked = checked;
+      updateSelectionCounts();
     });
   }
   $('student-form').addEventListener('submit', async event => {

@@ -32,7 +32,7 @@
     </section>
     <section id="questions-view" hidden>
       <a href="#students" class="back-link">← All students</a>
-      <div class="page-heading"><div><p class="eyebrow">QUESTIONS TO DISCUSS</p><h1 id="all-questions-title">Questions</h1><p>Saved questions from English Road Practice, all other self-study activities, and Study on your own. Only the student can change these choices.</p></div></div>
+      <div class="page-heading"><div><p class="eyebrow">QUESTIONS TO DISCUSS</p><h1 id="all-questions-title">Questions</h1><p>Saved questions from English Road Practice, all other self-study activities, and Study on your own. After discussing an item, choose Resolved to remove it from both Questions lists. Its Finished status and saved answers stay the same.</p></div></div>
       <button id="refresh-all-questions" class="secondary-button" type="button">Refresh questions</button>
       <p id="all-questions-status" role="status"></p>
       <div id="all-questions-content"></div>
@@ -75,21 +75,21 @@
       </section>
       <section id="terms-questions-panel" class="cefr-panel" aria-labelledby="terms-questions-title" hidden>
         <h2 id="terms-questions-title">Business terms · Questions list</h2>
-        <p class="field-note">Open an item to discuss it during a lesson. These are the student’s saved questions. Only the student can mark items finished or remove them from the list.</p>
+        <p class="field-note">Open an item to discuss it during a lesson. These are the student’s saved questions. Only the student can mark items finished. Use Resolved in the combined Questions list to remove a discussed item from both lists.</p>
         <button id="load-terms-questions" class="secondary-button" type="button">Load questions list</button>
         <p id="terms-questions-status" role="status"></p>
         <div id="terms-questions-content"></div>
       </section>
       <section id="grammar-questions-panel" class="cefr-panel" aria-labelledby="grammar-questions-title" hidden>
         <h2 id="grammar-questions-title">Grammar practice · Questions list</h2>
-        <p class="field-note">Open an item to discuss it during a lesson. These are the student’s saved questions. Only the student can mark items finished or remove them from the list.</p>
+        <p class="field-note">Open an item to discuss it during a lesson. These are the student’s saved questions. Only the student can mark items finished. Use Resolved in the combined Questions list to remove a discussed item from both lists.</p>
         <button id="load-grammar-questions" class="secondary-button" type="button">Load questions list</button>
         <p id="grammar-questions-status" role="status"></p>
         <div id="grammar-questions-content"></div>
       </section>
       <section id="study-questions-panel" class="cefr-panel" aria-labelledby="study-questions-title" hidden>
         <h2 id="study-questions-title">Study on your own · Questions list</h2>
-        <p class="field-note">Review the student’s saved topics during a lesson. Questions from earlier assessments stay available. Only the student can change these choices.</p>
+        <p class="field-note">Review the student’s saved topics during a lesson. Questions from earlier assessments stay available. Students can change their choices. You can resolve a discussed topic in the combined Questions list.</p>
         <button id="load-study-questions" class="secondary-button" type="button">Load questions list</button>
         <p id="study-questions-status" role="status"></p>
         <div id="study-questions-content"></div>
@@ -164,6 +164,7 @@
         <article class="technical-card"><h2>Combined Questions</h2><dl>
           <div><dt>Directory link</dt><dd>The Questions column shows a count and link when a student has saved questions. It combines English Road Practice, Grammar practice, Business terms, Vocabulary practice, the five conversation and meaning activities, and Study on your own.</dd></div>
           <div><dt>Review</dt><dd>The combined list includes full exercises, saved Vocabulary answers, and the first and latest choices for the five conversation and meaning activities, twenty questions per page. It includes hidden activities and paused accounts. Earlier saved study topics remain available.</dd></div>
+          <div><dt>Resolved</dt><dd>After a lesson discussion, Resolved clears the item’s saved Questions choice for both the student and instructor. It preserves Finished, answers, first choices, scores, and practice history. Students can save the item to Questions again. An already open student page sees the change when its activity is reopened or refreshed. Only the signed-in administrator can resolve items here; teacher previews stay read-only. Conflicting changes require a refresh before retrying.</dd></div>
           <div><dt>Privacy</dt><dd>The administrator’s combined lists and directory counts remain restricted to the administrator host. Each student can also read their own combined list through a separate account-bound endpoint. Opening it does not change student work. Use Refresh to check for new questions. Failed checks show Unable to check. These records do not feed CEFR or nightly lesson generation.</dd></div>
         </dl></article>
         <article class="technical-card"><h2>CEFR estimates</h2><dl>
@@ -174,7 +175,7 @@
         </dl><p>Estimates and supporting examples appear only in the administrator interface. Each account shows its next eligible review date.</p></article>
         <article class="technical-card"><h2>Study on your own</h2><dl>
           <div><dt>Saved choices</dt><dd>Each topic has Finish and Questions buttons. Finish turns the topic grey. Questions adds it to a list for discussion. Students can click either button again to undo it. Choices are saved privately in their account and return on another device.</dd></div>
-          <div><dt>Shared review</dt><dd>Students see their Questions list under Study on your own. The instructor sees it on the student page and on the administrator account page, including paused accounts. Only the student changes the choices.</dd></div>
+          <div><dt>Shared review</dt><dd>Students see their Questions list under Study on your own. The instructor sees it on the student page and on the administrator account page, including paused accounts. Students change their choices. The administrator can resolve a discussed topic in the combined Questions list without changing Finished.</dd></div>
           <div><dt>Later assessments</dt><dd>An unchanged topic keeps its choices. A rewritten topic starts fresh. Saved questions keep the original topic so it remains available for discussion after a new assessment replaces it. Lists show up to 20 topics per page.</dd></div>
           <div><dt>Privacy and cost</dt><dd>Choices stay in private server storage, are removed when the account is deleted, and are not used as CEFR or quiz evidence. Saving and viewing them makes no AI calls. The AI prompt text stays hidden; its copy button and icons remain directly available.</dd></div>
         </dl></article>

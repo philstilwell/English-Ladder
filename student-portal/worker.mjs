@@ -191,6 +191,22 @@ async function handleAdmin(request, env) {
       }
       return json({ statuses, nextCursor: records.length > 20 ? page.at(-1).key : null });
     }
+    const resolveAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/questions\/resolve$/.exec(url.pathname);
+    if (resolveAccount) {
+      if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405, { Allow: 'POST' });
+      if (request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
+      const input = await smallJson(request, 1024);
+      if (!input) return json({ error: 'Please check the question.' }, 400);
+      const directory = await directoryRequest(env, '/students');
+      if (!directory.ok) return json({ error: 'Student records are temporarily unavailable.' }, 503);
+      const student = (await directory.json()).students.find(s => s.key === resolveAccount[1]);
+      if (!student || student.deletionPending || !student.activated || !student.studentId) return json({ error: 'Student not found.' }, 404);
+      if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable.' }, 503);
+      try {
+        return await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/questions/resolve',
+          { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(input) }));
+      } catch { return json({ error: 'The question could not be resolved. Please try again.' }, 503); }
+    }
     const selfCheckAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/(business-terms|grammar-practice|study-practice|activity-summary|questions)$/.exec(url.pathname);
     if (selfCheckAccount && request.method === 'GET') {
       if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);

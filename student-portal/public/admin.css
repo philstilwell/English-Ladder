@@ -40,3 +40,5 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 
 .resource-choice-group + .resource-choice-group{margin-top:16px}.resource-choice-group h3{font-size:.9rem;color:var(--muted);margin:0 0 6px}
 .resource-selection-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}.resource-selection-actions button{background:#fff;cursor:pointer}.resource-selection-actions button:hover{background:#eef2fc}
+
+.resolve-question{font-size:.7rem;padding:7px 10px;min-height:30px}.resolve-status:empty{display:none}.resolve-status{margin:6px 0 0;overflow-wrap:anywhere}

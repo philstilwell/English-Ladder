@@ -45,7 +45,7 @@ export async function questionsOverview(storage, { after = null, statusOnly = fa
       const id = source.id + ':' + (source.items ? String(entry.number).padStart(8, '0') : entry.id);
       if (after && id <= after) continue;
       const progress = { ...(source.communication ? { choice: entry.choice, correct: entry.correct, firstChoice: entry.firstChoice, firstCorrect: entry.firstCorrect } : {}), ...(source.id === 'study-practice' ? { id: entry.id, revision: entry.revision } : {}), finished: Boolean(entry.finished), question: true, updatedAt: entry.updatedAt || null };
-      selected.push({ id, source: source.id, label: source.label, item: source.id === 'english-road' ? entry : { ...item, progress, ...(source.id === 'study-practice' ? { current: currentTopics.has(entry.id) } : {}), ...(source.id === 'vocabulary-practice' ? { studentAnswer: entry.answer || '', studentSentence: entry.sentence || '' } : {}) } });
+      selected.push({ id, revision: entry.revision, source: source.id, label: source.label, item: source.id === 'english-road' ? entry : { ...item, progress, ...(source.id === 'study-practice' ? { current: currentTopics.has(entry.id) } : {}), ...(source.id === 'vocabulary-practice' ? { studentAnswer: entry.answer || '', studentSentence: entry.sentence || '' } : {}) } });
       // Keep only the next page and one sentinel while scanning bounded pages.
       selected.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
       if (selected.length > 21) selected.pop();
@@ -54,4 +54,27 @@ export async function questionsOverview(storage, { after = null, statusOnly = fa
   return Response.json(statusOnly ? { state: 'ready', count } : {
     count, counts, questions: await Promise.all(selected.slice(0, 20).map(async row => row.source === 'english-road' ? { ...row, item: await roadQuestionItem(storage, row.item) } : row)), nextCursor: selected.length > 20 ? selected[19].id : null,
   });
+}
+
+// Called only inside the account's deletion-checked transaction. The teacher
+// clears the same flag the student reads; no learning record is deleted.
+export async function resolveQuestion(storage, input) {
+  const invalid = () => Response.json({ error: 'Please refresh the Questions list and try again.' }, { status: 400 });
+  if (!input || typeof input.id !== 'string' || !Number.isSafeInteger(input.revision) || input.revision < 1 ||
+      Object.keys(input).some(key => !['id', 'revision'].includes(key))) return invalid();
+  const [sourceId, itemId, extra] = input.id.split(':'), source = sources.find(s => s.id === sourceId);
+  if (!source || extra !== undefined) return invalid();
+  if (source.items ? !/^\d{8}$/.test(itemId) || !source.items.has(Number(itemId)) :
+      !(sourceId === 'english-road' ? /^[0-9a-f-]{36}_\d{2}$/ : /^[a-f0-9]{64}$/).test(itemId)) return invalid();
+  const key = source.prefix.replace(':question:', ':item:') + (source.items ? Number(itemId) : itemId);
+  const entry = await storage.get(key);
+  if (!entry) return Response.json({ error: 'This saved question is no longer available. Refresh the list.' }, { status: 404 });
+  // Repeating a successful request after a lost response is harmless. A newer
+  // re-added question still requires its current revision before resolving.
+  if (!entry.question) return Response.json({ resolved: true, id: input.id, revision: entry.revision });
+  if (entry.revision !== input.revision) return Response.json({ error: 'This item changed since you opened it. Refresh the Questions list before marking it resolved.' }, { status: 409 });
+  const updated = { ...entry, question: false, revision: entry.revision + 1, updatedAt: new Date().toISOString() };
+  await storage.put({ [key]: updated });
+  if (!source.items) await storage.delete(source.prefix + itemId);
+  return Response.json({ resolved: true, id: input.id, revision: updated.revision });
 }

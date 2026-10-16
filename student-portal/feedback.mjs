@@ -2,7 +2,7 @@ import { handleCommunication } from './communication-practice.mjs';
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { handleRoad } from './english-road.mjs';
-import { questionsOverview } from './questions.mjs';
+import { questionsOverview, resolveQuestion } from './questions.mjs';
 import { activitySummary, studentActivityProgress } from './activity-summary.mjs';
 import { handleBusinessTerms } from './business-terms.mjs';
 import { handleStudyProgress } from './study-progress.mjs';
@@ -128,6 +128,11 @@ export class FeedbackStore {
     if (id === 'admin/delete-account' && request.method === 'POST') return this.removeAccount();
     if (await this.storage.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     if (['admin/questions', 'admin/questions-status'].includes(id) && request.method === 'GET') return this.activeTransaction(txn => questionsOverview(txn, { after: url.searchParams.get('after'), statusOnly: id.endsWith('-status') }));
+    if (id === 'admin/questions/resolve' && request.method === 'POST') {
+      let input;
+      try { input = await request.json(); } catch { return json({ error: 'Please check the question.' }, 400); }
+      return this.activeTransaction(txn => resolveQuestion(txn, input));
+    }
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'admin/activity-summary' && request.method === 'GET') return this.activeTransaction(async txn => json(await activitySummary(txn)));
     if (id === 'activities/questions' && request.method === 'GET') return this.activeTransaction(txn => questionsOverview(txn, { after: url.searchParams.get('after') }));

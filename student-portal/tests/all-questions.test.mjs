@@ -38,6 +38,11 @@ test('All Questions combines every source, preserves old snapshots and pages rea
   assert.deepEqual(await store.storage.list(),before);
   const other=await login(e,'other-test','https://cd26.englishladder.com');
   const empty=await(await get(e,other.cookie,'','https://cd26.englishladder.com')).json();assert.equal(empty.count,0);assert.deepEqual(empty.questions,[]);
+  const resolved=await store.fetch(new Request('https://feedback.internal/admin/questions/resolve',{method:'POST',body:JSON.stringify({id:'grammar-practice:00000001',revision:1})}));
+  assert.equal(resolved.status,200);
+  const refreshed=await(await get(e,student.cookie)).json();assert.equal(refreshed.count,31);assert.equal(refreshed.counts['grammar-practice'],22);
+  assert(!refreshed.questions.some(row=>row.id==='grammar-practice:00000001'));
+  assert.equal((await store.storage.get('grammar:item:1')).finished,true);
 });
 
 test('All Questions rejects unauthenticated, cross-account, cross-origin, invalid-page and write requests',async()=>{

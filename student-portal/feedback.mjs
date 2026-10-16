@@ -1,3 +1,4 @@
+import { handleCommunication } from './communication-practice.mjs';
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { handleRoad } from './english-road.mjs';
@@ -277,6 +278,7 @@ export class FeedbackStore {
         return json({ ok: true });
       });
     }
+    if (id.startsWith('communication/')) return handleCommunication(this.storage, request);
     if (id.startsWith('vocabulary/')) return handleVocabulary(this.storage, request);
     if (id.startsWith('terms/')) return handleBusinessTerms(this.storage, request);
     if (id.startsWith('study/')) return handleStudyProgress(this.storage, request);

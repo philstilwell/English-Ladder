@@ -1,3 +1,4 @@
+import { COMMUNICATION_ACTIVITIES, communicationPrefix } from './communication-practice.mjs';
 import vocabularyBank from './vocabulary-bank.json' with { type: 'json' };
 import grammarBank from './grammar-bank.json' with { type: 'json' };
 import termsBank from './business-terms-bank.json' with { type: 'json' };
@@ -18,6 +19,7 @@ const banks = [
   { id: 'grammar-practice', prefix: 'grammar', numbers: new Set(grammarBank.items.map(item => item.number)) },
   { id: 'business-terms', prefix: 'terms', numbers: new Set(termsBank.items.map(item => item.number)) },
   { id: 'vocabulary-practice', prefix: 'vocabulary', numbers: new Set(vocabularyBank.items.map(item => item.number)) },
+  ...COMMUNICATION_ACTIVITIES.map(bank => ({ id: bank.id, prefix: communicationPrefix(bank), numbers: new Set(bank.items.map(item => item.number)), answers: new Map(bank.items.map(item => [item.number, item.answer])) })),
 ];
 
 export async function activitySummary(storage) {
@@ -40,9 +42,13 @@ export async function activitySummary(storage) {
   }
   const activities = [road];
   for (const bank of banks) {
-    const summary = { id: bank.id, total: bank.numbers.size, finished: 0, questions: 0, savedPlace: null, lastActivityAt: null };
+    const summary = { ...(bank.answers ? { answered: 0, firstCorrect: 0 } : {}), id: bank.id, total: bank.numbers.size, finished: 0, questions: 0, savedPlace: null, lastActivityAt: null };
     for await (const row of records(storage, bank.prefix + ':item:')) {
       if (!bank.numbers.has(row.number)) continue;
+      if (bank.answers && Number.isInteger(row.firstChoice) && row.firstChoice >= 0 && row.firstChoice < 4) {
+        summary.answered++;
+        if (row.firstChoice === bank.answers.get(row.number)) summary.firstCorrect++;
+      }
       if (row.finished) summary.finished++;
       if (row.question) summary.questions++;
       summary.lastActivityAt = latest(summary.lastActivityAt, row.updatedAt);

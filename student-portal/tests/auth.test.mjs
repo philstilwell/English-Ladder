@@ -7,6 +7,17 @@ import worker from '../worker.mjs';
 const origin = 'https://ab26.englishladder.com';
 const pass = 'student-example-only';
 const teacherPass = 'teacher-example-only';
+test('student and administrator pages can load every declared script without exposing banks', async () => {
+  for (const [page, host] of [['index.html', origin], ['admin.html', 'https://phil.englishladder.com']]) {
+    const html = readFileSync(new URL('../public/' + page, import.meta.url), 'utf8');
+    for (const [, path] of html.matchAll(/<script[^>]+src="([^"]+)"/g)) {
+      const response = await worker.fetch(new Request(host + path), environment());
+      assert.equal(response.status, 200, host + path);
+    }
+    for (const path of ['/english-road-bank.json', '/communication-bank.json', '/road-questions.mjs'])
+      assert.equal((await worker.fetch(new Request(host + path), environment())).status, 404);
+  }
+});
 function environment(overrides = {}) {
   return {
     STUDENT_ACCOUNTS: JSON.stringify({ ab26: { name: 'Alex Brown', password: pass }, cd26: { name: 'Casey Drew', password: 'different-example-only' } }),

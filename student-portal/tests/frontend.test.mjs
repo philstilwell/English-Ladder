@@ -1,3 +1,4 @@
+import { COMMUNICATION_ACTIVITIES } from '../communication-practice.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -23,7 +24,7 @@ const second={...feedback,id:'2026-09-01-2057',startedAt:'2026-09-02T00:57:01Z',
 const profile={student:{id:'ab26',name:'Alex',nickname:'Alex the Explorer'},role:'student'};
 const reply=data=>new Response(JSON.stringify(data));
 const flush=async()=>{for(let i=0;i<12;i++)await new Promise(resolve=>setTimeout(resolve,1));};
-function setup(custom,url='https://ab26.englishladder.com/',role='student'){
+function setup(custom,url='https://ab26.englishladder.com/',role='student',omitCommunication=false){
  const dom=new JSDOM(html,{url,runScripts:'outside-only',pretendToBeVisual:true});
  const w=dom.window;w.setInterval=()=>0;w.AbortController=AbortController;
  const positions=new Map();
@@ -57,7 +58,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
  w.eval(readFileSync(new URL('../public/practice-position.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));
- w.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
+ w.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));if(!omitCommunication)w.eval(readFileSync(new URL('../public/communication-practice.js',import.meta.url),'utf8'));w.eval(script);return dom;
 }
 test('deep links open the selected page and show only student-safe content',async()=>{
  const dom=setup(null,'https://ab26.englishladder.com/#feedback/'+second.id);await flush();
@@ -1552,4 +1553,23 @@ test('failed study state loading preserves reading and copy controls, and offers
  let failed=true;const dom=setup(path=>path==='/api/study/state'&&failed?new Response(JSON.stringify({error:'Offline'}),{status:503}):null,origin+'/#assessments/next');await flush();
  const d=dom.window.document;assert(d.querySelector('.study-current .study-finish').disabled);assert(!d.querySelector('.study-current .practice-copy-button').disabled);
  const retry=[...d.querySelectorAll('#study-topics button')].find(b=>b.textContent==='Try again');assert(!retry.hidden);failed=false;retry.click();await flush();assert(!d.querySelector('.study-current .study-finish').disabled);dom.window.close();
+});
+
+test('all five conversation activities use selected menu entries and clear on leaving, page hide and sign-out',async()=>{
+ for(const bank of COMMUNICATION_ACTIVITIES){
+  const dom=setup(path=>path==='/api/communication/'+bank.id?reply(bank):path==='/api/communication/'+bank.id+'/state'?reply({entries:[],position:{number:null,revision:0},preferences:{hideFinished:false,revision:0}}):null,'https://ab26.englishladder.com/#activities/'+bank.id);
+  await flush();const w=dom.window,d=w.document,root=d.getElementById('communication-practice');assert.equal(root.hidden,false);assert.equal(root.querySelectorAll('.communication-option').length,4);assert.equal(d.getElementById('activity-title').textContent,bank.name);
+  assert.equal(d.querySelector('#activities-submenu a[aria-current="page"]').textContent,bank.name);
+  w.location.hash='#overview';await flush();assert.equal(root.textContent,'');assert(root.hidden);
+  w.location.hash='#activities/'+bank.id;await flush();w.dispatchEvent(new w.Event('pagehide'));assert.equal(root.textContent,'');
+  w.location.hash='#overview';await flush();w.location.hash='#activities/'+bank.id;await flush();d.getElementById('logout').click();await flush();assert.equal(root.textContent,'');w.close();
+ }
+ let reads=0;const hidden=setup(path=>path==='/api/account'?reply({...settingsFixture,visibleActivities:[]}):path.startsWith('/api/communication/')?(reads++,reply(COMMUNICATION_ACTIVITIES[0])):null,'https://ab26.englishladder.com/#activities/conversation-rescue');await flush();assert.equal(reads,0);assert(hidden.window.document.getElementById('communication-practice').hidden);hidden.window.close();
+});
+
+
+test('a failed new activity script shows a reload message while the student portal remains usable',async()=>{
+ const dom=setup(null,'https://ab26.englishladder.com/#activities/conversation-rescue','student',true);await flush();
+ const d=dom.window.document;assert.match(d.getElementById('communication-practice').textContent,/Reload this page/);assert.equal(d.getElementById('activities').hidden,false);
+ dom.window.location.hash='#overview';await flush();assert.equal(d.getElementById('overview').hidden,false);assert.equal(d.getElementById('communication-practice').textContent,'');dom.window.close();
 });

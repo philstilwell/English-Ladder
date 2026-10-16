@@ -1,3 +1,4 @@
+import { COMMUNICATION_ACTIVITIES } from './communication-practice.mjs';
 // These tools are selected by default for new students. Administrator choices
 // control menu visibility only; they never grant access or change learning data.
 export const ACTIVITY_TOOLS = Object.freeze([
@@ -23,6 +24,12 @@ export const ACTIVITY_TOOLS = Object.freeze([
       'Answer the short exercise for each word. Write your own sentence, then choose “Save batch”.',
       'Choose “Copy AI prompt”. It includes the ten words and your answers. Open an AI chat, paste the prompt, and send it to check your work.',
       'Read the feedback. Use “Practice again” for words to review, or “Questions” for help from your teacher.'] },
+  ...COMMUNICATION_ACTIVITIES.map(({id,name,description})=>({id,name,description,
+    benefit: description,
+    steps: ['Choose a topic set. Read the situation and the question.',
+      'Choose an answer. Read the explanation. You can try again.',
+      'Choose “Finish” when you are ready. Choose “Questions” to save an item to discuss with your teacher.'],
+  })),
 ]);
 export const visibleActivities = record => Array.isArray(record.visibleActivities)
   ? ACTIVITY_TOOLS.filter(tool => record.visibleActivities.includes(tool.id)).map(tool => tool.id)

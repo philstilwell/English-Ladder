@@ -125,6 +125,7 @@
         else if (row.source === 'study-practice') card.append(window.StudyPractice.review(item));
         else if (row.source === 'english-road') card.append(window.RoadQuestions.review(item));
         else if (row.source === 'vocabulary-practice') card.append(window.VocabularyPractice.review(item));
+        else if (window.CommunicationPractice.ids.includes(row.source)) card.append(window.CommunicationPractice.review(item));
         else throw new Error('This question type could not load. Please reload the page.');
         if (item.progress.finished) card.append(element('p', 'Marked as finished', 'field-note'));
         $('all-questions-content').append(card);
@@ -157,11 +158,12 @@
     try {
       const data = await api('/api/admin/students/' + student.key + '/activity-summary');
       if (!valid()) return;
-      const ids = ['english-road', 'grammar-practice', 'business-terms', 'vocabulary-practice'];
+      const ids = ['english-road', 'grammar-practice', 'business-terms', 'vocabulary-practice', ...window.CommunicationPractice.ids];
       const count = value => Number.isSafeInteger(value) && value >= 0;
       if (!Array.isArray(data.activities) || data.activities.length !== ids.length || data.activities.some((item, index) =>
         !item || item.id !== ids[index] || item.lastActivityAt !== null && !Number.isFinite(Date.parse(item.lastActivityAt)) ||
-        !(index ? ['total', 'finished', 'questions'] : ['setsStarted', 'setsCompleted', 'answered', 'correct', 'questions']).every(key => count(item[key]))))
+        !(index ? ['total', 'finished', 'questions'] : ['setsStarted', 'setsCompleted', 'answered', 'correct', 'questions']).every(key => count(item[key])) ||
+        window.CommunicationPractice.ids.includes(item.id) && (!['answered', 'firstCorrect'].every(key => count(item[key])) || item.firstCorrect > item.answered || item.answered > item.total)))
         throw new Error('Activity records could not load. Please try again.');
       for (const item of data.activities) {
         const tool = activityTools.find(tool => tool.id === item.id), card = element('article', null, 'activity-overview-card');
@@ -175,13 +177,14 @@
         } else {
           card.append(element('p', item.finished + ' of ' + item.total + ' items marked finished'),
             element('p', item.questions + (item.questions === 1 ? ' question' : ' questions') + ' to discuss'));
+          if (window.CommunicationPractice.ids.includes(item.id)) card.append(element('p', item.firstCorrect + ' correct on first try / ' + item.answered + ' items answered', 'field-note'));
           if (item.savedPlace !== null) card.append(element('p', 'Saved place: item ' + item.savedPlace, 'field-note'));
         }
         card.append(element('p', item.lastActivityAt ? 'Last saved activity: ' + displayTime(item.lastActivityAt) : 'No saved activity yet.', 'field-note'));
         const review = element('button', item.id === 'english-road' ? 'View practice results' : 'View questions', 'secondary-button');
         review.type = 'button'; review.addEventListener('click', () => {
           if (!valid()) return;
-          if (item.id === 'vocabulary-practice') { location.hash = '#students/' + student.key + '/questions'; return; }
+          if (item.id === 'vocabulary-practice' || window.CommunicationPractice.ids.includes(item.id)) { location.hash = '#students/' + student.key + '/questions'; return; }
           const id = item.id === 'english-road' ? 'road-results-panel' : item.id === 'grammar-practice' ? 'grammar-questions-panel' : 'terms-questions-panel';
           if (item.id === 'english-road') void loadRoad(); else void (item.id === 'grammar-practice' ? grammarPanel : termsPanel).load();
           $(id).scrollIntoView?.({ behavior: 'smooth', block: 'start' });

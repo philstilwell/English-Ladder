@@ -38,9 +38,9 @@ test('redaction removes exact sensitive spans without fixing language or changin
   ] });
   assert.equal(result[0].text, 'Yesterday I go to [PLACE_1]. I meet [PERSON_2] in [PLACE_1].');
   assert.deepEqual(result.map(({ text, ...rest }) => rest), segments.map(({ text, ...rest }) => rest));
-  assert.throws(() => applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'invented', category: 'PERSON', entity: 1 }] }), /transcript_redaction_invalid/);
-  assert.throws(() => applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'Ren', category: 'PERSON', entity: 1 }] }), /transcript_redaction_invalid/);
-  assert.throws(() => applyTranscriptRedactions(segments, { segments: [] }), /transcript_redaction_invalid/);
+  assert.equal(applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'invented', category: 'PERSON', entity: 1 }] })[0].text, '[PRIVATE_DETAIL]');
+  assert.equal(applyTranscriptRedactions(segments, { redactions: [{ segmentIndex: 0, text: 'Ren', category: 'PERSON', entity: 1 }] })[0].text, '[PRIVATE_DETAIL]');
+  assert.throws(() => applyTranscriptRedactions(segments, { segments: [] }), /transcript_redaction_format/);
 });
 
 test('failed or malformed privacy review never yields a storable transcript', async () => {
@@ -152,7 +152,23 @@ test('invalid redaction plans get only one repair and still require a separate r
   for(const fixed of [true,false]){
     let calls=0;const ai={run:async()=>({response:++calls===1||calls===2&&!fixed?{redactions:[{segmentIndex:99,text:'invented',category:'PERSON',entity:1}]}:calls===2?{redactions:[]}:{approved:true}})};
     const result=anonymizeTranscript(ai,note,readTranscript(note,{ab26:student}));
-    if(fixed)assert.deepEqual(await result,anonymous());else await assert.rejects(result,/transcript_redaction_invalid/);
+    if(fixed)assert.deepEqual(await result,anonymous());else await assert.rejects(result,/transcript_redaction_index/);
     assert.equal(calls,fixed?3:2);
+  }
+});
+
+
+test('a misquoted removal hides the whole identified turn and still cannot bypass independent review',async()=>{
+  for(const approved of [true,false]){
+    let calls=0;const ai={run:async(_model,request)=>{
+      calls++;const segments=JSON.parse(request.input[1].content).segments;
+      if(calls===1)return {response:{redactions:[{segmentIndex:0,text:'a misquoted personal detail',category:'PRIVATE_DETAIL',entity:1}]}};
+      assert.equal(segments[0].text,'[PRIVATE_DETAIL]');assert.equal(segments[0].role,'student');assert.equal(segments[0].at,'00:01:00');
+      return {response:{approved}};
+    }};
+    const result=anonymizeTranscript(ai,note,readTranscript(note,{ab26:student}));
+    if(approved){const saved=await result;assert.equal(saved.length,10);assert.deepEqual(saved.slice(1),anonymous().slice(1));}
+    else await assert.rejects(result,/transcript_privacy_rejected/);
+    assert.equal(calls,2);
   }
 });

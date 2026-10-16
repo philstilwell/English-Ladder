@@ -1337,3 +1337,13 @@ test('administrator retry identifies one failed lesson, prevents double clicks a
   assert.equal(d.getElementById('automation-problems').hidden,true);assert.equal(d.getElementById('automation-retry-status').textContent,'');
   dom.window.close();
 });
+
+
+test('ignoring a session uses the authenticated exact-origin administrator route',async()=>{
+  const {e}=environment(),cookie=await access(e),id='a'.repeat(64);let calls=0;
+  e.QUIZ_AUTOMATION={idFromName:x=>x,get:()=>({fetch:async request=>{calls++;assert.equal(new URL(request.url).pathname,'/ignore');assert.deepEqual(await request.json(),{id});return Response.json({ok:true});}})};
+  const path='/api/admin/automation/ignore';
+  assert.equal((await adminCall(e,path,write('',{id}))).status,401);
+  const cross=write(cookie,{id});cross.headers.Origin='https://evil.test';assert.equal((await adminCall(e,path,cross)).status,403);
+  assert.equal((await adminCall(e,path,write(cookie,{id}))).status,200);assert.equal(calls,1);
+});

@@ -13,7 +13,7 @@ const safeError = error => [
   'zoom_reconnect', 'zoom_unavailable', 'transcript_unusable', 'transcript_too_large', 'ambiguous_student',
   'insufficient_evidence', 'invalid_evidence', 'content_review_failed', 'assessment_required', 'unsafe_content',
   'invalid_model_response', 'monthly_limit', 'daily_limit', 'meeting_pending', 'publish_failed', 'meeting_reference_missing', 'discovery_incomplete',
-  'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_privacy_rejected', 'source_changed', 'student_changed', 'student_not_matched',
+  'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_redaction_format', 'transcript_redaction_index', 'transcript_privacy_rejected', 'source_changed', 'student_changed', 'student_not_matched',
   'cefr_window_too_large', 'invalid_cefr_evidence', 'cefr_review_failed', 'cefr_limit',
 ].includes(error.message) ? error.message : 'generation_failed';
 
@@ -266,8 +266,9 @@ export class QuizAutomation {
         // An explicitly owner-approved recovery is scoped to one job and UTC day.
         // It never resets counters, changes monthly limits, or enables other jobs.
         let grant; try { grant = JSON.parse(this.env.LESSON_RECOVERY_GRANT || 'null'); } catch {}
-        const grantKey = 'recovery-used:' + day + ':' + recoveryJobId;
-        if (isCefr || daily !== 2 || !/^[a-f0-9]{64}$/.test(recoveryJobId || '') ||
+        const attempt = grant?.attempt ?? 3;
+        const grantKey = 'recovery-used:' + day + ':' + recoveryJobId + ':' + attempt;
+        if (isCefr || !Number.isInteger(attempt) || attempt < 3 || attempt > 5 || daily !== attempt - 1 || !/^[a-f0-9]{64}$/.test(recoveryJobId || '') ||
             grant?.day !== day || grant?.jobId !== recoveryJobId || await txn.get(grantKey)) throw new Error(isCefr ? 'cefr_limit' : 'daily_limit');
         await txn.put({ [grantKey]: true });
       }
@@ -437,7 +438,7 @@ export class QuizAutomation {
           if (error.message === 'other_student') { job.status = 'needs_attention'; job.lastError = 'student_not_matched'; }
           else {
             job.lastError = safeError(error); job.tries++;
-            job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing', 'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_privacy_rejected'].includes(job.lastError) ? 'needs_attention' : 'pending';
+            job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing', 'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_redaction_format', 'transcript_redaction_index', 'transcript_privacy_rejected'].includes(job.lastError) ? 'needs_attention' : 'pending';
             job.nextAt = Date.now() + 3600000;
             if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; }
           }
@@ -455,6 +456,17 @@ export class QuizAutomation {
         if ((await txn.get('run-lock'))?.lease === lease) await txn.delete('run-lock');
       });
     }
+  }
+  async ignore(id) {
+    if (typeof id !== 'string' || !/^[a-f0-9]{64}$/.test(id)) return json({ error: 'Choose a session from the list.' }, 400);
+    return this.storage.transaction(async txn => {
+      if ((await txn.get('run-lock'))?.until > Date.now()) return json({ error: 'An update is running. Please wait until it finishes.' }, 409);
+      const key = 'job:' + id, job = await txn.get(key);
+      if (job?.status === 'ignored') return json({ ok: true });
+      if (!job || job.studentId || job.status !== 'needs_attention' || job.lastError !== 'student_not_matched') return json({ error: 'Only an unmatched session can be ignored here.' }, 409);
+      await txn.put({ [key]: { ...job, status: 'ignored', ignoredAt: new Date().toISOString() } });
+      return json({ ok: true });
+    });
   }
   async retry(id) {
     if (typeof id !== 'string' || !/^[a-f0-9]{64}$/.test(id)) return json({ error: 'Choose an update from the list.' }, 400);
@@ -488,6 +500,7 @@ export class QuizAutomation {
     if (path === '/webhook' && request.method === 'POST') return this.webhook(request);
     if (path === '/callback' && request.method === 'GET') return this.callback(new URL(request.headers.get('X-Callback-URL')));
     if (path === '/run' && request.method === 'POST') { const input = await request.json(); await this.run(input.scheduledTime); return json({ ok: true }); }
+    if (path === '/ignore' && request.method === 'POST') { const input = await request.json(); return this.ignore(input.id); }
     if (path === '/retry' && request.method === 'POST') { const input = await request.json(); return this.retry(input.id); }
     const studentId = request.headers.get('X-Student-ID'), origin = request.headers.get('X-Student-Origin');
     if (path === '/admin-status' && request.method === 'GET') {

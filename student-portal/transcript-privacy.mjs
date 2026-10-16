@@ -37,13 +37,18 @@ export function prepareAnonymousTranscript(note, transcript, instructorNames = [
 }
 
 export function applyTranscriptRedactions(segments, output) {
-  if (!Array.isArray(output?.redactions) || output.redactions.length > 2000) fail();
+  if (!Array.isArray(output?.redactions) || output.redactions.length > 2000) fail('transcript_redaction_format');
   const bySegment = new Map();
   for (const r of output.redactions) {
-    if (!Number.isInteger(r.segmentIndex) || !segments[r.segmentIndex] || typeof r.text !== 'string' || !r.text.trim() || r.text.length > 10000 ||
-        !['PERSON', 'ORGANIZATION', 'PLACE', 'CONTACT', 'IDENTIFIER', 'PRIVATE_DETAIL', 'DATE'].includes(r.category) ||
-        !Number.isInteger(r.entity) || r.entity < 1 || r.entity > 9999) fail();
+    if (!Number.isInteger(r?.segmentIndex) || !segments[r.segmentIndex]) fail('transcript_redaction_index');
     const source = segments[r.segmentIndex].text, intervals = bySegment.get(r.segmentIndex) || [];
+    const removeTurn = () => { intervals.push({ start: 0, end: source.length, marker: '[PRIVATE_DETAIL]' }); bySegment.set(r.segmentIndex, intervals); };
+    // A model can identify a sensitive turn but misquote its punctuation or words.
+    // Remove that entire turn conservatively; never keep the questionable text,
+    // rewrite it, change attribution, or waive the independent privacy review.
+    if (typeof r.text !== 'string' || !r.text.trim() || r.text.length > 10000 ||
+        !['PERSON', 'ORGANIZATION', 'PLACE', 'CONTACT', 'IDENTIFIER', 'PRIVATE_DETAIL', 'DATE'].includes(r.category) ||
+        !Number.isInteger(r.entity) || r.entity < 1 || r.entity > 9999) { removeTurn(); continue; }
     let at = source.indexOf(r.text), matches = 0;
     while (at !== -1) {
       const before = source.slice(0, at).at(-1), after = source[at + r.text.length];
@@ -53,7 +58,7 @@ export function applyTranscriptRedactions(segments, output) {
       }
       at = source.indexOf(r.text, at + r.text.length);
     }
-    if (!matches) fail();
+    if (!matches) { removeTurn(); continue; }
     bySegment.set(r.segmentIndex, intervals);
   }
   return segments.map(s => {
@@ -85,7 +90,7 @@ export async function anonymizeTranscript(ai, note, transcript, instructorNames)
   let redactions = await privacyCall(ai, PRIVACY_RULES, prepared.segments, 8000), segments, repaired = false;
   try { segments = applyTranscriptRedactions(prepared.segments, redactions); }
   catch (error) {
-    if (error.message !== 'transcript_redaction_invalid') throw error;
+    if (!error.message.startsWith('transcript_redaction_')) throw error;
     // One bounded repair can correct invented quotes or mistaken segment indexes.
     // Neither attempt can rewrite the transcript or skip the independent review.
     repaired = true;

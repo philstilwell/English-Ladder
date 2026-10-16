@@ -462,3 +462,30 @@ test('an approved recovery grant permits only one extra attempt for one job on o
   await assert.rejects(object.reserveGeneration('ab26','lesson',id),/monthly_limit/);
   delete env.LESSON_RECOVERY_GRANT;
 });
+
+
+test('ignoring an unmatched session preserves its source, survives duplicate events, and never generates content',async()=>{
+  const {object,storage,env}=coordinator(),id=await hash(event.payload.object.note_id),key='job:'+id;
+  await storage.put({oauth:{userId:'owner-1',accountId:'account-1'},[key]:{noteId:event.payload.object.note_id,meetingId:'meeting-123',status:'needs_attention',lastError:'student_not_matched',tries:0}});
+  const ignore=()=>object.fetch(new Request('https://automation.internal/ignore',{method:'POST',body:JSON.stringify({id})}));
+  await storage.put({'run-lock':{until:Date.now()+10000}});assert.equal((await ignore()).status,409);await storage.delete('run-lock');
+  assert.equal((await ignore()).status,200);assert.equal((await ignore()).status,200);
+  assert.equal((await storage.get(key)).noteId,event.payload.object.note_id);
+  await object.webhook(await signedRequest(event));assert.equal((await storage.get(key)).status,'ignored');
+  object.discover=async()=>{};object.accessToken=async()=>{};object.reviewCefr=async()=>{};
+  object.process=async()=>assert.fail('Ignored sessions must never generate');await object.run();
+  assert.equal((await storage.get(key)).status,'ignored');
+  const status=await(await object.fetch(new Request('https://automation.internal/admin-status'))).json();assert.equal(status.needsAttention,0);assert.equal(status.problems.length,0);
+});
+
+
+test('a later recovery requires a new explicit attempt number and cannot skip or repeat reservations',async()=>{
+  const {object,storage,env}=coordinator(),id='b'.repeat(64),day=new Date().toISOString().slice(0,10);
+  await storage.put({'usage:ab26':{day,month:day.slice(0,7),daily:3,monthly:3}});
+  env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day});await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day,attempt:5});await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day,attempt:4});await object.reserveGeneration('ab26','lesson',id);
+  await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+  assert.equal((await storage.get('usage:ab26')).daily,4);
+  env.LESSON_RECOVERY_GRANT=JSON.stringify({jobId:id,day,attempt:6});await assert.rejects(object.reserveGeneration('ab26','lesson',id),/daily_limit/);
+});

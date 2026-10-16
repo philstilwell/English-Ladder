@@ -26,6 +26,8 @@
   const element = (tag, text, className) => { const node = document.createElement(tag); if (text != null) node.textContent = text; if (className) node.className = className; return node; };
   const updateError = code => ({
     transcript_privacy_failed: 'The transcript privacy check did not pass.',
+    transcript_redaction_format: 'The AI did not supply a usable removal list. Nothing was published.',
+    transcript_redaction_index: 'The AI referred to transcript turns that do not exist. Nothing was published.',
     transcript_redaction_invalid: 'The AI’s proposed removals did not match the transcript. Nothing was published.',
     transcript_privacy_rejected: 'The privacy reviewer found information that still needs removal. Nothing was published.',
     invalid_model_response: 'The AI reply could not be read. No update was published.',
@@ -75,6 +77,19 @@
             }
           });
           row.append(button);
+        }
+        if (!student && problem.error === 'student_not_matched' && /^[a-f0-9]{64}$/.test(problem.id)) {
+          const ignore = element('button', 'Ignore session', 'secondary-button'); ignore.type = 'button'; ignore.disabled = retryingUpdate;
+          ignore.addEventListener('click', async () => {
+            if (!valid() || retryingUpdate) return;
+            retryingUpdate = true;
+            for (const control of $('automation-problem-items').querySelectorAll('button')) control.disabled = true;
+            try {
+              await api('/api/admin/automation/ignore', { method: 'POST', body: JSON.stringify({ id: problem.id }) });
+              if (valid()) { retryingUpdate = false; await refreshAutomation('Session ignored. The original Zoom transcript is unchanged.'); }
+            } catch (error) { if (valid()) { retryingUpdate = false; await refreshAutomation(error.message); } }
+          });
+          row.append(ignore);
         }
         $('automation-problem-items').append(row);
       }

@@ -1,0 +1,704 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-16",
+  "release_iso": "2026-10-16T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Fri, 16 Oct 2026 05:00:17 GMT",
+    "retrieved_at": "2026-10-16T07:21:57.214740+00:00",
+    "title": "Ship attack reports near Hormuz reach record high as oil exports slow",
+    "summary": "BBC Verify analysis of data from a UK maritime agency shows 12 vessels were struck in a week.",
+    "evidence_text": "The number of ships that have reported being attacked in and around the Strait of Hormuz has hit a record high, BBC Verify analysis of data from a UK maritime agency shows.\nTwelve vessels were attacked between 5 and 11 October - the largest number of weekly strikes reported to the UK's Maritime Trade Operations (UKMTO) agency since the US-Israeli war with Iran began. The previous week saw 10 ships reporting attacks.\nExperts say Tehran has been attacking ships in an effort to assert greater control over the waterway as the US military has increased the number of tankers it is shepherding through the south of the strait to evade Iranian strikes.\nThe aftermath of one of Sunday's six reported attacks was captured in verified footage showing the Nicaragua-flagged tanker Petro Dolphin on fire, as filmed by the crew on a smaller boat nearby.\nEleven Indian seafarers were rescued but two are still missing, the Forward Seamen's Union of India said.\nMiddle East oil exports have slowed as the number of ship strikes has risen.\nAs the number of strikes has risen, the recovery in oil shipments through the strait seen last month has slowed, industry data suggests.\nMost of the oil being shipped from Gulf Arab states recently has been carried using a \"shuttle\" system where a fleet of tankers load up and sail through the strait before transferring their cargo to larger tankers in the Gulf of Oman.\nThese shuttle ships use a route close to Oman's coastline. Iran says this is \"unauthorised\" and insist vessels take an alternative route closer to its own shore.\nMartin Kelly told BBC Verify that Iran is widening its attacks and targeting ships near the coast of Gulf Arab states and in the Gulf of Oman.\n\"The aim here is to stop the ships going through and to deter others,\" he added.\nThe US military's Central Command, which oversees operations in the Middle East, posted on social media that despite the attacks \"commercial traffic continues to flow through the Strait of Hormuz with co-ordinated protection from US forces and regional partners\".\nAttacks have continued this week with the container ship GFS Pride sinking after a strike by an unknown projectile in the strait on Tuesday. Twenty-one crew were safely evacuated.\nAbout 12.6 million barrels per day went through the strait on 13 October, below the 15 million reported at the end of September, data from trade intelligence firm Kpler shows. This compares with a pre-war baseline of some 17 million barrels per day.\nMartin Kelly, CEO of Orbital Risk Intelligence, said Iran has \"evolved its strategy\" in response to this loosening of its control over the strait and has been carrying out \"near daily or multiple attacks every single day\".",
+    "evidence_retrieved_at": "2026-10-16T07:21:57.214740+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cmde8dpg8g0no?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Do you think working on a cargo ship is a dangerous job? Use this to help you: \"I think it is safe/dangerous because...\" If you prefer, imagine what a sailor's family might think.",
+          "Why is the Strait of Hormuz important for the rest of the world? Think about the oil exports mentioned in the story."
+        ],
+        "editorial_check": {
+          "content_digest": "ef0cbc0c11d27dac9b1e0b2ebb2100a60803e65a8781e46a8f1b45a87c83a70e",
+          "date": "2026-10-16T07:22:52.142854+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz relies on clearly stated details, basic context, and one explicitly taught grammar pattern, avoiding tricky wording and double negatives."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The register is neutral, straightforward everyday English, entirely appropriate for reporting news to beginner-level adult learners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Grammar and vocabulary explanations use short, familiar clauses and connectors, making the concepts highly accessible for A1-A2 learners."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets such as 'rescued', 'tanker', and 'experts' are clear, concrete, and highly suitable for the A1-A2 level."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Using \"but\" to show contrast",
+          "example_quote": "Teams rescued eleven sailors, but two men are missing.",
+          "explanation": "We use the word \"but\" to connect two ideas that are different. In this story, saving eleven sailors is good news, but losing two men is bad news. The word \"but\" links these two opposite ideas in one sentence."
+        },
+        "news_brief_sentences": [
+          "The number of ship attacks near the Strait of Hormuz is very high.",
+          "Twelve ships were attacked in just one week.",
+          "Experts say Iran wants to control the water.",
+          "One attack caused a fire on a large tanker.",
+          "Teams rescued eleven sailors, but two men are missing.",
+          "Middle East oil exports have slowed because of these attacks."
+        ],
+        "overview": "Many ships have been attacked near the Strait of Hormuz, causing a slowdown in oil exports.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text says the number of ship attacks is very high.",
+              "The text says oil exports have slowed down, not that ships are moving too fast.",
+              "The text says attacks are high, but it does not say the strait is closed to all ships."
+            ],
+            "options": [
+              "Many ships are facing attacks.",
+              "Oil ships are moving too fast.",
+              "The Strait of Hormuz is completely closed."
+            ],
+            "question": "What is the main problem in this story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The story clearly states that twelve ships were attacked in one week.",
+              "Two is the number of missing men, not the number of ships attacked.",
+              "Eleven is the number of rescued sailors, not the number of ships attacked."
+            ],
+            "options": [
+              "Twelve ships.",
+              "Two ships.",
+              "Eleven ships."
+            ],
+            "question": "How many ships were attacked in just one week?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text says, \"One attack caused a fire on a large tanker.\"",
+              "Rescue teams saved the sailors, not the tanker.",
+              "The story says oil exports slowed, but does not say a tanker blocked the strait."
+            ],
+            "options": [
+              "An attack caused a fire on it.",
+              "It rescued eleven sailors.",
+              "It blocked the Strait of Hormuz."
+            ],
+            "question": "What happened to the large tanker in the story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Missing\" means they are lost and people cannot find them.",
+              "Eleven men were rescued, but the missing men are not safe.",
+              "They are lost at sea, not working on a new ship."
+            ],
+            "options": [
+              "Lost or not able to be found.",
+              "Safe at home.",
+              "Working on a new ship."
+            ],
+            "question": "What does \"missing\" mean in the sentence about the two men?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The story says oil exports have slowed because of these attacks.",
+              "The text does not say the Middle East ran out of oil.",
+              "The story mentions violent attacks, not that the sailors just decided to go home."
+            ],
+            "options": [
+              "Because of the ship attacks.",
+              "Because there is no more oil.",
+              "Because the sailors went home."
+            ],
+            "question": "Why have Middle East oil exports slowed?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"But\" shows contrast in the sentence: \"Teams rescued eleven sailors, but two men are missing.\"",
+              "\"Because\" gives a reason, like explaining why oil exports slowed.",
+              "\"And\" adds similar information, while \"but\" shows a difference or problem."
+            ],
+            "options": [
+              "But.",
+              "Because.",
+              "And."
+            ],
+            "question": "Which word from the story is used to show a contrast between a good event and a bad event?"
+          }
+        ],
+        "sentence_evidence": [
+          "The number of ships that have reported being attacked in and around the Strait of Hormuz has hit a record high, BBC Verify analysis of data from a UK maritime agency shows.",
+          "Twelve vessels were attacked between 5 and 11 October - the largest number of weekly strikes reported to the UK's Maritime Trade Operations (UKMTO) agency since the US-Israeli war with Iran began. The previous week saw 10 ships reporting attacks.",
+          "Experts say Tehran has been attacking ships in an effort to assert greater control over the waterway as the US military has increased the number of tankers it is shepherding through the south of the strait to evade Iranian strikes.",
+          "The aftermath of one of Sunday's six reported attacks was captured in verified footage showing the Nicaragua-flagged tanker Petro Dolphin on fire, as filmed by the crew on a smaller boat nearby.",
+          "Eleven Indian seafarers were rescued but two are still missing, the Forward Seamen's Union of India said.",
+          "Middle East oil exports have slowed as the number of ship strikes has risen."
+        ],
+        "title": "Record Number of Ship Attacks Slows Oil Exports",
+        "topic": "Ship attacks and oil exports",
+        "vocabulary": [
+          {
+            "definition": "violent actions to hurt or damage someone or something",
+            "part_of_speech": "noun",
+            "term": "attacks"
+          },
+          {
+            "definition": "people who know a lot about a special subject",
+            "part_of_speech": "noun",
+            "term": "experts"
+          },
+          {
+            "definition": "to have power over a place or thing",
+            "part_of_speech": "verb",
+            "term": "control"
+          },
+          {
+            "definition": "a large ship that carries oil, gas, or water",
+            "part_of_speech": "noun",
+            "term": "tanker"
+          },
+          {
+            "definition": "saved someone from a bad or dangerous situation",
+            "part_of_speech": "verb",
+            "term": "rescued"
+          },
+          {
+            "definition": "lost or not able to be found",
+            "part_of_speech": "adjective",
+            "term": "missing"
+          },
+          {
+            "definition": "products sold and sent to other countries",
+            "part_of_speech": "noun",
+            "term": "exports"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think protecting commercial shipping routes is so important for the global economy? Explain your reasons.",
+          "If you managed a shipping company, would you use a dangerous route just to save time? Share your view: “I would or would not because...”"
+        ],
+        "editorial_check": {
+          "content_digest": "7ef656fab14021123819934cb02c845e213c0962d4be0dffdca71e25a467abe9",
+          "date": "2026-10-16T07:24:29.588639+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz balances reading comprehension, contextual vocabulary, and grammatical understanding, offering an appropriate level of challenge for B1-B2 learners."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The text uses neutral, professional news reporting language suitable for an intermediate audience."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation correctly identifies and clearly explains the present perfect in context, and definitions are written in accessible language."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items, such as 'assert', 'deter', and 'unauthorised', are appropriate B1-B2 targets. They are effectively defined and do not overlap with reserved beginner words."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Present Perfect for Recent Changes",
+          "example_quote": "A recent analysis of maritime data shows that strikes on vessels near the Strait of Hormuz have reached a record high.",
+          "explanation": "We use the present perfect tense (have or has + past participle) to describe a recent action that has an important result in the present. In this news story, “have reached” shows that the number of strikes recently increased, and this record-high number still affects the shipping industry right now."
+        },
+        "news_brief_sentences": [
+          "A recent analysis of maritime data shows that strikes on vessels near the Strait of Hormuz have reached a record high.",
+          "Twelve vessels were targeted in just one week, which is the highest number reported since the current conflict began.",
+          "As a result of these frequent incidents, the recovery of oil shipments traveling through this important waterway has slowed down.",
+          "According to analysts, Iran is attempting to assert greater authority over the waterway while the US military escorts commercial traffic.",
+          "Many Gulf Arab states have been using a shuttle system, where smaller fleets carry cargo through the strait before transferring it to larger ships.",
+          "However, Iran claims that these smaller fleets are using an unauthorised route along the coast of Oman.",
+          "Furthermore, Iranian forces have started widening their operations by targeting ships near the coast of Gulf Arab states.",
+          "A risk analyst explained that the primary aim of these operations is to stop the ships and to deter others.",
+          "Despite these significant challenges, the US military insists that commercial trade continues to flow with coordinated protection."
+        ],
+        "overview": "The number of vessels struck near the Strait of Hormuz has reached a record high, slowing regional oil shipments.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading states that “strikes on vessels... have reached a record high.”",
+              "The reading explains that the recovery of oil shipments has actually slowed down, not reached a high.",
+              "The reading discusses attacks on ships, not the construction of new ports."
+            ],
+            "options": [
+              "The number of strikes on vessels.",
+              "The amount of oil successfully shipped.",
+              "The construction of new commercial ports."
+            ],
+            "question": "What has recently reached a record high near the Strait of Hormuz?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The story notes that “the recovery of oil shipments traveling through this important waterway has slowed down.”",
+              "The reading says the recovery has “slowed down,” but commercial trade continues to flow.",
+              "The frequent incidents have slowed down the shipments, not made them faster."
+            ],
+            "options": [
+              "The recovery of oil shipments has slowed down.",
+              "Commercial trade has permanently stopped.",
+              "The shipments have become much faster and cheaper."
+            ],
+            "question": "How have these frequent incidents affected the oil industry?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Unauthorised” describes an action or route that is used without official permission or approval.",
+              "If something were organized carefully by the government, it would be authorized.",
+              "Taking an unauthorised route during a conflict is often dangerous, not safe."
+            ],
+            "options": [
+              "Done or used without official permission.",
+              "Organized carefully by the government.",
+              "Known to be completely safe from attacks."
+            ],
+            "question": "In the reading, what does “unauthorised” mean?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The US military escorts these ships to provide coordinated protection while Iran attempts to assert authority.",
+              "The text does not say the US is forcing commercial ships to stop trading.",
+              "The US military is providing protection, not exploring new routes."
+            ],
+            "options": [
+              "To protect the ships while Iran attempts to assert authority.",
+              "To force the ships to stop trading with Middle Eastern countries.",
+              "To map and explore new, smaller shipping routes near Oman."
+            ],
+            "question": "Why does the US military escort commercial traffic in the waterway?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The simple past would be used for an action completed a long time ago, not the present perfect.",
+              "The present perfect describes the past leading up to now, not future plans.",
+              "The present perfect is often used for recent events that strongly affect the present situation."
+            ],
+            "options": [
+              "To describe a completed action that happened centuries ago.",
+              "To describe a planned event that will happen in the future.",
+              "To describe a recent change that has an important result in the present."
+            ],
+            "question": "Read this clause from the story: “...strikes on vessels near the Strait of Hormuz have reached a record high.” Why is the present perfect tense (“have reached”) used here?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A vessel is a large ship or boat, like the ones targeted in the strait.",
+              "The story describes vessels being targeted by weapons, not being weapons themselves.",
+              "While a vessel carries cargo, in maritime terms it refers to the ship itself, not a small container."
+            ],
+            "options": [
+              "A large ship or boat used for carrying goods.",
+              "A type of aerial drone or military weapon.",
+              "A small container specifically for holding oil."
+            ],
+            "question": "What is a “vessel” in the context of this news story?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading does not mention Iran closing its own ports.",
+              "Iran is targeting ships near Gulf Arab states, not building trading relationships with them.",
+              "An analyst explained that the aim is “to stop the ships and to deter others.”"
+            ],
+            "options": [
+              "To permanently close its own coastal ports.",
+              "To build new trading relationships with Gulf Arab states.",
+              "To stop ships and deter others from passing through."
+            ],
+            "question": "According to a risk analyst, what is the main purpose of Iran's strategy?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Deterring is about preventing forward movement or action, not pushing someone forward.",
+              "To deter means to stop someone from doing something by making it seem dangerous or difficult.",
+              "Deterring someone is the opposite of inviting them."
+            ],
+            "options": [
+              "To physically push them forward into a new area.",
+              "To discourage them from taking action through fear or difficulty.",
+              "To warmly invite them to participate in an activity."
+            ],
+            "question": "What does it mean to “deter” someone, as used in the story?"
+          }
+        ],
+        "sentence_evidence": [
+          "The number of ships that have reported being attacked in and around the Strait of Hormuz has hit a record high, BBC Verify analysis of data from a UK maritime agency shows.",
+          "Twelve vessels were attacked between 5 and 11 October - the largest number of weekly strikes reported to the UK's Maritime Trade Operations (UKMTO) agency since the US-Israeli war with Iran began. The previous week saw 10 ships reporting attacks.",
+          "As the number of strikes has risen, the recovery in oil shipments through the strait seen last month has slowed, industry data suggests.",
+          "Experts say Tehran has been attacking ships in an effort to assert greater control over the waterway as the US military has increased the number of tankers it is shepherding through the south of the strait to evade Iranian strikes.",
+          "Most of the oil being shipped from Gulf Arab states recently has been carried using a \"shuttle\" system where a fleet of tankers load up and sail through the strait before transferring their cargo to larger tankers in the Gulf of Oman.",
+          "These shuttle ships use a route close to Oman's coastline. Iran says this is \"unauthorised\" and insist vessels take an alternative route closer to its own shore.",
+          "Martin Kelly told BBC Verify that Iran is widening its attacks and targeting ships near the coast of Gulf Arab states and in the Gulf of Oman.",
+          "\"The aim here is to stop the ships going through and to deter others,\" he added.",
+          "The US military's Central Command, which oversees operations in the Middle East, posted on social media that despite the attacks \"commercial traffic continues to flow through the Strait of Hormuz with co-ordinated protection from US forces and regional partners\"."
+        ],
+        "title": "Record High Ship Strikes Slow Oil Recovery Near Hormuz",
+        "topic": "Maritime Security and Trade",
+        "vocabulary": [
+          {
+            "definition": "Large ships or boats used for carrying people or goods across the sea.",
+            "part_of_speech": "noun",
+            "term": "vessels"
+          },
+          {
+            "definition": "Chosen and attacked by a weapon or hostile force.",
+            "part_of_speech": "verb",
+            "term": "targeted"
+          },
+          {
+            "definition": "Unexpected events that are often dangerous, violent, or cause problems.",
+            "part_of_speech": "noun",
+            "term": "incidents"
+          },
+          {
+            "definition": "To behave in a strong and confident way so that people recognize your power or authority.",
+            "part_of_speech": "verb",
+            "term": "assert"
+          },
+          {
+            "definition": "Travels with another vehicle or person to protect them or provide security.",
+            "part_of_speech": "verb",
+            "term": "escorts"
+          },
+          {
+            "definition": "Done or used without official permission or legal approval.",
+            "part_of_speech": "adjective",
+            "term": "unauthorised"
+          },
+          {
+            "definition": "Increasing the size or range of an activity so it covers a larger area.",
+            "part_of_speech": "verb",
+            "term": "widening"
+          },
+          {
+            "definition": "To prevent or discourage someone from doing something by making them afraid of the consequences.",
+            "part_of_speech": "verb",
+            "term": "deter"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "What strategic advantages might a nation gain by threatening international shipping lanes, and how should the global community respond?",
+          "How does the cost of global shipping delays affect consumer prices in your country? Provide a specific example."
+        ],
+        "editorial_check": {
+          "content_digest": "f32cf1e506341ffaa82b0aa1f0a9c9993e0e17109b1eff53e618c7f73bbae787",
+          "date": "2026-10-16T07:27:59.856931+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz provides an excellent level of challenge by demanding inference and synthesis across multiple sentences, and uses plausible distractors that require close reading to eliminate."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading maintains a polished, formal reporting register appropriate for advanced learners, using accurate phrasing like 'noticeably decelerated' and 'evolved its maritime strategy'."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation and vocabulary definitions are clear and concise, explaining advanced structures and semantic nuances without relying on overly complex jargon."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items, such as 'orchestrating', 'traverse', 'ablaze', and 'unprecedented', are precise, transferable C1-level terms that offer distinct learning value."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "C1-Higher"
+        },
+        "grammar": {
+          "concept": "Present Participle Clauses for Method",
+          "example_quote": "Most Gulf Arab states now utilise a shuttle system, deploying smaller fleets to traverse the strait before transferring cargo to larger tankers in the Gulf of Oman.",
+          "explanation": "Participle clauses beginning with an '-ing' verb can elegantly condense sentences by expressing an action that happens concurrently with the main clause. In this advanced structure, the present participle is often used to explain the specific method or procedure by which the main action is accomplished without needing an additional conjunction."
+        },
+        "news_brief_sentences": [
+          "The number of maritime strikes reported in and around the Strait of Hormuz has surged to unprecedented levels, according to data from a UK agency.",
+          "Twelve assaults were documented in a single week, marking the highest weekly total since the outbreak of the current conflict involving Iran.",
+          "As the frequency of these engagements has escalated, the recent recovery in oil shipments navigating the strait has noticeably decelerated.",
+          "Regional specialists suggest Tehran is deliberately attempting to dominate the critical waterway while the US military shepherds commercial traffic to evade Iranian interceptions.",
+          "Despite these aggressive tactics, the US Central Command maintains that commercial operations proceed with co-ordinated protection from American forces.",
+          "Verified footage recently captured the aftermath of one severe strike, showing the Nicaragua-flagged ship Petro Dolphin ablaze.",
+          "The situation deteriorated further when the container ship GFS Pride sank in the strait following a direct hit by an unidentified projectile.",
+          "Daily oil transit volumes through the strait have plunged from fifteen million barrels at the end of September to roughly twelve and a half million.",
+          "Most Gulf Arab states now utilise a shuttle system, deploying smaller fleets to traverse the strait before transferring cargo to larger tankers in the Gulf of Oman.",
+          "Risk intelligence analysts observe that Iran has evolved its maritime strategy, orchestrating near-daily operations in response to its loosening dominance over the strait."
+        ],
+        "overview": "Unprecedented maritime assaults near the Strait of Hormuz are severely delaying Middle Eastern oil shipments as regional tensions escalate.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The story details a record number of ship assaults and their impact on global oil shipments.",
+              "Incorrect. The US Central Command remains actively involved, and no replacement alliance is mentioned.",
+              "Incorrect. Threats have actually escalated, resulting in unprecedented strikes and sunken ships."
+            ],
+            "options": [
+              "The sudden surge in maritime strikes disrupting oil transit near the Strait of Hormuz.",
+              "A new international alliance aimed at replacing the US military in the Middle East.",
+              "The successful elimination of all threats to container ships in the Gulf of Oman."
+            ],
+            "question": "What is the primary focus of the report?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading states that the frequency of engagements has decelerated recovery and volumes have plunged.",
+              "Incorrect. Gulf states are actively using a shuttle system to maintain trade, not halting extraction.",
+              "Incorrect. The recovery in oil shipments has noticeably decelerated, not accelerated."
+            ],
+            "options": [
+              "They have caused daily oil transit volumes to plunge, reversing a recent recovery.",
+              "They have forced Gulf Arab states to halt all commercial oil extraction entirely.",
+              "They have slightly accelerated the speed of commercial shipping through the strait."
+            ],
+            "question": "How have the recent maritime strikes affected regional trade?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Unprecedented\" means without previous instance; the number of strikes has surged past prior records.",
+              "Incorrect. The strikes are described as severe and unprecedented, not minor or regular.",
+              "Incorrect. The data is supported by a UK maritime agency and verified footage."
+            ],
+            "options": [
+              "The current volume of strikes has never been recorded at this high level before.",
+              "The strikes are minor, undocumented incidents that occur regularly every year.",
+              "The data regarding the strikes is considered completely unreliable by analysts."
+            ],
+            "question": "In the context of the report, what does the term \"unprecedented\" imply about the strikes?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading notes the US military shepherds traffic specifically to help them evade Iranian interceptions.",
+              "Incorrect. The US military maintains that commercial operations are safely proceeding under their protection.",
+              "Incorrect. The text states that Tehran, not the US, is aggressively attempting to dominate the waterway."
+            ],
+            "options": [
+              "To help merchant ships safely evade targeted interceptions by Iranian forces.",
+              "To block commercial operations from utilising the critical waterway entirely.",
+              "To assert dominance over the waterway and inspect cargo from Gulf Arab states."
+            ],
+            "question": "Why is the US military shepherding commercial traffic?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Ablaze\" means actively burning, which matches the ship's state after a severe strike.",
+              "Incorrect. While the GFS Pride sank, the Petro Dolphin was specifically captured ablaze on fire.",
+              "Incorrect. The ship was struck and caught fire; it did not safely anchor."
+            ],
+            "options": [
+              "It is burning fiercely following a severe impact or accident.",
+              "It has completely submerged beneath the surface of the water.",
+              "It has safely anchored at a secure port to undergo extensive repairs."
+            ],
+            "question": "If a ship is described as \"ablaze,\" what is its current condition?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. States use smaller ships to traverse the strait and later transfer the oil to larger tankers.",
+              "Incorrect. The system is designed for essential oil transit, not for moving empty containers.",
+              "Incorrect. The shuttle system is a commercial shipping strategy, not an offensive military operation."
+            ],
+            "options": [
+              "To navigate the dangerous strait with smaller fleets before transferring cargo to larger tankers.",
+              "To rapidly export empty shipping containers to international ports in the Gulf of Oman.",
+              "To orchestrate direct military strikes against unidentified maritime threats in the region."
+            ],
+            "question": "What is the strategic purpose of the shuttle system utilised by Gulf Arab states?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The participle clause \"deploying smaller fleets\" explains exactly how the states utilise the shuttle system.",
+              "Incorrect. \"Deploying\" is an active present participle, not a passive verb construction.",
+              "Incorrect. A coordinate conjunction would be a word like \"and\" or \"but\", not an \"-ing\" verb."
+            ],
+            "options": [
+              "It acts as a present participle clause expressing the method by which the main action is accomplished.",
+              "It functions as a passive verb emphasising the ships rather than the states controlling them.",
+              "It serves as a coordinate conjunction linking two completely independent commercial actions."
+            ],
+            "question": "In the phrase \"deploying smaller fleets to traverse the strait\", what grammatical function does \"deploying\" serve?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Orchestrating\" implies careful planning and coordination to disrupt transit and intimidate competitors.",
+              "Incorrect. Risk analysts describe a deliberate, evolved strategy, not random or isolated events.",
+              "Incorrect. The operations involve aggressive physical strikes and intimidation, not peaceful diplomacy."
+            ],
+            "options": [
+              "They are deliberately planned and coordinated to achieve a specific strategic effect.",
+              "They are random, isolated events occurring without any underlying regional purpose.",
+              "They are peaceful diplomatic maneuvers designed to negotiate new trade treaties."
+            ],
+            "question": "What does the term \"orchestrating\" suggest about Iran's maritime operations?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading implies Iran is escalating operations because alternative routes and military escorts are circumventing its power.",
+              "Incorrect. Tehran is actively fighting to assert regional dominance, not voluntarily surrendering it.",
+              "Incorrect. Oil shipments have plunged but have not completely ceased; states are adapting with a shuttle system."
+            ],
+            "options": [
+              "Coordinated US protection and new maritime shuttle routes are undermining Tehran's ability to exert absolute control.",
+              "Regional specialists have convinced Tehran to voluntarily surrender its influence over the critical waterway.",
+              "Gulf Arab states have completely ceased all oil shipments, making the strait strategically irrelevant."
+            ],
+            "question": "Why might Iran be responding aggressively to its \"loosening dominance over the strait\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading explicitly states the situation deteriorated when the GFS Pride sank after a direct hit.",
+              "Incorrect. The ship did not evade the attack; it was struck and ultimately sank.",
+              "Incorrect. This inaccurately conflates the fate of the GFS Pride with the shuttle system and the ablaze Petro Dolphin."
+            ],
+            "options": [
+              "It sank to the bottom of the strait following a direct hit by an unidentified projectile.",
+              "It safely evaded all incoming assaults with the assistance of American regional partners.",
+              "It successfully transferred its cargo to a larger tanker before catching fire."
+            ],
+            "question": "What was the ultimate fate of the container ship GFS Pride?"
+          }
+        ],
+        "sentence_evidence": [
+          "The number of ships that have reported being attacked in and around the Strait of Hormuz has hit a record high, BBC Verify analysis of data from a UK maritime agency shows.",
+          "Twelve vessels were attacked between 5 and 11 October - the largest number of weekly strikes reported to the UK's Maritime Trade Operations (UKMTO) agency since the US-Israeli war with Iran began. The previous week saw 10 ships reporting attacks.",
+          "As the number of strikes has risen, the recovery in oil shipments through the strait seen last month has slowed, industry data suggests.",
+          "Experts say Tehran has been attacking ships in an effort to assert greater control over the waterway as the US military has increased the number of tankers it is shepherding through the south of the strait to evade Iranian strikes.",
+          "The US military's Central Command, which oversees operations in the Middle East, posted on social media that despite the attacks \"commercial traffic continues to flow through the Strait of Hormuz with co-ordinated protection from US forces and regional partners\".",
+          "The aftermath of one of Sunday's six reported attacks was captured in verified footage showing the Nicaragua-flagged tanker Petro Dolphin on fire, as filmed by the crew on a smaller boat nearby.",
+          "Attacks have continued this week with the container ship GFS Pride sinking after a strike by an unknown projectile in the strait on Tuesday. Twenty-one crew were safely evacuated.",
+          "About 12.6 million barrels per day went through the strait on 13 October, below the 15 million reported at the end of September, data from trade intelligence firm Kpler shows. This compares with a pre-war baseline of some 17 million barrels per day.",
+          "Most of the oil being shipped from Gulf Arab states recently has been carried using a \"shuttle\" system where a fleet of tankers load up and sail through the strait before transferring their cargo to larger tankers in the Gulf of Oman.",
+          "Martin Kelly, CEO of Orbital Risk Intelligence, said Iran has \"evolved its strategy\" in response to this loosening of its control over the strait and has been carrying out \"near daily or multiple attacks every single day\"."
+        ],
+        "title": "Record Maritime Strikes Near Strait of Hormuz Disrupt Oil Transit",
+        "topic": "International Relations & Trade",
+        "vocabulary": [
+          {
+            "definition": "Increased suddenly and powerfully in degree, volume, or frequency.",
+            "part_of_speech": "verb",
+            "term": "surged"
+          },
+          {
+            "definition": "Never having happened or existed in the past; completely novel in scale.",
+            "part_of_speech": "adjective",
+            "term": "unprecedented"
+          },
+          {
+            "definition": "Violent physical attacks or concerted military actions against a target.",
+            "part_of_speech": "noun",
+            "term": "assaults"
+          },
+          {
+            "definition": "Become or made something become significantly greater, more intense, or more serious.",
+            "part_of_speech": "verb",
+            "term": "escalated"
+          },
+          {
+            "definition": "Reduced speed or slowed down in progress, growth, or recovery.",
+            "part_of_speech": "verb",
+            "term": "decelerated"
+          },
+          {
+            "definition": "Guides or directs a group of entities safely through a particular, often dangerous, area.",
+            "part_of_speech": "verb",
+            "term": "shepherds"
+          },
+          {
+            "definition": "To avoid or escape from something, often through cleverness or strategic maneuvering.",
+            "part_of_speech": "verb",
+            "term": "evade"
+          },
+          {
+            "definition": "Burning fiercely or completely consumed by fire.",
+            "part_of_speech": "adjective",
+            "term": "ablaze"
+          },
+          {
+            "definition": "An object fired, thrown, or propelled forward, typically as a weapon like a missile.",
+            "part_of_speech": "noun",
+            "term": "projectile"
+          },
+          {
+            "definition": "To travel across or through a specific geographical or physical area.",
+            "part_of_speech": "verb",
+            "term": "traverse"
+          },
+          {
+            "definition": "Carefully planning and coordinating the elements of a situation to produce a desired effect.",
+            "part_of_speech": "verb",
+            "term": "orchestrating"
+          }
+        ]
+      }
+    }
+  }
+}

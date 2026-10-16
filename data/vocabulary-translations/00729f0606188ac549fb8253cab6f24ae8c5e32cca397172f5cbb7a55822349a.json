@@ -1,0 +1,138 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The number of ship attacks near the Strait of Hormuz is very high.",
+      "Twelve ships were attacked in just one week.",
+      "Experts say Iran wants to control the water.",
+      "One attack caused a fire on a large tanker.",
+      "Teams rescued eleven sailors, but two men are missing.",
+      "Middle East oil exports have slowed because of these attacks."
+    ],
+    "vocabulary": [
+      {
+        "term": "attacks",
+        "part_of_speech": "noun",
+        "definition": "violent actions to hurt or damage someone or something"
+      },
+      {
+        "term": "experts",
+        "part_of_speech": "noun",
+        "definition": "people who know a lot about a special subject"
+      },
+      {
+        "term": "control",
+        "part_of_speech": "verb",
+        "definition": "to have power over a place or thing"
+      },
+      {
+        "term": "tanker",
+        "part_of_speech": "noun",
+        "definition": "a large ship that carries oil, gas, or water"
+      },
+      {
+        "term": "rescued",
+        "part_of_speech": "verb",
+        "definition": "saved someone from a bad or dangerous situation"
+      },
+      {
+        "term": "missing",
+        "part_of_speech": "adjective",
+        "definition": "lost or not able to be found"
+      },
+      {
+        "term": "exports",
+        "part_of_speech": "noun",
+        "definition": "products sold and sent to other countries"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人や物に危害を加えたり損害を与えたりするための暴力的な行為",
+      "ko": "누구 또는 무엇인가를 다치게 하거나 손상시키기 위한 폭력적인 행동",
+      "zh-Hans": "旨在伤害或损坏某人或某物的暴力行为",
+      "es": "Acciones violentas para herir o dañar a alguien o algo",
+      "pt-BR": "Ações violentas para ferir ou danificar alguém ou algo",
+      "fr": "Des actions violentes visant à blesser ou à endommager quelqu'un ou quelque chose",
+      "de": "Gewalttätige Handlungen, um jemanden oder etwas zu verletzen oder zu beschädigen"
+    },
+    {
+      "id": 1,
+      "ja": "特定の専門分野について多くの知識を持つ人々",
+      "ko": "특정 전문 분야에 대해 많이 아는 사람들",
+      "zh-Hans": "对某个专业领域了解很多的人",
+      "es": "Personas que saben mucho sobre un tema especial",
+      "pt-BR": "Pessoas que conhecem muito sobre um assunto específico",
+      "fr": "Des personnes qui connaissent beaucoup de choses sur un sujet spécial",
+      "de": "Personen, die viel über ein spezielles Thema wissen"
+    },
+    {
+      "id": 2,
+      "ja": "場所や物に対して力を持つこと",
+      "ko": "어떤 장소나 사물에 대해 권력을 가지다",
+      "zh-Hans": "对某个地方或事物拥有权力",
+      "es": "Tener poder sobre un lugar o una cosa",
+      "pt-BR": "Ter poder sobre um lugar ou uma coisa",
+      "fr": "Avoir du pouvoir sur un lieu ou une chose",
+      "de": "Macht über einen Ort oder eine Sache haben"
+    },
+    {
+      "id": 3,
+      "ja": "石油、ガス、または水を運ぶ大型船",
+      "ko": "석유, 가스 또는 물을 운반하는 큰 배",
+      "zh-Hans": "运载石油、天然气或水的大型船只",
+      "es": "Un barco grande que transporta petróleo, gas o agua",
+      "pt-BR": "Um navio grande que transporta petróleo, gás ou água",
+      "fr": "Un grand navire qui transporte du pétrole, du gaz ou de l'eau",
+      "de": "Ein großes Schiff, das Öl, Gas oder Wasser transportiert"
+    },
+    {
+      "id": 4,
+      "ja": "悪い状況や危険な状況から誰かを助けること",
+      "ko": "나쁘거나 위험한 상황에서 누군가를 구하다",
+      "zh-Hans": "将某人从糟糕或危险的境地中解救出来",
+      "es": "Haber salvado a alguien de una situación mala o peligrosa",
+      "pt-BR": "Ter salvo alguém de uma situação ruim ou perigosa",
+      "fr": "Avoir sauvé quelqu'un d'une mauvaise ou dangereuse situation",
+      "de": "Jemanden aus einer schlimmen oder gefährlichen Situation gerettet haben"
+    },
+    {
+      "id": 5,
+      "ja": "紛失したか、見つけることができない状態",
+      "ko": "잃어버렸거나 찾을 수 없는",
+      "zh-Hans": "丢失的或找不到的",
+      "es": "Perdido o que no se puede encontrar",
+      "pt-BR": "Perdido ou que não pode ser encontrado",
+      "fr": "Perdu ou introuvable",
+      "de": "Verloren oder nicht auffindbar"
+    },
+    {
+      "id": 6,
+      "ja": "他の国々に販売され送られる製品",
+      "ko": "다른 나라로 판매되고 보내지는 상품들",
+      "zh-Hans": "出售并运往其他国家的产品",
+      "es": "Productos vendidos y enviados a otros países",
+      "pt-BR": "Produtos vendidos e enviados para outros países",
+      "fr": "Produits vendus et envoyés vers d'autres pays",
+      "de": "Produkte, die an andere Länder verkauft und dorthin versandt werden"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-16T08:31:23.987898+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

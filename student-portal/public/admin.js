@@ -21,6 +21,9 @@
   let activityOverviewRequest = 0;
   let deleting = null, deleteBusy = false, saving = false;
   let savedFormState = null, editGeneration = 0;
+  let activeRouteHash = location.hash || '#students', restoringHistory = false;
+  let activeHistoryIndex = Number.isSafeInteger(history.state?.adminRouteIndex) ? history.state.adminRouteIndex : 0;
+  history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '');
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
   const displayTime = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(value)) + ' Eastern' : '';
@@ -341,7 +344,7 @@
         const review = element('button', item.id === 'english-road' ? 'View practice results' : 'View questions', 'secondary-button');
         review.type = 'button'; review.addEventListener('click', () => {
           if (!valid()) return;
-          if (item.id === 'vocabulary-practice' || window.CommunicationPractice.ids.includes(item.id)) { location.hash = '#students/' + student.key + '/questions'; return; }
+          if (item.id === 'vocabulary-practice' || window.CommunicationPractice.ids.includes(item.id)) { navigateTo('#students/' + student.key + '/questions'); return; }
           const id = item.id === 'english-road' ? 'road-results-panel' : item.id === 'grammar-practice' ? 'grammar-questions-panel' : 'terms-questions-panel';
           if (item.id === 'english-road') void loadRoad(); else void (item.id === 'grammar-practice' ? grammarPanel : termsPanel).load();
           $(id).scrollIntoView?.({ behavior: 'smooth', block: 'start' });
@@ -420,7 +423,7 @@
     $('cefr-panel').hidden = false;
     $('cefr-content').append(element('p', 'Loading the estimate…', 'field-note'));
     const request = cefrDetailRequest, version = epoch;
-    const stillCurrent = () => signedIn && version === epoch && request === cefrDetailRequest && current?.key === student.key && location.hash === '#students/' + student.key;
+    const stillCurrent = () => signedIn && version === epoch && request === cefrDetailRequest && current?.key === student.key && activeRouteHash === '#students/' + student.key;
     try {
       const { cefr, schedule } = await api('/api/admin/students/' + student.key + '/cefr');
       if (!stillCurrent()) return;
@@ -465,7 +468,7 @@
     if (!student || student.deletionPending) return null;
     $('login-details-panel').hidden = false; $('login-details-status').textContent = 'Loading saved login details…';
     const request = loginRequest, version = epoch;
-    const stillCurrent = () => signedIn && epoch === version && request === loginRequest && current?.key === student.key && location.hash === '#students/' + student.key;
+    const stillCurrent = () => signedIn && epoch === version && request === loginRequest && current?.key === student.key && activeRouteHash === '#students/' + student.key;
     try {
       const data = await api('/api/admin/students/' + student.key + '/login-details');
       if (!stillCurrent()) return null;
@@ -483,7 +486,7 @@
   }
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
-    savedFormState = null; editGeneration++;
+    savedFormState = null; editGeneration++; restoringHistory = false;
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     updateSelectionCounts();
     clearRoad(); clearQuestions(); clearActivityOverview();
@@ -698,6 +701,8 @@
       $(id).textContent = text;
       $(id).classList.toggle('unsaved', text.startsWith('Unsaved changes'));
     }
+    window.removeEventListener('beforeunload', warnBeforeUnload);
+    if (hasUnsavedEdits()) window.addEventListener('beforeunload', warnBeforeUnload);
   }
   function studentFormState() {
     return JSON.stringify([
@@ -709,6 +714,51 @@
     if (!signedIn || savedFormState === null || saving || current?.deletionPending) return;
     setSaveState(studentFormState() !== savedFormState ? 'Unsaved changes' : '');
   }
+  function hasUnsavedEdits() {
+    return signedIn && savedFormState !== null && !$('edit-view').hidden && !current?.deletionPending && studentFormState() !== savedFormState;
+  }
+  function warnBeforeUnload(event) {
+    if (!hasUnsavedEdits()) return;
+    event.preventDefault();
+    event.returnValue = '';
+  }
+  function canLeaveEditor() {
+    return !hasUnsavedEdits() || window.confirm(saving
+      ? 'Your changes are still being saved. Leave this page anyway?\n\nChoose Cancel to stay.'
+      : 'You have unsaved changes. Leave this page without saving them?\n\nChoose Cancel to keep editing.');
+  }
+  function navigateTo(hash) {
+    if (hash === activeRouteHash || !canLeaveEditor()) return;
+    activeHistoryIndex++;
+    history.pushState({ adminRouteIndex: activeHistoryIndex }, '', hash);
+    message(''); route();
+  }
+  function replaceRoute(hash) {
+    history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '', hash);
+    route();
+  }
+  function handleHistoryNavigation() {
+    const hash = location.hash || '#students';
+    if (restoringHistory) {
+      if (hash === activeRouteHash) restoringHistory = false;
+      return;
+    }
+    if (hash === activeRouteHash) return;
+    const index = history.state?.adminRouteIndex;
+    if (!canLeaveEditor()) {
+      restoringHistory = true;
+      if (!Number.isSafeInteger(index)) history.back();
+      else if (index !== activeHistoryIndex) history.go(activeHistoryIndex - index);
+      else {
+        history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '', activeRouteHash);
+        restoringHistory = false;
+      }
+      return;
+    }
+    activeHistoryIndex = Number.isSafeInteger(index) ? index : activeHistoryIndex + 1;
+    history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '');
+    message(''); route();
+  }
   function updateSaveLabel() {
     const label = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes';
     for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(current?.deletionPending) || saving;
@@ -718,6 +768,7 @@
     }
   }
   function route() {
+    activeRouteHash = location.hash || '#students';
     if (!signedIn) return;
     savedFormState = null; editGeneration++; setSaveState('');
     clearRoad(); clearQuestions(); clearActivityOverview();
@@ -781,7 +832,7 @@
       cefrRequest++; delete cefrStatuses[target.key]; clearCefr();
       if (!stillCurrent()) return;
       closeDelete(); current = null; $('student-form').reset();
-      history.replaceState(null, '', '#students'); route(); message('Student account and saved learning records deleted.');
+      replaceRoute('#students'); message('Student account and saved learning records deleted.');
     } catch (error) {
       if (!stillCurrent()) return;
       if (error.deletionPending) {
@@ -802,8 +853,9 @@
   });
   $('password').addEventListener('input', () => { $('password').value = $('password').value.toLowerCase(); });
   $('sign-out').addEventListener('click', async () => {
+    if (!canLeaveEditor()) return;
     // Clear every private DOM node immediately, before the network response.
-    clearPrivate(); location.hash = '#students';
+    clearPrivate(); replaceRoute('#students');
     try { await api('/api/logout', {method:'POST'}); $('login-message').textContent = 'You are signed out.'; }
     catch { $('login-message').textContent = 'The page is cleared. Sign-out could not reach the server; close this browser window to finish.'; }
   });
@@ -871,7 +923,7 @@
       if (!signedIn || version !== epoch) return;
       students = students.filter(s=>s.key!==data.student.key).concat(data.student).sort((a,b)=>(a.firstName+a.lastName).localeCompare(b.firstName+b.lastName));
       if (editor !== editGeneration) return;
-      history.replaceState(null, '', '#students/' + data.student.key); route();
+      replaceRoute('#students/' + data.student.key);
       message(data.student.status === 'active' ? 'Saved. This student’s site is active and linked to the nightly updates.' : 'Saved. This account is ' + data.student.status + '.');
       setSaveState('Saved');
       void refreshQuizStatuses();
@@ -896,10 +948,22 @@
       const result=await api('/api/admin/import',{method:'POST',body:JSON.stringify({rows:importRows})});
       if(!signedIn||version!==epoch)return;
       importRows=null;$('sheet-paste').value='';$('import-names').replaceChildren();$('import-preview').hidden=true;
-      await refresh();history.replaceState(null,'','#students');route();message('Imported '+result.imported+' private drafts. '+result.skipped+' existing records were left unchanged. '+result.excluded+' checked or expired rows were excluded.');
+      await refresh();replaceRoute('#students');message('Imported '+result.imported+' private drafts. '+result.skipped+' existing records were left unchanged. '+result.excluded+' checked or expired rows were excluded.');
     }catch(error){if(signedIn&&version===epoch)message(error.message,true);}finally{$('confirm-import').disabled=false;}
   });
-  window.addEventListener('hashchange',()=>{message('');route();});
+  document.addEventListener('click', event => {
+    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest?.('a[href]');
+    if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
+    const url = new URL(link.href, location.href);
+    if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search || !url.hash) return;
+    event.preventDefault();
+    if (url.hash === '#main') {
+      $('main').tabIndex = -1; $('main').focus({ preventScroll: true }); $('main').scrollIntoView?.();
+    } else navigateTo(url.hash);
+  });
+  window.addEventListener('popstate', handleHistoryNavigation);
+  window.addEventListener('hashchange', handleHistoryNavigation);
   window.addEventListener('resize',updateHeaderHeight);
   window.addEventListener('pagehide',clearPrivate);
   window.addEventListener('pageshow',event=>{if(event.persisted)restore();});

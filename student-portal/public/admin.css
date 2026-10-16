@@ -42,3 +42,5 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 .resource-selection-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}.resource-selection-actions button{background:#fff;cursor:pointer}.resource-selection-actions button:hover{background:#eef2fc}
 
 .resolve-question{font-size:.7rem;padding:7px 10px;min-height:30px}.resolve-status:empty{display:none}.resolve-status{margin:6px 0 0;overflow-wrap:anywhere}
+
+.questions-undo{padding:12px;border:1px solid #d3dfec;border-radius:8px;background:#f1f7fd;margin:12px 0}.questions-undo h2{font-size:1rem;margin:0 0 6px}.question-undo-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:6px 0}.question-undo-row>span{flex:1 1 180px;overflow-wrap:anywhere}.question-undo-row>.resolve-status{flex-basis:100%}.undo-question{font-size:.7rem;padding:7px 10px;min-height:30px}

@@ -1217,3 +1217,87 @@ test('pending resolution blocks duplicates and ignores late replies after naviga
   release(exit==='expiry'?Response.json({error:'Sign in again.'},{status:401}):Response.json({resolved:true,id:row.id}));await flush();assert.equal(d.getElementById('all-questions-content').textContent,'');assert.doesNotMatch(d.getElementById('all-questions-status').textContent,/Resolved/);if(exit==='expiry')assert.equal(d.getElementById('login-view').hidden,false);w.close();
  }
 });
+
+test('Undo restores every Questions source to both lists while preserving all learning data',async()=>{
+ const {e}=environment(),cookie=await access(e),record=(await list(e,cookie)).find(s=>s.studentId==='ab26'),student=await login(e),store=e.FEEDBACK_STORE.get('ab26');
+ const root='/api/admin/students/'+record.key+'/questions',[topic]=await studyTopics(assessment),attemptId=crypto.randomUUID(),roadId=attemptId+'_00';
+ const choices=[
+  {id:'grammar-practice:00000001',key:'grammar:item:1',entry:{number:1,finished:true}},
+  {id:'business-terms:00000001',key:'terms:item:1',entry:{number:1,finished:false}},
+  {id:'vocabulary-practice:00000001',key:'vocabulary:item:1',entry:{number:1,finished:true,review:true,answer:'recruiter',sentence:'The recruiter called me.'}},
+  ...COMMUNICATION_ACTIVITIES.map((bank,i)=>({id:bank.id+':00000001',key:'communication:'+bank.id+':v'+bank.version+':item:1',entry:{number:1,finished:i%2===0,choice:1,correct:false,firstChoice:2,firstCorrect:true}})),
+  {id:'study-practice:'+topic.id,key:'study:item:'+topic.id,index:'study:question:'+topic.id,entry:{id:topic.id,finished:true,topic}},
+  {id:'english-road:'+roadId,key:'road:item:'+roadId,index:'road:question:'+roadId,entry:{id:roadId,attemptId,questionIndex:0,startedAt:'2026-10-15T10:00:00Z',band:'A1',topic:'Articles',exercise:{setup:'Choose an article.',prompt:'I see ___ apple.',options:['a','an','the','some'],correctIndex:1,explanation:'Use an.'}}},
+ ];
+ const saved={'assessment:current':{...assessment,plan:[]},['road:attempt:'+attemptId]:{answers:[],questions:[],revision:3},'grammar:position':{number:31,revision:2},'vocabulary:preferences':{hideFinished:true,revision:3}};
+ for(const row of choices){row.entry={...row.entry,question:true,revision:4,updatedAt:'2026-10-15T10:00:00Z'};saved[row.key]=row.entry;if(row.index)saved[row.index]=row.entry;}await store.storage.put(saved);
+ for(const row of choices){
+  const resolved=await(await adminCall(e,root+'/resolve',write(cookie,{id:row.id,revision:4}))).json();assert.equal(resolved.undoable,true);assert.equal(resolved.revision,5);
+  const repeated=await(await adminCall(e,root+'/resolve',write(cookie,{id:row.id,revision:4}))).json();assert.equal(repeated.undoable,true);assert.equal(repeated.revision,5);
+ }
+ assert.equal((await(await call(e,'/api/activities/questions',{headers:{Cookie:student.cookie}})).json()).count,0);
+ for(const row of choices){
+  const restored=await adminCall(e,root+'/undo',write(cookie,{id:row.id,revision:5}));assert.equal(restored.status,200);assert.equal((await restored.json()).restored,true);
+  const entry=await store.storage.get(row.key);assert.equal(entry.question,true);assert.equal(entry.revision,6);assert.deepEqual({...entry,revision:4,updatedAt:row.entry.updatedAt},row.entry);
+  if(row.index)assert.deepEqual(await store.storage.get(row.index),entry);
+  const snapshot=await store.storage.list();assert.equal((await adminCall(e,root+'/undo',write(cookie,{id:row.id,revision:5}))).status,200);assert.deepEqual(await store.storage.list(),snapshot);
+ }
+ const teacherList=await(await adminCall(e,root,{headers:{Cookie:cookie}})).json(),studentList=await(await call(e,'/api/activities/questions',{headers:{Cookie:student.cookie}})).json();assert.equal(teacherList.count,10);assert.deepEqual(teacherList,studentList);
+ assert.equal(studentList.questions.find(row=>row.source==='study-practice').item.current,false);assert.equal(studentList.questions.find(row=>row.source==='english-road').item.exercise.correctIndex,undefined);
+ assert.doesNotMatch(JSON.stringify(studentList),/restoredRevision|questions:resolved/);
+ for(const key of ['assessment:current','road:attempt:'+attemptId,'grammar:position','vocabulary:preferences'])assert.deepEqual(await store.storage.get(key),saved[key]);
+ // Only the flags and indexes are restored; all activity-specific lists see them.
+ for(const path of ['/grammar/questions','/terms/questions','/vocabulary/questions','/study/questions','/road/questions',...COMMUNICATION_ACTIVITIES.map(b=>'/communication/'+b.id+'/questions')])assert.equal((await(await store.fetch(new Request('https://feedback.internal'+path))).json()).questions.length,1,path);
+});
+
+test('Undo is bound to an administrator resolution and cannot overwrite later changes',async()=>{
+ const {e,directory}=environment(),cookie=await access(e),records=await list(e,cookie),record=records.find(s=>s.studentId==='ab26'),other=records.find(s=>s.studentId==='cd26');
+ const student=await login(e),preview=await login(e,'teacher-test'),store=e.FEEDBACK_STORE.get('ab26'),root='/api/admin/students/'+record.key+'/questions',id='grammar-practice:00000001',body={id,revision:2};
+ await store.storage.put({'grammar:item:1':{number:1,question:false,finished:true,revision:2}});
+ assert.equal((await adminCall(e,root+'/undo',write(cookie,body))).status,409); // Student removal is not an administrator resolution.
+ assert.equal((await(await adminCall(e,root+'/resolve',write(cookie,{id,revision:1}))).json()).undoable,false);
+ for(const c of ['',student.cookie,preview.cookie])assert.equal((await adminCall(e,root+'/undo',write(c,body))).status,401);
+ assert.equal((await call(e,root+'/undo',{...write(preview.cookie,body),headers:{Cookie:preview.cookie,Origin:origin}})).status,405);
+ for(const originHeader of [undefined,'https://evil.test'])assert.equal((await adminCall(e,root+'/undo',{...write(cookie,body),headers:{Cookie:cookie,...(originHeader?{Origin:originHeader}:{})}})).status,403);
+ assert.equal((await adminCall(e,root+'/undo',{...write(cookie,body),headers:{Cookie:cookie,Origin:admin,'Sec-Fetch-Site':'cross-site'}})).status,403);
+ assert.equal((await adminCall(e,root+'/undo',{headers:{Cookie:cookie}})).status,405);
+ for(const bad of [{...body,finished:false},{...body,revision:-1},{...body,id:'grammar-practice:1'}])assert.equal((await adminCall(e,root+'/undo',write(cookie,bad))).status,400);
+ await store.storage.put({'grammar:item:1':{number:1,question:true,finished:true,revision:3}});
+ assert.equal((await adminCall(e,root+'/resolve',write(cookie,{id,revision:3}))).status,200);
+ assert.equal((await adminCall(e,'/api/admin/students/'+other.key+'/questions/undo',write(cookie,{id,revision:4}))).status,404);
+ // An intervening Finished edit is not overwritten by a stale undo.
+ await store.storage.put({'grammar:item:1':{number:1,question:false,finished:false,revision:5}});let before=await store.storage.list();assert.equal((await adminCall(e,root+'/undo',write(cookie,{id,revision:4}))).status,409);assert.deepEqual(await store.storage.list(),before);
+ // A newer resolution replaces the older receipt.
+ await store.storage.put({'grammar:item:1':{number:1,question:true,finished:false,revision:6}});await adminCall(e,root+'/resolve',write(cookie,{id,revision:6}));assert.equal((await adminCall(e,root+'/undo',write(cookie,{id,revision:4}))).status,409);
+ const paused=(await list(e,cookie)).find(s=>s.key===record.key);await adminCall(e,'/api/admin/students/'+record.key,write(cookie,{...paused,status:'paused'},'PUT'));
+ const responses=await Promise.all([1,2].map(()=>adminCall(e,root+'/undo',write(cookie,{id,revision:7}))));assert.deepEqual(responses.map(r=>r.status),[200,200]);assert.equal((await store.storage.get('grammar:item:1')).revision,8);
+ // A retry must not re-add the item after a subsequent student removal.
+ await store.storage.put({'grammar:item:1':{number:1,question:false,finished:false,revision:9}});before=await store.storage.list();assert.equal((await adminCall(e,root+'/undo',write(cookie,{id,revision:7}))).status,409);assert.deepEqual(await store.storage.list(),before);
+ const raw=(await directory.records()).find(r=>r.key===record.key);await directory.storage.put({['student:'+record.key]:{...raw,deletionPending:true}});assert.equal((await adminCall(e,root+'/undo',write(cookie,{id,revision:7}))).status,404);
+ await directory.storage.put({['student:'+record.key]:raw});await store.fetch(new Request('https://feedback.internal/admin/delete-account',{method:'POST'}));assert.equal((await adminCall(e,root+'/undo',write(cookie,{id,revision:7}))).status,410);assert.equal((await store.storage.list({prefix:'questions:resolved:'})).size,0);
+});
+
+test('Undo survives empty lists, refresh failures and multiple resolutions, restores counts and preserves Finished',async()=>{
+ const original=[1,2].map(number=>({id:'grammar-practice:'+String(number).padStart(8,'0'),revision:2,source:'grammar-practice',label:'Grammar practice',item:{...grammarBank.items[number-1],progress:{finished:true,question:true,revision:2}}}));let rows=[...original],failRead=false,failUndo=false,requests=[];
+ const dom=browser((path,opts)=>{
+  if(path.endsWith('/resolve')){const input=JSON.parse(opts.body);requests.push(input);rows=rows.filter(r=>r.id!==input.id);return Response.json({resolved:true,id:input.id,revision:3,undoable:true});}
+  if(path.endsWith('/undo')){const input=JSON.parse(opts.body);requests.push(input);if(failUndo)return Response.json({error:'Please try again.'},{status:503});rows.push({...original.find(r=>r.id===input.id),revision:4});return Response.json({restored:true,id:input.id,revision:4});}
+  if(path.endsWith('/questions'))return failRead?Response.json({error:'Unable to load.'},{status:503}):Response.json({count:rows.length,questions:rows,nextCursor:null});
+ });await flush();const w=dom.window,d=w.document;w.location.hash='students/'+fixture.key+'/questions';await flush();
+ d.querySelector('.resolve-question').click();await flush();assert.equal(d.querySelectorAll('.undo-question').length,1);assert.match(d.getElementById('questions-undo').textContent,/Item 1/);
+ d.querySelector('.resolve-question').click();await flush();assert.equal(rows.length,0);assert.equal(d.querySelectorAll('.undo-question').length,2);assert.equal(d.querySelector('.questions-badge'),null);
+ failRead=true;d.getElementById('refresh-all-questions').click();await flush();assert.equal(d.querySelectorAll('.undo-question').length,2);assert.equal(d.querySelector('.undo-question').disabled,false);
+ failUndo=true;d.querySelector('.undo-question').click();await flush();assert.match(d.getElementById('questions-undo').textContent,/Please try again/);assert.equal(d.querySelector('.undo-question').disabled,false);
+ failUndo=false;failRead=false;d.querySelector('.undo-question').click();await flush();assert.equal(rows.length,1);assert.equal(d.querySelectorAll('.undo-question').length,1);assert.match(d.getElementById('all-questions-status').textContent,/Restored to both Questions lists/);assert.match(d.querySelector('.questions-cell').textContent,/1 question/);assert.match(d.querySelector('.combined-question').textContent,/Marked as finished/);
+ d.querySelector('.undo-question').click();await flush();assert.equal(rows.length,2);assert.equal(d.getElementById('questions-undo').hidden,true);assert.ok(rows.every(row=>row.item.progress.finished));assert.ok(requests.every(body=>Object.keys(body).sort().join(',')==='id,revision'));
+ d.querySelector('.resolve-question').click();await flush();w.location.hash='students';await flush();assert.equal(d.getElementById('questions-undo').textContent,'');w.close();
+});
+
+test('Undo prevents duplicates and clears notices or late responses on navigation, logout, expiry and page hide',async()=>{
+ for(const exit of ['navigation','logout','expiry','pagehide']){
+  let release,writes=0,resolved=false;const row={id:'grammar-practice:00000001',revision:1,source:'grammar-practice',label:'Grammar practice',item:{...grammarBank.items[0],progress:{finished:true,question:true}}};
+  const dom=browser(path=>path.endsWith('/resolve')?(resolved=true,Response.json({resolved:true,id:row.id,revision:2,undoable:true})):path.endsWith('/undo')?(writes++,new Promise(r=>release=r)):path.endsWith('/questions')?Response.json({count:resolved?0:1,questions:resolved?[]:[row],nextCursor:null}):null);await flush();const w=dom.window,d=w.document;w.location.hash='students/'+fixture.key+'/questions';await flush();d.querySelector('.resolve-question').click();await flush();const button=d.querySelector('.undo-question');button.click();button.click();await flush();assert.equal(writes,1);assert.equal(button.disabled,true);assert.equal(d.getElementById('refresh-all-questions').disabled,true);
+  if(exit==='navigation')w.location.hash='students';else if(exit==='logout')d.getElementById('sign-out').click();else if(exit==='pagehide')w.dispatchEvent(new w.Event('pagehide'));await flush();
+  release(exit==='expiry'?Response.json({error:'Sign in again.'},{status:401}):Response.json({restored:true,id:row.id}));await flush();assert.equal(d.getElementById('questions-undo').textContent,'');assert.equal(d.getElementById('all-questions-content').textContent,'');if(exit==='expiry')assert.equal(d.getElementById('login-view').hidden,false);w.close();
+ }
+});

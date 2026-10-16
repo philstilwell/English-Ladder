@@ -58,7 +58,7 @@ export async function questionsOverview(storage, { after = null, statusOnly = fa
 
 // Called only inside the account's deletion-checked transaction. The teacher
 // clears the same flag the student reads; no learning record is deleted.
-export async function resolveQuestion(storage, input) {
+export async function resolveQuestion(storage, input, undo = false) {
   const invalid = () => Response.json({ error: 'Please refresh the Questions list and try again.' }, { status: 400 });
   if (!input || typeof input.id !== 'string' || !Number.isSafeInteger(input.revision) || input.revision < 1 ||
       Object.keys(input).some(key => !['id', 'revision'].includes(key))) return invalid();
@@ -69,12 +69,26 @@ export async function resolveQuestion(storage, input) {
   const key = source.prefix.replace(':question:', ':item:') + (source.items ? Number(itemId) : itemId);
   const entry = await storage.get(key);
   if (!entry) return Response.json({ error: 'This saved question is no longer available. Refresh the list.' }, { status: 404 });
+  const receiptKey = 'questions:resolved:' + input.id, receipt = await storage.get(receiptKey);
+  if (undo) {
+    const conflict = () => Response.json({ error: 'This item changed after it was resolved. Undo was not applied; the newer choices were kept.' }, { status: 409 });
+    // An undo refers to one specific administrator resolution, not any later
+    // student removal or a newer resolution. Receipts contain no exercise text.
+    if (!receipt || receipt.revision !== input.revision) return conflict();
+    if (entry.question) return Response.json({ restored: true, id: input.id, revision: entry.revision });
+    if (receipt.restoredRevision || entry.revision !== input.revision) return conflict();
+    const restored = { ...entry, question: true, revision: entry.revision + 1, updatedAt: new Date().toISOString() };
+    await storage.put({ [key]: restored, [receiptKey]: { ...receipt, restoredRevision: restored.revision },
+      ...(!source.items ? { [source.prefix + itemId]: restored } : {}) });
+    return Response.json({ restored: true, id: input.id, revision: restored.revision });
+  }
   // Repeating a successful request after a lost response is harmless. A newer
   // re-added question still requires its current revision before resolving.
-  if (!entry.question) return Response.json({ resolved: true, id: input.id, revision: entry.revision });
+  if (!entry.question) return Response.json({ resolved: true, id: input.id, revision: entry.revision,
+    undoable: Boolean(receipt && receipt.revision === entry.revision && !receipt.restoredRevision) });
   if (entry.revision !== input.revision) return Response.json({ error: 'This item changed since you opened it. Refresh the Questions list before marking it resolved.' }, { status: 409 });
   const updated = { ...entry, question: false, revision: entry.revision + 1, updatedAt: new Date().toISOString() };
-  await storage.put({ [key]: updated });
+  await storage.put({ [key]: updated, [receiptKey]: { revision: updated.revision } });
   if (!source.items) await storage.delete(source.prefix + itemId);
-  return Response.json({ resolved: true, id: input.id, revision: updated.revision });
+  return Response.json({ resolved: true, id: input.id, revision: updated.revision, undoable: true });
 }

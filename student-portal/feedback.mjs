@@ -128,10 +128,10 @@ export class FeedbackStore {
     if (id === 'admin/delete-account' && request.method === 'POST') return this.removeAccount();
     if (await this.storage.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
     if (['admin/questions', 'admin/questions-status'].includes(id) && request.method === 'GET') return this.activeTransaction(txn => questionsOverview(txn, { after: url.searchParams.get('after'), statusOnly: id.endsWith('-status') }));
-    if (id === 'admin/questions/resolve' && request.method === 'POST') {
+    if (['admin/questions/resolve', 'admin/questions/undo'].includes(id) && request.method === 'POST') {
       let input;
       try { input = await request.json(); } catch { return json({ error: 'Please check the question.' }, 400); }
-      return this.activeTransaction(txn => resolveQuestion(txn, input));
+      return this.activeTransaction(txn => resolveQuestion(txn, input, id.endsWith('/undo')));
     }
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'admin/activity-summary' && request.method === 'GET') return this.activeTransaction(async txn => json(await activitySummary(txn)));

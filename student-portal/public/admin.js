@@ -12,6 +12,7 @@
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let activityTools = [], resourceTools = [];
   let questionsRequest = 0, questionStatuses = {}, combinedRequest = 0;
+  let resolvedQuestions = [], questionActionPending = false;
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
@@ -101,8 +102,46 @@
     finally { if (valid()) $('load-study-questions').disabled = false; }
   }
   $('load-study-questions').addEventListener('click', () => loadStudyQuestions());
+  function lockQuestionControls() {
+    const controls = [...$('questions-view').querySelectorAll('.resolve-question, .undo-question, .questions-page-button, #refresh-all-questions')].map(button => [button, button.disabled]);
+    for (const [button] of controls) button.disabled = true;
+    return () => { for (const [button, disabled] of controls) button.disabled = disabled; };
+  }
+  function renderQuestionUndos(loading = false) {
+    const root = $('questions-undo'); root.replaceChildren(); root.hidden = !resolvedQuestions.length;
+    if (!resolvedQuestions.length) return;
+    root.append(element('h2', 'Recently resolved'), element('p', 'Removed by mistake? Undo restores the item to both Questions lists. These options stay here until you leave this page.', 'field-note'));
+    const version = epoch, request = combinedRequest, studentKey = current?.key;
+    const valid = () => signedIn && version === epoch && request === combinedRequest && current?.key === studentKey;
+    for (const item of resolvedQuestions) {
+      const row = element('div', null, 'question-undo-row'), undo = element('button', 'Undo', 'secondary-button undo-question');
+      undo.type = 'button'; undo.disabled = loading || questionActionPending;
+      undo.setAttribute('aria-label', 'Undo resolving ' + item.label);
+      const status = element('p', '', 'field-note resolve-status'); status.setAttribute('role', 'status');
+      row.append(element('span', item.label + ' · Resolved'), undo, status); root.append(row);
+      undo.addEventListener('click', async () => {
+        if (!valid() || questionActionPending || !row.isConnected) return;
+        questionActionPending = true; undo.textContent = 'Restoring…'; status.textContent = '';
+        const unlock = lockQuestionControls();
+        try {
+          const saved = await api('/api/admin/students/' + studentKey + '/questions/undo', { method: 'POST', body: JSON.stringify({ id: item.id, revision: item.revision }) });
+          if (!valid()) return;
+          if (saved.restored !== true || saved.id !== item.id) throw new Error('Please refresh to check whether this question was restored.');
+          resolvedQuestions = resolvedQuestions.filter(entry => entry !== item);
+          questionActionPending = false;
+          await loadCombinedQuestions([null], 'Restored to both Questions lists. Finished and saved answers are unchanged.');
+        } catch (error) {
+          if (valid()) status.textContent = error.message;
+        } finally {
+          if (valid()) { questionActionPending = false; undo.textContent = 'Undo'; unlock(); }
+        }
+      });
+    }
+  }
   function clearCombinedQuestions() {
     combinedRequest++;
+    resolvedQuestions = []; questionActionPending = false;
+    $('questions-undo').replaceChildren(); $('questions-undo').hidden = true;
     $('all-questions-title').textContent = 'Questions';
     $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = '';
     $('refresh-all-questions').disabled = false;
@@ -113,12 +152,12 @@
     const valid = () => signedIn && version === epoch && request === combinedRequest && current?.key === student.key;
     $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = 'Loading questions…';
     $('refresh-all-questions').disabled = true;
+    renderQuestionUndos(true);
     try {
       const data = await api('/api/admin/students/' + student.key + '/questions' + (pages.at(-1) ? '?after=' + encodeURIComponent(pages.at(-1)) : ''));
       if (!valid()) return;
       if (!Number.isSafeInteger(data.count) || !Array.isArray(data.questions) || data.questions.length > 20) throw new Error('Questions could not load. Please try again.');
       if (!data.questions.length && pages.length > 1) return await loadCombinedQuestions(pages.slice(0, -1), notice);
-      let resolving = false;
       for (const row of data.questions) {
         const item = row.item, card = element('article', null, 'combined-question');
         card.append(element('h2', row.label));
@@ -136,22 +175,25 @@
         resolve.title = 'Remove from both Questions lists. Keep Finished and saved answers.';
         const result = element('p', '', 'field-note resolve-status'); result.setAttribute('role', 'status');
         resolve.addEventListener('click', async () => {
-          if (!valid() || resolving || !card.isConnected) return;
-          resolving = true; resolve.textContent = 'Resolving…'; result.textContent = '';
-          const buttons = [...$('all-questions-content').querySelectorAll('.resolve-question, .questions-page-button'), $('refresh-all-questions')];
-          for (const button of buttons) button.disabled = true;
+          if (!valid() || questionActionPending || !card.isConnected) return;
+          questionActionPending = true; resolve.textContent = 'Resolving…'; result.textContent = '';
+          const unlock = lockQuestionControls();
           try {
             const saved = await api('/api/admin/students/' + student.key + '/questions/resolve', { method: 'POST', body: JSON.stringify({ id: row.id, revision: row.revision }) });
             if (!valid()) return;
             if (saved.resolved !== true || saved.id !== row.id) throw new Error('Please refresh to check whether this question was resolved.');
+            if (saved.undoable === true && Number.isSafeInteger(saved.revision)) {
+              const label = row.label + (item.number ? ' · Item ' + item.number : row.source === 'english-road' ? ' · Question ' + (item.questionIndex + 1) + ' · ' + displayTime(item.startedAt) : ' · ' + item.title);
+              resolvedQuestions = [{ id: row.id, revision: saved.revision, label }, ...resolvedQuestions.filter(entry => entry.id !== row.id)];
+            }
+            questionActionPending = false;
             await loadCombinedQuestions(pages, 'Resolved. Removed from both Questions lists; Finished and saved answers are unchanged.');
+            if (signedIn && version === epoch && current?.key === student.key) $('questions-undo').querySelector('.undo-question')?.focus();
           } catch (error) {
             if (valid()) result.textContent = error.message;
           } finally {
             if (valid()) {
-              resolving = false; resolve.textContent = 'Resolved';
-              for (const button of buttons) button.disabled = false;
-              back.disabled = pages.length < 2; more.disabled = !data.nextCursor;
+              questionActionPending = false; resolve.textContent = 'Resolved'; unlock();
             }
           }
         });
@@ -167,7 +209,7 @@
       $('all-questions-status').textContent = (notice ? notice + ' ' : '') + (data.count ? data.count + ' saved questions · Page ' + pages.length : 'No saved questions for this student.');
       questionStatuses[student.key] = { state: 'ready', count: data.count }; showList();
     } catch (error) { if (valid()) { $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = error.message; } }
-    finally { if (valid()) $('refresh-all-questions').disabled = false; }
+    finally { if (valid()) { $('refresh-all-questions').disabled = false; renderQuestionUndos(); } }
   }
   $('refresh-all-questions').addEventListener('click', () => loadCombinedQuestions());
   function clearQuestions() { clearCombinedQuestions(); termsPanel.clear(); grammarPanel.clear(); clearStudyQuestions(); }

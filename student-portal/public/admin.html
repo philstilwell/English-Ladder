@@ -32,9 +32,10 @@
     </section>
     <section id="questions-view" hidden>
       <a href="#students" class="back-link">← All students</a>
-      <div class="page-heading"><div><p class="eyebrow">QUESTIONS TO DISCUSS</p><h1 id="all-questions-title">Questions</h1><p>Saved questions from English Road Practice, all other self-study activities, and Study on your own. After discussing an item, choose Resolved to remove it from both Questions lists. Its Finished status and saved answers stay the same.</p></div></div>
+      <div class="page-heading"><div><p class="eyebrow">QUESTIONS TO DISCUSS</p><h1 id="all-questions-title">Questions</h1><p>Saved questions from English Road Practice, all other self-study activities, and Study on your own. After discussing an item, choose Resolved to remove it from both Questions lists. Its Finished status and saved answers stay the same. Use Undo if you remove an item by mistake.</p></div></div>
       <button id="refresh-all-questions" class="secondary-button" type="button">Refresh questions</button>
       <p id="all-questions-status" role="status"></p>
+      <section id="questions-undo" class="questions-undo" aria-label="Recently resolved questions" hidden></section>
       <div id="all-questions-content"></div>
     </section>
     <section id="edit-view" hidden>
@@ -164,6 +165,7 @@
         <article class="technical-card"><h2>Combined Questions</h2><dl>
           <div><dt>Directory link</dt><dd>The Questions column shows a count and link when a student has saved questions. It combines English Road Practice, Grammar practice, Business terms, Vocabulary practice, the five conversation and meaning activities, and Study on your own.</dd></div>
           <div><dt>Review</dt><dd>The combined list includes full exercises, saved Vocabulary answers, and the first and latest choices for the five conversation and meaning activities, twenty questions per page. It includes hidden activities and paused accounts. Earlier saved study topics remain available.</dd></div>
+          <div><dt>Undo</dt><dd>Each item resolved on this Questions page has an Undo option until you leave the page or sign out. Undo restores the original item to both lists, including older study topics and English Road sets. It preserves Finished, answers and scores. It checks the specific resolution and saved revision; newer changes are kept. Failed requests can be retried safely. Recently resolved options stay available through list refreshes and paging, with no countdown or browser storage.</dd></div>
           <div><dt>Resolved</dt><dd>After a lesson discussion, Resolved clears the item’s saved Questions choice for both the student and instructor. It preserves Finished, answers, first choices, scores, and practice history. Students can save the item to Questions again. An already open student page sees the change when its activity is reopened or refreshed. Only the signed-in administrator can resolve items here; teacher previews stay read-only. Conflicting changes require a refresh before retrying.</dd></div>
           <div><dt>Privacy</dt><dd>The administrator’s combined lists and directory counts remain restricted to the administrator host. Each student can also read their own combined list through a separate account-bound endpoint. Opening it does not change student work. Use Refresh to check for new questions. Failed checks show Unable to check. These records do not feed CEFR or nightly lesson generation.</dd></div>
         </dl></article>

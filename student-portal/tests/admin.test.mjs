@@ -219,7 +219,7 @@ test('administrator list links to editable accounts and has a separate registrat
   assert.equal(d.querySelectorAll('input[type="password"]').length,4);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
 });
 
-test('both save notices track edited values and selections, clear on revert, and confirm successful saves',async()=>{
+test('both save buttons and notices track edits, reverts, selections, and successful saves',async()=>{
   let saved=structuredClone(fixture),body,finishSave;
   const dom=browser((path,options)=>{
     if(path==='/api/admin/students')return Response.json({activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[saved]});
@@ -232,10 +232,15 @@ test('both save notices track edited values and selections, clear on revert, and
   d.querySelector('.student-name').click();await flush();
   const notice=text=>{
     for(const id of ['save-state','save-state-top'])assert.equal($(id).textContent,text);
+    for(const id of ['save-student','save-student-top'])assert.equal($(id).disabled,text!=='Unsaved changes');
     const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);
     assert.equal(unload.defaultPrevented,text==='Unsaved changes'||text==='Saving…');
   };
   notice('');
+  $('save-student').click();$('save-student-top').click();
+  $('student-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await flush();
+  assert.equal(body,undefined);notice('');
+  assert.ok([...d.querySelectorAll('#student-form fieldset')].every(fieldset=>!fieldset.disabled));
   for(const [id,value,event] of [['nickname','New nickname','input'],['zoomNames','New Zoom name','input'],['notes','New note','input'],['endsOn','2027-03-01','change'],['hoursUsed','4','input'],['status','paused','change'],['timeZone','Europe/London','change'],['newPassword','fictional-change','input'],['confirmPassword','fictional-change','input']]){
     const original=$(id).value;$(id).value=value;$(id).dispatchEvent(new w.Event(event,{bubbles:true}));notice('Unsaved changes');
     $(id).value=original;$(id).dispatchEvent(new w.Event(event,{bubbles:true}));notice('');
@@ -252,7 +257,7 @@ test('both save notices track edited values and selections, clear on revert, and
   assert.deepEqual(body.visibleActivities,[]);assert.deepEqual(body.visibleResources,[]);
   finishSave();await flush();notice('Saved');
   assert.ok([...d.querySelectorAll('#student-form fieldset')].every(fieldset=>!fieldset.disabled));
-  assert.equal($('save-student-top').disabled,false);assert.equal($('save-state-top').classList.contains('unsaved'),false);
+  assert.equal($('save-student-top').disabled,true);assert.equal($('save-state-top').classList.contains('unsaved'),false);
   $('notes').value='Another edit';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));notice('Unsaved changes');
   $('sign-out').click();notice('');await flush();w.close();
 });
@@ -267,6 +272,7 @@ test('failed saves retain unsaved edits, and a late save never restores data aft
   $('notes').value='Keep this unsaved note';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
   $('save-student-top').click();finishSave(Response.json({error:'Save failed. Please retry.'},{status:503}));await flush();
   for(const id of ['save-state','save-state-top'])assert.equal($(id).textContent,'Unsaved changes — not saved');
+  for(const id of ['save-student','save-student-top'])assert.equal($(id).disabled,false);
   const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);assert.equal(unload.defaultPrevented,true);
   assert.equal($('notes').value,'Keep this unsaved note');assert.equal($('notes').matches(':disabled'),false);
   $('save-student-top').click();$('register-nav').click();await flush();
@@ -369,7 +375,7 @@ test('Save and leave reuses an in-flight save and Keep editing cancels only navi
     let finishSave,writes=0,body;
     const dom=browser((path,options)=>{if(options?.method==='PUT'){writes++;body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}},{autoDiscard:false});
     await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
-    $('notes').value='Already saving';$('save-student-top').click();$('list-nav').click();$('leave-save').click();
+    $('notes').value='Already saving';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));$('save-student-top').click();$('list-nav').click();$('leave-save').click();
     if(keep)$('leave-keep').click();
     assert.equal(writes,1);finishSave(Response.json({student:{...fixture,...body,revision:2}}));await flush();
     assert.equal($('leave-dialog').open,false);assert.equal(w.location.hash,keep?'#students/'+fixture.key:'#students');
@@ -381,7 +387,7 @@ test('Save and leave does not repeat a save that finished while the dialog was o
   let finishSave,writes=0,body;
   const dom=browser((path,options)=>{if(options?.method==='PUT'){writes++;body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}},{autoDiscard:false});
   await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
-  $('notes').value='Save before deciding';$('save-student-top').click();$('list-nav').click();
+  $('notes').value='Save before deciding';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));$('save-student-top').click();$('list-nav').click();
   finishSave(Response.json({student:{...fixture,...body,revision:2}}));await flush();
   assert.equal($('leave-dialog').open,true);assert.match($('leave-status').textContent,/Changes saved/);
   $('leave-save').click();await flush();assert.equal(writes,1);assert.equal(w.location.hash,'#students');assert.equal($('leave-dialog').open,false);w.close();

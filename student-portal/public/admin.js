@@ -705,6 +705,7 @@
     }
     window.removeEventListener('beforeunload', warnBeforeUnload);
     if (hasUnsavedEdits()) window.addEventListener('beforeunload', warnBeforeUnload);
+    updateSaveLabel();
   }
   function studentFormState() {
     return JSON.stringify([
@@ -813,7 +814,7 @@
     for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(current?.deletionPending) || saving;
     for (const id of ['save-student', 'save-student-top']) {
       $(id).textContent = label;
-      $(id).disabled = Boolean(current?.deletionPending) || saving;
+      $(id).disabled = saving || !hasUnsavedEdits();
     }
   }
   function route(preserveLeave = false) {
@@ -964,6 +965,7 @@
   async function performStudentSave() {
     const version = epoch, editing = current, editor = editGeneration;
     if (!signedIn || !activityTools.length || !resourceTools.length || saving || deleting || editing?.deletionPending) return false;
+    if (!hasUnsavedEdits()) return false;
     if (!$('student-form').reportValidity()) return false;
     updateUnsavedNotice();
     const input = Object.fromEntries(fields.map(field => [field,$(field).value]));

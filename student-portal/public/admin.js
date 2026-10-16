@@ -20,6 +20,7 @@
   let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
   let activityOverviewRequest = 0;
   let deleting = null, deleteBusy = false, saving = false;
+  let savedFormState = null, editGeneration = 0;
   const fields = ['firstName','lastName','nickname','studentId','status','timeZone','course','fileNumber','email','otherEmail','staff','contactedOn','endsOn','hoursAuthorized','hoursUsed','hoursPending','hoursRemaining','notes'];
   const displayDate = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value)) : '';
   const displayTime = value => value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(value)) + ' Eastern' : '';
@@ -482,6 +483,7 @@
   }
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
+    savedFormState = null; editGeneration++;
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     updateSelectionCounts();
     clearRoad(); clearQuestions(); clearActivityOverview();
@@ -657,7 +659,6 @@
     }
     updateSelectionCounts();
 
-    for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(student?.deletionPending);
     $('delete-account-panel').hidden = !student;
     $('open-delete').disabled = saving;
     $('delete-account-note').textContent = student?.deletionPending ? 'The site is closed. Deletion is not finished. Use Delete student account again to finish removing the saved records.' : 'Permanently remove this account and its saved learning records. To keep the records and stop access, choose “Paused” above instead.';
@@ -677,6 +678,7 @@
     $('open-quiz-results').hidden = student?.status !== 'active';
     if (student?.status === 'active') $('open-quiz-results').href = 'https://' + student.studentId + '.englishladder.com/#quiz-results'; else $('open-quiz-results').removeAttribute('href');
     if (student && !student.studentId) suggestedAddress();
+    savedFormState = studentFormState();
     updateSaveLabel();
     void loadLoginDetails(student);
     void loadCefr(student);
@@ -692,10 +694,24 @@
     }
   }
   function setSaveState(text) {
-    for (const id of ['save-state', 'save-state-top']) $(id).textContent = text;
+    for (const id of ['save-state', 'save-state-top']) {
+      $(id).textContent = text;
+      $(id).classList.toggle('unsaved', text.startsWith('Unsaved changes'));
+    }
+  }
+  function studentFormState() {
+    return JSON.stringify([
+      ...[...fields, 'zoomNames', 'newPassword', 'confirmPassword'].map(id => $(id).value),
+      ...['student-activities', 'student-resources'].map(id => [...$(id).querySelectorAll('input:checked')].map(box => box.value))
+    ]);
+  }
+  function updateUnsavedNotice() {
+    if (!signedIn || savedFormState === null || saving || current?.deletionPending) return;
+    setSaveState(studentFormState() !== savedFormState ? 'Unsaved changes' : '');
   }
   function updateSaveLabel() {
     const label = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes';
+    for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(current?.deletionPending) || saving;
     for (const id of ['save-student', 'save-student-top']) {
       $(id).textContent = label;
       $(id).disabled = Boolean(current?.deletionPending) || saving;
@@ -703,6 +719,7 @@
   }
   function route() {
     if (!signedIn) return;
+    savedFormState = null; editGeneration++; setSaveState('');
     clearRoad(); clearQuestions(); clearActivityOverview();
     clearAutomation();
     closeDelete();
@@ -821,6 +838,7 @@
     }
   });
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
+  for (const event of ['input', 'change']) $('student-form').addEventListener(event, updateUnsavedNotice);
   for (const id of ['student-activities', 'student-resources']) $(id).addEventListener('change', updateSelectionCounts);
   for (const [id, target, checked] of [
     ['select-all-activities', 'student-activities', true], ['clear-all-activities', 'student-activities', false],
@@ -831,11 +849,13 @@
       if (!signedIn || !available.length || saving || deleting || current?.deletionPending) return;
       for (const box of $(target).querySelectorAll('input[type="checkbox"]')) box.checked = checked;
       updateSelectionCounts();
+      updateUnsavedNotice();
     });
   }
   $('student-form').addEventListener('submit', async event => {
-    event.preventDefault(); const version = epoch, editing = current;
+    event.preventDefault(); const version = epoch, editing = current, editor = editGeneration;
     if (!signedIn || !activityTools.length || !resourceTools.length || saving || deleting || editing?.deletionPending) return;
+    updateUnsavedNotice();
     const input = Object.fromEntries(fields.map(field => [field,$(field).value]));
     input.visibleActivities = [...$('student-activities').querySelectorAll('input:checked')].map(box => box.value);
     input.visibleResources = [...$('student-resources').querySelectorAll('input:checked')].map(box => box.value);
@@ -850,11 +870,12 @@
       const data = await api('/api/admin/students' + (editing ? '/' + editing.key : ''), {method:editing?'PUT':'POST',body:JSON.stringify(input)});
       if (!signedIn || version !== epoch) return;
       students = students.filter(s=>s.key!==data.student.key).concat(data.student).sort((a,b)=>(a.firstName+a.lastName).localeCompare(b.firstName+b.lastName));
+      if (editor !== editGeneration) return;
       history.replaceState(null, '', '#students/' + data.student.key); route();
       message(data.student.status === 'active' ? 'Saved. This student’s site is active and linked to the nightly updates.' : 'Saved. This account is ' + data.student.status + '.');
       setSaveState('Saved');
       void refreshQuizStatuses();
-    } catch(error) { if(signedIn && version===epoch){message(error.message,true);setSaveState('Not saved');} }
+    } catch(error) { if(signedIn && version===epoch && editor===editGeneration){message(error.message,true);setSaveState(studentFormState() !== savedFormState ? 'Unsaved changes — not saved' : 'Not saved');} }
     finally { saving = false; updateSaveLabel(); $('open-delete').disabled = false; }
   });
   $('sheet-paste').addEventListener('input',()=>{importRows=null;$('import-preview').hidden=true;$('import-names').replaceChildren();});

@@ -219,6 +219,61 @@ test('administrator list links to editable accounts and has a separate registrat
   assert.equal(d.querySelectorAll('input[type="password"]').length,4);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
 });
 
+test('both save notices track edited values and selections, clear on revert, and confirm successful saves',async()=>{
+  let saved=structuredClone(fixture),body,finishSave;
+  const dom=browser((path,options)=>{
+    if(path==='/api/admin/students')return Response.json({activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[saved]});
+    if(options?.method==='PUT'){
+      body=JSON.parse(options.body);
+      return new Promise(resolve=>{finishSave=()=>{saved={...saved,...body,revision:saved.revision+1};resolve(Response.json({student:saved}));};});
+    }
+  });
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);
+  d.querySelector('.student-name').click();await flush();
+  const notice=text=>{for(const id of ['save-state','save-state-top'])assert.equal($(id).textContent,text);};
+  notice('');
+  for(const [id,value,event] of [['nickname','New nickname','input'],['zoomNames','New Zoom name','input'],['notes','New note','input'],['endsOn','2027-03-01','change'],['hoursUsed','4','input'],['status','paused','change'],['timeZone','Europe/London','change'],['newPassword','fictional-change','input'],['confirmPassword','fictional-change','input']]){
+    const original=$(id).value;$(id).value=value;$(id).dispatchEvent(new w.Event(event,{bubbles:true}));notice('Unsaved changes');
+    $(id).value=original;$(id).dispatchEvent(new w.Event(event,{bubbles:true}));notice('');
+  }
+  const box=d.querySelector('#student-activities input:checked');box.click();notice('Unsaved changes');box.click();notice('');
+  const resource=d.querySelector('#student-resources input:checked');resource.click();notice('Unsaved changes');resource.click();notice('');
+  $('select-all-activities').click();notice('Unsaved changes');assert.equal(body,undefined);
+  $('clear-all-activities').click();notice('Unsaved changes');
+  $('select-all-resources').click();notice('Unsaved changes');
+  $('clear-all-resources').click();notice('Unsaved changes');assert.equal(body,undefined);
+  $('save-student-top').click();notice('Saving…');
+  assert.ok([...d.querySelectorAll('#student-form fieldset')].every(fieldset=>fieldset.disabled));
+  assert.equal($('save-student').disabled,true);assert.equal($('save-student-top').disabled,true);
+  assert.deepEqual(body.visibleActivities,[]);assert.deepEqual(body.visibleResources,[]);
+  finishSave();await flush();notice('Saved');
+  assert.ok([...d.querySelectorAll('#student-form fieldset')].every(fieldset=>!fieldset.disabled));
+  assert.equal($('save-student-top').disabled,false);assert.equal($('save-state-top').classList.contains('unsaved'),false);
+  $('notes').value='Another edit';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));notice('Unsaved changes');
+  $('sign-out').click();notice('');await flush();w.close();
+});
+
+test('failed saves retain unsaved edits, and a late save never marks another editor as saved',async()=>{
+  let finishSave,body;
+  const dom=browser((path,options)=>{
+    if(options?.method==='PUT'){body=JSON.parse(options.body);return new Promise(resolve=>finishSave=resolve);}
+  });
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);
+  d.querySelector('.student-name').click();await flush();
+  $('notes').value='Keep this unsaved note';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
+  $('save-student-top').click();finishSave(Response.json({error:'Save failed. Please retry.'},{status:503}));await flush();
+  for(const id of ['save-state','save-state-top'])assert.equal($(id).textContent,'Unsaved changes — not saved');
+  assert.equal($('notes').value,'Keep this unsaved note');assert.equal($('notes').matches(':disabled'),false);
+  $('save-student-top').click();$('register-nav').click();await flush();
+  assert.equal($('edit-title').textContent,'Register new student');assert.equal($('save-state-top').textContent,'');
+  finishSave(Response.json({student:{...fixture,...body,revision:2}}));await flush();
+  assert.equal(w.location.hash,'#register');assert.equal($('edit-title').textContent,'Register new student');
+  assert.equal($('firstName').value,'');assert.equal($('save-state-top').textContent,'');assert.equal($('save-state').textContent,'');
+  assert.equal($('firstName').matches(':disabled'),false);
+  $('firstName').value='New';$('firstName').dispatchEvent(new w.Event('input',{bubbles:true}));assert.equal($('save-state-top').textContent,'Unsaved changes');
+  w.dispatchEvent(new w.Event('pagehide'));assert.equal($('save-state-top').textContent,'');w.close();
+});
+
 test('administrator checkboxes load saved tools, save subsets and none, and clear on navigation and sign-out', async () => {
   let saved = structuredClone(fixture), body;
   const dom = browser((path, options) => {

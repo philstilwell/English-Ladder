@@ -11,6 +11,7 @@
   headerResizeObserver?.observe(stickyHeader);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let activityTools = [];
+  let questionsRequest = 0, questionStatuses = {}, combinedRequest = 0;
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
@@ -100,7 +101,46 @@
     finally { if (valid()) $('load-study-questions').disabled = false; }
   }
   $('load-study-questions').addEventListener('click', () => loadStudyQuestions());
-  function clearQuestions() { termsPanel.clear(); grammarPanel.clear(); clearStudyQuestions(); }
+  function clearCombinedQuestions() {
+    combinedRequest++;
+    $('all-questions-title').textContent = 'Questions';
+    $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = '';
+    $('refresh-all-questions').disabled = false;
+  }
+  async function loadCombinedQuestions(pages = [null]) {
+    if (!signedIn || !current?.activated || current.deletionPending) return;
+    const student = current, version = epoch, request = ++combinedRequest;
+    const valid = () => signedIn && version === epoch && request === combinedRequest && current?.key === student.key;
+    $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = 'Loading questions…';
+    $('refresh-all-questions').disabled = true;
+    try {
+      const data = await api('/api/admin/students/' + student.key + '/questions' + (pages.at(-1) ? '?after=' + encodeURIComponent(pages.at(-1)) : ''));
+      if (!valid()) return;
+      if (!Number.isSafeInteger(data.count) || !Array.isArray(data.questions) || data.questions.length > 20) throw new Error('Questions could not load. Please try again.');
+      for (const row of data.questions) {
+        const item = row.item, card = element('article', null, 'combined-question');
+        card.append(element('h2', row.label));
+        if (row.source === 'grammar-practice') card.append(window.GrammarPractice.exercise(item, 'article'));
+        else if (row.source === 'business-terms') card.append(window.BusinessTerms.exercise(item).card);
+        else if (row.source === 'study-practice') card.append(window.StudyPractice.review(item));
+        else if (row.source === 'vocabulary-practice') card.append(window.VocabularyPractice.review(item));
+        else throw new Error('This question type could not load. Please reload the page.');
+        if (item.progress.finished) card.append(element('p', 'Marked as finished', 'field-note'));
+        $('all-questions-content').append(card);
+      }
+      const controls = element('div', null, 'terms-controls');
+      const back = element('button', 'Previous questions', 'secondary-button'), more = element('button', 'More questions', 'secondary-button');
+      back.type = more.type = 'button'; back.disabled = pages.length < 2; more.disabled = !data.nextCursor;
+      back.addEventListener('click', () => loadCombinedQuestions(pages.slice(0, -1)));
+      more.addEventListener('click', () => loadCombinedQuestions([...pages, data.nextCursor]));
+      if (pages.length > 1 || data.nextCursor) { controls.append(back, more); $('all-questions-content').append(controls); }
+      $('all-questions-status').textContent = data.count ? data.count + ' saved questions · Page ' + pages.length : 'No saved questions for this student.';
+      questionStatuses[student.key] = { state: 'ready', count: data.count }; showList();
+    } catch (error) { if (valid()) { $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = error.message; } }
+    finally { if (valid()) $('refresh-all-questions').disabled = false; }
+  }
+  $('refresh-all-questions').addEventListener('click', () => loadCombinedQuestions());
+  function clearQuestions() { clearCombinedQuestions(); termsPanel.clear(); grammarPanel.clear(); clearStudyQuestions(); }
   function clearActivityOverview() {
     activityOverviewRequest++;
     $('activity-overview-panel').hidden = true;
@@ -116,7 +156,7 @@
     try {
       const data = await api('/api/admin/students/' + student.key + '/activity-summary');
       if (!valid()) return;
-      const ids = ['english-road', 'grammar-practice', 'business-terms'];
+      const ids = ['english-road', 'grammar-practice', 'business-terms', 'vocabulary-practice'];
       const count = value => Number.isSafeInteger(value) && value >= 0;
       if (!Array.isArray(data.activities) || data.activities.length !== ids.length || data.activities.some((item, index) =>
         !item || item.id !== ids[index] || item.lastActivityAt !== null && !Number.isFinite(Date.parse(item.lastActivityAt)) ||
@@ -139,6 +179,7 @@
         const review = element('button', item.id === 'english-road' ? 'View practice results' : 'View questions', 'secondary-button');
         review.type = 'button'; review.addEventListener('click', () => {
           if (!valid()) return;
+          if (item.id === 'vocabulary-practice') { location.hash = '#students/' + student.key + '/questions'; return; }
           const id = item.id === 'english-road' ? 'road-results-panel' : item.id === 'grammar-practice' ? 'grammar-questions-panel' : 'terms-questions-panel';
           if (item.id === 'english-road') void loadRoad(); else void (item.id === 'grammar-practice' ? grammarPanel : termsPanel).load();
           $(id).scrollIntoView?.({ behavior: 'smooth', block: 'start' });
@@ -284,7 +325,7 @@
     clearLoginDetails();
     clearCefr(); cefrRequest++; cefrStatuses = {};
     closeDelete();
-    quizRequest++; quizStatuses = {};
+    quizRequest++; quizStatuses = {}; questionsRequest++; questionStatuses = {};
     $('admin-view').hidden = true; $('login-view').hidden = false; $('sign-out').hidden = true;
     adminMenu.hidden = true; updateHeaderHeight();
     $('student-rows').replaceChildren(); $('import-names').replaceChildren(); $('student-form').reset();
@@ -323,7 +364,7 @@
     $('list-count').textContent = shown.length + ' of ' + students.length + ' students';
     $('empty-list').hidden = shown.length > 0;
     for (const student of shown) {
-      const row = element('tr'), name = element('td'), site = element('td'), course = element('td'), status = element('td'), latestQuiz = element('td', null, 'latest-quiz'), cefrCell = element('td', null, 'cefr-cell'), action = element('td');
+      const row = element('tr'), name = element('td'), site = element('td'), course = element('td'), status = element('td'), latestQuiz = element('td', null, 'latest-quiz'), cefrCell = element('td', null, 'cefr-cell'), questionsCell = element('td', null, 'questions-cell'), action = element('td');
       const link = element('a', [student.firstName,student.lastName].filter(Boolean).join(' '), 'student-name'); link.href = '#students/' + student.key; name.append(link);
       if (student.nickname) name.append(element('span', student.nickname, 'detail'));
       site.append(element('span', student.studentId ? student.studentId + '.englishladder.com' : 'Site not activated'));
@@ -342,21 +383,29 @@
       cefrCell.append(element('span', 'CEFR estimate: ', 'quiz-mobile-label'), cefrLink);
       if (cefr.state === 'estimated') cefrCell.append(element('span', (cefr.confidence === 'moderate' ? 'Moderate' : 'Low') + ' confidence', 'detail'));
       if (cefr.latestSessionId) cefrCell.append(element('span', 'Lesson ' + displayDate(cefr.latestSessionId.slice(0, 10)), 'detail'));
+      const questions = questionStatuses[student.key] || { state: 'loading' };
+      questionsCell.append(element('span', 'Questions: ', 'quiz-mobile-label'));
+      if (questions.state === 'ready' && questions.count > 0) {
+        const all = element('a', questions.count + (questions.count === 1 ? ' question →' : ' questions →'), 'questions-badge');
+        all.href = '#students/' + student.key + '/questions'; all.setAttribute('aria-label', questions.count + ' saved questions for ' + student.firstName);
+        questionsCell.append(all);
+      } else questionsCell.append(element('span', questions.state === 'ready' ? '—' : questions.state === 'loading' ? 'Checking…' : 'Unable to check', 'field-note'));
       const edit = element('a', 'Edit account →', 'edit-link'); edit.href = link.href; edit.setAttribute('aria-label', 'Edit account for ' + student.firstName + ' ' + student.lastName); action.append(edit);
-      row.append(name,site,course,status,latestQuiz,cefrCell,action); $(student.status === 'paused' ? 'paused-student-rows' : 'student-rows').append(row);
+      row.append(name,site,course,status,latestQuiz,cefrCell,questionsCell,action); $(student.status === 'paused' ? 'paused-student-rows' : 'student-rows').append(row);
     }
   }
   async function refresh() {
     quizRequest++;
-    cefrRequest++;
+    cefrRequest++; questionsRequest++;
     const version = epoch;
     const data = await api('/api/admin/students');
     if (!signedIn || version !== epoch) return;
     if (!Array.isArray(data.activities) || !data.activities.length || data.activities.some(a => !a || typeof a.id !== 'string' || typeof a.name !== 'string' || typeof a.description !== 'string')) throw new Error('The activity list could not load. Please refresh before editing a student.');
     activityTools = data.activities;
-    students = data.students; quizStatuses = {}; cefrStatuses = {}; showList(); route();
+    students = data.students; quizStatuses = {}; cefrStatuses = {}; questionStatuses = {}; showList(); route();
     void refreshQuizStatuses();
     void refreshCefrStatuses();
+    void refreshQuestionStatuses();
     try {
       const status = await api('/api/admin/automation');
       if (!signedIn || version !== epoch) return;
@@ -393,6 +442,22 @@
     } catch {
       if (!signedIn || version !== epoch || request !== cefrRequest) return;
       for (const student of students) if (!cefrStatuses[student.key]) cefrStatuses[student.key] = { state: 'unavailable' };
+      showList();
+    }
+  }
+  async function refreshQuestionStatuses() {
+    const version = epoch, request = ++questionsRequest;
+    let cursor;
+    try {
+      do {
+        const data = await api('/api/admin/questions-status' + (cursor ? '?after=' + encodeURIComponent(cursor) : ''));
+        if (!signedIn || version !== epoch || request !== questionsRequest) return;
+        if (!data.statuses) throw new Error('Unavailable');
+        Object.assign(questionStatuses, data.statuses); showList(); cursor = data.nextCursor;
+      } while (cursor);
+    } catch {
+      if (!signedIn || version !== epoch || request !== questionsRequest) return;
+      for (const student of students) if (!questionStatuses[student.key]) questionStatuses[student.key] = { state: 'unavailable' };
       showList();
     }
   }
@@ -450,13 +515,19 @@
     clearCefr();
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
-    for (const id of ['list-view','edit-view','import-view','technical-view']) $(id).hidden = true;
+    for (const id of ['list-view','edit-view','import-view','technical-view','questions-view']) $(id).hidden = true;
     for (const id of ['list-nav','register-nav','import-nav','technical-nav']) $(id).removeAttribute('aria-current');
     if (hash === '#register') { $('edit-view').hidden = false; $('register-nav').setAttribute('aria-current','page'); editStudent(null); }
     else if (hash.startsWith('#students/')) {
-      const student = students.find(s => s.key === hash.slice(10));
+      const parts = hash.slice(10).split('/');
+      const student = students.find(s => s.key === parts[0]);
       if (!student) { message('This student could not be found.', true); $('list-view').hidden = false; }
-      else { $('edit-view').hidden = false; editStudent(student); }
+      else if (parts[1] === 'questions') {
+        current = student; $('questions-view').hidden = false;
+        $('all-questions-title').textContent = student.firstName + ' · Questions';
+        if (student.activated && !student.deletionPending) void loadCombinedQuestions();
+        else $('all-questions-status').textContent = 'No saved questions for this student.';
+      } else { $('edit-view').hidden = false; editStudent(student); }
       $('list-nav').setAttribute('aria-current','page');
     } else if (hash === '#import') { $('import-view').hidden = false; $('import-nav').setAttribute('aria-current','page'); }
     else if (hash === '#technical-notes') { $('technical-view').hidden = false; $('technical-nav').setAttribute('aria-current','page'); }

@@ -3,7 +3,7 @@ const defaultPreferences = () => ({ hideFinished: false, revision: 0, updatedAt:
 const defaultPosition = () => ({ number: null, revision: 0, updatedAt: null });
 const empty = number => ({ number, finished: false, question: false, revision: 0, updatedAt: null });
 
-export function createSelfCheckHandler(prefix, bank) {
+export function createSelfCheckHandler(prefix, bank, fields = ['finished', 'question']) {
   const items = new Map(bank.items.map(item => [item.number, item]));
   return async function handleSelfCheck(storage, request) {
     const route = new URL(request.url).pathname;
@@ -46,7 +46,7 @@ export function createSelfCheckHandler(prefix, bank) {
         return json({ preferences: updated });
       });
     }
-    if (!input || !items.has(input.number) || !['finished', 'question'].includes(input.field) ||
+    if (!input || !items.has(input.number) || !fields.includes(input.field) ||
         typeof input.value !== 'boolean' || !Number.isSafeInteger(input.revision) || input.revision < 0 ||
         Object.keys(input).some(key => !['number', 'field', 'value', 'revision'].includes(key))) {
       return json({ error: 'Please check your choice.' }, 400);

@@ -151,7 +151,7 @@ export class StudentDirectory {
         activated, startAfter: previous?.startAfter || (activated ? now : null),
         lessonTimeZone: previous?.lessonTimeZone || 'America/New_York', createdAt: previous?.createdAt || now, updatedAt: now,
         ...(previous?.source ? { source: previous.source } : {}), ...(passwordCredential ? { passwordCredential } : {}), ...(passwordCopy ? { passwordCopy } : {}),
-        ...(!Object.hasOwn(values, 'visibleActivities') && Array.isArray(previous?.visibleActivities) ? { visibleActivities: previous.visibleActivities } : {}) };
+        ...(!Object.hasOwn(values, 'visibleActivities') ? { visibleActivities: previous ? visibleActivities(previous) : ACTIVITY_TOOLS.map(tool => tool.id) } : {}) };
       await txn.put({ ['student:' + record.key]: record, revision: (await txn.get('revision') || 0) + 1 });
       return json({ student: adminRecord(record) }, previous ? 200 : 201);
     });
@@ -311,7 +311,7 @@ export class StudentDirectory {
             keys.add(r.source.key); names.add(name); additions.push(r);
           }
           if (existing.length + additions.length > 1000) return json({ error: 'Too many students.' }, 400);
-          const records = additions.map(r => ({ ...r, key: crypto.randomUUID(), revision: 1, activated: false, startAfter: null,
+          const records = additions.map(r => ({ ...r, visibleActivities: ACTIVITY_TOOLS.map(tool => tool.id), key: crypto.randomUUID(), revision: 1, activated: false, startAfter: null,
             lessonTimeZone: 'America/New_York', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() }));
           await txn.put({ ...Object.fromEntries(records.map(r => ['student:' + r.key, r])), revision: (await txn.get('revision') || 0) + 1 });
           return json({ imported: records.length, skipped: parsed.length - records.length, excluded: inspected.excluded.length, removed });

@@ -1,9 +1,11 @@
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { handleRoad } from './english-road.mjs';
+import { questionsOverview } from './questions.mjs';
 import { activitySummary } from './activity-summary.mjs';
 import { handleBusinessTerms } from './business-terms.mjs';
 import { handleStudyProgress } from './study-progress.mjs';
+import { handleVocabulary } from './vocabulary-practice.mjs';
 import { handleGrammarPractice } from './grammar-practice.mjs';
 import { groundCefrWindow, cefrOverview } from './cefr.mjs';
 import { cefrReviewContext, cefrScheduleSummary } from './cefr-schedule.mjs';
@@ -124,6 +126,7 @@ export class FeedbackStore {
     // Internal-only routes: the public Worker never forwards arbitrary paths here.
     if (id === 'admin/delete-account' && request.method === 'POST') return this.removeAccount();
     if (await this.storage.get('account:deleted')) return json({ error: 'This account was deleted.' }, 410);
+    if (['admin/questions', 'admin/questions-status'].includes(id) && request.method === 'GET') return this.activeTransaction(txn => questionsOverview(txn, { after: url.searchParams.get('after'), statusOnly: id.endsWith('-status') }));
     if (id === 'admin/quiz-status' && request.method === 'GET') return json(await latestQuizStatus(this.storage));
     if (id === 'admin/activity-summary' && request.method === 'GET') return this.activeTransaction(async txn => json(await activitySummary(txn)));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
@@ -273,6 +276,7 @@ export class FeedbackStore {
         return json({ ok: true });
       });
     }
+    if (id.startsWith('vocabulary/')) return handleVocabulary(this.storage, request);
     if (id.startsWith('terms/')) return handleBusinessTerms(this.storage, request);
     if (id.startsWith('study/')) return handleStudyProgress(this.storage, request);
     if (id.startsWith('grammar/')) return handleGrammarPractice(this.storage, request);

@@ -1,0 +1,706 @@
+{
+  "version": 1,
+  "source": "Vocabulary tab, first 50 distinct entries. Teaching content is new practice, authored for the portal.",
+  "items": [
+    {
+      "number": 1,
+      "term": "recruit",
+      "meaning": "Find people to join a company or group.",
+      "examples": [
+        "The hospital wants to recruit more nurses.",
+        "Our club recruits new members every spring."
+      ],
+      "phrases": "recruit staff; recruit volunteers",
+      "forms": "recruiter (person); recruitment (process)",
+      "prompt": "The agency's ___ helped us find an engineer.",
+      "answer": "recruiter",
+      "task": "Your café needs two new workers. Write a sentence using “recruit”."
+    },
+    {
+      "number": 2,
+      "term": "revise",
+      "meaning": "Change something to improve it or make it correct.",
+      "examples": [
+        "Please revise the report before Friday.",
+        "We revised our plan after the meeting."
+      ],
+      "phrases": "revise a plan; revise a document",
+      "forms": "revision (noun); revised (past form)",
+      "prompt": "The editor asked for one final ___ of the article.",
+      "answer": "revision",
+      "task": "A travel plan now has the wrong dates. Write a sentence using “revise”."
+    },
+    {
+      "number": 3,
+      "term": "incentive",
+      "meaning": "Something that encourages someone to do something.",
+      "examples": [
+        "The bonus gives staff an incentive to sell more.",
+        "Free delivery is an incentive to order today."
+      ],
+      "phrases": "offer an incentive; an incentive to do something",
+      "forms": "incentives (plural)",
+      "prompt": "The company offers several ___ to attract new workers.",
+      "answer": "incentives",
+      "task": "A gym wants more people to join. Describe an incentive it could offer."
+    },
+    {
+      "number": 4,
+      "term": "implement",
+      "meaning": "Put a plan or decision into action.",
+      "examples": [
+        "We will implement the new safety rules next week.",
+        "The team implemented the changes in stages."
+      ],
+      "phrases": "implement a plan; implement changes",
+      "forms": "implementation (noun); implemented (past form)",
+      "prompt": "Careful planning will help with the ___ of the new system.",
+      "answer": "implementation",
+      "task": "A school has decided to reduce paper use. Write a sentence using “implement”."
+    },
+    {
+      "number": 5,
+      "term": "negotiate",
+      "meaning": "Discuss something to try to reach an agreement.",
+      "examples": [
+        "They negotiated a lower price.",
+        "We need to negotiate the delivery date."
+      ],
+      "phrases": "negotiate a contract; negotiate with someone",
+      "forms": "negotiation (noun); negotiator (person)",
+      "prompt": "Both sides sent an experienced ___ to the meeting.",
+      "answer": "negotiator",
+      "task": "You want a different start date for a job. Write a sentence using “negotiate”."
+    },
+    {
+      "number": 6,
+      "term": "merger",
+      "meaning": "The joining of two companies into one.",
+      "examples": [
+        "The merger created a larger airline.",
+        "Both companies approved the merger."
+      ],
+      "phrases": "approve a merger; a merger between companies",
+      "forms": "merge (verb); mergers (plural)",
+      "prompt": "The two small banks plan to ___ next year.",
+      "answer": "merge",
+      "task": "Two shops are becoming one business. Write a sentence using “merger”."
+    },
+    {
+      "number": 7,
+      "term": "revenue",
+      "meaning": "Money a business receives from sales before costs are taken away.",
+      "examples": [
+        "Ticket sales provide most of the theater's revenue.",
+        "The café's revenue increased in June."
+      ],
+      "phrases": "generate revenue; sales revenue",
+      "forms": "revenues (plural, often for different sources or periods)",
+      "prompt": "Online sales now generate half of our ___.",
+      "answer": "revenue",
+      "task": "A museum starts selling postcards. Explain how this could affect its revenue."
+    },
+    {
+      "number": 8,
+      "term": "eligible",
+      "meaning": "Allowed to receive or do something because you meet the rules.",
+      "examples": [
+        "Members are eligible for a discount.",
+        "You must be eighteen to be eligible to apply."
+      ],
+      "phrases": "eligible for support; eligible to apply",
+      "forms": "eligibility (noun); ineligible (opposite)",
+      "prompt": "The office will check your ___ before approving the grant.",
+      "answer": "eligibility",
+      "task": "A club gives discounts to students. Write a sentence using “eligible”."
+    },
+    {
+      "number": 9,
+      "term": "expire",
+      "meaning": "Come to the end of a valid or agreed period.",
+      "examples": [
+        "My passport expires in May.",
+        "The offer expired yesterday."
+      ],
+      "phrases": "a contract expires; a card expires",
+      "forms": "expiration (noun, US English); expiry (noun, UK English)",
+      "prompt": "Check the ___ date on your membership card.",
+      "answer": "expiration / expiry",
+      "task": "A discount code stops working tomorrow. Write a sentence using “expire”."
+    },
+    {
+      "number": 10,
+      "term": "credit",
+      "meaning": "An arrangement that lets you pay for something later.",
+      "examples": [
+        "The shop lets customers buy furniture on credit.",
+        "The bank offered the company a line of credit."
+      ],
+      "phrases": "buy on credit; a line of credit",
+      "forms": "creditor (person or organization owed money)",
+      "prompt": "The supplier agreed to sell us the equipment on ___.",
+      "answer": "credit",
+      "task": "A business cannot pay for a machine today. Write a sentence about using credit."
+    },
+    {
+      "number": 11,
+      "term": "budget",
+      "meaning": "A plan for how much money can be spent.",
+      "examples": [
+        "Our travel budget is small this year.",
+        "We need to stay within the budget."
+      ],
+      "phrases": "set a budget; stay within a budget",
+      "forms": "budget (also a verb); budgeting (planning spending)",
+      "prompt": "We are ___ for a new computer next year.",
+      "answer": "budgeting",
+      "task": "You are planning a small party. Write a sentence using “budget”."
+    },
+    {
+      "number": 12,
+      "term": "inventory",
+      "meaning": "The goods a business has available, or a list of those goods.",
+      "examples": [
+        "The shop checks its inventory every Monday.",
+        "We have too much winter inventory."
+      ],
+      "phrases": "check inventory; manage inventory",
+      "forms": "inventories (plural)",
+      "prompt": "Before ordering more chairs, check our current ___.",
+      "answer": "inventory",
+      "task": "A bookstore needs to know how many books it has. Write a sentence using “inventory”."
+    },
+    {
+      "number": 13,
+      "term": "conflict",
+      "meaning": "A serious disagreement, or a clash between needs or plans.",
+      "examples": [
+        "The manager helped resolve the conflict.",
+        "There is a conflict between the two meeting times."
+      ],
+      "phrases": "resolve a conflict; a conflict between",
+      "forms": "conflict (also a verb); conflicting (not agreeing)",
+      "prompt": "The two reports give ___ information about the cost.",
+      "answer": "conflicting",
+      "task": "Two teams want the same meeting room at the same time. Write a sentence using “conflict”."
+    },
+    {
+      "number": 14,
+      "term": "workload",
+      "meaning": "The amount of work someone has to do.",
+      "examples": [
+        "Her workload increased when a colleague left.",
+        "We shared the workload more fairly."
+      ],
+      "phrases": "a heavy workload; reduce a workload",
+      "forms": "workloads (plural)",
+      "prompt": "Hiring an assistant will reduce the manager's ___.",
+      "answer": "workload",
+      "task": "A colleague is doing too many tasks. Write a sentence using “workload”."
+    },
+    {
+      "number": 15,
+      "term": "workforce",
+      "meaning": "All the workers in a company, industry, or country.",
+      "examples": [
+        "The factory has a workforce of two hundred people.",
+        "Training helps us develop a skilled workforce."
+      ],
+      "phrases": "a skilled workforce; expand the workforce",
+      "forms": "workforces (plural)",
+      "prompt": "The business plans to expand its ___ by hiring ten people.",
+      "answer": "workforce",
+      "task": "A new factory will employ local people. Write a sentence using “workforce”."
+    },
+    {
+      "number": 16,
+      "term": "executive",
+      "meaning": "A person with a senior management job.",
+      "examples": [
+        "An executive approved the new project.",
+        "The company hired an experienced executive."
+      ],
+      "phrases": "a senior executive; a company executive",
+      "forms": "executive (also an adjective); executives (plural)",
+      "prompt": "Several senior ___ attended the board meeting.",
+      "answer": "executives",
+      "task": "A company needs someone to lead a new division. Write a sentence using “executive”."
+    },
+    {
+      "number": 17,
+      "term": "branch",
+      "meaning": "A local office or shop that is part of a larger organization.",
+      "examples": [
+        "The bank opened a branch near the station.",
+        "This branch closes at five."
+      ],
+      "phrases": "open a branch; a local branch",
+      "forms": "branches (plural)",
+      "prompt": "The company has three ___ in the city.",
+      "answer": "branches",
+      "task": "A restaurant company is opening in another town. Write a sentence using “branch”."
+    },
+    {
+      "number": 18,
+      "term": "asset",
+      "meaning": "Something valuable that a person or organization owns or has.",
+      "examples": [
+        "The company sold one of its assets.",
+        "Her language skills are an asset to the team."
+      ],
+      "phrases": "a valuable asset; company assets",
+      "forms": "assets (plural)",
+      "prompt": "The delivery vans are important company ___.",
+      "answer": "assets",
+      "task": "Explain why a helpful, experienced worker is an asset to a team."
+    },
+    {
+      "number": 19,
+      "term": "profit",
+      "meaning": "Money left after the costs of a business are taken away from its revenue.",
+      "examples": [
+        "The shop made a small profit last month.",
+        "Higher costs reduced our profit."
+      ],
+      "phrases": "make a profit; increase profit",
+      "forms": "profitable (adjective); profitability (noun)",
+      "prompt": "The new service became ___ after six months.",
+      "answer": "profitable",
+      "task": "A shop sells more but its costs also rise. Write a sentence using “profit”."
+    },
+    {
+      "number": 20,
+      "term": "authority",
+      "meaning": "The power or right to make decisions or give permission.",
+      "examples": [
+        "Only the director has the authority to approve this.",
+        "The manager gave her authority over the budget."
+      ],
+      "phrases": "have authority; authority to approve",
+      "forms": "authorize (verb); authorization (noun)",
+      "prompt": "We need written ___ before we can enter the building.",
+      "answer": "authorization",
+      "task": "An employee cannot approve a large purchase. Write a sentence using “authority”."
+    },
+    {
+      "number": 21,
+      "term": "investment",
+      "meaning": "Money, time, or effort used now to gain a benefit later.",
+      "examples": [
+        "The new equipment was a good investment.",
+        "Staff training is an investment in the future."
+      ],
+      "phrases": "make an investment; an investment in",
+      "forms": "invest (verb); investor (person)",
+      "prompt": "The company plans to ___ in better training.",
+      "answer": "invest",
+      "task": "A bakery buys a faster oven. Write a sentence using “investment”."
+    },
+    {
+      "number": 22,
+      "term": "contract",
+      "meaning": "An agreement that creates duties for the people or organizations involved.",
+      "examples": [
+        "She signed a one-year contract.",
+        "The contract sets out the delivery terms."
+      ],
+      "phrases": "sign a contract; renew a contract",
+      "forms": "contractual (adjective); contracts (plural)",
+      "prompt": "We must meet our ___ duties to the customer.",
+      "answer": "contractual",
+      "task": "A designer agrees to build a website for a client. Write a sentence using “contract”."
+    },
+    {
+      "number": 23,
+      "term": "launch",
+      "meaning": "Start or introduce something new.",
+      "examples": [
+        "The company will launch a new app in July.",
+        "They launched a service for small shops."
+      ],
+      "phrases": "launch a product; launch a campaign",
+      "forms": "launch (also a noun); launched (past form)",
+      "prompt": "The product ___ attracted many customers.",
+      "answer": "launch",
+      "task": "A local library is starting a reading club. Write a sentence using “launch”."
+    },
+    {
+      "number": 24,
+      "term": "acknowledge",
+      "meaning": "Show that you have received something, or accept that something is true.",
+      "examples": [
+        "Please acknowledge receipt of this email.",
+        "The manager acknowledged the mistake."
+      ],
+      "phrases": "acknowledge receipt; acknowledge a problem",
+      "forms": "acknowledgment / acknowledgement (noun)",
+      "prompt": "We received an ___ of our application.",
+      "answer": "acknowledgment / acknowledgement",
+      "task": "A supplier tells you an order will be late. Write a sentence using “acknowledge”."
+    },
+    {
+      "number": 25,
+      "term": "predict",
+      "meaning": "Say what you think will happen in the future.",
+      "examples": [
+        "Analysts predict stronger sales next year.",
+        "It is hard to predict customer demand."
+      ],
+      "phrases": "predict demand; predict a result",
+      "forms": "prediction (noun); predictable (adjective)",
+      "prompt": "Her ___ about falling prices was correct.",
+      "answer": "prediction",
+      "task": "A café expects more visitors during a festival. Write a sentence using “predict”."
+    },
+    {
+      "number": 26,
+      "term": "itinerary",
+      "meaning": "A plan showing the places and times for a trip.",
+      "examples": [
+        "I emailed the itinerary to the team.",
+        "Our itinerary includes two days in Osaka."
+      ],
+      "phrases": "prepare an itinerary; a travel itinerary",
+      "forms": "itineraries (plural)",
+      "prompt": "The travel agent prepared separate ___ for the two groups.",
+      "answer": "itineraries",
+      "task": "You are visiting three cities in a week. Write a sentence using “itinerary”."
+    },
+    {
+      "number": 27,
+      "term": "urgent",
+      "meaning": "Needing attention or action very soon.",
+      "examples": [
+        "This is an urgent request.",
+        "Please call me about an urgent problem."
+      ],
+      "phrases": "an urgent matter; urgent action",
+      "forms": "urgently (adverb); urgency (noun)",
+      "prompt": "We ___ need a replacement part.",
+      "answer": "urgently",
+      "task": "A water pipe breaks in an office. Write a sentence using “urgent”."
+    },
+    {
+      "number": 28,
+      "term": "deteriorate",
+      "meaning": "Become worse in quality or condition.",
+      "examples": [
+        "The road began to deteriorate after the floods.",
+        "Service quality has deteriorated recently."
+      ],
+      "phrases": "conditions deteriorate; deteriorate over time",
+      "forms": "deterioration (noun); deteriorating (present participle)",
+      "prompt": "The report describes the ___ of the old bridge.",
+      "answer": "deterioration",
+      "task": "A machine works less well each month. Write a sentence using “deteriorate”."
+    },
+    {
+      "number": 29,
+      "term": "desirable",
+      "meaning": "Worth wanting because it is useful or attractive.",
+      "examples": [
+        "Previous experience is desirable for this job.",
+        "Good transport links make the area desirable."
+      ],
+      "phrases": "a desirable feature; highly desirable",
+      "forms": "desirability (noun); undesirable (opposite)",
+      "prompt": "The noise is an ___ feature of the apartment.",
+      "answer": "undesirable",
+      "task": "Describe a desirable feature of a place to work."
+    },
+    {
+      "number": 30,
+      "term": "allowance",
+      "meaning": "An amount of money given regularly or for a particular purpose.",
+      "examples": [
+        "Employees receive a travel allowance.",
+        "The job includes a monthly phone allowance."
+      ],
+      "phrases": "a travel allowance; a monthly allowance",
+      "forms": "allowances (plural)",
+      "prompt": "Staff receive meal ___ when they work late.",
+      "answer": "allowances",
+      "task": "A company helps staff pay for transport. Write a sentence using “allowance”."
+    },
+    {
+      "number": 31,
+      "term": "agenda",
+      "meaning": "A list of subjects to discuss at a meeting.",
+      "examples": [
+        "Please send the agenda before the meeting.",
+        "Safety is the first item on the agenda."
+      ],
+      "phrases": "set the agenda; an agenda item",
+      "forms": "agendas (plural)",
+      "prompt": "We added staff training to the meeting ___.",
+      "answer": "agenda",
+      "task": "Your team needs to discuss a new project. Write a sentence using “agenda”."
+    },
+    {
+      "number": 32,
+      "term": "refund",
+      "meaning": "Money returned to someone who has paid for something.",
+      "examples": [
+        "The store gave me a full refund.",
+        "You can request a refund for the canceled trip."
+      ],
+      "phrases": "request a refund; a full refund",
+      "forms": "refund (also a verb); refunded (past form)",
+      "prompt": "The airline ___ the cost of my unused ticket.",
+      "answer": "refunded",
+      "task": "A customer receives a broken lamp. Write a sentence using “refund”."
+    },
+    {
+      "number": 33,
+      "term": "ensure",
+      "meaning": "Make certain that something happens or is true.",
+      "examples": [
+        "Please ensure that the doors are locked.",
+        "Regular checks ensure safe operation."
+      ],
+      "phrases": "ensure safety; ensure that something happens",
+      "forms": "ensured (past form); ensuring (present participle)",
+      "prompt": "The new checklist helps ___ that every order is complete.",
+      "answer": "ensure",
+      "task": "You want all guests to receive an invitation. Write a sentence using “ensure”."
+    },
+    {
+      "number": 34,
+      "term": "dispatch",
+      "meaning": "Send goods or people to a place.",
+      "examples": [
+        "We will dispatch your order tomorrow.",
+        "The office dispatched a driver to the airport."
+      ],
+      "phrases": "dispatch an order; dispatch a team",
+      "forms": "dispatch (also a noun); dispatched (past form)",
+      "prompt": "Your package was ___ this morning.",
+      "answer": "dispatched",
+      "task": "A repair company sends someone to fix a lift. Write a sentence using “dispatch”."
+    },
+    {
+      "number": 35,
+      "term": "adequate",
+      "meaning": "Enough or good enough for a particular need.",
+      "examples": [
+        "The room has adequate lighting.",
+        "We need adequate time to finish the work."
+      ],
+      "phrases": "adequate supplies; adequate for a task",
+      "forms": "adequately (adverb); inadequate (opposite)",
+      "prompt": "All staff must be ___ trained before using the machine.",
+      "answer": "adequately",
+      "task": "A meeting room may be too small for twenty people. Write a sentence using “adequate”."
+    },
+    {
+      "number": 36,
+      "term": "initiative",
+      "meaning": "A new plan for improving something, or the ability to act without being told.",
+      "examples": [
+        "The city started an initiative to reduce waste.",
+        "She showed initiative by solving the problem herself."
+      ],
+      "phrases": "launch an initiative; show initiative",
+      "forms": "initiatives (plural); initiate (verb meaning start)",
+      "prompt": "The school introduced two new reading ___.",
+      "answer": "initiatives",
+      "task": "A worker solves a small problem without waiting for instructions. Write a sentence using “initiative”."
+    },
+    {
+      "number": 37,
+      "term": "stimulate",
+      "meaning": "Encourage activity, interest, or growth.",
+      "examples": [
+        "The discount helped stimulate sales.",
+        "The question stimulated a useful discussion."
+      ],
+      "phrases": "stimulate growth; stimulate interest",
+      "forms": "stimulation (noun); stimulating (adjective)",
+      "prompt": "We had a ___ discussion that gave us new ideas.",
+      "answer": "stimulating",
+      "task": "A town wants more people to visit its shops. Write a sentence using “stimulate”."
+    },
+    {
+      "number": 38,
+      "term": "warranty",
+      "meaning": "A written promise to repair or replace a product under stated conditions.",
+      "examples": [
+        "The printer comes with a two-year warranty.",
+        "This repair is covered by the warranty."
+      ],
+      "phrases": "under warranty; a warranty covers something",
+      "forms": "warranties (plural)",
+      "prompt": "The company offers longer ___ on its premium products.",
+      "answer": "warranties",
+      "task": "A new fridge stops working after a month. Write a sentence using “warranty”."
+    },
+    {
+      "number": 39,
+      "term": "relevant",
+      "meaning": "Closely connected to the subject or situation.",
+      "examples": [
+        "Please include only relevant information.",
+        "Her experience is relevant to this job."
+      ],
+      "phrases": "relevant information; relevant to something",
+      "forms": "relevance (noun); irrelevant (opposite)",
+      "prompt": "The manager questioned the ___ of the old sales figures.",
+      "answer": "relevance",
+      "task": "You are choosing examples for a talk about customer service. Write a sentence using “relevant”."
+    },
+    {
+      "number": 40,
+      "term": "inspect",
+      "meaning": "Look at something carefully to check its condition.",
+      "examples": [
+        "A technician will inspect the equipment.",
+        "We inspected the rooms before the guests arrived."
+      ],
+      "phrases": "inspect a building; inspect for damage",
+      "forms": "inspection (noun); inspector (person)",
+      "prompt": "The restaurant passed its safety ___.",
+      "answer": "inspection",
+      "task": "A delivery arrives with a damaged box. Write a sentence using “inspect”."
+    },
+    {
+      "number": 41,
+      "term": "resume",
+      "meaning": "Start again after a pause. Here, this is the verb “resume”.",
+      "examples": [
+        "The meeting will resume after lunch.",
+        "They resumed work when the rain stopped."
+      ],
+      "phrases": "resume work; resume a meeting",
+      "forms": "resumed (past form); resumption (noun). “Résumé” is a different noun: a job-history document.",
+      "prompt": "Flights ___ after the airport reopened.",
+      "answer": "resumed",
+      "task": "A class pauses because of a power cut. Write a sentence using “resume”."
+    },
+    {
+      "number": 42,
+      "term": "endeavor",
+      "meaning": "Try hard to do something; this is a formal word.",
+      "examples": [
+        "We endeavor to answer all messages within a day.",
+        "The team endeavored to improve the service."
+      ],
+      "phrases": "endeavor to help; endeavor to improve",
+      "forms": "endeavor (also a noun); endeavour (UK spelling)",
+      "prompt": "Please ___ to arrive before the doors close.",
+      "answer": "endeavor / endeavour",
+      "task": "A business wants to reduce delays. Write a sentence using “endeavor”."
+    },
+    {
+      "number": 43,
+      "term": "margin",
+      "meaning": "The amount by which one thing is above or below another; in business, often profit as a share of sales.",
+      "examples": [
+        "The company has a small profit margin.",
+        "We included a margin for unexpected costs."
+      ],
+      "phrases": "profit margin; a margin of error",
+      "forms": "margins (plural)",
+      "prompt": "Rising costs have reduced our profit ___.",
+      "answer": "margins",
+      "task": "A shop has little money left after paying its costs. Write a sentence using “margin”."
+    },
+    {
+      "number": 44,
+      "term": "possess",
+      "meaning": "Have or own something; this is a formal word.",
+      "examples": [
+        "Applicants must possess a valid driving license.",
+        "She possesses excellent language skills."
+      ],
+      "phrases": "possess skills; possess a qualification",
+      "forms": "possession (noun); possessed (past form)",
+      "prompt": "The documents are in the manager's ___.",
+      "answer": "possession",
+      "task": "A role needs someone with strong computer skills. Write a sentence using “possess”."
+    },
+    {
+      "number": 45,
+      "term": "retain",
+      "meaning": "Keep something or continue to have it.",
+      "examples": [
+        "Please retain a copy of the receipt.",
+        "The company wants to retain experienced staff."
+      ],
+      "phrases": "retain staff; retain information",
+      "forms": "retention (noun); retained (past form)",
+      "prompt": "Better training can improve staff ___.",
+      "answer": "retention",
+      "task": "A club wants its members to stay next year. Write a sentence using “retain”."
+    },
+    {
+      "number": 46,
+      "term": "contribute",
+      "meaning": "Give money, time, ideas, or effort to help something.",
+      "examples": [
+        "Everyone contributed ideas during the meeting.",
+        "The company contributes to local charities."
+      ],
+      "phrases": "contribute to a project; contribute ideas",
+      "forms": "contribution (noun); contributor (person)",
+      "prompt": "Thank you for your ___ to the team project.",
+      "answer": "contribution",
+      "task": "You can help a community event for two hours. Write a sentence using “contribute”."
+    },
+    {
+      "number": 47,
+      "term": "obligation",
+      "meaning": "Something you must do because of a rule, agreement, or duty.",
+      "examples": [
+        "We have an obligation to protect customer information.",
+        "The contract explains each party's obligations."
+      ],
+      "phrases": "meet an obligation; an obligation to do something",
+      "forms": "obliged / obligated (adjectives or verb forms)",
+      "prompt": "Under the agreement, we are ___ to provide monthly reports.",
+      "answer": "obliged / obligated",
+      "task": "A shop promises to replace a faulty item. Write a sentence using “obligation”."
+    },
+    {
+      "number": 48,
+      "term": "preliminary",
+      "meaning": "Done before the main work to prepare or check something.",
+      "examples": [
+        "These are only preliminary results.",
+        "We held a preliminary meeting to discuss the idea."
+      ],
+      "phrases": "preliminary findings; a preliminary discussion",
+      "forms": "preliminarily (adverb, uncommon)",
+      "prompt": "The team made a ___ plan before choosing the final design.",
+      "answer": "preliminary",
+      "task": "You need to check a building before planning repairs. Write a sentence using “preliminary”."
+    },
+    {
+      "number": 49,
+      "term": "estimate",
+      "meaning": "Make a careful guess about an amount, cost, or time.",
+      "examples": [
+        "We estimate that the work will take three days.",
+        "The builder estimated the repair cost."
+      ],
+      "phrases": "estimate a cost; estimate how long something takes",
+      "forms": "estimate (also a noun); estimated (adjective or past form)",
+      "prompt": "The ___ cost is lower than we expected.",
+      "answer": "estimated",
+      "task": "You are planning a trip and do not know the exact cost. Write a sentence using “estimate”."
+    },
+    {
+      "number": 50,
+      "term": "integrate",
+      "meaning": "Combine things so that they work together as a whole.",
+      "examples": [
+        "We will integrate the new software with our existing system.",
+        "The course integrates reading and speaking practice."
+      ],
+      "phrases": "integrate with a system; integrate into a team",
+      "forms": "integration (noun); integrated (adjective or past form)",
+      "prompt": "The ___ of the two systems took several weeks.",
+      "answer": "integration",
+      "task": "A company wants one system for sales and stock records. Write a sentence using “integrate”."
+    }
+  ]
+}

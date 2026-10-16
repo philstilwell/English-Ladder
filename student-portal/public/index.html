@@ -37,6 +37,7 @@
         <button id="activities-toggle" class="overview-toggle activities-toggle" type="button" aria-label="Show Activities" aria-expanded="false" aria-controls="activities-submenu">Activities <span aria-hidden="true">▾</span></button>
         <ul id="activities-submenu" class="overview-submenu" hidden></ul>
       </div>
+      <a id="resources-nav" href="#resources">Resources</a>
       <div class="account-menu">
         <a id="account-nav" href="#account">Account</a>
         <button id="logout" class="text-button menu-sign-out" type="button" hidden>Sign out <span aria-hidden="true">↗</span></button>
@@ -146,6 +147,136 @@
           <div id="grammar-practice" hidden></div>
           <div id="business-terms" hidden></div>
         </article>
+      </section>
+      <section id="resources" class="section-panel resources-page" aria-labelledby="resources-title" hidden>
+        <div class="section-heading"><h2 id="resources-title" tabindex="-1">Resources for your English</h2></div>
+        <p class="section-intro">Choose a skill. Open one site and practice for 5–10 minutes. The “Start here” links are good places to begin.</p>
+        <nav class="resource-filters" aria-label="Choose a resource skill">
+          <a href="#resources" aria-current="page">All resources</a>
+          <a href="#resources/listening">Listening</a>
+          <a href="#resources/speaking">Speaking</a>
+          <a href="#resources/reading">Reading and news</a>
+          <a href="#resources/grammar">Grammar and words</a>
+          <a href="#resources/writing">Writing and work</a>
+        </nav>
+        <p class="resource-note">Links open in a new tab. Some sites show ads or offer paid extras. Your work on these sites is not saved in English Ladder.</p>
+        <p id="resource-count" class="resource-note" role="status"></p>
+        <section class="resource-group" data-resource-group="listening" aria-labelledby="resources-listening">
+          <h3 id="resources-listening">Listening</h3>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <p class="resource-level">A1 · Start here</p>
+              <h4><a href="https://learnenglish.britishcouncil.org/free-resources/listening/a1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">British Council: A1 listening <span aria-hidden="true">↗</span></a></h4>
+              <p>Listen to short conversations. Read the words, then try the exercises.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Listen once without reading. Then listen again with the text.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">A1–C1 · Choose your level</p>
+              <h4><a href="https://elllo.org/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ELLLO <span aria-hidden="true">↗</span></a></h4>
+              <p>Hear people from different countries. Many lessons have text and a short quiz.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Choose A1 or A2 for an easier start.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">Start with “Easy”</p>
+              <h4><a href="https://www.esl-lab.com/easy/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Randall’s Listening Lab <span aria-hidden="true">↗</span></a></h4>
+              <p>Listen to everyday conversations and answer questions.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Try one quiz. Listen again to the parts you missed.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">Clear, slow audio</p>
+              <h4><a href="https://spotlightenglish.com/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Spotlight English <span aria-hidden="true">↗</span></a></h4>
+              <p>Listen to stories about people, places, and ideas. Read the words as you listen.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Choose one story. Say two things you learned.</p>
+            </article>
+          </div>
+        </section>
+        <section class="resource-group" data-resource-group="speaking" aria-labelledby="resources-speaking">
+          <h3 id="resources-speaking">Speaking</h3>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <p class="resource-level">A1 · Start here</p>
+              <h4><a href="https://learnenglish.britishcouncil.org/free-resources/speaking/a1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">British Council: A1 speaking <span aria-hidden="true">↗</span></a></h4>
+              <p>Watch short videos. Learn useful phrases for everyday conversations.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Pause the video and say each phrase aloud.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">Short conversations</p>
+              <h4><a href="https://www.eslfast.com/easydialogs/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ESL Fast: Easy Conversations <span aria-hidden="true">↗</span></a></h4>
+              <p>Practice simple conversations about daily life.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Read both parts aloud. Then try one part without looking.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">Words in real videos</p>
+              <h4><a href="https://youglish.com/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouGlish <span aria-hidden="true">↗</span></a></h4>
+              <p>Type a word or phrase. Hear how people say it in video clips.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Listen to one short sentence. Pause and say it aloud.</p>
+            </article>
+          </div>
+        </section>
+        <section class="resource-group" data-resource-group="reading" aria-labelledby="resources-reading">
+          <h3 id="resources-reading">Reading and news</h3>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <p class="resource-level">Levels 1–3 · New stories</p>
+              <h4><a href="https://www.newsinlevels.com/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">News in Levels <span aria-hidden="true">↗</span></a></h4>
+              <p>Read and listen to short news stories. Each story has three versions.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Start with Level 1. Tell the story in two sentences.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">Levels 0–6 · New lessons</p>
+              <h4><a href="https://breakingnewsenglish.com/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Breaking News English <span aria-hidden="true">↗</span></a></h4>
+              <p>Read news with listening and language exercises.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Choose an “Easier” lesson and start with Level 0 or 1.</p>
+            </article>
+          </div>
+        </section>
+        <section class="resource-group" data-resource-group="grammar" aria-labelledby="resources-grammar">
+          <h3 id="resources-grammar">Grammar and words</h3>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <p class="resource-level">A1–A2 · Start here</p>
+              <h4><a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">British Council: A1–A2 grammar <span aria-hidden="true">↗</span></a></h4>
+              <p>Read a short explanation. Check your understanding with exercises.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Choose one topic from your assessment’s “Things to practice”.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">A1–C2 · Choose your level</p>
+              <h4><a href="https://www.cambridgeenglish.org/learning-english/activities-for-learners/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Cambridge English activities <span aria-hidden="true">↗</span></a></h4>
+              <p>Find short exercises for grammar, words, and other English skills.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Choose “Basic” for A1–A2 practice. Pick a five-minute activity.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">Sentences and translations</p>
+              <h4><a href="https://www.manythings.org/rndaudio/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">ManyThings: Sentences with Audio <span aria-hidden="true">↗</span></a></h4>
+              <p>Hear example sentences at normal or slow speed. Translations include Japanese and other languages.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Choose three sentences. Listen and repeat each one.</p>
+            </article>
+          </div>
+        </section>
+        <section class="resource-group" data-resource-group="writing" aria-labelledby="resources-writing">
+          <h3 id="resources-writing">Writing and work</h3>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <p class="resource-level">Free writing practice</p>
+              <h4><a href="https://writeandimprove.com/free" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Cambridge Write &amp; Improve <span aria-hidden="true">↗</span></a></h4>
+              <p>Choose a task and write a short answer. Get automatic feedback, then make changes.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Try a beginner task. You can start without an account.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">A2–B1 · Work emails</p>
+              <h4><a href="https://learnenglish.britishcouncil.org/free-resources/business/english-emails" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">British Council: English for emails <span aria-hidden="true">↗</span></a></h4>
+              <p>Learn how to start, finish, and check an email in English.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Write a short practice email to arrange a meeting.</p>
+            </article>
+            <article class="resource-card">
+              <p class="resource-level">Longer explanations</p>
+              <h4><a href="https://www.thepunctuationguide.com/comma.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">The Punctuation Guide <span aria-hidden="true">↗</span></a></h4>
+              <p>See how to use commas and other marks in writing.</p>
+              <p class="resource-tip"><strong>Try this:</strong> Read one rule and its examples. Then write your own sentence.</p>
+            </article>
+          </div>
+        </section>
+        <p class="resource-note resource-reviewed">Links checked <time datetime="2026-10-15">October 15, 2026</time>. If a link does not work, please tell Phil.</p>
       </section>
       <section id="account" class="section-panel" aria-labelledby="account-title" hidden>
         <div class="section-heading"><h2 id="account-title" tabindex="-1">Your account</h2></div>

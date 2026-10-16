@@ -52,6 +52,47 @@ test('deep links open the selected page and show only student-safe content',asyn
  assert.equal(d.querySelectorAll('.practice-item details').length,1);
  dom.window.close();
 });
+test('resources support skill links, history navigation and teacher previews',async()=>{
+ for(const role of ['student','teacher']){
+  const dom=setup(null,'https://ab26.englishladder.com/#resources/speaking',role);await flush();
+  const w=dom.window,d=w.document;
+  assert.equal(d.getElementById('resources').hidden,false);
+  assert.equal(d.getElementById('feedback').hidden,true);
+  assert.equal(d.getElementById('resources-nav').getAttribute('aria-current'),'page');
+  assert.equal(d.querySelectorAll('.resource-group:not([hidden])').length,1);
+  assert.equal(d.querySelector('.resource-group:not([hidden])').dataset.resourceGroup,'speaking');
+  assert.equal(d.title,'English resources · English Ladder');
+  d.querySelector('.resource-filters a[href="#resources/reading"]').click();await flush();
+  assert.equal(d.querySelector('.resource-group:not([hidden])').dataset.resourceGroup,'reading');
+  assert.equal(d.activeElement.id,'resources-title');
+  w.location.hash='resources/unknown';await flush();
+  assert.equal(d.querySelectorAll('.resource-group[hidden]').length,0);
+  assert.equal(d.querySelector('.resource-filters a[aria-current]').hash,'#resources');
+  w.location.hash='feedback';await flush();
+  assert.equal(d.getElementById('resources').hidden,true);
+  assert.equal(d.getElementById('resources-nav').hasAttribute('aria-current'),false);
+  dom.window.close();
+ }
+});
+test('resource links open separately without passing student data or a referrer',()=>{
+ const dom=new JSDOM(html,{url:'https://ab26.englishladder.com/'}),d=dom.window.document;
+ const links=[...d.querySelectorAll('.resource-card a')];
+ assert.ok(links.length>0);
+ assert.equal(new Set(links.map(link=>link.href)).size,links.length);
+ for(const link of links){
+  const url=new URL(link.href);
+  assert.equal(url.protocol,'https:');
+  assert.equal(url.search,'');
+  assert.equal(url.hash,'');
+  assert.equal(link.target,'_blank');
+  assert.ok(link.relList.contains('noopener'));
+  assert.ok(link.relList.contains('noreferrer'));
+  assert.equal(link.referrerPolicy || link.getAttribute('referrerpolicy'),'no-referrer');
+ }
+ assert.equal(d.getElementById('dashboard-view').hidden,true);
+ assert.equal(d.querySelectorAll('#resources iframe,#resources script,#resources form').length,0);
+ dom.window.close();
+});
 test('late page responses cannot overwrite a newer selection',async()=>{
  let resolveFirst;
  const dom=setup(path=>path.endsWith('/'+feedback.id)?new Promise(resolve=>{resolveFirst=resolve;}):null);

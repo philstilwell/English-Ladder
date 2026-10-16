@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz', 'quiz-results', 'account', 'activities'];
+  const sections = ['overview', 'assessments', 'sessions', 'feedback', 'quiz', 'quiz-results', 'account', 'activities', 'resources'];
   const assessmentSections = ['summary', 'strengths', 'patterns', 'next'];
   const validId = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
   let authenticated = false, checking = false, identityRevision = 0, pageRevision = 0;
@@ -188,6 +188,22 @@
     }
     $('session-select').value = id || '';
   }
+  function renderResources(requested, focus) {
+    const groups = [...document.querySelectorAll('[data-resource-group]')];
+    const selected = groups.some(group => group.dataset.resourceGroup === requested) ? requested : '';
+    let count = 0;
+    for (const group of groups) {
+      group.hidden = Boolean(selected && group.dataset.resourceGroup !== selected);
+      if (!group.hidden) count += group.querySelectorAll('.resource-card').length;
+    }
+    for (const link of document.querySelectorAll('.resource-filters a')) {
+      if (link.hash === '#resources' + (selected ? '/' + selected : '')) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    }
+    $('resource-count').textContent = count + ' resources';
+    document.title = 'English resources · English Ladder';
+    if (focus) $('resources-title').focus();
+  }
   function navigate(focus = false) {
     if (!authenticated) return;
     const [part, requested, extra] = location.hash.slice(1).split('/');
@@ -217,6 +233,7 @@
         if (focus) $('quiz-results-title').focus();
       }
       if (selected === 'activities') { renderActivityPage(); if (focus) $('activity-title').focus(); }
+      if (selected === 'resources') renderResources(extra === undefined ? requested : '', focus);
       if (selected === 'account') {
         document.title = 'My account · English Ladder';
         loadSettings();

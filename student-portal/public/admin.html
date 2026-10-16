@@ -121,17 +121,23 @@
           <div><label for="endsOn">Course end date</label><input id="endsOn" name="endsOn" type="date"></div>
         </div><div class="hours-grid"><div><label for="hoursAuthorized">Hours authorized</label><input id="hoursAuthorized" name="hoursAuthorized" type="number" step="0.25"></div><div><label for="hoursUsed">Hours used</label><input id="hoursUsed" name="hoursUsed" type="number" step="0.25"></div><div><label for="hoursPending">Hours upcoming / pending</label><input id="hoursPending" name="hoursPending" type="number" step="0.25"></div><div><label for="hoursRemaining">Hours remaining</label><input id="hoursRemaining" name="hoursRemaining" type="number" step="0.25"></div></div><p class="field-note">Course dates and hours are your records. They do not automatically pause a site or change when a Zoom meeting finishes.</p></fieldset>
         <fieldset><legend>Your private notes</legend><label for="notes" class="visually-hidden">Private notes</label><textarea id="notes" name="notes" rows="4" maxlength="4000"></textarea></fieldset>
-        <fieldset class="student-activity-settings"><legend>Student activities</legend>
-          <div id="student-activities"></div>
-        </fieldset>
-        <fieldset class="student-activity-settings"><legend>Student resources</legend>
-          <p class="field-note">Check the sites this student can see on their Resources page, then save changes. Uncheck all to show no resources. New accounts start with all resources checked.</p>
-          <div class="resource-selection-actions" role="group" aria-label="Select student resources">
-            <button id="select-all-resources" class="secondary-button" type="button" aria-controls="student-resources">Select all</button>
-            <button id="clear-all-resources" class="secondary-button" type="button" aria-controls="student-resources">Clear all</button>
-          </div>
-          <div id="student-resources"></div>
-        </fieldset>
+        <details id="student-activities-panel" class="student-settings-accordion">
+          <summary>Student activities</summary>
+          <fieldset class="student-activity-settings"><legend class="visually-hidden">Student activities</legend>
+            <div id="student-activities"></div>
+          </fieldset>
+        </details>
+        <details id="student-resources-panel" class="student-settings-accordion">
+          <summary>Student resources</summary>
+          <fieldset class="student-activity-settings"><legend class="visually-hidden">Student resources</legend>
+            <p class="field-note">Check the sites this student can see on their Resources page, then save changes. Uncheck all to show no resources. New accounts start with all resources checked.</p>
+            <div class="resource-selection-actions" role="group" aria-label="Select student resources">
+              <button id="select-all-resources" class="secondary-button" type="button" aria-controls="student-resources">Select all</button>
+              <button id="clear-all-resources" class="secondary-button" type="button" aria-controls="student-resources">Clear all</button>
+            </div>
+            <div id="student-resources"></div>
+          </fieldset>
+        </details>
         <div class="form-actions"><button id="save-student" class="primary-button" type="submit">Save student</button><a href="#students" class="secondary-button">Back to students</a><span id="save-state" role="status"></span></div>
       </form>
       <section id="delete-account-panel" class="delete-account-panel" aria-labelledby="delete-account-title" hidden>

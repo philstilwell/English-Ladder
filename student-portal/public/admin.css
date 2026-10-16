@@ -40,6 +40,7 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 
 .resource-choice-group + .resource-choice-group{margin-top:16px}.resource-choice-group h3{font-size:.9rem;color:var(--muted);margin:0 0 6px}
 .resource-selection-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}.resource-selection-actions button{background:#fff;cursor:pointer}.resource-selection-actions button:hover{background:#eef2fc}
+.student-settings-accordion{border:1px solid var(--line);border-radius:10px;background:#fff;margin:0 0 18px}.student-settings-accordion>summary{cursor:pointer;padding:14px 28px;font-size:1.05rem;font-weight:650}.student-settings-accordion>summary::marker{color:var(--blue)}.student-settings-accordion>summary:focus-visible{outline:3px solid var(--blue);outline-offset:-4px;border-radius:10px}.student-settings-accordion>fieldset{border:0;border-radius:0;margin:0;padding:0 28px 18px;background:transparent}@media(max-width:600px){.student-settings-accordion>summary{padding:14px 18px;font-size:.95rem}.student-settings-accordion>fieldset{padding:0 18px 14px}}
 
 .resolve-question{font-size:.7rem;padding:7px 10px;min-height:30px}.resolve-status:empty{display:none}.resolve-status{margin:6px 0 0;overflow-wrap:anywhere}
 

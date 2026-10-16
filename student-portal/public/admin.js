@@ -632,6 +632,7 @@
   function editStudent(student) {
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); setSaveState('');
+    for (const id of ['student-activities-panel', 'student-resources-panel']) $(id).open = false;
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     const selected = student?.visibleActivities ?? activityTools.map(activity => activity.id);
     for (const activity of activityTools) {

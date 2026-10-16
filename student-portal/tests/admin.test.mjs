@@ -232,7 +232,7 @@ test('both save buttons and notices track edits, reverts, selections, and succes
   d.querySelector('.student-name').click();await flush();
   const notice=text=>{
     for(const id of ['save-state','save-state-top'])assert.equal($(id).textContent,text);
-    for(const id of ['save-student','save-student-top'])assert.equal($(id).disabled,text!=='Unsaved changes');
+    for(const id of ['save-student','save-student-top','discard-student','discard-student-top'])assert.equal($(id).disabled,text!=='Unsaved changes');
     const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);
     assert.equal(unload.defaultPrevented,text==='Unsaved changes'||text==='Saving…');
   };
@@ -260,6 +260,63 @@ test('both save buttons and notices track edits, reverts, selections, and succes
   assert.equal($('save-student-top').disabled,true);assert.equal($('save-state-top').classList.contains('unsaved'),false);
   $('notes').value='Another edit';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));notice('Unsaved changes');
   $('sign-out').click();notice('');await flush();w.close();
+});
+
+test('both Discard buttons restore the saved form in place without requests and use the latest successful save',async()=>{
+  let requests=0,writes=0,saved=structuredClone(fixture);
+  const dom=browser((path,options)=>{
+    requests++;
+    if(path==='/api/admin/students')return Response.json({activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[saved]});
+    if(options?.method==='PUT'){writes++;saved={...saved,...JSON.parse(options.body),revision:saved.revision+1};return Response.json({student:saved});}
+  });
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+  const formValues=()=>[...d.querySelectorAll('#student-form input,#student-form select,#student-form textarea')].map(input=>[input.id,input.value,input.type==='checkbox'?input.checked:null]);
+  const original=formValues(),hash=w.location.hash,length=w.history.length;
+  for(const button of ['discard-student-top','discard-student']){
+    assert.equal($(button).disabled,true);
+    for(const [id,value] of [['nickname','Unsaved nickname'],['notes','Unsaved notes'],['zoomNames','Unsaved Zoom name'],['newPassword','fictional-password'],['confirmPassword','fictional-password'],['hoursUsed','8'],['email','changed@example.test'],['status','paused'],['timeZone','Europe/London']]){
+      $(id).value=value;$(id).dispatchEvent(new w.Event('input',{bubbles:true}));
+    }
+    $('student-activities-panel').open=true;$('student-resources-panel').open=true;
+    $('clear-all-activities').click();$('clear-all-resources').click();
+    const before=requests;$(button).click();await flush();
+    assert.deepEqual(formValues(),original);assert.equal(requests,before);assert.equal(writes,0);
+    assert.equal(w.location.hash,hash);assert.equal(w.history.length,length);assert.equal($('edit-view').hidden,false);
+    assert.equal($('student-activities-panel').open,true);assert.equal($('student-resources-panel').open,true);
+    assert.equal($('student-activities-count').textContent,'2 selected');assert.equal($('student-resources-count').textContent,'2 selected');
+    for(const id of ['save-state','save-state-top'])assert.equal($(id).textContent,'Changes discarded');
+    for(const id of ['save-student','save-student-top','discard-student','discard-student-top'])assert.equal($(id).disabled,true);
+    const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);assert.equal(unload.defaultPrevented,false);
+  }
+  $('nickname').value='New saved nickname';$('nickname').dispatchEvent(new w.Event('input',{bubbles:true}));$('clear-all-resources').click();
+  $('save-student-top').click();await flush();assert.equal(writes,1);const latest=formValues();
+  $('nickname').value='Later unsaved nickname';$('nickname').dispatchEvent(new w.Event('input',{bubbles:true}));$('select-all-resources').click();
+  $('discard-student').click();await flush();assert.deepEqual(formValues(),latest);assert.equal(writes,1);
+  assert.equal($('nickname').value,'New saved nickname');assert.equal($('student-resources-count').textContent,'0 selected');w.close();
+});
+
+test('Discard restores registration defaults, resets suggested addresses, and is blocked during saves',async()=>{
+  let writes=0,finishSave,body;
+  const dom=browser((path,options)=>{if(path==='/api/admin/students'&&options?.method==='POST'){writes++;body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);$('register-nav').click();await flush();
+  const change=(id,value)=>{$(id).value=value;$(id).dispatchEvent(new w.Event('input',{bubbles:true}));};
+  change('firstName','Taylor');change('lastName','Testperson');change('studentId','manualaddress');change('newPassword','fictional-password');
+  $('clear-all-activities').click();$('clear-all-resources').click();$('discard-student-top').click();
+  for(const id of ['firstName','lastName','studentId','newPassword','confirmPassword'])assert.equal($(id).value,'');
+  assert.equal($('status').value,'active');assert.equal($('timeZone').value,'America/New_York');
+  assert.equal(d.querySelectorAll('#student-activities input:checked').length,ACTIVITY_TOOLS.length);
+  assert.equal(d.querySelectorAll('#student-resources input:checked').length,RESOURCE_TOOLS.length);
+  assert.equal(writes,0);assert.equal(w.location.hash,'#register');
+  change('firstName','Taylor');change('lastName','Testperson');assert.match($('studentId').value,/^tt\d{2}$/);
+  change('zoomNames','Taylor Test');$('save-student-top').click();assert.equal(writes,1);
+  for(const id of ['discard-student','discard-student-top']){
+    assert.equal($(id).disabled,true);$(id).dispatchEvent(new w.Event('click'));
+  }
+  assert.equal($('firstName').value,'Taylor');assert.equal($('save-state-top').textContent,'Saving…');
+  finishSave(Response.json({error:'Preview save failed.'},{status:503}));await flush();
+  assert.equal($('discard-student').disabled,false);$('discard-student').click();
+  assert.equal($('firstName').value,'');assert.equal($('message').hidden,true);assert.equal($('save-state-top').textContent,'Changes discarded');
+  assert.equal(writes,1);assert.equal(body.firstName,'Taylor');w.close();
 });
 
 test('failed saves retain unsaved edits, and a late save never restores data after page hide',async()=>{

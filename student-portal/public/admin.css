@@ -44,6 +44,7 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 .selection-count{display:inline-block;vertical-align:middle;margin-left:6px;padding:2px 7px;border-radius:5px;background:#edf0f6;color:#52607a;font-size:.73rem;font-weight:600;white-space:nowrap}.selection-count:empty{display:none}
 .form-actions .unsaved{color:#805b06;font-weight:650}
 .form-actions .primary-button:disabled{cursor:default;background:var(--blue)}
+.form-actions .secondary-button:disabled{cursor:default}
 
 .resolve-question{font-size:.7rem;padding:7px 10px;min-height:30px}.resolve-status:empty{display:none}.resolve-status{margin:6px 0 0;overflow-wrap:anywhere}
 

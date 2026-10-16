@@ -713,6 +713,19 @@
       ...['student-activities', 'student-resources'].map(id => [...$(id).querySelectorAll('input:checked')].map(box => box.value))
     ]);
   }
+  function discardStudentChanges() {
+    if (saving || deleting || !hasUnsavedEdits()) return;
+    const values = JSON.parse(savedFormState);
+    const inputIds = [...fields, 'zoomNames', 'newPassword', 'confirmPassword'];
+    inputIds.forEach((id, index) => { $(id).value = values[index]; });
+    ['student-activities', 'student-resources'].forEach((id, index) => {
+      const selected = new Set(values[inputIds.length + index]);
+      for (const box of $(id).querySelectorAll('input[type="checkbox"]')) box.checked = selected.has(box.value);
+    });
+    addressEdited = Boolean(current?.studentId);
+    updateSelectionCounts(); message(''); setSaveState('Changes discarded');
+  }
+  for (const id of ['discard-student', 'discard-student-top']) $(id).addEventListener('click', discardStudentChanges);
   function updateUnsavedNotice() {
     if (!signedIn || savedFormState === null || saving || current?.deletionPending) return;
     setSaveState(studentFormState() !== savedFormState ? 'Unsaved changes' : '');
@@ -816,6 +829,7 @@
       $(id).textContent = label;
       $(id).disabled = saving || !hasUnsavedEdits();
     }
+    for (const id of ['discard-student', 'discard-student-top']) $(id).disabled = saving || !hasUnsavedEdits();
   }
   function route(preserveLeave = false) {
     if (!preserveLeave) closeLeave();

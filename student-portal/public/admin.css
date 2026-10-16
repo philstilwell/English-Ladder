@@ -56,7 +56,8 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 
 /* Keep editing controls below the navigation, with space when scrolling to fields. */
 .student-editor-actions{position:sticky;top:var(--admin-header-height,114px);z-index:9;background:var(--paper);padding:12px 0;border-bottom:1px solid var(--line);box-shadow:0 8px 12px -12px #20242b66;gap:8px 12px}
+.student-editor-name{min-width:0;max-width:min(30ch,100%);font-size:.9rem;line-height:1.4;overflow-wrap:anywhere}
 #save-state-top:empty{display:none}
 html:has(#edit-view:not([hidden])){scroll-padding-top:calc(var(--admin-header-height,114px) + var(--admin-editor-actions-height,76px) + 16px)}
 #edit-view .cefr-panel{scroll-margin-top:0}
-@media(max-width:600px){.student-editor-actions{padding-block:8px;gap:4px 8px}.student-editor-actions .primary-button,.student-editor-actions .secondary-button{flex:1 1 116px;width:auto;min-height:44px;padding:10px 12px;font-size:.78rem}}
+@media(max-width:600px){.student-editor-actions{padding-block:8px;gap:4px 8px}.student-editor-name{flex-basis:100%;max-width:none;font-size:.85rem;margin-bottom:4px}.student-editor-actions .primary-button,.student-editor-actions .secondary-button{flex:1 1 116px;width:auto;min-height:44px;padding:10px 12px;font-size:.78rem}}

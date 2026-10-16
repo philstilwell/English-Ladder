@@ -506,7 +506,7 @@
     $('paused-student-rows').replaceChildren(); $('paused-students').open = false; $('paused-students').hidden = true; $('paused-count').textContent = '0';
     $('delete-account-panel').hidden = true;
     $('sheet-paste').value = ''; $('password').value = ''; $('search').value = ''; $('filter').value = 'all';
-    $('edit-title').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href'); $('open-quiz-results').removeAttribute('href'); $('open-quiz-results').hidden = true;
+    $('edit-title').textContent = ''; $('student-editor-name').textContent = ''; $('source-note').textContent = ''; $('open-site').removeAttribute('href'); $('open-quiz-results').removeAttribute('href'); $('open-quiz-results').hidden = true;
     $('activation-note').textContent = ''; setSaveState(''); $('import-preview').hidden = true;
     $('password-status').textContent = '';
     $('active-count').textContent = '0'; $('draft-count').textContent = '0'; $('list-count').textContent = '';
@@ -677,6 +677,7 @@
     $('studentId').readOnly = Boolean(student?.activated);
     $('status').querySelector('option[value="draft"]').disabled = Boolean(student?.activated);
     $('edit-title').textContent = student ? student.firstName + ' ' + student.lastName : 'Register new student';
+    $('student-editor-name').textContent = student ? $('edit-title').textContent : 'New student';
     $('edit-kicker').textContent = student ? 'EDIT STUDENT ACCOUNT' : 'A NEW LEARNING SPACE';
     $('edit-description').textContent = student ? 'Update the account details. Changes take effect when you save.' : 'Add the student’s details and exact Zoom display name.';
     $('source-note').hidden = !student?.source;
@@ -872,7 +873,7 @@
     clearRoad(); clearQuestions(); clearActivityOverview();
     clearAutomation();
     closeDelete();
-    clearLoginDetails(); current = null;
+    clearLoginDetails(); current = null; $('student-editor-name').textContent = '';
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     updateSelectionCounts();
     clearCefr();

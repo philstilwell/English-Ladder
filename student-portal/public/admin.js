@@ -95,7 +95,7 @@
       back.addEventListener('click', () => loadStudyQuestions(pages.slice(0, -1)));
       more.addEventListener('click', () => loadStudyQuestions([...pages, data.nextCursor]));
       if (pages.length > 1 || data.nextCursor) { controls.append(back, more); $('study-questions-content').append(controls); }
-      $('study-questions-status').textContent = data.questions.length ? 'Saved topics to discuss. Only the student can change these choices.' : 'No topics in this student’s Questions list.';
+      $('study-questions-status').textContent = data.questions.length ? 'Saved topics to discuss. Use Resolved in the combined Questions list after discussing a topic.' : 'No topics in this student’s Questions list.';
       $('load-study-questions').textContent = 'Refresh questions list';
     } catch (error) { if (valid()) $('study-questions-status').textContent = error.message; }
     finally { if (valid()) $('load-study-questions').disabled = false; }
@@ -107,7 +107,7 @@
     $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = '';
     $('refresh-all-questions').disabled = false;
   }
-  async function loadCombinedQuestions(pages = [null]) {
+  async function loadCombinedQuestions(pages = [null], notice = '') {
     if (!signedIn || !current?.activated || current.deletionPending) return;
     const student = current, version = epoch, request = ++combinedRequest;
     const valid = () => signedIn && version === epoch && request === combinedRequest && current?.key === student.key;
@@ -117,6 +117,8 @@
       const data = await api('/api/admin/students/' + student.key + '/questions' + (pages.at(-1) ? '?after=' + encodeURIComponent(pages.at(-1)) : ''));
       if (!valid()) return;
       if (!Number.isSafeInteger(data.count) || !Array.isArray(data.questions) || data.questions.length > 20) throw new Error('Questions could not load. Please try again.');
+      if (!data.questions.length && pages.length > 1) return await loadCombinedQuestions(pages.slice(0, -1), notice);
+      let resolving = false;
       for (const row of data.questions) {
         const item = row.item, card = element('article', null, 'combined-question');
         card.append(element('h2', row.label));
@@ -128,15 +130,41 @@
         else if (window.CommunicationPractice.ids.includes(row.source)) card.append(window.CommunicationPractice.review(item));
         else throw new Error('This question type could not load. Please reload the page.');
         if (item.progress.finished) card.append(element('p', 'Marked as finished', 'field-note'));
+        const resolve = element('button', 'Resolved', 'secondary-button resolve-question');
+        resolve.type = 'button';
+        resolve.disabled = typeof row.id !== 'string' || !Number.isSafeInteger(row.revision);
+        resolve.title = 'Remove from both Questions lists. Keep Finished and saved answers.';
+        const result = element('p', '', 'field-note resolve-status'); result.setAttribute('role', 'status');
+        resolve.addEventListener('click', async () => {
+          if (!valid() || resolving || !card.isConnected) return;
+          resolving = true; resolve.textContent = 'Resolving…'; result.textContent = '';
+          const buttons = [...$('all-questions-content').querySelectorAll('.resolve-question, .questions-page-button'), $('refresh-all-questions')];
+          for (const button of buttons) button.disabled = true;
+          try {
+            const saved = await api('/api/admin/students/' + student.key + '/questions/resolve', { method: 'POST', body: JSON.stringify({ id: row.id, revision: row.revision }) });
+            if (!valid()) return;
+            if (saved.resolved !== true || saved.id !== row.id) throw new Error('Please refresh to check whether this question was resolved.');
+            await loadCombinedQuestions(pages, 'Resolved. Removed from both Questions lists; Finished and saved answers are unchanged.');
+          } catch (error) {
+            if (valid()) result.textContent = error.message;
+          } finally {
+            if (valid()) {
+              resolving = false; resolve.textContent = 'Resolved';
+              for (const button of buttons) button.disabled = false;
+              back.disabled = pages.length < 2; more.disabled = !data.nextCursor;
+            }
+          }
+        });
+        card.append(resolve, result);
         $('all-questions-content').append(card);
       }
       const controls = element('div', null, 'terms-controls');
-      const back = element('button', 'Previous questions', 'secondary-button'), more = element('button', 'More questions', 'secondary-button');
+      const back = element('button', 'Previous questions', 'secondary-button questions-page-button'), more = element('button', 'More questions', 'secondary-button questions-page-button');
       back.type = more.type = 'button'; back.disabled = pages.length < 2; more.disabled = !data.nextCursor;
       back.addEventListener('click', () => loadCombinedQuestions(pages.slice(0, -1)));
       more.addEventListener('click', () => loadCombinedQuestions([...pages, data.nextCursor]));
       if (pages.length > 1 || data.nextCursor) { controls.append(back, more); $('all-questions-content').append(controls); }
-      $('all-questions-status').textContent = data.count ? data.count + ' saved questions · Page ' + pages.length : 'No saved questions for this student.';
+      $('all-questions-status').textContent = (notice ? notice + ' ' : '') + (data.count ? data.count + ' saved questions · Page ' + pages.length : 'No saved questions for this student.');
       questionStatuses[student.key] = { state: 'ready', count: data.count }; showList();
     } catch (error) { if (valid()) { $('all-questions-content').replaceChildren(); $('all-questions-status').textContent = error.message; } }
     finally { if (valid()) $('refresh-all-questions').disabled = false; }

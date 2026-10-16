@@ -1133,3 +1133,85 @@ test('combined instructor Questions renders all five new activities and first ch
  assert.equal(d.querySelectorAll('.combined-question').length,5);assert.equal(d.querySelectorAll('.communication-saved').length,5);assert.match(d.getElementById('all-questions-content').textContent,/First saved choice/);assert.equal(d.querySelectorAll('.combined-question .practice-ai-link').length,20);
  d.querySelector('.communication-option').click();await flush();assert.equal(writes,0);w.location.hash='students';await flush();assert.equal(d.getElementById('all-questions-content').textContent,'');w.close();
 });
+
+test('administrator resolves every Questions source without changing finished status or saved learning work', async () => {
+ const {e}=environment(),cookie=await access(e),students=await list(e,cookie),record=students.find(s=>s.studentId==='ab26'),other=students.find(s=>s.studentId==='cd26');
+ const store=e.FEEDBACK_STORE.get('ab26'), student=await login(e), root='/api/admin/students/'+record.key+'/questions';
+ const [topic]=await studyTopics(assessment), attemptId=crypto.randomUUID();
+ const choices=[
+  {id:'grammar-practice:00000001',key:'grammar:item:1',entry:{number:1,finished:true}},
+  {id:'business-terms:00000001',key:'terms:item:1',entry:{number:1,finished:false}},
+  {id:'vocabulary-practice:00000001',key:'vocabulary:item:1',entry:{number:1,finished:true,review:true,answer:'recruiter',sentence:'The recruiter called me.'}},
+  {id:'study-practice:'+topic.id,key:'study:item:'+topic.id,index:'study:question:'+topic.id,entry:{id:topic.id,finished:true,topic}},
+  {id:'english-road:'+attemptId+'_00',key:'road:item:'+attemptId+'_00',index:'road:question:'+attemptId+'_00',entry:{id:attemptId+'_00',attemptId,questionIndex:0,startedAt:'2026-10-15T10:00:00Z',band:'A1',topic:'Articles',exercise:{setup:'Choose an article.',prompt:'I see ___ apple.',options:['a','an','the','some'],correctIndex:1,explanation:'Use an.'}}},
+  ...COMMUNICATION_ACTIVITIES.map((bank,i)=>({id:bank.id+':00000001',key:'communication:'+bank.id+':v'+bank.version+':item:1',entry:{number:1,finished:i%2===0,choice:1,firstChoice:0,correct:true,firstCorrect:false}})),
+ ];
+ const saved={'assessment:current':{...assessment,plan:[]},'grammar:position':{number:20,revision:3},'grammar:preferences':{hideFinished:true,revision:2},['road:attempt:'+attemptId]:{answers:[{choiceIndex:0}],questions:[],revision:7}};
+ for(const row of choices){row.entry={...row.entry,question:true,revision:4,updatedAt:'2026-10-15T10:00:00Z'};saved[row.key]=row.entry;if(row.index)saved[row.index]=row.entry;}
+ await store.storage.put(saved);await e.FEEDBACK_STORE.get('cd26').storage.put({'grammar:item:1':saved['grammar:item:1']});
+ const untouched=await e.FEEDBACK_STORE.get('cd26').storage.list();
+ const result=await(await adminCall(e,root,{headers:{Cookie:cookie}})).json();assert.equal(result.count,10);assert.ok(result.questions.every(row=>row.revision===4));
+ // Paused students remain reviewable without reopening their account.
+ await adminCall(e,'/api/admin/students/'+record.key,write(cookie,{...record,status:'paused'},'PUT'));
+ for(const row of choices){
+  const response=await adminCall(e,root+'/resolve',write(cookie,{id:row.id,revision:4}));assert.equal(response.status,200);assert.equal(response.headers.get('cache-control'),'no-store');
+  const after=await store.storage.get(row.key);assert.deepEqual({...after,question:true,revision:4,updatedAt:row.entry.updatedAt},row.entry);assert.equal(after.question,false);assert.equal(after.revision,5);
+  if(row.index)assert.equal(await store.storage.get(row.index),undefined);
+  const snapshot=await store.storage.list();assert.equal((await adminCall(e,root+'/resolve',write(cookie,{id:row.id,revision:4}))).status,200);assert.deepEqual(await store.storage.list(),snapshot);
+ }
+ assert.equal((await(await adminCall(e,root,{headers:{Cookie:cookie}})).json()).count,0);
+ assert.equal((await(await adminCall(e,'/api/admin/questions-status',{headers:{Cookie:cookie}})).json()).statuses[record.key].count,0);
+ assert.deepEqual(await e.FEEDBACK_STORE.get('cd26').storage.list(),untouched);
+ for(const key of ['assessment:current','grammar:position','grammar:preferences','road:attempt:'+attemptId])assert.deepEqual(await store.storage.get(key),saved[key]);
+ // Every activity reads the same cleared flag, including old Study snapshots.
+ for(const path of ['/grammar/questions','/terms/questions','/vocabulary/questions','/study/questions','/road/questions',...COMMUNICATION_ACTIVITIES.map(b=>'/communication/'+b.id+'/questions')]){
+  const response=await store.fetch(new Request('https://feedback.internal'+path));assert.equal(response.status,200,path);assert.deepEqual((await response.json()).questions,[],path);
+ }
+ const active=(await list(e,cookie)).find(s=>s.key===record.key);assert.equal(active.status,'paused');
+ await adminCall(e,'/api/admin/students/'+record.key,write(cookie,{...active,status:'active',lastName:'Testperson',zoomNames:['AlexZoom']},'PUT'));
+ const added=await call(e,'/api/grammar-practice/state',{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({number:1,field:'question',value:true,revision:5})});assert.equal(added.status,200);
+ assert.equal((await adminCall(e,root+'/resolve',write(cookie,{id:choices[0].id,revision:4}))).status,409);
+ assert.equal((await store.storage.get('grammar:item:1')).question,true);
+});
+
+test('Questions resolution rejects other hosts, forged requests, stale revisions and deleted accounts', async()=>{
+ const {e,directory}=environment(),cookie=await access(e),records=await list(e,cookie),record=records.find(s=>s.studentId==='ab26'),other=records.find(s=>s.studentId==='cd26');
+ const student=await login(e),preview=await login(e,'teacher-test'),store=e.FEEDBACK_STORE.get('ab26'),path='/api/admin/students/'+record.key+'/questions/resolve',body={id:'grammar-practice:00000001',revision:1};
+ await store.storage.put({'grammar:item:1':{number:1,finished:true,question:true,revision:2}});const snapshot=await store.storage.list();
+ for(const c of ['',student.cookie,preview.cookie])assert.equal((await adminCall(e,path,write(c,body))).status,401);
+ assert.equal((await call(e,path,{...write(preview.cookie,body),headers:{Cookie:preview.cookie,Origin:origin}})).status,405);
+ for(const o of [undefined,'https://other.test','null'])assert.equal((await adminCall(e,path,{...write(cookie,body),headers:{Cookie:cookie,...(o?{Origin:o}:{})}})).status,403);
+ assert.equal((await adminCall(e,path,{...write(cookie,body),headers:{Cookie:cookie,Origin:admin,'Sec-Fetch-Site':'cross-site'}})).status,403);
+ assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,405);
+ assert.equal((await adminCall(e,path,write(cookie,body))).status,409);
+ for(const input of [{...body,finished:false},{...body,id:'grammar-practice:1'},{...body,id:'grammar-practice:99999999'},{...body,id:'study-practice:../../item'},{...body,revision:-1},{...body,id:'unknown:00000001'}])assert.equal((await adminCall(e,path,write(cookie,input))).status,400);
+ assert.equal((await adminCall(e,path,{...write(cookie,body),body:'{'})).status,400);
+ assert.equal((await adminCall(e,path,{...write(cookie,body),body:JSON.stringify({junk:'x'.repeat(1100)})})).status,400);
+ assert.equal((await adminCall(e,'/api/admin/students/'+other.key+'/questions/resolve',write(cookie,{...body,revision:2}))).status,404);
+ assert.deepEqual(await store.storage.list(),snapshot);
+ // A finish change invalidates an earlier resolution; both concurrent requests remain atomic.
+ const responses=await Promise.all([1,2].map(()=>adminCall(e,path,write(cookie,{...body,revision:2}))));assert.deepEqual(responses.map(r=>r.status),[200,200]);assert.equal((await store.storage.get('grammar:item:1')).revision,3);assert.equal((await store.storage.get('grammar:item:1')).finished,true);
+ const raw=(await directory.records()).find(s=>s.key===record.key);await directory.storage.put({['student:'+record.key]:{...raw,deletionPending:true}});assert.equal((await adminCall(e,path,write(cookie,{...body,revision:3}))).status,404);
+ await directory.storage.put({['student:'+record.key]:raw});await store.storage.put({'account:deleted':true});assert.equal((await adminCall(e,path,write(cookie,{...body,revision:3}))).status,410);
+});
+
+test('Resolved clears a combined Questions item and count, handles failures and recovers an empty last page',async()=>{
+ let rows=Array.from({length:21},(_,i)=>({id:'grammar-practice:'+String(i+1).padStart(8,'0'),revision:2,source:'grammar-practice',label:'Grammar practice',item:{...grammarBank.items[i],progress:{finished:true,question:true,revision:2}}})),fail=true,writes=[];
+ const dom=browser((path,options)=>{
+  if(path.endsWith('/questions/resolve')){writes.push(JSON.parse(options.body));if(fail)return Response.json({error:'Please refresh before trying again.'},{status:409});rows=rows.filter(r=>r.id!==writes.at(-1).id);return Response.json({resolved:true,id:writes.at(-1).id});}
+  if(path.includes('/questions')){const after=new URL(path,admin).searchParams.get('after'),selected=rows.filter(r=>!after||r.id>after);return Response.json({count:rows.length,questions:selected.slice(0,20),nextCursor:selected.length>20?selected[19].id:null});}
+ });await flush();const w=dom.window,d=w.document;w.location.hash='students/'+fixture.key+'/questions';await flush();
+ [...d.querySelectorAll('button')].find(b=>b.textContent==='More questions').click();await flush();assert.equal(d.querySelectorAll('.resolve-question').length,1);
+ d.querySelector('.resolve-question').click();await flush();assert.match(d.querySelector('.resolve-status').textContent,/refresh/);assert.equal(d.querySelector('.resolve-question').disabled,false);assert.equal(rows.length,21);
+ fail=false;d.querySelector('.resolve-question').click();await flush();assert.equal(rows.length,20);assert.equal(d.querySelectorAll('.combined-question').length,20);assert.match(d.getElementById('all-questions-status').textContent,/Resolved.*Finished.*unchanged.*Page 1/);assert.match(d.querySelector('.questions-cell').textContent,/20 questions/);assert.ok(rows.every(r=>r.item.progress.finished));assert.deepEqual(Object.keys(writes[0]).sort(),['id','revision']);
+ rows=rows.slice(0,1);d.getElementById('refresh-all-questions').click();await flush();d.querySelector('.resolve-question').click();await flush();assert.match(d.getElementById('all-questions-status').textContent,/No saved questions/);assert.equal(d.querySelector('.questions-badge'),null);w.close();
+});
+
+test('pending resolution blocks duplicates and ignores late replies after navigation, logout, expiry or page hide',async()=>{
+ for(const exit of ['navigation','logout','expiry','pagehide']){
+  let release,writes=0;const row={id:'grammar-practice:00000001',revision:1,source:'grammar-practice',label:'Grammar practice',item:{...grammarBank.items[0],progress:{question:true,finished:false,revision:1}}};
+  const dom=browser((path)=>path.endsWith('/resolve')?(writes++,new Promise(r=>release=r)):path.endsWith('/questions')?Response.json({count:1,questions:[row],nextCursor:null}):null);await flush();const w=dom.window,d=w.document;w.location.hash='students/'+fixture.key+'/questions';await flush();const button=d.querySelector('.resolve-question');button.click();button.click();await flush();assert.equal(writes,1);assert.equal(button.disabled,true);assert.equal(d.getElementById('refresh-all-questions').disabled,true);
+  if(exit==='navigation')w.location.hash='students';else if(exit==='logout')d.getElementById('sign-out').click();else if(exit==='pagehide')w.dispatchEvent(new w.Event('pagehide'));await flush();
+  release(exit==='expiry'?Response.json({error:'Sign in again.'},{status:401}):Response.json({resolved:true,id:row.id}));await flush();assert.equal(d.getElementById('all-questions-content').textContent,'');assert.doesNotMatch(d.getElementById('all-questions-status').textContent,/Resolved/);if(exit==='expiry')assert.equal(d.getElementById('login-view').hidden,false);w.close();
+ }
+});

@@ -353,7 +353,7 @@ summary { cursor:pointer; }
 .terms-sentences { padding-left:24px; margin:20px 0 8px; }
 .terms-sentences li { padding:8px 0; line-height:1.75; overflow-wrap:anywhere; }
 .terms-answer { color:var(--blue); }
-.terms-item .terms-reveal { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
+.terms-item .terms-reveal { display:flex; align-items:center; gap:12px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
 .terms-item .terms-reveal span { font-size:inherit; color:inherit; margin:0; }
 .terms-reveal input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }
 .terms-controls { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:20px 0; }
@@ -381,7 +381,7 @@ summary { cursor:pointer; }
 .grammar-prompt { font-weight:650; margin:0 0 10px; }
 .grammar-prompt.is-revealed { color:var(--blue); }
 .grammar-options { padding-left:20px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 24px; margin:0 0 8px; font-size:.94rem; }
-.grammar-item .grammar-reveal { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
+.grammar-item .grammar-reveal { display:flex; align-items:center; gap:12px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
 .grammar-item .grammar-reveal span { font-size:inherit; color:inherit; margin:0; }
 .grammar-reveal input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }
 .grammar-controls { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:20px 0; }
@@ -451,7 +451,7 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-header-height,11
 .activity-progress-toolbar p { margin:0; font-size:.9rem; }
 @media(max-width:740px) { .activity-catalog { grid-template-columns:1fr; gap:16px; } }
 
-.account-card .practice-filter { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; margin:12px 0; font-size:.94rem; font-weight:400; cursor:pointer; }
+.account-card .practice-filter { display:flex; align-items:center; gap:12px; width:fit-content; max-width:100%; min-height:44px; margin:12px 0; font-size:.94rem; font-weight:400; cursor:pointer; }
 .practice-filter input { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }
 .practice-filter span { font-size:inherit; color:inherit; margin:0; }
 .practice-empty { padding:16px; background:#f1f3f8; border-radius:6px; }
@@ -484,7 +484,7 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-header-height,11
 .communication-option[aria-pressed="true"] { border-color:var(--blue); box-shadow:inset 3px 0 var(--blue); background:#eef2ff; }
 .communication-feedback { margin:14px 0; padding:12px; background:#f5f5f6; border-radius:5px; }
 .communication-feedback p:last-child { margin-bottom:0; }
-.communication-item .grammar-reveal { display:flex; align-items:center; gap:10px; min-height:44px; cursor:pointer; }
+.communication-item .grammar-reveal { display:flex; align-items:center; gap:12px; min-height:44px; cursor:pointer; }
 .communication-item .grammar-reveal input { width:20px; height:20px; min-height:20px; margin:0; accent-color:var(--blue); }
 .communication-key { color:var(--blue); font-weight:650; }
 .communication-save-status:empty { display:none; }
@@ -502,3 +502,8 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-header-height,11
 .all-question-card .assessment-plan-card { padding:0; }
 
 #all-questions [role="status"] { scroll-margin-top:calc(var(--student-header-height,114px) + 20px); }
+
+/* Keep every checkbox separate from its label, including new activity types. */
+label:has(> input[type="checkbox"]) { display:flex; align-items:center; column-gap:12px; min-height:44px; max-width:100%; cursor:pointer; }
+label > input[type="checkbox"] { flex:0 0 20px; width:20px; height:20px; min-height:20px; padding:0; margin:0; accent-color:var(--blue); }
+label:has(> input[type="checkbox"]) > span { min-width:0; margin-inline-start:0; }

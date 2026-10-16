@@ -547,7 +547,14 @@ export default {
   async fetch(request, env) {
     try { return protect(await handle(request, env)); }
     catch (error) {
-      console.error('Student service unavailable:', runtimeErrorCategory(error));
+      const category = runtimeErrorCategory(error);
+      console.error('Student service unavailable:', category);
+      if (category === 'request_allowance') {
+        const reset = new Date((Math.floor(Date.now() / 86400000) + 1) * 86400000);
+        const resetTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(reset);
+        return protect(json({ error: 'The daily hosting request allowance has been reached. Please try again after ' + resetTime + ' Eastern.', retryAt: reset.toISOString() }, 503,
+          { 'Retry-After': String(Math.max(1, Math.ceil((reset.getTime() - Date.now()) / 1000))) }));
+      }
       const directory = new URL(request.url).pathname === '/api/admin/students';
       return protect(json({ error: directory ? 'The student directory is temporarily unavailable. Please try Refresh shortly.' : 'Sign-in is temporarily unavailable. Please try again shortly.' }, 503));
     }

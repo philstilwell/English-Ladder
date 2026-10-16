@@ -86,6 +86,19 @@ test('administrator host accepts only teacher credentials; cookies cannot cross 
   assert.equal((await adminCall(e,'/api/session',{headers:{Cookie:cookie}})).status,200);
   for(const path of ['/admin.html','/admin.js','/api/admin/students','/directory.internal/students'])assert.equal((await call(e,path,{headers:{Cookie:studentTeacher}})).status,404);
 });
+
+test('daily directory request limit reports the reset without exposing records or changing sign-in',async()=>{
+  const {e}=environment(),cookie=await access(e);
+  e.STUDENT_DIRECTORY.get=()=>({fetch:async()=>{throw new Error('Daily Durable Object requests limit exceeded. private diagnostic value');}});
+  const response=await adminCall(e,'/api/admin/students',{headers:{Cookie:cookie}});
+  assert.equal(response.status,503);assert.equal(response.headers.get('cache-control'),'no-store');
+  const data=await response.json();assert.match(data.error,/daily hosting request allowance.*Eastern/);
+  assert.doesNotMatch(JSON.stringify(data),/private diagnostic value|password|cookie/);
+  assert.equal(new Date(data.retryAt).getUTCHours(),0);
+  assert.ok(Date.parse(data.retryAt)>Date.now());
+  assert.ok(Number(response.headers.get('retry-after'))>0);
+  assert.equal((await adminCall(e,'/api/session',{headers:{Cookie:cookie}})).status,200);
+});
 test('registration and edits take effect without redeployment; private fields never reach student endpoints',async()=>{
   const {e}=environment(),cookie=await access(e);
   const response=await adminCall(e,'/api/admin/students',write(cookie,example));assert.equal(response.status,201);

@@ -10,7 +10,7 @@
   const headerResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateHeaderHeight);
   headerResizeObserver?.observe(stickyHeader);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
-  let activityTools = [];
+  let activityTools = [], resourceTools = [];
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
   let loginRequest = 0, loginDetails = null;
@@ -278,8 +278,8 @@
     }
   }
   function clearPrivate() {
-    epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = [];
-    $('student-activities').replaceChildren();
+    epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
+    $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     clearRoad(); clearQuestions(); clearActivityOverview();
     clearLoginDetails();
     clearCefr(); cefrRequest++; cefrStatuses = {};
@@ -349,11 +349,17 @@
   async function refresh() {
     quizRequest++;
     cefrRequest++;
+    resourceTools = [];
     const version = epoch;
     const data = await api('/api/admin/students');
     if (!signedIn || version !== epoch) return;
     if (!Array.isArray(data.activities) || !data.activities.length || data.activities.some(a => !a || typeof a.id !== 'string' || typeof a.name !== 'string' || typeof a.description !== 'string')) throw new Error('The activity list could not load. Please refresh before editing a student.');
-    activityTools = data.activities;
+    if (!Array.isArray(data.resources) || !data.resources.length ||
+        new Set(data.resources.map(resource => resource?.id)).size !== data.resources.length ||
+        data.resources.some(resource => !resource || !/^[a-z0-9-]{1,60}$/.test(resource.id) ||
+          typeof resource.name !== 'string' || typeof resource.group !== 'string' || typeof resource.groupName !== 'string'))
+      throw new Error('The resource list could not load. Please refresh before editing a student.');
+    activityTools = data.activities; resourceTools = data.resources;
     students = data.students; quizStatuses = {}; cefrStatuses = {}; showList(); route();
     void refreshQuizStatuses();
     void refreshCefrStatuses();
@@ -403,12 +409,26 @@
   function editStudent(student) {
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); $('save-state').textContent = '';
-    $('student-activities').replaceChildren();
+    $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     const selected = student?.visibleActivities ?? activityTools.map(activity => activity.id);
     for (const activity of activityTools) {
       const label = element('label', null, 'activity-choice'), input = element('input');
       input.type = 'checkbox'; input.name = 'visibleActivities'; input.value = activity.id; input.checked = selected.includes(activity.id);
       label.append(input, element('span', activity.name)); $('student-activities').append(label);
+    }
+    const selectedResources = student?.visibleResources ?? resourceTools.map(resource => resource.id);
+    const groups = new Map();
+    for (const resource of resourceTools) {
+      if (!groups.has(resource.group)) {
+        const group = element('div', null, 'resource-choice-group');
+        const heading = element('h3', resource.groupName), choices = element('div', null, 'resource-options');
+        heading.id = 'resource-choice-' + resource.group; choices.setAttribute('role', 'group');
+        choices.setAttribute('aria-labelledby', heading.id);
+        group.append(heading, choices); $('student-resources').append(group); groups.set(resource.group, choices);
+      }
+      const label = element('label', null, 'activity-choice'), input = element('input');
+      input.type = 'checkbox'; input.name = 'visibleResources'; input.value = resource.id; input.checked = selectedResources.includes(resource.id);
+      label.append(input, element('span', resource.name)); groups.get(resource.group).append(label);
     }
 
     for (const fieldset of $('student-form').querySelectorAll('fieldset')) fieldset.disabled = Boolean(student?.deletionPending);
@@ -446,7 +466,7 @@
     clearRoad(); clearQuestions(); clearActivityOverview();
     closeDelete();
     clearLoginDetails(); current = null;
-    $('student-activities').replaceChildren();
+    $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     clearCefr();
     $('newPassword').value = ''; $('confirmPassword').value = '';
     const hash = location.hash || '#students';
@@ -555,9 +575,10 @@
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
   $('student-form').addEventListener('submit', async event => {
     event.preventDefault(); const version = epoch, editing = current;
-    if (!signedIn || !activityTools.length || saving || deleting || editing?.deletionPending) return;
+    if (!signedIn || !activityTools.length || !resourceTools.length || saving || deleting || editing?.deletionPending) return;
     const input = Object.fromEntries(fields.map(field => [field,$(field).value]));
     input.visibleActivities = [...$('student-activities').querySelectorAll('input:checked')].map(box => box.value);
+    input.visibleResources = [...$('student-resources').querySelectorAll('input:checked')].map(box => box.value);
     input.zoomNames = $('zoomNames').value.split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
     if ($('newPassword').value || $('confirmPassword').value) {
       if ($('newPassword').value.toLowerCase() !== $('confirmPassword').value.toLowerCase()) { message('The two student passwords do not match.', true); return; }

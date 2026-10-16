@@ -322,6 +322,7 @@ async function handle(request, env) {
     const input = await smallJson(request, 4096);
     if (!input || !Number.isInteger(input.revision)) return json({ error: 'Please reload the account page and try again.' }, 400);
     if (Object.hasOwn(input, 'visibleActivities')) return json({ error: 'Your teacher chooses the activities in your menu.' }, 403);
+    if (Object.hasOwn(input, 'visibleResources')) return json({ error: 'Your teacher chooses the resources on your page.' }, 403);
     if (passwordChange) {
       if (typeof input.currentPassword !== 'string' || !input.currentPassword || input.currentPassword.length > 128)
         return json({ error: 'Enter your current password.' }, 400);

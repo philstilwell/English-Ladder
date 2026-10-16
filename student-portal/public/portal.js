@@ -14,6 +14,7 @@
   const sectionMenu = document.querySelector('.section-nav');
   const stickyHeader = document.querySelector('.masthead-band');
   let activityChoices = null, activitiesLoading = false, activitiesRevision = 0, activitiesError = false;
+  let resourceChoices = null, resourcesLoading = false, resourcesRevision = 0, resourcesError = false;
   const roadPractice = window.EnglishRoadPractice?.create({ root: $('road-practice'), api, expired }) || {
     clear() { $('road-practice').replaceChildren(); $('road-practice').hidden = true; },
     open() { $('road-practice').hidden = false; $('road-practice').textContent = 'Practice could not load. Reload this page to try again.'; },
@@ -129,6 +130,7 @@
     businessTerms.clear();
     closeDropdowns();
     clearSettings();
+    clearResources();
     activityChoices = null; activitiesLoading = false; activitiesError = false; activitiesRevision++;
     activitiesDropdown.list.replaceChildren(); $('activity-title').textContent = 'Activities'; $('activity-message').textContent = '';
     authenticated = false; sessions = []; nextCursor = null; indexReady = false; indexLoading = false; currentPage = '';
@@ -190,21 +192,54 @@
     }
     $('session-select').value = id || '';
   }
-  function renderResources(requested, focus) {
+  function clearResources() {
+    resourcesRevision++; resourceChoices = null; resourcesLoading = false; resourcesError = false;
+    $('resource-catalog').hidden = true; $('resource-status').textContent = ''; $('retry-resources').hidden = true;
+    $('resource-count').textContent = '';
+    for (const card of document.querySelectorAll('[data-resource-id]')) card.hidden = true;
+  }
+  function renderResources(requested = location.hash.slice(1).split('/').length === 2 ? location.hash.slice(1).split('/')[1] : '', focus = false) {
     const groups = [...document.querySelectorAll('[data-resource-group]')];
-    const selected = groups.some(group => group.dataset.resourceGroup === requested) ? requested : '';
+    for (const card of document.querySelectorAll('[data-resource-id]')) card.hidden = !resourceChoices?.includes(card.dataset.resourceId);
+    const available = groups.filter(group => group.querySelector('.resource-card:not([hidden])'));
+    const selected = available.some(group => group.dataset.resourceGroup === requested) ? requested : '';
     let count = 0;
     for (const group of groups) {
-      group.hidden = Boolean(selected && group.dataset.resourceGroup !== selected);
-      if (!group.hidden) count += group.querySelectorAll('.resource-card').length;
+      group.hidden = !available.includes(group) || Boolean(selected && group.dataset.resourceGroup !== selected);
+      if (!group.hidden) count += group.querySelectorAll('.resource-card:not([hidden])').length;
     }
     for (const link of document.querySelectorAll('.resource-filters a')) {
+      const category = link.hash.split('/')[1];
+      link.hidden = Boolean(category && !available.some(group => group.dataset.resourceGroup === category));
       if (link.hash === '#resources' + (selected ? '/' + selected : '')) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     }
-    $('resource-count').textContent = count + ' resources';
+    $('resource-catalog').hidden = !available.length;
+    $('resource-count').textContent = count + (count === 1 ? ' resource' : ' resources');
+    $('resource-status').textContent = resourceChoices
+      ? available.length ? '' : 'Your teacher has not selected any resources yet.'
+      : resourcesError ? 'Your resources could not be loaded. Please try again.' : 'Loading your resources…';
+    $('retry-resources').hidden = !resourcesError;
     document.title = 'English resources · English Ladder';
     if (focus) $('resources-title').focus();
+  }
+  async function loadResources(force = false) {
+    if (!authenticated || location.hash.slice(1).split('/')[0] !== 'resources' || resourcesLoading || resourceChoices && !force) return;
+    const identity = identityRevision, revision = ++resourcesRevision;
+    resourcesLoading = true; resourcesError = false; resourceChoices = null; renderResources();
+    try {
+      const data = await api('/api/account');
+      if (identity !== identityRevision || revision !== resourcesRevision) return;
+      if (!Number.isInteger(data.revision) || !Array.isArray(data.visibleResources) ||
+          new Set(data.visibleResources).size !== data.visibleResources.length ||
+          data.visibleResources.some(id => typeof id !== 'string' || !/^[a-z0-9-]{1,60}$/.test(id)))
+        throw new Error('Resources unavailable');
+      resourceChoices = data.visibleResources;
+      renderResources();
+    } catch (error) {
+      if (identity !== identityRevision || revision !== resourcesRevision || expired(error)) return;
+      resourcesError = true; renderResources();
+    } finally { if (identity === identityRevision && revision === resourcesRevision) resourcesLoading = false; }
   }
   function navigate(focus = false) {
     if (!authenticated) return;
@@ -214,6 +249,7 @@
     if (selected !== 'activities' || requested !== 'grammar-practice' || extra !== undefined) grammarPractice.clear();
     if (selected !== 'activities' || requested !== 'business-terms' || extra !== undefined) businessTerms.clear();
     if (selected !== 'account') clearSettings();
+    if (selected !== 'resources') clearResources();
     if (selected !== 'assessments') studyPractice.clear();
     else if ($('study-topics') && !$('study-topics').children.length && assessment) studyPractice.open($('study-topics'), assessment.plan, teacherMode);
     for (const id of sections) $(id).hidden = selected !== id;
@@ -237,7 +273,7 @@
         if (focus) $('quiz-results-title').focus();
       }
       if (selected === 'activities') { renderActivityPage(); if (focus) $('activity-title').focus(); }
-      if (selected === 'resources') renderResources(extra === undefined ? requested : '', focus);
+      if (selected === 'resources') { renderResources(extra === undefined ? requested : '', focus); void loadResources(); }
       if (selected === 'account') {
         document.title = 'My account · English Ladder';
         loadSettings();
@@ -991,7 +1027,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); closeDropdowns(); });
+  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); clearResources(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();
@@ -1052,7 +1088,7 @@
     if (!authenticated || checking || document.hidden) return;
     checking = true; const revision = identityRevision, profile = profileRevision;
     try {
-      const data = await api('/api/session'); if (revision === identityRevision && profile === profileRevision) { showDashboard(data); loadActivities(); }
+      const data = await api('/api/session'); if (revision === identityRevision && profile === profileRevision) { showDashboard(data); loadActivities(); void loadResources(true); }
     } catch (error) {
       if (revision !== identityRevision) return;
       if (!expired(error)) { clearIdentity(); $('unavailable-message').textContent = error.message; show('unavailable-view'); }
@@ -1061,6 +1097,8 @@
   window.addEventListener('pageshow', event => { if (event.persisted) { clearIdentity(); start(); } });
   document.addEventListener('visibilitychange', checkSession);
   window.addEventListener('hashchange', () => { closeDropdowns(); navigate(true); });
+  $('retry-resources').addEventListener('click', () => loadResources(true));
+  $('resources-nav').addEventListener('click', () => { if (location.hash === '#resources') void loadResources(true); });
   window.addEventListener('scroll', scheduleAssessmentHighlight, { passive: true });
   window.addEventListener('resize', updateHeaderHeight);
   document.querySelector('.assessment-outline').addEventListener('click', event => {

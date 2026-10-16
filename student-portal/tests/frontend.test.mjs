@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {JSDOM} from 'jsdom';
 import {studyTopics} from '../study-progress.mjs';
 import {ACTIVITY_TOOLS} from '../activities.mjs';
+import {RESOURCE_TOOLS} from '../resources.mjs';
 import {feedback,assessment,quiz} from './fixture.mjs';
 import {seedQuiz,call,origin} from './harness.mjs';
 import grammarBank from '../grammar-bank.json' with { type: 'json' };
@@ -24,6 +25,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/context')return reply({id:'ab26'});
   if(path==='/api/session'||path==='/api/login')return reply({...profile,role});
   if(path==='/api/logout')return reply({ok:true});
+  if(path==='/api/account')return reply(settingsFixture);
   if(path==='/api/study/state')return reply({topics:studyFixture});
   if(path.startsWith('/api/study/questions'))return reply({questions:[],nextCursor:null});
   if(path==='/api/assessment')return reply({assessment});
@@ -81,6 +83,9 @@ test('resources support skill links, history navigation and teacher previews',as
 });
 test('resource links open separately without passing student data or a referrer',()=>{
  const dom=new JSDOM(html,{url:'https://ab26.englishladder.com/'}),d=dom.window.document;
+ const cards=[...d.querySelectorAll('[data-resource-id]')];
+ assert.deepEqual(cards.map(card=>({id:card.dataset.resourceId,name:card.querySelector('h4').textContent.replace(/\s*↗\s*$/, '').trim(),group:card.closest('[data-resource-group]').dataset.resourceGroup})),RESOURCE_TOOLS.map(({id,name,group})=>({id,name,group})));
+ assert.ok(cards.every(card=>card.hidden));
  const links=[...d.querySelectorAll('.resource-card a')];
  assert.ok(links.length>0);
  assert.equal(new Set(links.map(link=>link.href)).size,links.length);
@@ -97,6 +102,65 @@ test('resource links open separately without passing student data or a referrer'
  assert.equal(d.getElementById('dashboard-view').hidden,true);
  assert.equal(d.querySelectorAll('#resources iframe,#resources script,#resources form').length,0);
  dom.window.close();
+});
+test('resources show only saved choices, hide empty categories, and reload choices on returning',async()=>{
+ for(const role of ['student','teacher']) {
+  let choices=['elllo','write-and-improve'],writes=0;
+  const dom=setup((path,options)=>{
+   if(options?.method&&options.method!=='GET')writes++;
+   if(path==='/api/account')return reply({...settingsFixture,visibleResources:choices});
+  },'https://ab26.englishladder.com/#resources/speaking',role);
+  await flush();const w=dom.window,d=w.document;
+  const shown=()=>[...d.querySelectorAll('[data-resource-id]:not([hidden])')].map(card=>card.dataset.resourceId);
+  assert.deepEqual(shown(),choices);
+  assert.equal(d.getElementById('resource-count').textContent,'2 resources');
+  assert.equal(d.querySelectorAll('.resource-group:not([hidden])').length,2);
+  assert.equal(d.querySelector('.resource-filters a[href="#resources/speaking"]').hidden,true);
+  assert.equal(d.querySelector('.resource-filters a[aria-current]').hash,'#resources');
+  assert.equal(d.querySelectorAll('#resources input[type="checkbox"]').length,0);
+  w.location.hash='overview';await flush();assert.equal(d.getElementById('resource-catalog').hidden,true);assert.deepEqual(shown(),[]);
+  choices=['news-in-levels'];w.location.hash='resources';await flush();assert.deepEqual(shown(),choices);
+  assert.equal(d.getElementById('resource-count').textContent,'1 resource');
+  choices=[];d.dispatchEvent(new w.Event('visibilitychange'));await flush();
+  assert.deepEqual(shown(),[]);assert.equal(d.getElementById('resource-catalog').hidden,true);
+  assert.match(d.getElementById('resource-status').textContent,/teacher has not selected/);
+  assert.equal(writes,0);w.close();
+ }
+});
+test('resource reads fail closed, offer retry, and clear choices on expiry and page hide',async()=>{
+ for(const invalid of [null,{}, {revision:1,visibleResources:'all'}, {revision:1,visibleResources:['elllo','elllo']}]) {
+  let state='invalid';
+  const dom=setup(path=>path==='/api/account' ? state==='expired' ? new Response('{}',{status:401}) : reply(state==='valid'?{...settingsFixture,visibleResources:['elllo']}:invalid) : null,'https://ab26.englishladder.com/#resources');
+  await flush();const w=dom.window,d=w.document;
+  assert.equal(d.getElementById('resource-catalog').hidden,true);
+  assert.match(d.getElementById('resource-status').textContent,/could not be loaded/);
+  assert.equal(d.getElementById('retry-resources').hidden,false);
+  state='valid';d.getElementById('retry-resources').click();await flush();
+  assert.equal(d.getElementById('resource-catalog').hidden,false);
+  w.dispatchEvent(new w.Event('pagehide'));assert.equal(d.getElementById('resource-catalog').hidden,true);
+  state='expired';d.dispatchEvent(new w.Event('visibilitychange'));await flush();
+  assert.equal(d.getElementById('login-view').hidden,false);
+  assert.equal(d.querySelectorAll('[data-resource-id]:not([hidden])').length,0);w.close();
+ }
+});
+test('late resource responses cannot restore old choices after navigation or sign-out',async()=>{
+ for(const action of ['navigate','logout']) {
+  const pending=[];
+  const dom=setup(path=>path==='/api/account'?new Promise(resolve=>pending.push(resolve)):null,'https://ab26.englishladder.com/#resources');
+  await flush();const w=dom.window,d=w.document;
+  assert.equal(d.getElementById('resource-catalog').hidden,true);
+  if(action==='logout')d.getElementById('logout').click();else w.location.hash='overview';
+  await flush();
+  for(const resolve of pending.splice(0))resolve(reply(settingsFixture));await flush();
+  assert.equal(d.getElementById('resource-catalog').hidden,true);
+  assert.equal(d.querySelectorAll('[data-resource-id]:not([hidden])').length,0);
+  if(action==='navigate'){
+   w.location.hash='resources';await flush();
+   for(const resolve of pending.splice(0))resolve(reply({...settingsFixture,visibleResources:['elllo']}));await flush();
+   assert.deepEqual([...d.querySelectorAll('[data-resource-id]:not([hidden])')].map(card=>card.dataset.resourceId),['elllo']);
+  }
+  w.close();
+ }
 });
 test('late page responses cannot overwrite a newer selection',async()=>{
  let resolveFirst;
@@ -628,7 +692,7 @@ test('repeated assessment references to one lesson show one date and no elapsed 
  dom.window.close();
 });
 
-const settingsFixture = { nickname: 'Alex the Explorer', revision: 1, visibleActivities: ACTIVITY_TOOLS.map(a => a.id), activities: ACTIVITY_TOOLS };
+const settingsFixture = { visibleResources: RESOURCE_TOOLS.map(r => r.id), nickname: 'Alex the Explorer', revision: 1, visibleActivities: ACTIVITY_TOOLS.map(a => a.id), activities: ACTIVITY_TOOLS };
 const submitForm = (dom, id) => dom.window.document.getElementById(id).dispatchEvent(new dom.window.Event('submit', { bubbles: true, cancelable: true }));
 test('Account saves only a nickname, has no activity picker, and keeps teacher preview read-only', async () => {
   let saved = structuredClone(settingsFixture), writes = 0;

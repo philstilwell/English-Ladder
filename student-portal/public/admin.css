@@ -53,3 +53,10 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 .automation-problems{padding:16px 24px;margin:16px 0;background:#fff;border:1px solid #e5ca87;border-radius:8px}.automation-problems h2{font-size:1.2rem;margin:0 0 10px}.automation-problems article{border-top:1px solid var(--line);padding:12px 0}.automation-problems h3{font-size:.94rem;margin:0 0 6px}.automation-problems p{margin:6px 0 10px}.automation-problems button{white-space:normal}
 
 #leave-dialog{width:min(640px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;border:1px solid var(--line);border-radius:14px;padding:30px;color:var(--ink);background:#fff;box-sizing:border-box}#leave-dialog::backdrop{background:rgb(20 28 46 / .65)}#leave-dialog h2{font:400 1.9rem/1.2 Georgia,serif;margin:0 0 18px}#leave-description,#leave-status{font-size:.9rem;line-height:1.65}#leave-description{color:var(--muted)}#leave-status:empty{display:none}.leave-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.leave-actions .primary-button{width:auto}.leave-actions button:disabled{opacity:.55;cursor:not-allowed}@media(max-width:600px){#leave-dialog{padding:22px}.leave-actions{flex-direction:column}.leave-actions button{width:100%}}
+
+/* Keep editing controls below the navigation, with space when scrolling to fields. */
+.student-editor-actions{position:sticky;top:var(--admin-header-height,114px);z-index:9;background:var(--paper);padding:12px 0;border-bottom:1px solid var(--line);box-shadow:0 8px 12px -12px #20242b66;gap:8px 12px}
+#save-state-top:empty{display:none}
+html:has(#edit-view:not([hidden])){scroll-padding-top:calc(var(--admin-header-height,114px) + var(--admin-editor-actions-height,76px) + 16px)}
+#edit-view .cefr-panel{scroll-margin-top:0}
+@media(max-width:600px){.student-editor-actions{padding-block:8px;gap:4px 8px}.student-editor-actions .primary-button,.student-editor-actions .secondary-button{flex:1 1 116px;width:auto;min-height:44px;padding:10px 12px;font-size:.78rem}}

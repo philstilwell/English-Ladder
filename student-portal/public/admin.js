@@ -3,12 +3,15 @@
   const $ = id => document.getElementById(id);
   const adminMenu = document.querySelector('.admin-nav');
   const stickyHeader = document.querySelector('.masthead-band');
-  function updateHeaderHeight() {
+  const editorActions = $('student-editor-actions');
+  function updateStickyHeights() {
     const height = stickyHeader.getBoundingClientRect().height;
     if (height) document.documentElement.style.setProperty('--admin-header-height', height + 'px');
+    document.documentElement.style.setProperty('--admin-editor-actions-height', editorActions.getBoundingClientRect().height + 'px');
   }
-  const headerResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateHeaderHeight);
+  const headerResizeObserver = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateStickyHeights);
   headerResizeObserver?.observe(stickyHeader);
+  headerResizeObserver?.observe(editorActions);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let activityTools = [], resourceTools = [];
   let questionsRequest = 0, questionStatuses = {}, combinedRequest = 0;
@@ -498,7 +501,7 @@
     closeDelete();
     quizRequest++; quizStatuses = {}; questionsRequest++; questionStatuses = {};
     $('admin-view').hidden = true; $('login-view').hidden = false; $('sign-out').hidden = true;
-    adminMenu.hidden = true; updateHeaderHeight();
+    adminMenu.hidden = true; updateStickyHeights();
     $('student-rows').replaceChildren(); $('import-names').replaceChildren(); $('student-form').reset();
     $('paused-student-rows').replaceChildren(); $('paused-students').open = false; $('paused-students').hidden = true; $('paused-count').textContent = '0';
     $('delete-account-panel').hidden = true;
@@ -858,6 +861,7 @@
       $(id).hidden = !canUndoDiscard();
       $(id).disabled = !canUndoDiscard() || saving || Boolean(deleting);
     }
+    updateStickyHeights();
   }
   function route(preserveLeave = false) {
     clearDiscardUndo();
@@ -939,7 +943,7 @@
       if (stillCurrent()) { deleteBusy = false; $('confirm-delete').disabled = !matchesDeletion(); $('cancel-delete').disabled = false; $('delete-confirmation').disabled = false; $('confirm-delete').textContent = 'Delete account permanently'; }
     }
   });
-  async function enter() { signedIn = true; $('login-view').hidden = true; $('admin-view').hidden = false; $('sign-out').hidden = false; adminMenu.hidden = false; $('password').value = ''; updateHeaderHeight(); await refresh(); }
+  async function enter() { signedIn = true; $('login-view').hidden = true; $('admin-view').hidden = false; $('sign-out').hidden = false; adminMenu.hidden = false; $('password').value = ''; updateStickyHeights(); await refresh(); }
   $('login-form').addEventListener('submit', async event => {
     event.preventDefault(); const button = event.submitter; button.disabled = true; $('login-message').textContent = '';
     try { await api('/api/login', { method:'POST', body:JSON.stringify({password:$('password').value.toLowerCase()}) }); await enter(); }
@@ -1081,7 +1085,7 @@
   });
   window.addEventListener('popstate', handleHistoryNavigation);
   window.addEventListener('hashchange', handleHistoryNavigation);
-  window.addEventListener('resize',updateHeaderHeight);
+  window.addEventListener('resize',updateStickyHeights);
   window.addEventListener('pagehide',clearPrivate);
   window.addEventListener('pageshow',event=>{if(event.persisted)restore();});
   const common = {'America/New_York':'Eastern time — New York','America/Chicago':'Central time — Chicago','America/Denver':'Mountain time — Denver','America/Los_Angeles':'Pacific time — Los Angeles','Asia/Tokyo':'Japan — Tokyo','Europe/Berlin':'Central Europe — Berlin','Europe/London':'United Kingdom — London','Asia/Kolkata':'India — Kolkata'};

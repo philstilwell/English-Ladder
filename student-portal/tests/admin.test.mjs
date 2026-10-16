@@ -219,6 +219,48 @@ test('administrator list links to editable accounts and has a separate registrat
   assert.equal(d.querySelectorAll('input[type="password"]').length,4);assert.doesNotMatch(script,/localStorage|sessionStorage|innerHTML/);dom.window.close();
 });
 
+test('directory failure after restored or new sign-in stays visible and Refresh recovers the saved students',async()=>{
+  for (const restored of [true,false]) {
+    let failed=true;
+    const dom=browser(path=>path==='/api/session'&&!restored?Response.json({error:'Please sign in.'},{status:401}):path==='/api/login'?Response.json({administrator:true}):path==='/api/admin/students'&&failed?Response.json({error:'Directory temporarily unavailable.'},{status:503}):null);
+    await flush();const w=dom.window,d=w.document;
+    if (!restored) {
+      d.getElementById('password').value='fictional-test';
+      d.getElementById('login-form').dispatchEvent(new w.SubmitEvent('submit',{bubbles:true,cancelable:true,submitter:d.querySelector('#login-form button')}));
+      await flush();
+    }
+    assert.equal(d.getElementById('login-view').hidden,true);
+    assert.equal(d.getElementById('admin-view').hidden,false);
+    assert.equal(d.getElementById('message').hidden,false);
+    assert.match(d.getElementById('message').textContent,/student list could not load.*Directory temporarily unavailable/);
+    assert.equal(d.getElementById('active-count').textContent,'—');
+    assert.equal(d.getElementById('draft-count').textContent,'—');
+    assert.equal(d.getElementById('empty-list').hidden,true);
+    d.getElementById('search').dispatchEvent(new w.Event('input',{bubbles:true}));
+    assert.equal(d.getElementById('active-count').textContent,'—');
+    w.location.hash='#register';await flush();assert.equal(d.getElementById('edit-view').hidden,true);
+    w.location.hash='#students';await flush();
+    failed=false;d.getElementById('refresh').click();await flush();
+    assert.match(d.getElementById('student-rows').textContent,/Morgan Testperson/);
+    assert.equal(d.getElementById('active-count').textContent,'1');
+    assert.equal(d.getElementById('message').classList.contains('error'),false);
+    dom.window.close();
+  }
+});
+
+test('failed directory refresh preserves the loaded students and activity/resource choices',async()=>{
+  let failed=false;
+  const dom=browser(path=>path==='/api/admin/students'&&failed?Response.json({error:'Temporarily unavailable.'},{status:503}):null);
+  await flush();const d=dom.window.document;
+  failed=true;d.getElementById('refresh').click();await flush();
+  assert.match(d.getElementById('student-rows').textContent,/Morgan Testperson/);
+  assert.match(d.getElementById('message').textContent,/previously loaded list is still shown/);
+  d.querySelector('.student-name').click();await flush();
+  assert.equal(d.querySelectorAll('#student-resources input:checked').length,fixture.visibleResources.length);
+  assert.equal(d.querySelectorAll('#student-activities input:checked').length,fixture.visibleActivities.length);
+  dom.window.close();
+});
+
 test('sticky ID copies only the saved ID, confirms success briefly, and preserves unsaved edits',async()=>{
   let copied=[],finishCopy,writes=0;
   const dom=browser((path,options)=>{if(options?.method&&options.method!=='GET')writes++;});await flush();const w=dom.window,d=w.document;

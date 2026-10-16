@@ -6,6 +6,7 @@ export { FeedbackStore } from './feedback.mjs';
 import { nightlyDate } from './server-quiz-automation.mjs';
 export { QuizAutomation } from './server-quiz-automation.mjs';
 import { directoryRequest } from './student-directory.mjs';
+import { runtimeErrorCategory } from './runtime-error.mjs';
 import { matchesStudentPassword } from './student-password.mjs';
 import vocabularyBank from './vocabulary-bank.json' with { type: 'json' };
 import grammarBank from './grammar-bank.json' with { type: 'json' };
@@ -545,9 +546,10 @@ export default {
   },
   async fetch(request, env) {
     try { return protect(await handle(request, env)); }
-    catch {
-      // Never log passwords, secret configuration, or request bodies.
-      return protect(json({ error: 'Sign-in is temporarily unavailable. Please try again shortly.' }, 503));
+    catch (error) {
+      console.error('Student service unavailable:', runtimeErrorCategory(error));
+      const directory = new URL(request.url).pathname === '/api/admin/students';
+      return protect(json({ error: directory ? 'The student directory is temporarily unavailable. Please try Refresh shortly.' : 'Sign-in is temporarily unavailable. Please try again shortly.' }, 503));
     }
   },
 };

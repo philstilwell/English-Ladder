@@ -14,6 +14,7 @@
   headerResizeObserver?.observe(editorActions);
   let signedIn = false, epoch = 0, students = [], current = null, importRows = null, addressEdited = false;
   let activityTools = [], resourceTools = [];
+  let directoryLoaded = false, directoryRead = 0;
   let questionsRequest = 0, questionStatuses = {}, combinedRequest = 0;
   let automationRequest = 0, retryingUpdate = false;
   let resolvedQuestions = [], questionActionPending = false;
@@ -490,6 +491,7 @@
     }
   }
   function clearPrivate() {
+    directoryLoaded = false; directoryRead++;
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
     savedFormState = null; editGeneration++; restoringHistory = false; clearDiscardUndo();
     historyDestination = null; approvedHistory = null; closeLeave();
@@ -510,7 +512,8 @@
     $('edit-title').textContent = ''; $('student-editor-name').textContent = ''; clearStudentIdCopy(); $('source-note').textContent = ''; $('open-site').removeAttribute('href'); $('open-quiz-results').removeAttribute('href'); $('open-quiz-results').hidden = true;
     $('activation-note').textContent = ''; setSaveState(''); $('import-preview').hidden = true;
     $('password-status').textContent = '';
-    $('active-count').textContent = '0'; $('draft-count').textContent = '0'; $('list-count').textContent = '';
+    $('active-count').textContent = '—'; $('draft-count').textContent = '—'; $('list-count').textContent = '';
+    $('empty-list').hidden = true; $('refresh').disabled = false;
     $('last-check').textContent = ''; $('schedule-state').textContent = ''; message('');
     document.title = 'Phil’s students · English Ladder';
   }
@@ -526,6 +529,7 @@
     return data;
   }
   function showList() {
+    if (!directoryLoaded) return;
     const query = $('search').value.trim().toLowerCase(), filter = $('filter').value;
     const shown = students.filter(s => (filter === 'all' || s.status === filter) && [s.firstName,s.lastName,s.studentId,...s.zoomNames].join(' ').toLowerCase().includes(query));
     $('student-rows').replaceChildren();
@@ -571,12 +575,16 @@
     }
   }
   async function refresh() {
+    const read = ++directoryRead;
     quizRequest++;
     cefrRequest++; questionsRequest++;
-    resourceTools = [];
     const version = epoch;
+    $('refresh').disabled = true;
+    if (!directoryLoaded) { $('list-count').textContent = 'Loading students…'; $('empty-list').hidden = true; }
+    try {
     const data = await api('/api/admin/students');
-    if (!signedIn || version !== epoch) return;
+    if (!signedIn || version !== epoch || read !== directoryRead) return;
+    if (!Array.isArray(data.students)) throw new Error('The student list was not returned.');
     if (!Array.isArray(data.activities) || !data.activities.length || data.activities.some(a => !a || typeof a.id !== 'string' || typeof a.name !== 'string' || typeof a.description !== 'string')) throw new Error('The activity list could not load. Please refresh before editing a student.');
     if (!Array.isArray(data.resources) || !data.resources.length ||
         new Set(data.resources.map(resource => resource?.id)).size !== data.resources.length ||
@@ -584,10 +592,20 @@
           typeof resource.name !== 'string' || typeof resource.group !== 'string' || typeof resource.groupName !== 'string'))
       throw new Error('The resource list could not load. Please refresh before editing a student.');
     activityTools = data.activities; resourceTools = data.resources;
+    directoryLoaded = true; message('');
     students = data.students; quizStatuses = {}; cefrStatuses = {}; questionStatuses = {}; showList(); route();
     void refreshQuizStatuses();
     void refreshCefrStatuses();
     void refreshQuestionStatuses();
+    } catch (error) {
+      if (signedIn && version === epoch && read === directoryRead) {
+        if (!directoryLoaded) $('list-count').textContent = 'Student list unavailable. Click Refresh to try again.';
+        message((directoryLoaded ? 'Could not refresh the student list. The previously loaded list is still shown. ' : 'The student list could not load. ') + error.message, true);
+      }
+      throw error;
+    } finally {
+      if (version === epoch && read === directoryRead) $('refresh').disabled = false;
+    }
   }
   async function refreshQuizStatuses() {
     const version = epoch, request = ++quizRequest;
@@ -886,6 +904,10 @@
     const hash = location.hash || '#students';
     for (const id of ['list-view','edit-view','import-view','technical-view','questions-view']) $(id).hidden = true;
     for (const id of ['list-nav','register-nav','import-nav','technical-nav']) $(id).removeAttribute('aria-current');
+    if (!directoryLoaded && hash !== '#technical-notes') {
+      $('list-view').hidden = false; $('list-nav').setAttribute('aria-current','page');
+      return;
+    }
     if (hash === '#register') { $('edit-view').hidden = false; $('register-nav').setAttribute('aria-current','page'); editStudent(null); }
     else if (hash.startsWith('#students/')) {
       const parts = hash.slice(10).split('/');
@@ -949,11 +971,11 @@
       if (stillCurrent()) { deleteBusy = false; $('confirm-delete').disabled = !matchesDeletion(); $('cancel-delete').disabled = false; $('delete-confirmation').disabled = false; $('confirm-delete').textContent = 'Delete account permanently'; }
     }
   });
-  async function enter() { signedIn = true; $('login-view').hidden = true; $('admin-view').hidden = false; $('sign-out').hidden = false; adminMenu.hidden = false; $('password').value = ''; updateStickyHeights(); await refresh(); }
+  async function enter() { signedIn = true; $('login-view').hidden = true; $('admin-view').hidden = false; $('sign-out').hidden = false; adminMenu.hidden = false; $('password').value = ''; updateStickyHeights(); route(); await refresh(); }
   $('login-form').addEventListener('submit', async event => {
     event.preventDefault(); const button = event.submitter; button.disabled = true; $('login-message').textContent = '';
     try { await api('/api/login', { method:'POST', body:JSON.stringify({password:$('password').value.toLowerCase()}) }); await enter(); }
-    catch (error) { $('login-message').textContent = error.message; }
+    catch (error) { if (!signedIn) $('login-message').textContent = error.message; }
     finally { button.disabled = false; }
   });
   $('password').addEventListener('input', () => { $('password').value = $('password').value.toLowerCase(); });
@@ -963,7 +985,7 @@
     try { await api('/api/logout', {method:'POST'}); $('login-message').textContent = 'You are signed out.'; }
     catch { $('login-message').textContent = 'The page is cleared. Sign-out could not reach the server; close this browser window to finish.'; }
   }));
-  $('refresh').addEventListener('click', async () => { try { await refresh(); message('Student list refreshed.'); } catch (error) { if (signedIn) message(error.message,true); } });
+  $('refresh').addEventListener('click', async () => { try { await refresh(); if (signedIn) message('Student list refreshed.'); } catch { /* refresh shows the error without hiding an existing list. */ } });
   const filterList = () => { $('paused-students').open = $('filter').value === 'paused' || Boolean($('search').value.trim()); showList(); };
   $('search').addEventListener('input',filterList); $('filter').addEventListener('change',filterList);
   $('firstName').addEventListener('input',suggestedAddress); $('lastName').addEventListener('input',suggestedAddress);
@@ -1140,6 +1162,6 @@
   const common = {'America/New_York':'Eastern time — New York','America/Chicago':'Central time — Chicago','America/Denver':'Mountain time — Denver','America/Los_Angeles':'Pacific time — Los Angeles','Asia/Tokyo':'Japan — Tokyo','Europe/Berlin':'Central Europe — Berlin','Europe/London':'United Kingdom — London','Asia/Kolkata':'India — Kolkata'};
   const zones=[...Object.keys(common),...(Intl.supportedValuesOf?.('timeZone')||[]).filter(z=>!common[z])];
   for(const zone of zones){const option=element('option',common[zone]||zone.replaceAll('_',' '));option.value=zone;$('timeZone').append(option);}
-  async function restore(){try{const session=await api('/api/session');if(session.administrator)await enter();}catch(error){if(signedIn)message(error.message,true);}}
+  async function restore(){try{const session=await api('/api/session');if(session.administrator)await enter();}catch{ /* refresh reports directory failures in the signed-in view. */ }}
   restore();
 })();

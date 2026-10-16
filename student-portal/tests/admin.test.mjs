@@ -206,7 +206,7 @@ test('directory changes retry unmatched notes and use new Zoom names on the next
 const html=readFileSync(new URL('../public/admin.html',import.meta.url),'utf8'),script=readFileSync(new URL('../public/admin.js',import.meta.url),'utf8');
 const fixture={...example,visibleResources:['elllo','write-and-improve'],visibleActivities:['english-road','grammar-practice'],key:'11111111-1111-4111-8111-111111111111',revision:1,activated:true,startAfter:'2026-10-14T12:00:00Z'};
 const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1));};
-function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.confirm=()=>true;dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
+function browser(custom, {autoDiscard = true} = {}){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;if(this.id==='leave-dialog'&&autoDiscard)dom.window.document.getElementById('leave-discard').click();};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
   return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
 };dom.window.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/study-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/communication-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/road-questions.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
@@ -257,7 +257,7 @@ test('both save notices track edited values and selections, clear on revert, and
   $('sign-out').click();notice('');await flush();w.close();
 });
 
-test('failed saves retain unsaved edits, and a late save never marks another editor as saved',async()=>{
+test('failed saves retain unsaved edits, and a late save never restores data after page hide',async()=>{
   let finishSave,body;
   const dom=browser((path,options)=>{
     if(options?.method==='PUT'){body=JSON.parse(options.body);return new Promise(resolve=>finishSave=resolve);}
@@ -270,63 +270,161 @@ test('failed saves retain unsaved edits, and a late save never marks another edi
   const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);assert.equal(unload.defaultPrevented,true);
   assert.equal($('notes').value,'Keep this unsaved note');assert.equal($('notes').matches(':disabled'),false);
   $('save-student-top').click();$('register-nav').click();await flush();
-  assert.equal($('edit-title').textContent,'Register new student');assert.equal($('save-state-top').textContent,'');
+  assert.equal($('leave-dialog').open,true);assert.equal($('leave-discard').disabled,true);
+  assert.equal($('edit-title').textContent,'Morgan Testperson');
+  w.dispatchEvent(new w.Event('pagehide'));assert.equal($('leave-dialog').open,false);
   finishSave(Response.json({student:{...fixture,...body,revision:2}}));await flush();
-  assert.equal(w.location.hash,'#register');assert.equal($('edit-title').textContent,'Register new student');
-  assert.equal($('firstName').value,'');assert.equal($('save-state-top').textContent,'');assert.equal($('save-state').textContent,'');
-  assert.equal($('firstName').matches(':disabled'),false);
-  $('firstName').value='New';$('firstName').dispatchEvent(new w.Event('input',{bubbles:true}));assert.equal($('save-state-top').textContent,'Unsaved changes');
-  w.dispatchEvent(new w.Event('pagehide'));assert.equal($('save-state-top').textContent,'');w.close();
+  assert.equal($('admin-view').hidden,true);assert.equal($('firstName').value,'');
+  assert.equal($('save-state-top').textContent,'');assert.equal($('save-state').textContent,'');w.close();
 });
 
-test('leaving an edited form requires confirmation and Cancel preserves every draft control',async()=>{
-  const dom=browser();await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);
+test('Keep editing and Escape preserve every draft control; Discard changes leaves without saving',async()=>{
+  let writes=0;
+  const dom=browser((path,options)=>{if(options?.method==='PUT')writes++;},{autoDiscard:false});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);
   d.querySelector('.student-name').click();await flush();
   const warns=()=>{const event=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(event);return event.defaultPrevented;};
-  let prompts=0;w.confirm=text=>{prompts++;assert.match(text,/unsaved changes/);return false;};
   assert.equal(warns(),false);
   $('notes').value='Keep this draft';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
   $('newPassword').value='fictional-unsaved';$('newPassword').dispatchEvent(new w.Event('input',{bubbles:true}));
   $('clear-all-activities').click();$('clear-all-resources').click();
   const hash=w.location.hash,length=w.history.length;assert.equal(warns(),true);
-  $('list-nav').click();await flush();assert.equal(prompts,1);assert.equal(w.location.hash,hash);assert.equal(w.history.length,length);
+  $('list-nav').focus();$('list-nav').click();assert.equal($('leave-dialog').open,true);
+  assert.deepEqual([...$('leave-dialog').querySelectorAll('button')].map(b=>b.textContent),['Save and leave','Discard changes','Keep editing']);
+  $('leave-keep').click();await flush();assert.equal($('leave-dialog').open,false);assert.equal(d.activeElement,$('list-nav'));
+  assert.equal(w.location.hash,hash);assert.equal(w.history.length,length);
   assert.equal($('notes').value,'Keep this draft');assert.equal($('newPassword').value,'fictional-unsaved');
   assert.equal(d.querySelectorAll('#student-activities input:checked').length,0);assert.equal(d.querySelectorAll('#student-resources input:checked').length,0);
   assert.equal($('save-state-top').textContent,'Unsaved changes');assert.equal($('edit-view').hidden,false);
   d.querySelector('.student-name').click();d.querySelector('.skip-link').click();$('open-site').click();await flush();
-  assert.equal(prompts,1);assert.equal(w.location.hash,hash);assert.equal($('notes').value,'Keep this draft');
-  w.confirm=()=>{prompts++;return true;};$('list-nav').click();await flush();
-  assert.equal(prompts,2);assert.equal(w.location.hash,'#students');assert.equal($('edit-view').hidden,true);assert.equal($('newPassword').value,'');assert.equal(warns(),false);
+  assert.equal($('leave-dialog').open,false);assert.equal(w.location.hash,hash);
+  $('list-nav').click();const escape=new w.Event('cancel',{cancelable:true});$('leave-dialog').dispatchEvent(escape);
+  assert.equal(escape.defaultPrevented,true);assert.equal($('leave-dialog').open,false);assert.equal($('notes').value,'Keep this draft');
+  $('list-nav').click();$('leave-discard').click();await flush();
+  assert.equal(writes,0);assert.equal(w.location.hash,'#students');assert.equal($('edit-view').hidden,true);assert.equal($('newPassword').value,'');assert.equal(warns(),false);
   w.close();
 });
 
-test('cancelled Back and Forward preserve the form and its history destinations',async()=>{
-  const dom=browser();await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);
+test('Back and Forward retain their destinations through Keep editing, Discard changes, and Save and leave',async()=>{
+  let saved=structuredClone(fixture),writes=0;
+  const dom=browser((path,options)=>{if(options?.method==='PUT'){writes++;saved={...saved,...JSON.parse(options.body),revision:2};return Response.json({student:saved});}},{autoDiscard:false});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);
   d.querySelector('.student-name').click();await flush();const editHash=w.location.hash;
   $('register-nav').click();await flush();w.history.back();await flush();assert.equal(w.location.hash,editHash);
   $('notes').value='Keep this history draft';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
-  let prompts=0;w.confirm=()=>{prompts++;return false;};const length=w.history.length;
-  w.history.forward();await flush();assert.equal(w.location.hash,editHash);assert.equal(prompts,1);
-  w.history.back();await flush();assert.equal(w.location.hash,editHash);assert.equal(prompts,2);
+  const length=w.history.length;
+  w.history.forward();await flush();assert.equal(w.location.hash,editHash);assert.equal($('leave-dialog').open,true);$('leave-keep').click();
+  w.history.back();await flush();assert.equal(w.location.hash,editHash);assert.equal($('leave-dialog').open,true);$('leave-keep').click();
   assert.equal(w.history.length,length);assert.equal($('notes').value,'Keep this history draft');assert.equal($('edit-view').hidden,false);
-  w.confirm=()=>{prompts++;return true;};w.history.forward();await flush();
-  assert.equal(w.location.hash,'#register');assert.equal(prompts,3);assert.equal($('notes').value,'');
-  w.history.back();await flush();assert.equal(w.location.hash,editHash);assert.equal(prompts,3);assert.equal($('notes').value,fixture.notes);
-  w.close();
+  w.history.forward();await flush();$('leave-discard').click();await flush();
+  assert.equal(w.location.hash,'#register');assert.equal($('notes').value,'');assert.equal(writes,0);
+  w.history.back();await flush();assert.equal(w.location.hash,editHash);assert.equal($('notes').value,fixture.notes);
+  $('notes').value='Save this history draft';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
+  w.history.back();await flush();$('leave-save').click();await flush();
+  assert.equal(w.location.hash,'#students');assert.equal(w.history.length,length);assert.equal(writes,1);
+  w.history.forward();await flush();assert.equal(w.location.hash,editHash);assert.equal($('notes').value,'Save this history draft');
+  assert.equal($('leave-dialog').open,false);w.close();
 });
 
-test('sign-out warns before discarding edits, while expiry always clears private data without a prompt',async()=>{
-  let logouts=0,expire=false;
-  const dom=browser((path,options)=>{
-    if(path==='/api/logout')logouts++;
-    if(expire)return Response.json({error:'Please sign in again.'},{status:401});
-  });
+test('Save and leave saves all selections once, waits for success, and opens the requested section',async()=>{
+  let finishSave,body,writes=0;
+  const dom=browser((path,options)=>{if(options?.method==='PUT'){writes++;body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}},{autoDiscard:false});
   await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
-  $('notes').value='Unsaved sign-out draft';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
-  let prompts=0;w.confirm=()=>{prompts++;return false;};$('sign-out').click();await flush();
-  assert.equal(logouts,0);assert.equal(prompts,1);assert.equal($('admin-view').hidden,false);assert.equal($('notes').value,'Unsaved sign-out draft');
+  $('notes').value='Save all changes';$('newPassword').value='fictional-password';$('confirmPassword').value='fictional-password';
+  $('clear-all-activities').click();$('clear-all-resources').click();$('technical-nav').click();
+  $('leave-save').click();$('leave-save').click();await flush();
+  assert.equal(writes,1);assert.equal($('edit-view').hidden,false);assert.equal($('leave-dialog').open,true);
+  assert.equal($('leave-discard').disabled,true);assert.equal($('leave-save').disabled,true);
+  assert.equal(body.notes,'Save all changes');assert.equal(body.newPassword,'fictional-password');assert.equal(body.revision,1);
+  assert.deepEqual(body.visibleActivities,[]);assert.deepEqual(body.visibleResources,[]);
+  finishSave(Response.json({student:{...fixture,...body,revision:2}}));await flush();
+  assert.equal(w.location.hash,'#technical-notes');assert.equal($('leave-dialog').open,false);assert.equal($('newPassword').value,'');
+  const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);assert.equal(unload.defaultPrevented,false);w.close();
+});
+
+test('Save and leave retains edits after a failed save and supports retry',async()=>{
+  let writes=0;
+  const dom=browser((path,options)=>{if(options?.method==='PUT'){writes++;return writes===1?Response.json({error:'Save unavailable.'},{status:503}):Response.json({student:{...fixture,...JSON.parse(options.body),revision:2}});}},{autoDiscard:false});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+  $('notes').value='Retain on failure';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));$('list-nav').click();$('leave-save').click();await flush();
+  assert.equal($('leave-dialog').open,true);assert.equal($('leave-save').disabled,false);assert.equal($('leave-discard').disabled,false);
+  assert.match($('leave-status').textContent,/Save unavailable/);assert.equal($('notes').value,'Retain on failure');
+  assert.equal($('save-state-top').textContent,'Unsaved changes — not saved');assert.equal($('edit-view').hidden,false);
+  $('leave-save').click();await flush();assert.equal(writes,2);assert.equal(w.location.hash,'#students');assert.equal($('leave-dialog').open,false);w.close();
+});
+
+test('invalid fields and mismatched passwords prevent Save and leave without losing the form',async()=>{
+  let writes=0;const dom=browser((path,options)=>{if(options?.method==='PUT')writes++;},{autoDiscard:false});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+  $('firstName').value='';$('list-nav').click();$('leave-save').click();await flush();
+  assert.equal(writes,0);assert.equal($('edit-view').hidden,false);assert.equal($('leave-dialog').open,false);assert.equal($('firstName').value,'');
+  $('firstName').value='Morgan';$('newPassword').value='fictional-password';$('confirmPassword').value='different-password';
+  $('list-nav').click();$('leave-save').click();await flush();
+  assert.equal(writes,0);assert.equal($('leave-dialog').open,true);assert.match($('leave-status').textContent,/passwords do not match/);
+  $('leave-keep').click();assert.equal($('newPassword').value,'fictional-password');w.close();
+});
+
+test('Save and leave reuses an in-flight save and Keep editing cancels only navigation',async()=>{
+  for(const keep of [false,true]){
+    let finishSave,writes=0,body;
+    const dom=browser((path,options)=>{if(options?.method==='PUT'){writes++;body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}},{autoDiscard:false});
+    await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+    $('notes').value='Already saving';$('save-student-top').click();$('list-nav').click();$('leave-save').click();
+    if(keep)$('leave-keep').click();
+    assert.equal(writes,1);finishSave(Response.json({student:{...fixture,...body,revision:2}}));await flush();
+    assert.equal($('leave-dialog').open,false);assert.equal(w.location.hash,keep?'#students/'+fixture.key:'#students');
+    if(keep){assert.equal($('notes').value,'Already saving');assert.equal($('save-state-top').textContent,'Saved');}w.close();
+  }
+});
+
+test('Save and leave does not repeat a save that finished while the dialog was open',async()=>{
+  let finishSave,writes=0,body;
+  const dom=browser((path,options)=>{if(options?.method==='PUT'){writes++;body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}},{autoDiscard:false});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+  $('notes').value='Save before deciding';$('save-student-top').click();$('list-nav').click();
+  finishSave(Response.json({student:{...fixture,...body,revision:2}}));await flush();
+  assert.equal($('leave-dialog').open,true);assert.match($('leave-status').textContent,/Changes saved/);
+  $('leave-save').click();await flush();assert.equal(writes,1);assert.equal(w.location.hash,'#students');assert.equal($('leave-dialog').open,false);w.close();
+});
+
+test('Save and leave creates a registration before leaving and later reopens the saved account',async()=>{
+  let body,writes=0;
+  const dom=browser((path,options)=>{if(path==='/api/admin/students'&&options?.method==='POST'){writes++;body=JSON.parse(options.body);return Response.json({student:{...fixture,...body,key:'22222222-2222-4222-8222-222222222222'}});}},{autoDiscard:false});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);$('register-nav').click();await flush();
+  $('firstName').value='Taylor';$('lastName').value='Testperson';$('studentId').value='tt26';$('zoomNames').value='Taylor Test';
+  $('list-nav').click();$('leave-save').click();await flush();assert.equal(writes,1);assert.equal(w.location.hash,'#students');assert.equal(body.firstName,'Taylor');
+  w.history.back();await flush();assert.equal(w.location.hash,'#students/22222222-2222-4222-8222-222222222222');assert.equal($('firstName').value,'Taylor');w.close();
+});
+
+test('sign-out can keep, discard, or save edits and waits for saving before logging out',async()=>{
+  for(const choice of ['leave-discard','leave-save']){
+    let finishSave,body;const calls=[];
+    const dom=browser((path,options)=>{
+      if(options?.method==='PUT'){calls.push('save');body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}
+      if(path==='/api/logout')calls.push('logout');
+    },{autoDiscard:false});
+    await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+    $('notes').value='Sign-out draft';$('sign-out').click();$('leave-keep').click();await flush();
+    assert.deepEqual(calls,[]);assert.equal($('admin-view').hidden,false);assert.equal($('notes').value,'Sign-out draft');
+    $('sign-out').click();$(choice).click();
+    if(choice==='leave-save'){assert.deepEqual(calls,['save']);assert.equal($('admin-view').hidden,false);finishSave(Response.json({student:{...fixture,...body,revision:2}}));}
+    await flush();assert.deepEqual(calls,choice==='leave-save'?['save','logout']:['logout']);
+    assert.equal($('admin-view').hidden,true);assert.equal($('notes').value,'');assert.equal($('leave-dialog').open,false);w.close();
+  }
+});
+
+test('expiry clears an open leave dialog and late saves cannot navigate or restore private information',async()=>{
+  let finishSave,expire=false,logouts=0;
+  const dom=browser((path,options)=>{
+    if(expire)return Response.json({error:'Please sign in again.'},{status:401});
+    if(options?.method==='PUT')return new Promise(r=>finishSave=r);
+    if(path==='/api/logout')logouts++;
+  },{autoDiscard:false});
+  await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+  $('notes').value='Unsaved private draft';$('sign-out').click();$('leave-save').click();
   expire=true;$('refresh-login-details').click();await flush();
-  assert.equal(prompts,1);assert.equal($('admin-view').hidden,true);assert.equal($('notes').value,'');
+  assert.equal($('leave-dialog').open,false);assert.equal($('admin-view').hidden,true);assert.equal($('notes').value,'');
+  finishSave(Response.json({student:{...fixture,revision:2}}));await flush();assert.equal(logouts,0);assert.equal($('admin-view').hidden,true);assert.equal($('leave-status').textContent,'');
   const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);assert.equal(unload.defaultPrevented,false);w.close();
 });
 

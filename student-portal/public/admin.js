@@ -20,7 +20,8 @@
   let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
   let activityOverviewRequest = 0;
   let deleting = null, deleteBusy = false, saving = false;
-  let savedFormState = null, editGeneration = 0;
+  let savedFormState = null, editGeneration = 0, saveTask = null;
+  let pendingLeave = null, leaveBusy = false, historyDestination = null, approvedHistory = null;
   let activeRouteHash = location.hash || '#students', restoringHistory = false;
   let activeHistoryIndex = Number.isSafeInteger(history.state?.adminRouteIndex) ? history.state.adminRouteIndex : 0;
   history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '');
@@ -487,6 +488,7 @@
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
     savedFormState = null; editGeneration++; restoringHistory = false;
+    historyDestination = null; approvedHistory = null; closeLeave();
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     updateSelectionCounts();
     clearRoad(); clearQuestions(); clearActivityOverview();
@@ -722,41 +724,88 @@
     event.preventDefault();
     event.returnValue = '';
   }
-  function canLeaveEditor() {
-    return !hasUnsavedEdits() || window.confirm(saving
-      ? 'Your changes are still being saved. Leave this page anyway?\n\nChoose Cancel to stay.'
-      : 'You have unsaved changes. Leave this page without saving them?\n\nChoose Cancel to keep editing.');
+  function closeLeave() {
+    const focus = pendingLeave?.focus;
+    pendingLeave = null; leaveBusy = false;
+    if ($('leave-dialog').open) $('leave-dialog').close();
+    $('leave-status').textContent = '';
+    if (signedIn && focus?.isConnected) focus.focus({ preventScroll: true });
   }
+  function updateLeaveState() {
+    $('leave-save').disabled = leaveBusy;
+    // A request already sent cannot be discarded safely while it is saving.
+    $('leave-discard').disabled = saving;
+    if (saving) $('leave-status').textContent = 'Saving… Please wait. Keep editing will keep you on this page.';
+  }
+  function requestLeave(action) {
+    if (pendingLeave || restoringHistory) return;
+    if (!hasUnsavedEdits()) { action(); return; }
+    pendingLeave = { action, version: epoch, editor: editGeneration, focus: document.activeElement };
+    $('leave-status').textContent = '';
+    updateLeaveState(); $('leave-dialog').showModal();
+  }
+  function completeLeave(leave) {
+    if (pendingLeave !== leave || !signedIn || leave.version !== epoch || leave.editor !== editGeneration) return;
+    closeLeave(); leave.action();
+  }
+  $('leave-keep').addEventListener('click', closeLeave);
+  $('leave-dialog').addEventListener('cancel', event => { event.preventDefault(); closeLeave(); });
+  $('leave-discard').addEventListener('click', () => { if (pendingLeave && !saving) completeLeave(pendingLeave); });
+  $('leave-save').addEventListener('click', async () => {
+    const leave = pendingLeave;
+    if (!leave || leaveBusy) return;
+    if (!hasUnsavedEdits()) { completeLeave(leave); return; }
+    if (!saving && !$('student-form').checkValidity()) {
+      closeLeave(); $('student-form').reportValidity(); return;
+    }
+    leaveBusy = true; updateLeaveState();
+    const saved = await saveStudent();
+    if (pendingLeave !== leave) return;
+    leaveBusy = false; updateLeaveState();
+    if (saved) completeLeave(leave);
+  });
   function navigateTo(hash) {
-    if (hash === activeRouteHash || !canLeaveEditor()) return;
-    activeHistoryIndex++;
-    history.pushState({ adminRouteIndex: activeHistoryIndex }, '', hash);
-    message(''); route();
+    if (hash === activeRouteHash) return;
+    requestLeave(() => {
+      activeHistoryIndex++;
+      history.pushState({ adminRouteIndex: activeHistoryIndex }, '', hash);
+      message(''); route();
+    });
   }
-  function replaceRoute(hash) {
+  function replaceRoute(hash, preserveLeave = false) {
     history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '', hash);
-    route();
+    route(preserveLeave);
   }
   function handleHistoryNavigation() {
     const hash = location.hash || '#students';
     if (restoringHistory) {
-      if (hash === activeRouteHash) restoringHistory = false;
-      return;
-    }
-    if (hash === activeRouteHash) return;
-    const index = history.state?.adminRouteIndex;
-    if (!canLeaveEditor()) {
-      restoringHistory = true;
-      if (!Number.isSafeInteger(index)) history.back();
-      else if (index !== activeHistoryIndex) history.go(activeHistoryIndex - index);
-      else {
-        history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '', activeRouteHash);
+      if (hash === activeRouteHash && history.state?.adminRouteIndex === activeHistoryIndex) {
         restoringHistory = false;
+        const destination = historyDestination; historyDestination = null;
+        if (destination) requestLeave(() => {
+          approvedHistory = destination;
+          history.go(destination.index - activeHistoryIndex);
+        });
       }
       return;
     }
-    activeHistoryIndex = Number.isSafeInteger(index) ? index : activeHistoryIndex + 1;
-    history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '');
+    if (hash === activeRouteHash) return;
+    const index = Number.isSafeInteger(history.state?.adminRouteIndex) ? history.state.adminRouteIndex : activeHistoryIndex + 1;
+    history.replaceState({ ...history.state, adminRouteIndex: index }, '');
+    const approved = approvedHistory?.hash === hash && approvedHistory.index === index;
+    approvedHistory = null;
+    if (!approved && hasUnsavedEdits()) {
+      if (index === activeHistoryIndex) {
+        history.replaceState({ ...history.state, adminRouteIndex: activeHistoryIndex }, '', activeRouteHash);
+        navigateTo(hash);
+      } else {
+        // Restore the editor's history entry before opening the asynchronous dialog.
+        historyDestination = { hash, index }; restoringHistory = true;
+        history.go(activeHistoryIndex - index);
+      }
+      return;
+    }
+    activeHistoryIndex = index;
     message(''); route();
   }
   function updateSaveLabel() {
@@ -767,7 +816,8 @@
       $(id).disabled = Boolean(current?.deletionPending) || saving;
     }
   }
-  function route() {
+  function route(preserveLeave = false) {
+    if (!preserveLeave) closeLeave();
     activeRouteHash = location.hash || '#students';
     if (!signedIn) return;
     savedFormState = null; editGeneration++; setSaveState('');
@@ -852,13 +902,12 @@
     finally { button.disabled = false; }
   });
   $('password').addEventListener('input', () => { $('password').value = $('password').value.toLowerCase(); });
-  $('sign-out').addEventListener('click', async () => {
-    if (!canLeaveEditor()) return;
+  $('sign-out').addEventListener('click', () => requestLeave(async () => {
     // Clear every private DOM node immediately, before the network response.
     clearPrivate(); replaceRoute('#students');
     try { await api('/api/logout', {method:'POST'}); $('login-message').textContent = 'You are signed out.'; }
     catch { $('login-message').textContent = 'The page is cleared. Sign-out could not reach the server; close this browser window to finish.'; }
-  });
+  }));
   $('refresh').addEventListener('click', async () => { try { await refresh(); message('Student list refreshed.'); } catch (error) { if (signedIn) message(error.message,true); } });
   const filterList = () => { $('paused-students').open = $('filter').value === 'paused' || Boolean($('search').value.trim()); showList(); };
   $('search').addEventListener('input',filterList); $('filter').addEventListener('change',filterList);
@@ -904,32 +953,53 @@
       updateUnsavedNotice();
     });
   }
-  $('student-form').addEventListener('submit', async event => {
-    event.preventDefault(); const version = epoch, editing = current, editor = editGeneration;
-    if (!signedIn || !activityTools.length || !resourceTools.length || saving || deleting || editing?.deletionPending) return;
+  $('student-form').addEventListener('submit', event => { event.preventDefault(); void saveStudent(); });
+  function saveStudent() {
+    if (saveTask?.version === epoch && saveTask.editor === editGeneration) return saveTask.promise;
+    const task = { version: epoch, editor: editGeneration };
+    saveTask = task;
+    task.promise = performStudentSave().finally(() => { if (saveTask === task) saveTask = null; });
+    return task.promise;
+  }
+  async function performStudentSave() {
+    const version = epoch, editing = current, editor = editGeneration;
+    if (!signedIn || !activityTools.length || !resourceTools.length || saving || deleting || editing?.deletionPending) return false;
+    if (!$('student-form').reportValidity()) return false;
     updateUnsavedNotice();
     const input = Object.fromEntries(fields.map(field => [field,$(field).value]));
     input.visibleActivities = [...$('student-activities').querySelectorAll('input:checked')].map(box => box.value);
     input.visibleResources = [...$('student-resources').querySelectorAll('input:checked')].map(box => box.value);
     input.zoomNames = $('zoomNames').value.split(/\r?\n/).map(v=>v.trim()).filter(Boolean);
     if ($('newPassword').value || $('confirmPassword').value) {
-      if ($('newPassword').value.toLowerCase() !== $('confirmPassword').value.toLowerCase()) { message('The two student passwords do not match.', true); return; }
+      if ($('newPassword').value.toLowerCase() !== $('confirmPassword').value.toLowerCase()) {
+        const error = 'The two student passwords do not match.' + (pendingLeave ? ' Choose Keep editing to correct them.' : '');
+        message(error, true); if (pendingLeave) $('leave-status').textContent = error; return false;
+      }
       input.newPassword = $('newPassword').value.toLowerCase(); input.confirmPassword = $('confirmPassword').value.toLowerCase();
     }
     if (editing) input.revision = editing.revision;
-    saving = true; $('open-delete').disabled = true; updateSaveLabel(); setSaveState('Saving…'); message('');
+    saving = true; $('open-delete').disabled = true; updateSaveLabel(); setSaveState('Saving…'); message(''); updateLeaveState();
     try {
       const data = await api('/api/admin/students' + (editing ? '/' + editing.key : ''), {method:editing?'PUT':'POST',body:JSON.stringify(input)});
-      if (!signedIn || version !== epoch) return;
+      if (!signedIn || version !== epoch) return false;
       students = students.filter(s=>s.key!==data.student.key).concat(data.student).sort((a,b)=>(a.firstName+a.lastName).localeCompare(b.firstName+b.lastName));
-      if (editor !== editGeneration) return;
-      replaceRoute('#students/' + data.student.key);
+      if (editor !== editGeneration) return false;
+      replaceRoute('#students/' + data.student.key, true);
+      if (pendingLeave) pendingLeave.editor = editGeneration;
       message(data.student.status === 'active' ? 'Saved. This student’s site is active and linked to the nightly updates.' : 'Saved. This account is ' + data.student.status + '.');
       setSaveState('Saved');
       void refreshQuizStatuses();
-    } catch(error) { if(signedIn && version===epoch && editor===editGeneration){message(error.message,true);setSaveState(studentFormState() !== savedFormState ? 'Unsaved changes — not saved' : 'Not saved');} }
-    finally { saving = false; updateSaveLabel(); $('open-delete').disabled = false; }
-  });
+      if (pendingLeave) $('leave-status').textContent = 'Changes saved. You can now leave or keep editing.';
+      return true;
+    } catch (error) {
+      if (signedIn && version === epoch && editor === editGeneration) {
+        message(error.message, true);
+        setSaveState(studentFormState() !== savedFormState ? 'Unsaved changes — not saved' : 'Not saved');
+        if (pendingLeave) $('leave-status').textContent = error.message + ' Your edits are still here. Try Save and leave again, or choose Keep editing.';
+      }
+      return false;
+    } finally { saving = false; updateSaveLabel(); $('open-delete').disabled = false; updateLeaveState(); }
+  }
   $('sheet-paste').addEventListener('input',()=>{importRows=null;$('import-preview').hidden=true;$('import-names').replaceChildren();});
   $('preview-import').addEventListener('click',async()=>{
     const version=epoch; $('preview-import').disabled=true; message('');

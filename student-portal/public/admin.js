@@ -62,6 +62,10 @@
         const student = students.find(s => s.studentId === problem.studentId), row = element('article');
         row.append(element('h3', (student?.firstName || 'Unmatched session') + (problem.startedAt ? ' · ' + displayTime(problem.startedAt) : '')),
           element('p', updateError(problem.error), 'field-note'));
+        if (problem.status === 'pending') row.append(element('p', 'Queued for the next eligible nightly check.', 'field-note'));
+        if (problem.phase) row.append(element('p', problem.phase === 'privacy' ? 'Stopped while preparing the private transcript.' : 'Stopped while writing or reviewing lesson feedback.', 'field-note'));
+        const replyIssue = { output_limit: 'The AI reply reached its length limit.', incomplete: 'The AI reply was incomplete.', missing_output: 'The AI returned no final answer.', refused: 'The AI declined the request.', invalid_json: 'The AI reply did not use the required format.', provider_error: 'The AI service returned an error.' }[problem.modelIssue];
+        if (replyIssue) row.append(element('p', replyIssue, 'field-note'));
         if (student?.status === 'active' && /^[a-f0-9]{64}$/.test(problem.id)) {
           const button = element('button', 'Retry update for ' + student.firstName, 'secondary-button'); button.type = 'button'; button.disabled = retryingUpdate;
           button.addEventListener('click', async () => {
@@ -71,7 +75,7 @@
             $('automation-retry-status').textContent = 'Updating ' + student.firstName + '’s lesson. This may take a few minutes. Keep this page open.';
             try {
               const result = await api('/api/admin/automation/retry', { method: 'POST', body: JSON.stringify({ id: problem.id }) });
-              if (valid()) { retryingUpdate = false; await refreshAutomation(result.ok ? student.firstName + '’s lesson update is published.' : updateError(result.errorCode)); }
+              if (valid()) { retryingUpdate = false; await refreshAutomation(result.ok ? student.firstName + '’s lesson update is published.' : updateError(result.errorCode) + (result.status === 'pending' ? ' The lesson remains queued for the next eligible nightly check.' : '')); }
             } catch (error) {
               if (valid()) { retryingUpdate = false; await refreshAutomation(error.message); }
             }
@@ -419,6 +423,7 @@
       const content = $('cefr-content'); content.replaceChildren();
       content.append(element('strong', cefrLabel(cefr), 'cefr-level'));
       content.append(element('p', 'First estimate after two recorded sessions. Monthly reviews use the latest four available transcripts, with at least two required.', 'field-note'));
+      if (Number.isInteger(schedule?.availableSessions)) content.append(element('p', 'Privacy-reviewed transcripts available: ' + schedule.availableSessions + '.', 'field-note'));
       if (schedule?.nextReviewOn) content.append(element('p', 'Next review from ' + displayDate(schedule.nextReviewOn) + ', when new session evidence is available.', 'field-note'));
       if (schedule?.lastReviewState === 'insufficient' && cefr?.state === 'estimated') content.append(element('p', 'The latest review had too little reliable evidence. The earlier estimate is retained.', 'field-note'));
       if (!cefr) { content.append(element('p', 'An estimate can be added during the next eligible nightly check after two usable redacted transcripts are saved. Existing lessons have not been reprocessed.', 'field-note')); return; }

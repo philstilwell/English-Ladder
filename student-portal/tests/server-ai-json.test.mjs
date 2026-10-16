@@ -26,3 +26,11 @@ test('partial, refused, malformed and non-object model replies fail closed', asy
     { output: [] }, { response: [] }, { response: 'null' }, { error: 'failed', response: { approved: true } },
   ]) await assert.rejects(modelJson({ run: async () => reply }, '', {}, 4000), /invalid_model_response/);
 });
+
+
+test('model diagnostics distinguish truncation without exposing content and accept only an entire JSON fence',async()=>{
+  const ai={run:async()=>({status:'incomplete',incomplete_details:{reason:'max_output_tokens'},output:[]})};
+  await assert.rejects(modelJson(ai,'',{},10),error=>error.message==='invalid_model_response'&&error.modelIssue==='output_limit');
+  assert.deepEqual(await modelJson({run:async()=>({response:'```json\n{"approved":true}\n```'})},'',{},4000),{approved:true});
+  await assert.rejects(modelJson({run:async()=>({response:'Extra text ```json\n{"approved":true}\n```'})},'',{},4000),error=>error.modelIssue==='invalid_json');
+});

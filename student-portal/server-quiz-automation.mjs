@@ -9,6 +9,7 @@ const encoder = new TextEncoder();
 const hex = bytes => [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, '0')).join('');
 export const hash = async value => hex(await crypto.subtle.digest('SHA-256', encoder.encode(value)));
 const noteIdValid = id => typeof id === 'string' && /^[\w-]{10,80}$/.test(id);
+const safeModelIssue = error => ['provider_error','output_limit','incomplete','missing_output','refused','invalid_json','invalid_object','invalid_message'].includes(error.modelIssue) ? error.modelIssue : null;
 const safeError = error => [
   'zoom_reconnect', 'zoom_unavailable', 'transcript_unusable', 'transcript_too_large', 'ambiguous_student',
   'insufficient_evidence', 'invalid_evidence', 'content_review_failed', 'assessment_required', 'unsafe_content',
@@ -328,6 +329,7 @@ export class QuizAutomation {
     }
     await this.reserveGeneration(job.studentId, 'lesson', key.slice(4));
     if (!reusable) {
+      job.phase = 'privacy'; await this.saveJob(key, job);
       const sameContent = cached?.privacyVersion === TRANSCRIPT_PRIVACY_VERSION && cached.mappingHash === mappingHash && cached.sourceHash === sourceHash;
       const segments = sameContent ? cached.segments : await anonymizeTranscript(this.env.AI, note, transcript, instructorNames);
       if (JSON.stringify(await this.students()) !== JSON.stringify(students)) throw new Error('student_changed');
@@ -342,6 +344,7 @@ export class QuizAutomation {
       transcript = { ...transcript, learnerLabel: 'Student', segments };
       note = null;
     }
+    job.phase = 'lesson'; await this.saveJob(key, job);
     const output = await authorQuiz(this.env.AI, transcript, meeting, job.noteId, context);
     // Recheck the mapping after generation: a pause or name edit must take effect
     // before any content reaches the student's account.
@@ -350,7 +353,7 @@ export class QuizAutomation {
     await this.checkSource(key, job);
     const saved = await this.portal(job.studentId, '/automation/publish', { ...output, fingerprint: sourceHash });
     if (!saved.ok) throw new Error('publish_failed');
-    job.status = 'published'; job.sessionId = id; job.publishedAt = new Date().toISOString(); job.lastError = null;
+    job.status = 'published'; job.sessionId = id; job.publishedAt = new Date().toISOString(); job.lastError = null; job.modelIssue = null; job.phase = null;
   }
   sourceChanged(current, job) {
     return current && ((current.sourceEventAt || 0) > (job.sourceEventAt || 0) ||
@@ -437,7 +440,7 @@ export class QuizAutomation {
         catch (error) {
           if (error.message === 'other_student') { job.status = 'needs_attention'; job.lastError = 'student_not_matched'; }
           else {
-            job.lastError = safeError(error); job.tries++;
+            job.lastError = safeError(error); job.modelIssue = safeModelIssue(error); job.tries++;
             job.status = job.tries >= 6 || ['transcript_too_large', 'ambiguous_student', 'meeting_reference_missing', 'transcript_privacy_failed', 'transcript_redaction_invalid', 'transcript_redaction_format', 'transcript_redaction_index', 'transcript_privacy_rejected'].includes(job.lastError) ? 'needs_attention' : 'pending';
             job.nextAt = Date.now() + 3600000;
             if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; }
@@ -484,7 +487,7 @@ export class QuizAutomation {
       if (!['pending', 'needs_attention'].includes(job.status)) return json({ error: 'This update cannot be retried.' }, 409);
       try { await this.process(key, job); }
       catch (error) {
-        job.lastError = safeError(error); job.tries = (job.tries || 0) + 1;
+        job.lastError = safeError(error); job.modelIssue = safeModelIssue(error); job.tries = (job.tries || 0) + 1;
         job.status = 'needs_attention';
         if (['daily_limit', 'monthly_limit'].includes(job.lastError)) { job.status = 'pending'; job.tries--; job.nextAt = Date.now() + 3600000; }
       }
@@ -514,7 +517,7 @@ export class QuizAutomation {
         problems: entries.filter(([, j]) => ['pending', 'needs_attention'].includes(j.status) && j.lastError)
           .sort(([, a], [, b]) => (b.startedAt || '').localeCompare(a.startedAt || '')).slice(0, 20)
           .map(([key, j]) => ({ id: key.slice(4), studentId: j.studentId || null, startedAt: j.startedAt || null,
-            status: j.status, error: safeError(new Error(j.lastError)), attempts: j.tries || 0, retryAt: j.status === 'pending' && j.nextAt ? new Date(j.nextAt).toISOString() : null })),
+            status: j.status, error: safeError(new Error(j.lastError)), modelIssue: safeModelIssue(j), phase: ['privacy','lesson'].includes(j.phase) ? j.phase : null, attempts: j.tries || 0, retryAt: j.status === 'pending' && j.nextAt ? new Date(j.nextAt).toISOString() : null })),
         students: Object.fromEntries(Object.keys(await this.students()).map(id => [id, {
           latestPublication: jobs.filter(j => j.studentId === id && j.publishedAt).map(j => j.publishedAt).sort().at(-1) || null,
           pending: jobs.filter(j => j.studentId === id && j.status === 'pending').length,

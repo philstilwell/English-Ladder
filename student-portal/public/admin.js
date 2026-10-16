@@ -573,6 +573,12 @@
     }
   });
   for (const id of ['newPassword','confirmPassword']) $(id).addEventListener('input', () => { $(id).value = $(id).value.toLowerCase(); });
+  for (const [id, checked] of [['select-all-resources', true], ['clear-all-resources', false]]) {
+    $(id).addEventListener('click', () => {
+      if (!signedIn || !resourceTools.length || saving || deleting || current?.deletionPending) return;
+      for (const box of $('student-resources').querySelectorAll('input[type="checkbox"]')) box.checked = checked;
+    });
+  }
   $('student-form').addEventListener('submit', async event => {
     event.preventDefault(); const version = epoch, editing = current;
     if (!signedIn || !activityTools.length || !resourceTools.length || saving || deleting || editing?.deletionPending) return;

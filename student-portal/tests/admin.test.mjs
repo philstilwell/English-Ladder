@@ -690,15 +690,22 @@ test('administrator resource checkboxes save subsets and none, default all on re
   assert.deepEqual(chosen(),['elllo','write-and-improve']);
   assert.equal(d.querySelectorAll('#student-resources input').length,15);
   assert.equal(d.querySelectorAll('#student-resources [role="group"]').length,5);
+  d.getElementById('select-all-resources').click();await flush();
+  assert.deepEqual(chosen(),RESOURCE_TOOLS.map(r=>r.id));assert.equal(body,undefined);
+  assert.deepEqual([...d.querySelectorAll('#student-activities input:checked')].map(box=>box.value),fixture.visibleActivities);
   for(const box of d.querySelectorAll('#student-resources input'))box.checked=box.value==='news-in-levels';
   d.getElementById('student-form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));await flush();
   assert.deepEqual(body.visibleResources,['news-in-levels']);assert.deepEqual(body.visibleActivities,fixture.visibleActivities);
   d.getElementById('list-nav').click();await flush();assert.equal(d.getElementById('student-resources').textContent,'');
   d.querySelector('.student-name').click();await flush();assert.deepEqual(chosen(),['news-in-levels']);
-  for(const box of d.querySelectorAll('#student-resources input'))box.checked=false;
+  const previousBody=body;
+  d.getElementById('clear-all-resources').click();await flush();
+  assert.deepEqual(chosen(),[]);assert.equal(body,previousBody);
   d.getElementById('student-form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));await flush();
   assert.deepEqual(body.visibleResources,[]);assert.deepEqual(chosen(),[]);
   d.getElementById('register-nav').click();await flush();assert.deepEqual(chosen(),RESOURCE_TOOLS.map(r=>r.id));
+  d.getElementById('clear-all-resources').click();assert.deepEqual(chosen(),[]);
+  d.getElementById('select-all-resources').click();assert.deepEqual(chosen(),RESOURCE_TOOLS.map(r=>r.id));
   d.getElementById('sign-out').click();await flush();assert.equal(d.getElementById('student-resources').textContent,'');w.close();
 });
 

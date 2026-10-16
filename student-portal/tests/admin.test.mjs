@@ -12,6 +12,7 @@ import termsBank from '../business-terms-bank.json' with { type: 'json' };
 import grammarBank from '../grammar-bank.json' with { type: 'json' };
 import { ACTIVITY_TOOLS } from '../activities.mjs';
 import vocabularyBank from '../vocabulary-bank.json' with { type: 'json' };
+import { RESOURCE_TOOLS } from '../resources.mjs';
 
 const admin = 'https://phil.englishladder.com';
 const example = { firstName:'Morgan', lastName:'Testperson', nickname:'Morgan the Explorer', studentId:'mt26', status:'active', zoomNames:['Morgan-Zoom'], timeZone:'Asia/Tokyo', email:'private@example.test', notes:'Private administrative note', hoursAuthorized:40 };
@@ -202,11 +203,11 @@ test('directory changes retry unmatched notes and use new Zoom names on the next
 });
 
 const html=readFileSync(new URL('../public/admin.html',import.meta.url),'utf8'),script=readFileSync(new URL('../public/admin.js',import.meta.url),'utf8');
-const fixture={...example,visibleActivities:['english-road','grammar-practice'],key:'11111111-1111-4111-8111-111111111111',revision:1,activated:true,startAfter:'2026-10-14T12:00:00Z'};
+const fixture={...example,visibleResources:['elllo','write-and-improve'],visibleActivities:['english-road','grammar-practice'],key:'11111111-1111-4111-8111-111111111111',revision:1,activated:true,startAfter:'2026-10-14T12:00:00Z'};
 const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1));};
 function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
-  return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{activities:ACTIVITY_TOOLS,students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
+  return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
 };dom.window.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/study-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/vocabulary-practice.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
 test('administrator list links to editable accounts and has a separate registration form',async()=>{
   const dom=browser();await flush();const w=dom.window,d=w.document;
@@ -220,7 +221,7 @@ test('administrator list links to editable accounts and has a separate registrat
 test('administrator checkboxes load saved tools, save subsets and none, and clear on navigation and sign-out', async () => {
   let saved = structuredClone(fixture), body;
   const dom = browser((path, options) => {
-    if (path === '/api/admin/students') return Response.json({ activities: ACTIVITY_TOOLS, students: [saved] });
+    if (path === '/api/admin/students') return Response.json({ activities: ACTIVITY_TOOLS, resources: RESOURCE_TOOLS, students: [saved] });
     if (path === '/api/admin/students/' + fixture.key && options?.method === 'PUT') {
       body = JSON.parse(options.body); saved = { ...saved, ...body, revision: saved.revision + 1 };
       return Response.json({ student: saved });
@@ -302,7 +303,7 @@ test('sign-out clears form fields and directory; delayed responses cannot restor
   assert.doesNotMatch(d.getElementById('admin-view').textContent,/Testperson|private@example/);dom.window.close();
 });
 test('expired administrator sessions clear private data and imported text renders safely',async()=>{
-  let expired=false;const dom=browser(path=>path==='/api/admin/students'?(expired?Response.json({error:'Expired'},{status:401}):Response.json({activities:ACTIVITY_TOOLS,students:[{...fixture,firstName:'<img src=x onerror=alert(1)>'}]})):null);await flush();const d=dom.window.document;
+  let expired=false;const dom=browser(path=>path==='/api/admin/students'?(expired?Response.json({error:'Expired'},{status:401}):Response.json({activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[{...fixture,firstName:'<img src=x onerror=alert(1)>'}]})):null);await flush();const d=dom.window.document;
   assert.equal(d.querySelector('#student-rows img'),null);expired=true;d.getElementById('refresh').click();await flush();assert.equal(d.getElementById('admin-view').hidden,true);assert.equal(d.getElementById('student-rows').textContent,'');dom.window.close();
 });
 
@@ -460,7 +461,7 @@ test('manual copy fallback stays private and clears on leaving; inactive or unav
 
 test('paused accounts are collapsed below the main list, remain editable, and are found by search',async()=>{
   const paused={...fixture,key:'22222222-2222-4222-8222-222222222222',firstName:'Taylor',studentId:'tt26',status:'paused'};
-  const dom=browser(path=>path==='/api/admin/students'?Response.json({activities:ACTIVITY_TOOLS,students:[fixture,paused]}):undefined);await flush();const w=dom.window,d=w.document;
+  const dom=browser(path=>path==='/api/admin/students'?Response.json({activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[fixture,paused]}):undefined);await flush();const w=dom.window,d=w.document;
   const section=d.getElementById('paused-students');assert.equal(section.open,false);assert.equal(section.hidden,false);
   assert.match(d.getElementById('student-rows').textContent,/Morgan/);assert.doesNotMatch(d.getElementById('student-rows').textContent,/Taylor/);
   assert.match(d.getElementById('paused-student-rows').textContent,/Taylor/);assert.equal(d.getElementById('paused-count').textContent,'1');
@@ -631,12 +632,94 @@ test('CEFR overview distinguishes missing evidence from failures and clears afte
 
 const selfWrite = (cookie, body, method = 'PUT') => ({ method, headers: { Cookie: cookie, Origin: origin, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 const selfProfile = async (e, cookie) => (await call(e, '/api/account', { headers: { Cookie: cookie } })).json();
+test('resource selections are private, administrator-only, isolated and preserved by unrelated edits', async () => {
+  const {e,directory}=environment(), cookie=await access(e), student=await login(e), teacher=await login(e,'teacher-test');
+  const all=RESOURCE_TOOLS.map(r=>r.id), initial=await selfProfile(e,student.cookie);
+  assert.deepEqual(initial.visibleResources,all);
+  const catalog=await (await adminCall(e,'/api/admin/students',{headers:{Cookie:cookie}})).json();
+  assert.deepEqual(catalog.resources,RESOURCE_TOOLS);
+  for(const visibleResources of [[],['elllo'],'all']) {
+    assert.equal((await call(e,'/api/account',selfWrite(student.cookie,{revision:initial.revision,visibleResources}))).status,403);
+    assert.equal((await directory.selfAccount('ab26',{revision:initial.revision,expectedAccountRevision:initial.revision,visibleResources})).status,403);
+  }
+  const record=catalog.students.find(s=>s.studentId==='ab26'), path='/api/admin/students/'+record.key;
+  const input={...record,lastName:'Brown',visibleResources:['write-and-improve','elllo']};
+  for(const caller of ['',student.cookie,teacher.cookie]) assert.equal((await adminCall(e,path,write(caller,input,'PUT'))).status,401);
+  for(const foreign of [origin,'https://evil.test',null]) {
+    const options=write(cookie,input,'PUT'); if(foreign)options.headers.Origin=foreign;else delete options.headers.Origin;
+    assert.equal((await adminCall(e,path,options)).status,403);
+  }
+  for(const visibleResources of [['unknown'],['elllo','elllo'],'all',null,[1]])
+    assert.equal((await adminCall(e,path,write(cookie,{...input,visibleResources},'PUT'))).status,400);
+  const storage=e.FEEDBACK_STORE.get('ab26').storage;
+  await storage.put({'road:history':{answers:[1,0]},'terms:item:1':{finished:true,questions:true}});
+  const before=await storage.list({limit:100});
+  let saved=(await (await adminCall(e,path,write(cookie,input,'PUT'))).json()).student;
+  assert.deepEqual(saved.visibleResources,['elllo','write-and-improve']);
+  assert.deepEqual((await selfProfile(e,student.cookie)).visibleResources,saved.visibleResources);
+  for(const choices of [saved.visibleResources,[]]) {
+    saved=(await (await adminCall(e,path,write(cookie,{...saved,visibleResources:choices},'PUT'))).json()).student;
+    const {visibleResources,...omitted}=saved;
+    saved=(await (await adminCall(e,path,write(cookie,{...omitted,notes:'Unrelated edit'},'PUT'))).json()).student;
+    assert.deepEqual(saved.visibleResources,choices);
+    const own=await call(e,'/api/account',selfWrite(student.cookie,{revision:saved.revision,nickname:'A new nickname'}));
+    assert.equal(own.status,200);assert.deepEqual((await own.json()).visibleResources,choices);
+    saved=(await list(e,cookie)).find(s=>s.key===record.key);
+  }
+  assert.deepEqual(await storage.list({limit:100}),before);
+  const other=await login(e,'other-test','https://cd26.englishladder.com');
+  const otherProfile=await (await call(e,'/api/account',{headers:{Cookie:other.cookie}},'https://cd26.englishladder.com')).json();
+  assert.deepEqual(otherProfile.visibleResources,all);
+  assert.equal((await call(e,'/api/account',{headers:{Cookie:student.cookie}},'https://cd26.englishladder.com')).status,401);
+  const outcomes=await Promise.all([['elllo'],[]].map(visibleResources=>adminCall(e,path,write(cookie,{...saved,visibleResources},'PUT'))));
+  assert.deepEqual(outcomes.map(r=>r.status).sort(),[200,409]);
+  const fresh=await adminCall(e,'/api/admin/students',write(cookie,{...example,visibleResources:[]}));
+  assert.equal(fresh.status,201);assert.deepEqual((await fresh.json()).student.visibleResources,[]);
+});
+
+test('administrator resource checkboxes save subsets and none, default all on registration, and clear private state',async()=>{
+  let saved=structuredClone(fixture),body;
+  const dom=browser((path,options)=>{
+    if(path==='/api/admin/students')return Response.json({activities:ACTIVITY_TOOLS,resources:RESOURCE_TOOLS,students:[saved]});
+    if(path==='/api/admin/students/'+fixture.key&&options?.method==='PUT') {
+      body=JSON.parse(options.body);saved={...saved,...body,revision:saved.revision+1};return Response.json({student:saved});
+    }
+  });
+  await flush();const w=dom.window,d=w.document;
+  d.querySelector('.student-name').click();await flush();
+  const chosen=()=>[...d.querySelectorAll('#student-resources input:checked')].map(box=>box.value);
+  assert.deepEqual(chosen(),['elllo','write-and-improve']);
+  assert.equal(d.querySelectorAll('#student-resources input').length,15);
+  assert.equal(d.querySelectorAll('#student-resources [role="group"]').length,5);
+  for(const box of d.querySelectorAll('#student-resources input'))box.checked=box.value==='news-in-levels';
+  d.getElementById('student-form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));await flush();
+  assert.deepEqual(body.visibleResources,['news-in-levels']);assert.deepEqual(body.visibleActivities,fixture.visibleActivities);
+  d.getElementById('list-nav').click();await flush();assert.equal(d.getElementById('student-resources').textContent,'');
+  d.querySelector('.student-name').click();await flush();assert.deepEqual(chosen(),['news-in-levels']);
+  for(const box of d.querySelectorAll('#student-resources input'))box.checked=false;
+  d.getElementById('student-form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));await flush();
+  assert.deepEqual(body.visibleResources,[]);assert.deepEqual(chosen(),[]);
+  d.getElementById('register-nav').click();await flush();assert.deepEqual(chosen(),RESOURCE_TOOLS.map(r=>r.id));
+  d.getElementById('sign-out').click();await flush();assert.equal(d.getElementById('student-resources').textContent,'');w.close();
+});
+
+test('an unavailable resource catalog cannot silently clear selections through a save',async()=>{
+  let writes=0;
+  const dom=browser((path,options)=>{
+    if(['POST','PUT'].includes(options?.method))writes++;
+    if(path==='/api/admin/students')return Response.json({activities:ACTIVITY_TOOLS,students:[fixture]});
+  });
+  await flush();const w=dom.window,d=w.document;
+  d.getElementById('student-form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));await flush();
+  assert.equal(writes,0);assert.equal(d.querySelectorAll('#student-resources input').length,0);w.close();
+});
+
 test('only the administrator changes activity selections; nickname edits preserve them and learning progress', async () => {
   const { e, directory } = environment(), student = await login(e), teacher = await login(e, 'teacher-test'), adminCookie = await access(e);
   assert.equal((await call(e, '/api/account')).status, 401);
   const initial = await selfProfile(e, student.cookie);
   assert.deepEqual(initial.visibleActivities, ['english-road','grammar-practice','business-terms']);
-  assert.deepEqual(Object.keys(initial).sort(), ['activities', 'nickname', 'revision', 'visibleActivities']);
+  assert.deepEqual(Object.keys(initial).sort(), ['activities', 'nickname', 'revision', 'visibleActivities', 'visibleResources']);
   for (const visibleActivities of [[], ['english-road'], ['unknown'], 'all']) {
     assert.equal((await call(e, '/api/account', selfWrite(student.cookie, { revision: initial.revision, nickname: 'Blocked', visibleActivities }))).status, 403);
   }

@@ -26,6 +26,7 @@
     clear() { $('business-terms').replaceChildren(); $('business-terms').hidden = true; },
     open() { $('business-terms').hidden = false; $('business-terms').textContent = 'Practice could not load. Reload this page to try again.'; },
   };
+  const studyPractice = window.StudyPractice.create({ api, expired });
   const dropdowns = ['overview', 'activities'].map(id => ({
     group: $(id + '-menu'), toggle: $(id + '-toggle'), list: $(id + '-submenu'),
     label: id === 'overview' ? 'Overview links' : 'Activities',
@@ -122,6 +123,7 @@
   }
   function clearIdentity() {
     identityRevision++; pageRevision++;
+    studyPractice.clear();
     roadPractice.clear();
     grammarPractice.clear();
     businessTerms.clear();
@@ -212,6 +214,8 @@
     if (selected !== 'activities' || requested !== 'grammar-practice' || extra !== undefined) grammarPractice.clear();
     if (selected !== 'activities' || requested !== 'business-terms' || extra !== undefined) businessTerms.clear();
     if (selected !== 'account') clearSettings();
+    if (selected !== 'assessments') studyPractice.clear();
+    else if ($('study-topics') && !$('study-topics').children.length && assessment) studyPractice.open($('study-topics'), assessment.plan, teacherMode);
     for (const id of sections) $(id).hidden = selected !== id;
     for (const el of document.querySelectorAll('.section-nav a')) {
       if (el.hash === '#' + selected || selected === 'activities' && el.hash === '#activities/' + requested) el.setAttribute('aria-current', 'page');
@@ -453,14 +457,6 @@
     $('assessment-content').replaceChildren(content);
     $('assessment-content').setAttribute('aria-busy', String(assessmentLoading));
   }
-  function studyPrompt(item) {
-    const box = node('div', '', 'study-prompt');
-    const prompt = item.aiPrompt || 'Help me study this English topic: “' + item.title + '”. Use short, simple English. First, explain the topic and give three easy examples. Then give me five practice questions, one at a time. Wait for my answer. Explain any mistake and let me try again.';
-    const ai = window.PracticePrompt.create({ prompt, label: ': ' + item.title });
-    ai.controls.classList.add('study-prompt-actions'); ai.status.classList.add('study-prompt-status');
-    box.append(ai.controls, ai.status);
-    return box;
-  }
   function renderAssessment(record) {
     const fragment = document.createDocumentFragment(), header = node('header', '', 'feedback-header');
     header.append(node('p', 'OVERALL ASSESSMENT / ENGLISH ONLY', 'eyebrow'));
@@ -513,11 +509,7 @@
     fragment.append(patterns);
     const plan = assessmentSection('Study on your own', 'next', 'assessment-plan');
     plan.append(node('p', 'Your lessons showed which parts of your English need more practice. We chose these topics to help you improve. Choose a topic. Copy its AI prompt and paste it into an AI chat.', 'section-intro'));
-    for (const item of record.plan) {
-      const card = node('section', '', 'assessment-plan-card');
-      card.append(node('h4', item.title), node('p', item.activity));
-      const target = node('p', '', 'assessment-target'); target.append(node('strong', 'Try this: '), document.createTextNode(item.target)); card.append(target, studyPrompt(item)); plan.append(card);
-    }
+    const studyRoot = node('div'); studyRoot.id = 'study-topics'; plan.append(studyRoot);
     fragment.append(plan);
     const source = node('details', '', 'feedback-source');
     source.append(node('summary', 'How we made this assessment'), node('p', 'AI helped write this page. We used all the available text from each lesson below. Dates link to your lesson feedback.'));
@@ -526,6 +518,7 @@
     source.append(list, node('p', 'This page is only about your English. The lesson text was made by a computer, so some words may be wrong. We checked what you practiced with Phil and what you did well. This is not a test score or an official English level. We cannot check your pronunciation or speaking speed from text alone.'));
     fragment.append(source);
     $('assessment-content').replaceChildren(fragment);
+    studyPractice.open(studyRoot, record.plan, teacherMode);
     $('assessment-content').setAttribute('aria-busy', 'false');
     $('assessment-sidebar').hidden = false;
     $('assessment-source-count').textContent = 'Based on ' + record.sourceSessions.length + ' lessons';
@@ -998,7 +991,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { clearSettings(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); closeDropdowns(); });
+  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();

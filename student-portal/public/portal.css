@@ -362,15 +362,15 @@ summary { cursor:pointer; }
 .terms-item { padding:16px; border:1px solid var(--line); border-radius:6px; margin:12px 0; }
 .terms-item .terms-heading { margin-top:0; }
 .terms-item.is-finished { background:#eeeeef; border-color:#b8b8bf; }
-.terms-actions,.grammar-actions { display:flex; flex-wrap:wrap; gap:8.4px; margin:12px 0; }
-.terms-actions .secondary-button,.grammar-actions .secondary-button,.secondary-button.practice-copy-button { min-height:30.8px; padding:7px 12.6px; border-radius:4.2px; font-size:.595rem; }
-.terms-actions [aria-pressed="true"],.grammar-actions [aria-pressed="true"] { background:var(--blue); color:#fff; border-color:var(--blue); }
-.terms-actions .question-button,.grammar-actions .question-button,.secondary-button.practice-copy-button { background:#fff3c4; color:#563c00; border-color:#bd8b00; }
-.terms-actions .question-button:hover,.grammar-actions .question-button:hover,.secondary-button.practice-copy-button:hover { background:#ffe69a; }
-.terms-actions .question-button[aria-pressed="true"],.grammar-actions .question-button[aria-pressed="true"],.secondary-button.practice-copy-button.is-copied { background:#f4c542; color:#332600; border-color:#a27600; }
-.terms-actions .question-button[aria-pressed="true"]:hover,.grammar-actions .question-button[aria-pressed="true"]:hover,.secondary-button.practice-copy-button.is-copied:hover { background:#e9b52c; }
-.terms-questions,.grammar-questions { border:1px solid var(--line); border-radius:6px; padding:12px; margin:16px 0; }
-.terms-questions summary,.grammar-questions summary { cursor:pointer; min-height:32px; font-weight:650; overflow-wrap:anywhere; }
+.terms-actions,.grammar-actions,.study-actions { display:flex; flex-wrap:wrap; gap:8.4px; margin:12px 0; }
+.terms-actions .secondary-button,.grammar-actions .secondary-button,.study-actions .secondary-button,.secondary-button.practice-copy-button { min-height:30.8px; padding:7px 12.6px; border-radius:4.2px; font-size:.595rem; }
+.terms-actions [aria-pressed="true"],.grammar-actions [aria-pressed="true"],.study-actions [aria-pressed="true"] { background:var(--blue); color:#fff; border-color:var(--blue); }
+.terms-actions .question-button,.grammar-actions .question-button,.study-actions .question-button,.secondary-button.practice-copy-button { background:#fff3c4; color:#563c00; border-color:#bd8b00; }
+.terms-actions .question-button:hover,.grammar-actions .question-button:hover,.study-actions .question-button:hover,.secondary-button.practice-copy-button:hover { background:#ffe69a; }
+.terms-actions .question-button[aria-pressed="true"],.grammar-actions .question-button[aria-pressed="true"],.study-actions .question-button[aria-pressed="true"],.secondary-button.practice-copy-button.is-copied { background:#f4c542; color:#332600; border-color:#a27600; }
+.terms-actions .question-button[aria-pressed="true"]:hover,.grammar-actions .question-button[aria-pressed="true"]:hover,.study-actions .question-button[aria-pressed="true"]:hover,.secondary-button.practice-copy-button.is-copied:hover { background:#e9b52c; }
+.terms-questions,.grammar-questions,.study-questions { border:1px solid var(--line); border-radius:6px; padding:12px; margin:16px 0; }
+.terms-questions summary,.grammar-questions summary,.study-questions summary { cursor:pointer; min-height:32px; font-weight:650; overflow-wrap:anywhere; }
 .terms-question-links,.grammar-question-links { list-style:none; padding:0; display:grid; gap:8px; }
 .terms-question-links button,.grammar-question-links button { text-align:left; white-space:normal; overflow-wrap:anywhere; max-width:100%; }
 .grammar-picker { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:16px 0; }
@@ -446,3 +446,8 @@ html:has(.student-main) { scroll-padding-top:calc(var(--student-header-height,11
 .practice-ai-link:hover { background:#eef2ff; }
 .practice-ai-link:focus-visible { outline:2px solid var(--blue); outline-offset:1px; }
 .practice-copy-buffer { position:fixed; left:-10000px; top:0; width:1px; height:1px; opacity:0; }
+
+.assessment-plan-card.is-finished { background:#eeeeef; border-color:#b8b8bf; }
+.study-save-status:empty { display:none; }
+.study-actions { align-items:center; }
+.study-question-items .assessment-plan-card { margin:12px 0; }

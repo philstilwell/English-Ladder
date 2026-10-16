@@ -71,7 +71,36 @@
     validItems: window.GrammarPractice.validItems,
     exercise: item => ({ card: window.GrammarPractice.exercise(item, 'article') }),
   }), item => `Item ${item.number} · “${item.prompt}”`);
-  function clearQuestions() { termsPanel.clear(); grammarPanel.clear(); }
+  let studyRequest = 0;
+  function clearStudyQuestions() {
+    studyRequest++; $('study-questions-panel').hidden = true;
+    $('study-questions-content').replaceChildren(); $('study-questions-status').textContent = '';
+    $('load-study-questions').disabled = false; $('load-study-questions').textContent = 'Load questions list';
+  }
+  async function loadStudyQuestions(pages = [null]) {
+    if (!signedIn || !current?.activated || current.deletionPending) return;
+    const student = current, version = epoch, request = ++studyRequest;
+    const valid = () => signedIn && version === epoch && request === studyRequest && current?.key === student.key;
+    $('load-study-questions').disabled = true; $('study-questions-content').replaceChildren();
+    $('study-questions-status').textContent = 'Loading questions…';
+    try {
+      const data = await api('/api/admin/students/' + student.key + '/study-practice' + (pages.at(-1) ? '?after=' + pages.at(-1) : ''));
+      if (!valid()) return;
+      if (!window.StudyPractice.validItems(data.questions) || data.nextCursor !== null && !/^[a-f0-9]{64}$/.test(data.nextCursor)) throw new Error('Questions could not load. Please try again.');
+      for (const item of data.questions) $('study-questions-content').append(window.StudyPractice.review(item));
+      const controls = element('div', '', 'terms-controls');
+      const back = element('button', 'Previous questions', 'secondary-button'), more = element('button', 'More questions', 'secondary-button');
+      back.type = more.type = 'button'; back.disabled = pages.length < 2; more.disabled = !data.nextCursor;
+      back.addEventListener('click', () => loadStudyQuestions(pages.slice(0, -1)));
+      more.addEventListener('click', () => loadStudyQuestions([...pages, data.nextCursor]));
+      if (pages.length > 1 || data.nextCursor) { controls.append(back, more); $('study-questions-content').append(controls); }
+      $('study-questions-status').textContent = data.questions.length ? 'Saved topics to discuss. Only the student can change these choices.' : 'No topics in this student’s Questions list.';
+      $('load-study-questions').textContent = 'Refresh questions list';
+    } catch (error) { if (valid()) $('study-questions-status').textContent = error.message; }
+    finally { if (valid()) $('load-study-questions').disabled = false; }
+  }
+  $('load-study-questions').addEventListener('click', () => loadStudyQuestions());
+  function clearQuestions() { termsPanel.clear(); grammarPanel.clear(); clearStudyQuestions(); }
   function clearActivityOverview() {
     activityOverviewRequest++;
     $('activity-overview-panel').hidden = true;
@@ -408,6 +437,7 @@
     void loadCefr(student);
     clearRoad(); $('road-results-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
     termsPanel.show(student); grammarPanel.show(student);
+    clearStudyQuestions(); $('study-questions-panel').hidden = !student?.activated || Boolean(student?.deletionPending);
     clearActivityOverview(); void loadActivityOverview();
   }
   function updateSaveLabel() { $('save-student').textContent = $('status').value === 'active' && !current?.activated ? 'Save and activate site' : 'Save changes'; }

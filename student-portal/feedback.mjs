@@ -3,6 +3,7 @@ import { handleQuiz, latestQuizStatus } from './quiz-results.mjs';
 import { handleRoad } from './english-road.mjs';
 import { activitySummary } from './activity-summary.mjs';
 import { handleBusinessTerms } from './business-terms.mjs';
+import { handleStudyProgress } from './study-progress.mjs';
 import { handleGrammarPractice } from './grammar-practice.mjs';
 import { groundCefrWindow, cefrOverview } from './cefr.mjs';
 import { cefrReviewContext, cefrScheduleSummary } from './cefr-schedule.mjs';
@@ -273,6 +274,7 @@ export class FeedbackStore {
       });
     }
     if (id.startsWith('terms/')) return handleBusinessTerms(this.storage, request);
+    if (id.startsWith('study/')) return handleStudyProgress(this.storage, request);
     if (id.startsWith('grammar/')) return handleGrammarPractice(this.storage, request);
     if (id.startsWith('road/')) return handleRoad(this.storage, request);
     if (id.startsWith('quiz/')) return handleQuiz(this.storage, request);

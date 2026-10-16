@@ -1,3 +1,4 @@
+import {studyTopics} from '../study-progress.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -205,7 +206,7 @@ const flush=async()=>{for(let i=0;i<12;i++)await new Promise(r=>setTimeout(r,1))
 function browser(custom){const dom=new JSDOM(html,{url:admin+'/#students',runScripts:'outside-only',pretendToBeVisual:true});dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;};dom.window.fetch=async(path,opts)=>{
   const result=custom?.(path,opts);if(result)return result;
   return Response.json(path==='/api/session'?{administrator:true}:path==='/api/admin/students'?{activities:ACTIVITY_TOOLS,students:[fixture]}:path==='/api/admin/quiz-status'?{statuses:{[fixture.key]:{state:'not_started',title:'Practice',total:2}},nextCursor:null}:path==='/api/admin/automation'?{enabled:true,connected:true}:{});
-};dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
+};dom.window.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/study-practice.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/business-terms.js',import.meta.url),'utf8'));dom.window.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));dom.window.eval(script);return dom;}
 test('administrator list links to editable accounts and has a separate registration form',async()=>{
   const dom=browser();await flush();const w=dom.window,d=w.document;
   assert.equal(d.querySelector('.masthead-band .admin-nav').hidden,false);
@@ -930,4 +931,41 @@ test('activity overview clears stale reads on navigation, logout and page hide; 
   assert.match(d.getElementById('activity-overview-status').textContent,/Unavailable/);assert.equal(d.getElementById('refresh-activity-overview').disabled,false);
   state='ready';d.getElementById('refresh-activity-overview').click();await flush();assert.equal(d.getElementById('activity-overview-content').children.length,3);
   state='expired';d.getElementById('refresh-activity-overview').click();await flush();assert.equal(d.getElementById('login-view').hidden,false);assert.equal(d.getElementById('activity-overview-content').textContent,'');w.close();
+});
+
+test('study Questions lists stay private to each account and remain available for paused students',async()=>{
+ const {e}=environment(),cookie=await access(e),records=await list(e,cookie),student=await login(e),teacher=await login(e,'teacher-test');
+ const record=records.find(s=>s.studentId==='ab26'),other=records.find(s=>s.studentId==='cd26');
+ await e.FEEDBACK_STORE.get('ab26').storage.put({'assessment:current':assessment});
+ const [item]=await studyTopics(assessment);
+ assert.equal((await call(e,'/api/study/state',{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({id:item.id,field:'question',value:true,revision:0})})).status,200);
+ const path='/api/admin/students/'+record.key+'/study-practice';
+ for(const token of ['',student.cookie,teacher.cookie])assert.equal((await adminCall(e,path,{headers:{Cookie:token}})).status,401);
+ assert.equal((await call(e,path,{headers:{Cookie:teacher.cookie}})).status,404);
+ assert.equal((await adminCall(e,path,{headers:{Cookie:cookie,Origin:'https://evil.test'}})).status,403);
+ assert.equal((await adminCall(e,path+'?after=bad',{headers:{Cookie:cookie}})).status,400);
+ const response=await adminCall(e,path,{headers:{Cookie:cookie}});assert.equal(response.headers.get('cache-control'),'no-store');
+ const data=await response.json();assert.equal(data.questions.length,1);assert.equal(data.questions[0].target,item.target);assert.equal(data.questions[0].progress.question,true);
+ assert.deepEqual((await(await adminCall(e,'/api/admin/students/'+other.key+'/study-practice',{headers:{Cookie:cookie}})).json()).questions,[]);
+ await adminCall(e,'/api/admin/students/'+record.key,write(cookie,{...record,status:'paused'},'PUT'));
+ assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,200);
+ assert.equal((await call(e,'/api/study/state',{headers:{Cookie:student.cookie}})).status,404);
+});
+
+test('administrator study Questions list pages safely, preserves hidden prompts and clears late loads',async()=>{
+ const [topic]=await studyTopics(assessment),first={...topic,title:'<img src=x onerror=alert(1)>',aiPrompt:'HIDDEN STUDY PROMPT',current:false,progress:{id:topic.id,finished:true,question:true,revision:1}};
+ let delayed=false,resolve,writes=0;
+ const dom=browser((path,options)=>{
+  if(options?.method)writes++;
+  if(!path.includes('/study-practice'))return null;
+  if(delayed)return new Promise(r=>{resolve=r;});
+  return Response.json(path.includes('?after=')?{questions:[],nextCursor:null}:{questions:[first],nextCursor:topic.id});
+ });await flush();const w=dom.window,d=w.document;w.location.hash='students/'+fixture.key;await flush();
+ d.getElementById('load-study-questions').click();await flush();const root=d.getElementById('study-questions-content');
+ assert.match(root.textContent,/From an earlier assessment/);assert.match(root.textContent,/Saved to Questions/);assert.doesNotMatch(root.textContent,/HIDDEN STUDY PROMPT/);assert.equal(root.querySelector('[onerror]'),null);
+ assert(root.querySelector('.study-finish').disabled);assert(root.querySelector('.question-button').disabled);assert.equal(root.querySelectorAll('.practice-ai-link').length,4);
+ [...root.querySelectorAll('button')].find(b=>b.textContent==='More questions').click();await flush();assert.match(d.getElementById('study-questions-status').textContent,/No topics/);
+ [...root.querySelectorAll('button')].find(b=>b.textContent==='Previous questions').click();await flush();assert(root.querySelector('.is-finished'));
+ delayed=true;d.getElementById('load-study-questions').click();await flush();w.location.hash='students';await flush();resolve(Response.json({questions:[first],nextCursor:null}));await flush();
+ assert.equal(root.textContent,'');assert.equal(d.getElementById('study-questions-panel').hidden,true);assert.equal(writes,0);w.close();
 });

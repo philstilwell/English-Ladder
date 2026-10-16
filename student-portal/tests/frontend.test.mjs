@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM} from 'jsdom';
+import {studyTopics} from '../study-progress.mjs';
 import {ACTIVITY_TOOLS} from '../activities.mjs';
 import {feedback,assessment,quiz} from './fixture.mjs';
 import {seedQuiz,call,origin} from './harness.mjs';
@@ -9,6 +10,7 @@ import grammarBank from '../grammar-bank.json' with { type: 'json' };
 import termsBank from '../business-terms-bank.json' with { type: 'json' };
 const html=readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
 const script=readFileSync(new URL('../public/portal.js',import.meta.url),'utf8');
+const studyFixture=(await studyTopics(assessment)).map(topic=>({...topic,progress:{id:topic.id,finished:false,question:false,revision:0,updatedAt:null}}));
 const second={...feedback,id:'2026-09-01-2057',startedAt:'2026-09-02T00:57:01Z',title:'Earlier English lesson'};
 const profile={student:{id:'ab26',name:'Alex',nickname:'Alex the Explorer'},role:'student'};
 const reply=data=>new Response(JSON.stringify(data));
@@ -22,6 +24,8 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   if(path==='/api/context')return reply({id:'ab26'});
   if(path==='/api/session'||path==='/api/login')return reply({...profile,role});
   if(path==='/api/logout')return reply({ok:true});
+  if(path==='/api/study/state')return reply({topics:studyFixture});
+  if(path.startsWith('/api/study/questions'))return reply({questions:[],nextCursor:null});
   if(path==='/api/assessment')return reply({assessment});
   if(path==='/api/quiz/state')return reply({attempt:null});
   if(['/api/business-terms/state','/api/grammar-practice/state'].includes(path)) {
@@ -35,6 +39,7 @@ function setup(custom,url='https://ab26.englishladder.com/',role='student'){
   return reply(path.endsWith(second.id)?second:feedback);
  };
  w.eval(readFileSync(new URL('../public/practice-prompt.js',import.meta.url),'utf8'));
+ w.eval(readFileSync(new URL('../public/study-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/road-practice.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/practice-position.js',import.meta.url),'utf8'));
  w.eval(readFileSync(new URL('../public/grammar-practice.js',import.meta.url),'utf8'));
@@ -558,7 +563,7 @@ test('self-study controls are directly available and copy the hidden prompt exac
  Object.defineProperty(dom.window.navigator,'clipboard',{value:{writeText:async text=>{copied=text;}}});
  assert.equal(d.querySelector('details.study-prompt, .study-prompt summary'),null);
  assert.equal(d.querySelector('.study-prompt').tagName,'DIV');
- const button=d.querySelector('.study-prompt button');
+ const button=d.querySelector('.study-prompt .practice-copy-button');
  button.click();await flush();
  assert.equal(copied,aiPrompt);assert.equal(button.textContent,'AI prompt copied');
  assert.match(d.querySelector('.study-prompt-status').textContent,/Choose an AI chat/);
@@ -587,8 +592,8 @@ test('AI study logos open four sites without sending prompts or changing the cli
  const boxes=[...d.querySelectorAll('.study-prompt')];
  for(const box of boxes){
   assert.equal(box.querySelector('summary, details, .study-prompt-text'),null);
-  assert.equal(box.querySelectorAll('button').length,1);
-  assert.equal(box.querySelector('button').textContent,'Copy AI prompt');
+  assert.equal(box.querySelectorAll('.practice-copy-button').length,1);
+  assert.equal(box.querySelector('.practice-copy-button').textContent,'Copy AI prompt');
   const links=[...box.querySelectorAll('a')];assert.equal(links.length,4);
   assert.deepEqual(links.map(link=>link.href),['https://chatgpt.com/','https://gemini.google.com/app','https://claude.ai/','https://copilot.microsoft.com/']);
   for(const link of links){
@@ -604,8 +609,8 @@ test('AI study logos open four sites without sending prompts or changing the cli
  }
  await flush();
  assert.equal(copied,undefined);
- boxes[0].querySelector('button').click();await flush();assert.equal(copied,aiPrompt);
- boxes[1].querySelector('button').click();await flush();
+ boxes[0].querySelector('.practice-copy-button').click();await flush();assert.equal(copied,aiPrompt);
+ boxes[1].querySelector('.practice-copy-button').click();await flush();
  assert.ok(!boxes[1].textContent.includes(copied));
  assert.match(copied,/Second topic/);
  d.getElementById('logout').click();await flush();
@@ -1254,4 +1259,65 @@ test('practice copy buttons fall back safely, report failure honestly, and ignor
  let finish;Object.defineProperty(w.navigator,'clipboard',{value:{writeText:()=>new Promise(resolve=>{finish=resolve;})}});
  button.click();w.location.hash='overview';await flush();assert.equal(root.textContent,'');finish();await flush();assert.equal(root.textContent,'');
  w.location.hash='activities/grammar-practice';await flush();button=root.querySelector('.practice-copy-button');assert.equal(button.textContent,'Copy AI prompt');assert(root.querySelector('.practice-copy-status').hidden);w.close();
+});
+
+test('study topics save Finish and Questions independently and restore choices on reopening',async()=>{
+ const {e,student}=await seedQuiz();let writes=0;
+ const dom=setup((path,options)=>{
+  if(!path.startsWith('/api/study/'))return null;
+  if(options?.method)writes++;
+  return call(e,path,{...options,headers:{Cookie:student.cookie,Origin:origin,...options?.headers}});
+ },origin+'/#assessments/next');await flush();const w=dom.window,d=w.document;
+ const root=()=>d.getElementById('study-topics'),row=()=>root().querySelector('.study-current .assessment-plan-card');
+ const finish=()=>row().querySelector('.study-finish'),question=()=>row().querySelector('.question-button');
+ assert.equal(writes,0);assert(!finish().disabled);finish().click();await flush();
+ assert.equal(finish().textContent,'Finished');assert(row().classList.contains('is-finished'));
+ question().click();await flush();assert.equal(question().textContent,'Saved to Questions');assert.equal(root().querySelectorAll('.study-question-items .assessment-plan-card').length,1);
+ const before=writes;w.location.hash='overview';await flush();assert.equal(root().textContent,'');w.location.hash='assessments/next';await flush();
+ assert.equal(writes,before);assert.equal(finish().getAttribute('aria-pressed'),'true');assert.equal(question().getAttribute('aria-pressed'),'true');
+ finish().click();await flush();assert(!row().classList.contains('is-finished'));assert.equal(question().textContent,'Saved to Questions');
+ root().querySelector('.study-question-items .question-button').click();await flush();assert.equal(question().textContent,'Questions');assert.equal(root().querySelectorAll('.study-question-items .assessment-plan-card').length,0);
+ assert.equal(w.localStorage.length,0);assert.equal(w.sessionStorage.length,0);w.close();
+});
+
+test('study saves handle failures, lost responses and conflicting changes without false success',async()=>{
+ const {e,student}=await seedQuiz();let mode='failed';
+ const mock=(path,options)=>{
+  if(!path.startsWith('/api/study/'))return null;
+  if(options?.method && mode==='failed')return Promise.resolve(new Response(JSON.stringify({error:'Unavailable'}),{status:503}));
+  return call(e,path,{...options,headers:{Cookie:student.cookie,Origin:origin,...options?.headers}}).then(response=>{if(options?.method&&mode==='lost'){mode='normal';throw Error('Lost response');}return response;});
+ };
+ const page=setup(mock,origin+'/#assessments/next');await flush();const d=page.window.document;
+ const button=()=>d.querySelector('.study-current .study-finish'),question=()=>d.querySelector('.study-current .question-button');
+ button().click();await flush();assert.equal(button().textContent,'Finish');assert.match(d.querySelector('.study-save-status').textContent,/could not be saved/);
+ mode='lost';button().click();await flush();assert.equal(button().textContent,'Finish');button().click();await flush();assert.equal(button().textContent,'Finished');
+ const id=studyFixture[0].id;await call(e,'/api/study/state',{method:'PATCH',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({id,field:'finished',value:false,revision:1})});
+ question().click();await flush();assert.equal(button().textContent,'Finish');assert.equal(question().textContent,'Questions');assert.match(d.querySelector('.study-save-status').textContent,/changed on another page/);
+ question().click();await flush();assert.equal(question().textContent,'Saved to Questions');page.window.close();
+});
+
+test('study teacher previews and old questions are readable without writes',async()=>{
+ const old={...studyFixture[0],title:'Earlier topic',id:'a'.repeat(64),current:false,progress:{id:'a'.repeat(64),question:true,finished:true,revision:2}};let writes=0;
+ const dom=setup((path,options)=>{if(options?.method)writes++;return path.startsWith('/api/study/questions')?reply({questions:[old],nextCursor:null}):null;},origin+'/#assessments/next','teacher');await flush();
+ const d=dom.window.document;assert.match(d.querySelector('.study-question-items').textContent,/Earlier topic/);assert.match(d.querySelector('.study-question-items').textContent,/From an earlier assessment/);
+ assert(d.querySelector('.study-question-items .assessment-plan-card').classList.contains('is-finished'));
+ for(const b of d.querySelectorAll('.study-finish,.study-actions .question-button')){assert(b.disabled);b.click();}
+ assert.equal(writes,0);dom.window.close();
+});
+
+test('study choices and late responses clear on leaving, page hide, logout and expiry',async()=>{
+ for(const action of ['leave','pagehide','logout','expiry']){
+  let resolve;const dom=setup((path,options)=>path==='/api/study/state'&&options?.method?new Promise(r=>{resolve=r;}):null,origin+'/#assessments/next');await flush();
+  const w=dom.window,d=w.document;d.querySelector('.study-current .study-finish').click();await flush();
+  if(action==='leave')w.location.hash='overview';else if(action==='pagehide')w.dispatchEvent(new w.Event('pagehide'));else if(action==='logout')d.getElementById('logout').click();
+  await flush();resolve(action==='expiry'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):reply({entry:{...studyFixture[0].progress,finished:true,revision:1}}));await flush();
+  assert.equal(d.querySelectorAll('.study-finish').length,0);assert.equal(d.querySelectorAll('.study-question-items .assessment-plan-card').length,0);
+  if(['logout','expiry'].includes(action))assert.equal(d.getElementById('login-view').hidden,false);w.close();
+ }
+});
+
+test('failed study state loading preserves reading and copy controls, and offers retry',async()=>{
+ let failed=true;const dom=setup(path=>path==='/api/study/state'&&failed?new Response(JSON.stringify({error:'Offline'}),{status:503}):null,origin+'/#assessments/next');await flush();
+ const d=dom.window.document;assert(d.querySelector('.study-current .study-finish').disabled);assert(!d.querySelector('.study-current .practice-copy-button').disabled);
+ const retry=[...d.querySelectorAll('#study-topics button')].find(b=>b.textContent==='Try again');assert(!retry.hidden);failed=false;retry.click();await flush();assert(!d.querySelector('.study-current .study-finish').disabled);dom.window.close();
 });

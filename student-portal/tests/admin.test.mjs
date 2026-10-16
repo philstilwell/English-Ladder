@@ -295,6 +295,75 @@ test('both Discard buttons restore the saved form in place without requests and 
   assert.equal($('nickname').value,'New saved nickname');assert.equal($('student-resources-count').textContent,'0 selected');w.close();
 });
 
+test('Undo at either location restores all discarded edits once without requests, navigation, or saving',async()=>{
+  let requests=0;const dom=browser(()=>{requests++;});await flush();
+  const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+  const values=()=>[...d.querySelectorAll('#student-form input,#student-form select,#student-form textarea')].map(input=>[input.id,input.value,input.type==='checkbox'?input.checked:null]);
+  const hash=w.location.hash,length=w.history.length;
+  for(const [discard,undo] of [['discard-student-top','undo-discard'],['discard-student','undo-discard-top']]){
+    for(const [id,value] of [['nickname','Draft for '+undo],['notes','Keep these notes'],['zoomNames','Changed Zoom names'],['newPassword','fictional-unsaved-password'],['confirmPassword','fictional-unsaved-password'],['hoursUsed','12'],['status','paused'],['timeZone','Europe/London']]){
+      $(id).value=value;$(id).dispatchEvent(new w.Event('input',{bubbles:true}));
+    }
+    $('student-activities-panel').open=true;$('student-resources-panel').open=true;
+    $('clear-all-activities').click();$('select-all-resources').click();
+    const draft=values(),before=requests;$(discard).click();await flush();
+    for(const id of ['undo-discard','undo-discard-top']){assert.equal($(id).hidden,false);assert.equal($(id).disabled,false);}
+    assert.equal($('newPassword').value,'');assert.equal($('notes').value,fixture.notes);
+    $(undo).click();await flush();assert.deepEqual(values(),draft);assert.equal(requests,before);
+    assert.equal(w.location.hash,hash);assert.equal(w.history.length,length);assert.equal($('edit-view').hidden,false);
+    assert.equal($('student-activities-panel').open,true);assert.equal($('student-resources-panel').open,true);
+    assert.equal($('student-activities-count').textContent,'0 selected');assert.equal($('student-resources-count').textContent,RESOURCE_TOOLS.length+' selected');
+    for(const id of ['save-state','save-state-top'])assert.equal($(id).textContent,'Unsaved changes — restored');
+    for(const id of ['save-student','save-student-top','discard-student','discard-student-top'])assert.equal($(id).disabled,false);
+    for(const id of ['undo-discard','undo-discard-top']){assert.equal($(id).hidden,true);assert.equal($(id).disabled,true);}
+    assert.equal(d.activeElement,$(undo==='undo-discard-top'?'discard-student-top':'discard-student'));
+    const unload=new w.Event('beforeunload',{cancelable:true});w.dispatchEvent(unload);assert.equal(unload.defaultPrevented,true);
+    $(undo).dispatchEvent(new w.Event('click'));assert.deepEqual(values(),draft);
+  }
+  w.close();
+});
+
+test('discarded drafts cannot overwrite new edits or survive saving, deletion, navigation, logout, expiry, or page hide',async()=>{
+  for(const action of ['input','bulk','unreported-edit','save','failed-save','delete','navigation','logout','expiry','pagehide']){
+    let expire=false,finishSave,body;
+    const dom=browser((path,options)=>{
+      if(expire)return Response.json({error:'Please sign in again.'},{status:401});
+      if(options?.method==='PUT'){body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}
+      if(options?.method==='DELETE')return Response.json({deleted:true});
+    });
+    await flush();const w=dom.window,d=w.document,$=id=>d.getElementById(id);d.querySelector('.student-name').click();await flush();
+    $('notes').value='Discarded private draft';$('newPassword').value='fictional-private-draft';$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
+    $('discard-student').click();assert.equal($('undo-discard').hidden,false);
+    if(action==='input'||action==='unreported-edit'){
+      $('notes').value='Newer draft';if(action==='input')$('notes').dispatchEvent(new w.Event('input',{bubbles:true}));
+      else $('undo-discard').click();
+    }else if(action==='bulk')$('clear-all-resources').click();
+    else if(action==='navigation')$('register-nav').click();
+    else if(action==='logout')$('sign-out').click();
+    else if(action==='expiry'){expire=true;$('refresh-login-details').click();}
+    else if(action==='pagehide')w.dispatchEvent(new w.Event('pagehide'));
+    else if(action==='delete'){
+      $('open-delete').click();$('delete-confirmation').value=fixture.studentId;
+      $('delete-confirmation').dispatchEvent(new w.Event('input'));$('confirm-delete').click();
+    }else{
+      $('notes').value='Newer saved draft';$('student-form').dispatchEvent(new w.Event('submit',{cancelable:true}));
+      assert.equal($('undo-discard').hidden,true);$('undo-discard').dispatchEvent(new w.Event('click'));
+      assert.equal($('notes').value,'Newer saved draft');
+      finishSave(action==='failed-save'?Response.json({error:'Save failed.'},{status:503}):Response.json({student:{...fixture,...body,revision:2}}));
+    }
+    await flush();
+    for(const id of ['undo-discard','undo-discard-top']){assert.equal($(id).hidden,true,action);assert.equal($(id).disabled,true,action);}
+    const note=$('notes').value,firstName=$('firstName').value,hash=w.location.hash;
+    $('undo-discard').dispatchEvent(new w.Event('click'));$('undo-discard-top').dispatchEvent(new w.Event('click'));
+    assert.equal($('notes').value,note);assert.equal($('firstName').value,firstName);assert.equal(w.location.hash,hash);assert.equal($('newPassword').value,'');
+    if(action==='input'||action==='unreported-edit')assert.equal(note,'Newer draft');
+    if(action==='save'||action==='failed-save')assert.equal(note,'Newer saved draft');
+    if(action==='navigation')assert.equal(firstName,'');
+    if(['logout','expiry','pagehide'].includes(action)){assert.equal($('admin-view').hidden,true);assert.equal(note,'');}
+    w.close();
+  }
+});
+
 test('Discard restores registration defaults, resets suggested addresses, and is blocked during saves',async()=>{
   let writes=0,finishSave,body;
   const dom=browser((path,options)=>{if(path==='/api/admin/students'&&options?.method==='POST'){writes++;body=JSON.parse(options.body);return new Promise(r=>finishSave=r);}});
@@ -302,6 +371,8 @@ test('Discard restores registration defaults, resets suggested addresses, and is
   const change=(id,value)=>{$(id).value=value;$(id).dispatchEvent(new w.Event('input',{bubbles:true}));};
   change('firstName','Taylor');change('lastName','Testperson');change('studentId','manualaddress');change('newPassword','fictional-password');
   $('clear-all-activities').click();$('clear-all-resources').click();$('discard-student-top').click();
+  $('undo-discard-top').click();assert.equal($('studentId').value,'manualaddress');
+  change('firstName','Jordan');assert.equal($('studentId').value,'manualaddress');$('discard-student-top').click();
   for(const id of ['firstName','lastName','studentId','newPassword','confirmPassword'])assert.equal($(id).value,'');
   assert.equal($('status').value,'active');assert.equal($('timeZone').value,'America/New_York');
   assert.equal(d.querySelectorAll('#student-activities input:checked').length,ACTIVITY_TOOLS.length);

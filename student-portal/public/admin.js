@@ -20,7 +20,7 @@
   let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
   let activityOverviewRequest = 0;
   let deleting = null, deleteBusy = false, saving = false;
-  let savedFormState = null, editGeneration = 0, saveTask = null;
+  let savedFormState = null, editGeneration = 0, saveTask = null, discardedForm = null;
   let pendingLeave = null, leaveBusy = false, historyDestination = null, approvedHistory = null;
   let activeRouteHash = location.hash || '#students', restoringHistory = false;
   let activeHistoryIndex = Number.isSafeInteger(history.state?.adminRouteIndex) ? history.state.adminRouteIndex : 0;
@@ -487,7 +487,7 @@
   }
   function clearPrivate() {
     epoch++; signedIn = false; students = []; current = null; importRows = null; activityTools = []; resourceTools = [];
-    savedFormState = null; editGeneration++; restoringHistory = false;
+    savedFormState = null; editGeneration++; restoringHistory = false; clearDiscardUndo();
     historyDestination = null; approvedHistory = null; closeLeave();
     $('student-activities').replaceChildren(); $('student-resources').replaceChildren();
     updateSelectionCounts();
@@ -638,6 +638,7 @@
     if (first && last && !addressEdited && !current?.activated) $('studentId').value = (first[0] + last[0]).toLowerCase() + new Intl.DateTimeFormat('en', { timeZone: 'America/New_York', year: '2-digit' }).format(new Date());
   }
   function editStudent(student) {
+    clearDiscardUndo();
     current = student; addressEdited = Boolean(student?.studentId);
     $('student-form').reset(); setSaveState('');
     for (const id of ['student-activities-panel', 'student-resources-panel']) $(id).open = false;
@@ -713,22 +714,45 @@
       ...['student-activities', 'student-resources'].map(id => [...$(id).querySelectorAll('input:checked')].map(box => box.value))
     ]);
   }
-  function discardStudentChanges() {
-    if (saving || deleting || !hasUnsavedEdits()) return;
-    const values = JSON.parse(savedFormState);
+  function restoreStudentFormState(state, editedAddress) {
+    const values = JSON.parse(state);
     const inputIds = [...fields, 'zoomNames', 'newPassword', 'confirmPassword'];
     inputIds.forEach((id, index) => { $(id).value = values[index]; });
     ['student-activities', 'student-resources'].forEach((id, index) => {
       const selected = new Set(values[inputIds.length + index]);
       for (const box of $(id).querySelectorAll('input[type="checkbox"]')) box.checked = selected.has(box.value);
     });
-    addressEdited = Boolean(current?.studentId);
-    updateSelectionCounts(); message(''); setSaveState('Changes discarded');
+    addressEdited = editedAddress;
+    updateSelectionCounts();
+  }
+  function clearDiscardUndo() {
+    discardedForm = null;
+    for (const id of ['undo-discard', 'undo-discard-top']) { $(id).hidden = true; $(id).disabled = true; }
+  }
+  function canUndoDiscard() {
+    return Boolean(signedIn && discardedForm && discardedForm.version === epoch && discardedForm.editor === editGeneration && !$('edit-view').hidden && !current?.deletionPending);
+  }
+  function discardStudentChanges() {
+    if (saving || deleting || !hasUnsavedEdits()) return;
+    discardedForm = { state: studentFormState(), addressEdited, version: epoch, editor: editGeneration };
+    restoreStudentFormState(savedFormState, Boolean(current?.studentId));
+    message(''); setSaveState('Changes discarded');
+  }
+  function undoDiscard(event) {
+    if (saving || deleting || !canUndoDiscard()) return;
+    if (studentFormState() !== savedFormState) { clearDiscardUndo(); updateUnsavedNotice(); return; }
+    const draft = discardedForm;
+    clearDiscardUndo(); restoreStudentFormState(draft.state, draft.addressEdited);
+    message(''); setSaveState('Unsaved changes — restored');
+    $(event.currentTarget.id === 'undo-discard-top' ? 'discard-student-top' : 'discard-student').focus({ preventScroll: true });
   }
   for (const id of ['discard-student', 'discard-student-top']) $(id).addEventListener('click', discardStudentChanges);
+  for (const id of ['undo-discard', 'undo-discard-top']) $(id).addEventListener('click', undoDiscard);
   function updateUnsavedNotice() {
     if (!signedIn || savedFormState === null || saving || current?.deletionPending) return;
-    setSaveState(studentFormState() !== savedFormState ? 'Unsaved changes' : '');
+    const changed = studentFormState() !== savedFormState;
+    if (changed) clearDiscardUndo();
+    setSaveState(changed ? 'Unsaved changes' : canUndoDiscard() ? 'Changes discarded' : '');
   }
   function hasUnsavedEdits() {
     return signedIn && savedFormState !== null && !$('edit-view').hidden && !current?.deletionPending && studentFormState() !== savedFormState;
@@ -830,8 +854,13 @@
       $(id).disabled = saving || !hasUnsavedEdits();
     }
     for (const id of ['discard-student', 'discard-student-top']) $(id).disabled = saving || !hasUnsavedEdits();
+    for (const id of ['undo-discard', 'undo-discard-top']) {
+      $(id).hidden = !canUndoDiscard();
+      $(id).disabled = !canUndoDiscard() || saving || Boolean(deleting);
+    }
   }
   function route(preserveLeave = false) {
+    clearDiscardUndo();
     if (!preserveLeave) closeLeave();
     activeRouteHash = location.hash || '#students';
     if (!signedIn) return;
@@ -887,6 +916,7 @@
     event.preventDefault();
     if (!signedIn || deleteBusy || !matchesDeletion()) return;
     const target = deleting, version = epoch;
+    clearDiscardUndo();
     deleteBusy = true; $('confirm-delete').disabled = true; $('cancel-delete').disabled = true; $('delete-confirmation').disabled = true;
     $('confirm-delete').textContent = 'Deleting…'; $('delete-error').textContent = '';
     const stillCurrent = () => signedIn && epoch === version && deleting === target;
@@ -994,6 +1024,7 @@
       input.newPassword = $('newPassword').value.toLowerCase(); input.confirmPassword = $('confirmPassword').value.toLowerCase();
     }
     if (editing) input.revision = editing.revision;
+    clearDiscardUndo();
     saving = true; $('open-delete').disabled = true; updateSaveLabel(); setSaveState('Saving…'); message(''); updateLeaveState();
     try {
       const data = await api('/api/admin/students' + (editing ? '/' + editing.key : ''), {method:editing?'PUT':'POST',body:JSON.stringify(input)});

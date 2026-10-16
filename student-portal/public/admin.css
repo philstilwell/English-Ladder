@@ -45,6 +45,7 @@ html:has(.admin-main){scroll-padding-top:calc(var(--admin-header-height,114px) +
 .form-actions .unsaved{color:#805b06;font-weight:650}
 .form-actions .primary-button:disabled{cursor:default;background:var(--blue)}
 .form-actions .secondary-button:disabled{cursor:default}
+.form-actions .undo-discard{padding:8px 0;font-size:.85rem;text-decoration:underline}
 
 .resolve-question{font-size:.7rem;padding:7px 10px;min-height:30px}.resolve-status:empty{display:none}.resolve-status{margin:6px 0 0;overflow-wrap:anywhere}
 

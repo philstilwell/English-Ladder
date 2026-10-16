@@ -28,6 +28,11 @@
     clear() { $('business-terms').replaceChildren(); $('business-terms').hidden = true; },
     open() { $('business-terms').hidden = false; $('business-terms').textContent = 'Practice could not load. Reload this page to try again.'; },
   };
+  const communicationIds = window.CommunicationPractice?.ids || ['conversation-rescue', 'meaning-switch', 'ask-right-question', 'story-builder', 'missing-details'];
+  const communicationPractice = window.CommunicationPractice?.create({ root: $('communication-practice'), api, expired }) || {
+    clear() { $('communication-practice').replaceChildren(); $('communication-practice').hidden = true; },
+    open() { $('communication-practice').hidden = false; $('communication-practice').textContent = 'Practice could not load. Reload this page to try again.'; },
+  };
   const studyPractice = window.StudyPractice.create({ api, expired });
   const dropdowns = ['overview', 'activities'].map(id => ({
     group: $(id + '-menu'), toggle: $(id + '-toggle'), list: $(id + '-submenu'),
@@ -130,6 +135,7 @@
     grammarPractice.clear();
     businessTerms.clear();
     vocabularyPractice.clear();
+    communicationPractice.clear();
     closeDropdowns();
     clearSettings();
     clearResources();
@@ -251,6 +257,7 @@
     if (selected !== 'activities' || requested !== 'grammar-practice' || extra !== undefined) grammarPractice.clear();
     if (selected !== 'activities' || requested !== 'business-terms' || extra !== undefined) businessTerms.clear();
     if (selected !== 'activities' || requested !== 'vocabulary-practice' || extra !== undefined) vocabularyPractice.clear(true);
+    if (selected !== 'activities' || !communicationIds.includes(requested) || extra !== undefined) communicationPractice.clear();
     if (selected !== 'account') clearSettings();
     if (selected !== 'resources') clearResources();
     if (selected !== 'assessments') studyPractice.clear();
@@ -942,6 +949,7 @@
     if (activity?.id === 'grammar-practice') grammarPractice.open(teacherMode); else grammarPractice.clear();
     if (activity?.id === 'business-terms') businessTerms.open(teacherMode); else businessTerms.clear();
     if (activity?.id === 'vocabulary-practice') vocabularyPractice.open(teacherMode); else vocabularyPractice.clear(true);
+    if (activity && communicationIds.includes(activity.id)) communicationPractice.open(activity.id, teacherMode); else communicationPractice.clear();
     $('activity-title').textContent = activity ? activity.name : 'Activities';
     $('activity-message').textContent = activity ? activity.description : !activityChoices
       ? (activitiesError ? 'Your activities could not be loaded. Open the Activities menu to try again.' : 'Loading your activities…')
@@ -1031,7 +1039,7 @@
   $('settings-form').addEventListener('submit', event => saveSettings(event, false));
   $('password-form').addEventListener('submit', event => saveSettings(event, true));
   $('reload-settings').addEventListener('click', () => loadSettings(true));
-  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); clearResources(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); vocabularyPractice.clear(); closeDropdowns(); });
+  window.addEventListener('pagehide', () => { studyPractice.clear(); clearSettings(); clearResources(); roadPractice.clear(); grammarPractice.clear(); businessTerms.clear(); vocabularyPractice.clear(); communicationPractice.clear(); closeDropdowns(); });
 
   function showDashboard(data, focus = false) {
     if (authenticated && teacherMode !== (data.role === 'teacher')) clearIdentity();

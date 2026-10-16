@@ -1,9 +1,11 @@
+import { COMMUNICATION_ACTIVITIES, communicationPrefix } from './communication-practice.mjs';
 import { studyTopics } from './study-progress.mjs';
 import vocabularyBank from './vocabulary-bank.json' with { type: 'json' };
 import grammarBank from './grammar-bank.json' with { type: 'json' };
 import termsBank from './business-terms-bank.json' with { type: 'json' };
 
 const sources = [
+  ...COMMUNICATION_ACTIVITIES.map(bank => ({ id: bank.id, label: bank.name, prefix: communicationPrefix(bank) + ':item:', bank, communication: true })),
   { id: 'vocabulary-practice', label: 'Vocabulary practice', prefix: 'vocabulary:item:', bank: vocabularyBank },
   { id: 'grammar-practice', label: 'Grammar practice', prefix: 'grammar:item:', bank: grammarBank },
   { id: 'business-terms', label: 'Business terms', prefix: 'terms:item:', bank: termsBank },
@@ -24,7 +26,7 @@ async function* records(storage, prefix) {
 // Derive the combined list from existing choices. Reading it never writes or
 // changes completion, questions, or assessment history.
 export async function questionsOverview(storage, { after = null, statusOnly = false } = {}) {
-  if (after !== null && !/^(grammar-practice|business-terms|study-practice|vocabulary-practice):(?:\d{8}|[a-f0-9]{64})$/.test(after)) {
+  if (after !== null && (typeof after !== 'string' || !sources.some(source => after.startsWith(source.id + ':')) || !/^[a-z-]+:(?:\d{8}|[a-f0-9]{64})$/.test(after))) {
     return Response.json({ error: 'Please check the page.' }, { status: 400 });
   }
   const counts = {}, selected = [];
@@ -40,7 +42,7 @@ export async function questionsOverview(storage, { after = null, statusOnly = fa
       if (statusOnly) continue;
       const id = source.id + ':' + (source.items ? String(entry.number).padStart(8, '0') : entry.id);
       if (after && id <= after) continue;
-      const progress = { ...(source.id === 'study-practice' ? { id: entry.id, revision: entry.revision } : {}), finished: Boolean(entry.finished), question: true, updatedAt: entry.updatedAt || null };
+      const progress = { ...(source.communication ? { choice: entry.choice, correct: entry.correct, firstChoice: entry.firstChoice, firstCorrect: entry.firstCorrect } : {}), ...(source.id === 'study-practice' ? { id: entry.id, revision: entry.revision } : {}), finished: Boolean(entry.finished), question: true, updatedAt: entry.updatedAt || null };
       selected.push({ id, source: source.id, label: source.label, item: { ...item, progress, ...(source.id === 'study-practice' ? { current: currentTopics.has(entry.id) } : {}), ...(source.id === 'vocabulary-practice' ? { studentAnswer: entry.answer || '', studentSentence: entry.sentence || '' } : {}) } });
       // Keep only the next page and one sentinel while scanning bounded pages.
       selected.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);

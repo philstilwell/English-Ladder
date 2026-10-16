@@ -1,3 +1,4 @@
+import { COMMUNICATION_ACTIVITIES } from './communication-practice.mjs';
 import { FEEDBACK_ID, validateFeedback, validatePracticeEdit } from './feedback.mjs';
 import { validateAssessment } from './assessment.mjs';
 export { FeedbackStore } from './feedback.mjs';
@@ -13,7 +14,7 @@ export { StudentDirectory } from './student-directory.mjs';
 const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
-const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/vocabulary-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
+const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/vocabulary-practice.js', '/communication-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
 const SECURITY_HEADERS = {
   'Cache-Control': 'no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -250,7 +251,7 @@ async function handleAdmin(request, env) {
     return directoryRequest(env, path, body, request.method);
   }
   if (!['GET', 'HEAD'].includes(request.method)) return json({ error: 'Method not allowed.' }, 405);
-  const assets = new Set(['/', '/admin.html', '/admin.js', '/admin.css', '/portal.css', '/practice-prompt.js', '/study-practice.js', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/business-terms.js', '/vocabulary-practice.js', '/grammar-practice.js', '/ladder-mark.png', '/favicon.png', '/robots.txt']);
+  const assets = new Set(['/', '/admin.html', '/admin.js', '/admin.css', '/portal.css', '/practice-prompt.js', '/study-practice.js', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/business-terms.js', '/vocabulary-practice.js', '/communication-practice.js', '/grammar-practice.js', '/ladder-mark.png', '/favicon.png', '/robots.txt']);
   if (!assets.has(url.pathname)) return json({ error: 'Page not found.' }, 404);
   if (url.pathname === '/robots.txt') return new Response('User-agent: *\nDisallow: /\n');
   if (url.pathname === '/') url.pathname = '/admin.html';
@@ -352,6 +353,27 @@ async function handle(request, env) {
     if (!body) return json({ error: 'Please check the learning records.' }, 400);
     if (!env.FEEDBACK_STORE) return json({ error: 'Learning records are temporarily unavailable.' }, 503);
     return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/learning-import', { method: 'POST', body: JSON.stringify(body) }));
+  }
+
+  const communication = /^\/api\/communication\/([a-z-]+)(?:\/(state))?$/.exec(url.pathname);
+  if (communication) {
+    const activity = COMMUNICATION_ACTIVITIES.find(item => item.id === communication[1]);
+    if (!activity) return json({ error: 'Activity not found.' }, 404);
+    const session = await readSession(request, env, account);
+    if (!session) return json({ error: 'Please sign in to continue.' }, 401);
+    const methods = communication[2] ? ['GET', 'PATCH'] : ['GET'];
+    if (!methods.includes(request.method)) return json({ error: 'Method not allowed.' }, 405, { Allow: methods.join(', ') });
+    let body;
+    if (request.method === 'PATCH') {
+      if (session.role !== 'student') return json({ error: 'Teacher view is read-only. Only the student can save choices.' }, 403);
+      if (request.headers.get('Origin') !== url.origin) return json({ error: 'Please reload and try again.' }, 403);
+      if (!(await (env.PRACTICE_LIMITER || env.ACCOUNT_LIMITER).limit({ key: account.id })).success) return json({ error: 'Please wait a minute, then try again.' }, 429, { 'Retry-After': '60' });
+      body = await smallJson(request, 1024);
+      if (!body) return json({ error: 'Please check your choice.' }, 400);
+    } else if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Please open this from your student page.' }, 403);
+    if (!communication[2]) return json(activity);
+    if (!env.FEEDBACK_STORE) return json({ error: 'Practice is temporarily unavailable.' }, 503);
+    return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(account.id)).fetch(new Request('https://feedback.internal/communication/' + activity.id + '/state', { method: request.method, ...(body ? { body: JSON.stringify(body) } : {}) }));
   }
 
   if (['/api/grammar-practice', '/api/business-terms', '/api/vocabulary-practice'].includes(url.pathname)) {

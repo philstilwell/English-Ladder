@@ -89,7 +89,7 @@ test('reviewed snapshot is complete, consistent, unique and bounded for private 
 test('practice requires student authentication, host isolation, exact origins and bounded writes', async () => {
   const e = env(), student = await login(e), teacher = await login(e, 'teacher-test');
   for (const action of ['state', 'start', 'answer', 'end']) assert.equal((await call(e, '/api/road/' + action)).status, 401);
-  assert.equal((await get(e, teacher.cookie)).status, 403);
+  assert.equal((await get(e, teacher.cookie)).status, 200);
   assert.equal((await post(e, teacher.cookie, 'start', startInput())).status, 403);
   assert.equal((await get(e, student.cookie, '/api/road/state', 'https://cd26.englishladder.com')).status, 401);
   for (const Origin of ['https://evil.test', 'https://cd26.englishladder.com', '']) assert.equal((await call(e, '/api/road/start', { method: 'POST', headers: { Cookie: student.cookie, Origin, 'Content-Type': 'application/json' }, body: JSON.stringify(startInput()) })).status, 403);
@@ -167,4 +167,24 @@ test('private practice pagination is stable and account deletion removes all pra
   await store.fetch(new Request('https://feedback.internal/admin/delete-account', { method: 'POST' }));
   assert.equal((await store.storage.list({ prefix: 'road:' })).size, 0);
   assert.equal((await post(e, student.cookie, 'start', startInput())).status, 410);
+});
+
+
+test('teacher can read the current Road set without writes or unanswered keys and cannot change it', async () => {
+  const e=env(),student=await login(e),teacher=await login(e,'teacher-test');
+  const a=await start(e,student.cookie);
+  await post(e,student.cookie,'answer',{attemptId:a.id,questionIndex:0,choiceIndex:0});
+  const store=e.FEEDBACK_STORE.get('ab26'),before=await store.storage.list();
+  const response=await get(e,teacher.cookie);assert.equal(response.status,200);
+  const state=await response.json();assert.equal(state.attempt.id,a.id);assert.equal(state.attempt.answered,1);
+  assert.equal(typeof state.attempt.questions[0].correctIndex,'number');
+  assert.equal(state.attempt.questions[1].correctIndex,undefined);
+  assert.deepEqual(await store.storage.list(),before);
+  for(const [action,body] of [['start',startInput(a.id)],['answer',{attemptId:a.id,questionIndex:1,choiceIndex:0}],['end',{attemptId:a.id,revision:1}]])
+    assert.equal((await post(e,teacher.cookie,action,body)).status,403);
+  assert.equal((await flag(e,teacher.cookie,{attemptId:a.id,questionIndex:0,value:true,revision:0})).status,403);
+  assert.equal((await get(e,teacher.cookie,'/api/road/state','https://cd26.englishladder.com')).status,401);
+  for(const headers of [{Origin:'https://evil.test'},{'Sec-Fetch-Site':'cross-site'}])
+    assert.equal((await call(e,'/api/road/state',{headers:{Cookie:teacher.cookie,...headers}})).status,403);
+  assert.deepEqual(await store.storage.list(),before);
 });

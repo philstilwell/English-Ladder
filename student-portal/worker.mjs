@@ -459,7 +459,7 @@ async function handle(request, env) {
     if (!session) return json({ error: 'Please sign in to continue.' }, 401);
     const route = url.pathname.slice('/api'.length);
     if (!['/road/state', '/road/start', '/road/answer', '/road/end', '/road/questions'].includes(route)) return json({ error: 'Page not found.' }, 404);
-    if (session.role !== 'student' && !(route === '/road/questions' && request.method === 'GET')) return json({ error: 'Open English Road results from the administrator account page. Teacher previews do not save student practice.' }, 403);
+    if (session.role !== 'student' && !(['/road/state', '/road/questions'].includes(route) && request.method === 'GET')) return json({ error: 'Teacher previews do not save student practice.' }, 403);
     const method = route === '/road/questions' ? (request.method === 'GET' ? 'GET' : 'PATCH') : route === '/road/state' ? 'GET' : 'POST';
     if (request.method !== method) return json({ error: 'Method not allowed.' }, 405, { Allow: method });
     let body;

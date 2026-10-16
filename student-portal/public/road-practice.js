@@ -87,6 +87,31 @@
         });
         root.append(form);
       }
+      function teacherPreview() {
+        root.append(node('p', 'Teacher preview. Browse this student’s saved set without changing answers, progress, or Questions.'));
+        if (!attempt) {
+          if (!busy && !error && catalog) root.append(node('p', 'This student has not started an English Road practice set yet. With the student’s own sign-in, choose a practice band and topic, then select Start practice.'));
+          return;
+        }
+        const index = viewing ?? Math.min(attempt.answers.length, attempt.questions.length - 1);
+        const question = attempt.questions[index]; if (!question) return;
+        root.append(node('p', attempt.band + ' · ' + (attempt.topic || 'All topics'), 'eyebrow'));
+        const title = node('h4', 'Question ' + (index + 1) + ' of ' + attempt.total); title.id = 'road-question-title'; title.tabIndex = -1;
+        root.append(title, node('p', question.setup), node('p', '“' + question.prompt + '”', 'road-prompt'));
+        const options = node('ol'); options.type = 'A';
+        question.options.forEach(option => options.append(node('li', option))); root.append(options);
+        const answer = attempt.answers[index];
+        if (answer) {
+          root.append(node('p', 'Student’s saved answer: “' + question.options[answer.choiceIndex] + '”'));
+          root.append(node('p', 'Correct answer: “' + question.options[question.correctIndex] + '”'), node('p', question.explanation));
+        } else root.append(node('p', 'No answer saved for this question.', 'field-note'));
+        if (question.progress?.question) root.append(node('p', 'Saved to Questions', 'field-note'));
+        root.append(promptControls(question));
+        const controls = node('div', null, 'terms-controls');
+        if (index > 0) controls.append(button('Previous question', () => { viewing = index - 1; render(); focusQuestion(); }));
+        if (index < attempt.total - 1) controls.append(button('Next question', () => { viewing = index + 1; render(); focusQuestion(); }));
+        root.append(controls);
+      }
       function render() {
         root.replaceChildren(); root.hidden = !mounted;
         if (!mounted) return;
@@ -95,18 +120,15 @@
         if (questionsOnly) {
           const list = node('div', null, 'road-questions'); root.append(list); questions.list(list, teacher); return;
         }
-        if (teacher) {
-          root.append(node('p', 'Teacher view does not save student practice. Open this student’s account on your administrator page to review English Road results.'));
-          return;
-        }
         root.append(node('p', 'A1–C2 are practice bands. This quiz does not measure your overall English level.', 'field-note'));
-        const status = node('p', busy ? 'Saving or loading…' : pending ? 'Not saved yet. Try again before you continue.' : error ? 'Load saved progress to check your answers.' : 'Your submitted answers are saved in your account. Your teacher can review them.', 'save-message');
+        const status = node('p', busy ? 'Saving or loading…' : pending ? 'Not saved yet. Try again before you continue.' : error ? 'Load saved progress to try again.' : teacher ? 'Saved student practice · read-only' : 'Your submitted answers are saved in your account. Your teacher can review them.', 'save-message');
         status.setAttribute('role', 'status'); root.append(status);
         if (error) {
           const message = node('p', error, 'error-message'); message.setAttribute('role', 'alert'); root.append(message);
           if (pending) root.append(button('Try saving again', () => send(pending.path, pending.body)));
         }
         root.append(button('Load saved progress', load));
+        if (teacher) { teacherPreview(); return; }
         if (!attempt) { setup(); return; }
         const index = viewing ?? attempt.answers.length;
         root.append(node('p', attempt.band + ' · ' + (attempt.topic || 'All topics'), 'eyebrow'));
@@ -152,7 +174,7 @@
           if (window.confirm('End this set? Your saved answers will stay in your account. You can then start a new set.')) send('end', { attemptId: attempt.id, revision: attempt.revision });
         }));
       }
-      return { clear, open(isTeacher, showQuestions = false) { if (mounted && teacher === isTeacher && questionsOnly === showQuestions) return; clear(); mounted = true; teacher = isTeacher; questionsOnly = showQuestions; render(); if (!teacher && !questionsOnly) load(); } };
+      return { clear, open(isTeacher, showQuestions = false) { if (mounted && teacher === isTeacher && questionsOnly === showQuestions) return; clear(); mounted = true; teacher = isTeacher; questionsOnly = showQuestions; render(); if (!questionsOnly) load(); } };
     },
   };
 })();

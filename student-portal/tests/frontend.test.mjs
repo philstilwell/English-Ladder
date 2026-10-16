@@ -1230,8 +1230,8 @@ test('English Road clears late responses on navigation, sign-out and expiry and 
   const expiredDom=setup(path=>path==='/api/account'?reply(roadSettings):path==='/api/road/state'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):null,roadRoute);
   await flush();assert.equal(expiredDom.window.document.getElementById('login-view').hidden,false);assert.equal(expiredDom.window.document.getElementById('road-practice').textContent,'');expiredDom.window.close();
   let requests=0;
-  const teacher=setup(path=>{if(path==='/api/account')return reply(roadSettings);if(path.startsWith('/api/road/')){requests++;return reply({});}},roadRoute,'teacher');await flush();
-  assert.match(teacher.window.document.getElementById('road-practice').textContent,/Teacher view does not save/);assert.equal(requests,0);teacher.window.close();
+  const teacher=setup(path=>{if(path==='/api/account')return reply(roadSettings);if(path.startsWith('/api/road/')){requests++;return reply({catalog:{levels:['A1'],topics:['Articles']},attempt:null});}},roadRoute,'teacher');await flush();
+  assert.match(teacher.window.document.getElementById('road-practice').textContent,/has not started an English Road practice set/);assert.equal(requests,1);teacher.window.close();
   const hidden=setup(path=>path==='/api/account'?reply({...roadSettings,visibleActivities:[]}):null,roadRoute);await flush();assert.equal(hidden.window.document.getElementById('road-practice').hidden,true);hidden.window.close();
 });
 
@@ -1631,4 +1631,33 @@ test('a failed new activity script shows a reload message while the student port
  const dom=setup(null,'https://ab26.englishladder.com/#activities/conversation-rescue','student',true);await flush();
  const d=dom.window.document;assert.match(d.getElementById('communication-practice').textContent,/Reload this page/);assert.equal(d.getElementById('activities').hidden,false);
  dom.window.location.hash='#overview';await flush();assert.equal(d.getElementById('overview').hidden,false);assert.equal(d.getElementById('communication-practice').textContent,'');dom.window.close();
+});
+
+
+test('teacher Road preview browses saved questions and clears late reads without changing student work',async()=>{
+ const {e,student,teacher}=await seedQuiz();
+ const started=await call(e,'/api/road/start',{method:'POST',headers:{Cookie:student.cookie,Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({attemptId:crypto.randomUUID(),previousAttemptId:null,band:'C1',topic:''})});
+ const a=(await started.json()).attempt;
+ const before=await e.FEEDBACK_STORE.get('ab26').storage.list();let writes=0;
+ const dom=setup((path,options={})=>{
+  if(path==='/api/account')return reply(roadSettings);
+  if(path.startsWith('/api/road/')){if(options.method)writes++;return call(e,path,{...options,headers:{...options.headers,Cookie:teacher.cookie}});}
+ },roadRoute,'teacher');await flush();const d=dom.window.document;
+ assert.equal(d.getElementById('road-question-title').textContent,'Question 1 of 25');
+ assert.match(d.getElementById('road-practice').textContent,/C1 · All topics/);
+ assert.equal(d.querySelectorAll('#road-practice ol li').length,4);
+ assert.equal(d.querySelectorAll('#road-practice form,#road-practice input,#road-practice .question-button').length,0);
+ assert.equal(roadButton(d,'End this set'),undefined);assert.equal(roadButton(d,'Start practice'),undefined);
+ roadButton(d,'Next question').click();assert.equal(d.getElementById('road-question-title').textContent,'Question 2 of 25');
+ roadButton(d,'Previous question').click();assert.equal(d.getElementById('road-question-title').textContent,'Question 1 of 25');
+ roadButton(d,'Load saved progress').click();await flush();assert.equal(writes,0);
+ assert.deepEqual(await e.FEEDBACK_STORE.get('ab26').storage.list(),before);
+ assert.equal(dom.window.localStorage.length,0);assert.equal(dom.window.sessionStorage.length,0);dom.window.close();
+ for(const action of ['navigate','logout','pagehide','expiry']){
+  let release;const late=setup(path=>path==='/api/account'?reply(roadSettings):path==='/api/road/state'?new Promise(r=>{release=r;}):null,roadRoute,'teacher');await flush();
+  const w=late.window,doc=w.document;
+  if(action==='navigate')w.location.hash='#overview';else if(action==='logout')doc.getElementById('logout').click();else if(action==='pagehide')w.dispatchEvent(new w.Event('pagehide'));
+  await flush();release(action==='expiry'?new Response(JSON.stringify({error:'Please sign in.'}),{status:401}):reply({catalog:{levels:['C1'],topics:['Articles']},attempt:a}));await flush();
+  assert.equal(doc.getElementById('road-practice').textContent,'');w.close();
+ }
 });

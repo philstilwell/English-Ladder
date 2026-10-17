@@ -5,6 +5,7 @@ import { QuizAutomation, hash, nightlyDate, zoomSignatureValid } from '../server
 import { readTranscript, authorQuiz, firstTryReview } from '../server-quiz-model.mjs';
 import { seedQuiz, call, origin, env as emptyEnv } from './harness.mjs';
 import { feedback, assessment, quiz } from './fixture.mjs';
+import { runDate, RECHECK_DELAY } from '../codex-nightly.mjs';
 
 const student = { firstName: 'Alex', zoomNames: ['Alex0529'], timeZone: 'America/New_York', startAfter: '2026-10-14T00:00:00Z' };
 const note = { transcript: { speakers: [{ speaker_id: 'a', display_name: 'Alex0529' }, { speaker_id: 't', display_name: 'Private Teacher Name' }],
@@ -580,6 +581,97 @@ test('Codex handoff publishes an exact reviewed bundle, verifies it, cancels rec
   assert.equal(await storage.get('usage:lesson:ab26'),undefined);
 });
 
+test('nightly readiness waits fifteen minutes and permits only one recheck across restart and midnight', async()=>{
+  const {storage,env,id,dispatch,object}=await codexFixture();
+  const originalNow=Date.now;let now=Date.parse('2026-10-17T03:50:00Z'),reads=0;
+  Date.now=()=>now;
+  try {
+    const pendingMeeting={...meeting,end_time:new Date(now-60000).toISOString()};
+    object.zoom=async path=>{reads++;return path.startsWith('/my_notes/')?note:pendingMeeting;};
+    const first=await (await dispatch('nightly-prepare',{id})).json();
+    assert.equal(first.waiting,true);assert.equal(Date.parse(first.retryAt),now+RECHECK_DELAY);assert.equal(reads,2);
+    assert.equal((await (await dispatch('nightly-prepare',{id})).json()).waiting,true);assert.equal(reads,2);
+    now+=RECHECK_DELAY;
+    const resumed=new QuizAutomation({storage},env);resumed.zoom=object.zoom;
+    const again=()=>resumed.fetch(new Request('https://automation.internal/codex/nightly-prepare',{method:'POST',body:JSON.stringify({id})}));
+    assert.ok((await (await again()).json()).snapshotHash);assert.equal(reads,4);
+    assert.equal((await (await again()).json()).deferred,true);assert.equal(reads,4);
+    assert.equal((await storage.get('job:'+id)).codexCheck.checks,2);
+  } finally { Date.now=originalNow; }
+});
+
+test('empty transcripts get one recheck, then wait for a Zoom change; ordinary failures do not retry', async()=>{
+  const {storage,id,dispatch,object}=await codexFixture();
+  const originalNow=Date.now;let now=Date.parse('2026-10-17T03:35:00Z'),reads=0;
+  Date.now=()=>now;
+  try {
+    object.zoom=async()=>{reads++;return {transcript:{speakers:note.transcript.speakers,items:[]}};};
+    assert.equal((await (await dispatch('nightly-prepare',{id})).json()).waiting,true);
+    now+=RECHECK_DELAY;
+    assert.equal((await (await dispatch('nightly-prepare',{id})).json()).deferred,true);assert.equal(reads,2);
+    now+=86400000;
+    assert.equal((await (await dispatch('nightly-prepare',{id})).json()).deferred,true);assert.equal(reads,2);
+    await storage.put({['job:'+id]:{...await storage.get('job:'+id),sourceEventAt:now-3600000}});
+    object.zoom=async()=>{reads++;throw Error('zoom_reconnect');};
+    assert.equal((await (await dispatch('nightly-prepare',{id})).json()).error,'zoom_reconnect');
+    assert.equal((await (await dispatch('nightly-prepare',{id})).json()).deferred,true);assert.equal(reads,3);
+  } finally { Date.now=originalNow; }
+});
+
+test('nightly run dates follow New York wall-clock time through midnight and daylight saving',()=>{
+  for(const [instant,date] of [['2026-10-17T03:35:00Z','2026-10-16'],['2026-10-17T04:05:00Z','2026-10-16'],['2026-11-01T05:55:00Z','2026-10-31'],['2026-11-01T06:05:00Z','2026-10-31'],['2026-11-02T04:35:00Z','2026-11-01']]) assert.equal(runDate(Date.parse(instant)),date);
+});
+
+test('nightly discovery allows one follow-up even with an empty first queue and survives restart',async()=>{
+  const {object,storage,env,dispatch,id}=await codexFixture();await storage.delete('job:'+id);
+  const originalNow=Date.now;let now=Date.parse('2026-10-17T03:50:00Z'),searches=0;Date.now=()=>now;
+  try {
+    object.pruneTranscripts=async()=>{};object.accessToken=async()=>{};object.discover=async()=>{searches++;};
+    const first=await (await dispatch('nightly-discover')).json();assert.equal(first.jobs.length,0);assert.equal(first.discovery.checks,1);
+    assert.equal(Date.parse(first.discovery.recheckAt),now+RECHECK_DELAY);await dispatch('nightly-discover');assert.equal(searches,1);
+    now+=RECHECK_DELAY;
+    const resumed=new QuizAutomation({storage},env);resumed.pruneTranscripts=object.pruneTranscripts;resumed.accessToken=object.accessToken;
+    resumed.discover=async()=>{searches++;await storage.put({['job:'+id]:{noteId:'fictional-note-123',status:'pending'}});};
+    const again=()=>resumed.fetch(new Request('https://automation.internal/codex/nightly-discover',{method:'POST',body:'{}'}));
+    const second=await (await again()).json();assert.equal(second.discovery.checks,2);assert.equal(second.discovery.recheckAt,null);assert.equal(second.jobs.length,1);
+    await again();assert.equal(searches,2);
+  } finally { Date.now=originalNow; }
+});
+
+test('pre-activation warnings identify the exact lesson, remain administrator-only, and clear after approved publication',async()=>{
+  const {storage,env,id,records,dispatch,payload,object}=await codexFixture();
+  const config=JSON.parse(env.QUIZ_STUDENTS);config.ab26.startAfter='2026-10-15T03:00:00Z';env.QUIZ_STUDENTS=JSON.stringify(config);
+  const result=await (await dispatch('nightly-prepare',{id})).json();assert.equal(result.approvalRequired,true);
+  const status=()=>object.fetch(new Request('https://automation.internal/admin-status')).then(r=>r.json());
+  assert.deepEqual((await status()).catchUpRequired,[{id,studentId:'ab26',startedAt:meeting.start_time}]);
+  assert.equal((await (await dispatch('queue')).json()).jobs.length,0);
+  const studentStatus=await (await object.fetch(new Request('https://automation.internal/status',{headers:{'X-Student-ID':'ab26'}}))).json();
+  assert.equal(studentStatus.catchUpRequired,undefined);
+  assert.equal(await env.FEEDBACK_STORE.get('ab26').storage.get('feedback:'+session),undefined);
+  env.QUIZ_STUDENTS='{}';assert.deepEqual((await status()).catchUpRequired,[]);env.QUIZ_STUDENTS=JSON.stringify(config);
+  const job=await storage.get('job:'+id);await storage.put({['job:'+id]:{...job,status:'ignored'}});assert.deepEqual((await status()).catchUpRequired,[]);await storage.put({['job:'+id]:job});
+  const catchUp={studentId:'ab26',noteId:job.noteId,startedAt:meeting.start_time};
+  assert.equal((await (await dispatch('nightly-prepare',{id,catchUp})).json()).error,'invalid_catch_up');
+  const p=await (await dispatch('prepare',{id,catchUp})).json();
+  assert.equal((await (await dispatch('publish',{...await payload(records),snapshotHash:p.snapshotHash,catchUp})).json()).verified,true);
+  assert.deepEqual((await status()).catchUpRequired,[]);assert.equal(JSON.parse(env.QUIZ_STUDENTS).ab26.startAfter,config.ab26.startAfter);
+});
+
+test('Codex discovery looks back one day for activation warnings without opening older history',async()=>{
+  const {object,storage,env}=coordinator();env.LESSON_PROCESSOR='codex';env.AUTOMATION_ENABLED='false';
+  env.QUIZ_STUDENTS=JSON.stringify({ab26:{...student,startAfter:'2026-10-15T03:00:00Z'}});
+  await storage.put({oauth:{userId:'owner',pmi:1234567890}});const lookedUp=[];
+  object.zoom=async(path,_token,body)=>{
+    if(path==='/docs/file_search'){assert.equal(body.modified_time_from,'2026-10-14T03:00:00.000Z');return {files:[]};}
+    if(path.startsWith('/users/me/meetings?'))return {meetings:[]};
+    if(path.endsWith('/instances'))return {meetings:[{uuid:'recent',start_time:meeting.start_time},{uuid:'old',start_time:'2026-10-13T00:00:00Z'}]};
+    if(path.startsWith('/my_notes/notes?')){lookedUp.push(path);return {notes:[{note_id:'fictional-note-123',modified_time:meeting.end_time}]};}
+    throw Error('Unexpected lookup');
+  };
+  await object.discover();assert.equal(lookedUp.length,1);assert.match(lookedUp[0],/recent/);
+  assert.equal((await storage.list({prefix:'job:'})).size,1);
+});
+
 test('Codex rejects changed, unreviewed and wrongly grounded results before saving', async()=>{
   const {id,p,records,dispatch,payload,env}=await codexFixture();
   const body=await payload(records);body.records.feedback[0].summary='Changed after review.';
@@ -617,6 +709,11 @@ test('Codex handoff requires its narrow credential on the administrator host, ne
   assert.equal((await call(e,'/api/codex/queue',{...options,headers:{...options.headers,Origin:admin}},admin)).status,401);
   assert.equal((await call(e,'/api/codex/queue',options,origin)).status,404);
   assert.equal((await call(e,'/api/codex/queue',options,admin)).status,200);assert.equal(calls,1);
+  for(const route of ['nightly-prepare','nightly-discover']) {
+    assert.equal((await call(e,'/api/codex/'+route,options,origin)).status,404);
+    assert.equal((await call(e,'/api/codex/'+route,{...options,headers:{...options.headers,Origin:admin}},admin)).status,401);
+    assert.equal((await call(e,'/api/codex/'+route,options,admin)).status,200);
+  }
   assert.equal((await call(e,'/api/codex/delete-account',options,admin)).status,404);
   e.LESSON_PROCESSOR='cloudflare';assert.equal((await call(e,'/api/codex/queue',options,admin)).status,401);
 });

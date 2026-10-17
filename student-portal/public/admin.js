@@ -17,6 +17,7 @@
   let directoryLoaded = false, directoryRead = 0;
   let questionsRequest = 0, questionStatuses = {}, combinedRequest = 0;
   let automationRequest = 0, retryingUpdate = false;
+  let catchUpRequest = 0;
   let resolvedQuestions = [], questionActionPending = false;
   let quizRequest = 0, quizStatuses = {};
   let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
@@ -57,7 +58,37 @@
   }[code] || 'The update could not finish. Existing feedback was kept.');
   function clearAutomation() {
     automationRequest++; retryingUpdate = false;
+    catchUpRequest++;
+    $('catch-up-items').replaceChildren(); $('catch-up-warnings').hidden = true;
+    $('student-catch-up-items').replaceChildren(); $('student-catch-up-warnings').hidden = true;
     $('automation-problem-items').replaceChildren(); $('automation-problems').hidden = true; $('automation-retry-status').textContent = '';
+  }
+  function renderCatchUp(container, warnings, studentOnly = null) {
+    container.replaceChildren();
+    for (const warning of warnings || []) {
+      const student = students.find(s => s.studentId === warning.studentId && s.status === 'active' && !s.deletionPending);
+      if (!student || studentOnly && student.key !== studentOnly.key) continue;
+      const row = element('article');
+      row.append(element('h3', student.firstName + ' · ' + displayTime(warning.startedAt)),
+        element('p', 'This lesson was held before account activation. It needs your approval for a one-time catch-up.', 'field-note'),
+        element('p', 'Ask Codex: “Please publish the lesson for ' + student.firstName + ' (' + student.studentId + ') held on ' + displayTime(warning.startedAt) + ' as a one-time catch-up.”', 'field-note'));
+      if (!studentOnly) { const link = element('a', 'Open student account'); link.href = '#students/' + student.key; row.append(link); }
+      container.append(row);
+    }
+  }
+  async function loadCatchUp(student) {
+    const request = ++catchUpRequest, version = epoch;
+    $('student-catch-up-items').replaceChildren(); $('student-catch-up-warnings').hidden = true;
+    if (!student?.activated || student.status !== 'active' || student.deletionPending) return;
+    const valid = () => signedIn && epoch === version && request === catchUpRequest && current?.key === student.key;
+    try {
+      const status = await api('/api/admin/automation');
+      if (!valid()) return;
+      renderCatchUp($('student-catch-up-items'), status.catchUpRequired, student);
+      $('student-catch-up-warnings').hidden = !$('student-catch-up-items').childElementCount;
+    } catch (error) {
+      if (valid()) { $('student-catch-up-items').textContent = 'Could not check for earlier lessons. Reopen this account to try again.'; $('student-catch-up-warnings').hidden = false; }
+    }
   }
   async function refreshAutomation(notice = '') {
     const version = epoch, request = ++automationRequest;
@@ -65,6 +96,8 @@
     try {
       const status = await api('/api/admin/automation');
       if (!valid()) return;
+      renderCatchUp($('catch-up-items'), status.catchUpRequired);
+      $('catch-up-warnings').hidden = !$('catch-up-items').childElementCount;
       $('schedule-state').textContent = status.retentionError ? 'Transcript cleanup needs attention. Older cached copies could not be removed.' : status.cefrNeedsAttention ? 'CEFR review needs attention. Existing estimates have been kept.' : status.connectionError ? 'Zoom needs attention. Open a student’s Quiz results to check the connection.' : status.processor === 'codex' ? 'Codex · keep your Mac awake and Codex open' : status.connected && status.enabled ? 'On the server · adjusts for daylight saving' : 'Automatic updates are not connected yet.';
       $('last-check').textContent = status.lastCheck ? 'Last check: ' + displayTime(status.lastCheck) + (status.needsAttention ? ' · ' + status.needsAttention + ' sessions need attention' : '') : 'The first nightly check is still ahead.';
       $('automation-problem-items').replaceChildren(); $('automation-retry-status').textContent = notice;
@@ -705,7 +738,8 @@
     $('edit-description').textContent = student ? 'Update the account details. Changes take effect when you save.' : 'Add the student’s details and exact Zoom display name.';
     $('source-note').hidden = !student?.source;
     $('source-note').textContent = student?.source ? 'Imported from “New-Students” on ' + displayDate(student.source.importedAt) + ' as “' + student.source.name + '”. Check the first and last names before activation. Changes here do not change the spreadsheet.' : '';
-    $('activation-note').textContent = student?.activated ? 'Includes sessions held after ' + displayTime(student.startAfter) + '. Pausing stops access and updates; saved learning records stay in place.' : 'Activation includes sessions held after you activate this account. Updates arrive after the nightly check.';
+    $('activation-note').textContent = student?.activated ? 'Includes sessions held after ' + displayTime(student.startAfter) + '. The nightly check flags matching lessons from the 24 hours before activation for your catch-up approval. Pausing stops access and updates; saved learning records stay in place.' : 'Activation includes sessions held after you activate this account. The nightly check flags matching lessons from the previous 24 hours for your catch-up approval.';
+    void loadCatchUp(student);
     $('open-site').hidden = student?.status !== 'active';
     if (student?.status === 'active') $('open-site').href = 'https://' + student.studentId + '.englishladder.com/'; else $('open-site').removeAttribute('href');
     $('open-quiz-results').hidden = student?.status !== 'active';

@@ -3,6 +3,7 @@
 import { readTranscript, sessionId } from './server-quiz-model.mjs';
 import { validateFeedback } from './feedback.mjs';
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
+import { CATCH_UP_LOOKBACK, RECHECK_DELAY, runDate, sourceVersion, preparationState, delayedSource, catchUpWarnings } from './codex-nightly.mjs';
 const enc = new TextEncoder();
 const json = (data, status = 200) => Response.json(data, { status });
 export const canonical = value => JSON.stringify(sort(value));
@@ -51,8 +52,18 @@ async function prepared(c, id, catchUp) {
   if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start || end > Date.now() - 900000 ||
       Date.parse(job.modifiedAt) > Date.now() - 900000 || job.sourceEventAt > Date.now() - 900000) throw new Error('meeting_pending');
   if (start < Date.parse(transcript.student.startAfter) && !catchUp) {
-    await c.saveJob(key, { ...job, status: 'skipped', lastError: null });
-    return { skipped: true };
+    context ||= await c.portal(transcript.studentId, '/automation/context');
+    const published = context.sourceNotes.find(s => s.noteId === job.noteId && context.publishedSessions.includes(s.id));
+    if (published) {
+      await c.saveJob(key, { ...job, studentId: transcript.studentId, sessionId: published.id, status: 'published', lastError: null, skipReason: null });
+      return { duplicate: true, studentId: transcript.studentId, sessionId: published.id };
+    }
+    await c.checkSource(key, job);
+    if (canonical((await c.students())[transcript.studentId]) !== canonical(transcript.student)) throw new Error('student_changed');
+    const approvalRequired = start >= Date.parse(transcript.student.startAfter) - CATCH_UP_LOOKBACK;
+    await c.saveJob(key, { ...job, studentId: transcript.studentId, startedAt: meeting.start_time, status: 'skipped', lastError: null,
+      skipReason: approvalRequired ? 'catch_up_required' : 'before_activation' });
+    return { skipped: true, approvalRequired, studentId: transcript.studentId, startedAt: meeting.start_time };
   }
   context ||= await c.portal(transcript.studentId, '/automation/context');
   const sid = sessionId(meeting.start_time, transcript.student.timeZone);
@@ -66,7 +77,7 @@ async function prepared(c, id, catchUp) {
   const instructorIds = note.transcript.speakers.filter(s => instructorNames.some(n => n.toLowerCase() === s.display_name.toLowerCase())).map(s => s.speaker_id);
   const snapshot = { sourceHash: source.sourceHash, student: transcript.student, priorAssessment: context.assessment,
     attempts: context.attempts, meeting: { start_time: meeting.start_time, end_time: meeting.end_time }, ...(catchUp ? { catchUp } : {}) };
-  const nextJob = { ...job, studentId: transcript.studentId, sessionId: sid, startedAt: meeting.start_time };
+  const nextJob = { ...job, studentId: transcript.studentId, sessionId: sid, startedAt: meeting.start_time, lastError: null };
   await c.checkSource(key, job);
   if (canonical((await c.students())[transcript.studentId]) !== canonical(transcript.student)) throw new Error('student_changed');
   await c.saveJob(key, nextJob);
@@ -112,21 +123,42 @@ export async function codexHandoff(c, action, input) {
       const key = 'job:' + recovery.id, job = await c.storage.get(key);
       if (job) await c.saveJob(key, { ...job, recoveryAt: null, nextAt: 0, ...(job.lastError === 'recovery_scheduled' ? { lastError: null } : {}) });
     }
-    if (action === 'discover') {
+    let discoverNow = action === 'discover';
+    if (action === 'nightly-discover') {
+      const previous = await c.storage.get('codex-discovery');
+      discoverNow = previous?.runDate !== runDate() || previous.checks === 1 && Date.parse(previous.recheckAt) <= Date.now();
+      if (discoverNow) await c.storage.put({ 'codex-discovery': { runDate: runDate(), checks: previous?.runDate === runDate() ? 2 : 1,
+        recheckAt: previous?.runDate === runDate() ? null : new Date(Date.now() + RECHECK_DELAY).toISOString() } });
+    }
+    if (discoverNow) {
       await c.pruneTranscripts(); await c.storage.put({ 'retention-error': null });
       if (Object.keys(await c.students()).length) {
         await c.accessToken(); await c.refreshDirectory(); await c.discover();
       }
       await c.storage.put({ 'last-check': new Date().toISOString(), 'connection-error': null, 'last-codex-check': new Date().toISOString() });
     }
-    if (['discover', 'queue'].includes(action)) {
+    if (['discover', 'nightly-discover', 'queue'].includes(action)) {
       const jobs = [...await c.storage.list({ prefix: 'job:' })];
-      return json({ processor: 'codex', serverAI: false, jobs: jobs.filter(([,j]) => ['pending','needs_attention'].includes(j.status)).map(([k,j]) => ({ id: k.slice(4), noteId: j.noteId, status: j.status, startedAt: j.startedAt || null, error: j.lastError || null })) });
+      const discovery = await c.storage.get('codex-discovery');
+      return json({ processor: 'codex', serverAI: false, discovery: discovery?.runDate === runDate() ? discovery : null,
+        catchUpRequired: (await catchUpWarnings(c, jobs)).map(w => ({ ...w, noteId: jobs.find(([k]) => k === 'job:' + w.id)[1].noteId })),
+        jobs: jobs.filter(([,j]) => ['pending','needs_attention'].includes(j.status)).map(([k,j]) => ({ id: k.slice(4), noteId: j.noteId, status: j.status, startedAt: j.startedAt || null, error: j.lastError || null, ...preparationState(j) })) });
     }
-    if (!['prepare','publish'].includes(action)) return json({ error: 'not_found' }, 404);
+    if (!['prepare','nightly-prepare','publish'].includes(action)) return json({ error: 'not_found' }, 404);
+    if (action === 'nightly-prepare') {
+      if (input.catchUp) throw new Error('invalid_catch_up');
+      if (!/^[a-f0-9]{64}$/.test(input.id || '')) throw new Error('invalid_job');
+      const key = 'job:' + input.id, job = await c.storage.get(key);
+      if (!job || !['pending','needs_attention'].includes(job.status)) throw new Error('job_unavailable');
+      const state = preparationState(job);
+      if (state.waiting || state.deferred) return json(state);
+      // Reserve before reading Zoom, so a resumed/interrupted run cannot loop.
+      await c.saveJob(key, { ...job, codexCheck: { runDate: runDate(), checks: job.codexCheck?.runDate === runDate() ? job.codexCheck.checks + 1 : 1,
+        sourceVersion: sourceVersion(job), retryAt: null } });
+    }
     const p = await prepared(c, input.id, input.catchUp);
     if (p.duplicate || p.skipped) return json(p);
-    if (action === 'prepare') { const { _job, _student, ...result } = p; return json(result); }
+    if (['prepare','nightly-prepare'].includes(action)) { const { _job, _student, ...result } = p; return json(result); }
     if (input.snapshotHash !== p.snapshotHash) return json({ error: 'source_or_history_changed' }, 409);
     if (input.review?.recordsHash !== await digest(input.records)) return json({ error: 'reviewed_content_changed' }, 409);
     const output = validateOutput(input, p);
@@ -148,11 +180,17 @@ export async function codexHandoff(c, action, input) {
   } catch (error) {
     const allowed = ['invalid_catch_up','invalid_job','job_unavailable','student_changed','other_student','ambiguous_student','meeting_reference_missing','meeting_pending','source_changed','transcript_unusable','transcript_too_large','invalid_evidence','content_review_failed','unsafe_content','publish_failed','zoom_reconnect','zoom_unavailable','discovery_incomplete'];
     const code = allowed.includes(error.message) ? error.message : 'handoff_failed';
-    if (['prepare','publish'].includes(action) && /^[a-f0-9]{64}$/.test(input.id || '')) {
+    let retryAt = null;
+    if (['prepare','nightly-prepare','publish'].includes(action) && /^[a-f0-9]{64}$/.test(input.id || '')) {
       const key = 'job:' + input.id, job = await c.storage.get(key);
-      if (job && !['ignored','published','skipped'].includes(job.status)) await c.saveJob(key, { ...job, lastError: code === 'other_student' ? 'student_not_matched' : code,
-        status: ['other_student','ambiguous_student','meeting_reference_missing'].includes(code) ? 'needs_attention' : 'pending' });
+      if (job && !['ignored','published','skipped'].includes(job.status)) {
+        retryAt = action === 'nightly-prepare' && delayedSource(code) && job.codexCheck?.checks === 1 ? new Date(Date.now() + RECHECK_DELAY).toISOString() : null;
+        await c.saveJob(key, { ...job, lastError: code === 'other_student' ? 'student_not_matched' : code,
+          ...(action === 'nightly-prepare' && job.codexCheck ? { codexCheck: { ...job.codexCheck, retryAt } } : {}),
+          status: ['other_student','ambiguous_student','meeting_reference_missing'].includes(code) ? 'needs_attention' : 'pending' });
+      }
     }
+    if (action === 'nightly-prepare' && delayedSource(code)) return json({ error: code, waiting: Boolean(retryAt), retryAt, deferred: !retryAt });
     return json({ error: code }, 409);
   } finally {
     await c.storage.transaction(async txn => { if ((await txn.get('run-lock'))?.lease === lease) await txn.delete('run-lock'); });

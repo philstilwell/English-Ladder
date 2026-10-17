@@ -4,6 +4,7 @@ import { prepareAnonymousTranscript } from './transcript-privacy.mjs';
 import { TRANSCRIPT_PRIVACY_VERSION, reusableTranscript } from './transcript-cache.mjs';
 import { authorCefr, cefrModelInput } from './server-cefr-model.mjs';
 import { codexHandoff } from './codex-handoff.mjs';
+import { CATCH_UP_LOOKBACK, catchUpWarnings } from './codex-nightly.mjs';
 
 const json = (data, status = 200) => Response.json(data, { status });
 const encoder = new TextEncoder();
@@ -87,7 +88,7 @@ export class QuizAutomation {
       }
     }
     const dates = Object.values(directory.students).map(s => Date.parse(s.startAfter));
-    if (dates.length) await this.storage.put({ 'discovery-since': new Date(Math.min(...dates)).toISOString() });
+    if (dates.length) await this.storage.put({ 'discovery-since': new Date(Math.min(...dates) - (this.env.LESSON_PROCESSOR === 'codex' ? CATCH_UP_LOOKBACK : 0)).toISOString() });
     await this.storage.put({ 'directory-revision': directory.revision });
   }
   async tokenRequest(params) {
@@ -180,12 +181,14 @@ export class QuizAutomation {
     await this.storage.transaction(async txn => {
       const existing = await txn.get(key);
       if (existing) {
+        const newTranscript = event.event === 'my_notes.transcript_generated' && Number(request.headers.get('x-zm-request-timestamp')) * 1000 > (existing.sourceEventAt || 0);
         existing.meetingId = object.meeting_id;
         existing.sourceEventAt = Math.max(existing.sourceEventAt || 0, Number(request.headers.get('x-zm-request-timestamp')) * 1000);
         if (event.event === 'my_notes.transcript_generated' && existing.status === 'needs_attention' &&
             ['transcript_unusable', 'meeting_pending', 'meeting_reference_missing', 'zoom_unavailable'].includes(existing.lastError)) {
           existing.status = 'pending'; existing.tries = 0; existing.nextAt = 0;
         }
+        if (newTranscript && existing.lastError === 'transcript_unusable' && !['ignored','published','skipped'].includes(existing.status)) existing.lastError = null;
         await txn.put({ [key]: existing });
         return;
       }
@@ -197,7 +200,9 @@ export class QuizAutomation {
   }
   async discover() {
     const owner = await this.storage.get('oauth');
-    const cutoff = new Date(Math.min(...Object.values(await this.students()).map(s => Date.parse(s.startAfter)))).toISOString();
+    // One day before activation is discovery for an approval warning only.
+    // Preparation still blocks publication before each student's exact cutoff.
+    const cutoff = new Date(Math.min(...Object.values(await this.students()).map(s => Date.parse(s.startAfter))) - (this.env.LESSON_PROCESSOR === 'codex' ? CATCH_UP_LOOKBACK : 0)).toISOString();
     const since = await this.storage.get('discovery-since') || cutoff;
     const until = new Date().toISOString();
     // Search notes by modification time: this catches transcripts that arrive late.
@@ -245,7 +250,8 @@ export class QuizAutomation {
           const key = 'job:' + await hash(note.note_id), prior = await this.storage.get(key);
           const modifiedAt = Number.isFinite(Date.parse(note.modified_time)) && (!prior?.modifiedAt || Date.parse(note.modified_time) > Date.parse(prior.modifiedAt)) ? note.modified_time : prior?.modifiedAt;
           await this.storage.put({ [key]: { receivedAt: Date.now(), nextAt: 0, status: 'pending', tries: 0, ...prior,
-            noteId: note.note_id, meetingId: instance.uuid, startedAt: instance.start_time, modifiedAt } });
+            noteId: note.note_id, meetingId: instance.uuid, startedAt: instance.start_time, modifiedAt,
+            ...(prior?.lastError === 'transcript_unusable' && modifiedAt && Date.parse(modifiedAt) > (Date.parse(prior.modifiedAt) || 0) ? { lastError: null } : {}) } });
         }
       }
     }
@@ -543,6 +549,7 @@ export class QuizAutomation {
     if (path === '/admin-status' && request.method === 'GET') {
       const entries = [...await this.storage.list({ prefix: 'job:' })], jobs = entries.map(([, j]) => j);
       return json({ enabled: this.env.AUTOMATION_ENABLED === 'true' || this.env.LESSON_PROCESSOR === 'codex', processor: this.env.LESSON_PROCESSOR === 'codex' ? 'codex' : 'cloudflare', connected: Boolean(await this.storage.get('oauth')),
+        catchUpRequired: await catchUpWarnings(this, entries),
         lastRetention: await this.storage.get('last-retention') || null, retentionError: await this.storage.get('retention-error') || null,
         cefrNeedsAttention: await this.storage.get('cefr-errors') || 0,
         lastCheck: await this.storage.get('last-check') || null, connectionError: await this.storage.get('connection-error') || null,

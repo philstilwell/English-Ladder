@@ -1781,6 +1781,46 @@ test('administrator retry identifies one failed lesson, prevents double clicks a
   dom.window.close();
 });
 
+test('catch-up warnings name the lesson on list and account pages without approving or exposing another account',async()=>{
+  let writes=0;
+  const warning={id:'a'.repeat(64),studentId:fixture.studentId,startedAt:'2026-10-15T20:00:00Z'};
+  const dom=browser((path,opts)=>{
+    if(opts?.method && opts.method!=='GET')writes++;
+    if(path==='/api/admin/automation')return Response.json({processor:'codex',catchUpRequired:[warning,{...warning,studentId:'other26'}]});
+  });await flush();const d=dom.window.document;
+  assert.equal(d.getElementById('catch-up-warnings').hidden,false);
+  assert.equal(d.querySelectorAll('#catch-up-items article').length,1);
+  assert.match(d.getElementById('catch-up-items').textContent,/Morgan.*Oct 15.*approval.*one-time catch-up/s);
+  d.querySelector('#catch-up-items a').click();await flush();
+  assert.equal(d.getElementById('catch-up-warnings').hidden,true);
+  assert.equal(d.getElementById('student-catch-up-warnings').hidden,false);
+  assert.match(d.getElementById('student-catch-up-items').textContent,/Morgan.*before account activation/s);
+  assert.equal(d.querySelector('#student-catch-up-items button'),null);assert.equal(writes,0);
+  d.getElementById('sign-out').click();await flush();
+  assert.equal(d.getElementById('student-catch-up-items').textContent,'');dom.window.close();
+});
+
+test('catch-up responses cannot restore private warnings after navigation, logout, page hide or expiry',async()=>{
+  for(const exit of ['navigation','logout','pagehide','expiry']){
+    let release;const dom=browser(path=>path==='/api/admin/automation'&&dom?.window.location.hash.startsWith('#students/')?new Promise(r=>{release=r;}):null);
+    await flush();const w=dom.window,d=w.document;d.querySelector('.student-name').click();await flush();
+    if(exit==='navigation')w.location.hash='#register';else if(exit==='logout')d.getElementById('sign-out').click();else if(exit==='pagehide')w.dispatchEvent(new w.Event('pagehide'));
+    await flush();release(exit==='expiry'?Response.json({error:'Sign in again.'},{status:401}):Response.json({catchUpRequired:[{studentId:fixture.studentId,startedAt:'2026-10-15T20:00:00Z'}]}));await flush();
+    assert.equal(d.getElementById('student-catch-up-items').textContent,'');assert.equal(d.getElementById('student-catch-up-warnings').hidden,true);w.close();
+  }
+});
+
+test('catch-up status requires an administrator-host session; student and preview sessions cannot read it',async()=>{
+  const {e}=environment(),cookie=await access(e),student=await login(e),teacher=await login(e,'teacher-test');let reads=0;
+  e.QUIZ_AUTOMATION={idFromName:x=>x,get:()=>({fetch:async()=>{reads++;return Response.json({catchUpRequired:[{studentId:'ab26',startedAt:'2026-10-15T20:00:00Z'}]});}})};
+  assert.equal((await adminCall(e,'/api/admin/automation')).status,401);
+  for(const c of [student.cookie,teacher.cookie]){
+    assert.equal((await adminCall(e,'/api/admin/automation',{headers:{Cookie:c}})).status,401);
+    assert.equal((await call(e,'/api/admin/automation',{headers:{Cookie:c}})).status,404);
+  }
+  assert.equal(reads,0);assert.equal((await adminCall(e,'/api/admin/automation',{headers:{Cookie:cookie}})).status,200);assert.equal(reads,1);
+});
+
 
 test('ignoring a session uses the authenticated exact-origin administrator route',async()=>{
   const {e}=environment(),cookie=await access(e),id='a'.repeat(64);let calls=0;

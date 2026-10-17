@@ -18,7 +18,8 @@ async function save(name, value) {
   await chmod(path, 0o600);
 }
 const [action, ...args] = process.argv.slice(2);
-if (!['queue','discover','prepare','publish','verify'].includes(action)) throw Error('Use queue|discover <output>, prepare <job> <output> [private-catch-up.json], publish <prepared> <records> <review> <receipt>, or verify <prepared>.');
+if (!['queue','discover','nightly-discover','prepare','nightly-prepare','publish','verify'].includes(action)) throw Error('Use queue|discover|nightly-discover <output>, nightly-prepare <job> <output>, prepare <job> <output> [private-catch-up.json], publish <prepared> <records> <review> <receipt>, or verify <prepared>.');
+if (action === 'nightly-prepare' && args[2]) throw Error('Scheduled checks cannot approve catch-up.');
 const secret = (await readFile(new URL('./private/codex-handoff-secret', import.meta.url), 'utf8')).trim();
 if (!/^[a-f0-9]{64}$/.test(secret)) throw Error('Operator credential is unavailable.');
 async function api(action, body = {}) {
@@ -28,13 +29,13 @@ async function api(action, body = {}) {
   if (!response.ok) throw Error('Handoff failed (' + response.status + '): ' + (result.error || 'unknown'));
   return result;
 }
-if (['queue','discover'].includes(action)) {
+if (['queue','discover','nightly-discover'].includes(action)) {
   const result = await api(action); await save(args[0], result);
-  console.log(JSON.stringify({ processor: result.processor, serverAI: result.serverAI, jobs: result.jobs.length }));
-} else if (action === 'prepare') {
+  console.log(JSON.stringify({ processor: result.processor, serverAI: result.serverAI, jobs: result.jobs.length, catchUpRequired: result.catchUpRequired?.length || 0, discovery: result.discovery || null }));
+} else if (['prepare','nightly-prepare'].includes(action)) {
   const catchUp = args[2] ? await read(args[2]) : undefined;
-  const result = await api('prepare', { id: args[0], ...(catchUp ? { catchUp } : {}) }); await save(args[1], result);
-  console.log(JSON.stringify({ prepared: Boolean(result.snapshotHash), duplicate: result.duplicate || false, skipped: result.skipped || false, sessionId: result.sessionId, segments: result.source?.segmentCount }));
+  const result = await api(action, { id: args[0], ...(catchUp ? { catchUp } : {}) }); await save(args[1], result);
+  console.log(JSON.stringify({ prepared: Boolean(result.snapshotHash), duplicate: result.duplicate || false, skipped: result.skipped || false, approvalRequired: result.approvalRequired || false, waiting: result.waiting || false, deferred: result.deferred || false, retryAt: result.retryAt || null, error: result.error || null, sessionId: result.sessionId, segments: result.source?.segmentCount }));
 } else if (action === 'verify') {
   const prepared = await read(args[0]), result = await api('prepare', { id: prepared.id });
   if (!result.duplicate) throw Error('Publication is not confirmed.');

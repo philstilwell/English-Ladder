@@ -88,7 +88,7 @@ Publish a reviewed assessment JSON object with `node student-portal/publish-feed
 
 ## Nightly server updates
 
-See [CODEX_UPDATES.md](CODEX_UPDATES.md) for the active 11:30 p.m. Eastern Codex schedule. [QUIZ_AUTOMATION.md](QUIZ_AUTOMATION.md) retains the former server implementation, Zoom authorization, private storage and discovery details for reference. The coordinator is a separate SQLite Durable Object; retain the `quiz-automation-v1` migration. Student content remains in the existing per-student stores. The teacher-only Quiz results page shows connection status and the last successful check.
+See [CODEX_UPDATES.md](CODEX_UPDATES.md) for the active 11:10 p.m. Eastern Codex schedule. [QUIZ_AUTOMATION.md](QUIZ_AUTOMATION.md) retains the former server implementation, Zoom authorization, private storage and discovery details for reference. The coordinator is a separate SQLite Durable Object; retain the `quiz-automation-v1` migration. Student content remains in the existing per-student stores. The teacher-only Quiz results page shows connection status and the last successful check.
 
 
 ## Private administrator directory
@@ -261,4 +261,4 @@ Cloudflare free-allowance exhaustion now has its own safe diagnostic and leaves 
 
 ## Codex transcript handoff (October 16, 2026)
 
-The active nightly author is now Codex at 11:30 p.m. New York time. Cloudflare AI is unbound and server lesson generation is disabled; server cron only maintains transcript retention. The separate operator credential and source-checked atomic handoff preserve all student records without an expiring browser session. See [CODEX_UPDATES.md](CODEX_UPDATES.md) for the exact workflow, independent review, private helper files, failure handling and Mac availability requirements. This supersedes earlier server-AI schedule and cost descriptions above.
+The active nightly author is now Codex at 11:10 p.m. New York time. Cloudflare AI is unbound and server lesson generation is disabled; server cron only maintains transcript retention. The separate operator credential and source-checked atomic handoff preserve all student records without an expiring browser session. See [CODEX_UPDATES.md](CODEX_UPDATES.md) for the exact workflow, independent review, private helper files, failure handling and Mac availability requirements. This supersedes earlier server-AI schedule and cost descriptions above.

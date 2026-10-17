@@ -1,6 +1,6 @@
 # Nightly Codex lesson updates
 
-Owner authorization, October 16, 2026: process full lesson transcripts through Codex and publish finished results to Cloudflare at **11:30 p.m. America/New_York**. The Mac stays awake, online, and running Codex. No Cloudflare AI or separately billed AI service is authorized. Codex account usage limits apply.
+Owner authorization, October 16, 2026: process full lesson transcripts through Codex and publish finished results to Cloudflare at **11:10 p.m. America/New_York**. The Mac stays awake, online, and running Codex. No Cloudflare AI or separately billed AI service is authorized. Codex account usage limits apply.
 
 ## Active system
 
@@ -26,11 +26,11 @@ Use at most two author/revision cycles per student per scheduled run. Leave unre
 
 ## Schedule and daylight saving
 
-Use the Codex app automation tool, not a local system cron or a second publisher. The existing automation ID is `verify-takako-s-feedback-recovery`, named “Update student feedback nightly”, attached to this chat. The owner moved the daily update to **23:30 New York time** on October 16 because the Mac is more likely to be awake then. Preserve the existing America/New_York zone and daylight-saving behavior. The unrelated Cloudflare retention-only maintenance remains at 1 a.m.; it does not require the Mac or invoke AI.
+Use the Codex app automation tool, not a local system cron or a second publisher. The existing automation ID is `verify-takako-s-feedback-recovery`, named “Update student feedback nightly”, attached to this chat. The owner moved the daily update to **23:10 New York time** on October 16 because the Mac is more likely to be awake then. Preserve the existing America/New_York zone and daylight-saving behavior. The unrelated Cloudflare retention-only maintenance remains at 1 a.m.; it does not require the Mac or invoke AI.
 
-This installed scheduler ignores `TZID=America/New_York` and interprets recurrence hours as UTC. The lesson recurrence is therefore 03:30 UTC the following date in daylight time and 04:30 UTC the following date in standard time. The app may wake a few minutes early. If it does, wait until 23:30 New York using clock waits of at most 60 seconds before discovery. A late run, including one after midnight, should catch up immediately instead of waiting a whole day.
+Use a local wall-clock daily recurrence at hour 23, minute 10, second 0, without an explicit DTSTART or UTC conversion. On October 16, this was verified to save the next nominal occurrence as 23:10 America/New_York and display the recurring time consistently. The older UTC-anchored rule produced a misleading daily time in the app; do not restore it. Keep the Mac’s time zone set to America/New_York so the local recurrence follows New York daylight-saving changes.
 
-At the beginning of **every** scheduled run, after any early-wake wait and even when Zoom is unavailable or the queue is empty, calculate the next future 23:30 using Python's `zoneinfo.ZoneInfo('America/New_York')`. Use today's 23:30 if it is still in the future; otherwise use the next calendar day's 23:30. Convert that instant to UTC, including its date. Read the existing automation TOML and, only if its UTC recurrence hour/minute differs, use `automation_update` to update this same active heartbeat: UTC hour 3 in daylight time, 4 in standard time, minute 30; set DTSTART to that next occurrence. Preserve the complete prompt, name, thread target and notification preference. Never edit the automation file/database directly or create a duplicate. This adjusts the next run before each daylight-saving change. Verify the saved nominal occurrence after any schedule edit. If the scheduler gains working named-time-zone support, verify actual next-run behavior before simplifying this rule.
+The app may start a few minutes before or after the nominal time. If it wakes early, wait until 23:10 New York using clock waits of at most 60 seconds before discovery. A late run, including one after midnight, should catch up immediately instead of waiting a whole day. Use the Codex automation tool for any schedule changes, preserve the same ID, complete prompt, name, active status, thread target and notification preference, and verify the saved nominal occurrence. Never edit the automation file/database directly or create a duplicate publisher.
 
 Server publication receipts prevent the same session from being published twice. After a missed wake, process the pending queue when the scheduled task next runs; do not claim the Mac can be off.
 

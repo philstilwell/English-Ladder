@@ -5436,6 +5436,132 @@
         "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple",
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/questions-negatives"
       ]
+    },
+    {
+      "number": 48,
+      "title": "Maybe or may be?",
+      "level": "A2–B1",
+      "category": "Time and verbs",
+      "goal": "Distinguish the one-word adverb “maybe” from the two-word verb phrase “may be”.",
+      "rules": [
+        "“Maybe” is one word meaning “perhaps”. It is an adverb: it adds uncertainty to a statement. A useful pattern is “Maybe + subject + verb”: “Maybe the shop is open”. Keep the verb that the statement needs: “Maybe the keys are upstairs”. “Maybe” can appear in other positions too; this lesson practises the common beginning position.",
+        "“May be” is two words. “May” is a modal verb, a helping verb that can express possibility, and “be” is the plain form of the next verb. Put the subject before it: “The shop may be open”. This expresses the same possibility as “Maybe the shop is open”, using a different sentence pattern. Write “The keys may be upstairs”, not “The keys maybe upstairs”.",
+        "After “may”, use the plain verb form without “to” or a third-person -s: “She may arrive early”. With the verb “be”, use “may be”, not “may is” or “may are”. These examples express possibility, not certainty; they do not assign an exact percentage. They can describe now (“The shop may be open now”) or the future (“The shop may be open tomorrow”). “May” also has other uses, such as permission, which this lesson does not cover."
+      ],
+      "cards": [
+        {
+          "label": "MAYBE: ONE WORD",
+          "example": "Maybe the shop is open. Maybe the keys are upstairs.",
+          "note": "“Maybe” means “perhaps”. The statements still need their verbs: “is” and “are”."
+        },
+        {
+          "label": "MAY BE: TWO WORDS",
+          "example": "The shop may be open. The keys may be upstairs.",
+          "note": "The subject comes before “may be”. Keep a space between the helping verb “may” and the plain verb “be”."
+        },
+        {
+          "label": "MAY + PLAIN VERB",
+          "example": "She may arrive early. The shop may be open tomorrow.",
+          "note": "Use “arrive” or “be” after “may”. Do not add “to”, -s, or a form such as “is”."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Complete: “___ the museum is open today.”",
+          "options": [
+            {
+              "text": "May be",
+              "correct": false,
+              "feedback": "The statement already has its verb “is”. Put the one-word adverb “Maybe” before “the museum”."
+            },
+            {
+              "text": "Maybe",
+              "correct": true,
+              "feedback": "“Maybe” means “perhaps” and introduces the statement “the museum is open today”."
+            },
+            {
+              "text": "May",
+              "correct": false,
+              "feedback": "“May” cannot introduce this statement before its subject. Use “Maybe the museum is open”."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete: “The museum ___ open today.”",
+          "options": [
+            {
+              "text": "maybe",
+              "correct": false,
+              "feedback": "“Maybe” cannot supply the missing verb. Use “may be”, or rewrite the sentence as “Maybe the museum is open today”."
+            },
+            {
+              "text": "may is",
+              "correct": false,
+              "feedback": "After “may”, use the plain verb “be”, not “is”."
+            },
+            {
+              "text": "may be",
+              "correct": true,
+              "feedback": "The subject “the museum” is followed by “may” and the plain verb “be”."
+            }
+          ]
+        },
+        {
+          "prompt": "Which sentence correctly expresses a possible early arrival?",
+          "options": [
+            {
+              "text": "She may arrive early.",
+              "correct": true,
+              "feedback": "“May” is followed by the plain verb “arrive”, without -s or “to”."
+            },
+            {
+              "text": "She may arrives early.",
+              "correct": false,
+              "feedback": "Do not add -s to the verb after “may”. Use “may arrive”."
+            },
+            {
+              "text": "She may to arrive early.",
+              "correct": false,
+              "feedback": "“May” takes the plain verb without “to”: “may arrive”."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You are unsure where the keys are. Which sentence correctly expresses the same possibility as “Maybe the keys are upstairs”?",
+        "options": [
+          {
+            "text": "The keys maybe upstairs.",
+            "correct": false,
+            "feedback": "“Maybe” is an adverb, so this sentence is missing a verb. Write “The keys may be upstairs”."
+          },
+          {
+            "text": "The keys may be upstairs.",
+            "correct": true,
+            "feedback": "This uses “may” plus “be” to express the same possible location."
+          },
+          {
+            "text": "The keys may are upstairs.",
+            "correct": false,
+            "feedback": "Use the plain form “be” after “may”, even with the plural subject “the keys”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-48-maybe-or-may-be-student-workbook.pdf",
+        "concept-48-maybe-or-may-be-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-17",
+      "related": [
+        8,
+        35,
+        47
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/maybe-or-may-be",
+        "https://learnenglishteens.britishcouncil.org/grammar/b1-b2-grammar/modals-deduction",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/modal-verbs"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

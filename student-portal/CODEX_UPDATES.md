@@ -1,6 +1,6 @@
 # Nightly Codex lesson updates
 
-Owner authorization, October 16, 2026: process full lesson transcripts through Codex and publish finished results to Cloudflare at **11:10 p.m. America/New_York**. The Mac stays awake, online, and running Codex. No Cloudflare AI or separately billed AI service is authorized. Codex account usage limits apply.
+Owner authorization, October 16, 2026: process full lesson transcripts through Codex and publish finished results to Cloudflare at **11:35 p.m. America/New_York**. The Mac stays awake, online, and running Codex. No Cloudflare AI or separately billed AI service is authorized. Codex account usage limits apply.
 
 ## Active system
 
@@ -30,11 +30,11 @@ Only when the owner directly requests a named pre-activation lesson, the operato
 
 ## Schedule and daylight saving
 
-Use the Codex app automation tool, not a local system cron or a second publisher. The existing automation ID is `verify-takako-s-feedback-recovery`, named “Update student feedback nightly”, attached to this chat. The owner moved the daily update to **23:10 New York time** on October 16 because the Mac is more likely to be awake then. Preserve the existing America/New_York zone and daylight-saving behavior. The unrelated Cloudflare retention-only maintenance remains at 1 a.m.; it does not require the Mac or invoke AI.
+Use the Codex app automation tool, not a local system cron or a second publisher. The existing automation ID is `verify-takako-s-feedback-recovery`, named “Update student feedback nightly”, attached to this chat. The owner moved the daily update to **23:35 New York time** on October 16 to allow the last evening transcript to settle before processing. Preserve the existing America/New_York zone and daylight-saving behavior. The unrelated Cloudflare retention-only maintenance remains at 1 a.m.; it does not require the Mac or invoke AI.
 
-Use a local wall-clock daily recurrence at hour 23, minute 10, second 0, without an explicit DTSTART or UTC conversion. On October 16, this was verified to save the next nominal occurrence as 23:10 America/New_York and display the recurring time consistently. The older UTC-anchored rule produced a misleading daily time in the app; do not restore it. Keep the Mac’s time zone set to America/New_York so the local recurrence follows New York daylight-saving changes.
+Use a local wall-clock daily recurrence at hour 23, minute 35, second 0, without an explicit DTSTART or UTC conversion. Verify the saved next nominal occurrence in America/New_York after schedule changes. The older UTC-anchored rule produced a misleading daily time in the app; do not restore it. Keep the Mac’s time zone set to America/New_York so the local recurrence follows New York daylight-saving changes.
 
-The app may start a few minutes before or after the nominal time. If it wakes early, wait until 23:10 New York using clock waits of at most 60 seconds before discovery. A late run, including one after midnight, should catch up immediately instead of waiting a whole day. Use the Codex automation tool for any schedule changes, preserve the same ID, complete prompt, name, active status, thread target and notification preference, and verify the saved nominal occurrence. Never edit the automation file/database directly or create a duplicate publisher.
+The app may start a few minutes before or after the nominal time. If it wakes early, wait until 23:35 New York using clock waits of at most 60 seconds before discovery. A late run, including one after midnight, should catch up immediately instead of waiting a whole day. Use the Codex automation tool for any schedule changes, preserve the same ID, complete prompt, name, active status, thread target and notification preference, and verify the saved nominal occurrence. Never edit the automation file/database directly or create a duplicate publisher.
 
 Server publication receipts prevent the same session from being published twice. After a missed wake, process the pending queue when the scheduled task next runs; do not claim the Mac can be off.
 

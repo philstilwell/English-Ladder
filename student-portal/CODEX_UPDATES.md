@@ -24,6 +24,10 @@ Work in this checkout and read AGENTS.md. Check the current New York date/time. 
 
 Use at most two author/revision cycles per student per scheduled run. Leave unresolved work queued with a meaningful explanation. No subscriptions, credits, separately billed APIs or Cloudflare AI fallbacks. If a tool/usage limit blocks completion, report that specific limit and preserve the queue.
 
+## Explicit one-session catch-up
+
+Only when the owner directly requests a named pre-activation lesson, the operator may pass a third private JSON file to `prepare <job> <prepared> <catch-up>`. It must contain exactly `studentId`, `noteId`, and the completed meeting's exact `startedAt`. The server matches all three to the trusted active student and Zoom source. The prepared snapshot binds this exception; the helper carries it into the reviewed atomic publication. Ignored, paused, deleted, changing, and mismatched sources remain blocked. No account cutoff changes, bulk exceptions, automatic historical discovery, or second publisher are permitted. Keep this file private and remove it after verification. Scheduled runs do not supply a catch-up file.
+
 ## Schedule and daylight saving
 
 Use the Codex app automation tool, not a local system cron or a second publisher. The existing automation ID is `verify-takako-s-feedback-recovery`, named “Update student feedback nightly”, attached to this chat. The owner moved the daily update to **23:10 New York time** on October 16 because the Mac is more likely to be awake then. Preserve the existing America/New_York zone and daylight-saving behavior. The unrelated Cloudflare retention-only maintenance remains at 1 a.m.; it does not require the Mac or invoke AI.

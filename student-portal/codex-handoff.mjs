@@ -20,12 +20,19 @@ export async function codexAuthorized(request, env) {
   const expected = await crypto.subtle.sign('HMAC', key, enc.encode(env.CODEX_HANDOFF_SECRET));
   return crypto.subtle.verify('HMAC', key, expected, enc.encode(token));
 }
-async function prepared(c, id) {
+async function prepared(c, id, catchUp) {
   if (!/^[a-f0-9]{64}$/.test(id || '')) throw new Error('invalid_job');
   const key = 'job:' + id, job = await c.storage.get(key);
-  if (!job || ['ignored', 'skipped'].includes(job.status)) throw new Error('job_unavailable');
+  if (!job || job.status === 'ignored' || job.status === 'skipped' && !catchUp) throw new Error('job_unavailable');
+  // An explicit operator request may include one exact pre-activation lesson.
+  // It never changes the account cutoff or authorizes any other source.
+  if (catchUp && (typeof catchUp !== 'object' || Array.isArray(catchUp) ||
+      Object.keys(catchUp).sort().join(',') !== 'noteId,startedAt,studentId' ||
+      catchUp.noteId !== job.noteId || !/^[a-z0-9-]{2,40}$/.test(catchUp.studentId || '') ||
+      !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(catchUp.startedAt || ''))) throw new Error('invalid_catch_up');
   const students = await c.students();
   if (job.studentId && !students[job.studentId]) throw new Error('student_changed');
+  if (catchUp && (!students[catchUp.studentId] || job.studentId && job.studentId !== catchUp.studentId)) throw new Error('student_changed');
   let context = job.studentId ? await c.portal(job.studentId, '/automation/context') : null;
   const known = context?.sourceNotes.find(s => s.noteId === job.noteId);
   if (known && context.publishedSessions.includes(known.id)) {
@@ -35,13 +42,15 @@ async function prepared(c, id) {
   const note = await c.zoom('/my_notes/notes/' + encodeURIComponent(job.noteId) + '/content?include=transcript');
   const transcript = readTranscript(note, students);
   if (job.studentId && job.studentId !== transcript.studentId) throw new Error('student_changed');
+  if (catchUp && catchUp.studentId !== transcript.studentId) throw new Error('student_changed');
   if (!job.meetingId) throw new Error('meeting_reference_missing');
   const uuid = job.meetingId.startsWith('/') || job.meetingId.includes('//') ? encodeURIComponent(encodeURIComponent(job.meetingId)) : encodeURIComponent(job.meetingId);
   const meeting = await c.zoom('/past_meetings/' + uuid);
   const start = Date.parse(meeting.start_time), end = Date.parse(meeting.end_time);
+  if (catchUp && catchUp.startedAt !== meeting.start_time) throw new Error('invalid_catch_up');
   if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start || end > Date.now() - 900000 ||
       Date.parse(job.modifiedAt) > Date.now() - 900000 || job.sourceEventAt > Date.now() - 900000) throw new Error('meeting_pending');
-  if (start < Date.parse(transcript.student.startAfter)) {
+  if (start < Date.parse(transcript.student.startAfter) && !catchUp) {
     await c.saveJob(key, { ...job, status: 'skipped', lastError: null });
     return { skipped: true };
   }
@@ -56,14 +65,14 @@ async function prepared(c, id) {
   const instructorNames = JSON.parse(c.env.ZOOM_INSTRUCTOR_NAMES || '["Phil","Phil Stilwell"]');
   const instructorIds = note.transcript.speakers.filter(s => instructorNames.some(n => n.toLowerCase() === s.display_name.toLowerCase())).map(s => s.speaker_id);
   const snapshot = { sourceHash: source.sourceHash, student: transcript.student, priorAssessment: context.assessment,
-    attempts: context.attempts, meeting: { start_time: meeting.start_time, end_time: meeting.end_time } };
+    attempts: context.attempts, meeting: { start_time: meeting.start_time, end_time: meeting.end_time }, ...(catchUp ? { catchUp } : {}) };
   const nextJob = { ...job, studentId: transcript.studentId, sessionId: sid, startedAt: meeting.start_time };
   await c.checkSource(key, job);
   if (canonical((await c.students())[transcript.studentId]) !== canonical(transcript.student)) throw new Error('student_changed');
   await c.saveJob(key, nextJob);
   return { id, studentId: transcript.studentId, student: { firstName: transcript.student.firstName, timeZone: transcript.student.timeZone },
     sessionId: sid, meeting: snapshot.meeting, source, speakerRoles: { learnerIds, instructorIds },
-    snapshotHash: await digest(snapshot), context: { assessment: context.assessment, attempts: context.attempts },
+    snapshotHash: await digest(snapshot), context: { assessment: context.assessment, attempts: context.attempts }, ...(catchUp ? { catchUp } : {}),
     _job: nextJob, _student: transcript.student };
 }
 function validateOutput(input, p) {
@@ -115,7 +124,7 @@ export async function codexHandoff(c, action, input) {
       return json({ processor: 'codex', serverAI: false, jobs: jobs.filter(([,j]) => ['pending','needs_attention'].includes(j.status)).map(([k,j]) => ({ id: k.slice(4), noteId: j.noteId, status: j.status, startedAt: j.startedAt || null, error: j.lastError || null })) });
     }
     if (!['prepare','publish'].includes(action)) return json({ error: 'not_found' }, 404);
-    const p = await prepared(c, input.id);
+    const p = await prepared(c, input.id, input.catchUp);
     if (p.duplicate || p.skipped) return json(p);
     if (action === 'prepare') { const { _job, _student, ...result } = p; return json(result); }
     if (input.snapshotHash !== p.snapshotHash) return json({ error: 'source_or_history_changed' }, 409);
@@ -137,7 +146,7 @@ export async function codexHandoff(c, action, input) {
       lastError: null, modelIssue: null, modelStage: null, phase: null, recoveryAt: null });
     return json({ ok: true, verified: true, sessionId: p.sessionId, questions: 7, preservedAttempts: p.context.attempts.length });
   } catch (error) {
-    const allowed = ['invalid_job','job_unavailable','student_changed','other_student','ambiguous_student','meeting_reference_missing','meeting_pending','source_changed','transcript_unusable','transcript_too_large','invalid_evidence','content_review_failed','unsafe_content','publish_failed','zoom_reconnect','zoom_unavailable','discovery_incomplete'];
+    const allowed = ['invalid_catch_up','invalid_job','job_unavailable','student_changed','other_student','ambiguous_student','meeting_reference_missing','meeting_pending','source_changed','transcript_unusable','transcript_too_large','invalid_evidence','content_review_failed','unsafe_content','publish_failed','zoom_reconnect','zoom_unavailable','discovery_incomplete'];
     const code = allowed.includes(error.message) ? error.message : 'handoff_failed';
     if (['prepare','publish'].includes(action) && /^[a-f0-9]{64}$/.test(input.id || '')) {
       const key = 'job:' + input.id, job = await c.storage.get(key);

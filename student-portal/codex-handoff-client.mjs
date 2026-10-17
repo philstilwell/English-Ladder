@@ -18,7 +18,7 @@ async function save(name, value) {
   await chmod(path, 0o600);
 }
 const [action, ...args] = process.argv.slice(2);
-if (!['queue','discover','prepare','publish','verify'].includes(action)) throw Error('Use queue|discover <output>, prepare <job> <output>, publish <prepared> <records> <review> <receipt>, or verify <prepared>.');
+if (!['queue','discover','prepare','publish','verify'].includes(action)) throw Error('Use queue|discover <output>, prepare <job> <output> [private-catch-up.json], publish <prepared> <records> <review> <receipt>, or verify <prepared>.');
 const secret = (await readFile(new URL('./private/codex-handoff-secret', import.meta.url), 'utf8')).trim();
 if (!/^[a-f0-9]{64}$/.test(secret)) throw Error('Operator credential is unavailable.');
 async function api(action, body = {}) {
@@ -32,7 +32,8 @@ if (['queue','discover'].includes(action)) {
   const result = await api(action); await save(args[0], result);
   console.log(JSON.stringify({ processor: result.processor, serverAI: result.serverAI, jobs: result.jobs.length }));
 } else if (action === 'prepare') {
-  const result = await api('prepare', { id: args[0] }); await save(args[1], result);
+  const catchUp = args[2] ? await read(args[2]) : undefined;
+  const result = await api('prepare', { id: args[0], ...(catchUp ? { catchUp } : {}) }); await save(args[1], result);
   console.log(JSON.stringify({ prepared: Boolean(result.snapshotHash), duplicate: result.duplicate || false, skipped: result.skipped || false, sessionId: result.sessionId, segments: result.source?.segmentCount }));
 } else if (action === 'verify') {
   const prepared = await read(args[0]), result = await api('prepare', { id: prepared.id });
@@ -41,7 +42,7 @@ if (['queue','discover'].includes(action)) {
 } else {
   const prepared = await read(args[0]), records = await read(args[1]), review = await read(args[2]);
   if (review.approved !== true || review.fullTranscript !== true || review.independent !== true || review.recordsHash !== await digest(records)) throw Error('The exact records need independent approval.');
-  const result = await api('publish', { id: prepared.id, snapshotHash: prepared.snapshotHash, records, review });
+  const result = await api('publish', { id: prepared.id, snapshotHash: prepared.snapshotHash, records, review, ...(prepared.catchUp ? { catchUp: prepared.catchUp } : {}) });
   await save(args[3], result);
   console.log(JSON.stringify(result));
 }

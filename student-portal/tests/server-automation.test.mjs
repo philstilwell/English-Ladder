@@ -620,3 +620,26 @@ test('Codex handoff requires its narrow credential on the administrator host, ne
   assert.equal((await call(e,'/api/codex/delete-account',options,admin)).status,404);
   e.LESSON_PROCESSOR='cloudflare';assert.equal((await call(e,'/api/codex/queue',options,admin)).status,401);
 });
+
+
+test('explicit single-lesson catch-up preserves activation cutoff and cannot include ignored or mismatched sources', async()=>{
+  const {storage,env,id,records,dispatch,payload}=await codexFixture();
+  const config=JSON.parse(env.QUIZ_STUDENTS);config.ab26.startAfter='2026-10-16T00:00:00Z';env.QUIZ_STUDENTS=JSON.stringify(config);
+  assert.equal((await (await dispatch('prepare',{id})).json()).skipped,true);
+  const catchUp={studentId:'ab26',noteId:'fictional-note-123',startedAt:meeting.start_time};
+  assert.equal((await (await dispatch('prepare',{id,catchUp:{...catchUp,noteId:'different-note-123'}})).json()).error,'invalid_catch_up');
+  assert.equal((await (await dispatch('prepare',{id,catchUp:{...catchUp,startedAt:'2026-10-13T00:00:00Z'}})).json()).error,'invalid_catch_up');
+  assert.equal((await (await dispatch('prepare',{id,catchUp:{...catchUp,studentId:'other'}})).json()).error,'student_changed');
+  await storage.put({['job:'+id]:{...await storage.get('job:'+id),status:'ignored'}});
+  assert.equal((await (await dispatch('prepare',{id,catchUp})).json()).error,'job_unavailable');
+  await storage.put({['job:'+id]:{...await storage.get('job:'+id),status:'skipped'}});
+  const p=await (await dispatch('prepare',{id,catchUp})).json();
+  assert.deepEqual(p.catchUp,catchUp);assert.ok(p.snapshotHash);
+  const body={...await payload(records),snapshotHash:p.snapshotHash,catchUp};
+  const result=await dispatch('publish',body);assert.equal(result.status,200);assert.equal((await result.json()).verified,true);
+  assert.equal(JSON.parse(env.QUIZ_STUDENTS).ab26.startAfter,'2026-10-16T00:00:00Z');
+  assert.equal((await (await dispatch('prepare',{id})).json()).duplicate,true);
+  const other=await hash('another-fictional-note');
+  await storage.put({['job:'+other]:{noteId:'another-fictional-note',meetingId:'meeting-123',status:'pending'}});
+  assert.equal((await (await dispatch('prepare',{id:other,catchUp})).json()).error,'invalid_catch_up');
+});

@@ -1008,7 +1008,7 @@ test('business terms preserve answer highlights and save navigation without savi
   assert.equal(root.querySelectorAll('.terms-answer').length,0);
   assert(!root.querySelector('.terms-sentences').classList.contains('is-revealed'));assert.equal(calls.length,count);
   const jump=value=>{d.getElementById('terms-number').value=String(value);root.querySelector('form').dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));};
-  jump(4);assert.equal([...root.querySelectorAll('.terms-words q')].filter(q=>q.textContent==='are').length,2);
+  jump(4);assert.equal([...root.querySelectorAll('.terms-words li')].filter(option=>option.textContent==='are').length,2);
   root.querySelector('.terms-reveal input').click();assert.match(root.querySelectorAll('.terms-sentences q')[1].textContent,/"Do Not Enter\."/);
   jump(5);root.querySelector('.terms-reveal input').click();assert.equal(root.querySelectorAll('.terms-sentences q')[1].textContent,'An electrical receptacle is another term for an outlet.');
   jump(17);jump(18);assert.match(d.getElementById('terms-jump-status').textContent,/not available/);assert.match(root.querySelector('h4').textContent,/Item 17/);

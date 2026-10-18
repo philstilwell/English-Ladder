@@ -24,7 +24,7 @@
     const title = node('h4', `Item ${item.number} · “${item.term}”`, 'terms-heading'); title.tabIndex = -1;
     const wordHeading = node('p', 'Words to use', 'terms-label');
     const words = node('ul', '', 'terms-words'); words.setAttribute('aria-label', 'Six words in alphabetical order');
-    for (const word of item.options) { const entry = node('li'); entry.append(node('q', word)); words.append(entry); }
+    for (const word of item.options) words.append(node('li', word));
     const hint = node('p', 'Use each word once. If a word is shown twice, use it twice.', 'field-hint');
     const sentences = node('ol', '', 'terms-sentences'); sentences.id = 'terms-sentences-' + item.number; sentences.setAttribute('aria-live', 'polite');
     function showAnswers(revealed) {

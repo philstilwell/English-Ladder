@@ -119,13 +119,20 @@ async function browser(custom,teacher=false,id=banks[0].id){
 const click=(b,text)=>{const button=[...b.root.querySelectorAll('button')].find(n=>n.textContent===text);assert.ok(button,'Missing button '+text);button.click();};
 const select=(b,selector,value)=>{const input=b.root.querySelector(selector);input.value=value;input.dispatchEvent(new b.w.Event('change',{bubbles:true}));};
 
-test('students answer, reveal, copy, flag, finish, filter and resume each activity with separate saved places',async()=>{
+test('students answer, copy, flag, finish, filter and resume each activity with separate saved places',async()=>{
  const b=await browser();
  for(const bank of banks){
   await b.view.open(bank.id);assert.equal(b.root.querySelectorAll('.communication-option').length,4);
   assert.equal(b.root.querySelectorAll('.practice-ai-link').length,4);
+  assert.equal(b.root.querySelector('.communication-item input[type=checkbox]'),null);
+  assert.equal(b.root.querySelector('.communication-feedback').hidden,true);
   const wrong=(bank.items[0].answer+1)%4;b.root.querySelectorAll('.communication-option')[wrong].click();await flush();assert.match(b.root.textContent,/Not quite/);
   b.root.querySelectorAll('.communication-option')[bank.items[0].answer].click();await flush();assert.match(b.root.textContent,/Correct/);
+  const feedback=b.root.querySelector('.communication-feedback'),item=bank.items[0];
+  assert.equal(feedback.hidden,false);assert.equal(feedback.querySelector('.communication-key').textContent,'Answer: '+item.options[item.answer]);
+  assert.equal([...feedback.querySelectorAll('p')].filter(p=>p.textContent===item.explanation).length,1);
+  if(item.reply)assert.ok(feedback.textContent.includes(item.reply));
+  if(item.title)assert.match(feedback.textContent,/Try saying the story in your own words/);
   click(b,'Copy AI prompt');await flush();assert.equal(b.root.querySelector('.practice-copy-button').textContent,'AI prompt copied');assert.match(b.copied,/Answer key:/);assert.doesNotMatch(b.copied,/Alex|ab26|firstChoice|studentAnswer|password|https?:/i);
   click(b,'Questions');await flush();click(b,'Finish');await flush();assert.match(b.root.textContent,/Saved to Questions/);assert.ok(b.root.querySelector('.is-finished'));
   b.root.querySelector('.practice-filter input').click();await flush();assert.match(b.root.querySelector('h3').textContent,/Item 2/);
@@ -134,6 +141,8 @@ test('students answer, reveal, copy, flag, finish, filter and resume each activi
   assert.equal(b.root.firstElementChild.textContent,'Last saved place: Item 21');
   b.root.querySelector('.grammar-question-links button').click();await flush();assert.match(b.root.querySelector('h3').textContent,/Item 1\b/);assert.equal(b.root.querySelector('.practice-filter input').checked,false);assert.equal(b.root.querySelectorAll('.communication-option')[bank.items[0].answer].getAttribute('aria-pressed'),'true');
   assert.equal((await b.e.FEEDBACK_STORE.get('ab26').storage.get(communicationPrefix(bank)+':preferences')).hideFinished,true);
+  assert.equal(b.root.querySelector('.communication-feedback').hidden,false);
+  assert.equal(b.root.querySelector('.communication-key').textContent,'Answer: '+item.options[item.answer]);
  }
  b.view.clear();assert.equal(b.root.textContent,'');assert.equal(b.root.hidden,true);assert.equal(b.w.localStorage.length,0);assert.equal(b.w.sessionStorage.length,0);b.w.close();
 });
@@ -154,6 +163,23 @@ test('teacher preview can explore without saving and admin review preserves firs
  const item=structuredClone(banks[0].items[0]);item.context='<img src=x onerror=alert(1)>';item.progress={firstChoice:0,firstCorrect:false,choice:2,finished:true};
  const card=b.w.CommunicationPractice.review(item);b.root.replaceChildren(card);assert.match(card.textContent,/First saved choice/);assert.match(card.textContent,/Latest saved choice/);assert.equal(card.querySelector('img:not(.practice-ai-link img),script,[onerror]'),null);
  card.querySelectorAll('.communication-option')[1].click();assert.equal(b.requests.filter(r=>r.method).length,0);b.view.clear();b.w.close();
+});
+
+test('saved question reviews keep the answer guide available without a reveal checkbox or a new student attempt',async()=>{
+ const b=await browser(null,true),before=b.requests.length;
+ for(const bank of banks)for(const answered of [false,true]){
+  const item=structuredClone(bank.items[0]);
+  item.progress={question:true,...(answered?{choice:item.answer,firstChoice:item.answer,firstCorrect:true}:{})};
+  const card=b.w.CommunicationPractice.review(item,false);b.root.replaceChildren(card);
+  assert.equal(card.querySelector('input[type=checkbox]'),null);
+  assert.equal(card.querySelector('.communication-feedback').hidden,false);
+  assert.equal(card.querySelector('.communication-key').textContent,'Answer: '+item.options[item.answer]);
+  assert.ok(card.querySelector('.communication-feedback').textContent.includes(item.explanation));
+  assert.equal(card.querySelector('.communication-feedback strong')?.textContent,answered?'Correct.':undefined);
+  for(const button of card.querySelectorAll('.communication-option')){assert.equal(button.disabled,true);button.click();}
+  assert.equal(card.querySelectorAll('.communication-option[aria-pressed="true"]').length,answered?1:0);
+ }
+ assert.equal(b.requests.length,before);b.view.clear();b.w.close();
 });
 
 test('late loads and saves cannot restore a cleared view; reopen waits for a pending saved place',async()=>{

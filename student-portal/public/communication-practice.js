@@ -11,26 +11,26 @@
     const choices=el('div','','communication-choices');choices.setAttribute('role','group');choices.setAttribute('aria-label','Answer choices for item '+item.number);
     const buttons=item.options.map((option,index)=>{const button=el('button',option,'communication-option');button.type='button';button.setAttribute('aria-pressed','false');choices.append(button);return button;});
     const feedback=el('div','','communication-feedback');feedback.setAttribute('role','status');feedback.hidden=true;
-    const reveal=el('label','','grammar-reveal'),checkbox=el('input');checkbox.type='checkbox';checkbox.autocomplete='off';checkbox.setAttribute('aria-label','Show answer for item '+item.number);
-    const answer=el('div','','communication-answer');answer.hidden=true;
-    answer.append(el('p','Answer: '+item.options[item.answer],'communication-key'),el('p',item.explanation));
-    if(item.reply)answer.append(el('p','The reply: “'+item.reply+'”'));
-    if(item.title)answer.append(el('p','Try saying the story in your own words.','field-hint'));
-    checkbox.addEventListener('change',()=>{answer.hidden=!checkbox.checked;});reveal.append(checkbox,el('span','Show answer'));
     const actions=el('div','','grammar-actions');
     const copy=window.PracticePrompt.create({label:' for item '+item.number,prompt:window.PracticePrompt.text(
       'English practice:\n'+item.context+'\n\n'+item.prompt+'\nChoices:\n'+item.options.map((option,i)=>'Choice '+(i+1)+': '+option).join('\n')+'\nAnswer key: '+item.options[item.answer]+'\nExplanation: '+item.explanation+(item.reply?'\nReply after clarification: '+item.reply:''),
       'Explain why the answer fits this situation. Explain why each other choice does not fit, or what different question it would answer. Treat this as practice, not an assessment of a person.')});
-    actions.append(copy.controls);card.append(choices,feedback,reveal,answer,actions,copy.status);
-    function showChoice(choice) {
+    actions.append(copy.controls);card.append(choices,feedback,actions,copy.status);
+    function showChoice(choice, reviewing=false) {
       buttons.forEach((button,index)=>button.setAttribute('aria-pressed',String(index===choice)));
-      feedback.replaceChildren();feedback.hidden=!Number.isInteger(choice);
-      if(!feedback.hidden){feedback.append(el('strong',choice===item.answer?'Correct.':'Not quite. You can try again.'),el('p',item.explanation));if(item.reply)feedback.append(el('p','The reply: “'+item.reply+'”'));}
+      feedback.replaceChildren();feedback.hidden=!Number.isInteger(choice)&&!reviewing;
+      if(!feedback.hidden){
+        if(Number.isInteger(choice))feedback.append(el('strong',choice===item.answer?'Correct.':'Not quite. You can try again.'));
+        feedback.append(el('p','Answer: '+item.options[item.answer],'communication-key'),el('p',item.explanation));
+        if(item.reply)feedback.append(el('p','The reply: “'+item.reply+'”'));
+        if(item.title)feedback.append(el('p','Try saying the story in your own words.','field-hint'));
+      }
     }
     return {card,actions,buttons,showChoice};
   }
   function review(item, teacherView=true){
     const view=exercise(item);view.buttons.forEach((button,index)=>{button.disabled=!teacherView;if(teacherView)button.addEventListener('click',()=>view.showChoice(index));});
+    view.showChoice(item.progress?.choice,true);
     view.card.classList.toggle('is-finished',Boolean(item.progress?.finished));
     const saved=el('div','','communication-saved');
     if(Number.isInteger(item.progress?.firstChoice))saved.append(el('p','First saved choice: “'+item.options[item.progress.firstChoice]+'” · '+(item.progress.firstCorrect?'Correct':'Needs practice')));

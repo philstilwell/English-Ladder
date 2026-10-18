@@ -1197,12 +1197,12 @@ test('English Road saves actual student answers and resumes the next question on
   assert.equal(d.querySelector('#road-question-title').textContent,'Question 1 of 20');
   const option=d.querySelector('.road-options input');option.checked=true;option.dispatchEvent(new dom.window.Event('change',{bubbles:true}));roadSubmit(dom);await flush();
   assert.match(d.querySelector('.road-answer').textContent,/Your answer:/);
-  assert.match(d.getElementById('road-practice').firstElementChild.textContent,/Last saved answer: Question 1 of 20.*Articles.*current set/);
+  assert.match(d.getElementById('road-practice').firstElementChild.textContent,/Last saved place: Question 1 of 20.*Articles.*current set/);
   assert.equal(dom.window.localStorage.length,0);assert.equal(dom.window.sessionStorage.length,0);
   const saved=await(await call(e,'/api/road/state',{headers:{Cookie:student.cookie}})).json();assert.equal(saved.attempt.answered,1);
   dom.window.close();const resumed=setup(mock,roadRoute);await flush();
   assert.equal(resumed.window.document.querySelector('#road-question-title').textContent,'Question 2 of 20');
-  assert.match(resumed.window.document.querySelector('.practice-last-position').textContent,/Last saved answer: Question 1 of 20/);
+  assert.match(resumed.window.document.querySelector('.practice-last-position').textContent,/Last saved place: Question 1 of 20/);
   resumed.window.document.getElementById('logout').click();await flush();assert.equal(resumed.window.document.getElementById('road-practice').textContent,'');
   resumed.window.close();
 });

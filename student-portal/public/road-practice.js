@@ -122,7 +122,7 @@
         }
         if (catalog) {
           const saved = node('p', null, 'practice-last-position');
-          saved.append(node('strong', 'Last saved answer: '), attempt?.answers.length
+          saved.append(node('strong', 'Last saved place: '), attempt?.answers.length
             ? 'Question ' + attempt.answers.length + ' of ' + attempt.total + ' · ' + attempt.band + ' · ' + (attempt.topic || 'All topics') + ' (current set)'
             : attempt ? 'No answers saved in this set yet.' : 'No practice set started yet.');
           root.prepend(saved);

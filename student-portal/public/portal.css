@@ -352,6 +352,7 @@ summary { cursor:pointer; }
 .terms-words li { padding:4px 10px; border:1px solid var(--line); border-radius:4px; overflow-wrap:anywhere; max-width:100%; }
 .terms-sentences { padding-left:24px; margin:20px 0 8px; }
 .terms-sentences li { padding:8px 0; line-height:1.75; overflow-wrap:anywhere; }
+.practice-last-position { margin:0 0 16px; padding:12px 16px; background:#eef2fc; border-left:3px solid var(--blue); border-radius:4px; font-size:.9rem; overflow-wrap:anywhere; }
 .terms-answer { color:var(--blue); font-weight:700; }
 .terms-item .terms-reveal { display:flex; align-items:center; gap:10px; width:fit-content; max-width:100%; min-height:44px; font-size:.94rem; font-weight:400; cursor:pointer; }
 .terms-item .terms-reveal span { font-size:inherit; color:inherit; margin:0; }

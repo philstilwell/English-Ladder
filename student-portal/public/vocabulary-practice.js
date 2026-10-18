@@ -27,7 +27,7 @@
   window.VocabularyPractice = {
     review, batchPrompt,
     create({ root, api, expired }) {
-      const bookmark = window.PracticePosition?.create({ api, expired, path });
+      const bookmark = window.PracticePosition?.create({ api, expired, path, describe: number => 'Batch ' + (Math.floor((number - 1) / 10) + 1) + ' · Words ' + (Math.floor((number - 1) / 10) * 10 + 1) + '–' + Math.min(items.length, (Math.floor((number - 1) / 10) + 1) * 10) });
       let active = false, generation = 0, items = [], progress = new Map(), drafts = new Map(), batch = 0, teacher = false, saving = null, conflict = false, hideFinished = false, preferenceRevision = 0;
       let questionView = false, questionsPending = false, questionsOpen = false;
       const group = () => items.slice(batch * 10, (batch + 1) * 10);
@@ -166,7 +166,7 @@
         const pager = el('div', '', 'grammar-controls');
         for (const [label, step] of [['Previous batch', -1], ['Next batch', 1]]) { const button = el('button', label, 'secondary-button'); button.type = 'button'; button.disabled = batch + step < 0 || batch + step >= Math.ceil(items.length / 10); button.addEventListener('click', () => changeBatch(batch + step)); if (!button.disabled) controls.push(button); pager.append(button); }
         footer.append(saveButton, copy.controls); root.replaceChildren(intro, picker, heading, lists, filterLabel, list, footer, status, help, copy.status, pager);
-        if (bookmark) root.append(bookmark.notice);
+        if (bookmark) { root.prepend(bookmark.summary); root.append(bookmark.notice); }
       }
       function focusQuestions() {
         const list = root.querySelector('.vocabulary-questions');

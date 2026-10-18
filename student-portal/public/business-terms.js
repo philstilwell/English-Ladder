@@ -152,7 +152,7 @@
         updateList();
         if (!visible.length) {
           const empty = node('p', 'All items are finished. Uncheck “Hide finished items” to see them again.', 'practice-empty'); empty.tabIndex = -1;
-          root.replaceChildren(intro, filter, filterStatus, bookmark.notice, questions, empty);
+          root.replaceChildren(bookmark.summary, intro, filter, filterStatus, bookmark.notice, questions, empty);
           if (focus) empty.focus();
           return;
         }
@@ -243,7 +243,7 @@
         previous.addEventListener('click', () => { if (visiblePosition > 0) { position = visible[visiblePosition - 1]; render(true); } });
         next.addEventListener('click', () => { if (visiblePosition < visible.length - 1) { position = visible[visiblePosition + 1]; render(true); } });
         controls.append(previous, next);
-        root.replaceChildren(intro, filter, filterStatus, bookmark.notice, questions, jump, status, card, controls);
+        root.replaceChildren(bookmark.summary, intro, filter, filterStatus, bookmark.notice, questions, jump, status, card, controls);
         if (remember) bookmark.remember(item.number);
         if (focus) { title.focus(); title.scrollIntoView?.({ block: 'start' }); }
       }

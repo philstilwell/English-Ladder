@@ -72,6 +72,7 @@ test('ten-word batches save drafts, copy current answers only, and resume the sa
   b.root.querySelector('[data-number="1"][data-field="question"]').click();await flush();assert.match(b.root.textContent,/Questions \(1\)/);
   clickText(b,'Next batch');await flush();assert.equal(b.root.querySelectorAll('.vocabulary-item').length,10);assert.ok(b.root.querySelector('#vocabulary-answer-11'));
   b.view.clear();await b.view.open();assert.ok(b.root.querySelector('#vocabulary-answer-11'));
+  assert.equal(b.root.firstElementChild.textContent,'Last saved place: Batch 2 · Words 11–20');
   clickText(b,'Previous batch');await flush();assert.equal(b.root.querySelector('#vocabulary-sentence-1').value,'We recruit kind workers.');
   b.view.clear();assert.equal(b.root.textContent,'');assert.equal(b.root.hidden,true);b.w.close();
 });

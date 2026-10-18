@@ -131,6 +131,7 @@ test('students answer, reveal, copy, flag, finish, filter and resume each activi
   b.root.querySelector('.practice-filter input').click();await flush();assert.match(b.root.querySelector('h3').textContent,/Item 2/);
   select(b,'#communication-group',bank.groups[2]);await flush();assert.match(b.root.querySelector('h3').textContent,/Item 21/);
   b.view.clear();await b.view.open(bank.id);assert.match(b.root.querySelector('h3').textContent,/Item 21/);assert.equal(b.root.querySelector('.practice-filter input').checked,true);
+  assert.equal(b.root.firstElementChild.textContent,'Last saved place: Item 21');
   b.root.querySelector('.grammar-question-links button').click();await flush();assert.match(b.root.querySelector('h3').textContent,/Item 1\b/);assert.equal(b.root.querySelector('.practice-filter input').checked,false);assert.equal(b.root.querySelectorAll('.communication-option')[bank.items[0].answer].getAttribute('aria-pressed'),'true');
   assert.equal((await b.e.FEEDBACK_STORE.get('ab26').storage.get(communicationPrefix(bank)+':preferences')).hideFinished,true);
  }
@@ -167,5 +168,5 @@ test('late loads and saves cannot restore a cleared view; reopen waits for a pen
 test('expired saves clear content and an all-finished filter retains a way back',async()=>{
  const b=await browser((p,o)=>o.method==='PATCH'?Response.json({error:'Expired'},{status:401}):null);click(b,'Questions');await flush();assert.equal(b.root.textContent,'');assert.equal(b.root.hidden,true);b.w.close();
  const bank=banks[0],c=await browser((p,o)=>p===path(bank.id)+'/state'&&!o.method?Response.json({entries:bank.items.map(i=>({number:i.number,finished:true,question:false,revision:1})),preferences:{hideFinished:true,revision:1},position:{number:60,revision:1}}):null);
- assert.match(c.root.textContent,/All items are finished/);assert.equal(c.root.querySelector('.practice-filter input').checked,true);c.view.clear();c.w.close();
+ assert.match(c.root.textContent,/All items are finished/);assert.equal(c.root.querySelector('.practice-filter input').checked,true);assert.equal(c.root.firstElementChild.textContent,'Last saved place: Item 60');c.view.clear();c.w.close();
 });

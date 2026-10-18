@@ -120,6 +120,13 @@
         if (questionsOnly) {
           const list = node('div', null, 'road-questions'); root.append(list); questions.list(list, teacher); return;
         }
+        if (catalog) {
+          const saved = node('p', null, 'practice-last-position');
+          saved.append(node('strong', 'Last saved answer: '), attempt?.answers.length
+            ? 'Question ' + attempt.answers.length + ' of ' + attempt.total + ' · ' + attempt.band + ' · ' + (attempt.topic || 'All topics') + ' (current set)'
+            : attempt ? 'No answers saved in this set yet.' : 'No practice set started yet.');
+          root.prepend(saved);
+        }
         root.append(node('p', 'A1–C2 are practice bands. This quiz does not measure your overall English level.', 'field-note'));
         const status = node('p', busy ? 'Saving or loading…' : pending ? 'Not saved yet. Try again before you continue.' : error ? 'Load saved progress to try again.' : teacher ? 'Saved student practice · read-only' : 'Your submitted answers are saved in your account. Your teacher can review them.', 'save-message');
         status.setAttribute('role', 'status'); root.append(status);

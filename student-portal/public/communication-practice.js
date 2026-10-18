@@ -64,7 +64,7 @@
       const links=el('ul','','grammar-question-links');
       for(const item of flagged){const li=el('li'),button=el('button','Item '+item.number+' · '+(item.title||item.context.slice(0,90))+(progress.get(item.number)?.finished?' · Finished':''),'secondary-button');button.type='button';button.disabled=busy;button.addEventListener('click',()=>{const hidden=hideFinished&&progress.get(item.number)?.finished;if(hidden)hideFinished=false;number=item.number;listOpen=false;render(hidden?'Showing all items so you can view this question.':'',true,true);});li.append(button);links.append(li);}
       questions.append(flagged.length?links:el('p','No questions yet. Choose “Questions” on an item to add it here.','field-hint'));
-      root.replaceChildren(intro,help,filter,status,bookmark.notice,questions);
+      root.replaceChildren(bookmark.summary,intro,help,filter,status,bookmark.notice,questions);
       if(!items.length){root.append(el('p','All items are finished. Uncheck “Hide finished items” to see them again.','practice-empty'));return;}
       const item=items.find(item=>item.number===number),entry=progress.get(number),picker=el('div','','grammar-picker');
       const groupLabel=el('label','Topic set'),groups=el('select');groups.id='communication-group';groupLabel.htmlFor=groups.id;groups.disabled=busy;

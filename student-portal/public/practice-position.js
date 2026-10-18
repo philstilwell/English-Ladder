@@ -6,8 +6,15 @@
     return position;
   }
   window.PracticePosition = {
-    create({ api, expired, path }) {
+    create({ api, expired, path, describe = number => 'Item ' + number }) {
       let current = null, pending = Promise.resolve();
+      const summary = document.createElement('p'); summary.className = 'practice-last-position'; summary.hidden = true;
+      function showSaved(state) {
+        if (current !== state) return;
+        summary.replaceChildren(); summary.hidden = false;
+        const label = document.createElement('strong'); label.textContent = 'Last saved place: ';
+        summary.append(label, state.saved === null ? 'No place saved yet.' : describe(state.saved));
+      }
       const notice = document.createElement('p'); notice.className = 'field-hint practice-position-status'; notice.setAttribute('role', 'status'); notice.hidden = true;
       const message = document.createElement('span'), retry = document.createElement('button'); retry.type = 'button'; retry.className = 'secondary-button'; retry.textContent = 'Try again';
       notice.append(message, ' ', retry);
@@ -29,6 +36,7 @@
               const data = await request({ method: 'PATCH', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ field: 'position', value: number, revision: state.revision }) });
               const position = valid(data.position);
               state.saved = position.number; state.revision = position.revision;
+              showSaved(state);
             } catch (error) {
               if (current === state && expired(error)) return;
               if (error.status === 409) {
@@ -36,6 +44,7 @@
                 try {
                   const data = await request(), position = valid(data.position);
                   state.saved = position.number; state.revision = position.revision;
+                  showSaved(state);
                 } catch (readError) {
                   if (current === state && expired(readError)) return;
                 }
@@ -53,11 +62,12 @@
       }
       retry.addEventListener('click', () => save(current));
       return {
-        notice,
+        notice, summary,
         settled: () => pending,
         read(position = { number: null, revision: 0 }, writable = false) {
           valid(position);
           current = { saved: position.number, desired: position.number, revision: position.revision, writable, busy: false };
+          showSaved(current);
           show(current);
           return position.number;
         },
@@ -68,6 +78,7 @@
         clear() {
           // Already requested places finish saving, but cannot change a closed or newer view.
           current = null; notice.hidden = true; message.textContent = ''; retry.hidden = true;
+          summary.hidden = true; summary.replaceChildren();
         },
       };
     },

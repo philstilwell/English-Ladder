@@ -66,7 +66,7 @@
   window.GrammarPractice = {
     exercise, validItems,
     create({ root, api, expired }) {
-      const bookmark = window.PracticePosition.create({ api, expired, path: '/api/grammar-practice/state' });
+      const bookmark = window.PracticePosition.create({ api, expired, path: '/api/grammar-practice/state', describe: number => 'Group starting at item ' + number });
       let revision = 0, active = false, items = [], page = 0, progress = new Map(), teacher = false, saving = false;
       let listOpen = false, listPage = 0, hideFinished = false, preferenceRevision = 0;
       let questionView = false, questionsPending = false;
@@ -175,7 +175,7 @@
         if (!visible.length) {
           updateList();
           const empty = element('p', 'All items are finished. Uncheck “Hide finished items” to see them again.', 'practice-empty'); empty.tabIndex = -1;
-          root.replaceChildren(intro, help, filter, filterStatus, bookmark.notice, questions, empty);
+          root.replaceChildren(bookmark.summary, intro, help, filter, filterStatus, bookmark.notice, questions, empty);
           if (focus) empty.focus();
           return;
         }
@@ -263,7 +263,7 @@
         previous.addEventListener('click', () => { if (page > 0) { page--; render(true); } });
         next.addEventListener('click', () => { if (end < visible.length) { page++; render(true); } });
         controls.append(previous, next);
-        root.replaceChildren(intro, help, filter, filterStatus, bookmark.notice, questions, picker, heading, list, controls);
+        root.replaceChildren(bookmark.summary, intro, help, filter, filterStatus, bookmark.notice, questions, picker, heading, list, controls);
         if (remember) bookmark.remember(visible[start].number);
         if (focus) { const target = focusNumber ? rows.get(focusNumber).row : heading; target.focus(); target.scrollIntoView?.({ block: 'start' }); }
       }

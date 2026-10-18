@@ -1,0 +1,155 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Violence broke out across France on Saturday during demonstrations against hardship in schools and financial difficulties.",
+      "In Paris, there were significant clashes into the evening with riot police, who used tear gas to control crowds.",
+      "Widespread vandalism targeted businesses, and looting was reported in several major cities.",
+      "As the day continued, some groups torched vehicles in the city streets.",
+      "Local police said hostile individuals prevented firefighters from safely tackling the blaze.",
+      "Hundreds of thousands of students have also demonstrated recently over staff shortages and poor facilities in secondary schools.",
+      "Prime Minister Sébastien Lecornu stated that 150 police officers were injured in the unrest.",
+      "Meanwhile, Macron promised that individuals who attacked public buildings would be prosecuted."
+    ],
+    "vocabulary": [
+      {
+        "term": "hardship",
+        "part_of_speech": "noun",
+        "definition": "Severe suffering or difficulty, especially regarding money or living conditions."
+      },
+      {
+        "term": "clashes",
+        "part_of_speech": "noun",
+        "definition": "Violent confrontations or physical arguments between two or more opposing groups."
+      },
+      {
+        "term": "vandalism",
+        "part_of_speech": "noun",
+        "definition": "The crime of intentionally damaging buildings or property belonging to other people."
+      },
+      {
+        "term": "looting",
+        "part_of_speech": "noun",
+        "definition": "The criminal activity of stealing goods from shops and homes during a violent public event."
+      },
+      {
+        "term": "blaze",
+        "part_of_speech": "noun",
+        "definition": "A very large, dangerous, or fiercely burning fire."
+      },
+      {
+        "term": "shortages",
+        "part_of_speech": "noun",
+        "definition": "Situations where there is not enough of a necessary resource or personnel."
+      },
+      {
+        "term": "unrest",
+        "part_of_speech": "noun",
+        "definition": "A state of anger, dissatisfaction, and violent public action among a group of people."
+      },
+      {
+        "term": "prosecuted",
+        "part_of_speech": "verb",
+        "definition": "Officially charged with a crime and judged in a court of law."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "経済的な問題や生活環境に関して特に、非常にひどい苦しみや困難。",
+      "ko": "특히 돈이나 생활 환경과 관련하여 심한 고통이나 어려움.",
+      "zh-Hans": "严重的痛苦或困难，尤其是在金钱或生活条件方面。",
+      "es": "Sufrimiento o dificultad grave, especialmente en relación con el dinero o las condiciones de vida.",
+      "pt-BR": "Sofrimento ou dificuldade grave, especialmente em relação a dinheiro ou condições de vida.",
+      "fr": "Souffrance ou difficulté grave, surtout en ce qui concerne l'argent ou les conditions de vie.",
+      "de": "Schweres Leid oder große Schwierigkeiten, besonders in Bezug auf Geld oder Lebensbedingungen."
+    },
+    {
+      "id": 1,
+      "ja": "2つ以上の対立する集団の間で起こる暴力的な衝突や身体的な争い。",
+      "ko": "둘 이상의 대립하는 집단 사이에서 발생하는 폭력적인 대치나 물리적인 다툼.",
+      "zh-Hans": "两个或多个对立群体之间发生的暴力对抗或肢体冲突。",
+      "es": "Enfrentamientos violentos o altercados físicos entre dos o más grupos opuestos.",
+      "pt-BR": "Confrontos violentos ou embates físicos entre dois ou mais grupos opostos.",
+      "fr": "Affrontements violents ou disputes physiques entre deux ou plusieurs groupes opposés.",
+      "de": "Gewalttätige Auseinandersetzungen oder körperliche Streitigkeiten zwischen zwei oder mehr gegnerischen Gruppen."
+    },
+    {
+      "id": 2,
+      "ja": "意図的に他人の建物や財産を損壊する犯罪。",
+      "ko": "다른 사람의 건물이나 재산을 고의로 훼손하는 범죄.",
+      "zh-Hans": "故意损坏他人建筑物或财产的犯罪行为。",
+      "es": "El delito de dañar intencionalmente edificios o propiedades que pertenecen a otras personas.",
+      "pt-BR": "O crime de danificar intencionalmente edifícios ou propriedades pertencentes a outras pessoas.",
+      "fr": "Le crime consistant à endommager intentionnellement des bâtiments ou des biens appartenant à autrui.",
+      "de": "Das Verbrechen, vorsätzlich Gebäude oder Eigentum anderer Personen zu beschädigen."
+    },
+    {
+      "id": 3,
+      "ja": "暴力的な公共の出来事の際に、店や家から商品を盗む犯罪行為。",
+      "ko": "폭력적인 공공 행사 중에 상점이나 집에서 물건을 훔치는 범죄 행위.",
+      "zh-Hans": "在暴力公共事件中，从商店和住宅窃取商品的犯罪活动。",
+      "es": "La actividad criminal de robar bienes de tiendas y hogares durante un evento público violento.",
+      "pt-BR": "A atividade criminosa de roubar bens de lojas e residências durante um evento público violento.",
+      "fr": "L'activité criminelle consistant à voler des marchandises dans des magasins et des maisons lors d'un événement public violent.",
+      "de": "Die kriminelle Aktivität, Waren aus Geschäften und Häusern während eines gewalttätigen öffentlichen Ereignisses zu stehlen."
+    },
+    {
+      "id": 4,
+      "ja": "非常に大きく、危険で、激しく燃え上がる火災。",
+      "ko": "매우 크고 위험하며 맹렬하게 타는 불.",
+      "zh-Hans": "非常大、危险或剧烈燃烧的火。",
+      "es": "Un incendio muy grande, peligroso o que arde con ferocidad.",
+      "pt-BR": "Um incêndio muito grande, perigoso ou que queima ferozmente.",
+      "fr": "Un très grand incendie, dangereux ou qui brûle avec violence.",
+      "de": "Ein sehr großes, gefährliches oder heftig brennendes Feuer."
+    },
+    {
+      "id": 5,
+      "ja": "必要な資源や人員が十分にない状況。",
+      "ko": "필수적인 자원이나 인력이 충분하지 않은 상황.",
+      "zh-Hans": "缺乏必要资源或人员的情况。",
+      "es": "Situaciones en las que no hay suficiente de un recurso o personal necesario.",
+      "pt-BR": "Situações em que não há o suficiente de um recurso ou pessoal necessário.",
+      "fr": "Situations où il n'y a pas assez d'une ressource ou de personnel nécessaire.",
+      "de": "Situationen, in denen es an einer notwendigen Ressource oder an Personal mangelt."
+    },
+    {
+      "id": 6,
+      "ja": "ある集団の人々の間で怒り、不満、暴力的な公共行動の状態。",
+      "ko": "어떤 집단 사람들 사이에 분노, 불만, 폭력적인 공공 행동이 있는 상태.",
+      "zh-Hans": "一群人中存在的愤怒、不满和暴力公共行动的状态。",
+      "es": "Un estado de ira, insatisfacción y acción pública violenta entre un grupo de personas.",
+      "pt-BR": "Um estado de raiva, insatisfação e ação pública violenta entre um grupo de pessoas.",
+      "fr": "Un état de colère, d'insatisfaction et d'action publique violente au sein d'un groupe de personnes.",
+      "de": "Ein Zustand von Wut, Unzufriedenheit und gewalttätigen öffentlichen Aktionen innerhalb einer Gruppe von Menschen."
+    },
+    {
+      "id": 7,
+      "ja": "正式に犯罪で告発され、法廷で裁判を受けること。",
+      "ko": "공식적으로 범죄로 기소되어 법원에서 재판을 받는 것.",
+      "zh-Hans": "被正式指控犯罪并在法庭上接受审判。",
+      "es": "Ser acusado oficialmente de un crimen y juzgado en un tribunal de justicia.",
+      "pt-BR": "Ser oficialmente acusado de um crime e julgado em um tribunal de justiça.",
+      "fr": "Être officiellement accusé d'un crime et jugé devant un tribunal.",
+      "de": "Offiziell eines Verbrechens angeklagt und vor Gericht gestellt werden."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-18T08:55:35.308417+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

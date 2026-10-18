@@ -1,0 +1,694 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-18",
+  "release_iso": "2026-10-18T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Sun, 18 Oct 2026 05:56:20 GMT",
+    "retrieved_at": "2026-10-18T08:43:50.143914+00:00",
+    "title": "Violent clashes, looting and buildings ablaze in France as more than 1,200 arrested after protests",
+    "summary": "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.",
+    "evidence_text": "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.\nHundreds of thousands of students have protested in recent weeks over staff shortages and dilapidated facilities in the country's lycées - secondary schools attended by 15- to 18-year-olds.\nIn the French capital, the main march appeared to be largely peaceful during the afternoon. A group of young people told the BBC that they were \"pacifists\" who were \"just trying to make things change, but nothing is moving\".\nHowever, as the day wore on some groups lit fires in the street and torched vehicles, including in iconic locations in the city centre like the Place de la République.\nAt least 1,200 people were arrested during what the French government described as an \"escalation in violence\" alongside an estimated 550,000 taking to the streets.\nThe government has made apparent attempts at concessions, with Education Minister Édouard Geffray promising 3,000 extra supply teachers during a television interview on 8 October.\nViolence broke out across France on Saturday during the latest day of demonstrations against hardship in schools and the cost of living.\nIn Paris, there were significant clashes into the evening with riot police, who used tear gas and water cannon on crowds.\nLooting broke out in several cities, with widespread vandalism targeting city halls and businesses also reported.\nLocal police said \"hostile individuals\" prevented firefighters from safely tackling the blaze.\nPrime Minister Sébastien Lecornu said 150 police officers were injured in the unrest.\nMacron said: \"Those who have broken, attacked the prefectures as well as businesses, looted even our town halls, will be prosecuted and punished.\"\nFire crews also battled the fire at Limoges town hall, which the local prefecture said caused part of the building to collapse.\nIn Lyon, Mayor Grégory Doucet said the burning of the city's tourist office was \"a tragedy\", telling BFMTV \"it breaks our hearts because it's a very iconic, well-known historic building\".\nThese groups include the so-called gilets jaunes (or \"yellow vest\") movement, which demonstrated against cost-of-living hikes for more than a year from 2018 - becoming one of the longest-lived protest movements in French history.\nWhile France is no stranger to outbreaks of protest and disorder, this round comes as the country heads into a period of deep political uncertainty.",
+    "evidence_retrieved_at": "2026-10-18T08:43:50.143914+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c6d937wedj7jo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why did people in France decide to protest? What two reasons does the reading give?",
+          "Do you think protests are a good way to change rules? Use this frame: \"I think ... because ...\" Or, imagine you are a student and say why you want more teachers."
+        ],
+        "title": "Thousands Protest Over Cost of Living in France",
+        "overview": "More than half a million people protested in France about high prices and problems in schools.",
+        "topic": "Protests in France",
+        "vocabulary": [
+          {
+            "term": "protested",
+            "part_of_speech": "verb",
+            "definition": "showed that you disagree with something by standing together with others in the street."
+          },
+          {
+            "term": "cost of living",
+            "part_of_speech": "noun phrase",
+            "definition": "the amount of money you need to pay for basic things like food and housing."
+          },
+          {
+            "term": "peacefully",
+            "part_of_speech": "adverb",
+            "definition": "in a quiet and calm way, without fighting or breaking things."
+          },
+          {
+            "term": "fires",
+            "part_of_speech": "noun",
+            "definition": "things that burn and produce heat, flames, and light."
+          },
+          {
+            "term": "arrested",
+            "part_of_speech": "verb",
+            "definition": "caught people and took them away because they did something against the law."
+          },
+          {
+            "term": "extra",
+            "part_of_speech": "adjective",
+            "definition": "more than what is usual or what you already have."
+          }
+        ],
+        "grammar": {
+          "concept": "Using \"because\" to Give a Reason",
+          "explanation": "We use the word \"because\" to answer the question \"Why?\" It connects an action or a feeling to the reason it happened.",
+          "example_quote": "Many students also protested because their schools need more teachers."
+        },
+        "quiz": [
+          {
+            "question": "What is the reading mainly about?",
+            "options": [
+              "Large protests in France.",
+              "A new law about schools.",
+              "A new police station in Paris."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the story is about thousands of people protesting and the violence that happened.",
+              "The story is not about a new law, but about people who are angry about the cost of living and schools.",
+              "The story mentions police, but it does not talk about building a new police station."
+            ]
+          },
+          {
+            "question": "Why did many students join the protests?",
+            "options": [
+              "They want more teachers in their schools.",
+              "They want to buy new clothes.",
+              "They want a longer summer holiday."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the story says their schools need more teachers.",
+              "The reading does not say they protested for clothes.",
+              "The story does not mention holidays. They asked for more teachers."
+            ]
+          },
+          {
+            "question": "According to the story, when did most people march peacefully?",
+            "options": [
+              "During the afternoon.",
+              "Late at night.",
+              "Early in the morning."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the reading states that most people marched peacefully during the afternoon.",
+              "No, the protests were peaceful in the afternoon, but fires started later in the day.",
+              "The reading does not mention what happened early in the morning."
+            ]
+          },
+          {
+            "question": "What did some groups do later in the day?",
+            "options": [
+              "They started fires in the streets.",
+              "They cleaned the city parks.",
+              "They went home to study."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The story says that later in the day, some groups started fires.",
+              "The story does not say they cleaned parks; it says they started fires.",
+              "The reading says they started fires, not that they went home to study."
+            ]
+          },
+          {
+            "question": "What does \"cost of living\" mean in this story?",
+            "options": [
+              "The money you need for food, housing, and daily life.",
+              "The price of a plane ticket to France.",
+              "The money a student pays to buy books."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The cost of living is how much it costs to live and buy basic things.",
+              "No, this refers to everyday living expenses, not travel.",
+              "It includes all daily living costs like food and housing, not just books."
+            ]
+          },
+          {
+            "question": "What did the government promise to give the schools?",
+            "options": [
+              "Extra teachers.",
+              "New computers.",
+              "More police officers."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The government promised to find extra teachers to help.",
+              "The reading does not say the government promised computers.",
+              "The government promised more teachers, not more police officers in schools."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "More than half a million people protested in France.",
+          "They are angry about the high cost of living.",
+          "Many students also protested because their schools need more teachers.",
+          "Most people marched peacefully during the afternoon.",
+          "Later in the day, some groups started fires in the streets.",
+          "Police arrested more than 1,200 people because of the violence.",
+          "The government promised to find extra teachers to help the schools."
+        ],
+        "sentence_evidence": [
+          "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.",
+          "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.",
+          "Hundreds of thousands of students have protested in recent weeks over staff shortages and dilapidated facilities in the country's lycées - secondary schools attended by 15- to 18-year-olds.",
+          "In the French capital, the main march appeared to be largely peaceful during the afternoon. A group of young people told the BBC that they were \"pacifists\" who were \"just trying to make things change, but nothing is moving\".",
+          "However, as the day wore on some groups lit fires in the street and torched vehicles, including in iconic locations in the city centre like the Place de la République.",
+          "At least 1,200 people were arrested during what the French government described as an \"escalation in violence\" alongside an estimated 550,000 taking to the streets.",
+          "The government has made apparent attempts at concessions, with Education Minister Édouard Geffray promising 3,000 extra supply teachers during a television interview on 8 October."
+        ],
+        "editorial_check": {
+          "date": "2026-10-18T08:44:49.130436+00:00",
+          "model": "gemini-3.1-pro-preview",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets ('cost of living', 'peacefully', 'arrested') are highly relevant to the news context and are defined using clear, accessible terms for A1-A2 learners."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The text maintains a neutral, straightforward reporting tone suitable for adult beginners, avoiding sensationalism or overly colloquial phrasing."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar and vocabulary explanations use short, familiar clauses (e.g., 'It connects an action or a feeling to the reason it happened'), making the instruction easy to follow."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz tests basic comprehension and reading details without using dense reasoning or trick distractors. The options are straightforward and unambiguous."
+            }
+          },
+          "content_digest": "890544f769f8bc4d477f60ab84f2f3fbc9779cebf981efbcc121a95ffeb1be5f"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "What are some reasons why people might choose to participate in a large demonstration? Use examples from the story or your own knowledge.",
+          "How do you think a city can best recover after facing widespread vandalism? \"I believe cities should...\""
+        ],
+        "title": "Violence and Arrests Across France During Nationwide Demonstrations",
+        "overview": "Extensive demonstrations regarding schools and financial difficulties led to violent clashes, vandalism, and numerous arrests across France.",
+        "topic": "Nationwide demonstrations and civil unrest",
+        "vocabulary": [
+          {
+            "term": "hardship",
+            "part_of_speech": "noun",
+            "definition": "Severe suffering or difficulty, especially regarding money or living conditions."
+          },
+          {
+            "term": "clashes",
+            "part_of_speech": "noun",
+            "definition": "Violent confrontations or physical arguments between two or more opposing groups."
+          },
+          {
+            "term": "vandalism",
+            "part_of_speech": "noun",
+            "definition": "The crime of intentionally damaging buildings or property belonging to other people."
+          },
+          {
+            "term": "looting",
+            "part_of_speech": "noun",
+            "definition": "The criminal activity of stealing goods from shops and homes during a violent public event."
+          },
+          {
+            "term": "blaze",
+            "part_of_speech": "noun",
+            "definition": "A very large, dangerous, or fiercely burning fire."
+          },
+          {
+            "term": "shortages",
+            "part_of_speech": "noun",
+            "definition": "Situations where there is not enough of a necessary resource or personnel."
+          },
+          {
+            "term": "unrest",
+            "part_of_speech": "noun",
+            "definition": "A state of anger, dissatisfaction, and violent public action among a group of people."
+          },
+          {
+            "term": "prosecuted",
+            "part_of_speech": "verb",
+            "definition": "Officially charged with a crime and judged in a court of law."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice (Past Simple)",
+          "explanation": "We use the passive voice when the action itself, or the receiver of the action, is more important than who performed it. To form the past simple passive, use \"was\" or \"were\" followed by the past participle of the main verb. It is very common in formal news reporting when the identity of the person doing the action is unknown or less important.",
+          "example_quote": "Widespread vandalism targeted businesses, and looting was reported in several major cities."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary topic of this news story?",
+            "options": [
+              "Widespread demonstrations and resulting disorder across France.",
+              "A completely peaceful election campaign for the French presidency.",
+              "The opening of newly funded secondary schools in Paris."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The story focuses on nationwide demonstrations and the violent clashes that followed.",
+              "Incorrect. The story describes violent clashes and unrest, not a peaceful election campaign.",
+              "Incorrect. Schools are mentioned because students are demonstrating about poor facilities, not celebrating new openings."
+            ]
+          },
+          {
+            "question": "How did riot police respond to the crowds in Paris?",
+            "options": [
+              "They used tear gas to try to control the situation.",
+              "They successfully negotiated a peaceful end to the march.",
+              "They joined the demonstrations to ask for better safety equipment."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading states that riot police used tear gas to control crowds in Paris.",
+              "Incorrect. The article describes significant clashes with police, not peaceful negotiations.",
+              "Incorrect. The police were trying to control the crowds, not joining them in the demonstrations."
+            ]
+          },
+          {
+            "question": "What problem did firefighters face according to local police?",
+            "options": [
+              "Hostile individuals stopped them from safely fighting the blaze.",
+              "They ran out of water while trying to save a historic building.",
+              "They were delayed because their own vehicles were torched."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text notes that hostile individuals prevented firefighters from safely tackling the blaze.",
+              "Incorrect. The text does not say that firefighters ran out of water.",
+              "Incorrect. While vehicles were torched elsewhere in the story, this is not why firefighters were delayed."
+            ]
+          },
+          {
+            "question": "Why have secondary school students been demonstrating recently?",
+            "options": [
+              "They are unhappy about a lack of staff and poor school conditions.",
+              "They want to reduce the amount of daily homework they receive.",
+              "They are asking for more riot police to patrol their schools."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text states students demonstrated over staff shortages and poor facilities in secondary schools.",
+              "Incorrect. The article does not mention homework as a reason for the demonstrations.",
+              "Incorrect. Students are protesting about educational resources, not asking for police presence in schools."
+            ]
+          },
+          {
+            "question": "In the context of the story, what does the word \"looting\" mean?",
+            "options": [
+              "Stealing goods from businesses during a period of disorder.",
+              "Organizing peaceful marches through a busy city center.",
+              "Repairing buildings that have been damaged by heavy vandalism."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Looting\" refers to the crime of stealing from businesses during riots or public unrest.",
+              "Incorrect. Looting is a violent criminal activity, not a peaceful organizational effort.",
+              "Incorrect. Looting involves taking things, not repairing damaged property."
+            ]
+          },
+          {
+            "question": "What does the Prime Minister mean by \"unrest\" when discussing the injured officers?",
+            "options": [
+              "A situation filled with anger, disruption, and violent behavior.",
+              "A mandatory rest period required for all active police officers.",
+              "A calm and quiet demonstration focused entirely on financial issues."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Unrest\" refers to a public state of anger, dissatisfaction, and violent action.",
+              "Incorrect. Despite containing the word \"rest\", unrest means the exact opposite of a calm resting period.",
+              "Incorrect. The unrest involved injuries and significant clashes, so it was neither calm nor quiet."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses the past simple passive voice, similar to the reading's grammar example?",
+            "options": [
+              "Several vehicles were torched during the evening clashes.",
+              "Violent groups torched several vehicles during the evening clashes.",
+              "Several vehicles are torching during the evening clashes."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Were torched\" is the past simple passive, showing the action happened to the vehicles.",
+              "Incorrect. This sentence uses the active voice, focusing on who actually performed the action.",
+              "Incorrect. This sentence uses an incorrect active continuous form, not the past simple passive voice."
+            ]
+          },
+          {
+            "question": "What consequence did Macron promise for those who attacked public buildings?",
+            "options": [
+              "They would face official legal charges in a court of law.",
+              "They would be asked to clean up the damages themselves.",
+              "They would be forced to leave the country immediately."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Macron promised that attackers would be \"prosecuted,\" meaning they will face legal charges.",
+              "Incorrect. While they may face fines, the specific consequence promised in the text is being prosecuted.",
+              "Incorrect. The text does not mention deporting the attackers or forcing them to leave the country."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Violence broke out across France on Saturday during demonstrations against hardship in schools and financial difficulties.",
+          "In Paris, there were significant clashes into the evening with riot police, who used tear gas to control crowds.",
+          "Widespread vandalism targeted businesses, and looting was reported in several major cities.",
+          "As the day continued, some groups torched vehicles in the city streets.",
+          "Local police said hostile individuals prevented firefighters from safely tackling the blaze.",
+          "Hundreds of thousands of students have also demonstrated recently over staff shortages and poor facilities in secondary schools.",
+          "Prime Minister Sébastien Lecornu stated that 150 police officers were injured in the unrest.",
+          "Meanwhile, Macron promised that individuals who attacked public buildings would be prosecuted."
+        ],
+        "sentence_evidence": [
+          "Violence broke out across France on Saturday during the latest day of demonstrations against hardship in schools and the cost of living.",
+          "In Paris, there were significant clashes into the evening with riot police, who used tear gas and water cannon on crowds.",
+          "Looting broke out in several cities, with widespread vandalism targeting city halls and businesses also reported.",
+          "However, as the day wore on some groups lit fires in the street and torched vehicles, including in iconic locations in the city centre like the Place de la République.",
+          "Local police said \"hostile individuals\" prevented firefighters from safely tackling the blaze.",
+          "Hundreds of thousands of students have protested in recent weeks over staff shortages and dilapidated facilities in the country's lycées - secondary schools attended by 15- to 18-year-olds.",
+          "Prime Minister Sébastien Lecornu said 150 police officers were injured in the unrest.",
+          "Macron said: \"Those who have broken, attacked the prefectures as well as businesses, looted even our town halls, will be prosecuted and punished.\""
+        ],
+        "editorial_check": {
+          "date": "2026-10-18T08:48:16.335097+00:00",
+          "model": "gemini-3.1-pro-preview",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The target vocabulary (hardship, clashes, vandalism, looting, blaze, shortages, unrest, prosecuted) is well-selected for the B1-B2 level, focusing on useful general news terminology that avoids the elementary reserved words."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading and explanations maintain a neutral, objective reporting tone that is standard for news stories, while remaining accessible to intermediate learners without unexplained slang or overly academic jargon."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanations, vocabulary definitions, and quiz feedback are clear and use accessible language. The grammar example correctly identifies and explains the past simple passive."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively challenges learners to apply the taught grammar to new sentences, deduce contextual meaning, and comprehend relationships between details such as causes and consequences of the unrest."
+            }
+          },
+          "content_digest": "4e92efb99c35ff32ce49a7a85be295118fd94ac6f57eac4c59718b80c0c1ecd9"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think broader movements often join student demonstrations? I think this happens because...",
+          "Do you believe pledging additional teachers is enough to resolve the underlying turbulence? In my view..."
+        ],
+        "title": "Violent Demonstrations Erupt Across France Amid Economic Pressures",
+        "overview": "Widespread disorder and violent confrontations have swept across France as over half a million people protest economic pressures and dilapidated facilities.",
+        "topic": "French Politics and Protests",
+        "vocabulary": [
+          {
+            "term": "erupted",
+            "part_of_speech": "verb",
+            "definition": "Broke out suddenly, violently, or dramatically."
+          },
+          {
+            "term": "characterised",
+            "part_of_speech": "verb",
+            "definition": "Described the distinctive nature or features of something in a specific way."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "A rapid or significant increase in the intensity, seriousness, or magnitude of a situation."
+          },
+          {
+            "term": "detaining",
+            "part_of_speech": "verb",
+            "definition": "Keeping individuals in official custody, typically for questioning or for participating in illegal activities."
+          },
+          {
+            "term": "confrontations",
+            "part_of_speech": "noun",
+            "definition": "Hostile, argumentative, or physical clashes between opposing parties."
+          },
+          {
+            "term": "deploy",
+            "part_of_speech": "verb",
+            "definition": "To bring resources or equipment into effective action."
+          },
+          {
+            "term": "torched",
+            "part_of_speech": "verb",
+            "definition": "Intentionally set fire to something in order to destroy it."
+          },
+          {
+            "term": "dilapidated",
+            "part_of_speech": "adjective",
+            "definition": "In a state of disrepair, ruin, or physical deterioration, often as a result of age or neglect."
+          },
+          {
+            "term": "bolstered",
+            "part_of_speech": "verb",
+            "definition": "Supported, strengthened, or increased in numbers or morale."
+          },
+          {
+            "term": "concessions",
+            "part_of_speech": "noun",
+            "definition": "Things that are granted, yielded, or compromised on, especially in response to demands."
+          }
+        ],
+        "grammar": {
+          "concept": "Using \"with\" + noun + participle",
+          "explanation": "In advanced reporting, the preposition \"with\" followed by a noun (e.g., \"the education minister\") and an -ing participle (e.g., \"pledging\") is often used to efficiently add an accompanying circumstance or supporting detail to the main clause. Here, it explains exactly how the government is attempting to make concessions without requiring a separate sentence.",
+          "example_quote": "Consequently, the government has made apparent attempts at concessions, with the education minister pledging 3,000 additional supply teachers."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary catalyst for the widespread demonstrations across France?",
+            "options": [
+              "Economic pressures and living costs.",
+              "Demands to decrease political uncertainty.",
+              "Attempts to restructure the secondary school curriculum."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explicitly notes that over half a million people rallied against economic pressures.",
+              "The protests were not aimed at decreasing political uncertainty, which is merely a concurrent situation.",
+              "Students are protesting inadequate staffing and facilities, not restructuring the curriculum."
+            ]
+          },
+          {
+            "question": "How did the government describe the nature of the recent disturbances?",
+            "options": [
+              "As an escalation in violence that required detaining participants.",
+              "As a minor turbulence caused by a small faction of students.",
+              "As a complete breakdown of democratic institutions."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The government accurately characterised the situation as an escalation, detaining over 1,200 people.",
+              "The government viewed the violence as a serious escalation, not minor turbulence.",
+              "There is no mention in the reading that the government described the events as a breakdown of democratic institutions."
+            ]
+          },
+          {
+            "question": "How did riot police respond to the evening confrontations in Paris?",
+            "options": [
+              "They set up barricades around historic landmarks.",
+              "They deployed tear gas and water cannon against the crowds.",
+              "They retreated to avoid further escalation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "There is no evidence in the text that police set up barricades around historic landmarks.",
+              "The reading states that riot police responded to the confrontations by deploying tear gas and water cannon.",
+              "The police actively confronted the crowds; they did not retreat."
+            ]
+          },
+          {
+            "question": "What specific damage occurred in the city of Lyon?",
+            "options": [
+              "A historic tourist office was burnt, which the mayor called a tragedy.",
+              "The central town hall partially collapsed due to flames.",
+              "Several police vehicles were torched in the city centre."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading specifies that a tourist office in Lyon was burnt, which the mayor called a tragedy.",
+              "The partial building collapse occurred at the Limoges town hall, not in Lyon.",
+              "While vehicles were torched in Paris, the specific damage mentioned in Lyon was to a tourist office."
+            ]
+          },
+          {
+            "question": "Why have hundreds of thousands of French students recently mobilised?",
+            "options": [
+              "To demand an immediate change in the national government.",
+              "To protest against inadequate staffing and dilapidated facilities.",
+              "To support requests for higher minimum wages."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not state that students are demanding an immediate change in the national government.",
+              "The text states students have mobilised over inadequate staffing and dilapidated facilities in secondary schools.",
+              "The students' specific grievances were about school conditions, not minimum wages."
+            ]
+          },
+          {
+            "question": "In the context of the unrest, what does the term \"dilapidated\" imply about the secondary schools?",
+            "options": [
+              "The facilities have been intentionally vandalised during the recent protests.",
+              "The classrooms are dangerously overcrowded with students.",
+              "The buildings are in a severe state of disrepair due to age or neglect."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While vandalism occurred during the protests, \"dilapidated\" refers to long-term disrepair, not sudden intentional damage.",
+              "Although schools face inadequate staffing, \"dilapidated\" specifically describes the poor physical condition of the facilities.",
+              "\"Dilapidated\" accurately describes buildings or facilities that have fallen into a state of ruin or disrepair."
+            ]
+          },
+          {
+            "question": "What is meant by \"bolstered\" in the phrase \"numbers have been bolstered by the prominent yellow vest movement\"?",
+            "options": [
+              "The protest attendance was supported and increased by these groups.",
+              "The original protesters were replaced entirely by movement members.",
+              "The students were prevented from marching by the movement's actions."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Bolstered\" means to support or strengthen; in this context, the student numbers were increased by other groups joining.",
+              "The movement members joined and added to the crowd, rather than replacing the original protesters.",
+              "The movement supported the protests; they did not prevent the students from marching."
+            ]
+          },
+          {
+            "question": "Which option best defines \"concessions\" as used to describe the government's response?",
+            "options": [
+              "Harsh penalties imposed to deter further turbulence.",
+              "Things granted or yielded in response to demands.",
+              "Formal agreements signed between opposing political factions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Concessions refer to yielding to demands, not imposing harsh penalties or punishments.",
+              "In a political context, \"concessions\" are compromises or things granted in response to demands, such as pledging additional teachers.",
+              "While it implies an attempt to appease, it refers to the act of granting demands, not a formal signed agreement."
+            ]
+          },
+          {
+            "question": "What underlying situation is occurring concurrently with this turbulence?",
+            "options": [
+              "The current government has officially resigned from office.",
+              "The yellow vest movement has formed a new recognised political party.",
+              "France is entering a period of deep political uncertainty."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading mentions deep political uncertainty, but it does not claim the government has resigned.",
+              "The yellow vest movement is mentioned as bolstering numbers, not as forming a political party.",
+              "The text notes that this turbulence arrives as France enters a period of deep political uncertainty."
+            ]
+          },
+          {
+            "question": "In the sentence ending \"...with the education minister pledging 3,000 additional supply teachers,\" what is the grammatical function of the \"with\" phrase?",
+            "options": [
+              "It introduces an accompanying circumstance that gives a specific example of concessions.",
+              "It acts as the main verb clause describing the government's primary action.",
+              "It forms a conditional clause stating what must happen before the protests end."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The \"with\" + participle structure smoothly attaches an accompanying detail—the specific pledge—to the main clause.",
+              "The main verb clause is \"the government has made apparent attempts\"; the \"with\" phrase is subordinate.",
+              "The phrase indicates an action that is currently accompanying the concessions, not a condition that must be met in the future."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Widespread disorder erupted across France as more than half a million people joined demonstrations against economic pressures.",
+          "The government characterised the disturbances as an escalation in violence, detaining at least 1,200 individuals who had taken to the streets.",
+          "In Paris, significant confrontations occurred into the evening, prompting riot police to deploy tear gas and water cannon against the crowds.",
+          "As the day wore on, some factions ignited fires in the street and torched vehicles in iconic central locations.",
+          "Emergency crews also battled flames at the Limoges town hall, which the local prefecture confirmed caused part of the building to collapse.",
+          "Furthermore, a historic tourist office was burnt in Lyon, a destruction the local mayor described as a tragedy.",
+          "Hundreds of thousands of students have recently mobilised against inadequate staffing and dilapidated facilities in secondary schools.",
+          "Their numbers have been bolstered by the prominent yellow vest movement and other demonstrating groups.",
+          "This latest wave of turbulence arrives as France enters a period of deep political uncertainty.",
+          "Consequently, the government has made apparent attempts at concessions, with the education minister pledging 3,000 additional supply teachers."
+        ],
+        "sentence_evidence": [
+          "Disorder broke out in cities across the country on a day in which more than half a million joined cost of living protests.",
+          "At least 1,200 people were arrested during what the French government described as an \"escalation in violence\" alongside an estimated 550,000 taking to the streets.",
+          "In Paris, there were significant clashes into the evening with riot police, who used tear gas and water cannon on crowds.",
+          "However, as the day wore on some groups lit fires in the street and torched vehicles, including in iconic locations in the city centre like the Place de la République.",
+          "Fire crews also battled the fire at Limoges town hall, which the local prefecture said caused part of the building to collapse.",
+          "In Lyon, Mayor Grégory Doucet said the burning of the city's tourist office was \"a tragedy\", telling BFMTV \"it breaks our hearts because it's a very iconic, well-known historic building\".",
+          "Hundreds of thousands of students have protested in recent weeks over staff shortages and dilapidated facilities in the country's lycées - secondary schools attended by 15- to 18-year-olds.",
+          "These groups include the so-called gilets jaunes (or \"yellow vest\") movement, which demonstrated against cost-of-living hikes for more than a year from 2018 - becoming one of the longest-lived protest movements in French history.",
+          "While France is no stranger to outbreaks of protest and disorder, this round comes as the country heads into a period of deep political uncertainty.",
+          "The government has made apparent attempts at concessions, with Education Minister Édouard Geffray promising 3,000 extra supply teachers during a television interview on 8 October."
+        ],
+        "editorial_check": {
+          "date": "2026-10-18T08:52:35.936623+00:00",
+          "model": "gemini-3.1-pro-preview",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary is well-selected for C1 learners, featuring advanced, precise terms like 'dilapidated', 'bolstered', and 'concessions' that are highly transferable in news and academic contexts."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The text maintains a suitably neutral, polished journalistic register for reporting on political unrest, effectively balancing complex sentence structures with clear attribution."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar and vocabulary explanations are exceptionally clear and accurate. The grammar explanation effectively clarifies the 'with + noun + participle' structure as an accompanying circumstance without overcomplicating it."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz offers a strong challenge by testing nuanced comprehension, precise vocabulary definitions in context, and syntactic function, moving successfully beyond mere factual recall."
+            }
+          },
+          "content_digest": "45a3c8bf05c6ab659db69203ea14e7210adfe68a5d51e32c481e644c1f3ccbde"
+        }
+      }
+    }
+  }
+}

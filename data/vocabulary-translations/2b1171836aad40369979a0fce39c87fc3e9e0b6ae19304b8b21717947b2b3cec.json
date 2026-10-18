@@ -1,0 +1,124 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "More than half a million people protested in France.",
+      "They are angry about the high cost of living.",
+      "Many students also protested because their schools need more teachers.",
+      "Most people marched peacefully during the afternoon.",
+      "Later in the day, some groups started fires in the streets.",
+      "Police arrested more than 1,200 people because of the violence.",
+      "The government promised to find extra teachers to help the schools."
+    ],
+    "vocabulary": [
+      {
+        "term": "protested",
+        "part_of_speech": "verb",
+        "definition": "showed that you disagree with something by standing together with others in the street."
+      },
+      {
+        "term": "cost of living",
+        "part_of_speech": "noun phrase",
+        "definition": "the amount of money you need to pay for basic things like food and housing."
+      },
+      {
+        "term": "peacefully",
+        "part_of_speech": "adverb",
+        "definition": "in a quiet and calm way, without fighting or breaking things."
+      },
+      {
+        "term": "fires",
+        "part_of_speech": "noun",
+        "definition": "things that burn and produce heat, flames, and light."
+      },
+      {
+        "term": "arrested",
+        "part_of_speech": "verb",
+        "definition": "caught people and took them away because they did something against the law."
+      },
+      {
+        "term": "extra",
+        "part_of_speech": "adjective",
+        "definition": "more than what is usual or what you already have."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "他の人たちと一緒に路上に立って、何かに対して反対意見があることを示す。",
+      "ko": "다른 사람들과 함께 길거리에 서서 어떤 것에 반대한다는 것을 보여주는 것이다.",
+      "zh-Hans": "通过与其他人一起站在街上，表达你不同意某事。",
+      "es": "Demostrar que no estás de acuerdo con algo uniéndote a otras personas en la calle.",
+      "pt-BR": "Mostrar que você discorda de algo juntando-se a outras pessoas na rua.",
+      "fr": "Montrer que l'on n'est pas d'accord avec quelque chose en se tenant avec d'autres personnes dans la rue.",
+      "de": "Zeigen, dass man mit etwas nicht einverstanden ist, indem man sich mit anderen auf der Straße versammelt."
+    },
+    {
+      "id": 1,
+      "ja": "食料や住居のような基本的なものの支払いに必要な金額。",
+      "ko": "음식과 주거 같은 기본적인 것들을 지불하는 데 필요한 돈의 양.",
+      "zh-Hans": "你需要支付食物和住房等基本物品的金额。",
+      "es": "La cantidad de dinero que necesitas para pagar cosas básicas como comida y vivienda.",
+      "pt-BR": "A quantia de dinheiro que você precisa para pagar coisas básicas como comida e moradia.",
+      "fr": "La somme d'argent dont vous avez besoin pour payer les choses de base comme la nourriture et le logement.",
+      "de": "Die Geldmenge, die man benötigt, um grundlegende Dinge wie Essen und Wohnen zu bezahlen."
+    },
+    {
+      "id": 2,
+      "ja": "戦ったり物を壊したりせずに、静かで穏やかな方法で。",
+      "ko": "싸우거나 물건을 부수지 않고, 조용하고 침착한 방식으로.",
+      "zh-Hans": "以一种安静、平静的方式，不打架也不破坏东西。",
+      "es": "De una manera tranquila y en calma, sin pelear ni romper cosas.",
+      "pt-BR": "De maneira calma e tranquila, sem brigas ou quebrar coisas.",
+      "fr": "D'une manière calme et tranquille, sans se battre ni casser des choses.",
+      "de": "Auf eine ruhige und besonnene Weise, ohne zu kämpfen oder Dinge zu zerstören."
+    },
+    {
+      "id": 3,
+      "ja": "熱、炎、光を発生させて燃えるもの。",
+      "ko": "열, 불꽃, 빛을 내며 타는 것.",
+      "zh-Hans": "燃烧并产生热量、火焰和光的东西。",
+      "es": "Cosas que arden y producen calor, llamas y luz.",
+      "pt-BR": "Coisas que queimam e produzem calor, chamas e luz.",
+      "fr": "Des choses qui brûlent et produisent de la chaleur, des flammes et de la lumière.",
+      "de": "Dinge, die brennen und Hitze, Flammen und Licht erzeugen."
+    },
+    {
+      "id": 4,
+      "ja": "法に反する行為をしたため、人々を捕まえて連行した。",
+      "ko": "법에 어긋나는 행동을 했기 때문에 사람들을 붙잡아 데려갔다.",
+      "zh-Hans": "抓住并带走某人，因为他们做了违法的事情。",
+      "es": "Atrapar a personas y llevárselas porque hicieron algo en contra de la ley.",
+      "pt-BR": "Prender pessoas e levá-las porque fizeram algo contra a lei.",
+      "fr": "Arrêter des personnes et les emmener parce qu'elles ont fait quelque chose d'illégal.",
+      "de": "Personen festnehmen und mitnehmen, weil sie etwas gegen das Gesetz getan haben."
+    },
+    {
+      "id": 5,
+      "ja": "通常よりも多い、またはすでに持っているものよりも多い。",
+      "ko": "평소보다 더 많은 양, 또는 이미 가지고 있는 것보다 더 많은 양.",
+      "zh-Hans": "比平常或你已经拥有的更多。",
+      "es": "Más de lo habitual o de lo que ya tienes.",
+      "pt-BR": "Mais do que o normal ou do que você já tem.",
+      "fr": "Plus que ce qui est habituel ou ce que vous avez déjà.",
+      "de": "Mehr als das Übliche oder als das, was man bereits hat."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-18T08:55:31.789894+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

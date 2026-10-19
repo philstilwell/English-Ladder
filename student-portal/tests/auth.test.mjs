@@ -74,6 +74,50 @@ test('universal teacher password works on every configured student host', async 
   }
 });
 
+for (const [label, host, password] of [
+  ['student', origin, pass],
+  ['teacher preview', origin, teacherPass],
+  ['administrator', 'https://phil.englishladder.com', teacherPass],
+]) test(`${label} sign-in lasts seven days without renewing on reads`, async t => {
+  const env = environment(), signedInAt = Date.parse('2026-10-18T12:00:00Z');
+  let now = signedInAt;
+  t.mock.method(Date, 'now', () => now);
+  const response = await login(env, password, host);
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('Set-Cookie'), /; Max-Age=604800;/);
+  const cookie = sessionCookie(response);
+  const payload = JSON.parse(Buffer.from(cookie.split('=')[1].split('.')[0], 'base64url'));
+  assert.equal(payload.expires, signedInAt / 1000 + 604800);
+  const sessionRequest = () => new Request(host + '/api/session', { headers: { Cookie: cookie } });
+  for (const elapsed of [86400, 604799]) {
+    now = signedInAt + elapsed * 1000;
+    const session = await worker.fetch(sessionRequest(), env);
+    assert.equal(session.status, 200);
+    assert.equal(session.headers.get('Set-Cookie'), null);
+  }
+  const changedCredentials = password === pass
+    ? { ...env, STUDENT_ACCOUNTS: JSON.stringify({ ab26: { name: 'Alex', password: 'changed-example' } }) }
+    : { ...env, TEACHER_PASSWORD: 'changed-teacher-example' };
+  assert.equal((await worker.fetch(sessionRequest(), changedCredentials)).status, 401);
+  now = signedInAt + 604800 * 1000;
+  assert.equal((await worker.fetch(sessionRequest(), env)).status, 401);
+});
+
+test('older eight-hour sessions keep their original expiry', async t => {
+  const env = environment(), signedInAt = Date.parse('2026-10-18T12:00:00Z');
+  let now = signedInAt;
+  t.mock.method(Date, 'now', () => now);
+  const current = sessionCookie(await login(env));
+  const payload = JSON.parse(Buffer.from(current.split('=')[1].split('.')[0], 'base64url'));
+  const encoded = Buffer.from(JSON.stringify({ ...payload, expires: signedInAt / 1000 + 28800 })).toString('base64url');
+  const signature = createHmac('sha256', env.SESSION_SECRET).update(encoded).digest('base64url');
+  const headers = { Cookie: `__Host-el-session=${encoded}.${signature}` };
+  now = signedInAt + 28799 * 1000;
+  assert.equal((await worker.fetch(request('/api/session', { headers }), env)).status, 200);
+  now = signedInAt + 28800 * 1000;
+  assert.equal((await worker.fetch(request('/api/session', { headers }), env)).status, 401);
+});
+
 test('incorrect password cannot issue a session or reveal account details', async () => {
   const response = await login(environment(), 'wrong');
   assert.equal(response.status, 401);
@@ -131,9 +175,11 @@ test('login and logout require POST and exact same-origin requests', async () =>
 });
 
 test('sign out clears the host-only session cookie', async () => {
-  const response = await worker.fetch(request('/api/logout', { method: 'POST', headers: { Origin: origin } }), environment());
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get('Set-Cookie'), /Max-Age=0/);
+  for (const host of [origin, 'https://phil.englishladder.com']) {
+    const response = await worker.fetch(new Request(host + '/api/logout', { method: 'POST', headers: { Origin: host } }), environment());
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get('Set-Cookie'), /Max-Age=0/);
+  }
 });
 
 test('missing configuration, missing limiters, and invalid account secrets fail closed', async () => {

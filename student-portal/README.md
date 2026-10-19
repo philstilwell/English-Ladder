@@ -262,3 +262,13 @@ Cloudflare free-allowance exhaustion now has its own safe diagnostic and leaves 
 ## Codex transcript handoff (October 16, 2026)
 
 The active nightly author is now Codex at 11:35 p.m. New York time. Cloudflare AI is unbound and server lesson generation is disabled; server cron only maintains transcript retention. The separate operator credential and source-checked atomic handoff preserve all student records without an expiring browser session. See [CODEX_UPDATES.md](CODEX_UPDATES.md) for the exact workflow, independent review, private helper files, failure handling and Mac availability requirements. This supersedes earlier server-AI schedule and cost descriptions above.
+
+## Protecting private storage from scanning traffic
+
+As of October 18, 2026, the Worker rejects nonexistent student page/API paths before looking up an account. It checks subdomains against the same ID format used by registration, while preserving explicitly configured legacy IDs. Keep `STUDENT_API_PATHS` in `worker.mjs` current when adding student endpoints; communication paths are derived from the activity definitions.
+
+For valid-looking addresses, `directory-gate.mjs` keeps a private in-memory set of reserved account IDs for at most 60 seconds per Worker instance. The internal `/account-ids` route returns only IDs, including draft/paused accounts; it has no public route and never returns names, credentials, or learning records. Concurrent refreshes share one request, and failed refreshes have a five-second retry delay. Successful directory writes invalidate the local hint. A new address may take up to one minute to appear at other locations.
+
+This hint can only reject unknown addresses. Every accepted address still receives a live account lookup and the existing authentication checks. Pausing/deleting an account and changing its password therefore take effect immediately even with a warm hint. No account, session, credential, or learning data is cached, and no DNS, plan, secret, storage migration, or publishing schedule is changed.
+
+The traffic-protection tests simulate unavailable private storage and scanner bursts, count directory calls, check cache expiry/recovery, and verify that the internal ID list is not publicly accessible. The full student suite additionally checks access isolation, password changes, deletion, learning records, teacher-only writes, and page-state cleanup.

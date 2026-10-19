@@ -5,7 +5,8 @@ import { validateAssessment } from './assessment.mjs';
 export { FeedbackStore } from './feedback.mjs';
 import { nightlyDate } from './server-quiz-automation.mjs';
 export { QuizAutomation } from './server-quiz-automation.mjs';
-import { directoryRequest } from './student-directory.mjs';
+import { directoryRequest, STUDENT_ID } from './student-directory.mjs';
+import { directoryMayContainAccount } from './directory-gate.mjs';
 import { runtimeErrorCategory } from './runtime-error.mjs';
 import { matchesStudentPassword } from './student-password.mjs';
 import vocabularyBank from './vocabulary-bank.json' with { type: 'json' };
@@ -17,6 +18,22 @@ const COOKIE = '__Host-el-session';
 const SESSION_SECONDS = 8 * 60 * 60;
 const encoder = new TextEncoder();
 const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/road-questions.js', '/all-questions.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/vocabulary-practice.js', '/communication-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
+const STUDENT_API_PATHS = new Set([
+  '/api/login', '/api/logout', '/api/account', '/api/account/password', '/api/context', '/api/session',
+  '/api/learning-import', '/api/assessment', '/api/feedback', '/api/activities/progress', '/api/activities/questions',
+  '/api/grammar-practice', '/api/business-terms', '/api/vocabulary-practice',
+  '/api/grammar-practice/state', '/api/business-terms/state', '/api/vocabulary-practice/state',
+  '/api/study/state', '/api/study/questions', '/api/road/state', '/api/road/start', '/api/road/answer',
+  '/api/road/end', '/api/road/questions', '/api/quiz/state', '/api/quiz/answer', '/api/quiz/results',
+  '/api/automation/status', '/api/automation/connect', '/api/automation/verify', '/api/automation/callback', '/api/automation/webhook',
+  ...COMMUNICATION_ACTIVITIES.flatMap(activity => ['/api/communication/' + activity.id, '/api/communication/' + activity.id + '/state']),
+]);
+
+function studentPathExists(path) {
+  return PUBLIC_PATHS.has(path) || STUDENT_API_PATHS.has(path) ||
+    path.startsWith('/api/feedback/') && FEEDBACK_ID.test(path.slice('/api/feedback/'.length)) ||
+    /^\/api\/quiz\/results\/[a-zA-Z0-9-]{36}$/.test(path);
+}
 const SECURITY_HEADERS = {
   'Cache-Control': 'no-store',
   'X-Robots-Tag': 'noindex, nofollow, noarchive',
@@ -70,8 +87,11 @@ async function accountFor(request, env, allowPausedIntegration = false) {
   const id = local ? env.LOCAL_STUDENT_ID : match?.[1];
   if (!id || ['www', 'students', 'admin', 'phil'].includes(id)) return null;
   const accounts = JSON.parse(env.STUDENT_ACCOUNTS || '{}');
+  // Match the same address rule used by registration; preserve explicit legacy IDs.
+  if (!STUDENT_ID.test(id) && !Object.hasOwn(accounts, id)) return null;
   let account = Object.hasOwn(accounts, id) ? accounts[id] : null;
   if (env.STUDENT_DIRECTORY) {
+    if (!await directoryMayContainAccount(env.STUDENT_DIRECTORY, id)) return null;
     const response = await directoryRequest(env, (allowPausedIntegration ? '/integration-account/' : '/account/') + encodeURIComponent(id));
     if (response.status === 404) return null;
     if (!response.ok) throw new Error('Directory unavailable');
@@ -299,7 +319,12 @@ async function handle(request, env) {
   const url = new URL(request.url);
   if (!configured(env)) return json({ error: 'This student space is being set up. Please try again later.' }, 503);
   if (url.hostname === 'phil.englishladder.com' || ['localhost', '127.0.0.1'].includes(url.hostname) && env.LOCAL_STUDENT_ID === 'phil') return handleAdmin(request, env);
-  if (url.pathname.startsWith('/api/codex/')) return json({ error: 'Page not found.' }, 404);
+  // Scanner paths must not spend private-directory requests, even during an outage.
+  if (!studentPathExists(url.pathname)) {
+    if (!/^\/api\/(?:codex|automation|feedback|quiz|road|communication)\//.test(url.pathname) && !['GET', 'HEAD'].includes(request.method))
+      return json({ error: 'Method not allowed.' }, 405, { Allow: 'GET, HEAD' });
+    return json({ error: 'Page not found.' }, 404);
+  }
   const account = await accountFor(request, env, ['/api/automation/webhook', '/api/automation/callback'].includes(url.pathname));
   if (!account) return json({ error: 'This student space could not be found.' }, 404);
 

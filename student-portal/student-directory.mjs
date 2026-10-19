@@ -3,6 +3,7 @@
 import { makeStudentPassword, matchesStudentPassword, encryptStudentPassword, decryptStudentPassword } from './student-password.mjs';
 import { ACTIVITY_TOOLS, visibleActivities, validateActivities } from './activities.mjs';
 import { RESOURCE_TOOLS, visibleResources, validateResources } from './resources.mjs';
+import { clearDirectoryHint } from './directory-gate.mjs';
 const json = (value, status = 200) => Response.json(value, { status });
 const adminRecord = ({ passwordCredential, passwordCopy, ...record }) => ({ ...record, visibleActivities: visibleActivities(record), visibleResources: visibleResources(record), hasCustomPassword: Boolean(passwordCredential) });
 export const STUDENT_ID = /^[a-z]{2,8}\d{2}(?:-[a-z0-9]{1,12})?$/;
@@ -100,10 +101,12 @@ export function inspectStudentRows(rows, now = Date.now()) {
 }
 export const parseStudentRows = (rows, now) => inspectStudentRows(rows, now).students;
 
-export function directoryRequest(env, path, body, method = body ? 'POST' : 'GET') {
+export async function directoryRequest(env, path, body, method = body ? 'POST' : 'GET') {
   if (!env.STUDENT_DIRECTORY) throw new Error('Directory unavailable');
-  return env.STUDENT_DIRECTORY.get(env.STUDENT_DIRECTORY.idFromName('students')).fetch(new Request('https://directory.internal' + path,
+  const response = await env.STUDENT_DIRECTORY.get(env.STUDENT_DIRECTORY.idFromName('students')).fetch(new Request('https://directory.internal' + path,
     { method, ...(body ? { headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : {}) }));
+  if (response.ok && !['GET', 'HEAD'].includes(method)) clearDirectoryHint(env.STUDENT_DIRECTORY);
+  return response;
 }
 export async function directoryStudents(env) {
   const response = await directoryRequest(env, '/automation');
@@ -266,6 +269,10 @@ export class StudentDirectory {
     await this.initialize();
     const url = new URL(request.url), path = url.pathname;
     try {
+      // Internal binding only. Include reserved drafts/paused IDs so activating
+      // an existing account is immediate; live account lookup still decides access.
+      if (path === '/account-ids' && request.method === 'GET') return json({ studentIds: (await this.records())
+        .filter(record => !record.deletionPending && record.studentId).map(record => record.studentId) });
       if (path === '/students' && request.method === 'GET') return json({ activities: ACTIVITY_TOOLS, resources: RESOURCE_TOOLS, students: (await this.records()).map(adminRecord).sort((a,b) => (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName)) });
       const loginDetails = path.match(/^\/students\/([\w-]{36})\/login-details$/);
       if (loginDetails && request.method === 'GET') return await this.loginDetails(loginDetails[1]);

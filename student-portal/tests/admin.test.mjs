@@ -1830,3 +1830,30 @@ test('ignoring a session uses the authenticated exact-origin administrator route
   const cross=write(cookie,{id});cross.headers.Origin='https://evil.test';assert.equal((await adminCall(e,path,cross)).status,403);
   assert.equal((await adminCall(e,path,write(cookie,{id}))).status,200);assert.equal(calls,1);
 });
+
+test('private address hints do not contain records and cannot keep a paused account open', async () => {
+ const {e,directory}=environment(), cookie=await access(e);
+ const hint=await(await directory.fetch(new Request('https://directory.internal/account-ids'))).json();
+ assert.deepEqual(Object.keys(hint),['studentIds']); assert.deepEqual(hint.studentIds.sort(),['ab26','cd26']);
+ assert.doesNotMatch(JSON.stringify(hint),/Alex|Brown|password|Zoom|credential/);
+ assert.equal((await call(e,'/')).status,200);
+ const account=(await list(e,cookie)).find(s=>s.studentId==='ab26');
+ // Change the directory directly to leave the worker's hint warm, as on another edge location.
+ const stopped=await directory.fetch(new Request('https://directory.internal/students/'+account.key,{method:'PUT',body:JSON.stringify({...account,status:'paused'})}));
+ assert.equal(stopped.status,200,await stopped.text());
+ assert.equal((await call(e,'/')).status,404);
+ assert.equal((await call(e,'/api/session')).status,404);
+ const paused=(await list(e,cookie)).find(s=>s.studentId==='ab26');
+ const reopened=await directory.fetch(new Request('https://directory.internal/students/'+account.key,{method:'PUT',body:JSON.stringify({...paused,lastName:'Brown',status:'active'})}));
+ assert.equal(reopened.status,200,await reopened.text());
+ assert.equal((await call(e,'/')).status,200);
+});
+
+test('registering an account clears local address hints without exposing a roster', async () => {
+ const {e}=environment(),cookie=await access(e);
+ assert.equal((await call(e,'/',{},'https://mt26.englishladder.com')).status,404);
+ const saved=await adminCall(e,'/api/admin/students',write(cookie,example)); assert.equal(saved.status,201);
+ assert.equal((await call(e,'/',{},'https://mt26.englishladder.com')).status,200);
+ const response=await adminCall(e,'/api/admin/account-ids',{headers:{Cookie:cookie}});
+ assert.equal(response.status,404); assert.doesNotMatch(await response.text(),/studentIds|mt26/);
+});

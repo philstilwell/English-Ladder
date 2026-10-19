@@ -5562,6 +5562,131 @@
         "https://learnenglishteens.britishcouncil.org/grammar/b1-b2-grammar/modals-deduction",
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/modal-verbs"
       ]
+    },
+    {
+      "number": 49,
+      "title": "Spend time: on, with, or -ing?",
+      "level": "A2–B1",
+      "category": "Time and verbs",
+      "goal": "Use “spend time on” for a task, “spend time with” for company, and “spend time doing” to name an activity.",
+      "rules": [
+        "Use “spend + time + on + task” to describe time devoted to a task: “I spent an hour on the report”. The time phrase can be “an hour”, “ten minutes”, or simply “time”. The past form of “spend” is “spent”; the present forms are “spend” and “spends”.",
+        "Use “spend + time + with + person” when the meaning is time together: “I spent an hour with my sister”. Choose the preposition for the relationship you mean. “On a task” and “with a person” are useful patterns, not a universal rule that objects always take “on” and people always take “with”.",
+        "To say what you did during that time, use an -ing form: “I spent an hour reading”. Do not replace “reading” with “to read” in this pattern. You can combine activity and company: “I spent an hour reading with my sister”. “On + -ing” is also possible. Place phrases work too, as in “We spent the afternoon in the garden”."
+      ],
+      "cards": [
+        {
+          "label": "ON: A TASK",
+          "example": "I spent an hour on the report.",
+          "note": "This tells us which task received the time and attention."
+        },
+        {
+          "label": "WITH: TIME TOGETHER",
+          "example": "I spent an hour with my sister.",
+          "note": "This tells us who was there with the speaker."
+        },
+        {
+          "label": "-ING: THE ACTIVITY",
+          "example": "I spent an hour reading.",
+          "note": "This tells us what the speaker did. Use “reading”, not “to read”, to name that activity."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "You worked on a poster for thirty minutes. Complete: “I spent thirty minutes ___ the poster.”",
+          "options": [
+            {
+              "text": "of",
+              "correct": false,
+              "feedback": "“Of” does not introduce the task after “spent thirty minutes”. Use “on the poster”."
+            },
+            {
+              "text": "on",
+              "correct": true,
+              "feedback": "“On the poster” names the task that received thirty minutes of work."
+            },
+            {
+              "text": "to",
+              "correct": false,
+              "feedback": "Use “on” before this task: “spent thirty minutes on the poster”."
+            }
+          ]
+        },
+        {
+          "prompt": "You enjoyed an afternoon together with your cousin. Complete: “I spent the afternoon ___ my cousin.”",
+          "options": [
+            {
+              "text": "at",
+              "correct": false,
+              "feedback": "“At my cousin” does not express time together. Use “with my cousin”."
+            },
+            {
+              "text": "of",
+              "correct": false,
+              "feedback": "“Of” does not identify your companion in this sentence. Use “with”."
+            },
+            {
+              "text": "with",
+              "correct": true,
+              "feedback": "“With my cousin” expresses who shared the afternoon with you."
+            }
+          ]
+        },
+        {
+          "prompt": "You listened to a podcast for twenty minutes. Which sentence correctly names that activity after “spent”?",
+          "options": [
+            {
+              "text": "I spent twenty minutes listening to a podcast.",
+              "correct": true,
+              "feedback": "“Listening” is the -ing form that names the activity during those twenty minutes."
+            },
+            {
+              "text": "I spent twenty minutes to listen to a podcast.",
+              "correct": false,
+              "feedback": "To name the activity in this pattern, use “listening”, not “to listen”."
+            },
+            {
+              "text": "I spent twenty minutes listen to a podcast.",
+              "correct": false,
+              "feedback": "The plain verb “listen” does not fit here. Use the -ing form “listening”."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You and your classmates worked together on a model for two hours. Which sentence correctly identifies both the task and your companions?",
+        "options": [
+          {
+            "text": "We spent two hours with the model on our classmates.",
+            "correct": false,
+            "feedback": "This reverses the intended relationships. The task is “on the model”; the company is “with our classmates”."
+          },
+          {
+            "text": "We spent two hours on the model with our classmates.",
+            "correct": true,
+            "feedback": "“On the model” names the task; “with our classmates” identifies the people working together."
+          },
+          {
+            "text": "We spent two hours to the model of our classmates.",
+            "correct": false,
+            "feedback": "Use “on” for this task and “with” for the people sharing the time."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-49-spend-time-student-workbook.pdf",
+        "concept-49-spend-time-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-19",
+      "related": [
+        15,
+        29,
+        45
+      ],
+      "sources": [
+        "https://www.oxfordlearnersdictionaries.com/definition/english/spend_1",
+        "https://dictionary.cambridge.org/dictionary/english/spend"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

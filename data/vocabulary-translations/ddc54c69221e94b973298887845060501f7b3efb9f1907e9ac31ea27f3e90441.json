@@ -1,0 +1,125 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A space mission will launch soon to visit a moon of Mars.",
+      "The spacecraft will leave from Japan and arrive at the moon in 2027.",
+      "A small robot will look for a safe place to land.",
+      "The spacecraft will touch down on the surface and grab some dust.",
+      "A small capsule will bring this dust back to Earth in 2031.",
+      "Scientists hope the dust will explain how the moons of Mars formed.",
+      "The spacecraft will bring back only a tiny amount of material.",
+      "Even a small amount is enough to learn more about space."
+    ],
+    "vocabulary": [
+      {
+        "term": "mission",
+        "part_of_speech": "noun",
+        "definition": "an important job that usually involves travelling somewhere"
+      },
+      {
+        "term": "launch",
+        "part_of_speech": "verb",
+        "definition": "to send a machine into the sky or space"
+      },
+      {
+        "term": "spacecraft",
+        "part_of_speech": "noun",
+        "definition": "a vehicle that travels in space"
+      },
+      {
+        "term": "surface",
+        "part_of_speech": "noun",
+        "definition": "the top or outside part of something like a planet"
+      },
+      {
+        "term": "tiny",
+        "part_of_speech": "adjective",
+        "definition": "very small"
+      },
+      {
+        "term": "amount",
+        "part_of_speech": "noun",
+        "definition": "how much there is of something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "どこかへ行くことが含まれる、大切な仕事。",
+      "ko": "보통 어딘가로 이동하는 것을 포함하는 중요한 일.",
+      "zh-Hans": "一项通常需要去某个地方的重要工作。",
+      "es": "Un trabajo importante que normalmente implica viajar a algún lugar.",
+      "pt-BR": "Um trabalho importante que geralmente envolve viajar para algum lugar.",
+      "fr": "Un travail important qui implique généralement de voyager quelque part.",
+      "de": "Eine wichtige Aufgabe, die normalerweise Reisen beinhaltet."
+    },
+    {
+      "id": 1,
+      "ja": "機械を空や宇宙へ送ること。",
+      "ko": "기계를 하늘이나 우주로 보내는 것.",
+      "zh-Hans": "将机器送入天空或太空。",
+      "es": "Enviar una máquina al cielo o al espacio.",
+      "pt-BR": "Enviar uma máquina para o céu ou espaço.",
+      "fr": "Envoyer une machine dans le ciel ou l'espace.",
+      "de": "Eine Maschine in den Himmel oder ins All schicken."
+    },
+    {
+      "id": 2,
+      "ja": "宇宙を旅する乗り物。",
+      "ko": "우주를 여행하는 탈것.",
+      "zh-Hans": "一种在太空中飞行的交通工具。",
+      "es": "Un vehículo que viaja por el espacio.",
+      "pt-BR": "Um veículo que viaja no espaço.",
+      "fr": "Un véhicule qui voyage dans l'espace.",
+      "de": "Ein Fahrzeug, das im Weltraum reist."
+    },
+    {
+      "id": 3,
+      "ja": "惑星のようなものの、一番上または外側の部分。",
+      "ko": "행성처럼 어떤 것의 가장 위쪽 또는 바깥쪽 부분.",
+      "zh-Hans": "像行星这样的物体的最上面或最外面部分。",
+      "es": "La parte superior o exterior de algo, como un planeta.",
+      "pt-BR": "A parte superior ou externa de algo, como um planeta.",
+      "fr": "La partie supérieure ou extérieure de quelque chose, comme une planète.",
+      "de": "Der obere oder äußere Teil von etwas, zum Beispiel einem Planeten."
+    },
+    {
+      "id": 4,
+      "ja": "非常に小さい。",
+      "ko": "매우 작은.",
+      "zh-Hans": "非常小的。",
+      "es": "Muy pequeño.",
+      "pt-BR": "Muito pequeno.",
+      "fr": "Très petit.",
+      "de": "Sehr klein."
+    },
+    {
+      "id": 5,
+      "ja": "何かがどれくらいあるかということ。",
+      "ko": "어떤 것의 양이나 수량.",
+      "zh-Hans": "某物的数量。",
+      "es": "La cantidad que hay de algo.",
+      "pt-BR": "A quantidade de algo que existe.",
+      "fr": "La quantité de quelque chose.",
+      "de": "Wie viel von etwas vorhanden ist."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-19T08:16:36.162351+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

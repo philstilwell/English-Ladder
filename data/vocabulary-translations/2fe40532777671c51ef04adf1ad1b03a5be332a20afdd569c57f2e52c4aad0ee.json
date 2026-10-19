@@ -1,0 +1,156 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "A new mission will attempt to grab a piece of a Martian moon and bring it back to Earth.",
+      "The project plans to set down a small rover to explore the terrain, though this will be no easy feat.",
+      "The strong gravity of nearby Mars makes it much harder to get a rover onto the moon's surface.",
+      "Once on the surface, the vehicle will deploy a robotic arm and two samplers to grab some dust.",
+      "This material will be packed into a small capsule that will return to Earth in 2031.",
+      "Scientists can conduct several studies even on individual grains, so they do not need to bring back kilograms of rock.",
+      "Researchers believe the sample will finally shed light on the puzzle of where Mars's moons came from.",
+      "The results will quickly show whether the moon is the product of a dramatic impact or a captured asteroid.",
+      "Because the moon is so close to Mars, the returned sample may actually contain grains from the planet itself."
+    ],
+    "vocabulary": [
+      {
+        "term": "attempt",
+        "part_of_speech": "verb",
+        "definition": "To try to do something, especially something difficult."
+      },
+      {
+        "term": "terrain",
+        "part_of_speech": "noun",
+        "definition": "The physical features of a piece of land or ground."
+      },
+      {
+        "term": "feat",
+        "part_of_speech": "noun",
+        "definition": "An achievement that requires great courage, skill, or strength."
+      },
+      {
+        "term": "deploy",
+        "part_of_speech": "verb",
+        "definition": "To bring into action or put something into a position ready for use."
+      },
+      {
+        "term": "capsule",
+        "part_of_speech": "noun",
+        "definition": "A small, closed container used in space travel to carry things safely."
+      },
+      {
+        "term": "individual",
+        "part_of_speech": "adjective",
+        "definition": "Considered separately from other things in a group; single."
+      },
+      {
+        "term": "shed light on",
+        "part_of_speech": "phrase",
+        "definition": "To help to explain a situation or make it easier to understand."
+      },
+      {
+        "term": "impact",
+        "part_of_speech": "noun",
+        "definition": "The powerful crash or force of one object hitting another."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かを行う、特に難しいことを試みる。",
+      "ko": "무엇인가를, 특히 어려운 것을 하려고 노력하다.",
+      "zh-Hans": "尝试做某事，尤其是困难的事情。",
+      "es": "Intentar hacer algo, especialmente algo difícil.",
+      "pt-BR": "Tentar fazer algo, especialmente algo difícil.",
+      "fr": "Essayer de faire quelque chose, surtout quelque chose de difficile.",
+      "de": "Versuchen, etwas zu tun, besonders etwas Schwieriges."
+    },
+    {
+      "id": 1,
+      "ja": "土地や地面の物理的な特徴。",
+      "ko": "특정 지역의 땅이나 지면의 물리적인 특징.",
+      "zh-Hans": "某块土地或地面的自然地理特征。",
+      "es": "Las características físicas de un terreno o superficie.",
+      "pt-BR": "As características físicas de um pedaço de terra ou solo.",
+      "fr": "Les caractéristiques physiques d'une étendue de terre ou d'un sol.",
+      "de": "Die physischen Merkmale eines Landstücks oder Bodens."
+    },
+    {
+      "id": 2,
+      "ja": "優れた勇気、技術、または強さを必要とする偉業。",
+      "ko": "대단한 용기, 기술 또는 힘을 필요로 하는 업적.",
+      "zh-Hans": "需要巨大勇气、技能或力量才能完成的成就。",
+      "es": "Un logro que requiere gran coraje, habilidad o fuerza.",
+      "pt-BR": "Uma conquista que exige grande coragem, habilidade ou força.",
+      "fr": "Un exploit qui demande beaucoup de courage, d'habileté ou de force.",
+      "de": "Eine Leistung, die großen Mut, Geschick oder Stärke erfordert."
+    },
+    {
+      "id": 3,
+      "ja": "行動に移す、または使用準備ができた状態に配置する。",
+      "ko": "무엇인가를 작동시키거나 사용 준비가 된 상태로 배치하다.",
+      "zh-Hans": "使某物投入行动或放置到准备好使用的位置。",
+      "es": "Poner algo en acción o en una posición lista para su uso.",
+      "pt-BR": "Colocar algo em ação ou em uma posição pronta para uso.",
+      "fr": "Mettre en action ou positionner quelque chose pour qu'il soit prêt à l'emploi.",
+      "de": "Etwas in Gang setzen oder in eine Position bringen, die einsatzbereit ist."
+    },
+    {
+      "id": 4,
+      "ja": "宇宙旅行で使用される、物を安全に運ぶための小型の密閉容器。",
+      "ko": "우주여행 시 물건을 안전하게 운반하는 데 사용되는 작고 밀폐된 용기.",
+      "zh-Hans": "用于太空旅行的、装载物品以确保其安全的小型密封容器。",
+      "es": "Un pequeño contenedor cerrado que se usa en viajes espaciales para transportar cosas de forma segura.",
+      "pt-BR": "Um pequeno recipiente fechado usado em viagens espaciais para transportar coisas com segurança.",
+      "fr": "Un petit conteneur fermé utilisé dans les voyages spatiaux pour transporter des choses en toute sécurité.",
+      "de": "Ein kleiner, geschlossener Behälter, der in der Raumfahrt verwendet wird, um Dinge sicher zu transportieren."
+    },
+    {
+      "id": 5,
+      "ja": "グループ内の他のものとは別に考慮されること。単一の。",
+      "ko": "그룹 내 다른 것들과는 별도로 고려되는 것; 개별적인.",
+      "zh-Hans": "在群体中被单独考虑的；单个的。",
+      "es": "Considerado por separado de otras cosas en un grupo; único.",
+      "pt-BR": "Considerado separadamente de outras coisas em um grupo; único.",
+      "fr": "Considéré séparément des autres éléments d'un groupe ; unique.",
+      "de": "Getrennt von anderen Dingen in einer Gruppe betrachtet; einzeln."
+    },
+    {
+      "id": 6,
+      "ja": "状況を説明するのに役立つ、または理解しやすくする。",
+      "ko": "어떤 상황을 설명하거나 이해하기 쉽게 돕다.",
+      "zh-Hans": "有助于解释某种情况或使其更容易理解。",
+      "es": "Ayudar a explicar una situación o hacerla más fácil de entender.",
+      "pt-BR": "Ajudar a explicar uma situação ou torná-la mais fácil de entender.",
+      "fr": "Aider à expliquer une situation ou à la rendre plus facile à comprendre.",
+      "de": "Helfen, eine Situation zu erklären oder leichter verständlich zu machen."
+    },
+    {
+      "id": 7,
+      "ja": "ある物体が別の物体に衝突する際の強力な衝突または力。",
+      "ko": "한 물체가 다른 물체에 부딪히는 강력한 충돌 또는 힘.",
+      "zh-Hans": "一个物体撞击另一个物体时产生的强大碰撞或力量。",
+      "es": "El choque o la fuerza poderosa de un objeto que golpea a otro.",
+      "pt-BR": "A colisão poderosa ou a força de um objeto atingindo outro.",
+      "fr": "Le choc ou la force puissante d'un objet en heurtant un autre.",
+      "de": "Der starke Aufprall oder die Kraft, wenn ein Objekt ein anderes trifft."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-19T08:16:40.956449+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

@@ -1,0 +1,703 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-19",
+  "release_iso": "2026-10-19T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Sun, 18 Oct 2026 23:00:48 GMT",
+    "retrieved_at": "2026-10-19T07:26:29.840497+00:00",
+    "title": "Mission set to blast off for Mars to grab a piece of its moon",
+    "summary": "A spacecraft is set to launch on an ambitious mission to bring 10g of Martian moon dust back to Earth.",
+    "evidence_text": "A space mission is set to launch on Monday that will attempt to grab a piece of Mars' moon Phobos and bring it back to Earth.\nThe spacecraft will blast off from Japan and arrive at Phobos in August 2027.\nThe rover will scout out a landing site so that the MMX spacecraft itself can later touch down on Phobos.\nOnce on the surface, it will deploy a robotic arm and two samplers to grab some moon dust.\nThis material will be packed into a small capsule that will return to Earth in 2031, landing in the Woomera desert of South Australia.\nScientists believe the sample will finally shed light on the puzzle of where Mars's moons came from.\nThe amount of material that will come back is tiny - just 10g.\n\"However we can do several studies even on individual grains… You don't need to have kilos back from a surface in order to do science. So it's worth every gram,\" she said.\nIt plans to set down a small rover to explore the terrain, though this will be no easy feat.\n\"But it's next to an enormous planet that's got a much higher gravity, and that makes it much harder to get a rover onto the surface.\"\n\"It should be pretty much immediately obvious.. whether it's the product of this dramatic impact or whether it's a captured asteroid. So we'll find that out really quickly.\"\n\"And that means that the sample we get back may actually contain grains of Mars as well. So it can give us really direct information about the composition and history of Mars.\"\nIt is hoped that the Mars Moons Exploration (MMX) mission, which is led by the Japanese Space Agency, will solve the mystery of how Mars's moons formed.\n\"When we get the sample back, we'll be able to look in detail at its chemistry and its mineral composition - and the two hypotheses will produce very distinct results,\" said Sara Russell.\n\"One of the really exciting things is that Phobos is so close to the Mars surface that whenever there's an impact into the Mars surface, little grains might actually become implanted into Phobos itself,\" said Russell.\nMartian meteorites are extremely rare, but like all space rocks that fall to our planet, they become contaminated as soon as they get here, mixing with the air, dust, soil and water.",
+    "evidence_retrieved_at": "2026-10-19T07:26:29.840497+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cmvgxvkv54w1o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think scientists want to study dust from space? Use the text to help you explain.",
+          "Would you like to travel in a spacecraft? Tell us why. Frame: \"I prefer to stay on Earth because...\" Or talk about a friend: \"My friend wants to go to space because he loves adventure.\""
+        ],
+        "editorial_check": {
+          "content_digest": "8b4669abb003c850b211e1889180228efc5003c2d46c05e28adae6362d63bee8",
+          "date": "2026-10-19T07:35:44.783131+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively tests comprehension, vocabulary, and the future tense grammar point without trick questions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The tone is appropriately neutral and uses simple, direct phrasing suitable for beginner adult learners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations use accessible language, and the discussion provides a clear sentence frame for learners."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The words selected, such as tiny and amount, are practical and clearly defined for the A1-A2 level."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Future tense with will",
+          "example_quote": "The spacecraft will leave from Japan and arrive at the moon in 2027.",
+          "explanation": "We use the word \"will\" before a main verb to talk about the future. In this story, it describes what the spacecraft is planned to do."
+        },
+        "news_brief_sentences": [
+          "A space mission will launch soon to visit a moon of Mars.",
+          "The spacecraft will leave from Japan and arrive at the moon in 2027.",
+          "A small robot will look for a safe place to land.",
+          "The spacecraft will touch down on the surface and grab some dust.",
+          "A small capsule will bring this dust back to Earth in 2031.",
+          "Scientists hope the dust will explain how the moons of Mars formed.",
+          "The spacecraft will bring back only a tiny amount of material.",
+          "Even a small amount is enough to learn more about space."
+        ],
+        "overview": "A space mission from Japan will try to bring dust from a Martian moon back to Earth.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: The mission wants to collect dust from a Martian moon.",
+              "Incorrect: The text says nothing about building a station.",
+              "Incorrect: The text does not say people will go to Mars."
+            ],
+            "options": [
+              "Bring back dust from a moon of Mars.",
+              "Build a new station on the moon.",
+              "Send people to live on Mars."
+            ],
+            "question": "What is the space mission trying to do?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 2027 is when the spacecraft arrives at the moon.",
+              "Correct: The text says the dust will come back to Earth in 2031.",
+              "Incorrect: It takes several years for the dust to return."
+            ],
+            "options": [
+              "In 2027.",
+              "In 2031.",
+              "Soon after it launches."
+            ],
+            "question": "When will the dust come back to Earth?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: The reading says it will bring back only a tiny amount.",
+              "Incorrect: The text says the amount is tiny, not large.",
+              "Incorrect: It will bring back dust, not a heavy rock."
+            ],
+            "options": [
+              "A very small amount.",
+              "A very large amount.",
+              "A heavy piece of rock."
+            ],
+            "question": "How much dust will the capsule bring back?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: The word \"tiny\" means very small.",
+              "Incorrect: The word \"tiny\" does not describe speed.",
+              "Incorrect: The word \"tiny\" describes size, not age."
+            ],
+            "options": [
+              "Very small.",
+              "Very fast.",
+              "Very old."
+            ],
+            "question": "What does the word \"tiny\" mean in the text?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: The word \"spacecraft\" is a noun, not a time word.",
+              "Correct: We use \"will\" to talk about something in the future.",
+              "Incorrect: The word \"back\" shows direction, not the future."
+            ],
+            "options": [
+              "spacecraft",
+              "will",
+              "back"
+            ],
+            "question": "Which word in the story shows that an action is happening in the future?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: The story does not mention building a faster spacecraft.",
+              "Correct: Scientists hope the dust explains how the moons formed.",
+              "Incorrect: The text does not talk about the temperature of Mars."
+            ],
+            "options": [
+              "How to build a faster spacecraft.",
+              "How the moons of Mars formed.",
+              "Why the planet Mars is so hot."
+            ],
+            "question": "What do scientists hope the dust will explain?"
+          }
+        ],
+        "sentence_evidence": [
+          "A space mission is set to launch on Monday that will attempt to grab a piece of Mars' moon Phobos and bring it back to Earth.",
+          "The spacecraft will blast off from Japan and arrive at Phobos in August 2027.",
+          "The rover will scout out a landing site so that the MMX spacecraft itself can later touch down on Phobos.",
+          "Once on the surface, it will deploy a robotic arm and two samplers to grab some moon dust.",
+          "This material will be packed into a small capsule that will return to Earth in 2031, landing in the Woomera desert of South Australia.",
+          "Scientists believe the sample will finally shed light on the puzzle of where Mars's moons came from.",
+          "The amount of material that will come back is tiny - just 10g.",
+          "\"However we can do several studies even on individual grains… You don't need to have kilos back from a surface in order to do science. So it's worth every gram,\" she said."
+        ],
+        "title": "Japan plans mission to get dust from a Mars moon",
+        "topic": "Space Exploration",
+        "vocabulary": [
+          {
+            "definition": "an important job that usually involves travelling somewhere",
+            "part_of_speech": "noun",
+            "term": "mission"
+          },
+          {
+            "definition": "to send a machine into the sky or space",
+            "part_of_speech": "verb",
+            "term": "launch"
+          },
+          {
+            "definition": "a vehicle that travels in space",
+            "part_of_speech": "noun",
+            "term": "spacecraft"
+          },
+          {
+            "definition": "the top or outside part of something like a planet",
+            "part_of_speech": "noun",
+            "term": "surface"
+          },
+          {
+            "definition": "very small",
+            "part_of_speech": "adjective",
+            "term": "tiny"
+          },
+          {
+            "definition": "how much there is of something",
+            "part_of_speech": "noun",
+            "term": "amount"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do scientists want to know if the Martian moon was created by a dramatic impact or a captured asteroid? Explain why understanding this history is important.",
+          "If you were a space researcher, what kind of mission would you design? \"I would choose to send a rover to ... because ...\""
+        ],
+        "editorial_check": {
+          "content_digest": "7d3c9b8cd28956ee244af923dce504cfe1e0af5f6047c767773f2f013a44b560",
+          "date": "2026-10-19T07:37:09.138338+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz offers a strong balance of reading comprehension, contextual vocabulary checks, a grammar application question, and a well-supported inference question about Martian debris."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading maintains a clear, neutral news reporting tone that perfectly matches the space exploration topic without drifting into overly academic jargon."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation for the future passive voice is concise and accurately explained using clear everyday language ('will be' followed by the past participle). The discussion prompts are well-scaffolded."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items, such as 'deploy', 'feat', 'terrain', and 'shed light on', are excellent, moderately abstract choices for B1-B2 learners and avoid the reserved Beginner targets."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Future Passive Voice",
+          "example_quote": "This material will be packed into a small capsule that will return to Earth in 2031.",
+          "explanation": "We use the future passive voice to talk about an action that will happen to a subject in the future, especially when the action is more important than who or what does it. It is formed using \"will be\" followed by the past participle of the main verb."
+        },
+        "news_brief_sentences": [
+          "A new mission will attempt to grab a piece of a Martian moon and bring it back to Earth.",
+          "The project plans to set down a small rover to explore the terrain, though this will be no easy feat.",
+          "The strong gravity of nearby Mars makes it much harder to get a rover onto the moon's surface.",
+          "Once on the surface, the vehicle will deploy a robotic arm and two samplers to grab some dust.",
+          "This material will be packed into a small capsule that will return to Earth in 2031.",
+          "Scientists can conduct several studies even on individual grains, so they do not need to bring back kilograms of rock.",
+          "Researchers believe the sample will finally shed light on the puzzle of where Mars's moons came from.",
+          "The results will quickly show whether the moon is the product of a dramatic impact or a captured asteroid.",
+          "Because the moon is so close to Mars, the returned sample may actually contain grains from the planet itself."
+        ],
+        "overview": "A new space project plans to collect a sample from one of Mars's moons to discover how it originally formed.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text states the mission will attempt to grab a piece of a Martian moon and bring it back.",
+              "The mission might investigate if the moon is a captured asteroid, but it will not move one.",
+              "The rover is meant to explore the moon's surface, not the surface of the planet Mars."
+            ],
+            "options": [
+              "To return a sample from a Martian moon to Earth.",
+              "To move a captured asteroid closer to Mars.",
+              "To send a small rover to explore the surface of Mars."
+            ],
+            "question": "What is the main goal of the new space mission described in the text?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explains that nearby Mars has strong gravity, making it harder to get a rover onto the moon.",
+              "The text does not mention the speed of the moon's orbit around Mars as a problem.",
+              "While the terrain is being explored, the text blames the strong gravity of Mars, not destroyed equipment."
+            ],
+            "options": [
+              "Mars's strong gravity pulls on the nearby moon.",
+              "The moon is moving too quickly around the planet.",
+              "The rocky terrain destroys robotic arms upon landing."
+            ],
+            "question": "Why is it difficult to land a rover on the Martian moon?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text notes that scientists can conduct several studies even on individual grains of dust.",
+              "The passage does not discuss the safety or danger of returning a heavier capsule.",
+              "The reading states they do not need kilograms of rock, not that they already have them."
+            ],
+            "options": [
+              "They can perform valuable studies on single grains of material.",
+              "A heavier capsule would be too dangerous to return to Earth.",
+              "They already have many kilograms of rock from similar missions."
+            ],
+            "question": "Why are scientists satisfied with bringing back only a small amount of dust?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading states researchers want to shed light on the puzzle of where Mars's moons came from.",
+              "The mission focuses on the origin of the moons, not the loss of Mars's atmosphere.",
+              "There is no mention in the text about searching for hidden water on the moon."
+            ],
+            "options": [
+              "How the moons of Mars originally formed.",
+              "Why Mars lost its atmosphere millions of years ago.",
+              "Whether there is water hidden under the moon's surface."
+            ],
+            "question": "What specific mystery do researchers hope this sample will solve?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A \"feat\" is an impressive achievement; \"no easy feat\" means it will be very challenging.",
+              "A feat is an achievement or act of skill, not an error or mistake.",
+              "This word describes an accomplishment, not a change in plans."
+            ],
+            "options": [
+              "A difficult achievement requiring great skill.",
+              "A simple mistake that causes large problems.",
+              "A sudden change in a plan or schedule."
+            ],
+            "question": "What does the word \"feat\" mean in the phrase \"no easy feat\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "To deploy means to bring equipment into action or make it ready to use.",
+              "Deploying a robotic arm means extending it to use it, not repairing it.",
+              "The vehicle will use the arm to collect samples, not leave it behind on the moon."
+            ],
+            "options": [
+              "To put something into action or a ready position.",
+              "To repair a broken part of a machine.",
+              "To leave something behind on the ground."
+            ],
+            "question": "In the sentence \"the vehicle will deploy a robotic arm\", what does \"deploy\" mean?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "This uses \"will be\" plus the past participle \"collected\" to focus on the action happening to the dust.",
+              "This is an active voice sentence because it focuses on the vehicle performing the action.",
+              "This uses the future continuous tense, not the future passive voice."
+            ],
+            "options": [
+              "The moon dust will be collected by a robotic arm.",
+              "The vehicle will pack the material into a capsule.",
+              "Scientists will be testing the individual grains."
+            ],
+            "question": "Which sentence correctly uses the future passive voice as seen in the lesson's grammar point?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "If Mars grains are on the moon, it suggests material from Mars was thrown onto the nearby moon, possibly by impacts.",
+              "The rover will only land on the moon, not travel back and forth to Mars.",
+              "The text explicitly states that Mars has strong gravity while the moon has very little."
+            ],
+            "options": [
+              "Debris from Mars reached the moon during past events.",
+              "The rover will travel from the moon to Mars before returning.",
+              "Mars and its moons share exactly the same gravity."
+            ],
+            "question": "What can we infer about the returned sample if it is found to contain grains of Mars?"
+          }
+        ],
+        "sentence_evidence": [
+          "A space mission is set to launch on Monday that will attempt to grab a piece of Mars' moon Phobos and bring it back to Earth.",
+          "It plans to set down a small rover to explore the terrain, though this will be no easy feat.",
+          "\"But it's next to an enormous planet that's got a much higher gravity, and that makes it much harder to get a rover onto the surface.\"",
+          "Once on the surface, it will deploy a robotic arm and two samplers to grab some moon dust.",
+          "This material will be packed into a small capsule that will return to Earth in 2031, landing in the Woomera desert of South Australia.",
+          "\"However we can do several studies even on individual grains… You don't need to have kilos back from a surface in order to do science. So it's worth every gram,\" she said.",
+          "Scientists believe the sample will finally shed light on the puzzle of where Mars's moons came from.",
+          "\"It should be pretty much immediately obvious.. whether it's the product of this dramatic impact or whether it's a captured asteroid. So we'll find that out really quickly.\"",
+          "\"And that means that the sample we get back may actually contain grains of Mars as well. So it can give us really direct information about the composition and history of Mars.\""
+        ],
+        "title": "Mars Mission Aims to Bring Moon Dust Back to Earth",
+        "topic": "Space Exploration",
+        "vocabulary": [
+          {
+            "definition": "To try to do something, especially something difficult.",
+            "part_of_speech": "verb",
+            "term": "attempt"
+          },
+          {
+            "definition": "The physical features of a piece of land or ground.",
+            "part_of_speech": "noun",
+            "term": "terrain"
+          },
+          {
+            "definition": "An achievement that requires great courage, skill, or strength.",
+            "part_of_speech": "noun",
+            "term": "feat"
+          },
+          {
+            "definition": "To bring into action or put something into a position ready for use.",
+            "part_of_speech": "verb",
+            "term": "deploy"
+          },
+          {
+            "definition": "A small, closed container used in space travel to carry things safely.",
+            "part_of_speech": "noun",
+            "term": "capsule"
+          },
+          {
+            "definition": "Considered separately from other things in a group; single.",
+            "part_of_speech": "adjective",
+            "term": "individual"
+          },
+          {
+            "definition": "To help to explain a situation or make it easier to understand.",
+            "part_of_speech": "phrase",
+            "term": "shed light on"
+          },
+          {
+            "definition": "The powerful crash or force of one object hitting another.",
+            "part_of_speech": "noun",
+            "term": "impact"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Based on the reading, explain why scientists are not satisfied with studying Martian meteorites that have already fallen to Earth.",
+          "If you could choose one mystery in our Solar System for scientists to investigate next, what would it be and why?"
+        ],
+        "title": "Japan Aims to Retrieve Pristine Dust from Martian Moon Phobos",
+        "overview": "An ambitious Japanese space expedition prepares to retrieve a pristine sample from Mars' moon Phobos to uncover its origins.",
+        "topic": "Space Exploration",
+        "vocabulary": [
+          {
+            "term": "endeavor",
+            "part_of_speech": "noun",
+            "definition": "A determined effort or serious attempt to achieve a challenging goal."
+          },
+          {
+            "term": "retrieve",
+            "part_of_speech": "verb",
+            "definition": "To recover or bring something back from a specific remote location."
+          },
+          {
+            "term": "spearheaded",
+            "part_of_speech": "verb",
+            "definition": "Led, directed, or initiated a significant undertaking or campaign."
+          },
+          {
+            "term": "formidable",
+            "part_of_speech": "adjective",
+            "definition": "Presenting a severe or daunting challenge that requires great effort to overcome."
+          },
+          {
+            "term": "dwarfed",
+            "part_of_speech": "verb",
+            "definition": "Made to seem much smaller or less significant by comparison to something substantially larger."
+          },
+          {
+            "term": "culminating",
+            "part_of_speech": "verb",
+            "definition": "Concluding an extended process or series of events with a significant final stage or climax."
+          },
+          {
+            "term": "minuscule",
+            "part_of_speech": "adjective",
+            "definition": "Exceptionally small in size, scale, or quantity."
+          },
+          {
+            "term": "ample",
+            "part_of_speech": "adjective",
+            "definition": "Plentiful and entirely sufficient for a specific purpose or requirement."
+          },
+          {
+            "term": "hypotheses",
+            "part_of_speech": "noun",
+            "definition": "Proposed scientific explanations or theories that require further testing and evidence."
+          },
+          {
+            "term": "embedded",
+            "part_of_speech": "verb",
+            "definition": "Fixed firmly and deeply within a surrounding substance or material."
+          },
+          {
+            "term": "paramount",
+            "part_of_speech": "adjective",
+            "definition": "Of supreme importance, outweighing all other considerations."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced Non-defining Relative Clauses",
+          "explanation": "A past participle phrase like \"spearheaded by the Japanese Space Agency\" functions as a reduced non-defining relative clause (shortened from \"which is spearheaded by\"). Placed between commas, it adds essential background information about the subject without interrupting the main syntactic flow of the sentence.",
+          "example_quote": "The bold initiative, spearheaded by the Japanese Space Agency, aims to resolve the enduring mystery surrounding the formation of these Martian satellites."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary goal of the upcoming expedition departing on Monday?",
+            "options": [
+              "To establish a permanent base on the Martian surface.",
+              "To recover a physical sample from one of Mars' moons.",
+              "To retrieve uncontaminated meteorites from the Australian desert."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text does not mention building a permanent base on Mars.",
+              "The expedition's main endeavor is to \"retrieve material from Mars' moon Phobos.\"",
+              "The Australian desert is merely the landing site for the returning sample, not the source of meteorites."
+            ]
+          },
+          {
+            "question": "According to the text, why does landing on Phobos present a \"formidable challenge\"?",
+            "options": [
+              "The moon's gravity is excessively strong compared to its adjacent planet.",
+              "The automated rover lacks the necessary mechanisms for a precise touchdown.",
+              "The moon's incredibly weak gravity is overpowered by Mars' gravitational pull."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The text states that the moon's gravity is \"remarkably weak,\" not excessively strong.",
+              "The reading notes the rover is successfully designed to \"scout out a suitable location,\" rather than lacking capability.",
+              "Landing is difficult because the moon's weak gravity is \"dwarfed by that of the adjacent planet.\""
+            ]
+          },
+          {
+            "question": "What does the word \"spearheaded\" indicate about the Japanese Space Agency's involvement?",
+            "options": [
+              "The agency is solely funding the operation without international assistance.",
+              "The agency is leading and directing the bold initiative.",
+              "The agency was forced to take over the project after previous failures."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not discuss the financial arrangements or claim that the agency is the sole funder.",
+              "\"Spearheaded\" means to lead or initiate an undertaking, establishing the agency's primary role.",
+              "There is no evidence in the text suggesting previous failures or a forced takeover."
+            ]
+          },
+          {
+            "question": "What is the intended sequence of events regarding the automated rover and the main probe?",
+            "options": [
+              "The rover will survey the area to ensure the main probe can land securely.",
+              "The main probe will land first to deploy the automated rover safely.",
+              "Both the rover and the main probe will touch down simultaneously on Phobos."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The rover prepares the way by scouting a suitable location so that the probe \"can subsequently touch down securely.\"",
+              "The text clearly states the rover acts first to scout the area before the main probe lands.",
+              "The text indicates a sequential process, not a simultaneous landing."
+            ]
+          },
+          {
+            "question": "How do researchers view the anticipated ten-gram sample size?",
+            "options": [
+              "They consider it sufficient for conducting extensive laboratory analyses.",
+              "They view it as a disappointing outcome caused by payload limitations.",
+              "They believe it is too minuscule to test their conflicting hypotheses."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Researchers stress that this \"minuscule quantity provides ample material for comprehensive laboratory studies.\"",
+              "The text portrays the small amount as highly valuable and entirely adequate, not as a disappointment.",
+              "Despite being physically small, it provides \"ample material\" and is therefore not too small for testing."
+            ]
+          },
+          {
+            "question": "In the context of the reading, what does \"dwarfed\" mean?",
+            "options": [
+              "Made physically smaller by atmospheric pressure over time.",
+              "Rendered insignificant or overshadowed by something much larger.",
+              "Prevented from growing to a natural or expected size."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Dwarfed\" does not refer to atmospheric pressure physically shrinking the moon here.",
+              "It means the moon's weak gravity is vastly overshadowed by the immense gravity of the adjacent planet.",
+              "The biological definition of dwarfing does not apply to the gravitational forces described in this context."
+            ]
+          },
+          {
+            "question": "What secondary discovery do experts hope the Phobos sample might yield?",
+            "options": [
+              "Evidence of ancient atmospheric water trapped within the celestial body.",
+              "Pristine grains ejected directly from the Martian crust.",
+              "Uncontaminated terrestrial elements preserved since the Solar System formed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The passage does not mention atmospheric water being trapped on the moon.",
+              "Experts harbor hopes that proximity allowed \"ejected grains from the Martian crust to become embedded\" in Phobos.",
+              "Terrestrial elements are earth-based contaminants, which the scientists are actively trying to avoid."
+            ]
+          },
+          {
+            "question": "Why are researchers unsatisfied with studying existing Martian meteorites found on Earth?",
+            "options": [
+              "They become tainted by earthly elements as they enter the atmosphere.",
+              "They do not contain any minerals originally formed in the inner Solar System.",
+              "They are too minuscule to be analyzed by modern laboratory equipment."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Meteorites \"inevitably suffer terrestrial contamination upon atmospheric entry,\" making them less valuable than unblemished material.",
+              "Meteorites do contain Martian minerals, but their severe contamination makes them far less ideal than direct samples.",
+              "The text asserts that even ten grams is ample for analysis; physical size is not the primary issue with meteorites."
+            ]
+          },
+          {
+            "question": "In the grammar of the sentence \"The bold initiative, spearheaded by the Japanese Space Agency, aims...\", what role does the phrase enclosed in commas play?",
+            "options": [
+              "It is a prepositional phrase indicating the physical location of the agency.",
+              "It is an active gerund phrase describing an ongoing action by the initiative.",
+              "It is a reduced non-defining relative clause modifying the subject."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Spearheaded\" is a past participle, not a preposition of physical location.",
+              "An active gerund would use the \"-ing\" form; this phrase employs a passive past participle.",
+              "The clause uses a past participle to supply essential background information about \"the bold initiative\" without starting a new sentence."
+            ]
+          },
+          {
+            "question": "What does the adjective \"paramount\" imply about the goal of securing uncontaminated matter?",
+            "options": [
+              "It is of the highest, overriding importance to the researchers' scientific goals.",
+              "It is entirely impossible to achieve given current technological constraints.",
+              "It is a minor detail that will be easily resolved during the transit back to Earth."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Paramount\" means supreme or outweighing all other considerations, highlighting its critical value to the mission.",
+              "The text describes this entire endeavor as an effort to achieve this goal, indicating it is possible, not impossible.",
+              "The word strongly emphasizes supreme importance, which is the exact opposite of a minor, easily resolved detail."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "A pioneering space expedition is scheduled to depart on Monday, embarking on an ambitious endeavor to retrieve material from Mars' moon Phobos.",
+          "The bold initiative, spearheaded by the Japanese Space Agency, aims to resolve the enduring mystery surrounding the formation of these Martian satellites.",
+          "The automated rover will scout out a suitable location so that the main probe can subsequently touch down securely.",
+          "Landing on such a small celestial body poses a formidable challenge because its remarkably weak gravity is dwarfed by that of the adjacent planet.",
+          "The collected material will be securely packed for transit, culminating in a 2031 descent into the Australian desert.",
+          "Experts stress that such a minuscule quantity provides ample material for comprehensive laboratory studies, proving that massive amounts are unnecessary.",
+          "Scientists anticipate that examining the chemistry and mineral composition will produce distinct results to evaluate the conflicting hypotheses.",
+          "Furthermore, experts harbor hopes that proximity has allowed ejected grains from the Martian crust to become embedded directly into Phobos.",
+          "This could provide unprecedented, direct information regarding the chemical makeup and geological history of Mars itself.",
+          "Securing uncontaminated matter is paramount for researchers, as existing Martian meteorites inevitably suffer terrestrial contamination upon atmospheric entry."
+        ],
+        "sentence_evidence": [
+          "A space mission is set to launch on Monday that will attempt to grab a piece of Mars' moon Phobos and bring it back to Earth.",
+          "It is hoped that the Mars Moons Exploration (MMX) mission, which is led by the Japanese Space Agency, will solve the mystery of how Mars's moons formed.",
+          "The rover will scout out a landing site so that the MMX spacecraft itself can later touch down on Phobos.",
+          "\"But it's next to an enormous planet that's got a much higher gravity, and that makes it much harder to get a rover onto the surface.\"",
+          "This material will be packed into a small capsule that will return to Earth in 2031, landing in the Woomera desert of South Australia.",
+          "\"However we can do several studies even on individual grains… You don't need to have kilos back from a surface in order to do science. So it's worth every gram,\" she said.",
+          "\"When we get the sample back, we'll be able to look in detail at its chemistry and its mineral composition - and the two hypotheses will produce very distinct results,\" said Sara Russell.",
+          "\"One of the really exciting things is that Phobos is so close to the Mars surface that whenever there's an impact into the Mars surface, little grains might actually become implanted into Phobos itself,\" said Russell.",
+          "\"And that means that the sample we get back may actually contain grains of Mars as well. So it can give us really direct information about the composition and history of Mars.\"",
+          "Martian meteorites are extremely rare, but like all space rocks that fall to our planet, they become contaminated as soon as they get here, mixing with the air, dust, soil and water."
+        ],
+        "editorial_check": {
+          "date": "2026-10-19T08:13:22.268862+00:00",
+          "model": "gemini-3.1-pro-preview",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Terms like 'formidable', 'dwarfed', 'paramount', and 'spearheaded' are excellent C1-level targets with precise, clear definitions fitting their context."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The text maintains a polished, natural reporting style suitable for scientific news, using sophisticated phrasing like 'enduring mystery' and 'minuscule quantity'."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation accurately and concisely breaks down reduced non-defining relative clauses, and the quiz feedback provides direct references to the reading text."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively tests comprehension, contextual vocabulary, and grammatical structure with highly plausible distractors that challenge the learner without relying on trick wording."
+            }
+          },
+          "content_digest": "28535fe54b7b8531c1e1eafc1b742cf76663fa3a552fc65de25512c1791df1dd"
+        }
+      }
+    }
+  }
+}

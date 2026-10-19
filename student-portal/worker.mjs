@@ -14,7 +14,7 @@ import businessTermsBank from './business-terms-bank.json' with { type: 'json' }
 export { StudentDirectory } from './student-directory.mjs';
 
 const COOKIE = '__Host-el-session';
-const SESSION_SECONDS = 8 * 60 * 60;
+const SESSION_SECONDS = 7 * 24 * 60 * 60;
 const encoder = new TextEncoder();
 const PUBLIC_PATHS = new Set(['/', '/index.html', '/portal.css', '/portal.js', '/practice-prompt.js', '/road-questions.js', '/all-questions.js', '/study-practice.js', '/road-practice.js', '/practice-position.js', '/grammar-practice.js', '/business-terms.js', '/vocabulary-practice.js', '/communication-practice.js', '/ladder-mark.png', '/favicon.png', '/chatgpt-logo.svg', '/gemini-logo.png', '/claude-logo.png', '/copilot-logo.svg', '/robots.txt']);
 const SECURITY_HEADERS = {

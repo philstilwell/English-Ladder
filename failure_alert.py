@@ -129,7 +129,7 @@ def collect_diagnostics(env, fetch=api_json):
     return details, warnings
 
 
-def explain_failure(detail):
+def explain_failure(detail, lesson_published=False):
     """Describe the failed stage without claiming to know an unavailable cause."""
     stage = ' '.join(detail['steps'] or [detail['name']]).lower()
     if detail['conclusion'] == 'timed_out':
@@ -137,10 +137,14 @@ def explain_failure(detail):
     if detail['conclusion'] == 'cancelled':
         return 'This job was cancelled before it completed.'
     if any(word in stage for word in ('cloudflare', 'publishing', 'public domain', 'current lesson')):
+        if lesson_published:
+            return "A follow-up website check failed after today's daily lesson was verified live."
         return 'The saved lessons could not be confirmed on the live website. The hosting service may still be serving an older version.'
     if any(word in stage for word in ('retention', 'cleanup', 'expired', 'older lessons', 'maintenance')):
         return 'The daily removal of lessons older than the 50-day window did not finish successfully.'
     if any(word in stage for word in ('commit', 'push', 'save checked', 'save generated')):
+        if lesson_published:
+            return "This retry could not save additional changes. Today's previously published lesson was verified live."
         return 'The updated lesson files could not be saved to GitHub for publication.'
     if any(word in stage for word in ('install', 'set up', 'checkout', 'dependencies')):
         return 'The job could not prepare the tools or site files needed to run.'
@@ -149,6 +153,8 @@ def explain_failure(detail):
     if 'translat' in stage:
         return 'Vocabulary translation did not finish. English lessons may already be live, but translated vocabulary support is incomplete.'
     if any(word in stage for word in ('generat', 'lesson')):
+        if lesson_published:
+            return "A follow-up lesson update did not finish. Today's previously published lesson was verified live."
         return 'Lesson preparation or review did not finish successfully, so a complete new edition could not be confirmed.'
     return 'This part of the daily update did not complete successfully; the error notes below provide any available cause.'
 
@@ -156,11 +162,27 @@ def explain_failure(detail):
 def build_report(env, details, warnings, now=None):
     repo, run_id, attempt = run_context(env)
     now = now or datetime.now(EST)
-    date = now.astimezone(EST).date().isoformat()
-    subject = f'English Ladder: final daily attempt failed ({date} EST)'
+    release_date = env.get('RELEASE_DATE', '')
+    date = (release_date if re.fullmatch(r'\d{4}-\d{2}-\d{2}', release_date)
+            else now.astimezone(EST).date().isoformat())
+    # A successful aggregate job is not enough: require the explicit dated
+    # lesson check, which cannot fall back to yesterday's archived edition.
+    lesson_published = env.get('DAILY_LESSON_VERIFIED') == 'true'
+    if lesson_published:
+        category = ('lesson published; maintenance retry failed' if env.get('PUBLISHING_RESULT') == 'success'
+                    else 'lesson published; website checks need attention')
+        opening = f"The {date} daily lesson is verified live. A maintenance or supporting update did not complete."
+        action = ("Review the failed maintenance or verification stage below and retry only that work. "
+                  "Do not regenerate the already published daily lesson.")
+    else:
+        category = 'daily publication not confirmed'
+        opening = f"The {date} daily lesson could not be verified live. Publication needs attention."
+        action = ('Open the failed job to review its diagnostics. If lesson files were saved but publishing failed, '
+                  'retry publication of those saved lessons rather than generating them again.')
+    subject = f'English Ladder: {category} ({date} EST)'
     lines = [
-        'English Ladder needs attention.', '',
-        'The final daily attempt, scheduled for 03:15 fixed EST (UTC-5), did not complete successfully.',
+        opening, '',
+        'A stage of the final daily attempt, scheduled for 03:15 fixed EST (UTC-5), did not complete successfully.',
         'The scheduled attempts are 01:15, 02:15 and 03:15 fixed EST. Earlier failures do not send email.', '',
     ]
     labels = [('MAINTENANCE_RESULT', '50-day cleanup'), ('GENERATION_RESULT', 'Lesson preparation and saving'),
@@ -169,17 +191,23 @@ def build_report(env, details, warnings, now=None):
     for key, label in labels:
         if env.get(key):
             result = clean_text(env[key], env, 40)
-            suffix = ' (a required earlier stage may have failed)' if result == 'skipped' else ''
+            suffix = ''
+            if result == 'skipped':
+                suffix = (' (complete daily edition already verified live)'
+                          if key == 'GENERATION_RESULT' and env.get('ALREADY_PUBLISHED') == 'true'
+                          else ' (a required earlier stage may have failed)')
             lines.append(f'{label}: {result}{suffix}')
     if env.get('TRANSLATIONS_RESULT') in FAILED:
-        lines.extend(['', 'Vocabulary translations did not finish successfully. English lessons may already be live, '
+        availability = 'The English lesson is verified live,' if lesson_published else 'English lessons may already be live,'
+        lines.extend(['', f'Vocabulary translations did not finish successfully. {availability} '
                       'but some translated vocabulary support is missing. Review the vocabulary translation step in the run below.'])
     if env.get('IMAGE_RESULT') in FAILED:
+        availability = 'The English lesson is verified live.' if lesson_published else 'The saved English lesson may already be live.'
         lines.extend(['', 'The daily lesson illustration is still missing or could not be verified after the final attempt. '
-                      'The saved English lesson may already be live. Review the image health check and generation diagnostics in the run below.'])
+                      f'{availability} Review the image health check and generation diagnostics in the run below.'])
     for detail in details:
         label = 'Failed step within job' if detail.get('step_only') else 'Failed job'
-        lines.extend(['', f"{label}: {detail['name']} ({detail['conclusion']})", explain_failure(detail)])
+        lines.extend(['', f"{label}: {detail['name']} ({detail['conclusion']})", explain_failure(detail, lesson_published)])
         if detail['steps']:
             lines.append('Failed step(s): ' + '; '.join(detail['steps']))
         lines.extend('GitHub error note: ' + note for note in detail['annotations'])
@@ -187,8 +215,7 @@ def build_report(env, details, warnings, now=None):
         lines.extend(['', 'No more specific error details were available when this email was prepared.'])
     lines.extend([''] + warnings if warnings else [])
     lines.extend(['', f'View this run: https://github.com/{repo}/actions/runs/{run_id}/attempts/{attempt}',
-                  '', 'Open the failed job to review its diagnostics. If lesson files were saved but publishing failed, '
-                  'retry publication of those saved lessons rather than generating them again.',
+                  '', action,
                   'No further daily retry is scheduled until 01:15 fixed EST tomorrow.'])
     return subject, '\n'.join(lines) + '\n'
 

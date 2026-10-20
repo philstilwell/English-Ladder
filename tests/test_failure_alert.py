@@ -92,7 +92,7 @@ class FailureAlertTests(unittest.TestCase):
                 patch.object(alert, 'send_report') as send, contextlib.redirect_stdout(io.StringIO()) as output:
             self.assertEqual(alert.main(['--dry-run'], CONTEXT), 0)
         send.assert_not_called()
-        self.assertIn('final daily attempt failed', output.getvalue())
+        self.assertIn('daily publication not confirmed', output.getvalue())
 
     def test_test_mode_is_clearly_labeled_and_does_not_collect_failures(self):
         with patch.object(alert, 'collect_diagnostics') as diagnostics, \
@@ -180,6 +180,39 @@ class FailureAlertTests(unittest.TestCase):
                 alert.send_report(MAIL, 'Test', 'Body')
         smtp.login.assert_not_called()
         smtp.send_message.assert_not_called()
+
+    def test_cancelled_retry_after_publication_reports_maintenance_not_missing_lesson(self):
+        env = {**CONTEXT, 'GENERATION_RESULT': 'cancelled', 'PUBLISHING_RESULT': 'success',
+               'DAILY_LESSON_VERIFIED': 'true', 'RELEASE_DATE': '2026-10-20'}
+        details = [{'name': 'Generate and save checked lessons', 'conclusion': 'cancelled',
+                    'steps': ['Commit updated lesson pages'], 'annotations': ['Maximum execution time exceeded.']}]
+        subject, body = alert.build_report(env, details, [])
+        self.assertIn('lesson published; maintenance retry failed', subject)
+        self.assertIn('2026-10-20 daily lesson is verified live', body)
+        self.assertIn('Maximum execution time exceeded.', body)
+        self.assertIn('Do not regenerate', body)
+        self.assertNotIn('Publication needs attention', body)
+
+    def test_successful_generic_check_does_not_prove_todays_lesson_is_live(self):
+        env = {**CONTEXT, 'PUBLISHING_RESULT': 'success', 'GENERATION_RESULT': 'cancelled'}
+        subject, body = alert.build_report(env, [], [])
+        self.assertIn('daily publication not confirmed', subject)
+        self.assertIn('could not be verified live', body)
+
+    def test_later_hosting_check_failure_preserves_verified_lesson_fact(self):
+        env = {**CONTEXT, 'DAILY_LESSON_VERIFIED': 'true'}
+        details = [{'name': 'Verify publishing', 'conclusion': 'failure',
+                    'steps': ['Verify expired lessons are unavailable'], 'annotations': []}]
+        subject, body = alert.build_report(env, details, [])
+        self.assertIn('lesson published; website checks need attention', subject)
+        self.assertIn('daily lesson is verified live', body)
+
+    def test_successful_shortcut_is_not_described_as_failed_generation(self):
+        env = {**CONTEXT, 'GENERATION_RESULT': 'skipped', 'ALREADY_PUBLISHED': 'true',
+               'DAILY_LESSON_VERIFIED': 'true', 'MAINTENANCE_RESULT': 'failure'}
+        _, body = alert.build_report(env, [], [])
+        self.assertIn('skipped (complete daily edition already verified live)', body)
+        self.assertNotIn('a required earlier stage may have failed', body)
 
     def test_invalid_run_context_rejected_before_network(self):
         for replacement in ({'GITHUB_REPOSITORY': 'bad\nrepo'}, {'GITHUB_RUN_ID': '../2'}, {'GITHUB_RUN_ATTEMPT': '0'}):

@@ -128,6 +128,10 @@ See the [25-occupation expansion review](docs/occupation-expansion-2026-09-28.md
 
 ## How the Daily Update Works
 
+Before expensive tests or page rebuilding, `daily_publication.py` checks whether the intended daily edition is complete and already live. The shortcut requires all three saved lessons and pages, a matching illustration, complete reviewed translations for the latest three editions, and live checks of the dated lesson data, homepage, feeds, lesson pages, illustration bytes, and private-path 404s. It reads and hashes only those files; it does not render or package the site. A missing component or inconclusive live check keeps recovery enabled. Archive cleanup and final hosting verification still run; an intentional generation skip does not send a failure alert.
+
+Use the manual **verify_only** option to run the focused automation tests and this live check without rebuilding, paid generation, or email. It fails if the complete edition cannot be verified and never falls through to generation. Explicit `deploy_only`, `refresh_feature`, and translation-recovery requests continue to do their requested work.
+
 1. GitHub Actions starts the workflow.
 2. `update_site.py` chooses a new headline and summary from the day's topic feed.
 3. Gemini creates:
@@ -143,7 +147,9 @@ See the [25-occupation expansion review](docs/occupation-expansion-2026-09-28.md
 
 ### Final-attempt failure email
 
-Only the final scheduled attempt (`15 8 * * *`, 03:15 fixed EST) sends an alert when cleanup, lesson generation, publishing verification, vocabulary translation recovery, or the daily illustration fails. Earlier recovery attempts and ordinary pushes do not send failure emails. The message explains the affected stage, lists failed steps and available error details, and links to the GitHub run. Publishing verification requires the intended release date after a successful scheduled generation, so an older edition cannot silently pass as today’s lesson.
+Only the final scheduled attempt (`15 8 * * *`, 03:15 fixed EST) sends an alert when cleanup, lesson generation, publishing verification, vocabulary translation recovery, or the daily illustration fails. Earlier recovery attempts and ordinary pushes do not send failure emails. The message explains the affected stage, lists failed steps and available error details, and links to the GitHub run. Scheduled publishing verification requires the intended release date even if generation was skipped, failed, or cancelled, so an older edition cannot silently pass as today’s lesson.
+
+Alerts distinguish **daily publication not confirmed** from **lesson published; maintenance retry failed**. The latter requires an explicit successful check of the dated live lesson and preserves the failed retry's diagnostics without suggesting that the published lesson must be regenerated. If that lesson passed but another website check failed, the subject says **lesson published; website checks need attention**. An aggregate job success alone is not proof that today's lesson was published.
 
 Alerts are sent from and to **philstilwell@gmail.com**, using encrypted Gmail SMTP on port 587. Configure a Gmail **app password** directly as the repository secret `SMTP_PASSWORD` at Settings → Secrets and variables → Actions. Do not use or commit the normal Google account password. Google requires two-step verification for app passwords: [Google setup instructions](https://support.google.com/accounts/answer/185833). No additional email service subscription is used. Missing credentials produce a visible notification-job failure; they do not silently report a successful email.
 

@@ -27,11 +27,20 @@ def step_script(name):
 
 def job_condition(job, values):
     section = WORKFLOW.split('\n  ' + job + ':\n', 1)[1]
-    expression = next(line[8:] for line in section.splitlines() if line.startswith('    if: '))
+    lines = section.splitlines()
+    start = next(i for i, line in enumerate(lines) if line.startswith('    if: '))
+    expression = lines[start][8:]
+    if expression == '>-':
+        parts = []
+        for line in lines[start + 1:]:
+            if not line.startswith('      '):
+                break
+            parts.append(line.strip())
+        expression = ' '.join(parts)
     expression = (expression.replace('always()', 'True').replace('&&', ' and ')
                   .replace('||', ' or ').replace('!contains', 'not contains'))
-    for key in sorted(values, key=len, reverse=True):
-        expression = expression.replace(key, repr(values[key]))
+    expression = re.sub(r'\b(?:github|needs)\.[A-Za-z0-9_.]+',
+                        lambda match: repr(values.get(match.group(), '')), expression)
     return eval(expression, {'__builtins__': {}, 'contains': lambda value, needle: needle in value}, {})
 
 
@@ -157,6 +166,54 @@ else:
 
 
 class WorkflowRoutingTests(unittest.TestCase):
+    def test_published_schedule_skips_expensive_job_but_keeps_verification(self):
+        values = {'github.event_name': 'schedule', 'needs.maintain_archive.result': 'success',
+                  'needs.check_daily.outputs.already_published': 'true',
+                  'needs.check_daily.outputs.publishing_revision': 'saved-revision',
+                  'needs.build_and_deploy.result': 'skipped'}
+        self.assertTrue(job_condition('check_daily', values))
+        self.assertFalse(job_condition('build_and_deploy', values))
+        self.assertTrue(job_condition('verify_publishing', values))
+
+    def test_incomplete_schedule_still_runs_recovery(self):
+        values = {'github.event_name': 'schedule', 'needs.maintain_archive.result': 'success',
+                  'needs.check_daily.outputs.already_published': 'false'}
+        self.assertTrue(job_condition('build_and_deploy', values))
+
+    def test_verification_only_cannot_rebuild_or_generate_even_with_conflicting_flags(self):
+        for flag in ('maintenance_only', 'deploy_only', 'refresh_feature', 'translate_recent', 'translate_archive'):
+            values = {'github.event_name': 'workflow_dispatch', 'github.event.inputs.verify_only': 'true',
+                      f'github.event.inputs.{flag}': 'true', 'needs.maintain_archive.result': 'skipped'}
+            with self.subTest(flag=flag):
+                self.assertTrue(job_condition('check_daily', values))
+                self.assertFalse(job_condition('maintain_archive', values))
+                self.assertFalse(job_condition('build_and_deploy', values))
+        self.assertFalse(job_condition('test_email', {
+            'github.event_name': 'workflow_dispatch', 'github.event.inputs.verify_only': 'true',
+            'github.event.inputs.test_email': 'true'}))
+
+    def test_healthy_shortcut_does_not_send_failure_email_but_real_problems_do(self):
+        healthy = {'github.event_name': 'schedule', 'github.event.schedule': '15 8 * * *',
+                   'needs.maintain_archive.result': 'success', 'needs.check_daily.result': 'success',
+                   'needs.check_daily.outputs.already_published': 'true',
+                   'needs.build_and_deploy.result': 'skipped', 'needs.verify_publishing.result': 'success'}
+        self.assertFalse(job_condition('failure_email', healthy))
+        for key in ('needs.maintain_archive.result', 'needs.check_daily.result',
+                    'needs.verify_publishing.result', 'needs.build_and_deploy.outputs.translations_result',
+                    'needs.build_and_deploy.outputs.image_result'):
+            with self.subTest(key=key):
+                self.assertTrue(job_condition('failure_email', {**healthy, key: 'failure'}))
+        self.assertTrue(job_condition('failure_email', {
+            **healthy, 'needs.check_daily.outputs.already_published': 'false',
+            'needs.build_and_deploy.result': 'cancelled'}))
+        self.assertFalse(job_condition('failure_email', {**healthy, 'github.event_name': 'workflow_dispatch'}))
+
+    def test_schedule_verifies_target_date_even_if_generation_was_cancelled(self):
+        script = step_script('Verify current lesson on Cloudflare')
+        self.assertIn('retention_date()', script)
+        self.assertLess(script.index('export RELEASE_DATE'), script.index('verify-current-lesson.cjs'))
+        self.assertLess(script.index('verify-current-lesson.cjs'), script.index('verified=true'))
+
     def test_publication_retry_stages_a_private_request_even_without_lesson_changes(self):
         source = step_script('Commit updated lesson pages')
         marker = re.search(r'(?sm)^\s*if \[ "\$\{RETRY_PUBLISHING\}".*?^\s*fi$', source).group()

@@ -5687,6 +5687,131 @@
         "https://www.oxfordlearnersdictionaries.com/definition/english/spend_1",
         "https://dictionary.cambridge.org/dictionary/english/spend"
       ]
+    },
+    {
+      "number": 50,
+      "title": "Talking about jobs: a or an?",
+      "level": "A1–A2",
+      "category": "Everyday communication",
+      "goal": "Introduce a person’s job with “a” or “an”, choosing the article by the next word’s first sound.",
+      "rules": [
+        "When introducing one person’s job, we usually use “a” or “an” before the singular job noun: “She is a teacher”; “She is an engineer”. Keep the article after “work as” too: “He works as a designer”. “A” and “an” are articles: small words that introduce the noun phrase. In these ordinary introductions, do not say “I work as teacher”.",
+        "Choose by the first sound of the word immediately after the article. Use “a” before a consonant sound: “a teacher”, “a designer”. Use “an” before a vowel sound: “an engineer”, “an artist”. An adjective can change the choice: “a teacher” but “an experienced teacher”. The first sound of “experienced”, not “teacher”, now decides the article.",
+        "Sound and spelling do not always match. “University” starts with the consonant sound at the beginning of “you”, so say “a university teacher”. For plural job nouns, leave out “a/an”: “They are teachers”. Use “the” when identifying a particular person, as in “She is the teacher I told you about”. Titles and appointment expressions can have other patterns, such as “elected president”; this lesson practises ordinary job introductions."
+      ],
+      "cards": [
+        {
+          "label": "A: CONSONANT SOUND",
+          "example": "She is a teacher. He works as a designer.",
+          "note": "The next words, “teacher” and “designer”, begin with consonant sounds."
+        },
+        {
+          "label": "AN: VOWEL SOUND",
+          "example": "She is an engineer. He works as an artist.",
+          "note": "The next words, “engineer” and “artist”, begin with vowel sounds."
+        },
+        {
+          "label": "LISTEN TO THE NEXT WORD",
+          "example": "a university teacher; an experienced teacher",
+          "note": "“University” begins with a “you” sound. “Experienced” begins with a vowel sound."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "You are introducing your job. Complete: “I am ___ mechanic.”",
+          "options": [
+            {
+              "text": "an",
+              "correct": false,
+              "feedback": "“Mechanic” begins with the consonant sound /m/. Use “a mechanic”."
+            },
+            {
+              "text": "a",
+              "correct": true,
+              "feedback": "Keep the article in this job introduction. “Mechanic” begins with a consonant sound, so use “a”."
+            },
+            {
+              "text": "no article",
+              "correct": false,
+              "feedback": "This ordinary singular job introduction needs an article: “I am a mechanic”."
+            }
+          ]
+        },
+        {
+          "prompt": "Which sentence correctly introduces someone’s job?",
+          "options": [
+            {
+              "text": "She works as a engineer.",
+              "correct": false,
+              "feedback": "“Engineer” starts with a vowel sound. Use “an engineer”."
+            },
+            {
+              "text": "She works as engineer.",
+              "correct": false,
+              "feedback": "Keep the article after “works as”: “She works as an engineer”."
+            },
+            {
+              "text": "She works as an engineer.",
+              "correct": true,
+              "feedback": "“An” introduces the singular job noun “engineer”, which starts with a vowel sound."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete this job description: “He is ___ university teacher.”",
+          "options": [
+            {
+              "text": "a",
+              "correct": true,
+              "feedback": "“University” starts with the consonant sound in “you”, even though its first letter is u. Use “a”."
+            },
+            {
+              "text": "an",
+              "correct": false,
+              "feedback": "Choose by sound, not just the letter u. Say “a university teacher”."
+            },
+            {
+              "text": "no article",
+              "correct": false,
+              "feedback": "Keep the article in this introduction: “He is a university teacher”."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You are a designer with several years of experience. Which sentence introduces your job correctly?",
+        "options": [
+          {
+            "text": "I work as a experienced designer.",
+            "correct": false,
+            "feedback": "The word immediately after the article is “experienced”, which begins with a vowel sound. Use “an”."
+          },
+          {
+            "text": "I work as an experienced designer.",
+            "correct": true,
+            "feedback": "Use “an” before the vowel sound at the beginning of “experienced”. The later word “designer” does not decide the article."
+          },
+          {
+            "text": "I work as experienced designer.",
+            "correct": false,
+            "feedback": "The adjective does not remove the need for an article. Say “an experienced designer”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-50-jobs-a-or-an-student-workbook.pdf",
+        "concept-50-jobs-a-or-an-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-21",
+      "related": [
+        6,
+        10,
+        21
+      ],
+      "sources": [
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2-grammar/articles-a-an-the",
+        "https://dictionary.cambridge.org/grammar/british-grammar/the"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

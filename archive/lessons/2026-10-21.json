@@ -1,0 +1,694 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-21",
+  "release_iso": "2026-10-21T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Wed, 21 Oct 2026 12:32:01 GMT",
+    "retrieved_at": "2026-10-21T13:04:06.393976+00:00",
+    "title": "US citizen Stephen Hubbard freed by Russia as Trump envoy meets Putin",
+    "summary": "The 74-year-old former teacher has been released without any \"swap\" required, Trump says.",
+    "evidence_text": "US citizen Stephen Hubbard freed by Russia as Trump envoy meets Putin\nThe 74-year-old former teacher has been released without any \"swap\" required, Trump says.\nRussia has released a 74-year-old American citizen who was jailed for allegedly fighting on behalf of Ukraine, as President Vladimir Putin met US envoy Steve Witkoff in St Petersburg for talks.\nPresident Donald Trump later said the former teacher was \"on his way back home\" and \"there was no 'swap' necessary\".\nWriting on social media after Russian state media reported the release, Trump said it had followed a request he \"made directly\" to Putin last week.\nCBS News, the BBC's US media partner, reported that Hubbard had been in poor health and was expected to be flown to Texas for treatment.\nHubbard was sentenced to almost seven years in a penal colony in 2024. He was accused of serving in a defence unit in Izyum, Ukraine, when he was captured by Russian forces shortly after Moscow's full-scale invasion in 2022.\nThe US State Department had previously classified Hubbard, from Michigan, as \"wrongfully detained\" and the US president had suggested on Tuesday that his release may be imminent.\nThe US envoy, who had attended talks with Ukrainian President Volodymyr Zelensky in Norway the previous day, also asked Putin to consider renewing trilateral peace talks with Ukraine as the war grinds on in its fifth year.\nTrump also appeared to defend his recent decision to suspend sanctions on Russia two days before they were due to come into force , writing that \"if sanctions would have been placed\", negotiations for Hubbard's release \"would have come to a complete and total halt\".\nStephen Hubbard has been taken to Pulkovo Airport, Putin said during the meeting early on Wednesday.\nHe thanked Putin for the deal struck with Washington earlier this month to import Russian diesel , saying Trump was \"deeply grateful\" for it.\nThe diesel deal infuriated Zelensky and triggered a tumultuous few weeks of deteriorating relations during which Trump suspended a number of sanctions and said it was time for Ukraine to elect a new leader.\nKyiv meanwhile accused Washington of halting intelligence sharing on deadly Russian strikes , causing Ukrainians to lose their lives - an allegation Washington rejected as \"scandalous\" - and claimed a sudden restriction to the Starshield internet service in its war effort had been deliberate.\nThe Ukrainian president said on Tuesday that intelligence sharing had resumed, following talks with Witkoff in Oslo described by a US official as \"constructive\".",
+    "evidence_retrieved_at": "2026-10-21T13:04:06.393976+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c6m24l9v3745o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think countries sometimes use a \"swap\" to free people from prison?",
+          "Imagine your friend is travelling to a new country. How would you help them stay safe? I think I would help by... because..."
+        ],
+        "editorial_check": {
+          "content_digest": "ecfa741ffdc0eaf8577642a365e2ea8f3816209dac2ce78532b291379f722c1a",
+          "date": "2026-10-21T13:07:37.964112+00:00",
+          "generation_attempts": 3,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz tests main ideas, key facts, and the taught grammar concept clearly without using trick questions or overly dense distractors."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading and prompts maintain a straightforward, neutral tone appropriate for beginner-level adult learners discussing news."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation and quiz feedback use simple, direct sentences and clearly reference the example wording."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items like 'citizen', 'swap', and 'treatment' are clearly defined and highly practical for an A1-A2 news reading."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "example_quote": "A US envoy met Vladimir Putin in St Petersburg for talks.",
+          "explanation": "We use the simple past tense to talk about finished actions. Some verbs are irregular and do not end in \"-ed\". For example, the past form of \"meet\" is \"met\"."
+        },
+        "news_brief_sentences": [
+          "Russia freed US citizen Stephen Hubbard.",
+          "Donald Trump said the former teacher was released without any swap required.",
+          "A US envoy met Vladimir Putin in St Petersburg for talks.",
+          "Trump later said the man was on his way back home.",
+          "Trump said he made a request directly to Putin last week.",
+          "Hubbard was in poor health and needed treatment in Texas."
+        ],
+        "overview": "Russia has released a 74-year-old American man from prison.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, Russia freed an American named Stephen Hubbard.",
+              "No, Vladimir Putin is the Russian leader.",
+              "No, he is a former teacher who is going to Texas."
+            ],
+            "options": [
+              "A US citizen.",
+              "A Russian leader.",
+              "A soldier from Texas."
+            ],
+            "question": "Who did Russia free from prison?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a different person is an envoy for Donald Trump.",
+              "Correct. The reading calls him a \"former teacher\".",
+              "No, Stephen is the sick person getting medical treatment."
+            ],
+            "options": [
+              "He worked as an envoy for Trump.",
+              "He was a teacher.",
+              "He gave medical treatment."
+            ],
+            "question": "What is true about Stephen's past job?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, Trump claimed he asked to free him without a swap.",
+              "No, there is no proof they traded him for anyone.",
+              "Yes, Trump said the countries did not need a swap."
+            ],
+            "options": [
+              "Yes, they agreed to a swap last week.",
+              "Yes, they traded him for a Russian citizen.",
+              "No, Trump said a swap was not required."
+            ],
+            "question": "Did the countries use a \"swap\" to free him?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, an American envoy met Putin in St Petersburg.",
+              "No, Stephen Hubbard went to prison, not the envoy.",
+              "No, the envoy spoke with Putin."
+            ],
+            "options": [
+              "He met Vladimir Putin for talks.",
+              "He went to prison in Russia.",
+              "He gave treatment to Stephen."
+            ],
+            "question": "What did the US envoy do?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the story does not say he is meeting Trump there.",
+              "Yes, he is flying to Texas to get medical help.",
+              "No, he is an older man who needs medical care."
+            ],
+            "options": [
+              "He wants to meet Donald Trump there.",
+              "He is in poor health and needs treatment.",
+              "He will start a new job as a teacher."
+            ],
+            "question": "Why is Stephen flying to Texas?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, we use words like \"is meeting\" for things happening now.",
+              "No, we use words like \"will meet\" for the future.",
+              "Yes, \"met\" shows that the action is finished."
+            ],
+            "options": [
+              "The meeting is happening right now.",
+              "The meeting will happen next week.",
+              "The meeting already happened."
+            ],
+            "question": "What does the simple past verb \"met\" tell us in this sentence: \"A US envoy met Vladimir Putin in St Petersburg for talks.\"?"
+          }
+        ],
+        "sentence_evidence": [
+          "US citizen Stephen Hubbard freed by Russia as Trump envoy meets Putin",
+          "The 74-year-old former teacher has been released without any \"swap\" required, Trump says.",
+          "Russia has released a 74-year-old American citizen who was jailed for allegedly fighting on behalf of Ukraine, as President Vladimir Putin met US envoy Steve Witkoff in St Petersburg for talks.",
+          "President Donald Trump later said the former teacher was \"on his way back home\" and \"there was no 'swap' necessary\".",
+          "Writing on social media after Russian state media reported the release, Trump said it had followed a request he \"made directly\" to Putin last week.",
+          "CBS News, the BBC's US media partner, reported that Hubbard had been in poor health and was expected to be flown to Texas for treatment."
+        ],
+        "title": "US Citizen Freed by Russia Without a Prisoner Swap",
+        "topic": "World News",
+        "vocabulary": [
+          {
+            "definition": "let someone leave a prison or a bad place",
+            "part_of_speech": "verb",
+            "term": "freed"
+          },
+          {
+            "definition": "a person who legally belongs to a country",
+            "part_of_speech": "noun",
+            "term": "citizen"
+          },
+          {
+            "definition": "true in the past but not true now",
+            "part_of_speech": "adjective",
+            "term": "former"
+          },
+          {
+            "definition": "a trade where you give one thing to get another thing",
+            "part_of_speech": "noun",
+            "term": "swap"
+          },
+          {
+            "definition": "a person who speaks for a leader in another country",
+            "part_of_speech": "noun",
+            "term": "envoy"
+          },
+          {
+            "definition": "medical care for a sick or hurt person",
+            "part_of_speech": "noun",
+            "term": "treatment"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think countries sometimes use official penalties, or sanctions, against each other? Can you give an example?",
+          "Imagine you are returning home after being away for a very long time. What is the first thing you would want to do?"
+        ],
+        "editorial_check": {
+          "content_digest": "3c96ace0b23fc4a6c43b3e69bd399b7dc9f18d0f0d7d6e6665748059960510a3",
+          "date": "2026-10-21T13:09:11.887089+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The text offers appropriate B1-B2 challenge by requiring learners to track shifting timelines, legal statuses, and diplomatic causes, moving beyond simple factual recall."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading maintains a clear, objective, and natural reporting tone suitable for international news, while explanations use accessible teaching language."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation effectively contrasts the passive focus with the active voice using the provided example. Definitions are straightforward and avoid circularity."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets, including 'allegedly', 'negotiations', and 'suspended', are highly appropriate for the B1-B2 level, offering excellent utility for news contexts without overlapping with the beginner-reserved list."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Past Simple Passive",
+          "example_quote": "Stephen Hubbard was sentenced to almost seven years in a penal colony after Russian forces captured him in 2022.",
+          "explanation": "The past simple passive is formed using \"was\" or \"were\" plus the past participle of the main verb. It is used to focus on an action that happened to the subject, rather than who did the action. In the example sentence, \"was sentenced\" focuses on what happened to Stephen Hubbard, while the active verb \"captured\" focuses on what the Russian forces did."
+        },
+        "news_brief_sentences": [
+          "Russia has released a 74-year-old American man who was jailed for allegedly fighting for Ukraine.",
+          "Stephen Hubbard was sentenced to almost seven years in a penal colony after Russian forces captured him in 2022.",
+          "President Donald Trump stated that Hubbard was on his way home and that no prisoner exchange was required.",
+          "This release happened as President Vladimir Putin met with a US representative for talks in St Petersburg.",
+          "The US government had previously classified the man as wrongfully detained.",
+          "Reports indicated that Hubbard was in poor health and would travel to Texas for medical care.",
+          "During the meeting, the US representative also asked Putin to consider restarting peace negotiations with Ukraine.",
+          "Furthermore, Trump recently suspended some sanctions on Russia, arguing that these penalties would have stopped the talks."
+        ],
+        "overview": "An American man jailed in Russia has been released and is returning home without a prisoner exchange.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The story focuses on Stephen Hubbard being allowed to leave a Russian prison and return home.",
+              "Incorrect. The reading specifically notes that no prisoner exchange was required.",
+              "Incorrect. While peace talks were mentioned as a request, the main focus is the American's release."
+            ],
+            "options": [
+              "The release of an American man from a Russian penal colony.",
+              "A prisoner exchange between the United States and Russia.",
+              "The start of new peace negotiations in St Petersburg."
+            ],
+            "question": "What is the main event described in this article?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. He was jailed for allegedly fighting for Ukraine after being captured.",
+              "Incorrect. The text does not mention him spying on Russian forces.",
+              "Incorrect. Although he is a former teacher, his teaching contract was not the reason for his arrest."
+            ],
+            "options": [
+              "He was accused of fighting on behalf of Ukraine.",
+              "He was caught secretly spying on Russian forces.",
+              "He broke the rules of his international teaching contract."
+            ],
+            "question": "Why was Stephen Hubbard sent to a penal colony in Russia?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Donald Trump stated that no prisoner exchange was necessary for this release.",
+              "Incorrect. The release was publicly announced, not kept entirely secret.",
+              "Incorrect. The Ukrainian president did not negotiate this direct release."
+            ],
+            "options": [
+              "It did not require a prisoner exchange.",
+              "It was kept entirely secret from the public.",
+              "It was negotiated directly by the Ukrainian president."
+            ],
+            "question": "How was Hubbard's release different from some other recent releases of Americans?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Allegedly\" means something is claimed to be true but lacks complete proof.",
+              "Incorrect. The word implies it is a claim, not a definitively proven fact.",
+              "Incorrect. \"Allegedly\" describes the accusation, not his personal denial of it."
+            ],
+            "options": [
+              "There is a claim that he fought for Ukraine, but it is not definitively proven.",
+              "He was definitively proven guilty of fighting for Ukraine in a global court.",
+              "He completely denied ever visiting the country of Ukraine."
+            ],
+            "question": "What does the word \"allegedly\" suggest in the first sentence?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Trump argued that keeping the penalties would have stopped the release negotiations.",
+              "Incorrect. The text connects the suspended sanctions directly to Hubbard's release talks.",
+              "Incorrect. There is no mention of the State Department instructing him to lift sanctions."
+            ],
+            "options": [
+              "He felt the penalties would have halted the talks to release Hubbard.",
+              "He wanted to lower global fuel prices before the upcoming elections.",
+              "He was officially instructed to do so by the US State Department."
+            ],
+            "question": "According to the text, why did Donald Trump temporarily stop some sanctions against Russia?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Negotiations\" are formal discussions aimed at reaching a mutual agreement.",
+              "Incorrect. \"Wrongfully detained\" means being kept in prison unfairly.",
+              "Incorrect. \"Russian forces\" refers to military troops, not discussions."
+            ],
+            "options": [
+              "Peace negotiations.",
+              "Wrongfully detained.",
+              "Russian forces."
+            ],
+            "question": "Which phrase describes official discussions that take place to reach an agreement?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Was captured\" correctly uses the past simple passive structure to focus on the man.",
+              "Incorrect. This mixes the \"be\" verb with a present-tense active verb improperly.",
+              "Incorrect. This is missing the word \"been\" to form the present perfect passive."
+            ],
+            "options": [
+              "The man was captured by soldiers near the border.",
+              "The soldiers were capture the man near the border.",
+              "The man has captured by soldiers near the border."
+            ],
+            "question": "Read the grammar point. Which of the following sentences correctly uses the past simple passive?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Reports indicated he was in poor health and was expected to travel to Texas for medical care.",
+              "Incorrect. The story specifically notes that he was in poor health, not healthy.",
+              "Incorrect. He was not injured in a swap, as the text states no prisoner exchange took place."
+            ],
+            "options": [
+              "He was in poor health and would travel for medical care.",
+              "He was perfectly healthy and ready to resume teaching.",
+              "He was injured during a recent dangerous prisoner swap."
+            ],
+            "question": "What condition was Stephen Hubbard reported to be in after his release?"
+          }
+        ],
+        "sentence_evidence": [
+          "Russia has released a 74-year-old American citizen who was jailed for allegedly fighting on behalf of Ukraine, as President Vladimir Putin met US envoy Steve Witkoff in St Petersburg for talks.",
+          "Hubbard was sentenced to almost seven years in a penal colony in 2024. He was accused of serving in a defence unit in Izyum, Ukraine, when he was captured by Russian forces shortly after Moscow's full-scale invasion in 2022.",
+          "President Donald Trump later said the former teacher was \"on his way back home\" and \"there was no 'swap' necessary\".",
+          "Russia has released a 74-year-old American citizen who was jailed for allegedly fighting on behalf of Ukraine, as President Vladimir Putin met US envoy Steve Witkoff in St Petersburg for talks.",
+          "The US State Department had previously classified Hubbard, from Michigan, as \"wrongfully detained\" and the US president had suggested on Tuesday that his release may be imminent.",
+          "CBS News, the BBC's US media partner, reported that Hubbard had been in poor health and was expected to be flown to Texas for treatment.",
+          "The US envoy, who had attended talks with Ukrainian President Volodymyr Zelensky in Norway the previous day, also asked Putin to consider renewing trilateral peace talks with Ukraine as the war grinds on in its fifth year.",
+          "Trump also appeared to defend his recent decision to suspend sanctions on Russia two days before they were due to come into force , writing that \"if sanctions would have been placed\", negotiations for Hubbard's release \"would have come to a complete and total halt\"."
+        ],
+        "title": "American Released by Russia During Talks in St Petersburg",
+        "topic": "World Politics",
+        "vocabulary": [
+          {
+            "definition": "used to state that something is claimed to be true, although it has not been proven",
+            "part_of_speech": "adverb",
+            "term": "allegedly"
+          },
+          {
+            "definition": "given a formal punishment by a judge in a court of law",
+            "part_of_speech": "verb",
+            "term": "sentenced"
+          },
+          {
+            "definition": "caught and taken prisoner by force",
+            "part_of_speech": "verb",
+            "term": "captured"
+          },
+          {
+            "definition": "the act of giving someone or something and receiving something else instead",
+            "part_of_speech": "noun",
+            "term": "exchange"
+          },
+          {
+            "definition": "a person chosen to speak or make decisions on behalf of another person or group",
+            "part_of_speech": "noun",
+            "term": "representative"
+          },
+          {
+            "definition": "done in a way that is unfair, unjust, or illegal",
+            "part_of_speech": "adverb",
+            "term": "wrongfully"
+          },
+          {
+            "definition": "formal discussions aimed at reaching a mutual agreement",
+            "part_of_speech": "noun",
+            "term": "negotiations"
+          },
+          {
+            "definition": "officially stopped something for a temporary period of time",
+            "part_of_speech": "verb",
+            "term": "suspended"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Why might pausing economic sanctions to secure a prisoner's release cause friction with allied nations?",
+          "If you had to negotiate an agreement between conflicting parties, how would you balance diplomatic trades? I would..."
+        ],
+        "editorial_check": {
+          "content_digest": "25a6d97c83396c2554463dc3e65b9907d679b713219df4879aca740730e9c3b1",
+          "date": "2026-10-21T13:15:52.445293+00:00",
+          "generation_attempts": 3,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz items go beyond basic recall to test inferences, the nuanced meaning of adverbs like 'purportedly', and the grammatical function of specific phrases in context."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading maintains a polished, neutral tone appropriate for diplomatic reporting, naturally elevating colloquialisms like 'swap' to 'reciprocal concessions'."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation concisely demonstrates how participial phrases express a direct consequence, emphasizing their semantic effect rather than relying solely on abstract terminology."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The target terms such as 'purportedly', 'tumultuous', and 'reciprocal' are appropriately advanced, accurately defined in context, and entirely distinct from the reserved lists."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "C1-Higher"
+        },
+        "grammar": {
+          "concept": "Participial phrases expressing result",
+          "example_quote": "This diesel agreement infuriated Ukrainian President Volodymyr Zelensky, triggering a tumultuous period of deteriorating relations.",
+          "explanation": "A present participle like \"triggering\" can introduce a phrase that describes the direct consequence of the action in the main clause. This structure offers a sophisticated way to link a cause to its immediate effect without starting a new sentence."
+        },
+        "news_brief_sentences": [
+          "Russia has released a 74-year-old American who was jailed for purportedly fighting on behalf of Ukraine.",
+          "The Russian president confirmed during an early Wednesday meeting that Stephen Hubbard had been transported to Pulkovo Airport.",
+          "Donald Trump stated that the release followed a direct request he made to the Russian leader last week.",
+          "He added that the release did not require any reciprocal concessions from the United States.",
+          "American news outlets reported that the elderly man was in poor health and expected to be flown to Texas for medical care.",
+          "Trump defended his move to pause impending sanctions against Russia, arguing that enforcing them would have brought diplomatic discussions to a complete halt.",
+          "Steve Witkoff thanked Putin for a deal struck with Washington earlier this month to import Russian diesel.",
+          "This diesel agreement infuriated Ukrainian President Volodymyr Zelensky, triggering a tumultuous period of deteriorating relations.",
+          "Witkoff also urged Putin to consider resuming trilateral peace talks, seeking an end to a conflict that grinds on into its fifth year.",
+          "Meanwhile, Kyiv accused Washington of withholding vital intelligence, a claim the US firmly rejected as scandalous.",
+          "However, Zelensky confirmed that intelligence sharing had resumed after constructive talks with American officials in Oslo."
+        ],
+        "overview": "Russia has freed an elderly American without demanding a reciprocal exchange, amid complex diplomacy involving sanctions, diesel imports, and intelligence disputes.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading states the release did not require any reciprocal concessions from the United States, meaning no mutual exchange was necessary.",
+              "Incorrect. While Trump paused some impending sanctions to keep talks open, the reading states the release itself required no reciprocal concessions.",
+              "Incorrect. Trilateral peace talks were suggested by Witkoff, but they were never mentioned as a condition for Hubbard's release."
+            ],
+            "options": [
+              "It was granted without the US making a mutual exchange.",
+              "It required the US to lift all economic sanctions on Russia.",
+              "It was contingent on Ukraine resuming trilateral peace talks."
+            ],
+            "question": "What can be inferred about the conditions of Stephen Hubbard's release?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Trump argued that enforcing the impending sanctions would have brought diplomatic discussions to a complete halt.",
+              "Incorrect. The diesel deal was a separate agreement and not cited as the reason for suspending these specific sanctions.",
+              "Incorrect. The intelligence dispute involved Kyiv and Washington, while Trump's sanctions pause was focused on negotiations with Russia."
+            ],
+            "options": [
+              "To prevent the collapse of diplomatic discussions.",
+              "To secure a new agreement for Russian diesel imports.",
+              "To penalise Ukraine for halting vital intelligence sharing."
+            ],
+            "question": "According to the text, why did Trump pause the planned sanctions against Russia?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Kyiv claimed Washington was withholding vital intelligence, an allegation the US firmly rejected.",
+              "Incorrect. The US did not accuse Ukraine of leaking; rather, it rejected Ukraine's claim about withholding intelligence as scandalous.",
+              "Incorrect. There is no mention of a change in Ukraine's leadership causing a restriction on intelligence access."
+            ],
+            "options": [
+              "Ukraine alleged that the US was withholding crucial information.",
+              "The US accused Ukraine of leaking scandalous intelligence.",
+              "Washington formally restricted access due to tumultuous leadership."
+            ],
+            "question": "What was the nature of the intelligence dispute between Kyiv and Washington?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. A \"reciprocal\" action or concession involves mutual exchange, such as a prisoner swap.",
+              "Incorrect. Dictating terms without mutual exchange is a unilateral action, which is the opposite of reciprocal.",
+              "Incorrect. \"Reciprocal\" refers to a mutual exchange, not a suspension or delay of relations."
+            ],
+            "options": [
+              "Both sides offer something of value in return.",
+              "One side dictates terms without making mutual concessions.",
+              "The agreement is indefinitely suspended due to deteriorating relations."
+            ],
+            "question": "In the context of international diplomacy, what does a \"reciprocal\" concession imply?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Tumultuous\" describes a period of intense disorder, turbulence, or strained relations.",
+              "Incorrect. Steadily improving relations would be described as constructive, which is the opposite of tumultuous.",
+              "Incorrect. Strict and unchanging conditions indicate rigid stability, whereas tumultuous means highly unstable."
+            ],
+            "options": [
+              "Characterised by severe instability, turbulence, and conflict.",
+              "Steadily improving through constructive, trilateral dialogue.",
+              "Governed by strict but unchanging diplomatic agreements."
+            ],
+            "question": "If relations between two countries are described as \"tumultuous\", they are:"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Impending\" describes an event or action that is fast approaching or about to happen.",
+              "Incorrect. Sanctions that are already active or enforced cannot be described as impending.",
+              "Incorrect. Although they were paused, the word impending refers to the fact that they were originally about to take effect."
+            ],
+            "options": [
+              "They were scheduled to take effect very soon.",
+              "They had already been enforced for several years.",
+              "They were permanently cancelled by the State Department."
+            ],
+            "question": "What does \"impending\" suggest about the sanctions Trump paused?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The phrasal verb \"grinds on\" suggests a difficult, tedious, and relentless continuation.",
+              "Incorrect. \"Grinds on\" emphasises slow, difficult progress, not a rapid advancement.",
+              "Incorrect. The conflict has not paused; \"grinds on\" indicates that it is still continuing without relief."
+            ],
+            "options": [
+              "Continuing in a slow, relentless, and exhausting manner.",
+              "Advancing rapidly toward a swift and decisive conclusion.",
+              "Paused temporarily while peace frameworks are actively outlined."
+            ],
+            "question": "The phrase \"grinds on\" implies that the conflict is:"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The present participle \"triggering\" forms a phrase that describes the direct consequence of the agreement.",
+              "Incorrect. \"Triggering\" is a non-finite participle, so it cannot act as the primary verb of an independent clause.",
+              "Incorrect. The direct object of infuriated is Ukrainian President Volodymyr Zelensky, not the participle triggering."
+            ],
+            "options": [
+              "It introduces a participial phrase that expresses the result of the main clause.",
+              "It serves as the primary verb of an independent clause detailing a new event.",
+              "It acts as a gerund functioning as the direct object of the verb infuriated."
+            ],
+            "question": "In the sentence \"This diesel agreement infuriated Ukrainian President Volodymyr Zelensky, triggering a tumultuous period...\", what is the grammatical function of \"triggering\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading explicitly states that the deal allowed the United States to import Russian diesel, which angered Zelensky.",
+              "Incorrect. The deal involved the US importing Russian diesel, not Ukraine exporting its own reserves.",
+              "Incorrect. Trilateral peace talks were a separate proposal and were not replaced by the diesel deal."
+            ],
+            "options": [
+              "It permitted the United States to import diesel from Russia.",
+              "It forced Ukraine to export its own diesel reserves to Russia at a massive loss.",
+              "It officially replaced all trilateral peace talks with economic sanctions."
+            ],
+            "question": "According to the text, what was the nature of the diesel agreement that infuriated Zelensky?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Purportedly\" is used to show that something is alleged or claimed, but the absolute truth remains unverified.",
+              "Incorrect. If something is definitively proven, it is factual, whereas purportedly highlights an unverified claim.",
+              "Incorrect. \"Purportedly\" means it is claimed; it does not explicitly state that the claim is a complete fabrication."
+            ],
+            "options": [
+              "Claimed to be true, but not definitively proven.",
+              "Confirmed by overwhelming and indisputable evidence.",
+              "Completely fabricated by the American diplomatic team."
+            ],
+            "question": "The use of \"purportedly\" in the first sentence indicates that Hubbard's involvement in the fighting was:"
+          }
+        ],
+        "sentence_evidence": [
+          "Russia has released a 74-year-old American citizen who was jailed for allegedly fighting on behalf of Ukraine, as President Vladimir Putin met US envoy Steve Witkoff in St Petersburg for talks.",
+          "Stephen Hubbard has been taken to Pulkovo Airport, Putin said during the meeting early on Wednesday.",
+          "Writing on social media after Russian state media reported the release, Trump said it had followed a request he \"made directly\" to Putin last week.",
+          "President Donald Trump later said the former teacher was \"on his way back home\" and \"there was no 'swap' necessary\".",
+          "CBS News, the BBC's US media partner, reported that Hubbard had been in poor health and was expected to be flown to Texas for treatment.",
+          "Trump also appeared to defend his recent decision to suspend sanctions on Russia two days before they were due to come into force , writing that \"if sanctions would have been placed\", negotiations for Hubbard's release \"would have come to a complete and total halt\".",
+          "He thanked Putin for the deal struck with Washington earlier this month to import Russian diesel , saying Trump was \"deeply grateful\" for it.",
+          "The diesel deal infuriated Zelensky and triggered a tumultuous few weeks of deteriorating relations during which Trump suspended a number of sanctions and said it was time for Ukraine to elect a new leader.",
+          "The US envoy, who had attended talks with Ukrainian President Volodymyr Zelensky in Norway the previous day, also asked Putin to consider renewing trilateral peace talks with Ukraine as the war grinds on in its fifth year.",
+          "Kyiv meanwhile accused Washington of halting intelligence sharing on deadly Russian strikes , causing Ukrainians to lose their lives - an allegation Washington rejected as \"scandalous\" - and claimed a sudden restriction to the Starshield internet service in its war effort had been deliberate.",
+          "The Ukrainian president said on Tuesday that intelligence sharing had resumed, following talks with Witkoff in Oslo described by a US official as \"constructive\"."
+        ],
+        "title": "Russia Releases American Without Conditions Amid Diplomatic Tensions",
+        "topic": "Diplomatic relations and prisoner release",
+        "vocabulary": [
+          {
+            "definition": "As appears or is stated to be true, though not definitively proven.",
+            "part_of_speech": "adverb",
+            "term": "purportedly"
+          },
+          {
+            "definition": "Given, felt, or done in return; involving mutual exchange.",
+            "part_of_speech": "adjective",
+            "term": "reciprocal"
+          },
+          {
+            "definition": "About to happen; looming or fast approaching.",
+            "part_of_speech": "adjective",
+            "term": "impending"
+          },
+          {
+            "definition": "Made someone extremely angry and impatient.",
+            "part_of_speech": "verb",
+            "term": "infuriated"
+          },
+          {
+            "definition": "Characterised by intense disorder, turbulence, or confusion.",
+            "part_of_speech": "adjective",
+            "term": "tumultuous"
+          },
+          {
+            "definition": "Becoming progressively worse over a period of time.",
+            "part_of_speech": "adjective",
+            "term": "deteriorating"
+          },
+          {
+            "definition": "Involving three separate parties, countries, or groups.",
+            "part_of_speech": "adjective",
+            "term": "trilateral"
+          },
+          {
+            "definition": "Continues for a long time in a slow, tedious, and destructive way.",
+            "part_of_speech": "phrasal verb",
+            "term": "grinds on"
+          },
+          {
+            "definition": "Causing outrage by a perceived offence against morality or established norms.",
+            "part_of_speech": "adjective",
+            "term": "scandalous"
+          },
+          {
+            "definition": "Serving a useful purpose; tending to build up or improve relations.",
+            "part_of_speech": "adjective",
+            "term": "constructive"
+          }
+        ]
+      }
+    }
+  }
+}

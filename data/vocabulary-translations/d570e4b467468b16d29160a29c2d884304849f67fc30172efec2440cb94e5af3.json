@@ -1,0 +1,123 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Russia freed US citizen Stephen Hubbard.",
+      "Donald Trump said the former teacher was released without any swap required.",
+      "A US envoy met Vladimir Putin in St Petersburg for talks.",
+      "Trump later said the man was on his way back home.",
+      "Trump said he made a request directly to Putin last week.",
+      "Hubbard was in poor health and needed treatment in Texas."
+    ],
+    "vocabulary": [
+      {
+        "term": "freed",
+        "part_of_speech": "verb",
+        "definition": "let someone leave a prison or a bad place"
+      },
+      {
+        "term": "citizen",
+        "part_of_speech": "noun",
+        "definition": "a person who legally belongs to a country"
+      },
+      {
+        "term": "former",
+        "part_of_speech": "adjective",
+        "definition": "true in the past but not true now"
+      },
+      {
+        "term": "swap",
+        "part_of_speech": "noun",
+        "definition": "a trade where you give one thing to get another thing"
+      },
+      {
+        "term": "envoy",
+        "part_of_speech": "noun",
+        "definition": "a person who speaks for a leader in another country"
+      },
+      {
+        "term": "treatment",
+        "part_of_speech": "noun",
+        "definition": "medical care for a sick or hurt person"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "誰かを刑務所や悪い場所から出させる。",
+      "ko": "누군가를 감옥이나 좋지 않은 곳에서 나가게 하다.",
+      "zh-Hans": "让某人离开监狱或一个不好的地方。",
+      "es": "Permitir que alguien salga de una prisión o de un lugar malo.",
+      "pt-BR": "Permitir que alguém saia de uma prisão ou de um lugar ruim.",
+      "fr": "Permettre à quelqu'un de quitter une prison ou un mauvais endroit.",
+      "de": "Jemandem erlauben, ein Gefängnis oder einen schlechten Ort zu verlassen."
+    },
+    {
+      "id": 1,
+      "ja": "ある国に法的に属している人。",
+      "ko": "어떤 나라에 법적으로 소속된 사람.",
+      "zh-Hans": "在法律上属于某个国家的人。",
+      "es": "Una persona que legalmente pertenece a un país.",
+      "pt-BR": "Uma pessoa que legalmente pertence a um país.",
+      "fr": "Une personne qui appartient légalement à un pays.",
+      "de": "Eine Person, die rechtmäßig zu einem Land gehört."
+    },
+    {
+      "id": 2,
+      "ja": "過去にはそうだったが、今はもうそうではないこと。",
+      "ko": "과거에는 사실이었지만 지금은 사실이 아닌.",
+      "zh-Hans": "过去是真的但现在不是真的。",
+      "es": "Que fue verdad en el pasado pero ya no lo es.",
+      "pt-BR": "Que era verdade no passado, mas não é mais agora.",
+      "fr": "Qui était vrai dans le passé mais ne l'est plus maintenant.",
+      "de": "In der Vergangenheit zutreffend, aber jetzt nicht mehr."
+    },
+    {
+      "id": 3,
+      "ja": "あるものを与えて別のものをもらう取引。",
+      "ko": "어떤 것을 주고 다른 것을 받는 거래.",
+      "zh-Hans": "你给一样东西以换取另一样东西的交易。",
+      "es": "Un intercambio en el que das una cosa para obtener otra.",
+      "pt-BR": "Uma troca em que você dá uma coisa para receber outra.",
+      "fr": "Un échange où l'on donne une chose pour en obtenir une autre.",
+      "de": "Ein Tausch, bei dem man eine Sache gibt, um eine andere zu bekommen."
+    },
+    {
+      "id": 4,
+      "ja": "別の国の指導者のために話す人。",
+      "ko": "다른 나라의 지도자를 위해 이야기하는 사람.",
+      "zh-Hans": "代表一个国家的领导人在另一个国家发言的人。",
+      "es": "Una persona que habla en nombre de un líder en otro país.",
+      "pt-BR": "Uma pessoa que fala por um líder em outro país.",
+      "fr": "Une personne qui parle au nom d'un dirigeant dans un autre pays.",
+      "de": "Eine Person, die für einen Anführer in einem anderen Land spricht."
+    },
+    {
+      "id": 5,
+      "ja": "病気の人やけがをした人のための医療行為。",
+      "ko": "아프거나 다친 사람을 위한 의료 처치.",
+      "zh-Hans": "对生病或受伤的人提供的医疗护理。",
+      "es": "Cuidado médico para una persona enferma o herida.",
+      "pt-BR": "Cuidados médicos para uma pessoa doente ou ferida.",
+      "fr": "Des soins médicaux pour une personne malade ou blessée.",
+      "de": "Medizinische Versorgung für eine kranke oder verletzte Person."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-21T13:58:27.927765+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

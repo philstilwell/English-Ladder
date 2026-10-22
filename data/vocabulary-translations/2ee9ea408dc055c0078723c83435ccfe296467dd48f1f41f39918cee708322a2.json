@@ -1,0 +1,123 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "After a long wait, the United Kingdom now has an oil fund.",
+      "The government is starting a new energy fund with two billion pounds.",
+      "The plan is to use this money for green energy in the country.",
+      "Officials calculated the possible value of a missing British fund.",
+      "They believe a saved fund from the past would be worth one trillion pounds today.",
+      "Norway saved its oil money over the years to build a very large fund."
+    ],
+    "vocabulary": [
+      {
+        "term": "fund",
+        "part_of_speech": "noun",
+        "definition": "A sum of money saved or collected for a special purpose."
+      },
+      {
+        "term": "government",
+        "part_of_speech": "noun",
+        "definition": "The group of people who officially control a country."
+      },
+      {
+        "term": "billion",
+        "part_of_speech": "noun",
+        "definition": "The number 1,000,000,000."
+      },
+      {
+        "term": "green energy",
+        "part_of_speech": "noun",
+        "definition": "Power that comes from nature and does not harm the environment."
+      },
+      {
+        "term": "Officials",
+        "part_of_speech": "noun",
+        "definition": "People who hold important jobs in a government or business."
+      },
+      {
+        "term": "missing",
+        "part_of_speech": "adjective",
+        "definition": "Lost, or not in the right place."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "特定の目的のために貯められたり集められたりしたお金の総額。",
+      "ko": "특정한 목적을 위해 모으거나 저축해 둔 돈의 총액.",
+      "zh-Hans": "为特殊目的而储存或募集的款项。",
+      "es": "Una cantidad de dinero guardada o recaudada para un propósito especial.",
+      "pt-BR": "Uma quantia de dinheiro guardada ou arrecadada para um propósito específico.",
+      "fr": "Une somme d'argent économisée ou collectée pour un but particulier.",
+      "de": "Eine Geldsumme, die für einen besonderen Zweck gespart oder gesammelt wurde."
+    },
+    {
+      "id": 1,
+      "ja": "公式に国を統治する人々の集団。",
+      "ko": "한 나라를 공식적으로 통제하는 사람들의 집단.",
+      "zh-Hans": "官方控制一个国家的人群。",
+      "es": "El grupo de personas que controlan oficialmente un país.",
+      "pt-BR": "O grupo de pessoas que controla oficialmente um país.",
+      "fr": "Le groupe de personnes qui contrôlent officiellement un pays.",
+      "de": "Die Gruppe von Personen, die ein Land offiziell kontrollieren."
+    },
+    {
+      "id": 2,
+      "ja": "1,000,000,000という数字。",
+      "ko": "숫자 1,000,000,000.",
+      "zh-Hans": "数字1,000,000,000。",
+      "es": "El número 1.000.000.000.",
+      "pt-BR": "O número 1.000.000.000.",
+      "fr": "Le nombre 1 000 000 000.",
+      "de": "Die Zahl 1.000.000.000."
+    },
+    {
+      "id": 3,
+      "ja": "自然から得られ、環境を害さないエネルギー。",
+      "ko": "자연에서 얻어지며 환경에 해를 끼치지 않는 에너지.",
+      "zh-Hans": "来自自然且不损害环境的能源。",
+      "es": "Energía que proviene de la naturaleza y no daña el medio ambiente.",
+      "pt-BR": "Energia que vem da natureza e não prejudica o meio ambiente.",
+      "fr": "Énergie qui provient de la nature et ne nuit pas à l'environnement.",
+      "de": "Energie, die aus der Natur stammt und der Umwelt nicht schadet."
+    },
+    {
+      "id": 4,
+      "ja": "政府や企業で重要な役職に就いている人々。",
+      "ko": "정부나 사업체에서 중요한 직책을 맡고 있는 사람들.",
+      "zh-Hans": "在政府或企业中担任重要职务的人。",
+      "es": "Personas que ocupan puestos importantes en un gobierno o negocio.",
+      "pt-BR": "Pessoas que ocupam cargos importantes em um governo ou negócio.",
+      "fr": "Des personnes qui occupent des postes importants au sein d'un gouvernement ou d'une entreprise.",
+      "de": "Personen, die wichtige Positionen in einer Regierung oder einem Unternehmen innehaben."
+    },
+    {
+      "id": 5,
+      "ja": "失われた、または正しい場所にない状態。",
+      "ko": "잃어버리거나 제자리에 없는 상태.",
+      "zh-Hans": "丢失的，或不在正确位置的。",
+      "es": "Perdido, o no en el lugar correcto.",
+      "pt-BR": "Perdido, ou que não está no lugar certo.",
+      "fr": "Perdu, ou qui n'est pas à sa bonne place.",
+      "de": "Verloren oder nicht am richtigen Platz."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-22T07:25:15.143385+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

@@ -2,7 +2,10 @@
 // Only metadata is retained; this module never processes transcript text.
 export const RECHECK_DELAY = 15 * 60 * 1000;
 export const CATCH_UP_LOOKBACK = 24 * 60 * 60 * 1000;
-export const delayedSource = code => ['meeting_pending', 'transcript_unusable'].includes(code);
+// A partial discovery can find a note before its completed meeting lookup
+// succeeds. These temporary failures share the existing single recheck; they
+// must not permanently consume it or reset the reservation when metadata lands.
+export const delayedSource = code => ['meeting_pending', 'transcript_unusable', 'meeting_reference_missing', 'zoom_unavailable'].includes(code);
 export function runDate(now = Date.now()) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date(now)).map(p => [p.type, p.value]));
   const date = `${parts.year}-${parts.month}-${parts.day}`;

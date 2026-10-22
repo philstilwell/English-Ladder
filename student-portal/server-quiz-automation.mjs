@@ -251,6 +251,10 @@ export class QuizAutomation {
           const modifiedAt = Number.isFinite(Date.parse(note.modified_time)) && (!prior?.modifiedAt || Date.parse(note.modified_time) > Date.parse(prior.modifiedAt)) ? note.modified_time : prior?.modifiedAt;
           await this.storage.put({ [key]: { receivedAt: Date.now(), nextAt: 0, status: 'pending', tries: 0, ...prior,
             noteId: note.note_id, meetingId: instance.uuid, startedAt: instance.start_time, modifiedAt,
+            // Completed-meeting discovery can recover an older unresolved job
+            // even when that note was absent from the modification search.
+            // Keep codexCheck intact: finding metadata never grants extra tries.
+            ...(prior?.status === 'needs_attention' && prior.lastError === 'meeting_reference_missing' ? { status: 'pending' } : {}),
             ...(prior?.lastError === 'transcript_unusable' && modifiedAt && Date.parse(modifiedAt) > (Date.parse(prior.modifiedAt) || 0) ? { lastError: null } : {}) } });
         }
       }

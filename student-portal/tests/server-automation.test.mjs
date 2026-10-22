@@ -618,6 +618,103 @@ test('empty transcripts get one recheck, then wait for a Zoom change; ordinary f
   } finally { Date.now=originalNow; }
 });
 
+test('partial Zoom discovery recovers meeting details and publishes on the one nightly recheck', async()=>{
+  const {object,storage,env,id,dispatch,records,payload}=await codexFixture();
+  await storage.delete('job:'+id);
+  await storage.put({oauth:{userId:'owner',pmi:1234567890}});
+  const originalNow=Date.now;let now=Date.parse('2026-10-17T03:50:00Z'),failed=true,searches=0,sourceReads=0;
+  Date.now=()=>now;
+  const zoom=async path=>{
+    if(path==='/docs/file_search'){searches++;return {files:searches===1?[{file_id:'fictional-note-123'}]:[]};}
+    if(path.startsWith('/users/me/meetings?')){if(failed)throw Error('zoom_unavailable');return {meetings:[]};}
+    if(path.endsWith('/instances'))return {meetings:[{uuid:'meeting-123',start_time:meeting.start_time}]};
+    if(path.startsWith('/my_notes/notes?'))return {notes:[{note_id:'fictional-note-123',modified_time:meeting.end_time}]};
+    if(path.includes('/content?')){sourceReads++;return structuredClone(note);}
+    if(path==='/past_meetings/meeting-123')return structuredClone(meeting);
+    throw Error('Unexpected path: '+path);
+  };
+  try {
+    object.zoom=zoom;object.accessToken=async()=>{};object.pruneTranscripts=async()=>{};
+    assert.equal((await (await dispatch('nightly-discover')).json()).error,'zoom_unavailable');
+    assert.equal(await storage.get('discovery-since'),undefined);
+    const queue=await (await dispatch('queue')).json();
+    assert.equal(queue.jobs.length,1);assert.equal(queue.discovery.checks,1);
+    const first=await (await dispatch('nightly-prepare',{id})).json();
+    assert.equal(first.error,'meeting_reference_missing');assert.equal(first.waiting,true);
+    assert.equal(first.retryAt,queue.discovery.recheckAt);
+    assert.equal((await storage.get('job:'+id)).status,'pending');
+    now+=RECHECK_DELAY-1;
+    assert.equal((await (await dispatch('nightly-prepare',{id})).json()).waiting,true);assert.equal(sourceReads,1);
+    now++;failed=false;
+    const resumed=new QuizAutomation({storage},env);resumed.zoom=zoom;resumed.accessToken=async()=>{};resumed.pruneTranscripts=async()=>{};
+    const again=(action,body={})=>resumed.fetch(new Request('https://automation.internal/codex/'+action,{method:'POST',body:JSON.stringify(body)}));
+    const recovered=await (await again('nightly-discover')).json();
+    assert.equal(recovered.discovery.checks,2);assert.equal(recovered.jobs[0].startedAt,meeting.start_time);
+    assert.equal(recovered.jobs[0].waiting,false);
+    assert.equal((await storage.get('job:'+id)).codexCheck.checks,1);
+    const p=await (await again('nightly-prepare',{id})).json();assert.ok(p.snapshotHash);assert.equal(sourceReads,2);
+    assert.equal((await (await again('nightly-prepare',{id})).json()).deferred,true);assert.equal(sourceReads,2);
+    const published=await (await again('publish',{...await payload(records),snapshotHash:p.snapshotHash})).json();
+    assert.equal(published.verified,true);assert.equal(published.questions,7);assert.equal(published.preservedAttempts,0);
+    assert.equal((await (await again('prepare',{id})).json()).duplicate,true);
+    await again('nightly-discover');assert.equal(searches,2);
+    assert.equal(await storage.get('usage:lesson:ab26'),undefined);
+  } finally {Date.now=originalNow;}
+});
+
+test('temporary Zoom preparation failures get one recheck but reconnect and matching failures do not',async()=>{
+  const originalNow=Date.now;let now=Date.parse('2026-10-17T03:50:00Z');Date.now=()=>now;
+  try {
+    for(const failure of ['zoom_unavailable','meeting_reference_missing']){
+      const {object,storage,env,id,dispatch}=await codexFixture();let reads=0;
+      object.zoom=async()=>{reads++;throw Error(failure);};
+      assert.equal((await (await dispatch('nightly-prepare',{id})).json()).waiting,true);
+      now+=RECHECK_DELAY;
+      assert.equal((await (await dispatch('nightly-prepare',{id})).json()).deferred,true);assert.equal(reads,2);
+      // A later metadata update and process restart cannot grant a third check.
+      await storage.put({['job:'+id]:{...await storage.get('job:'+id),status:'pending',modifiedAt:meeting.end_time,meetingId:'recovered-meeting'}});
+      const resumed=new QuizAutomation({storage},env);resumed.zoom=()=>assert.fail('Third readiness attempt');
+      const result=await resumed.fetch(new Request('https://automation.internal/codex/nightly-prepare',{method:'POST',body:JSON.stringify({id})}));
+      assert.equal((await result.json()).deferred,true);assert.equal((await storage.get('job:'+id)).codexCheck.checks,2);
+    }
+    for(const failure of ['zoom_reconnect','other_student','ambiguous_student','transcript_too_large']){
+      const {object,id,dispatch}=await codexFixture();let reads=0;
+      object.zoom=async()=>{reads++;throw Error(failure);};
+      assert.equal((await dispatch('nightly-prepare',{id})).status,409);
+      now+=RECHECK_DELAY;
+      assert.equal((await (await dispatch('nightly-prepare',{id})).json()).deferred,true);assert.equal(reads,1);
+    }
+  } finally {Date.now=originalNow;}
+});
+
+test('a temporary Zoom meeting fetch failure can prepare and publish after recovery',async()=>{
+  const {object,id,dispatch,records,payload}=await codexFixture();
+  const originalNow=Date.now;let now=Date.parse('2026-10-17T03:50:00Z'),unavailable=true;Date.now=()=>now;
+  object.zoom=async path=>{if(path.startsWith('/my_notes/'))return note;if(unavailable)throw Error('zoom_unavailable');return meeting;};
+  try {
+    const first=await (await dispatch('nightly-prepare',{id})).json();assert.equal(first.waiting,true);assert.equal(first.error,'zoom_unavailable');
+    now+=RECHECK_DELAY;unavailable=false;
+    const p=await (await dispatch('nightly-prepare',{id})).json();assert.ok(p.snapshotHash);
+    assert.equal((await (await dispatch('publish',{...await payload(records),snapshotHash:p.snapshotHash})).json()).verified,true);
+  } finally {Date.now=originalNow;}
+});
+
+test('completed-meeting lookup recovers old unresolved status without resetting readiness reservations',async()=>{
+  const {object,storage,id,dispatch}=await codexFixture();
+  const check={runDate:runDate(),checks:2,sourceVersion:'old',retryAt:null};
+  await storage.put({oauth:{userId:'owner',pmi:1234567890},['job:'+id]:{noteId:'fictional-note-123',status:'needs_attention',lastError:'meeting_reference_missing',codexCheck:check}});
+  object.zoom=async path=>{
+    if(path==='/docs/file_search')return {files:[]};
+    if(path.startsWith('/users/me/meetings?'))return {meetings:[]};
+    if(path.endsWith('/instances'))return {meetings:[{uuid:'meeting-123',start_time:meeting.start_time}]};
+    if(path.startsWith('/my_notes/notes?'))return {notes:[{note_id:'fictional-note-123',modified_time:meeting.end_time}]};
+    throw Error('Unexpected source fetch');
+  };
+  await object.discover();
+  const job=await storage.get('job:'+id);assert.equal(job.status,'pending');assert.deepEqual(job.codexCheck,check);
+  assert.equal((await (await dispatch('nightly-prepare',{id})).json()).deferred,true);
+});
+
 test('nightly run dates follow New York wall-clock time through midnight and daylight saving',()=>{
   for(const [instant,date] of [['2026-10-17T03:35:00Z','2026-10-16'],['2026-10-17T04:05:00Z','2026-10-16'],['2026-11-01T05:55:00Z','2026-10-31'],['2026-11-01T06:05:00Z','2026-10-31'],['2026-11-02T04:35:00Z','2026-11-01']]) assert.equal(runDate(Date.parse(instant)),date);
 });

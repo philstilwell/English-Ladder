@@ -187,7 +187,7 @@ export async function codexHandoff(c, action, input) {
         retryAt = action === 'nightly-prepare' && delayedSource(code) && job.codexCheck?.checks === 1 ? new Date(Date.now() + RECHECK_DELAY).toISOString() : null;
         await c.saveJob(key, { ...job, lastError: code === 'other_student' ? 'student_not_matched' : code,
           ...(action === 'nightly-prepare' && job.codexCheck ? { codexCheck: { ...job.codexCheck, retryAt } } : {}),
-          status: ['other_student','ambiguous_student','meeting_reference_missing'].includes(code) ? 'needs_attention' : 'pending' });
+          status: ['other_student','ambiguous_student'].includes(code) || code === 'meeting_reference_missing' && !retryAt ? 'needs_attention' : 'pending' });
       }
     }
     if (action === 'nightly-prepare' && delayedSource(code)) return json({ error: code, waiting: Boolean(retryAt), retryAt, deferred: !retryAt });

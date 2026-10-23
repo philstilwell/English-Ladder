@@ -5812,6 +5812,131 @@
         "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2-grammar/articles-a-an-the",
         "https://dictionary.cambridge.org/grammar/british-grammar/the"
       ]
+    },
+    {
+      "number": 51,
+      "title": "Do or does? Asking everyday questions",
+      "level": "A1–A2",
+      "category": "Everyday communication",
+      "goal": "Ask present-simple questions with “do” or “does” and keep the main verb in its base form.",
+      "rules": [
+        "For ordinary present-simple questions with most main verbs, put “do” or “does” before the subject, the person or thing the question is about. Use “do” with I, you, we, and they: “Do you like music?” Use “does” with he, she, it, or one named person or thing: “Does she like music?”; “Does the shop open early?”",
+        "After “do” or “does”, use the base verb, the form without an added -s: “She likes music” becomes “Does she like music?” Do not say “Does she likes music?” Put a question word before “do” or “does” when asking for information: “Where do they work?”; “When does the bus leave?” Short answers repeat the helping verb: “Yes, she does”; “No, she doesn’t”.",
+        "This pattern does not cover every question. With “be”, move the verb before the subject: “Is she busy?” With a modal verb, a helping verb such as “can”, ask “Can she swim?” Do not add “do” to either pattern. When “who” or “what” itself is the subject, an ordinary neutral question usually needs no “do” or “does”: “Who works here?” Compare “Who does she work with?”, where “she” is the subject. This lesson practises direct present-simple questions with most main verbs."
+      ],
+      "cards": [
+        {
+          "label": "DO + SUBJECT + BASE VERB",
+          "example": "Do you like music? Where do they work?",
+          "note": "Use “do” with I, you, we, and they. A question word goes before “do”."
+        },
+        {
+          "label": "DOES + SUBJECT + BASE VERB",
+          "example": "Does she like music? When does the bus leave?",
+          "note": "Use “does” with he, she, it, or one named person or thing. Keep “like” and “leave” in the base form."
+        },
+        {
+          "label": "MOVE THE -S TO DOES",
+          "example": "She likes music. → Does she like music?",
+          "note": "“Does” carries the present-simple third-person form. Do not add another -s to “like”."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Ask about your friends’ usual travel. Complete: “___ they walk to school?”",
+          "options": [
+            {
+              "text": "Does",
+              "correct": false,
+              "feedback": "“They” takes “do”, not “does”, in this present-simple question."
+            },
+            {
+              "text": "Do",
+              "correct": true,
+              "feedback": "Use “do” before “they”, followed by the base verb “walk”."
+            },
+            {
+              "text": "Are",
+              "correct": false,
+              "feedback": "“Are they walk” is not the present-simple question pattern. Use “Do they walk”."
+            }
+          ]
+        },
+        {
+          "prompt": "Which question correctly asks about her usual reading?",
+          "options": [
+            {
+              "text": "Does she reads every evening?",
+              "correct": false,
+              "feedback": "After “does”, use the base verb “read”, without -s."
+            },
+            {
+              "text": "Do she read every evening?",
+              "correct": false,
+              "feedback": "“She” takes “does”, not “do”, in a present-simple question."
+            },
+            {
+              "text": "Does she read every evening?",
+              "correct": true,
+              "feedback": "“Does” comes before “she”, and “read” stays in its base form."
+            }
+          ]
+        },
+        {
+          "prompt": "Ask about a café’s regular closing time. Which question is correct?",
+          "options": [
+            {
+              "text": "When does the café close?",
+              "correct": true,
+              "feedback": "Put “when” first, then “does”, the subject “the café”, and the base verb “close”."
+            },
+            {
+              "text": "When the café does close?",
+              "correct": false,
+              "feedback": "For this direct question, put “does” before “the café”: “When does the café close?”"
+            },
+            {
+              "text": "When does the café closes?",
+              "correct": false,
+              "feedback": "Use “close”, not “closes”, after “does”."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "Your friend says, “My brother works in a hospital.” Ask about his usual starting time. Which direct question is correct?",
+        "options": [
+          {
+            "text": "What time does he starts work?",
+            "correct": false,
+            "feedback": "“Does” already carries the third-person form. Use “start”, without -s."
+          },
+          {
+            "text": "What time does he start work?",
+            "correct": true,
+            "feedback": "The order is question phrase + does + subject + base verb: “What time does he start work?”"
+          },
+          {
+            "text": "What time he starts work?",
+            "correct": false,
+            "feedback": "An ordinary direct question with “start” needs “does” before “he” and the base verb “start”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-51-do-or-does-student-workbook.pdf",
+        "concept-51-do-or-does-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-23",
+      "related": [
+        47,
+        6,
+        20
+      ],
+      "sources": [
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple",
+        "https://learnenglishteens.britishcouncil.org/grammar/a1-a2-grammar/question-words"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

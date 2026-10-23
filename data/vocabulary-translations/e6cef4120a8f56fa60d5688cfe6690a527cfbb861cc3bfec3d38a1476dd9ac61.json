@@ -1,0 +1,123 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Ukraine uses an internet system called Starlink.",
+      "The military needs this fast internet to operate drones.",
+      "Recently, the military had a problem with slow speeds.",
+      "The slow internet made it hard to stop attacks.",
+      "Donald Trump said that Elon Musk restored the access.",
+      "Now, reporters say the system is working normally again."
+    ],
+    "vocabulary": [
+      {
+        "term": "system",
+        "part_of_speech": "noun",
+        "definition": "A group of connected things that work together to do a job."
+      },
+      {
+        "term": "military",
+        "part_of_speech": "noun",
+        "definition": "The armed forces of a country, like the army and navy."
+      },
+      {
+        "term": "operate",
+        "part_of_speech": "verb",
+        "definition": "To control or use a machine or vehicle."
+      },
+      {
+        "term": "drones",
+        "part_of_speech": "noun",
+        "definition": "Small flying machines that do not have a pilot inside them."
+      },
+      {
+        "term": "attacks",
+        "part_of_speech": "noun",
+        "definition": "Violent actions meant to hurt people or damage places."
+      },
+      {
+        "term": "restored",
+        "part_of_speech": "verb",
+        "definition": "Brought something back to normal or made it work again."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "複数の接続されたものが協力して一つの仕事を果たすもの。",
+      "ko": "서로 연결된 여러 부분이 함께 작동하여 어떤 일을 수행하는 것.",
+      "zh-Hans": "相互连接并协同工作以完成某项任务的一组事物。",
+      "es": "Un conjunto de cosas conectadas que trabajan juntas para realizar una tarea.",
+      "pt-BR": "Um grupo de coisas conectadas que funcionam juntas para realizar um trabalho.",
+      "fr": "Un ensemble d'éléments connectés qui fonctionnent ensemble pour accomplir une tâche.",
+      "de": "Eine Gruppe miteinander verbundener Dinge, die zusammenarbeiten, um eine Aufgabe zu erledigen."
+    },
+    {
+      "id": 1,
+      "ja": "国の陸軍や海軍のような武装した部隊。",
+      "ko": "육군과 해군처럼 한 나라의 무장한 군대.",
+      "zh-Hans": "一个国家的武装力量，例如陆军和海军。",
+      "es": "Las fuerzas armadas de un país, como el ejército y la marina.",
+      "pt-BR": "As forças armadas de um país, como o exército e a marinha.",
+      "fr": "Les forces armées d'un pays, comme l'armée de terre et la marine.",
+      "de": "Die bewaffneten Streitkräfte eines Landes, wie Heer und Marine."
+    },
+    {
+      "id": 2,
+      "ja": "機械や乗り物を操作したり使用したりすること。",
+      "ko": "기계나 차량을 조종하거나 사용하는 것.",
+      "zh-Hans": "控制或使用机器或车辆。",
+      "es": "Controlar o usar una máquina o un vehículo.",
+      "pt-BR": "Controlar ou usar uma máquina ou um veículo.",
+      "fr": "Contrôler ou utiliser une machine ou un véhicule.",
+      "de": "Eine Maschine oder ein Fahrzeug steuern oder benutzen."
+    },
+    {
+      "id": 3,
+      "ja": "内部にパイロットがいない小さな飛行機械。",
+      "ko": "안에 조종사가 없는 작은 비행 기계.",
+      "zh-Hans": "内部没有飞行员的小型飞行器。",
+      "es": "Pequeñas máquinas voladoras que no tienen un piloto en su interior.",
+      "pt-BR": "Pequenas máquinas voadoras que não têm um piloto dentro delas.",
+      "fr": "De petites machines volantes qui n'ont pas de pilote à l'intérieur.",
+      "de": "Kleine Flugmaschinen, die keinen Piloten in sich haben."
+    },
+    {
+      "id": 4,
+      "ja": "人々を傷つけたり場所を破壊したりすることを目的とした暴力的な行動。",
+      "ko": "사람들에게 해를 입히거나 장소를 손상시키기 위한 폭력적인 행동.",
+      "zh-Hans": "旨在伤害他人或破坏地点的暴力行为。",
+      "es": "Acciones violentas destinadas a dañar a personas o lugares.",
+      "pt-BR": "Ações violentas destinadas a ferir pessoas ou danificar lugares.",
+      "fr": "Des actions violentes destinées à blesser des personnes ou à endommager des lieux.",
+      "de": "Gewalttätige Handlungen, die darauf abzielen, Menschen zu verletzen oder Orte zu beschädigen."
+    },
+    {
+      "id": 5,
+      "ja": "何かを正常な状態に戻したり、再び機能するようにしたりすること。",
+      "ko": "무언가를 정상으로 되돌리거나 다시 작동하게 만드는 것.",
+      "zh-Hans": "使某物恢复正常或使其再次工作。",
+      "es": "Devolver algo a la normalidad o hacer que funcione de nuevo.",
+      "pt-BR": "Trazer algo de volta ao normal ou fazê-lo funcionar novamente.",
+      "fr": "Rétablir quelque chose à la normale ou le faire fonctionner de nouveau.",
+      "de": "Etwas wieder in den Normalzustand versetzen oder wieder zum Laufen bringen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-23T08:57:39.498104+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

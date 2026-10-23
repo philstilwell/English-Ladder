@@ -1,0 +1,187 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "US President Donald Trump claims that Elon Musk has reactivated full access to Ukraine’s satellite internet network, following reports that deliberate limitations had severely hampered Kyiv's tactical maneuvers.",
+      "Ukrainian President Volodymyr Zelensky previously noted that connectivity to the highly secure Starshield network, provided by Musk's infrastructure, had yet to be fully re-established.",
+      "The connectivity limitations coincided with Trump pressuring Zelensky to halt Ukrainian aerial strikes on Russian oil refineries, which the US leader argued were causing global prices to surge.",
+      "Facing crucial midterm elections next month, Trump also waived specific sanctions on Moscow and approved a controversial deal to import Russian diesel.",
+      "According to unnamed officials, Trump contacted Musk to express frustration that the network's data speeds remained severely capped.",
+      "These artificial speed limits rendered Ukraine's frontline interceptors practically useless against incoming Russian strikes.",
+      "Although Trump refused to confirm whether he directly asked Musk to lift the limitations, he confidently asserted that the service had been successfully reinstated.",
+      "For his part, Musk has consistently denied deliberately throttling the network, which is vital for targeting remote positions and protecting the country.",
+      "Furthermore, the tech entrepreneur suggested that the US government might be responsible for the limitations, as the Pentagon fundamentally controls access to the secure platform.",
+      "Nevertheless, the White House has categorically denied issuing any formal orders to curtail the crucial satellite service."
+    ],
+    "vocabulary": [
+      {
+        "term": "hampered",
+        "part_of_speech": "verb",
+        "definition": "hindered, impeded, or created difficulties for the progress or movement of something."
+      },
+      {
+        "term": "connectivity",
+        "part_of_speech": "noun",
+        "definition": "the ability of a device or network to successfully link to the internet or other communication platforms."
+      },
+      {
+        "term": "waived",
+        "part_of_speech": "verb",
+        "definition": "officially chose not to enforce or apply a rule, penalty, or requirement."
+      },
+      {
+        "term": "sanctions",
+        "part_of_speech": "noun",
+        "definition": "official orders or economic penalties taken against a country to force it to obey international law."
+      },
+      {
+        "term": "capped",
+        "part_of_speech": "verb",
+        "definition": "had an upper limit strictly enforced, preventing speed or performance from increasing beyond a certain level."
+      },
+      {
+        "term": "interceptors",
+        "part_of_speech": "noun",
+        "definition": "fast aircraft or defensive missiles specifically designed to stop incoming enemy strikes before they reach their targets."
+      },
+      {
+        "term": "asserted",
+        "part_of_speech": "verb",
+        "definition": "stated a fact or belief confidently and forcefully."
+      },
+      {
+        "term": "throttling",
+        "part_of_speech": "verb",
+        "definition": "intentionally slowing down the speed or bandwidth of an internet connection or digital service."
+      },
+      {
+        "term": "fundamentally",
+        "part_of_speech": "adverb",
+        "definition": "at the most basic, essential, and foundational level; in a core or underlying way."
+      },
+      {
+        "term": "categorically",
+        "part_of_speech": "adverb",
+        "definition": "in a completely clear, direct, and explicit manner, leaving absolutely no room for doubt or confusion."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かの進歩や動きを妨げたり、困難を引き起こしたりした。",
+      "ko": "어떤 것의 진행이나 움직임을 방해하거나 어렵게 만들었다.",
+      "zh-Hans": "阻碍、妨碍或为某事物的进展或移动制造了困难。",
+      "es": "Dificultar, impedir o crear obstáculos para el progreso o movimiento de algo.",
+      "pt-BR": "Atrapalhou, impediu ou criou dificuldades para o progresso ou movimento de algo.",
+      "fr": "Entraver, gêner ou créer des difficultés pour le progrès ou le mouvement de quelque chose.",
+      "de": "Den Fortschritt oder die Bewegung von etwas behindert, gehemmt oder erschwert."
+    },
+    {
+      "id": 1,
+      "ja": "デバイスやネットワークがインターネットや他の通信プラットフォームに正常に接続できる能力。",
+      "ko": "기기나 네트워크가 인터넷 또는 다른 통신 플랫폼에 성공적으로 연결될 수 있는 능력.",
+      "zh-Hans": "设备或网络成功连接到互联网或其他通信平台的能力。",
+      "es": "La capacidad de un dispositivo o red para conectarse exitosamente a internet u otras plataformas de comunicación.",
+      "pt-BR": "A capacidade de um dispositivo ou rede de se conectar com sucesso à internet ou a outras plataformas de comunicação.",
+      "fr": "La capacité d'un appareil ou d'un réseau à se connecter avec succès à internet ou à d'autres plateformes de communication.",
+      "de": "Die Fähigkeit eines Geräts oder Netzwerks, sich erfolgreich mit dem Internet oder anderen Kommunikationsplattformen zu verbinden."
+    },
+    {
+      "id": 2,
+      "ja": "規則、罰則、または要件を強制または適用しないことを公式に選択した。",
+      "ko": "규칙, 처벌 또는 요구 사항을 공식적으로 강제하거나 적용하지 않기로 결정했다.",
+      "zh-Hans": "正式选择不执行或不适用某项规则、惩罚或要求。",
+      "es": "Eligió oficialmente no hacer cumplir o aplicar una regla, sanción o requisito.",
+      "pt-BR": "Escolheu oficialmente não aplicar ou fazer cumprir uma regra, penalidade ou exigência.",
+      "fr": "A officiellement choisi de ne pas appliquer ou de ne pas faire respecter une règle, une pénalité ou une exigence.",
+      "de": "Offiziell beschlossen, eine Regel, Strafe oder Anforderung nicht durchzusetzen oder anzuwenden."
+    },
+    {
+      "id": 3,
+      "ja": "国際法に従わせるために、ある国に対して取られる公式な命令や経済的な制裁措置。",
+      "ko": "어떤 나라가 국제법을 따르도록 강제하기 위해 그 나라에 대해 취해지는 공식적인 명령이나 경제적 제재.",
+      "zh-Hans": "为迫使一个国家遵守国际法而对其采取的官方命令或经济惩罚。",
+      "es": "Órdenes oficiales o sanciones económicas tomadas contra un país para forzarlo a obedecer el derecho internacional.",
+      "pt-BR": "Ordens oficiais ou penalidades econômicas tomadas contra um país para forçá-lo a obedecer ao direito internacional.",
+      "fr": "Ordres officiels ou sanctions économiques prises contre un pays pour le contraindre à obéir au droit international.",
+      "de": "Offizielle Anordnungen oder wirtschaftliche Strafmaßnahmen, die gegen ein Land verhängt werden, um es zur Einhaltung des Völkerrechts zu zwingen."
+    },
+    {
+      "id": 4,
+      "ja": "速度や性能が一定のレベルを超えて上昇するのを防ぐため、厳しく上限が設定された。",
+      "ko": "속도나 성능이 특정 수준 이상으로 증가하는 것을 막기 위해 상한이 엄격하게 적용되었다.",
+      "zh-Hans": "严格执行了上限，阻止速度或性能超过特定水平。",
+      "es": "Se le aplicó un límite máximo estricto, impidiendo que la velocidad o el rendimiento aumentaran más allá de cierto nivel.",
+      "pt-BR": "Teve um limite superior estritamente imposto, impedindo que a velocidade ou o desempenho aumentassem além de um certo nível.",
+      "fr": "A eu une limite supérieure strictement appliquée, empêchant la vitesse ou les performances d'augmenter au-delà d'un certain niveau.",
+      "de": "Eine Obergrenze wurde streng durchgesetzt, die verhinderte, dass Geschwindigkeit oder Leistung ein bestimmtes Niveau überschreiten konnten."
+    },
+    {
+      "id": 5,
+      "ja": "飛来する敵の攻撃が目標に到達する前に阻止するために特別に設計された高速航空機または防御ミサイル。",
+      "ko": "들어오는 적의 공격이 목표물에 도달하기 전에 막기 위해 특별히 설계된 고속 항공기 또는 방어 미사일.",
+      "zh-Hans": "专门设计用于在敌方攻击到达目标之前将其拦截的快速飞机或防御导弹。",
+      "es": "Aeronaves rápidas o misiles defensivos específicamente diseñados para detener los ataques enemigos entrantes antes de que alcancen sus objetivos.",
+      "pt-BR": "Aeronaves rápidas ou mísseis defensivos especificamente projetados para parar ataques inimigos que se aproximam antes que atinjam seus alvos.",
+      "fr": "Avions rapides ou missiles défensifs spécifiquement conçus pour arrêter les frappes ennemies entrantes avant qu'elles n'atteignent leurs cibles.",
+      "de": "Schnelle Flugzeuge oder Abfangraketen, die speziell dafür entwickelt wurden, anfliegende feindliche Angriffe abzufangen, bevor sie ihre Ziele erreichen."
+    },
+    {
+      "id": 6,
+      "ja": "事実や信念を自信を持って力強く述べた。",
+      "ko": "사실이나 신념을 자신감 있고 단호하게 진술했다.",
+      "zh-Hans": "自信而有力地陈述了一个事实或信念。",
+      "es": "Afirmó un hecho o una creencia con confianza y vehemencia.",
+      "pt-BR": "Declarou um fato ou crença de forma confiante e vigorosa.",
+      "fr": "Affirmer un fait ou une conviction avec assurance et fermeté.",
+      "de": "Eine Tatsache oder Überzeugung selbstbewusst und nachdrücklich geäußert."
+    },
+    {
+      "id": 7,
+      "ja": "インターネット接続やデジタルサービスの速度や帯域幅を意図的に低下させること。",
+      "ko": "인터넷 연결이나 디지털 서비스의 속도나 대역폭을 의도적으로 늦추는 행위.",
+      "zh-Hans": "故意降低互联网连接或数字服务的速度或带宽。",
+      "es": "Reducir intencionadamente la velocidad o el ancho de banda de una conexión a internet o de un servicio digital.",
+      "pt-BR": "Diminuir intencionalmente a velocidade ou a largura de banda de uma conexão com a internet ou de um serviço digital.",
+      "fr": "Ralentir intentionnellement la vitesse ou la bande passante d'une connexion internet ou d'un service numérique.",
+      "de": "Die Geschwindigkeit oder Bandbreite einer Internetverbindung oder eines digitalen Dienstes absichtlich zu verlangsamen."
+    },
+    {
+      "id": 8,
+      "ja": "最も基本的で、本質的で、根源的なレベルで。核となる、あるいは根本的な方法で。",
+      "ko": "가장 기본적이고, 본질적이며, 근본적인 수준에서. 핵심적이거나 근원적인 방식으로.",
+      "zh-Hans": "在最基本、最本质和最根本的层面上；以核心或潜在的方式。",
+      "es": "En el nivel más básico, esencial y fundamental; de una manera central o subyacente.",
+      "pt-BR": "No nível mais básico, essencial e fundamental; de uma forma central ou subjacente.",
+      "fr": "Au niveau le plus fondamental, essentiel et primaire; de manière essentielle ou sous-jacente.",
+      "de": "Auf der grundlegendsten, wesentlichsten und fundamentalsten Ebene; auf eine Kern- oder zugrunde liegende Weise."
+    },
+    {
+      "id": 9,
+      "ja": "完全に明確で、直接的で、明示的な方法で、疑問や混乱の余地を一切残さない。",
+      "ko": "완전히 명확하고, 직접적이며, 명시적인 방식으로, 의심이나 혼란의 여지를 전혀 남기지 않는.",
+      "zh-Hans": "以完全清晰、直接和明确的方式，不留任何疑问或混淆的余地。",
+      "es": "De manera completamente clara, directa y explícita, sin dejar absolutamente ningún lugar a dudas o confusiones.",
+      "pt-BR": "De forma completamente clara, direta e explícita, sem deixar absolutamente nenhuma margem para dúvidas ou confusão.",
+      "fr": "D'une manière complètement claire, directe et explicite, ne laissant absolument aucune place au doute ou à la confusion.",
+      "de": "Auf eine völlig klare, direkte und explizite Weise, die absolut keinen Raum für Zweifel oder Verwirrung lässt."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-23T08:57:48.023972+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

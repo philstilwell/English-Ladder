@@ -1,0 +1,692 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-23",
+  "release_iso": "2026-10-23T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Thu, 22 Oct 2026 21:42:39 GMT",
+    "retrieved_at": "2026-10-23T07:43:59.185172+00:00",
+    "title": "Trump says Musk has restored access to Ukraine's Starlink network",
+    "summary": "Ukraine relies on Starlink for a range of military uses - its owner Elon Musk has repeatedly denied restricting access.",
+    "evidence_text": "Ukraine relies on Starlink for a range of military uses - its owner Elon Musk has repeatedly denied restricting access.\nModern warfare often relies on the use of high-speed internet to effectively operate drones.\nEarlier on Thursday, Zelensky said the speed of the system used by Ukraine's military had still not been restored fully.\nThe speed limit made Ukraine's offensive drones and interceptors powerless against Russian attacks.\nElon Musk has restored Ukraine's Starlink internet access, US President Donald Trump has said, after restrictions hampered Kyiv's armed forces.\nThe journal reported that the system was working more normally on Thursday, shortly after their conversation.\nTrump made the comments after Ukrainian President Volodymyr Zelensky said connectivity to the military-grade Starshield network, which is provided by Musk's satellite-based Starlink system, had yet to be fully restored.\nTrump refused to be drawn on a report that he had called Musk to ask him to lift restrictions to the service, but said: \"Bottom line, he put it back.\"\nMusk said last week that the US government ultimately controls access to Starshield, the military-grade version of Starlink which Ukraine uses for some of its operation. He said the system was designed for the Pentagon, suggesting the US military may therefore be behind the restrictions.\nThe connectivity restrictions came as Trump put pressure on Zelensky to stop Ukrainian attacks on Russian oil refineries, which he has argued have caused prices to rise.\nFaced with midterm elections next month, Trump has waived some sanctions on Russia and agreed a deal to import Russian diesel for the US market - a move criticised by Ukraine and its European allies.\nThe US outlet reported that Trump told Musk he was frustrated the Starlink system's speeds were still capped at around 160km/h, according to officials.\nMusk previously denied he was behind the slowdown, which affects Ukraine's ability to use drones to attack Russian targets in Ukraine and protect itself from attacks.\nThe White House has repeatedly said it did not order access to be restricted.",
+    "evidence_retrieved_at": "2026-10-23T07:43:59.185172+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cq74pjpmx0e8o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why is fast internet important for a country? You can talk about a real country or a made-up one. Use this sentence frame: \"Fast internet is important because ...\"",
+          "How do you use the internet in your daily life? If you prefer, imagine a busy student and describe how they use the internet."
+        ],
+        "editorial_check": {
+          "content_digest": "6228f4fc172a357750641b8bed7d354ec1d7d5f640b42d29ee14bbd648af24c8",
+          "date": "2026-10-23T07:44:53.814863+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz items effectively test the main ideas, vocabulary in context, and the taught grammar concept using short, plausible distractors."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading and explanations use a direct, neutral reporting style that is highly accessible and appropriate for adult A1-A2 learners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation and answer feedback use clear, familiar language. The discussion prompts thoughtfully include a simple sentence frame and a hypothetical alternative."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets like \"operate\", \"drones\", and \"restored\" are well-chosen concrete terms that help beginners understand the news without being overly technical."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "example_quote": "Donald Trump said that Elon Musk restored the access.",
+          "explanation": "We use the simple past tense to talk about actions that are finished. Regular past tense verbs end in \"-ed\", like \"restored\". Irregular verbs change their spelling, like \"said\" instead of \"say\"."
+        },
+        "news_brief_sentences": [
+          "Ukraine uses an internet system called Starlink.",
+          "The military needs this fast internet to operate drones.",
+          "Recently, the military had a problem with slow speeds.",
+          "The slow internet made it hard to stop attacks.",
+          "Donald Trump said that Elon Musk restored the access.",
+          "Now, reporters say the system is working normally again."
+        ],
+        "overview": "Donald Trump says Elon Musk fixed Ukraine's slow internet problems.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The story explains that Ukraine's military internet was slow, but it is working normally again.",
+              "The story mentions using drones, but it is about fixing the internet connection.",
+              "The text does not talk about selling computers to anyone."
+            ],
+            "options": [
+              "Fixing internet problems in Ukraine",
+              "Building new flying machines",
+              "Selling computers to the military"
+            ],
+            "question": "What is this story mostly about?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Fast internet helps the military control their flying machines.",
+              "The story does not say they use the internet to call other countries.",
+              "The story says the military uses the internet to operate drones, not to read news."
+            ],
+            "options": [
+              "To operate drones",
+              "To call other countries",
+              "To read the news"
+            ],
+            "question": "Why does the military need fast internet?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text says the military had a problem with slow speeds.",
+              "The text does not mention broken computers.",
+              "The story does not say the military lost any satellites."
+            ],
+            "options": [
+              "The internet speeds were slow.",
+              "Their computers broke down.",
+              "They lost their satellites."
+            ],
+            "question": "What problem did the military have recently?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says that Donald Trump said Elon Musk restored the access.",
+              "Reporters say the system is working normally again, but Trump is the one who said Musk restored it.",
+              "The military had a problem, but Trump was the person who said Musk fixed it."
+            ],
+            "options": [
+              "Donald Trump",
+              "Reporters",
+              "The military"
+            ],
+            "question": "Who said that Elon Musk fixed the access?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Operate\" means to control or use a machine, like flying a drone.",
+              "The military did not use the internet to fix screens.",
+              "In this story, \"operate\" is about controlling drones, not talking to people."
+            ],
+            "options": [
+              "To control or use a machine",
+              "To fix a broken screen",
+              "To talk to a person"
+            ],
+            "question": "What does \"operate\" mean in this story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Made\" is the simple past tense of the irregular verb \"make\".",
+              "\"Hard\" is an adjective, not a past tense verb.",
+              "\"Stop\" is a base verb here, not a past tense verb."
+            ],
+            "options": [
+              "made",
+              "hard",
+              "stop"
+            ],
+            "question": "Which word in this sentence shows that the action happened in the past? \"The slow internet made it hard to stop attacks.\""
+          }
+        ],
+        "sentence_evidence": [
+          "Ukraine relies on Starlink for a range of military uses - its owner Elon Musk has repeatedly denied restricting access.",
+          "Modern warfare often relies on the use of high-speed internet to effectively operate drones.",
+          "Earlier on Thursday, Zelensky said the speed of the system used by Ukraine's military had still not been restored fully.",
+          "The speed limit made Ukraine's offensive drones and interceptors powerless against Russian attacks.",
+          "Elon Musk has restored Ukraine's Starlink internet access, US President Donald Trump has said, after restrictions hampered Kyiv's armed forces.",
+          "The journal reported that the system was working more normally on Thursday, shortly after their conversation."
+        ],
+        "title": "Trump Says Musk Restored Starlink Internet in Ukraine",
+        "topic": "Technology News",
+        "vocabulary": [
+          {
+            "definition": "A group of connected things that work together to do a job.",
+            "part_of_speech": "noun",
+            "term": "system"
+          },
+          {
+            "definition": "The armed forces of a country, like the army and navy.",
+            "part_of_speech": "noun",
+            "term": "military"
+          },
+          {
+            "definition": "To control or use a machine or vehicle.",
+            "part_of_speech": "verb",
+            "term": "operate"
+          },
+          {
+            "definition": "Small flying machines that do not have a pilot inside them.",
+            "part_of_speech": "noun",
+            "term": "drones"
+          },
+          {
+            "definition": "Violent actions meant to hurt people or damage places.",
+            "part_of_speech": "noun",
+            "term": "attacks"
+          },
+          {
+            "definition": "Brought something back to normal or made it work again.",
+            "part_of_speech": "verb",
+            "term": "restored"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think reliable communication is so important in a modern conflict?",
+          "How much control should private companies have over services used by a country's armed forces? Explain your view."
+        ],
+        "editorial_check": {
+          "content_digest": "5054f8dfee4987844fdc02b7178770f23d1440cb2a39255c7b2a04aa9adfa050",
+          "date": "2026-10-23T07:47:35.341041+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The reading offers appropriate challenge through solid paraphrasing (e.g., 'unmanned vehicles' for drones) and the quiz effectively tests comprehension, vocabulary, and the grammatical target in context."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The text maintains a neutral, professional news register suitable for intermediate learners, using clear sentence connections and objective reporting."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation for gerunds after reporting verbs is clear, and the vocabulary definitions use accessible language without overly complex jargon."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items (e.g., 'warfare', 'ultimately', 'restrictions', 'effectively') are appropriate B1-B2 targets that describe military contexts and consequences without relying on the beginner-level reserved words."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Reporting verbs followed by an -ing form (gerund)",
+          "example_quote": "Ukraine relies on the service for various uses, and Elon Musk has repeatedly denied restricting access.",
+          "explanation": "Some reporting verbs, like \"deny\", \"admit\", or \"suggest\", are followed by a verb ending in \"-ing\" (a gerund) rather than a \"to\" infinitive. In the example, the verb \"denied\" is followed directly by \"restricting\" to talk about an action someone claims they did not do."
+        },
+        "news_brief_sentences": [
+          "US President Donald Trump claims that Elon Musk has brought back internet access for Ukraine's armed forces.",
+          "Trump made these comments after Ukrainian President Volodymyr Zelensky said the satellite network was still limited.",
+          "The recent speed limit made Ukraine's offensive equipment powerless against Russian attacks.",
+          "Modern warfare often relies on high-speed internet to effectively direct unmanned vehicles.",
+          "Trump refused to discuss a report that he personally called Musk to lift the restrictions.",
+          "The journal reported that the system was working more normally shortly after their conversation.",
+          "Ukraine relies on the service for various uses, and Elon Musk has repeatedly denied restricting access.",
+          "Meanwhile, Musk has suggested that the US government ultimately controls this specific network."
+        ],
+        "overview": "Donald Trump claims that Elon Musk has lifted restrictions on a satellite network used by the Ukrainian military.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The story focuses on Trump's claim that Musk brought back essential internet access for Ukraine.",
+              "The text says Ukraine relies on the service, not that they have stopped using it.",
+              "The story is about access to an existing network, not the US buying a brand new one."
+            ],
+            "options": [
+              "Donald Trump says Elon Musk has restored internet access for Ukraine's military.",
+              "Ukraine has decided to stop using Elon Musk's internet service for its vehicles.",
+              "The US government recently bought a new satellite network for the armed forces."
+            ],
+            "question": "What is the main point of this story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explicitly states that the speed limit made Ukraine's offensive equipment powerless.",
+              "The service was limited and slowed down, but it was not completely shut down.",
+              "There is no mention in the reading of Ukraine being forced to buy expensive new technology."
+            ],
+            "options": [
+              "It made their offensive equipment powerless against Russian attacks.",
+              "It completely shut down all their communication devices.",
+              "It forced them to buy more expensive technology from other countries."
+            ],
+            "question": "How did the speed limit affect Ukraine?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text says Trump refused to discuss a report that he called Musk to lift the restrictions.",
+              "Trump claimed the service was restored; he did not refuse to help.",
+              "Trump spoke about the issue after comments from Zelensky, but did not refuse to speak with him."
+            ],
+            "options": [
+              "He refused to discuss a report saying he personally called Musk about the restrictions.",
+              "He refused to help Ukraine restore its internet access.",
+              "He refused to speak with the Ukrainian president about the war."
+            ],
+            "question": "What did Donald Trump refuse to do?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Warfare\" refers to the actual activities and fighting involved in a war.",
+              "This option describes construction equipment, not warfare itself.",
+              "A peace treaty is an agreement to stop fighting, which is the opposite of warfare."
+            ],
+            "options": [
+              "The activity or methods involved in fighting a war.",
+              "The heavy machines used to build military roads.",
+              "A formal peace treaty between two countries."
+            ],
+            "question": "What does \"warfare\" mean in the text?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Restrictions\" are limits or controls placed on something, like an internet connection.",
+              "This describes a present or donation, not a restriction.",
+              "Vehicles are machines used for transport, not restrictions."
+            ],
+            "options": [
+              "Official rules or limits on what people can do or use.",
+              "Special gifts given to foreign military leaders.",
+              "Fast vehicles used by the military for transport."
+            ],
+            "question": "What are \"restrictions\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Doing something effectively means doing it well and getting a good result.",
+              "This is the opposite of acting effectively.",
+              "This describes acting harmfully, not effectively."
+            ],
+            "options": [
+              "In a successful way that achieves the desired result.",
+              "In a slow and confused manner.",
+              "In a way that causes problems for other people."
+            ],
+            "question": "If someone acts \"effectively\", how do they act?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The verb \"deny\" is often followed by a gerund (an \"-ing\" verb) to report an action someone claims they didn't do.",
+              "\"Repeatedly\" is an adverb describing how often the denial happened, not a verb.",
+              "\"Access\" functions as a noun in this sentence, not a verb."
+            ],
+            "options": [
+              "denied",
+              "repeatedly",
+              "access"
+            ],
+            "question": "Look at this part of the text: \"... Elon Musk has repeatedly denied restricting access.\" Which word is the reporting verb that requires the \"-ing\" form here?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Musk suggested that the US government \"ultimately controls\" the network, meaning they have the final say.",
+              "Musk implies that the US government, not himself, has the ultimate control over the network.",
+              "The reading indicates the US government has control, rather than Ukraine."
+            ],
+            "options": [
+              "The US government has the final authority over this specific network.",
+              "Elon Musk personally makes all the decisions about how the network is used.",
+              "The Ukrainian military completely controls the internet service on its own."
+            ],
+            "question": "What does Elon Musk's suggestion about the network mean?"
+          }
+        ],
+        "sentence_evidence": [
+          "Elon Musk has restored Ukraine's Starlink internet access, US President Donald Trump has said, after restrictions hampered Kyiv's armed forces.",
+          "Trump made the comments after Ukrainian President Volodymyr Zelensky said connectivity to the military-grade Starshield network, which is provided by Musk's satellite-based Starlink system, had yet to be fully restored.",
+          "The speed limit made Ukraine's offensive drones and interceptors powerless against Russian attacks.",
+          "Modern warfare often relies on the use of high-speed internet to effectively operate drones.",
+          "Trump refused to be drawn on a report that he had called Musk to ask him to lift restrictions to the service, but said: \"Bottom line, he put it back.\"",
+          "The journal reported that the system was working more normally on Thursday, shortly after their conversation.",
+          "Ukraine relies on Starlink for a range of military uses - its owner Elon Musk has repeatedly denied restricting access.",
+          "Musk said last week that the US government ultimately controls access to Starshield, the military-grade version of Starlink which Ukraine uses for some of its operation. He said the system was designed for the Pentagon, suggesting the US military may therefore be behind the restrictions."
+        ],
+        "title": "Trump Says Musk Brought Back Ukrainian Internet Access",
+        "topic": "Technology in Modern Warfare",
+        "vocabulary": [
+          {
+            "definition": "a country's military organizations, such as the army, navy, and air force",
+            "part_of_speech": "noun",
+            "term": "armed forces"
+          },
+          {
+            "definition": "used for attacking someone or something, rather than for defending",
+            "part_of_speech": "adjective",
+            "term": "offensive"
+          },
+          {
+            "definition": "lacking the strength or authority to act or to prevent something from happening",
+            "part_of_speech": "adjective",
+            "term": "powerless"
+          },
+          {
+            "definition": "the activity of fighting a war, often involving specific weapons or methods",
+            "part_of_speech": "noun",
+            "term": "warfare"
+          },
+          {
+            "definition": "in a way that is successful and achieves the result that you want",
+            "part_of_speech": "adverb",
+            "term": "effectively"
+          },
+          {
+            "definition": "official rules or laws that limit what people can do or use",
+            "part_of_speech": "noun",
+            "term": "restrictions"
+          },
+          {
+            "definition": "happening many times or again and again",
+            "part_of_speech": "adverb",
+            "term": "repeatedly"
+          },
+          {
+            "definition": "finally, after a series of things have happened, or at the most basic level",
+            "part_of_speech": "adverb",
+            "term": "ultimately"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "How might artificial speed limits on satellite internet impact a country's defense capabilities during an active conflict?",
+          "If you were advising a government, would you recommend relying on privately owned networks for defense? I think... because..."
+        ],
+        "editorial_check": {
+          "content_digest": "e8b5d69dd4cf96aaee4bce2cdb06e7a2a77e07101c230aad46a2928234683ae1",
+          "date": "2026-10-23T07:52:07.763560+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz tests advanced reading comprehension, requiring learners to parse inferences (such as linking 'Pentagon' to 'defense establishment') and successfully evaluates both nuanced vocabulary and grammar in context."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson employs a polished, formal news reporting register with careful attribution (e.g., 'confidently asserted', 'categorically denied') and appropriate nuance for advanced analysis."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and option feedback are clear, concise, and instructive. The grammar explanation accurately unpacks how a participle clause establishes context without requiring an additional sentence."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets (such as 'throttling', 'waived', 'categorically', and 'sanctions') are precise, domain-relevant terms suitable for C1+ learners, and they are defined accurately in context without relying on reserved vocabulary."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "C1-Higher"
+        },
+        "grammar": {
+          "concept": "Present participle clauses",
+          "example_quote": "Facing crucial midterm elections next month, Trump also waived specific sanctions on Moscow and approved a controversial deal to import Russian diesel.",
+          "explanation": "A present participle clause starting with an '-ing' verb can establish the political context, cause, or background for the main action. Here, it concisely explains why the subject made their decision without requiring a separate sentence."
+        },
+        "news_brief_sentences": [
+          "US President Donald Trump claims that Elon Musk has reactivated full access to Ukraine’s satellite internet network, following reports that deliberate limitations had severely hampered Kyiv's tactical maneuvers.",
+          "Ukrainian President Volodymyr Zelensky previously noted that connectivity to the highly secure Starshield network, provided by Musk's infrastructure, had yet to be fully re-established.",
+          "The connectivity limitations coincided with Trump pressuring Zelensky to halt Ukrainian aerial strikes on Russian oil refineries, which the US leader argued were causing global prices to surge.",
+          "Facing crucial midterm elections next month, Trump also waived specific sanctions on Moscow and approved a controversial deal to import Russian diesel.",
+          "According to unnamed officials, Trump contacted Musk to express frustration that the network's data speeds remained severely capped.",
+          "These artificial speed limits rendered Ukraine's frontline interceptors practically useless against incoming Russian strikes.",
+          "Although Trump refused to confirm whether he directly asked Musk to lift the limitations, he confidently asserted that the service had been successfully reinstated.",
+          "For his part, Musk has consistently denied deliberately throttling the network, which is vital for targeting remote positions and protecting the country.",
+          "Furthermore, the tech entrepreneur suggested that the US government might be responsible for the limitations, as the Pentagon fundamentally controls access to the secure platform.",
+          "Nevertheless, the White House has categorically denied issuing any formal orders to curtail the crucial satellite service."
+        ],
+        "overview": "Amid political pressure and tactical concerns, Donald Trump claims Elon Musk has reinstated crucial satellite network access for Ukraine's defense.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The story centers on the political pressure, statements by Trump and Musk, and the tactical impact of lifting the network's limitations.",
+              "Incorrect. The report discusses connectivity and speed caps, not the complete replacement of one network with another.",
+              "Incorrect. The reading states the speed limits rendered the interceptors useless; it does not claim they achieved immediate success after an upgrade."
+            ],
+            "options": [
+              "The political maneuvering and tactical impact surrounding the removal of speed limits on Ukraine's internet access.",
+              "The total replacement of a civilian internet network with a highly secure government platform.",
+              "The immediate success of Ukraine's interceptors following a major upgrade to their data speeds."
+            ],
+            "question": "What is the primary focus of the news report regarding the satellite network?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading specifically connects Trump waiving sanctions and approving the diesel deal with the approaching crucial midterm elections.",
+              "Incorrect. The reading links the oil refinery strikes to price surges, but the diesel import deal is explicitly linked to the midterm elections.",
+              "Incorrect. The passage notes Trump waived sanctions and approved a deal, but there is no evidence that the US government instructed him to do so."
+            ],
+            "options": [
+              "He was facing crucial midterm elections next month and sought to manage political or economic pressures.",
+              "He was attempting to stop Ukrainian strikes on Russian oil refineries that were causing global prices to surge.",
+              "He was formally instructed by the US government to secure a new energy deal despite European opposition."
+            ],
+            "question": "According to the passage, what motivated Trump to agree to a deal importing Russian diesel?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading explicitly states that the artificial speed limits rendered the frontline interceptors practically useless against incoming strikes.",
+              "Incorrect. The Pentagon's control is mentioned as a reason Musk suggested the US government might be responsible, not as a result of the speed caps.",
+              "Incorrect. Trump pressured Zelensky to halt strikes on oil refineries; the capped speeds did not cause a surge in these aerial strikes."
+            ],
+            "options": [
+              "Ukraine's frontline interceptors became highly vulnerable and essentially useless against Russian strikes.",
+              "The US government was forced to take fundamental control of the defense department's secure communication platform.",
+              "Ukrainian aerial strikes on Russian oil refineries surged, causing significant disruption to global energy markets."
+            ],
+            "question": "What was the consequence of the network's speeds remaining \"capped\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Throttling\" refers to deliberately slowing down the network, which Musk denied doing to Ukraine's communications.",
+              "Incorrect. Throttling means slowing down or limiting, which is the opposite of accelerating performance.",
+              "Incorrect. The word refers to restricting network speeds, not transferring ownership or administrative control."
+            ],
+            "options": [
+              "Intentionally restricting the bandwidth or speed of an internet service.",
+              "Accelerating data processing to improve the performance of frontline interceptors.",
+              "Transferring the ownership of a satellite network to a different governmental body."
+            ],
+            "question": "In the context of the story, what does \"throttling\" imply?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. To deny something \"categorically\" means to deny it completely and clearly, leaving no room for doubt.",
+              "Incorrect. This means the opposite; a categorical denial is firm and certain, not hesitant.",
+              "Incorrect. While \"categorical\" shares a root with \"category\", in this context it means absolute, not related to sorting items into groups."
+            ],
+            "options": [
+              "In an absolute and unambiguous manner.",
+              "With a degree of hesitation and uncertainty.",
+              "By providing a series of distinct categories."
+            ],
+            "question": "Which phrase best replaces \"categorically\" in the reading?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Musk suggested the US government might be responsible since the Pentagon controls access to the highly secure Starshield platform.",
+              "Incorrect. The reading states the White House categorically denied issuing any formal orders to curtail the service.",
+              "Incorrect. There is no suggestion in the text that Ukraine restricted its own access by exceeding data speed limits."
+            ],
+            "options": [
+              "The US defense establishment, because they fundamentally control access to the secure platform.",
+              "The White House, because they officially issued formal orders to curtail the satellite service.",
+              "The Ukrainian government, because they exceeded the data speeds required for aerial strikes."
+            ],
+            "question": "Who did Elon Musk imply might have been responsible for the connectivity limitations?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Trump waived specific sanctions, meaning he chose to lift or not enforce those particular penalties on Moscow.",
+              "Incorrect. Waived does not mean to signal physically; it relates to officially giving up a right or rule.",
+              "Incorrect. Waiving sanctions reduces or removes them, rather than increasing their severity."
+            ],
+            "options": [
+              "Chose not to enforce or apply a rule or penalty.",
+              "Signaled for a tactical maneuver to commence immediately.",
+              "Increased the severity of international trade limitations."
+            ],
+            "question": "What is the meaning of \"waived\" as used in the passage?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The present participle clause acts as an adverbial phrase explaining the background or reason for Trump waiving sanctions.",
+              "Incorrect. The clause provides the reason for the current action, not a timeline confirming the sanctions are permanently gone.",
+              "Incorrect. The elections are the context for the decision, not a result caused by importing Russian diesel."
+            ],
+            "options": [
+              "To establish the political context and possible motivation for the action in the main clause.",
+              "To emphasize that the elections will happen after the sanctions are permanently removed.",
+              "To show that the midterm elections were directly caused by the decision to import diesel."
+            ],
+            "question": "\"Facing crucial midterm elections next month, Trump also waived specific sanctions on Moscow...\" Why does the author use the participle clause at the beginning of this sentence?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading notes he pressured Zelensky to halt strikes on oil refineries, arguing they were causing global prices to surge.",
+              "Incorrect. The text states Trump pressured Zelensky to halt the strikes, not that he supported them.",
+              "Incorrect. He argued the strikes were causing prices to surge; he did not raise prices himself to justify the deal."
+            ],
+            "options": [
+              "He linked the Ukrainian attacks on these refineries to the surging global prices of oil.",
+              "He supported Ukrainian strikes on refineries because rising oil prices would strategically damage the Russian economy.",
+              "He deliberately increased global oil prices to justify importing controversial Russian diesel for the US market."
+            ],
+            "question": "What can be inferred about Trump's arguments regarding the Russian oil refineries?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The passage explicitly notes that Trump refused to confirm whether he directly asked Musk to lift the limitations.",
+              "Incorrect. While he confidently asserted the service was reinstated, he avoided confirming whether he directly instructed Musk to do so.",
+              "Incorrect. The text notes Trump refused to confirm his direct involvement; it does not state he credited or blamed the White House for resolving the issues."
+            ],
+            "options": [
+              "No, he refused to confirm if he made the request, though he asserted the service was reinstated.",
+              "Yes, he proudly announced that he personally forced Musk to lift the artificial limitations.",
+              "No, he claimed the White House was entirely responsible for resolving the connectivity issues."
+            ],
+            "question": "Did Trump admit that he directly ordered Elon Musk to reinstate the network's speeds?"
+          }
+        ],
+        "sentence_evidence": [
+          "Elon Musk has restored Ukraine's Starlink internet access, US President Donald Trump has said, after restrictions hampered Kyiv's armed forces.",
+          "Trump made the comments after Ukrainian President Volodymyr Zelensky said connectivity to the military-grade Starshield network, which is provided by Musk's satellite-based Starlink system, had yet to be fully restored.",
+          "The connectivity restrictions came as Trump put pressure on Zelensky to stop Ukrainian attacks on Russian oil refineries, which he has argued have caused prices to rise.",
+          "Faced with midterm elections next month, Trump has waived some sanctions on Russia and agreed a deal to import Russian diesel for the US market - a move criticised by Ukraine and its European allies.",
+          "The US outlet reported that Trump told Musk he was frustrated the Starlink system's speeds were still capped at around 160km/h, according to officials.",
+          "The speed limit made Ukraine's offensive drones and interceptors powerless against Russian attacks.",
+          "Trump refused to be drawn on a report that he had called Musk to ask him to lift restrictions to the service, but said: \"Bottom line, he put it back.\"",
+          "Musk previously denied he was behind the slowdown, which affects Ukraine's ability to use drones to attack Russian targets in Ukraine and protect itself from attacks.",
+          "Musk said last week that the US government ultimately controls access to Starshield, the military-grade version of Starlink which Ukraine uses for some of its operation. He said the system was designed for the Pentagon, suggesting the US military may therefore be behind the restrictions.",
+          "The White House has repeatedly said it did not order access to be restricted."
+        ],
+        "title": "Trump Claims Musk Reinstated Starlink Access for Ukraine",
+        "topic": "Politics & Technology",
+        "vocabulary": [
+          {
+            "definition": "hindered, impeded, or created difficulties for the progress or movement of something.",
+            "part_of_speech": "verb",
+            "term": "hampered"
+          },
+          {
+            "definition": "the ability of a device or network to successfully link to the internet or other communication platforms.",
+            "part_of_speech": "noun",
+            "term": "connectivity"
+          },
+          {
+            "definition": "officially chose not to enforce or apply a rule, penalty, or requirement.",
+            "part_of_speech": "verb",
+            "term": "waived"
+          },
+          {
+            "definition": "official orders or economic penalties taken against a country to force it to obey international law.",
+            "part_of_speech": "noun",
+            "term": "sanctions"
+          },
+          {
+            "definition": "had an upper limit strictly enforced, preventing speed or performance from increasing beyond a certain level.",
+            "part_of_speech": "verb",
+            "term": "capped"
+          },
+          {
+            "definition": "fast aircraft or defensive missiles specifically designed to stop incoming enemy strikes before they reach their targets.",
+            "part_of_speech": "noun",
+            "term": "interceptors"
+          },
+          {
+            "definition": "stated a fact or belief confidently and forcefully.",
+            "part_of_speech": "verb",
+            "term": "asserted"
+          },
+          {
+            "definition": "intentionally slowing down the speed or bandwidth of an internet connection or digital service.",
+            "part_of_speech": "verb",
+            "term": "throttling"
+          },
+          {
+            "definition": "at the most basic, essential, and foundational level; in a core or underlying way.",
+            "part_of_speech": "adverb",
+            "term": "fundamentally"
+          },
+          {
+            "definition": "in a completely clear, direct, and explicit manner, leaving absolutely no room for doubt or confusion.",
+            "part_of_speech": "adverb",
+            "term": "categorically"
+          }
+        ]
+      }
+    }
+  }
+}

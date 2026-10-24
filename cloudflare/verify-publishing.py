@@ -97,8 +97,8 @@ def wait_for_publishing(origin, expected, *, timeout=DEFAULT_TIMEOUT,
             if live['files'] == expected['files']:
                 report['status'] = 'success'
                 report['elapsed_seconds'] = round(clock() - started, 3)
-                log(f"Cloudflare publishes all {len(expected['files'])} expected public files; "
-                    f"live revision {live['revision']}.")
+                log(f"Cloudflare deployment manifest matches all {len(expected['files'])} expected public files; "
+                    f"live revision {live['revision']}. Public URL checks must still pass.")
                 return report
             delta = report['differences']
             message = (f"Live revision {live['revision']} has {len(live['files'])} public files; "

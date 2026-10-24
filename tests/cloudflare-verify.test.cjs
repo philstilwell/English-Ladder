@@ -169,6 +169,16 @@ test('curl timeouts are retryable while certificate and command failures are per
   }
 });
 
+test('curl respects the remaining publication budget and keeps its 30-second cap', async () => {
+  for (const [timeoutMs, seconds] of [[1250, '1.25'], [60_000, '30']]) {
+    const request = createCurlRequest(origin, undefined, (program, args, options, callback) => {
+      assert.equal(args[args.indexOf('--max-time') + 1], seconds);
+      callback(null, Buffer.concat([current, Buffer.from('\n200')]));
+    });
+    await request(origin, {timeoutMs});
+  }
+});
+
 test('partial transfers retain permanent HTTP failures instead of accepting a later success', async () => {
   for (const [status, expectedStatus, file] of [
     [401, 200, 'lesson.html'], [404, 200, 'lesson.html'],

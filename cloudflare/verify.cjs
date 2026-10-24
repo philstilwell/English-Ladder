@@ -18,6 +18,8 @@ const hash = body => crypto.createHash('sha256').update(body).digest('hex');
 const statusMismatch = (file, expected, actual) => {
   const error = new Error(`${file}: expected HTTP ${expected}, got ${actual}`);
   error.retryable = TRANSIENT_HTTP.has(actual);
+  error.expectedStatus = expected;
+  error.status = actual;
   return error;
 };
 
@@ -25,8 +27,12 @@ function createCurlRequest(origin, ip, execFile = cp.execFile) {
   // An optional IP verifies the real domain before old DNS caches expire.
   // curl still validates the domain's HTTPS certificate.
   const connection = ip ? ['--resolve', `${origin.hostname}:${origin.port || (origin.protocol === 'https:' ? 443 : 80)}:${ip}`] : [];
-  return url => new Promise((resolve, reject) => {
-    execFile('curl', [...connection, '--silent', '--show-error', '--max-time', '30',
+  return (url, {timeoutMs = 30_000} = {}) => new Promise((resolve, reject) => {
+    if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
+      reject(new Error('Request timeout must be finite and positive'));
+      return;
+    }
+    execFile('curl', [...connection, '--silent', '--show-error', '--max-time', String(Math.min(30_000, timeoutMs) / 1000),
       '--user-agent', 'English-family-deploy-check', '--write-out', '\n%{http_code}', url.href],
     {encoding: 'buffer', maxBuffer: 30 * 1024 * 1024}, (error, output) => {
       const hasStatus = Buffer.isBuffer(output) && /^\n\d{3}$/.test(output.subarray(-4).toString('ascii'));
@@ -53,8 +59,8 @@ function createCurlRequest(origin, ip, execFile = cp.execFile) {
 }
 
 async function verifyResponse(file, {origin, request, expectedHash, expectedStatus = 200,
-  sleep = wait}) {
-  for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt++) {
+  sleep = wait, retryDelaysMs = RETRY_DELAYS_MS}) {
+  for (let attempt = 0; attempt <= retryDelaysMs.length; attempt++) {
     // Verify the URL students actually receive. A cache-busted copy may be
     // current while this original public URL still serves the previous page.
     const url = new URL(file, origin);
@@ -74,17 +80,18 @@ async function verifyResponse(file, {origin, request, expectedHash, expectedStat
           && error.status !== expectedStatus) {
         error = statusMismatch(file, expectedStatus, error.status);
       }
-      if (attempt === RETRY_DELAYS_MS.length || error.retryable !== true) {
+      if (attempt === retryDelaysMs.length || error.retryable !== true) {
         // Request diagnostics can contain server details. Only report the
         // checked file or a locally constructed validation message.
         if (!error.message.startsWith(`${file}: `)) {
           const failure = new Error(`${file}: could not fetch verified content`);
           failure.cause = error;
+          failure.retryable = error.retryable === true;
           throw failure;
         }
         throw error;
       }
-      await sleep(RETRY_DELAYS_MS[attempt]);
+      await sleep(retryDelaysMs[attempt]);
     }
   }
 }

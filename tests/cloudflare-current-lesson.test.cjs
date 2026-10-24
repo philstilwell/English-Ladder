@@ -5,7 +5,8 @@ const crypto = require('node:crypto');
 const {
   currentLessonFiles,
   isAllowedPublicEdgeBlock,
-  verifyCurrentLesson
+  verifyCurrentLesson,
+  waitForCurrentLesson
 } = require('../cloudflare/verify-current-lesson.cjs');
 
 const origin = new URL('https://englishladder.example/');
@@ -89,4 +90,147 @@ test('public edge-block warnings require the explicit workflow flag', () => {
     if (original === undefined) delete process.env.ALLOW_PUBLIC_EDGE_BLOCK;
     else process.env.ALLOW_PUBLIC_EDGE_BLOCK = original;
   }
+});
+
+function publicationClock() {
+  let now = 0;
+  const delays = [];
+  const messages = [];
+  return {
+    delays, messages,
+    advance: milliseconds => { now += milliseconds; },
+    options: {
+      origin, releaseDate, timeoutMs: 35_000, intervalMs: 10_000,
+      clock: () => now,
+      sleep: async milliseconds => { delays.push(milliseconds); now += milliseconds; },
+      log: message => messages.push(message),
+    },
+  };
+}
+
+test('a matching manifest can precede the public lesson: retry its ordinary URL until available', async () => {
+  const {manifest, request} = fixture();
+  const timer = publicationClock();
+  const lesson = `/news/${releaseDate}/beginner.html`;
+  const urls = [];
+  let attempts = 0;
+  const result = await waitForCurrentLesson(manifest, {
+    ...timer.options,
+    request: async url => {
+      urls.push(url);
+      if (url.pathname === lesson && ++attempts < 3) return {status: 404, body: Buffer.from('Not found')};
+      return request(url);
+    },
+  });
+  assert.equal(result.releaseDate, releaseDate);
+  assert.deepEqual(timer.delays, [10_000, 10_000]);
+  assert.equal(attempts, 3);
+  assert.ok(urls.every(url => !url.search));
+  assert.ok(urls.some(url => url.pathname === '/.git/config'));
+  assert.equal(timer.messages.length, 1);
+});
+
+test('a permanently missing public lesson still fails at the shared deadline', async () => {
+  const {manifest, request} = fixture();
+  const timer = publicationClock();
+  let attempts = 0;
+  await assert.rejects(waitForCurrentLesson(manifest, {
+    ...timer.options,
+    request: async url => {
+      if (url.pathname === `/news/${releaseDate}/beginner.html`) {
+        attempts++;
+        return {status: 404, body: Buffer.from('Not found')};
+      }
+      return request(url);
+    },
+  }), /within 35s: news\/.*\/beginner\.html: expected HTTP 200, got 404/);
+  assert.equal(attempts, 4);
+  assert.deepEqual(timer.delays, [10_000, 10_000, 10_000, 5000]);
+});
+
+test('stale JSON and stale HTML must become correct, not just return HTTP 200', async () => {
+  for (const file of ['/lesson-data.json', '/index.html']) {
+    const {manifest, request} = fixture();
+    const timer = publicationClock();
+    let attempts = 0;
+    await waitForCurrentLesson(manifest, {
+      ...timer.options,
+      request: async url => {
+        if (url.pathname === file && ++attempts < 3) return {status: 200, body: Buffer.from('old edition')};
+        return request(url);
+      },
+    });
+    assert.deepEqual(timer.delays, [10_000, 10_000]);
+    const persistent = publicationClock();
+    await assert.rejects(waitForCurrentLesson(manifest, {
+      ...persistent.options,
+      request: async url => url.pathname === file ? {status: 200, body: Buffer.from('old edition')} : request(url),
+    }), /did not become available/);
+  }
+});
+
+test('exposed private files, redirects, authentication and certificate failures are immediate', async () => {
+  for (const [file, response] of [
+    ['/.git/config', {status: 200, body: Buffer.from('exposed')}],
+    ['/index.html', {status: 301, body: Buffer.from('redirect')}],
+    ['/index.html', {status: 401, body: Buffer.from('unauthorized')}],
+    ['/index.html', Object.assign(new Error('private certificate diagnostic'), {retryable: false})],
+  ]) {
+    const {manifest, request} = fixture();
+    const timer = publicationClock();
+    let attempts = 0;
+    await assert.rejects(waitForCurrentLesson(manifest, {
+      ...timer.options,
+      request: async url => {
+        if (url.pathname !== file) return request(url);
+        attempts++;
+        if (response instanceof Error) throw response;
+        return response;
+      },
+    }), error => !error.message.includes('private certificate diagnostic'));
+    assert.equal(attempts, 1);
+    assert.deepEqual(timer.delays, []);
+  }
+});
+
+test('temporary transport failures preserve retryability without leaking diagnostics', async () => {
+  const {manifest, request} = fixture();
+  const timer = publicationClock();
+  let attempts = 0;
+  await waitForCurrentLesson(manifest, {
+    ...timer.options,
+    request: async url => {
+      if (++attempts === 1) throw Object.assign(new Error('private network detail'), {retryable: true});
+      return request(url);
+    },
+  });
+  assert.deepEqual(timer.delays, [10_000]);
+  assert.ok(timer.messages.every(message => !message.includes('private network detail')));
+});
+
+test('one budget covers requests, waits, and all public files', async () => {
+  const {manifest, request} = fixture();
+  const timer = publicationClock();
+  const timeouts = [];
+  await assert.rejects(waitForCurrentLesson(manifest, {
+    ...timer.options,
+    request: async (url, {timeoutMs}) => {
+      timeouts.push(timeoutMs);
+      timer.advance(Math.min(20_000, timeoutMs));
+      return request(url);
+    },
+  }), /did not become available within 35s/);
+  assert.deepEqual(timeouts, [30_000, 15_000]);
+  assert.deepEqual(timer.delays, []);
+});
+
+test('a missing saved lesson fails before any request or publication wait', async () => {
+  const {manifest} = fixture();
+  delete manifest.files[`news/${releaseDate}/beginner.html`];
+  const timer = publicationClock();
+  await assert.rejects(waitForCurrentLesson(manifest, {
+    ...timer.options,
+    request: async () => assert.fail('Must not fetch an unsaved edition'),
+  }), /Deployment manifest does not include/);
+  assert.deepEqual(timer.delays, []);
 });

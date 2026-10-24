@@ -1,0 +1,123 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "France prepares for a day of protest.",
+      "The government will send 70,000 police officers to French cities.",
+      "This comes a week after large riots in the country.",
+      "The protests began because high school students wanted to improve their schools.",
+      "The French president met with student leaders and made commitments to them.",
+      "Some famous museums will be closed."
+    ],
+    "vocabulary": [
+      {
+        "term": "protest",
+        "part_of_speech": "noun",
+        "definition": "an event where people gather to show they strongly disagree with something"
+      },
+      {
+        "term": "officers",
+        "part_of_speech": "noun",
+        "definition": "men or women who work in the police force"
+      },
+      {
+        "term": "riots",
+        "part_of_speech": "noun",
+        "definition": "situations where a large crowd of people behave in a violent way"
+      },
+      {
+        "term": "improve",
+        "part_of_speech": "verb",
+        "definition": "to make something better than it was before"
+      },
+      {
+        "term": "commitments",
+        "part_of_speech": "noun",
+        "definition": "promises or firm decisions to do a certain thing"
+      },
+      {
+        "term": "museums",
+        "part_of_speech": "noun",
+        "definition": "buildings where people can look at important art, history, or science objects"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人々が集まって、何かに強く反対していることを示す出来事。",
+      "ko": "사람들이 어떤 것에 강하게 반대한다는 것을 보여주기 위해 모이는 행사.",
+      "zh-Hans": "人们聚集在一起，表达他们强烈反对某事的活动。",
+      "es": "Un evento en el que las personas se reúnen para mostrar que están en fuerte desacuerdo con algo.",
+      "pt-BR": "Um evento onde as pessoas se reúnem para mostrar que discordam veementemente de algo.",
+      "fr": "Un événement où des gens se rassemblent pour montrer leur forte désapprobation à l'égard de quelque chose.",
+      "de": "Eine Veranstaltung, bei der Menschen zusammenkommen, um zu zeigen, dass sie mit etwas stark nicht einverstanden sind."
+    },
+    {
+      "id": 1,
+      "ja": "警察で働く男性または女性。",
+      "ko": "경찰에서 일하는 남성이나 여성.",
+      "zh-Hans": "在警察部队中工作的男性或女性。",
+      "es": "Hombres o mujeres que trabajan en la fuerza policial.",
+      "pt-BR": "Homens ou mulheres que trabalham na força policial.",
+      "fr": "Des hommes ou des femmes qui travaillent dans les forces de police.",
+      "de": "Männer oder Frauen, die bei der Polizei arbeiten."
+    },
+    {
+      "id": 2,
+      "ja": "大勢の人が暴力的な行動をとる状況。",
+      "ko": "많은 사람들이 폭력적인 방식으로 행동하는 상황.",
+      "zh-Hans": "大群人以暴力方式行事的状况。",
+      "es": "Situaciones en las que una gran multitud de personas se comporta de manera violenta.",
+      "pt-BR": "Situações em que uma grande multidão de pessoas se comporta de forma violenta.",
+      "fr": "Des situations où une grande foule de personnes se comporte de manière violente.",
+      "de": "Situationen, in denen sich eine große Menschenmenge gewalttätig verhält."
+    },
+    {
+      "id": 3,
+      "ja": "何かを以前よりも良くすること。",
+      "ko": "어떤 것을 이전보다 더 좋게 만드는 것.",
+      "zh-Hans": "使某物比以前更好。",
+      "es": "Hacer que algo sea mejor de lo que era antes.",
+      "pt-BR": "Tornar algo melhor do que era antes.",
+      "fr": "Rendre quelque chose meilleur qu'il ne l'était auparavant.",
+      "de": "Etwas besser machen, als es vorher war."
+    },
+    {
+      "id": 4,
+      "ja": "特定のことを行うという約束や固い決断。",
+      "ko": "특정한 일을 하겠다는 약속이나 굳은 결정.",
+      "zh-Hans": "做某事的承诺或坚定的决定。",
+      "es": "Promesas o decisiones firmes de hacer una determinada cosa.",
+      "pt-BR": "Promessas ou decisões firmes de fazer uma determinada coisa.",
+      "fr": "Des promesses ou des décisions fermes de faire une certaine chose.",
+      "de": "Versprechen oder feste Entscheidungen, eine bestimmte Sache zu tun."
+    },
+    {
+      "id": 5,
+      "ja": "人々が重要な芸術、歴史、または科学の品物を見ることができる建物。",
+      "ko": "사람들이 중요한 예술, 역사 또는 과학 물품을 볼 수 있는 건물.",
+      "zh-Hans": "人们可以参观重要的艺术、历史或科学物品的建筑物。",
+      "es": "Edificios donde la gente puede ver importantes objetos de arte, historia o ciencia.",
+      "pt-BR": "Edifícios onde as pessoas podem ver importantes objetos de arte, história ou ciência.",
+      "fr": "Des bâtiments où les gens peuvent regarder d'importants objets d'art, d'histoire ou de science.",
+      "de": "Gebäude, in denen Menschen wichtige Kunst-, Geschichts- oder Wissenschaftsobjekte betrachten können."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-24T09:54:13.621827+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

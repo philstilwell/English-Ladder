@@ -1,0 +1,156 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "France is on high alert ahead of new nationwide demonstrations, a week after the country experienced severe unrest.",
+      "The interior ministry plans to deploy 70,000 police to increase security in French cities.",
+      "Opposition parties accused the government of failing to predict the scale of the recent violence.",
+      "Hundreds of people have been jailed for vandalism and looting after rapid court hearings.",
+      "Disillusionment is high among the public due to rising living costs and warnings about spending cuts.",
+      "Several key cities have announced complete bans on public gatherings over the weekend.",
+      "Despite these restrictions, huge crowds are still expected to gather in Paris and elsewhere.",
+      "Meanwhile, some local businesses have boarded up their windows.",
+      "This unrest has played out as France prepares for a highly unpredictable election period."
+    ],
+    "vocabulary": [
+      {
+        "term": "unrest",
+        "part_of_speech": "noun",
+        "definition": "A state of angry dissatisfaction and disturbance in a group of people."
+      },
+      {
+        "term": "deploy",
+        "part_of_speech": "verb",
+        "definition": "To move police or military into a position so they are ready for action."
+      },
+      {
+        "term": "scale",
+        "part_of_speech": "noun",
+        "definition": "The size, level, or extent of something, especially when it is large."
+      },
+      {
+        "term": "vandalism",
+        "part_of_speech": "noun",
+        "definition": "The crime of intentionally damaging public or private property."
+      },
+      {
+        "term": "looting",
+        "part_of_speech": "noun",
+        "definition": "The activity of stealing things from shops or homes during a disturbance."
+      },
+      {
+        "term": "disillusionment",
+        "part_of_speech": "noun",
+        "definition": "A feeling of disappointment when discovering something is not as good as believed."
+      },
+      {
+        "term": "restrictions",
+        "part_of_speech": "noun",
+        "definition": "Rules or laws that limit what people are allowed to do."
+      },
+      {
+        "term": "unpredictable",
+        "part_of_speech": "adjective",
+        "definition": "Not able to be known or guessed before it happens."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人々が怒り、不満を抱き、混乱している状態。",
+      "ko": "사람들이 화를 내고 불만을 품으며 혼란스러운 상태.",
+      "zh-Hans": "一群人中出现愤怒不满和骚乱的状态。",
+      "es": "Un estado de gran descontento y disturbios entre un grupo de personas.",
+      "pt-BR": "Um estado de grande descontentamento e agitação em um grupo de pessoas.",
+      "fr": "Un état de profond mécontentement et de troubles au sein d'un groupe de personnes.",
+      "de": "Ein Zustand großer Unzufriedenheit und Unruhe in einer Gruppe von Menschen."
+    },
+    {
+      "id": 1,
+      "ja": "警察や軍隊を、行動できるよう特定の場所に配置すること。",
+      "ko": "경찰이나 군대를 작전을 수행할 수 있도록 특정 위치로 이동시키는 것.",
+      "zh-Hans": "将警察或军队部署到某个位置，使其做好行动准备。",
+      "es": "Mover a la policía o a los militares a una posición para que estén listos para la acción.",
+      "pt-BR": "Mover a polícia ou os militares para uma posição para que estejam prontos para a ação.",
+      "fr": "Déplacer la police ou l'armée vers une position afin qu'elle soit prête à agir.",
+      "de": "Polizei oder Militär in eine Position zu bringen, damit sie handlungsbereit sind."
+    },
+    {
+      "id": 2,
+      "ja": "何かの大きさ、水準、または範囲、特にそれが大きい場合。",
+      "ko": "어떤 것의 크기, 수준 또는 범위, 특히 그것이 클 때.",
+      "zh-Hans": "某事物的规模、程度或范围，尤其指其较大时。",
+      "es": "El tamaño, nivel o alcance de algo, especialmente cuando es grande.",
+      "pt-BR": "O tamanho, nível ou extensão de algo, especialmente quando é grande.",
+      "fr": "La taille, le niveau ou l'étendue de quelque chose, surtout quand c'est grand.",
+      "de": "Die Größe, das Ausmaß oder der Umfang von etwas, besonders wenn es groß ist."
+    },
+    {
+      "id": 3,
+      "ja": "公共または私有の財産を意図的に損傷する犯罪。",
+      "ko": "공공 또는 사유 재산을 고의로 손상하는 범죄.",
+      "zh-Hans": "故意破坏公共或私人财产的罪行。",
+      "es": "El delito de dañar intencionadamente propiedades públicas o privadas.",
+      "pt-BR": "O crime de danificar intencionalmente propriedades públicas ou privadas.",
+      "fr": "Le crime de détériorer intentionnellement des biens publics ou privés.",
+      "de": "Das Verbrechen der vorsätzlichen Beschädigung von öffentlichem oder privatem Eigentum."
+    },
+    {
+      "id": 4,
+      "ja": "混乱中に店や家から物を盗む行為。",
+      "ko": "소요 사태 중에 상점이나 집에서 물건을 훔치는 행위.",
+      "zh-Hans": "在骚乱期间从商店或住宅偷窃物品的行为。",
+      "es": "La actividad de robar cosas de tiendas o casas durante un disturbio.",
+      "pt-BR": "A atividade de roubar coisas de lojas ou casas durante um distúrbio.",
+      "fr": "L'activité de voler des objets dans des magasins ou des maisons pendant des troubles.",
+      "de": "Die Aktivität, während einer Störung Dinge aus Geschäften oder Häusern zu stehlen."
+    },
+    {
+      "id": 5,
+      "ja": "何かが信じられていたほど良くないと分かったときに感じる失望。",
+      "ko": "무언가가 믿었던 것만큼 좋지 않다는 것을 발견했을 때 느끼는 실망감.",
+      "zh-Hans": "当发现某事不如预想的那么好时所产生的失望情绪。",
+      "es": "Un sentimiento de decepción al descubrir que algo no es tan bueno como se creía.",
+      "pt-BR": "Um sentimento de desapontamento ao descobrir que algo não é tão bom quanto se acreditava.",
+      "fr": "Un sentiment de déception lorsque l'on découvre que quelque chose n'est pas aussi bon qu'on le croyait.",
+      "de": "Ein Gefühl der Enttäuschung, wenn man feststellt, dass etwas nicht so gut ist, wie man glaubte."
+    },
+    {
+      "id": 6,
+      "ja": "人々がすることを制限する規則や法律。",
+      "ko": "사람들이 할 수 있는 것을 제한하는 규칙이나 법률.",
+      "zh-Hans": "限制人们可以做的事情的规则或法律。",
+      "es": "Reglas o leyes que limitan lo que las personas pueden hacer.",
+      "pt-BR": "Regras ou leis que limitam o que as pessoas podem fazer.",
+      "fr": "Des règles ou des lois qui limitent ce que les gens sont autorisés à faire.",
+      "de": "Regeln oder Gesetze, die einschränken, was Menschen tun dürfen."
+    },
+    {
+      "id": 7,
+      "ja": "それが起こる前に知ることや推測することができない。",
+      "ko": "어떤 일이 일어나기 전에 알거나 예측할 수 없는.",
+      "zh-Hans": "无法预知或猜测其何时发生。",
+      "es": "Que no se puede saber o adivinar antes de que ocurra.",
+      "pt-BR": "Que não pode ser conhecido ou adivinhado antes de acontecer.",
+      "fr": "Qui ne peut être connu ou deviné avant que cela n'arrive.",
+      "de": "Nicht vorhersehbar oder erratbar, bevor es geschieht."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-24T09:54:19.185418+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

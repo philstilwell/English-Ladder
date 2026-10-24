@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-24",
+  "release_iso": "2026-10-24T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Sat, 24 Oct 2026 06:19:46 GMT",
+    "retrieved_at": "2026-10-24T07:40:27.410225+00:00",
+    "title": "France prepares for day of protest a week after nationwide riots",
+    "summary": "Hundreds of thousands are expected to turn out, as more than 70,000 police officers are to be deployed over some may defy restrictions.",
+    "evidence_text": "France prepares for day of protest a week after nationwide riots\nThe interior ministry has said it will deploy 70,000 police officers, ramping up the security presence in French cities, after the government was accused by opposition parties of failing to foresee the scale of the unrest on 17 October.\nThe protests began with demands from high school students to improve school conditions and fix staff shortages, before violence took hold in places.\nPresident Emmanuel Macron met high-school students' representatives on Friday ahead of Saturday's protests, and although they said he had made clear commitments to them, they said students should \"continue to mobilise\".\nThe Louvre, Orsay and Picasso museums will all be closed, a scheduled home match for football team PSG has been moved to Monday, while some businesses have boarded up their windows.\nFrance is on high alert ahead of a new day of nationwide protests on Saturday, a week after the country saw some of its worst unrest in decades.\nHundreds of people have been jailed for vandalism, arson and looting after fast-track court hearings in recent days.\nDisillusionment is high among the French public, who have seen cost-of-living pressures increase and who are faced with increasingly dire warnings that any future government will likely come with deep spending cuts.\nMacron decreed earlier this week that only demonstrations organised by a recognised trade unions would be permitted to take place on Saturday. Several key cities including Lyon, Nice and Montpellier have gone further by announcing blanket bans on gatherings .\nSweeping restrictions have been imposed on demonstrations across France but hundreds of thousands of protesters are still expected to gather in Paris and elsewhere for a second round of protests organised by students, trade unions and wider anti-government groups.\nThe recent unrest has played out against a backdrop of a polarised political landscape and with France preparing for what could be the most divisive and unpredictable election period in a generation.\n\"We will be uncompromising with the vandals, with the looters, and all those who commit acts of violence,\" he added, explaining that separate from the planned protests, numerous calls for violence had been seen on social media from the \"far left and radical extreme left\".\nIn Paris, a march organised by the student trade union and supported by labour groups has been ordered to stick to a route that does not go through the city centre - though preparations for potential unrest in some of the city's most recognisable parts are under way regardless.\nIn a sign of how a student-led protest movement expanded to become a wider anti-government outpouring, protesters associated with a revived gilet jaunes (yellow-vest) movement could be out in force across France on Saturday.\nFrench Prime Minister Sébastien Lecornu said while visiting Limoges on Friday that the national government would pay for the building to be reconstructed \"exactly as it was\" rather than local taxpayers having to foot the bill.",
+    "evidence_retrieved_at": "2026-10-24T07:40:27.410225+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cj62yv5k0w4yo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do people decide to protest? You can talk about a real event, or imagine a student who wants better food at school. Start with: 'I think people protest because...'",
+          "The story says famous museums will close. What businesses or places in your town would need to close if there was a very large crowd in the streets?"
+        ],
+        "editorial_check": {
+          "content_digest": "d82d845d13bb18ec02db300bece4d6b2712583c41f09438c768722e39a8e538c",
+          "date": "2026-10-24T07:42:39.461760+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively tests reading comprehension, vocabulary, and the taught grammar in a straightforward way without relying on trick wording or overly dense distractors."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses neutral, everyday English appropriate for adult beginners reporting on a news event, and the discussion prompts are natural and supportive."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations and feedback use short, accessible clauses. The grammar explanation for 'because' is simple and accurately models the target structure."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets like 'protest', 'officers', and 'improve' are highly relevant and well-suited for A1-A2 learners, with clear, simple definitions."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "\"Because\" for reasons",
+          "example_quote": "The protests began because high school students wanted to improve their schools.",
+          "explanation": "We use the word \"because\" to explain the reason for something. In this story, it explains the reason why the protests started."
+        },
+        "news_brief_sentences": [
+          "France prepares for a day of protest.",
+          "The government will send 70,000 police officers to French cities.",
+          "This comes a week after large riots in the country.",
+          "The protests began because high school students wanted to improve their schools.",
+          "The French president met with student leaders and made commitments to them.",
+          "Some famous museums will be closed."
+        ],
+        "overview": "The French government is sending 70,000 police officers to cities as people plan a new protest.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading says France is preparing for a day of protest.",
+              "Incorrect. The story is about protests, not a sports match.",
+              "Incorrect. Famous museums will close, not hold a festival."
+            ],
+            "options": [
+              "A day of protest",
+              "A large sports match",
+              "A museum festival"
+            ],
+            "question": "What is France preparing for?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The reading says 70,000, not 7,000.",
+              "Correct. The text says the government will send 70,000 police officers.",
+              "Incorrect. The correct number of police officers is 70,000."
+            ],
+            "options": [
+              "7,000",
+              "70,000",
+              "17,000"
+            ],
+            "question": "How many police officers will the government send?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. To improve means to make something better than it was.",
+              "Incorrect. The students wanted to fix their schools, not break them.",
+              "Incorrect. Improving a school means making it a better place to learn, not staying home."
+            ],
+            "options": [
+              "To make something better",
+              "To break things",
+              "To stay at home"
+            ],
+            "question": "What does the word \"improve\" mean?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The students wanted to make their schools better.",
+              "Incorrect. The museums will close because of the protests, not the other way around.",
+              "Incorrect. The protests started because of the students, not the police officers."
+            ],
+            "options": [
+              "High school students wanted to improve their schools.",
+              "Famous museums were closed for the day.",
+              "Police officers wanted better pay."
+            ],
+            "question": "Why did the protests begin?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. We use \"because\" to give the reason why we stayed home.",
+              "Incorrect. \"But\" shows a different or opposite idea, not a reason.",
+              "Incorrect. \"Or\" gives a choice between two things."
+            ],
+            "options": [
+              "because",
+              "but",
+              "or"
+            ],
+            "question": "Choose the best word to complete this sentence: \"We stayed home _____ it was raining.\""
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The president did not meet with museum workers.",
+              "Incorrect. The text says the government will send police, but the president met with students.",
+              "Correct. The reading states the French president met with student leaders."
+            ],
+            "options": [
+              "Museum workers",
+              "Police officers",
+              "Student leaders"
+            ],
+            "question": "Who did the French president meet with?"
+          }
+        ],
+        "sentence_evidence": [
+          "France prepares for day of protest a week after nationwide riots",
+          "The interior ministry has said it will deploy 70,000 police officers, ramping up the security presence in French cities, after the government was accused by opposition parties of failing to foresee the scale of the unrest on 17 October.",
+          "France prepares for day of protest a week after nationwide riots",
+          "The protests began with demands from high school students to improve school conditions and fix staff shortages, before violence took hold in places.",
+          "President Emmanuel Macron met high-school students' representatives on Friday ahead of Saturday's protests, and although they said he had made clear commitments to them, they said students should \"continue to mobilise\".",
+          "The Louvre, Orsay and Picasso museums will all be closed, a scheduled home match for football team PSG has been moved to Monday, while some businesses have boarded up their windows."
+        ],
+        "title": "France Prepares for More Protests After Large Riots",
+        "topic": "Protests in France",
+        "vocabulary": [
+          {
+            "definition": "an event where people gather to show they strongly disagree with something",
+            "part_of_speech": "noun",
+            "term": "protest"
+          },
+          {
+            "definition": "men or women who work in the police force",
+            "part_of_speech": "noun",
+            "term": "officers"
+          },
+          {
+            "definition": "situations where a large crowd of people behave in a violent way",
+            "part_of_speech": "noun",
+            "term": "riots"
+          },
+          {
+            "definition": "to make something better than it was before",
+            "part_of_speech": "verb",
+            "term": "improve"
+          },
+          {
+            "definition": "promises or firm decisions to do a certain thing",
+            "part_of_speech": "noun",
+            "term": "commitments"
+          },
+          {
+            "definition": "buildings where people can look at important art, history, or science objects",
+            "part_of_speech": "noun",
+            "term": "museums"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think people choose to take part in large demonstrations to make their voices heard? I think they do this because...",
+          "If you owned a shop in a city that was expecting large demonstrations, how would you manage the situation?"
+        ],
+        "editorial_check": {
+          "content_digest": "1bc9f02e3db4e1f0606770cf535952f8f8b21ce287857937a31561c73f244fe6",
+          "date": "2026-10-24T07:45:04.502807+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The text offers sufficient complexity through its vocabulary and syntactic structures (such as passive voice and multi-clause sentences) while remaining accessible to an intermediate learner."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading maintains a neutral and objective news-reporting tone throughout, appropriately paraphrasing the source material for the target level."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation for the present perfect passive is clear, uses a direct example from the text, and avoids overly complex linguistic jargon. The quiz feedback is similarly direct and helpful."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items, such as 'disillusionment', 'vandalism', and 'deploy', are appropriate for the B1-B2 level and are clearly defined in context without relying on reserved beginner terms."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Present Perfect Passive",
+          "example_quote": "Hundreds of people have been jailed for vandalism and looting after rapid court hearings.",
+          "explanation": "The present perfect passive is formed with \"have/has been\" plus a past participle. It describes a completed action with a present result, often focusing on the person experiencing the action rather than who did it. In this example, the focus is on what happened to the people (\"have been jailed\"), rather than the specific authorities who locked them up."
+        },
+        "news_brief_sentences": [
+          "France is on high alert ahead of new nationwide demonstrations, a week after the country experienced severe unrest.",
+          "The interior ministry plans to deploy 70,000 police to increase security in French cities.",
+          "Opposition parties accused the government of failing to predict the scale of the recent violence.",
+          "Hundreds of people have been jailed for vandalism and looting after rapid court hearings.",
+          "Disillusionment is high among the public due to rising living costs and warnings about spending cuts.",
+          "Several key cities have announced complete bans on public gatherings over the weekend.",
+          "Despite these restrictions, huge crowds are still expected to gather in Paris and elsewhere.",
+          "Meanwhile, some local businesses have boarded up their windows.",
+          "This unrest has played out as France prepares for a highly unpredictable election period."
+        ],
+        "overview": "French authorities are increasing security and imposing restrictions ahead of expected nationwide demonstrations.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The story explains how police, officials, and businesses are getting ready for more demonstrations.",
+              "The election is mentioned as background context, but the main event is the preparation for demonstrations.",
+              "Some businesses are voluntarily boarding up their windows; the reading does not mention a new law."
+            ],
+            "options": [
+              "Preparations in France for further demonstrations following recent violence.",
+              "An upcoming national election to replace the president immediately.",
+              "A new law forcing businesses to board up their windows."
+            ],
+            "question": "What is the main focus of this news story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text states that opposition parties accused the government of failing to predict the scale of the violence.",
+              "The text mentions spending cuts, but it does not say opposition parties complained about repair costs.",
+              "The reading does not mention the government refusing to listen to high school students."
+            ],
+            "options": [
+              "They failed to predict the scale of the recent violence.",
+              "They spent too much money fixing public property.",
+              "They refused to listen to high school students."
+            ],
+            "question": "Why did opposition parties criticise the government recently?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Disillusionment is high because of rising living costs and warnings about spending cuts.",
+              "The reading mentions an upcoming election period, but it does not say the election was delayed.",
+              "The 70,000 police are being deployed for security, not going on strike."
+            ],
+            "options": [
+              "People are facing rising living costs and warnings about spending cuts.",
+              "People are angry because the national election has been delayed.",
+              "People are upset that thousands of police are going on strike."
+            ],
+            "question": "According to the text, why is there high \"disillusionment\" among the public?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Restrictions\" refers to the bans and limits placed on public gatherings.",
+              "While a scale is a tool for weighing, that is not the meaning of \"restrictions\".",
+              "The text mentions rapid court hearings, but this is not the definition of \"restrictions\"."
+            ],
+            "options": [
+              "Rules or laws that limit what people are allowed to do.",
+              "A tool used by police to weigh dangerous items.",
+              "A type of rapid court hearing for violent crimes."
+            ],
+            "question": "What does the word \"restrictions\" mean in this context?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Unpredictable\" describes a situation where the outcome cannot be known in advance.",
+              "The story says France is preparing for the election period; it has not been cancelled.",
+              "Because it is unpredictable, we do not know what the definite result will be."
+            ],
+            "options": [
+              "It is very difficult to guess what the result will be.",
+              "It has already been cancelled because of the ongoing violence.",
+              "It will definitely result in a new government being formed."
+            ],
+            "question": "What does the word \"unpredictable\" tell us about the upcoming election period?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The passive voice emphasises the action and the receivers (the people jailed) instead of the authorities doing the jailing.",
+              "The present perfect passive describes completed actions that have a present result, not ongoing actions.",
+              "The sentence says hearings happened recently, but it does not claim no more hearings will occur."
+            ],
+            "options": [
+              "To focus on the people receiving the action rather than the authorities doing it.",
+              "To show that the people are currently in the middle of committing crimes.",
+              "To indicate that the courts have finished all hearings for the year."
+            ],
+            "question": "Why is the present perfect passive used in the phrase \"have been jailed\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text states that some local businesses have boarded up their windows.",
+              "The reading mentions police security, but it does not mention businesses hiring guards.",
+              "Businesses are boarding up their windows; they are not inviting people inside."
+            ],
+            "options": [
+              "They have boarded up their windows.",
+              "They have hired private security guards.",
+              "They have invited protesters inside."
+            ],
+            "question": "What action have some businesses taken ahead of the weekend?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "In this context, \"scale\" refers to how large and widespread the violence became.",
+              "Businesses use boards for windows, but that is not what \"scale\" means.",
+              "A ban is a restriction, while the word \"scale\" refers to the size of the violence itself."
+            ],
+            "options": [
+              "The size, level, or extent of the events that occurred.",
+              "A heavy wooden board used to protect shop windows.",
+              "A complete ban on large public gatherings."
+            ],
+            "question": "What does the word \"scale\" mean in the phrase \"the scale of the recent violence\"?"
+          }
+        ],
+        "sentence_evidence": [
+          "France is on high alert ahead of a new day of nationwide protests on Saturday, a week after the country saw some of its worst unrest in decades.",
+          "The interior ministry has said it will deploy 70,000 police officers, ramping up the security presence in French cities, after the government was accused by opposition parties of failing to foresee the scale of the unrest on 17 October.",
+          "The interior ministry has said it will deploy 70,000 police officers, ramping up the security presence in French cities, after the government was accused by opposition parties of failing to foresee the scale of the unrest on 17 October.",
+          "Hundreds of people have been jailed for vandalism, arson and looting after fast-track court hearings in recent days.",
+          "Disillusionment is high among the French public, who have seen cost-of-living pressures increase and who are faced with increasingly dire warnings that any future government will likely come with deep spending cuts.",
+          "Macron decreed earlier this week that only demonstrations organised by a recognised trade unions would be permitted to take place on Saturday. Several key cities including Lyon, Nice and Montpellier have gone further by announcing blanket bans on gatherings .",
+          "Sweeping restrictions have been imposed on demonstrations across France but hundreds of thousands of protesters are still expected to gather in Paris and elsewhere for a second round of protests organised by students, trade unions and wider anti-government groups.",
+          "The Louvre, Orsay and Picasso museums will all be closed, a scheduled home match for football team PSG has been moved to Monday, while some businesses have boarded up their windows.",
+          "The recent unrest has played out against a backdrop of a polarised political landscape and with France preparing for what could be the most divisive and unpredictable election period in a generation."
+        ],
+        "title": "France Prepares for Demonstrations After Severe Unrest",
+        "topic": "News / European Politics",
+        "vocabulary": [
+          {
+            "definition": "A state of angry dissatisfaction and disturbance in a group of people.",
+            "part_of_speech": "noun",
+            "term": "unrest"
+          },
+          {
+            "definition": "To move police or military into a position so they are ready for action.",
+            "part_of_speech": "verb",
+            "term": "deploy"
+          },
+          {
+            "definition": "The size, level, or extent of something, especially when it is large.",
+            "part_of_speech": "noun",
+            "term": "scale"
+          },
+          {
+            "definition": "The crime of intentionally damaging public or private property.",
+            "part_of_speech": "noun",
+            "term": "vandalism"
+          },
+          {
+            "definition": "The activity of stealing things from shops or homes during a disturbance.",
+            "part_of_speech": "noun",
+            "term": "looting"
+          },
+          {
+            "definition": "A feeling of disappointment when discovering something is not as good as believed.",
+            "part_of_speech": "noun",
+            "term": "disillusionment"
+          },
+          {
+            "definition": "Rules or laws that limit what people are allowed to do.",
+            "part_of_speech": "noun",
+            "term": "restrictions"
+          },
+          {
+            "definition": "Not able to be known or guessed before it happens.",
+            "part_of_speech": "adjective",
+            "term": "unpredictable"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Based on the text, why might the government's approach of dramatically ramping up security forces escalate tensions during a wider anti-government outpouring?",
+          "If you were a city mayor facing severe turmoil, how would you balance citizens' right to assemble with the immediate necessity of maintaining public safety?"
+        ],
+        "editorial_check": {
+          "content_digest": "d7f3fd144f8381b8b68321e91b862517032cf1e8c579378056cd305c8d488e0d",
+          "date": "2026-10-24T07:48:56.933037+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz provides solid C1-level challenge through tasks involving inference, nuanced reading comprehension, and syntactic analysis, with plausible distractors throughout."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reading maintains a polished, formal journalistic tone with well-calibrated certainty and objective phrasing suitable for an advanced news report."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation concisely and accurately breaks down the advanced use of participle clauses for cohesion, using clear, accessible terminology and an exact quote."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The lesson introduces highly appropriate C1 vocabulary such as 'outpouring', 'sweeping', 'converge on', and 'pre-emptively', with precise contextual definitions and no overlap with reserved terms."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "C1-Higher"
+        },
+        "grammar": {
+          "concept": "Participle clauses replacing adverbial clauses",
+          "example_quote": "Facing accusations of failing to foresee the extent of the earlier disorder, the government is drastically ramping up security by dispatching 70,000 personnel.",
+          "explanation": "Advanced writers often use a present participle (an \"-ing\" verb) to introduce a dependent clause that explains the cause, background, or result of the main action. In this example, \"Facing accusations...\" replaces an adverbial clause of reason (like \"Because the government was facing accusations...\"), making the sentence more concise and cohesive while keeping the focus on the main action."
+        },
+        "news_brief_sentences": [
+          "France is on high alert ahead of a new wave of nationwide marches, just a week after experiencing some of its most severe turmoil in decades.",
+          "Although authorities have imposed sweeping bans on demonstrations, hundreds of thousands of participants are still expected to converge on Paris and other major cities.",
+          "Facing accusations of failing to foresee the extent of the earlier disorder, the government is drastically ramping up security by dispatching 70,000 personnel.",
+          "The interior minister warned that security forces would be uncompromising with violent offenders, citing numerous online calls for violence from radical factions.",
+          "The initial movement was ignited by high school students demanding better educational environments and urgent solutions to staff shortages.",
+          "Although the French president recently met with student representatives and pledged clear commitments to them, these delegates have urged their peers to continue to mobilise.",
+          "Several key municipalities have taken an aggressive regulatory stance by announcing blanket bans on all public gatherings ahead of the weekend.",
+          "In Paris, a march supported by labour groups has been officially ordered to adhere to a route that entirely bypasses the city centre.",
+          "Nevertheless, prominent cultural institutions in the capital have opted to close pre-emptively as businesses board up their windows to mitigate potential damage.",
+          "What began as a student-led initiative has rapidly expanded to become a wider anti-government outpouring across the nation.",
+          "Meanwhile, the national government has promised to reconstruct a severely damaged civic building entirely, ensuring that local taxpayers will not have to foot the bill."
+        ],
+        "overview": "As France braces for massive nationwide demonstrations, authorities are dramatically ramping up security and enforcing sweeping bans to prevent a recurrence of recent turmoil.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text outlines massive personnel dispatching, various municipal bans, and the political context of the upcoming marches.",
+              "While educational reforms are mentioned as the initial catalyst, they are not the central focus of the entire report.",
+              "The text states that authorities are preparing for demonstrations; it does not claim radical factions have already been suppressed."
+            ],
+            "options": [
+              "The French government's extensive security and regulatory preparations ahead of further nationwide demonstrations.",
+              "A detailed analysis of the educational reforms promised by the French president to high school students.",
+              "The successful suppression of radical factions following a week of severe turmoil in major French cities."
+            ],
+            "question": "What is the central focus of the report?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "In this context, 'sweeping' describes rules or legal actions that have a very comprehensive and far-reaching impact.",
+              "'Sweeping' refers to the broad scope and extent of the bans, not to their duration or temporary nature.",
+              "While 'sweeping' literally involves clearing away, here it figuratively describes the extent of the legal prohibitions."
+            ],
+            "options": [
+              "The prohibitions are broad, extensive, and affect a wide range of activities.",
+              "The bans are temporary and will be quickly removed after the weekend.",
+              "The authorities are forcefully removing demonstrators from public areas."
+            ],
+            "question": "What does the adjective \"sweeping\" imply in the phrase \"sweeping bans\"?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explicitly states the government is ramping up security after facing accusations of failing to foresee the extent of earlier disorder.",
+              "Although the interior minister warned against violence, the massive personnel increase was a response to earlier failures, not a specific decree.",
+              "The text mentions ramping up security by dispatching personnel, but it does not state they are replacing overwhelmed local law enforcement."
+            ],
+            "options": [
+              "It faced severe criticism for failing to anticipate the extensive magnitude of the previous week's disorder.",
+              "It was mandated by an emergency decree issued by the interior minister following violent online threats.",
+              "It needed to replace local law enforcement forces that were overwhelmed and outnumbered in major cities."
+            ],
+            "question": "According to the text, what motivated the government to dispatch 70,000 security personnel?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The movement was originally ignited by high school students advocating for better educational environments and staffing.",
+              "Labour groups joined the movement later; they did not trigger the initial demonstrations.",
+              "The text notes opposition accusations regarding security failures, but it does not identify them as the initial trigger for the marches."
+            ],
+            "options": [
+              "Demands from students for better educational environments and resolutions to staffing shortages.",
+              "A coordinated effort by labour unions to demonstrate against relentless cost-of-living pressures.",
+              "Opposition figures accusing the administration of failing to foresee the scale of the unrest."
+            ],
+            "question": "What issue initially triggered the current wave of demonstrations in France?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A 'blanket ban' applies universally to all cases, meaning no public gatherings whatsoever are permitted in those specific areas.",
+              "The term 'blanket' refers to the comprehensive scope of the ban across all activities, not a curfew or nighttime restriction.",
+              "'Blanket' in this expression means total or absolute; it does not imply concealing or covering up information."
+            ],
+            "options": [
+              "It indicates that authorities have strictly forbidden all public gatherings without granting any exceptions.",
+              "It suggests that the regulations only apply to demonstrations occurring during nighttime curfews.",
+              "It means the cities are attempting to conceal the true magnitude of the turmoil from the national government."
+            ],
+            "question": "How does the term \"blanket bans\" describe the actions taken by some key municipalities?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Because they urged their peers to continue to mobilise despite the president pledging clear reforms, they evidently believed the pressure must be maintained.",
+              "The text states the delegates themselves urged their peers to continue; it does not say they tried and failed to stop radical factions.",
+              "There is no evidence in the text suggesting that the students have completely abandoned their original educational demands."
+            ],
+            "options": [
+              "They felt his pledges were inadequate to halt their momentum and thus encouraged continued mobilisation.",
+              "They fully accepted his proposed reforms but were unable to convince radical factions to stop marching.",
+              "They abandoned their educational demands in favour of a broader anti-government political agenda."
+            ],
+            "question": "What can be inferred about the student delegates' reaction to their meeting with the French president?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading notes that several key municipalities have taken an aggressive stance by announcing blanket bans on all public gatherings.",
+              "The text describes key municipalities enforcing bans, directly contradicting the idea of unanimously allowing all marches to proceed.",
+              "The text does not claim that local authorities have surrendered their security responsibilities to the interior ministry."
+            ],
+            "options": [
+              "Several key municipalities have taken aggressive regulatory stances by enforcing total prohibitions on public gatherings.",
+              "They have unanimously agreed to bypass the central government's directives by allowing all marches to proceed.",
+              "They have delegated all law enforcement responsibilities directly to the interior ministry."
+            ],
+            "question": "How are local authorities across France handling the planned marches?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The participle clause acts adverbially, replacing a phrase like 'Because the government was facing accusations...' to show cause.",
+              "'Facing' is a participle introducing a dependent clause, while the main verb phrase of the sentence is 'is... ramping up'.",
+              "'Facing' is not the grammatical subject of the sentence; 'the government' is the subject that performs the main action."
+            ],
+            "options": [
+              "It introduces an adverbial clause that explains the underlying reason for the government's subsequent action.",
+              "It functions as the main verb of the sentence, indicating an action that is currently happening.",
+              "It acts as a gerund serving as the grammatical subject of the sentence, highlighting the government's difficulties."
+            ],
+            "question": "In the clause \"Facing accusations of failing to foresee the extent of the earlier disorder...\", what grammatical purpose does the present participle \"facing\" serve?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "'Foot the bill' is an idiom meaning to pay for an expense, which the national government has promised to do for the building.",
+              "The phrase specifically relates to paying for financial costs, not doing the physical labour of rebuilding the structures.",
+              "The expression has nothing to do with physically stepping on or over anything; it strictly means covering a financial cost."
+            ],
+            "options": [
+              "It means that the national government will take full responsibility for paying the reconstruction costs.",
+              "It indicates that local taxpayers are being forced to physically rebuild the structures themselves.",
+              "It suggests that authorities will simply step over the debris rather than funding immediate repairs."
+            ],
+            "question": "How is the idiom \"foot the bill\" used in the context of the damaged civic building?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text explicitly notes that what began as a student-led initiative expanded into a wider anti-government outpouring.",
+              "The text states the exact opposite progression; it started with students, and labour groups joined the broader movement later.",
+              "Cultural institutions are mentioned as closing pre-emptively to avoid damage, not as the primary leaders of the demonstrations."
+            ],
+            "options": [
+              "They transitioned from a focused student initiative into a much broader expression of nationwide anti-government sentiment.",
+              "They evolved from a peaceful labour march in Paris into a nationwide student demand for better educational reforms.",
+              "They started as isolated incidents of property damage but quickly became a highly organised movement led by prominent cultural institutions."
+            ],
+            "question": "How has the nature of the demonstrations shifted since they originally began?"
+          }
+        ],
+        "sentence_evidence": [
+          "France is on high alert ahead of a new day of nationwide protests on Saturday, a week after the country saw some of its worst unrest in decades.",
+          "Sweeping restrictions have been imposed on demonstrations across France but hundreds of thousands of protesters are still expected to gather in Paris and elsewhere for a second round of protests organised by students, trade unions and wider anti-government groups.",
+          "The interior ministry has said it will deploy 70,000 police officers, ramping up the security presence in French cities, after the government was accused by opposition parties of failing to foresee the scale of the unrest on 17 October.",
+          "\"We will be uncompromising with the vandals, with the looters, and all those who commit acts of violence,\" he added, explaining that separate from the planned protests, numerous calls for violence had been seen on social media from the \"far left and radical extreme left\".",
+          "The protests began with demands from high school students to improve school conditions and fix staff shortages, before violence took hold in places.",
+          "President Emmanuel Macron met high-school students' representatives on Friday ahead of Saturday's protests, and although they said he had made clear commitments to them, they said students should \"continue to mobilise\".",
+          "Macron decreed earlier this week that only demonstrations organised by a recognised trade unions would be permitted to take place on Saturday. Several key cities including Lyon, Nice and Montpellier have gone further by announcing blanket bans on gatherings .",
+          "In Paris, a march organised by the student trade union and supported by labour groups has been ordered to stick to a route that does not go through the city centre - though preparations for potential unrest in some of the city's most recognisable parts are under way regardless.",
+          "The Louvre, Orsay and Picasso museums will all be closed, a scheduled home match for football team PSG has been moved to Monday, while some businesses have boarded up their windows.",
+          "In a sign of how a student-led protest movement expanded to become a wider anti-government outpouring, protesters associated with a revived gilet jaunes (yellow-vest) movement could be out in force across France on Saturday.",
+          "French Prime Minister Sébastien Lecornu said while visiting Limoges on Friday that the national government would pay for the building to be reconstructed \"exactly as it was\" rather than local taxpayers having to foot the bill."
+        ],
+        "title": "France Prepares for Nationwide Marches Following Severe Turmoil",
+        "topic": "Civil Unrest and Security Measures in France",
+        "vocabulary": [
+          {
+            "definition": "A state of great disturbance, confusion, or uncertainty.",
+            "part_of_speech": "noun",
+            "term": "turmoil"
+          },
+          {
+            "definition": "Extensive or wide-ranging in scope, effect, or application.",
+            "part_of_speech": "adjective",
+            "term": "sweeping"
+          },
+          {
+            "definition": "To move towards a specific location from different directions and gather there.",
+            "part_of_speech": "phrasal verb",
+            "term": "converge on"
+          },
+          {
+            "definition": "To be aware of beforehand; to predict or anticipate an event.",
+            "part_of_speech": "verb",
+            "term": "foresee"
+          },
+          {
+            "definition": "Substantially increasing the level, amount, or speed of an activity or effort.",
+            "part_of_speech": "phrasal verb",
+            "term": "ramping up"
+          },
+          {
+            "definition": "Showing an unwillingness to make concessions or negotiate, particularly when enforcing rules.",
+            "part_of_speech": "adjective",
+            "term": "uncompromising"
+          },
+          {
+            "definition": "Sparked or started a heated situation, such as an argument, movement, or conflict.",
+            "part_of_speech": "verb",
+            "term": "ignited"
+          },
+          {
+            "definition": "Absolute prohibitions that apply universally to all cases or situations without exception.",
+            "part_of_speech": "noun",
+            "term": "blanket bans"
+          },
+          {
+            "definition": "Done beforehand to prevent an anticipated event or to mitigate its effects.",
+            "part_of_speech": "adverb",
+            "term": "pre-emptively"
+          },
+          {
+            "definition": "A sudden, robust expression of strong emotion or widespread public dissent.",
+            "part_of_speech": "noun",
+            "term": "outpouring"
+          },
+          {
+            "definition": "To pay for something, especially a large or unexpected expense.",
+            "part_of_speech": "idiom",
+            "term": "foot the bill"
+          }
+        ]
+      }
+    }
+  }
+}

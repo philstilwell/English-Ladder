@@ -1,5 +1,5 @@
 {
-  "revision": "2026-09-06-multiple-choice",
+  "revision": "2026-10-25",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -5936,6 +5936,132 @@
       "sources": [
         "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple",
         "https://learnenglishteens.britishcouncil.org/grammar/a1-a2-grammar/question-words"
+      ]
+    },
+    {
+      "number": 52,
+      "title": "Fewer or less? Comparing quantities",
+      "level": "A2–B1",
+      "category": "Nouns and quantities",
+      "goal": "Compare a smaller number or amount with “fewer” and “less”, and recognize common measurement expressions.",
+      "rules": [
+        "Use “fewer” for a smaller number of separate things: “We need fewer boxes.” The noun is plural because boxes are countable: one box, two boxes. In careful writing, choose “fewer” with ordinary plural countable nouns such as mistakes, bottles, and questions.",
+        "Use “less” for a smaller amount: “We need less paper”; “This takes less time.” Paper and time are uncountable in these examples. If you name countable units, change the word: “less water” but “fewer bottles of water”; “less paper” but “fewer sheets of paper”. The noun you choose determines the pattern.",
+        "This is a useful starting rule, not an absolute ban on “less” with plurals. Measurements commonly use “less”: “less than ten minutes”, “less than twenty dollars”. The words describe a total amount of time or money. You may also hear “less” with ordinary plural nouns in conversation; “fewer” is the safer choice for those nouns in careful writing. “Fewer” and “less” make comparisons; they do not necessarily mean that the remaining quantity is small."
+      ],
+      "cards": [
+        {
+          "label": "FEWER: A SMALLER NUMBER",
+          "example": "We need fewer boxes. She made fewer mistakes.",
+          "note": "Boxes and mistakes are separate things we can count. Use the plural noun after “fewer”."
+        },
+        {
+          "label": "LESS: A SMALLER AMOUNT",
+          "example": "We need less paper. This takes less time.",
+          "note": "Paper is a material here, and time is an amount. Neither noun needs a plural ending in these examples."
+        },
+        {
+          "label": "CHECK THE NOUN AND THE MEANING",
+          "example": "fewer bottles • less water • less than ten minutes",
+          "note": "Bottles are counted as objects. Water is measured as an amount. A time measurement can also describe one total amount."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "There were eight delivery boxes yesterday and five today. Which sentence uses the usual careful-writing pattern for a smaller number?",
+          "options": [
+            {
+              "text": "There are fewer boxes today.",
+              "correct": true,
+              "feedback": "Five is a smaller number than eight. “Fewer” goes with the plural countable noun “boxes”."
+            },
+            {
+              "text": "There are fewer box today.",
+              "correct": false,
+              "feedback": "Use the plural noun “boxes” after “fewer”."
+            },
+            {
+              "text": "There are more boxes today.",
+              "correct": false,
+              "feedback": "“More” describes a larger number, but five is smaller than eight."
+            }
+          ]
+        },
+        {
+          "prompt": "The printer now uses a smaller amount of paper. Complete: “The printer uses ___ paper.”",
+          "options": [
+            {
+              "text": "fewer",
+              "correct": false,
+              "feedback": "“Paper” names an uncountable material here. Use “less paper”, or name units: “fewer sheets of paper”."
+            },
+            {
+              "text": "less",
+              "correct": true,
+              "feedback": "“Less paper” describes a smaller amount of the material."
+            },
+            {
+              "text": "many",
+              "correct": false,
+              "feedback": "“Many” needs a plural countable noun, such as “sheets”, and does not express a smaller amount."
+            }
+          ]
+        },
+        {
+          "prompt": "A journey takes eight minutes. Which sentence correctly expresses that its total duration is below ten minutes?",
+          "options": [
+            {
+              "text": "It takes more than ten minutes.",
+              "correct": false,
+              "feedback": "Eight minutes is below ten, so “more than ten” gives the wrong information."
+            },
+            {
+              "text": "It takes less ten minutes.",
+              "correct": false,
+              "feedback": "Add “than” before the comparison point: “less than ten minutes”."
+            },
+            {
+              "text": "It takes less than ten minutes.",
+              "correct": true,
+              "feedback": "This is a standard measurement expression. “Less than” compares the total duration with ten minutes."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "Last week a kitchen used twelve bottles and six litres of water. This week it used eight bottles and four litres. Choose the sentence that accurately compares both quantities in careful written English.",
+        "options": [
+          {
+            "text": "The kitchen used fewer bottles and fewer water.",
+            "correct": false,
+            "feedback": "“Fewer bottles” is right, but water is uncountable in this sentence. Use “less water”."
+          },
+          {
+            "text": "The kitchen used fewer bottles and less water.",
+            "correct": true,
+            "feedback": "The number of bottles fell from twelve to eight, and the amount of water fell from six to four litres."
+          },
+          {
+            "text": "The kitchen used more bottles and less water.",
+            "correct": false,
+            "feedback": "The amount of water decreased, but so did the number of bottles. Use “fewer bottles”, not “more bottles”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-52-fewer-or-less-student-workbook.pdf",
+        "concept-52-fewer-or-less-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-25",
+      "related": [
+        21,
+        27,
+        43
+      ],
+      "sources": [
+        "https://www.merriam-webster.com/grammar/fewer-vs-less",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/quantifiers",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/count-nouns"
       ]
     }
   ],

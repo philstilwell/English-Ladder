@@ -63,7 +63,8 @@ class WorkflowPublishingTests(unittest.TestCase):
         self.assertEqual("gpt-6.1-sol", automation["model"])
         self.assertEqual("high", automation["reasoning_effort"])
         self.assertEqual(
-            "FREQ=DAILY;BYHOUR=6,7,8;BYMINUTE=15;BYSECOND=0",
+            "DTSTART:20261026T061500Z\n"
+            "RRULE:FREQ=DAILY;BYHOUR=6,7,8;BYMINUTE=15;BYSECOND=0",
             automation["rrule"],
         )
 

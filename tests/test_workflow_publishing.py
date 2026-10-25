@@ -1,285 +1,72 @@
-"""Exercise runner authentication and the real cleanup shell with disposable Git repos."""
-import os
+"""Guard the no-API daily trigger and offline publication workflow."""
 from pathlib import Path
 import re
-import shlex
-import shutil
-import subprocess
-import sys
-import tempfile
-import textwrap
+import tomllib
 import unittest
 
-WORKFLOW = (Path(__file__).resolve().parents[1] / '.github/workflows/cron.yml').read_text()
+
+ROOT = Path(__file__).resolve().parents[1]
+WORKFLOW = (ROOT / ".github/workflows/cron.yml").read_text()
 
 
-def step_script(name):
-    lines = WORKFLOW.splitlines()
-    start = lines.index('      - name: ' + name)
-    run = next(i for i in range(start + 1, len(lines)) if lines[i].startswith('        run:'))
-    if lines[run] != '        run: |':
-        return lines[run].removeprefix('        run: ')
-    end = run + 1
-    while end < len(lines) and (not lines[end].strip() or lines[end].startswith('          ')):
-        end += 1
-    return textwrap.dedent('\n'.join(lines[run + 1:end]))
-
-
-def job_condition(job, values):
-    section = WORKFLOW.split('\n  ' + job + ':\n', 1)[1]
-    lines = section.splitlines()
-    start = next(i for i, line in enumerate(lines) if line.startswith('    if: '))
-    expression = lines[start][8:]
-    if expression == '>-':
-        parts = []
-        for line in lines[start + 1:]:
-            if not line.startswith('      '):
-                break
-            parts.append(line.strip())
-        expression = ' '.join(parts)
-    expression = (expression.replace('always()', 'True').replace('&&', ' and ')
-                  .replace('||', ' or ').replace('!contains', 'not contains'))
-    expression = re.sub(r'\b(?:github|needs)\.[A-Za-z0-9_.]+',
-                        lambda match: repr(values.get(match.group(), '')), expression)
-    return eval(expression, {'__builtins__': {}, 'contains': lambda value, needle: needle in value}, {})
-
-
-@unittest.skipUnless(shutil.which('git') and shutil.which('gh'), 'Git and GitHub CLI are required')
 class WorkflowPublishingTests(unittest.TestCase):
-    def setUp(self):
-        self.directory = tempfile.TemporaryDirectory()
-        self.addCleanup(self.directory.cleanup)
-        self.root = Path(self.directory.name)
-        self.repo = self.root / 'checkout'
-        self.remote = self.root / 'remote.git'
-        self.bin = self.root / 'bin'
-        self.bin.mkdir()
-        self.git = shutil.which('git')
-        self.env = {**os.environ, 'GH_TOKEN': 'synthetic-offline-test-token',
-                    'GH_CONFIG_DIR': str(self.root / 'gh'), 'GIT_CONFIG_GLOBAL': str(self.root / 'gitconfig'),
-                    'GIT_CONFIG_NOSYSTEM': '1', 'GIT_TERMINAL_PROMPT': '0',
-                    'GITHUB_REF_NAME': 'main', 'GITHUB_OUTPUT': str(self.root / 'outputs'),
-                    'TEST_ROOT': str(self.root), 'REAL_GIT': self.git}
-        subprocess.run([self.git, 'init', '--bare', str(self.remote)], check=True, capture_output=True, env=self.env)
-        subprocess.run([self.git, 'init', '-b', 'main', str(self.repo)], check=True, capture_output=True, env=self.env)
-        for name in ('index.html', 'archive/keep.json', 'news/expired/beginner.html', 'assets/news/keep.json',
-                     'data/vocabulary-translations/keep.json', 'lesson-data.json', 'sitemap.xml',
-                     'sitemaps/keep.xml', 'content/seo-index.json', 'robots.txt'):
-            path = self.repo / name
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text('Before cleanup\n')
-        self.run_git('config', 'user.name', 'Test')
-        self.run_git('config', 'user.email', 'test@example.invalid')
-        self.run_git('add', '.')
-        self.run_git('commit', '-m', 'Initial edition')
-        self.run_git('remote', 'add', 'origin', str(self.remote))
-        self.run_git('push', '-u', 'origin', 'main')
-        self.initial = self.run_git('rev-parse', 'HEAD').stdout.strip()
-        self.executable('sleep', '#!/bin/sh\nexit 0\n')
-        self.executable('git', f'''#!{sys.executable}
-import json, os, pathlib, sys
-root = pathlib.Path(os.environ['TEST_ROOT'])
-args = sys.argv[1:]
-with (root / 'git-calls').open('a') as log: log.write(json.dumps(args) + '\\n')
-if args and args[0] in ('fetch', 'push'):
-    operation = args[0]
-    counter = root / (operation + '-count')
-    count = int(counter.read_text()) + 1 if counter.exists() else 1
-    counter.write_text(str(count))
-    if count <= int(os.environ.get('FAIL_' + operation.upper(), '0')):
-        print('fatal: simulated transport failure', file=sys.stderr)
-        sys.exit(128)
-os.execv(os.environ['REAL_GIT'], [os.environ['REAL_GIT']] + args)
-''')
-        self.executable('python', f'''#!{sys.executable}
-import os, pathlib, sys
-root = pathlib.Path(os.environ['TEST_ROOT'])
-with (root / 'python-calls').open('a') as log: log.write(' '.join(sys.argv[1:]) + '\\n')
-if sys.argv[1:] == ['update_site.py', '--refresh-pages']:
-    pathlib.Path('news/expired/beginner.html').unlink(missing_ok=True)
-    pathlib.Path('index.html').write_text('Retained edition\\n')
-elif sys.argv[1:] == ['audit_site.py']:
-    sys.exit(int(os.environ.get('FAIL_AUDIT', '0')))
-else:
-    raise SystemExit('Unexpected generation command in cleanup-only flow')
-''')
-        self.env['PATH'] = str(self.bin) + os.pathsep + self.env['PATH']
+    def test_github_workflow_has_no_daily_schedule_or_model_generation_path(self):
+        self.assertNotRegex(WORKFLOW, r"(?m)^\s*schedule:\s*$")
+        forbidden = [
+            "GEMINI" + "_API_KEY",
+            "OPENAI" + "_API_KEY",
+            "generate_" + "daily_lessons",
+            "ensure_" + "daily_image",
+            "vocabulary_" + "translations.py --budget",
+        ]
+        for value in forbidden:
+            with self.subTest(value=value):
+                self.assertNotIn(value, WORKFLOW)
 
-    def executable(self, name, source):
-        path = self.bin / name
-        path.write_text(source)
-        path.chmod(0o700)
-
-    def run_git(self, *args):
-        return subprocess.run([self.git, *args], cwd=self.repo, env=self.env, text=True, capture_output=True, check=True)
-
-    def cleanup(self, **failures):
-        return subprocess.run(['bash', '-e', '-o', 'pipefail', '-c',
-                               step_script('Rebuild and save the retained archive')],
-                              cwd=self.repo, env={**self.env, **failures}, text=True, capture_output=True, timeout=20)
-
-    def test_credential_helper_works_without_checkout_credentials(self):
-        # Use the workflow's actual setup command, with a synthetic token and no user config.
-        setup = next(line.strip() for line in step_script('Rebuild and save the retained archive').splitlines()
-                     if line.strip().startswith('gh auth setup-git'))
-        subprocess.run(['bash', '-e', '-c', setup], cwd=self.repo, env=self.env, check=True, capture_output=True)
-        result = subprocess.run([self.git, 'credential', 'fill'], input='protocol=https\nhost=github.com\n\n',
-                                cwd=self.repo, env=self.env, text=True, capture_output=True, check=True, timeout=15)
-        self.assertIn('password=' + self.env['GH_TOKEN'], result.stdout)
-        self.assertNotIn(self.env['GH_TOKEN'], (self.root / 'gitconfig').read_text())
-
-    def test_transient_fetch_failure_retries_then_publishes_cleanup(self):
-        result = self.cleanup(FAIL_FETCH='1')
-        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual('2', (self.root / 'fetch-count').read_text())
-        self.assertEqual('Retained edition', self.run_git('show', 'origin/main:index.html').stdout.strip())
-        self.assertNotIn('news/expired/beginner.html', self.run_git('ls-tree', '-r', '--name-only', 'origin/main').stdout)
-        self.assertNotIn(self.env['GH_TOKEN'], result.stdout + result.stderr + (self.root / 'git-calls').read_text())
-
-    def test_transient_push_failure_rebuilds_after_refreshing_branch(self):
-        result = self.cleanup(FAIL_PUSH='1')
-        self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-        self.assertEqual('2', (self.root / 'push-count').read_text())
-        self.assertEqual(2, (self.root / 'python-calls').read_text().count('update_site.py --refresh-pages'))
-        self.assertEqual(self.run_git('rev-parse', 'HEAD').stdout, self.run_git('rev-parse', 'origin/main').stdout)
-
-    def test_permanent_fetch_failure_is_bounded_and_explains_authentication(self):
-        result = self.cleanup(FAIL_FETCH='99')
-        self.assertNotEqual(0, result.returncode)
-        self.assertEqual('3', (self.root / 'fetch-count').read_text())
-        self.assertIn('::error::Archive cleanup could not fetch', result.stdout)
-        self.assertIn('LESSON_PUBLISH_TOKEN', result.stdout)
-        self.assertFalse((self.root / 'python-calls').exists())
-        self.assertEqual(self.initial, self.run_git('rev-parse', 'origin/main').stdout.strip())
-
-    def test_failed_audit_never_pushes(self):
-        result = self.cleanup(FAIL_AUDIT='1')
-        self.assertNotEqual(0, result.returncode)
-        self.assertFalse((self.root / 'push-count').exists())
-        self.assertEqual(self.initial, self.run_git('rev-parse', 'origin/main').stdout.strip())
-
-    def test_checked_revision_is_recorded_even_without_a_cleanup_commit(self):
-        result = subprocess.run(['bash', '-e', '-c', step_script('Record checked archive revision')],
-                                cwd=self.repo, env=self.env, text=True, capture_output=True)
-        self.assertEqual(0, result.returncode)
-        self.assertEqual('revision=' + self.initial, (self.root / 'outputs').read_text().strip())
-
-
-class WorkflowRoutingTests(unittest.TestCase):
-    def test_published_schedule_skips_expensive_job_but_keeps_verification(self):
-        values = {'github.event_name': 'schedule', 'needs.maintain_archive.result': 'success',
-                  'needs.check_daily.outputs.already_published': 'true',
-                  'needs.check_daily.outputs.publishing_revision': 'saved-revision',
-                  'needs.build_and_deploy.result': 'skipped'}
-        self.assertTrue(job_condition('check_daily', values))
-        self.assertFalse(job_condition('build_and_deploy', values))
-        self.assertTrue(job_condition('verify_publishing', values))
-
-    def test_incomplete_schedule_still_runs_recovery(self):
-        values = {'github.event_name': 'schedule', 'needs.maintain_archive.result': 'success',
-                  'needs.check_daily.outputs.already_published': 'false'}
-        self.assertTrue(job_condition('build_and_deploy', values))
-
-    def test_verification_only_cannot_rebuild_or_generate_even_with_conflicting_flags(self):
-        for flag in ('maintenance_only', 'deploy_only', 'refresh_feature', 'translate_recent', 'translate_archive'):
-            values = {'github.event_name': 'workflow_dispatch', 'github.event.inputs.verify_only': 'true',
-                      f'github.event.inputs.{flag}': 'true', 'needs.maintain_archive.result': 'skipped'}
-            with self.subTest(flag=flag):
-                self.assertTrue(job_condition('check_daily', values))
-                self.assertFalse(job_condition('maintain_archive', values))
-                self.assertFalse(job_condition('build_and_deploy', values))
-        self.assertFalse(job_condition('test_email', {
-            'github.event_name': 'workflow_dispatch', 'github.event.inputs.verify_only': 'true',
-            'github.event.inputs.test_email': 'true'}))
-
-    def test_healthy_shortcut_does_not_send_failure_email_but_real_problems_do(self):
-        healthy = {'github.event_name': 'schedule', 'github.event.schedule': '15 8 * * *',
-                   'needs.maintain_archive.result': 'success', 'needs.check_daily.result': 'success',
-                   'needs.check_daily.outputs.already_published': 'true',
-                   'needs.build_and_deploy.result': 'skipped', 'needs.verify_publishing.result': 'success'}
-        self.assertFalse(job_condition('failure_email', healthy))
-        for key in ('needs.maintain_archive.result', 'needs.check_daily.result',
-                    'needs.verify_publishing.result', 'needs.build_and_deploy.outputs.translations_result',
-                    'needs.build_and_deploy.outputs.image_result'):
-            with self.subTest(key=key):
-                self.assertTrue(job_condition('failure_email', {**healthy, key: 'failure'}))
-        self.assertTrue(job_condition('failure_email', {
-            **healthy, 'needs.check_daily.outputs.already_published': 'false',
-            'needs.build_and_deploy.result': 'cancelled'}))
-        self.assertFalse(job_condition('failure_email', {**healthy, 'github.event_name': 'workflow_dispatch'}))
-
-    def test_schedule_verifies_target_date_even_if_generation_was_cancelled(self):
-        script = step_script('Verify current lesson on Cloudflare')
-        self.assertIn('retention_date()', script)
-        self.assertLess(script.index('export RELEASE_DATE'), script.index('verify-current-lesson.cjs'))
-        self.assertLess(script.index('verify-current-lesson.cjs'), script.index('verified=true'))
-
-    def test_publication_retry_stages_a_private_request_even_without_lesson_changes(self):
-        source = step_script('Commit updated lesson pages')
-        marker = re.search(r'(?sm)^\s*if \[ "\$\{RETRY_PUBLISHING\}".*?^\s*fi$', source).group()
-        marker = marker.replace("python - <<'PY'", shlex.quote(sys.executable) + " - <<'PY'")
-        with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
-            (root / 'cloudflare').mkdir()
-            subprocess.run(['git', 'init', '-q', temporary], check=True, capture_output=True)
-            env = {**os.environ, 'RETRY_PUBLISHING': 'true', 'REQUESTED_RELEASE_DATE': '2026-10-06',
-                   'GITHUB_RUN_ID': '123', 'GITHUB_RUN_ATTEMPT': '1'}
-            result = subprocess.run(['bash', '-e', '-c', marker], cwd=root, env=env, text=True, capture_output=True)
-            self.assertEqual(0, result.returncode, result.stdout + result.stderr)
-            staged = subprocess.check_output(['git', 'diff', '--cached', '--name-only'], cwd=root, text=True)
-            self.assertEqual('cloudflare/publication-request.json\n', staged)
-            self.assertIn('"release_date": "2026-10-06"', (root / staged.strip()).read_text())
-
-    def test_publication_retry_refuses_generation_mode(self):
-        for retry, deploy, expected in (("true", "false", 1), ("true", "true", 0),
-                                         ("false", "false", 0)):
-            with self.subTest(retry=retry, deploy=deploy):
-                result = subprocess.run(['bash', '-e', '-c', step_script('Validate publishing retry request')],
-                                        env={**os.environ, 'RETRY_PUBLISHING': retry, 'DEPLOY_ONLY': deploy},
-                                        text=True, capture_output=True)
-                self.assertEqual(expected, result.returncode)
-
-    def test_manual_maintenance_never_enters_content_generation(self):
-        for event, maintenance, email, result, expected in (
-            ('workflow_dispatch', 'true', 'false', 'success', (True, False)),
-            ('workflow_dispatch', 'true', 'true', 'skipped', (False, False)),
-            ('schedule', '', '', 'success', (True, True)),
-            ('schedule', '', '', 'failure', (True, False)),
-            ('push', '', '', 'skipped', (False, True)),
-            ('workflow_dispatch', 'false', 'false', 'skipped', (False, True)),
+    def test_push_runs_complete_offline_checks_and_hosting_verification(self):
+        for required in (
+            "python -m unittest discover -s tests -p 'test_*.py'",
+            "npm run check:js",
+            "node --test tests/*.test.cjs",
+            "python audit_site.py",
+            "cloudflare/verify-publishing.py",
+            "cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev",
+            "cloudflare/verify-current-lesson.cjs https://englishladder.com",
         ):
-            values = {'github.event_name': event, 'github.event.head_commit.message': '',
-                      'github.event.inputs.maintenance_only': maintenance,
-                      'github.event.inputs.test_email': email, 'needs.maintain_archive.result': result}
-            with self.subTest(event=event, maintenance=maintenance, email=email, result=result):
-                self.assertEqual(expected, tuple(job_condition(job, values)
-                                 for job in ('maintain_archive', 'build_and_deploy')))
+            with self.subTest(required=required):
+                self.assertIn(required, WORKFLOW)
 
-    def test_workflow_generated_pushes_do_not_enqueue_another_full_build(self):
-        for message in (
-            'Retain the latest 50 calendar days of news lessons [skip-daily-workflow]',
-            'Auto-update daily lessons [skip-daily-workflow]',
-        ):
-            values = {
-                'github.event_name': 'push',
-                'github.event.head_commit.message': message,
-                'github.event.inputs.maintenance_only': '',
-                'github.event.inputs.test_email': '',
-                'needs.maintain_archive.result': 'skipped',
-            }
-            with self.subTest(message=message):
-                self.assertFalse(job_condition('build_and_deploy', values))
+    def test_manual_workflow_can_only_verify_or_test_email(self):
+        inputs = re.search(r"(?ms)^  workflow_dispatch:\n    inputs:\n(.*?)\n\nconcurrency:",
+                           WORKFLOW).group(1)
+        names = re.findall(r"^      ([a-z_]+):$", inputs, re.M)
+        self.assertEqual(["verify_only", "test_email"], names)
+        self.assertIn("python daily_publication.py --require-published", WORKFLOW)
 
-    def test_human_push_still_runs_validation_and_publication_checks(self):
-        values = {
-            'github.event_name': 'push',
-            'github.event.head_commit.message': 'Improve lesson generation',
-            'github.event.inputs.maintenance_only': '',
-            'github.event.inputs.test_email': '',
-            'needs.maintain_archive.result': 'skipped',
-        }
-        self.assertTrue(job_condition('build_and_deploy', values))
+    def test_audio_workflow_no_longer_backfills_daily_vocabulary(self):
+        audio = (ROOT / ".github/workflows/translate-us-life.yml").read_text()
+        self.assertNotIn("include_vocabulary", audio)
+        self.assertNotIn("vocabulary_translations.py", audio)
+        self.assertNotIn("data/vocabulary-translations", audio)
+
+    def test_repository_skill_is_the_declared_producer(self):
+        skill = (ROOT / ".agents/skills/english-ladder-daily-producer/SKILL.md").read_text()
+        self.assertIn("plan_daily_runner.py", skill)
+        self.assertIn("06:15, 07:15, and 08:15 UTC", skill)
+        self.assertIn("no paid api fallback", skill.lower())
+        self.assertIn("node cloudflare/check-daily-publication.cjs", skill)
+
+    def test_desktop_schedule_uses_local_checkout_and_three_idempotent_opportunities(self):
+        with (ROOT / "ops/english-ladder-daily.automation.toml").open("rb") as stream:
+            automation = tomllib.load(stream)
+        self.assertEqual("local", automation["execution_environment"])
+        self.assertEqual("gpt-6.1-sol", automation["model"])
+        self.assertEqual("high", automation["reasoning_effort"])
+        self.assertEqual(
+            "FREQ=DAILY;BYHOUR=6,7,8;BYMINUTE=15;BYSECOND=0",
+            automation["rrule"],
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -33,11 +33,6 @@ on:
         required: false
         type: number
         default: 8
-      include_vocabulary:
-        description: 'Also fill missing languages across the retained news archive and evergreen stories (up to $5)'
-        required: false
-        type: boolean
-        default: false
       budget_key:
         description: 'Cumulative spending record; reuse the same key when retrying (Everyday English cap $2)'
         required: false
@@ -89,12 +84,6 @@ jobs:
           else
             python -u us_life_audio_batch.py --budget 2 --budget-key "$BACKFILL_KEY" --limit "$AUDIO_LIMIT" --model "$AUDIO_MODEL" --batch-size "$AUDIO_BATCH_SIZE"
           fi
-      - name: Fill and separately review missing vocabulary languages
-        if: github.event.inputs.include_vocabulary == 'true'
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
-        run: python -u vocabulary_translations.py --all --budget 5 --budget-key "$BACKFILL_KEY"
       - name: Translate and separately edit the public sidebars
         if: ${{ !cancelled() }}
         env:
@@ -114,7 +103,6 @@ jobs:
           name: reviewed-translations-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             data/us-life-translations/
-            data/vocabulary-translations/
             assets/audio/us-life/
             content/us-life-audio.json
             content/.audio-usage-*.json
@@ -129,7 +117,7 @@ jobs:
           gh auth setup-git --hostname github.com
           git config user.name 'GitHub Actions Bot'
           git config user.email 'actions@github.com'
-          git add data/us-life-translations data/vocabulary-translations
+          git add data/us-life-translations
           if [ -d assets/audio/us-life ]; then git add assets/audio/us-life; fi
           git add content/
           # This derived preview may have missing sidebars until the review finishes.

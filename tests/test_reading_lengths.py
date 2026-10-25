@@ -95,27 +95,16 @@ class ReadingLengthTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Intermediate.*at least 8'):
                 update_site.require_archive_lesson_minimums(directory)
 
-    def test_one_failed_level_prevents_the_whole_daily_edition_from_being_saved(self):
+    def test_legacy_paid_generation_entrypoint_is_retired(self):
         args = SimpleNamespace(refresh_feature=False, refresh_pages=False,
                                release_date='2026-09-06', skip_existing=False)
-        client = SimpleNamespace(close=lambda: None)
-        calls = []
-        def generate(client, news, config, date, **resume):
-            calls.append(config['name'])
-            if config['name'] == 'Advanced':
-                raise RuntimeError('Advanced reading is below the ten-sentence minimum.')
-            return self.archive['levels'][config['name'].lower()]['lesson'], '<details></details>'
         with patch.object(update_site, 'parse_args', return_value=args), \
-             patch.object(update_site, 'get_daily_news', return_value=self.archive['source']), \
-             patch.object(update_site, 'configure_gemini', return_value=client), \
-             patch.object(update_site, 'generate_lesson', side_effect=generate), \
              patch.object(update_site, 'archive_daily_lessons') as archive, \
              patch.object(update_site, 'update_level_page') as publish:
-            with self.assertRaisesRegex(RuntimeError, 'below'):
+            with self.assertRaisesRegex(RuntimeError, 'Paid-API daily lesson generation is retired'):
                 update_site.main()
             archive.assert_not_called()
             publish.assert_not_called()
-        self.assertEqual(['Beginner', 'Intermediate', 'Advanced'], calls)
 
     def test_news_selection_tries_another_article_when_the_first_has_no_body(self):
         entries = [dict(title='A new discovery', summary='Researchers describe their discovery.', link='https://www.bbc.co.uk/news/articles/first'),

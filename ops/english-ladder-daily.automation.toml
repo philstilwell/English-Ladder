@@ -1,0 +1,13 @@
+version = 1
+id = "english-ladder-daily-plan"
+kind = "cron"
+name = "English Ladder Daily"
+prompt = "Read .agents/skills/english-ladder-daily-producer/SKILL.md completely and follow it. Produce, recover, publish, and verify today's complete English Ladder edition. Use only ChatGPT-authenticated Codex plan sessions, retain complete existing stages, and never use a paid API fallback."
+status = "ACTIVE"
+rrule = "FREQ=DAILY;BYHOUR=6,7,8;BYMINUTE=15;BYSECOND=0"
+model = "gpt-6.1-sol"
+reasoning_effort = "high"
+execution_environment = "local"
+cwds = ["/Users/philstilwell/Documents/Codex/2026-10-05/task/English-Ladder"]
+created_at = 1792941000000
+updated_at = 1792941000000

@@ -14,6 +14,7 @@ GENERATION_POLICY_FILES = (
     'lesson_levels.py',
     'lesson_evidence.py',
     'lesson_run.py',
+    'plan_daily.py',
 )
 MAX_SOURCE_ARTICLES_PER_RUN = 4
 SOURCE_FAILURES_BEFORE_WORLD_FALLBACK = 1

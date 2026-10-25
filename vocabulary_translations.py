@@ -232,21 +232,11 @@ def main():
         parser.error('Use a safe budget key and a budget greater than zero, at most $10.')
     lessons = list(lessons_to_translate(args.all))
     pending = [(label, source) for label, source in lessons if not read_record(source)]
-    if not args.check and pending:
-        from update_site import configure_gemini
-        client = configure_gemini()
-        budget = Budget(CACHE_DIR / ('.usage-' + args.budget_key + '.json'), args.budget)
-        try:
-            with ThreadPoolExecutor(max_workers=4) as pool:
-                jobs = {pool.submit(translate_lesson, client, source, budget): label for label, source in pending}
-                for job in as_completed(jobs):
-                    try:
-                        print(f'{jobs[job]}: {job.result()}', flush=True)
-                    except Exception as error:
-                        print(f'{jobs[job]}: kept English ({type(error).__name__})', flush=True)
-        finally:
-            client.close()
-        print(f'Translation cost recorded/reserved: ${budget.spent:.4f} of ${budget.limit:.2f}', flush=True)
+    if not args.check:
+        raise RuntimeError(
+            'Paid-API vocabulary generation is retired. Use plan_daily_runner.py '
+            'with ChatGPT sign-in; --check remains available offline.'
+        )
     missing = [label for label, source in lessons if not read_record(source)]
     print(f'Reviewed vocabulary translations: {len(lessons) - len(missing)}/{len(lessons)} lessons; {len(missing)} awaiting translation.')
     if missing:

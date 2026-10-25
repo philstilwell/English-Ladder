@@ -1657,14 +1657,10 @@ def parse_args():
 def main():
     args = parse_args()
     if args.refresh_feature:
-        require_archive_lesson_minimums()
-        from daily_images import latest_lesson, ensure_daily_image
-        archive_path, _ = latest_lesson()
-        if archive_path:
-            ensure_daily_image(archive_path)
-        from editorial import publish_editorial_pages
-        publish_editorial_pages()
-        return
+        raise RuntimeError(
+            "Paid-API daily image generation is retired. Use plan_daily_runner.py "
+            "with ChatGPT sign-in to recover a missing illustration."
+        )
     if args.refresh_pages:
         from lesson_retention import prune_expired_lessons, summary
         retention = prune_expired_lessons(Path.cwd())
@@ -1678,38 +1674,10 @@ def main():
         publish_editorial_pages()
         return
 
-    if args.release_date:
-        release_dt = release_datetime_from_date(args.release_date)
-        print(f"Using explicit release date {args.release_date}.")
-    else:
-        release_dt = datetime.now(timezone.utc)
-
-    if args.skip_existing and archive_exists_for_release_dt(release_dt):
-        require_archive_lesson_minimums()
-        archive_path = archive_path_for_release_dt(release_dt)
-        print(f"Archive {archive_path} already exists; checking its illustration without regenerating lessons.")
-        from daily_images import ensure_daily_image
-        ensure_daily_image(archive_path)
-        from editorial import publish_editorial_pages
-        publish_editorial_pages()
-        return
-
-    from lesson_run import generate_daily_lessons
-    news_item, level_lessons = generate_daily_lessons(release_dt)
-    archive_path = archive_daily_lessons(news_item, level_lessons, release_dt)
-    print(f"Archived generated lesson JSON to {archive_path}.")
-    source = {"name": news_item.get("source_name", NEWS_SOURCE_NAME),
-              "link": news_item.get("link", ""), "title": news_item.get("title", ""),
-              "summary": news_item.get("summary", "")}
-    for level in LEVELS:
-        lesson_html = render_lesson_html(level_lessons[level['name'].lower()], level, release_dt, source)
-        update_level_page(level["file_path"], lesson_html, default_release_dt=release_dt)
-    from daily_images import ensure_daily_image
-    ensure_daily_image(archive_path)
-    from editorial import publish_editorial_pages
-    publish_editorial_pages()
-
-    print("Finished updating all lesson pages.")
+    raise RuntimeError(
+        "Paid-API daily lesson generation is retired. Use plan_daily_runner.py "
+        "with ChatGPT sign-in. update_site.py remains available with --refresh-pages only."
+    )
 
 
 if __name__ == "__main__":

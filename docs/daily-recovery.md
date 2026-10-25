@@ -1,57 +1,46 @@
-# Independent daily recovery
+# Independent daily monitor
 
-The daily GitHub schedule is the main trigger. A second timer on Phil's Mac checks
-every 15 minutes, starting at 02:45 America/New_York, including weekends. The timer
-uses the existing GitHub CLI account and does not depend on Codex or GitHub's cron
-scheduler. It also runs at login; missed calendar checks are coalesced when the Mac
-wakes. No server subscription or new credential stored with another service is
-required. The Mac must be on, awake, signed in, and connected to the internet.
+The local scheduled Codex task is the only automatic producer. It requests starts
+at 06:15, 07:15, and 08:15 UTC every day. Each attempt follows
+`.agents/skills/english-ladder-daily-producer/SKILL.md`, resumes missing stages,
+and exits without model work when the complete edition is already live. It uses
+the supported local checkout mode, resumes recognized current-date producer
+artifacts, and stops on unrelated checkout changes or low disk space. The Mac
+must be on, awake, connected, and signed in to ChatGPT through the Codex app.
 
-`daily_recovery.py` is installed at
-`~/Documents/Codex/English-Ladder-daily-recovery/daily_recovery.py`. macOS runs it
-through `~/Library/LaunchAgents/com.philstilwell.englishladder.daily-recovery.plist`.
-Its `state/last-check.json` records the latest result; `state/state.json` preserves
-today's attempt reservations and `state/recovery.log` retains rotating diagnostics.
-These installation and state files are not website assets.
+A separate macOS timer runs `daily_recovery.py` every 15 minutes and at login.
+It is a read-only monitor, not a second producer. Before 08:45 UTC it records that
+the production window is still open. After that time it checks:
 
-The default command is read-only. `--apply` enables recovery:
+- today's date-specific archive on GitHub;
+- all three reviewed levels and their minimum reading, vocabulary, and quiz data;
+- the identical public archive and current feed;
+- Discover, the archive listing, the three level feeds, and the three dated pages;
+- whether an offline GitHub publication check is still active; and
+- a 30-minute grace period for a saved commit to reach hosting.
+
+Missing, partial, unreadable, or stale state is reported as `needs_attention`.
+The monitor never dispatches a workflow, starts generation, repeats a model call,
+changes a schedule, or mutates GitHub. Network uncertainty is reported rather
+than treated as proof that an edition is missing.
+
+The installed files are:
+
+- `~/Library/Application Support/EnglishLadderDailyRecovery/daily_recovery.py`
+- `~/Library/LaunchAgents/com.philstilwell.englishladder.daily-recovery.plist`
+- `~/Library/Application Support/EnglishLadderDailyRecovery/state/last-check.json`
+- `~/Library/Application Support/EnglishLadderDailyRecovery/state/recovery.log`
+
+`--apply` means “persist this read-only health result and its rotating log.” It
+does not authorize recovery or a remote write:
 
 ```sh
 python3 daily_recovery.py --json
 python3 daily_recovery.py --apply --json
 ```
 
-The check reads the date-specific archive from GitHub, confirms three reviewed
-levels, and checks the identical public archive, current feed, homepage, archive
-listing, level feeds and three dated pages. An HTTP failure or unreadable data
-does not count as proof of a missing edition. A partial saved edition needs
-attention; it never triggers replacement generation.
-
-If today's archive is missing and no daily job is queued/running, recovery starts
-the existing daily workflow with the explicit date. The workflow retains its
-source/evidence checks, independent review, saved progress, generation limits,
-translation budget and illustration limit. It uses `--skip-existing`, checks out
-the current branch after waiting, and serializes daily jobs, so a delayed scheduled
-attempt sees an edition saved by recovery and does not replace it. Existing daily
-generation charges still apply; the timer itself never calls a generation API.
-
-If the complete archive is already saved but the live site is stale, the timer
-allows 30 minutes for normal publishing, then starts the workflow with both
-`deploy_only=true` and `retry_publishing=true`. This does not generate lesson text,
-translations or images. The latter input commits a private publication request,
-which causes the existing Cloudflare GitHub integration to retry even when the
-public lesson files have not changed. The workflow refuses `retry_publishing`
-without `deploy_only`.
-
-A local lock prevents overlapping checks. Attempt reservations are saved before
-dispatch, so an uncertain network response cannot cause another immediate request.
-Recovery waits an hour between actions and allows at most three generation
-requests and three publication requests per date. Exhaustion stops automatic
-retries and is visible in the state/report. The weekday follow-up monitor remains
-the separate route for surfacing failures needing human attention.
-
-This prevents a GitHub scheduling delay from leaving an edition unstarted while
-the Mac is available. It cannot guarantee publication during outages, a failed
-editorial review, or when the Mac is unavailable. A future cloud timer can use the
-same decisions, but requires a separate GitHub credential restricted to this
-repository and renewed Cloudflare access.
+When a stage needs recovery, run the repository skill or
+`.venv/bin/python plan_daily_runner.py --date YYYY-MM-DD`. The runner preserves complete
+artifacts and uses fresh, ChatGPT-authenticated Codex sessions only for missing
+work. A hosting failure after a saved commit is verified and retried as a
+publishing problem; it is never a reason to regenerate the lesson.

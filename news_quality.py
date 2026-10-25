@@ -68,7 +68,7 @@ def validate_evidence(lesson,news):
             if number not in evidence:issues.append(f'Sentence {i} adds the unsupported number {number}.')
     return issues
 
-def review_lesson(client,news,lesson,level,model,review_record=None):
+def review_lesson(client,news,lesson,level,model,review_record=None,return_request=False):
     """A separate call; retain its level assessments only after every gate passes."""
     from teaching_typography import GUIDANCE
     from lesson_evidence import archive_evidence
@@ -110,6 +110,8 @@ For A1-A2, common beginner words such as "ideas" are acceptable vocabulary targe
 For every blocking issue or failed check, identify the problematic term or field, the violated requirement, and the concrete revision needed. Recheck the actual field before returning the issue, and quote the relevant draft wording accurately. A preferred synonym, sentence rhythm or optional extra explanation is not a blocker unless the current wording violates a stated requirement or causes a concrete meaning, clarity or level problem. Optional polish is not a blocking issue. A general approved flag cannot override a failed or missing level check. Passing the numeric minimums never excuses unsuitable vocabulary or register.
 Approve only if every check passes. If not, list concrete changes, not generic advice. Return the supplied JSON schema.
 \n'''+STORY_TITLE_GUIDANCE+'\n'+GUIDANCE+'\n'+format_language_policy(level)+'\nDATA:\n'+json.dumps(payload,ensure_ascii=False)
+    if return_request:
+        return prompt, review_response_schema()
     from generation_retry import generate_with_retry
     response=generate_with_retry(client,model=model,contents=prompt,
         config=structured_generation_config(review_response_schema()))

@@ -1,143 +1,56 @@
-name: Daily ESL Lesson Generator
+name: English Ladder Offline Publication Checks
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - '.github/workflows/cron.yml'
-      # Cover all shared generators and browser behavior, including newly added files.
+      - '.agents/skills/english-ladder-daily-producer/**'
       - '*.py'
       - '*.js'
       - '*.cjs'
       - '*.css'
       - 'package*.json'
       - 'archive/lessons/**'
-      - 'wrangler.jsonc'
+      - 'assets/news/**'
       - 'cloudflare/**'
       - '**/*.html'
       - 'pdf/**'
       - 'prompts/**'
       - 'data/**'
       - 'content/**'
-      - 'update_site.py'
-      - 'daily_images.py'
-      - 'verify_discover.py'
+      - 'sitemaps/**'
       - 'requirements.txt'
       - 'tests/**'
-      - 'styles.css'
-      - 'app.js'
-      - 'index.html'
-      - 'editorial.py'
-      - 'editorial.css'
-      - 'learning.js'
-      - 'site.js'
-      - 'site.css'
-      - 'site_quality.py'
-      - 'reading_layout.py'
-      - 'ai_extensions.py'
-      - 'ai-practice.js'
-      - 'news_quality.py'
-      - 'lesson_levels.py'
-      - 'lesson_evidence.py'
-      - 'lesson_checkpoint.py'
-      - 'lesson_run.py'
-      - 'generation_retry.py'
-      - 'vocabulary_translations.py'
-      - 'us_life_translations.py'
-      - 'us_life_language_ui.py'
-      - 'us-life.js'
-      - 'workflow_checkpoint.py'
-      - 'publish_snapshot.py'
-      - 'audit_site.py'
-      - 'audit_seo.py'
-      - 'seo.py'
-      - 'seo_lessons.py'
-      - 'seo_content.py'
-      - 'seo.css'
-      - 'work_ready_prompts.py'
-      - 'work-ready.js'
-      - 'work-ai.css'
-      - 'generate_efsp_web_pages.py'
-      - 'story_lessons.py'
-      - 'assets/editorial/**'
-  schedule:
-    # Later runs verify a complete live edition and skip expensive rebuilding.
-    # Incomplete lessons, illustrations, or translations still enter recovery.
-    # Fixed EST (UTC-5) year-round: 01:15, 02:15, and 03:15.
-    # Keep separate entries so only the final attempt sends a failure email.
-    - cron: '15 6 * * *'
-    - cron: '15 7 * * *'
-    - cron: '15 8 * * *'
+      - 'wrangler.jsonc'
   workflow_dispatch:
     inputs:
       verify_only:
-        description: 'Test daily automation and verify the saved daily edition; no rebuilding, generation, or email'
+        description: 'Run tests and verify the current saved edition; never generate content'
         required: false
         type: boolean
-        default: false
-      maintenance_only:
-        description: 'Run the scheduled archive cleanup and live checks only; no paid content generation'
-        required: false
-        type: boolean
-        default: false
+        default: true
       test_email:
-        description: 'Send a clearly labeled test alert only; no lessons, images, or publishing'
-        required: false
-        type: boolean
-        default: false
-      translate_recent:
-        description: 'Refresh missing recent vocabulary translations only; no new lessons or images ($0.30 cumulative daily cap)'
-        required: false
-        type: boolean
-        default: false
-      translate_archive:
-        description: 'Fill missing reviewed vocabulary translations; no new lessons or images ($10 cumulative initial budget)'
-        required: false
-        type: boolean
-        default: false
-      deploy_only:
-        description: 'Rebuild existing pages and verify hosting without generating lessons or images'
-        required: false
-        type: boolean
-        default: false
-      retry_publishing:
-        description: 'With deploy_only, request a fresh Cloudflare build even if public files have not changed; no paid generation'
-        required: false
-        type: boolean
-        default: false
-      release_date:
-        description: 'Optional backfill release date in YYYY-MM-DD format'
-        required: false
-        type: string
-      refresh_feature:
-        description: 'Only create a missing image for the latest lesson and rebuild Discover (no new lesson text)'
+        description: 'Send a clearly labeled test alert only; never generate content'
         required: false
         type: boolean
         default: false
 
 concurrency:
-  group: daily-esl-lesson-generator-${{ github.ref }}
+  group: english-ladder-offline-${{ github.ref }}
   cancel-in-progress: false
-  # Automated lesson pushes must not replace a waiting final scheduled attempt.
-  queue: max
 
 jobs:
-  maintain_archive:
-    name: Remove expired daily lessons
-    if: github.event.inputs.test_email != 'true' && github.event.inputs.verify_only != 'true' && (github.event_name == 'schedule' || github.event.inputs.maintenance_only == 'true')
+  check_and_verify:
+    name: Test saved content and verify publishing
+    if: github.event.inputs.test_email != 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     permissions:
-      contents: write
-    outputs:
-      publishing_revision: ${{ steps.saved_revision.outputs.revision }}
+      contents: read
     steps:
-      - name: Checkout current branch
+      - name: Checkout exact saved revision
         uses: actions/checkout@v6
-        with:
-          ref: ${{ github.ref_name }}
-          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -145,445 +58,53 @@ jobs:
           python-version: '3.11'
           cache: pip
 
-      - name: Install publishing dependencies
+      - name: Install Python dependencies
         run: pip install -r requirements.txt
-
-      - name: Check the 50-day window
-        id: retention
-        run: |
-          python - <<'PY'
-          import json, os, subprocess
-          report = json.loads(subprocess.check_output(['python', 'lesson_retention.py', '--json'], text=True))
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
-              output.write(f"needed={str(bool(report['files'])).lower()}\n")
-          print(f"Keep daily lessons dated {report['oldest_allowed']} or later; {len(report['files'])} expired files.")
-          PY
-
-      - name: Rebuild and save the retained archive
-        # Manual maintenance also exercises authentication when nothing expired.
-        if: steps.retention.outputs.needed == 'true' || github.event.inputs.maintenance_only == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.LESSON_PUBLISH_TOKEN || github.token }}
-        run: |
-          # Git HTTPS uses a credential helper, not REST API Bearer headers.
-          # This works even when checkout deliberately leaves no credentials.
-          gh auth setup-git --hostname github.com
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
-          for attempt in 1 2 3; do
-            echo "Archive publishing attempt ${attempt}/3: fetch current branch..."
-            if ! git fetch origin "${GITHUB_REF_NAME}"; then
-              if [ "${attempt}" = 3 ]; then
-                echo "::error::Archive cleanup could not fetch the repository after 3 attempts. Check LESSON_PUBLISH_TOKEN access and the Git error above."
-                exit 1
-              fi
-              sleep $((attempt * 5))
-              continue
-            fi
-            git reset --hard "origin/${GITHUB_REF_NAME}"
-            # Refresh always prunes again after reset, then rebuilds all links.
-            python update_site.py --refresh-pages
-            python audit_site.py
-            git add -A -- '*.html' archive news assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
-            if git diff --cached --quiet; then
-              exit 0
-            fi
-            # This push must reach the hosting integration, but it must not
-            # enqueue another full daily workflow behind the current run.
-            git commit -m "Retain the latest 50 calendar days of news lessons [skip-daily-workflow]"
-            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
-              exit 0
-            fi
-            sleep $((attempt * 5))
-          done
-          echo "::error::Failed to push the 50-day archive cleanup after 3 attempts. Check LESSON_PUBLISH_TOKEN write access and the Git error above."
-          exit 1
-
-      - name: Record checked archive revision
-        id: saved_revision
-        # Also verify the existing commit when there was nothing to prune.
-        run: echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-  check_daily:
-    name: Check whether the daily edition is already published
-    needs: maintain_archive
-    if: always() && github.event.inputs.test_email != 'true' && (github.event.inputs.verify_only == 'true' || ((github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.event.inputs.maintenance_only != 'true' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true' && github.event.inputs.translate_recent != 'true' && github.event.inputs.translate_archive != 'true'))
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-    outputs:
-      already_published: ${{ steps.published.outputs.already_published }}
-      release_date: ${{ steps.published.outputs.release_date }}
-      publishing_revision: ${{ steps.published.outputs.publishing_revision }}
-    steps:
-      - name: Checkout current daily edition
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ github.ref_name }}
-          persist-credentials: false
-      - uses: actions/setup-python@v7
-        with:
-          python-version: '3.11'
-      - uses: actions/setup-node@v7
-        with:
-          node-version: '22'
-      - name: Test daily automation without external services
-        if: github.event.inputs.verify_only == 'true'
-        run: |
-          python -m unittest discover -s tests -p 'test_daily_publication.py'
-          python -m unittest discover -s tests -p 'test_failure_alert.py'
-          python -m unittest discover -s tests -p 'test_workflow_publishing.py'
-          node --test tests/check-daily-publication.test.cjs
-      - name: Check saved content and live daily publication
-        id: published
-        env:
-          REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
-          VERIFY_ONLY: ${{ github.event.inputs.verify_only || 'false' }}
-        run: |
-          args=(--date "${REQUESTED_RELEASE_DATE}")
-          if [ "${VERIFY_ONLY}" = "true" ]; then
-            args+=(--require-published)
-          fi
-          python daily_publication.py "${args[@]}"
-
-  build_and_deploy:
-    name: Generate and save checked lessons
-    needs: [maintain_archive, check_daily]
-    if: always() && github.event.inputs.test_email != 'true' && github.event.inputs.verify_only != 'true' && github.event.inputs.maintenance_only != 'true' && needs.check_daily.outputs.already_published != 'true' && (needs.maintain_archive.result == 'success' || needs.maintain_archive.result == 'skipped') && (github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip-daily-workflow]'))
-    outputs:
-      publishing_revision: ${{ steps.saved_revision.outputs.revision }}
-      release_date: ${{ steps.release.outputs.date }}
-      translations_result: ${{ steps.translations.outcome }}
-      image_result: ${{ steps.image_status.outputs.result }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: write # This gives the action permission to save files to your repo
-      actions: read # Restore checkpoints from this workflow's earlier runs.
-      
-    steps:
-      - name: Validate publishing retry request
-        env:
-          RETRY_PUBLISHING: ${{ github.event.inputs.retry_publishing || 'false' }}
-          DEPLOY_ONLY: ${{ github.event.inputs.deploy_only || 'false' }}
-        run: |
-          if [ "${RETRY_PUBLISHING}" = "true" ] && [ "${DEPLOY_ONLY}" != "true" ]; then
-            echo "::error::retry_publishing requires deploy_only=true so recovery cannot start paid generation."
-            exit 1
-          fi
-
-      - name: Checkout repository
-        id: checkout
-        uses: actions/checkout@v6
-        with:
-          # A delayed schedule must see archives/images saved by an earlier run,
-          # not the older commit that was current when GitHub queued this job.
-          ref: ${{ github.ref_name }}
-          # Publishing uses the explicit GH_TOKEN credential helper below.
-          persist-credentials: false
-        continue-on-error: true
-
-      - name: Fallback checkout
-        if: steps.checkout.outcome == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "actions/checkout failed; attempting manual checkout fallback."
-          gh auth setup-git --hostname github.com
-          find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
-          git init .
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
-          for attempt in 1 2 3; do
-            echo "Manual checkout attempt ${attempt}..."
-            if git fetch --no-tags --depth=1 origin "${GITHUB_REF_NAME}" \
-              && git checkout --force -B "${GITHUB_REF_NAME}" FETCH_HEAD; then
-              exit 0
-            fi
-            sleep $((attempt * 5))
-          done
-          echo "Manual checkout fallback failed after 3 attempts." >&2
-          exit 1
-
-      - name: Set up Python
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.11'
-          cache: pip
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Set up Node for interaction checks
-        uses: actions/setup-node@v7
-        with:
-          node-version: '22'
-          cache: npm
-
-      - name: Check learning interactions
-        run: |
-          npm ci --ignore-scripts
-          npm run check:js
-          node --test tests/*.test.cjs
-
-      - name: Run checks
-        run: |
-          python -m py_compile update_site.py lesson_model.py lesson_evidence.py lesson_checkpoint.py lesson_run.py generation_retry.py workflow_checkpoint.py daily_images.py verify_discover.py
-          python -m unittest discover -s tests -p 'test_*.py'
-
-      - name: Resolve daily release date
-        id: release
-        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true' && github.event.inputs.translate_archive != 'true' && github.event.inputs.translate_recent != 'true'
-        env:
-          REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
-        run: |
-          python - <<'PY'
-          import os
-          from datetime import date
-          from pathlib import Path
-          from lesson_retention import retention_date
-          requested = os.environ.get('REQUESTED_RELEASE_DATE') or retention_date().isoformat()
-          release = date.fromisoformat(requested).isoformat()
-          needed = not Path(f'archive/lessons/{release}.json').exists()
-          with open(os.environ['GITHUB_ENV'], 'a') as output:
-              output.write(f'RELEASE_DATE={release}\nLESSON_GENERATION_NEEDED={int(needed)}\n')
-              output.write(f"LESSON_STATE_DIR={os.environ['RUNNER_TEMP']}/lesson-state\n")
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
-              output.write(f'date={release}\n')
-          print(f'Daily release: {release}; new lesson text needed: {needed}')
-          PY
-
-      - name: Restore unfinished daily edition
-        if: env.LESSON_GENERATION_NEEDED == '1'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          python workflow_checkpoint.py --repo "$GITHUB_REPOSITORY" --branch "$GITHUB_REF_NAME" --date "$RELEASE_DATE" --directory "$LESSON_STATE_DIR" --current-run-id "$GITHUB_RUN_ID"
-
-      - name: Run Python Script
-        # Leave time to upload saved progress even when a provider stays slow.
-        timeout-minutes: 30
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          EVENT_NAME: ${{ github.event_name }}
-          DEPLOY_ONLY: ${{ github.event.inputs.deploy_only || 'false' }}
-          REFRESH_FEATURE: ${{ github.event.inputs.refresh_feature || 'false' }}
-          TRANSLATE_ARCHIVE: ${{ github.event.inputs.translate_archive || 'false' }}
-          TRANSLATE_RECENT: ${{ github.event.inputs.translate_recent || 'false' }}
-          LESSON_DIAGNOSTICS_DIR: ${{ runner.temp }}/lesson-diagnostics
-        run: |
-          if [ "${EVENT_NAME}" = "push" ] || [ "${DEPLOY_ONLY}" = "true" ] || [ "${TRANSLATE_ARCHIVE}" = "true" ] || [ "${TRANSLATE_RECENT}" = "true" ]; then
-            python update_site.py --refresh-pages
-            exit 0
-          fi
-          if [ "${REFRESH_FEATURE}" = "true" ]; then
-            python update_site.py --refresh-feature
-            exit 0
-          fi
-          # Repeating a manual or scheduled run must not overwrite a complete edition.
-          args=(--skip-existing)
-          if [ -n "${RELEASE_DATE}" ]; then
-            args+=(--release-date "${RELEASE_DATE}")
-          fi
-          python -u update_site.py "${args[@]}"
-
-      - name: Prepare reviewed vocabulary translations
-        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true'
-        id: translations
-        timeout-minutes: 40
-        # Translation trouble must never block the English lesson. Save partial work below.
-        continue-on-error: true
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TRANSLATE_ARCHIVE: ${{ github.event.inputs.translate_archive || 'false' }}
-        run: |
-          if [ "${TRANSLATE_ARCHIVE}" = "true" ]; then
-            python -u vocabulary_translations.py --all --budget 10 --budget-key initial-backfill
-          else
-            # Include the latest three editions to recover a recent service outage.
-            python -u vocabulary_translations.py --budget 0.30
-          fi
-
-      - name: Retain vocabulary translation progress
-        if: always() && steps.translations.outcome != 'skipped'
-        uses: actions/upload-artifact@v7
-        with:
-          name: vocabulary-translations-${{ github.run_id }}-${{ github.run_attempt }}
-          path: data/vocabulary-translations/
-          include-hidden-files: true
-          retention-days: 14
-          if-no-files-found: ignore
-
-      - name: Refresh translated definitions
-        if: steps.translations.outcome == 'success' || steps.translations.outcome == 'failure'
-        run: python update_site.py --refresh-pages
-
-      - name: Retain unfinished daily edition
-        if: always() && env.LESSON_GENERATION_NEEDED == '1'
-        uses: actions/upload-artifact@v7
-        with:
-          name: lesson-state-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/lesson-state/*.json
-          retention-days: 7
-          if-no-files-found: ignore
-
-      - name: Retain lesson review diagnostics
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: lesson-review-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/lesson-diagnostics
-          retention-days: 7
-          if-no-files-found: ignore
-
-      - name: Retain completed edition for publication recovery
-        # A page audit or push failure must not lose paid work (including the
-        # illustration). This is a recovery bundle, not permission to bypass
-        # the quality gate: validate and rebuild it before publishing.
-        if: always() && env.LESSON_GENERATION_NEEDED == '1'
-        uses: actions/upload-artifact@v7
-        with:
-          name: lesson-publication-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            archive/lessons/${{ env.RELEASE_DATE }}.json
-            assets/news/${{ env.RELEASE_DATE }}-*
-            data/vocabulary-translations/
-          include-hidden-files: true
-          retention-days: 7
-          if-no-files-found: ignore
-
-      - name: Check generated pages
-        run: |
-          # audit_site includes the complete search audit.
-          python audit_site.py
-
-      - name: Commit updated lesson pages
-        env:
-          # External deploy integrations do not reliably receive pushes made
-          # with GitHub's built-in workflow token. Use the repository's
-          # publishing token for lesson commits so Cloudflare sees an ordinary
-          # branch update; fall back only for local copies without the secret.
-          GH_TOKEN: ${{ secrets.LESSON_PUBLISH_TOKEN || github.token }}
-          RETRY_PUBLISHING: ${{ github.event.inputs.retry_publishing || 'false' }}
-          REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
-        run: |
-          gh auth setup-git --hostname github.com
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
-          lesson_snapshot="$(mktemp -d)"
-          python publish_snapshot.py capture "${lesson_snapshot}"
-
-          for attempt in 1 2 3; do
-            echo "Preparing lesson update push attempt ${attempt}..."
-            if ! git fetch origin "${GITHUB_REF_NAME}"; then
-              if [ "${attempt}" = 3 ]; then
-                echo "::error::Lesson publishing could not fetch the repository after 3 attempts. Check LESSON_PUBLISH_TOKEN access and the Git error above."
-                exit 1
-              fi
-              sleep $((attempt * 5))
-              continue
-            fi
-            git reset --hard "origin/${GITHUB_REF_NAME}"
-            python publish_snapshot.py restore "${lesson_snapshot}"
-            python update_site.py --refresh-pages
-            python audit_site.py
-            git add -A -- '*.html' archive news assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
-            if [ "${RETRY_PUBLISHING}" = "true" ]; then
-              # An unchanged deploy_only run cannot wake a failed hosting build.
-              # This private, tracked request makes Cloudflare retry the saved
-              # edition. It is excluded from the public asset package.
-              python - <<'PY'
-          import json, os
-          from pathlib import Path
-          request = {'release_date': os.environ['REQUESTED_RELEASE_DATE'],
-                     'run_id': os.environ['GITHUB_RUN_ID'],
-                     'run_attempt': os.environ['GITHUB_RUN_ATTEMPT']}
-          Path('cloudflare/publication-request.json').write_text(json.dumps(request, indent=2) + '\n')
-          PY
-              git add cloudflare/publication-request.json
-            fi
-            if git diff --cached --quiet; then
-              echo "No changes to commit"
-              exit 0
-            fi
-
-            # Keep this commit visible to the Cloudflare GitHub integration.
-            # If GitHub emits a push workflow anyway, the marker below makes
-            # the expensive generation job exit at the routing condition.
-            # Cloudflare still sees the branch update, while this workflow
-            # recognizes its own publication commit and exits immediately.
-            git commit -m "Auto-update daily lessons [skip-daily-workflow]"
-            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
-              exit 0
-            fi
-
-            echo "Push attempt ${attempt} failed; retrying after refreshing ${GITHUB_REF_NAME}..."
-            sleep $((attempt * 5))
-          done
-
-          echo "::error::Failed to push lesson update after 3 attempts. Check LESSON_PUBLISH_TOKEN write access and the Git error above."
-          exit 1
-
-      - name: Record saved publishing revision
-        id: saved_revision
-        run: echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-      - name: Check the saved daily illustration
-        id: image_status
-        if: github.event_name == 'schedule'
-        run: |
-          python - <<'PY'
-          import json, os
-          from pathlib import Path
-          from daily_images import image_for_lesson
-          edition = json.loads(Path(f"archive/lessons/{os.environ['RELEASE_DATE']}.json").read_text())
-          result = 'success' if image_for_lesson(edition) else 'failure'
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
-              output.write(f'result={result}\n')
-          if result == 'failure':
-              print('::warning::Daily lesson is saved, but its illustration is unavailable.')
-          PY
-
-  verify_publishing:
-    name: Verify saved lesson publishing
-    outputs:
-      daily_lesson_verified: ${{ steps.current_lesson.outputs.verified }}
-    defaults:
-      run:
-        # Explicit bash enables pipefail: tee must not hide a failed verifier.
-        shell: bash
-    needs: [maintain_archive, check_daily, build_and_deploy]
-    if: always() && (needs.build_and_deploy.result == 'success' || needs.maintain_archive.outputs.publishing_revision != '' || needs.check_daily.outputs.publishing_revision != '')
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    permissions:
-      contents: read
-    steps:
-      # A failed publishing check can be rerun alone, without lesson, image,
-      # translation, or page generation. Check the exact commit that was saved.
-      - name: Checkout saved publishing revision
-        uses: actions/checkout@v6
-        with:
-          ref: ${{ needs.build_and_deploy.outputs.publishing_revision || needs.check_daily.outputs.publishing_revision || needs.maintain_archive.outputs.publishing_revision }}
-
-      - name: Set up Python
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.11'
 
       - name: Set up Node
         uses: actions/setup-node@v7
         with:
           node-version: '22'
+          cache: npm
+
+      - name: Install browser-check dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Prove the workflow is offline-only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          workflow = Path('.github/workflows/cron.yml').read_text()
+          forbidden = [
+              'GEMINI' + '_API_KEY',
+              'OPENAI' + '_API_KEY',
+              'generate_' + 'daily_lessons',
+              'ensure_' + 'daily_image',
+              'vocabulary_' + 'translations.py --budget',
+          ]
+          found = [value for value in forbidden if value in workflow]
+          if found:
+              raise SystemExit('The offline publication workflow contains a model-generation path.')
+          PY
+
+      - name: Run application checks
+        run: |
+          python -m py_compile update_site.py lesson_model.py lesson_evidence.py lesson_checkpoint.py lesson_run.py plan_daily.py plan_daily_runner.py daily_images.py daily_publication.py verify_discover.py
+          python -m unittest discover -s tests -p 'test_*.py'
+          npm run check:js
+          node --test tests/*.test.cjs
+          python audit_site.py
+
+      - name: Require a complete saved daily edition
+        if: github.event_name == 'workflow_dispatch'
+        run: python daily_publication.py --require-published
 
       - name: Package expected public files
+        if: github.event_name == 'push'
         run: node cloudflare/build.cjs
 
       - name: Wait for Cloudflare publishing
-        id: manifest
+        if: github.event_name == 'push'
         timeout-minutes: 17
         run: |
           python -u cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev \
@@ -591,40 +112,22 @@ jobs:
             2>&1 | tee "${RUNNER_TEMP}/publishing-manifest.log"
 
       - name: Verify current lesson on Cloudflare
-        id: current_lesson
-        env:
-          RELEASE_DATE: ${{ needs.check_daily.outputs.release_date || needs.build_and_deploy.outputs.release_date || '' }}
-          REQUIRE_TODAY: ${{ github.event_name == 'schedule' }}
+        if: github.event_name == 'push'
         run: |
-          # Never accept yesterday's edition as today's successful publication
-          # when generation or its earlier check was cancelled.
-          if [ -z "${RELEASE_DATE}" ] && [ "${REQUIRE_TODAY}" = "true" ]; then
-            RELEASE_DATE="$(python -c 'from lesson_retention import retention_date; print(retention_date().isoformat())')"
-            export RELEASE_DATE
-          fi
           node cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev \
             2>&1 | tee "${RUNNER_TEMP}/publishing-current-lesson.log"
-          echo "verified=true" >> "$GITHUB_OUTPUT"
 
       - name: Verify current lesson on public domain
-        env:
-          RELEASE_DATE: ${{ needs.check_daily.outputs.release_date || needs.build_and_deploy.outputs.release_date || '' }}
+        if: github.event_name == 'push'
         run: |
           ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-current-lesson.cjs https://englishladder.com \
             2>&1 | tee "${RUNNER_TEMP}/publishing-public-domain.log"
 
-      - name: Verify expired lessons are unavailable
-        run: |
-          node cloudflare/verify-retention.cjs https://englishladder.philstilwell.workers.dev \
-            2>&1 | tee "${RUNNER_TEMP}/publishing-retention.log"
-          ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-retention.cjs https://englishladder.com \
-            2>&1 | tee "${RUNNER_TEMP}/publishing-retention-public.log"
-
       - name: Retain publishing diagnostics
-        if: always()
+        if: always() && github.event_name == 'push'
         uses: actions/upload-artifact@v7
         with:
-          name: publishing-${{ github.run_id }}-${{ github.run_attempt }}
+          name: offline-publishing-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             ${{ runner.temp }}/publishing-*.json
             ${{ runner.temp }}/publishing-*.log
@@ -633,66 +136,9 @@ jobs:
           if-no-files-found: ignore
           include-hidden-files: true
 
-      - name: Summarize publishing result
-        if: always()
-        env:
-          PUBLISHING_STATUS: ${{ job.status }}
-          PUBLISHING_REVISION: ${{ needs.build_and_deploy.outputs.publishing_revision || needs.check_daily.outputs.publishing_revision || needs.maintain_archive.outputs.publishing_revision }}
-        run: |
-          {
-            echo "### Publishing: ${PUBLISHING_STATUS}"
-            echo "Saved source revision: ${PUBLISHING_REVISION}"
-            echo ""
-            echo "Publishing checks use saved content and make no paid generation calls."
-            if [ "${PUBLISHING_STATUS}" != "success" ]; then
-              echo "Inspect the publishing artifact and the English Ladder Cloudflare build log."
-              echo "If Cloudflare exhausted its deployment retries, retry that build for the saved commit, then rerun only the failed publishing job."
-              echo "A manual deploy_only=true run can rebuild and verify existing content, but cannot restart a failed Cloudflare build when no files change."
-            fi
-          } >> "$GITHUB_STEP_SUMMARY"
-
-  failure_email:
-    name: Email the final publication or maintenance problem
-    needs: [maintain_archive, check_daily, build_and_deploy, verify_publishing]
-    if: >-
-      always() && github.event_name == 'schedule' && github.event.schedule == '15 8 * * *' &&
-      (needs.maintain_archive.result != 'success' || needs.check_daily.result != 'success' ||
-       (needs.build_and_deploy.result != 'success' && needs.check_daily.outputs.already_published != 'true') ||
-       needs.verify_publishing.result != 'success' || needs.build_and_deploy.outputs.translations_result == 'failure' ||
-       needs.build_and_deploy.outputs.image_result == 'failure')
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: read
-      actions: read
-      checks: read
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.ref_name }}
-      - name: Send the failure explanation
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          MAINTENANCE_RESULT: ${{ needs.maintain_archive.result }}
-          GENERATION_RESULT: ${{ needs.build_and_deploy.result }}
-          PUBLISHING_RESULT: ${{ needs.verify_publishing.result }}
-          DAILY_LESSON_VERIFIED: ${{ needs.verify_publishing.outputs.daily_lesson_verified }}
-          RELEASE_DATE: ${{ needs.check_daily.outputs.release_date || needs.build_and_deploy.outputs.release_date }}
-          ALREADY_PUBLISHED: ${{ needs.check_daily.outputs.already_published }}
-          TRANSLATIONS_RESULT: ${{ needs.build_and_deploy.outputs.translations_result }}
-          IMAGE_RESULT: ${{ needs.build_and_deploy.outputs.image_result }}
-          SMTP_HOST: smtp.gmail.com
-          SMTP_PORT: '587'
-          SMTP_SECURITY: starttls
-          SMTP_USERNAME: philstilwell@gmail.com
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          ALERT_FROM: philstilwell@gmail.com
-          ALERT_TO: philstilwell@gmail.com
-        run: python3 failure_alert.py
-
   test_email:
     name: Test the email connection
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.test_email == 'true' && github.event.inputs.verify_only != 'true'
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.test_email == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

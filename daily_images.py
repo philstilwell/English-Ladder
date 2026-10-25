@@ -1,4 +1,4 @@
-"""One cached Gemini illustration per daily story; no network calls while rendering."""
+"""One cached conceptual illustration per daily story; no calls while rendering."""
 import hashlib
 import io
 import json
@@ -97,6 +97,64 @@ def write_metadata(path, metadata):
     temporary.replace(path)
 
 
+def import_daily_image(archive_path, source_path, root=ROOT, *, model,
+                       surface="Codex with ChatGPT sign-in"):
+    """Validate and import an image already created by a plan-authenticated agent.
+
+    This function never contacts an image service. The caller must create the
+    source image in a separate step, so provider access and publication remain
+    independently auditable.
+    """
+    lesson = json.loads(Path(archive_path).read_text())
+    cached = image_for_lesson(lesson, root)
+    if cached:
+        return cached
+    source_path = Path(source_path)
+    if not source_path.is_file() or not 1_000 <= source_path.stat().st_size <= 20_000_000:
+        raise ValueError("The generated image file is missing or has an invalid size.")
+    metadata_path, image_path = image_paths(lesson, root)
+    previous = read_metadata(metadata_path)
+    attempts = previous.get("attempts", 0)
+    attempts = attempts if isinstance(attempts, int) and attempts >= 0 else 0
+    prompt = image_prompt(lesson)
+    temporary = image_path.with_suffix(".webp.tmp")
+    try:
+        from PIL import Image
+        with Image.open(source_path) as original:
+            original.load()
+            if min(original.size) < 512 or max(original.size) > 8192:
+                raise ValueError("Unexpected image dimensions")
+            picture = original.convert("RGB")
+            picture.thumbnail((1600, 1600))
+            image_path.parent.mkdir(parents=True, exist_ok=True)
+            picture.save(temporary, format="WEBP", quality=85, method=6)
+            width, height = picture.size
+        temporary.replace(image_path)
+    finally:
+        temporary.unlink(missing_ok=True)
+    meta = {
+        "status": "ready",
+        "release_date": lesson["release_date"],
+        "story_digest": story_digest(lesson),
+        "model": model,
+        "surface": surface,
+        "provider": "OpenAI",
+        "prompt": prompt,
+        "attempts": attempts + 1,
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "path": image_path.relative_to(root).as_posix(),
+        "width": width,
+        "height": height,
+        "sha256": hashlib.sha256(image_path.read_bytes()).hexdigest(),
+        "source_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
+        "alt": "AI-generated conceptual illustration for the lesson: "
+               + lesson["levels"]["beginner"]["lesson"]["title"],
+        "caption": "AI-generated illustration · Inspired by this lesson; not a news photograph.",
+    }
+    write_metadata(metadata_path, meta)
+    return meta
+
+
 def ensure_daily_image(archive_path, root=ROOT, client=None):
     """At most one API request per invocation; persist attempts for scheduled retries."""
     lesson = json.loads(Path(archive_path).read_text())
@@ -117,14 +175,13 @@ def ensure_daily_image(archive_path, root=ROOT, client=None):
             "story_digest": story_digest(lesson), "model": MODEL, "prompt": prompt,
             "attempts": attempts + 1, "updated_at": datetime.now(timezone.utc).isoformat()}
     write_metadata(metadata_path, meta)
-    owned_client = client is None
+    owned_client = False
     temporary = image_path.with_suffix(".webp.tmp")
     try:
-        if owned_client:
-            from google import genai
-            from google.genai import types
-            client = genai.Client(api_key=os.environ["GEMINI_API_KEY"], http_options=types.HttpOptions(
-                timeout=90_000, retry_options=types.HttpRetryOptions(attempts=1)))
+        if client is None:
+            raise RuntimeError(
+                "Paid-API daily image generation is retired; import a ChatGPT-plan image instead."
+            )
         response = client.models.generate_content(model=MODEL, contents=prompt, config={
             "response_modalities": ["IMAGE"],
             "image_config": {"aspect_ratio": "4:3", "image_size": "1K"},

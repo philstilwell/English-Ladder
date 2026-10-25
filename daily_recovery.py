@@ -1,7 +1,8 @@
-"""Independent daily recovery, using the signed-in GitHub CLI and no AI APIs.
+"""Independent read-only monitor for the plan-authenticated daily producer.
 
-The macOS timer lives outside GitHub Actions. Read-only is the default; --apply
-permits bounded recovery through the existing checked daily workflow.
+The macOS timer lives outside GitHub Actions. It checks repository and public
+state, records a local health result, and never dispatches generation or changes
+remote state. The scheduled Codex task is the only daily producer.
 """
 from __future__ import annotations
 
@@ -19,15 +20,13 @@ from pathlib import Path
 import subprocess
 import tempfile
 from urllib.parse import urlencode
-from zoneinfo import ZoneInfo
 
 REPOSITORY = "philstilwell/English-Ladder"
 WORKFLOW = "cron.yml"
 LEVELS = {"beginner": 6, "intermediate": 8, "advanced": 10}
-TIME_ZONE = ZoneInfo("America/New_York")
-MAX_ATTEMPTS = 3
-RETRY_INTERVAL = timedelta(hours=1)
 PUBLISHING_GRACE = timedelta(minutes=30)
+MONITOR_HOUR_UTC = 8
+MONITOR_MINUTE_UTC = 45
 DEFAULT_STATE_DIR = Path.home() / "Documents/Codex/English-Ladder-daily-recovery/state"
 
 
@@ -88,13 +87,6 @@ class GitHub:
                     or run.get("status") not in {"queued", "in_progress", "waiting", "pending", "requested", "completed"}):
                 raise ServiceUnavailable("The daily job queue returned an unknown state.")
         return runs
-
-    def dispatch(self, release, kind):
-        inputs = {"release_date": release}
-        if kind == "publication":
-            inputs.update(deploy_only=True, retry_publishing=True)
-        self.api(f"actions/workflows/{WORKFLOW}/dispatches", {"ref": "main", "inputs": inputs})
-
 
 def public_file(path, now, runner=subprocess.run):
     url = f"https://englishladder.com/{path}?daily-recovery={int(now.timestamp())}"
@@ -195,13 +187,13 @@ def save_state(path, state):
 def check(now, github, state_path, apply=False, fetch=public_file):
     if now.tzinfo is None:
         raise ValueError("The recovery clock must have a time zone.")
-    local = now.astimezone(TIME_ZONE)
-    release = local.date().isoformat()
+    utc = now.astimezone(timezone.utc)
+    release = utc.date().isoformat()
     result = {"release_date": release, "checked_at": now.isoformat(), "apply": apply}
-    # Respect the overnight production window; after waking later in the day,
-    # check the current date only, never pay to backfill yesterday automatically.
-    if (local.hour, local.minute) < (2, 45):
-        return {**result, "status": "before_recovery_window"}
+    # The three producer attempts are 06:15, 07:15 and 08:15 UTC. Wait thirty
+    # minutes after the final requested start before declaring attention needed.
+    if (utc.hour, utc.minute) < (MONITOR_HOUR_UTC, MONITOR_MINUTE_UTC):
+        return {**result, "status": "before_monitor_window"}
     state = read_state(state_path, release)
     body = github.archive(release)
     if body is not None and not complete_archive(body, release):
@@ -212,40 +204,25 @@ def check(now, github, state_path, apply=False, fetch=public_file):
         if apply:
             save_state(state_path, state)
         return state["last_result"]
-    if any(run["status"] != "completed" for run in github.runs(now)):
-        return {**result, "status": "waiting_for_active_job"}
-    kind = "generation" if body is None else "publication"
-    if kind == "publication":
-        fingerprint = hashlib.sha256(body).hexdigest()
-        if state.get("expected_archive") != fingerprint:
-            state.update(expected_archive=fingerprint, stale_since=now.isoformat())
-        try:
-            since = datetime.fromisoformat(state["stale_since"])
-            if since.tzinfo is None:
-                raise ValueError()
-        except (KeyError, ValueError, TypeError) as error:
-            raise ServiceUnavailable("The publishing recovery clock is unreadable.") from error
-        if now - since < PUBLISHING_GRACE:
-            if apply:
-                save_state(state_path, state)
-            return {**result, "status": "waiting_for_publishing", "kind": kind}
-    attempts = [attempt for attempt in state["attempts"] if attempt["kind"] == kind]
-    if len(attempts) >= MAX_ATTEMPTS:
-        return {**result, "status": "needs_attention", "reason": f"The {MAX_ATTEMPTS} daily {kind} recovery attempts are exhausted."}
-    if state["attempts"] and now - datetime.fromisoformat(state["attempts"][-1]["at"]) < RETRY_INTERVAL:
-        return {**result, "status": "waiting_for_retry_interval", "kind": kind}
-    if not apply:
-        return {**result, "status": "would_start_recovery", "kind": kind}
-    # Reserve BEFORE sending. A timeout after GitHub accepts the request consumes
-    # an attempt and cannot cause another immediate request after a crash.
-    state["attempts"].append({"at": now.isoformat(), "kind": kind, "status": "reserved"})
-    save_state(state_path, state)
-    github.dispatch(release, kind)
-    state["attempts"][-1]["status"] = "requested"
-    result.update(status="recovery_requested", kind=kind, attempt=len(attempts) + 1)
-    state["last_result"] = result
-    save_state(state_path, state)
-    return result
+    active = any(run["status"] != "completed" for run in github.runs(now))
+    if body is None:
+        return {**result, "status": "needs_attention",
+                "reason": "The scheduled ChatGPT producer has not saved today's edition."}
+    fingerprint = hashlib.sha256(body).hexdigest()
+    if state.get("expected_archive") != fingerprint:
+        state.update(expected_archive=fingerprint, stale_since=now.isoformat())
+    try:
+        since = datetime.fromisoformat(state["stale_since"])
+        if since.tzinfo is None:
+            raise ValueError()
+    except (KeyError, ValueError, TypeError) as error:
+        raise ServiceUnavailable("The publishing monitor clock is unreadable.") from error
+    if active or now - since < PUBLISHING_GRACE:
+        if apply:
+            save_state(state_path, state)
+        return {**result, "status": "waiting_for_publishing"}
+    return {**result, "status": "needs_attention",
+            "reason": "The saved edition has not reached the public site after the publishing grace period."}
 
 
 @contextmanager
@@ -265,7 +242,8 @@ def locked(path):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--apply", action="store_true", help="Permit bounded automatic recovery; default is read-only.")
+    parser.add_argument("--apply", action="store_true",
+                        help="Persist the read-only health result and logs; never dispatch work.")
     parser.add_argument("--state-dir", type=Path, default=DEFAULT_STATE_DIR)
     parser.add_argument("--gh", default="gh", help="Absolute GitHub CLI path for the macOS timer.")
     parser.add_argument("--json", action="store_true", help="Print the result for a manual check.")

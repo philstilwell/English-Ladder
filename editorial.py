@@ -351,7 +351,7 @@ def build_homepage():
 def build_credits():
     credits = json.loads((ROOT / "assets/editorial/credits.json").read_text())
     items = "".join(f'<li><a href="{item["source_page"]}">{html.escape(item["alt"])}</a> — {html.escape(item["creator"])}. <a href="{item["license_url"]}">{item["license"]}</a>. Resized and compressed for this site.</li>' for item in credits)
-    (ROOT / "photo-credits.html").write_text(document("Photo credits", f'<section class="page-hero"><p class="eyebrow">Behind the photographs</p><h1>Photo credits</h1><p>Photographs and illustrations used in our lessons.</p></section><section><h2>Daily news illustrations</h2><p>The featured daily image is generated with Google Gemini for that lesson and labeled as an AI-generated illustration. It illustrates the topic and does not document the reported event. Each image is saved with its generation details.</p></section><section><h2>Evergreen story photographs</h2><ul>{items}</ul></section>'), encoding="utf-8")
+    (ROOT / "photo-credits.html").write_text(document("Photo credits", f'<section class="page-hero"><p class="eyebrow">Behind the photographs</p><h1>Photo credits</h1><p>Photographs and illustrations used in our lessons.</p></section><section><h2>Daily news illustrations</h2><p>The featured daily image is generated for that lesson with the AI service recorded in its saved metadata and labeled as an AI-generated illustration. It illustrates the topic and does not document the reported event. Each image is saved with its prompt, model, dimensions, story fingerprint, and checksum.</p></section><section><h2>Evergreen story photographs</h2><ul>{items}</ul></section>'), encoding="utf-8")
 
 
 def build_stories():

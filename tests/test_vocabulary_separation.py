@@ -87,24 +87,18 @@ class VocabularySeparationTests(unittest.TestCase):
                 site_quality.rebuild_news_levels()
             for level in u.LEVELS: self.assertEqual('previous page', (root/level['file_path']).read_text())
 
-    def test_generation_passes_approved_targets_forward_without_mutating_global_levels(self):
-        original = copy.deepcopy(u.LEVELS); calls = []
-        def generate(client, news, config, date, **resume):
-            calls.append(copy.deepcopy(config))
-            return copy.deepcopy(self.lessons[config['name'].lower()]), '<details></details>'
-        args = SimpleNamespace(refresh_feature=False, refresh_pages=False, release_date='2026-09-06', skip_existing=False)
-        client = SimpleNamespace(close=lambda: None)
-        with patch.object(u, 'parse_args', return_value=args), \
-             patch.object(u, 'get_daily_news', return_value=self.edition['source']), \
-             patch.object(u, 'configure_gemini', return_value=client), \
-             patch.object(u, 'generate_lesson', side_effect=generate), \
-             patch.object(u, 'archive_daily_lessons', return_value=Path('synthetic.json')), \
-             patch.object(u, 'update_level_page'), \
-             patch('daily_images.ensure_daily_image'), \
-             patch('editorial.publish_editorial_pages'):
-            u.main()
-        self.assertEqual([0, 6, 14], [len(c['reserved_vocabulary']) for c in calls])
-        self.assertEqual({'Beginner', 'Intermediate'}, {i['level'] for i in calls[2]['reserved_vocabulary']})
+    def test_plan_generation_passes_approved_targets_forward_without_mutating_global_levels(self):
+        import plan_daily
+        original = copy.deepcopy(u.LEVELS)
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            plan_daily.atomic_json(state / 'approved-beginner.json', self.lessons['beginner'])
+            plan_daily.atomic_json(state / 'approved-intermediate.json', self.lessons['intermediate'])
+            configs = [plan_daily.level_config(name, state)
+                       for name in ('beginner', 'intermediate', 'advanced')]
+        self.assertEqual([0, 6, 14], [len(c['reserved_vocabulary']) for c in configs])
+        self.assertEqual({'Beginner', 'Intermediate'},
+                         {i['level'] for i in configs[2]['reserved_vocabulary']})
         self.assertEqual(original, u.LEVELS)
 
     def test_every_archived_edition_has_separate_lists_and_retains_all_minimums(self):

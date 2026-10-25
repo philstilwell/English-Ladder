@@ -78,6 +78,21 @@ class DailyImageTests(unittest.TestCase):
             self.assertEqual("WEBP", picture.format)
             self.assertEqual((800, 600), picture.size)
 
+    def test_plan_image_import_is_offline_and_records_honest_provenance(self):
+        value = lesson()
+        archive = self.archive(value)
+        source = self.root / "agent-image.png"
+        Image.new("RGB", (1200, 900), "#7b684f").save(source)
+        meta = daily_images.import_daily_image(
+            archive, source, self.root, model="gpt-image-1.5",
+            surface="Codex with ChatGPT sign-in")
+        self.assertEqual("OpenAI", meta["provider"])
+        self.assertEqual("Codex with ChatGPT sign-in", meta["surface"])
+        self.assertEqual("gpt-image-1.5", meta["model"])
+        self.assertEqual((1200, 900), (meta["width"], meta["height"]))
+        self.assertEqual(meta, daily_images.image_for_lesson(value, self.root))
+        self.assertEqual(meta["source_sha256"], __import__("hashlib").sha256(source.read_bytes()).hexdigest())
+
     def test_replaced_story_never_reuses_an_unrelated_image(self):
         value = lesson()
         path = self.archive(value)
@@ -181,26 +196,19 @@ class DailyImageTests(unittest.TestCase):
         image.assert_not_called()
         text.assert_not_called()
 
-    def test_scheduled_existing_lesson_retries_only_its_image(self):
+    def test_legacy_existing_lesson_image_retry_is_retired(self):
         args = SimpleNamespace(refresh_feature=False, refresh_pages=False, release_date="2020-01-02", skip_existing=True)
         with patch.object(update_site, "parse_args", return_value=args), \
-                patch.object(update_site, "archive_exists_for_release_dt", return_value=True), \
-                patch.object(editorial, "publish_editorial_pages") as publish, \
-                patch.object(daily_images, "ensure_daily_image") as image, \
-                patch.object(update_site, "get_daily_news") as news:
-            update_site.main()
-        image.assert_called_once()
-        publish.assert_called_once()
-        news.assert_not_called()
+                patch.object(daily_images, "ensure_daily_image") as image:
+            with self.assertRaisesRegex(RuntimeError, "Paid-API daily lesson generation is retired"):
+                update_site.main()
+        image.assert_not_called()
 
-    def test_initial_feature_refresh_does_not_generate_lesson_text(self):
+    def test_legacy_feature_refresh_is_retired(self):
         path = self.archive(lesson())
         args = SimpleNamespace(refresh_feature=True)
         with patch.object(update_site, "parse_args", return_value=args), \
-                patch.object(daily_images, "latest_lesson", return_value=(path, lesson())), \
-                patch.object(editorial, "publish_editorial_pages"), \
-                patch.object(daily_images, "ensure_daily_image") as image, \
-                patch.object(update_site, "get_daily_news") as news:
-            update_site.main()
-        image.assert_called_once_with(path)
-        news.assert_not_called()
+                patch.object(daily_images, "ensure_daily_image") as image:
+            with self.assertRaisesRegex(RuntimeError, "Paid-API daily image generation is retired"):
+                update_site.main()
+        image.assert_not_called()

@@ -36,6 +36,12 @@ class WorkflowPublishingTests(unittest.TestCase):
             with self.subTest(required=required):
                 self.assertIn(required, WORKFLOW)
 
+    def test_full_offline_suite_has_a_realistic_bounded_deadline(self):
+        timeout = int(re.search(
+            r"(?ms)^  check_and_verify:.*?^    timeout-minutes: (\d+)$", WORKFLOW
+        ).group(1))
+        self.assertGreaterEqual(timeout, 60)
+
     def test_manual_workflow_can_only_verify_or_test_email(self):
         inputs = re.search(r"(?ms)^  workflow_dispatch:\n    inputs:\n(.*?)\n\nconcurrency:",
                            WORKFLOW).group(1)

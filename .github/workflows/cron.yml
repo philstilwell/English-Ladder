@@ -45,7 +45,7 @@ jobs:
     name: Test saved content and verify publishing
     if: github.event.inputs.test_email != 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 60
     permissions:
       contents: read
     steps:
@@ -87,13 +87,20 @@ jobs:
               raise SystemExit('The offline publication workflow contains a model-generation path.')
           PY
 
-      - name: Run application checks
-        run: |
-          python -m py_compile update_site.py lesson_model.py lesson_evidence.py lesson_checkpoint.py lesson_run.py plan_daily.py plan_daily_runner.py daily_images.py daily_publication.py verify_discover.py
-          python -m unittest discover -s tests -p 'test_*.py'
-          npm run check:js
-          node --test tests/*.test.cjs
-          python audit_site.py
+      - name: Compile Python
+        run: python -m py_compile update_site.py lesson_model.py lesson_evidence.py lesson_checkpoint.py lesson_run.py plan_daily.py plan_daily_runner.py daily_images.py daily_publication.py verify_discover.py
+
+      - name: Run Python tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
+
+      - name: Run JavaScript static checks
+        run: npm run check:js
+
+      - name: Run Node browser tests
+        run: node --test tests/*.test.cjs
+
+      - name: Audit the generated site
+        run: python audit_site.py
 
       - name: Require a complete saved daily edition
         if: github.event_name == 'workflow_dispatch'

@@ -1,0 +1,139 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Hundreds of thousands of people protested across France on Saturday.",
+      "They marched because the cost of living is very high.",
+      "The protests were mostly peaceful during the day.",
+      "Clashes between police and protesters happened late on Saturday.",
+      "Police officers used tear gas to stop the crowds.",
+      "Officials said that police arrested almost 1,000 people.",
+      "People also protested in other European countries for similar reasons."
+    ],
+    "vocabulary": [
+      {
+        "term": "protested",
+        "part_of_speech": "verb",
+        "definition": "stood together in public to show they disagree with something"
+      },
+      {
+        "term": "cost of living",
+        "part_of_speech": "noun",
+        "definition": "the money you need to pay for everyday things like food and housing"
+      },
+      {
+        "term": "peaceful",
+        "part_of_speech": "adjective",
+        "definition": "quiet, calm, and without violence or fighting"
+      },
+      {
+        "term": "clashes",
+        "part_of_speech": "noun",
+        "definition": "fights between two groups of people"
+      },
+      {
+        "term": "tear gas",
+        "part_of_speech": "noun",
+        "definition": "a special gas used by police that hurts people's eyes"
+      },
+      {
+        "term": "arrested",
+        "part_of_speech": "verb",
+        "definition": "taken by the police because a person might have broken the law"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かに反対していることを示すために、公共の場で一緒に立った。",
+      "ko": "어떤 것에 반대한다는 뜻을 보이려고 공공장소에 함께 모여 섰다.",
+      "zh-Hans": "一起站在公共场所，表示对某件事的反对。",
+      "es": "Estuvieron de pie juntos en un lugar público para mostrar que no estaban de acuerdo con algo.",
+      "pt-BR": "Ficaram de pé juntos em um lugar público para mostrar que discordavam de algo.",
+      "fr": "Se sont tenus debout ensemble dans un lieu public pour montrer leur désaccord avec quelque chose.",
+      "de": "Standen gemeinsam in der Öffentlichkeit, um zu zeigen, dass sie mit etwas nicht einverstanden waren."
+    },
+    {
+      "id": 1,
+      "ja": "食べ物や住まいなど、日々の生活に必要なものに支払うお金。",
+      "ko": "음식이나 주거처럼 일상생활에 필요한 것에 지불해야 하는 돈.",
+      "zh-Hans": "支付食物和住房等日常生活所需的费用。",
+      "es": "El dinero que necesitas para pagar cosas cotidianas como la comida y la vivienda.",
+      "pt-BR": "O dinheiro de que você precisa para pagar coisas do dia a dia, como alimentação e moradia.",
+      "fr": "L'argent dont on a besoin pour payer les choses de la vie quotidienne, comme la nourriture et le logement.",
+      "de": "Das Geld, das man für alltägliche Dinge wie Essen und Wohnen bezahlen muss."
+    },
+    {
+      "id": 2,
+      "ja": "静かで落ち着いていて、暴力や争いがない。",
+      "ko": "조용하고 차분하며 폭력이나 싸움이 없는.",
+      "zh-Hans": "安静、平和，没有暴力或打斗。",
+      "es": "Tranquilo, calmado y sin violencia ni peleas.",
+      "pt-BR": "Tranquilo, calmo e sem violência ou brigas.",
+      "fr": "Tranquille, calme et sans violence ni affrontements.",
+      "de": "Ruhig, gelassen und ohne Gewalt oder Kämpfe."
+    },
+    {
+      "id": 3,
+      "ja": "二つの集団の間で起こるけんかや衝突。",
+      "ko": "두 집단 사이에서 벌어지는 싸움.",
+      "zh-Hans": "两群人之间的打斗。",
+      "es": "Peleas entre dos grupos de personas.",
+      "pt-BR": "Brigas entre dois grupos de pessoas.",
+      "fr": "Des affrontements entre deux groupes de personnes.",
+      "de": "Kämpfe zwischen zwei Gruppen von Menschen."
+    },
+    {
+      "id": 4,
+      "ja": "警察が使う、人の目に痛みを起こす特殊なガス。",
+      "ko": "경찰이 사용하는, 사람들의 눈을 아프게 하는 특수한 가스.",
+      "zh-Hans": "警察使用的一种会使人眼睛疼痛的特殊气体。",
+      "es": "Un gas especial que usa la policía y que causa dolor en los ojos.",
+      "pt-BR": "Um gás especial usado pela polícia que causa dor nos olhos das pessoas.",
+      "fr": "Un gaz spécial utilisé par la police qui fait mal aux yeux.",
+      "de": "Ein spezielles Gas, das die Polizei einsetzt und das Schmerzen in den Augen verursacht."
+    },
+    {
+      "id": 5,
+      "ja": "法律を破った可能性があるため、警察に連れていかれた。",
+      "ko": "법을 어겼을 가능성이 있어 경찰에 붙잡혀 갔다.",
+      "zh-Hans": "因为可能违反了法律而被警察带走。",
+      "es": "Se lo llevó la policía porque podría haber infringido la ley.",
+      "pt-BR": "Foi levado pela polícia porque pode ter desrespeitado a lei.",
+      "fr": "Emmené par la police parce qu'il est possible que la personne ait enfreint la loi.",
+      "de": "Von der Polizei mitgenommen, weil die Person möglicherweise gegen das Gesetz verstoßen hatte."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-10-25T14:56:33.211706+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation",
+      "artifact_sha256": "33800b5e3da2fb4680a5daa1ce9fe6a9748477470886b72c16b3acf79c809019"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true,
+      "artifact_sha256": "f37c0dc417e6c6cee09e03b564c80a1c7f9eacfa24442c404069c130e73e225a"
+    }
+  }
+}

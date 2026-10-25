@@ -1,0 +1,696 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-25",
+  "release_iso": "2026-10-25T06:15:00Z",
+  "model": "gemini-3.1-pro-preview",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Sun, 25 Oct 2026 04:16:52 GMT",
+    "retrieved_at": "2026-10-25T07:33:07.179407+00:00",
+    "title": "Almost 1,000 arrested as clashes follow another day of mass protests across France",
+    "summary": "Hundreds of thousands took part in demonstrations in France, with protests also taking place in other European countries.",
+    "evidence_text": "Nearly 1,000 arrests were made as hundreds of thousands of people took part in another day of protests across France, which were followed by some clashes late on Saturday, officials have said.\nSome 70,000 police officers were deployed and restrictions imposed in several cities to prevent the latest protests over the cost of living and poor school conditions from descending into the kind of chaos which saw officers outnumbered, hundreds of businesses looted and buildings torched.\nAfter a day of largely peaceful demonstrations, police fired tear gas and water cannon to disperse protesters in a number of cities including Paris, while barricades were set alight in Marseille and people ripped boards from a shop in Bordeaux.\nNuñez said late in the day that nearly 1,000 people had been arrested, a number he said would increase.\nMass protests triggered by similar issues as in France also rocked several other European cities on Saturday.\nClashes between protesters and riot police in Paris erupted at the end of a peaceful march from the city's Porte d'Italie towards Porte de Vincennes on Saturday, where the police operation included an elite unit that usually deals with organised crime and counter-terrorism.\nSome protesters were seen erecting makeshift barricades and pelting officers with projectiles, while police baton-charged groups of masked youths who were smashing the windows of a car dealership.\nBut officials have so far managed to avoid rioting and looting on the scale seen last weekend, which resulted in some of the worst scenes of disorder in France's modern history.\nTwo masked teenage protesters, who did not want to give their names, also said their generation was in despair and felt abandoned by the government.\nAround 550,000 people took part in last weekend's demonstrations against rising fuel prices and the cost of living, with frustrations escalating after weeks of student protests. The chaos which followed resulted in more than 2,500 arrests.\nPresident Emmanuel Macron had decreed earlier this week that only demonstrations organised by a recognised trade unions would be permitted. Hundreds of people have been jailed for vandalism, arson and looting after fast-track court hearings in recent days.\nFrench Interior Minister Laurent Nuñez said that \"several thousand radical activists gathered at the rear of the march, including around 500 individuals identified as rioters\", the AFP news agency reported.\nIn the southern port of Marseille, rubbish bins were set ablaze and metal sheets used to block streets. A law enforcement vehicle was seen driving through a burning barricade in France's second-largest city.\nIn Lyon, police used tear gas grenades to disperse a crowd which had reportedly gathered in an area deemed off-limits by the local prefecture.\nIn Barcelona, more than 100 people were arrested after a student protest descended into what local authorities described as \"gratuitous violence\".\nThe continuing protests come ahead of France's presidential elections in six months' time, and leading contenders have levelled the blame at Macron and his ministers.",
+    "evidence_retrieved_at": "2026-10-25T07:33:07.179407+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c95ynd587ynzo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "What things cost more money now than they did last year? You can use this sentence frame: 'I think ... costs more now because ...' Or, you can imagine a student who is trying to buy food.",
+          "Some people march in the streets to ask the government for change. Do you think this is a good way to solve problems? Why or why not?"
+        ],
+        "editorial_check": {
+          "content_digest": "17a640642b75f04df9eb7e5e5d729d94ce2b23d51656831492b4b00e175a7968",
+          "date": "2026-10-25T07:34:48.086637+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively tests basic comprehension, contextual vocabulary, and the taught grammar point with unambiguous, accessible distractors."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses a straightforward, neutral news reporting style without overly complex phrasing or inappropriate idioms."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The reading sentences are brief and direct, all remaining well under the 18-word maximum guideline. The grammar explanation uses familiar connectors."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets like 'peaceful', 'arrested', and 'cost of living' are very useful, concrete terms with clear definitions suitable for the A1-A2 level."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Using \"because\" to give a reason",
+          "example_quote": "They marched because the cost of living is very high.",
+          "explanation": "We use the word \"because\" to answer the question \"why?\" or to explain the reason for an action. In this story, \"because\" explains the reason why the people marched in the streets."
+        },
+        "news_brief_sentences": [
+          "Hundreds of thousands of people protested across France on Saturday.",
+          "They marched because the cost of living is very high.",
+          "The protests were mostly peaceful during the day.",
+          "Clashes between police and protesters happened late on Saturday.",
+          "Police officers used tear gas to stop the crowds.",
+          "Officials said that police arrested almost 1,000 people.",
+          "People also protested in other European countries for similar reasons."
+        ],
+        "overview": "Police arrested nearly 1,000 people after large protests about the high cost of living happened across France.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the reading says hundreds of thousands of people protested across France.",
+              "The story is about large protests and arrests, not a police officer's new job.",
+              "The story is about protests and clashes, not tourism or holidays."
+            ],
+            "options": [
+              "Large protests across France.",
+              "A police officer's new job.",
+              "The best places to visit in Europe."
+            ],
+            "question": "What is this story mainly about?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading says people marched because \"the cost of living is very high.\"",
+              "The story does not say they marched to choose a new president today.",
+              "The story does not mention the weather as a reason for the marches."
+            ],
+            "options": [
+              "Because the cost of living is very high.",
+              "Because they want to choose a new president today.",
+              "Because the weather in France is very hot."
+            ],
+            "question": "Why did the people march in the streets?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. The reading says that clashes happened \"late on Saturday.\"",
+              "The story does not say anything about Sunday morning.",
+              "The reading says the protests were mostly peaceful during the day."
+            ],
+            "options": [
+              "Late on Saturday.",
+              "Early on Sunday morning.",
+              "During the peaceful daytime."
+            ],
+            "question": "When did the clashes happen?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Arrested\" means someone is taken by the police for possibly breaking the law.",
+              "People who are arrested do not receive money from the police.",
+              "The police took them away, rather than just asking them to go home."
+            ],
+            "options": [
+              "Taken by the police.",
+              "Given a lot of money.",
+              "Asked to go home early."
+            ],
+            "question": "What does \"arrested\" mean in this story?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. \"peaceful\" means calm and without fighting, just like the protests were during the daytime.",
+              "Something that is loud, violent, and dangerous is the opposite of peaceful.",
+              "This describes something that costs a lot of money, not the word \"peaceful\"."
+            ],
+            "options": [
+              "It is quiet and without violence.",
+              "It is very loud and dangerous.",
+              "It is expensive and hard to find."
+            ],
+            "question": "If a protest is \"peaceful\", what is it like?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. We use \"because\" to give a reason. Being thirsty is the reason the person drank water.",
+              "We use \"but\" to show a difference, not to give a reason.",
+              "We use \"or\" to show a choice between two things."
+            ],
+            "options": [
+              "because",
+              "but",
+              "or"
+            ],
+            "question": "Complete this sentence using the grammar from the lesson: \"I drank some water _____ I was thirsty.\""
+          }
+        ],
+        "sentence_evidence": [
+          "Nearly 1,000 arrests were made as hundreds of thousands of people took part in another day of protests across France, which were followed by some clashes late on Saturday, officials have said.",
+          "Some 70,000 police officers were deployed and restrictions imposed in several cities to prevent the latest protests over the cost of living and poor school conditions from descending into the kind of chaos which saw officers outnumbered, hundreds of businesses looted and buildings torched.",
+          "After a day of largely peaceful demonstrations, police fired tear gas and water cannon to disperse protesters in a number of cities including Paris, while barricades were set alight in Marseille and people ripped boards from a shop in Bordeaux.",
+          "Nearly 1,000 arrests were made as hundreds of thousands of people took part in another day of protests across France, which were followed by some clashes late on Saturday, officials have said.",
+          "After a day of largely peaceful demonstrations, police fired tear gas and water cannon to disperse protesters in a number of cities including Paris, while barricades were set alight in Marseille and people ripped boards from a shop in Bordeaux.",
+          "Nuñez said late in the day that nearly 1,000 people had been arrested, a number he said would increase.",
+          "Mass protests triggered by similar issues as in France also rocked several other European cities on Saturday."
+        ],
+        "title": "Almost 1,000 Arrested After Mass Protests in France",
+        "topic": "Protests in France",
+        "vocabulary": [
+          {
+            "definition": "stood together in public to show they disagree with something",
+            "part_of_speech": "verb",
+            "term": "protested"
+          },
+          {
+            "definition": "the money you need to pay for everyday things like food and housing",
+            "part_of_speech": "noun",
+            "term": "cost of living"
+          },
+          {
+            "definition": "quiet, calm, and without violence or fighting",
+            "part_of_speech": "adjective",
+            "term": "peaceful"
+          },
+          {
+            "definition": "fights between two groups of people",
+            "part_of_speech": "noun",
+            "term": "clashes"
+          },
+          {
+            "definition": "a special gas used by police that hurts people's eyes",
+            "part_of_speech": "noun",
+            "term": "tear gas"
+          },
+          {
+            "definition": "taken by the police because a person might have broken the law",
+            "part_of_speech": "verb",
+            "term": "arrested"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think rising fuel prices and living costs can trigger such massive public protests? Use examples from the story.",
+          "Imagine you are a city official facing a large protest. What steps would you take to keep people safe while allowing the demonstration?"
+        ],
+        "editorial_check": {
+          "content_digest": "c022668f2a3bbd9d88ba7e687c4099459ac26b17aafc6319b341277ee6aee215",
+          "date": "2026-10-25T07:37:50.203581+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The reading and quiz questions offer appropriate B1-B2 comprehension checks and contextual vocabulary testing, requiring learners to process causes, actions, and consequences."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently maintains a neutral, informative news tone appropriate for reporting on mass protests, avoiding both overly academic phrasing and sensationalism."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation for the present perfect tense is clear and directly relates to the provided quote, using accessible language that effectively conveys the connection between past events and present situations."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "Target vocabulary words like 'makeshift', 'projectiles', 'disperse', and 'escalating' are highly relevant and well-defined for the B1-B2 level, focusing on useful news contexts without borrowing reserved beginner terms."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Present Perfect Tense",
+          "example_quote": "Similar issues have triggered mass protests in several other European cities.",
+          "explanation": "We use the present perfect tense (\"have\" or \"has\" + past participle) to describe an action that happened at an unspecified time in the past and has a result or connection to the present. In this sentence, the issues \"have triggered\" protests, showing that a past event is closely connected to the current situation."
+        },
+        "news_brief_sentences": [
+          "Hundreds of thousands of people took part in mass demonstrations across France on Saturday.",
+          "While many marches were calm, violent conflict erupted between protesters and riot police in Paris.",
+          "Some protesters built makeshift barricades and threw projectiles at officers, while masked youths smashed windows.",
+          "In response, law enforcement used water cannon to disperse crowds in several cities.",
+          "Despite the violence, officials have so far managed to avoid the extreme disorder seen last weekend.",
+          "Officials stated that nearly 1,000 arrests were made following the protests.",
+          "Two demonstrators explained that they feel abandoned by the government.",
+          "Similar issues have triggered mass protests in several other European cities.",
+          "These recent events follow weeks of escalating tension over rising fuel prices."
+        ],
+        "overview": "Hundreds of thousands demonstrated in France over rising costs, leading to widespread arrests and clashes with police.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The story focuses on the mass demonstrations in France and the resulting arrests.",
+              "Incorrect. Protesters are angry about rising fuel prices, but a new policy to reduce them is not mentioned.",
+              "Incorrect. The events were protests, and the reading notes that some of them turned violent."
+            ],
+            "options": [
+              "Widespread protests and arrests across France.",
+              "A new government policy to reduce fuel prices.",
+              "A peaceful festival celebrating modern French history."
+            ],
+            "question": "What is the main subject of the reading?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text specifically notes that masked youths smashed windows.",
+              "Incorrect. The protesters who built barricades were a different group throwing projectiles.",
+              "Incorrect. The riot police were trying to stop the violence, not smashing windows."
+            ],
+            "options": [
+              "Masked youths.",
+              "Some protesters who built barricades.",
+              "Riot police."
+            ],
+            "question": "According to the reading, who smashed windows during the conflict?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Police used water cannon to disperse crowds in several cities.",
+              "Incorrect. The police took action to break up the crowds.",
+              "Incorrect. Law enforcement clashed with some protesters rather than joining them."
+            ],
+            "options": [
+              "They used water cannon to disperse them.",
+              "They completely ignored the crowds until they left.",
+              "They joined the protests peacefully."
+            ],
+            "question": "How did law enforcement respond to the crowds in several cities?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Demonstrators explained that they feel abandoned by the government.",
+              "Incorrect. The protesters are demonstrating because they are frustrated with the government.",
+              "Incorrect. The text does not mention them demanding higher taxes; it only notes their feelings of despair and abandonment."
+            ],
+            "options": [
+              "They feel abandoned by the government.",
+              "They feel fully supported by the government.",
+              "They are demanding that the government raise their taxes."
+            ],
+            "question": "According to the article, how do the interviewed demonstrators feel about the government?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Erupted\" means to break out suddenly and forcefully, like the conflict in Paris.",
+              "Incorrect. This describes something fading away, which is the opposite of erupted.",
+              "Incorrect. The conflict was not prevented; it broke out suddenly."
+            ],
+            "options": [
+              "Started suddenly and violently.",
+              "Slowly disappeared over time.",
+              "Was completely prevented by officials."
+            ],
+            "question": "In the context of the story, what does \"erupted\" mean?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Projectiles are objects thrown as weapons, which some people threw at officers.",
+              "Incorrect. Temporary walls are called barricades, not projectiles.",
+              "Incorrect. The machines used to spray water are called water cannon."
+            ],
+            "options": [
+              "Objects that are thrown at a target.",
+              "Temporary walls built by police.",
+              "Machines used to spray water."
+            ],
+            "question": "What are \"projectiles\" as used in the article?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The present perfect tense connects a past event to the present situation.",
+              "Incorrect. The present continuous tense would be used for actions happening right now.",
+              "Incorrect. The future tense would be used for upcoming actions or predictions."
+            ],
+            "options": [
+              "To describe a past action that has a connection to current events.",
+              "To show that the protests are happening right now in the present moment.",
+              "To predict that mass protests will happen in the future."
+            ],
+            "question": "Read this sentence from the story: \"Similar issues have triggered mass protests in several other European cities.\" Why is the present perfect phrase \"have triggered\" used?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text confirms that several other European cities also experienced mass protests.",
+              "Incorrect. The unrest happened across France and also in other European cities.",
+              "Incorrect. The protests have already spread to other cities; it is not just an expectation."
+            ],
+            "options": [
+              "No, similar issues triggered protests in other European cities.",
+              "Yes, the unrest was strictly limited to Paris.",
+              "Yes, but officials expect protests to start elsewhere soon."
+            ],
+            "question": "Did the unrest happen only in France?"
+          }
+        ],
+        "sentence_evidence": [
+          "Nearly 1,000 arrests were made as hundreds of thousands of people took part in another day of protests across France, which were followed by some clashes late on Saturday, officials have said.",
+          "Clashes between protesters and riot police in Paris erupted at the end of a peaceful march from the city's Porte d'Italie towards Porte de Vincennes on Saturday, where the police operation included an elite unit that usually deals with organised crime and counter-terrorism.",
+          "Some protesters were seen erecting makeshift barricades and pelting officers with projectiles, while police baton-charged groups of masked youths who were smashing the windows of a car dealership.",
+          "After a day of largely peaceful demonstrations, police fired tear gas and water cannon to disperse protesters in a number of cities including Paris, while barricades were set alight in Marseille and people ripped boards from a shop in Bordeaux.",
+          "But officials have so far managed to avoid rioting and looting on the scale seen last weekend, which resulted in some of the worst scenes of disorder in France's modern history.",
+          "Nearly 1,000 arrests were made as hundreds of thousands of people took part in another day of protests across France, which were followed by some clashes late on Saturday, officials have said.",
+          "Two masked teenage protesters, who did not want to give their names, also said their generation was in despair and felt abandoned by the government.",
+          "Mass protests triggered by similar issues as in France also rocked several other European cities on Saturday.",
+          "Around 550,000 people took part in last weekend's demonstrations against rising fuel prices and the cost of living, with frustrations escalating after weeks of student protests. The chaos which followed resulted in more than 2,500 arrests."
+        ],
+        "title": "Mass Protests Across France Lead to Nearly 1,000 Arrests",
+        "topic": "European News",
+        "vocabulary": [
+          {
+            "definition": "Public events where large groups of people meet or march to show support or opposition for something.",
+            "part_of_speech": "noun",
+            "term": "demonstrations"
+          },
+          {
+            "definition": "Started suddenly and often violently.",
+            "part_of_speech": "verb",
+            "term": "erupted"
+          },
+          {
+            "definition": "Made to be used temporarily when nothing better is available.",
+            "part_of_speech": "adjective",
+            "term": "makeshift"
+          },
+          {
+            "definition": "Objects that are thrown at a target, often as weapons.",
+            "part_of_speech": "noun",
+            "term": "projectiles"
+          },
+          {
+            "definition": "To make a crowd of people leave an area and spread out in different directions.",
+            "part_of_speech": "verb",
+            "term": "disperse"
+          },
+          {
+            "definition": "A situation where people behave in a noisy, disorganized, or violent way in public.",
+            "part_of_speech": "noun",
+            "term": "disorder"
+          },
+          {
+            "definition": "Caused a reaction or series of events to start happening.",
+            "part_of_speech": "verb",
+            "term": "triggered"
+          },
+          {
+            "definition": "Becoming greater, more serious, or worse over time.",
+            "part_of_speech": "adjective",
+            "term": "escalating"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "In your view, when do massive street protests cross the line from justified democratic expression to gratuitous violence?",
+          "How might ongoing civil unrest influence a country's upcoming national elections?"
+        ],
+        "editorial_check": {
+          "content_digest": "65666dabf0d336415d4ea68838d0aac4014adf365d3828a8255f07268e993df9",
+          "date": "2026-10-25T07:43:09.860181+00:00",
+          "generation_attempts": 3,
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz offers a rigorous challenge by testing nuanced comprehension, contextual vocabulary, and structural grammar with plausible, well-explained distractors that require C1-level inference."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a polished, formal news reporting register throughout, using appropriate attribution, objective phrasing, and calibrated certainty suitable for Advanced learners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations and answer feedback are exceptionally clear and illuminating. The grammar section adeptly distinguishes between the grammatical roles of 'with' as a simple preposition versus its use in participle clauses."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary list provides precise, transferable C1-level terms (e.g., 'gratuitous', 'descending into', 'ablaze') that are highly relevant to news reporting and are correctly defined for the context."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-3.1-pro-preview",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "C1-Higher"
+        },
+        "grammar": {
+          "concept": "\"With\"-participle clauses",
+          "example_quote": "The continuing unrest comes ahead of presidential elections in six months' time, with leading contenders levelling the blame directly at Macron.",
+          "explanation": "The preposition \"with\" can introduce a participle clause to describe circumstances happening at the same time as the main action. In this structure, \"with\" is followed by a noun phrase and an -ing or -ed participle. This efficiently provides crucial background context without needing a completely separate sentence."
+        },
+        "news_brief_sentences": [
+          "French officials confirmed that nearly 1,000 arrests were made as hundreds of thousands of people participated in another day of protests across the nation.",
+          "Approximately 70,000 police officers were deployed to prevent the latest protests from descending into the kind of chaos that previously saw officers outnumbered.",
+          "Officials have so far managed to avoid rioting and looting on the scale seen last weekend, averting the worst scenes of disorder.",
+          "Furthermore, President Emmanuel Macron decreed that only demonstrations organised by recognised trade unions would be legally permitted.",
+          "Despite these measures, the interior minister noted that several thousand radical activists gathered at the rear of the march.",
+          "Tensions rose as police baton-charged groups of masked youths who were smashing windows and pelting officers with various objects.",
+          "In the southern port of Marseille, rubbish bins were set ablaze and metal sheets were used to block streets.",
+          "Meanwhile, authorities in Lyon utilised non-lethal grenades to scatter a crowd that had reportedly gathered in an area deemed off-limits by the local prefecture.",
+          "In Barcelona, over 100 people were arrested after a student protest resulted in what local authorities described as gratuitous violence.",
+          "The continuing unrest comes ahead of presidential elections in six months' time, with leading contenders levelling the blame directly at Macron."
+        ],
+        "overview": "French authorities deploy thousands of officers to contain widespread demonstrations and escalating political tensions months before national elections.",
+        "quiz": [
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While trade unions are mentioned as the only permitted organisers, their broader policies are not the main focus.",
+              "Correct. The text outlines the scale of the protests, the police response, and measures taken to prevent severe disorder.",
+              "Incorrect. The reading describes ongoing, persistent unrest rather than the definitive conclusion of the protests."
+            ],
+            "options": [
+              "A comprehensive evaluation of French trade unions and their economic policies.",
+              "Efforts by authorities to manage widespread protests and mitigate chaos across France.",
+              "The definitive end to a series of violent demonstrations in major European capitals."
+            ],
+            "question": "Which statement best summarises the central focus of the reading?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The text explicitly notes that 70,000 officers were deployed, suggesting an immense security presence, not a reduction.",
+              "Incorrect. The text mentions nearly 1,000 arrests and instances of violence, such as pelting officers and setting bins ablaze.",
+              "Correct. The reading states that officials have so far managed to avoid disorder on the scale seen last weekend."
+            ],
+            "options": [
+              "The police deployed fewer officers due to the predominantly peaceful nature of the crowds.",
+              "The latest marches were completely devoid of any violent incidents or arrests.",
+              "The authorities have so far managed to avoid the widespread rioting and looting seen previously."
+            ],
+            "question": "How did the recent demonstrations differ from those of the preceding weekend?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text directly states Macron decreed that only demonstrations organised by recognised trade unions would be legally permitted.",
+              "Incorrect. The decree specifically targeted the organisers, not the specific subject matter of the protests.",
+              "Incorrect. While a crowd gathered in an off-limits area, there is no mention of a presidential decree regarding student zones."
+            ],
+            "options": [
+              "That solely demonstrations orchestrated by officially recognised trade unions would be legal.",
+              "That protests concerning the cost of living would be strictly prohibited until the elections.",
+              "That any student protests must remain confined to designated zones approved by prefectures."
+            ],
+            "question": "What legal stipulation did President Macron decree regarding public gatherings?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This describes being dismissed or relieved of duty, which contradicts the mobilisation of 70,000 officers.",
+              "Correct. To deploy means to move military or police personnel into position for action.",
+              "Incorrect. While elite units were present, \"deploy\" broadly refers to positioning the officers, not permanently reassigning them."
+            ],
+            "options": [
+              "Discharged from active service due to uncontrollable circumstances.",
+              "Positioned and distributed forces strategically for a specific objective.",
+              "Reassigned permanently to an elite counter-terrorism division."
+            ],
+            "question": "In the context of the police response, what does \"deployed\" mean?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Gratuitous\" describes something done without good reason or cause.",
+              "Incorrect. Although \"gratuitous\" can mean given free of charge in other contexts, it refers to unwarranted brutality here.",
+              "Incorrect. The word implies the exact opposite; the violence was excessive and unprovoked, rather than necessary."
+            ],
+            "options": [
+              "That it was uncalled for, unjustified, and lacked a valid reason.",
+              "That it was offered free of charge by cooperative local authorities.",
+              "That it was an inevitable and necessary part of the students' demands."
+            ],
+            "question": "What does the term \"gratuitous\" imply about the violence in Barcelona?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Here, \"with\" is simply a preposition following the verb \"negotiated\" to show who the government spoke to.",
+              "Incorrect. In this sentence, \"with\" functions as a preposition showing the cause of their frustration, not a participle clause.",
+              "Correct. The preposition \"with\" followed by a noun (\"tensions\") and an -ing participle (\"rising\") provides background context."
+            ],
+            "options": [
+              "The government negotiated directly with leading contenders to avoid a strike.",
+              "The protesters were frustrated with the recent increases in the cost of living.",
+              "The minister addressed the press, with tensions rising rapidly among the crowd."
+            ],
+            "question": "Which of the following sentences uses a \"with\"-participle clause to demonstrate accompanying circumstances, similar to the grammar focus?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While masked youths smashed windows, the reading does not state they dismantled a storefront in Marseille.",
+              "Correct. The reading specifies that in Marseille, bins were set ablaze and metal sheets were used to block streets.",
+              "Incorrect. The gathering in an off-limits area occurred in Lyon, not Marseille."
+            ],
+            "options": [
+              "They completely dismantled a large commercial storefront.",
+              "They ignited rubbish bins and obstructed roads using metal sheets.",
+              "They breached an area expressly designated as off-limits by the prefecture."
+            ],
+            "question": "What disruptive actions did protesters take in Marseille?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. In this context, \"descending into\" means gradually worsening into a chaotic situation.",
+              "Incorrect. This describes a literal, physical downward movement, rather than a metaphorical decline in social order.",
+              "Incorrect. While the phrase can sometimes relate to inheritance, it is used here to describe the escalation of disorder."
+            ],
+            "options": [
+              "Deteriorating or collapsing into a worse state of disorder.",
+              "Physically moving downwards into lower geographical areas.",
+              "Handing over control to a younger generation of activists."
+            ],
+            "question": "What is the meaning of the phrase \"descending into\" when describing the chaos?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The reading describes restrictions and arrests, not any obligation or intention to concede to the demands.",
+              "Incorrect. There is no evidence suggesting the protests will cease; the reading states the unrest is \"continuing.\"",
+              "Correct. The text explicitly notes that \"leading contenders [are] levelling the blame directly at Macron\" ahead of the elections."
+            ],
+            "options": [
+              "They obligate the current administration to immediately concede to all protester demands.",
+              "They guarantee that all protests will be suspended until the voting period concludes.",
+              "They create an opening for political rivals to fault the incumbent president for the unrest."
+            ],
+            "question": "Based on the reading, how do the impending elections influence the political landscape?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Contenders\" refers to political candidates aiming for the presidency, not the street protesters.",
+              "Correct. A contender is a person who competes for a championship or political office.",
+              "Incorrect. It refers to those running for office in the upcoming elections, not the police forces."
+            ],
+            "options": [
+              "The most radical activists who frequently clash with riot police.",
+              "Individuals aggressively competing for a prominent political position.",
+              "Law enforcement officials tasked with restoring public order."
+            ],
+            "question": "Who are the \"contenders\" referenced in the final sentence?"
+          }
+        ],
+        "sentence_evidence": [
+          "Nearly 1,000 arrests were made as hundreds of thousands of people took part in another day of protests across France, which were followed by some clashes late on Saturday, officials have said.",
+          "Some 70,000 police officers were deployed and restrictions imposed in several cities to prevent the latest protests over the cost of living and poor school conditions from descending into the kind of chaos which saw officers outnumbered, hundreds of businesses looted and buildings torched.",
+          "But officials have so far managed to avoid rioting and looting on the scale seen last weekend, which resulted in some of the worst scenes of disorder in France's modern history.",
+          "President Emmanuel Macron had decreed earlier this week that only demonstrations organised by a recognised trade unions would be permitted. Hundreds of people have been jailed for vandalism, arson and looting after fast-track court hearings in recent days.",
+          "French Interior Minister Laurent Nuñez said that \"several thousand radical activists gathered at the rear of the march, including around 500 individuals identified as rioters\", the AFP news agency reported.",
+          "Some protesters were seen erecting makeshift barricades and pelting officers with projectiles, while police baton-charged groups of masked youths who were smashing the windows of a car dealership.",
+          "In the southern port of Marseille, rubbish bins were set ablaze and metal sheets used to block streets. A law enforcement vehicle was seen driving through a burning barricade in France's second-largest city.",
+          "In Lyon, police used tear gas grenades to disperse a crowd which had reportedly gathered in an area deemed off-limits by the local prefecture.",
+          "In Barcelona, more than 100 people were arrested after a student protest descended into what local authorities described as \"gratuitous violence\".",
+          "The continuing protests come ahead of France's presidential elections in six months' time, and leading contenders have levelled the blame at Macron and his ministers."
+        ],
+        "title": "Mass Protests and Clashes Grip France Ahead of Elections",
+        "topic": "Mass Protests in France",
+        "vocabulary": [
+          {
+            "definition": "Positioned or distributed military or police personnel strategically for action.",
+            "part_of_speech": "verb",
+            "term": "deployed"
+          },
+          {
+            "definition": "Gradually worsening or changing into a state of severe disorder.",
+            "part_of_speech": "phrasal verb",
+            "term": "descending into"
+          },
+          {
+            "definition": "The act of taking part in a violent public disturbance alongside a crowd.",
+            "part_of_speech": "noun",
+            "term": "rioting"
+          },
+          {
+            "definition": "Officially ordered or commanded an action by a formal legal authority.",
+            "part_of_speech": "verb",
+            "term": "decreed"
+          },
+          {
+            "definition": "Characterised by a desire for extreme political or social reform.",
+            "part_of_speech": "adjective",
+            "term": "radical"
+          },
+          {
+            "definition": "Repeatedly throwing items or objects at someone or something.",
+            "part_of_speech": "verb",
+            "term": "pelting"
+          },
+          {
+            "definition": "Burning fiercely or intensely on fire.",
+            "part_of_speech": "adjective",
+            "term": "ablaze"
+          },
+          {
+            "definition": "Legally or officially restricted from access by the general public.",
+            "part_of_speech": "adjective",
+            "term": "off-limits"
+          },
+          {
+            "definition": "Done without good reason; uncalled for or lacking valid justification.",
+            "part_of_speech": "adjective",
+            "term": "gratuitous"
+          },
+          {
+            "definition": "Individuals or groups who are competing for a championship or political position.",
+            "part_of_speech": "noun",
+            "term": "contenders"
+          }
+        ]
+      }
+    }
+  }
+}

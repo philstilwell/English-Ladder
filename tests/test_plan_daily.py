@@ -1,6 +1,9 @@
 """Boundaries for the ChatGPT-plan producer."""
+import json
 import os
 from pathlib import Path
+import subprocess
+import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
@@ -59,6 +62,70 @@ class PlanDailyTests(unittest.TestCase):
         self.assertIn("Review an English lesson", prompt)
         self.assertEqual({"approved", "issues", "level_checks"},
                          set(schema["properties"]))
+
+    def test_existing_staged_image_is_reused_without_another_model_call(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            image = state / "image.png"
+            image.write_bytes(b"already generated")
+            with patch.object(plan_daily, "prepare_image", return_value=state / "image.prompt.txt"), \
+                    patch.object(plan_daily_runner.subprocess, "run") as run:
+                self.assertEqual(image, plan_daily_runner.model_image("codex", "2026-10-26", state))
+            run.assert_not_called()
+
+    def test_saved_translation_draft_and_review_are_imported_without_model_calls(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state = root / "state"
+            state.mkdir()
+            lesson = {"news_brief_sentences": ["A complete sentence."],
+                      "vocabulary": [{"term": "complete", "part_of_speech": "adjective",
+                                      "definition": "Having every needed part."}]}
+            archive = root / "archive/lessons/2026-10-26.json"
+            archive.parent.mkdir(parents=True)
+            archive.write_text('{"levels":{"beginner":{"lesson":' +
+                               json.dumps(lesson) + '}}}')
+            (state / "translation-draft-beginner.json").write_text("{}")
+            (state / "translation-result-review-beginner.json").write_text("{}")
+            with patch.object(plan_daily_runner, "ROOT", root), \
+                    patch.object(plan_daily_runner, "read_record", return_value=None), \
+                    patch.object(plan_daily_runner, "run_python") as run_python, \
+                    patch.object(plan_daily_runner, "model_json") as model_json:
+                plan_daily_runner.create_translation(
+                    "codex", "2026-10-26", state, "beginner")
+            model_json.assert_not_called()
+            commands = [call.args[1] for call in run_python.call_args_list]
+            self.assertEqual(["prepare-translation", "accept-translation-review"], commands)
+
+    def test_transient_review_failure_reuses_structurally_valid_lesson(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            (state / "lesson-beginner.json").write_text("{}")
+            calls = []
+
+            def record_run(release, command, *args, **kwargs):
+                calls.append(command)
+
+            failure = subprocess.CalledProcessError(1, ["codex"])
+            with patch.object(plan_daily_runner, "LEVELS", ("beginner",)), \
+                    patch.object(plan_daily_runner, "run_python", side_effect=record_run), \
+                    patch.object(plan_daily_runner, "model_json", side_effect=[failure, None]):
+                plan_daily_runner.create_lessons("codex", "2026-10-26", state)
+            self.assertNotIn("prepare-level", calls)
+            self.assertNotIn("accept-draft", calls)
+            self.assertEqual(2, calls.count("prepare-review"))
+            self.assertIn("accept-review", calls)
+
+    def test_producer_lock_serializes_overlapping_attempts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "producer.lock"
+            with plan_daily_runner.producer_lock(path) as acquired:
+                self.assertTrue(acquired)
+                with plan_daily_runner.producer_lock(path) as second:
+                    self.assertFalse(second)
+
+    def test_image_provenance_does_not_claim_an_unexposed_model(self):
+        self.assertIn("model not exposed", plan_daily.IMAGE_MODEL)
 
 
 if __name__ == "__main__":

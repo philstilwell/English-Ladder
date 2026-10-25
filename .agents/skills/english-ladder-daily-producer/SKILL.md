@@ -57,9 +57,11 @@ disk space; the checkout-status check below remains mandatory.
 
    The runner uses fresh ephemeral Codex sessions for drafting, independent
    editorial review, translation, independent multilingual editing, and image
-   generation. Local validators import the results. It allows at most three full
+   generation. The exact underlying built-in image model is recorded as not
+   exposed unless the tool reports it explicitly. Local validators import the results. It allows at most three full
    lesson attempts per level during one scheduled run and retains resumable state
-   under ignored `.daily-agent/`.
+   under ignored `.daily-agent/`. A per-edition process lock makes overlapping
+   06:15/07:15/08:15 opportunities exit without duplicating model work.
 5. Inspect `git status`, `git diff --check`, the new illustration, and the
    provenance records. Never stage `.daily-agent/`, usage ledgers, secrets, or
    audio. Expected daily output may include the dated archive, dated image and

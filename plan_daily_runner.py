@@ -9,7 +9,9 @@ the responsibility of the scheduled repository skill.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 from datetime import date
+import fcntl
 import json
 import os
 from pathlib import Path
@@ -103,7 +105,10 @@ def model_json(executable: str, prompt_path: Path, schema_path: Path,
 def model_image(executable: str, release: str, state: Path) -> Path:
     prompt_path = plan_daily.prepare_image(release, state)
     output_path = state / "image.png"
-    output_path.unlink(missing_ok=True)
+    # A model session may have completed before import or publication failed.
+    # Preserve that staged image and let the deterministic importer validate it.
+    if output_path.is_file():
+        return output_path
     instruction = f"""Use the $imagegen skill and only ChatGPT's built-in image-generation tool.
 Do not use Gemini, an API key, curl, a browser, or another external image service.
 Create exactly one image from the following production prompt. Save the final PNG directly at:
@@ -137,12 +142,17 @@ def create_lessons(executable: str, release: str, state: Path) -> None:
         last_error = None
         for attempt in range(1, 4):
             try:
-                run_python(release, "prepare-level", "--level", level, state=state)
-                draft_result = state / f"draft-result-{level}-{attempt}.json"
-                model_json(executable, state / f"draft-{level}.prompt.txt",
-                           state / f"draft-{level}.schema.json", draft_result)
-                run_python(release, "accept-draft", "--level", level,
-                           "--input", str(draft_result), state=state)
+                lesson = state / f"lesson-{level}.json"
+                issues = state / f"issues-{level}.json"
+                if lesson.exists() and not issues.exists():
+                    run_python(release, "prepare-review", "--level", level, state=state)
+                else:
+                    run_python(release, "prepare-level", "--level", level, state=state)
+                    draft_result = state / f"draft-result-{level}-{attempt}.json"
+                    model_json(executable, state / f"draft-{level}.prompt.txt",
+                               state / f"draft-{level}.schema.json", draft_result)
+                    run_python(release, "accept-draft", "--level", level,
+                               "--input", str(draft_result), state=state)
                 review_result = state / f"review-result-{level}-{attempt}.json"
                 model_json(executable, state / f"review-{level}.prompt.txt",
                            state / f"review-{level}.schema.json", review_result)
@@ -165,22 +175,42 @@ def create_translation(executable: str, release: str, state: Path, level: str) -
     source = source_data(edition["levels"][level]["lesson"], level)
     if read_record(source):
         return
-    run_python(release, "prepare-translation", "--level", level, state=state)
+    saved_draft = state / f"translation-draft-{level}.json"
     draft = state / f"translation-result-draft-{level}.json"
-    model_json(executable, state / f"translation-draft-{level}.prompt.txt",
-               state / f"translation-{level}.schema.json", draft)
-    run_python(release, "accept-translation-draft", "--level", level,
-               "--input", str(draft), state=state)
+    if not saved_draft.exists():
+        if not draft.exists():
+            run_python(release, "prepare-translation", "--level", level, state=state)
+            model_json(executable, state / f"translation-draft-{level}.prompt.txt",
+                       state / f"translation-{level}.schema.json", draft)
+        run_python(release, "accept-translation-draft", "--level", level,
+                   "--input", str(draft), state=state)
     run_python(release, "prepare-translation", "--level", level, "--review", state=state)
     review = state / f"translation-result-review-{level}.json"
-    model_json(executable, state / f"translation-review-{level}.prompt.txt",
-               state / f"translation-{level}.schema.json", review)
+    if not review.exists():
+        model_json(executable, state / f"translation-review-{level}.prompt.txt",
+                   state / f"translation-{level}.schema.json", review)
     run_python(release, "accept-translation-review", "--level", level,
                "--input", str(review), state=state)
 
 
 def recent_releases() -> list[str]:
     return [path.stem for path in sorted((ROOT / "archive/lessons").glob("*.json"), reverse=True)[:3]]
+
+
+@contextmanager
+def producer_lock(path: Path):
+    """Serialize the three scheduled opportunities without hiding a failed process."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a") as stream:
+        try:
+            fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            yield False
+            return
+        try:
+            yield True
+        finally:
+            fcntl.flock(stream, fcntl.LOCK_UN)
 
 
 def main(argv=None) -> int:
@@ -191,27 +221,33 @@ def main(argv=None) -> int:
     release = date.fromisoformat(args.date).isoformat()
     state = plan_daily.state_dir(release, args.state_dir)
     state.mkdir(parents=True, exist_ok=True)
-    verify_free_space()
-    executable = codex_executable()
-    verify_chatgpt_login(executable)
+    with producer_lock(state / "producer.lock") as acquired:
+        if not acquired:
+            print(json.dumps({"release_date": release, "status": "already_running",
+                              "model": MODEL, "authentication": "ChatGPT",
+                              "api_fallback": False}))
+            return 0
+        verify_free_space()
+        executable = codex_executable()
+        verify_chatgpt_login(executable)
 
-    archive = ROOT / f"archive/lessons/{release}.json"
-    if not archive.exists():
-        create_lessons(executable, release, state)
-    for recent in recent_releases():
-        recent_state = plan_daily.state_dir(recent)
-        recent_state.mkdir(parents=True, exist_ok=True)
-        for level in LEVELS:
-            create_translation(executable, recent, recent_state, level)
+        archive = ROOT / f"archive/lessons/{release}.json"
+        if not archive.exists():
+            create_lessons(executable, release, state)
+        for recent in recent_releases():
+            recent_state = plan_daily.state_dir(recent)
+            recent_state.mkdir(parents=True, exist_ok=True)
+            for level in LEVELS:
+                create_translation(executable, recent, recent_state, level)
 
-    edition = json.loads(archive.read_text(encoding="utf-8"))
-    if plan_daily.image_for_lesson(edition, ROOT) is None:
-        image = model_image(executable, release, state)
-        run_python(release, "import-image", "--input", str(image), state=state)
+        edition = json.loads(archive.read_text(encoding="utf-8"))
+        if plan_daily.image_for_lesson(edition, ROOT) is None:
+            image = model_image(executable, release, state)
+            run_python(release, "import-image", "--input", str(image), state=state)
 
-    run_python(release, "build", state=state)
-    print(json.dumps({"release_date": release, "status": "complete", "model": MODEL,
-                      "authentication": "ChatGPT", "api_fallback": False}))
+        run_python(release, "build", state=state)
+        print(json.dumps({"release_date": release, "status": "complete", "model": MODEL,
+                          "authentication": "ChatGPT", "api_fallback": False}))
     return 0
 
 

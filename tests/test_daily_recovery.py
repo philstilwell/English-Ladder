@@ -1,6 +1,8 @@
 """Exercise the monitor without network, generation, or remote mutations."""
 import base64
 from datetime import datetime, timedelta, timezone
+import hashlib
+import fcntl
 import json
 from pathlib import Path
 import subprocess
@@ -16,11 +18,48 @@ RELEASE = "2026-10-06"
 
 
 def edition(release=RELEASE):
-    return json.dumps({"release_date": release, "levels": {
-        level: {"lesson": {"editorial_check": {"status": "passed"},
-                         "news_brief_sentences": ["A complete sentence."] * minimum,
-                         "vocabulary": [{}] * minimum, "quiz": [{}] * minimum}}
-        for level, minimum in recovery.LEVELS.items()}}).encode()
+    levels = {}
+    for level, minimum in recovery.LEVELS.items():
+        levels[level] = {"lesson": {
+            "title": f"A complete {level} lesson", "overview": "A complete overview.",
+            "editorial_check": {"status": "passed"},
+            "news_brief_sentences": [f"Complete sentence {index}." for index in range(minimum)],
+            "vocabulary": [{"term": f"term {index}", "part_of_speech": "noun",
+                            "definition": f"Definition number {index}."}
+                           for index in range(minimum)],
+            "quiz": [{}] * minimum,
+        }}
+    return json.dumps({"release_date": release, "levels": levels}).encode()
+
+
+def public_files(body):
+    record = json.loads(body)
+    files = {f"archive/lessons/{RELEASE}.json": body}
+    for level in recovery.LEVELS:
+        source = recovery.translation_source(record["levels"][level]["lesson"], level)
+        entries = [{"id": index, **{code: f"Translated {code} {index}"
+                                    for code in recovery.LANGUAGES}}
+                   for index in range(len(source["vocabulary"]))]
+        files[f"data/vocabulary-translations/{recovery.translation_key(source)}.json"] = json.dumps({
+            "source": source, "review": {"status": "reviewed"}, "entries": entries,
+        }).encode()
+    digest = recovery.story_digest(record)
+    image_path = f"assets/news/{RELEASE}-{digest[:12]}.webp"
+    image = b"verified image bytes"
+    files[f"assets/news/{RELEASE}.json"] = json.dumps({
+        "status": "ready", "story_digest": digest, "path": image_path,
+        "width": 1024, "height": 768, "sha256": hashlib.sha256(image).hexdigest(),
+    }).encode()
+    files[image_path] = image
+    files["lesson-data.json"] = json.dumps({
+        level: {"url": f"news/{RELEASE}/{level}.html"} for level in recovery.LEVELS
+    }).encode()
+    files[""] = f'data-completion-story="news/{RELEASE}"'.encode()
+    for path in ("archive.html", *[f"{level}.html" for level in recovery.LEVELS]):
+        files[path] = f"news/{RELEASE}/beginner.html".encode()
+    for level in recovery.LEVELS:
+        files[f"news/{RELEASE}/{level}.html"] = f"Lesson {RELEASE}".encode()
+    return files
 
 
 class FakeGitHub:
@@ -43,8 +82,9 @@ class MonitorTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.path = Path(self.temporary.name) / "state.json"
 
-    def check(self, github, now=NOW, apply=True, fetch=None):
-        return recovery.check(now, github, self.path, apply, fetch or Mock(return_value=None))
+    def check(self, github, now=NOW, apply=True, fetch=None, producer_is_active=None):
+        return recovery.check(now, github, self.path, apply, fetch or Mock(return_value=None),
+                              producer_is_active=producer_is_active)
 
     def test_missing_edition_requires_attention_without_dispatch(self):
         github = FakeGitHub()
@@ -80,17 +120,39 @@ class MonitorTests(unittest.TestCase):
 
     def test_healthy_edition_requires_all_three_live_levels_and_indexes(self):
         body = edition()
-        feed = json.dumps({level: {"url": f"news/{RELEASE}/{level}.html"}
-                           for level in recovery.LEVELS}).encode()
+        files = public_files(body)
         def fetch(path, now):
-            if path.startswith("archive/lessons/"):
-                return body
-            if path == "lesson-data.json":
-                return feed
-            if path == "":
-                return f'data-completion-story="news/{RELEASE}"'.encode()
-            return f"news/{RELEASE}/beginner.html".encode()
+            return files.get(path)
         self.assertEqual("healthy", self.check(FakeGitHub(body), fetch=fetch)["status"])
+
+    def test_healthy_requires_every_translation_and_matching_image(self):
+        body = edition()
+        complete = public_files(body)
+        record = json.loads(body)
+        beginner = recovery.translation_source(record["levels"]["beginner"]["lesson"], "beginner")
+        missing_translation = dict(complete)
+        missing_translation.pop(
+            f"data/vocabulary-translations/{recovery.translation_key(beginner)}.json")
+        self.assertEqual("waiting_for_publishing", self.check(
+            FakeGitHub(body), fetch=lambda path, now: missing_translation.get(path))["status"])
+        missing_image = dict(complete)
+        missing_image.pop(f"assets/news/{RELEASE}.json")
+        self.assertEqual("waiting_for_publishing", self.check(
+            FakeGitHub(body), fetch=lambda path, now: missing_image.get(path))["status"])
+
+    def test_active_local_producer_is_not_reported_as_failure(self):
+        self.assertEqual("producer_running", self.check(
+            FakeGitHub(), producer_is_active=lambda release: release == RELEASE)["status"])
+
+    def test_local_producer_lock_is_observed_without_taking_it(self):
+        root = Path(self.temporary.name) / "repository"
+        lock = root / ".daily-agent" / RELEASE / "producer.lock"
+        lock.parent.mkdir(parents=True)
+        with lock.open("a") as stream:
+            fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            self.assertTrue(recovery.producer_running(root, RELEASE))
+            fcntl.flock(stream, fcntl.LOCK_UN)
+        self.assertFalse(recovery.producer_running(root, RELEASE))
 
     def test_monitor_waits_until_after_final_utc_attempt(self):
         for utc in (datetime(2026, 10, 6, 6, 44, tzinfo=timezone.utc),

@@ -37,6 +37,7 @@ import update_site
 ROOT = Path(__file__).resolve().parent
 STATE_ROOT = ROOT / ".daily-agent"
 MODEL = "gpt-6.1-sol"
+IMAGE_MODEL = "ChatGPT built-in image generation (exact model not exposed)"
 SURFACE = "Codex with ChatGPT sign-in"
 LEVEL_NAMES = ("beginner", "intermediate", "advanced")
 
@@ -133,12 +134,28 @@ def accept_draft(release_date: str, state: Path, name: str, draft_path: Path) ->
         raise ValueError("; ".join(issues))
     lesson_path = state / f"lesson-{name}.json"
     atomic_json(lesson_path, lesson)
+    prepare_review(release_date, state, name)
+    return lesson_path
+
+
+def prepare_review(release_date: str, state: Path, name: str) -> dict:
+    """Resume at review without asking the model to recreate a valid lesson draft."""
+    source = load_json(source_path(state))
+    lesson = load_json(state / f"lesson-{name}.json")
+    level = level_config(name, state)
+    issues = list(dict.fromkeys(
+        update_site.validate_lesson_data(lesson, level) + validate_evidence(lesson, source)
+    ))
+    if issues:
+        atomic_json(state / f"issues-{name}.json", issues)
+        raise ValueError("; ".join(issues))
     prompt, schema = review_lesson(None, source, lesson, level, MODEL, return_request=True)
     prompt_path = state / f"review-{name}.prompt.txt"
     schema_path = state / f"review-{name}.schema.json"
     prompt_path.write_text(prompt, encoding="utf-8")
     atomic_json(schema_path, schema)
-    return lesson_path
+    (state / f"issues-{name}.json").unlink(missing_ok=True)
+    return {"schema": str(schema_path), "prompt": str(prompt_path)}
 
 
 def accept_review(release_date: str, state: Path, name: str, review_path: Path,
@@ -270,7 +287,7 @@ def prepare_image(release_date: str, state: Path) -> Path:
 
 def import_image(release_date: str, image_path: Path):
     return import_daily_image(archive_path(release_date), image_path, ROOT,
-                              model="gpt-image-1.5", surface=SURFACE)
+                              model=IMAGE_MODEL, surface=SURFACE)
 
 
 def build_and_check(release_date: str) -> None:
@@ -298,7 +315,7 @@ def parser() -> argparse.ArgumentParser:
     command.add_argument("--state-dir")
     sub = command.add_subparsers(dest="command", required=True)
     sub.add_parser("prepare-source")
-    for name in ("prepare-level", "accept-draft", "accept-review",
+    for name in ("prepare-level", "prepare-review", "accept-draft", "accept-review",
                  "prepare-translation", "accept-translation-draft",
                  "accept-translation-review"):
         item = sub.add_parser(name)
@@ -326,6 +343,8 @@ def main(argv=None) -> int:
         result = prepare_source(args.date, state)
     elif args.command == "prepare-level":
         result = prepare_level(args.date, state, args.level)
+    elif args.command == "prepare-review":
+        result = prepare_review(args.date, state, args.level)
     elif args.command == "accept-draft":
         result = accept_draft(args.date, state, args.level, args.input)
     elif args.command == "accept-review":

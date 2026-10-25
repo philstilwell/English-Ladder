@@ -24,6 +24,7 @@ from urllib.parse import urlencode
 REPOSITORY = "philstilwell/English-Ladder"
 WORKFLOW = "cron.yml"
 LEVELS = {"beginner": 6, "intermediate": 8, "advanced": 10}
+LANGUAGES = ("ja", "ko", "zh-Hans", "es", "pt-BR", "fr", "de")
 PUBLISHING_GRACE = timedelta(minutes=30)
 MONITOR_HOUR_UTC = 8
 MONITOR_MINUTE_UTC = 45
@@ -122,9 +123,77 @@ def complete_archive(body, release):
         return False
 
 
+def translation_source(lesson, level):
+    return {"policy": "2026-09-08-context-definitions-v1", "level": level,
+            "reading": lesson["news_brief_sentences"],
+            "vocabulary": [{key: item[key] for key in ("term", "part_of_speech", "definition")}
+                           for item in lesson["vocabulary"]]}
+
+
+def translation_key(source):
+    return hashlib.sha256(json.dumps(
+        source, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def valid_translation(body, source):
+    try:
+        record = json.loads(body)
+        if record["source"] != source or record["review"]["status"] != "reviewed":
+            return False
+        entries = record["entries"]
+        if len(entries) != len(source["vocabulary"]):
+            return False
+        for index, entry in enumerate(entries):
+            if (type(entry.get("id")) is not int or entry["id"] != index
+                    or set(entry) != {"id", *LANGUAGES}
+                    or any(not isinstance(entry[code], str) or not entry[code].strip()
+                           for code in LANGUAGES)):
+                return False
+        return True
+    except (ValueError, KeyError, TypeError, AttributeError):
+        return False
+
+
+def story_digest(edition):
+    lesson = edition["levels"]["beginner"]["lesson"]
+    context = {"source": edition.get("source", {}), "title": lesson["title"],
+               "overview": lesson["overview"], "reading": lesson.get("news_brief_sentences", [])}
+    return hashlib.sha256(json.dumps(context, sort_keys=True).encode()).hexdigest()
+
+
+def valid_image(edition, release, now, fetch):
+    metadata_body = fetch(f"assets/news/{release}.json", now)
+    if metadata_body is None:
+        return False
+    try:
+        metadata = json.loads(metadata_body)
+        digest = story_digest(edition)
+        expected_path = f"assets/news/{release}-{digest[:12]}.webp"
+        if (metadata.get("status") != "ready" or metadata.get("story_digest") != digest
+                or metadata.get("path") != expected_path
+                or any(type(metadata.get(key)) is not int or not 512 <= metadata[key] <= 1600
+                       for key in ("width", "height"))):
+            return False
+        image = fetch(expected_path, now)
+        return image is not None and hashlib.sha256(image).hexdigest() == metadata.get("sha256")
+    except (ValueError, KeyError, TypeError, AttributeError):
+        return False
+
+
 def published(body, release, now, fetch=public_file):
     remote = fetch(f"archive/lessons/{release}.json", now)
     if remote is None or hashlib.sha256(remote).digest() != hashlib.sha256(body).digest():
+        return False
+    try:
+        edition = json.loads(body)
+        for level in LEVELS:
+            source = translation_source(edition["levels"][level]["lesson"], level)
+            record = fetch(f"data/vocabulary-translations/{translation_key(source)}.json", now)
+            if record is None or not valid_translation(record, source):
+                return False
+        if not valid_image(edition, release, now, fetch):
+            return False
+    except (ValueError, KeyError, TypeError, AttributeError):
         return False
     feed_body = fetch("lesson-data.json", now)
     if feed_body is None:
@@ -147,6 +216,26 @@ def published(body, release, now, fetch=public_file):
         if page is None or release.encode() not in page:
             return False
     return True
+
+
+def producer_running(root, release):
+    """Read the producer lock without creating state or signalling the process."""
+    if root is None:
+        return False
+    path = Path(root) / ".daily-agent" / release / "producer.lock"
+    if not path.is_file():
+        return False
+    try:
+        with path.open("r") as stream:
+            try:
+                fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                return True
+            else:
+                fcntl.flock(stream, fcntl.LOCK_UN)
+                return False
+    except OSError as error:
+        raise ServiceUnavailable("The local producer state could not be checked safely.") from error
 
 
 def read_state(path, release):
@@ -184,7 +273,7 @@ def save_state(path, state):
         temporary.unlink(missing_ok=True)
 
 
-def check(now, github, state_path, apply=False, fetch=public_file):
+def check(now, github, state_path, apply=False, fetch=public_file, producer_is_active=None):
     if now.tzinfo is None:
         raise ValueError("The recovery clock must have a time zone.")
     utc = now.astimezone(timezone.utc)
@@ -196,7 +285,10 @@ def check(now, github, state_path, apply=False, fetch=public_file):
         return {**result, "status": "before_monitor_window"}
     state = read_state(state_path, release)
     body = github.archive(release)
+    local_active = bool(producer_is_active and producer_is_active(release))
     if body is not None and not complete_archive(body, release):
+        if local_active:
+            return {**result, "status": "producer_running"}
         return {**result, "status": "needs_attention", "reason": "The saved edition is incomplete or unreviewed."}
     if body is not None and published(body, release, now, fetch):
         state.pop("stale_since", None)
@@ -204,10 +296,12 @@ def check(now, github, state_path, apply=False, fetch=public_file):
         if apply:
             save_state(state_path, state)
         return state["last_result"]
-    active = any(run["status"] != "completed" for run in github.runs(now))
     if body is None:
+        if local_active:
+            return {**result, "status": "producer_running"}
         return {**result, "status": "needs_attention",
                 "reason": "The scheduled ChatGPT producer has not saved today's edition."}
+    active = any(run["status"] != "completed" for run in github.runs(now))
     fingerprint = hashlib.sha256(body).hexdigest()
     if state.get("expected_archive") != fingerprint:
         state.update(expected_archive=fingerprint, stale_since=now.isoformat())
@@ -217,6 +311,10 @@ def check(now, github, state_path, apply=False, fetch=public_file):
             raise ValueError()
     except (KeyError, ValueError, TypeError) as error:
         raise ServiceUnavailable("The publishing monitor clock is unreadable.") from error
+    if local_active:
+        if apply:
+            save_state(state_path, state)
+        return {**result, "status": "producer_running"}
     if active or now - since < PUBLISHING_GRACE:
         if apply:
             save_state(state_path, state)
@@ -246,6 +344,8 @@ def main(argv=None):
                         help="Persist the read-only health result and logs; never dispatch work.")
     parser.add_argument("--state-dir", type=Path, default=DEFAULT_STATE_DIR)
     parser.add_argument("--gh", default="gh", help="Absolute GitHub CLI path for the macOS timer.")
+    parser.add_argument("--producer-root", type=Path,
+                        help="Repository root used only to inspect the read-only producer lock.")
     parser.add_argument("--json", action="store_true", help="Print the result for a manual check.")
     args = parser.parse_args(argv)
     logger = logging.getLogger("daily-recovery")
@@ -260,7 +360,10 @@ def main(argv=None):
             if not acquired:
                 result = {"status": "another_check_is_running"}
             else:
-                result = check(datetime.now(timezone.utc), GitHub(args.gh), args.state_dir / "state.json", args.apply)
+                result = check(
+                    datetime.now(timezone.utc), GitHub(args.gh), args.state_dir / "state.json",
+                    args.apply, producer_is_active=lambda release: producer_running(args.producer_root, release),
+                )
     except (ServiceUnavailable, OSError) as error:
         result = {"status": "needs_attention", "reason": str(error), "checked_at": datetime.now(timezone.utc).isoformat()}
     if args.apply:

@@ -14,12 +14,14 @@ the production window is still open. After that time it checks:
 
 - today's date-specific archive on GitHub;
 - all three reviewed levels and their minimum reading, vocabulary, and quiz data;
+- every reviewed seven-language vocabulary record and the matching image bytes;
 - the identical public archive and current feed;
 - Discover, the archive listing, the three level feeds, and the three dated pages;
-- whether an offline GitHub publication check is still active; and
+- whether the local producer lock or an offline GitHub publication check is still active; and
 - a 30-minute grace period for a saved commit to reach hosting.
 
 Missing, partial, unreadable, or stale state is reported as `needs_attention`.
+An edition still being produced is reported as `producer_running`, not a false failure.
 The monitor never dispatches a workflow, starts generation, repeats a model call,
 changes a schedule, or mutates GitHub. Network uncertainty is reported rather
 than treated as proof that an edition is missing.

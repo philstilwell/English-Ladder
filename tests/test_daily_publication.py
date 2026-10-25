@@ -58,11 +58,20 @@ class DailyPublicationTests(unittest.TestCase):
 
     def test_complete_live_edition_skips_rebuilding(self):
         run = Mock(return_value=subprocess.CompletedProcess([], 0))
-        ready, reason = publication.check_publication(self.root, DATE, run)
+        with patch.object(publication, "node_executable", return_value="/supported/node"):
+            ready, reason = publication.check_publication(self.root, DATE, run)
         self.assertTrue(ready, reason)
         run.assert_called_once()
-        self.assertEqual(run.call_args.args[0], ["node", "cloudflare/check-daily-publication.cjs", DATE])
+        self.assertEqual(run.call_args.args[0],
+                         ["/supported/node", "cloudflare/check-daily-publication.cjs", DATE])
         self.assertEqual(run.call_args.kwargs["timeout"], 120)
+
+    def test_node_resolution_supports_minimal_scheduled_path(self):
+        with patch.dict(os.environ, {"PATH": ""}, clear=False), \
+                patch.object(publication, "CHATGPT_NODE", Path("/scheduled/node")), \
+                patch.object(publication.Path, "is_file", autospec=True,
+                             side_effect=lambda path: str(path) == "/scheduled/node"):
+            self.assertEqual("/scheduled/node", publication.node_executable())
 
     def test_missing_edition_does_not_probe_network_or_claim_success(self):
         (self.root / f"archive/lessons/{DATE}.json").unlink()
@@ -103,7 +112,8 @@ class DailyPublicationTests(unittest.TestCase):
                     Mock(side_effect=subprocess.TimeoutExpired("node", 120)),
                     Mock(side_effect=OSError("missing executable"))):
             with self.subTest(run=run):
-                self.assertFalse(publication.check_publication(self.root, DATE, run)[0])
+                with patch.object(publication, "node_executable", return_value="/supported/node"):
+                    self.assertFalse(publication.check_publication(self.root, DATE, run)[0])
 
     def test_verification_only_fails_without_generating_or_sending(self):
         output = self.root / "outputs"

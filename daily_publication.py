@@ -10,6 +10,7 @@ from datetime import date
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 
 from daily_images import image_for_lesson
@@ -18,6 +19,18 @@ from vocabulary_translations import read_record, source_data
 
 ROOT = Path(__file__).resolve().parent
 LEVELS = ("beginner", "intermediate", "advanced")
+CHATGPT_NODE = Path("/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node")
+
+
+def node_executable():
+    """Resolve Node explicitly because scheduled macOS tasks have a minimal PATH."""
+    configured = os.environ.get("ENGLISH_LADDER_NODE")
+    candidates = (configured, shutil.which("node"), str(CHATGPT_NODE),
+                  "/opt/homebrew/bin/node", "/usr/local/bin/node")
+    for candidate in candidates:
+        if candidate and Path(candidate).is_file():
+            return str(Path(candidate))
+    raise FileNotFoundError("A supported Node executable is not installed.")
 
 
 def saved_edition_status(root, release_date):
@@ -58,7 +71,7 @@ def check_publication(root, release_date, run=subprocess.run):
         return False, reason
     try:
         result = run(
-            ["node", "cloudflare/check-daily-publication.cjs", release_date],
+            [node_executable(), "cloudflare/check-daily-publication.cjs", release_date],
             cwd=root, capture_output=True, text=True, timeout=120,
         )
     except (OSError, subprocess.TimeoutExpired):

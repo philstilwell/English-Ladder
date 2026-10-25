@@ -15,6 +15,7 @@ import hashlib
 import json
 import logging
 from logging.handlers import RotatingFileHandler
+from html.parser import HTMLParser
 import os
 from pathlib import Path
 import subprocess
@@ -123,34 +124,34 @@ def complete_archive(body, release):
         return False
 
 
-def translation_source(lesson, level):
-    return {"policy": "2026-09-08-context-definitions-v1", "level": level,
-            "reading": lesson["news_brief_sentences"],
-            "vocabulary": [{key: item[key] for key in ("term", "part_of_speech", "definition")}
-                           for item in lesson["vocabulary"]]}
+class TranslationParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.entries = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        classes = set(attributes.get("class", "").split())
+        if tag == "span" and "vocab-definition" in classes:
+            self.entries.append(attributes.get("data-translations"))
 
 
-def translation_key(source):
-    return hashlib.sha256(json.dumps(
-        source, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
-
-
-def valid_translation(body, source):
+def valid_page_translations(body, expected_count):
+    """Validate the seven-language objects users receive inside the live HTML."""
     try:
-        record = json.loads(body)
-        if record["source"] != source or record["review"]["status"] != "reviewed":
+        parser = TranslationParser()
+        parser.feed(body.decode("utf-8"))
+        parser.close()
+        if len(parser.entries) != expected_count:
             return False
-        entries = record["entries"]
-        if len(entries) != len(source["vocabulary"]):
-            return False
-        for index, entry in enumerate(entries):
-            if (type(entry.get("id")) is not int or entry["id"] != index
-                    or set(entry) != {"id", *LANGUAGES}
-                    or any(not isinstance(entry[code], str) or not entry[code].strip()
+        for raw in parser.entries:
+            translations = json.loads(raw)
+            if (set(translations) != set(LANGUAGES)
+                    or any(not isinstance(translations[code], str) or not translations[code].strip()
                            for code in LANGUAGES)):
                 return False
         return True
-    except (ValueError, KeyError, TypeError, AttributeError):
+    except (UnicodeDecodeError, ValueError, TypeError, AttributeError):
         return False
 
 
@@ -186,11 +187,6 @@ def published(body, release, now, fetch=public_file):
         return False
     try:
         edition = json.loads(body)
-        for level in LEVELS:
-            source = translation_source(edition["levels"][level]["lesson"], level)
-            record = fetch(f"data/vocabulary-translations/{translation_key(source)}.json", now)
-            if record is None or not valid_translation(record, source):
-                return False
         if not valid_image(edition, release, now, fetch):
             return False
     except (ValueError, KeyError, TypeError, AttributeError):
@@ -213,7 +209,9 @@ def published(body, release, now, fetch=public_file):
             return False
     for level in LEVELS:
         page = fetch(f"news/{release}/{level}.html", now)
-        if page is None or release.encode() not in page:
+        expected = len(edition["levels"][level]["lesson"]["vocabulary"])
+        if (page is None or release.encode() not in page
+                or not valid_page_translations(page, expected)):
             return False
     return True
 

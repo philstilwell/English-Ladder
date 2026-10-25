@@ -3,6 +3,7 @@ import base64
 from datetime import datetime, timedelta, timezone
 import hashlib
 import fcntl
+import html
 import json
 from pathlib import Path
 import subprocess
@@ -35,14 +36,6 @@ def edition(release=RELEASE):
 def public_files(body):
     record = json.loads(body)
     files = {f"archive/lessons/{RELEASE}.json": body}
-    for level in recovery.LEVELS:
-        source = recovery.translation_source(record["levels"][level]["lesson"], level)
-        entries = [{"id": index, **{code: f"Translated {code} {index}"
-                                    for code in recovery.LANGUAGES}}
-                   for index in range(len(source["vocabulary"]))]
-        files[f"data/vocabulary-translations/{recovery.translation_key(source)}.json"] = json.dumps({
-            "source": source, "review": {"status": "reviewed"}, "entries": entries,
-        }).encode()
     digest = recovery.story_digest(record)
     image_path = f"assets/news/{RELEASE}-{digest[:12]}.webp"
     image = b"verified image bytes"
@@ -58,7 +51,16 @@ def public_files(body):
     for path in ("archive.html", *[f"{level}.html" for level in recovery.LEVELS]):
         files[path] = f"news/{RELEASE}/beginner.html".encode()
     for level in recovery.LEVELS:
-        files[f"news/{RELEASE}/{level}.html"] = f"Lesson {RELEASE}".encode()
+        count = len(record["levels"][level]["lesson"]["vocabulary"])
+        spans = []
+        for index in range(count):
+            translations = json.dumps({
+                code: f"Translated {code} {index}" for code in recovery.LANGUAGES
+            }, ensure_ascii=False)
+            spans.append('<span class="vocab-definition" data-translations="' +
+                         html.escape(translations, quote=True) + '">Definition</span>')
+        files[f"news/{RELEASE}/{level}.html"] = (
+            f"Lesson {RELEASE}" + "".join(spans)).encode()
     return files
 
 
@@ -128,11 +130,8 @@ class MonitorTests(unittest.TestCase):
     def test_healthy_requires_every_translation_and_matching_image(self):
         body = edition()
         complete = public_files(body)
-        record = json.loads(body)
-        beginner = recovery.translation_source(record["levels"]["beginner"]["lesson"], "beginner")
         missing_translation = dict(complete)
-        missing_translation.pop(
-            f"data/vocabulary-translations/{recovery.translation_key(beginner)}.json")
+        missing_translation[f"news/{RELEASE}/beginner.html"] = f"Lesson {RELEASE}".encode()
         self.assertEqual("waiting_for_publishing", self.check(
             FakeGitHub(body), fetch=lambda path, now: missing_translation.get(path))["status"])
         missing_image = dict(complete)

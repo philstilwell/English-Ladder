@@ -153,6 +153,16 @@ class MonitorTests(unittest.TestCase):
             fcntl.flock(stream, fcntl.LOCK_UN)
         self.assertFalse(recovery.producer_running(root, RELEASE))
 
+    def test_recent_publication_handoff_is_active_but_stale_handoff_is_not(self):
+        root = Path(self.temporary.name) / "repository"
+        marker = root / ".daily-agent" / RELEASE / "publication-pending.json"
+        marker.parent.mkdir(parents=True)
+        marker.write_text(json.dumps({
+            "release_date": RELEASE, "created_at": NOW.isoformat(), "archive_sha256": "a" * 64,
+        }))
+        self.assertTrue(recovery.producer_running(root, RELEASE, NOW + timedelta(minutes=90)))
+        self.assertFalse(recovery.producer_running(root, RELEASE, NOW + timedelta(hours=3)))
+
     def test_monitor_waits_until_after_final_utc_attempt(self):
         for utc in (datetime(2026, 10, 6, 6, 44, tzinfo=timezone.utc),
                     datetime(2026, 12, 6, 8, 44, tzinfo=timezone.utc)):

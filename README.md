@@ -122,7 +122,7 @@ See the [25-occupation expansion review](docs/occupation-expansion-2026-09-28.md
 
 - `plan_daily_runner.py` and `plan_daily.py`
   Rotate the BBC feeds through the existing source selector, invoke fresh ChatGPT-authenticated Codex sessions for writing and independent review, validate every imported artifact, and rebuild the three rolling level pages plus the homepage. Common model API-key variables are removed from every Codex subprocess.
-  A per-edition lock serializes the three scheduled opportunities. Valid lesson drafts resume at review, and saved translation and image stages are imported rather than regenerated after an operational interruption.
+  A per-edition lock serializes model/build work, and a persistent handoff blocks later opportunities until the first task verifies publication. Valid lesson drafts resume at review, and saved translation and image stages are imported rather than regenerated after an operational interruption.
 
 - `requirements.txt`
   Pins the runtime dependencies used by GitHub Actions.
@@ -177,7 +177,7 @@ Push-triggered GitHub runs are offline-only and never call a model. Scheduled an
 
 Generation, independent review, translations, multilingual editing, and the daily illustration use ChatGPT plan allowance or credits through Codex sign-in. There is no paid-API fallback. Offline tests, page rebuilding, and reuse of completed artifacts do not consume model allowance. Bounded attempts prevent accidental repeated work but are not a guarantee of plan capacity.
 
-Later requested starts fetch current `main`, see artifacts saved by an earlier attempt, and never regenerate a complete date's lesson text. Saved images are checked against the story, dimensions, path, and checksum before reuse. To recover a missing stage, run `.venv/bin/python plan_daily_runner.py --date YYYY-MM-DD`; it resumes rather than replacing complete stages. The runner stops before model work when less than 512 MiB is free. Ordinary `.venv/bin/python editorial.py` and page rebuilding remain offline.
+Later requested starts fetch current `main`, see artifacts saved by an earlier attempt, and never regenerate a complete date's lesson text. Saved images are checked against the story, dimensions, path, and checksum before reuse. To recover a missing stage, run `.venv/bin/python plan_daily_runner.py --date YYYY-MM-DD`; it resumes rather than replacing complete stages. A successful build records `publication-pending.json`; later tasks stop until the publishing owner verifies the live edition and runs `--finish-publication`. The runner stops before model work when less than 512 MiB is free. Ordinary `.venv/bin/python editorial.py` and page rebuilding remain offline.
 
 ## Optional AI practice extensions
 

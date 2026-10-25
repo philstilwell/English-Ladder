@@ -21,7 +21,9 @@ the production window is still open. After that time it checks:
 - a 30-minute grace period for a saved commit to reach hosting.
 
 Missing, partial, unreadable, or stale state is reported as `needs_attention`.
-An edition still being produced is reported as `producer_running`, not a false failure.
+An edition still being produced or in its bounded publication handoff is reported
+as `producer_running`, not a false failure. A handoff older than two hours no
+longer suppresses `needs_attention`.
 The monitor never dispatches a workflow, starts generation, repeats a model call,
 changes a schedule, or mutates GitHub. Network uncertainty is reported rather
 than treated as proof that an edition is missing.

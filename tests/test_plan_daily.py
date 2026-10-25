@@ -7,6 +7,8 @@ import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
+import contextlib
+import io
 
 import plan_daily
 import plan_daily_runner
@@ -123,6 +125,45 @@ class PlanDailyTests(unittest.TestCase):
                 self.assertTrue(acquired)
                 with plan_daily_runner.producer_lock(path) as second:
                     self.assertFalse(second)
+
+    def test_already_running_exits_before_preflight_or_publication(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            with plan_daily_runner.producer_lock(state / "producer.lock"):
+                with patch.object(plan_daily_runner, "verify_free_space") as preflight, \
+                        contextlib.redirect_stdout(io.StringIO()) as output:
+                    result = plan_daily_runner.main([
+                        "--date", "2026-10-26", "--state-dir", str(state)])
+            self.assertEqual(0, result)
+            self.assertEqual("already_running", json.loads(output.getvalue())["status"])
+            preflight.assert_not_called()
+
+    def test_publication_handoff_blocks_later_attempts_before_preflight(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            plan_daily.atomic_json(plan_daily_runner.publication_marker(state), {"release_date": "2026-10-26"})
+            with patch.object(plan_daily_runner, "verify_free_space") as preflight, \
+                    contextlib.redirect_stdout(io.StringIO()) as output:
+                result = plan_daily_runner.main([
+                    "--date", "2026-10-26", "--state-dir", str(state)])
+            self.assertEqual(0, result)
+            self.assertEqual("publication_pending", json.loads(output.getvalue())["status"])
+            preflight.assert_not_called()
+
+    def test_publication_handoff_clears_only_after_live_verification(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            marker = plan_daily_runner.publication_marker(state)
+            plan_daily.atomic_json(marker, {"release_date": "2026-10-26"})
+            with patch.object(plan_daily_runner, "check_publication",
+                              return_value=(False, "not live")):
+                with self.assertRaisesRegex(RuntimeError, "not live"):
+                    plan_daily_runner.finish_publication("2026-10-26", state)
+            self.assertTrue(marker.exists())
+            with patch.object(plan_daily_runner, "check_publication",
+                              return_value=(True, "verified")):
+                plan_daily_runner.finish_publication("2026-10-26", state)
+            self.assertFalse(marker.exists())
 
     def test_image_provenance_does_not_claim_an_unexposed_model(self):
         self.assertIn("model not exposed", plan_daily.IMAGE_MODEL)

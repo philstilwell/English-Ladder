@@ -10,8 +10,9 @@ from __future__ import annotations
 
 import argparse
 from contextlib import contextmanager
-from datetime import date
+from datetime import date, datetime, timezone
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -20,6 +21,7 @@ import subprocess
 import sys
 
 import plan_daily
+from daily_publication import check_publication
 from vocabulary_translations import read_record, source_data
 
 
@@ -31,6 +33,27 @@ FORBIDDEN_ENV = {
     "ANTHROPIC_API_KEY", "AZURE_OPENAI_API_KEY",
 }
 MINIMUM_FREE_BYTES = 512 * 1024 * 1024
+
+
+def publication_marker(state: Path) -> Path:
+    return state / "publication-pending.json"
+
+
+def mark_publication_pending(release: str, state: Path, archive: Path) -> Path:
+    marker = publication_marker(state)
+    plan_daily.atomic_json(marker, {
+        "release_date": release,
+        "archive_sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    })
+    return marker
+
+
+def finish_publication(release: str, state: Path) -> None:
+    published, reason = check_publication(ROOT, release)
+    if not published:
+        raise RuntimeError(reason)
+    publication_marker(state).unlink(missing_ok=True)
 
 
 def codex_executable() -> str:
@@ -217,6 +240,8 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", default=date.today().isoformat())
     parser.add_argument("--state-dir")
+    parser.add_argument("--finish-publication", action="store_true",
+                        help="Verify the live edition and release its publication handoff.")
     args = parser.parse_args(argv)
     release = date.fromisoformat(args.date).isoformat()
     state = plan_daily.state_dir(release, args.state_dir)
@@ -224,6 +249,15 @@ def main(argv=None) -> int:
     with producer_lock(state / "producer.lock") as acquired:
         if not acquired:
             print(json.dumps({"release_date": release, "status": "already_running",
+                              "model": MODEL, "authentication": "ChatGPT",
+                              "api_fallback": False}))
+            return 0
+        if args.finish_publication:
+            finish_publication(release, state)
+            print(json.dumps({"release_date": release, "status": "published"}))
+            return 0
+        if publication_marker(state).exists():
+            print(json.dumps({"release_date": release, "status": "publication_pending",
                               "model": MODEL, "authentication": "ChatGPT",
                               "api_fallback": False}))
             return 0
@@ -246,7 +280,8 @@ def main(argv=None) -> int:
             run_python(release, "import-image", "--input", str(image), state=state)
 
         run_python(release, "build", state=state)
-        print(json.dumps({"release_date": release, "status": "complete", "model": MODEL,
+        mark_publication_pending(release, state, archive)
+        print(json.dumps({"release_date": release, "status": "ready_to_publish", "model": MODEL,
                           "authentication": "ChatGPT", "api_fallback": False}))
     return 0
 

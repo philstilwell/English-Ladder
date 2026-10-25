@@ -27,6 +27,7 @@ WORKFLOW = "cron.yml"
 LEVELS = {"beginner": 6, "intermediate": 8, "advanced": 10}
 LANGUAGES = ("ja", "ko", "zh-Hans", "es", "pt-BR", "fr", "de")
 PUBLISHING_GRACE = timedelta(minutes=30)
+PUBLICATION_HANDOFF_GRACE = timedelta(hours=2)
 MONITOR_HOUR_UTC = 8
 MONITOR_MINUTE_UTC = 45
 DEFAULT_STATE_DIR = Path.home() / "Documents/Codex/English-Ladder-daily-recovery/state"
@@ -216,11 +217,25 @@ def published(body, release, now, fetch=public_file):
     return True
 
 
-def producer_running(root, release):
-    """Read the producer lock without creating state or signalling the process."""
+def producer_running(root, release, now=None):
+    """Read the producer lock/handoff without creating state or signalling work."""
     if root is None:
         return False
-    path = Path(root) / ".daily-agent" / release / "producer.lock"
+    state = Path(root) / ".daily-agent" / release
+    marker = state / "publication-pending.json"
+    if marker.is_file():
+        try:
+            record = json.loads(marker.read_text())
+            created = datetime.fromisoformat(record["created_at"])
+            current = now or datetime.now(timezone.utc)
+            age = current.astimezone(timezone.utc) - created.astimezone(timezone.utc)
+            if record["release_date"] != release or age < -timedelta(minutes=5):
+                raise ValueError()
+            if age <= PUBLICATION_HANDOFF_GRACE:
+                return True
+        except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:
+            raise ServiceUnavailable("The local publication handoff is unreadable.") from error
+    path = state / "producer.lock"
     if not path.is_file():
         return False
     try:
@@ -360,7 +375,9 @@ def main(argv=None):
             else:
                 result = check(
                     datetime.now(timezone.utc), GitHub(args.gh), args.state_dir / "state.json",
-                    args.apply, producer_is_active=lambda release: producer_running(args.producer_root, release),
+                    args.apply,
+                    producer_is_active=lambda release: producer_running(
+                        args.producer_root, release, datetime.now(timezone.utc)),
                 )
     except (ServiceUnavailable, OSError) as error:
         result = {"status": "needs_attention", "reason": str(error), "checked_at": datetime.now(timezone.utc).isoformat()}

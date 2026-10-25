@@ -48,7 +48,9 @@ disk space; the checkout-status check below remains mandatory.
    .venv/bin/python daily_publication.py --date YYYY-MM-DD --require-published
    ```
 
-   Exit successfully when this passes. A later scheduled attempt must be a no-op.
+   When this passes, clear any completed publication handoff with
+   `.venv/bin/python plan_daily_runner.py --date YYYY-MM-DD --finish-publication`
+   and exit. A later scheduled attempt must be a no-op.
 4. Run the bounded producer:
 
    ```bash
@@ -62,6 +64,10 @@ disk space; the checkout-status check below remains mandatory.
    lesson attempts per level during one scheduled run and retains resumable state
    under ignored `.daily-agent/`. A per-edition process lock makes overlapping
    06:15/07:15/08:15 opportunities exit without duplicating model work.
+   Read its final JSON status. If it is `already_running` or
+   `publication_pending`, exit this task immediately: do not rebuild, test,
+   inspect, commit, push, or verify publication. `ready_to_publish` creates a
+   persistent handoff that blocks later attempts throughout the steps below.
 5. Inspect `git status`, `git diff --check`, the new illustration, and the
    provenance records. Never stage `.daily-agent/`, usage ledgers, secrets, or
    audio. Expected daily output may include the dated archive, dated image and
@@ -87,6 +93,11 @@ disk space; the checkout-status check below remains mandatory.
    matching illustration bytes, and all seven translation controls. Report the
    commit and GitHub workflow link. If publication is still converging, wait and
    retry the read-only verifier; do not regenerate content.
+9. Only after the live verifier passes, run
+   `.venv/bin/python plan_daily_runner.py --date YYYY-MM-DD --finish-publication`.
+   This independently rechecks the complete live edition and clears the handoff.
+   If the task stops before this step, retain the marker and report the blocker;
+   never delete it merely to let another producer start.
 
 ## Failure handling
 

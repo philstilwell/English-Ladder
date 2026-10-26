@@ -92,7 +92,8 @@ disk space; the checkout-status check below remains mandatory.
    ```
 
    Verify the dated Beginner, Intermediate, and Advanced pages, Discover feature,
-   matching illustration bytes, and all seven translation controls. Report the
+   matching illustration bytes, and all seven translation controls on
+   `https://englishladder.com` itself. Report the
    commit and GitHub workflow link. If publication is still converging, wait and
    retry the read-only verifier; do not regenerate content.
 9. Only after the live verifier passes, run

@@ -23,7 +23,7 @@ async function checkDailyPublication({root, releaseDate, origin, request, sleep}
 
 module.exports = {checkDailyPublication};
 if (require.main === module) {
-  const origin = new URL('https://englishladder.philstilwell.workers.dev');
+  const origin = new URL('https://englishladder.com');
   checkDailyPublication({
     root: path.resolve(__dirname, '..'), releaseDate: process.argv[2],
     origin, request: createCurlRequest(origin),

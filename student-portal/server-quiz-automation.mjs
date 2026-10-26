@@ -552,10 +552,12 @@ export class QuizAutomation {
     const studentId = request.headers.get('X-Student-ID'), origin = request.headers.get('X-Student-Origin');
     if (path === '/admin-status' && request.method === 'GET') {
       const entries = [...await this.storage.list({ prefix: 'job:' })], jobs = entries.map(([, j]) => j);
+      const activeCefrStudents = this.env.CEFR_PROCESSOR === 'codex' ? await this.students() : null;
+      const cefrErrors = activeCefrStudents ? [...await this.storage.list({ prefix: 'cefr-error:' })].filter(([key]) => activeCefrStudents[key.slice('cefr-error:'.length)]).length : await this.storage.get('cefr-errors') || 0;
       return json({ enabled: this.env.AUTOMATION_ENABLED === 'true' || this.env.LESSON_PROCESSOR === 'codex', processor: this.env.LESSON_PROCESSOR === 'codex' ? 'codex' : 'cloudflare', connected: Boolean(await this.storage.get('oauth')),
         catchUpRequired: await catchUpWarnings(this, entries),
         lastRetention: await this.storage.get('last-retention') || null, retentionError: await this.storage.get('retention-error') || null,
-        cefrNeedsAttention: await this.storage.get('cefr-errors') || 0,
+        cefrNeedsAttention: cefrErrors,
         lastCheck: await this.storage.get('last-check') || null, connectionError: await this.storage.get('connection-error') || null,
         pending: jobs.filter(j => j.status === 'pending').length,
         needsAttention: jobs.filter(j => j.status === 'needs_attention').length,

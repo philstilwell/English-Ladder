@@ -44,7 +44,8 @@
   ],
   "vars": {
     "AUTOMATION_ENABLED": "false",
-    "LESSON_PROCESSOR": "codex"
+    "LESSON_PROCESSOR": "codex",
+    "CEFR_PROCESSOR": "codex"
   },
   "triggers": {
     "crons": [

@@ -469,10 +469,10 @@
       const content = $('cefr-content'); content.replaceChildren();
       content.append(element('strong', cefrLabel(cefr), 'cefr-level'));
       content.append(element('p', 'First estimate after two recorded sessions. Monthly reviews use the latest four available transcripts, with at least two required.', 'field-note'));
-      if (Number.isInteger(schedule?.availableSessions)) content.append(element('p', 'Privacy-reviewed transcripts available: ' + schedule.availableSessions + '.', 'field-note'));
+      if (Number.isInteger(schedule?.availableSessions)) content.append(element('p', 'Published lesson sources available: ' + schedule.availableSessions + '.', 'field-note'));
       if (schedule?.nextReviewOn) content.append(element('p', 'Next review from ' + displayDate(schedule.nextReviewOn) + ', when new session evidence is available.', 'field-note'));
       if (schedule?.lastReviewState === 'insufficient' && cefr?.state === 'estimated') content.append(element('p', 'The latest review had too little reliable evidence. The earlier estimate is retained.', 'field-note'));
-      if (!cefr) { content.append(element('p', 'An estimate can be added during the next eligible nightly check after two usable redacted transcripts are saved. Existing lessons have not been reprocessed.', 'field-note')); return; }
+      if (!cefr) { content.append(element('p', 'The next eligible nightly check runs through Codex at 11:35 p.m. Eastern. It reads two usable full lesson transcripts for the first estimate, then up to four for monthly reviews.', 'field-note')); return; }
       content.append(element('p', 'Reviewed ' + displayDate(cefr.assessedOn) + ' · Latest lesson ' + displayDate(cefr.latestSessionId.slice(0, 10)), 'field-note'));
       content.append(element('p', cefr.rationale));
       if (cefr.state !== 'estimated') return;

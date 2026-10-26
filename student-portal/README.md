@@ -1,3 +1,7 @@
+## Current CEFR workflow — October 25, 2026
+
+Automatic CEFR authoring uses GPT inside Codex and the existing account allowance, with **$0 additional AI charges**. Follow [CODEX_CEFR.md](CODEX_CEFR.md). `CEFR_PROCESSOR=codex` enables only the narrow authenticated prepare/publish/verify handoff. `AUTOMATION_ENABLED=false` and no Workers AI binding keep paid server inference disabled. The existing 11:35 p.m. Eastern task processes CEFR after ordinary lesson work. First estimates require two usable complete published lesson sources; subsequent reviews wait a calendar month and use up to four recent sources (minimum two). The selected full Zoom transcripts are read transiently, never stored. This supersedes the legacy cache-only CEFR workflow described below; existing reviewed caches retain their original retention rule.
+
 # English Ladder student portal
 
 The student portal is a separate Cloudflare Worker, `englishladder-students`, in the existing Cloudflare account. It serves the student subdomains without changing the public lesson site's Worker or publishing schedule. The first registered address is `kh26.englishladder.com`.
@@ -252,7 +256,7 @@ The administrator student list now shows bounded, safe per-lesson failure reason
 
 All GPT-OSS JSON calls use the Responses API binding contract through `server-ai-json.mjs`. Only a completed assistant text message is parsed; reasoning, incomplete replies, refusals, and malformed results cannot act as approvals. Invalid replies report `invalid_model_response`, separately from a real privacy rejection. Independent reviewer calls allow 4,000 output tokens to accommodate reasoning. No raw response bodies are logged or returned to the administrator.
 
-The separate `transcript-privacy.mjs` utility is retained for explicitly requested reviewed-cache work. Neither the cron job nor the manual retry path invokes its AI redaction or privacy-review functions. New unreviewed transcripts stay transient and cannot enter the reviewed cache or monthly CEFR evidence. The lesson editor still checks the proposed student content for privacy, accuracy, source attribution, and English-only scope.
+The separate `transcript-privacy.mjs` utility is retained for explicitly requested reviewed-cache work. Neither the cron job nor the manual retry path invokes its AI redaction or privacy-review functions. New full transcripts stay transient and cannot enter the reviewed cache. Under the October 25 authorization, Codex CEFR may re-read already-published lesson sources transiently and obtain independent full-source review before saving an estimate; see CODEX_CEFR.md. The lesson editor still checks the proposed student content for privacy, accuracy, source attribution, and English-only scope.
 
 Failure diagnostics expose only a fixed processing stage and allowlisted reply issue (for example, incomplete output or invalid JSON); no generated text, prompt, transcript, or provider error body is returned. Account pages show the count of privacy-reviewed cached transcripts so completed privacy work can be distinguished from lesson generation. A complete JSON object enclosed only in a Markdown JSON code fence is accepted; surrounding prose and incomplete replies remain invalid.
 

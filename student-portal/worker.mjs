@@ -176,8 +176,8 @@ async function handleAdmin(request, env) {
     if (!await codexAuthorized(request, env)) return json({ error: 'Operator authorization required.' }, 401);
     if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
     const action = url.pathname.slice('/api/codex/'.length);
-    if (!['discover','nightly-discover','queue','prepare','nightly-prepare','publish'].includes(action)) return json({ error: 'Page not found.' }, 404);
-    const body = await smallJson(request, action === 'publish' ? 524288 : 1024);
+    if (!['discover','nightly-discover','queue','prepare','nightly-prepare','publish','cefr-queue','cefr-prepare','cefr-publish','cefr-verify'].includes(action)) return json({ error: 'Page not found.' }, 404);
+    const body = await smallJson(request, action.endsWith('publish') ? 524288 : 1024);
     if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'Invalid input.' }, 400);
     if (!env.QUIZ_AUTOMATION) return json({ error: 'Updates are unavailable.' }, 503);
     return env.QUIZ_AUTOMATION.get(env.QUIZ_AUTOMATION.idFromName('zoom')).fetch(new Request('https://automation.internal/codex/' + action, { method: 'POST', body: JSON.stringify(body) }));
@@ -275,7 +275,7 @@ async function handleAdmin(request, env) {
       if (!student || student.deletionPending) return json({ error: 'Student not found.' }, 404);
       if (!student.activated || !student.studentId) return json({ cefr: null });
       try {
-        const result = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/cefr'));
+        const result = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/cefr' + (env.CEFR_PROCESSOR === 'codex' ? '?processor=codex' : '')));
         if (!result.ok) throw new Error('Unavailable');
         return json(await result.json());
       } catch { return json({ error: 'The CEFR estimate is temporarily unavailable. Please try again.' }, 503); }

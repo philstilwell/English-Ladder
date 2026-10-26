@@ -4,6 +4,7 @@ import { readTranscript, sessionId } from './server-quiz-model.mjs';
 import { validateFeedback } from './feedback.mjs';
 import { validateAssessment, assessmentReferences } from './assessment.mjs';
 import { CATCH_UP_LOOKBACK, RECHECK_DELAY, runDate, sourceVersion, preparationState, delayedSource, catchUpWarnings } from './codex-nightly.mjs';
+import { codexCefr } from './codex-cefr.mjs';
 const enc = new TextEncoder();
 const json = (data, status = 200) => Response.json(data, { status });
 export const canonical = value => JSON.stringify(sort(value));
@@ -115,6 +116,7 @@ export async function codexHandoff(c, action, input) {
   });
   if (!locked) return json({ error: 'busy' }, 409);
   try {
+    if (action.startsWith('cefr-')) return await codexCefr(c, action, input, { digest, canonical });
     // Cancel the obsolete one-time AI alarm as part of the explicit migration.
     const recovery = await c.storage.get('recovery-once');
     if (recovery?.status === 'queued') {

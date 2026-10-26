@@ -8,8 +8,8 @@ import { handleBusinessTerms } from './business-terms.mjs';
 import { handleStudyProgress } from './study-progress.mjs';
 import { handleVocabulary } from './vocabulary-practice.mjs';
 import { handleGrammarPractice } from './grammar-practice.mjs';
-import { groundCefrWindow, cefrOverview } from './cefr.mjs';
-import { cefrReviewContext, cefrScheduleSummary } from './cefr-schedule.mjs';
+import { groundCefrWindow, cefrOverview, validateCefr } from './cefr.mjs';
+import { cefrReviewContext, cefrScheduleSummary, cefrPublishedContext } from './cefr-schedule.mjs';
 import { validNoteId, saveTranscriptCache, readTranscriptCache, validateTranscriptCache, pruneTranscriptCache } from './transcript-cache.mjs';
 
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
@@ -139,10 +139,42 @@ export class FeedbackStore {
     if (id === 'activities/progress' && request.method === 'GET') return this.activeTransaction(async txn => json(await studentActivityProgress(txn)));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
     if (id === 'admin/cefr' && request.method === 'GET') return this.activeTransaction(async txn => {
-      const context = await cefrReviewContext(txn);
+      const context = url.searchParams.get('processor') === 'codex' ? await cefrPublishedContext(txn) : await cefrReviewContext(txn);
       return json({ cefr: context.current, schedule: cefrScheduleSummary(context) });
     });
     if (id === 'automation/prune-transcripts' && request.method === 'POST') return this.activeTransaction(async txn => json(await pruneTranscriptCache(txn)));
+    if (id === 'automation/codex-cefr-context' && request.method === 'GET') return this.activeTransaction(async txn => json(await cefrPublishedContext(txn)));
+    if (id.startsWith('automation/codex-cefr-receipt/') && request.method === 'GET') {
+      const attemptId = id.slice('automation/codex-cefr-receipt/'.length);
+      if (!/^[a-f0-9-]{36}$/.test(attemptId)) return json({ error: 'Invalid review.' }, 400);
+      return this.activeTransaction(async txn => json({ receipt: await txn.get('cefr:codex-receipt:' + attemptId) || null }));
+    }
+    if (id === 'automation/codex-cefr-publish' && request.method === 'POST') {
+      const input = await request.json();
+      return this.activeTransaction(async txn => {
+        if (!/^[a-f0-9-]{36}$/.test(input.attemptId || '')) return json({ error: 'Invalid review.' }, 400);
+        const receiptKey = 'cefr:codex-receipt:' + input.attemptId, receipt = await txn.get(receiptKey);
+        if (receipt) return json(receipt);
+        const context = await cefrPublishedContext(txn);
+        if (!context.due || input.windowHash !== context.windowHash || input.cefr?.assessedOn !== context.today) return json({ error: 'CEFR source window changed or is not due.' }, 409);
+        let cefr;
+        try {
+          cefr = validateCefr(input.cefr);
+          if (cefr.latestSessionId !== context.references.at(-1).sessionId || cefr.state === 'estimated' &&
+              JSON.stringify(cefr.sourceSessions) !== JSON.stringify(context.references.map(r => r.sessionId).sort())) throw Error();
+        } catch { return json({ error: 'Invalid CEFR evidence.' }, 400); }
+        const saved = { ok: true, verified: true, attemptId: input.attemptId, snapshotHash: input.snapshotHash, recordsHash: input.recordsHash, assessedOn: context.today, state: cefr.state,
+          sessionCount: context.references.length, nextReviewOn: null };
+        const update = { ['cefr:history:' + context.today + ':' + context.windowHash]: cefr,
+          'cefr:review': { completedOn: context.today, state: cefr.state, windowHash: context.windowHash, references: context.references, processor: 'codex' },
+          [receiptKey]: saved };
+        if (cefr.state === 'estimated' || context.current?.state !== 'estimated') update['cefr:current'] = cefr;
+        await txn.put(update);
+        saved.nextReviewOn = (await cefrPublishedContext(txn)).nextReviewOn;
+        await txn.put({ [receiptKey]: saved });
+        return json(saved);
+      });
+    }
     if (id === 'automation/cefr-context' && request.method === 'POST') {
       const { timeZone } = await request.json();
       try { new Intl.DateTimeFormat('en', { timeZone }); } catch { return json({ error: 'Invalid lesson time zone.' }, 400); }

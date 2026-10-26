@@ -18,7 +18,7 @@ async function save(name, value) {
   await chmod(path, 0o600);
 }
 const [action, ...args] = process.argv.slice(2);
-if (!['queue','discover','nightly-discover','prepare','nightly-prepare','publish','verify'].includes(action)) throw Error('Use queue|discover|nightly-discover <output>, nightly-prepare <job> <output>, prepare <job> <output> [private-catch-up.json], publish <prepared> <records> <review> <receipt>, or verify <prepared>.');
+if (!['queue','discover','nightly-discover','prepare','nightly-prepare','publish','verify','cefr-queue','cefr-prepare','cefr-publish','cefr-verify'].includes(action)) throw Error('Use queue|discover|nightly-discover|cefr-queue <output>, nightly-prepare <job> <output>, prepare <job> <output> [private-catch-up.json], publish <prepared> <records> <review> <receipt>, verify <prepared>, cefr-prepare <student-id> <output>, cefr-publish <prepared> <estimate> <review> <receipt>, or cefr-verify <prepared> [receipt].');
 if (action === 'nightly-prepare' && args[2]) throw Error('Scheduled checks cannot approve catch-up.');
 const secret = (await readFile(new URL('./private/codex-handoff-secret', import.meta.url), 'utf8')).trim();
 if (!/^[a-f0-9]{64}$/.test(secret)) throw Error('Operator credential is unavailable.');
@@ -29,7 +29,27 @@ async function api(action, body = {}) {
   if (!response.ok) throw Error('Handoff failed (' + response.status + '): ' + (result.error || 'unknown'));
   return result;
 }
-if (['queue','discover','nightly-discover'].includes(action)) {
+if (action === 'cefr-queue') {
+  const result = await api(action); await save(args[0], result);
+  console.log(JSON.stringify({ processor: result.processor, serverAI: result.serverAI, students: result.students.length,
+    due: result.students.filter(s => s.due && !s.deferred).length, additionalAiCost: 0 }));
+} else if (action === 'cefr-prepare') {
+  const result = await api(action, { studentId: args[0] }); await save(args[1], result);
+  console.log(JSON.stringify({ prepared: Boolean(result.snapshotHash), due: result.due, sources: result.sources?.length || 0 }));
+} else if (action === 'cefr-verify') {
+  const prepared = await read(args[0]);
+  const result = await api(action, { studentId: prepared.studentId, attemptId: prepared.attemptId });
+  if (result.verified !== true) throw Error('CEFR publication is not confirmed.');
+  if (args[1]) await save(args[1], result);
+  console.log(JSON.stringify(result));
+} else if (action === 'cefr-publish') {
+  const prepared = await read(args[0]), cefr = await read(args[1]), review = await read(args[2]);
+  if (review.approved !== true || review.fullTranscript !== true || review.independent !== true ||
+      review.snapshotHash !== prepared.snapshotHash || review.recordsHash !== await digest(cefr)) throw Error('The exact CEFR estimate and full source window need independent approval.');
+  const result = await api(action, { studentId: prepared.studentId, attemptId: prepared.attemptId, snapshotHash: prepared.snapshotHash, cefr, review });
+  if (result.verified !== true) throw Error('CEFR publication is not confirmed; refresh its eligibility.');
+  await save(args[3], result); console.log(JSON.stringify(result));
+} else if (['queue','discover','nightly-discover'].includes(action)) {
   const result = await api(action); await save(args[0], result);
   console.log(JSON.stringify({ processor: result.processor, serverAI: result.serverAI, jobs: result.jobs.length, catchUpRequired: result.catchUpRequired?.length || 0, discovery: result.discovery || null }));
 } else if (['prepare','nightly-prepare'].includes(action)) {

@@ -5,6 +5,7 @@ import html
 import json
 import os
 import re
+import ssl
 import unicodedata
 from datetime import date, datetime, timezone
 from functools import lru_cache
@@ -13,6 +14,7 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
+import certifi
 import feedparser
 from bs4 import BeautifulSoup
 from lesson_model import MODEL_NAME, structured_generation_config
@@ -188,6 +190,14 @@ def select_news_entry(entries, recent_links=()):
     return min(candidates, key=lambda item: item[:2])[2] if candidates else None
 
 
+def news_tls_context():
+    """Use normal trust roots, filling only an empty Python certificate store."""
+    context = ssl.create_default_context()
+    if not context.get_ca_certs():
+        context.load_verify_locations(cafile=certifi.where())
+    return context
+
+
 def get_daily_news(release_dt=None, excluded_links=(), preferred_categories=None):
     release_dt = release_dt or datetime.now(timezone.utc)
     category = NEWS_WEEK[release_dt.weekday()]
@@ -211,7 +221,7 @@ def get_daily_news(release_dt=None, excluded_links=(), preferred_categories=None
         url, name = NEWS_CATEGORIES[feed_category]
         try:
             request = Request(url, headers={"User-Agent": "English-Ladder/1.0"})
-            with urlopen(request, timeout=20) as response:
+            with urlopen(request, timeout=20, context=news_tls_context()) as response:
                 feed = feedparser.parse(response.read(2_000_000))
         except (OSError, ValueError) as error:
             print(f"Could not read {name}: {error}")
@@ -243,7 +253,7 @@ def fetch_article_evidence(link):
     if not valid_source(link):
         raise ValueError("The article must be an HTTPS BBC source.")
     request = Request(link, headers={"User-Agent": "English-Ladder/1.0"})
-    with urlopen(request, timeout=20) as response:
+    with urlopen(request, timeout=20, context=news_tls_context()) as response:
         if not valid_source(response.geturl()):
             raise ValueError("The source redirected outside the expected publisher.")
         raw = response.read(2_000_001)

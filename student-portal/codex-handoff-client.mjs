@@ -18,7 +18,7 @@ async function save(name, value) {
   await chmod(path, 0o600);
 }
 const [action, ...args] = process.argv.slice(2);
-if (!['queue','discover','nightly-discover','prepare','nightly-prepare','publish','verify','cefr-queue','cefr-prepare','cefr-publish','cefr-verify'].includes(action)) throw Error('Use queue|discover|nightly-discover|cefr-queue <output>, nightly-prepare <job> <output>, prepare <job> <output> [private-catch-up.json], publish <prepared> <records> <review> <receipt>, verify <prepared>, cefr-prepare <student-id> <output>, cefr-publish <prepared> <estimate> <review> <receipt>, or cefr-verify <prepared> [receipt].');
+if (!['queue','discover','nightly-discover','prepare','nightly-prepare','publish','verify','cefr-queue','cefr-inspect','cefr-prepare','cefr-publish','cefr-verify'].includes(action)) throw Error('Use queue|discover|nightly-discover|cefr-queue <output>, nightly-prepare <job> <output>, prepare <job> <output> [private-catch-up.json], publish <prepared> <records> <review> <receipt>, verify <prepared>, cefr-inspect|cefr-prepare <student-id> <output>, cefr-publish <prepared> <estimate> <review> <receipt>, or cefr-verify <prepared> [receipt].');
 if (action === 'nightly-prepare' && args[2]) throw Error('Scheduled checks cannot approve catch-up.');
 const secret = (await readFile(new URL('./private/codex-handoff-secret', import.meta.url), 'utf8')).trim();
 if (!/^[a-f0-9]{64}$/.test(secret)) throw Error('Operator credential is unavailable.');
@@ -33,8 +33,12 @@ if (action === 'cefr-queue') {
   const result = await api(action); await save(args[0], result);
   console.log(JSON.stringify({ processor: result.processor, serverAI: result.serverAI, students: result.students.length,
     due: result.students.filter(s => s.due && !s.deferred).length, additionalAiCost: 0 }));
-} else if (action === 'cefr-prepare') {
+} else if (action === 'cefr-inspect') {
   const result = await api(action, { studentId: args[0] }); await save(args[1], result);
+  console.log(JSON.stringify({ studentId: result.studentId, due: result.context.due, sources: result.context.references.length, error: result.error }));
+} else if (action === 'cefr-prepare') {
+  const recovery = args[2] ? await read(args[2]) : undefined;
+  const result = await api(action, { studentId: args[0], ...(recovery ? { recovery } : {}) }); await save(args[1], result);
   console.log(JSON.stringify({ prepared: Boolean(result.snapshotHash), due: result.due, sources: result.sources?.length || 0 }));
 } else if (action === 'cefr-verify') {
   const prepared = await read(args[0]);

@@ -8,7 +8,7 @@ export { MODEL } from './server-ai-json.mjs';
 const STAMP = /^\d{2}:[0-5]\d:[0-5]\d\.\d{3}$/;
 const fail = () => { throw new Error('transcript_unusable'); };
 
-export function readTranscript(note, students) {
+export function readTranscript(note, students, { maxChars = 180000 } = {}) {
   const items = note?.transcript?.items, speakers = note?.transcript?.speakers;
   if (!Array.isArray(items) || !items.length || !Array.isArray(speakers)) fail();
   if (speakers.some(s => !(typeof s.speaker_id === 'string' && s.speaker_id || Number.isSafeInteger(s.speaker_id)) || typeof s.display_name !== 'string') ||
@@ -30,7 +30,7 @@ export function readTranscript(note, students) {
   });
   if (segments.length < 10 || !segments.some(s => s.speaker === student.firstName && s.text.trim())) fail();
   // Never silently truncate a full transcript to fit the model's context window.
-  if (JSON.stringify(segments).length > 180000) throw new Error('transcript_too_large');
+  if (JSON.stringify(segments).length > maxChars) throw new Error('transcript_too_large');
   return { studentId, student, segments };
 }
 

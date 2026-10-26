@@ -176,7 +176,7 @@ async function handleAdmin(request, env) {
     if (!await codexAuthorized(request, env)) return json({ error: 'Operator authorization required.' }, 401);
     if (request.method !== 'POST') return json({ error: 'Method not allowed.' }, 405);
     const action = url.pathname.slice('/api/codex/'.length);
-    if (!['discover','nightly-discover','queue','prepare','nightly-prepare','publish','cefr-queue','cefr-prepare','cefr-publish','cefr-verify'].includes(action)) return json({ error: 'Page not found.' }, 404);
+    if (!['discover','nightly-discover','queue','prepare','nightly-prepare','publish','cefr-queue','cefr-inspect','cefr-prepare','cefr-publish','cefr-verify'].includes(action)) return json({ error: 'Page not found.' }, 404);
     const body = await smallJson(request, action.endsWith('publish') ? 524288 : 1024);
     if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'Invalid input.' }, 400);
     if (!env.QUIZ_AUTOMATION) return json({ error: 'Updates are unavailable.' }, 503);

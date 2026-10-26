@@ -133,7 +133,7 @@ test('paused/deleted accounts, ignored sources, and changed source windows canno
 
 test('CEFR operator actions reject browser/student/cross-host access and require separately enabled Codex with paid AI disabled', async t => {
   const f = await fixture(t), student = await login(f.e), teacher = await login(f.e, 'teacher-test');
-  for (const action of ['cefr-queue','cefr-prepare','cefr-publish','cefr-verify']) {
+  for (const action of ['cefr-queue','cefr-inspect','cefr-prepare','cefr-publish','cefr-verify']) {
     for (const headers of [{}, { Cookie: student.cookie }, { Cookie: teacher.cookie }, { Authorization: 'Bearer ' + f.e.CODEX_HANDOFF_SECRET, Origin: 'https://phil.englishladder.com' }]) {
       assert.equal((await call(f.e, '/api/codex/' + action, { method: 'POST', headers, body: '{}' }, 'https://phil.englishladder.com')).status, 401);
     }
@@ -141,4 +141,85 @@ test('CEFR operator actions reject browser/student/cross-host access and require
   }
   f.e.AI = { run: () => assert.fail('No paid inference') }; assert.equal((await f.dispatch('cefr-queue')).status, 409); delete f.e.AI;
   f.e.CEFR_PROCESSOR = 'disabled'; assert.equal((await f.dispatch('cefr-queue')).status, 409);
+});
+
+test('operator inspection returns source metadata without downloading transcripts or reserving attempts', async t => {
+  const f = await fixture(t); await f.lesson('2026-10-20'); await f.lesson('2026-10-24');
+  const result = await (await f.dispatch('cefr-inspect', { studentId: 'ab26' })).json();
+  assert.equal(result.context.references.length, 2); assert.equal(result.usage, null);
+  assert.equal(result.attempt, null); assert.equal(f.reads(), 0);
+  assert.doesNotMatch(JSON.stringify(result), /segments|I can explain|teacher model/);
+  assert.equal(await f.storage.get('cefr-usage:ab26'), undefined);
+});
+
+test('Codex reads long complete windows beyond the former AI limits and grounds evidence near the end', async t => {
+  const f = await fixture(t); const a = await f.lesson('2026-10-20'), b = await f.lesson('2026-10-24');
+  for (const record of [a, b]) f.notes.get(record.source.noteId).transcript.items[1].text = 'A long teacher explanation. '.repeat(14000);
+  const p = await (await f.dispatch('cefr-prepare', { studentId: 'ab26' })).json();
+  assert.equal(p.sources.length, 2); assert.ok(p.sources.every(s => s.segmentCount === 10 && s.coverageEnd === '00:10:30'));
+  const estimate = f.estimate(p); estimate.evidence.forEach(e => { e.at = '00:09:00'; });
+  assert.equal((await (await f.dispatch('cefr-publish', await f.payload(p, estimate))).json()).verified, true);
+  assert.doesNotMatch(JSON.stringify([...await f.storage.list()]), /A long teacher explanation/);
+});
+
+test('Codex retains a bounded complete source and refuses oversized input without truncating', async t => {
+  const f = await fixture(t); const a = await f.lesson('2026-10-20'); await f.lesson('2026-10-24');
+  f.notes.get(a.source.noteId).transcript.items[1].text = 'x'.repeat(1000001);
+  assert.equal((await (await f.dispatch('cefr-prepare', { studentId: 'ab26' })).json()).error, 'transcript_too_large');
+  assert.equal(await f.store.storage.get('cefr:current'), undefined);
+});
+
+test('historical lesson time zones remain valid after an account moves, but inconsistent dates still fail', async t => {
+  const f = await fixture(t);
+  const a = await f.lesson('2026-10-20', { id: '2026-10-20-0700', timeZone: 'America/Chicago' });
+  await f.lesson('2026-10-24');
+  const p = await (await f.dispatch('cefr-prepare', { studentId: 'ab26' })).json();
+  assert.equal(p.sources[0].sessionId, a.id); assert.equal(p.sources[0].timeZone, 'America/Chicago');
+  assert.equal((await (await f.dispatch('cefr-publish', await f.payload(p))).json()).verified, true);
+  assert.equal((await f.store.storage.get('feedback:2026-10-20-0800')).timeZone, 'America/Chicago');
+});
+
+test('wrong historical dates and unmatched learner names are never repaired by inference', async t => {
+  const f = await fixture(t); const a = await f.lesson('2026-10-20', { timeZone: 'America/Chicago' }); await f.lesson('2026-10-24');
+  assert.equal((await (await f.dispatch('cefr-prepare', { studentId: 'ab26' })).json()).error, 'cefr_source_changed');
+  await f.store.storage.put({ ['feedback:' + a.id]: { ...a, timeZone: 'America/New_York' } });
+  t.mock.timers.setTime(Date.parse('2026-10-27T18:00:00Z'));
+  f.notes.get(a.source.noteId).transcript.speakers[0].display_name = 'Alex old display name';
+  assert.equal((await (await f.dispatch('cefr-prepare', { studentId: 'ab26' })).json()).error, 'other_student');
+});
+
+test('an explicitly approved exact failed attempt gets one recovery, with counters and all source checks preserved', async t => {
+  const f = await fixture(t); const a = await f.lesson('2026-10-20'); await f.lesson('2026-10-24');
+  f.notes.get(a.source.noteId).transcript.speakers[0].display_name = 'Historical Alex';
+  assert.equal((await (await f.dispatch('cefr-prepare', { studentId: 'ab26' })).json()).error, 'other_student');
+  const old = await f.storage.get('codex-cefr-attempt:ab26'); assert.equal(old.status, 'failed');
+  const recovery = { approved: true, studentId: 'ab26', attemptId: old.attemptId, windowHash: old.windowHash, day: old.day };
+  for (const patch of [{ approved: false }, { studentId: 'zz26' }, { attemptId: crypto.randomUUID() }, { day: '2026-10-25' }, { windowHash: 'f'.repeat(64) }]) {
+    assert.equal((await f.dispatch('cefr-prepare', { studentId: 'ab26', recovery: { ...recovery, ...patch } })).status, 409);
+  }
+  assert.equal((await f.dispatch('cefr-prepare', { studentId: 'ab26' })).status, 409);
+  assert.equal(await f.storage.get('cefr-error:ab26'), 'other_student');
+  const roster = JSON.parse(f.e.QUIZ_STUDENTS); roster.ab26.zoomNames.push('Historical Alex'); f.e.QUIZ_STUDENTS = JSON.stringify(roster);
+  // Legacy failures left their attempt marked preparing; the exact saved error is still required.
+  await f.storage.put({ 'codex-cefr-attempt:ab26': { ...old, status: 'preparing' } });
+  const p = await (await f.dispatch('cefr-prepare', { studentId: 'ab26', recovery })).json();
+  assert.ok(p.snapshotHash); assert.notEqual(p.attemptId, old.attemptId);
+  assert.equal((await f.storage.get('cefr-usage:ab26')).daily, 2);
+  assert.equal((await f.storage.get('cefr-usage:ab26')).monthly, 2);
+  assert.equal((await f.dispatch('cefr-prepare', { studentId: 'ab26', recovery })).status, 409);
+  assert.equal((await (await f.dispatch('cefr-publish', await f.payload(p))).json()).verified, true);
+});
+
+test('manual recovery still rejects a wrong learner and cannot become a third attempt or bypass the monthly cap', async t => {
+  const f = await fixture(t); const a = await f.lesson('2026-10-20'); await f.lesson('2026-10-24');
+  f.notes.get(a.source.noteId).transcript.speakers[0].display_name = 'Someone else';
+  await f.dispatch('cefr-prepare', { studentId: 'ab26' });
+  const old = await f.storage.get('codex-cefr-attempt:ab26');
+  const recovery = { approved: true, studentId: 'ab26', attemptId: old.attemptId, windowHash: old.windowHash, day: old.day };
+  assert.equal((await (await f.dispatch('cefr-prepare', { studentId: 'ab26', recovery })).json()).error, 'other_student');
+  const failed = await f.storage.get('codex-cefr-attempt:ab26');
+  assert.equal((await f.dispatch('cefr-prepare', { studentId: 'ab26', recovery: { ...recovery, attemptId: failed.attemptId } })).status, 409);
+  t.mock.timers.setTime(Date.parse('2026-10-27T18:00:00Z'));
+  assert.equal((await f.dispatch('cefr-prepare', { studentId: 'ab26' })).status, 409);
+  assert.equal(await f.store.storage.get('cefr:current'), undefined);
 });

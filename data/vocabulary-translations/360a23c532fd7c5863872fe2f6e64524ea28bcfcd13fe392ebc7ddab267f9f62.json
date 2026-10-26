@@ -1,0 +1,142 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "New technology is changing how some farmers work.",
+      "George McMaster started farming by milking eight cows.",
+      "He now has 300 cows and watches them through a camera.",
+      "The camera makes a short video of each cow every day.",
+      "It can find changes before farmers can see them.",
+      "One farmer says healthier cows give them more milk.",
+      "Some cows use a milking machine when they want to.",
+      "A faster internet connection helped one farmer open a farm shop.",
+      "A farmer uses an app to help run his farm.",
+      "In this app, each cow has a page with all her records in one place.",
+      "The app's developer says farmers should make the decisions.",
+      "He says the technology helps farmers see the right information at the right time."
+    ],
+    "vocabulary": [
+      {
+        "term": "technology",
+        "part_of_speech": "noun",
+        "definition": "Machines and computer programs that help people do things."
+      },
+      {
+        "term": "machine",
+        "part_of_speech": "noun",
+        "definition": "Something that uses power to do a job."
+      },
+      {
+        "term": "connection",
+        "part_of_speech": "noun",
+        "definition": "A way for a phone or computer to use the internet."
+      },
+      {
+        "term": "shop",
+        "part_of_speech": "noun",
+        "definition": "A place where people buy things."
+      },
+      {
+        "term": "records",
+        "part_of_speech": "plural noun",
+        "definition": "Written or saved information about something."
+      },
+      {
+        "term": "video",
+        "part_of_speech": "noun",
+        "definition": "Moving pictures that you can watch on a screen."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人が何かをするのを助ける機械やコンピュータープログラムです。",
+      "ko": "사람들이 어떤 일을 하도록 도와주는 기계와 컴퓨터 프로그램입니다.",
+      "zh-Hans": "帮助人们做事的机器和计算机程序。",
+      "es": "Máquinas y programas informáticos que ayudan a las personas a hacer cosas.",
+      "pt-BR": "Máquinas e programas de computador que ajudam as pessoas a fazer coisas.",
+      "fr": "Des machines et des programmes informatiques qui aident les gens à faire des choses.",
+      "de": "Maschinen und Computerprogramme, die Menschen dabei helfen, etwas zu tun."
+    },
+    {
+      "id": 1,
+      "ja": "エネルギーを使って作業をするものです。",
+      "ko": "에너지를 사용하여 일을 하는 것입니다.",
+      "zh-Hans": "利用能量来完成工作的东西。",
+      "es": "Algo que utiliza energía para realizar un trabajo.",
+      "pt-BR": "Algo que usa energia para realizar um trabalho.",
+      "fr": "Quelque chose qui utilise de l’énergie pour effectuer un travail.",
+      "de": "Etwas, das Energie nutzt, um eine Arbeit zu erledigen."
+    },
+    {
+      "id": 2,
+      "ja": "電話やコンピューターでインターネットを使えるようにする手段です。",
+      "ko": "전화기나 컴퓨터로 인터넷을 사용할 수 있게 해 주는 수단입니다.",
+      "zh-Hans": "让电话或计算机能够使用互联网的方式。",
+      "es": "Un medio que permite a un teléfono o una computadora usar internet.",
+      "pt-BR": "Um meio que permite a um telefone ou computador usar a internet.",
+      "fr": "Un moyen permettant à un téléphone ou à un ordinateur d’utiliser Internet.",
+      "de": "Eine Möglichkeit für ein Telefon oder einen Computer, das Internet zu nutzen."
+    },
+    {
+      "id": 3,
+      "ja": "人が物を買う場所です。",
+      "ko": "사람들이 물건을 사는 곳입니다.",
+      "zh-Hans": "人们购买东西的地方。",
+      "es": "Un lugar donde las personas compran cosas.",
+      "pt-BR": "Um lugar onde as pessoas compram coisas.",
+      "fr": "Un endroit où les gens achètent des choses.",
+      "de": "Ein Ort, an dem Menschen Dinge kaufen."
+    },
+    {
+      "id": 4,
+      "ja": "何かについて書き留めたり保存したりした情報です。",
+      "ko": "무언가에 대해 글로 적거나 저장해 둔 정보입니다.",
+      "zh-Hans": "关于某事物的、以文字记下或保存的信息。",
+      "es": "Información escrita o guardada sobre algo.",
+      "pt-BR": "Informações escritas ou salvas sobre algo.",
+      "fr": "Des informations écrites ou enregistrées à propos de quelque chose.",
+      "de": "Aufgeschriebene oder gespeicherte Informationen über etwas."
+    },
+    {
+      "id": 5,
+      "ja": "画面で見ることができる動く映像です。",
+      "ko": "화면으로 볼 수 있는 움직이는 영상입니다.",
+      "zh-Hans": "可以在屏幕上观看的动态画面。",
+      "es": "Imágenes en movimiento que se pueden ver en una pantalla.",
+      "pt-BR": "Imagens em movimento que você pode ver em uma tela.",
+      "fr": "Des images en mouvement que l’on peut regarder sur un écran.",
+      "de": "Bewegte Bilder, die man auf einem Bildschirm ansehen kann."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-10-26T06:15:01.400343+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

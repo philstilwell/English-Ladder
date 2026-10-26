@@ -1,0 +1,204 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "George McMaster began his farming career milking eight cows and relying on visual judgement to detect health problems.",
+      "He now watches a herd of 300 through an AI camera in the milking parlour at his farm near Islandmagee in County Antrim.",
+      "The camera uses an algorithm, a set of computational rules, to identify individual cows, analyse daily footage and flag changes that may not yet be visible to a person.",
+      "A farmer reports that the camera can identify lameness, or difficulty walking normally, earlier than ordinary daily checks had revealed it.",
+      "A farmer also links healthier cattle with greater milk production and better animal welfare.",
+      "In the robotic milking arrangement described, automation allows cows to enter and leave the machine when they choose, rather than being brought in at fixed times.",
+      "For one farmer, obtaining high-speed broadband was a turning point that enabled him to open a farm shop accepting electronic payments.",
+      "One farmer describes a lighter administrative burden, with information entered as work is done rather than written down both in the cattle house and in the office.",
+      "A compliance section allows reports on medicines, feed and other farm information to be selected in preparation for inspections.",
+      "Another stated priority is for AI to help reduce inputs, the resources farming uses, while increasing outputs, what it produces.",
+      "Although one speaker is enthusiastic about the technology, he does not believe it will replace humans.",
+      "One speaker explicitly rejects the prospect of AI taking over farmers' decision-making.",
+      "One contributor argues that combining datasets could advance sustainability across its economic, environmental and social dimensions.",
+      "Digitalisation is also presented as a way to help farmers meet their obligations while supplying good-quality, sustainable food."
+    ],
+    "vocabulary": [
+      {
+        "term": "algorithm",
+        "part_of_speech": "countable noun",
+        "definition": "A set of rules a computer follows to process information, here to identify individual animals and detect changes."
+      },
+      {
+        "term": "automation",
+        "part_of_speech": "uncountable noun",
+        "definition": "The use of technology to perform tasks with less direct human involvement, without necessarily removing human responsibility."
+      },
+      {
+        "term": "administrative burden",
+        "part_of_speech": "noun phrase",
+        "definition": "The time and effort required to organise information and complete routine paperwork, viewed as a demand on someone's resources."
+      },
+      {
+        "term": "compliance",
+        "part_of_speech": "uncountable noun",
+        "definition": "The fulfilment of official rules or requirements; organised documentation can help demonstrate it."
+      },
+      {
+        "term": "inputs",
+        "part_of_speech": "plural noun",
+        "definition": "Resources used in production, considered in relation to the goods or quantities they help produce."
+      },
+      {
+        "term": "outputs",
+        "part_of_speech": "plural noun",
+        "definition": "The goods or quantities produced by an activity, considered in relation to the resources used."
+      },
+      {
+        "term": "decision-making",
+        "part_of_speech": "uncountable noun",
+        "definition": "The process of assessing information and choosing what to do, distinct from simply receiving information."
+      },
+      {
+        "term": "sustainability",
+        "part_of_speech": "uncountable noun",
+        "definition": "The capacity to maintain farming over time while addressing economic, environmental and social needs."
+      },
+      {
+        "term": "digitalisation",
+        "part_of_speech": "uncountable noun",
+        "definition": "The adoption of digital systems that changes how information is managed and work is carried out."
+      },
+      {
+        "term": "obligations",
+        "part_of_speech": "plural noun",
+        "definition": "Duties or requirements that someone is expected or required to fulfil, rather than optional ambitions."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "コンピューターが情報を処理する際に従う一連の規則。ここでは、動物の個体を識別し、変化を検出するために使われる。",
+      "ko": "컴퓨터가 정보를 처리할 때 따르는 일련의 규칙. 여기서는 동물을 개체별로 식별하고 변화를 감지하는 데 사용된다.",
+      "zh-Hans": "计算机处理信息时遵循的一套规则，这里用于识别每一头动物并发现变化。",
+      "es": "Conjunto de reglas que sigue una computadora para procesar información, en este caso para identificar a cada animal y detectar cambios.",
+      "pt-BR": "Conjunto de regras que um computador segue para processar informações, neste caso para identificar cada animal e detectar mudanças.",
+      "fr": "Ensemble de règles qu’un ordinateur suit pour traiter des informations, ici pour identifier chaque animal et détecter des changements.",
+      "de": "Eine Reihe von Regeln, nach denen ein Computer Informationen verarbeitet, hier zur Erkennung einzelner Tiere und zur Feststellung von Veränderungen."
+    },
+    {
+      "id": 1,
+      "ja": "人間の直接的な関与を減らして作業を行うために技術を使うこと。ただし、人間の責任が必ずなくなるわけではない。",
+      "ko": "사람의 직접적인 관여를 줄이면서 작업을 수행하기 위해 기술을 사용하는 것. 그렇다고 반드시 사람의 책임까지 없어지는 것은 아니다.",
+      "zh-Hans": "利用技术完成任务，减少人的直接参与，但并不一定免除人的责任。",
+      "es": "Uso de tecnología para realizar tareas con menos intervención humana directa, sin que ello elimine necesariamente la responsabilidad de las personas.",
+      "pt-BR": "Uso de tecnologia para realizar tarefas com menos participação humana direta, sem necessariamente eliminar a responsabilidade das pessoas.",
+      "fr": "Utilisation de technologies pour accomplir des tâches avec moins d’intervention humaine directe, sans nécessairement supprimer la responsabilité humaine.",
+      "de": "Der Einsatz von Technik, um Aufgaben mit weniger direkter menschlicher Beteiligung auszuführen, ohne dass dadurch zwangsläufig die Verantwortung des Menschen entfällt."
+    },
+    {
+      "id": 2,
+      "ja": "情報を整理し、日常的な書類作業を済ませるために必要な時間と労力を、その人の使える時間や労力などへの負担として捉えたもの。",
+      "ko": "정보를 정리하고 일상적인 서류 업무를 처리하는 데 필요한 시간과 노력을, 개인이 쓸 수 있는 시간과 노력 등의 자원에 대한 부담으로 보는 것.",
+      "zh-Hans": "整理信息和完成日常文书工作所需的时间与精力，被视为对个人可用资源的占用。",
+      "es": "Tiempo y esfuerzo necesarios para organizar información y completar trámites y documentos rutinarios, considerados como una carga que consume los recursos de una persona.",
+      "pt-BR": "Tempo e esforço necessários para organizar informações e realizar tarefas rotineiras de documentação, vistos como uma demanda sobre os recursos de uma pessoa.",
+      "fr": "Temps et efforts nécessaires pour organiser des informations et effectuer les formalités courantes, considérés comme une charge qui mobilise les ressources d’une personne.",
+      "de": "Der Zeit- und Arbeitsaufwand für das Ordnen von Informationen und das Erledigen routinemäßiger Schreibarbeiten, betrachtet als Beanspruchung der verfügbaren Ressourcen einer Person."
+    },
+    {
+      "id": 3,
+      "ja": "公的な規則や要件を守ること。整理された記録や書類は、それを守っていることを示すのに役立つ場合がある。",
+      "ko": "공식적인 규칙이나 요건을 지키는 것. 체계적으로 정리된 문서는 이를 지키고 있음을 입증하는 데 도움이 될 수 있다.",
+      "zh-Hans": "遵守官方规定或满足官方要求；有条理的文件记录可以帮助证明这一点。",
+      "es": "Cumplimiento de normas o requisitos oficiales; una documentación organizada puede ayudar a demostrarlo.",
+      "pt-BR": "Cumprimento de regras ou exigências oficiais; uma documentação organizada pode ajudar a demonstrá-lo.",
+      "fr": "Respect des règles ou des exigences officielles ; une documentation bien organisée peut aider à le démontrer.",
+      "de": "Die Einhaltung offizieller Vorschriften oder Anforderungen; geordnete Unterlagen können helfen, die Einhaltung nachzuweisen."
+    },
+    {
+      "id": 4,
+      "ja": "生産に使われる資源を、それによって生み出される物やその量との関係で捉えたもの。",
+      "ko": "생산에 사용되는 자원을, 그 자원이 생산하는 데 기여하는 물품이나 생산량과의 관계에서 보는 것.",
+      "zh-Hans": "生产中使用的资源，从这些资源与其所帮助生产的产品或产量之间的关系来考量。",
+      "es": "Recursos utilizados en la producción, considerados en relación con los bienes o las cantidades que ayudan a producir.",
+      "pt-BR": "Recursos usados na produção, considerados em relação aos bens ou às quantidades que ajudam a produzir.",
+      "fr": "Ressources utilisées dans la production, considérées par rapport aux biens ou aux quantités qu’elles contribuent à produire.",
+      "de": "Ressourcen, die bei der Produktion eingesetzt werden, betrachtet im Verhältnis zu den Gütern oder Mengen, die mit ihrer Hilfe hergestellt werden."
+    },
+    {
+      "id": 5,
+      "ja": "ある活動によって生み出される物やその量を、使われた資源との関係で捉えたもの。",
+      "ko": "어떤 활동을 통해 생산된 물품이나 생산량을, 사용된 자원과의 관계에서 보는 것.",
+      "zh-Hans": "某项活动生产的产品或产量，从其与所用资源之间的关系来考量。",
+      "es": "Bienes o cantidades producidos por una actividad, considerados en relación con los recursos utilizados.",
+      "pt-BR": "Bens ou quantidades produzidos por uma atividade, considerados em relação aos recursos utilizados.",
+      "fr": "Biens ou quantités produits par une activité, considérés par rapport aux ressources utilisées.",
+      "de": "Die Güter oder Mengen, die durch eine Tätigkeit erzeugt werden, betrachtet im Verhältnis zu den eingesetzten Ressourcen."
+    },
+    {
+      "id": 6,
+      "ja": "単に情報を受け取ることとは異なり、情報を評価し、何をするかを選ぶ過程。",
+      "ko": "단순히 정보를 받는 것과 구별되는, 정보를 평가하고 무엇을 할지 선택하는 과정.",
+      "zh-Hans": "评估信息并选择如何行动的过程，区别于仅仅接收信息。",
+      "es": "Proceso de evaluar información y elegir qué hacer, distinto de simplemente recibir información.",
+      "pt-BR": "Processo de avaliar informações e escolher o que fazer, distinto de simplesmente receber informações.",
+      "fr": "Processus consistant à évaluer des informations et à choisir quoi faire, qui se distingue du simple fait de recevoir des informations.",
+      "de": "Der Vorgang, Informationen zu bewerten und zu entscheiden, was zu tun ist, im Unterschied zum bloßen Empfang von Informationen."
+    },
+    {
+      "id": 7,
+      "ja": "経済、環境、社会のそれぞれのニーズに対応しながら、農業を長期にわたって続けられる能力。",
+      "ko": "경제적·환경적·사회적 필요에 대응하면서 장기적으로 농업을 유지할 수 있는 능력.",
+      "zh-Hans": "在兼顾经济、环境和社会需求的同时，长期维持农业的能力。",
+      "es": "Capacidad de mantener la actividad agropecuaria a lo largo del tiempo atendiendo a las necesidades económicas, ambientales y sociales.",
+      "pt-BR": "Capacidade de manter a atividade agropecuária ao longo do tempo, atendendo às necessidades econômicas, ambientais e sociais.",
+      "fr": "Capacité à maintenir l’activité agricole dans la durée tout en répondant aux besoins économiques, environnementaux et sociaux.",
+      "de": "Die Fähigkeit, die Landwirtschaft langfristig aufrechtzuerhalten und dabei wirtschaftlichen, ökologischen und sozialen Bedürfnissen gerecht zu werden."
+    },
+    {
+      "id": 8,
+      "ja": "デジタルシステムの導入によって、情報の管理方法や仕事の進め方が変わること。",
+      "ko": "디지털 시스템을 도입하여 정보 관리 방식과 업무 수행 방식이 달라지는 것.",
+      "zh-Hans": "采用数字系统，从而改变信息管理和工作开展的方式。",
+      "es": "Adopción de sistemas digitales que transforma la manera de gestionar la información y realizar el trabajo.",
+      "pt-BR": "Adoção de sistemas digitais que transforma a maneira de gerenciar informações e realizar o trabalho.",
+      "fr": "Adoption de systèmes numériques qui modifie la manière de gérer les informations et d’effectuer le travail.",
+      "de": "Die Einführung digitaler Systeme, durch die sich die Verwaltung von Informationen und die Durchführung von Arbeiten verändern."
+    },
+    {
+      "id": 9,
+      "ja": "実行することを期待されたり義務付けられたりしている務めや要件であり、自由に目指すかどうかを選べる目標とは異なるもの。",
+      "ko": "개인이 이행할 것으로 기대되거나 반드시 이행해야 하는 의무나 요건으로, 선택적으로 추구하는 목표와는 구별되는 것.",
+      "zh-Hans": "某人被期望或被要求履行的职责或满足的要求，而不是可自由选择是否追求的目标。",
+      "es": "Deberes o requisitos que se espera que una persona cumpla o que está obligada a cumplir, en lugar de metas que puede elegir perseguir.",
+      "pt-BR": "Deveres ou exigências que se espera que uma pessoa cumpra ou que ela é obrigada a cumprir, em vez de objetivos que pode escolher buscar.",
+      "fr": "Devoirs ou exigences qu’une personne est censée remplir ou tenue de respecter, plutôt que des objectifs qu’elle est libre de poursuivre ou non.",
+      "de": "Pflichten oder Anforderungen, deren Erfüllung von jemandem erwartet oder verlangt wird, im Unterschied zu Zielen, die man freiwillig verfolgen kann."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-10-26T06:17:57.456600+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

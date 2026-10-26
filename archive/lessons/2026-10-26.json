@@ -1,0 +1,806 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-26",
+  "release_iso": "2026-10-26T04:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Mon, 26 Oct 2026 00:13:09 GMT",
+    "retrieved_at": "2026-10-26T05:56:11.045584+00:00",
+    "title": "From agriculture to AI-griculture: How tech is changing farming",
+    "summary": "From remote monitoring of cattle to automation of processes that took up valuable time, farmers in NI are rapidly becoming skilled in technology.",
+    "evidence_text": "It is just one example of how technology is changing the traditional profession.\nGeorge McMaster's farming career started with milking eight cows in a byre, relying on his eyes to spot any health issues in his cattle.\nHe still watches his now-300-strong herd, but via a feed from an AI camera in the milking parlour at the farm near Islandmagee in County Antrim.\nThe device uses an algorithm which assigns each cow its own ID, records a short video of the animal every day, analyses it and flags any changes - often before they are visible to the human eye.\n\"And if cows are in better health, we get more milk and they're happier - happy cows make happy farmers.\"\nThey filter in and out of a robotic milking machine when they want to, rather than being herded in at set times.\nGetting high-speed broadband was a game-changer for him - he has been able to open a farm shop with an electronic payment system.\nFor four years now, he has used the FarmDrive app to run the business.\nDeveloper Gareth McDonald describes FarmDrive as \"Facebook for cows\". Each animal gets a profile with all her records in one place and a photo can be added.\n\"We're very much of the opinion we don't want the AI making the decision for the farmer.\"\n\"It's allowing us to work a lot more quickly and efficiently, and on the farming side, it's basically allowing the farmer to see the right information at the right time, where it's kind of that adviser to the farmer,\" he said.\n\"There's cows there we would never have thought of as lame when we were just watching them every day, but whenever the camera's watching they're picking them up so much earlier, any emergencies that we have, to check cows before they lose condition and get sick,\" he said.\n\"It's so much handier - beforehand you're writing things down, bits of paperwork in the cattle house and writing them down in the office, whereas now you just do it at that time,\" he said.\n\"And then whenever you have inspections coming up, all you have to do is go into your compliance section, select reports, and there's your reports for your medicine, for your meal records, for everything.\n\"The AI really should be looking towards how to manage your farm better and how to reduce your inputs and increase your outputs.\"\nAlthough he is passionate about the technology, he does not believe it will replace humans.\n\"When we take all the datasets, then I think we can deliver on the three pillars of sustainability - economic, environmental and social,\" he said.\n\"So I think that because we've got so much data and so much digitalisation in the industry, that farmers will certainly use this to their advantage and can meet their targets, meet their objectives and meet the obligations whilst delivering good quality, sustainable food.\"",
+    "evidence_retrieved_at": "2026-10-26T05:56:11.045584+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cw80zk9k51j1o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "How does George's camera help him care for his cows? Use “The camera helps because ...”.",
+          "Which would help you or an imaginary farmer more: a camera or a milking machine? Use “I think ... because ...”."
+        ],
+        "title": "New Technology Changes Life on Farms",
+        "overview": "Farmers use cameras, machines and apps to help with their work.",
+        "topic": "Technology on farms",
+        "vocabulary": [
+          {
+            "term": "technology",
+            "part_of_speech": "noun",
+            "definition": "Machines and computer programs that help people do things."
+          },
+          {
+            "term": "machine",
+            "part_of_speech": "noun",
+            "definition": "Something that uses power to do a job."
+          },
+          {
+            "term": "connection",
+            "part_of_speech": "noun",
+            "definition": "A way for a phone or computer to use the internet."
+          },
+          {
+            "term": "shop",
+            "part_of_speech": "noun",
+            "definition": "A place where people buy things."
+          },
+          {
+            "term": "records",
+            "part_of_speech": "plural noun",
+            "definition": "Written or saved information about something."
+          },
+          {
+            "term": "video",
+            "part_of_speech": "noun",
+            "definition": "Moving pictures that you can watch on a screen."
+          }
+        ],
+        "grammar": {
+          "concept": "Can for ability",
+          "explanation": "Use “can” with a verb to say what someone or something is able to do. After “can”, use the verb without “to” or “-s”.",
+          "example_quote": "It can find changes before farmers can see them."
+        },
+        "quiz": [
+          {
+            "question": "What is this news mainly about?",
+            "options": [
+              "How farmers use new technology",
+              "Why farmers want fewer cows",
+              "How people learn to cook"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading describes cameras, machines and apps that help farmers.",
+              "The reading does not say farmers want fewer cows.",
+              "The reading describes technology and farm work."
+            ]
+          },
+          {
+            "question": "How many cows did George milk when he started farming?",
+            "options": [
+              "300",
+              "Eight",
+              "90"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "George has 300 cows now, but he started with eight.",
+              "Correct. George started farming by milking eight cows.",
+              "The reading says George started with eight cows."
+            ]
+          },
+          {
+            "question": "What does George's camera make every day?",
+            "options": [
+              "A list of things to buy",
+              "A report about the weather",
+              "A short video of each cow"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says the camera makes a short video of each cow.",
+              "The reading does not say the camera reports the weather.",
+              "Correct. It makes a short video of each cow every day."
+            ]
+          },
+          {
+            "question": "When do the cows in the reading use the milking machine?",
+            "options": [
+              "Only in the morning",
+              "When they want to",
+              "When the shop opens"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says they use it when they want to.",
+              "Correct. The cows use the machine when they want to.",
+              "The reading does not connect milking times with the shop."
+            ]
+          },
+          {
+            "question": "What helped one farmer open a farm shop?",
+            "options": [
+              "A faster internet connection",
+              "A camera for watching cows",
+              "An app with cow records"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. A faster internet connection helped the farmer open the shop.",
+              "The camera helps George watch his cows; faster internet helped with the shop.",
+              "The reading says a faster internet connection helped the farmer open the shop."
+            ]
+          },
+          {
+            "question": "What does “records” mean in the sentence about the app?",
+            "options": [
+              "Food for the cows",
+              "Places where cows sleep",
+              "Saved information about the cows"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Records” means saved information about the cows.",
+              "“Records” does not mean places where animals sleep.",
+              "Correct. The app keeps information about each cow."
+            ]
+          },
+          {
+            "question": "Which sentence uses “can” correctly to describe a farm camera's ability?",
+            "options": [
+              "A camera can shows changes.",
+              "A camera can show changes.",
+              "A camera can showing changes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Use “show” after “can”, not “shows”.",
+              "Correct. Use “can” followed by “show”.",
+              "Use “show” after “can”, not “showing”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "New technology is changing how some farmers work.",
+          "George McMaster started farming by milking eight cows.",
+          "He now has 300 cows and watches them through a camera.",
+          "The camera makes a short video of each cow every day.",
+          "It can find changes before farmers can see them.",
+          "One farmer says healthier cows give them more milk.",
+          "Some cows use a milking machine when they want to.",
+          "A faster internet connection helped one farmer open a farm shop.",
+          "A farmer uses an app to help run his farm.",
+          "In this app, each cow has a page with all her records in one place.",
+          "The app's developer says farmers should make the decisions.",
+          "He says the technology helps farmers see the right information at the right time."
+        ],
+        "sentence_evidence": [
+          "It is just one example of how technology is changing the traditional profession.",
+          "George McMaster's farming career started with milking eight cows in a byre, relying on his eyes to spot any health issues in his cattle.",
+          "He still watches his now-300-strong herd, but via a feed from an AI camera in the milking parlour at the farm near Islandmagee in County Antrim.",
+          "The device uses an algorithm which assigns each cow its own ID, records a short video of the animal every day, analyses it and flags any changes - often before they are visible to the human eye.",
+          "The device uses an algorithm which assigns each cow its own ID, records a short video of the animal every day, analyses it and flags any changes - often before they are visible to the human eye.",
+          "\"And if cows are in better health, we get more milk and they're happier - happy cows make happy farmers.\"",
+          "They filter in and out of a robotic milking machine when they want to, rather than being herded in at set times.",
+          "Getting high-speed broadband was a game-changer for him - he has been able to open a farm shop with an electronic payment system.",
+          "For four years now, he has used the FarmDrive app to run the business.",
+          "Developer Gareth McDonald describes FarmDrive as \"Facebook for cows\". Each animal gets a profile with all her records in one place and a photo can be added.",
+          "\"We're very much of the opinion we don't want the AI making the decision for the farmer.\"",
+          "\"It's allowing us to work a lot more quickly and efficiently, and on the farming side, it's basically allowing the farmer to see the right information at the right time, where it's kind of that adviser to the farmer,\" he said."
+        ],
+        "editorial_check": {
+          "date": "2026-10-26T06:02:04.414002+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six distinct targets occur in the reading. Words such as “connection” and “records” have clear, accessible definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses neutral news reporting and natural discussion frames such as “I think ... because ...”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences support beginners. The explanation of “can” is accurate, and its exact reading quotation demonstrates the pattern."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct questions test the main idea, stated details, “records” and “can”, with clear answers and accurate feedback."
+            }
+          },
+          "content_digest": "90aea91ab79e17f91a105a76e36577c1c46646c056946a1804cc48fa00dc3f82"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why might an AI camera be useful even when a farmer watches the cows every day?",
+          "Which tool from the story would you choose for a farm, and how could it improve daily work?"
+        ],
+        "title": "AI Helps Farmers Care for Cows and Save Time",
+        "overview": "Farmers are using cameras, robots and apps to check animal health, save time and manage information.",
+        "topic": "Farming and digital tools",
+        "vocabulary": [
+          {
+            "term": "monitors",
+            "part_of_speech": "verb, present simple",
+            "definition": "Regularly watches or checks something to notice changes."
+          },
+          {
+            "term": "highlights",
+            "part_of_speech": "verb, present simple",
+            "definition": "Draws attention to something so that it is easier to notice."
+          },
+          {
+            "term": "observation",
+            "part_of_speech": "noun",
+            "definition": "The activity of watching carefully to learn about something."
+          },
+          {
+            "term": "immediately",
+            "part_of_speech": "adverb",
+            "definition": "At once, without waiting."
+          },
+          {
+            "term": "inspections",
+            "part_of_speech": "plural noun",
+            "definition": "Official checks to see whether rules and standards are being followed."
+          },
+          {
+            "term": "profile",
+            "part_of_speech": "noun",
+            "definition": "A page or section in an app containing information about one person or animal."
+          },
+          {
+            "term": "adviser",
+            "part_of_speech": "noun",
+            "definition": "Someone or something that offers information and suggestions to help with decisions."
+          },
+          {
+            "term": "efficiently",
+            "part_of_speech": "adverb",
+            "definition": "In a way that uses time and effort well, with little waste."
+          }
+        ],
+        "grammar": {
+          "concept": "Present perfect with a period of time",
+          "explanation": "Use the present perfect to describe an activity that began in the past and continues now: “The farmer has used the FarmDrive app to run his business for four years.” Form it with “has” or “have” plus the past participle, as in “has used”. Use “for” with a period of time, such as “for four years”.",
+          "example_quote": "The farmer has used the FarmDrive app to run his business for four years."
+        },
+        "quiz": [
+          {
+            "question": "What is the main idea of the reading?",
+            "options": [
+              "Digital tools are helping farmers care for animals and manage daily work.",
+              "Digital tools are mainly helping farmers promote their milk to customers.",
+              "Digital tools are mainly helping farmers prepare for official inspections."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the examples include health checks, milking and managing farm information.",
+              "The reading mentions milk production, but it does not describe promoting milk.",
+              "Inspection reports are one example, but the reading describes several other uses."
+            ]
+          },
+          {
+            "question": "What advantage does the farmer describe when comparing the camera with daily observation?",
+            "options": [
+              "It shows which cows produce the most milk.",
+              "It helps identify walking problems earlier.",
+              "It suggests which treatment a cow needs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The farmer links better health with more milk, but does not say the camera compares milk production.",
+              "Correct: the farmer says the camera helps identify walking problems earlier.",
+              "The reading describes noticing problems earlier, but does not say the camera suggests treatments."
+            ]
+          },
+          {
+            "question": "How does robotic milking change the cows' routine in the reading?",
+            "options": [
+              "The farmer gathers the cows when the equipment is ready.",
+              "The cows enter at fixed times chosen by the farmer.",
+              "The cows enter whenever they choose."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says the cows enter by choice instead of being gathered.",
+              "Fixed times describe the routine that this system replaces.",
+              "Correct: the cows choose when to enter the milking machine."
+            ]
+          },
+          {
+            "question": "What has better broadband allowed the farmer to do?",
+            "options": [
+              "Open a farm shop that accepts electronic payments.",
+              "Prepare reports about animal medicines and feed.",
+              "Check the herd through an AI camera."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the reading directly connects better broadband with opening the shop and accepting electronic payments.",
+              "The reading connects these reports with the FarmDrive app, rather than identifying them as the result of better broadband.",
+              "The camera is another example of digital farming, but the stated result of better broadband is opening the shop."
+            ]
+          },
+          {
+            "question": "How does entering information in FarmDrive change the farmer's work?",
+            "options": [
+              "He enters information only when an inspection is due.",
+              "He enters it immediately instead of writing it in two places.",
+              "He writes it in the office before adding it to the app."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The app lets him enter information immediately, without waiting for an inspection.",
+              "Correct: the app reduces repeated writing in the cattle building and office.",
+              "The reading describes entering information immediately instead of writing it in both places."
+            ]
+          },
+          {
+            "question": "What does “highlights” mean in the sentence about the camera's software?",
+            "options": [
+              "Explains the causes of changes.",
+              "Predicts when changes will happen.",
+              "Draws attention to changes."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Highlights” means making something noticeable; it does not mean explaining its causes.",
+              "“Highlights” refers to drawing attention to changes, rather than predicting future events.",
+              "Correct: “highlights” means drawing attention to something so it is easier to notice."
+            ]
+          },
+          {
+            "question": "Why might keeping each cow's information in one profile be useful?",
+            "options": [
+              "The farmer can find that animal's information together.",
+              "The farmer can view the whole herd in one shared animal profile.",
+              "The profile can choose treatments based on the animal's information."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the reading says each profile keeps information about one cow together.",
+              "The reading describes a separate profile for each cow, rather than one shared animal profile for the herd.",
+              "The profile keeps information together; the reading does not say it chooses treatments."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses the present perfect to describe farm workers' app use that began in the past and continues now?",
+            "options": [
+              "The workers has used this farm app for two months.",
+              "The workers have used this farm app for two months.",
+              "The workers have use this farm app for two months."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Use “have” with the plural subject “the workers”.",
+              "Correct: “have used” has the correct form, and “for two months” gives the period of time.",
+              "After “have”, use the past participle “used”, rather than “use”."
+            ]
+          },
+          {
+            "question": "Which statement best matches the developer's view of AI?",
+            "options": [
+              "AI should make farm decisions once it has enough information.",
+              "AI should focus on storing information without offering advice.",
+              "AI should support farmers while they remain responsible for decisions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The developer wants farmers to remain responsible for decisions, even when AI provides useful information.",
+              "The developer describes AI as an adviser, so its role includes helping farmers use information.",
+              "Correct: the developer sees AI as a source of advice and useful information for farmers."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "George McMaster began his farming career by milking eight cows and checking their health by eye.",
+          "Today, he monitors a herd of 300 cows through an AI camera at his farm near Islandmagee.",
+          "The camera's software identifies each cow, analyses a short daily video and highlights changes that people may not yet see.",
+          "The farmer says the camera helps identify cows with walking problems earlier than daily observation alone.",
+          "The farmer believes healthier cows produce more milk, bringing benefits for both animals and farmers.",
+          "Cows enter a robotic milking machine whenever they choose, instead of being gathered at fixed times.",
+          "Better broadband has allowed the farmer to open a farm shop that accepts electronic payments.",
+          "The farmer has used the FarmDrive app to run his business for four years.",
+          "The app lets him enter information immediately, instead of writing it down in both the cattle building and the office.",
+          "It also allows him to prepare reports for inspections, including details about animal medicines and feed.",
+          "Each cow can have a profile that keeps all her information together, with the option of adding a photo.",
+          "The developer sees AI as an adviser that helps farmers find useful information and work more efficiently.",
+          "He believes farmers should remain responsible for decisions, rather than letting AI make those decisions for them."
+        ],
+        "sentence_evidence": [
+          "George McMaster's farming career started with milking eight cows in a byre, relying on his eyes to spot any health issues in his cattle.",
+          "He still watches his now-300-strong herd, but via a feed from an AI camera in the milking parlour at the farm near Islandmagee in County Antrim.",
+          "The device uses an algorithm which assigns each cow its own ID, records a short video of the animal every day, analyses it and flags any changes - often before they are visible to the human eye.",
+          "\"There's cows there we would never have thought of as lame when we were just watching them every day, but whenever the camera's watching they're picking them up so much earlier, any emergencies that we have, to check cows before they lose condition and get sick,\" he said.",
+          "\"And if cows are in better health, we get more milk and they're happier - happy cows make happy farmers.\"",
+          "They filter in and out of a robotic milking machine when they want to, rather than being herded in at set times.",
+          "Getting high-speed broadband was a game-changer for him - he has been able to open a farm shop with an electronic payment system.",
+          "For four years now, he has used the FarmDrive app to run the business.",
+          "\"It's so much handier - beforehand you're writing things down, bits of paperwork in the cattle house and writing them down in the office, whereas now you just do it at that time,\" he said.",
+          "\"And then whenever you have inspections coming up, all you have to do is go into your compliance section, select reports, and there's your reports for your medicine, for your meal records, for everything.",
+          "Developer Gareth McDonald describes FarmDrive as \"Facebook for cows\". Each animal gets a profile with all her records in one place and a photo can be added.",
+          "\"It's allowing us to work a lot more quickly and efficiently, and on the farming side, it's basically allowing the farmer to see the right information at the right time, where it's kind of that adviser to the farmer,\" he said.",
+          "\"We're very much of the opinion we don't want the AI making the decision for the farmer.\""
+        ],
+        "editorial_check": {
+          "date": "2026-10-26T06:07:26.904854+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct targets occur in the reading. “Monitors”, “inspections” and “efficiently” offer useful B1–B2 learning value; definitions are clear and no reserved targets are reused."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and natural expressions such as “manage daily work” maintain an appropriate, consistent tone."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Instructions and feedback are clear. The exact reading quotation demonstrates “has used” with “for four years”, matching the grammar explanation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Thirteen distinct reading sentences and nine quiz questions cover comprehension, “highlights” in context, supported inference and present-perfect transfer, meeting all minimums."
+            }
+          },
+          "content_digest": "f041c822d6b9d854a6955b3dfefe09061ec130599abb8ef1e8edfafcab200c53"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "How do the examples distinguish gathering farm data from using it to improve decisions?",
+          "Which farm decisions would you delegate to AI, and where would you retain human control? Explain your reasoning."
+        ],
+        "title": "How AI Is Changing Farming and Supporting Human Judgement",
+        "overview": "Digital systems are reshaping cattle farming through earlier health alerts and simpler administration, alongside an explicit preference for retaining human judgement.",
+        "topic": "AI, farm management and human judgement",
+        "vocabulary": [
+          {
+            "term": "algorithm",
+            "part_of_speech": "countable noun",
+            "definition": "A set of rules a computer follows to process information, here to identify individual animals and detect changes."
+          },
+          {
+            "term": "automation",
+            "part_of_speech": "uncountable noun",
+            "definition": "The use of technology to perform tasks with less direct human involvement, without necessarily removing human responsibility."
+          },
+          {
+            "term": "administrative burden",
+            "part_of_speech": "noun phrase",
+            "definition": "The time and effort required to organise information and complete routine paperwork, viewed as a demand on someone's resources."
+          },
+          {
+            "term": "compliance",
+            "part_of_speech": "uncountable noun",
+            "definition": "The fulfilment of official rules or requirements; organised documentation can help demonstrate it."
+          },
+          {
+            "term": "inputs",
+            "part_of_speech": "plural noun",
+            "definition": "Resources used in production, considered in relation to the goods or quantities they help produce."
+          },
+          {
+            "term": "outputs",
+            "part_of_speech": "plural noun",
+            "definition": "The goods or quantities produced by an activity, considered in relation to the resources used."
+          },
+          {
+            "term": "decision-making",
+            "part_of_speech": "uncountable noun",
+            "definition": "The process of assessing information and choosing what to do, distinct from simply receiving information."
+          },
+          {
+            "term": "sustainability",
+            "part_of_speech": "uncountable noun",
+            "definition": "The capacity to maintain farming over time while addressing economic, environmental and social needs."
+          },
+          {
+            "term": "digitalisation",
+            "part_of_speech": "uncountable noun",
+            "definition": "The adoption of digital systems that changes how information is managed and work is carried out."
+          },
+          {
+            "term": "obligations",
+            "part_of_speech": "plural noun",
+            "definition": "Duties or requirements that someone is expected or required to fulfil, rather than optional ambitions."
+          }
+        ],
+        "grammar": {
+          "concept": "Concessive clauses with “although”",
+          "explanation": "A concessive clause introduced by “although” acknowledges a fact that might suggest a different conclusion. Here, “is enthusiastic about the technology” might create an expectation of support for replacing humans, but the main clause rejects that expectation without denying the enthusiasm.",
+          "example_quote": "Although one speaker is enthusiastic about the technology, he does not believe it will replace humans."
+        },
+        "quiz": [
+          {
+            "question": "Which interpretation best captures the reading's account of technological change in farming?",
+            "options": [
+              "Its principal contribution is to transfer responsibility for farm decisions to software.",
+              "It changes several aspects of farm management, alongside a stated preference for retaining human judgement.",
+              "Its advantages concern animal health, with little relevance to administration or commercial activities."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "One speaker explicitly opposes AI taking over farmers' decisions.",
+              "The reading covers health alerts, milking, paperwork and electronic payments, while also reporting support for human control.",
+              "The examples include simpler paperwork and a farm shop enabled by broadband."
+            ]
+          },
+          {
+            "question": "What advantage does a farmer identify in the camera system's detection of lameness?",
+            "options": [
+              "It establishes the underlying cause of each animal's walking difficulties.",
+              "It confirms that ordinary daily checks already identify every affected animal.",
+              "It can identify walking difficulties that ordinary daily checks had failed to reveal."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Earlier detection does not establish that the camera identifies the underlying cause.",
+              "The farmer describes difficulties that had escaped ordinary checks.",
+              "The reported benefit is earlier identification of problems that daily visual checks had missed."
+            ]
+          },
+          {
+            "question": "What changes under the robotic milking arrangement described in the reading?",
+            "options": [
+              "Cows enter and leave according to their own timing.",
+              "Cows attend milking at more tightly controlled intervals.",
+              "Camera assessment replaces the process of milking."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The cows use the robotic system when they choose, rather than at fixed milking times.",
+              "The reading contrasts this arrangement with fixed times; it does not describe stricter scheduling.",
+              "Camera assessment and robotic milking are separate examples with different functions."
+            ]
+          },
+          {
+            "question": "What does the broadband example suggest about the relationship between connectivity and rural business?",
+            "options": [
+              "Electronic payments are the stated reason for adopting robotic milking.",
+              "Improved connectivity can enable a farm to extend its commercial activities.",
+              "Opening a farm shop necessarily produces more income than dairy farming."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading connects broadband with opening a shop, without identifying a reason for adopting robotic milking.",
+              "High-speed broadband enabled one farmer to open a shop accepting electronic payments.",
+              "The reading provides no comparison of income from the shop and dairy production."
+            ]
+          },
+          {
+            "question": "Which change most directly explains the lighter “administrative burden” described by one farmer?",
+            "options": [
+              "Entering information during work instead of writing it down in two places.",
+              "Eliminating the need to maintain information about farm activities.",
+              "Giving software responsibility for deciding whether official requirements have been met."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reduced burden concerns avoiding duplicated paperwork and entering information as work is done.",
+              "The farmer still maintains information; the process becomes less repetitive.",
+              "The reading describes information entry and reports, without assigning such decisions to software."
+            ]
+          },
+          {
+            "question": "What can reasonably be concluded about the “compliance” section?",
+            "options": [
+              "Having its reports proves that every farming requirement has been fulfilled.",
+              "Its availability removes the need for farm inspections.",
+              "It helps prepare documentation without guaranteeing that every requirement has been fulfilled."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Access to reports is not proof that all requirements have been met.",
+              "The section is described as useful when preparing for inspections, rather than replacing them.",
+              "The supported benefit is convenient access to relevant reports; the reading makes no guarantee of compliance."
+            ]
+          },
+          {
+            "question": "How should the stated priority of reducing “inputs” while increasing “outputs” be understood?",
+            "options": [
+              "As confirmation that resource use has already fallen and production has already risen.",
+              "As an objective for AI: using fewer resources while producing more.",
+              "As a recommendation to reduce both resource use and production."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The statement describes a priority, rather than reporting measured results.",
+              "“Inputs” refers to resources used, while “outputs” refers to what production delivers; the sentence presents an intended direction.",
+              "The stated aim is to increase production while reducing the resources used."
+            ]
+          },
+          {
+            "question": "Which distinction best represents the positions on AI enthusiasm and human control reported in the reading?",
+            "options": [
+              "Welcoming AI assistance is compatible with opposing its control over farm decisions.",
+              "Rejecting AI control requires rejecting its use in farm management.",
+              "Expecting humans to remain involved means that their existing tasks will remain unchanged."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading reports enthusiasm for the technology alongside opposition to transferring decisions to it.",
+              "The concessive sentence explicitly presents enthusiasm and a continuing human role as compatible.",
+              "A continuing human role does not establish that individual tasks will remain unchanged."
+            ]
+          },
+          {
+            "question": "Why would an exclusively environmental interpretation of “sustainability” be incomplete here?",
+            "options": [
+              "The contributor treats environmental concerns as unrelated to farming.",
+              "The contributor reports that environmental benefits have already been demonstrated.",
+              "The contributor also includes economic and social dimensions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Environmental concerns form one of the three dimensions identified.",
+              "The statement concerns what combining datasets could achieve, rather than demonstrated benefits.",
+              "The reading explicitly presents sustainability as economic, environmental and social."
+            ]
+          },
+          {
+            "question": "Which hypothetical sentence uses a concessive clause with “although” to acknowledge enthusiasm for farm AI while maintaining a limit on its role?",
+            "options": [
+              "Because a farmer welcomes AI assistance, she may still insist on making the final decision.",
+              "Although a farmer welcomes AI assistance, she may still insist on making the final decision.",
+              "If a farmer welcomes AI assistance, she may still insist on making the final decision."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Because” presents enthusiasm as a reason; this grammatical sentence does not express the requested concession.",
+              "“Although” acknowledges enthusiasm while maintaining a position that might initially seem contrary to it.",
+              "“If” makes enthusiasm a condition, rather than acknowledging it as the circumstance against which the main claim holds."
+            ]
+          },
+          {
+            "question": "What does “digitalisation” encompass in this reading?",
+            "options": [
+              "Changes to how farm information and work are managed through digital systems.",
+              "The narrower process of producing electronic images of cattle.",
+              "The transfer of all operational authority from farmers to computers."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The examples range from analysing footage to entering information and selecting reports.",
+              "Images form only part of the reading's broader account of changes to farm activities.",
+              "“Digitalisation” does not itself mean surrendering authority, and one speaker explicitly opposes that outcome."
+            ]
+          },
+          {
+            "question": "Which statement preserves the status of the sustainability and digitalisation claims as assessments of potential benefits?",
+            "options": [
+              "Combining datasets has already secured economic, environmental and social sustainability.",
+              "Adopting digital systems guarantees that farmers will fulfil their obligations.",
+              "Combining datasets could support sustainability, while digitalisation could help farmers fulfil their duties."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This turns a proposed benefit into an established achievement that the reading does not report.",
+              "The reading presents a possible contribution, without guaranteeing that adoption will produce this outcome.",
+              "“Could” preserves the assessment of potential, and “fulfil their duties” expresses the contextual meaning of “meet their obligations”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "George McMaster began his farming career milking eight cows and relying on visual judgement to detect health problems.",
+          "He now watches a herd of 300 through an AI camera in the milking parlour at his farm near Islandmagee in County Antrim.",
+          "The camera uses an algorithm, a set of computational rules, to identify individual cows, analyse daily footage and flag changes that may not yet be visible to a person.",
+          "A farmer reports that the camera can identify lameness, or difficulty walking normally, earlier than ordinary daily checks had revealed it.",
+          "A farmer also links healthier cattle with greater milk production and better animal welfare.",
+          "In the robotic milking arrangement described, automation allows cows to enter and leave the machine when they choose, rather than being brought in at fixed times.",
+          "For one farmer, obtaining high-speed broadband was a turning point that enabled him to open a farm shop accepting electronic payments.",
+          "One farmer describes a lighter administrative burden, with information entered as work is done rather than written down both in the cattle house and in the office.",
+          "A compliance section allows reports on medicines, feed and other farm information to be selected in preparation for inspections.",
+          "Another stated priority is for AI to help reduce inputs, the resources farming uses, while increasing outputs, what it produces.",
+          "Although one speaker is enthusiastic about the technology, he does not believe it will replace humans.",
+          "One speaker explicitly rejects the prospect of AI taking over farmers' decision-making.",
+          "One contributor argues that combining datasets could advance sustainability across its economic, environmental and social dimensions.",
+          "Digitalisation is also presented as a way to help farmers meet their obligations while supplying good-quality, sustainable food."
+        ],
+        "sentence_evidence": [
+          "George McMaster's farming career started with milking eight cows in a byre, relying on his eyes to spot any health issues in his cattle.",
+          "He still watches his now-300-strong herd, but via a feed from an AI camera in the milking parlour at the farm near Islandmagee in County Antrim.",
+          "The device uses an algorithm which assigns each cow its own ID, records a short video of the animal every day, analyses it and flags any changes - often before they are visible to the human eye.",
+          "\"There's cows there we would never have thought of as lame when we were just watching them every day, but whenever the camera's watching they're picking them up so much earlier, any emergencies that we have, to check cows before they lose condition and get sick,\" he said.",
+          "\"And if cows are in better health, we get more milk and they're happier - happy cows make happy farmers.\"",
+          "They filter in and out of a robotic milking machine when they want to, rather than being herded in at set times.",
+          "Getting high-speed broadband was a game-changer for him - he has been able to open a farm shop with an electronic payment system.",
+          "\"It's so much handier - beforehand you're writing things down, bits of paperwork in the cattle house and writing them down in the office, whereas now you just do it at that time,\" he said.",
+          "\"And then whenever you have inspections coming up, all you have to do is go into your compliance section, select reports, and there's your reports for your medicine, for your meal records, for everything.",
+          "\"The AI really should be looking towards how to manage your farm better and how to reduce your inputs and increase your outputs.\"",
+          "Although he is passionate about the technology, he does not believe it will replace humans.",
+          "\"We're very much of the opinion we don't want the AI making the decision for the farmer.\"",
+          "\"When we take all the datasets, then I think we can deliver on the three pillars of sustainability - economic, environmental and social,\" he said.",
+          "\"So I think that because we've got so much data and so much digitalisation in the industry, that farmers will certainly use this to their advantage and can meet their targets, meet their objectives and meet the obligations whilst delivering good quality, sustainable food.\""
+        ],
+        "editorial_check": {
+          "date": "2026-10-26T06:14:17.211896+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct targets occur in the reading, avoid reserved vocabulary, and offer advanced learning value, including “administrative burden”, “compliance” and “digitalisation”."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Natural reporting preserves attribution and uncertainty through wording such as “one contributor argues” and “could advance sustainability”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the exact grammar quotation demonstrates how “although” expresses concession."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct questions test comprehension, concession, contextual meanings and qualified claims, including potential benefits versus established results."
+            }
+          },
+          "content_digest": "7076eaa308604bcbc97783b13acda64fd8aff62ca19ece6a0b0ab35017503df3"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

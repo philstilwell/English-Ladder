@@ -6,6 +6,8 @@ Run this after ordinary lesson processing in the existing **11:35 p.m. America/N
 
 ## Schedule and sources
 
+Published monthly reviews remain dated, immutable history snapshots, including insufficient-evidence results. The administrator’s “Level over time” section reads this history and shows changes without changing current estimates or review dates. Keep older estimate history when full transcripts expire; account deletion removes both. Do not manufacture missing months, rewrite earlier estimates or use this history as a substitute for full new source evidence.
+
 - First estimate: two distinct usable full Zoom transcripts from the latest two already-published, reviewed lessons.
 - Later reviews: no sooner than one calendar month after the last review, using the latest four available published lessons within the last three calendar months. Use two or three if fewer remain; fewer than two means wait. Month-end dates clamp to the last day. An insufficient review also waits a month; unchanged selected lessons do not trigger another review.
 - Only active accounts qualify. Never invent a student, meeting date, source, or a missing transcript. Do not restore ignored work, publish old lesson feedback, change activation cutoffs, or create new full-transcript caches. Existing reviewed caches retain their retention rule.

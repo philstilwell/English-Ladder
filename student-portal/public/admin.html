@@ -60,6 +60,13 @@
         <h2 id="cefr-title">Estimated CEFR level <span class="private-label">Administrator only</span></h2>
         <p class="field-note">CEFR is the Common European Framework of Reference for Languages, from A1 to C2. This is an AI-assisted estimate of conversational English from lesson transcripts, not a formal test result. It does not assess pronunciation, spoken pace, reading, writing, or listening independently.</p>
         <div id="cefr-content" aria-live="polite"></div>
+        <section class="cefr-history" aria-labelledby="cefr-history-title">
+          <h3 id="cefr-history-title">Level over time</h3>
+          <p class="field-note">Each row keeps the level range recorded on that review date. Newest reviews appear first. Changes reflect the evidence available then, not a test score.</p>
+          <div id="cefr-history-content"></div>
+          <p id="cefr-history-status" class="field-note" role="status"></p>
+          <div id="cefr-history-actions" class="cefr-history-actions"></div>
+        </section>
         <p class="field-note">Use your own teaching judgment alongside the estimate. <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-3-cefr-3.3-common-reference-levels-qualitative-aspects-of-spoken-language-use" target="_blank" rel="noopener noreferrer">CEFR spoken-language descriptors ↗</a></p>
       </section>
       <section id="activity-overview-panel" class="cefr-panel" aria-labelledby="activity-overview-title" hidden>
@@ -187,6 +194,7 @@
         </dl></article>
         <article class="technical-card"><h2>CEFR estimates</h2><p class="field-note">Updated October 26, 2026.</p><p>Automatic CEFR reviews run through GPT in Codex using the existing allowance, with no additional AI charges. The 11:35 p.m. Eastern task checks eligibility after lesson updates. Keep the Mac awake, online, and Codex open. Cloudflare AI stays disabled.</p><dl>
           <div><dt>First estimate</dt><dd>After two distinct reviewed lesson records have usable full Zoom transcripts. Codex reads the latest two in full, temporarily.</dd></div>
+          <div><dt>Level history</dt><dd>Open Level history beside a student’s estimate to see “Level over time” on their account page. Every completed review keeps its date, original level range, confidence, explanation and brief supporting examples. The chart shows twelve reviews at a time, newest first, with older pages available. An inconclusive review is marked separately and never shown as a drop in level. A single estimate is a starting point, not a trend. History stays available after full transcripts expire and is removed only when the account is deleted. Reading it makes no AI calls and does not change review dates or student work.</dd></div>
           <div><dt>Monthly review</dt><dd>No sooner than one calendar month after the previous review. It uses the latest four available published lesson sources from the last three calendar months. If only two or three remain, it uses those. Fewer than two means it waits.</dd></div>
           <div><dt>Evidence and limits</dt><dd>CEFR means Common European Framework of Reference for Languages. The estimate covers conversational language visible in transcripts, from A1 to C2. It is not a formal test result or an independent assessment of pronunciation, pace, listening, reading, or writing.</dd></div>
           <div><dt>What keeps the level stable</dt><dd>Every selected transcript is read in full, with learner quotations checked against each session. Teacher examples and quiz scores do not establish the level. Unchanged evidence does not trigger another review. Failed or inconclusive monthly reviews keep the earlier estimate.</dd></div>

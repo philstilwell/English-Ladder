@@ -10,6 +10,7 @@ import { handleVocabulary } from './vocabulary-practice.mjs';
 import { handleGrammarPractice } from './grammar-practice.mjs';
 import { groundCefrWindow, cefrOverview, validateCefr } from './cefr.mjs';
 import { cefrReviewContext, cefrScheduleSummary, cefrPublishedContext } from './cefr-schedule.mjs';
+import { cefrHistory, validCefrHistoryCursor } from './cefr-history.mjs';
 import { validNoteId, saveTranscriptCache, readTranscriptCache, validateTranscriptCache, pruneTranscriptCache } from './transcript-cache.mjs';
 
 export const FEEDBACK_ID = /^\d{4}-\d{2}-\d{2}-\d{4}$/;
@@ -138,6 +139,11 @@ export class FeedbackStore {
     if (id === 'activities/questions' && request.method === 'GET') return this.activeTransaction(txn => questionsOverview(txn, { after: url.searchParams.get('after') }));
     if (id === 'activities/progress' && request.method === 'GET') return this.activeTransaction(async txn => json(await studentActivityProgress(txn)));
     if (id === 'admin/cefr-status' && request.method === 'GET') return json(cefrOverview(await this.storage.get('cefr:current')));
+    if (id === 'admin/cefr/history' && request.method === 'GET') {
+      const before = url.searchParams.get('before');
+      if (!validCefrHistoryCursor(before)) return json({ error: 'Invalid history page.' }, 400);
+      return this.activeTransaction(async txn => json(await cefrHistory(txn, before)));
+    }
     if (id === 'admin/cefr' && request.method === 'GET') return this.activeTransaction(async txn => {
       const context = url.searchParams.get('processor') === 'codex' ? await cefrPublishedContext(txn) : await cefrReviewContext(txn);
       return json({ cefr: context.current, schedule: cefrScheduleSummary(context) });

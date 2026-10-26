@@ -94,6 +94,10 @@ test('monthly Codex review waits a calendar month, selects latest four, and reta
   assert.ok(p.attemptId);
   const result = await f.dispatch('cefr-publish', await f.payload(p, { state: 'insufficient', rationale: 'Too little independent learner language.' }));
   assert.equal(result.status, 200); assert.deepEqual(await f.store.storage.get('cefr:current'), old);
+  const history = await (await f.store.fetch(new Request('https://feedback.internal/admin/cefr/history'))).json();
+  assert.equal(history.history.length, 2);
+  assert.equal(history.history[0].state, 'insufficient');
+  assert.deepEqual(history.history[1], old);
   assert.equal((await cefrPublishedContext(f.store.storage)).nextReviewOn, '2026-12-25');
   t.mock.timers.setTime(Date.parse('2026-12-25T18:00:00Z'));
   assert.equal((await cefrPublishedContext(f.store.storage)).due, false);

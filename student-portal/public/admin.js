@@ -20,7 +20,7 @@
   let catchUpRequest = 0;
   let resolvedQuestions = [], questionActionPending = false;
   let quizRequest = 0, quizStatuses = {};
-  let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0;
+  let cefrRequest = 0, cefrStatuses = {}, cefrDetailRequest = 0, cefrHistoryRequest = 0;
   let loginRequest = 0, loginDetails = null;
   let studentIdCopyRequest = 0, studentIdCopyTimer = null;
   let roadEpoch = 0, roadRows = [], roadCursor = null, roadLoading = false;
@@ -148,7 +148,11 @@
   function message(text, error = false) { $('message').textContent = text; $('message').hidden = !text; $('message').classList.toggle('error', error); }
   const cefrLabel = record => record?.state === 'estimated' ? (record.lower === record.upper ? record.lower : record.lower + '–' + record.upper) :
     { pending: 'Not assessed yet', insufficient: 'More evidence needed', unavailable: 'Unable to check', loading: 'Checking…' }[record?.state] || 'Not assessed yet';
-  function clearCefr() { cefrDetailRequest++; $('cefr-panel').hidden = true; $('cefr-content').replaceChildren(); }
+  function clearCefr() {
+    cefrDetailRequest++; cefrHistoryRequest++;
+    $('cefr-panel').hidden = true; $('cefr-content').replaceChildren();
+    $('cefr-history-content').replaceChildren(); $('cefr-history-actions').replaceChildren(); $('cefr-history-status').textContent = '';
+  }
   function createQuestionsPanel(id, activity, renderer, label) {
     let requestRevision = 0, questions = [], page = 0;
     function clear() {
@@ -456,10 +460,81 @@
   }
   $('load-road-results').addEventListener('click', () => loadRoad());
   $('more-road-results').addEventListener('click', () => loadRoad(true));
+  function appendCefrEvidence(content, cefr) {
+    if (cefr.state !== 'estimated') return;
+    content.append(element('p', (cefr.confidence === 'moderate' ? 'Moderate' : 'Low') + ' confidence · Evidence from ' + cefr.sourceSessions.length + (cefr.sourceSessions.length === 1 ? ' lesson' : ' lessons'), 'field-note'));
+    const aspects = element('dl', null, 'cefr-aspects');
+    const labels = { range: 'Vocabulary and sentence range', accuracy: 'Grammar control', coherence: 'Connecting ideas', interaction: 'Conversation skills' };
+    for (const aspect of cefr.aspects) { const item = element('div'); item.append(element('dt', labels[aspect.area]), element('dd', aspect.detail)); aspects.append(item); }
+    content.append(aspects);
+    const evidence = element('details', null, 'cefr-evidence'); evidence.append(element('summary', 'Supporting learner examples'));
+    for (const ref of cefr.evidence) {
+      const item = element('div', null, 'cefr-example');
+      item.append(element('p', displayDate(ref.sessionId.slice(0, 10)) + ' · Transcript ' + ref.at, 'field-note'), element('blockquote', '“' + ref.quote + '”'), element('p', ref.note));
+      evidence.append(item);
+    }
+    content.append(evidence);
+  }
+  function renderCefrHistory(records, hasOlder) {
+    const content = $('cefr-history-content'); content.replaceChildren();
+    if (!records.length) { content.append(element('p', 'No level reviews have been saved yet.', 'field-note')); return; }
+    if (records.length === 1 && records[0].state === 'estimated' && !hasOlder) content.append(element('p', 'This is the starting estimate. Changes will appear after later monthly reviews.', 'field-note'));
+    const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    const scale = element('div', null, 'cefr-history-scale'); scale.setAttribute('aria-hidden', 'true');
+    levels.forEach(level => scale.append(element('span', level))); content.append(scale);
+    for (const [index, record] of records.entries()) {
+      const item = element('article', null, 'cefr-history-item');
+      const heading = element('h4'); const date = element('time', displayDate(record.assessedOn)); date.dateTime = record.assessedOn;
+      heading.append(date, element('span', cefrLabel(record), 'cefr-history-level')); item.append(heading);
+      if (record.state === 'estimated') {
+        const band = element('div', null, 'cefr-history-band'); band.setAttribute('aria-hidden', 'true');
+        levels.forEach((_, i) => { const tick = element('span', null, 'cefr-history-tick'); tick.style.gridColumn = String(i + 1); band.append(tick); });
+        const range = element('span', cefrLabel(record), 'cefr-history-range');
+        range.style.gridColumn = (levels.indexOf(record.lower) + 1) + ' / ' + (levels.indexOf(record.upper) + 2);
+        band.append(range); item.append(band);
+        const previous = records.slice(index + 1).find(row => row.state === 'estimated');
+        const change = previous ? (cefrLabel(previous) === cefrLabel(record) ? 'Same estimated range as ' + displayDate(previous.assessedOn) + '.' :
+          'From ' + cefrLabel(previous) + ' on ' + displayDate(previous.assessedOn) + ' → ' + cefrLabel(record) + '.') :
+          hasOlder ? 'Earlier estimates are on the next page.' : 'First saved estimate.';
+        item.append(element('p', change, 'cefr-history-change'));
+      } else item.append(element('p', 'No new level assigned. Any earlier estimate stays in place.', 'cefr-history-change'));
+      const details = element('details', null, 'cefr-history-review');
+      details.append(element('summary', 'Review details'), element('p', record.rationale));
+      details.append(element('p', 'Latest source lesson: ' + displayDate(record.latestSessionId.slice(0, 10)), 'field-note'));
+      appendCefrEvidence(details, record); item.append(details); content.append(item);
+    }
+  }
+  async function loadCefrHistory(student, cursors = [null]) {
+    const request = ++cefrHistoryRequest, version = epoch;
+    const valid = () => signedIn && version === epoch && request === cefrHistoryRequest && current?.key === student.key && activeRouteHash === '#students/' + student.key;
+    const actions = $('cefr-history-actions'); actions.replaceChildren();
+    $('cefr-history-status').textContent = 'Loading level history…';
+    try {
+      const before = cursors.at(-1);
+      const data = await api('/api/admin/students/' + student.key + '/cefr/history' + (before ? '?before=' + encodeURIComponent(before) : ''));
+      if (!valid()) return;
+      if (!Array.isArray(data.history)) throw new Error('Level history is temporarily unavailable.');
+      renderCefrHistory(data.history, Boolean(data.nextCursor));
+      $('cefr-history-status').textContent = data.history.length ? 'Page ' + cursors.length + ' · ' + data.history.length + ' saved review' + (data.history.length === 1 ? '' : 's') : '';
+      const button = (label, next) => {
+        const control = element('button', label, 'secondary-button'); control.type = 'button';
+        control.addEventListener('click', () => loadCefrHistory(student, next)); actions.append(control);
+      };
+      if (cursors.length > 1) button('Newer reviews', cursors.slice(0, -1));
+      if (data.nextCursor) button('Older reviews', [...cursors, data.nextCursor]);
+      button('Refresh history', [null]);
+    } catch (error) {
+      if (!valid()) return;
+      $('cefr-history-status').textContent = 'Could not load level history. ' + error.message;
+      const retry = element('button', 'Try history again', 'secondary-button'); retry.type = 'button';
+      retry.addEventListener('click', () => loadCefrHistory(student, cursors)); actions.append(retry);
+    }
+  }
   async function loadCefr(student) {
     clearCefr();
     if (!student || student.deletionPending) return;
     $('cefr-panel').hidden = false;
+    void loadCefrHistory(student);
     $('cefr-content').append(element('p', 'Loading the estimate…', 'field-note'));
     const request = cefrDetailRequest, version = epoch;
     const stillCurrent = () => signedIn && version === epoch && request === cefrDetailRequest && current?.key === student.key && activeRouteHash === '#students/' + student.key;
@@ -475,19 +550,7 @@
       if (!cefr) { content.append(element('p', 'The next eligible nightly check runs through Codex at 11:35 p.m. Eastern. It reads two usable full lesson transcripts for the first estimate, then up to four for monthly reviews.', 'field-note')); return; }
       content.append(element('p', 'Reviewed ' + displayDate(cefr.assessedOn) + ' · Latest lesson ' + displayDate(cefr.latestSessionId.slice(0, 10)), 'field-note'));
       content.append(element('p', cefr.rationale));
-      if (cefr.state !== 'estimated') return;
-      content.append(element('p', (cefr.confidence === 'moderate' ? 'Moderate' : 'Low') + ' confidence · Evidence from ' + cefr.sourceSessions.length + (cefr.sourceSessions.length === 1 ? ' lesson' : ' lessons'), 'field-note'));
-      const aspects = element('dl', null, 'cefr-aspects');
-      const labels = { range: 'Vocabulary and sentence range', accuracy: 'Grammar control', coherence: 'Connecting ideas', interaction: 'Conversation skills' };
-      for (const aspect of cefr.aspects) { const item = element('div'); item.append(element('dt', labels[aspect.area]), element('dd', aspect.detail)); aspects.append(item); }
-      content.append(aspects);
-      const evidence = element('details', null, 'cefr-evidence'); evidence.append(element('summary', 'Supporting learner examples'));
-      for (const ref of cefr.evidence) {
-        const item = element('div', null, 'cefr-example');
-        item.append(element('p', displayDate(ref.sessionId.slice(0, 10)) + ' · Transcript ' + ref.at, 'field-note'), element('blockquote', '“' + ref.quote + '”'), element('p', ref.note));
-        evidence.append(item);
-      }
-      content.append(evidence);
+      appendCefrEvidence(content, cefr);
     } catch (error) {
       if (!stillCurrent()) return;
       const retry = element('button', 'Try again', 'secondary-button'); retry.type = 'button'; retry.addEventListener('click', () => loadCefr(student));
@@ -593,6 +656,10 @@
       const cefrLink = element('a', cefrLabel(cefr), 'cefr-badge ' + cefr.state); cefrLink.href = link.href;
       cefrLink.setAttribute('aria-label', 'CEFR estimate for ' + student.firstName + ': ' + cefrLabel(cefr));
       cefrCell.append(element('span', 'CEFR estimate: ', 'quiz-mobile-label'), cefrLink);
+      if (cefr.state === 'estimated') {
+        const historyLink = element('a', 'Level history', 'detail'); historyLink.href = link.href;
+        historyLink.setAttribute('aria-label', 'Level history for ' + student.firstName); cefrCell.append(historyLink);
+      }
       if (cefr.state === 'estimated') cefrCell.append(element('span', (cefr.confidence === 'moderate' ? 'Moderate' : 'Low') + ' confidence', 'detail'));
       if (cefr.latestSessionId) cefrCell.append(element('span', 'Lesson ' + displayDate(cefr.latestSessionId.slice(0, 10)), 'detail'));
       const questions = questionStatuses[student.key] || { state: 'loading' };

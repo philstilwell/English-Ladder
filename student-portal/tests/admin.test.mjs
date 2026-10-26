@@ -14,6 +14,7 @@ import grammarBank from '../grammar-bank.json' with { type: 'json' };
 import { ACTIVITY_TOOLS } from '../activities.mjs';
 import vocabularyBank from '../vocabulary-bank.json' with { type: 'json' };
 import { RESOURCE_TOOLS } from '../resources.mjs';
+import { validateCefr } from '../cefr.mjs';
 
 const admin = 'https://phil.englishladder.com';
 const example = { firstName:'Morgan', lastName:'Testperson', nickname:'Morgan the Explorer', studentId:'mt26', status:'active', zoomNames:['Morgan-Zoom'], timeZone:'Asia/Tokyo', email:'private@example.test', notes:'Private administrative note', hoursAuthorized:40 };
@@ -1856,4 +1857,91 @@ test('registering an account clears local address hints without exposing a roste
  assert.equal((await call(e,'/',{},'https://mt26.englishladder.com')).status,200);
  const response=await adminCall(e,'/api/admin/account-ids',{headers:{Cookie:cookie}});
  assert.equal(response.status,404); assert.doesNotMatch(await response.text(),/studentIds|mt26/);
+});
+
+const historyEstimate = (day, lower = 'A2', upper = 'B1') => validateCefr({
+  state:'estimated', assessedOn:day, latestSessionId:day+'-1200', lower, upper, confidence:'low',
+  rationale:'A provisional conversation estimate.', aspects:['range','accuracy','coherence','interaction'].map(area=>({area,detail:'Some independent language is visible.'})),
+  evidence:['00:01:00','00:02:00'].map(at=>({sessionId:day+'-1200',at,quote:'Could you explain that?',note:'A clarification question.'}))
+});
+test('level history is administrator-only, account-isolated, no-store and read-only for active or paused students', async()=>{
+  const {e}=environment(), cookie=await access(e), records=await list(e,cookie), account=records.find(s=>s.studentId==='ab26');
+  const path='/api/admin/students/'+account.key+'/cefr/history', old=historyEstimate('2026-09-25'), recent=historyEstimate('2026-10-25','B1','B1');
+  const store=e.FEEDBACK_STORE.get('ab26');
+  await store.storage.put({['cefr:history:2026-09-25:'+ 'a'.repeat(64)]:old, ['cefr:history:2026-10-25:'+ 'b'.repeat(64)]:recent,
+    'cefr:current':recent, 'assessment:current':assessment, 'attempt:example':{answers:[[1,0]]}});
+  const before=await store.storage.list();
+  const response=await adminCall(e,path,{headers:{Cookie:cookie}});
+  assert.equal(response.status,200); assert.equal(response.headers.get('cache-control'),'no-store');
+  assert.deepEqual((await response.json()).history,[recent,old]);
+  assert.equal((await adminCall(e,path)).status,401);
+  for(const password of ['student-test','teacher-test']) {
+    const other=await login(e,password);
+    assert.equal((await adminCall(e,path,{headers:{Cookie:other.cookie}})).status,401);
+    for(const route of [path,'/api/cefr/history','/api/feedback/admin/cefr/history']) assert.equal((await call(e,route,{headers:{Cookie:other.cookie}})).status,404);
+  }
+  for(const headers of [{Origin:origin},{'Sec-Fetch-Site':'cross-site'}]) assert.equal((await adminCall(e,path,{headers:{Cookie:cookie,...headers}})).status,403);
+  assert.equal((await adminCall(e,path,write(cookie,{}))).status,404);
+  assert.equal((await adminCall(e,path+'?before=bad',{headers:{Cookie:cookie}})).status,400);
+  const other=records.find(s=>s.studentId==='cd26');
+  assert.deepEqual((await(await adminCall(e,'/api/admin/students/'+other.key+'/cefr/history',{headers:{Cookie:cookie}})).json()).history,[]);
+  assert.equal((await adminCall(e,'/api/admin/students/00000000-0000-4000-8000-000000000000/cefr/history',{headers:{Cookie:cookie}})).status,404);
+  assert.deepEqual(await store.storage.list(),before);
+  const pause=await adminCall(e,'/api/admin/students/'+account.key,write(cookie,{...account,status:'paused'},'PUT'));
+  assert.equal(pause.status,200); assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,200);
+  await store.storage.put({'account:deleted':true});
+  assert.equal((await adminCall(e,path,{headers:{Cookie:cookie}})).status,410);
+});
+
+test('level history shows dated ranges, changes, inconclusive reviews, evidence and paging without inventing trends', async()=>{
+  const recent=historyEstimate('2026-10-25','B1','B1'), older=historyEstimate('2026-08-25'), baseline=historyEstimate('2026-07-25');
+  const missing={state:'insufficient',assessedOn:'2026-09-25',latestSessionId:'2026-09-20-1200',rationale:'Too little independent language.'};
+  recent.evidence[0].quote='<img src=x onerror=alert(1)>';
+  const requests=[];
+  const dom=browser(path=>{
+    if(path.includes('/cefr/history')) { requests.push(path);return Response.json(path.includes('?before=')?{history:[baseline],nextCursor:null}:{history:[recent,missing,older],nextCursor:'older'}); }
+    if(path.endsWith('/cefr')) return Response.json({cefr:recent});
+    return null;
+  });
+  await flush(); const w=dom.window,d=w.document;
+  d.querySelector('.student-name').click();await flush();
+  const content=d.getElementById('cefr-history-content');
+  assert.equal(content.querySelectorAll('.cefr-history-item').length,3);
+  assert.equal(content.querySelectorAll('.cefr-history-band').length,2);
+  assert.equal(content.querySelector('.cefr-history-range').style.gridColumn,'3 / 4');
+  assert.match(content.textContent,/From A2–B1 on Aug 25, 2026 → B1/);
+  assert.match(content.textContent,/No new level assigned/);
+  assert.match(content.textContent,/Earlier estimates are on the next page/);
+  assert.equal(content.querySelector('img'),null);assert.match(content.textContent,/<img/);
+  assert.match(content.textContent,/Low confidence/);
+  const button=label=>[...d.querySelectorAll('#cefr-history-actions button')].find(b=>b.textContent===label);
+  button('Older reviews').click();await flush();
+  assert.equal(content.querySelectorAll('.cefr-history-item').length,1);
+  assert.match(content.textContent,/First saved estimate/);
+  assert.match(requests.at(-1),/before=older/);
+  button('Newer reviews').click();await flush();assert.equal(content.querySelectorAll('.cefr-history-item').length,3);
+  w.location.hash='#students';await flush();assert.equal(content.textContent,'');
+  assert.equal(d.getElementById('cefr-history-actions').textContent,'');w.close();
+});
+
+test('level history handles empty and single baselines, retries failures, and clears on expiry, page hide or delayed navigation', async()=>{
+  const estimate=historyEstimate('2026-10-25');let state='empty', pending;
+  const dom=browser(path=>path.endsWith('/cefr/history')?
+    state==='failure'?Response.json({error:'Unavailable'},{status:503}):state==='pending'?new Promise(resolve=>{pending=resolve;}):
+    state==='expired'?Response.json({error:'Expired'},{status:401}):Response.json({history:state==='empty'?[]:[estimate],nextCursor:null}):
+    path.endsWith('/cefr')?Response.json({cefr:estimate}):null);
+  await flush();const w=dom.window,d=w.document,content=d.getElementById('cefr-history-content');
+  const open=async()=>{w.location.hash='#students/'+fixture.key;await flush();};
+  await open();assert.match(content.textContent,/No level reviews/);
+  state='single';d.querySelector('#cefr-history-actions button').click();await flush();assert.match(content.textContent,/starting estimate/);
+  state='failure';d.querySelector('#cefr-history-actions button').click();await flush();
+  assert.match(d.getElementById('cefr-history-status').textContent,/Could not load/);assert.match(content.textContent,/starting estimate/);
+  state='pending';d.querySelector('#cefr-history-actions button').click();await flush();
+  w.location.hash='#register';await flush();pending(Response.json({history:[estimate],nextCursor:null}));await flush();assert.equal(content.textContent,'');
+  state='single';await open();assert.match(content.textContent,/starting estimate/);
+  w.dispatchEvent(new w.PageTransitionEvent('pagehide'));assert.equal(content.textContent,'');assert.equal(d.getElementById('cefr-history-actions').textContent,'');w.close();
+  const expired=browser(path=>path.endsWith('/cefr/history')?Response.json({error:'Expired'},{status:401}):null);
+  await flush();expired.window.document.querySelector('.student-name').click();await flush();
+  assert.equal(expired.window.document.getElementById('admin-view').hidden,true);
+  assert.equal(expired.window.document.getElementById('cefr-history-content').textContent,'');expired.window.close();
 });

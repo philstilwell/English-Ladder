@@ -266,16 +266,20 @@ async function handleAdmin(request, env) {
       if (url.searchParams.has('before')) target.searchParams.set('before', url.searchParams.get('before'));
       return env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request(target));
     }
-    const cefrAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/cefr$/.exec(url.pathname);
+    const cefrAccount = /^\/api\/admin\/students\/([0-9a-f-]{36})\/cefr(\/history)?$/.exec(url.pathname);
     if (cefrAccount && request.method === 'GET') {
       if (request.headers.has('Origin') && request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return json({ error: 'Open this from your administrator page.' }, 403);
       const response = await directoryRequest(env, '/students');
       if (!response.ok) return json({ error: 'Student records are temporarily unavailable.' }, 503);
       const student = (await response.json()).students.find(s => s.key === cefrAccount[1]);
       if (!student || student.deletionPending) return json({ error: 'Student not found.' }, 404);
-      if (!student.activated || !student.studentId) return json({ cefr: null });
+      if (!student.activated || !student.studentId) return json(cefrAccount[2] ? { history: [], nextCursor: null } : { cefr: null });
       try {
-        const result = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request('https://feedback.internal/admin/cefr' + (env.CEFR_PROCESSOR === 'codex' ? '?processor=codex' : '')));
+        const target = new URL('https://feedback.internal/admin/cefr' + (cefrAccount[2] || ''));
+        if (cefrAccount[2] && url.searchParams.has('before')) target.searchParams.set('before', url.searchParams.get('before'));
+        if (!cefrAccount[2] && env.CEFR_PROCESSOR === 'codex') target.searchParams.set('processor', 'codex');
+        const result = await env.FEEDBACK_STORE.get(env.FEEDBACK_STORE.idFromName(student.studentId)).fetch(new Request(target));
+        if (result.status === 400 || result.status === 410) return result;
         if (!result.ok) throw new Error('Unavailable');
         return json(await result.json());
       } catch { return json({ error: 'The CEFR estimate is temporarily unavailable. Please try again.' }, 503); }

@@ -6,11 +6,12 @@ import json
 import os
 import re
 import unicodedata
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
+from zoneinfo import ZoneInfo
 
 import feedparser
 from bs4 import BeautifulSoup
@@ -33,8 +34,9 @@ NEWS_CATEGORIES = {
 NEWS_WEEK = ["science", "culture", "technology", "business", "world", "culture", "science"]
 MAX_GENERATION_ATTEMPTS = 3
 MAX_DAILY_GENERATION_ATTEMPTS = 6
-DEFAULT_RELEASE_HOUR_UTC = 6
-DEFAULT_RELEASE_MINUTE_UTC = 15
+RELEASE_TIME_ZONE = ZoneInfo("America/New_York")
+DEFAULT_RELEASE_HOUR_LOCAL = 0
+DEFAULT_RELEASE_MINUTE_LOCAL = 30
 FORBIDDEN_TAGS = {"script", "style", "iframe", "object", "embed", "link", "meta"}
 SAFE_BUTTON_HANDLER = "checkAnswer(this)"
 QUIZ_OPTION_LABELS = ["a", "b", "c"]
@@ -731,12 +733,12 @@ def parse_summary_parts(summary_tag):
 def fallback_release_datetime(date_text):
     release_date = datetime.strptime(date_text, "%B %d, %Y")
     return release_date.replace(
-        hour=DEFAULT_RELEASE_HOUR_UTC,
-        minute=DEFAULT_RELEASE_MINUTE_UTC,
+        hour=DEFAULT_RELEASE_HOUR_LOCAL,
+        minute=DEFAULT_RELEASE_MINUTE_LOCAL,
         second=0,
         microsecond=0,
-        tzinfo=timezone.utc,
-    )
+        tzinfo=RELEASE_TIME_ZONE,
+    ).astimezone(timezone.utc)
 
 
 def get_release_datetime(summary_tag, date_text, default_release_dt=None):
@@ -759,12 +761,12 @@ def release_datetime_from_date(release_date_text):
 
     release_date = datetime.strptime(release_date_text, "%Y-%m-%d")
     return release_date.replace(
-        hour=DEFAULT_RELEASE_HOUR_UTC,
-        minute=DEFAULT_RELEASE_MINUTE_UTC,
+        hour=DEFAULT_RELEASE_HOUR_LOCAL,
+        minute=DEFAULT_RELEASE_MINUTE_LOCAL,
         second=0,
         microsecond=0,
-        tzinfo=timezone.utc,
-    )
+        tzinfo=RELEASE_TIME_ZONE,
+    ).astimezone(timezone.utc)
 
 
 def format_elapsed_text(release_dt, now_dt=None):
@@ -1642,8 +1644,8 @@ def parse_args():
     parser.add_argument(
         "--release-date",
         help=(
-            "Use a specific UTC release date for generated lessons, in YYYY-MM-DD "
-            "format. The release time is 06:15 UTC (01:15 fixed EST)."
+            "Use a specific New York release date for generated lessons, in YYYY-MM-DD "
+            "format. The release time is 00:30 America/New_York."
         ),
     )
     parser.add_argument(
@@ -1663,7 +1665,8 @@ def main():
         )
     if args.refresh_pages:
         from lesson_retention import prune_expired_lessons, summary
-        retention = prune_expired_lessons(Path.cwd())
+        retention_date = date.fromisoformat(args.release_date) if args.release_date else None
+        retention = prune_expired_lessons(Path.cwd(), retention_date)
         print(summary(retention))
         for warning in retention["warnings"]:
             print(f"Warning: {warning}")

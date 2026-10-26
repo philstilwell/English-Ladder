@@ -141,7 +141,7 @@ class LessonRetentionTests(unittest.TestCase):
         self.assertIn('href="stories/city-trees/beginner.html"', home)
 
     def test_new_release_time_and_legacy_explicit_publication_times(self):
-        expected = datetime(2026, 9, 22, 6, 15, tzinfo=timezone.utc)
+        expected = datetime(2026, 9, 22, 4, 30, tzinfo=timezone.utc)
         self.assertEqual(expected, update_site.release_datetime_from_date("2026-09-22"))
         self.assertEqual(expected, update_site.fallback_release_datetime("September 22, 2026"))
         old = {"release_date": "2026-09-21", "release_iso": "2026-09-21T10:00:00Z"}

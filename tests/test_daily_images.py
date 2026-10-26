@@ -184,15 +184,16 @@ class DailyImageTests(unittest.TestCase):
         self.assertTrue(discover_mismatches("https://example.com", self.root, Mock(return_value=stale)))
 
     def test_push_refresh_never_calls_an_image_or_text_model(self):
-        args = SimpleNamespace(refresh_feature=False, refresh_pages=True)
+        args = SimpleNamespace(refresh_feature=False, refresh_pages=True, release_date="2026-10-26")
         with patch.object(update_site, "parse_args", return_value=args), \
-                patch("lesson_retention.prune_expired_lessons", return_value={"files": [], "expired_dates": [], "oldest_allowed": "2026-08-04", "as_of": "2026-09-22", "time_zone": "EST", "warnings": []}), \
+                patch("lesson_retention.prune_expired_lessons", return_value={"files": [], "expired_dates": [], "oldest_allowed": "2026-08-04", "as_of": "2026-09-22", "time_zone": "EST", "warnings": []}) as prune, \
                 patch("site_quality.rebuild_news_levels"), \
                 patch.object(update_site, "refresh_existing_pages"), \
                 patch.object(editorial, "publish_editorial_pages"), \
                 patch.object(daily_images, "ensure_daily_image") as image, \
                 patch.object(update_site, "configure_gemini") as text:
             update_site.main()
+        prune.assert_called_once_with(Path.cwd(), date(2026, 10, 26))
         image.assert_not_called()
         text.assert_not_called()
 

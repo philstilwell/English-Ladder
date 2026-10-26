@@ -1,5 +1,6 @@
 """Prove that the daily shortcut preserves incomplete-content recovery."""
 import contextlib
+from datetime import date
 import hashlib
 import io
 import json
@@ -126,6 +127,16 @@ class DailyPublicationTests(unittest.TestCase):
         probe.assert_called_once_with(self.root, DATE)
         self.assertIn(f"release_date={DATE}", output.read_text())
         self.assertIn("already_published=false", output.read_text())
+
+    def test_default_date_uses_the_new_york_cycle_resolver(self):
+        with patch.object(publication, "ROOT", self.root), \
+                patch.object(publication, "scheduled_release_date", return_value=date.fromisoformat(DATE)), \
+                patch.object(publication, "check_publication", return_value=(True, "Verified")) as probe, \
+                patch.object(publication.subprocess, "check_output", return_value="test-revision\n"), \
+                contextlib.redirect_stdout(io.StringIO()) as output:
+            self.assertEqual(0, publication.main([]))
+        probe.assert_called_once_with(self.root, DATE)
+        self.assertEqual(DATE, json.loads(output.getvalue())["release_date"])
 
 
 if __name__ == "__main__":

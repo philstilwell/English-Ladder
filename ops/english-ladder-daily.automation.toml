@@ -2,12 +2,12 @@ version = 1
 id = "english-ladder-daily-plan"
 kind = "cron"
 name = "English Ladder Daily"
-prompt = "Read .agents/skills/english-ladder-daily-producer/SKILL.md completely and follow it. Produce, recover, publish, and verify today's complete English Ladder edition. Use only ChatGPT-authenticated Codex plan sessions, retain complete existing stages, and never use a paid API fallback."
+prompt = "Read .agents/skills/english-ladder-daily-producer/SKILL.md completely and follow it. Produce, recover, publish, and verify the edition date resolved by daily_schedule.py: 22:30 and 23:30 America/New_York target the following local date, and the following 00:30 targets that same date. Use only ChatGPT-authenticated Codex plan sessions, retain complete existing stages, and never use a paid API fallback."
 status = "ACTIVE"
-rrule = "DTSTART:20261026T061500Z\nRRULE:FREQ=DAILY;BYHOUR=6,7,8;BYMINUTE=15;BYSECOND=0"
+rrule = "DTSTART;TZID=America/New_York:20261025T223000\nRRULE:FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0"
 model = "gpt-6.1-sol"
 reasoning_effort = "high"
 execution_environment = "local"
 cwds = ["/Users/philstilwell/Documents/Codex/2026-10-05/task/English-Ladder"]
 created_at = 1792941000000
-updated_at = 1792941000000
+updated_at = 1792971941000

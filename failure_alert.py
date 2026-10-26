@@ -6,7 +6,7 @@ never sends without mail configuration, and can render a report with --dry-run.
 from __future__ import annotations
 
 import argparse
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from email.message import EmailMessage
 from email.utils import format_datetime
 import json
@@ -18,7 +18,8 @@ import sys
 from urllib.error import HTTPError, URLError
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
-EST = timezone(timedelta(hours=-5), name='EST')
+from daily_schedule import TIME_ZONE
+
 FAILED = {'failure', 'timed_out', 'cancelled', 'action_required', 'startup_failure', 'stale'}
 MAX_RESPONSE_BYTES = 1024 * 1024
 MAX_FAILED_JOBS = 8
@@ -161,10 +162,10 @@ def explain_failure(detail, lesson_published=False):
 
 def build_report(env, details, warnings, now=None):
     repo, run_id, attempt = run_context(env)
-    now = now or datetime.now(EST)
+    now = now or datetime.now(TIME_ZONE)
     release_date = env.get('RELEASE_DATE', '')
     date = (release_date if re.fullmatch(r'\d{4}-\d{2}-\d{2}', release_date)
-            else now.astimezone(EST).date().isoformat())
+            else now.astimezone(TIME_ZONE).date().isoformat())
     # A successful aggregate job is not enough: require the explicit dated
     # lesson check, which cannot fall back to yesterday's archived edition.
     lesson_published = env.get('DAILY_LESSON_VERIFIED') == 'true'
@@ -179,11 +180,11 @@ def build_report(env, details, warnings, now=None):
         opening = f"The {date} daily lesson could not be verified live. Publication needs attention."
         action = ('Open the failed job to review its diagnostics. If lesson files were saved but publishing failed, '
                   'retry publication of those saved lessons rather than generating them again.')
-    subject = f'English Ladder: {category} ({date} EST)'
+    subject = f'English Ladder: {category} ({date} New York)'
     lines = [
         opening, '',
-        'A stage of the final daily attempt, scheduled for 03:15 fixed EST (UTC-5), did not complete successfully.',
-        'The scheduled attempts are 01:15, 02:15 and 03:15 fixed EST. Earlier failures do not send email.', '',
+        'A stage of the final recovery opportunity, scheduled for 00:30 America/New_York, did not complete successfully.',
+        'The scheduled opportunities are 22:30, 23:30 and 00:30 America/New_York. Earlier failures do not send email.', '',
     ]
     labels = [('MAINTENANCE_RESULT', '50-day cleanup'), ('GENERATION_RESULT', 'Lesson preparation and saving'),
               ('PUBLISHING_RESULT', 'Live website verification'),
@@ -216,7 +217,7 @@ def build_report(env, details, warnings, now=None):
     lines.extend([''] + warnings if warnings else [])
     lines.extend(['', f'View this run: https://github.com/{repo}/actions/runs/{run_id}/attempts/{attempt}',
                   '', action,
-                  'No further daily retry is scheduled until 01:15 fixed EST tomorrow.'])
+                  'No further daily opportunity is scheduled until 22:30 America/New_York.'])
     return subject, '\n'.join(lines) + '\n'
 
 
@@ -287,7 +288,7 @@ def main(argv=None, env=None):
             body = ('This is a requested test of English Ladder failure notifications.\n\n'
                     'If this email arrived, the configured sending service accepted the test.\n'
                     'This message does not mean a lesson or website update failed.\n\n'
-                    'Future failure reports are sent only when the final 03:15 fixed EST (UTC-5) daily attempt fails.\n'
+                    'Future failure reports are sent only when the final 00:30 America/New_York recovery opportunity fails.\n'
                     f'Test run: https://github.com/{repo}/actions/runs/{run_id}/attempts/{attempt}\n')
         else:
             details, warnings = collect_diagnostics(env)

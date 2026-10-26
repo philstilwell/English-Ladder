@@ -36,8 +36,9 @@ class FailureAlertTests(unittest.TestCase):
         env = {**MAIL, 'GITHUB_TOKEN': 'token-secret'}
         details, warnings = alert.collect_diagnostics(env, fetch)
         subject, body = alert.build_report(env, details, warnings, datetime(2026, 9, 23, 2, tzinfo=timezone.utc))
-        self.assertIn('2026-09-22 EST', subject)
-        self.assertIn('03:15 fixed EST', body)
+        self.assertIn('2026-09-22 New York', subject)
+        self.assertIn('00:30 America/New_York', body)
+        self.assertIn('22:30, 23:30 and 00:30', body)
         self.assertIn('could not be confirmed on the live website', body)
         self.assertIn('Wait for Cloudflare publishing', body)
         self.assertIn('Deployment timed out.', body)

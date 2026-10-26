@@ -138,10 +138,11 @@ class UpdateSiteTests(unittest.TestCase):
         self.assertEqual("May 09, 2026", date_text)
         self.assertEqual("Structured Title", title_text)
 
-    def test_release_datetime_from_date_uses_default_utc_release_time(self):
-        release_dt = update_site.release_datetime_from_date("2026-07-09")
-
-        self.assertEqual(datetime(2026, 7, 9, 6, 15, tzinfo=timezone.utc), release_dt)
+    def test_release_datetime_from_date_uses_half_past_midnight_new_york(self):
+        self.assertEqual(datetime(2026, 7, 9, 4, 30, tzinfo=timezone.utc),
+                         update_site.release_datetime_from_date("2026-07-09"))
+        self.assertEqual(datetime(2026, 1, 9, 5, 30, tzinfo=timezone.utc),
+                         update_site.release_datetime_from_date("2026-01-09"))
 
     def test_release_datetime_from_date_requires_iso_date(self):
         with self.assertRaisesRegex(ValueError, "YYYY-MM-DD"):

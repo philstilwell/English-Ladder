@@ -7,7 +7,9 @@ description: Produce, recover, publish, and verify the daily English Ladder news
 
 Run this workflow from the English-Ladder repository. It is the only automatic
 daily content producer. GitHub Actions performs offline tests and publication
-verification only. Requested starts are 06:15, 07:15, and 08:15 UTC. The Codex
+verification only. Requested starts are 22:30, 23:30, and 00:30
+`America/New_York`. The 22:30 run produces the following local date; both later
+opportunities stay pinned to that edition across midnight. The Codex
 desktop task runs in the repository's supported local environment because the
 large static archive makes a second worktree unsafe on this Mac's available
 disk space; the checkout-status check below remains mandatory.
@@ -39,7 +41,7 @@ disk space; the checkout-status check below remains mandatory.
 2. Resolve the release date with:
 
    ```bash
-   .venv/bin/python -c 'from lesson_retention import retention_date; print(retention_date().isoformat())'
+   .venv/bin/python -c 'from daily_schedule import scheduled_release_date; print(scheduled_release_date().isoformat())'
    ```
 
 3. Check whether the complete edition is already live:
@@ -63,7 +65,7 @@ disk space; the checkout-status check below remains mandatory.
    exposed unless the tool reports it explicitly. Local validators import the results. It allows at most three full
    lesson attempts per level during one scheduled run and retains resumable state
    under ignored `.daily-agent/`. A per-edition process lock makes overlapping
-   06:15/07:15/08:15 opportunities exit without duplicating model work.
+   22:30/23:30/00:30 New York opportunities exit without duplicating model work.
    Read its final JSON status. If it is `already_running` or
    `publication_pending`, exit this task immediately: do not rebuild, test,
    inspect, commit, push, or verify publication. `ready_to_publish` creates a
@@ -101,7 +103,7 @@ disk space; the checkout-status check below remains mandatory.
 
 ## Failure handling
 
-- A model or validation failure leaves state for the 07:15 or 08:15 UTC attempt.
+- A model or validation failure leaves state for the 23:30 or 00:30 New York attempt.
 - A push race requires a normal fetch/rebase and repeated local checks, not a
   force push.
 - A hosting failure after a saved commit is a publication problem; do not rerun

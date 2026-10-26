@@ -2,15 +2,16 @@
 import base64
 from datetime import datetime, timedelta, timezone
 import hashlib
-import fcntl
 import html
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock
+from zoneinfo import ZoneInfo
 
 import daily_recovery as recovery
 
@@ -143,31 +144,33 @@ class MonitorTests(unittest.TestCase):
         self.assertEqual("producer_running", self.check(
             FakeGitHub(), producer_is_active=lambda release: release == RELEASE)["status"])
 
-    def test_local_producer_lock_is_observed_without_taking_it(self):
+    def test_timestamped_activity_marker_is_observed_without_opening_lock(self):
         root = Path(self.temporary.name) / "repository"
-        lock = root / ".daily-agent" / RELEASE / "producer.lock"
-        lock.parent.mkdir(parents=True)
-        with lock.open("a") as stream:
-            fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            self.assertTrue(recovery.producer_running(root, RELEASE))
-            fcntl.flock(stream, fcntl.LOCK_UN)
-        self.assertFalse(recovery.producer_running(root, RELEASE))
+        marker = root / ".daily-agent" / RELEASE / "producer-active.json"
+        marker.parent.mkdir(parents=True)
+        marker.write_text("metadata content is deliberately not opened")
+        os.utime(marker, (NOW.timestamp(), NOW.timestamp()))
+        self.assertTrue(recovery.producer_running(root, RELEASE, NOW + timedelta(hours=5)))
+        self.assertFalse(recovery.producer_running(root, RELEASE, NOW + timedelta(hours=7)))
+        marker.unlink()
+        self.assertFalse(recovery.producer_running(root, RELEASE, NOW))
 
     def test_recent_publication_handoff_is_active_but_stale_handoff_is_not(self):
         root = Path(self.temporary.name) / "repository"
         marker = root / ".daily-agent" / RELEASE / "publication-pending.json"
         marker.parent.mkdir(parents=True)
-        marker.write_text(json.dumps({
-            "release_date": RELEASE, "created_at": NOW.isoformat(), "archive_sha256": "a" * 64,
-        }))
+        marker.write_text("metadata content is deliberately not opened")
+        os.utime(marker, (NOW.timestamp(), NOW.timestamp()))
         self.assertTrue(recovery.producer_running(root, RELEASE, NOW + timedelta(minutes=90)))
         self.assertFalse(recovery.producer_running(root, RELEASE, NOW + timedelta(hours=3)))
 
-    def test_monitor_waits_until_after_final_utc_attempt(self):
-        for utc in (datetime(2026, 10, 6, 6, 44, tzinfo=timezone.utc),
-                    datetime(2026, 12, 6, 8, 44, tzinfo=timezone.utc)):
+    def test_monitor_waits_until_one_am_new_york_after_final_attempt(self):
+        new_york = ZoneInfo("America/New_York")
+        for local in (datetime(2026, 7, 10, 22, 30, tzinfo=new_york),
+                      datetime(2026, 7, 10, 23, 30, tzinfo=new_york),
+                      datetime(2026, 7, 11, 0, 59, tzinfo=new_york)):
             github = Mock()
-            self.assertEqual("before_monitor_window", self.check(github, utc)["status"])
+            self.assertEqual("before_monitor_window", self.check(github, local)["status"])
             github.archive.assert_not_called()
 
     def test_lock_prevents_overlapping_checks(self):

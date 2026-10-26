@@ -21,6 +21,7 @@ import subprocess
 import sys
 
 import plan_daily
+from daily_schedule import scheduled_release_date
 from daily_publication import check_publication
 from vocabulary_translations import read_record, source_data
 
@@ -224,6 +225,7 @@ def recent_releases() -> list[str]:
 def producer_lock(path: Path):
     """Serialize the three scheduled opportunities without hiding a failed process."""
     path.parent.mkdir(parents=True, exist_ok=True)
+    activity = path.with_name("producer-active.json")
     with path.open("a") as stream:
         try:
             fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -231,19 +233,24 @@ def producer_lock(path: Path):
             yield False
             return
         try:
+            plan_daily.atomic_json(activity, {
+                "started_at": datetime.now(timezone.utc).isoformat(),
+                "pid": os.getpid(),
+            })
             yield True
         finally:
+            activity.unlink(missing_ok=True)
             fcntl.flock(stream, fcntl.LOCK_UN)
 
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--date", default=date.today().isoformat())
+    parser.add_argument("--date")
     parser.add_argument("--state-dir")
     parser.add_argument("--finish-publication", action="store_true",
                         help="Verify the live edition and release its publication handoff.")
     args = parser.parse_args(argv)
-    release = date.fromisoformat(args.date).isoformat()
+    release = date.fromisoformat(args.date).isoformat() if args.date else scheduled_release_date().isoformat()
     state = plan_daily.state_dir(release, args.state_dir)
     state.mkdir(parents=True, exist_ok=True)
     with producer_lock(state / "producer.lock") as acquired:

@@ -113,12 +113,12 @@ See the [25-occupation expansion review](docs/occupation-expansion-2026-09-28.md
 ## Automation
 
 - `.agents/skills/english-ladder-daily-producer/SKILL.md`
-  Defines the sole daily producer. A local Codex task requests starts at `06:15`, `07:15`, and `08:15 UTC`. It uses the supported local checkout mode because this static site is too large to duplicate safely with the Mac's current free space. It resumes recognized current-date artifacts and stops when it finds unrelated checkout changes. Later attempts resume missing stages and exit without changes when the complete edition is already live. The Mac and ChatGPT app must be awake, running, and signed in.
+  Defines the sole daily producer. A daylight-saving-aware local Codex task requests starts at `22:30`, `23:30`, and `00:30 America/New_York`. The 22:30 start targets the following New York calendar date; both recovery opportunities remain pinned to that edition across midnight. It uses the supported local checkout mode because this static site is too large to duplicate safely with the Mac's current free space. It resumes recognized current-date artifacts and stops when it finds unrelated checkout changes. Later attempts resume missing stages and exit without changes when the complete edition is already live. The Mac and ChatGPT app must be awake, running, and signed in.
 
 - `.github/workflows/cron.yml`
   Runs offline tests, audits, and deployment verification after a push. It has no schedule, model credential, lesson-generation path, translation-generation path, or image-generation path.
 
-  An [independent monitor](docs/daily-recovery.md) on Phil's Mac checks every 15 minutes. After 08:45 UTC it records `needs_attention` when the saved or public edition is missing. It never dispatches generation or changes remote state.
+  An [independent monitor](docs/daily-recovery.md) on Phil's Mac checks every 15 minutes. From 01:00 America/New_York it records `needs_attention` when the saved or public edition is missing. It never dispatches generation or changes remote state.
 
 - `plan_daily_runner.py` and `plan_daily.py`
   Rotate the BBC feeds through the existing source selector, invoke fresh ChatGPT-authenticated Codex sessions for writing and independent review, validate every imported artifact, and rebuild the three rolling level pages plus the homepage. Common model API-key variables are removed from every Codex subprocess.
@@ -151,7 +151,7 @@ Use the manual **verify_only** option to run the tests and this live check witho
 
 ### Final-attempt monitoring
 
-The final requested producer start is 08:15 UTC. From 08:45 UTC, the independent macOS monitor records `needs_attention` if today's complete saved edition, seven-language translations, or matching image is absent or has not reached the public site after its publication grace period. A held local producer lock is reported as `producer_running` instead of a false failure. The monitor is deliberately read-only: it never starts generation, repeats model calls, or dispatches a GitHub workflow. The scheduled Codex task's run record and the offline GitHub publication check provide the diagnostics.
+The production cycle starts at 22:30 New York time for the following local date. Recovery starts at 23:30 and 00:30 for that same edition. From 01:00 New York time, the independent macOS monitor records `needs_attention` if the complete saved edition, seven-language translations, or matching image is absent or has not reached the public site after its publication grace period. A held local producer lock is reported as `producer_running` instead of a false failure. The monitor is deliberately read-only: it never starts generation, repeats model calls, or dispatches a GitHub workflow. The scheduled Codex task's run record and the offline GitHub publication check provide the diagnostics.
 
 The offline workflow retains a manual **test_email** connection check for the existing Gmail SMTP configuration. It is not an automatic daily-generation trigger or failure-recovery mechanism. `python failure_alert.py --test --dry-run` previews that setup message without network calls.
 

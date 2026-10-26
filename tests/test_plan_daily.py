@@ -8,6 +8,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
 import contextlib
+from datetime import date
 import io
 
 import plan_daily
@@ -38,6 +39,20 @@ class PlanDailyTests(unittest.TestCase):
         with patch.object(plan_daily_runner.shutil, "disk_usage", return_value=usage):
             with self.assertRaisesRegex(RuntimeError, "at least 512 MiB"):
                 plan_daily_runner.verify_free_space()
+
+    def test_build_pins_cleanup_to_the_edition_date(self):
+        edition = {"levels": {level: {"lesson": {}} for level in plan_daily.LEVEL_NAMES}}
+        with patch.object(plan_daily, "load_json", return_value=edition), \
+                patch.object(plan_daily, "translation_source", return_value={}), \
+                patch.object(plan_daily, "read_record", return_value={"reviewed": True}), \
+                patch.object(plan_daily, "image_for_lesson", return_value=Path("image.webp")), \
+                patch.object(plan_daily.subprocess, "run") as run, \
+                patch.object(plan_daily, "saved_edition_status", return_value=(True, "complete")):
+            plan_daily.build_and_check("2026-10-26")
+        self.assertEqual(
+            [plan_daily.sys.executable, "update_site.py", "--refresh-pages", "--release-date", "2026-10-26"],
+            run.call_args_list[0].args[0],
+        )
 
     def test_model_modules_contain_no_api_client_or_fallback(self):
         for path in (ROOT / "plan_daily.py", ROOT / "plan_daily_runner.py"):
@@ -123,8 +138,10 @@ class PlanDailyTests(unittest.TestCase):
             path = Path(directory) / "producer.lock"
             with plan_daily_runner.producer_lock(path) as acquired:
                 self.assertTrue(acquired)
+                self.assertTrue(path.with_name("producer-active.json").is_file())
                 with plan_daily_runner.producer_lock(path) as second:
                     self.assertFalse(second)
+            self.assertFalse(path.with_name("producer-active.json").exists())
 
     def test_already_running_exits_before_preflight_or_publication(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -148,6 +165,18 @@ class PlanDailyTests(unittest.TestCase):
                     "--date", "2026-10-26", "--state-dir", str(state)])
             self.assertEqual(0, result)
             self.assertEqual("publication_pending", json.loads(output.getvalue())["status"])
+            preflight.assert_not_called()
+
+    def test_default_date_uses_the_new_york_cycle_resolver(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            plan_daily.atomic_json(plan_daily_runner.publication_marker(state), {"release_date": "2026-10-26"})
+            with patch.object(plan_daily_runner, "scheduled_release_date", return_value=date(2026, 10, 26)), \
+                    patch.object(plan_daily_runner, "verify_free_space") as preflight, \
+                    contextlib.redirect_stdout(io.StringIO()) as output:
+                result = plan_daily_runner.main(["--state-dir", str(state)])
+            self.assertEqual(0, result)
+            self.assertEqual("2026-10-26", json.loads(output.getvalue())["release_date"])
             preflight.assert_not_called()
 
     def test_publication_handoff_clears_only_after_live_verification(self):

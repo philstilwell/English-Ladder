@@ -58,7 +58,7 @@ class WorkflowPublishingTests(unittest.TestCase):
     def test_repository_skill_is_the_declared_producer(self):
         skill = (ROOT / ".agents/skills/english-ladder-daily-producer/SKILL.md").read_text()
         self.assertIn("plan_daily_runner.py", skill)
-        self.assertIn("06:15, 07:15, and 08:15 UTC", skill)
+        self.assertIn("22:30, 23:30, and 00:30", skill)
         self.assertIn("no paid api fallback", skill.lower())
         self.assertIn("node cloudflare/check-daily-publication.cjs", skill)
 
@@ -68,9 +68,10 @@ class WorkflowPublishingTests(unittest.TestCase):
         self.assertEqual("local", automation["execution_environment"])
         self.assertEqual("gpt-6.1-sol", automation["model"])
         self.assertEqual("high", automation["reasoning_effort"])
+        self.assertIn("daily_schedule.py", automation["prompt"])
         self.assertEqual(
-            "DTSTART:20261026T061500Z\n"
-            "RRULE:FREQ=DAILY;BYHOUR=6,7,8;BYMINUTE=15;BYSECOND=0",
+            "DTSTART;TZID=America/New_York:20261025T223000\n"
+            "RRULE:FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0",
             automation["rrule"],
         )
 

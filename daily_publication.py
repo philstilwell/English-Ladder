@@ -14,7 +14,7 @@ import shutil
 import subprocess
 
 from daily_images import image_for_lesson
-from lesson_retention import retention_date
+from daily_schedule import scheduled_release_date
 from vocabulary_translations import read_record, source_data
 
 ROOT = Path(__file__).resolve().parent
@@ -87,7 +87,8 @@ def main(argv=None):
     parser.add_argument("--require-published", action="store_true",
                         help="Fail without doing recovery if the edition is not verified live.")
     args = parser.parse_args(argv)
-    release_date = date.fromisoformat(args.date).isoformat() if args.date else retention_date().isoformat()
+    release_date = (date.fromisoformat(args.date).isoformat()
+                    if args.date else scheduled_release_date().isoformat())
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     # Save the target date before the network check, including on a failed probe.
     output = os.environ.get("GITHUB_OUTPUT")

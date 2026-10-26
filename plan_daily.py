@@ -298,7 +298,8 @@ def build_and_check(release_date: str) -> None:
             raise ValueError(f"Reviewed translations are missing for {release_date}/{name}.")
     if image_for_lesson(edition, ROOT) is None:
         raise ValueError(f"The validated illustration is missing for {release_date}.")
-    subprocess.run([sys.executable, "update_site.py", "--refresh-pages"], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, "update_site.py", "--refresh-pages", "--release-date", release_date],
+                   cwd=ROOT, check=True)
     subprocess.run([sys.executable, "audit_site.py"], cwd=ROOT, check=True)
     for pattern in ("test_quality.py", "test_daily_publication.py",
                     "test_vocabulary_translations.py", "test_daily_images.py"):

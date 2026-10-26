@@ -18,9 +18,12 @@ from logging.handlers import RotatingFileHandler
 from html.parser import HTMLParser
 import os
 from pathlib import Path
+import stat
 import subprocess
 import tempfile
 from urllib.parse import urlencode
+
+from daily_schedule import monitoring_ready, scheduled_release_date
 
 REPOSITORY = "philstilwell/English-Ladder"
 WORKFLOW = "cron.yml"
@@ -28,8 +31,7 @@ LEVELS = {"beginner": 6, "intermediate": 8, "advanced": 10}
 LANGUAGES = ("ja", "ko", "zh-Hans", "es", "pt-BR", "fr", "de")
 PUBLISHING_GRACE = timedelta(minutes=30)
 PUBLICATION_HANDOFF_GRACE = timedelta(hours=2)
-MONITOR_HOUR_UTC = 8
-MONITOR_MINUTE_UTC = 45
+PRODUCER_ACTIVE_GRACE = timedelta(hours=6)
 DEFAULT_STATE_DIR = Path.home() / "Documents/Codex/English-Ladder-daily-recovery/state"
 
 
@@ -217,38 +219,31 @@ def published(body, release, now, fetch=public_file):
     return True
 
 
+def recent_marker(path, now, grace):
+    """Inspect only marker metadata so a background timer never opens producer files."""
+    try:
+        metadata = path.stat()
+    except FileNotFoundError:
+        return False
+    except OSError as error:
+        raise ServiceUnavailable("The local producer state could not be checked safely.") from error
+    if not stat.S_ISREG(metadata.st_mode):
+        raise ServiceUnavailable("The local producer state is not a regular file.")
+    current = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    modified = datetime.fromtimestamp(metadata.st_mtime, timezone.utc)
+    age = current - modified
+    if age < -timedelta(minutes=5):
+        raise ServiceUnavailable("The local producer state has an invalid timestamp.")
+    return age <= grace
+
+
 def producer_running(root, release, now=None):
-    """Read the producer lock/handoff without creating state or signalling work."""
+    """Observe timestamped activity/handoff markers without taking the producer lock."""
     if root is None:
         return False
     state = Path(root) / ".daily-agent" / release
-    marker = state / "publication-pending.json"
-    if marker.is_file():
-        try:
-            record = json.loads(marker.read_text())
-            created = datetime.fromisoformat(record["created_at"])
-            current = now or datetime.now(timezone.utc)
-            age = current.astimezone(timezone.utc) - created.astimezone(timezone.utc)
-            if record["release_date"] != release or age < -timedelta(minutes=5):
-                raise ValueError()
-            if age <= PUBLICATION_HANDOFF_GRACE:
-                return True
-        except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:
-            raise ServiceUnavailable("The local publication handoff is unreadable.") from error
-    path = state / "producer.lock"
-    if not path.is_file():
-        return False
-    try:
-        with path.open("r") as stream:
-            try:
-                fcntl.flock(stream, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            except BlockingIOError:
-                return True
-            else:
-                fcntl.flock(stream, fcntl.LOCK_UN)
-                return False
-    except OSError as error:
-        raise ServiceUnavailable("The local producer state could not be checked safely.") from error
+    return (recent_marker(state / "producer-active.json", now, PRODUCER_ACTIVE_GRACE)
+            or recent_marker(state / "publication-pending.json", now, PUBLICATION_HANDOFF_GRACE))
 
 
 def read_state(path, release):
@@ -289,12 +284,11 @@ def save_state(path, state):
 def check(now, github, state_path, apply=False, fetch=public_file, producer_is_active=None):
     if now.tzinfo is None:
         raise ValueError("The recovery clock must have a time zone.")
-    utc = now.astimezone(timezone.utc)
-    release = utc.date().isoformat()
+    release = scheduled_release_date(now).isoformat()
     result = {"release_date": release, "checked_at": now.isoformat(), "apply": apply}
-    # The three producer attempts are 06:15, 07:15 and 08:15 UTC. Wait thirty
-    # minutes after the final requested start before declaring attention needed.
-    if (utc.hour, utc.minute) < (MONITOR_HOUR_UTC, MONITOR_MINUTE_UTC):
+    # The cycle starts at 22:30 New York time for the following date. Recovery
+    # starts at 23:30 and 00:30; wait until 01:00 before requiring completion.
+    if not monitoring_ready(now):
         return {**result, "status": "before_monitor_window"}
     state = read_state(state_path, release)
     body = github.archive(release)

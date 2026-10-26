@@ -1,7 +1,9 @@
 # Independent daily monitor
 
 The local scheduled Codex task is the only automatic producer. It requests starts
-at 06:15, 07:15, and 08:15 UTC every day. Each attempt follows
+at 22:30, 23:30, and 00:30 America/New_York every day. The first start targets
+the following local date, and the two recovery starts remain pinned to that
+edition across midnight. Each attempt follows
 `.agents/skills/english-ladder-daily-producer/SKILL.md`, resumes missing stages,
 and exits without model work when the complete edition is already live. It uses
 the supported local checkout mode, resumes recognized current-date producer
@@ -9,8 +11,9 @@ artifacts, and stops on unrelated checkout changes or low disk space. The Mac
 must be on, awake, connected, and signed in to ChatGPT through the Codex app.
 
 A separate macOS timer runs `daily_recovery.py` every 15 minutes and at login.
-It is a read-only monitor, not a second producer. Before 08:45 UTC it records that
-the production window is still open. After that time it checks:
+It is a read-only monitor, not a second producer. From 22:30 through 00:59 New
+York time it records that the production window is still open. From 01:00 until
+the next 22:30 cycle it checks:
 
 - today's date-specific archive on GitHub;
 - all three reviewed levels and their minimum reading, vocabulary, and quiz data;
@@ -23,7 +26,10 @@ the production window is still open. After that time it checks:
 Missing, partial, unreadable, or stale state is reported as `needs_attention`.
 An edition still being produced or in its bounded publication handoff is reported
 as `producer_running`, not a false failure. A handoff older than two hours no
-longer suppresses `needs_attention`.
+longer suppresses `needs_attention`. The producer keeps its advisory process lock
+and also exposes short-lived timestamped activity metadata; the background timer
+uses only file metadata so macOS does not need to grant it access to open producer
+artifacts in Documents.
 The monitor never dispatches a workflow, starts generation, repeats a model call,
 changes a schedule, or mutates GitHub. Network uncertainty is reported rather
 than treated as proof that an edition is missing.

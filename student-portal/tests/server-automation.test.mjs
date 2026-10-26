@@ -467,9 +467,9 @@ test('an approved recovery grant permits only one extra attempt for one job on o
 });
 
 
-test('ignoring an unmatched session preserves its source, survives duplicate events, and never generates content',async()=>{
+for (const status of ['needs_attention', 'pending']) test(`ignoring an unmatched ${status} session preserves its source, survives duplicate events, and never generates content`,async()=>{
   const {object,storage,env}=coordinator(),id=await hash(event.payload.object.note_id),key='job:'+id;
-  await storage.put({oauth:{userId:'owner-1',accountId:'account-1'},[key]:{noteId:event.payload.object.note_id,meetingId:'meeting-123',status:'needs_attention',lastError:'student_not_matched',tries:0}});
+  await storage.put({oauth:{userId:'owner-1',accountId:'account-1'},[key]:{noteId:event.payload.object.note_id,meetingId:'meeting-123',status,lastError:'student_not_matched',tries:0}});
   const ignore=()=>object.fetch(new Request('https://automation.internal/ignore',{method:'POST',body:JSON.stringify({id})}));
   await storage.put({'run-lock':{until:Date.now()+10000}});assert.equal((await ignore()).status,409);await storage.delete('run-lock');
   assert.equal((await ignore()).status,200);assert.equal((await ignore()).status,200);
@@ -478,7 +478,23 @@ test('ignoring an unmatched session preserves its source, survives duplicate eve
   object.discover=async()=>{};object.accessToken=async()=>{};object.reviewCefr=async()=>{};
   object.process=async()=>assert.fail('Ignored sessions must never generate');await object.run();
   assert.equal((await storage.get(key)).status,'ignored');
-  const status=await(await object.fetch(new Request('https://automation.internal/admin-status'))).json();assert.equal(status.needsAttention,0);assert.equal(status.problems.length,0);
+  const overview=await(await object.fetch(new Request('https://automation.internal/admin-status'))).json();assert.equal(overview.needsAttention,0);assert.equal(overview.problems.length,0);
+});
+
+test('ignore rejects matched, completed, skipped, and other failed sessions without changing them', async () => {
+  const { object, storage } = coordinator(), id = 'a'.repeat(64), key = 'job:' + id;
+  const unmatched = { noteId: 'fictional-note', status: 'pending', lastError: 'student_not_matched' };
+  for (const job of [
+    { ...unmatched, studentId: 'ab26' },
+    { ...unmatched, status: 'published' },
+    { ...unmatched, status: 'skipped' },
+    { ...unmatched, lastError: 'transcript_unusable' },
+  ]) {
+    await storage.put({ [key]: job });
+    const response = await object.fetch(new Request('https://automation.internal/ignore', { method: 'POST', body: JSON.stringify({ id }) }));
+    assert.equal(response.status, 409);
+    assert.deepEqual(await storage.get(key), job);
+  }
 });
 
 

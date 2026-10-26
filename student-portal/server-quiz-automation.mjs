@@ -476,7 +476,7 @@ export class QuizAutomation {
       if ((await txn.get('run-lock'))?.until > Date.now()) return json({ error: 'An update is running. Please wait until it finishes.' }, 409);
       const key = 'job:' + id, job = await txn.get(key);
       if (job?.status === 'ignored') return json({ ok: true });
-      if (!job || job.studentId || job.status !== 'needs_attention' || job.lastError !== 'student_not_matched') return json({ error: 'Only an unmatched session can be ignored here.' }, 409);
+      if (!job || job.studentId || !['needs_attention', 'pending'].includes(job.status) || job.lastError !== 'student_not_matched') return json({ error: 'Only an unmatched session can be ignored here.' }, 409);
       await txn.put({ [key]: { ...job, status: 'ignored', ignoredAt: new Date().toISOString() } });
       return json({ ok: true });
     });

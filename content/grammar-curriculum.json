@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-25",
+  "revision": "2026-10-27",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -6062,6 +6062,131 @@
         "https://www.merriam-webster.com/grammar/fewer-vs-less",
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/quantifiers",
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/count-nouns"
+      ]
+    },
+    {
+      "number": 53,
+      "title": "Leaves or leave? Matching subjects and verbs",
+      "level": "A1–A2",
+      "category": "Verbs and sentences",
+      "goal": "Choose the correct verb form in present-simple statements by matching it to the subject.",
+      "rules": [
+        "In present-simple statements, a singular subject that could be replaced by he, she, or it usually takes a verb ending in -s: “The train leaves at six”; “The shop opens early.” This matching is called subject–verb agreement. Use the present simple for habits, general facts, and regular schedules. These examples describe a timetable and a usual opening time.",
+        "With a plural subject, use the base form: “The trains leave at six”; “The shops open early.” The base form is the plain verb, such as leave or open. A plural noun may end in -s, but its present-simple verb does not take the he/she/it ending. I, you, we, and they also take the base form: “I leave early”; “You work here.” This is true even when I or you refers to just one person.",
+        "Check the spelling: work becomes works; watch becomes watches; study becomes studies. Have becomes has with he, she, or it. Be has its own forms: I am, you/we/they are, and he/she/it is. After a modal verb such as can, use the base form: “She can swim.” This lesson focuses on affirmative statements with ordinary verbs. For do/does questions and don't/doesn't negatives, use the related lessons."
+      ],
+      "cards": [
+        {
+          "label": "ONE TRAIN: IT LEAVES",
+          "example": "The train leaves at six. The shop opens early.",
+          "note": "Train and shop are singular here. Each can be replaced by it, so leaves and opens have the -s ending."
+        },
+        {
+          "label": "TWO TRAINS: THEY LEAVE",
+          "example": "The trains leave at six. The shops open early.",
+          "note": "Trains and shops are plural here. Each can be replaced by they. Use leave and open without the he/she/it ending."
+        },
+        {
+          "label": "CHECK THE SUBJECT AND THE SPELLING",
+          "example": "I work. You work. She works. He watches. They study.",
+          "note": "I and you take the base form even when referring to one person. Some he/she/it forms need -es or a spelling change: watches, studies."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Complete this statement about one shop's usual opening time: “The shop ___ at nine.”",
+          "options": [
+            {
+              "text": "open",
+              "correct": false,
+              "feedback": "The subject is one shop, so it matches it. Use the he/she/it form opens."
+            },
+            {
+              "text": "opens",
+              "correct": true,
+              "feedback": "One shop can be replaced by it. In this present-simple statement, the verb takes -s: opens."
+            },
+            {
+              "text": "opening",
+              "correct": false,
+              "feedback": "Opening cannot stand alone as the verb in this statement. The present-simple form is opens."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete this statement about two trains' regular schedule: “Both trains ___ at six.”",
+          "options": [
+            {
+              "text": "leave",
+              "correct": true,
+              "feedback": "The subject “both trains” is plural, like “they”. Use the base form leave."
+            },
+            {
+              "text": "leaves",
+              "correct": false,
+              "feedback": "Leaves goes with he, she, it, or a singular noun subject. Use leave with the plural subject “both trains”."
+            },
+            {
+              "text": "leaving",
+              "correct": false,
+              "feedback": "Leaving alone does not form this present-simple statement. Use leave."
+            }
+          ]
+        },
+        {
+          "prompt": "Choose the correct present-simple statement with the subject “I”.",
+          "options": [
+            {
+              "text": "I walks to the station every day.",
+              "correct": false,
+              "feedback": "Walks is the he/she/it form. Use the base form walk after “I”."
+            },
+            {
+              "text": "I walking to the station every day.",
+              "correct": false,
+              "feedback": "Walking cannot stand alone here. For this present-simple statement, use walk."
+            },
+            {
+              "text": "I walk to the station every day.",
+              "correct": true,
+              "feedback": "The pronoun “I” takes the base form walk, even though the speaker is one person."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "One bus stops outside a station. Two other buses stop outside a school. Choose the sentence that correctly describes both regular routes.",
+        "options": [
+          {
+            "text": "One bus stop at the station, and two buses stops at the school.",
+            "correct": false,
+            "feedback": "The endings are reversed. “One bus” takes stops; “two buses” takes stop."
+          },
+          {
+            "text": "One bus stops at the station, and two buses stop at the school.",
+            "correct": true,
+            "feedback": "“One bus” matches “it”, so use stops. “Two buses” matches “they”, so use the base form stop."
+          },
+          {
+            "text": "One bus stops at the station, and two buses stops at the school.",
+            "correct": false,
+            "feedback": "The first verb is right. Change the second verb to stop because the subject “two buses” is plural."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-53-leaves-or-leave-student-workbook.pdf",
+        "concept-53-leaves-or-leave-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-27",
+      "related": [
+        47,
+        51,
+        46
+      ],
+      "sources": [
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/present-simple"
       ]
     }
   ],

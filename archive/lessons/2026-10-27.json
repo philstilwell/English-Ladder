@@ -1,0 +1,787 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-27",
+  "release_iso": "2026-10-27T04:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Entertainment & Arts",
+    "feed_url": "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
+    "category": "culture",
+    "published_at": "Mon, 26 Oct 2026 22:07:26 GMT",
+    "retrieved_at": "2026-10-27T02:35:25.210179+00:00",
+    "title": "Busted's James Bourne says 'hero' brother saved his life with kidney donation",
+    "summary": "The guitarist says doctors had given him \"a few years left to live\", but is now recovering well.",
+    "evidence_text": "The guitarist, 43, dropped out of an arena tour featuring his band and fellow punk-pop favourites McFly in September 2025, just a day before it began.\nHe blamed health problems and was replaced by his younger brother Chris.\n\"My condition was serious and the doctors told me I had a few years left to live.\n\"I'm happy to share now that my youngest brother, Chris, who stepped in for me on tour last year, has saved my life yet again. This time quite literally by donating me one of his kidneys.\"\n\"I'm still going to need some time, but I wanted you to know that we're both recovering from surgery just fine. My brother is a hero.\"\nBusted star James Bourne has said his brother \"saved my life\" by donating a kidney, after doctors had given him \"a few years left to live\".\nJames later said he needed major surgery to \"extend my life\", and has now thanked his \"hero\" Chris and said they are both recovering from their transplant operations.\nJames continued: \"I can't believe how much better I'm starting to feel already.\nBourne has not given any more details of his condition.\nThey scored four number one singles in the UK before splitting up in 2005. In 2013, Bourne and Willis teamed up with McFly to make McBusted, before Simpson rejoined Busted for a full reunion in 2015.\nChris posted his own message on X saying simply: \"We did it brother.\"\nThe guitarist, vocalist and songwriter shot to fame with Charlie Simpson and Matt Willis in Busted in the early 2000s, and the trio had hits including What I Go To School For, Year 3000 and Crashed the Wedding.\nBourne has written songs for McFly and 5 Seconds of Summer, and also fronted his own band, Son of Dork. He recently released the music from his stage musical Murder at the Gates.",
+    "evidence_retrieved_at": "2026-10-27T02:35:25.210179+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cm0rljq0dzvxo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why does James call Chris a hero? Use \"Chris is a hero because ...\".",
+          "How can you help a friend who is ill? You can imagine a friend. Use \"I can help by ...\"."
+        ],
+        "title": "James Bourne Says His Brother Saved His Life",
+        "overview": "James Bourne is getting better after his brother gave him a kidney.",
+        "topic": "Health and family",
+        "vocabulary": [
+          {
+            "term": "band",
+            "part_of_speech": "noun",
+            "definition": "A group of people who play music together."
+          },
+          {
+            "term": "tour",
+            "part_of_speech": "noun",
+            "definition": "A journey to play music for people in different places."
+          },
+          {
+            "term": "health problems",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Things that are wrong with your body and make you ill."
+          },
+          {
+            "term": "in his place",
+            "part_of_speech": "phrase",
+            "definition": "Doing something that he usually does."
+          },
+          {
+            "term": "kidneys",
+            "part_of_speech": "plural noun",
+            "definition": "Parts inside the body that clean the blood."
+          },
+          {
+            "term": "getting better",
+            "part_of_speech": "verb phrase",
+            "definition": "Becoming less ill."
+          },
+          {
+            "term": "hero",
+            "part_of_speech": "noun",
+            "definition": "Someone who helps others in a very important way."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past",
+          "explanation": "Use the simple past for a finished action: \"His younger brother Chris played in his place.\" Here, \"played\" is the past form of \"play\". Many past forms end in \"-ed\".",
+          "example_quote": "His younger brother Chris played in his place."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about James Bourne?",
+            "options": [
+              "He started a new band.",
+              "His brother gave him a kidney.",
+              "He finished a music tour."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not say James started a new band.",
+              "Chris gave James one of his kidneys to save his life.",
+              "James left the tour just before it began."
+            ]
+          },
+          {
+            "question": "Why did James say he left the tour?",
+            "options": [
+              "He had health problems.",
+              "He wanted to stop playing music.",
+              "He wanted to join another band."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "James said he left because he had health problems.",
+              "The reading does not say he wanted to stop playing music.",
+              "The reading does not say he wanted to join another band."
+            ]
+          },
+          {
+            "question": "What did doctors tell James?",
+            "options": [
+              "He could return to the tour immediately.",
+              "He did not have any health problems.",
+              "He had only a few years left to live."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading does not say doctors told him to return immediately.",
+              "James had health problems.",
+              "James said doctors told him he had only a few years left to live."
+            ]
+          },
+          {
+            "question": "What does James say about himself and Chris now?",
+            "options": [
+              "They are both getting better.",
+              "They are both playing on tour.",
+              "They are both feeling worse."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "James says he and Chris are both getting better.",
+              "The reading does not say they are both playing on tour now.",
+              "James says they are getting better, so this answer does not match."
+            ]
+          },
+          {
+            "question": "What does \"tour\" mean in this story?",
+            "options": [
+              "A place where doctors help people.",
+              "A journey to play music in different places.",
+              "A group of people who play music."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A \"tour\" here is a journey for music shows.",
+              "A \"tour\" takes musicians to different places to play.",
+              "A group that plays music is a \"band\"."
+            ]
+          },
+          {
+            "question": "What does \"in his place\" tell us about Chris?",
+            "options": [
+              "He played at James's home.",
+              "He watched James play.",
+              "He played instead of James."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Here, \"in his place\" describes who did James's work, not a home.",
+              "\"In his place\" means Chris played; it does not mean he watched.",
+              "Chris did the playing that James usually did."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past to describe Chris's help?",
+            "options": [
+              "Chris helps his brother.",
+              "Chris helped his brother.",
+              "Chris is helping his brother."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Helps\" is the simple present. The question asks for the simple past.",
+              "\"Helped\" is the simple past of \"help\" and describes a finished action.",
+              "\"Is helping\" describes an action happening now. The question asks for the simple past."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "James Bourne plays guitar in the band Busted.",
+          "In September 2025, he left a tour just before it began.",
+          "He said he left because he had health problems.",
+          "His younger brother Chris played in his place.",
+          "Doctors told James that he had only a few years left to live.",
+          "Chris later gave James one of his kidneys to save his life.",
+          "James says he and Chris are both getting better.",
+          "James still needs more time to get well.",
+          "He calls his brother a hero."
+        ],
+        "sentence_evidence": [
+          "The guitarist, 43, dropped out of an arena tour featuring his band and fellow punk-pop favourites McFly in September 2025, just a day before it began.",
+          "The guitarist, 43, dropped out of an arena tour featuring his band and fellow punk-pop favourites McFly in September 2025, just a day before it began.",
+          "He blamed health problems and was replaced by his younger brother Chris.",
+          "He blamed health problems and was replaced by his younger brother Chris.",
+          "\"My condition was serious and the doctors told me I had a few years left to live.",
+          "\"I'm happy to share now that my youngest brother, Chris, who stepped in for me on tour last year, has saved my life yet again. This time quite literally by donating me one of his kidneys.\"",
+          "\"I'm still going to need some time, but I wanted you to know that we're both recovering from surgery just fine. My brother is a hero.\"",
+          "\"I'm still going to need some time, but I wanted you to know that we're both recovering from surgery just fine. My brother is a hero.\"",
+          "\"I'm still going to need some time, but I wanted you to know that we're both recovering from surgery just fine. My brother is a hero.\""
+        ],
+        "editorial_check": {
+          "date": "2026-10-27T02:37:59.450807+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Seven useful targets occur in the reading. “Band” and “tour” suit beginners; “kidneys” has a simple contextual definition."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and everyday expressions such as “getting better” suit adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences, clear definitions, and the exact “played” example explain the simple past accessibly. Discussion prompts include sentence frames and an imagined situation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct questions test the main news, stated details, contextual meanings, and simple past grammar, with one clear answer each."
+            }
+          },
+          "content_digest": "2dbef6f585c6ef3455da57f5f7498125810f41e26de2a09aa44ace3229f151fe"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "How did Chris support James in two different ways, and why might both kinds of help matter?",
+          "What could a music group do to support a member who needs a long recovery?"
+        ],
+        "title": "James Bourne Says His Brother Saved His Life",
+        "overview": "Learn how James Bourne’s brother supported him during serious health problems and donated a kidney to help him live longer.",
+        "topic": "Health and family support",
+        "vocabulary": [
+          {
+            "term": "donating",
+            "part_of_speech": "verb, -ing form",
+            "definition": "Giving something, such as a part of your body, to help another person."
+          },
+          {
+            "term": "condition",
+            "part_of_speech": "noun",
+            "definition": "A health problem or illness affecting someone."
+          },
+          {
+            "term": "withdrew",
+            "part_of_speech": "verb, past tense",
+            "definition": "Decided not to take part in a planned activity."
+          },
+          {
+            "term": "replaced",
+            "part_of_speech": "verb, past tense",
+            "definition": "Took another person’s role or position."
+          },
+          {
+            "term": "major",
+            "part_of_speech": "adjective",
+            "definition": "Serious or involving a lot of medical treatment, when describing an operation."
+          },
+          {
+            "term": "recovering",
+            "part_of_speech": "verb, -ing form",
+            "definition": "Becoming healthy again after an illness or operation."
+          },
+          {
+            "term": "further details",
+            "part_of_speech": "plural noun phrase",
+            "definition": "More specific information about something."
+          },
+          {
+            "term": "reunited",
+            "part_of_speech": "verb, past tense",
+            "definition": "Came together again after a period apart."
+          }
+        ],
+        "grammar": {
+          "concept": "Relative clauses that add extra information",
+          "explanation": "Use a relative clause with \"who\" to add information about a person. When the person is already clearly identified, put commas around the extra information. In the example, \"who had already taken his place on tour\" adds information about Chris. The main message remains complete without this clause.",
+          "example_quote": "Chris, who had already taken his place on tour, then donated one of his kidneys to James."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news in the reading?",
+            "options": [
+              "James has announced a new Busted tour.",
+              "James says his brother saved his life through a kidney donation.",
+              "James has explained how he wrote Busted’s biggest songs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes James leaving a tour, but it does not announce a new one.",
+              "Correct. James says his brother saved his life by donating a kidney.",
+              "The reading mentions Busted’s success but does not explain how James wrote songs."
+            ]
+          },
+          {
+            "question": "What had doctors told James about his health?",
+            "options": [
+              "His condition was serious, and he had only a few years left to live.",
+              "His condition would disappear without treatment.",
+              "He would be fully healthy before the tour began."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. James reported this warning from his doctors.",
+              "The reading does not say doctors expected his condition to disappear without treatment.",
+              "The reading does not report this prediction about his health."
+            ]
+          },
+          {
+            "question": "When did James withdraw from the tour with Busted and McFly?",
+            "options": [
+              "After the first month of performances.",
+              "On the day of the final performance.",
+              "One day before the tour began."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says James left before the tour began.",
+              "James left before the beginning of the tour, rather than at its end.",
+              "Correct. He withdrew just one day before the tour began in September 2025."
+            ]
+          },
+          {
+            "question": "Which statement best connects Chris’s two forms of support?",
+            "options": [
+              "He wrote songs for James and arranged a reunion.",
+              "He replaced James on tour and later donated a kidney.",
+              "He gave James medical advice and cancelled the tour."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not say Chris wrote songs or arranged a reunion.",
+              "Correct. Chris first took James’s place on tour and later donated a kidney.",
+              "The reading does not say Chris gave medical advice or cancelled the tour."
+            ]
+          },
+          {
+            "question": "Which statement accurately describes James’s recovery?",
+            "options": [
+              "He felt better but still needed more time to recover.",
+              "He said his recovery was complete.",
+              "He said he had noticed no improvement."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. James noticed improvement while explaining that he still needed time.",
+              "Feeling better does not mean recovery is complete, and James said he needed more time.",
+              "James said he was surprised by how much better he was beginning to feel."
+            ]
+          },
+          {
+            "question": "What information about James’s illness is missing from the reading?",
+            "options": [
+              "Whether doctors considered it serious.",
+              "Whether James needed an operation.",
+              "The exact medical condition he has."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says doctors warned James that his condition was serious.",
+              "The reading says James needed major surgery.",
+              "Correct. The reading describes his condition as serious but does not name the illness."
+            ]
+          },
+          {
+            "question": "What does \"withdrew\" mean in the sentence about the tour?",
+            "options": [
+              "Decided not to take part.",
+              "Agreed to perform more often.",
+              "Changed the name of the event."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Withdrew\" means James decided not to take part in the planned tour.",
+              "\"Withdrew\" describes leaving a planned activity, rather than adding performances.",
+              "\"Withdrew\" concerns James’s participation, rather than the event’s name."
+            ]
+          },
+          {
+            "question": "What does \"reunited\" tell us about Busted in 2015?",
+            "options": [
+              "The group became successful for the first time.",
+              "The full group came together again after being apart.",
+              "The group decided to stop performing together."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Reunited\" describes coming together again, and the reading mentions earlier success.",
+              "Correct. \"Reunited\" means the full group came together again.",
+              "\"Reunited\" describes the group returning, while \"splitting up\" describes separating."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses \"who\" and two commas to add extra information about Leila, following the example about Chris?",
+            "options": [
+              "Leila, which helped her brother, received a thank-you message.",
+              "Leila, who supported her sister received a thank-you message.",
+              "Leila, who helped her brother, received a thank-you message."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Use \"who\" for a person in this relative clause; \"which\" is not suitable here.",
+              "The extra information needs a closing comma after \"sister\".",
+              "Correct. \"Who\" refers to Leila, and two commas separate the extra information."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Busted star James Bourne says his brother saved his life by donating a kidney.",
+          "Doctors had warned him that his condition was serious and that he had only a few years left to live.",
+          "In September 2025, the guitarist withdrew from a tour with Busted and McFly just one day before it began.",
+          "Because of James’s health problems, his younger brother Chris replaced him.",
+          "James later explained that he needed major surgery, meaning a serious medical operation, to help him live longer.",
+          "Chris, who had already taken his place on tour, then donated one of his kidneys to James.",
+          "James has now thanked Chris and reported that both brothers are recovering after their operations.",
+          "James said he was surprised by how much better he was already beginning to feel.",
+          "However, he explained that he still needed more time to recover fully.",
+          "He has not shared further details about his condition.",
+          "Busted had four UK number one singles before splitting up in 2005, and the full group reunited in 2015."
+        ],
+        "sentence_evidence": [
+          "Busted star James Bourne has said his brother \"saved my life\" by donating a kidney, after doctors had given him \"a few years left to live\".",
+          "\"My condition was serious and the doctors told me I had a few years left to live.",
+          "The guitarist, 43, dropped out of an arena tour featuring his band and fellow punk-pop favourites McFly in September 2025, just a day before it began.",
+          "He blamed health problems and was replaced by his younger brother Chris.",
+          "James later said he needed major surgery to \"extend my life\", and has now thanked his \"hero\" Chris and said they are both recovering from their transplant operations.",
+          "\"I'm happy to share now that my youngest brother, Chris, who stepped in for me on tour last year, has saved my life yet again. This time quite literally by donating me one of his kidneys.\"",
+          "James later said he needed major surgery to \"extend my life\", and has now thanked his \"hero\" Chris and said they are both recovering from their transplant operations.",
+          "James continued: \"I can't believe how much better I'm starting to feel already.",
+          "\"I'm still going to need some time, but I wanted you to know that we're both recovering from surgery just fine. My brother is a hero.\"",
+          "Bourne has not given any more details of his condition.",
+          "They scored four number one singles in the UK before splitting up in 2005. In 2013, Bourne and Willis teamed up with McFly to make McBusted, before Simpson rejoined Busted for a full reunion in 2015."
+        ],
+        "editorial_check": {
+          "date": "2026-10-27T02:50:44.691342+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight useful targets, including “withdrew,” “recovering” and “further details,” have clear contextual definitions and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses neutral reporting, preserves James’s attribution and discusses illness without sensationalism."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and feedback are clear. The relative-clause explanation accurately describes the exact News Brief quotation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct questions cover comprehension, relationships between details, contextual vocabulary and a fresh application of the taught grammar."
+            }
+          },
+          "content_digest": "d83da14b41d33badc6a488a1abd8db241c868edd19906672eec81679b6d44fe0"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "How does Bourne balance optimism about his recovery with recognition that he still needs time?",
+          "When public figures discuss serious illness, how should news reports balance public interest with personal privacy?"
+        ],
+        "title": "James Bourne Says Brother's Kidney Donation Saved His Life",
+        "overview": "James Bourne credits his brother with a lifesaving kidney donation while acknowledging that recovery will take time.",
+        "topic": "Health, family support and public disclosure",
+        "vocabulary": [
+          {
+            "term": "credited",
+            "part_of_speech": "verb, past participle",
+            "definition": "Publicly identified someone as responsible for a positive outcome; the pattern “credit someone with doing something” assigns recognition."
+          },
+          {
+            "term": "prognosis",
+            "part_of_speech": "countable noun",
+            "definition": "A medical assessment of how an illness is likely to develop, including the prospects for survival or improvement."
+          },
+          {
+            "term": "on the eve of",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Immediately before an important event; here, specifically the day before the performances began."
+          },
+          {
+            "term": "attributed",
+            "part_of_speech": "verb, past simple",
+            "definition": "Identified something as the cause of an event; “attribute something to something” reports a causal explanation."
+          },
+          {
+            "term": "extend his life",
+            "part_of_speech": "verb phrase",
+            "definition": "Enable him to live longer than he otherwise might; the expression does not itself imply a complete cure."
+          },
+          {
+            "term": "tempered",
+            "part_of_speech": "verb, past simple",
+            "definition": "Made a statement or impression less absolute by adding a balancing qualification."
+          },
+          {
+            "term": "disclosed",
+            "part_of_speech": "verb, past participle",
+            "definition": "Made previously private information known; this relatively formal verb often concerns sensitive or confidential matters."
+          },
+          {
+            "term": "rose to prominence",
+            "part_of_speech": "verb phrase, past simple",
+            "definition": "Became widely known and attracted substantial public attention within a particular field."
+          },
+          {
+            "term": "disbanded",
+            "part_of_speech": "verb, past simple",
+            "definition": "Stopped operating together as an established group, without necessarily ruling out a later return."
+          },
+          {
+            "term": "fronted",
+            "part_of_speech": "verb, past simple",
+            "definition": "Served as the lead performer or principal public presence of a musical group, rather than merely writing material for it."
+          }
+        ],
+        "grammar": {
+          "concept": "Concessive clauses with “although”",
+          "explanation": "“Although” introduces information that might lead readers to expect a different main-clause message: positive recovery might suggest that little further time is needed, yet Bourne qualifies that impression. The concessive relationship presents both statements as compatible while highlighting the tension between them.",
+          "example_quote": "Although Bourne said both brothers were recovering well after surgery, he tempered this positive account by acknowledging that he still needed time."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the central development and its qualification?",
+            "options": [
+              "Bourne credits his brother's donation with saving his life while recognising that recovery requires more time.",
+              "Bourne announces that surgery has completed his recovery and confirms his immediate return to performing.",
+              "Bourne reveals his precise diagnosis while explaining why his brother could replace him professionally."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading combines Bourne's account of the donation's significance with his acknowledgement that he still needs time.",
+              "The reading reports encouraging recovery, but neither completed recovery nor an immediate return is established.",
+              "The reading explicitly states that Bourne has not disclosed the precise nature of his illness."
+            ]
+          },
+          {
+            "question": "What distinction should readers preserve when interpreting the doctors' reported “prognosis”?",
+            "options": [
+              "It identifies the exact illness without making any assessment of its likely development.",
+              "It expresses an assessment of his prospects rather than establishing a certain date of death.",
+              "It confirms that the operation would remove every future health concern."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A “prognosis” concerns likely development and outcomes; the precise illness remains undisclosed.",
+              "The reported estimate concerns how long he might live, so it should not be converted into certainty.",
+              "The doctors' reported assessment does not establish that surgery would eliminate every future concern."
+            ]
+          },
+          {
+            "question": "What does “on the eve of its launch” contribute to the account of Bourne's departure?",
+            "options": [
+              "It places his departure during the opening evening's performance.",
+              "It suggests that the launch date remained undecided when he left.",
+              "It emphasises how close his departure was to the scheduled beginning."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“On the eve of” places the departure before the beginning, not during a performance.",
+              "The expression indicates proximity to an expected event; it does not suggest uncertainty about scheduling.",
+              "The phrase highlights the last-minute timing of his departure."
+            ]
+          },
+          {
+            "question": "Which interpretation of Chris's involvement is supported by the reading?",
+            "options": [
+              "His support extended across both Bourne's professional circumstances and his serious health difficulties.",
+              "His professional substitution established that he would become a permanent member of the original trio.",
+              "His kidney donation was reported as the reason Bourne left the performances in September 2025."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Chris replaced Bourne professionally and subsequently provided the kidney donation described as lifesaving.",
+              "His role as a replacement does not establish permanent membership of the original trio.",
+              "Bourne attributed his departure to health problems; the reading does not identify the donation as its cause."
+            ]
+          },
+          {
+            "question": "What does “tempered” imply about Bourne's account of his recovery?",
+            "options": [
+              "He withdrew his earlier claim that both brothers were recovering well.",
+              "He balanced encouraging information with a limitation on what it implied.",
+              "He concealed whether either brother had undergone surgery."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Tempered” signals qualification, not withdrawal of the positive account.",
+              "His need for more time limits any impression that encouraging progress means recovery is complete.",
+              "The sentence explicitly discusses both brothers' recovery after surgery."
+            ]
+          },
+          {
+            "question": "Which question remains unanswered by the reading?",
+            "options": [
+              "Who replaced Bourne after his departure?",
+              "What did Bourne identify as the reason for leaving?",
+              "What specific illness led to his need for surgery?"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading names Chris as his replacement.",
+              "Bourne attributed his departure to health problems, although he did not specify the illness.",
+              "The reading states that Bourne has not disclosed the precise nature of his illness."
+            ]
+          },
+          {
+            "question": "Which account preserves the distinction between McBusted and Busted's later reunion?",
+            "options": [
+              "Bourne and Willis formed McBusted with McFly before Simpson returned to complete Busted's original trio.",
+              "Simpson returned to Busted before Bourne and Willis formed McBusted with McFly.",
+              "McBusted was the name adopted by Busted's original trio when Simpson returned."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading places McBusted's formation in 2013 and Simpson's return to Busted in 2015.",
+              "This reverses the chronology given in the reading.",
+              "The reading identifies McBusted as the collaboration with McFly, not as the reunited original trio's new name."
+            ]
+          },
+          {
+            "question": "Why does “fronted” convey something different from writing songs for other performers?",
+            "options": [
+              "It establishes ownership of every song performed by the group.",
+              "It identifies a leading performance role within the group.",
+              "It refers specifically to composing music without appearing publicly."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Fronted” describes a performance role; it does not establish ownership of songs.",
+              "The verb indicates that Bourne served as Son of Dork's lead performer or principal public presence.",
+              "This describes a possible writing role, whereas “fronted” concerns leading the group as a performer."
+            ]
+          },
+          {
+            "question": "Which sentence uses a concessive clause to preserve the relationship between encouraging recovery and the continuing need for time?",
+            "options": [
+              "Because Bourne reported that recovery was going well, he acknowledged that he still needed time.",
+              "If Bourne reported that recovery was going well, he would acknowledge that he still needed time.",
+              "Even though Bourne reported that recovery was going well, he acknowledged that he still needed time."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is grammatical, but “because” introduces a causal relationship that the reading does not establish.",
+              "This sentence is grammatical, but “if” makes the report conditional rather than presenting the stated contrast.",
+              "“Even though” introduces a concessive clause, retaining both the encouraging report and its qualification."
+            ]
+          },
+          {
+            "question": "How do “credited” and “attributed” function differently in this reading?",
+            "options": [
+              "“Credited” assigns recognition for a positive outcome, while “attributed” identifies a stated cause.",
+              "“Credited” expresses doubt about an outcome, while “attributed” independently verifies a medical claim.",
+              "“Credited” identifies a financial transaction, while “attributed” describes a professional replacement."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Bourne gives his brother recognition for saving his life and identifies health problems as the cause of his departure.",
+              "Neither verb has the proposed function here: “credited” assigns recognition, and “attributed” reports his causal explanation.",
+              "These meanings do not fit the contextual uses of “credited” and “attributed” in the reading."
+            ]
+          },
+          {
+            "question": "What does Bourne's statement that he needed surgery to “extend his life” establish?",
+            "options": [
+              "It establishes that the operation guaranteed a specific number of additional years.",
+              "It identifies the purpose of the proposed surgery without specifying his eventual lifespan.",
+              "It establishes that no further recovery would be necessary after the operation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Extend his life” expresses the intended benefit without guaranteeing a particular duration.",
+              "The statement concerns living longer; the reading provides no exact lifespan after surgery.",
+              "The reading explicitly includes Bourne's acknowledgement that he still needs time."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Busted musician James Bourne has credited his brother with saving his life by donating a kidney.",
+          "He described a grave prognosis, an assessment of how an illness is likely to develop, saying doctors had given him only a few years to live.",
+          "Bourne, 43, pulled out of the arena tour featuring Busted and McFly on the eve of its launch in September 2025.",
+          "He attributed his departure to health problems, and his younger brother Chris stepped in as his replacement.",
+          "Bourne later said he needed substantial surgery to extend his life, and he has since thanked Chris as both brothers recover from their operations.",
+          "Although Bourne said both brothers were recovering well after surgery, he tempered this positive account by acknowledging that he still needed time.",
+          "Chris marked the outcome with a brief message on X expressing their shared achievement.",
+          "Bourne has not disclosed the precise nature of his illness.",
+          "He rose to prominence in the early 2000s alongside Charlie Simpson and Matt Willis in Busted, whose hits included Year 3000.",
+          "The group achieved four UK number one singles before it disbanded in 2005.",
+          "Bourne and Willis subsequently joined forces with McFly to form McBusted in 2013.",
+          "Simpson returned to Busted in 2015, completing the original trio's reunion.",
+          "Beyond Busted, Bourne has written songs for McFly and 5 Seconds of Summer and fronted Son of Dork.",
+          "He also recently released music from his stage musical Murder at the Gates."
+        ],
+        "sentence_evidence": [
+          "Busted star James Bourne has said his brother \"saved my life\" by donating a kidney, after doctors had given him \"a few years left to live\".",
+          "Busted star James Bourne has said his brother \"saved my life\" by donating a kidney, after doctors had given him \"a few years left to live\".",
+          "The guitarist, 43, dropped out of an arena tour featuring his band and fellow punk-pop favourites McFly in September 2025, just a day before it began.",
+          "He blamed health problems and was replaced by his younger brother Chris.",
+          "James later said he needed major surgery to \"extend my life\", and has now thanked his \"hero\" Chris and said they are both recovering from their transplant operations.",
+          "\"I'm still going to need some time, but I wanted you to know that we're both recovering from surgery just fine. My brother is a hero.\"",
+          "Chris posted his own message on X saying simply: \"We did it brother.\"",
+          "Bourne has not given any more details of his condition.",
+          "The guitarist, vocalist and songwriter shot to fame with Charlie Simpson and Matt Willis in Busted in the early 2000s, and the trio had hits including What I Go To School For, Year 3000 and Crashed the Wedding.",
+          "They scored four number one singles in the UK before splitting up in 2005. In 2013, Bourne and Willis teamed up with McFly to make McBusted, before Simpson rejoined Busted for a full reunion in 2015.",
+          "They scored four number one singles in the UK before splitting up in 2005. In 2013, Bourne and Willis teamed up with McFly to make McBusted, before Simpson rejoined Busted for a full reunion in 2015.",
+          "They scored four number one singles in the UK before splitting up in 2005. In 2013, Bourne and Willis teamed up with McFly to make McBusted, before Simpson rejoined Busted for a full reunion in 2015.",
+          "Bourne has written songs for McFly and 5 Seconds of Summer, and also fronted his own band, Son of Dork. He recently released the music from his stage musical Murder at the Gates.",
+          "Bourne has written songs for McFly and 5 Seconds of Summer, and also fronted his own band, Son of Dork. He recently released the music from his stage musical Murder at the Gates."
+        ],
+        "editorial_check": {
+          "date": "2026-10-27T02:55:46.732419+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct reading-based targets, including “prognosis” and “tempered”, offer useful advanced meanings without borrowing reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified; “credited” and “attributed” preserve Bourne’s responsibility for his claims."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual distinctions, and the exact grammar quotation demonstrates how “although” introduces concession."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Eleven distinct questions test supported inference, chronology, qualification, contextual meanings and concessive grammar, with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "6b64755b662537ac68d64df0f6c3f4248159d70b5ff267f065501ae030bced3b"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Some companies use drones, or flying machines, to bring orders to people's homes.",
+      "These deliveries are becoming part of everyday life for many people in the US.",
+      "Ashley Schmidt lives near Dallas and spends less time in her garden now.",
+      "She does not like the noise from delivery drones above her home.",
+      "She can hear them even inside her home.",
+      "Companies are looking for ways to make drones quieter.",
+      "Greenjets puts the parts that turn inside a cover to make less noise.",
+      "Wing changes where its drones fly to avoid flying over the same homes again and again."
+    ],
+    "vocabulary": [
+      {
+        "term": "orders",
+        "part_of_speech": "plural noun",
+        "definition": "Things that people buy and ask a shop to send."
+      },
+      {
+        "term": "deliveries",
+        "part_of_speech": "plural noun",
+        "definition": "Times when someone brings things to a person or place."
+      },
+      {
+        "term": "garden",
+        "part_of_speech": "noun",
+        "definition": "An area outside a home where people grow flowers or other plants."
+      },
+      {
+        "term": "noise",
+        "part_of_speech": "noun",
+        "definition": "A sound, often one that people do not like."
+      },
+      {
+        "term": "inside",
+        "part_of_speech": "preposition",
+        "definition": "In a building or place, not outside it."
+      },
+      {
+        "term": "quieter",
+        "part_of_speech": "comparative adjective",
+        "definition": "Making less noise."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人が買って、店に送ってもらうよう頼む品物。",
+      "ko": "사람들이 사고 가게에 보내 달라고 요청하는 물건들.",
+      "zh-Hans": "人们购买并要求商店寄送的东西。",
+      "es": "Cosas que las personas compran y piden a una tienda que les envíe.",
+      "pt-BR": "Coisas que as pessoas compram e pedem a uma loja que envie.",
+      "fr": "Choses que les gens achètent et demandent à un magasin de leur envoyer.",
+      "de": "Dinge, die Menschen kaufen und die sie sich von einem Geschäft schicken lassen möchten."
+    },
+    {
+      "id": 1,
+      "ja": "誰かが人や場所に物を届けること。",
+      "ko": "누군가가 사람이나 장소에 물건을 가져다주는 일들.",
+      "zh-Hans": "某人把东西送到一个人手中或某个地方的事。",
+      "es": "Ocasiones en las que alguien lleva cosas a una persona o a un lugar.",
+      "pt-BR": "Ocasiões em que alguém leva coisas a uma pessoa ou a um lugar.",
+      "fr": "Occasions où quelqu’un apporte des choses à une personne ou à un endroit.",
+      "de": "Vorgänge, bei denen jemand Dinge zu einer Person oder an einen Ort bringt."
+    },
+    {
+      "id": 2,
+      "ja": "家の外にある、花やほかの植物を育てる場所。",
+      "ko": "집 밖에서 사람들이 꽃이나 다른 식물을 기르는 공간.",
+      "zh-Hans": "住宅外面供人们种植花卉或其他植物的一片地方。",
+      "es": "Un espacio fuera de una vivienda donde las personas cultivan flores u otras plantas.",
+      "pt-BR": "Uma área fora de uma casa onde as pessoas cultivam flores ou outras plantas.",
+      "fr": "Un espace à l’extérieur d’une habitation où les gens cultivent des fleurs ou d’autres plantes.",
+      "de": "Ein Bereich außerhalb eines Hauses, in dem Menschen Blumen oder andere Pflanzen anbauen."
+    },
+    {
+      "id": 3,
+      "ja": "音のこと。人が不快に感じる音を指すことが多い。",
+      "ko": "소리로, 흔히 사람들이 좋아하지 않는 소리.",
+      "zh-Hans": "一种声音，通常是人们不喜欢的声音。",
+      "es": "Un sonido, a menudo uno que a las personas no les gusta.",
+      "pt-BR": "Um som, muitas vezes desagradável para as pessoas.",
+      "fr": "Un son, souvent désagréable pour les gens.",
+      "de": "Ein Geräusch, das Menschen oft als unangenehm empfinden."
+    },
+    {
+      "id": 4,
+      "ja": "建物や場所の外ではなく、中に。",
+      "ko": "건물이나 어떤 장소의 바깥이 아니라 안에.",
+      "zh-Hans": "在建筑物或某个地方的内部，而不是外部。",
+      "es": "En el interior de un edificio o lugar, no fuera de él.",
+      "pt-BR": "Na parte de dentro de um prédio ou lugar, e não fora dele.",
+      "fr": "À l’intérieur d’un bâtiment ou d’un lieu, et non à l’extérieur.",
+      "de": "Im Inneren eines Gebäudes oder eines Ortes, nicht außerhalb davon."
+    },
+    {
+      "id": 5,
+      "ja": "出す音がより小さい。",
+      "ko": "소음을 더 적게 내는.",
+      "zh-Hans": "发出的噪声更小的。",
+      "es": "Que hace menos ruido.",
+      "pt-BR": "Que faz menos barulho.",
+      "fr": "Qui fait moins de bruit.",
+      "de": "Weniger Lärm verursachend."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-10-28T03:42:53.584773+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

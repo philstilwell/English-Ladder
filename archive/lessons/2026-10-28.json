@@ -1,0 +1,806 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-28",
+  "release_iso": "2026-10-28T04:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Technology",
+    "feed_url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "category": "technology",
+    "published_at": "Wed, 28 Oct 2026 00:01:10 GMT",
+    "retrieved_at": "2026-10-28T03:30:55.988285+00:00",
+    "title": "'An annoying buzz': The search for stealthier drones",
+    "summary": "As drone deliveries become more commonplace, their makers are looking for ways to make them quieter.",
+    "evidence_text": "Schmidt is one of a growing number of people living with the noise of drones dispatched by companies including Amazon and Walmart as they seek to speed up home deliveries.\nDelivery drone services, not long ago a novelty, are becoming part of everyday life for many people in the US.\nNature lover Ashley Schmidt no longer spends much time in her garden, in the Dallas suburb of North Garland.\nIt's all because she can't stand the sound of the delivery drones that fly overhead, depositing her neighbours' online orders.\n\"You can hear the drones on approach and you can hear them inside your home when they pass directly overhead and then you hear them as they leave,\" she says.\nAs drone deliveries become more commonplace, their makers are looking for ways to make them quieter.\nWhile standard drones use spinning propellers that slice through open air, creating that high-pitched buzz, Greenjets encloses spinning blades inside a pod, to muffle the sound and direct the noise away from the ground.\nDrone maker Wing, which provides its vehicles for Walmart deliveries, says its propellers are designed to minimise noise. It also varies its flight paths to prevent repeated overflights over any single home or neighbourhood.\nWhile the steady passing of traffic might blend into the background, the sudden whine of a drone's rotors can pierce the everyday hum.\nThe sound tends to be \"particularly noticeable, even when overall sound levels are relatively low,\" says Antonio Torija Martinez, professor in acoustic engineering and psychoacoustics at the University of Salford.\nUnlike planes, drones operate at low altitudes and may fly directly over residential areas.\nHe points to research showing that people respond strongly to a noise when they consider the source to be \"novel, intrusive or frequent\". People who benefit from a drone delivery service, for example, may be less bothered by the noise.\nThe London-based business has designed a propulsion system it claims can reduce drone noise by at least two thirds.\nIts system also quietens things down through slower rotor speed and by using materials that reduce vibration noise.\nThe result was to create a propeller with twisted loop-shaped blades with no points.\nCompanies at the forefront of drone deliveries say they are also working to reduce the noise of their fleets. A spokesperson for Amazon says it has made \"measurable sound improvements\" to its drones and its latest designs use custom-designed propellers \"that produce almost half the perceived sound of the prior generation, with a milder tone\".\nFor Schmidt, fed up with the noise of drones, the only truly satisfactory solution would be to halt drone deliveries in her area. \"I would like them to completely stop until they figure out how their services stop being a nuisance,\" she says.\n\"They can expose communities that have not previously experienced significant aircraft noise, and who may therefore be more sensitive to changes in their local soundscape,\" says Torija Martinez.\nHowever, complaints about the sound of drones are likely to grow, he warns: \"At the moment we are seeing some of these problems localised in some areas, but… as the drone sector expands, more and more of these complaints will happen.\"\nGreenjets' low-noise tech has been used by police and harbour security teams in Germany. It has also helped conservationists in Africa, who are seeking to track poachers from above without being detected.\nBut he stresses that drone speed, rather than stealthiness, tends to come first for larger drones used in the war between Russia and Ukraine. \"Make it faster, not less quiet, seems to be the approach,\" says Tollast.",
+    "evidence_retrieved_at": "2026-10-28T03:30:55.988285+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/ck1exgejq3xvo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why does Ashley spend less time in her garden? Use “She ... because ...”.",
+          "Would you like drone deliveries? Answer for yourself or for a person in a story: “I think ... because ...”."
+        ],
+        "title": "Companies Try to Make Delivery Drones Quieter",
+        "overview": "Companies want delivery drones to make less noise near people's homes.",
+        "topic": "Drone deliveries and noise",
+        "vocabulary": [
+          {
+            "term": "orders",
+            "part_of_speech": "plural noun",
+            "definition": "Things that people buy and ask a shop to send."
+          },
+          {
+            "term": "deliveries",
+            "part_of_speech": "plural noun",
+            "definition": "Times when someone brings things to a person or place."
+          },
+          {
+            "term": "garden",
+            "part_of_speech": "noun",
+            "definition": "An area outside a home where people grow flowers or other plants."
+          },
+          {
+            "term": "noise",
+            "part_of_speech": "noun",
+            "definition": "A sound, often one that people do not like."
+          },
+          {
+            "term": "inside",
+            "part_of_speech": "preposition",
+            "definition": "In a building or place, not outside it."
+          },
+          {
+            "term": "quieter",
+            "part_of_speech": "comparative adjective",
+            "definition": "Making less noise."
+          }
+        ],
+        "grammar": {
+          "concept": "Can + verb",
+          "explanation": "Use “can” to say what someone is able to do. Put the basic verb after “can”, without “to” or an added “s”. The reading says, “She can hear them even inside her home.”",
+          "example_quote": "She can hear them even inside her home."
+        },
+        "quiz": [
+          {
+            "question": "What is the main idea of this news?",
+            "options": [
+              "Companies want to make delivery drones quieter.",
+              "Companies want to deliver garden plants.",
+              "Companies want everyone to stop ordering things."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Companies are looking for ways to make drones quieter.",
+              "The reading does not say companies want to deliver garden plants.",
+              "The reading says companies want quieter drones, not an end to all orders."
+            ]
+          },
+          {
+            "question": "Why does Ashley spend less time in her garden, according to the reading?",
+            "options": [
+              "She has moved to another home.",
+              "She does not like the drone noise.",
+              "She has too many orders."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not say Ashley has moved.",
+              "Yes. Ashley does not like the noise from delivery drones.",
+              "The reading does not say Ashley has too many orders."
+            ]
+          },
+          {
+            "question": "Where can Ashley hear the drones?",
+            "options": [
+              "Only in her garden",
+              "Only far from her home",
+              "Even inside her home"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "She can also hear them inside her home.",
+              "The reading says she can hear them inside her home.",
+              "Yes. She can hear the drones even inside her home."
+            ]
+          },
+          {
+            "question": "Why does Greenjets put the parts that turn inside a cover?",
+            "options": [
+              "To carry more orders",
+              "To make less noise",
+              "To fly over more homes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not give this reason for the cover.",
+              "Yes. Greenjets uses the cover to make less noise.",
+              "The reading does not say the cover helps drones fly over more homes."
+            ]
+          },
+          {
+            "question": "What does “quieter” mean in this reading?",
+            "options": [
+              "Making less noise",
+              "Carrying fewer things",
+              "Flying more often"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. “Quieter” means making less noise.",
+              "“Quieter” describes sound, not how much a drone carries.",
+              "“Quieter” describes sound, not how often a drone flies."
+            ]
+          },
+          {
+            "question": "Which sentence uses the pattern “can + basic verb” correctly?",
+            "options": [
+              "People can hears drones at home.",
+              "People can to hear drones at home.",
+              "People can hear drones at home."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Use “hear” after “can”, without an added “s”.",
+              "Use “hear” after “can”, without “to”.",
+              "Yes. “Can hear” follows the pattern “can + basic verb”."
+            ]
+          },
+          {
+            "question": "What does Wing change to avoid flying over the same homes again and again?",
+            "options": [
+              "Where its drones fly",
+              "Where people build gardens",
+              "What people order"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Wing changes where its drones fly.",
+              "The reading does not say Wing changes where people build gardens.",
+              "The reading says Wing changes where drones fly, not what people order."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Some companies use drones, or flying machines, to bring orders to people's homes.",
+          "These deliveries are becoming part of everyday life for many people in the US.",
+          "Ashley Schmidt lives near Dallas and spends less time in her garden now.",
+          "She does not like the noise from delivery drones above her home.",
+          "She can hear them even inside her home.",
+          "Companies are looking for ways to make drones quieter.",
+          "Greenjets puts the parts that turn inside a cover to make less noise.",
+          "Wing changes where its drones fly to avoid flying over the same homes again and again."
+        ],
+        "sentence_evidence": [
+          "Schmidt is one of a growing number of people living with the noise of drones dispatched by companies including Amazon and Walmart as they seek to speed up home deliveries.",
+          "Delivery drone services, not long ago a novelty, are becoming part of everyday life for many people in the US.",
+          "Nature lover Ashley Schmidt no longer spends much time in her garden, in the Dallas suburb of North Garland.",
+          "It's all because she can't stand the sound of the delivery drones that fly overhead, depositing her neighbours' online orders.",
+          "\"You can hear the drones on approach and you can hear them inside your home when they pass directly overhead and then you hear them as they leave,\" she says.",
+          "As drone deliveries become more commonplace, their makers are looking for ways to make them quieter.",
+          "While standard drones use spinning propellers that slice through open air, creating that high-pitched buzz, Greenjets encloses spinning blades inside a pod, to muffle the sound and direct the noise away from the ground.",
+          "Drone maker Wing, which provides its vehicles for Walmart deliveries, says its propellers are designed to minimise noise. It also varies its flight paths to prevent repeated overflights over any single home or neighbourhood."
+        ],
+        "editorial_check": {
+          "date": "2026-10-28T03:33:02.358299+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six targets occur in the reading. Words such as “orders”, “inside” and “quieter” have useful, clear beginner definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral, everyday wording such as “make less noise” suits adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations and feedback are accessible. The exact grammar quotation demonstrates “can + verb”, and discussion includes a sentence frame and hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct questions test the main idea, stated details, contextual vocabulary and the taught grammar, with one correct answer each."
+            }
+          },
+          "content_digest": "083fe29a6ad1e19e189bccf5b1adfd4651be3c2a7872595c8e0552c44ea60c43"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why might people who receive drone deliveries react differently to the sound from people who do not use the service?",
+          "How should a delivery company respond to neighbours who find its drones annoying? Explain your suggestion."
+        ],
+        "title": "The Search for Quieter Delivery Drones",
+        "overview": "Explore why delivery drones disturb some residents and how companies are trying to reduce their sound.",
+        "topic": "Technology and community life",
+        "vocabulary": [
+          {
+            "term": "manufacturers",
+            "part_of_speech": "plural noun",
+            "definition": "Companies that make products."
+          },
+          {
+            "term": "background",
+            "part_of_speech": "noun",
+            "definition": "The sounds around you that you do not pay much attention to."
+          },
+          {
+            "term": "noticeable",
+            "part_of_speech": "adjective",
+            "definition": "Easy to hear, see or become aware of."
+          },
+          {
+            "term": "residential areas",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Parts of a town or city where people live."
+          },
+          {
+            "term": "benefit from",
+            "part_of_speech": "verb phrase",
+            "definition": "Receive something helpful or useful from something."
+          },
+          {
+            "term": "vibration",
+            "part_of_speech": "noun",
+            "definition": "Repeated small, fast movements that can produce sound."
+          },
+          {
+            "term": "flight paths",
+            "part_of_speech": "plural noun phrase",
+            "definition": "The routes that aircraft follow through the air."
+          },
+          {
+            "term": "nuisance",
+            "part_of_speech": "noun",
+            "definition": "Something that annoys people or causes problems for them."
+          }
+        ],
+        "grammar": {
+          "concept": "Relative clauses that add extra information",
+          "explanation": "“Wing, which supplies drones for Walmart deliveries, varies its flight paths to avoid repeatedly flying over the same homes.” The clause “which supplies drones for Walmart deliveries” adds extra information about Wing. Here, “which” refers to a company; it can also refer to a thing. Commas separate this extra information from the main sentence, which remains complete without it.",
+          "example_quote": "Wing, which supplies drones for Walmart deliveries, varies its flight paths to avoid repeatedly flying over the same homes."
+        },
+        "quiz": [
+          {
+            "question": "What is the main focus of the reading?",
+            "options": [
+              "Why delivery companies are replacing drones with cars",
+              "How drone sound affects residents and how companies are responding",
+              "Why customers have stopped using drone delivery services"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not describe companies replacing drones with cars.",
+              "The reading connects residents’ concerns with efforts to reduce drone sound.",
+              "The reading does not say customers have stopped using these services."
+            ]
+          },
+          {
+            "question": "How does the reading compare traffic sounds with drone sounds?",
+            "options": [
+              "Traffic can become part of the background, while a sudden drone sound stands out.",
+              "Traffic always sounds louder than drones.",
+              "Traffic and drones are equally easy to ignore."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading contrasts steady traffic sounds with the sudden sound of a drone.",
+              "The reading does not make this comparison of sound levels.",
+              "The reading explains that drone sounds can attract particular attention."
+            ]
+          },
+          {
+            "question": "According to the reading, who may be less bothered by drone sound?",
+            "options": [
+              "People who live directly under every flight path",
+              "People who spend more time in their gardens",
+              "People who benefit from drone delivery services"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading does not say living under a flight path makes people less bothered.",
+              "The reading does not connect gardening with being less bothered.",
+              "The reading suggests that receiving a benefit may affect a person’s response."
+            ]
+          },
+          {
+            "question": "What does the reading report about Greenjets’ system?",
+            "options": [
+              "Residents have confirmed that it makes drones completely silent.",
+              "Greenjets claims that it can reduce drone noise by at least two thirds.",
+              "Greenjets plans to stop all drone deliveries near homes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading reports a company claim about reducing sound, not confirmation of complete silence.",
+              "This answer gives both the amount claimed and who makes the claim.",
+              "The reading describes a system for reducing sound, not a plan to stop deliveries."
+            ]
+          },
+          {
+            "question": "What is one purpose of the pod around Greenjets’ spinning blades?",
+            "options": [
+              "To soften the sound and direct it away from the ground",
+              "To give customers more space for their shopping",
+              "To allow the drone to fly without spinning blades"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading gives both of these purposes for the pod.",
+              "The reading does not describe the pod as a space for shopping.",
+              "The system still uses spinning blades inside the pod."
+            ]
+          },
+          {
+            "question": "Why does Wing vary its flight paths?",
+            "options": [
+              "To make its propellers turn more slowly",
+              "To stop supplying drones for Walmart",
+              "To avoid flying over the same homes repeatedly"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Changing routes is not described as a way to slow the propellers.",
+              "Wing is described as supplying drones for Walmart deliveries.",
+              "Changing routes helps Wing avoid repeated flights over particular homes."
+            ]
+          },
+          {
+            "question": "What does “nuisance” mean in the sentence about Schmidt’s wishes?",
+            "options": [
+              "An annoying problem",
+              "A useful delivery route",
+              "A quieter type of aircraft"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Nuisance” describes something that annoys people or causes problems.",
+              "“Nuisance” refers to the problem the service causes, not a route.",
+              "“Nuisance” describes an annoying thing or situation, not a type of aircraft."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses “which” to add extra information about some drone blades?",
+            "options": [
+              "The blades, which turns slowly, make less sound.",
+              "The blades, which turn slowly, make less sound.",
+              "The blades, which turning slowly, make less sound."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The plural noun “blades” needs “turn”, not “turns”.",
+              "“Which turn slowly” is a complete relative clause, and the commas mark extra information.",
+              "“Which turning slowly” needs a complete verb form, such as “which turn slowly”."
+            ]
+          },
+          {
+            "question": "What does Schmidt want to happen in her area?",
+            "options": [
+              "Deliveries should continue because milder sounds fully satisfy her.",
+              "Deliveries should move to the same route every day.",
+              "Deliveries should stop until the service no longer causes a nuisance."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading does not say Schmidt is satisfied with milder sounds.",
+              "The reading does not say Schmidt wants a fixed delivery route.",
+              "The reading states that she wants deliveries to stop until the problem is resolved."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "As drone deliveries become more common, manufacturers are looking for ways to reduce the sound their aircraft make.",
+          "Ashley Schmidt now spends little time in her garden in North Garland, near Dallas.",
+          "She cannot stand the sound of delivery drones flying overhead with her neighbours’ online orders.",
+          "Steady traffic sounds may blend into the background, while the sudden sound of a drone can stand out.",
+          "Researcher Antonio Torija Martinez says drone sounds can be particularly noticeable even when overall sound levels are relatively low.",
+          "Drones operate at low altitudes, or heights, and may fly directly over residential areas, where people live.",
+          "People who benefit from drone delivery services may be less bothered by their sound, according to Torija Martinez.",
+          "London-based company Greenjets claims its system for powering drones can reduce their noise by at least two thirds.",
+          "It places spinning blades inside a pod, a case that helps soften the sound and direct it away from the ground.",
+          "It also slows the rotating blades and uses materials that reduce the sound caused by vibration, or repeated shaking.",
+          "One propeller design has twisted, loop-shaped blades with no pointed tips.",
+          "Amazon says its latest propellers produce almost half the perceived sound of its previous design, with a milder tone.",
+          "Wing, which supplies drones for Walmart deliveries, varies its flight paths to avoid repeatedly flying over the same homes.",
+          "Schmidt wants deliveries in her area to stop until the service no longer causes a nuisance, or an annoying problem."
+        ],
+        "sentence_evidence": [
+          "As drone deliveries become more commonplace, their makers are looking for ways to make them quieter.",
+          "Nature lover Ashley Schmidt no longer spends much time in her garden, in the Dallas suburb of North Garland.",
+          "It's all because she can't stand the sound of the delivery drones that fly overhead, depositing her neighbours' online orders.",
+          "While the steady passing of traffic might blend into the background, the sudden whine of a drone's rotors can pierce the everyday hum.",
+          "The sound tends to be \"particularly noticeable, even when overall sound levels are relatively low,\" says Antonio Torija Martinez, professor in acoustic engineering and psychoacoustics at the University of Salford.",
+          "Unlike planes, drones operate at low altitudes and may fly directly over residential areas.",
+          "He points to research showing that people respond strongly to a noise when they consider the source to be \"novel, intrusive or frequent\". People who benefit from a drone delivery service, for example, may be less bothered by the noise.",
+          "The London-based business has designed a propulsion system it claims can reduce drone noise by at least two thirds.",
+          "While standard drones use spinning propellers that slice through open air, creating that high-pitched buzz, Greenjets encloses spinning blades inside a pod, to muffle the sound and direct the noise away from the ground.",
+          "Its system also quietens things down through slower rotor speed and by using materials that reduce vibration noise.",
+          "The result was to create a propeller with twisted loop-shaped blades with no points.",
+          "Companies at the forefront of drone deliveries say they are also working to reduce the noise of their fleets. A spokesperson for Amazon says it has made \"measurable sound improvements\" to its drones and its latest designs use custom-designed propellers \"that produce almost half the perceived sound of the prior generation, with a milder tone\".",
+          "Drone maker Wing, which provides its vehicles for Walmart deliveries, says its propellers are designed to minimise noise. It also varies its flight paths to prevent repeated overflights over any single home or neighbourhood.",
+          "For Schmidt, fed up with the noise of drones, the only truly satisfactory solution would be to halt drone deliveries in her area. \"I would like them to completely stop until they figure out how their services stop being a nuisance,\" she says."
+        ],
+        "editorial_check": {
+          "date": "2026-10-28T03:36:25.235915+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct targets, including “manufacturers,” “benefit from” and “flight paths,” occur in the reading, suit B1-B2 and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting consistently preserves qualifications through wording such as “may,” “claims” and “Amazon says.”"
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions are clear, specialist terms receive brief explanations, and the relative-clause explanation accurately uses an exact reading quotation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Fourteen distinct reading sentences and nine quiz questions provide appropriate comprehension, comparison, contextual vocabulary and grammar practice."
+            }
+          },
+          "content_digest": "485d9651108d26955f6cbf63f3780b32d688946adc16c7d9a3544df39aef0a54"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why reducing a drone's overall sound level might not fully address residents' objections.",
+          "What conditions would you require before accepting regular drone deliveries in a neighbourhood, and why?"
+        ],
+        "title": "The Search for Quieter Delivery Drones",
+        "overview": "As delivery drones become increasingly familiar, residents report unwelcome disruption while companies develop ways to reduce their acoustic impact.",
+        "topic": "Drone technology and community noise",
+        "vocabulary": [
+          {
+            "term": "novelty",
+            "part_of_speech": "noun",
+            "definition": "Something that attracts interest because it is new or unfamiliar, often with the implication that this interest will fade."
+          },
+          {
+            "term": "conspicuous",
+            "part_of_speech": "adjective",
+            "definition": "Standing out strongly from the surroundings; here, readily attracting attention through sound."
+          },
+          {
+            "term": "soundscape",
+            "part_of_speech": "noun",
+            "definition": "The combination of sounds that characterises a particular environment."
+          },
+          {
+            "term": "intrusive",
+            "part_of_speech": "adjective",
+            "definition": "Unwelcome because it enters someone's personal space or disrupts their activities or peace."
+          },
+          {
+            "term": "localised",
+            "part_of_speech": "adjective",
+            "definition": "Restricted to particular places rather than distributed across a wider area."
+          },
+          {
+            "term": "propulsion system",
+            "part_of_speech": "noun phrase",
+            "definition": "The equipment that generates the force needed to move a vehicle."
+          },
+          {
+            "term": "muffle",
+            "part_of_speech": "verb",
+            "definition": "To make a sound less clearly audible by enclosing or covering its source."
+          },
+          {
+            "term": "takes precedence",
+            "part_of_speech": "verb phrase",
+            "definition": "Receives greater importance than another consideration when priorities are decided."
+          },
+          {
+            "term": "stealth",
+            "part_of_speech": "noun",
+            "definition": "The ability to operate without attracting attention or being detected."
+          },
+          {
+            "term": "perceived",
+            "part_of_speech": "adjective",
+            "definition": "Experienced or judged by a person, rather than described solely through physical measurements."
+          }
+        ],
+        "grammar": {
+          "concept": "What-cleft sentences for information focus",
+          "explanation": "A what-cleft organises a message around a clause beginning with “what”, followed by “be” and the information receiving emphasis; in the example, “What Torija Martinez emphasises” introduces his central point, while the clause after “is” states that point explicitly.",
+          "example_quote": "What Torija Martinez emphasises is that drone sound can be conspicuous even when overall sound levels are relatively low."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the central tension in the reading?",
+            "options": [
+              "Delivery drones are becoming familiar, but their sound remains contentious as companies pursue improvements.",
+              "Residents' acceptance depends chiefly on whether delivery services remain unfamiliar.",
+              "Companies' reported improvements have satisfied residents who previously opposed drone deliveries."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: expanding familiarity, continuing objections and efforts to reduce sound form the central tension.",
+              "Unfamiliarity may influence reactions, but the reading also identifies intrusion, frequency and personal benefit.",
+              "Schmidt's continuing objections show that reported improvements do not establish residents' satisfaction."
+            ]
+          },
+          {
+            "question": "What does Torija Martinez's observation imply about assessing drone sound?",
+            "options": [
+              "Relatively low overall sound levels reliably indicate that drones will attract little attention.",
+              "Overall sound levels alone may not explain how strongly drones attract attention.",
+              "A drone's prominence establishes that it produces more sound than surrounding traffic."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "His observation challenges this inference: drone sound can remain conspicuous at relatively low overall levels.",
+              "Correct: the reading distinguishes how strongly a sound stands out from its overall level.",
+              "The comparison concerns how sounds stand out, without establishing which source produces more sound."
+            ]
+          },
+          {
+            "question": "Which supported reason could explain different reactions to the same delivery service?",
+            "options": [
+              "People who receive a benefit may find its sound less bothersome.",
+              "People who receive deliveries necessarily experience lower sound levels.",
+              "People familiar with aircraft sound are certain to welcome drone services."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the cited research suggests that benefiting from the service may influence people's reactions.",
+              "The reading discusses differences in response, not a necessary reduction in physical exposure.",
+              "Possible sensitivity among less exposed communities does not establish certain acceptance among others."
+            ]
+          },
+          {
+            "question": "Why does the wording of the Greenjets sentence require a cautious interpretation?",
+            "options": [
+              "The stated reduction is a future ambition rather than a claimed capability.",
+              "The reduction is attributed to the company rather than presented as independently established.",
+              "The stated reduction applies to every drone using enclosed blades."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The company claims that its system can achieve the reduction; the sentence does not describe merely a future ambition.",
+              "Correct: “claims” identifies whose assessment is being reported and preserves its evidential status.",
+              "The claim concerns Greenjets' system, not every design with enclosed blades."
+            ]
+          },
+          {
+            "question": "Which explanation specifically describes the purpose of enclosing Greenjets' blades within a pod?",
+            "options": [
+              "It limits repeated exposure by changing the routes drones follow.",
+              "It reduces sound through the choice of materials that control vibration.",
+              "It muffles sound and directs it away from the ground."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Changing routes is Wing's reported approach to limiting repeated overflights.",
+              "Materials are another part of Greenjets' approach, but this does not explain the enclosure's stated purpose.",
+              "Correct: the reading links the enclosure to both muffling sound and redirecting it."
+            ]
+          },
+          {
+            "question": "What priority does Tollast report for larger drones used in the Russia–Ukraine war?",
+            "options": [
+              "Reducing detectability generally receives greater priority than speed.",
+              "Speed generally receives greater priority than stealth.",
+              "Speed and stealth generally receive equal priority."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This reverses the priority attributed to Tollast.",
+              "Correct: “takes precedence” identifies speed as the greater priority in his assessment.",
+              "The reading reports a priority between the two considerations, rather than equal emphasis."
+            ]
+          },
+          {
+            "question": "Which feature characterises the alternative propeller design described after Tollast's assessment?",
+            "options": [
+              "Its blades form twisted loops without pointed tips.",
+              "Its spinning blades are enclosed within a sound-muffling pod.",
+              "Its principal change is slower rotor speed rather than a different blade shape."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the alternative design is distinguished by twisted, loop-shaped blades without pointed tips.",
+              "The enclosure belongs to the Greenjets design described earlier.",
+              "Slower rotor speed is part of Greenjets' approach; the alternative design changes blade shape."
+            ]
+          },
+          {
+            "question": "Which interpretation most accurately preserves Amazon's reported claim?",
+            "options": [
+              "Its latest drones are inaudible to approximately half of nearby residents.",
+              "Its latest propellers produce exactly half as much physically measured sound energy.",
+              "Its latest designs produce almost half the perceived sound of the previous generation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "A comparison of perceived sound does not specify how many residents can hear the drones.",
+              "The reading reports perceived sound and an approximate comparison, not an exact measurement of sound energy.",
+              "Correct: this preserves the perceptual comparison, the reference to the previous generation and the qualification “almost”."
+            ]
+          },
+          {
+            "question": "What distinguishes Wing's reported approach from a change to propeller design alone?",
+            "options": [
+              "It also adjusts routes to limit repeated flights over particular homes or neighbourhoods.",
+              "It also encloses blades to direct sound away from the ground.",
+              "It also adopts twisted loops to remove pointed blade tips."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: varying routes addresses how repeatedly particular places experience overflights.",
+              "Sound redirection through an enclosure is attributed to Greenjets.",
+              "Loop-shaped blades are described as another design, without being attributed to Wing."
+            ]
+          },
+          {
+            "question": "Which policy most closely matches Schmidt's stated position?",
+            "options": [
+              "Continue deliveries once a company reports a substantial reduction in sound.",
+              "Suspend deliveries in her area until the service stops causing a disturbance.",
+              "Continue deliveries if routes vary, even while the service remains disturbing."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Her condition concerns whether the disturbance ends, rather than whether a company reports technical progress.",
+              "Correct: her proposed suspension is conditional on resolving the disturbance.",
+              "Route variation alone does not meet her stated condition if the disturbance continues."
+            ]
+          },
+          {
+            "question": "In the warning about complaints, what distinction does “localised” establish?",
+            "options": [
+              "Current complaints occur in particular areas, while expansion may spread them more widely.",
+              "Current complaints concern minor disturbances rather than serious disruption.",
+              "Current complaints arise from unfamiliarity rather than repeated exposure."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: “localised” describes geographical extent, which the forecast suggests may change.",
+              "“Localised” describes distribution, not the seriousness of the disturbance.",
+              "“Localised” identifies where complaints occur, not why people complain."
+            ]
+          },
+          {
+            "question": "Which what-cleft emphasises what Wing varies while preserving the reading's meaning?",
+            "options": [
+              "What Wing varies is the speed of its rotors.",
+              "What Wing varies is the route its drones follow.",
+              "What Wing varies is the shape of its propeller tips."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is a grammatical what-cleft, but slower rotor speeds are reported as part of Greenjets' approach.",
+              "Correct: the clause beginning with “what” introduces the action, and the information after “is” identifies the route as its focus.",
+              "This is a grammatical what-cleft, but the reading does not report Wing varying the shape of its propeller tips."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "For many people in the United States, delivery drones are ceasing to be a novelty and becoming part of everyday life.",
+          "Ashley Schmidt, a resident of North Garland near Dallas, now spends little time in her garden.",
+          "She attributes her discomfort to the sound of drones flying overhead with her neighbours' purchases.",
+          "Whereas steady traffic may merge into the surrounding hum, a drone's sudden whine can cut through it.",
+          "What Torija Martinez emphasises is that drone sound can be conspicuous even when overall sound levels are relatively low.",
+          "He explains that communities with little previous exposure to aircraft noise may be especially sensitive to changes in their local soundscape, the combination of sounds around them.",
+          "Research he cites suggests that reactions are stronger when a sound's source seems unfamiliar, intrusive or frequent, while people who benefit from drone services may be less troubled.",
+          "He warns that currently localised complaints are likely to become more widespread as the sector expands.",
+          "London-based Greenjets claims that its propulsion system, which generates the force to move a drone, can reduce drone noise by at least two thirds.",
+          "Its design encloses spinning blades within a pod to muffle their sound and direct it away from the ground.",
+          "The system also uses slower rotor speeds and materials that reduce sound caused by vibration.",
+          "Greenjets' technology has helped conservationists in Africa seeking to monitor poachers from above without revealing their presence.",
+          "For larger drones used in the Russia–Ukraine war, however, speed generally takes precedence over stealth, according to Tollast.",
+          "Another propeller design features twisted, loop-shaped blades without pointed tips.",
+          "Amazon says its latest drone designs use custom propellers that produce almost half the perceived sound of the previous generation, with a milder tone.",
+          "Wing says that, alongside designing propellers to minimise sound, it varies flight paths to limit repeated overflights of individual homes or neighbourhoods.",
+          "Schmidt would prefer deliveries in her area to stop until the service no longer causes a disturbance."
+        ],
+        "sentence_evidence": [
+          "Delivery drone services, not long ago a novelty, are becoming part of everyday life for many people in the US.",
+          "Nature lover Ashley Schmidt no longer spends much time in her garden, in the Dallas suburb of North Garland.",
+          "It's all because she can't stand the sound of the delivery drones that fly overhead, depositing her neighbours' online orders.",
+          "While the steady passing of traffic might blend into the background, the sudden whine of a drone's rotors can pierce the everyday hum.",
+          "The sound tends to be \"particularly noticeable, even when overall sound levels are relatively low,\" says Antonio Torija Martinez, professor in acoustic engineering and psychoacoustics at the University of Salford.",
+          "\"They can expose communities that have not previously experienced significant aircraft noise, and who may therefore be more sensitive to changes in their local soundscape,\" says Torija Martinez.",
+          "He points to research showing that people respond strongly to a noise when they consider the source to be \"novel, intrusive or frequent\". People who benefit from a drone delivery service, for example, may be less bothered by the noise.",
+          "However, complaints about the sound of drones are likely to grow, he warns: \"At the moment we are seeing some of these problems localised in some areas, but… as the drone sector expands, more and more of these complaints will happen.\"",
+          "The London-based business has designed a propulsion system it claims can reduce drone noise by at least two thirds.",
+          "While standard drones use spinning propellers that slice through open air, creating that high-pitched buzz, Greenjets encloses spinning blades inside a pod, to muffle the sound and direct the noise away from the ground.",
+          "Its system also quietens things down through slower rotor speed and by using materials that reduce vibration noise.",
+          "Greenjets' low-noise tech has been used by police and harbour security teams in Germany. It has also helped conservationists in Africa, who are seeking to track poachers from above without being detected.",
+          "But he stresses that drone speed, rather than stealthiness, tends to come first for larger drones used in the war between Russia and Ukraine. \"Make it faster, not less quiet, seems to be the approach,\" says Tollast.",
+          "The result was to create a propeller with twisted loop-shaped blades with no points.",
+          "Companies at the forefront of drone deliveries say they are also working to reduce the noise of their fleets. A spokesperson for Amazon says it has made \"measurable sound improvements\" to its drones and its latest designs use custom-designed propellers \"that produce almost half the perceived sound of the prior generation, with a milder tone\".",
+          "Drone maker Wing, which provides its vehicles for Walmart deliveries, says its propellers are designed to minimise noise. It also varies its flight paths to prevent repeated overflights over any single home or neighbourhood.",
+          "For Schmidt, fed up with the noise of drones, the only truly satisfactory solution would be to halt drone deliveries in her area. \"I would like them to completely stop until they figure out how their services stop being a nuisance,\" she says."
+        ],
+        "editorial_check": {
+          "date": "2026-10-28T03:41:52.353610+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct reading-based targets, including “takes precedence” and “perceived”, teach useful advanced meanings without borrowing reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified through wording such as “claims”, “may” and “according to Tollast”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the what-cleft explanation accurately describes its exact reading quotation and emphasis."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct questions combine comprehension with supported inference, attribution, perceptual distinctions and grammar; each has one defensible answer and accurate feedback."
+            }
+          },
+          "content_digest": "aa27d736242bb5e17b3c4660318f030c6f93b5156de20a4cf05659541cb9b3a7"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

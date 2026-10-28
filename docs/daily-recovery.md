@@ -1,5 +1,9 @@
 # Independent daily monitor
 
+For the existing producer's registration, time-zone requirements, and a fresh
+effective next-run receipt, see [producer registration](daily-registration.md).
+An old inspection report does not establish the current registration state.
+
 The local scheduled Codex task is the only automatic producer. It requests starts
 at 22:30, 23:30, and 00:30 America/New_York every day. The first start targets
 the following local date, and the two recovery starts remain pinned to that

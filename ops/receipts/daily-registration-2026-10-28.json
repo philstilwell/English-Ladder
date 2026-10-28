@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-10-28T22:56:44.404547+00:00",
+  "scope": "Point-in-time local registration; not proof of a future run or publication.",
+  "host": "Mac.lan",
+  "system_timezone": "America/New_York",
+  "required_timezone": "America/New_York",
+  "automation_id": "english-ladder-daily-plan",
+  "status": "registered",
+  "problems": [],
+  "active_producer_ids_in_configuration": [
+    "english-ladder-daily-plan"
+  ],
+  "registration": {
+    "id": "english-ladder-daily-plan",
+    "name": "English Ladder Daily Plan",
+    "kind": "cron",
+    "status": "ACTIVE",
+    "rrule": "FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0",
+    "execution_environment": "local",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "target": {
+      "type": "project",
+      "project_id": "07c38551-b94c-4fd4-98da-cc036369c4d7"
+    },
+    "cwds": [
+      "/Users/philstilwell/.local/share/EnglishLadder/English-Ladder",
+      "/Users/philstilwell/Documents/ChatGPT/English Ladder Daily"
+    ],
+    "updated_at": 1793227953637,
+    "prompt_sha256": "0e679b7e9eae041564477515acdbb9e23563c74ef2c3da2812d91a3e133d6887",
+    "early_dispatch_guard_present": true
+  },
+  "active_producer_ids_in_scheduler": [
+    "english-ladder-daily-plan"
+  ],
+  "next_dispatch": {
+    "epoch_ms": 1793240760000,
+    "utc": "2026-10-29T02:26:00+00:00",
+    "new_york": "2026-10-28T22:26:00-04:00"
+  },
+  "next_nominal_start": {
+    "epoch_ms": 1793241000000,
+    "utc": "2026-10-29T02:30:00+00:00",
+    "new_york": "2026-10-28T22:30:00-04:00"
+  },
+  "next_edition_date": "2026-10-29",
+  "dispatch_offset_seconds": -240.0,
+  "independent_monitor": {
+    "label": "com.philstilwell.englishladder.daily-recovery",
+    "role": "read-only publication health check; no producer",
+    "latest_check": {
+      "release_date": "2026-10-28",
+      "checked_at": "2026-10-28T22:56:29.915398+00:00",
+      "apply": true,
+      "status": "healthy"
+    },
+    "installed_sha256": {
+      "daily_recovery.py": "cb1bd3f30cd5ac83d8505116918f844236cb3197afbe746ba753a8aba7513fab",
+      "daily_schedule.py": "6cdd93a1049367c2e9d7ffa225c86372437ab0f9190f3ce9f3bcb5035c73df06"
+    }
+  }
+}

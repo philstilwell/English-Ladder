@@ -143,8 +143,7 @@ class WorkflowPublishingTests(unittest.TestCase):
         self.assertEqual(["/Users/philstilwell/.local/share/EnglishLadder/English-Ladder"],
                          automation["cwds"])
         self.assertEqual(
-            "DTSTART;TZID=America/New_York:20261025T223000\n"
-            "RRULE:FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0",
+            "FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0",
             automation["rrule"],
         )
 

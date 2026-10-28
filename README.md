@@ -112,6 +112,10 @@ See the [25-occupation expansion review](docs/occupation-expansion-2026-09-28.md
 
 ## Automation
 
+See [producer registration and next-run receipts](docs/daily-registration.md)
+to verify the sole existing local task. The Mac must use the `America/New_York`
+system time zone; use the verified local-time recurrence in `ops/`.
+
 - `.agents/skills/english-ladder-daily-producer/SKILL.md`
   Defines the sole daily producer. A daylight-saving-aware local Codex task requests starts at `22:30`, `23:30`, and `00:30 America/New_York`. The desktop scheduler may dispatch up to five minutes early or late. Before resolving the edition or checking publication, `.venv/bin/python daily_schedule.py --wait-for-start` keeps an early attempt alive until its nominal local time. This prevents a 22:26 dispatch from checking yesterday's edition and exiting. The 22:30 start targets the following New York calendar date; both recovery opportunities remain pinned to that edition across midnight. It uses the supported local checkout mode because this static site is too large to duplicate safely with the Mac's current free space. It resumes recognized current-date artifacts and stops when it finds unrelated checkout changes. Later attempts resume missing stages and exit without changes when the complete edition is already live. The Mac and ChatGPT app must be awake, running, and signed in.
 

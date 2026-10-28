@@ -4,7 +4,9 @@ kind = "cron"
 name = "English Ladder Daily"
 prompt = "Read .agents/skills/english-ladder-daily-producer/SKILL.md completely and follow it. Before resolving the edition or checking publication, run .venv/bin/python daily_schedule.py --wait-for-start and let any early-dispatch wait finish. Produce, recover, publish, and verify the edition date it prints: 22:30 and 23:30 America/New_York target the following local date, and the following 00:30 targets that same date. Use only ChatGPT-authenticated Codex plan sessions, retain complete existing stages, and never use a paid API fallback."
 status = "ACTIVE"
-rrule = "DTSTART;TZID=America/New_York:20261025T223000\nRRULE:FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0"
+# The installed desktop scheduler correctly evaluates this in the Mac's local
+# time zone, which must remain America/New_York. See docs/daily-registration.md.
+rrule = "FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0"
 model = "gpt-6.1-sol"
 reasoning_effort = "high"
 execution_environment = "local"

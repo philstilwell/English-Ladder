@@ -1,6 +1,11 @@
 """Guard the no-API daily trigger and offline publication workflow."""
 from pathlib import Path
+import os
 import re
+import shutil
+import subprocess
+import tempfile
+import textwrap
 import tomllib
 import unittest
 
@@ -41,6 +46,68 @@ class WorkflowPublishingTests(unittest.TestCase):
             r"(?ms)^  check_and_verify:.*?^    timeout-minutes: (\d+)$", WORKFLOW
         ).group(1))
         self.assertGreaterEqual(timeout, 60)
+
+    def test_publication_pipelines_preserve_verifier_status_and_logs(self):
+        steps = (
+            ("Wait for Cloudflare publishing", "publishing-manifest.log"),
+            ("Verify current lesson on Cloudflare", "publishing-current-lesson.log"),
+            ("Verify current lesson on public domain", "publishing-public-domain.log"),
+        )
+        bash = shutil.which("bash")
+        self.assertIsNotNone(bash, "Publication workflow tests require Bash")
+        for name, log_name in steps:
+            step = re.search(
+                rf"(?m)^      - name: {re.escape(name)}\n((?:        .*\n|\n)+)",
+                WORKFLOW,
+            ).group(1)
+            script = textwrap.dedent(re.search(
+                r"(?m)^        run: \|\n((?:          .*\n)+)", step
+            ).group(1))
+            shell = re.search(r"(?m)^        shell: (.+)$", step)
+            # Match GitHub Actions: implicit Bash uses -e; explicit shell: bash
+            # also enables pipefail. Removing the workflow fix must fail here.
+            command = [bash, "--noprofile", "--norc", "-e"]
+            if shell:
+                self.assertEqual("bash", shell.group(1))
+                command.extend(["-o", "pipefail"])
+            for exit_code in (0, 1, 124):
+                with self.subTest(step=name, verifier_exit=exit_code), \
+                        tempfile.TemporaryDirectory(prefix="publishing checks ") as temp:
+                    root = Path(temp)
+                    stub_bin = root / "bin"
+                    stub_bin.mkdir()
+                    # Stub only the verifiers; run the real workflow script and tee.
+                    for executable in ("python", "node"):
+                        stub = stub_bin / executable
+                        stub.write_text(
+                            '#!/bin/sh\n'
+                            'printf "verifier stdout\\n"\n'
+                            'printf "verifier stderr\\n" >&2\n'
+                            'exit "$VERIFIER_EXIT_CODE"\n'
+                        )
+                        stub.chmod(0o755)
+                    script_path = root / "step.sh"
+                    script_path.write_text(script)
+                    result = subprocess.run(
+                        [*command, str(script_path)], cwd=root,
+                        env={"PATH": f"{stub_bin}{os.pathsep}{os.defpath}",
+                             "RUNNER_TEMP": temp, "VERIFIER_EXIT_CODE": str(exit_code)},
+                        capture_output=True, text=True, timeout=10,
+                    )
+                    output = "verifier stdout\nverifier stderr\n"
+                    self.assertEqual(output, result.stdout)
+                    self.assertEqual("", result.stderr)
+                    self.assertEqual(output, (root / log_name).read_text())
+                    self.assertEqual(exit_code, result.returncode)
+
+    def test_publication_failures_remain_fatal_and_diagnostics_are_retained(self):
+        self.assertNotIn("continue-on-error:", WORKFLOW)
+        diagnostics = re.search(
+            r"(?m)^      - name: Retain publishing diagnostics\n((?:        .*\n|\n)+)",
+            WORKFLOW,
+        ).group(1)
+        self.assertIn("if: always() && github.event_name == 'push'", diagnostics)
+        self.assertIn("${{ runner.temp }}/publishing-*.log", diagnostics)
 
     def test_manual_workflow_can_only_verify_or_test_email(self):
         inputs = re.search(r"(?ms)^  workflow_dispatch:\n    inputs:\n(.*?)\n\nconcurrency:",

@@ -1,6 +1,9 @@
 """Pin all nightly producer opportunities to one New York edition date."""
 from datetime import date, datetime, timedelta, timezone
+from contextlib import redirect_stderr, redirect_stdout
+import io
 import unittest
+from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 import daily_schedule as schedule
@@ -10,6 +13,85 @@ NEW_YORK = ZoneInfo("America/New_York")
 
 
 class DailyScheduleTests(unittest.TestCase):
+    def wait_with_fake_clock(self, start):
+        current = start
+        pauses = []
+        messages = []
+
+        def pause(seconds):
+            nonlocal current
+            pauses.append(seconds)
+            current += timedelta(seconds=seconds)
+
+        ready = schedule.wait_for_scheduled_start(
+            clock=lambda: current, pause=pause, report=messages.append
+        )
+        self.assertTrue(all(0 < seconds <= 30 for seconds in pauses))
+        return ready, pauses, messages
+
+    def test_observed_early_dispatch_waits_before_resolving_next_edition(self):
+        start = datetime(2026, 10, 27, 22, 26, 39, tzinfo=NEW_YORK)
+        self.assertEqual(date(2026, 10, 27), schedule.scheduled_release_date(start))
+        ready, pauses, messages = self.wait_with_fake_clock(start)
+        self.assertEqual(datetime(2026, 10, 27, 22, 30, tzinfo=NEW_YORK), ready)
+        self.assertEqual(201, sum(pauses))
+        self.assertIn("America/New_York", messages[0])
+        self.assertEqual(date(2026, 10, 28), schedule.scheduled_release_date(ready))
+
+    def test_all_early_opportunities_wait_for_same_edition(self):
+        for start in (
+            datetime(2026, 10, 27, 22, 25, tzinfo=NEW_YORK),
+            datetime(2026, 10, 27, 23, 25, tzinfo=NEW_YORK),
+            datetime(2026, 10, 28, 0, 25, tzinfo=NEW_YORK),
+        ):
+            with self.subTest(start=start):
+                ready, pauses, _ = self.wait_with_fake_clock(start)
+                self.assertEqual(start + timedelta(minutes=5), ready)
+                self.assertEqual(300, sum(pauses))
+                self.assertEqual(date(2026, 10, 28), schedule.scheduled_release_date(ready))
+
+    def test_late_nominal_and_daytime_invocations_do_not_wait(self):
+        for start in (
+            datetime(2026, 10, 27, 12, 0, tzinfo=NEW_YORK),
+            datetime(2026, 10, 27, 22, 24, 59, tzinfo=NEW_YORK),
+            datetime(2026, 10, 27, 22, 30, tzinfo=NEW_YORK),
+            datetime(2026, 10, 27, 22, 34, tzinfo=NEW_YORK),
+            datetime(2026, 10, 27, 23, 34, tzinfo=NEW_YORK),
+            datetime(2026, 10, 28, 0, 33, tzinfo=NEW_YORK),
+        ):
+            with self.subTest(start=start):
+                ready, pauses, messages = self.wait_with_fake_clock(start)
+                self.assertEqual(start, ready)
+                self.assertEqual([], pauses)
+                self.assertEqual([], messages)
+
+    def test_early_wait_uses_new_york_clock_across_dst_and_year_end(self):
+        for day in (date(2026, 3, 7), date(2026, 3, 8),
+                    date(2026, 10, 31), date(2026, 11, 1), date(2026, 12, 31)):
+            for hour in (0, 22, 23):
+                local = datetime(day.year, day.month, day.day, hour, 26, tzinfo=NEW_YORK)
+                with self.subTest(local=local):
+                    ready, pauses, _ = self.wait_with_fake_clock(local.astimezone(timezone.utc))
+                    self.assertEqual(local.replace(minute=30), ready)
+                    self.assertEqual(local.utcoffset(), ready.utcoffset())
+                    self.assertEqual(240, sum(pauses))
+                    expected = day + timedelta(days=hour >= 22)
+                    self.assertEqual(expected, schedule.scheduled_release_date(ready))
+
+    def test_cli_prints_only_ready_edition_on_stdout(self):
+        ready = datetime(2026, 10, 27, 22, 30, tzinfo=NEW_YORK)
+
+        def wait(**kwargs):
+            kwargs["report"]("Early scheduled dispatch: waiting until 22:30.")
+            return ready
+
+        out, err = io.StringIO(), io.StringIO()
+        with patch.object(schedule, "wait_for_scheduled_start", side_effect=wait), \
+                redirect_stdout(out), redirect_stderr(err):
+            self.assertEqual(0, schedule.main(["--wait-for-start"]))
+        self.assertEqual("2026-10-28\n", out.getvalue())
+        self.assertIn("waiting until 22:30", err.getvalue())
+
     def test_evening_and_after_midnight_attempts_share_one_release_date(self):
         cases = (
             (datetime(2026, 7, 10, 22, 29, tzinfo=NEW_YORK), date(2026, 7, 10)),

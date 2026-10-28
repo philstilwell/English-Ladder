@@ -61,6 +61,9 @@ class WorkflowPublishingTests(unittest.TestCase):
         self.assertIn("22:30, 23:30, and 00:30", skill)
         self.assertIn("no paid api fallback", skill.lower())
         self.assertIn("node cloudflare/check-daily-publication.cjs", skill)
+        self.assertIn(".venv/bin/python daily_schedule.py --wait-for-start", skill)
+        self.assertLess(skill.index("daily_schedule.py --wait-for-start"),
+                        skill.index("daily_publication.py --date"))
 
     def test_desktop_schedule_uses_local_checkout_and_three_idempotent_opportunities(self):
         with (ROOT / "ops/english-ladder-daily.automation.toml").open("rb") as stream:
@@ -69,6 +72,9 @@ class WorkflowPublishingTests(unittest.TestCase):
         self.assertEqual("gpt-6.1-sol", automation["model"])
         self.assertEqual("high", automation["reasoning_effort"])
         self.assertIn("daily_schedule.py", automation["prompt"])
+        self.assertIn("daily_schedule.py --wait-for-start", automation["prompt"])
+        self.assertEqual(["/Users/philstilwell/.local/share/EnglishLadder/English-Ladder"],
+                         automation["cwds"])
         self.assertEqual(
             "DTSTART;TZID=America/New_York:20261025T223000\n"
             "RRULE:FREQ=DAILY;BYHOUR=0,22,23;BYMINUTE=30;BYSECOND=0",

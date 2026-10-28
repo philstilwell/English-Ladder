@@ -38,11 +38,21 @@ disk space; the checkout-status check below remains mandatory.
    resume. If unrelated local changes are present, stop and report them instead
    of overwriting them. Fetch `origin/main` and fast-forward or rebase before
    creating new content.
-2. Resolve the release date with:
+2. Wait out any early scheduler dispatch, then resolve the release date with:
 
    ```bash
-   .venv/bin/python -c 'from daily_schedule import scheduled_release_date; print(scheduled_release_date().isoformat())'
+   .venv/bin/python daily_schedule.py --wait-for-start
    ```
+
+   The desktop scheduler can dispatch up to five minutes before or after its
+   nominal time. This command keeps an early attempt alive in short waits until
+   `22:30`, `23:30`, or `00:30 America/New_York`, then prints the edition date.
+   Keep the command running if it reports an early dispatch; poll its running
+   session and report progress as needed. Do not check the previous edition and
+   exit while waiting. In particular, a `22:26` dispatch must wait until `22:30`
+   before selecting the following day's edition. Late and ordinary daytime
+   invocations proceed immediately. Never replace this command with a bare date
+   lookup in a scheduled attempt. The recurrence itself stays unchanged.
 
 3. Check whether the complete edition is already live:
 

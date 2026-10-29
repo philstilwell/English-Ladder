@@ -6194,27 +6194,27 @@
       "title": "Japan or the US? Articles with country names",
       "level": "A1–A2",
       "category": "Articles and nouns",
-      "goal": "Use country names naturally in full sentences by choosing the or no article.",
+      "goal": "Understand why country names use the or no article, then apply the pattern in full sentences.",
       "rules": [
-        "Most ordinary country names take no article: “We live in Japan”; “Our flight goes to Canada”; “She is from Brazil.” No article means that you put nothing before the name. Do not add the just because you mean one particular country.",
-        "Some country names normally take the. Names containing words such as Kingdom, States, or Republic usually follow this pattern: the United Kingdom and the United States. Keep the with their common abbreviations when they name the country in a sentence: “He works in the UK”; “They live in the US.”",
-        "Learn familiar plural names with the, including the Netherlands and the Philippines: “We visited the Netherlands.” Use the established name rather than guessing from the country's size, location, or islands. These patterns describe ordinary country names used as nouns in full sentences. A country label on a map or an abbreviation before another noun, such as “US dollars”, can follow a different pattern."
+        "Most familiar country names are proper names: they identify a place directly, rather than describe a type of place. Names such as Japan, Canada, and Brazil therefore normally stand alone: “We live in Japan”; “She is from Brazil.” No article means putting nothing before the name. Being a particular country does not by itself require the.",
+        "Others are descriptive names built around ordinary nouns. State, kingdom, and republic name types of political units. In “the United States”, the identifies a particular group of states; in “the United Kingdom”, it identifies a particular kingdom. Each whole expression is still a country name, but its noun-based structure helps explain the article. The abbreviations retain it: “They live in the US”; “He works in the UK”.",
+        "Plural place names also commonly take the, marking a particular named group: the Netherlands, the Philippines. These are useful patterns, with established exceptions; do not try to predict every name from geography alone. This lesson covers ordinary country names used as nouns in full sentences. Map labels and expressions such as “US dollars”, where US modifies another noun, have different structures."
       ],
       "cards": [
         {
-          "label": "NO ARTICLE: JAPAN, CANADA, BRAZIL",
+          "label": "A NAME IDENTIFIES THE PLACE DIRECTLY",
           "example": "She lives in Japan. He works in Canada.",
-          "note": "Use these country names directly after in, to, or from. The preposition does not create a need for the."
+          "note": "Japan and Canada are names that normally stand alone. They already identify the place; in, to, and from do not add a need for the."
         },
         {
-          "label": "KEEP THE: THE US AND THE UK",
-          "example": "We moved to the US. Our cousins live in the UK.",
-          "note": "The short forms follow the country-name pattern: the United States becomes the US, and the United Kingdom becomes the UK."
+          "label": "A DESCRIPTIVE NAME USES ORDINARY NOUNS",
+          "example": "the United States: a particular group of states. the United Kingdom: a particular kingdom.",
+          "note": "States and kingdom are ordinary nouns within these names. The identifies the particular group or kingdom. The short forms keep it: the US and the UK."
         },
         {
-          "label": "LEARN THESE NAMES TOGETHER WITH THE",
+          "label": "PLURAL PLACE NAMES: A NAMED GROUP",
           "example": "Our team visited the Netherlands. The parcel came from the Philippines.",
-          "note": "Both names normally take the in these full sentences. Learn the as part of each expression."
+          "note": "These plural place names conventionally take the, marking a particular named group. The pattern helps explain the usage, but established names still have exceptions."
         }
       ],
       "checks": [
@@ -6224,12 +6224,12 @@
             {
               "text": "the Japan",
               "correct": false,
-              "feedback": "The ordinary country name “Japan” takes no article here. Use “in Japan”."
+              "feedback": "Japan directly names the place and normally stands alone. Use “in Japan” without the."
             },
             {
               "text": "Japan",
               "correct": true,
-              "feedback": "“Japan” is normally used without an article: “My friend lives in Japan”."
+              "feedback": "Japan directly identifies the place, so this name normally needs no article: “My friend lives in Japan”."
             },
             {
               "text": "a Japan",
@@ -6244,17 +6244,17 @@
             {
               "text": "the US",
               "correct": true,
-              "feedback": "Keep the with this country name: “the United States” and “the US”."
+              "feedback": "US stands for United States. The full name refers to a particular group of states, and the abbreviation keeps the: “in the US”."
             },
             {
               "text": "US",
               "correct": false,
-              "feedback": "In this ordinary full sentence, the country name needs the: “in the US”."
+              "feedback": "US keeps the from “the United States”, a name built around the ordinary noun states. Say “in the US”."
             },
             {
               "text": "an US",
               "correct": false,
-              "feedback": "This country name takes the, not a or an. Say “in the US”."
+              "feedback": "The name identifies a particular group of states, so its article is the. The abbreviation keeps it: “in the US”."
             }
           ]
         },
@@ -6264,7 +6264,7 @@
             {
               "text": "We spent a week in Netherlands.",
               "correct": false,
-              "feedback": "The country name is normally “the Netherlands”. Keep the after in."
+              "feedback": "The Netherlands has the form of a plural place name. This established name takes the: “in the Netherlands”."
             },
             {
               "text": "We spent a week in a Netherlands.",
@@ -6274,7 +6274,7 @@
             {
               "text": "We spent a week in the Netherlands.",
               "correct": true,
-              "feedback": "“The Netherlands” normally takes the when used as a country name in a full sentence."
+              "feedback": "The Netherlands follows the pattern of plural place names taking the. Keep the when naming the country in this full sentence."
             }
           ]
         }
@@ -6285,17 +6285,17 @@
           {
             "text": "We fly from the Canada to the UK.",
             "correct": false,
-            "feedback": "“The UK” is right, but the ordinary country name “Canada” takes no article. Say “from Canada”."
+            "feedback": "The UK keeps the from its descriptive full name. Canada directly names the place and normally stands alone: “from Canada”."
           },
           {
             "text": "We fly from Canada to the UK.",
             "correct": true,
-            "feedback": "Use “Canada” without an article and keep the in “the UK”."
+            "feedback": "Canada directly names the place and normally stands alone. UK keeps the from “the United Kingdom”, which identifies a particular kingdom."
           },
           {
             "text": "We fly from Canada to UK.",
             "correct": false,
-            "feedback": "“Canada” is right, but “UK” needs the in this full sentence. Say “to the UK”."
+            "feedback": "Canada is correct. UK abbreviates a name built around the noun kingdom, so it keeps the: “to the UK”."
           }
         ]
       },
@@ -6311,7 +6311,9 @@
       ],
       "sources": [
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/definite-article",
-        "https://assets.cambridge.org/97813166/31751/excerpt/9781316631751_excerpt.pdf"
+        "https://assets.cambridge.org/97813166/31751/excerpt/9781316631751_excerpt.pdf",
+        "https://pressbooks.cuny.edu/englishsyntax/chapter/chapter-7/",
+        "https://udel.pressbooks.pub/language/chapter/articles-a-an-the-o-more-patterns-of-use/"
       ]
     }
   ],

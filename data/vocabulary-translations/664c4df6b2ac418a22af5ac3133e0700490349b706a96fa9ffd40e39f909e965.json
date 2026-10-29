@@ -1,0 +1,142 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The BBC asked people how the government's new money plans affect their lives.",
+      "Dave Herbert works as a driver.",
+      "He spends about £350 a month on petrol for work and his own trips.",
+      "Dave wanted a lower tax on fuel, but the government did not lower it.",
+      "He feels angry about this.",
+      "A 19-year-old woman is looking for work.",
+      "She wants businesses to get more money so they can give jobs to more young people.",
+      "Robert Portlock lives with his parents and wants to move out.",
+      "He says rent for a small flat would take most of his monthly pay.",
+      "Chloe lives with her son and pays about £200 a month for gas and electricity.",
+      "She tries to spend no more than £40 a week on food.",
+      "She thinks the government's £100 energy payment will help her."
+    ],
+    "vocabulary": [
+      {
+        "term": "petrol",
+        "part_of_speech": "noun",
+        "definition": "A liquid that many cars use to run."
+      },
+      {
+        "term": "looking for work",
+        "part_of_speech": "verb phrase",
+        "definition": "Trying to find a job."
+      },
+      {
+        "term": "move out",
+        "part_of_speech": "phrasal verb",
+        "definition": "To leave your home and start living somewhere else."
+      },
+      {
+        "term": "rent",
+        "part_of_speech": "noun",
+        "definition": "Money you pay to live in a home that belongs to someone else."
+      },
+      {
+        "term": "spend",
+        "part_of_speech": "verb",
+        "definition": "To use money to pay for something."
+      },
+      {
+        "term": "payment",
+        "part_of_speech": "noun",
+        "definition": "Money paid to someone."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "多くの車が走るために使う液体。",
+      "ko": "많은 자동차가 달리는 데 사용하는 액체.",
+      "zh-Hans": "许多汽车行驶时使用的一种液体。",
+      "es": "Un líquido que muchos coches usan para funcionar.",
+      "pt-BR": "Um líquido que muitos carros usam para funcionar.",
+      "fr": "Un liquide que beaucoup de voitures utilisent pour fonctionner.",
+      "de": "Eine Flüssigkeit, die viele Autos zum Fahren verwenden."
+    },
+    {
+      "id": 1,
+      "ja": "仕事を見つけようとすること。",
+      "ko": "일자리를 찾으려고 노력하는 것.",
+      "zh-Hans": "努力寻找工作。",
+      "es": "Intentar encontrar un empleo.",
+      "pt-BR": "Tentar encontrar um emprego.",
+      "fr": "Essayer de trouver un emploi.",
+      "de": "Versuchen, eine Arbeitsstelle zu finden."
+    },
+    {
+      "id": 2,
+      "ja": "今の家を出て、別の場所に住み始めること。",
+      "ko": "지금 살고 있는 집을 떠나 다른 곳에서 살기 시작하는 것.",
+      "zh-Hans": "离开现在的家，开始在别处生活。",
+      "es": "Dejar la vivienda donde vives y empezar a vivir en otro lugar.",
+      "pt-BR": "Sair da casa onde você mora e começar a morar em outro lugar.",
+      "fr": "Quitter son logement et commencer à vivre ailleurs.",
+      "de": "Die bisherige Wohnung verlassen und anfangen, woanders zu wohnen."
+    },
+    {
+      "id": 3,
+      "ja": "ほかの人が所有する家に住むために払うお金。",
+      "ko": "다른 사람 소유의 집에 살기 위해 내는 돈.",
+      "zh-Hans": "为住在别人拥有的房子里而支付的钱。",
+      "es": "Dinero que pagas por vivir en una vivienda que pertenece a otra persona.",
+      "pt-BR": "Dinheiro que você paga para morar em uma casa que pertence a outra pessoa.",
+      "fr": "L’argent que l’on paie pour habiter un logement qui appartient à quelqu’un d’autre.",
+      "de": "Geld, das man bezahlt, um in einer Wohnung zu leben, die jemand anderem gehört."
+    },
+    {
+      "id": 4,
+      "ja": "何かの代金を払うためにお金を使うこと。",
+      "ko": "무언가의 값을 치르기 위해 돈을 쓰는 것.",
+      "zh-Hans": "用钱支付某样东西的费用。",
+      "es": "Usar dinero para pagar algo.",
+      "pt-BR": "Usar dinheiro para pagar por alguma coisa.",
+      "fr": "Utiliser de l’argent pour payer quelque chose.",
+      "de": "Geld verwenden, um etwas zu bezahlen."
+    },
+    {
+      "id": 5,
+      "ja": "誰かに支払われるお金。",
+      "ko": "누군가에게 지급되는 돈.",
+      "zh-Hans": "支付给某人的钱。",
+      "es": "Dinero que se paga a alguien.",
+      "pt-BR": "Dinheiro pago a alguém.",
+      "fr": "De l’argent versé à quelqu’un.",
+      "de": "Geld, das an jemanden gezahlt wird."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-10-29T02:47:01.004996+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

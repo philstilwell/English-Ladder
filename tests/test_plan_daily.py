@@ -194,6 +194,95 @@ class PlanDailyTests(unittest.TestCase):
                 plan_daily_runner.finish_publication("2026-10-26", state)
             self.assertFalse(marker.exists())
 
+    def publication_fixture(self, root):
+        state = root / 'state'
+        state.mkdir()
+        archive = root / 'archive/lessons/2026-10-26.json'
+        archive.parent.mkdir(parents=True)
+        archive.write_text('{"approved":true}')
+        with patch.dict(os.environ, {"CODEX_THREAD_ID": "failed-chat"}):
+            marker = plan_daily_runner.mark_publication_pending('2026-10-26', state, archive)
+        return state, archive, marker
+
+    def test_handoff_records_owner_and_pending_reports_it_without_generation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state, archive, marker = self.publication_fixture(Path(directory))
+            self.assertEqual('failed-chat', json.loads(marker.read_text())['owner_thread_id'])
+            with contextlib.redirect_stdout(io.StringIO()) as output, \
+                    patch.object(plan_daily_runner, 'verify_free_space') as preflight:
+                plan_daily_runner.main(['--date', '2026-10-26', '--state-dir', str(state)])
+            self.assertEqual('failed-chat', json.loads(output.getvalue())['owner_thread_id'])
+            preflight.assert_not_called()
+
+    def test_failed_owner_recovery_preserves_content_and_cannot_call_models_or_build(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state, archive, marker = self.publication_fixture(root)
+            original = archive.read_bytes()
+            with patch.object(plan_daily_runner, 'ROOT', root), \
+                    patch.dict(os.environ, {'CODEX_THREAD_ID': 'recovery-chat'}), \
+                    patch.object(plan_daily_runner, 'saved_edition_status', return_value=(True, 'complete')), \
+                    patch.object(plan_daily_runner, 'verify_free_space') as preflight, \
+                    patch.object(plan_daily_runner, 'run_python') as build, \
+                    patch.object(plan_daily_runner, 'model_json') as model, \
+                    contextlib.redirect_stdout(io.StringIO()) as output:
+                result = plan_daily_runner.main(['--date', '2026-10-26', '--state-dir', str(state),
+                                                '--resume-publication-from', 'failed-chat'])
+            self.assertEqual(0, result)
+            self.assertEqual('ready_to_publish', json.loads(output.getvalue())['status'])
+            self.assertEqual('recovery-chat', json.loads(marker.read_text())['owner_thread_id'])
+            self.assertEqual(original, archive.read_bytes())
+            for operation in (preflight, build, model):
+                operation.assert_not_called()
+
+    def test_concurrent_takeover_loser_cannot_replace_new_owner(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            state, archive, marker = self.publication_fixture(root)
+            with patch.object(plan_daily_runner, 'ROOT', root), \
+                    patch.object(plan_daily_runner, 'saved_edition_status', return_value=(True, 'complete')):
+                for owner in ('first-recovery', 'second-recovery'):
+                    with patch.dict(os.environ, {'CODEX_THREAD_ID': owner}), \
+                            plan_daily_runner.producer_lock(state / 'producer.lock'):
+                        if owner == 'first-recovery':
+                            plan_daily_runner.resume_publication('2026-10-26', state, 'failed-chat')
+                        else:
+                            with self.assertRaisesRegex(RuntimeError, 'owner changed'):
+                                plan_daily_runner.resume_publication('2026-10-26', state, 'failed-chat')
+            record = json.loads(marker.read_text())
+            self.assertEqual('first-recovery', record['owner_thread_id'])
+            self.assertEqual(1, len(record['ownership_transfers']))
+
+    def test_recovery_rejects_changed_archive_incomplete_content_and_unknown_owner(self):
+        for failure in ('changed archive', 'incomplete content', 'unknown owner'):
+            with self.subTest(failure=failure), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                state, archive, marker = self.publication_fixture(root)
+                if failure == 'changed archive':
+                    archive.write_text('{"changed":true}')
+                if failure == 'unknown owner':
+                    record = json.loads(marker.read_text()); record.pop('owner_thread_id')
+                    plan_daily.atomic_json(marker, record)
+                before = marker.read_bytes()
+                with patch.object(plan_daily_runner, 'ROOT', root), \
+                        patch.dict(os.environ, {'CODEX_THREAD_ID': 'recovery-chat'}), \
+                        patch.object(plan_daily_runner, 'saved_edition_status',
+                                     return_value=(failure != 'incomplete content', 'missing translations')):
+                    with self.assertRaises(RuntimeError):
+                        plan_daily_runner.resume_publication('2026-10-26', state, 'failed-chat')
+                self.assertEqual(before, marker.read_bytes())
+
+    def test_recovery_cannot_bypass_active_process_lock(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state, archive, marker = self.publication_fixture(Path(directory))
+            with plan_daily_runner.producer_lock(state / 'producer.lock'), \
+                    contextlib.redirect_stdout(io.StringIO()) as output, \
+                    patch.object(plan_daily_runner, 'resume_publication') as resume:
+                plan_daily_runner.main(['--date', '2026-10-26', '--state-dir', str(state),
+                                        '--resume-publication-from', 'failed-chat'])
+            self.assertEqual('already_running', json.loads(output.getvalue())['status'])
+            resume.assert_not_called()
+
     def test_image_provenance_does_not_claim_an_unexposed_model(self):
         self.assertIn("model not exposed", plan_daily.IMAGE_MODEL)
 

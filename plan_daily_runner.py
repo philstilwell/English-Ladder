@@ -22,7 +22,7 @@ import sys
 
 import plan_daily
 from daily_schedule import scheduled_release_date
-from daily_publication import check_publication
+from daily_publication import check_publication, saved_edition_status
 from vocabulary_translations import read_record, source_data
 
 
@@ -46,8 +46,38 @@ def mark_publication_pending(release: str, state: Path, archive: Path) -> Path:
         "release_date": release,
         "archive_sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
         "created_at": datetime.now(timezone.utc).isoformat(),
+        "owner_thread_id": os.environ.get("CODEX_THREAD_ID"),
     })
     return marker
+
+
+def resume_publication(release: str, state: Path, previous_owner: str) -> None:
+    """Transfer a handoff after the caller verifies the old chat has stopped.
+
+    Called only under producer_lock. The expected owner makes concurrent
+    takeovers fail closed; a marker's age alone never authorizes takeover.
+    This path cannot invoke a model or rebuild the saved edition.
+    """
+    owner = os.environ.get("CODEX_THREAD_ID")
+    marker = publication_marker(state)
+    record = json.loads(marker.read_text())
+    if not owner or not previous_owner or owner == previous_owner:
+        raise RuntimeError("Publication recovery requires a different, identified owning chat.")
+    if record.get("owner_thread_id") != previous_owner:
+        raise RuntimeError("Publication owner changed or is unknown; recheck ownership before recovery.")
+    archive = ROOT / f"archive/lessons/{release}.json"
+    if (record.get("release_date") != release or
+            record.get("archive_sha256") != hashlib.sha256(archive.read_bytes()).hexdigest()):
+        raise RuntimeError("The saved edition no longer matches its publication handoff.")
+    complete, reason = saved_edition_status(ROOT, release)
+    if not complete:
+        raise RuntimeError(reason)
+    record.setdefault("ownership_transfers", []).append({
+        "from": previous_owner, "to": owner,
+        "at": datetime.now(timezone.utc).isoformat(),
+    })
+    record["owner_thread_id"] = owner
+    plan_daily.atomic_json(marker, record)
 
 
 def finish_publication(release: str, state: Path) -> None:
@@ -249,7 +279,11 @@ def main(argv=None) -> int:
     parser.add_argument("--state-dir")
     parser.add_argument("--finish-publication", action="store_true",
                         help="Verify the live edition and release its publication handoff.")
+    parser.add_argument("--resume-publication-from", metavar="STOPPED_THREAD_ID",
+                        help="Claim saved publication after verifying that its owning chat stopped.")
     args = parser.parse_args(argv)
+    if args.finish_publication and args.resume_publication_from:
+        parser.error("Choose either finishing or resuming publication.")
     release = date.fromisoformat(args.date).isoformat() if args.date else scheduled_release_date().isoformat()
     state = plan_daily.state_dir(release, args.state_dir)
     state.mkdir(parents=True, exist_ok=True)
@@ -263,8 +297,16 @@ def main(argv=None) -> int:
             finish_publication(release, state)
             print(json.dumps({"release_date": release, "status": "published"}))
             return 0
+        if args.resume_publication_from:
+            resume_publication(release, state, args.resume_publication_from)
+            print(json.dumps({"release_date": release, "status": "ready_to_publish",
+                              "resumed": True, "owner_thread_id": os.environ["CODEX_THREAD_ID"],
+                              "model": MODEL, "authentication": "ChatGPT", "api_fallback": False}))
+            return 0
         if publication_marker(state).exists():
+            record = json.loads(publication_marker(state).read_text())
             print(json.dumps({"release_date": release, "status": "publication_pending",
+                              "owner_thread_id": record.get("owner_thread_id"),
                               "model": MODEL, "authentication": "ChatGPT",
                               "api_fallback": False}))
             return 0

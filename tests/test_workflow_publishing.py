@@ -147,6 +147,15 @@ class WorkflowPublishingTests(unittest.TestCase):
             automation["rrule"],
         )
 
+    def test_stopped_publication_owner_has_an_explicit_recovery_path(self):
+        skill = (ROOT / '.agents/skills/english-ladder-daily-producer/SKILL.md').read_text()
+        self.assertIn('read_thread', skill)
+        self.assertIn('--resume-publication-from STOPPED_THREAD_ID', skill)
+        self.assertIn('ambiguous status', skill)
+        self.assertIn('Do not infer abandonment', skill)
+        self.assertIn('Never regenerate or rebuild', skill)
+        self.assertNotIn('already_running` or\n   `publication_pending`, exit', skill)
+
 
 if __name__ == "__main__":
     unittest.main()

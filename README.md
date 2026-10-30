@@ -126,7 +126,7 @@ system time zone; use the verified local-time recurrence in `ops/`.
 
 - `plan_daily_runner.py` and `plan_daily.py`
   Rotate the BBC feeds through the existing source selector, invoke fresh ChatGPT-authenticated Codex sessions for writing and independent review, validate every imported artifact, and rebuild the three rolling level pages plus the homepage. Common model API-key variables are removed from every Codex subprocess.
-  A per-edition lock serializes model/build work, and a persistent handoff blocks later opportunities until the first task verifies publication. Valid lesson drafts resume at review, and saved translation and image stages are imported rather than regenerated after an operational interruption.
+  A per-edition lock serializes model/build work. The persistent publication handoff records the owning chat. Later opportunities leave an active owner alone; if the app confirms that owner stopped, they transfer ownership under the lock with `--resume-publication-from STOPPED_THREAD_ID` and finish the saved publication without regeneration. Unknown ownership fails closed. Archive checksums, complete saved stages, and an expected-owner comparison guard recovery races. The handoff clears only after live verification. Valid lesson drafts resume at review, and saved translation and image stages are imported rather than regenerated after an operational interruption.
 
 - `requirements.txt`
   Pins the runtime dependencies used by GitHub Actions.

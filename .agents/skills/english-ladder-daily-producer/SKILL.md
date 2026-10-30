@@ -76,10 +76,31 @@ disk space; the checkout-status check below remains mandatory.
    lesson attempts per level during one scheduled run and retains resumable state
    under ignored `.daily-agent/`. A per-edition process lock makes overlapping
    22:30/23:30/00:30 New York opportunities exit without duplicating model work.
-   Read its final JSON status. If it is `already_running` or
-   `publication_pending`, exit this task immediately: do not rebuild, test,
-   inspect, commit, push, or verify publication. `ready_to_publish` creates a
-   persistent handoff that blocks later attempts throughout the steps below.
+   Read its final JSON status. For `already_running`, exit immediately without
+   further work. `ready_to_publish` creates a persistent handoff recording this
+   chat's `CODEX_THREAD_ID`; continue through publication below.
+
+   For `publication_pending`, inspect only the reported `owner_thread_id` with
+   the supported `read_thread` app tool (one recent turn, bounded output).
+   If that chat is active, waiting for approval/input, unavailable, or has an
+   ambiguous status, exit without publication work. Do not infer abandonment
+   from elapsed time, an absent runner process, or the marker alone.
+   If the app confirms that the owner has failed (`systemError`/failed) or is
+   idle with its turn ended, also confirm its last commands/tools have ended.
+   A failed chat can leave a command running; do not take over while a command
+   is still in progress or its completion is uncertain. Once both the chat and
+   its commands have stopped, resume the saved publication automatically:
+
+   ```bash
+   .venv/bin/python plan_daily_runner.py --date YYYY-MM-DD --resume-publication-from STOPPED_THREAD_ID
+   ```
+
+   This checks the expected owner and archive checksum under the producer lock,
+   validates saved completeness, and atomically assigns this chat as owner.
+   Only `ready_to_publish` authorizes continuing at step 5. An ownership change
+   or `already_running` means stop. Never regenerate or rebuild during this
+   recovery. A legacy handoff without an owner needs explicit manual recovery;
+   do not delete it or guess an owner. Preserve the handoff until live checks pass.
 5. Inspect `git status`, `git diff --check`, the new illustration, and the
    provenance records. Never stage `.daily-agent/`, usage ledgers, secrets, or
    audio. Expected daily output may include the dated archive, dated image and
@@ -119,5 +140,8 @@ disk space; the checkout-status check below remains mandatory.
   force push.
 - A hosting failure after a saved commit is a publication problem; do not rerun
   model stages.
+- A chat failure after `ready_to_publish` is recoverable by the next existing
+  opportunity using the verified stopped-owner transfer above. The marker is
+  durable recovery state, not proof that its original chat is still running.
 - After the final attempt, the separate macOS monitor records `needs_attention`.
   It never dispatches a GitHub generation workflow.

@@ -1,0 +1,804 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-30",
+  "release_iso": "2026-10-30T04:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Thu, 29 Oct 2026 20:21:54 GMT",
+    "retrieved_at": "2026-10-30T02:32:36.812145+00:00",
+    "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+    "summary": "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+    "evidence_text": "The main Israeli opposition leader Gadi Eisenkot and Arab-led party leaders have denounced Prime Minister Benjamin Netanyahu for alleging foreign interference following the election which saw his coalition lose its majority.\nFinal results confirmed that neither Netanyahu's bloc nor the Jewish opposition had won a majority in parliament.\nNetanyahu's Likud accused Israel's Arab-led parties of \"stealing\" the election. Home security agency Shin Bet is investigating whether they received illegal funding from Qatar and Turkey.\nBoth Arab parties strongly rejected the claim, with the Arab-majority Joint List alliance saying it was baseless.\nIsraeli media reported that the CEC had been presented with a claim that Qatar had provided funding aimed at increasing voter turnout in Arab communities. Qatar's Foreign Ministry \"categorically\" denied the claims.\nThe two Arab party lists - The Joint List and the Ra'am - defied expectations to win a record 19 seats in the 120-seat Knesset following a surge in turnout among Arab voters.\nThat positions them as potential kingmakers, with Netanyahu's bloc winning 53 seats and his rival Gadi Eisenkot's bloc securing 48.\nEisenkot, who was briefed on the investigation, said \"it is too early to determine what happened, or if anything happened at all,\" and accused Netanyahu of running \"an orchestrated and organized campaign to delegitimize the election results\".\nThe final results offer only three plausible options for a government to be formed: a national unity government involving Netanyahu and Eisenkot, a right-wing coalition involving Netanyahu and defectors from Eisenkot's bloc, or an Eisenkot-led government supported by the Arab parties.\nThe PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.\nQatar's foreign ministry denied the \"ridiculous and dangerous\" allegations and accused Israeli politicians of conducting a disinformation campaign against Doha.\nBut the Shin Bet later clarified that their investigation did not implicate an entire community who had voted legally, while acting CEC Director General Dean Livne said there was \"no basis for allegations of systematic violations of election integrity.\"\nThe row is being seen by Netanyahu's critics as an attempt to delegitimise the Arab parties, thereby making it politically impossible for Eisenkot to join forces with them - which is currently his bloc's only route to power.\nOn Thursday Likud alleged that voters had been \"bribed\" to vote for Arab parties, after the head of the Central Elections Committee (CEC) asked the Shin Bet security service to investigate \"serious suspicions\" of foreign interference.\nFor years, many boycotted Israeli elections, saying voting would legitimise a system that they say treats them as second-class citizens. But their turnout on Tuesday was inspired by a desire to oust the most right-wing governing coalition in Israel's history, led by Netanyahu.\nEisenkot and every member of his bloc bar one has previously refused to enter government with Arab parties, but speculation has swirled in recent days that an agreement could yet be reached.\nA snap poll conducted by Hebrew University showed that the most popular option for voters from every party in the opposition bloc was for Eisenkot to form a minority government with Ra'am, and supported from outside by the Joint List.",
+    "evidence_retrieved_at": "2026-10-30T02:32:36.812145+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do Netanyahu's group and the Arab-led parties disagree? Use “They disagree because ...”.",
+          "When people disagree, should they check the facts first? Give your view or advise a fictional friend: “I think ... because ...”."
+        ],
+        "title": "Israel's Leaders Argue About Election Results",
+        "overview": "Learn why leaders in Israel disagree about the election results.",
+        "topic": "Politics and elections",
+        "vocabulary": [
+          {
+            "term": "election",
+            "part_of_speech": "noun",
+            "definition": "A time when people vote to choose leaders."
+          },
+          {
+            "term": "lost",
+            "part_of_speech": "verb, simple past",
+            "definition": "Stopped having something."
+          },
+          {
+            "term": "seats",
+            "part_of_speech": "plural noun",
+            "definition": "Places for people chosen to be members of parliament."
+          },
+          {
+            "term": "rejected",
+            "part_of_speech": "verb, simple past",
+            "definition": "Said that something was not true."
+          },
+          {
+            "term": "results",
+            "part_of_speech": "plural noun",
+            "definition": "The numbers showing how many votes or seats each party won."
+          },
+          {
+            "term": "support",
+            "part_of_speech": "noun",
+            "definition": "Help for someone or their plans."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past",
+          "explanation": "Use the simple past to talk about a finished event. “Won” is the simple past of “win”. Use “won” with different subjects, such as “the parties” and “his group”.",
+          "example_quote": "The Arab-led parties won 19 of the 120 seats in parliament."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news in this reading?",
+            "options": [
+              "Israel's leaders disagree about the election results.",
+              "All the parties agreed to form a government.",
+              "Qatar chose Israel's new leader."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The leaders disagree about whether the election results were fair.",
+              "The reading describes a possible government, but it does not report an agreement.",
+              "The reading reports claims about money from Qatar, not Qatar choosing a leader."
+            ]
+          },
+          {
+            "question": "How many seats did the Arab-led parties win?",
+            "options": [
+              "48",
+              "19",
+              "53"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Eisenkot's group won 48 seats.",
+              "Correct. The Arab-led parties won 19 seats.",
+              "Netanyahu's group won 53 seats."
+            ]
+          },
+          {
+            "question": "What is Israel's security service checking?",
+            "options": [
+              "Who will lead Eisenkot's group",
+              "How many seats parliament should have",
+              "Whether the Arab-led parties received money illegally"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says it is checking claims about money.",
+              "The reading gives parliament's size but does not say this is being checked.",
+              "Correct. It is checking whether the parties received money illegally from Qatar and Turkey."
+            ]
+          },
+          {
+            "question": "What does “rejected” mean in the reading?",
+            "options": [
+              "Said the claim was not true",
+              "Agreed that the claim was true",
+              "Asked someone to explain the claim"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The Arab-led parties said the claim was not true.",
+              "“Rejected” means they did not accept the claim.",
+              "“Rejected” means they said the claim was not true; they did not ask for an explanation."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past of “win” correctly?",
+            "options": [
+              "Eisenkot's group win 48 seats.",
+              "Eisenkot's group won 48 seats.",
+              "Eisenkot's group winning 48 seats."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Win” is not the simple past form; use “won” for a finished event.",
+              "Correct. “Won” is the simple past of “win”, including with “Eisenkot's group”.",
+              "“Winning” alone does not make a complete sentence here; use “won”."
+            ]
+          },
+          {
+            "question": "How could Eisenkot form a government, according to the reading?",
+            "options": [
+              "With support from Qatar",
+              "By winning all 120 seats",
+              "With support from the Arab-led parties"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading mentions Qatar in claims about money, not as support for Eisenkot's government.",
+              "The reading says his group won 48 seats and gives a different possible way to form a government.",
+              "Correct. Their support could help him form a government. The reading describes this as a possibility."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Netanyahu's group of parties lost its majority in Israel's election.",
+          "A majority means more than half the seats in parliament, the group that makes a country's laws.",
+          "His Likud party accused Arab-led parties of stealing the election.",
+          "The Arab-led parties rejected this claim and said it was not true.",
+          "Israel's security service is checking whether these parties received money illegally from Qatar and Turkey.",
+          "Qatar said the claims about its money were not true.",
+          "The Arab-led parties won 19 of the 120 seats in parliament.",
+          "Gadi Eisenkot's group won 48 seats, while Netanyahu's group won 53.",
+          "Eisenkot said it was too early to know if anything had happened.",
+          "He accused Netanyahu of trying to make people think the election results were not fair.",
+          "Eisenkot could form a government with support from the Arab-led parties."
+        ],
+        "sentence_evidence": [
+          "The main Israeli opposition leader Gadi Eisenkot and Arab-led party leaders have denounced Prime Minister Benjamin Netanyahu for alleging foreign interference following the election which saw his coalition lose its majority.",
+          "Final results confirmed that neither Netanyahu's bloc nor the Jewish opposition had won a majority in parliament.",
+          "Netanyahu's Likud accused Israel's Arab-led parties of \"stealing\" the election. Home security agency Shin Bet is investigating whether they received illegal funding from Qatar and Turkey.",
+          "Both Arab parties strongly rejected the claim, with the Arab-majority Joint List alliance saying it was baseless.",
+          "Netanyahu's Likud accused Israel's Arab-led parties of \"stealing\" the election. Home security agency Shin Bet is investigating whether they received illegal funding from Qatar and Turkey.",
+          "Israeli media reported that the CEC had been presented with a claim that Qatar had provided funding aimed at increasing voter turnout in Arab communities. Qatar's Foreign Ministry \"categorically\" denied the claims.",
+          "The two Arab party lists - The Joint List and the Ra'am - defied expectations to win a record 19 seats in the 120-seat Knesset following a surge in turnout among Arab voters.",
+          "That positions them as potential kingmakers, with Netanyahu's bloc winning 53 seats and his rival Gadi Eisenkot's bloc securing 48.",
+          "Eisenkot, who was briefed on the investigation, said \"it is too early to determine what happened, or if anything happened at all,\" and accused Netanyahu of running \"an orchestrated and organized campaign to delegitimize the election results\".",
+          "Eisenkot, who was briefed on the investigation, said \"it is too early to determine what happened, or if anything happened at all,\" and accused Netanyahu of running \"an orchestrated and organized campaign to delegitimize the election results\".",
+          "The final results offer only three plausible options for a government to be formed: a national unity government involving Netanyahu and Eisenkot, a right-wing coalition involving Netanyahu and defectors from Eisenkot's bloc, or an Eisenkot-led government supported by the Arab parties."
+        ],
+        "editorial_check": {
+          "date": "2026-10-30T02:37:59.233843+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "“Election,” “lost,” “seats,” “rejected,” “results” and “support” occur in the reading and have useful, accessible definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting preserves attribution through “accused,” “checking whether” and “could form a government.”"
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences explain “majority” and “parliament”; the exact grammar quotation demonstrates “won.” Discussion includes sentence frames and a fictional alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Six distinct questions test the main idea, seat numbers, the investigation, “rejected,” simple past and possible government support."
+            }
+          },
+          "content_digest": "db9ef0032ab7d2ce0f1702ade04aaf292c50bfa2d33ea8bd9828dc22a32bad4d"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why could the Arab parties have an important role in forming a government, even though they won fewer seats than the other blocs?",
+          "What should political leaders do while election claims are being investigated? Explain your view."
+        ],
+        "title": "Netanyahu faces criticism over election claims",
+        "overview": "Israeli parties disagree over claims of illegal foreign funding after an election leaves the main political groups without a majority.",
+        "topic": "Politics and elections",
+        "vocabulary": [
+          {
+            "term": "coalition",
+            "part_of_speech": "noun",
+            "definition": "A group of political parties that work together to govern."
+          },
+          {
+            "term": "majority",
+            "part_of_speech": "noun",
+            "definition": "More than half of the total, here referring to seats in parliament."
+          },
+          {
+            "term": "turnout",
+            "part_of_speech": "uncountable noun",
+            "definition": "The number or percentage of people who vote in an election."
+          },
+          {
+            "term": "accused",
+            "part_of_speech": "verb, past tense",
+            "definition": "Said that someone had done something wrong, without necessarily proving it."
+          },
+          {
+            "term": "funding",
+            "part_of_speech": "uncountable noun",
+            "definition": "Money provided to pay for an activity or organisation."
+          },
+          {
+            "term": "allegations",
+            "part_of_speech": "plural noun",
+            "definition": "Claims that someone has done something wrong which have not been proved."
+          },
+          {
+            "term": "investigation",
+            "part_of_speech": "noun",
+            "definition": "A process of carefully examining information to find out what happened."
+          },
+          {
+            "term": "join forces",
+            "part_of_speech": "verb phrase",
+            "definition": "Work together to achieve a shared aim."
+          }
+        ],
+        "grammar": {
+          "concept": "Present continuous passive",
+          "explanation": "Use “is” or “are” + “being” + a past participle to describe an action happening now when the person or thing receiving the action is the focus. In the example sentence, “is being investigated” describes an examination that is still in progress; it does not mean the claim has been proved. The phrase beginning with “by” identifies who is carrying out the investigation.",
+          "example_quote": "The possibility of illegal funding from Qatar and Turkey is being investigated by Israel's home security agency, Shin Bet."
+        },
+        "quiz": [
+          {
+            "question": "What is the main disagreement described in the reading?",
+            "options": [
+              "Whether parliament has 120 seats",
+              "Whether wrongdoing affected the election",
+              "Whether the Arab parties won any seats"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading gives the total number of seats without describing a disagreement about it.",
+              "Likud accused the Arab parties of wrongdoing, while the parties rejected the claim and an investigation continued.",
+              "The reading reports that the Arab parties won 19 seats; the disagreement concerns accusations about the election."
+            ]
+          },
+          {
+            "question": "Which comparison matches the reported seat totals?",
+            "options": [
+              "Eisenkot's bloc won more seats than Netanyahu's bloc.",
+              "The Arab parties won more seats than either main bloc.",
+              "Netanyahu's bloc won more seats than Eisenkot's bloc."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Eisenkot's bloc won 48 seats, compared with 53 for Netanyahu's bloc.",
+              "The Arab parties won 19 seats, fewer than either main bloc.",
+              "Netanyahu's bloc won 53 seats, while Eisenkot's bloc won 48."
+            ]
+          },
+          {
+            "question": "Which reason from the reading explains why the Arab parties could influence who forms the next government?",
+            "options": [
+              "Neither main bloc had a majority, so cooperation could matter.",
+              "The Arab parties already controlled more than half of parliament.",
+              "The investigation had given the Arab parties extra seats."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Neither main bloc had enough seats for a majority, giving the Arab parties a possible role in forming a government.",
+              "The Arab parties won 19 of 120 seats, which is less than half.",
+              "The reading does not report any extra seats being awarded through the investigation."
+            ]
+          },
+          {
+            "question": "What does the reading establish about possible illegal foreign funding?",
+            "options": [
+              "Qatar admitted providing illegal funding.",
+              "An investigation was examining whether it happened.",
+              "Investigators had proved that both countries provided illegal funding."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Qatar denied the allegations.",
+              "The possibility was being investigated, so the reading does not present it as proved.",
+              "An ongoing investigation does not establish that the alleged funding happened."
+            ]
+          },
+          {
+            "question": "What did the security agency clarify about the community whose members voted legally?",
+            "options": [
+              "The entire community was accused of wrongdoing.",
+              "Its members' votes had been cancelled.",
+              "Its investigation did not accuse the entire community."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The agency said its investigation did not accuse an entire community.",
+              "The reading does not say these votes were cancelled.",
+              "The agency distinguished its investigation from an accusation against a whole community."
+            ]
+          },
+          {
+            "question": "According to Netanyahu's critics, what was he trying to achieve through the accusations?",
+            "options": [
+              "Prevent cooperation between Eisenkot and the Arab parties",
+              "Encourage Eisenkot to lead a government with the Arab parties",
+              "Persuade Qatar to accept the election results"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "His critics said he was trying to prevent Eisenkot from joining forces with the Arab parties.",
+              "The critics described an attempt to prevent this cooperation.",
+              "The reading does not identify this as the purpose described by his critics."
+            ]
+          },
+          {
+            "question": "What does “turnout” describe in the report about Arab voters?",
+            "options": [
+              "The amount of money parties received",
+              "The number or percentage of people who voted",
+              "The number of parties entering parliament"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Money provided for an activity is “funding”.",
+              "“Turnout” measures how many people take part in voting.",
+              "“Turnout” refers to voters taking part, rather than parties entering parliament."
+            ]
+          },
+          {
+            "question": "Which workplace situation best illustrates the meaning of “join forces”?",
+            "options": [
+              "Two teams compete for the same contract.",
+              "Two teams refuse to share information.",
+              "Two teams work together to finish a shared project."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Competing does not express the shared effort meant by “join forces”.",
+              "Refusing to share information does not show the cooperation meant by “join forces”.",
+              "“Join forces” means working together towards a shared aim, as political parties might do when forming a government."
+            ]
+          },
+          {
+            "question": "An election team is checking totals right now; which sentence uses the present continuous passive to describe this?",
+            "options": [
+              "The totals are being checked by the election team.",
+              "The totals were checked by the election team.",
+              "The totals will be checked by the election team."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Are being checked” uses the present continuous passive for work happening now.",
+              "“Were checked” is grammatical, but it uses the past simple passive.",
+              "“Will be checked” is grammatical, but it refers to a future action."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Netanyahu's coalition, a group of parties governing together, lost its majority in Israel's election.",
+          "Final results showed that neither Netanyahu's bloc, or political group, nor the main Jewish opposition won more than half the seats in parliament.",
+          "The two Arab party lists won a record 19 of parliament's 120 seats following a sharp rise in turnout among Arab voters.",
+          "Netanyahu's bloc won 53 seats, while the bloc led by his rival Gadi Eisenkot won 48.",
+          "These figures could give the Arab parties an important role in deciding who forms the next government.",
+          "Likud, Netanyahu's party, accused the Arab-led parties of stealing the election.",
+          "The possibility of illegal funding from Qatar and Turkey is being investigated by Israel's home security agency, Shin Bet.",
+          "Qatar denied the allegations and accused Israeli politicians of spreading false information about the country.",
+          "Both Arab parties rejected the claim of wrongdoing, and the Joint List said it had no basis.",
+          "The agency later clarified that its investigation did not accuse an entire community whose members had voted legally.",
+          "An election official said there was no basis for claims of a pattern of actions breaking rules protecting fair elections.",
+          "Eisenkot said it was too early to know whether anything had happened and accused Netanyahu of trying to weaken trust in the results.",
+          "Netanyahu's critics said he was trying to prevent Eisenkot from agreeing to join forces with the Arab parties."
+        ],
+        "sentence_evidence": [
+          "The PM's Likud party has alleged foreign interference and said Arab-led parties \"stole\" the election after his coalition lost its majority.",
+          "Final results confirmed that neither Netanyahu's bloc nor the Jewish opposition had won a majority in parliament.",
+          "The two Arab party lists - The Joint List and the Ra'am - defied expectations to win a record 19 seats in the 120-seat Knesset following a surge in turnout among Arab voters.",
+          "That positions them as potential kingmakers, with Netanyahu's bloc winning 53 seats and his rival Gadi Eisenkot's bloc securing 48.",
+          "That positions them as potential kingmakers, with Netanyahu's bloc winning 53 seats and his rival Gadi Eisenkot's bloc securing 48.",
+          "Netanyahu's Likud accused Israel's Arab-led parties of \"stealing\" the election. Home security agency Shin Bet is investigating whether they received illegal funding from Qatar and Turkey.",
+          "Netanyahu's Likud accused Israel's Arab-led parties of \"stealing\" the election. Home security agency Shin Bet is investigating whether they received illegal funding from Qatar and Turkey.",
+          "Qatar's foreign ministry denied the \"ridiculous and dangerous\" allegations and accused Israeli politicians of conducting a disinformation campaign against Doha.",
+          "Both Arab parties strongly rejected the claim, with the Arab-majority Joint List alliance saying it was baseless.",
+          "But the Shin Bet later clarified that their investigation did not implicate an entire community who had voted legally, while acting CEC Director General Dean Livne said there was \"no basis for allegations of systematic violations of election integrity.\"",
+          "But the Shin Bet later clarified that their investigation did not implicate an entire community who had voted legally, while acting CEC Director General Dean Livne said there was \"no basis for allegations of systematic violations of election integrity.\"",
+          "Eisenkot, who was briefed on the investigation, said \"it is too early to determine what happened, or if anything happened at all,\" and accused Netanyahu of running \"an orchestrated and organized campaign to delegitimize the election results\".",
+          "The row is being seen by Netanyahu's critics as an attempt to delegitimise the Arab parties, thereby making it politically impossible for Eisenkot to join forces with them - which is currently his bloc's only route to power."
+        ],
+        "editorial_check": {
+          "date": "2026-10-30T02:43:49.597719+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All eight targets occur in the reading, avoid reserved vocabulary, and provide useful B1-B2 learning, including “turnout” and “join forces”."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting consistently attributes accusations and preserves uncertainty through wording such as “could” and “critics said”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and feedback are clear. The exact grammar quotation correctly demonstrates “is being investigated” and explains its meaning."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Thirteen distinct reading sentences and nine valid questions combine comprehension, comparisons, supported reasoning, contextual vocabulary and grammar transfer."
+            }
+          },
+          "content_digest": "4265f4caa9bee0babe7d5a710f9a57dcfae92816897953e0b936640da066749b"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why the Arab parties could gain bargaining power despite holding fewer seats than either major bloc.",
+          "What safeguards would you prioritise when examining disputed electoral conduct without prejudging the people involved?"
+        ],
+        "title": "Israeli Opposition Challenges Netanyahu's Claims of Electoral Interference",
+        "overview": "Explore how disputed interference claims intersect with coalition negotiations, while distinguishing political accusations, institutional findings and unresolved questions.",
+        "topic": "Electoral legitimacy and coalition negotiations in Israel",
+        "vocabulary": [
+          {
+            "term": "disinformation campaign",
+            "part_of_speech": "noun phrase",
+            "definition": "A coordinated effort to spread deliberately false or misleading information in order to influence public understanding."
+          },
+          {
+            "term": "defied expectations",
+            "part_of_speech": "verb phrase, past tense",
+            "definition": "Produced an outcome substantially different from what people had anticipated."
+          },
+          {
+            "term": "kingmakers",
+            "part_of_speech": "plural noun",
+            "definition": "Political participants whose backing can determine who gains power, even though they do not lead the government themselves."
+          },
+          {
+            "term": "baseless",
+            "part_of_speech": "adjective",
+            "definition": "Lacking adequate evidence or justification; here, this expresses the Joint List's assessment of the claim."
+          },
+          {
+            "term": "delegitimise",
+            "part_of_speech": "verb",
+            "definition": "Undermine the recognition of someone or something as valid, rightful or entitled to participate."
+          },
+          {
+            "term": "implicate",
+            "part_of_speech": "verb",
+            "definition": "Connect someone with suspected wrongdoing, without necessarily establishing their guilt."
+          },
+          {
+            "term": "systematic",
+            "part_of_speech": "adjective",
+            "definition": "Following an organised or consistent pattern rather than occurring as isolated incidents."
+          },
+          {
+            "term": "orchestrating",
+            "part_of_speech": "verb, present participle",
+            "definition": "Deliberately coordinating several actions towards a particular outcome; here, it suggests a planned political campaign."
+          },
+          {
+            "term": "oust",
+            "part_of_speech": "verb",
+            "definition": "Remove someone from a position of power, including through electoral or parliamentary action."
+          },
+          {
+            "term": "defectors",
+            "part_of_speech": "plural noun",
+            "definition": "People who abandon their political group to align themselves with another side."
+          },
+          {
+            "term": "ruled out",
+            "part_of_speech": "phrasal verb, past participle",
+            "definition": "Declared that a particular course of action would not be considered or accepted."
+          },
+          {
+            "term": "snap poll",
+            "part_of_speech": "noun phrase",
+            "definition": "A public-opinion survey conducted quickly to capture views on an immediate issue."
+          }
+        ],
+        "grammar": {
+          "concept": "What-clefts for focusing an interpretation",
+          "explanation": "A what-cleft divides a message into a clause beginning with “What” and a focal statement introduced by “is” or “was”. Here, “What Netanyahu's critics see in the dispute” introduces their perspective, while the material after “is” foregrounds their interpretation of the dispute's purpose. The attribution remains essential: the sentence presents the critics' assessment rather than an established motive.",
+          "example_quote": "What Netanyahu's critics see in the dispute is an attempt to delegitimise the Arab parties and make Eisenkot's only current route to power, an agreement with them, politically impossible."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the central tension in the brief?",
+            "options": [
+              "A confirmed foreign operation has determined which coalition must govern.",
+              "Disputed interference claims have become entangled with the struggle to form a government.",
+              "The opposition has agreed on a government despite objections from the Arab parties."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief describes suspected interference and competing assessments, not a confirmed foreign operation.",
+              "The claims concern electoral conduct, while critics connect them to efforts to obstruct a possible governing arrangement.",
+              "The brief reports speculation about an agreement, not an agreement already reached."
+            ]
+          },
+          {
+            "question": "Why does the brief describe the Arab parties as potential “kingmakers”?",
+            "options": [
+              "Their backing could determine which rival bloc can form a government.",
+              "Their combined seats exceed those of either rival bloc.",
+              "They have already selected the next prime minister."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Neither rival bloc secured a majority, so backing from the Arab parties could be decisive.",
+              "Their 19 seats are fewer than the 53 and 48 held by the rival blocs.",
+              "“Potential” indicates possible influence; the brief does not report that a prime minister has been selected."
+            ]
+          },
+          {
+            "question": "How did Qatar's foreign ministry respond to the accusations?",
+            "options": [
+              "It acknowledged financial assistance but disputed its electoral purpose.",
+              "It accepted the accusations while questioning the inquiry's independence.",
+              "It dismissed the accusations and alleged an Israeli disinformation campaign."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The ministry dismissed the accusations; the brief reports no acknowledgement of financial assistance.",
+              "The brief describes rejection of the accusations, not acceptance accompanied by criticism of the inquiry.",
+              "The ministry both rejected the accusations and charged Israeli politicians with spreading disinformation."
+            ]
+          },
+          {
+            "question": "According to Netanyahu's critics, what political purpose could the dispute serve?",
+            "options": [
+              "Persuading the Arab parties to abandon their parliamentary seats.",
+              "Making an agreement between Eisenkot and the Arab parties politically impossible.",
+              "Demonstrating that Netanyahu and Eisenkot had already agreed to govern together."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The critics' stated concern is the political acceptability of cooperation, not the surrender of seats.",
+              "The critics regard the dispute as an attempt to obstruct what they see as Eisenkot's only current route to power.",
+              "A unity administration is listed as an option, but no completed agreement is reported."
+            ]
+          },
+          {
+            "question": "What does the Joint List convey by describing the claim as “baseless”?",
+            "options": [
+              "It considers the claim inadequately supported.",
+              "It accepts the claim but disputes its political relevance.",
+              "It reports that the security service has formally cleared every party."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Baseless” expresses the Joint List's judgment that the claim lacks adequate evidence or justification.",
+              "“Baseless” rejects the claim's foundation rather than accepting it as true.",
+              "The wording expresses a party's assessment; it does not establish a comprehensive official clearance."
+            ]
+          },
+          {
+            "question": "Which conclusion is consistent with both institutional statements reported in the brief?",
+            "options": [
+              "The inquiry established wrongdoing across the Arab electorate.",
+              "Every possible instance of electoral misconduct had been excluded.",
+              "The inquiry did not justify implicating an entire community or asserting systematic breaches."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Shin Bet specifically clarified that its inquiry did not implicate an entire community.",
+              "The statements concern collective implication and systematic breaches; they do not exclude every possible incident.",
+              "This preserves the limits of both statements without converting them into a blanket finding about every allegation."
+            ]
+          },
+          {
+            "question": "What distinction does “systematic” introduce in the discussion of electoral breaches?",
+            "options": [
+              "A distinction between foreign conduct and domestic conduct.",
+              "A distinction between an organised pattern and isolated incidents.",
+              "A distinction between suspected conduct and conduct that is automatically lawful."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Systematic” concerns a pattern of conduct, not where that conduct originates.",
+              "“Systematic” describes an organised or consistent pattern, so denying such a pattern does not necessarily exclude isolated incidents.",
+              "“Systematic” does not determine whether conduct is lawful or whether suspicion has been proved."
+            ]
+          },
+          {
+            "question": "What uncertainty did Eisenkot explicitly preserve in his response?",
+            "options": [
+              "Whether any relevant wrongdoing had occurred at all.",
+              "Whether the Arab parties had won any parliamentary seats.",
+              "Whether Netanyahu's bloc had secured a parliamentary majority."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "His caution extended to whether anything had happened, rather than assuming an offence and debating only its scale.",
+              "The brief gives the Arab parties' seat total as a confirmed result.",
+              "The brief states that Netanyahu's bloc had not secured a majority."
+            ]
+          },
+          {
+            "question": "In the proposed Netanyahu coalition, who would the “defectors” be?",
+            "options": [
+              "Arab voters who had previously boycotted elections.",
+              "Members of the security service who disputed the accusations.",
+              "Members leaving Eisenkot's bloc to align themselves with Netanyahu."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Changing from non-participation to voting does not make these voters the political “defectors” described here.",
+              "The proposed arrangement concerns parliamentary alignments, not security-service personnel.",
+              "“Defectors” identifies people switching political allegiance from Eisenkot's bloc to Netanyahu's side."
+            ]
+          },
+          {
+            "question": "How should readers reconcile Eisenkot's previous position with the speculation about an agreement?",
+            "options": [
+              "His previous refusal proves that an agreement is now impossible.",
+              "His earlier refusal remains relevant, but a possible change has not been confirmed.",
+              "The speculation establishes that every member of his bloc has reversed position."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A previous refusal does not establish permanent impossibility, particularly when the brief reports speculation about an agreement.",
+              "The brief contrasts an established earlier stance with an unresolved possibility.",
+              "Speculation does not establish either a completed agreement or a unanimous change of position."
+            ]
+          },
+          {
+            "question": "What does the snap poll establish about the proposed minority government?",
+            "options": [
+              "It was the most popular option among voters from each party in the opposition bloc.",
+              "Every surveyed opposition voter preferred it to all other arrangements.",
+              "The opposition parties had formally committed themselves to creating it."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The finding concerns the leading preference within each party's voter group.",
+              "The most popular option within a group need not be the preference of every person in that group.",
+              "A poll measures reported preferences; it does not establish commitments by political parties."
+            ]
+          },
+          {
+            "question": "Which grammatical sentence uses a what-cleft to foreground the Joint List's assessment while preserving its attribution?",
+            "options": [
+              "It was the Joint List that described the claim as baseless.",
+              "The claim was described as baseless by the Joint List.",
+              "What the Joint List challenged was the basis for the claim."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This grammatical sentence uses an it-cleft, which focuses on who made the assessment.",
+              "This grammatical sentence uses a passive construction rather than a what-cleft.",
+              "The clause beginning with “What” introduces the issue, and the phrase after “was” focuses on the claim's basis."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Israeli opposition leader Gadi Eisenkot and Arab-led party leaders denounced Prime Minister Benjamin Netanyahu over claims of foreign interference after his coalition lost its majority.",
+          "Netanyahu's Likud party accused Arab-led parties of stealing the election, while the Shin Bet security agency was examining whether they had received illegal financial assistance from Qatar and Turkey.",
+          "Qatar's foreign ministry dismissed the accusations and charged Israeli politicians with conducting a disinformation campaign against Doha.",
+          "Neither Netanyahu's bloc nor the Jewish opposition secured a parliamentary majority.",
+          "The Joint List and Ra'am defied expectations by securing a record 19 of the Knesset's 120 seats after a surge in Arab voter participation.",
+          "With Netanyahu's bloc on 53 seats and Eisenkot's on 48, the Arab parties emerged as potential kingmakers, whose backing could determine who forms a government.",
+          "Likud alleged that voters had been bribed to choose Arab parties, following a request by the head of the Central Elections Committee for a security inquiry into suspected foreign interference.",
+          "Both Arab parties rejected the claim, and the Joint List described it as baseless.",
+          "What Netanyahu's critics see in the dispute is an attempt to delegitimise the Arab parties and make Eisenkot's only current route to power, an agreement with them, politically impossible.",
+          "Shin Bet clarified that its inquiry did not implicate an entire community whose members had voted legally.",
+          "The acting director general of the Central Elections Committee said there was no basis for claims of systematic breaches of election integrity.",
+          "Eisenkot cautioned that it remained too early to establish whether anything had happened and accused Netanyahu of orchestrating a campaign against the legitimacy of the results.",
+          "Many Arab Israelis had previously boycotted elections, but their participation was now motivated by a desire to oust Netanyahu's governing coalition.",
+          "The reported options for forming a government were a Netanyahu–Eisenkot unity administration, a Netanyahu coalition involving defectors from Eisenkot's bloc, or an Eisenkot-led administration backed by Arab parties.",
+          "Although Eisenkot and all but one member of his bloc had previously ruled out governing with Arab parties, speculation persisted that an agreement might still be reached.",
+          "A Hebrew University snap poll found that, among voters from each party in the opposition bloc, the most popular option was an Eisenkot minority government involving Ra'am, with the Joint List providing backing from outside the government."
+        ],
+        "sentence_evidence": [
+          "The main Israeli opposition leader Gadi Eisenkot and Arab-led party leaders have denounced Prime Minister Benjamin Netanyahu for alleging foreign interference following the election which saw his coalition lose its majority.",
+          "Netanyahu's Likud accused Israel's Arab-led parties of \"stealing\" the election. Home security agency Shin Bet is investigating whether they received illegal funding from Qatar and Turkey.",
+          "Qatar's foreign ministry denied the \"ridiculous and dangerous\" allegations and accused Israeli politicians of conducting a disinformation campaign against Doha.",
+          "Final results confirmed that neither Netanyahu's bloc nor the Jewish opposition had won a majority in parliament.",
+          "The two Arab party lists - The Joint List and the Ra'am - defied expectations to win a record 19 seats in the 120-seat Knesset following a surge in turnout among Arab voters.",
+          "That positions them as potential kingmakers, with Netanyahu's bloc winning 53 seats and his rival Gadi Eisenkot's bloc securing 48.",
+          "On Thursday Likud alleged that voters had been \"bribed\" to vote for Arab parties, after the head of the Central Elections Committee (CEC) asked the Shin Bet security service to investigate \"serious suspicions\" of foreign interference.",
+          "Both Arab parties strongly rejected the claim, with the Arab-majority Joint List alliance saying it was baseless.",
+          "The row is being seen by Netanyahu's critics as an attempt to delegitimise the Arab parties, thereby making it politically impossible for Eisenkot to join forces with them - which is currently his bloc's only route to power.",
+          "But the Shin Bet later clarified that their investigation did not implicate an entire community who had voted legally, while acting CEC Director General Dean Livne said there was \"no basis for allegations of systematic violations of election integrity.\"",
+          "But the Shin Bet later clarified that their investigation did not implicate an entire community who had voted legally, while acting CEC Director General Dean Livne said there was \"no basis for allegations of systematic violations of election integrity.\"",
+          "Eisenkot, who was briefed on the investigation, said \"it is too early to determine what happened, or if anything happened at all,\" and accused Netanyahu of running \"an orchestrated and organized campaign to delegitimize the election results\".",
+          "For years, many boycotted Israeli elections, saying voting would legitimise a system that they say treats them as second-class citizens. But their turnout on Tuesday was inspired by a desire to oust the most right-wing governing coalition in Israel's history, led by Netanyahu.",
+          "The final results offer only three plausible options for a government to be formed: a national unity government involving Netanyahu and Eisenkot, a right-wing coalition involving Netanyahu and defectors from Eisenkot's bloc, or an Eisenkot-led government supported by the Arab parties.",
+          "Eisenkot and every member of his bloc bar one has previously refused to enter government with Arab parties, but speculation has swirled in recent days that an agreement could yet be reached.",
+          "A snap poll conducted by Hebrew University showed that the most popular option for voters from every party in the opposition bloc was for Eisenkot to form a minority government with Ra'am, and supported from outside by the Joint List."
+        ],
+        "editorial_check": {
+          "date": "2026-10-30T02:46:26.067177+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All 12 targets occur in the reading, avoid reserved vocabulary, and offer appropriate advanced learning value, including “implicate,” “delegitimise” and “snap poll.”"
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is polished and appropriately qualified: “potential kingmakers” and “speculation persisted” preserve uncertainty, while disputed assessments remain attributed."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the accurately quoted what-cleft supports an explanation of focus and attribution. Language examples are appropriately marked."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The 16 reading sentences and 12 distinct quiz questions exceed the minimums without padding. Questions test attribution, institutional qualifications, group preferences and grammatical focus, with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "9d09a5411ff7ec4813dc934154a9e52909c44393f4b0292bbcc2e23d0b34c2f6"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

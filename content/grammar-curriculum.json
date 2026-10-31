@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-29",
+  "revision": "2026-10-31",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -6314,6 +6314,133 @@
         "https://assets.cambridge.org/97813166/31751/excerpt/9781316631751_excerpt.pdf",
         "https://pressbooks.cuny.edu/englishsyntax/chapter/chapter-7/",
         "https://udel.pressbooks.pub/language/chapter/articles-a-an-the-o-more-patterns-of-use/"
+      ]
+    },
+    {
+      "number": 55,
+      "title": "Active or passive? Choose your starting point",
+      "level": "B1",
+      "category": "Verb forms and sentence focus",
+      "goal": "Explain who does an action and what receives it, then choose an active or passive sentence to suit your message.",
+      "rules": [
+        "In an active action sentence, the subject names the doer: ‘A painter painted the door.’ In its passive counterpart, the receiver becomes the subject: ‘The door was painted by a painter.’ The painting event stays the same; the sentence starts from a different participant. The passive is useful when you want to make the receiver your topic. This is a pattern for action sentences, not a claim that every active subject deliberately does something.",
+        "The usual passive uses be plus a past participle, a verb form such as painted, written, or made. In the past simple, choose was or were to match the subject: ‘The door was painted’; ‘The doors were painted.’ Was/were supplies past time and agreement; the participle names the action. Without was, ‘The door painted yesterday’ wrongly presents the door as doing the painting. Some participles differ from the simple past: write, wrote, written.",
+        "Add by plus the doer when that information helps: ‘The door was painted by a local artist.’ Leave the doer out when unknown, obvious, or unimportant: ‘The door was painted yesterday.’ A passive does not prove that the doer is unknown. Not every verb allows this change: arrive has no object to become a passive subject, so say ‘The train arrived’, not ‘The train was arrived’. Get can also form some passives, but this lesson practices the usual be pattern."
+      ],
+      "cards": [
+        {
+          "label": "ACTIVE: START WITH THE DOER",
+          "example": "A painter painted the door.",
+          "note": "A painter is the subject and does the painting. The door receives that action. This wording starts with the person who acted."
+        },
+        {
+          "label": "PASSIVE: START WITH THE RECEIVER",
+          "example": "The door was painted by a painter.",
+          "note": "The door is now the subject, but it still receives the painting action. Was painted marks the past passive; by a painter identifies the same doer."
+        },
+        {
+          "label": "KEEP THE ACTION; OMIT AN UNNEEDED DOER",
+          "example": "Two windows were repaired yesterday.",
+          "note": "This reports what happened to the windows without naming the repairer. Plural windows takes were; repaired is the past participle."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Someone painted the door yesterday. Complete a sentence that starts with the receiver: ‘The door ___ yesterday.’",
+          "options": [
+            {
+              "text": "painted",
+              "correct": false,
+              "feedback": "Painted alone would make the door the doer. Because the door receives the action, use the past passive was painted."
+            },
+            {
+              "text": "was painted",
+              "correct": true,
+              "feedback": "The door receives the action. Was supplies past time and matches the singular subject; painted is the past participle."
+            },
+            {
+              "text": "was paint",
+              "correct": false,
+              "feedback": "Was supplies past time, but the passive also needs a past participle. Use painted, not the base form paint."
+            }
+          ]
+        },
+        {
+          "prompt": "Rewrite ‘A local artist painted the door’ in the passive, keeping both the action and the named doer.",
+          "options": [
+            {
+              "text": "The door was painted by a local artist.",
+              "correct": true,
+              "feedback": "The door becomes the subject because it receives the action. By a local artist keeps the original doer; the painting event stays the same."
+            },
+            {
+              "text": "A local artist was painted by the door.",
+              "correct": false,
+              "feedback": "This reverses the roles: it makes the artist receive paint and the door do the painting. Keep the door as receiver and the artist as doer."
+            },
+            {
+              "text": "The door painted a local artist.",
+              "correct": false,
+              "feedback": "This is active and makes the door the doer. Use was painted to show that the door receives the action."
+            }
+          ]
+        },
+        {
+          "prompt": "Someone wrote the instructions last week. Choose the correct past passive: ‘The instructions ___ last week.’",
+          "options": [
+            {
+              "text": "was written",
+              "correct": false,
+              "feedback": "Written is the right participle, but instructions is plural. The past form of be must agree: were written."
+            },
+            {
+              "text": "were wrote",
+              "correct": false,
+              "feedback": "Were matches the plural subject, but wrote is the simple past form. The passive needs the past participle written."
+            },
+            {
+              "text": "were written",
+              "correct": true,
+              "feedback": "The instructions receive the writing action. Were marks past time and agrees with the plural subject; written is the past participle of write."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You are giving an update about a bridge. Repairs finished yesterday, but you do not know who did them. Choose a complete sentence that starts with the bridge and does not invent a doer.",
+        "options": [
+          {
+            "text": "The bridge repaired yesterday.",
+            "correct": false,
+            "feedback": "This makes the bridge the doer. The bridge received the repairs, so use was repaired to express the past passive."
+          },
+          {
+            "text": "The bridge was repaired yesterday.",
+            "correct": true,
+            "feedback": "The bridge is the receiver and your topic. Was repaired reports the completed past action; the passive lets you leave the unknown doer unnamed."
+          },
+          {
+            "text": "The bridge was repaired by our neighbors yesterday.",
+            "correct": false,
+            "feedback": "The grammar is passive, but the sentence invents who did the repair. Since you do not know the doer, omit the by phrase."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-55-active-passive-student-workbook.pdf",
+        "concept-55-active-passive-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-31",
+      "related": [
+        14,
+        26,
+        53
+      ],
+      "sources": [
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/passives",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/active-passive-voice",
+        "https://learnenglishteens.britishcouncil.org/grammar/b1-b2-grammar/passive-forms",
+        "https://dictionary.cambridge.org/grammar/british-grammar/passive-typical-errors"
       ]
     }
   ],

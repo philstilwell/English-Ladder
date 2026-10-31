@@ -72,11 +72,14 @@ disk space; the checkout-status check below remains mandatory.
    The runner uses fresh ephemeral Codex sessions for drafting, independent
    editorial review, translation, independent multilingual editing, and image
    generation. The exact underlying built-in image model is recorded as not
-   exposed unless the tool reports it explicitly. Local validators import the results. It allows at most three full
-   lesson attempts per level during one scheduled run. Isolated mechanical errors and
+   exposed unless the tool reports it explicitly. Local validators import the results. It allows at most three draft or repair
+   attempts per level during one scheduled run. Isolated mechanical errors and
    explicit grammar-only editorial failures use section replacements with the reading
    and omitted sections locked; ambiguous or mixed editorial failures use a complete
-   revision. Every merged lesson still receives all validators and a fresh independent
+   revision. The reviewer returns an explicit affected_sections list; section-only
+   routing must match a saved checksum of both the draft and its issues. Legacy,
+   stale, unknown, or mixed scope cannot authorize editorial section-only repair.
+   Every merged lesson still receives all validators and a fresh independent
    full-lesson review. Grammar explanations must finish within 420 characters; the
    writer targets 180–320 without repeating the separately displayed example. It retains resumable state
    under ignored `.daily-agent/`. A per-edition process lock makes overlapping
@@ -111,10 +114,13 @@ disk space; the checkout-status check below remains mandatory.
    audio. Expected daily output may include the dated archive, dated image and
    metadata, translation records, level pages, dated pages, Discover page, feeds,
    search metadata, and sitemaps.
-6. Re-run `.venv/bin/python audit_site.py`,
+6. After the runner returns `ready_to_publish` and all generated files are stable,
+   run `.venv/bin/python audit_site.py`,
    `.venv/bin/python -m unittest discover -s tests`, and
    `/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node --test tests/*.test.cjs`
-   if any file changed after the runner finished. The absolute Node path is the
+   before committing. Never run site-wide suites concurrently with generation or
+   rebuilding: they can observe a new archive before its pages exist. Repeat the
+   affected checks if subsequent edits invalidate earlier results. The absolute Node path is the
    supported runtime bundled with the ChatGPT desktop app that owns this task.
 7. Fetch `origin/main` again. Rebase the validated commit if main moved, then
    repeat the focused completeness check. Commit with

@@ -12,7 +12,6 @@ import argparse
 import hashlib
 from datetime import datetime, timezone
 import json
-import re
 from pathlib import Path
 import subprocess
 import sys
@@ -121,20 +120,49 @@ def validate_plan_lesson(lesson, level):
     return issues
 
 
-def repair_fields(lesson, source, level, issues):
+def repair_fields(lesson, source, level, issues, scope=None):
     fields = update_site.local_repair_fields(lesson, source, level, issues)
     if fields:
         return fields
-    # Editorial feedback can authorize a grammar-only repair only when every
-    # primary issue explicitly names grammar and no other suitability check failed.
-    primary = [i for i in issues if not i.startswith("Level suitability failed")]
-    summaries = [i for i in issues if i.startswith("Level suitability failed")]
-    if (primary and all(re.match(r"(?:In )?(?:lesson\.)?grammar\.", i) for i in primary)
-            and all(i.startswith("Level suitability failed (teaching_language):") for i in summaries)
-            and not update_site.validate_reading_length(lesson.get("news_brief_sentences"), level)
-            and not validate_evidence(lesson, source)):
+    if (update_site.validate_reading_length(lesson.get("news_brief_sentences"), level)
+            or validate_evidence(lesson, source)):
+        return ()
+    # Route our own grammar checks by exact diagnostic identity, never reviewer prose.
+    ordinary = update_site.validate_lesson_data(lesson, level)
+    grammar_issues = [i for i in validate_plan_lesson(lesson, level) if i not in ordinary]
+    if issues and grammar_issues and all(i in grammar_issues for i in issues):
+        return ("grammar",)
+    # Editorial scope is explicit and bound to this exact draft and issue set.
+    # Ambiguous, legacy, stale or mixed feedback always receives a full revision.
+    if (isinstance(scope, dict) and scope.get("base_sha256") == draft_digest(lesson)
+            and scope.get("issues_sha256") == draft_digest(issues)
+            and scope.get("affected_sections") == ["grammar"]
+            and isinstance(scope.get("failed_checks"), list)
+            and all(check == "teaching_language" for check in scope["failed_checks"])):
         return ("grammar",)
     return ()
+
+
+REVIEW_SECTIONS = ("title", "overview", "topic", "reading", "evidence",
+                   "vocabulary", "grammar", "quiz", "discussion", "unknown")
+
+
+def validate_review_scope(raw):
+    if not isinstance(raw, dict):
+        raise ValueError("Editorial review must be a JSON object.")
+    sections = raw.get("affected_sections")
+    # Older retained reviews predate this field and remain readable; their
+    # feedback cannot authorize a section-only repair.
+    if sections is None:
+        return None
+    if (not isinstance(sections, list) or any(not isinstance(x, str) or x not in REVIEW_SECTIONS for x in sections)
+            or len(sections) != len(set(sections))):
+        raise ValueError("Review affected_sections must be a distinct list of known lesson sections.")
+    if raw.get("approved") and sections:
+        raise ValueError("An approved review cannot also identify affected sections.")
+    if not raw.get("approved") and not sections:
+        raise ValueError("A rejected review must identify affected sections, or unknown.")
+    return sections
 
 
 def draft_digest(lesson):
@@ -154,7 +182,9 @@ def prepare_level(release_date: str, state: Path, name: str) -> dict:
         if not isinstance(issues, list) or any(not isinstance(issue, str) for issue in issues):
             raise ValueError("Saved revision issues are invalid.")
         previous = load_json(previous_path)
-        fields = repair_fields(previous, source, level, issues)
+        scope_path = state / f"repair-scope-{name}.json"
+        scope = load_json(scope_path) if scope_path.exists() else None
+        fields = repair_fields(previous, source, level, issues, scope)
         revision = update_site.revision_instructions(previous, level, issues)
     schema = update_site.build_response_schema(level, source)
     prompt = update_site.build_prompt(source, level, revision)
@@ -216,6 +246,20 @@ def prepare_review(release_date: str, state: Path, name: str) -> dict:
         atomic_json(state / f"issues-{name}.json", issues)
         raise ValueError("; ".join(issues))
     prompt, schema = review_lesson(None, source, lesson, level, MODEL, return_request=True)
+    schema["required"].append("affected_sections")
+    schema["properties"]["affected_sections"] = {
+        "type": "array", "items": {"type": "string", "enum": list(REVIEW_SECTIONS)},
+    }
+    prompt += (
+        "\nReport affected_sections as an explicit list of ALL lesson sections needing "
+        "changes for ALL blocking issues and failed level checks. Use reading for "
+        "news_brief_sentences, evidence for sentence_evidence, and the other canonical "
+        "section names in the schema. Include dependent sections that must change. "
+        "A grammar explanation-only issue is [\"grammar\"]; an unsupported reading "
+        "claim used by a quiz needs [\"reading\", \"quiz\"]. Use unknown for any "
+        "uncertain scope. Return [] only when approved with no issues and all checks passed. "
+        "This field controls repair scope only; review the ENTIRE lesson each time.\n"
+    )
     prompt_path = state / f"review-{name}.prompt.txt"
     schema_path = state / f"review-{name}.schema.json"
     prompt_path.write_text(prompt, encoding="utf-8")
@@ -230,6 +274,7 @@ def accept_review(release_date: str, state: Path, name: str, review_path: Path,
     lesson = load_json(state / f"lesson-{name}.json")
     level = level_config(name, state)
     raw = load_json(review_path)
+    sections = validate_review_scope(raw)
     issues = list(dict.fromkeys(
         validate_plan_lesson(lesson, level)
         + validate_evidence(lesson, source)
@@ -237,6 +282,11 @@ def accept_review(release_date: str, state: Path, name: str, review_path: Path,
     ))
     if issues:
         atomic_json(state / f"issues-{name}.json", issues)
+        atomic_json(state / f"repair-scope-{name}.json", {
+            "base_sha256": draft_digest(lesson), "issues_sha256": draft_digest(issues),
+            "affected_sections": sections,
+            "failed_checks": [key for key, check in raw["level_checks"].items() if not check["passed"]],
+        })
         raise ValueError("; ".join(issues))
     lesson["editorial_check"] = {
         "date": datetime.now(timezone.utc).isoformat(),

@@ -24,9 +24,14 @@ class PlanDailyTests(unittest.TestCase):
         lesson = edition["levels"]["beginner"]["lesson"]
         plan_daily.atomic_json(state / "source.json", edition["source"])
         plan_daily.atomic_json(state / "lesson-beginner.json", lesson)
-        plan_daily.atomic_json(state / "issues-beginner.json", [
-            "lesson.grammar.explanation ends mid-sentence.",
-            "Level suitability failed (teaching_language): The grammar explanation is unfinished."])
+        issues = ["The explanation stops before its thought is complete.",
+                  "Level suitability failed (teaching_language): The grammar explanation is unfinished."]
+        plan_daily.atomic_json(state / "issues-beginner.json", issues)
+        plan_daily.atomic_json(state / "repair-scope-beginner.json", {
+            "base_sha256": plan_daily.draft_digest(lesson),
+            "issues_sha256": plan_daily.draft_digest(issues),
+            "affected_sections": ["grammar"], "failed_checks": ["teaching_language"],
+        })
         return lesson
 
     def test_isolated_grammar_repair_locks_every_other_section_and_requires_review(self):
@@ -66,12 +71,10 @@ class PlanDailyTests(unittest.TestCase):
                     plan_daily.accept_draft("2026-10-26", state, "beginner", result)
                 self.assertEqual(original, plan_daily.load_json(state / "lesson-beginner.json"))
 
-    def test_editorial_grammar_path_with_in_prefix_still_uses_locked_repair(self):
+    def test_editorial_routing_uses_explicit_scope_instead_of_feedback_wording(self):
         with tempfile.TemporaryDirectory() as directory:
             state = Path(directory)
             self.repair_fixture(state)
-            plan_daily.atomic_json(state / "issues-beginner.json", [
-                'In grammar.explanation, the pattern needs quotation marks.'])
             plan_daily.prepare_level("2026-10-26", state, "beginner")
             self.assertEqual(["grammar"], plan_daily.load_json(
                 state / "draft-beginner.schema.json")["required"])
@@ -95,6 +98,62 @@ class PlanDailyTests(unittest.TestCase):
                 self.assertEqual(text, lesson["grammar"]["explanation"])
             self.assertFalse(plan_daily.validate_plan_lesson(
                 {"grammar": {"explanation": "Use this form for an unrealised possibility."}}, {}))
+
+    def test_stale_unknown_or_mixed_scope_never_authorizes_grammar_only_repair(self):
+        for change in ({"base_sha256": "stale"}, {"issues_sha256": "stale"},
+                       {"affected_sections": ["grammar", "quiz"]},
+                       {"affected_sections": ["unknown"]},
+                       {"failed_checks": ["register"]}):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as directory:
+                state = Path(directory)
+                self.repair_fixture(state)
+                path = state / "repair-scope-beginner.json"
+                scope = plan_daily.load_json(path)
+                scope.update(change)
+                plan_daily.atomic_json(path, scope)
+                plan_daily.prepare_level("2026-10-26", state, "beginner")
+                self.assertIn("reading", plan_daily.load_json(
+                    state / "draft-beginner.schema.json")["properties"])
+
+    def test_review_scope_is_emitted_saved_and_cannot_override_failed_review(self):
+        from review_fixtures import approved_review
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            self.repair_fixture(state)
+            plan_daily.prepare_review("2026-10-26", state, "beginner")
+            schema = plan_daily.load_json(state / "review-beginner.schema.json")
+            self.assertIn("affected_sections", schema["required"])
+            review = approved_review()
+            review.update(approved=False, issues=["Finish the explanation."], affected_sections=["grammar"])
+            review["level_checks"]["teaching_language"] = {
+                "passed": False, "reason": "The explanation is incomplete."}
+            path = state / "review.json"
+            plan_daily.atomic_json(path, review)
+            with self.assertRaises(ValueError):
+                plan_daily.accept_review("2026-10-26", state, "beginner", path, 1)
+            self.assertFalse((state / "approved-beginner.json").exists())
+            plan_daily.prepare_level("2026-10-26", state, "beginner")
+            self.assertEqual(["grammar"], plan_daily.load_json(
+                state / "draft-beginner.schema.json")["required"])
+
+    def test_invalid_or_conflicting_review_scope_is_rejected(self):
+        for raw in ([], {"approved": True, "affected_sections": ["grammar"]},
+                    {"approved": False, "affected_sections": []},
+                    {"approved": False, "affected_sections": ["made_up"]},
+                    {"approved": False, "affected_sections": ["grammar", "grammar"]}):
+            with self.subTest(raw=raw), self.assertRaises(ValueError):
+                plan_daily.validate_review_scope(raw)
+        self.assertIsNone(plan_daily.validate_review_scope({"approved": False}))
+
+    def test_local_fragment_check_routes_to_grammar_repair_without_editorial_prose(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            lesson = self.repair_fixture(state)
+            lesson["grammar"]["explanation"] = "The result would be"
+            level = plan_daily.level_config("beginner", state)
+            issues = plan_daily.validate_plan_lesson(lesson, level)
+            self.assertEqual(("grammar",), plan_daily.repair_fields(
+                lesson, plan_daily.load_json(state / "source.json"), level, issues))
 
     def test_runner_strips_every_supported_model_api_key(self):
         values = {name: "must-not-leak" for name in plan_daily_runner.FORBIDDEN_ENV}

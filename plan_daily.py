@@ -9,8 +9,10 @@ existing application.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from datetime import datetime, timezone
 import json
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -96,19 +98,74 @@ def prepare_source(release_date: str, state: Path) -> Path:
     return path
 
 
+# Leave a deliberate margin below the schema's 420-character hard ceiling.
+DRAFT_GUIDANCE = (
+    "Write grammar.explanation as complete sentences, ideally 180–320 characters "
+    "and never more than 420. Explain the rule directly; do not repeat the full "
+    "example quotation because it is displayed separately. Rewrite concisely to "
+    "fit; never cut off a sentence to meet a length limit. "
+    "Use a person’s name, surname, occupation or family relationship only if the "
+    "supplied evidence explicitly establishes it. Never complete a familiar name "
+    "from memory. If an excerpt says only a pronoun, do not guess its identity."
+)
+
+
+def validate_plan_lesson(lesson, level):
+    issues = list(update_site.validate_lesson_data(lesson, level))
+    grammar = lesson.get("grammar")
+    explanation = grammar.get("explanation", "") if isinstance(grammar, dict) else ""
+    if isinstance(explanation, str) and explanation:
+        if len(explanation) > 420 or not update_site.sentence_has_terminal_punctuation(explanation):
+            issues.append("grammar.explanation must contain complete sentences ending in punctuation "
+                          "within 420 characters. Rewrite concisely; do not truncate.")
+    return issues
+
+
+def repair_fields(lesson, source, level, issues):
+    fields = update_site.local_repair_fields(lesson, source, level, issues)
+    if fields:
+        return fields
+    # Editorial feedback can authorize a grammar-only repair only when every
+    # primary issue explicitly names grammar and no other suitability check failed.
+    primary = [i for i in issues if not i.startswith("Level suitability failed")]
+    summaries = [i for i in issues if i.startswith("Level suitability failed")]
+    if (primary and all(re.match(r"(?:In )?(?:lesson\.)?grammar\.", i) for i in primary)
+            and all(i.startswith("Level suitability failed (teaching_language):") for i in summaries)
+            and not update_site.validate_reading_length(lesson.get("news_brief_sentences"), level)
+            and not validate_evidence(lesson, source)):
+        return ("grammar",)
+    return ()
+
+
+def draft_digest(lesson):
+    return hashlib.sha256(json.dumps(lesson, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
 def prepare_level(release_date: str, state: Path, name: str) -> dict:
     source = load_json(source_path(state))
     level = level_config(name, state)
     previous_path = state / f"lesson-{name}.json"
     issues_path = state / f"issues-{name}.json"
     revision = None
+    fields = ()
+    previous = None
     if previous_path.exists() and issues_path.exists():
         issues = load_json(issues_path)
         if not isinstance(issues, list) or any(not isinstance(issue, str) for issue in issues):
             raise ValueError("Saved revision issues are invalid.")
-        revision = update_site.revision_instructions(load_json(previous_path), level, issues)
+        previous = load_json(previous_path)
+        fields = repair_fields(previous, source, level, issues)
+        revision = update_site.revision_instructions(previous, level, issues)
     schema = update_site.build_response_schema(level, source)
     prompt = update_site.build_prompt(source, level, revision)
+    if fields:
+        schema = update_site.build_repair_schema(previous, level, fields)
+        prompt = update_site.build_repair_prompt(previous, source, level, fields, issues)
+    from teaching_typography import GUIDANCE
+    prompt += "\n" + GUIDANCE + "\n" + DRAFT_GUIDANCE + "\n"
+    atomic_json(state / f"draft-{name}.mode.json", {
+        "fields": list(fields), "base_sha256": draft_digest(previous) if fields else None,
+    })
     schema_path = state / f"draft-{name}.schema.json"
     prompt_path = state / f"draft-{name}.prompt.txt"
     atomic_json(schema_path, schema)
@@ -120,9 +177,18 @@ def accept_draft(release_date: str, state: Path, name: str, draft_path: Path) ->
     source = load_json(source_path(state))
     level = level_config(name, state)
     try:
-        lesson = resolve_evidence_references(load_json(draft_path), source)
+        mode_path = state / f"draft-{name}.mode.json"
+        mode = load_json(mode_path) if mode_path.exists() else {"fields": []}
+        if mode["fields"]:
+            previous = load_json(state / f"lesson-{name}.json")
+            if draft_digest(previous) != mode["base_sha256"]:
+                raise ValueError("Repair base changed; prepare a new repair before importing.")
+            lesson = update_site.apply_lesson_repair(previous, load_json(draft_path), mode["fields"], level)
+            lesson.pop("editorial_check", None)
+        else:
+            lesson = resolve_evidence_references(load_json(draft_path), source)
         issues = list(dict.fromkeys(
-            update_site.validate_lesson_data(lesson, level) + validate_evidence(lesson, source)
+            validate_plan_lesson(lesson, level) + validate_evidence(lesson, source)
         ))
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as error:
         lesson = None
@@ -144,7 +210,7 @@ def prepare_review(release_date: str, state: Path, name: str) -> dict:
     lesson = load_json(state / f"lesson-{name}.json")
     level = level_config(name, state)
     issues = list(dict.fromkeys(
-        update_site.validate_lesson_data(lesson, level) + validate_evidence(lesson, source)
+        validate_plan_lesson(lesson, level) + validate_evidence(lesson, source)
     ))
     if issues:
         atomic_json(state / f"issues-{name}.json", issues)
@@ -165,7 +231,7 @@ def accept_review(release_date: str, state: Path, name: str, review_path: Path,
     level = level_config(name, state)
     raw = load_json(review_path)
     issues = list(dict.fromkeys(
-        update_site.validate_lesson_data(lesson, level)
+        validate_plan_lesson(lesson, level)
         + validate_evidence(lesson, source)
         + validate_editorial_review(raw)
     ))
@@ -178,7 +244,8 @@ def accept_review(release_date: str, state: Path, name: str, review_path: Path,
         "status": "passed",
         "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
         "generation_attempts": attempt,
-        "repaired_sections": [],
+        "repaired_sections": (load_json(state / f"draft-{name}.mode.json").get("fields", [])
+                              if (state / f"draft-{name}.mode.json").exists() else []),
         "provider": "OpenAI",
         "surface": SURFACE,
         "reviewer": {"model": MODEL, "surface": SURFACE, "separate_session": True},

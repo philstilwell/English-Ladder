@@ -19,6 +19,83 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class PlanDailyTests(unittest.TestCase):
+    def repair_fixture(self, state):
+        edition = json.loads((ROOT / "tests/fixtures/reviewed-edition.json").read_text())
+        lesson = edition["levels"]["beginner"]["lesson"]
+        plan_daily.atomic_json(state / "source.json", edition["source"])
+        plan_daily.atomic_json(state / "lesson-beginner.json", lesson)
+        plan_daily.atomic_json(state / "issues-beginner.json", [
+            "lesson.grammar.explanation ends mid-sentence.",
+            "Level suitability failed (teaching_language): The grammar explanation is unfinished."])
+        return lesson
+
+    def test_isolated_grammar_repair_locks_every_other_section_and_requires_review(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            original = self.repair_fixture(state)
+            plan_daily.prepare_level("2026-10-26", state, "beginner")
+            schema = plan_daily.load_json(state / "draft-beginner.schema.json")
+            self.assertEqual(["grammar"], schema["required"])
+            self.assertEqual({"grammar"}, set(schema["properties"]))
+            result = state / "repair.json"
+            plan_daily.atomic_json(result, {"grammar": {
+                "concept": "Simple present", "explanation": "Use the simple present to describe facts.",
+                "example_sentence_index": 0}})
+            with patch.object(plan_daily, "prepare_review") as review:
+                plan_daily.accept_draft("2026-10-26", state, "beginner", result)
+            saved = plan_daily.load_json(state / "lesson-beginner.json")
+            for key in original:
+                if key not in ("grammar", "editorial_check"):
+                    self.assertEqual(original[key], saved[key], key)
+            self.assertNotIn("editorial_check", saved)
+            self.assertFalse((state / "approved-beginner.json").exists())
+            review.assert_called_once()
+
+    def test_repair_rejects_extra_sections_and_changed_base(self):
+        for changed_base in (False, True):
+            with self.subTest(changed_base=changed_base), tempfile.TemporaryDirectory() as directory:
+                state = Path(directory)
+                original = self.repair_fixture(state)
+                plan_daily.prepare_level("2026-10-26", state, "beginner")
+                result = state / "repair.json"
+                plan_daily.atomic_json(result, {"grammar": original["grammar"], "quiz": []})
+                if changed_base:
+                    original["title"] = "Changed after repair preparation"
+                    plan_daily.atomic_json(state / "lesson-beginner.json", original)
+                with self.assertRaises(ValueError):
+                    plan_daily.accept_draft("2026-10-26", state, "beginner", result)
+                self.assertEqual(original, plan_daily.load_json(state / "lesson-beginner.json"))
+
+    def test_editorial_grammar_path_with_in_prefix_still_uses_locked_repair(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            self.repair_fixture(state)
+            plan_daily.atomic_json(state / "issues-beginner.json", [
+                'In grammar.explanation, the pattern needs quotation marks.'])
+            plan_daily.prepare_level("2026-10-26", state, "beginner")
+            self.assertEqual(["grammar"], plan_daily.load_json(
+                state / "draft-beginner.schema.json")["required"])
+            from teaching_typography import GUIDANCE
+            self.assertIn(GUIDANCE, (state / "draft-beginner.prompt.txt").read_text())
+
+    def test_mixed_editorial_issues_fall_back_to_complete_revision(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            self.repair_fixture(state)
+            plan_daily.atomic_json(state / "issues-beginner.json", [
+                "lesson.grammar.explanation is unfinished.", "Reading sentence 1 adds an unsupported name."])
+            plan_daily.prepare_level("2026-10-26", state, "beginner")
+            self.assertIn("reading", plan_daily.load_json(state / "draft-beginner.schema.json")["properties"])
+
+    def test_truncated_explanation_is_rejected_locally_without_changing_it(self):
+        with patch.object(plan_daily.update_site, "validate_lesson_data", return_value=[]):
+            for text in ("Use the form to describe a possible result", "x" * 420, "x" * 421 + "."):
+                lesson = {"grammar": {"explanation": text}}
+                self.assertTrue(plan_daily.validate_plan_lesson(lesson, {}))
+                self.assertEqual(text, lesson["grammar"]["explanation"])
+            self.assertFalse(plan_daily.validate_plan_lesson(
+                {"grammar": {"explanation": "Use this form for an unrealised possibility."}}, {}))
+
     def test_runner_strips_every_supported_model_api_key(self):
         values = {name: "must-not-leak" for name in plan_daily_runner.FORBIDDEN_ENV}
         with patch.dict(os.environ, values, clear=False):

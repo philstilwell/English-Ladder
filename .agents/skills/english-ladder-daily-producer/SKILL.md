@@ -73,7 +73,12 @@ disk space; the checkout-status check below remains mandatory.
    editorial review, translation, independent multilingual editing, and image
    generation. The exact underlying built-in image model is recorded as not
    exposed unless the tool reports it explicitly. Local validators import the results. It allows at most three full
-   lesson attempts per level during one scheduled run and retains resumable state
+   lesson attempts per level during one scheduled run. Isolated mechanical errors and
+   explicit grammar-only editorial failures use section replacements with the reading
+   and omitted sections locked; ambiguous or mixed editorial failures use a complete
+   revision. Every merged lesson still receives all validators and a fresh independent
+   full-lesson review. Grammar explanations must finish within 420 characters; the
+   writer targets 180–320 without repeating the separately displayed example. It retains resumable state
    under ignored `.daily-agent/`. A per-edition process lock makes overlapping
    22:30/23:30/00:30 New York opportunities exit without duplicating model work.
    Read its final JSON status. For `already_running`, exit immediately without

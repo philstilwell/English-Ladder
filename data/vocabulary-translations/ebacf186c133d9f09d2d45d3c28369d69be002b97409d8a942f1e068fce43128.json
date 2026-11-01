@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A rare beetle, a type of insect, was found in Pembrokeshire, Wales, after 60 years.",
+      "It is called the Short-Necked Oil Beetle.",
+      "Last year, people found only dead adult beetles at a place called Castlemartin.",
+      "This year, experts found very young beetles there after three years of searching.",
+      "Anne Hobbs said the beetles may be having young in Wales again.",
+      "These beetles need certain bees to survive.",
+      "They also need many flowers and plants to hide in.",
+      "They can live in grassy places near the sea.",
+      "They move around most on warm, sunny days.",
+      "Castlemartin is the only place in Wales where people can find these beetles now."
+    ],
+    "vocabulary": [
+      {
+        "term": "rare",
+        "part_of_speech": "adjective",
+        "definition": "Not often seen or found."
+      },
+      {
+        "term": "found",
+        "part_of_speech": "verb (past form)",
+        "definition": "Saw or discovered something after looking for it."
+      },
+      {
+        "term": "dead",
+        "part_of_speech": "adjective",
+        "definition": "No longer alive."
+      },
+      {
+        "term": "survive",
+        "part_of_speech": "verb",
+        "definition": "To stay alive."
+      },
+      {
+        "term": "flowers",
+        "part_of_speech": "plural noun",
+        "definition": "The parts of plants that often have bright colours."
+      },
+      {
+        "term": "warm",
+        "part_of_speech": "adjective",
+        "definition": "A little hot, but not very hot."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "あまり見られたり見つかったりしない。",
+      "ko": "자주 보이거나 발견되지 않는.",
+      "zh-Hans": "不常见到或找到的。",
+      "es": "Que no se ve ni se encuentra a menudo.",
+      "pt-BR": "Que não é visto ou encontrado com frequência.",
+      "fr": "Que l’on ne voit ou ne trouve pas souvent.",
+      "de": "Nicht oft zu sehen oder zu finden."
+    },
+    {
+      "id": 1,
+      "ja": "探したあとで、何かを目にしたり発見したりした。",
+      "ko": "무언가를 찾아본 뒤에 그것을 보거나 발견했다.",
+      "zh-Hans": "寻找后看到了或发现了某个东西。",
+      "es": "Vio o descubrió algo después de buscarlo.",
+      "pt-BR": "Viu ou descobriu algo depois de procurá-lo.",
+      "fr": "A vu ou découvert quelque chose après l’avoir cherché.",
+      "de": "Man sah oder entdeckte etwas, nachdem man danach gesucht hatte."
+    },
+    {
+      "id": 2,
+      "ja": "もう生きていない。",
+      "ko": "더 이상 살아 있지 않은.",
+      "zh-Hans": "已经不再活着的。",
+      "es": "Que ya no está vivo.",
+      "pt-BR": "Que não está mais vivo.",
+      "fr": "Qui n’est plus en vie.",
+      "de": "Nicht mehr am Leben."
+    },
+    {
+      "id": 3,
+      "ja": "生き続けること。",
+      "ko": "계속 살아 있는 것.",
+      "zh-Hans": "继续活着。",
+      "es": "Seguir con vida.",
+      "pt-BR": "Continuar vivo.",
+      "fr": "Rester en vie.",
+      "de": "Am Leben bleiben."
+    },
+    {
+      "id": 4,
+      "ja": "植物の部分で、鮮やかな色をしていることが多いもの。",
+      "ko": "흔히 밝고 선명한 색을 띠는 식물의 부분들.",
+      "zh-Hans": "植物上常常颜色鲜艳的部分。",
+      "es": "Las partes de las plantas que suelen tener colores vivos.",
+      "pt-BR": "As partes das plantas que costumam ter cores vivas.",
+      "fr": "Les parties des plantes qui ont souvent des couleurs vives.",
+      "de": "Die Teile von Pflanzen, die oft leuchtende Farben haben."
+    },
+    {
+      "id": 5,
+      "ja": "少し暑いが、それほど暑くはない。",
+      "ko": "조금 덥지만 아주 덥지는 않은.",
+      "zh-Hans": "有一点热，但不是很热的。",
+      "es": "Un poco caliente, pero no mucho.",
+      "pt-BR": "Um pouco quente, mas não muito.",
+      "fr": "Un peu chaud, mais pas très chaud.",
+      "de": "Etwas heiß, aber nicht sehr heiß."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-01T02:40:25.416972+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

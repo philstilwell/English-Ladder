@@ -1,6 +1,6 @@
 # Campaign tracking for English Ladder and Slugfester
 
-Current daily promotion runs were paused at Phil's request on November 1, 2026. Setting up tracking is not permission to resume them. Keep that hold until Phil authorizes future publishing.
+Phil explicitly resumed daily promotions for both sites on November 1, 2026 after tracking was deployed. The same single-owner schedule runs at 11:15 a.m. America/New_York. Use a distinct link for each future authorized placement, check ongoing post visibility, promptly report detected failures/removals, and compare per-post engagement on every daily run. This supersedes the earlier same-day pause.
 
 ## Reading the results
 
@@ -12,6 +12,10 @@ The private Cloudflare D1 database **promotion-campaigns** holds `campaign_dashb
 * `unclassified_link_requests`: audience-bucket fetches before browser confirmation. These may include undetected bots. Never describe this as human visitors.
 
 These are page loads, not unique people. Engagement is evidence of likely readership, not proof of a human. Repeat loads count again. Bots running real browsers may still qualify. Referrer stripping no longer prevents attribution because the unique link identifies the source post. A copied link remains attributed to its original campaign. Existing untagged posts cannot be attributed retrospectively.
+
+## Daily engagement reporting
+
+Read the live report each daily pass and save a dated snapshot in the shared `campaign-tracking/engagement-snapshots.jsonl`. Compare against the previous successful snapshot: show post permalink, community, visibility, browser arrivals, engaged visits, and changes since that check, with separate site totals. Rank posts by new engaged visits. Exclude QA/test/draft rows from public campaign performance, and reconcile active/pending rows with the shared register. Label the comparison window explicitly; it is not necessarily exactly 24 hours. Missing/unavailable collection is unknown, not zero. Preserve old untagged posts without claiming retrospective attribution. Alert promptly when a failed pass, removal, rejection, blocked visibility check or tracking failure is detected; monitoring is daily, not continuous.
 
 ## Exclude administration and verification
 
@@ -32,7 +36,7 @@ General Cloudflare traffic reports still include administrative requests. Use th
 4. Verify the full landing page, assets, internal links and intended resource through the campaign link, with internal mode confirmed and `?traffic=test`. For PDF resources link to their public HTML lesson/course page. Never link `/backend`, admin routes, private pages or malformed paths.
 5. Immediately before the authorized submission, execute SQL from `node campaign-tracking/campaign.mjs activate ID`. `active` means counting is enabled; it does **not** claim the post was published. Publish the clean campaign link without `traffic=test` or punctuation joined to it. The landing page adds standard `utm_source`, `utm_medium=social`, `utm_campaign=post-outreach` and `utm_content=ID` parameters automatically.
 6. Verify publication independently according to the platform rules. Only after verification use `node campaign-tracking/campaign.mjs published ID POST_URL ISO_TIME` and run that SQL. Record pending/removed/unknown/blocked statuses in the shared channel register; never mark those as published. Keep the link and counters even if a post is later removed. Do not delete history or resubmit automatically.
-7. During authorized reporting, compare browser arrivals and engaged visits by post and check continuing public visibility. Record removals and promptly notify Phil of failed promotions. No scheduled publishing resumes until Phil asks.
+7. During authorized reporting, compare browser arrivals and engaged visits by post and check continuing public visibility. Record removals and promptly notify Phil of failed promotions. Daily publishing is authorized under the shared channel rules; never force an ineligible placement or duplicate a completed daily publication.
 
 If current credentials lack D1 scope, use the signed-in Cloudflare Console/Explore Data UI. Do not expand credentials or use browser-cookie extraction. Replace newlines with spaces when pasting multi-line SQL into Console's single-line input.
 

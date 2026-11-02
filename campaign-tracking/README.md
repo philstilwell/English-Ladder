@@ -4,7 +4,7 @@ Current daily promotion runs were paused at Phil's request on November 1, 2026. 
 
 ## Reading the results
 
-The private Cloudflare D1 database **promotion-campaigns** holds `campaign_results`, one row per post-specific link. Open [Explore Data](https://dash.cloudflare.com/35f54f15edb91fa1d38da7b8eb7583f5/workers/d1/databases/7198c22f-cba8-401e-8389-f26d7835a8de/studio), select the `campaign_results` view. Cloudflare sign-in is required. There is no public analytics endpoint.
+The private Cloudflare D1 database **promotion-campaigns** holds `campaign_dashboard`, a compact lifetime-per-post report, and `campaign_results`, the full details including source, community, link and verified permalink. Open [Explore Data](https://dash.cloudflare.com/35f54f15edb91fa1d38da7b8eb7583f5/workers/d1/databases/7198c22f-cba8-401e-8389-f26d7835a8de/studio), select `campaign_dashboard` for the overview or `campaign_results` for details. Cloudflare sign-in is required. There is no public analytics endpoint.
 
 * `browser_arrivals`: a campaign landing page remained visible for at least one second.
 * `engaged_visits`: the same load remained visible for at least ten seconds and received a browser-reported trusted pointer, keyboard or scroll interaction.

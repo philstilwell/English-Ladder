@@ -49,3 +49,7 @@ CREATE VIEW IF NOT EXISTS campaign_results AS SELECT
  internal_arrivals, test_arrivals, bot_arrivals,
  internal_requests, test_requests, bot_requests
  FROM campaigns;
+CREATE VIEW IF NOT EXISTS campaign_dashboard AS SELECT
+ title AS post, browser_arrivals AS arrivals, engaged_visits AS engaged,
+ internal_arrivals AS internal, test_arrivals AS tests, bot_requests AS bot_requests,
+ id AS post_id FROM campaigns;

@@ -1,0 +1,139 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A bird park in County Antrim has closed while workers remove oil from its pond.",
+      "Someone damaged a nearby oil tank, and oil from it killed 13 birds.",
+      "The oil was a type that people use to heat their homes.",
+      "More than 20 birds went to an animal care centre for special help.",
+      "The team is helping geese, ducks and swans.",
+      "They washed the birds and gave them special care as quickly as possible.",
+      "The water is much cleaner now, but workers still need to do more.",
+      "Most birds at the centre cannot return until the pond is completely clean.",
+      "Police are asking people to share any information about what happened."
+    ],
+    "vocabulary": [
+      {
+        "term": "pond",
+        "part_of_speech": "noun",
+        "definition": "A small area of water with land around it."
+      },
+      {
+        "term": "damaged",
+        "part_of_speech": "verb, simple past",
+        "definition": "Broke something or made it work less well."
+      },
+      {
+        "term": "nearby",
+        "part_of_speech": "adjective",
+        "definition": "Not far away."
+      },
+      {
+        "term": "heat",
+        "part_of_speech": "verb",
+        "definition": "To make something warm or hot."
+      },
+      {
+        "term": "care",
+        "part_of_speech": "noun",
+        "definition": "Help to keep people or animals healthy and safe."
+      },
+      {
+        "term": "washed",
+        "part_of_speech": "verb, simple past",
+        "definition": "Cleaned with water."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "陸地に囲まれた、水がたまっている小さな場所。",
+      "ko": "땅으로 둘러싸여 물이 고여 있는 작은 곳.",
+      "zh-Hans": "四周被陆地围住的一小片水域。",
+      "es": "Una pequeña extensión de agua rodeada de tierra.",
+      "pt-BR": "Uma pequena área de água cercada por terra.",
+      "fr": "Une petite étendue d’eau entourée de terre.",
+      "de": "Eine kleine Wasserfläche, die von Land umgeben ist."
+    },
+    {
+      "id": 1,
+      "ja": "何かを壊したり、その働きを悪くしたりした。",
+      "ko": "무언가를 망가뜨리거나 제 기능을 덜 하게 만들었다.",
+      "zh-Hans": "弄坏了某样东西，或使它不如原来好用。",
+      "es": "Rompió algo o hizo que funcionara peor.",
+      "pt-BR": "Quebrou algo ou fez com que funcionasse pior.",
+      "fr": "A cassé quelque chose ou l’a fait moins bien fonctionner.",
+      "de": "Hat etwas kaputtgemacht oder bewirkt, dass es weniger gut funktioniert."
+    },
+    {
+      "id": 2,
+      "ja": "遠くないところにある。",
+      "ko": "멀리 떨어져 있지 않은.",
+      "zh-Hans": "离得不远的。",
+      "es": "Que está a poca distancia.",
+      "pt-BR": "Que fica a pouca distância.",
+      "fr": "Qui n’est pas loin.",
+      "de": "Nicht weit entfernt."
+    },
+    {
+      "id": 3,
+      "ja": "何かを暖かくしたり、熱くしたりすること。",
+      "ko": "무언가를 따뜻하거나 뜨겁게 만드는 것.",
+      "zh-Hans": "使某样东西变暖或变热。",
+      "es": "Hacer que algo se ponga tibio o caliente.",
+      "pt-BR": "Fazer com que algo fique morno ou quente.",
+      "fr": "Rendre quelque chose tiède ou chaud.",
+      "de": "Etwas warm oder heiß machen."
+    },
+    {
+      "id": 4,
+      "ja": "人や動物の健康と安全を守るための手助け。",
+      "ko": "사람이나 동물이 건강하고 안전하게 지내도록 돕는 것.",
+      "zh-Hans": "帮助人或动物保持健康和安全的照料。",
+      "es": "Ayuda para mantener sanas y seguras a las personas o a los animales.",
+      "pt-BR": "Ajuda para manter pessoas ou animais saudáveis e seguros.",
+      "fr": "Une aide pour garder les personnes ou les animaux en bonne santé et en sécurité.",
+      "de": "Hilfe, damit Menschen oder Tiere gesund und sicher bleiben."
+    },
+    {
+      "id": 5,
+      "ja": "水を使ってきれいにした。",
+      "ko": "물로 깨끗이 씻었다.",
+      "zh-Hans": "用水清洗了。",
+      "es": "Limpió con agua.",
+      "pt-BR": "Limpou com água.",
+      "fr": "A nettoyé avec de l’eau.",
+      "de": "Hat mit Wasser gereinigt."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-02T04:10:11.389446+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

@@ -1,0 +1,816 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-02",
+  "release_iso": "2026-11-02T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Sun, 01 Nov 2026 06:42:13 GMT",
+    "retrieved_at": "2026-11-02T03:57:05.348912+00:00",
+    "title": "Oil tank vandalism results in waterfowl park 'nightmare'",
+    "summary": "The popular attraction in County Down has been forced to close while efforts continue to remove oil from the pond.",
+    "evidence_text": "The popular attraction in County Antrim has been forced to close while efforts continue to remove oil from the pond.\nRecovery efforts are continuing after an oil spill caused by the vandalism of a nearby home heating oil tank resulted in the death of 13 birds from Broughshane Waterfowl Park.\nThe agency said the substance involved had been identified as home heating oil, or kerosene, and that the source had been traced to a nearby tank.\nMore than 20 birds were transported to the USPCA's headquarters last week for urgent specialist care, but the death toll has continued to rise.\nSiobhan and the team have been working tirelessly to help revive the birds which include geese, ducks and swans.\n\"It's been a case of getting them all bathed and treated as soon as we could because of the level of contamination they suffered,\" she said.\nThe waterway is noted to be much improved but further works will be carried out as long as is deemed necessary.\n\"The majority of these birds that have come into us are actually not native species so they can't be returned until the pond is 100% fully cleaned and cleared.\"\nPolice have appealed for anyone with information to come forward.\n\"One of our volunteers appeared on the Thursday morning to feed [the birds], and walked down through the park and smelt this kerosene smell and saw the black swans completely oiled.\"\nThe park is home to 120 \"collection birds\", as well as wild birds, he explained.\n\"The incident was quickly confirmed as having had a significant impact on the ponds and NIEA inspectors deployed oil absorbent booms and other countermeasures as mitigation,\" a spokesperson said.\n\"We've given them all doses of charcoal to help combat some of the toxins that they would have ingested.\n\"Birds are extremely good at hiding illnesses and ailments, so sometimes you don't see the symptoms until it's a little bit too late because they're just so good at hiding it.\nBroughshane Environment Wildfowl and Wildlife Trust's chairman, Gary Hayward, said they incident had been a \"nightmare\".\nHayward praised the efforts of the USPCA and Northern Ireland Environment Agency (NIEA), who have been instrumental in treating the sick birds and clearing up the spillage.\nHayward hopes that the incident will be an deterrent to those engaged in vandalism.\n\"We would like to think that they're over the worst of it, but you just don't know exactly how much they have potentially ingested,\" she explained.\nSiobhan and the team said the incident has also placed their staff under considerable pressure \"emotionally and mentally\".",
+    "evidence_retrieved_at": "2026-11-02T03:57:05.348912+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c64g14ene2epo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do most birds at the centre need to wait before returning to the park?",
+          "What could you or an imagined person do to help a local park? Start with “I could ... because ...”."
+        ],
+        "title": "Oil Kills Birds and Closes Park",
+        "overview": "Read about a bird park and the people helping after oil entered its pond.",
+        "topic": "Animals and the environment",
+        "vocabulary": [
+          {
+            "term": "pond",
+            "part_of_speech": "noun",
+            "definition": "A small area of water with land around it."
+          },
+          {
+            "term": "damaged",
+            "part_of_speech": "verb, simple past",
+            "definition": "Broke something or made it work less well."
+          },
+          {
+            "term": "nearby",
+            "part_of_speech": "adjective",
+            "definition": "Not far away."
+          },
+          {
+            "term": "heat",
+            "part_of_speech": "verb",
+            "definition": "To make something warm or hot."
+          },
+          {
+            "term": "care",
+            "part_of_speech": "noun",
+            "definition": "Help to keep people or animals healthy and safe."
+          },
+          {
+            "term": "washed",
+            "part_of_speech": "verb, simple past",
+            "definition": "Cleaned with water."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past",
+          "explanation": "Use the simple past to talk about finished actions. For many verbs, add “-ed”, as in “washed”. Some verbs change their form: “give” becomes “gave”. Use these forms with “they”, “he” and “she”.",
+          "example_quote": "They washed the birds and gave them special care as quickly as possible."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news?",
+            "options": [
+              "A bird park has opened a new pond.",
+              "Oil killed birds, and a park has closed.",
+              "All the birds have returned to the park."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says the park has closed while workers remove oil.",
+              "Yes. Oil killed 13 birds, and the park has closed.",
+              "Most birds at the centre must wait until the pond is completely clean."
+            ]
+          },
+          {
+            "question": "Where did the oil come from?",
+            "options": [
+              "A nearby tank",
+              "The animal care centre",
+              "A police station"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Someone damaged a nearby oil tank.",
+              "The centre is helping the birds; the oil came from a tank.",
+              "The oil came from a nearby tank."
+            ]
+          },
+          {
+            "question": "How many birds went to the animal care centre?",
+            "options": [
+              "Exactly 20",
+              "13",
+              "More than 20"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The number was more than 20, not exactly 20.",
+              "Thirteen birds died; more than 20 went to the centre.",
+              "Yes. More than 20 birds went there for special help."
+            ]
+          },
+          {
+            "question": "When can most birds at the centre return to the park?",
+            "options": [
+              "After the team washes them",
+              "When the pond is completely clean",
+              "When police get information"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Washing the birds is not enough; the pond must be completely clean.",
+              "Yes. They cannot return until the pond is completely clean.",
+              "The reading says they must wait for the pond to be completely clean."
+            ]
+          },
+          {
+            "question": "What does “nearby” mean in this story?",
+            "options": [
+              "Not far from the park",
+              "Far from the park",
+              "Inside the park"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. “Nearby” means not far away.",
+              "“Nearby” means close, not far away.",
+              "“Nearby” means close; it does not tell us the tank was inside the park."
+            ]
+          },
+          {
+            "question": "What are police asking people to do?",
+            "options": [
+              "Wash the birds",
+              "Clean the pond",
+              "Share information about what happened"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The team washed the birds; police are asking for information.",
+              "Workers are cleaning the pond; police are asking for information.",
+              "Yes. Police want people to share any information about what happened."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past to describe the team's help?",
+            "options": [
+              "The team helps the birds.",
+              "The team helped the birds.",
+              "The team will help the birds."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Helps” is a present form. The question asks for the simple past.",
+              "Yes. “Helped” is the simple past of “help”.",
+              "“Will help” talks about the future. The question asks for the simple past."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "A bird park in County Antrim has closed while workers remove oil from its pond.",
+          "Someone damaged a nearby oil tank, and oil from it killed 13 birds.",
+          "The oil was a type that people use to heat their homes.",
+          "More than 20 birds went to an animal care centre for special help.",
+          "The team is helping geese, ducks and swans.",
+          "They washed the birds and gave them special care as quickly as possible.",
+          "The water is much cleaner now, but workers still need to do more.",
+          "Most birds at the centre cannot return until the pond is completely clean.",
+          "Police are asking people to share any information about what happened."
+        ],
+        "sentence_evidence": [
+          "The popular attraction in County Antrim has been forced to close while efforts continue to remove oil from the pond.",
+          "Recovery efforts are continuing after an oil spill caused by the vandalism of a nearby home heating oil tank resulted in the death of 13 birds from Broughshane Waterfowl Park.",
+          "The agency said the substance involved had been identified as home heating oil, or kerosene, and that the source had been traced to a nearby tank.",
+          "More than 20 birds were transported to the USPCA's headquarters last week for urgent specialist care, but the death toll has continued to rise.",
+          "Siobhan and the team have been working tirelessly to help revive the birds which include geese, ducks and swans.",
+          "\"It's been a case of getting them all bathed and treated as soon as we could because of the level of contamination they suffered,\" she said.",
+          "The waterway is noted to be much improved but further works will be carried out as long as is deemed necessary.",
+          "\"The majority of these birds that have come into us are actually not native species so they can't be returned until the pond is 100% fully cleaned and cleared.\"",
+          "Police have appealed for anyone with information to come forward."
+        ],
+        "editorial_check": {
+          "date": "2026-11-02T03:59:15.648033+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six targets occur in the reading. Words such as “pond”, “heat” and “nearby” have useful, accessible definitions and correct word classes."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting such as “Police are asking people to share any information” is natural and suitable for adults."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations are short and clear. “Washed” and “gave” demonstrate the simple past, and “I could ... because ...” supports hypothetical discussion."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct reading sentences and seven quiz questions meet the minimums. Questions appropriately test the main idea, details, “nearby” and the simple past."
+            }
+          },
+          "content_digest": "63ddc073d3f009b4ef153a3f0ef9cc5e07df79388322135d76395235228ae009"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why does an improvement in the waterway not necessarily mean that the rescued birds can return?",
+          "What practical steps could a community take to protect a wildlife park from deliberate damage?"
+        ],
+        "title": "Oil Spill Kills Birds and Forces Wildlife Park Closure",
+        "overview": "An oil spill has killed birds at a wildlife park, leading to a rescue operation and continuing efforts to clean the water.",
+        "topic": "Wildlife and pollution",
+        "vocabulary": [
+          {
+            "part_of_speech": "adjective",
+            "definition": "Needing attention immediately.",
+            "term": "urgent"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "Medical help given by people with special knowledge of a particular problem.",
+            "term": "specialist treatment"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "To take a liquid into a material and hold it there.",
+            "term": "absorb"
+          },
+          {
+            "part_of_speech": "adverb",
+            "definition": "By a large amount or to a large degree.",
+            "term": "considerably"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "Harmed or changed by the event being discussed.",
+            "term": "affected"
+          },
+          {
+            "part_of_speech": "plural noun",
+            "definition": "Signs that a person or animal has an illness.",
+            "term": "symptoms"
+          },
+          {
+            "part_of_speech": "verb, past participle",
+            "definition": "Made a serious public request for help or information.",
+            "term": "appealed"
+          },
+          {
+            "part_of_speech": "phrasal verb",
+            "definition": "To offer information or help to the people who need it.",
+            "term": "come forward"
+          }
+        ],
+        "grammar": {
+          "concept": "Present perfect passive",
+          "explanation": "Use \"has\" or \"have\" followed by \"been\" and a past participle to connect a past action with its result now. The passive focuses on who or what receives the action. Here, \"has been forced to close\" explains why the attraction is closed.",
+          "example_quote": "The attraction in County Antrim has been forced to close while teams continue to remove oil from its pond."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best summarises the news?",
+            "options": [
+              "A wildlife park has closed to increase its collection of birds.",
+              "An oil spill has killed birds, closed a park and led to rescue work.",
+              "A wildlife park has reopened after all its birds recovered."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The park closed because of the oil spill, not to increase its bird collection.",
+              "The reading connects the spill with bird deaths, the closure and efforts to help the birds.",
+              "The reading says cleaning continues and does not report that the park has reopened."
+            ]
+          },
+          {
+            "question": "What does the reading say about the birds taken for specialist treatment?",
+            "options": [
+              "More than 20 were taken, but the number of deaths continued to rise.",
+              "Exactly 13 were taken, and all of them recovered.",
+              "All 120 birds kept by the park were taken."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading gives both the number taken for treatment and the continuing rise in deaths.",
+              "Thirteen is the reported number of deaths, not the number taken for treatment.",
+              "The park keeps 120 birds, but the reading does not say they were all taken for treatment."
+            ]
+          },
+          {
+            "question": "Why did inspectors use floating barriers?",
+            "options": [
+              "To provide resting places for the rescued birds.",
+              "To prevent visitors from entering the park.",
+              "To absorb oil and limit damage to the ponds."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes the barriers as equipment for dealing with oil.",
+              "The park is closed, but controlling visitors is not the stated purpose of the barriers.",
+              "The barriers take in oil to help reduce the damage it causes."
+            ]
+          },
+          {
+            "question": "What does the improvement in the waterway mean according to the reading?",
+            "options": [
+              "The waterway is completely clean and needs no more work.",
+              "Conditions are better, but more cleaning work is still needed.",
+              "The rescued birds have already returned."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "An improvement does not mean cleaning is complete; further work will continue.",
+              "The reading reports better conditions while making clear that work continues.",
+              "The reading says the birds cannot return until the pond is completely clean."
+            ]
+          },
+          {
+            "question": "What must happen before the rescued birds described as not native can return?",
+            "options": [
+              "The park must increase the number of wild birds.",
+              "Police must receive information from a visitor.",
+              "The pond must be completely clean."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading gives no requirement to increase the number of wild birds.",
+              "Police are requesting information, but this is not the stated condition for the birds' return.",
+              "The reading directly connects their return with a completely clean pond."
+            ]
+          },
+          {
+            "question": "What does \"deliberate damage\" tell us about the damage to the tank?",
+            "options": [
+              "It was done on purpose.",
+              "It happened through normal use.",
+              "It was discovered immediately."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Deliberate\" means intentional, so the damage was done on purpose.",
+              "\"Deliberate damage\" describes intentional harm, not damage from normal use.",
+              "\"Deliberate\" describes intention, not how quickly someone discovered the damage."
+            ]
+          },
+          {
+            "question": "What are police asking people to do when they ask them to \"come forward\"?",
+            "options": [
+              "Visit the park to help clean the pond.",
+              "Offer information about the incident.",
+              "Take responsibility for treating the birds."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The police request concerns information, not help with cleaning.",
+              "In this context, \"come forward\" means to offer information to the police.",
+              "The reading does not describe a police request for people to treat birds."
+            ]
+          },
+          {
+            "question": "What can we reasonably infer from the explanation about birds hiding illness?",
+            "options": [
+              "A bird without clear symptoms is certainly healthy.",
+              "Every rescued bird will show symptoms immediately.",
+              "A bird may be ill even when it shows no clear symptoms."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "A lack of clear symptoms does not prove good health because birds can hide illness.",
+              "The reading says symptoms may become clear late, so they do not always appear immediately.",
+              "This follows from the explanation that birds can hide signs of illness."
+            ]
+          },
+          {
+            "question": "Imagine the rescue team has finished cleaning a room: which sentence uses the present perfect passive to focus on the room?",
+            "options": [
+              "The rescue room has been cleaned.",
+              "The rescue room is being cleaned.",
+              "The rescue team has cleaned the room."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Has been cleaned\" uses the present perfect passive and presents the room as receiving the action.",
+              "\"Is being cleaned\" is grammatical, but it describes cleaning in progress using the present continuous passive.",
+              "This is grammatical present perfect, but the main clause is active and focuses on the team."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Deliberate damage to a home heating tank caused an oil spill that killed 13 birds from Broughshane Waterfowl Park.",
+          "The attraction in County Antrim has been forced to close while teams continue to remove oil from its pond.",
+          "More than 20 birds were taken for urgent specialist treatment, but the number of deaths has continued to rise.",
+          "A volunteer arriving to feed the birds noticed an oil smell and saw black swans covered in oil.",
+          "The park keeps 120 birds and also provides a home for wild birds.",
+          "Environmental inspectors used special floating barriers that absorb oil to limit the damage to the ponds.",
+          "The waterway has improved considerably, although further work will continue for as long as necessary.",
+          "Rescue workers have bathed and treated the affected birds as quickly as possible because of the oil pollution.",
+          "The team also gave the birds charcoal to help fight harmful substances they had swallowed.",
+          "Birds can hide signs of illness, so symptoms may only become clear when it is too late.",
+          "Most rescued birds are not native to the area, so they cannot return until the pond is completely clean.",
+          "Police have appealed for anyone with information about the incident to come forward."
+        ],
+        "sentence_evidence": [
+          "Recovery efforts are continuing after an oil spill caused by the vandalism of a nearby home heating oil tank resulted in the death of 13 birds from Broughshane Waterfowl Park.",
+          "The popular attraction in County Antrim has been forced to close while efforts continue to remove oil from the pond.",
+          "More than 20 birds were transported to the USPCA's headquarters last week for urgent specialist care, but the death toll has continued to rise.",
+          "\"One of our volunteers appeared on the Thursday morning to feed [the birds], and walked down through the park and smelt this kerosene smell and saw the black swans completely oiled.\"",
+          "The park is home to 120 \"collection birds\", as well as wild birds, he explained.",
+          "\"The incident was quickly confirmed as having had a significant impact on the ponds and NIEA inspectors deployed oil absorbent booms and other countermeasures as mitigation,\" a spokesperson said.",
+          "The waterway is noted to be much improved but further works will be carried out as long as is deemed necessary.",
+          "\"It's been a case of getting them all bathed and treated as soon as we could because of the level of contamination they suffered,\" she said.",
+          "\"We've given them all doses of charcoal to help combat some of the toxins that they would have ingested.",
+          "\"Birds are extremely good at hiding illnesses and ailments, so sometimes you don't see the symptoms until it's a little bit too late because they're just so good at hiding it.",
+          "\"The majority of these birds that have come into us are actually not native species so they can't be returned until the pond is 100% fully cleaned and cleared.\"",
+          "Police have appealed for anyone with information to come forward."
+        ],
+        "editorial_check": {
+          "date": "2026-11-02T04:02:48.667433+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "vocabulary"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct targets occur in the reading, including “absorb,” “considerably” and “come forward.” Definitions are clear, useful for B1-B2, and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting such as “further work will continue” maintains a consistent news register; teaching feedback is clear and respectful."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Manageable sentences explain cause and contrast. The present perfect passive explanation accurately describes “has been forced to close,” and its example exactly matches the reading."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and nine quiz questions provide suitable development through comprehension, contextual vocabulary, supported inference and grammar transfer."
+            }
+          },
+          "content_digest": "23f365124990ee2764593ca65d8dd2132c26e778291ccb4471971ee8a64185ef"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why improvements to the waterway do not, by themselves, establish that the rescued birds can safely return.",
+          "What practical measures would you prioritise to reduce the wildlife consequences of vandalism, and why?"
+        ],
+        "title": "Oil Tank Vandalism Kills Birds at Broughshane Waterfowl Park",
+        "overview": "Examine how an oil spill at Broughshane Waterfowl Park connects vandalism with wildlife losses, an ongoing rescue effort and uncertainty about recovery.",
+        "topic": "Wildlife rescue and environmental damage",
+        "vocabulary": [
+          {
+            "term": "death toll",
+            "part_of_speech": "noun phrase",
+            "definition": "The number of deaths resulting from a particular incident, often reported as that number changes."
+          },
+          {
+            "term": "instrumental",
+            "part_of_speech": "adjective",
+            "definition": "Making an important contribution to achieving something, without necessarily being solely responsible for it."
+          },
+          {
+            "term": "countermeasures",
+            "part_of_speech": "plural noun",
+            "definition": "Actions or equipment used to oppose a specific threat or reduce its harmful effects."
+          },
+          {
+            "term": "mitigation",
+            "part_of_speech": "uncountable noun",
+            "definition": "The reduction of harm or severity, without necessarily removing the problem entirely."
+          },
+          {
+            "term": "traced",
+            "part_of_speech": "verb, past tense",
+            "definition": "Established where something originated by investigating its source or route."
+          },
+          {
+            "term": "deterrent",
+            "part_of_speech": "countable noun",
+            "definition": "Something that discourages an action by making its possible consequences seem undesirable."
+          },
+          {
+            "term": "contamination",
+            "part_of_speech": "uncountable noun",
+            "definition": "The presence of an unwanted, potentially harmful substance on an animal or in an environment."
+          },
+          {
+            "term": "ingested",
+            "part_of_speech": "verb, past participle",
+            "definition": "Taken into the body by swallowing; a formal term that does not imply deliberate consumption."
+          },
+          {
+            "term": "tempered",
+            "part_of_speech": "verb, past participle",
+            "definition": "Made less strong or confident by a competing consideration, without being completely removed."
+          },
+          {
+            "term": "conceal",
+            "part_of_speech": "verb, base form",
+            "definition": "Keep something from being apparent or easily detected, without necessarily doing so consciously."
+          },
+          {
+            "term": "non-native species",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Types of animals or plants that do not naturally occur in the region concerned."
+          },
+          {
+            "term": "contingent on",
+            "part_of_speech": "adjective phrase",
+            "definition": "Dependent on a condition being fulfilled; meeting that condition does not necessarily guarantee the outcome."
+          }
+        ],
+        "grammar": {
+          "concept": "Perfect participle clauses with a shared subject",
+          "explanation": "A perfect participle clause uses “having” plus a past participle to present an event or experience as preceding the main event. Both clauses share a subject: here, the birds experienced contamination before they were bathed and treated.",
+          "example_quote": "Having suffered extensive contamination, the birds were bathed and treated as quickly as possible."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the central development in the reading?",
+            "options": [
+              "An improving waterway has enabled the park to reopen while treatment continues.",
+              "Vandalism caused wildlife deaths and a closure, with recovery still uncertain.",
+              "The rescue operation has established that the surviving birds are beyond danger."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The waterway has improved, but the reading says the park remains closed.",
+              "The reading connects the spill to vandalism and describes deaths, closure and unresolved uncertainty.",
+              "The rescuers' hopes are qualified by uncertainty over how much the birds may have ingested."
+            ]
+          },
+          {
+            "question": "What does the continued rise in the death toll establish?",
+            "options": [
+              "Taking birds for emergency treatment did not guarantee their survival.",
+              "Emergency treatment caused the additional deaths.",
+              "All birds transported to the headquarters eventually died."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Deaths continued despite birds being taken for treatment, so transport and treatment did not ensure survival.",
+              "The timing does not establish that treatment caused any deaths.",
+              "The reading reports a rising total without saying every transported bird died."
+            ]
+          },
+          {
+            "question": "What does Hayward convey by describing the organisations as “instrumental”?",
+            "options": [
+              "Their contribution was limited to supplying equipment.",
+              "They were solely responsible for every aspect of recovery.",
+              "They played an important role in treatment and cleanup."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Instrumental” describes an important contribution rather than a role restricted to equipment.",
+              "“Instrumental” does not imply exclusive responsibility.",
+              "“Instrumental” emphasises the importance of their contribution to both activities."
+            ]
+          },
+          {
+            "question": "Why is the distinction between “mitigation” and complete restoration important here?",
+            "options": [
+              "Deploying measures to limit harm does not establish that cleanup is complete.",
+              "Mitigation means the source of the oil remains unidentified.",
+              "Deploying barriers establishes that the rescued birds can return immediately."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Mitigation” concerns reducing harm, and the reading says further work will continue as necessary.",
+              "“Mitigation” describes the response to harm; the agency separately identified the oil's source.",
+              "The barriers were a response measure, while return depends on the pond being completely cleaned."
+            ]
+          },
+          {
+            "question": "What did tracing the oil's source establish?",
+            "options": [
+              "The identity of the person who vandalised the tank.",
+              "The nearby tank from which the oil originated.",
+              "The precise amount of oil swallowed by each bird."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Identifying the source of the oil does not identify the person responsible for the vandalism.",
+              "The agency connected the kerosene to a nearby tank.",
+              "The reading says uncertainty remained over how much the birds may have ingested."
+            ]
+          },
+          {
+            "question": "Which interpretation preserves the qualification in Hayward's hope about a deterrent?",
+            "options": [
+              "The incident has already produced a measurable reduction in vandalism.",
+              "The incident will certainly prevent further damage to tanks.",
+              "He hopes the incident will discourage vandalism."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading provides a hope without evidence of a measured reduction.",
+              "A hoped-for discouraging effect is not a guarantee of prevention.",
+              "This preserves both the discouraging effect of a “deterrent” and the uncertainty expressed by “hopes”."
+            ]
+          },
+          {
+            "question": "How does the reading characterise the purpose of administering charcoal?",
+            "options": [
+              "It was intended to help counter some toxins the birds may have swallowed.",
+              "It established that all swallowed toxins had been eliminated.",
+              "It replaced the need to bathe contaminated birds."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The treatment was intended to help counter possible swallowed toxins; the reading does not establish complete success.",
+              "The reading describes a treatment purpose, not proof that every toxin was removed.",
+              "The reading describes bathing and charcoal treatment as parts of the response."
+            ]
+          },
+          {
+            "question": "Why do the hopes about recovery remain qualified?",
+            "options": [
+              "The agency has not yet identified the substance involved.",
+              "The amount the birds may have ingested remains uncertain, and illness can be difficult to detect.",
+              "The staff have established that every surviving bird has permanent illness."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The agency identified the substance as kerosene.",
+              "Uncertainty about possible ingestion and potentially hidden illness limits confidence about recovery.",
+              "The reading describes uncertainty rather than a diagnosis of permanent illness."
+            ]
+          },
+          {
+            "question": "What additional consequence of the incident does the reading identify for rescue staff?",
+            "options": [
+              "They have decided to end treatment before the pond is cleaned.",
+              "They are unable to continue because all rescue facilities have closed.",
+              "They are experiencing substantial emotional and mental pressure."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading reports pressure on staff without describing a decision to end treatment.",
+              "The park's closure does not establish that rescue facilities have closed.",
+              "The reading explicitly identifies an emotional and mental burden on staff."
+            ]
+          },
+          {
+            "question": "What is implied by the birds' return being “contingent on” complete cleaning?",
+            "options": [
+              "Complete cleaning is a necessary condition, but no return date is guaranteed.",
+              "Complete cleaning is optional if the waterway looks substantially better.",
+              "Complete cleaning guarantees that every rescued bird will return immediately."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Contingent on” establishes a requirement without promising an immediate or universal outcome.",
+              "The reading requires complete cleaning; improvement alone does not fulfil that condition.",
+              "A necessary condition does not guarantee timing or the return of every individual bird."
+            ]
+          },
+          {
+            "question": "In a hypothetical rescue account, which sentence uses an active perfect participle clause to present bathing as completed before treatment began?",
+            "options": [
+              "Bathing the birds, the rescue team began treatment.",
+              "Having bathed the birds, the rescue team began treatment.",
+              "Having bathed the birds, treatment began."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Bathing” forms a grammatical participle clause, but it does not explicitly mark bathing as completed beforehand.",
+              "“Having bathed” marks the earlier completed action, and “the rescue team” performs both actions.",
+              "The opening clause would attach to “treatment”, which cannot perform the bathing."
+            ]
+          },
+          {
+            "question": "What does “contamination” refer to in the account of bathing the birds?",
+            "options": [
+              "Their classification as species originating outside the region.",
+              "Their tendency to conceal signs of illness.",
+              "The presence of unwanted oil on the birds, prompting bathing and treatment."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Being a non-native species concerns geographical origin rather than exposure to a harmful substance.",
+              "Concealing illness concerns its visibility rather than the presence of oil.",
+              "Here, “contamination” refers to unwanted oil on the birds and explains the need for bathing and treatment."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Vandalism of a nearby home heating oil tank caused a spill that killed 13 birds from Broughshane Waterfowl Park.",
+          "More than 20 birds were taken to the USPCA's headquarters for emergency treatment, yet the death toll continued to rise.",
+          "The attraction in County Antrim remains closed while work to remove oil from its pond continues.",
+          "A volunteer arriving to feed the birds noticed a kerosene smell and found the black swans coated in oil.",
+          "The park houses 120 birds in its collection as well as wild birds.",
+          "Gary Hayward, chairman of Broughshane Environment Wildfowl and Wildlife Trust, described the incident as a nightmare.",
+          "Hayward described the USPCA and the Northern Ireland Environment Agency as instrumental in treating birds and clearing the spill.",
+          "Inspectors deployed oil-absorbing barriers and other countermeasures as mitigation, seeking to limit the spill's impact.",
+          "The agency identified the substance as kerosene, a home heating oil, and traced its source to a nearby tank.",
+          "Although the waterway has improved, further work will continue for as long as it is deemed necessary.",
+          "Hayward hopes the incident will act as a deterrent to vandalism.",
+          "Having suffered extensive contamination, the birds were bathed and treated as quickly as possible.",
+          "The team administered charcoal to help counter some of the toxins the birds may have ingested.",
+          "Hopes that the birds were past the worst were tempered by uncertainty over how much they may have ingested.",
+          "The incident has also placed rescue staff under substantial emotional and mental pressure.",
+          "Birds can conceal illness effectively, meaning that outward signs may become apparent only when it is already too late.",
+          "Most rescued birds are non-native species, and their return is contingent on the pond being completely cleaned."
+        ],
+        "sentence_evidence": [
+          "Recovery efforts are continuing after an oil spill caused by the vandalism of a nearby home heating oil tank resulted in the death of 13 birds from Broughshane Waterfowl Park.",
+          "More than 20 birds were transported to the USPCA's headquarters last week for urgent specialist care, but the death toll has continued to rise.",
+          "The popular attraction in County Antrim has been forced to close while efforts continue to remove oil from the pond.",
+          "\"One of our volunteers appeared on the Thursday morning to feed [the birds], and walked down through the park and smelt this kerosene smell and saw the black swans completely oiled.\"",
+          "The park is home to 120 \"collection birds\", as well as wild birds, he explained.",
+          "Broughshane Environment Wildfowl and Wildlife Trust's chairman, Gary Hayward, said they incident had been a \"nightmare\".",
+          "Hayward praised the efforts of the USPCA and Northern Ireland Environment Agency (NIEA), who have been instrumental in treating the sick birds and clearing up the spillage.",
+          "\"The incident was quickly confirmed as having had a significant impact on the ponds and NIEA inspectors deployed oil absorbent booms and other countermeasures as mitigation,\" a spokesperson said.",
+          "The agency said the substance involved had been identified as home heating oil, or kerosene, and that the source had been traced to a nearby tank.",
+          "The waterway is noted to be much improved but further works will be carried out as long as is deemed necessary.",
+          "Hayward hopes that the incident will be an deterrent to those engaged in vandalism.",
+          "\"It's been a case of getting them all bathed and treated as soon as we could because of the level of contamination they suffered,\" she said.",
+          "\"We've given them all doses of charcoal to help combat some of the toxins that they would have ingested.",
+          "\"We would like to think that they're over the worst of it, but you just don't know exactly how much they have potentially ingested,\" she explained.",
+          "Siobhan and the team said the incident has also placed their staff under considerable pressure \"emotionally and mentally\".",
+          "\"Birds are extremely good at hiding illnesses and ailments, so sometimes you don't see the symptoms until it's a little bit too late because they're just so good at hiding it.",
+          "\"The majority of these birds that have come into us are actually not native species so they can't be returned until the pond is 100% fully cleaned and cleared.\""
+        ],
+        "editorial_check": {
+          "date": "2026-11-02T04:09:23.915729+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All 12 targets occur in the reading, avoid reserved targets, and teach useful distinctions through terms such as “mitigation” and “contingent on”."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and measured; “hopes,” “may have ingested,” and “tempered” preserve uncertainty."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the grammar accurately explains the sequence and shared subject in “Having suffered extensive contamination”."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The 12 distinct quiz questions combine comprehension with substantive distinctions involving mitigation, necessary conditions, qualification, and perfect participle clauses."
+            }
+          },
+          "content_digest": "38999bfc2872b1e2a39115062b97db6b43359784b6f10423e5e37139bcd8df9e"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

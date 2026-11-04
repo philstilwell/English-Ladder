@@ -17,6 +17,15 @@ disk space; the checkout-status check below remains mandatory.
 ## Hard boundaries
 
 - Use `gpt-6.1-sol` with high reasoning through the signed-in Codex CLI.
+- Use included ChatGPT allowance first; existing ChatGPT credits are authorized
+  when that allowance is exhausted, including for built-in image generation.
+  An exhausted ordinary allowance alone is not a blocker when existing credits
+  remain usable. Do not consume a reset, purchase credits, enable automatic
+  top-ups, or change the subscription or billing settings. Stop if neither
+  included allowance nor existing credits can support the required work.
+  Before credit-funded generation, report an estimate from retained usage and
+  current credit rates, stating any uncertainty. Do not describe spending
+  existing credits as $0 usage; distinguish credit consumption from new purchases.
 - Never use, reveal, copy, or request an API key. Never call Gemini or an OpenAI
   API endpoint. `plan_daily_runner.py` removes all common model API-key variables.
 - Do not run `update_site.py` without `--refresh-pages`; the retired modes fail

@@ -1,0 +1,141 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Lotte Underwood has finished university and uses AI tools for much of her work.",
+      "Her team's AI tools are computer programs that help with tasks like research and making pictures.",
+      "She checks their work and shares it with other people in her team.",
+      "She also joins meetings to learn how these tools can help customers.",
+      "Underwood wants to learn other skills for her job too.",
+      "Patel builds AI tools that give information to different teams.",
+      "Patel also looks for tasks that AI could do, such as work that people repeat.",
+      "Some graduates work with experienced staff to learn their jobs.",
+      "They move to a different area of work every six months.",
+      "Claire Reed believes too much AI work may not help graduates build their future careers.",
+      "She says workers need AI skills and knowledge of what their customers want."
+    ],
+    "vocabulary": [
+      {
+        "term": "tasks",
+        "part_of_speech": "plural noun",
+        "definition": "Pieces of work that someone needs to do."
+      },
+      {
+        "term": "checks",
+        "part_of_speech": "verb",
+        "definition": "Looks at something to see if it is correct."
+      },
+      {
+        "term": "shares",
+        "part_of_speech": "verb",
+        "definition": "Gives something to other people so they can use it too."
+      },
+      {
+        "term": "meetings",
+        "part_of_speech": "plural noun",
+        "definition": "Times when people come together to talk about something."
+      },
+      {
+        "term": "skills",
+        "part_of_speech": "plural noun",
+        "definition": "Things you can do well because you have learned or practised them."
+      },
+      {
+        "term": "staff",
+        "part_of_speech": "noun",
+        "definition": "The people who work for a company."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "誰かがする必要のある、一つ一つの仕事です。",
+      "ko": "누군가가 해야 하는 개별적인 일들입니다.",
+      "zh-Hans": "某人需要做的一项项工作。",
+      "es": "Trabajos concretos que alguien necesita hacer.",
+      "pt-BR": "Trabalhos específicos que alguém precisa fazer.",
+      "fr": "Différents travaux qu’une personne doit faire.",
+      "de": "Einzelne Arbeiten, die jemand erledigen muss."
+    },
+    {
+      "id": 1,
+      "ja": "何かが正しいかどうかを確かめるために、それを見ます。",
+      "ko": "무언가가 올바른지 알아보기 위해 살펴봅니다.",
+      "zh-Hans": "查看某样东西，确认它是否正确。",
+      "es": "Examina algo para ver si es correcto.",
+      "pt-BR": "Examina algo para ver se está correto.",
+      "fr": "Examine quelque chose pour voir si c’est correct.",
+      "de": "Sieht sich etwas an, um festzustellen, ob es richtig ist."
+    },
+    {
+      "id": 2,
+      "ja": "ほかの人も使えるように、その人たちに何かを渡します。",
+      "ko": "다른 사람들도 사용할 수 있도록 무언가를 그들에게 줍니다.",
+      "zh-Hans": "把某样东西给其他人，让他们也能使用。",
+      "es": "Da algo a otras personas para que también puedan usarlo.",
+      "pt-BR": "Dá algo a outras pessoas para que elas também possam usar.",
+      "fr": "Donne quelque chose à d’autres personnes pour qu’elles puissent aussi l’utiliser.",
+      "de": "Gibt anderen Menschen etwas, damit sie es auch benutzen können."
+    },
+    {
+      "id": 3,
+      "ja": "何かについて話すために、人々が集まる機会です。",
+      "ko": "사람들이 무언가에 대해 이야기하려고 모이는 시간입니다.",
+      "zh-Hans": "人们聚在一起讨论某件事的时候。",
+      "es": "Ocasiones en las que las personas se reúnen para hablar de algo.",
+      "pt-BR": "Momentos em que as pessoas se reúnem para conversar sobre algo.",
+      "fr": "Moments où des personnes se réunissent pour parler de quelque chose.",
+      "de": "Gelegenheiten, bei denen Menschen zusammenkommen, um über etwas zu sprechen."
+    },
+    {
+      "id": 4,
+      "ja": "学んだり練習したりしたことで、上手にできることです。",
+      "ko": "배우거나 연습해서 잘할 수 있는 것들입니다.",
+      "zh-Hans": "通过学习或练习而能做好的事情。",
+      "es": "Cosas que puedes hacer bien porque las has aprendido o practicado.",
+      "pt-BR": "Coisas que você consegue fazer bem porque aprendeu ou praticou.",
+      "fr": "Choses que l’on sait bien faire parce qu’on les a apprises ou pratiquées.",
+      "de": "Dinge, die man gut kann, weil man sie gelernt oder geübt hat."
+    },
+    {
+      "id": 5,
+      "ja": "会社で働く人たちです。",
+      "ko": "회사에서 일하는 사람들입니다.",
+      "zh-Hans": "为一家公司工作的人们。",
+      "es": "Las personas que trabajan para una empresa.",
+      "pt-BR": "As pessoas que trabalham para uma empresa.",
+      "fr": "Les personnes qui travaillent pour une entreprise.",
+      "de": "Die Menschen, die für ein Unternehmen arbeiten."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-04T03:45:09.507291+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

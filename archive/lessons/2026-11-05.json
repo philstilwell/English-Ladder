@@ -1,0 +1,778 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-05",
+  "release_iso": "2026-11-05T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Business",
+    "feed_url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "category": "business",
+    "published_at": "Thu, 05 Nov 2026 00:00:09 GMT",
+    "retrieved_at": "2026-11-05T03:35:16.782825+00:00",
+    "title": "Interest rates expected to rise for first time in over three years",
+    "summary": "Most analysts are predicting an increase from 3.75% to 4%, the first increase in more than three years.",
+    "evidence_text": "Policymakers at the Bank of England are expected to raise interest rates on Thursday in what would be the first increase to the benchmark rate for more than three years.\nMost analysts are predicting an increase from 3.75% to 4%, the first increase in more than three years.\nIts base rate is what it charges other banks and building societies to borrow money, which influences what they charge their own customers for mortgages as well as the interest rate they pay on savings.\nThe Bank rate has fallen from its 2023-24 peak of 5.25%, although the Bank's Monetary Policy Committee (MPC) has left the rate unchanged at its last six meetings.\nRising inflation, driven primarily by the cost of petrol and diesel, will push policymakers into an interest rate hike, analysts suggest.\nThe announcement will be made by the Bank at 12:00 GMT on Thursday.\nA 0.25 percentage point rise would mean a £31 increase in monthly repayments for someone with a typical tracker home loan, according to calculations by banking trade body UK Finance.\nSavers, on the flipside, could see the interest rates offered to them improve in light of any rise in the Bank rate.\nThe Bank of England last raised rates in August 2023.\nMost analysts are predicting an rise from 3.75% to 4% in a move that would increase the cost of borrowing for individuals and businesses, but boost savers.\nIt was 3.5% in the year to September 2026 , up from 3.1% the previous month and well above the central bank's 2% target.\nWere the Bank rate to rise, there would be an immediate impact on the 510,000 tracker mortgage-holders.\nUltimately, lenders - as well as policymakers at the Bank of England - are having to judge what may happen to the UK's economic outlook which is highly connected to changes in international events.\n\"A quarter-point rise is already widely expected, but the Bank now has to balance inflation that is still too high against an economy where the growth outlook has weakened sharply.\"\nThe Consumer Prices Index (CPI) measure of inflation is well below its peak of a few years ago but has been heading back up and is expected to go higher.\nThe ongoing impact of the Iran war, primarily on the cost of energy and fuel, has filtered through to the UK inflation rate. Millions of domestic energy customers are braced for a hefty rise in prices in January.\nThe 470,000 mortgage-holders on variable deals would need to wait for their lender's reaction to any Bank rate rise. Typically, a 0.25 percentage point rise would mean a £14 increase per month in repayments.\nWhile their monthly payments are not immediately affected by a rate change, their future deals are, and lenders have already \"priced in\" the expected rate rise when quoting new deals.\n\"The right choice ultimately depends on borrowers being confident they can stomach future rises. The devil is in the detail,\" said Rachel Springall from Moneyfacts.\nClose attention will also be paid to any hints from the MPC on the future direction of interest rates.",
+    "evidence_retrieved_at": "2026-11-05T03:35:16.782825+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/ck5ynw45jrgqo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why could a higher rate help people with savings? Use “It could help because ...”.",
+          "Would you save extra money or spend it? Answer for yourself or a fictional person: “I would ... because ...”."
+        ],
+        "title": "UK Interest Rate May Rise",
+        "overview": "The Bank of England may raise its rate, which could affect loans and savings.",
+        "topic": "Money and banking",
+        "vocabulary": [
+          {
+            "term": "raise",
+            "part_of_speech": "verb",
+            "definition": "To make a number or amount higher."
+          },
+          {
+            "term": "borrowing",
+            "part_of_speech": "noun",
+            "definition": "Taking money from a bank and paying it back later."
+          },
+          {
+            "term": "savings",
+            "part_of_speech": "plural noun",
+            "definition": "Money you keep instead of spending."
+          },
+          {
+            "term": "unchanged",
+            "part_of_speech": "adjective",
+            "definition": "Staying the same."
+          },
+          {
+            "term": "announcement",
+            "part_of_speech": "noun",
+            "definition": "Information that someone gives to a group of people."
+          },
+          {
+            "term": "monthly",
+            "part_of_speech": "adjective",
+            "definition": "Happening every month."
+          }
+        ],
+        "grammar": {
+          "concept": "Using “may” for possibility",
+          "explanation": "Use “may” before a verb to show that something is possible, but not certain. Use the verb without “to” or an added “-s”, as in “may rise”. This helps us talk about a possible change in the future.",
+          "example_quote": "The Bank of England may raise its interest rate on Thursday."
+        },
+        "quiz": [
+          {
+            "question": "What may the Bank of England do on Thursday?",
+            "options": [
+              "Raise its interest rate",
+              "Keep its rate the same",
+              "Lower its interest rate"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. The reading says the Bank may raise its interest rate.",
+              "The rate stayed the same at six meetings, but experts now expect a rise.",
+              "Experts expect a higher rate, so this does not match their prediction."
+            ]
+          },
+          {
+            "question": "What change do most experts expect?",
+            "options": [
+              "From 4% to 3.75%",
+              "From 3.75% to 4%",
+              "From 3.75% to 3.75%"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is a fall, but experts expect a rise.",
+              "Yes. Most experts expect the rate to rise from 3.75% to 4%.",
+              "These numbers show no change, but experts expect a rise."
+            ]
+          },
+          {
+            "question": "Why are prices rising, according to the experts in the reading?",
+            "options": [
+              "Banks are paying more on savings.",
+              "The Bank is having more meetings.",
+              "Petrol and diesel cost more."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading does not give this as a reason for rising prices.",
+              "The reading does not say more meetings are causing prices to rise.",
+              "Yes. Experts say prices are rising because petrol and diesel cost more."
+            ]
+          },
+          {
+            "question": "What could happen to some people with home loans if the rate rises?",
+            "options": [
+              "They could pay less each month.",
+              "They could pay more each month.",
+              "They could stop making payments."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says some monthly payments could rise.",
+              "Yes. Some people with home loans would have higher monthly payments.",
+              "The reading says some payments would rise, not stop."
+            ]
+          },
+          {
+            "question": "How could a higher rate help people with savings?",
+            "options": [
+              "Their banks could pay them more money.",
+              "Their banks could give them cheaper home loans.",
+              "Their monthly home payments could stop."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. People with savings could get more money from their banks.",
+              "The reading does not say a higher rate would make home loans cheaper.",
+              "The reading does not say home payments would stop."
+            ]
+          },
+          {
+            "question": "What does “unchanged” mean in the reading?",
+            "options": [
+              "Higher than before",
+              "Lower than before",
+              "The same as before"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Unchanged” means the rate did not become higher or lower.",
+              "“Unchanged” means the rate did not become lower or higher.",
+              "Yes. The Bank kept the rate the same at its last six meetings."
+            ]
+          },
+          {
+            "question": "When will the Bank make its announcement?",
+            "options": [
+              "On Wednesday",
+              "On Thursday",
+              "On Friday"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading gives Thursday as the announcement day.",
+              "Yes. The Bank will make its announcement on Thursday.",
+              "The reading gives Thursday, not Friday."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses “may” for a possible future rate change?",
+            "options": [
+              "The rate may rise again.",
+              "The rate may rises again.",
+              "The rate may to rise again."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Use “may” with “rise” to show that the change is possible.",
+              "Use “rise” after “may”, without adding “-s”.",
+              "Use “rise” after “may”, without “to”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Bank of England may raise its interest rate on Thursday.",
+          "Most experts think the rate will rise from 3.75% to 4%.",
+          "This rate affects the cost of borrowing money and the extra money banks pay on savings.",
+          "The Bank has kept the rate unchanged at its last six meetings.",
+          "Experts say prices are rising because petrol and diesel cost more.",
+          "The Bank will make its announcement on Thursday.",
+          "Some people with home loans would have higher monthly payments if the rate rises.",
+          "People with savings could get more money from their banks if the rate rises.",
+          "The Bank last raised its rate in August 2023."
+        ],
+        "sentence_evidence": [
+          "Policymakers at the Bank of England are expected to raise interest rates on Thursday in what would be the first increase to the benchmark rate for more than three years.",
+          "Most analysts are predicting an increase from 3.75% to 4%, the first increase in more than three years.",
+          "Its base rate is what it charges other banks and building societies to borrow money, which influences what they charge their own customers for mortgages as well as the interest rate they pay on savings.",
+          "The Bank rate has fallen from its 2023-24 peak of 5.25%, although the Bank's Monetary Policy Committee (MPC) has left the rate unchanged at its last six meetings.",
+          "Rising inflation, driven primarily by the cost of petrol and diesel, will push policymakers into an interest rate hike, analysts suggest.",
+          "The announcement will be made by the Bank at 12:00 GMT on Thursday.",
+          "A 0.25 percentage point rise would mean a £31 increase in monthly repayments for someone with a typical tracker home loan, according to calculations by banking trade body UK Finance.",
+          "Savers, on the flipside, could see the interest rates offered to them improve in light of any rise in the Bank rate.",
+          "The Bank of England last raised rates in August 2023."
+        ],
+        "editorial_check": {
+          "date": "2026-11-05T03:37:26.826484+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six distinct targets occur in the reading; “raise”, “savings” and “monthly” offer useful A1–A2 learning with clear definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The news uses neutral, direct language, and prompts such as “I would ... because ...” suit adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The explanation clearly demonstrates “may rise”; the exact reading quotation illustrates the pattern. Discussion includes sentence frames and a fictional-person alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Eight distinct questions test stated details, the meaning of “unchanged”, and the taught “may” pattern with accessible choices and accurate feedback."
+            }
+          },
+          "content_digest": "4a600d53215c533fd7bb00345a83b5defc1a648be39479cfe9282cdb772f480b"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Explain why an interest rate rise could help savers while creating difficulties for people with loans.",
+          "Imagine someone is choosing a home loan. What should they consider before making a decision, and why?"
+        ],
+        "title": "Bank of England Expected to Increase Interest Rates",
+        "overview": "Explore why interest rates are expected to rise and how this could affect people with loans and savings.",
+        "topic": "Interest rates and household finances",
+        "vocabulary": [
+          {
+            "term": "analysts",
+            "part_of_speech": "plural noun",
+            "definition": "People who study information carefully to explain situations and predict changes."
+          },
+          {
+            "term": "peak",
+            "part_of_speech": "noun",
+            "definition": "The highest level reached during a particular period."
+          },
+          {
+            "term": "driven mainly by",
+            "part_of_speech": "verb phrase",
+            "definition": "Caused mostly by a particular thing."
+          },
+          {
+            "term": "annual",
+            "part_of_speech": "adjective",
+            "definition": "Measured over a period of one year."
+          },
+          {
+            "term": "influences",
+            "part_of_speech": "verb, present simple",
+            "definition": "Affects how something develops or what happens to it."
+          },
+          {
+            "term": "impact",
+            "part_of_speech": "noun",
+            "definition": "An effect that an event or change has on someone or something."
+          },
+          {
+            "term": "repayments",
+            "part_of_speech": "plural noun",
+            "definition": "Amounts of money paid back regularly to cover a loan."
+          },
+          {
+            "term": "outlook",
+            "part_of_speech": "noun",
+            "definition": "The situation that people expect in the future."
+          }
+        ],
+        "grammar": {
+          "concept": "Second conditional for an imagined future situation",
+          "explanation": "Use “if” plus the past simple and “would” plus the base form of a verb to describe an imagined situation and its result. Here, the past form presents a possible future rate rise as imagined; it does not mean the rise has already happened.",
+          "example_quote": "If the Bank rate rose, it would have an immediate impact on 510,000 people with tracker mortgages, which follow changes in that rate."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best expresses the main message of the brief?",
+            "options": [
+              "An expected rate rise could have different effects on borrowers and savers.",
+              "The Bank has confirmed that interest rates have increased.",
+              "Interest rates are expected to return to their previous peak."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Loans could become more expensive, while savers could benefit.",
+              "The brief describes an expected increase, not a confirmed decision.",
+              "Analysts expect 4%, which is below the previous peak of 5.25%."
+            ]
+          },
+          {
+            "question": "Which reason do analysts give for the expected rate increase?",
+            "options": [
+              "Prices are falling towards the Bank's target.",
+              "Petrol and diesel costs are helping to push prices up.",
+              "The Bank rate has stayed the same for six meetings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief describes rising prices, with inflation above the Bank's target.",
+              "Correct. Analysts connect the expected increase to inflation driven mainly by petrol and diesel costs.",
+              "The rate has stayed the same, but the brief gives rising inflation as the reason for the expected increase."
+            ]
+          },
+          {
+            "question": "How does the current Bank rate compare with its recent history?",
+            "options": [
+              "It is above its 2023–24 peak.",
+              "It has increased at each of the last six meetings.",
+              "It is below its 2023–24 peak and has stayed the same at six meetings."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief says the rate is below its earlier peak of 5.25%.",
+              "The rate has stayed the same at the last six meetings.",
+              "Correct. The rate is below the peak and has not changed at those six meetings."
+            ]
+          },
+          {
+            "question": "According to UK Finance, what would the expected rise mean for someone with a typical tracker mortgage?",
+            "options": [
+              "An extra £31 in repayments each month.",
+              "An extra £31 in repayments each year.",
+              "A £31 reduction in repayments each month."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The brief gives £31 as the expected monthly increase.",
+              "The £31 increase would apply each month, not each year.",
+              "The brief describes an increase in repayments, not a reduction."
+            ]
+          },
+          {
+            "question": "How did September 2026 inflation compare with the previous month and the Bank's target?",
+            "options": [
+              "It was lower than both.",
+              "It was higher than both.",
+              "It was higher than the previous month but below the target."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "September inflation was 3.5%, above both the previous month's 3.1% and the 2% target.",
+              "Correct. At 3.5%, inflation was above both figures.",
+              "Inflation was higher than the previous month, but it was also above the target."
+            ]
+          },
+          {
+            "question": "Which phrase could replace “driven mainly by” in the brief without changing its meaning?",
+            "options": [
+              "Compared mostly with",
+              "Followed mainly by",
+              "Caused mostly by"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Compared mostly with” introduces a comparison rather than a cause.",
+              "“Followed mainly by” describes what comes afterwards rather than what causes something.",
+              "Correct. “Driven mainly by” identifies the main cause."
+            ]
+          },
+          {
+            "question": "What does the UK's economic “outlook” refer to?",
+            "options": [
+              "How the economy is expected to develop.",
+              "The highest interest rate reached in the past.",
+              "The amount paid back on a loan each month."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. “Outlook” concerns the situation people expect in the future.",
+              "The brief uses “peak” for the highest level reached during a period.",
+              "Regular amounts paid back on a loan are “repayments”."
+            ]
+          },
+          {
+            "question": "Which sentence uses the second conditional to imagine a possible future change in a home loan?",
+            "options": [
+              "If the lender lowers the rate, the payments will fall.",
+              "If the lender lowered the rate, the payments would fall.",
+              "If the lender had lowered the rate, the payments would have fallen."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is grammatical, but it uses “if” with the present simple and “will”, rather than the second conditional.",
+              "Correct. “Lowered” is past simple, and “would fall” describes the imagined result.",
+              "This is grammatical, but “had lowered” and “would have fallen” imagine a different past."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Bank of England is expected to increase its main interest rate on Thursday, for the first time in over three years.",
+          "Most analysts predict a rise from 3.75% to 4%, making loans more expensive for individuals and businesses while helping savers.",
+          "The rate is below its 2023–24 peak of 5.25%, and it has stayed the same at the last six meetings.",
+          "Analysts suggest that inflation, or rising prices, driven mainly by petrol and diesel costs will lead to a rate increase.",
+          "The annual inflation rate reached 3.5% in September 2026, compared with 3.1% the previous month and the Bank's 2% target.",
+          "The Bank's main rate influences both the cost of home loans, called mortgages, and the interest paid on savings.",
+          "If the Bank rate rose, it would have an immediate impact on 510,000 people with tracker mortgages, which follow changes in that rate.",
+          "For someone with a typical tracker mortgage, the expected rise would add £31 to monthly repayments, according to UK Finance.",
+          "Lenders and the Bank must judge the UK's economic outlook, which is closely connected to international events."
+        ],
+        "sentence_evidence": [
+          "Policymakers at the Bank of England are expected to raise interest rates on Thursday in what would be the first increase to the benchmark rate for more than three years.",
+          "Most analysts are predicting an rise from 3.75% to 4% in a move that would increase the cost of borrowing for individuals and businesses, but boost savers.",
+          "The Bank rate has fallen from its 2023-24 peak of 5.25%, although the Bank's Monetary Policy Committee (MPC) has left the rate unchanged at its last six meetings.",
+          "Rising inflation, driven primarily by the cost of petrol and diesel, will push policymakers into an interest rate hike, analysts suggest.",
+          "It was 3.5% in the year to September 2026 , up from 3.1% the previous month and well above the central bank's 2% target.",
+          "Its base rate is what it charges other banks and building societies to borrow money, which influences what they charge their own customers for mortgages as well as the interest rate they pay on savings.",
+          "Were the Bank rate to rise, there would be an immediate impact on the 510,000 tracker mortgage-holders.",
+          "A 0.25 percentage point rise would mean a £31 increase in monthly repayments for someone with a typical tracker home loan, according to calculations by banking trade body UK Finance.",
+          "Ultimately, lenders - as well as policymakers at the Bank of England - are having to judge what may happen to the UK's economic outlook which is highly connected to changes in international events."
+        ],
+        "editorial_check": {
+          "date": "2026-11-05T03:42:12.198231+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct reading-based targets, including “repayments” and “outlook”, provide useful B1–B2 learning without borrowing reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting preserves qualifications through wording such as “is expected to” and “Analysts suggest”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions are clear, specialist terms receive explanations, and the exact grammar quotation demonstrates the second conditional accurately."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct reading sentences and eight valid quiz questions combine comprehension, comparisons, contextual vocabulary and grammar transfer."
+            }
+          },
+          "content_digest": "a3451ab3826d94c2f44d1f301235483c80d20a0efe871df8ceea16779d4dd1ec"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain how an anticipated rate increase can affect new mortgage offers before the Bank announces its decision.",
+          "What information would you want before choosing a mortgage when future interest rates are uncertain?"
+        ],
+        "title": "Bank of England rate rise expected amid inflation concerns",
+        "overview": "An anticipated Bank of England rate increase exposes a difficult balance between inflation and weakening growth, with differing consequences for mortgage borrowers and savers.",
+        "topic": "Economics and monetary policy",
+        "vocabulary": [
+          {
+            "term": "benchmark rate",
+            "part_of_speech": "noun phrase",
+            "definition": "A central interest rate that serves as a reference for other lending and savings rates."
+          },
+          {
+            "term": "inflationary pressure",
+            "part_of_speech": "noun phrase",
+            "definition": "Conditions or forces that contribute to increases in the general level of prices."
+          },
+          {
+            "term": "trade-off",
+            "part_of_speech": "countable noun",
+            "definition": "A situation in which pursuing one desirable outcome involves accepting a disadvantage elsewhere."
+          },
+          {
+            "term": "growth prospects",
+            "part_of_speech": "plural noun phrase",
+            "definition": "The expected chances and extent of future economic expansion."
+          },
+          {
+            "term": "filtering through",
+            "part_of_speech": "phrasal verb, present participle",
+            "definition": "Gradually reaching another part of a system and producing effects there."
+          },
+          {
+            "term": "contingent on",
+            "part_of_speech": "adjective phrase",
+            "definition": "Dependent on a particular condition, event or decision."
+          },
+          {
+            "term": "insulated",
+            "part_of_speech": "past participle used as an adjective",
+            "definition": "Protected from a particular effect, without necessarily being protected from every related consequence."
+          },
+          {
+            "term": "priced in",
+            "part_of_speech": "phrasal verb, past participle",
+            "definition": "Already taken into account when setting a price or interest rate, before the anticipated event occurs."
+          },
+          {
+            "term": "stomach",
+            "part_of_speech": "verb",
+            "definition": "To tolerate something difficult or unpleasant; here, to accept the financial burden of further increases."
+          },
+          {
+            "term": "scrutinised",
+            "part_of_speech": "verb, past participle",
+            "definition": "Examined closely and critically, especially to identify details with wider significance."
+          }
+        ],
+        "grammar": {
+          "concept": "Conditional inversion with “were”",
+          "explanation": "Use “were + subject + to-infinitive” to introduce a hypothetical future condition without “if”. This formal structure presents a possibility rather than a confirmed event; the result clause commonly uses “would + base verb”.",
+          "example_quote": "Were the Bank rate to increase, the 510,000 tracker mortgage-holders would be affected immediately."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the policy dilemma presented in the reading?",
+            "options": [
+              "Policymakers face high inflation alongside sharply weaker growth prospects.",
+              "Policymakers must restore the rate to its previous peak before considering inflation.",
+              "Policymakers expect stronger growth to remove the need for a rate increase."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading presents inflation and weaker growth as competing considerations.",
+              "The previous peak provides context; the reading establishes no requirement to return to it.",
+              "The assessment describes weaker growth prospects, while a rate increase remains expected."
+            ]
+          },
+          {
+            "question": "How should the projected move from 3.75% to 4% be understood?",
+            "options": [
+              "As an increase already implemented after Thursday's decision.",
+              "As the prediction of most analysts, pending the Bank's decision.",
+              "As a commitment to increase rates at every subsequent meeting."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes an expected decision, not an implemented increase.",
+              "Correct. Most analysts anticipate this move, but the decision is still presented as forthcoming.",
+              "A prediction about this decision establishes no commitment about subsequent meetings."
+            ]
+          },
+          {
+            "question": "What does the comparison between the reported September figure, the previous month's figure and the target establish?",
+            "options": [
+              "The reported measure had returned to the central bank's target.",
+              "The reported measure had fallen while remaining above target.",
+              "The reported measure had risen and remained above target."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The 3.5% figure exceeds the stated 2% target.",
+              "The movement from 3.1% to 3.5% is an increase, not a fall.",
+              "Correct. The figure rose from 3.1% to 3.5%, exceeding the 2% target."
+            ]
+          },
+          {
+            "question": "What does “filtering through” convey about the connection between the Iran war and UK inflation?",
+            "options": [
+              "Effects are reaching UK inflation through energy and fuel costs.",
+              "Effects are confined to the conflict and have not reached UK prices.",
+              "Effects have made energy and fuel irrelevant to UK inflation."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. “Filtering through” describes effects passing through a system and becoming apparent elsewhere.",
+              "The reading says the effects are already reaching UK inflation.",
+              "Energy and fuel costs are identified as the principal route through which the effects reach inflation."
+            ]
+          },
+          {
+            "question": "Which statement accurately combines the reading's information about tracker mortgages?",
+            "options": [
+              "All tracker borrowers would pay exactly £31 more regardless of their loan.",
+              "A quarter-percentage-point increase would affect tracker borrowers immediately, with £31 illustrating the monthly increase for a typical loan.",
+              "Tracker borrowers would first need to wait for a discretionary response from their lender."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The £31 estimate concerns a typical loan; it is not presented as a universal amount.",
+              "Correct. The reading distinguishes the immediate effect from the illustrative calculation for a typical tracker loan.",
+              "Waiting for a lender's response is associated with variable mortgage deals in the reading."
+            ]
+          },
+          {
+            "question": "What does “contingent on their lender's response” imply for borrowers on variable mortgage deals?",
+            "options": [
+              "Their payments must remain unchanged after any Bank rate increase.",
+              "Their payments must change by the same amount as tracker payments.",
+              "Whether their payments change depends on their lender's decision."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Dependence on a decision does not guarantee that payments will remain unchanged.",
+              "The reading establishes no requirement for variable and tracker payments to change by identical amounts.",
+              "Correct. “Contingent on” identifies the lender's response as the condition determining a change."
+            ]
+          },
+          {
+            "question": "How can some borrowers be “insulated” while the expected increase is already “priced in”?",
+            "options": [
+              "Their existing monthly payments are protected immediately, while new offers can already reflect the expectation.",
+              "Their existing payments and all future mortgage offers are protected indefinitely.",
+              "Lenders can reflect an increase in new offers only after the Bank confirms it."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The expressions concern different things: existing payments and the rates offered on new deals.",
+              "The protection described concerns an immediate change in existing payments, not all future offers.",
+              "“Priced in” indicates that new offers already account for the anticipated increase."
+            ]
+          },
+          {
+            "question": "What does Rachel Springall's use of “stomach” emphasise?",
+            "options": [
+              "Borrowers' ability to predict the exact timing of future decisions.",
+              "Borrowers' willingness and financial capacity to tolerate further increases.",
+              "Borrowers' preference for discussing mortgages in formal language."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Stomach” concerns tolerating an unwelcome burden, not forecasting its timing precisely.",
+              "Correct. “Stomach” makes the burden of possible further increases more vivid and conversational.",
+              "“Stomach” is conversational; it does not describe a preference for formal discussion."
+            ]
+          },
+          {
+            "question": "Why will the committee's indications be closely “scrutinised”?",
+            "options": [
+              "They will prove that the expected increase has already happened.",
+              "They will guarantee the exact rate offered on every future mortgage.",
+              "They may provide clues about the future direction of interest rates."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading links this close examination to future policy indications, not proof of an earlier decision.",
+              "Clues about future policy do not amount to guarantees about individual mortgage offers.",
+              "Correct. “Scrutinised” conveys close examination for details that may signal what comes next."
+            ]
+          },
+          {
+            "question": "Which sentence correctly applies the taught conditional inversion to a hypothetical further increase?",
+            "options": [
+              "Were the Bank to increase rates again, borrowers would need to reassess their budgets.",
+              "Were the Bank would increase rates again, borrowers would need to reassess their budgets.",
+              "Were the Bank to increased rates again, borrowers would need to reassess their budgets."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. “Were the Bank to increase” follows “were + subject + to-infinitive” and introduces a hypothetical condition.",
+              "“Were the Bank would increase” does not follow the taught pattern; use “were the Bank to increase”.",
+              "The infinitive requires the base form “increase” after “to”, not “increased”."
+            ]
+          },
+          {
+            "question": "Which account accurately describes the rate's recent history?",
+            "options": [
+              "It has remained at 5.25% throughout the last six meetings.",
+              "It has fallen from its earlier peak, with no change at the last six meetings.",
+              "It has increased at each of the last six meetings after falling from its peak."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading identifies 5.25% as the earlier peak, not the rate maintained at the last six meetings.",
+              "Correct. An overall decline from the peak is compatible with a more recent period of stability.",
+              "The reading states that policymakers held the rate steady during those six meetings."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Bank of England is expected to increase its benchmark rate on Thursday, potentially marking its first rise in more than three years.",
+          "Most analysts anticipate a move from 3.75% to 4%, which would make borrowing more expensive while potentially benefiting savers.",
+          "The rate has declined from its 2023–24 peak of 5.25%, but policymakers have held it steady for six consecutive meetings.",
+          "Analysts suggest that inflationary pressure, stemming primarily from petrol and diesel prices, will prompt the increase.",
+          "One assessment quoted in the report highlights a trade-off between persistently high inflation and sharply weaker growth prospects.",
+          "The Consumer Prices Index measure of inflation remains well below its earlier peak, although it has begun rising again and is expected to climb further.",
+          "The reported figure for the year to September 2026 was 3.5%, compared with 3.1% a month earlier and the central bank's 2% target.",
+          "The effects of the Iran war are filtering through to UK inflation, principally via energy and fuel costs.",
+          "Were the Bank rate to increase, the 510,000 tracker mortgage-holders would be affected immediately.",
+          "UK Finance calculates that a quarter-percentage-point increase would add £31 to monthly payments on a typical tracker mortgage.",
+          "For the 470,000 borrowers on variable mortgage deals, any change in payments would be contingent on their lender's response.",
+          "Some borrowers are insulated from an immediate change in monthly payments, although lenders have already priced in the expected increase when offering new deals.",
+          "Rachel Springall of Moneyfacts cautions that borrowers' choice ultimately depends on whether they can stomach further rate increases.",
+          "The committee's indications of the future course of interest rates will also be closely scrutinised."
+        ],
+        "sentence_evidence": [
+          "Policymakers at the Bank of England are expected to raise interest rates on Thursday in what would be the first increase to the benchmark rate for more than three years.",
+          "Most analysts are predicting an rise from 3.75% to 4% in a move that would increase the cost of borrowing for individuals and businesses, but boost savers.",
+          "The Bank rate has fallen from its 2023-24 peak of 5.25%, although the Bank's Monetary Policy Committee (MPC) has left the rate unchanged at its last six meetings.",
+          "Rising inflation, driven primarily by the cost of petrol and diesel, will push policymakers into an interest rate hike, analysts suggest.",
+          "\"A quarter-point rise is already widely expected, but the Bank now has to balance inflation that is still too high against an economy where the growth outlook has weakened sharply.\"",
+          "The Consumer Prices Index (CPI) measure of inflation is well below its peak of a few years ago but has been heading back up and is expected to go higher.",
+          "It was 3.5% in the year to September 2026 , up from 3.1% the previous month and well above the central bank's 2% target.",
+          "The ongoing impact of the Iran war, primarily on the cost of energy and fuel, has filtered through to the UK inflation rate. Millions of domestic energy customers are braced for a hefty rise in prices in January.",
+          "Were the Bank rate to rise, there would be an immediate impact on the 510,000 tracker mortgage-holders.",
+          "A 0.25 percentage point rise would mean a £31 increase in monthly repayments for someone with a typical tracker home loan, according to calculations by banking trade body UK Finance.",
+          "The 470,000 mortgage-holders on variable deals would need to wait for their lender's reaction to any Bank rate rise. Typically, a 0.25 percentage point rise would mean a £14 increase per month in repayments.",
+          "While their monthly payments are not immediately affected by a rate change, their future deals are, and lenders have already \"priced in\" the expected rate rise when quoting new deals.",
+          "\"The right choice ultimately depends on borrowers being confident they can stomach future rises. The devil is in the detail,\" said Rachel Springall from Moneyfacts.",
+          "Close attention will also be paid to any hints from the MPC on the future direction of interest rates."
+        ],
+        "editorial_check": {
+          "date": "2026-11-05T03:47:58.943331+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct reading-based targets, including “contingent on” and “priced in”, offer useful advanced meanings without borrowing reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting preserves attribution and uncertainty through wording such as “is expected to” and “Analysts suggest”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the accurate conditional-inversion explanation connects grammatical form with hypothetical meaning."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Fourteen distinct reading sentences and eleven valid questions meet the minimums while testing qualification, financial distinctions, contextual meaning and grammar."
+            }
+          },
+          "content_digest": "8545d373c0c9d9d1a643c1c118e9db5eed16405f2212f961c59644c671cfa6b4"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

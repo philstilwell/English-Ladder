@@ -6568,6 +6568,133 @@
         "https://our-languages.canada.ca/en/writing-tips-plus/its-its",
         "https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/i/its-vs-its"
       ]
+    },
+    {
+      "number": 57,
+      "title": "You and I or you and me? Subject and object",
+      "level": "A2–B1",
+      "category": "Pronouns and sentence roles",
+      "goal": "Choose I or me by the job of the whole phrase in standard written English.",
+      "rules": [
+        "In standard written English, I is a subject form and me is an object form. Joining either word to you does not make I correct in every position. In ‘You and I can help’, the pair is the subject of can help: the sentence says what that pair can do. Replace the pair with we: ‘We can help.’ The form I fits the subject role.",
+        "Use you and me when the pair is an object of a verb or a preposition. In ‘She thanked you and me’, she is the subject and the pair receives her thanks. Replace the pair with us: ‘She thanked us.’ After a preposition such as for, with, or between, use the object form too: ‘The parcel is for you and me’; ‘Keep this between you and me.’ The corresponding checks are for us and between us.",
+        "Check the grammatical role, not simply who performs an action. ‘You and I were thanked’ has a passive verb: the pair receives thanks but is still the subject, just as in ‘We were thanked.’ You can often remove you and to hear the difference: ‘I can help’; ‘She thanked me.’ With between, keep the pair together and try us. Informal conversation has more variation, including me in a combined subject. This lesson practices the forms expected in standard written English; it does not describe every conversational use."
+      ],
+      "cards": [
+        {
+          "label": "SUBJECT: YOU AND I",
+          "example": "You and I can help.",
+          "note": "The pair is the subject of can help. We can help and I can help reveal the subject forms we and I."
+        },
+        {
+          "label": "OBJECT OF A VERB: YOU AND ME",
+          "example": "She thanked you and me.",
+          "note": "She is the subject; the pair is the object receiving her thanks. She thanked us and She thanked me reveal the object forms."
+        },
+        {
+          "label": "OBJECT OF A PREPOSITION: YOU AND ME",
+          "example": "Keep this between you and me.",
+          "note": "Between is a preposition. Its object is the whole pair: between us. That role calls for me in standard written English."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Choose the subject form expected in standard written English: ‘___ can carry the box.’",
+          "options": [
+            {
+              "text": "You and me",
+              "correct": false,
+              "feedback": "The phrase is the subject of can carry. Standard written English uses the subject form I here: You and I, like We can carry the box."
+            },
+            {
+              "text": "You and I",
+              "correct": true,
+              "feedback": "You and I is the subject. We can carry the box and I can carry the box show why the subject form I fits."
+            },
+            {
+              "text": "You and myself",
+              "correct": false,
+              "feedback": "Myself is not a substitute for the subject form I. The ordinary subject phrase here is you and I."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete in standard written English: ‘The coach thanked ___.’",
+          "options": [
+            {
+              "text": "you and me",
+              "correct": true,
+              "feedback": "The coach is the subject, and the pair is the object receiving the thanks. The coach thanked us and The coach thanked me show the object form."
+            },
+            {
+              "text": "you and I",
+              "correct": false,
+              "feedback": "The pair is the object of thanked. I is a subject form; use me, as in The coach thanked me."
+            },
+            {
+              "text": "you and mine",
+              "correct": false,
+              "feedback": "Mine expresses possession and does not name the speaker as the person being thanked. Use the object form me."
+            }
+          ]
+        },
+        {
+          "prompt": "Choose the form expected in standard written English: ‘Keep the plan between ___.’",
+          "options": [
+            {
+              "text": "you and I",
+              "correct": false,
+              "feedback": "Between takes an object. Between us is the useful check, so the phrase needs the object form me rather than I."
+            },
+            {
+              "text": "you and we",
+              "correct": false,
+              "feedback": "We is a subject form. Here the intended pair is the listener and the speaker, and between requires an object: you and me."
+            },
+            {
+              "text": "you and me",
+              "correct": true,
+              "feedback": "The whole pair is the object of the preposition between. Between us shows why me is the matching form."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "Both of us were selected; then the coach telephoned both of us. Choose the sentence that uses standard written English.",
+        "options": [
+          {
+            "text": "You and me were chosen, so the coach called you and me.",
+            "correct": false,
+            "feedback": "The second phrase is correctly an object. The first phrase is the subject of were chosen, even though the pair receives the action: write You and I were chosen."
+          },
+          {
+            "text": "You and I were chosen, so the coach called you and me.",
+            "correct": true,
+            "feedback": "The first pair is a subject: We were chosen. The second is an object: the coach called us. Those roles explain I first and me second."
+          },
+          {
+            "text": "You and I were chosen, so the coach called you and I.",
+            "correct": false,
+            "feedback": "The first I correctly belongs to the subject. The second pair is the object of called, so use you and me, like called us."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-57-you-and-i-you-and-me-student-workbook.pdf",
+        "concept-57-you-and-i-you-and-me-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-06",
+      "related": [
+        28,
+        53,
+        55
+      ],
+      "sources": [
+        "https://our-languages.canada.ca/en/writing-tips-plus/you-and-i-you-and-me",
+        "https://www.stylemanual.gov.au/style-manual-resources/government-writing-handbook/editors-tips/you-and-me-or-you-and-i",
+        "https://dictionaryblog.cambridge.org/2017/02/15/me-myself-and-i-how-to-use-pronouns-1/",
+        "https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/personal-pronouns"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

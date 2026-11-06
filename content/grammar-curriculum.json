@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-31",
+  "revision": "2026-11-06",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -6441,6 +6441,132 @@
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/active-passive-voice",
         "https://learnenglishteens.britishcouncil.org/grammar/b1-b2-grammar/passive-forms",
         "https://dictionary.cambridge.org/grammar/british-grammar/passive-typical-errors"
+      ]
+    },
+    {
+      "number": 56,
+      "title": "Its or it's? Belonging or a contraction",
+      "level": "A2–B1",
+      "category": "Pronouns and possession",
+      "goal": "Choose its for belonging and it's for it is or it has by identifying the job the words do.",
+      "rules": [
+        "Its is the possessive form of the personal pronoun it. It goes before a noun to show belonging or a connection: ‘The robot raised its arm.’ Here its arm means the robot's arm. Personal-pronoun forms such as his, hers, ours, and its already express possession; standard English writes them without an apostrophe. A noun such as robot forms its possessive differently: the robot's arm.",
+        "It's is a contraction: two words shortened into one. The apostrophe marks omitted letters. ‘It's ready’ means ‘It is ready’; ‘It's finished the job’ means ‘It has finished the job.’ In the second example, has helps form the present perfect. The spelling it's does not itself express possession, even though an apostrophe can mark possession in a noun such as robot's.",
+        "Check the meaning by expanding it's to it is or it has in the complete sentence. If one expansion fits, use it's. If neither fits and the word means belonging to or connected with it, use its: ‘The museum changed its opening hours.’ Sound cannot settle the choice because its and it's sound alike. Some contractions are ambiguous without context: ‘It's finished’ can mean it is finished or it has finished. The full sentence helps you choose the meaning."
+      ],
+      "cards": [
+        {
+          "label": "ITS: BELONGING OR CONNECTION",
+          "example": "The robot raised its arm.",
+          "note": "Its arm means the robot's arm. Its is already the possessive personal-pronoun form, like his; it needs no apostrophe."
+        },
+        {
+          "label": "IT'S: IT IS",
+          "example": "It's ready for the next task.",
+          "note": "Expand the contraction: It is ready for the next task. The apostrophe marks the missing letter in is."
+        },
+        {
+          "label": "IT'S: IT HAS",
+          "example": "It's finished the job.",
+          "note": "Expand the contraction: It has finished the job. Has is the helping verb in the present perfect; the apostrophe marks omitted letters."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "The arm belongs to the robot. Complete: ‘The robot moved ___ arm.’",
+          "options": [
+            {
+              "text": "it's",
+              "correct": false,
+              "feedback": "It is arm and it has arm do not fit this sentence. You need the possessive form its to connect the arm to the robot."
+            },
+            {
+              "text": "its",
+              "correct": true,
+              "feedback": "Its arm means the robot's arm. Like his, its is already a possessive form and takes no apostrophe."
+            },
+            {
+              "text": "its'",
+              "correct": false,
+              "feedback": "Its is a possessive personal-pronoun form, not a plural noun needing an apostrophe. Write its arm."
+            }
+          ]
+        },
+        {
+          "prompt": "Replace ‘It is’ with its contraction: ‘It is ready for testing.’",
+          "options": [
+            {
+              "text": "It's ready for testing.",
+              "correct": true,
+              "feedback": "It's contracts it is. The apostrophe marks the omitted letter; this sentence describes the robot's state."
+            },
+            {
+              "text": "Its ready for testing.",
+              "correct": false,
+              "feedback": "Its shows belonging before a noun. This sentence needs it is, so use the contraction it's."
+            },
+            {
+              "text": "Its' ready for testing.",
+              "correct": false,
+              "feedback": "An apostrophe after the s does not form this contraction. It is becomes it's."
+            }
+          ]
+        },
+        {
+          "prompt": "What does it's mean in ‘It's completed three tasks today’?",
+          "options": [
+            {
+              "text": "belonging to it",
+              "correct": false,
+              "feedback": "The sentence describes what has been completed; it does not put a possessive form before a noun. It's expands to it has."
+            },
+            {
+              "text": "it is",
+              "correct": false,
+              "feedback": "It is completed three tasks today does not fit. Completed has the object three tasks here, so the full verb phrase is has completed."
+            },
+            {
+              "text": "it has",
+              "correct": true,
+              "feedback": "It has completed three tasks today is the full sentence. Has is the helping verb in the present perfect, and it's shortens it has."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "A machine has finished its work, and a light belonging to the machine is green. Choose the sentence with both forms correct.",
+        "options": [
+          {
+            "text": "Its finished the job, and it's light is green.",
+            "correct": false,
+            "feedback": "The first part needs it has finished, so write it's. The second refers to the machine's light, so write its light."
+          },
+          {
+            "text": "It's finished the job, and its light is green.",
+            "correct": true,
+            "feedback": "It's finished expands to it has finished. Its light identifies the light belonging to the machine; that possessive form takes no apostrophe."
+          },
+          {
+            "text": "It's finished the job, and it's light is green.",
+            "correct": false,
+            "feedback": "The first it's correctly means it has. In the second part, it is light and it has light do not fit the intended meaning. Use its light for the machine's light."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-56-its-and-its-student-workbook.pdf",
+        "concept-56-its-and-its-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-06",
+      "related": [
+        28,
+        48,
+        50
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/it-s-or-its",
+        "https://our-languages.canada.ca/en/writing-tips-plus/its-its",
+        "https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/i/its-vs-its"
       ]
     }
   ],

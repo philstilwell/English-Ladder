@@ -9,6 +9,9 @@ test('campaign destinations exclude administration, malformed URLs, external red
  assert(validTarget('englishladder.com','/grammar-concepts/concept-12.html'));
  assert(validTarget('englishladder.com','/efsp-hospitality-tourism.html'));
  assert(validTarget('slugfester.com','/debate/swinburne-ehrman-god-suffering-2009/'));
+ assert(validTarget('slugfester.com','/'));
+ assert(!validTarget('englishladder.com','/'));
+ assert(!validTarget('slugfester.com','/interlocutor/private/'));
  for(const path of ['/backend/','//evil.com','/debate/test/The','/debate/../backend/','/debate/a/?x=1','/debate/a/%2e']) assert(!validTarget('slugfester.com',path));
  assert(!validTarget('evil.com','/debate/a/'));
 });

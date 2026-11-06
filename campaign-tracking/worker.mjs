@@ -5,7 +5,7 @@ const UUID = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{1
 export function validTarget(site, path) {
   if (typeof path !== 'string' || path.length > 200 || /[?#%\\\s]/.test(path)) return false;
   if (site === 'englishladder.com') return /^\/(?:grammar-concepts\/concept-\d+\.html|efsp(?:-[a-z0-9-]+)?\.html|us-life\.html|(?:beginner|intermediate|advanced)\.html)$/.test(path);
-  return site === 'slugfester.com' && /^\/debate\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(path);
+  return site === 'slugfester.com' && (path === '/' || /^\/debate\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(path));
 }
 export function bucketFor(request, campaign) {
   const url = new URL(request.url);

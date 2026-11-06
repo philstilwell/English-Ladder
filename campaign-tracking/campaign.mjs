@@ -8,7 +8,6 @@ function fail(message){console.error(message);process.exit(1);}
 if(command==='new'){
   const [site,source,community,title,target]=args;
   if(!validTarget(site,target)||!['facebook','reddit'].includes(source)||!community||!title) fail('Usage: node campaign.mjs new SITE facebook|reddit COMMUNITY TITLE /public-resource-path');
-  if(site==='slugfester.com'&&source==='reddit') fail('Slugfester Reddit promotion is outside the approved scope.');
   const prefix=site==='englishladder.com'?'el':'sf';
   const id=`${prefix}-${source}-${new Date().toISOString().slice(0,10).replaceAll('-','')}-${randomBytes(4).toString('hex')}`;
   console.log(`-- Link: https://${site}/campaign/${id}`);

@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-06",
+  "release_iso": "2026-11-06T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Fri, 06 Nov 2026 02:57:24 GMT",
+    "retrieved_at": "2026-11-06T03:34:18.731754+00:00",
+    "title": "Global tech stocks plunge as US midterms add to AI slowdown fears",
+    "summary": "Investors have reacted to possible tougher scrutiny of data centre construction and the AI industry.",
+    "evidence_text": "Hundreds of billions of dollars in market value has been wiped from major tech firms in the US and Asia in a stock market rout after the US midterm elections sparked concerns of a slowdown in artificial intelligence development.\nDemocrats in races across the US campaigned to slow the growth of data centres and AI, and there were dozens of measures on ballots around the country aimed at restricting the development of the hubs crucial for powering the technology.\nThe sell-off comes on top of broader concerns about whether the huge amounts being spent on AI will pay off.\nThe Nikkei 225 in Japan was 6% lower in early trading as shares in memory chip maker Kioxia lost over 12.6% and rival Tokyo Electron slipped by 9.5%.\nThe sell-off in Seoul sent the Kospi index plunging more than 8.5%, triggering a so-called circuit breaker, a mechanism that temporarily halts trading to curb panic selling.\nThey won both the US Senate and House of Representatives in Tuesday's midterms, taking control of Congress for the rest of President Donald Trump's presidency.\nTexas' Democratic governor-elect Gina Hinojosa campaigned heavily against data centres, pledging a moratorium on new construction in the sector.\nThe tech-heavy Nasdaq composite index closed down by more than 5.5%, losing an estimated $2.5tn (£1.9tn) in market value, according to Dow Jones data, while other key US stock indexes also saw big losses in their worst days since 2025.\nGreater scrutiny of data centre approvals, and their impact on the environment and electricity bills could delay projects and raise costs across the industry, said Charu Chanana, Chief Investment Strategist at Saxo.\nOpenAI president and co-founder Greg Brockman said he believed everyone had been surprised by the reaction to data centres, and more work needed to be done to ensure communities were on board.\nThe Nasdaq Composite fall was so large it is now in what market watchers call correction territory, which is where an index or company value falls at least 10% below its recent high.\n\"Fears that the vast sums poured into AI infrastructure may not deliver the returns investors have been banking on are now colliding with the prospect of a sharp slowdown in data centre construction.\"\nWhile both political parties are keen to ensure the US' dominance in the technology, \"there is a difference between supporting AI development and allowing infrastructure to expand at any cost or pace,\" she said.\nSome tech leaders have said they were caught off guard by the backlash against data centres in the midterms.\nThe Philadelphia Semiconductor Index, which tracks the performance of 30 of the largest companies involved in semiconductor production, fell by more than 12%.",
+    "evidence_retrieved_at": "2026-11-06T03:34:18.731754+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cmn04705rd8jo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "What is a data centre, and why is it important for AI?",
+          "Would you want a data centre near your home? You can answer as someone in an imaginary town. Use “I think ... because ...”."
+        ],
+        "title": "Tech Share Prices Fall After US Elections",
+        "overview": "Tech share prices fell in the US and Asia after the US elections.",
+        "topic": "Technology and money",
+        "vocabulary": [
+          {
+            "term": "shares",
+            "part_of_speech": "plural noun",
+            "definition": "Small parts of a company that people can buy and sell."
+          },
+          {
+            "term": "fell",
+            "part_of_speech": "past tense verb",
+            "definition": "Went down in price."
+          },
+          {
+            "term": "elections",
+            "part_of_speech": "plural noun",
+            "definition": "Times when people vote to choose their leaders."
+          },
+          {
+            "term": "AI",
+            "part_of_speech": "noun, short form",
+            "definition": "Technology that helps computers do things like answer questions."
+          },
+          {
+            "term": "slow down",
+            "part_of_speech": "phrasal verb",
+            "definition": "To happen more slowly or make something happen more slowly."
+          },
+          {
+            "term": "data centres",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Buildings with many computers that help run services like AI."
+          },
+          {
+            "term": "spending",
+            "part_of_speech": "noun",
+            "definition": "Using money to pay for things."
+          },
+          {
+            "term": "for a short time",
+            "part_of_speech": "time phrase",
+            "definition": "For a little while."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past",
+          "explanation": "Use the simple past to talk about things that happened before now. Many verbs add “-ed”, as in “start” and “started”. Some verbs change in other ways. In the reading, “fell” is the simple past of “fall”.",
+          "example_quote": "Share prices for big tech companies fell in the US and Asia after the US elections."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news in this story?",
+            "options": [
+              "AI companies spent less after the US elections.",
+              "Tech share prices fell after the US elections.",
+              "Tech companies built more data centres after the US elections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "People wondered if the money spent on AI would bring good results. The main news is about share prices.",
+              "Tech share prices fell in the US and Asia after the elections.",
+              "The story says some Democrats wanted to slow down the building of new data centres."
+            ]
+          },
+          {
+            "question": "What did some Democrats want to slow down?",
+            "options": [
+              "The counting of votes",
+              "The sale of tech shares",
+              "The building of new data centres"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The elections are part of the story. The Democrats’ goal here was about building new data centres.",
+              "The story reports a fall in tech share prices. Some Democrats wanted to slow down the building of new data centres.",
+              "Some Democrats wanted new data centres to be built more slowly."
+            ]
+          },
+          {
+            "question": "What did people wonder about spending on AI?",
+            "options": [
+              "Would the results be worth the money?",
+              "How much money did companies spend?",
+              "Would companies spend more money on AI?"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "People wondered if the money spent on AI would bring good enough results.",
+              "This asks how much companies spent. People in the story wondered what they would get for the money.",
+              "This asks about spending more in the future. People wondered whether the results would be worth the money."
+            ]
+          },
+          {
+            "question": "What happened on the Seoul market after share prices fell fast?",
+            "options": [
+              "Share prices went back up on the Seoul market.",
+              "Buying and selling shares on the Seoul market stopped for a short time.",
+              "People kept buying and selling shares on the Seoul market."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The change the story describes was a short stop in buying and selling shares on the Seoul market.",
+              "Buying and selling shares on the Seoul market stopped for a little while.",
+              "Buying and selling shares on the Seoul market paused for a short time after prices fell."
+            ]
+          },
+          {
+            "question": "What does “shares” mean in “shares in the chip maker Kioxia”?",
+            "options": [
+              "Jobs at the company",
+              "Chips made by the company",
+              "Small parts of the company that people can buy"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Jobs are the work people do. People can buy and sell “shares” in a company.",
+              "Chips are things Kioxia makes. “Shares” are small parts of the company itself.",
+              "When people buy “shares”, they own a small part of the company."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past to report the fall in tech share prices?",
+            "options": [
+              "Tech share prices dropped.",
+              "Tech share prices drop.",
+              "Tech share prices are dropping."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Dropped” is the simple past of “drop”.",
+              "“Drop” is in the simple present here. The simple past form is “dropped”.",
+              "“Are dropping” describes a change happening now. “Dropped” puts the change in the past."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Share prices for big tech companies fell in the US and Asia after the US elections.",
+          "People worried that work on artificial intelligence, or AI, might slow down.",
+          "Some Democrats wanted to slow down the building of new data centres.",
+          "These centres help run AI.",
+          "People also wondered if all the spending on AI would be worth it.",
+          "In Japan, shares in the chip maker Kioxia fell by more than 12%.",
+          "Buying and selling shares on the Seoul market stopped for a short time after share prices fell fast."
+        ],
+        "sentence_evidence": [
+          "Hundreds of billions of dollars in market value has been wiped from major tech firms in the US and Asia in a stock market rout after the US midterm elections sparked concerns of a slowdown in artificial intelligence development.",
+          "Hundreds of billions of dollars in market value has been wiped from major tech firms in the US and Asia in a stock market rout after the US midterm elections sparked concerns of a slowdown in artificial intelligence development.",
+          "Democrats in races across the US campaigned to slow the growth of data centres and AI, and there were dozens of measures on ballots around the country aimed at restricting the development of the hubs crucial for powering the technology.",
+          "Democrats in races across the US campaigned to slow the growth of data centres and AI, and there were dozens of measures on ballots around the country aimed at restricting the development of the hubs crucial for powering the technology.",
+          "The sell-off comes on top of broader concerns about whether the huge amounts being spent on AI will pay off.",
+          "The Nikkei 225 in Japan was 6% lower in early trading as shares in memory chip maker Kioxia lost over 12.6% and rival Tokyo Electron slipped by 9.5%.",
+          "The sell-off in Seoul sent the Kospi index plunging more than 8.5%, triggering a so-called circuit breaker, a mechanism that temporarily halts trading to curb panic selling."
+        ],
+        "editorial_check": {
+          "date": "2026-11-06T04:43:23.877530+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All eight targets occur in the News Brief. Everyday expressions such as “slow down” and “for a short time” are reusable, and the definitions explain “shares”, “AI” and “data centres” in plain language."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The news uses neutral, direct wording such as “share prices fell”, and the discussion uses the natural frame “I think ... because ...”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation shows how “start” becomes “started” and links “fell” to “fall”. Quiz feedback uses clear wording, and the discussion offers an imaginary town as an alternative to talking about home."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The six questions cover the main story, distinct details about data centres, AI spending and the Seoul market, the meaning of “shares”, and recognition of the simple past. Each has one clear answer."
+            }
+          },
+          "content_digest": "5a73fe02cf4cbc2bf4c251cc889b5c04abab6196ecd3bc9f4878524a461930e8"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why might the US midterm results worry investors who were already unsure whether investment in AI would pay off?",
+          "If a data centre were planned near your town, what would you want the company to explain before local officials made a decision?"
+        ],
+        "title": "Tech Stocks Slide as US Midterms Raise AI Concerns",
+        "overview": "Tech stocks dropped after the US midterms as investors worried that closer checks on new data centres could slow the growth of AI.",
+        "topic": "Technology and financial markets",
+        "vocabulary": [
+          {
+            "term": "raised fears",
+            "part_of_speech": "verb phrase",
+            "definition": "Made people worry that something bad might happen."
+          },
+          {
+            "term": "campaigned",
+            "part_of_speech": "verb",
+            "definition": "Worked to win public support for a plan during an election."
+          },
+          {
+            "term": "on hold",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Delayed or paused for a period of time."
+          },
+          {
+            "term": "index",
+            "part_of_speech": "noun",
+            "definition": "A measure that shows how the prices of a group of stocks change."
+          },
+          {
+            "term": "closed",
+            "part_of_speech": "verb",
+            "definition": "Finished the trading day at the level given."
+          },
+          {
+            "term": "sell-off",
+            "part_of_speech": "noun",
+            "definition": "A period when many investors sell their stocks, causing prices to drop sharply."
+          },
+          {
+            "term": "pay off",
+            "part_of_speech": "phrasal verb",
+            "definition": "Bring enough financial benefit to make the money invested worthwhile."
+          },
+          {
+            "term": "win support",
+            "part_of_speech": "verb phrase",
+            "definition": "Persuade people to agree with a plan or back it."
+          }
+        ],
+        "grammar": {
+          "concept": "Using “could” for possible effects",
+          "explanation": "Use “could” followed by the base form of a verb to describe a possible effect. In the reading, “could” applies to both “delay” and “raise”. Chanana presents both effects as possibilities if data centre plans face closer checks.",
+          "example_quote": "Investment strategist Charu Chanana said closer checks on data centre plans could delay projects and raise costs."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the main story?",
+            "options": [
+              "A pause in trading in Seoul was the main reason tech stocks fell.",
+              "Tech stocks fell as the US midterms added to existing worries about AI.",
+              "Worries about AI investment first appeared after the US midterms."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The pause in Seoul came after the sell-off had pushed the Kospi down.",
+              "The election raised fears about slower AI growth while investors were already questioning whether their investments would pay off.",
+              "Investors were already questioning whether the money going into AI would pay off."
+            ]
+          },
+          {
+            "question": "What had Gina Hinojosa promised during her campaign in Texas?",
+            "options": [
+              "To put new data centre construction on hold.",
+              "To help new data centres open sooner.",
+              "To close data centres that were already operating."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Her promise concerned pausing new construction.",
+              "Her promise was to pause new construction.",
+              "Her promise concerned new buildings. The brief gives no plan for closing existing centres."
+            ]
+          },
+          {
+            "question": "How do the times of the Nasdaq and Nikkei figures in the brief differ?",
+            "options": [
+              "Both figures come from early trading.",
+              "The Nasdaq figure comes from early trading, and the Nikkei figure is from the close.",
+              "The Nasdaq figure is from the close, and the Nikkei figure comes from early trading."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief gives an early figure for the Nikkei and a closing figure for the Nasdaq.",
+              "The brief says the Nasdaq “closed” lower and gives the Nikkei figure for “early trading”.",
+              "The Nasdaq figure shows where the index ended the day. The Nikkei figure shows where it stood early in the day."
+            ]
+          },
+          {
+            "question": "Why was trading briefly paused in Seoul?",
+            "options": [
+              "To give companies time to explain their AI plans.",
+              "To limit panic selling after a sharp drop.",
+              "To give investors time to study data centre approvals."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The pause was a response to a sharp drop in the market.",
+              "The market paused trading to try to limit panic selling.",
+              "The brief links the pause to panic selling after the Kospi dropped."
+            ]
+          },
+          {
+            "question": "What does “pay off” mean when the brief discusses money going into AI?",
+            "options": [
+              "Cover the cost of building a data centre.",
+              "Make it easier to sell tech stocks.",
+              "Bring enough financial benefit to make the investment worthwhile."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase refers to the financial benefit investors hope to get from the money they put into AI.",
+              "Investors were questioning the value of their investment in AI. The phrase describes whether the investment is worth the money.",
+              "If an investment “pays off”, it brings enough financial benefit to be worth making."
+            ]
+          },
+          {
+            "question": "What might companies need to plan for, based on Chanana’s comments?",
+            "options": [
+              "Their projects may take longer and cost more.",
+              "Closer checks may let them start construction sooner.",
+              "They can already tell how much extra each project will cost."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Chanana said closer checks could delay projects and raise costs.",
+              "Chanana warned that closer checks could delay projects.",
+              "Chanana described higher costs as a possibility. She gave no amounts in the brief."
+            ]
+          },
+          {
+            "question": "Whose support did Greg Brockman say would take more work to win?",
+            "options": [
+              "Investors in tech companies.",
+              "Local communities.",
+              "Members of Congress."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Investors appear elsewhere in the brief. Brockman was talking about local communities.",
+              "Brockman said more work was needed to win support from local communities.",
+              "The brief mentions Congress in connection with the election results. Brockman was talking about local communities."
+            ]
+          },
+          {
+            "question": "A town plans to review a building proposal. Which sentence uses “could” and the base form of a verb to describe a possible effect?",
+            "options": [
+              "The review could delays the opening.",
+              "The review could to delay the opening.",
+              "The review could delay the opening."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Use the base form “delay” after “could”.",
+              "The base form “delay” follows “could” directly.",
+              "“Could” followed by “delay” shows that a later opening is possible."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Tech stocks in the US and Asia dropped sharply after the US midterms raised fears that artificial intelligence (AI) development could slow.",
+          "Democrats across the US campaigned to limit the growth of AI and data centres, the facilities that help power the technology.",
+          "Democrats won control of both houses of Congress, the Senate and the House of Representatives.",
+          "In Texas, Gina Hinojosa, who won the race for governor, had promised to put new data centre construction on hold.",
+          "The Nasdaq Composite, an index that tracks a group of stocks, closed more than 5.5% lower.",
+          "In Japan, the Nikkei 225 was down 6% in early trading as shares in chip companies Kioxia and Tokyo Electron lost value.",
+          "In Seoul, the sell-off pushed the Kospi index down more than 8.5%, leading to a brief pause in trading to limit panic selling.",
+          "Investors were already questioning whether the large sums going into AI would pay off.",
+          "Investment strategist Charu Chanana said closer checks on data centre plans could delay projects and raise costs.",
+          "Chanana pointed to the effects of data centres on the environment and on electricity bills as issues that could face closer review.",
+          "OpenAI co-founder Greg Brockman said more work was needed to win support from local communities."
+        ],
+        "sentence_evidence": [
+          "Hundreds of billions of dollars in market value has been wiped from major tech firms in the US and Asia in a stock market rout after the US midterm elections sparked concerns of a slowdown in artificial intelligence development.",
+          "Democrats in races across the US campaigned to slow the growth of data centres and AI, and there were dozens of measures on ballots around the country aimed at restricting the development of the hubs crucial for powering the technology.",
+          "They won both the US Senate and House of Representatives in Tuesday's midterms, taking control of Congress for the rest of President Donald Trump's presidency.",
+          "Texas' Democratic governor-elect Gina Hinojosa campaigned heavily against data centres, pledging a moratorium on new construction in the sector.",
+          "The tech-heavy Nasdaq composite index closed down by more than 5.5%, losing an estimated $2.5tn (£1.9tn) in market value, according to Dow Jones data, while other key US stock indexes also saw big losses in their worst days since 2025.",
+          "The Nikkei 225 in Japan was 6% lower in early trading as shares in memory chip maker Kioxia lost over 12.6% and rival Tokyo Electron slipped by 9.5%.",
+          "The sell-off in Seoul sent the Kospi index plunging more than 8.5%, triggering a so-called circuit breaker, a mechanism that temporarily halts trading to curb panic selling.",
+          "The sell-off comes on top of broader concerns about whether the huge amounts being spent on AI will pay off.",
+          "Greater scrutiny of data centre approvals, and their impact on the environment and electricity bills could delay projects and raise costs across the industry, said Charu Chanana, Chief Investment Strategist at Saxo.",
+          "Greater scrutiny of data centre approvals, and their impact on the environment and electricity bills could delay projects and raise costs across the industry, said Charu Chanana, Chief Investment Strategist at Saxo.",
+          "OpenAI president and co-founder Greg Brockman said he believed everyone had been surprised by the reaction to data centres, and more work needed to be done to ensure communities were on board."
+        ],
+        "editorial_check": {
+          "date": "2026-11-06T04:45:23.551898+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All eight targets occur in the reading and are distinct from the reserved vocabulary. The definitions explain useful news and work language such as “sell-off”, “on hold” and “pay off” in context."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The title, overview and reading use neutral news English. Phrases such as “could delay projects” preserve uncertainty, and the prompts use a natural, respectful tone."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The reading explains “index” in context, and the exact grammar quotation shows how “could” applies to both “delay” and “raise”. The questions and feedback use manageable language."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Learners compare when the Nasdaq and Nikkei figures were recorded, interpret “pay off” in context and apply “could” to a new situation. The discussion prompts invite reasoned answers without requiring specialist knowledge."
+            }
+          },
+          "content_digest": "90044431de8a64b23fb25105831a6c9d010b8bdbf4f63f61d8dd1cc27db86df4"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "How might closer scrutiny of data centre projects affect the returns investors expect from AI infrastructure?",
+          "If a data centre were proposed in your area, what evidence would you want before deciding whether to support it?"
+        ],
+        "title": "Tech Stocks Slide as US Midterms Stir AI Fears",
+        "overview": "Technology stocks fell across global markets after the US midterms as investors weighed the prospect of tighter scrutiny of data centres alongside doubts about returns on AI infrastructure.",
+        "topic": "Technology stocks, AI investment and US politics",
+        "vocabulary": [
+          {
+            "term": "correction territory",
+            "part_of_speech": "noun phrase",
+            "definition": "A position in which a stock market benchmark or a company’s market value is at least 10% below its recent high."
+          },
+          {
+            "term": "circuit breaker",
+            "part_of_speech": "noun phrase",
+            "definition": "A market safeguard that temporarily halts trading when prices move sharply."
+          },
+          {
+            "term": "curb",
+            "part_of_speech": "verb",
+            "definition": "To limit the intensity or spread of something seen as harmful or excessive."
+          },
+          {
+            "term": "ballot measures",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Specific policy proposals put directly to voters for a decision."
+          },
+          {
+            "term": "moratorium",
+            "part_of_speech": "noun",
+            "definition": "An official pause in an activity, intended to be temporary."
+          },
+          {
+            "term": "prospect",
+            "part_of_speech": "noun",
+            "definition": "The possibility of a future event that people are taking into account now."
+          },
+          {
+            "term": "yield",
+            "part_of_speech": "verb",
+            "definition": "To produce a result or benefit, such as a financial gain from an investment."
+          },
+          {
+            "term": "counted on",
+            "part_of_speech": "phrasal verb, past participle form",
+            "definition": "Expected something to happen or be available and relied on that expectation."
+          },
+          {
+            "term": "scrutiny",
+            "part_of_speech": "noun",
+            "definition": "Close examination to assess whether something is justified or what effects it might have."
+          },
+          {
+            "term": "backlash",
+            "part_of_speech": "noun",
+            "definition": "A strong negative reaction to a decision, change or development."
+          }
+        ],
+        "grammar": {
+          "concept": "Concession with “although”",
+          "explanation": "An opening clause with “although” acknowledges a point before the main clause qualifies what readers might infer from it. Here, Chanana acknowledges a shared goal, then shows why that goal leaves the pace and cost of expansion open to debate.",
+          "example_quote": "Although both parties want the United States to lead in AI, support for the technology leaves open the question of how quickly and at what cost its infrastructure should expand, Chanana said."
+        },
+        "quiz": [
+          {
+            "question": "How does the brief connect the US midterms to the fall in technology stocks?",
+            "options": [
+              "The elections raised concerns that AI development could slow.",
+              "The elections signalled that investors expected weaker demand for computer chips.",
+              "The elections prompted trading restrictions that drove technology stocks lower."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief links the drop to concerns that AI development could slow and discusses those concerns alongside doubts about investment returns.",
+              "The concern linked to the elections is the pace of AI development. The brief gives no forecast for chip demand.",
+              "The steep drop in the Kospi triggered the trading halt. The brief describes the halt as a response to a decline."
+            ]
+          },
+          {
+            "question": "How does the starting point for the Nasdaq’s daily decline of more than 5.5% differ from the starting point used to determine whether it is in “correction territory”?",
+            "options": [
+              "The daily decline is measured from the previous close, while the correction is measured from that day’s opening level.",
+              "The daily decline is measured from the recent high, while the correction is measured from the previous close.",
+              "The daily decline is measured from the previous close, while the correction is measured from the recent high."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The daily comparison uses the previous close, but the correction is measured from the recent high.",
+              "This reverses the two reference points. The recent high is the basis for measuring the correction.",
+              "The daily figure compares two closing levels, while the correction measures how far the Nasdaq has moved below its recent high."
+            ]
+          },
+          {
+            "question": "What does the phrase “in an effort to curb panic selling” establish about the Kospi trading halt?",
+            "options": [
+              "It establishes that the halt reduced the amount of panic selling.",
+              "It identifies the purpose of the halt while leaving its effect open.",
+              "It indicates that traders had regained confidence by the time the halt began."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase “in an effort to” introduces an aim. The sentence gives no outcome for the amount of panic selling.",
+              "The halt was intended to limit panic selling. Its effectiveness would require separate evidence.",
+              "The sentence explains why trading was halted. It does not assess traders’ confidence."
+            ]
+          },
+          {
+            "question": "What can readers conclude from the description of the “ballot measures”?",
+            "options": [
+              "Proposals to restrict data centre development were put before voters across the country.",
+              "Voters approved the proposed restrictions in most of the places that considered them.",
+              "The proposals set out the same rules for data centre construction across the country."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief reports that dozens of proposals appeared on ballots across the country and identifies their shared aim.",
+              "A place on the ballot establishes that voters could consider a proposal. The brief gives no tally of approvals.",
+              "The proposals shared a broad aim. The brief leaves their individual terms unspecified."
+            ]
+          },
+          {
+            "question": "What is the most precise interpretation of Gina Hinojosa’s pledge?",
+            "options": [
+              "She pledged a permanent ban on building new data centres.",
+              "She pledged a temporary shutdown of operating data centres.",
+              "She pledged a temporary halt to the construction of new data centres."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "A “moratorium” is intended to be temporary. The pledge concerns a pause in new construction.",
+              "The pledge concerns construction of new facilities. Operating existing facilities is a separate activity.",
+              "The word “moratorium” conveys a temporary halt, and the brief identifies new construction as its scope."
+            ]
+          },
+          {
+            "question": "What does “yield lower returns than they had counted on” suggest about investors’ concern?",
+            "options": [
+              "The investments might produce a net loss, which is the specific risk identified by the phrase.",
+              "The investments might generate less financial benefit than investors had expected and relied on.",
+              "The cost of building the infrastructure might be lower than investors had anticipated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A return can fall short of expectations and still be positive. The phrase leaves the actual outcome open.",
+              "Here “yield” means “produce”, and “counted on” indicates that investors had relied on receiving the returns they expected.",
+              "The comparison concerns the financial benefit investors might receive. It gives no comparison of construction costs."
+            ]
+          },
+          {
+            "question": "Which inference about greater “scrutiny” is supported by Chanana’s assessment?",
+            "options": [
+              "The process of examining projects more closely could affect their timelines and costs.",
+              "Closer examination would concentrate on electricity bills and leave environmental effects outside the process.",
+              "The risk of higher costs arises only if a project is ultimately refused."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Chanana identifies delays and higher costs as possible consequences of closer examination.",
+              "Chanana mentions environmental effects alongside electricity bills as matters that could receive closer attention.",
+              "Chanana describes a potential rise in costs across the industry. She does not limit that risk to projects that are refused."
+            ]
+          },
+          {
+            "question": "What does Chanana’s distinction between backing AI and allowing its infrastructure to expand at any pace or cost imply?",
+            "options": [
+              "Supporting AI depends on keeping construction at its current pace.",
+              "Agreement on AI leadership settles how fast projects should go ahead.",
+              "Support for AI is compatible with limits on how its infrastructure expands."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Chanana separates the broad goal from decisions about construction. She specifies no preferred pace.",
+              "The shared goal is leadership in AI. Chanana leaves decisions about the pace and cost of expansion open.",
+              "Chanana presents support for the technology as a position that can coexist with limits on the pace or cost of expansion."
+            ]
+          },
+          {
+            "question": "Which sentence uses an opening “although” clause to acknowledge support for AI before qualifying what that support implies?",
+            "options": [
+              "Although a council may oppose a particular data centre, it can still support AI research.",
+              "Although a council supports AI research, it may still oppose a particular data centre.",
+              "Because a council supports AI research, it may oppose a particular data centre."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence is grammatical. Its opening clause acknowledges possible opposition to the centre, and its main clause makes support for research the central point.",
+              "The opening clause acknowledges support for research. The main clause qualifies what that support implies for a specific project.",
+              "The conjunction “because” presents support for research as a reason for opposing the centre. The task asks for a concession."
+            ]
+          },
+          {
+            "question": "What does “backlash” convey about the response to data centres?",
+            "options": [
+              "It conveys a strong negative reaction to data centres.",
+              "It conveys a cautious review of proposed data centre projects.",
+              "It conveys a binding decision to block data centre construction."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The word “backlash” signals strong opposition. The sentence separately reports that some technology leaders were surprised by it.",
+              "A cautious review is a form of examination. Here “backlash” describes the strength and negative direction of the reaction.",
+              "The word describes opposition. Whether that opposition leads to a binding decision is a separate question."
+            ]
+          },
+          {
+            "question": "Whose backing did Greg Brockman say more work was needed to secure?",
+            "options": [
+              "Investors weighing the financial returns of AI infrastructure.",
+              "Political parties pursuing US leadership in AI.",
+              "Local communities."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief discusses investor expectations elsewhere. Brockman’s remarks focus on support from local communities.",
+              "The parties’ shared goal appears in a separate part of the brief. Brockman focuses on support at the community level.",
+              "Brockman says more work is needed to secure the backing of local communities."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Major technology stocks in the United States and Asia plunged after the US midterm elections raised concerns that AI development could slow.",
+          "The technology-heavy Nasdaq Composite ended the trading day more than 5.5% below its previous close, according to Dow Jones data.",
+          "The drop put the Nasdaq Composite in correction territory, meaning it was at least 10% below its recent high.",
+          "In South Korea, the Kospi dropped more than 8.5%, triggering a circuit breaker that temporarily halted trading in an effort to curb panic selling.",
+          "Dozens of ballot measures across the United States sought to restrict the development of data centres, the facilities that provide computing power for AI.",
+          "In Texas, Democratic governor-elect Gina Hinojosa pledged a moratorium on new data centre construction.",
+          "Investors weighed the prospect of a sharp slowdown in data centre construction alongside concerns that AI infrastructure might yield lower returns than they had counted on.",
+          "Charu Chanana said greater scrutiny of data centre approvals and of the projects’ effects on the environment and electricity bills could delay projects and drive up costs across the industry.",
+          "Although both parties want the United States to lead in AI, support for the technology leaves open the question of how quickly and at what cost its infrastructure should expand, Chanana said.",
+          "Some technology leaders said the backlash against data centres in the midterms had taken them by surprise.",
+          "OpenAI president and co-founder Greg Brockman said more work was needed to secure the backing of local communities."
+        ],
+        "sentence_evidence": [
+          "Hundreds of billions of dollars in market value has been wiped from major tech firms in the US and Asia in a stock market rout after the US midterm elections sparked concerns of a slowdown in artificial intelligence development.",
+          "The tech-heavy Nasdaq composite index closed down by more than 5.5%, losing an estimated $2.5tn (£1.9tn) in market value, according to Dow Jones data, while other key US stock indexes also saw big losses in their worst days since 2025.",
+          "The Nasdaq Composite fall was so large it is now in what market watchers call correction territory, which is where an index or company value falls at least 10% below its recent high.",
+          "The sell-off in Seoul sent the Kospi index plunging more than 8.5%, triggering a so-called circuit breaker, a mechanism that temporarily halts trading to curb panic selling.",
+          "Democrats in races across the US campaigned to slow the growth of data centres and AI, and there were dozens of measures on ballots around the country aimed at restricting the development of the hubs crucial for powering the technology.",
+          "Texas' Democratic governor-elect Gina Hinojosa campaigned heavily against data centres, pledging a moratorium on new construction in the sector.",
+          "\"Fears that the vast sums poured into AI infrastructure may not deliver the returns investors have been banking on are now colliding with the prospect of a sharp slowdown in data centre construction.\"",
+          "Greater scrutiny of data centre approvals, and their impact on the environment and electricity bills could delay projects and raise costs across the industry, said Charu Chanana, Chief Investment Strategist at Saxo.",
+          "While both political parties are keen to ensure the US' dominance in the technology, \"there is a difference between supporting AI development and allowing infrastructure to expand at any cost or pace,\" she said.",
+          "Some tech leaders have said they were caught off guard by the backlash against data centres in the midterms.",
+          "OpenAI president and co-founder Greg Brockman said he believed everyone had been surprised by the reaction to data centres, and more work needed to be done to ensure communities were on board."
+        ],
+        "editorial_check": {
+          "date": "2026-11-06T04:53:55.793305+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All ten targets occur in the reading and are distinct from the reserved targets. The definitions explain contextual meanings, including the reliance implied by “counted on” and the market threshold denoted by “correction territory.”"
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses natural, neutral reporting. Phrases such as “could delay projects” preserve uncertainty, and the brief attributes Chanana’s assessment and Brockman’s remarks."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation uses the exact News Brief sentence to show how “although” acknowledges the shared goal before the main clause qualifies what follows from it. Quiz feedback clearly distinguishes concession from reason."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz tests distinct skills with one supported answer per item. Learners distinguish a trading halt’s purpose from its effect, compare market reference points, and apply the taught concession pattern to a fresh example."
+            }
+          },
+          "content_digest": "3186ebbd6f757ef0f79751461db2a726fd4e6c46bf960fc2f062b3eaa2a50a01"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

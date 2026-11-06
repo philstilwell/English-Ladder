@@ -1,0 +1,201 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "Major technology stocks in the United States and Asia plunged after the US midterm elections raised concerns that AI development could slow.",
+      "The technology-heavy Nasdaq Composite ended the trading day more than 5.5% below its previous close, according to Dow Jones data.",
+      "The drop put the Nasdaq Composite in correction territory, meaning it was at least 10% below its recent high.",
+      "In South Korea, the Kospi dropped more than 8.5%, triggering a circuit breaker that temporarily halted trading in an effort to curb panic selling.",
+      "Dozens of ballot measures across the United States sought to restrict the development of data centres, the facilities that provide computing power for AI.",
+      "In Texas, Democratic governor-elect Gina Hinojosa pledged a moratorium on new data centre construction.",
+      "Investors weighed the prospect of a sharp slowdown in data centre construction alongside concerns that AI infrastructure might yield lower returns than they had counted on.",
+      "Charu Chanana said greater scrutiny of data centre approvals and of the projects’ effects on the environment and electricity bills could delay projects and drive up costs across the industry.",
+      "Although both parties want the United States to lead in AI, support for the technology leaves open the question of how quickly and at what cost its infrastructure should expand, Chanana said.",
+      "Some technology leaders said the backlash against data centres in the midterms had taken them by surprise.",
+      "OpenAI president and co-founder Greg Brockman said more work was needed to secure the backing of local communities."
+    ],
+    "vocabulary": [
+      {
+        "term": "correction territory",
+        "part_of_speech": "noun phrase",
+        "definition": "A position in which a stock market benchmark or a company’s market value is at least 10% below its recent high."
+      },
+      {
+        "term": "circuit breaker",
+        "part_of_speech": "noun phrase",
+        "definition": "A market safeguard that temporarily halts trading when prices move sharply."
+      },
+      {
+        "term": "curb",
+        "part_of_speech": "verb",
+        "definition": "To limit the intensity or spread of something seen as harmful or excessive."
+      },
+      {
+        "term": "ballot measures",
+        "part_of_speech": "plural noun phrase",
+        "definition": "Specific policy proposals put directly to voters for a decision."
+      },
+      {
+        "term": "moratorium",
+        "part_of_speech": "noun",
+        "definition": "An official pause in an activity, intended to be temporary."
+      },
+      {
+        "term": "prospect",
+        "part_of_speech": "noun",
+        "definition": "The possibility of a future event that people are taking into account now."
+      },
+      {
+        "term": "yield",
+        "part_of_speech": "verb",
+        "definition": "To produce a result or benefit, such as a financial gain from an investment."
+      },
+      {
+        "term": "counted on",
+        "part_of_speech": "phrasal verb, past participle form",
+        "definition": "Expected something to happen or be available and relied on that expectation."
+      },
+      {
+        "term": "scrutiny",
+        "part_of_speech": "noun",
+        "definition": "Close examination to assess whether something is justified or what effects it might have."
+      },
+      {
+        "term": "backlash",
+        "part_of_speech": "noun",
+        "definition": "A strong negative reaction to a decision, change or development."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "株式市場の代表的な指数や企業の時価総額が、直近の最高値を10％以上下回っている状態。",
+      "ko": "주식시장의 대표 지수나 기업의 시장 가치가 최근 최고치보다 10% 이상 낮은 상태.",
+      "zh-Hans": "股票市场的基准指数或一家公司的市值比近期高点低至少百分之十的状态。",
+      "es": "Situación en la que un índice bursátil de referencia o el valor de mercado de una empresa está al menos un 10 % por debajo de su máximo reciente.",
+      "pt-BR": "Situação em que um índice de referência da bolsa ou o valor de mercado de uma empresa está pelo menos 10% abaixo do seu pico recente.",
+      "fr": "Situation dans laquelle un indice boursier de référence ou la valeur de marché d’une entreprise se situe au moins 10 % en dessous de son récent sommet.",
+      "de": "Lage, in der ein Aktienindex, der als Maßstab dient, oder der Marktwert eines Unternehmens mindestens 10 % unter seinem jüngsten Höchststand liegt."
+    },
+    {
+      "id": 1,
+      "ja": "価格が急激に変動したときに取引を一時停止する、市場を守るための仕組み。",
+      "ko": "가격이 급격히 움직일 때 거래를 일시적으로 중단하는 시장 보호 장치.",
+      "zh-Hans": "价格剧烈波动时暂时停止交易的一种市场保护机制。",
+      "es": "Mecanismo de protección del mercado que suspende temporalmente las operaciones cuando los precios cambian bruscamente.",
+      "pt-BR": "Mecanismo de proteção do mercado que suspende temporariamente as negociações quando os preços variam bruscamente.",
+      "fr": "Mécanisme de protection du marché qui suspend temporairement les transactions lorsque les prix varient brusquement.",
+      "de": "Schutzmechanismus für den Markt, der den Handel vorübergehend aussetzt, wenn sich die Preise stark und schnell verändern."
+    },
+    {
+      "id": 2,
+      "ja": "有害または行き過ぎとみなされるものの勢いや広がりを抑えること。",
+      "ko": "해롭거나 지나치다고 여겨지는 것의 강도나 확산을 억제하다.",
+      "zh-Hans": "限制被认为有害或过度的事物的强度或扩散范围。",
+      "es": "Limitar la intensidad o la propagación de algo que se considera perjudicial o excesivo.",
+      "pt-BR": "Limitar a intensidade ou a disseminação de algo considerado prejudicial ou excessivo.",
+      "fr": "Limiter l’intensité ou la propagation de quelque chose que l’on juge nuisible ou excessif.",
+      "de": "Die Stärke oder Ausbreitung von etwas begrenzen, das als schädlich oder übermäßig angesehen wird."
+    },
+    {
+      "id": 3,
+      "ja": "有権者が投票で直接決めるように提示される具体的な政策案。",
+      "ko": "유권자가 직접 투표로 결정하도록 제시된 구체적인 정책 제안들.",
+      "zh-Hans": "直接交由选民投票决定的具体政策提案。",
+      "es": "Propuestas concretas de política pública que se someten directamente al voto de los electores para que estos decidan.",
+      "pt-BR": "Propostas específicas de políticas públicas submetidas diretamente ao voto dos eleitores para que eles decidam.",
+      "fr": "Propositions précises de politique publique soumises directement au vote des électeurs pour qu’ils en décident.",
+      "de": "Konkrete politische Vorschläge, über die die Wahlberechtigten direkt abstimmen."
+    },
+    {
+      "id": 4,
+      "ja": "一時的なものとして行われる、活動の正式な停止。",
+      "ko": "일시적인 조치로 어떤 활동을 공식적으로 중단하는 것.",
+      "zh-Hans": "对某项活动的正式暂停，预定只持续一段时间。",
+      "es": "Suspensión oficial de una actividad que se establece con la intención de que sea temporal.",
+      "pt-BR": "Suspensão oficial de uma atividade, prevista para ser temporária.",
+      "fr": "Suspension officielle d’une activité, prévue pour être temporaire.",
+      "de": "Offizielle Aussetzung einer Tätigkeit, die nur vorübergehend sein soll."
+    },
+    {
+      "id": 5,
+      "ja": "人々が今考慮に入れている、将来何かが起こる可能性。",
+      "ko": "사람들이 지금 고려하고 있는, 앞으로 어떤 일이 일어날 가능성.",
+      "zh-Hans": "人们目前考虑到的、未来发生某件事的可能性。",
+      "es": "Posibilidad de que ocurra algo en el futuro y que la gente tiene en cuenta en el presente.",
+      "pt-BR": "Possibilidade, levada em conta agora, de que algo aconteça no futuro.",
+      "fr": "Possibilité, prise en compte aujourd’hui, qu’un événement se produise à l’avenir.",
+      "de": "Die Möglichkeit eines künftigen Ereignisses, die Menschen jetzt in Betracht ziehen."
+    },
+    {
+      "id": 6,
+      "ja": "投資から金銭的な利益が得られる場合のように、何らかの結果や利益を生み出すこと。",
+      "ko": "투자에서 금전적 이익을 얻는 경우처럼, 어떤 결과나 이익을 내다.",
+      "zh-Hans": "产生某种结果或带来某种收益，例如一项投资带来经济收益。",
+      "es": "Producir un resultado o un beneficio, como una ganancia económica derivada de una inversión.",
+      "pt-BR": "Gerar um resultado ou benefício, como um ganho financeiro obtido com um investimento.",
+      "fr": "Produire un résultat ou procurer un avantage, comme un gain financier tiré d’un investissement.",
+      "de": "Ein Ergebnis oder einen Nutzen hervorbringen, etwa einen finanziellen Gewinn aus einer Investition."
+    },
+    {
+      "id": 7,
+      "ja": "何かが起こる、または利用できると見込み、その見込みを当てにしていた。",
+      "ko": "어떤 일이 일어나거나 무언가를 이용할 수 있으리라고 예상했고, 그 예상에 의지했다.",
+      "zh-Hans": "当时预期某件事会发生或某样东西能够获得，并以这一预期为依据。",
+      "es": "Se esperaba que algo ocurriera o estuviera disponible, y se confiaba en que así sería.",
+      "pt-BR": "Esperava que algo acontecesse ou estivesse disponível e se apoiava nessa expectativa.",
+      "fr": "On s’attendait à ce que quelque chose se produise ou soit disponible, et on s’appuyait sur cette attente.",
+      "de": "Man erwartete, dass etwas geschehen oder verfügbar sein würde, und verließ sich auf diese Erwartung."
+    },
+    {
+      "id": 8,
+      "ja": "何かに正当な理由があるか、またはどのような影響があり得るかを判断するために、詳しく調べること。",
+      "ko": "어떤 것이 정당한지 또는 어떤 영향을 미칠 수 있는지 판단하기 위해 면밀히 살펴보는 것.",
+      "zh-Hans": "为判断某件事是否有充分理由，或评估它可能产生什么影响，而进行的仔细审查。",
+      "es": "Examen minucioso para determinar si algo está justificado o qué efectos podría tener.",
+      "pt-BR": "Análise cuidadosa para avaliar se algo se justifica ou quais efeitos pode ter.",
+      "fr": "Examen attentif visant à déterminer si quelque chose est justifié ou quels effets cela pourrait avoir.",
+      "de": "Genaue Prüfung, um einzuschätzen, ob etwas gerechtfertigt ist oder welche Auswirkungen es haben könnte."
+    },
+    {
+      "id": 9,
+      "ja": "決定や変化、新たな動きに対して起こる強い反発。",
+      "ko": "결정이나 변화, 새로운 움직임에 대한 강한 부정적 반응.",
+      "zh-Hans": "对某项决定、变化或新进展作出的强烈负面反应。",
+      "es": "Reacción negativa intensa ante una decisión, un cambio o un nuevo acontecimiento.",
+      "pt-BR": "Reação negativa intensa a uma decisão, mudança ou novo desdobramento.",
+      "fr": "Forte réaction négative à une décision, à un changement ou à une évolution.",
+      "de": "Starke ablehnende Reaktion auf eine Entscheidung, eine Veränderung oder eine Entwicklung."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-06T04:59:05.167389+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

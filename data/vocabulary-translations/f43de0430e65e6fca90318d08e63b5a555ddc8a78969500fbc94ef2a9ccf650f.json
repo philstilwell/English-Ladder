@@ -1,0 +1,171 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Tech stocks in the US and Asia dropped sharply after the US midterms raised fears that artificial intelligence (AI) development could slow.",
+      "Democrats across the US campaigned to limit the growth of AI and data centres, the facilities that help power the technology.",
+      "Democrats won control of both houses of Congress, the Senate and the House of Representatives.",
+      "In Texas, Gina Hinojosa, who won the race for governor, had promised to put new data centre construction on hold.",
+      "The Nasdaq Composite, an index that tracks a group of stocks, closed more than 5.5% lower.",
+      "In Japan, the Nikkei 225 was down 6% in early trading as shares in chip companies Kioxia and Tokyo Electron lost value.",
+      "In Seoul, the sell-off pushed the Kospi index down more than 8.5%, leading to a brief pause in trading to limit panic selling.",
+      "Investors were already questioning whether the large sums going into AI would pay off.",
+      "Investment strategist Charu Chanana said closer checks on data centre plans could delay projects and raise costs.",
+      "Chanana pointed to the effects of data centres on the environment and on electricity bills as issues that could face closer review.",
+      "OpenAI co-founder Greg Brockman said more work was needed to win support from local communities."
+    ],
+    "vocabulary": [
+      {
+        "term": "raised fears",
+        "part_of_speech": "verb phrase",
+        "definition": "Made people worry that something bad might happen."
+      },
+      {
+        "term": "campaigned",
+        "part_of_speech": "verb",
+        "definition": "Worked to win public support for a plan during an election."
+      },
+      {
+        "term": "on hold",
+        "part_of_speech": "prepositional phrase",
+        "definition": "Delayed or paused for a period of time."
+      },
+      {
+        "term": "index",
+        "part_of_speech": "noun",
+        "definition": "A measure that shows how the prices of a group of stocks change."
+      },
+      {
+        "term": "closed",
+        "part_of_speech": "verb",
+        "definition": "Finished the trading day at the level given."
+      },
+      {
+        "term": "sell-off",
+        "part_of_speech": "noun",
+        "definition": "A period when many investors sell their stocks, causing prices to drop sharply."
+      },
+      {
+        "term": "pay off",
+        "part_of_speech": "phrasal verb",
+        "definition": "Bring enough financial benefit to make the money invested worthwhile."
+      },
+      {
+        "term": "win support",
+        "part_of_speech": "verb phrase",
+        "definition": "Persuade people to agree with a plan or back it."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何か悪いことが起こるかもしれないという不安を人々に抱かせた。",
+      "ko": "사람들이 나쁜 일이 일어날지도 모른다고 걱정하게 했다.",
+      "zh-Hans": "让人们担心可能会发生不好的事。",
+      "es": "Hizo que la gente se preocupara por la posibilidad de que ocurriera algo malo.",
+      "pt-BR": "Fez com que as pessoas se preocupassem com a possibilidade de algo ruim acontecer.",
+      "fr": "A fait craindre aux gens que quelque chose de mauvais puisse arriver.",
+      "de": "Sorgte dafür, dass die Menschen befürchteten, es könnte etwas Schlimmes passieren."
+    },
+    {
+      "id": 1,
+      "ja": "選挙期間中に、ある計画に対する人々の支持を得ようと活動した。",
+      "ko": "선거 기간에 어떤 계획에 대한 대중의 지지를 얻으려고 활동했다.",
+      "zh-Hans": "在选举期间努力为某项计划争取公众支持。",
+      "es": "Trabajó durante el período electoral para conseguir el apoyo del público a un plan.",
+      "pt-BR": "Trabalhou durante o período eleitoral para conquistar o apoio da população a um plano.",
+      "fr": "A fait des efforts pendant une campagne électorale pour obtenir le soutien du public à un projet.",
+      "de": "Setzte sich im Wahlkampf dafür ein, die Öffentlichkeit für einen Plan zu gewinnen."
+    },
+    {
+      "id": 2,
+      "ja": "しばらくの間、延期または中断されている状態。",
+      "ko": "일정 기간 동안 미뤄지거나 중단된 상태.",
+      "zh-Hans": "被推迟或暂停一段时间。",
+      "es": "Aplazado o suspendido durante un tiempo.",
+      "pt-BR": "Adiado ou suspenso por algum tempo.",
+      "fr": "Reporté ou suspendu pendant un certain temps.",
+      "de": "Für eine gewisse Zeit verschoben oder unterbrochen."
+    },
+    {
+      "id": 3,
+      "ja": "複数の銘柄の株価がどのように変動するかを示す指標。",
+      "ko": "여러 종목의 주가가 어떻게 변하는지 보여 주는 지표.",
+      "zh-Hans": "反映一组股票价格如何变化的指标。",
+      "es": "Un indicador que muestra cómo cambian los precios de un grupo de acciones.",
+      "pt-BR": "Um indicador que mostra como variam os preços de um conjunto de ações.",
+      "fr": "Un indicateur qui montre comment évoluent les cours d’un groupe d’actions.",
+      "de": "Eine Kennzahl, die zeigt, wie sich die Kurse einer Gruppe von Aktien verändern."
+    },
+    {
+      "id": 4,
+      "ja": "示された水準でその日の取引を終えた。",
+      "ko": "제시된 수준에서 그날의 거래를 마쳤다.",
+      "zh-Hans": "当天交易结束时处于所说的水平。",
+      "es": "Terminó la jornada de negociación en el nivel indicado.",
+      "pt-BR": "Encerrou o dia de negociações no nível indicado.",
+      "fr": "A terminé la séance de bourse au niveau indiqué.",
+      "de": "Beendete den Handelstag auf dem angegebenen Stand."
+    },
+    {
+      "id": 5,
+      "ja": "多くの投資家が保有する株を売り、その結果、株価が急落する時期。",
+      "ko": "많은 투자자가 보유한 주식을 팔아 주가가 급격히 떨어지는 시기.",
+      "zh-Hans": "许多投资者卖出自己持有的股票，导致股价急剧下跌的一段时间。",
+      "es": "Un período en el que muchos inversores venden sus acciones, lo que provoca una fuerte caída de los precios.",
+      "pt-BR": "Um período em que muitos investidores vendem suas ações, fazendo com que os preços caiam bruscamente.",
+      "fr": "Une période pendant laquelle de nombreux investisseurs vendent leurs actions, ce qui entraîne une forte chute des cours.",
+      "de": "Eine Phase, in der viele Anleger ihre Aktien verkaufen und die Kurse dadurch stark fallen."
+    },
+    {
+      "id": 6,
+      "ja": "投じたお金に見合うだけの金銭的な利益をもたらす。",
+      "ko": "투자한 돈이 아깝지 않을 만큼 충분한 금전적 이익을 가져오다.",
+      "zh-Hans": "带来足够的经济收益，让投入的钱花得值。",
+      "es": "Generar suficiente beneficio económico para que valga la pena el dinero invertido.",
+      "pt-BR": "Gerar retorno financeiro suficiente para que o investimento valha a pena.",
+      "fr": "Rapporter suffisamment d’argent pour que l’investissement en vaille la peine.",
+      "de": "So viel finanziellen Nutzen bringen, dass sich die Investition lohnt."
+    },
+    {
+      "id": 7,
+      "ja": "人々を説得して、ある計画に賛成してもらうか、その計画を後押ししてもらう。",
+      "ko": "사람들을 설득해 어떤 계획에 찬성하거나 그 계획을 지지하게 하다.",
+      "zh-Hans": "说服人们赞同或支持某项计划。",
+      "es": "Convencer a la gente para que esté de acuerdo con un plan o lo respalde.",
+      "pt-BR": "Convencer as pessoas a concordar com um plano ou a apoiá-lo.",
+      "fr": "Convaincre les gens d’approuver ou de soutenir un projet.",
+      "de": "Menschen davon überzeugen, einem Plan zuzustimmen oder ihn zu unterstützen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-06T04:57:01.988812+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

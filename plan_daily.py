@@ -105,7 +105,13 @@ DRAFT_GUIDANCE = (
     "fit; never cut off a sentence to meet a length limit. "
     "Use a person’s name, surname, occupation or family relationship only if the "
     "supplied evidence explicitly establishes it. Never complete a familiar name "
-    "from memory. If an excerpt says only a pronoun, do not guess its identity."
+    "from memory. If an excerpt says only a pronoun, do not guess its identity. "
+    "Preserve the source’s attribution and scope: after does not mean because of, "
+    "and a reported possibility is not a fact. A plain-language definition may "
+    "explain a term without asserting a new detail about the event. Reading quiz "
+    "answers and feedback must be supported by the learner’s News Brief, not by "
+    "unseen excerpts. Use plausible misreadings for wrong options and explain "
+    "the distinction without adding facts."
 )
 
 
@@ -129,17 +135,23 @@ def repair_fields(lesson, source, level, issues, scope=None):
         return ()
     # Route our own grammar checks by exact diagnostic identity, never reviewer prose.
     ordinary = update_site.validate_lesson_data(lesson, level)
-    grammar_issues = [i for i in validate_plan_lesson(lesson, level) if i not in ordinary]
+    plan_issues = validate_plan_lesson(lesson, level)
+    grammar_issues = [i for i in plan_issues if i not in ordinary]
     if issues and grammar_issues and all(i in grammar_issues for i in issues):
         return ("grammar",)
     # Editorial scope is explicit and bound to this exact draft and issue set.
     # Ambiguous, legacy, stale or mixed feedback always receives a full revision.
-    if (isinstance(scope, dict) and scope.get("base_sha256") == draft_digest(lesson)
+    if (issues and isinstance(scope, dict) and scope.get("base_sha256") == draft_digest(lesson)
             and scope.get("issues_sha256") == draft_digest(issues)
-            and scope.get("affected_sections") == ["grammar"]
-            and isinstance(scope.get("failed_checks"), list)
-            and all(check == "teaching_language" for check in scope["failed_checks"])):
-        return ("grammar",)
+            and isinstance(scope.get("failed_checks"), list)):
+        sections = scope.get("affected_sections")
+        failed = scope["failed_checks"]
+        if sections == ["grammar"] and all(check == "teaching_language" for check in failed):
+            return ("grammar",)
+        if (sections == ["quiz"]
+                and all(check in ("challenge", "teaching_language") for check in failed)
+                and not plan_issues):
+            return ("quiz",)
     return ()
 
 
@@ -255,8 +267,8 @@ def prepare_review(release_date: str, state: Path, name: str) -> dict:
         "changes for ALL blocking issues and failed level checks. Use reading for "
         "news_brief_sentences, evidence for sentence_evidence, and the other canonical "
         "section names in the schema. Include dependent sections that must change. "
-        "A grammar explanation-only issue is [\"grammar\"]; an unsupported reading "
-        "claim used by a quiz needs [\"reading\", \"quiz\"]. Use unknown for any "
+        "Use [\"grammar\"] or [\"quiz\"] only when that section alone needs changes. "
+        "An unsupported reading claim used by a quiz needs [\"reading\", \"quiz\"]. Use unknown for any "
         "uncertain scope. Return [] only when approved with no issues and all checks passed. "
         "This field controls repair scope only; review the ENTIRE lesson each time.\n"
     )

@@ -81,6 +81,59 @@ class PlanDailyTests(unittest.TestCase):
             from teaching_typography import GUIDANCE
             self.assertIn(GUIDANCE, (state / "draft-beginner.prompt.txt").read_text())
 
+    def test_quiz_only_review_repairs_quiz_and_preserves_the_reading_for_full_review(self):
+        from review_fixtures import approved_review
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            original = self.repair_fixture(state)
+            review = approved_review()
+            review.update(approved=False, affected_sections=["quiz"],
+                          issues=["Quiz 4 feedback introduces timing absent from the reading."])
+            review["level_checks"]["challenge"] = {
+                "passed": False, "reason": "One distractor gives away its own error."}
+            review_path = state / "review.json"
+            plan_daily.atomic_json(review_path, review)
+            with self.assertRaises(ValueError):
+                plan_daily.accept_review("2026-10-26", state, "beginner", review_path, 1)
+            plan_daily.prepare_level("2026-10-26", state, "beginner")
+            schema = plan_daily.load_json(state / "draft-beginner.schema.json")
+            self.assertEqual({"quiz"}, set(schema["properties"]))
+
+            quiz = json.loads(json.dumps(original["quiz"]))
+            quiz[0]["option_feedback"][0] = "Look at what the first sentence says."
+            result = state / "repair.json"
+            plan_daily.atomic_json(result, {"quiz": quiz})
+            plan_daily.accept_draft("2026-10-26", state, "beginner", result)
+            saved = plan_daily.load_json(state / "lesson-beginner.json")
+            self.assertEqual(quiz, saved.pop("quiz"))
+            self.assertEqual({k: v for k, v in original.items() if k not in
+                              {"quiz", "editorial_check"}}, saved)
+            self.assertFalse((state / "approved-beginner.json").exists())
+            prompt = (state / "review-beginner.prompt.txt").read_text()
+            self.assertIn(original["news_brief_sentences"][0], prompt)
+            self.assertIn(quiz[0]["option_feedback"][0], prompt)
+
+    def test_quiz_scope_cannot_override_mixed_stale_or_invalid_draft(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            lesson = self.repair_fixture(state)
+            source = plan_daily.load_json(state / "source.json")
+            level = plan_daily.level_config("beginner", state)
+            issues = ["The quiz answer overstates what the reading says."]
+            scope = {"base_sha256": plan_daily.draft_digest(lesson),
+                     "issues_sha256": plan_daily.draft_digest(issues),
+                     "affected_sections": ["quiz"], "failed_checks": []}
+            self.assertEqual(("quiz",), plan_daily.repair_fields(lesson, source, level, issues, scope))
+            for override in ({"base_sha256": "old"}, {"issues_sha256": "old"},
+                             {"affected_sections": ["reading", "quiz"]},
+                             {"affected_sections": ["unknown"]}, {"failed_checks": ["vocabulary"]}):
+                with self.subTest(override=override):
+                    self.assertEqual((), plan_daily.repair_fields(
+                        lesson, source, level, issues, {**scope, **override}))
+            lesson["discussion"] = []
+            scope["base_sha256"] = plan_daily.draft_digest(lesson)
+            self.assertEqual((), plan_daily.repair_fields(lesson, source, level, issues, scope))
+
     def test_mixed_editorial_issues_fall_back_to_complete_revision(self):
         with tempfile.TemporaryDirectory() as directory:
             state = Path(directory)

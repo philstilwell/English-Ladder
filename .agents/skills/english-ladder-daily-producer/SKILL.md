@@ -1,167 +1,123 @@
 ---
 name: english-ladder-daily-producer
-description: Produce, recover, publish, and verify the daily English Ladder news edition with ChatGPT-plan Codex sessions and no paid API fallback. Use for the scheduled daily run and manual recovery of missing lesson text, review, seven-language vocabulary definitions, or the daily illustration.
+description: Produce, recover, publish, and verify the daily English Ladder news edition through the sole ChatGPT-authenticated Codex producer. Use for scheduled editions and manual recovery of their lessons, reviews, translations, illustration, or publication.
 ---
 
 # English Ladder daily producer
 
-Run this workflow from the English-Ladder repository. It is the only automatic
-daily content producer. GitHub Actions performs offline tests and publication
-verification only. Requested starts are 22:30, 23:30, and 00:30
-`America/New_York`. The 22:30 run produces the following local date; both later
-opportunities stay pinned to that edition across midnight. The Codex
-desktop task runs in the repository's supported local environment because the
-large static archive makes a second worktree unsafe on this Mac's available
-disk space; the checkout-status check below remains mandatory.
+Work on Mac.lan in `/Users/philstilwell/.local/share/EnglishLadder/English-Ladder`
+using the existing checkout and installed environment. The static archive is
+too large for a second checkout. GitHub Actions runs offline checks only.
 
-## Hard boundaries
+Use the ChatGPT-authenticated Codex CLI with `gpt-6.1-sol`, high reasoning, and
+ChatGPT's built-in image generation. Use included allowance first; authorized
+existing credits may cover any shortfall, including the image.
+[Estimate credit use](references/recovery.md#usage-or-capacity) before it begins. Stop if neither can
+support the work. No API keys, Gemini, fallback publisher, purchases, resets,
+top-ups, subscription, billing, credential, security, hosting, schedule, or
+audio changes. The runner alone handles generation and rebuilds.
 
-- Use `gpt-6.1-sol` with high reasoning through the signed-in Codex CLI.
-- Use included ChatGPT allowance first; existing ChatGPT credits are authorized
-  when that allowance is exhausted, including for built-in image generation.
-  An exhausted ordinary allowance alone is not a blocker when existing credits
-  remain usable. Do not consume a reset, purchase credits, enable automatic
-  top-ups, or change the subscription or billing settings. Stop if neither
-  included allowance nor existing credits can support the required work.
-  Before credit-funded generation, report an estimate from retained usage and
-  current credit rates, stating any uncertainty. Do not describe spending
-  existing credits as $0 usage; distinguish credit consumption from new purchases.
-- Never use, reveal, copy, or request an API key. Never call Gemini or an OpenAI
-  API endpoint. `plan_daily_runner.py` removes all common model API-key variables.
-- Do not run `update_site.py` without `--refresh-pages`; the retired modes fail
-  closed. Do not run `vocabulary_translations.py` without `--check`. Do not call
-  `daily_images.ensure_daily_image`.
-- Do not alter billing, secrets, permissions, the domain, hosting, or the separate
-  manual Everyday English audio/TTS workflow.
-- Do not overwrite a complete saved edition. Resume missing stages and preserve
-  the approved source, lesson text, translations, and illustration.
-- Do not publish a partial edition. Lesson text, independent review, all seven
-  translation languages, the matching illustration, offline tests, and the site
-  audit must all pass.
+## Preflight and run
 
-## Run
-
-1. Inspect the repository status. A clean checkout is required before starting a
-   new date. If the only changes are validated, current-date producer artifacts
-   that correspond to the retained `.daily-agent/` state, preserve them and
-   resume. If unrelated local changes are present, stop and report them instead
-   of overwriting them. Fetch `origin/main` and fast-forward or rebase before
-   creating new content.
-2. Wait out any early scheduler dispatch, then resolve the release date with:
+1. Run this gate **before resolving the edition or checking publication**:
 
    ```bash
    .venv/bin/python daily_schedule.py --wait-for-start
    ```
 
-   The desktop scheduler can dispatch up to five minutes before or after its
-   nominal time. This command keeps an early attempt alive in short waits until
-   `22:30`, `23:30`, or `00:30 America/New_York`, then prints the edition date.
-   Keep the command running if it reports an early dispatch; poll its running
-   session and report progress as needed. Do not check the previous edition and
-   exit while waiting. In particular, a `22:26` dispatch must wait until `22:30`
-   before selecting the following day's edition. Late and ordinary daytime
-   invocations proceed immediately. Never replace this command with a bare date
-   lookup in a scheduled attempt. The recurrence itself stays unchanged.
+   Wait through any early dispatch and use only the printed date as `DATE`.
+   The 22:30 and 23:30 New York starts target the next local date; 00:30
+   recovers that same edition. Keep local wall-clock times across daylight saving.
 
-3. Check whether the complete edition is already live:
+2. Confirm the required checkout, installed dependencies, ChatGPT sign-in and
+   `CODEX_THREAD_ID`. Inspect status and fetch `origin/main`. Fast-forward a
+   clean checkout as needed. Preserve only recognized artifacts for this date
+   backed by `.daily-agent/DATE/`; stop on unrelated changes, a checkout you
+   cannot safely synchronize, or an unavailable prerequisite.
 
-   ```bash
-   .venv/bin/python daily_publication.py --date YYYY-MM-DD --require-published
-   ```
-
-   When this passes, clear any completed publication handoff with
-   `.venv/bin/python plan_daily_runner.py --date YYYY-MM-DD --finish-publication`
-   and exit. A later scheduled attempt must be a no-op.
-4. Run the bounded producer:
+3. Check for a completed edition:
 
    ```bash
-   .venv/bin/python plan_daily_runner.py --date YYYY-MM-DD
+   .venv/bin/python daily_publication.py --date "$DATE" --require-published
    ```
 
-   The runner uses fresh ephemeral Codex sessions for drafting, independent
-   editorial review, translation, independent multilingual editing, and image
-   generation. The exact underlying built-in image model is recorded as not
-   exposed unless the tool reports it explicitly. Local validators import the results. It allows at most three draft or repair
-   attempts per level during one scheduled run. Isolated mechanical errors and
-   explicit grammar-only editorial failures use section replacements with the reading
-   and omitted sections locked; ambiguous or mixed editorial failures use a complete
-   revision. The reviewer returns an explicit affected_sections list; section-only
-   routing must match a saved checksum of both the draft and its issues. Legacy,
-   stale, unknown, or mixed scope cannot authorize editorial section-only repair.
-   Every merged lesson still receives all validators and a fresh independent
-   full-lesson review. Grammar explanations must finish within 420 characters; the
-   writer targets 180–320 without repeating the separately displayed example. It retains resumable state
-   under ignored `.daily-agent/`. A per-edition process lock makes overlapping
-   22:30/23:30/00:30 New York opportunities exit without duplicating model work.
-   Read its final JSON status. For `already_running`, exit immediately without
-   further work. `ready_to_publish` creates a persistent handoff recording this
-   chat's `CODEX_THREAD_ID`; continue through publication below.
-
-   For `publication_pending`, inspect only the reported `owner_thread_id` with
-   the supported `read_thread` app tool (one recent turn, bounded output).
-   If that chat is active, waiting for approval/input, unavailable, or has an
-   ambiguous status, exit without publication work. Do not infer abandonment
-   from elapsed time, an absent runner process, or the marker alone.
-   If the app confirms that the owner has failed (`systemError`/failed) or is
-   idle with its turn ended, also confirm its last commands/tools have ended.
-   A failed chat can leave a command running; do not take over while a command
-   is still in progress or its completion is uncertain. Once both the chat and
-   its commands have stopped, resume the saved publication automatically:
+   If already live with no handoff, exit. If already live with a handoff, go
+   to ownership and live verification below. Otherwise run:
 
    ```bash
-   .venv/bin/python plan_daily_runner.py --date YYYY-MM-DD --resume-publication-from STOPPED_THREAD_ID
+   .venv/bin/python plan_daily_runner.py --date "$DATE"
    ```
 
-   This checks the expected owner and archive checksum under the producer lock,
-   validates saved completeness, and atomically assigns this chat as owner.
-   Only `ready_to_publish` authorizes continuing at step 5. An ownership change
-   or `already_running` means stop. Never regenerate or rebuild during this
-   recovery. A legacy handoff without an owner needs explicit manual recovery;
-   do not delete it or guess an owner. Preserve the handoff until live checks pass.
-5. Inspect `git status`, `git diff --check`, the new illustration, and the
-   provenance records. Never stage `.daily-agent/`, usage ledgers, secrets, or
-   audio. Expected daily output may include the dated archive, dated image and
-   metadata, translation records, level pages, dated pages, Discover page, feeds,
-   search metadata, and sitemaps.
-6. After the runner returns `ready_to_publish` and all generated files are stable,
-   run `.venv/bin/python audit_site.py`,
-   `.venv/bin/python -m unittest discover -s tests`, and
-   `/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node --test tests/*.test.cjs`
-   before committing. Never run site-wide suites concurrently with generation or
-   rebuilding: they can observe a new archive before its pages exist. Repeat the
-   affected checks if subsequent edits invalidate earlier results. The absolute Node path is the
-   supported runtime bundled with the ChatGPT desktop app that owns this task.
-7. Fetch `origin/main` again. Rebase the validated commit if main moved, then
-   repeat the focused completeness check. Commit with
-   `Auto-update daily lessons [skip-daily-workflow]` and push to `main`. The marker
-   is retained for history; the new GitHub workflow is offline-only and may still
-   check the push.
-8. Wait for hosting, then run:
+   Preserve saved source, approved levels, reviewed translations and matching
+   illustration. A valid draft can resume at review. The runner caps lesson
+   attempts at three per level per run. After a failure, retain state and logs.
+   See [recovery guidance](references/recovery.md) for manual repairs, capacity
+   errors, and credit estimates.
+
+4. Follow the runner's final status:
+
+   - `already_running`: exit immediately.
+   - `ready_to_publish`: this chat owns the durable publication handoff.
+   - `publication_pending`: recover only the saved publication, as follows.
+
+   For pending publication, use the reported owner (or the saved owner in
+   `publication-pending.json` on the already-live path). Read only that chat
+   with the supported Codex app `read_thread` tool, one recent turn and bounded
+   output. Leave active, waiting, unavailable, ambiguous and unknown owners
+   alone. A marker's age or absent producer process proves nothing. If the app
+   confirms the chat failed or ended and its last commands/tools also stopped,
+   transfer ownership under the lock:
 
    ```bash
-   /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node cloudflare/check-daily-publication.cjs YYYY-MM-DD
+   .venv/bin/python plan_daily_runner.py --date "$DATE" --resume-publication-from STOPPED_THREAD_ID
    ```
 
-   Verify the dated Beginner, Intermediate, and Advanced pages, Discover feature,
-   matching illustration bytes, and all seven translation controls on
-   `https://englishladder.com` itself. Report the
-   commit and GitHub workflow link. If publication is still converging, wait and
-   retry the read-only verifier; do not regenerate content.
-9. Only after the live verifier passes, run
-   `.venv/bin/python plan_daily_runner.py --date YYYY-MM-DD --finish-publication`.
-   This independently rechecks the complete live edition and clears the handoff.
-   If the task stops before this step, retain the marker and report the blocker;
-   never delete it merely to let another producer start.
+   Continue only on `ready_to_publish`. This checks the expected owner,
+   saved completeness and archive checksum. Do not guess a missing owner,
+   delete a marker, regenerate or rebuild. If resuming the current chat's own
+   handoff after an explicit retry, confirm its prior commands ended before
+   continuing; no ownership transfer is needed.
 
-## Failure handling
+## Validate, push, and verify
 
-- A model or validation failure leaves state for the 23:30 or 00:30 New York attempt.
-- A push race requires a normal fetch/rebase and repeated local checks, not a
-  force push.
-- A hosting failure after a saved commit is a publication problem; do not rerun
-  model stages.
-- A chat failure after `ready_to_publish` is recoverable by the next existing
-  opportunity using the verified stopped-owner transfer above. The marker is
-  durable recovery state, not proof that its original chat is still running.
-- After the final attempt, the separate macOS monitor records `needs_attention`.
-  It never dispatches a GitHub generation workflow.
+1. For an unpushed edition, inspect the changed files, illustration and
+   provenance, and run `git diff --check`. Stage only expected generated
+   publication files; keep state, usage logs, secrets and audio out of Git.
+   Once the runner has returned `ready_to_publish` and writes have stopped,
+   run all three checks (they may run in parallel):
+
+   ```bash
+   .venv/bin/python audit_site.py
+   .venv/bin/python -m unittest discover -s tests
+   /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node --test tests/*.test.cjs
+   ```
+
+   Fetch `origin/main` again before pushing. Use a normal rebase if safe, then
+   recheck saved completeness and repeat checks invalidated by changes. Stop
+   on conflicts you cannot resolve without altering unrelated work. Commit
+   with `Auto-update daily lessons [skip-daily-workflow]` and push to `main`.
+   If the matching complete commit is already on `origin/main`, skip commit
+   and push; proceed to live verification.
+
+2. Wait for hosting and verify on `https://englishladder.com`:
+
+   ```bash
+   /Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node cloudflare/check-daily-publication.cjs "$DATE"
+   ```
+
+   This checks the dated pages, live data and matching image bytes. In a
+   temporary browser tab, also verify the Discover feature and its three level
+   links. On each dated Beginner, Intermediate and Advanced page, select all
+   seven definition languages, check the displayed definitions against the
+   reviewed values, and verify English reset. Restore the original preferences
+   and close the tab. Stale data or a 404 during rollout calls for bounded
+   read-only rechecks, not regeneration.
+
+3. Only after the live verifier **and** browser checks pass, clear the handoff:
+
+   ```bash
+   .venv/bin/python plan_daily_runner.py --date "$DATE" --finish-publication
+   ```
+
+   Report the edition, commit and offline workflow link, or the failing stage
+   and next action. If publication cannot be verified, retain the handoff.

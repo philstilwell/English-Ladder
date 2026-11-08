@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-08",
+  "release_iso": "2026-11-08T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Sat, 07 Nov 2026 02:03:28 GMT",
+    "retrieved_at": "2026-11-08T03:30:10.195802+00:00",
+    "title": "One of the year's most prolific meteor showers to light up the night sky this weekend",
+    "summary": "The Leonid meteor shower, known for its bright and fast meteors, will kick off this weekend and continue until the end of November.",
+    "evidence_text": "The Leonid meteor shower, known for its bright and fast meteors, will kick off this weekend and continue until the end of November.\nThese particles enter the Earth's atmosphere at up to 44 miles (71km) per second - meaning these streaks of light are the fastest meteors in the sky.\nThe celestial spectacle takes place from now until 30 November with the peak taking place on the night of 17 November.\nThere could be the chance to spot up to 10-15 meteors per hour.\nExperts advise finding a safe, dark location away from sources of light pollution such as street lights.\nThe meteors will be visible with the naked eye, with no binoculars or telescope required.\nHowever, giving your eyes some time to adapt to the dark - perhaps 20 or 30 minutes - will give you the best chance of spotting them.\nA wide open space is the best place to be, giving a full view of the night sky.\nAs with all celestial spectacles, clear skies will be a must.\nThe Leonid meteor shower is set to dazzle sky gazers across the UK throughout November.\nThe shower is made up of dust particles from the Comet 55P/Tempel-Tuttle, which leaves a trail of debris as it follows its path around the Sun.\nWhile the weather will often be dry, large amounts of cloud are expected to fill the sky in many areas with the chance of a few spots of rain or drizzle.\nHowever, fog could be an additional issue, forming in any areas where skies remain clear for any length of time, obscuring the view.\nAnd if you miss them this weekend then take heart that viewing conditions look particularly good around their peak in the middle of November. This is because the Moon will be below the horizon around midnight, meaning its reflected light will be less likely to spoil the view.\nMeteors could be visible anywhere but the Leonids' radiant - the point from which they seem to appear - will, as the name suggests, be around the head of the constellation Leo, meaning this is the best part of the sky to focus your gaze.\nAt the moment the best opportunities for clear skies appear to be in southern and western areas of England and Wales on Friday and Saturday nights, with more cloud in northern England, Northern Ireland and Scotland.\nBy Sunday night it is likely that more parts of the UK will be clear.",
+    "evidence_retrieved_at": "2026-11-08T03:30:10.195802+00:00",
+    "link": "https://www.bbc.co.uk/weather/articles/cmlykqq7zg9zo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why is it a good idea to spend some time in the dark before you look for meteors?",
+          "Where would you or a person in a story go to watch the meteors? Try “I’d go to ... because ...”."
+        ],
+        "title": "The Leonid Meteor Shower Starts This Weekend",
+        "overview": "You may see bright, fast meteors in November.",
+        "topic": "The night sky",
+        "vocabulary": [
+          {
+            "term": "meteor shower",
+            "part_of_speech": "noun phrase",
+            "definition": "a time when many lines of light can appear in the night sky"
+          },
+          {
+            "term": "lasts",
+            "part_of_speech": "verb",
+            "definition": "continues for some time"
+          },
+          {
+            "term": "away from",
+            "part_of_speech": "preposition",
+            "definition": "not near someone or something"
+          },
+          {
+            "term": "street lights",
+            "part_of_speech": "plural noun",
+            "definition": "lights along a road that help people see at night"
+          },
+          {
+            "term": "open space",
+            "part_of_speech": "noun phrase",
+            "definition": "a place outside with lots of room and few things in the way"
+          },
+          {
+            "term": "clear skies",
+            "part_of_speech": "plural noun phrase",
+            "definition": "a sky with few or no clouds"
+          }
+        ],
+        "grammar": {
+          "concept": "Using “can” to say what is possible",
+          "explanation": "Use “can” to say that it is possible to do something. Put “can” after the person or thing you are talking about. After “can”, use the basic form of the verb, such as “see” in “can see” or “find” in “can find”.",
+          "example_quote": "You can see the meteors with just your eyes."
+        },
+        "quiz": [
+          {
+            "question": "What is the news brief mainly about?",
+            "options": [
+              "Where to find clear weather in November",
+              "When and how to see the Leonid meteors",
+              "Which tools to buy to watch the night sky"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Clear skies are one detail. The brief also gives dates and tips for watching the meteors.",
+              "The brief tells you when the shower happens and how to get a good view.",
+              "The brief says you can see the meteors with just your eyes."
+            ]
+          },
+          {
+            "question": "On which night will the shower be strongest?",
+            "options": [
+              "30 November",
+              "1 November",
+              "17 November"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "30 November is the last day of the shower. It will be strongest on 17 November.",
+              "The brief gives 17 November as the night when the shower will be strongest.",
+              "The shower will be strongest on the night of 17 November."
+            ]
+          },
+          {
+            "question": "How many meteors might you see in one hour?",
+            "options": [
+              "As many as 15",
+              "As many as 30",
+              "As many as 17"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "You may see as many as 15 meteors in an hour.",
+              "The brief says to give your eyes about 20 to 30 minutes to get used to the dark.",
+              "17 November is the date of the strongest night. You may see as many as 15 meteors in an hour."
+            ]
+          },
+          {
+            "question": "What kind of place do experts suggest for watching the meteors?",
+            "options": [
+              "A place under a street light",
+              "A safe, dark place",
+              "A bright, open space"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Experts say to find a place away from street lights.",
+              "Experts say to choose a safe, dark place away from street lights.",
+              "An open space gives you a wide view, but experts also say the place should be dark."
+            ]
+          },
+          {
+            "question": "What does “lasts” mean in “The shower lasts until 30 November”?",
+            "options": [
+              "Gets stronger",
+              "Starts again",
+              "Continues"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Lasts” tells you how long the shower continues. The brief gives a separate date for its strongest night.",
+              "“Lasts” tells you that the same shower continues until 30 November.",
+              "“Lasts” means the shower continues until that date."
+            ]
+          },
+          {
+            "question": "Which words use “can” correctly in “From a dark place, we ___ for meteors”?",
+            "options": [
+              "can look",
+              "can to look",
+              "can looking"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "In “can look”, the verb “look” is in its basic form.",
+              "Use “look” right after “can”, without “to”.",
+              "After “can”, use the basic form “look”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Leonid meteor shower starts this weekend.",
+          "Its meteors look like lines of light that move quickly across the sky.",
+          "The shower lasts until 30 November.",
+          "It will be strongest on the night of 17 November.",
+          "You may see as many as 15 meteors in an hour.",
+          "Experts say to find a safe, dark place away from street lights.",
+          "You can see the meteors with just your eyes.",
+          "Give your eyes about 20 to 30 minutes to get used to the dark.",
+          "An open space gives you a wide view of the sky.",
+          "You need clear skies to see the meteors."
+        ],
+        "sentence_evidence": [
+          "The Leonid meteor shower, known for its bright and fast meteors, will kick off this weekend and continue until the end of November.",
+          "These particles enter the Earth's atmosphere at up to 44 miles (71km) per second - meaning these streaks of light are the fastest meteors in the sky.",
+          "The celestial spectacle takes place from now until 30 November with the peak taking place on the night of 17 November.",
+          "The celestial spectacle takes place from now until 30 November with the peak taking place on the night of 17 November.",
+          "There could be the chance to spot up to 10-15 meteors per hour.",
+          "Experts advise finding a safe, dark location away from sources of light pollution such as street lights.",
+          "The meteors will be visible with the naked eye, with no binoculars or telescope required.",
+          "However, giving your eyes some time to adapt to the dark - perhaps 20 or 30 minutes - will give you the best chance of spotting them.",
+          "A wide open space is the best place to be, giving a full view of the night sky.",
+          "As with all celestial spectacles, clear skies will be a must."
+        ],
+        "editorial_check": {
+          "date": "2026-11-08T03:35:24.093617+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six targets appear in the reading and have clear definitions for this context. The brief describes meteors as fast lines of light and teaches reusable phrases such as “away from” and “open space”."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The news uses neutral, direct language such as “Experts say to find a safe, dark place”. The discussion frame “I’d go to ... because ...” sounds natural in conversation."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences and accessible feedback suit beginners. The grammar uses an exact reading quote to show “can” followed by “see”, and the discussion offers both a sentence frame and an imagined situation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The six questions test distinct targets, including the main idea, the best night, the hourly count, the viewing location, the meaning of “lasts”, and the form “can look”. Each has one clearly correct answer."
+            }
+          },
+          "content_digest": "dfd29c36ad7305b24c2041876c68ce349e52a3a1637d35ed9d6a1873b44718ed"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why might a night with no rain still be a poor night for watching meteors? Use two details from the brief.",
+          "If you were planning to watch the Leonids with a friend, how would you choose a place and time?"
+        ],
+        "title": "Leonid Meteor Shower Expected to Peak on 17 November",
+        "overview": "The Leonid meteor shower is expected to peak on 17 November, and weather, moonlight and nearby lights can all affect how well people see it.",
+        "topic": "Space and weather",
+        "vocabulary": [
+          {
+            "term": "peak",
+            "part_of_speech": "noun",
+            "definition": "The time when the meteor shower is most active."
+          },
+          {
+            "term": "spot",
+            "part_of_speech": "verb",
+            "definition": "To notice or see something, especially when it is hard to see."
+          },
+          {
+            "term": "trail",
+            "part_of_speech": "noun",
+            "definition": "A line of material left behind as something moves."
+          },
+          {
+            "term": "streaks",
+            "part_of_speech": "plural noun",
+            "definition": "Long, narrow lines, here made of light."
+          },
+          {
+            "term": "with the naked eye",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Using your eyes without equipment such as binoculars or a telescope."
+          },
+          {
+            "term": "adjust to",
+            "part_of_speech": "verb phrase",
+            "definition": "To get used to a change, such as going from a bright place to a dark one."
+          },
+          {
+            "term": "calls for",
+            "part_of_speech": "verb phrase (third-person singular)",
+            "definition": "Says that a particular kind of weather is expected."
+          },
+          {
+            "term": "block the view",
+            "part_of_speech": "verb phrase",
+            "definition": "To get in the way so that someone cannot see what they are trying to look at."
+          },
+          {
+            "term": "below the horizon",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Lower than the line where the sky seems to meet the land or sea."
+          }
+        ],
+        "grammar": {
+          "concept": "Showing contrast with “although”",
+          "explanation": "Use “although” to connect two ideas that contrast. The part beginning with “although” gives a situation that makes the other idea seem surprising. When the part with “although” comes first, put a comma after it.",
+          "example_quote": "Although the forecast calls for dry weather much of the time, clouds may still block the view in many areas."
+        },
+        "quiz": [
+          {
+            "question": "Which sentence best sums up the brief?",
+            "options": [
+              "The best chance to see the Leonids is at the end of November.",
+              "The Leonids offer a chance to see meteors in November, and viewing conditions affect what people can see.",
+              "The brief mainly explains how the Leonids produce streaks of light."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The end of November is when the shower finishes. Its expected peak is on the night of 17 November.",
+              "The brief explains when the Leonids are active and what can help or get in the way of seeing them.",
+              "How the streaks form is one detail in a wider brief about when and how to see the meteors."
+            ]
+          },
+          {
+            "question": "What does the brief say about how many meteors people might see?",
+            "options": [
+              "They can count on seeing at least ten every hour.",
+              "They may see 10 to 15 in total over the whole month.",
+              "They could see as many as 10 to 15 in an hour."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The estimate describes how high the number could be. People might see fewer than ten.",
+              "The brief gives the estimate for a single hour.",
+              "Viewers could see 10 to 15 meteors in an hour, though they might see fewer."
+            ]
+          },
+          {
+            "question": "What produces the streaks of light seen during the Leonids?",
+            "options": [
+              "Dust from the comet enters the air around Earth.",
+              "The comet itself passes through the air around Earth.",
+              "Moonlight shines on the dust left by the comet."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The streaks form when dust left by the comet enters the air around Earth.",
+              "The comet leaves a trail as it travels around the Sun. The dust particles from that trail enter the air around Earth.",
+              "The streaks come from dust entering the air around Earth. Moonlight can make the meteors harder to see."
+            ]
+          },
+          {
+            "question": "What does “with the naked eye” tell you about watching the meteors?",
+            "options": [
+              "Your eyes will see the meteors clearly as soon as you go outside.",
+              "You can see the meteors from any place with a view of the sky.",
+              "You can see the meteors without using binoculars or a telescope."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“With the naked eye” describes seeing without equipment. The brief advises giving your eyes time to get used to the dark.",
+              "“With the naked eye” describes how you see. The brief recommends choosing a safe, dark place with a wide view of the sky.",
+              "“With the naked eye” means using your eyes alone."
+            ]
+          },
+          {
+            "question": "A friend has just arrived at a safe, dark place with a wide view of the sky. What should they do next to improve their chances of seeing meteors?",
+            "options": [
+              "Move closer to street lights so their eyes can adjust.",
+              "Spend about 20 to 30 minutes letting their eyes adjust to the dark.",
+              "Give their eyes just a minute or two to adjust to the dark."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Street lights are a source of light pollution, and the brief recommends staying in a dark place.",
+              "Giving your eyes time to get used to the dark can help you see the meteors.",
+              "The brief suggests allowing about 20 to 30 minutes for your eyes to get used to the dark."
+            ]
+          },
+          {
+            "question": "What reason does the brief give for why dry weather may still offer poor views of the meteors?",
+            "options": [
+              "Clouds may block the view even when it stays dry.",
+              "Clouds are only a problem in places where it rains.",
+              "Fog will form wherever the sky clears."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Dry weather can still be cloudy, and the clouds may hide the meteors.",
+              "Clouds can hide the sky during dry weather too.",
+              "The brief describes fog as a possibility in places where the sky stays clear for a while."
+            ]
+          },
+          {
+            "question": "Why might the view around midnight be better near the peak?",
+            "options": [
+              "The Moon will be below the horizon all night.",
+              "Fog is expected to clear around midnight.",
+              "The Moon will be below the horizon around midnight, so its light is less likely to spoil the view."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief gives the Moon’s position specifically around midnight.",
+              "The brief mentions fog as a possible problem. The reason it gives for better views around midnight is the Moon’s position.",
+              "With the Moon below the horizon around midnight, its light is less likely to make the meteors hard to see."
+            ]
+          },
+          {
+            "question": "Imagine that the sky is clear but your viewing spot is too bright. Which sentence uses a linking word that directly signals this contrast?",
+            "options": [
+              "Because the sky is clear, the viewing spot is too bright.",
+              "Although the sky is clear, the viewing spot is too bright.",
+              "The sky is clear, and the viewing spot is too bright."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Because” gives a reason. It makes the clear sky sound like the cause of the brightness.",
+              "“Although” shows that the sky is clear but there is still a problem with the viewing spot.",
+              "“And” joins the two ideas. “Although” directly signals the contrast between them."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Leonid meteor shower is expected to be visible across the UK during November.",
+          "The shower continues until 30 November and is expected to reach its peak on the night of 17 November.",
+          "Viewers could spot as many as 10 to 15 meteors in an hour.",
+          "As the comet Tempel-Tuttle travels around the Sun, it leaves behind a trail of dust particles.",
+          "These particles enter the layer of air around Earth at speeds of up to 71 kilometres per second, producing streaks of light.",
+          "Experts recommend finding a safe, dark place away from light pollution, which is unwanted light from sources such as street lights.",
+          "You can see the meteors with the naked eye, so you do not need binoculars or a telescope.",
+          "Allow about 20 to 30 minutes for your eyes to adjust to the dark so that you have a better chance of spotting the meteors.",
+          "An open area gives you a wide view of the night sky.",
+          "Although the forecast calls for dry weather much of the time, clouds may still block the view in many areas.",
+          "Fog could also form in places where the sky stays clear for a while, making the meteors harder to see.",
+          "Anyone who misses the meteors this weekend may have better viewing conditions near the peak in mid-November.",
+          "Near the peak, the Moon will be below the horizon around midnight, so its light is less likely to spoil the view."
+        ],
+        "sentence_evidence": [
+          "The Leonid meteor shower is set to dazzle sky gazers across the UK throughout November.",
+          "The celestial spectacle takes place from now until 30 November with the peak taking place on the night of 17 November.",
+          "There could be the chance to spot up to 10-15 meteors per hour.",
+          "The shower is made up of dust particles from the Comet 55P/Tempel-Tuttle, which leaves a trail of debris as it follows its path around the Sun.",
+          "These particles enter the Earth's atmosphere at up to 44 miles (71km) per second - meaning these streaks of light are the fastest meteors in the sky.",
+          "Experts advise finding a safe, dark location away from sources of light pollution such as street lights.",
+          "The meteors will be visible with the naked eye, with no binoculars or telescope required.",
+          "However, giving your eyes some time to adapt to the dark - perhaps 20 or 30 minutes - will give you the best chance of spotting them.",
+          "A wide open space is the best place to be, giving a full view of the night sky.",
+          "While the weather will often be dry, large amounts of cloud are expected to fill the sky in many areas with the chance of a few spots of rain or drizzle.",
+          "However, fog could be an additional issue, forming in any areas where skies remain clear for any length of time, obscuring the view.",
+          "And if you miss them this weekend then take heart that viewing conditions look particularly good around their peak in the middle of November. This is because the Moon will be below the horizon around midnight, meaning its reflected light will be less likely to spoil the view.",
+          "And if you miss them this weekend then take heart that viewing conditions look particularly good around their peak in the middle of November. This is because the Moon will be below the horizon around midnight, meaning its reflected light will be less likely to spoil the view."
+        ],
+        "editorial_check": {
+          "date": "2026-11-08T03:57:08.975481+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 4,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All nine targets occur in the News Brief and have clear contextual definitions and correct word classes. Phrases such as “adjust to” and “block the view” are useful at B1–B2, and no target duplicates reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reporting stays neutral and natural. Phrases such as “is expected to reach its peak” and “fog could also form” preserve the source’s uncertainty."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The brief explains “light pollution” in context, and the exact grammar example shows how “although” introduces a contrast and where the comma goes. Questions and feedback use clear language."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The eight quiz items cover gist, factual details, vocabulary in context, and using “although” in a new situation. The discussion asks learners to connect viewing conditions and apply the advice."
+            }
+          },
+          "content_digest": "a541828b3bda75371d3ecfd958b88cf786eda4c0c6a972ef07268e1a3c1022d0"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Why might the opening weekend and the November peak offer different viewing prospects? Explain how weather and the Moon’s position affect the outlook.",
+          "If you had one evening to watch the Leonids, how would you weigh the date of the peak against the forecast for your chosen location?"
+        ],
+        "title": "Leonid Meteor Shower to Peak on 17 November",
+        "overview": "Cloud and possible fog could hamper early sightings of the Leonids across the UK, while the Moon’s position may improve viewing prospects around the mid-November peak.",
+        "topic": "Astronomy and viewing conditions",
+        "vocabulary": [
+          {
+            "term": "as many as",
+            "part_of_speech": "quantifier phrase",
+            "definition": "Emphasises a high number; with “might see”, it highlights the upper end of an estimate."
+          },
+          {
+            "term": "originates in",
+            "part_of_speech": "verb phrase",
+            "definition": "Has its source in the material, place or process named next."
+          },
+          {
+            "term": "in its wake",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Behind something as it moves away, along the path it has taken."
+          },
+          {
+            "term": "radiant",
+            "part_of_speech": "noun",
+            "definition": "The point in the sky from which the meteors in a shower appear to spread out."
+          },
+          {
+            "term": "point of reference",
+            "part_of_speech": "noun phrase",
+            "definition": "A known position that helps you work out where to look or locate something else."
+          },
+          {
+            "term": "optical aids",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Instruments such as binoculars or telescopes that help people see objects that are difficult to make out unaided."
+          },
+          {
+            "term": "acclimatise to",
+            "part_of_speech": "verb phrase",
+            "definition": "Gradually become able to function under different conditions, here as the eyes become more sensitive to low light."
+          },
+          {
+            "term": "favours",
+            "part_of_speech": "verb",
+            "definition": "Indicates that one place or option has better prospects than others."
+          },
+          {
+            "term": "obscuring",
+            "part_of_speech": "verb, present participle",
+            "definition": "Making something harder or impossible to see by coming between it and the observer."
+          },
+          {
+            "term": "interfere",
+            "part_of_speech": "verb",
+            "definition": "Get in the way of an activity, as moonlight can do by making the meteors harder to see."
+          }
+        ],
+        "grammar": {
+          "concept": "Adjective fronting in concessive clauses with “though”",
+          "explanation": "Put an adjective before “though” to foreground a point you acknowledge, then use the main clause to challenge what readers might expect from it. Putting “Dry” first acknowledges the dry forecast before drawing attention to extensive cloud.",
+          "example_quote": "Dry though the weather is expected to be much of the time, extensive cloud is forecast in many areas."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the distinction between the shower’s timetable and the chances of seeing it?",
+            "options": [
+              "The opening weekend’s forecast indicates how long the shower is likely to continue.",
+              "The shower has an expected timetable, while the chances of seeing it depend on viewing conditions.",
+              "The peak date is a more reliable guide to local visibility than the weather forecast."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The forecast describes viewing conditions on particular nights. The brief gives the shower’s duration separately.",
+              "The brief gives expected dates for the shower and separately considers how cloud, fog and light may affect visibility.",
+              "The peak date tells readers when the shower is expected to be most active. The weather forecast helps them judge whether they will have a clear view."
+            ]
+          },
+          {
+            "question": "How should readers interpret the estimate of 10 to 15 meteors per hour?",
+            "options": [
+              "It gives the minimum count an observer can expect in a clear hour.",
+              "It gives the expected hourly average across the whole shower.",
+              "It indicates the upper end of what an observer might see in an hour."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase “as many as” highlights the upper end of the estimate. A minimum would call for wording such as “at least”.",
+              "The wording “might see as many as” describes what may be possible. An average would describe a rate across a defined period.",
+              "The wording “might see as many as” highlights a possible high count while leaving room for fewer sightings."
+            ]
+          },
+          {
+            "question": "What does “in its wake” imply about the relationship between the comet and the dust?",
+            "options": [
+              "The comet leaves the dust behind as it moves along its orbit.",
+              "The comet meets dust that was already lying ahead of it on its orbit.",
+              "The comet carries the dust along with it throughout its orbit."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The phrase “in its wake” places the dust behind the comet as it moves away.",
+              "The phrase “in its wake” refers to what lies behind the comet. The verb “leaves” identifies the comet as the source of the dust.",
+              "The expression “leaves in its wake” describes dust that remains behind after the comet has passed."
+            ]
+          },
+          {
+            "question": "What distinction does the brief make between the Leonids’ radiant and the places where meteors can be seen?",
+            "options": [
+              "The radiant is the area around Leo where all visible Leonids are concentrated.",
+              "The radiant marks the place where the comet releases the dust that produces the shower.",
+              "The radiant is the point from which the meteors seem to emerge, while sightings are possible elsewhere in the sky."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The area around Leo gives observers a point of reference. The brief says meteors can appear anywhere in the sky.",
+              "The radiant describes an apparent origin in the sky. The brief separately explains that the comet leaves dust along its orbit.",
+              "The wording “appear to emerge” describes the direction the meteors seem to come from. They can still be visible elsewhere in the sky."
+            ]
+          },
+          {
+            "question": "What does the brief imply about watching the shower without “optical aids”?",
+            "options": [
+              "Unaided viewing is practical only after a full thirty minutes in the dark.",
+              "Unaided viewing is possible, and giving your eyes time in the dark may improve your chances.",
+              "Giving your eyes time to adapt can take the place of finding a dark site."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The suggested range of twenty to thirty minutes is practical guidance for improving your chances, with no fixed waiting time required.",
+              "The brief says the meteors can be seen without instruments and presents time for your eyes to adjust as a way to improve your chances.",
+              "The brief recommends both finding a dark site and giving your eyes time to adapt to the darkness there."
+            ]
+          },
+          {
+            "question": "Which benefit of choosing a dark site is supported by the brief?",
+            "options": [
+              "It limits interference from artificial lighting, although cloud or fog may still obscure the sky.",
+              "It makes the view clearer mainly by reducing the chance of fog.",
+              "It improves visibility chiefly for people watching through binoculars."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The advice on choosing a dark site addresses light pollution. The forecast describes cloud and fog as separate obstacles to visibility.",
+              "The advice links dark sites to less exposure to artificial light. The brief discusses fog in relation to how long the skies stay clear.",
+              "The brief recommends a dark site for watching the shower and says the meteors can be seen without binoculars."
+            ]
+          },
+          {
+            "question": "What does “favours” imply about southern and western parts of England and Wales on Friday and Saturday nights?",
+            "options": [
+              "Clear skies are expected throughout those areas on both nights.",
+              "The best opportunities are expected there over the entire course of the shower.",
+              "The forecast suggests better prospects there during those two nights."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase “look more likely” signals a relative advantage and leaves room for variation within the areas and across the two nights.",
+              "The forecast comparison covers Friday and Saturday nights. The shower continues beyond that period.",
+              "Here, “favours” signals that those areas have comparatively better prospects for clear skies on the nights named."
+            ]
+          },
+          {
+            "question": "Why does the brief mention fog after describing the prospect of clearer skies by Sunday night?",
+            "options": [
+              "Fog is expected to help clear the remaining cloud cover.",
+              "Fog may develop even where skies stay clear for some time, qualifying the more promising outlook.",
+              "Fog is expected to obscure the sky wherever the clouds clear."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief describes sustained clear skies as a condition in which fog could form. This option reverses that relationship.",
+              "The possibility of fog explains why less cloud may still leave observers with a poor view.",
+              "The option replaces the possibility expressed by “could still form” with the firmer forecast “is expected”. It also applies that forecast wherever clouds clear, dropping the condition that skies stay clear for some time."
+            ]
+          },
+          {
+            "question": "What reason does the brief give for favourable viewing conditions around the peak?",
+            "options": [
+              "The Moon will be below the horizon around midnight, so its light is less likely to interfere.",
+              "The opening weekend’s forecast suggests that fog will be less likely by the time of the peak.",
+              "The Moon’s position is expected to increase the number of particles entering Earth’s atmosphere."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief links the Moon’s position around midnight to a lower chance of interference from reflected moonlight.",
+              "The brief discusses fog in the opening weekend’s forecast. Its explanation for the outlook around the peak concerns the Moon’s position.",
+              "The brief links the Moon’s position to visibility and traces the particles entering the atmosphere to dust left by the comet."
+            ]
+          },
+          {
+            "question": "Which sentence uses adjective fronting in a concessive clause with “though” to acknowledge a difficulty?",
+            "options": [
+              "Although the cloud may be widespread, some areas could still have clear skies.",
+              "Widespread though the cloud may be, some areas could still have clear skies.",
+              "If the cloud is widespread, some areas could still have clear skies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence expresses concession with “although”. The adjective “widespread” stays in its usual position after “be”.",
+              "The adjective “widespread” comes before “though”, foregrounding the extent of the cloud before the main clause allows for clear skies in some areas.",
+              "The opening “if” presents widespread cloud as a condition, and the adjective follows the verb."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Leonid meteor shower is set to begin this weekend and continue through the end of November.",
+          "The shower is expected to reach its peak on the night of 17 November.",
+          "The report estimates that observers might see as many as 10 to 15 meteors per hour.",
+          "The shower originates in dust that Comet 55P/Tempel-Tuttle leaves in its wake as it orbits the Sun.",
+          "Those particles can enter Earth’s atmosphere at up to 71 kilometres per second, a speed the report says makes the Leonids the fastest meteors in the sky.",
+          "The Leonids’ radiant, the point from which they appear to emerge, lies near the head of the constellation Leo.",
+          "That part of the sky offers a point of reference, although the meteors can appear anywhere in the sky.",
+          "Experts advise seeking a safe, dark site well removed from sources of light pollution such as street lighting.",
+          "The meteors can be seen without optical aids such as binoculars or a telescope.",
+          "Allowing 20 to 30 minutes for your eyes to acclimatise to the dark can improve your chances of seeing the meteors.",
+          "Dry though the weather is expected to be much of the time, extensive cloud is forecast in many areas.",
+          "For Friday and Saturday nights, the forecast favours southern and western parts of England and Wales, where clear skies look more likely.",
+          "More of the UK is likely to see clear skies by Sunday night.",
+          "Fog could still form where skies stay clear for some time, obscuring the view.",
+          "The report anticipates favourable viewing conditions around the peak, when the Moon will be below the horizon around midnight and its reflected light is less likely to interfere."
+        ],
+        "sentence_evidence": [
+          "The Leonid meteor shower, known for its bright and fast meteors, will kick off this weekend and continue until the end of November.",
+          "The celestial spectacle takes place from now until 30 November with the peak taking place on the night of 17 November.",
+          "There could be the chance to spot up to 10-15 meteors per hour.",
+          "The shower is made up of dust particles from the Comet 55P/Tempel-Tuttle, which leaves a trail of debris as it follows its path around the Sun.",
+          "These particles enter the Earth's atmosphere at up to 44 miles (71km) per second - meaning these streaks of light are the fastest meteors in the sky.",
+          "Meteors could be visible anywhere but the Leonids' radiant - the point from which they seem to appear - will, as the name suggests, be around the head of the constellation Leo, meaning this is the best part of the sky to focus your gaze.",
+          "Meteors could be visible anywhere but the Leonids' radiant - the point from which they seem to appear - will, as the name suggests, be around the head of the constellation Leo, meaning this is the best part of the sky to focus your gaze.",
+          "Experts advise finding a safe, dark location away from sources of light pollution such as street lights.",
+          "The meteors will be visible with the naked eye, with no binoculars or telescope required.",
+          "However, giving your eyes some time to adapt to the dark - perhaps 20 or 30 minutes - will give you the best chance of spotting them.",
+          "While the weather will often be dry, large amounts of cloud are expected to fill the sky in many areas with the chance of a few spots of rain or drizzle.",
+          "At the moment the best opportunities for clear skies appear to be in southern and western areas of England and Wales on Friday and Saturday nights, with more cloud in northern England, Northern Ireland and Scotland.",
+          "By Sunday night it is likely that more parts of the UK will be clear.",
+          "However, fog could be an additional issue, forming in any areas where skies remain clear for any length of time, obscuring the view.",
+          "And if you miss them this weekend then take heart that viewing conditions look particularly good around their peak in the middle of November. This is because the Moon will be below the horizon around midnight, meaning its reflected light will be less likely to spoil the view."
+        ],
+        "editorial_check": {
+          "date": "2026-11-08T04:04:07.358351+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All ten targets occur in the News Brief and have clear contextual definitions. Terms such as “radiant” and “in its wake” offer useful advanced learning without reusing reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reporting is natural and measured. Phrases such as “the report says” and “could still form” preserve attribution and uncertainty."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation uses the exact News Brief example to show how placing “Dry” before “though” foregrounds a concession. Quiz feedback explains distinctions such as a possible high count versus an average."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The ten quiz items have distinct targets, including apparent origin versus where meteors can be seen and better viewing prospects versus guaranteed clear skies. The discussion asks learners to weigh the peak date against local conditions."
+            }
+          },
+          "content_digest": "70e439951fa216fd8c99eb9877692d5c5d1e206732930e0f3bb61826c3d500c9"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The Leonid meteor shower starts this weekend.",
+      "Its meteors look like lines of light that move quickly across the sky.",
+      "The shower lasts until 30 November.",
+      "It will be strongest on the night of 17 November.",
+      "You may see as many as 15 meteors in an hour.",
+      "Experts say to find a safe, dark place away from street lights.",
+      "You can see the meteors with just your eyes.",
+      "Give your eyes about 20 to 30 minutes to get used to the dark.",
+      "An open space gives you a wide view of the sky.",
+      "You need clear skies to see the meteors."
+    ],
+    "vocabulary": [
+      {
+        "term": "meteor shower",
+        "part_of_speech": "noun phrase",
+        "definition": "a time when many lines of light can appear in the night sky"
+      },
+      {
+        "term": "lasts",
+        "part_of_speech": "verb",
+        "definition": "continues for some time"
+      },
+      {
+        "term": "away from",
+        "part_of_speech": "preposition",
+        "definition": "not near someone or something"
+      },
+      {
+        "term": "street lights",
+        "part_of_speech": "plural noun",
+        "definition": "lights along a road that help people see at night"
+      },
+      {
+        "term": "open space",
+        "part_of_speech": "noun phrase",
+        "definition": "a place outside with lots of room and few things in the way"
+      },
+      {
+        "term": "clear skies",
+        "part_of_speech": "plural noun phrase",
+        "definition": "a sky with few or no clouds"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "夜空にたくさんの光の筋が現れることのある時期",
+      "ko": "밤하늘에 많은 빛줄기가 나타날 수 있는 때",
+      "zh-Hans": "夜空中可能出现许多道亮线的一段时间",
+      "es": "Un período en el que pueden aparecer muchas líneas de luz en el cielo nocturno",
+      "pt-BR": "Um período em que muitas linhas de luz podem aparecer no céu à noite",
+      "fr": "Une période où de nombreuses traînées lumineuses peuvent apparaître dans le ciel nocturne",
+      "de": "Eine Zeit, in der am Nachthimmel viele Lichtstreifen erscheinen können"
+    },
+    {
+      "id": 1,
+      "ja": "しばらく続く",
+      "ko": "얼마 동안 계속되다",
+      "zh-Hans": "持续一段时间",
+      "es": "Continúa durante un tiempo",
+      "pt-BR": "Continua por algum tempo",
+      "fr": "Se poursuit pendant un certain temps",
+      "de": "Dauert eine Weile an"
+    },
+    {
+      "id": 2,
+      "ja": "人や物から離れたところに",
+      "ko": "누군가나 무언가로부터 떨어져 있는",
+      "zh-Hans": "不在某人或某物附近",
+      "es": "Sin estar cerca de alguien o de algo",
+      "pt-BR": "Sem estar perto de alguém ou de alguma coisa",
+      "fr": "À une certaine distance de quelqu’un ou de quelque chose",
+      "de": "Nicht in der Nähe von jemandem oder etwas"
+    },
+    {
+      "id": 3,
+      "ja": "夜に人が周りを見られるように、道路に沿って設置された明かり",
+      "ko": "사람들이 밤에 주변을 볼 수 있도록 길을 따라 설치된 조명",
+      "zh-Hans": "沿着道路设置、帮助人们在夜间看清周围的灯",
+      "es": "Luces situadas a lo largo de una vía que ayudan a las personas a ver de noche",
+      "pt-BR": "Luzes instaladas ao longo de uma via que ajudam as pessoas a enxergar à noite",
+      "fr": "Des lampes qui bordent une route et aident les gens à voir la nuit",
+      "de": "Lampen entlang einer Straße, die Menschen helfen, nachts etwas zu sehen"
+    },
+    {
+      "id": 4,
+      "ja": "屋外にある、広くてじゃまになるものが少ない場所",
+      "ko": "야외에 있으며, 공간이 넉넉하고 가로막는 것이 별로 없는 곳",
+      "zh-Hans": "宽敞、障碍物少的户外场所",
+      "es": "Un lugar al aire libre con mucho espacio y pocos obstáculos",
+      "pt-BR": "Um lugar ao ar livre com bastante espaço e poucos obstáculos",
+      "fr": "Un endroit à l’extérieur où il y a beaucoup de place et peu d’obstacles",
+      "de": "Ein Ort im Freien mit viel Platz und wenigen Hindernissen"
+    },
+    {
+      "id": 5,
+      "ja": "雲が少ないか、まったくない空",
+      "ko": "구름이 적거나 전혀 없는 하늘",
+      "zh-Hans": "云很少或完全没有云的天空",
+      "es": "Un cielo con pocas nubes o sin ninguna",
+      "pt-BR": "Um céu com poucas nuvens ou sem nuvens",
+      "fr": "Un ciel avec peu ou pas de nuages",
+      "de": "Ein Himmel mit wenigen oder gar keinen Wolken"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-08T04:05:41.564789+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

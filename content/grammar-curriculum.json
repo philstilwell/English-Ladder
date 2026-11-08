@@ -6695,6 +6695,132 @@
         "https://dictionaryblog.cambridge.org/2017/02/15/me-myself-and-i-how-to-use-pronouns-1/",
         "https://learnenglish.britishcouncil.org/grammar/english-grammar-reference/personal-pronouns"
       ]
+    },
+    {
+      "number": 58,
+      "title": "Used to do or be used to doing? Past habit and familiarity",
+      "level": "B1",
+      "category": "Verb patterns and meaning",
+      "goal": "Distinguish a former habit from familiarity, and explain why to takes different verb forms.",
+      "rules": [
+        "Used to + a base verb describes a repeated past action or a former state, usually contrasting it with the present. In ‘I used to cycle to work; now I take the train’, cycling belongs to the old routine. To cycle is an infinitive: to introduces the base verb cycle. The pattern also describes states: ‘This shop used to be a bakery.’ It is not the normal way to describe a single completed event; use the simple past for ‘I cycled there once.’",
+        "Be used to means be accustomed to: something feels familiar. Here, used describes a person's state, and to is a preposition linking that state to the familiar thing or activity. Compare ‘I'm used to the noise’, ‘I'm used to it’, and ‘I'm used to cycling to work’. The noun phrase, pronoun, or -ing expression fills that place after to. Cycling names the familiar activity; the -ing ending does not mean the activity is happening right now. That different job for to explains why ‘I'm used to cycle’ does not express familiarity.",
+        "Familiarity can belong to the past, present, or future: ‘I was used to cycling’, ‘I'm used to cycling’, ‘I'll be used to cycling soon’. Be carries the time information. Get used to describes becoming familiar: ‘I'm getting used to cycling in traffic.’ Do not confuse this meaning with passive use meaning employ: ‘This tool is used to cut wire’ describes a purpose and correctly has to cut. For past-habit questions and negatives in standard written English, use ‘Did you use to cycle?’ and ‘I didn't use to cycle.’"
+      ],
+      "cards": [
+        {
+          "label": "PAST ROUTINE: USED TO + BASE VERB",
+          "example": "I used to cycle to work. Now I take the train.",
+          "note": "Used to places the routine in the past. To cycle is an infinitive, so cycle has its base form."
+        },
+        {
+          "label": "FAMILIARITY: BE USED TO + -ING",
+          "example": "I'm used to cycling to work.",
+          "note": "Cycling feels familiar. To is a preposition, and cycling names the activity after it, like the pronoun it in I am used to it."
+        },
+        {
+          "label": "SAME FAMILIARITY, DIFFERENT TIME",
+          "example": "By next month, I will be used to the early starts.",
+          "note": "Will be places the familiarity in the future. Early starts names the familiar thing; this is not a former-habit statement."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Choose the old routine: ‘Years ago I ___ to work, but now I take the train.’",
+          "options": [
+            {
+              "text": "used to cycle",
+              "correct": true,
+              "feedback": "Used to + the base verb cycle presents a past routine that contrasts with now. To cycle is an infinitive."
+            },
+            {
+              "text": "used to cycling",
+              "correct": false,
+              "feedback": "The past-habit construction takes an infinitive: used to cycle. Cycling would fit the familiarity construction after a form of be."
+            },
+            {
+              "text": "am used to cycle",
+              "correct": false,
+              "feedback": "Am used to expresses familiarity and needs a noun or -ing expression after the preposition to. This sentence instead asks for a former routine: used to cycle."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete the familiarity statement: ‘Night work feels normal to me now. I am used to ___ late.’",
+          "options": [
+            {
+              "text": "work",
+              "correct": false,
+              "feedback": "Here used means accustomed, so to is a preposition. Use working to name the familiar activity."
+            },
+            {
+              "text": "working",
+              "correct": true,
+              "feedback": "Working names the activity that feels familiar. It follows the preposition to, like a noun or the pronoun it."
+            },
+            {
+              "text": "worked",
+              "correct": false,
+              "feedback": "Worked is not the activity form required after to here. Am gives the present time; working names what feels familiar."
+            }
+          ]
+        },
+        {
+          "prompt": "What does ‘When I lived there, I was used to the noise’ tell us?",
+          "options": [
+            {
+              "text": "The noise never occurred there.",
+              "correct": false,
+              "feedback": "Was used to indicates familiarity with the noise, not its absence."
+            },
+            {
+              "text": "The noise is happening right now.",
+              "correct": false,
+              "feedback": "Was places the familiarity in the past. The sentence does not report what is happening now."
+            },
+            {
+              "text": "The noise felt familiar to me then.",
+              "correct": true,
+              "feedback": "Was used to describes past familiarity. The noise is the thing named after the preposition to."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You formerly drove to work. Now you cycle, and cycling feels familiar. Choose the sentence that expresses both meanings.",
+        "options": [
+          {
+            "text": "I used to drive, but now I'm used to cycling.",
+            "correct": true,
+            "feedback": "Used to drive presents the old routine with an infinitive. Am used to cycling describes familiarity, with cycling naming the activity after the preposition to."
+          },
+          {
+            "text": "I used to driving, but now I'm used to cycle.",
+            "correct": false,
+            "feedback": "The two forms are reversed. The old routine needs used to drive; familiarity needs am used to cycling."
+          },
+          {
+            "text": "I'm used to driving, but I used to cycle.",
+            "correct": false,
+            "feedback": "This sentence is grammatical but reverses the intended meanings: driving feels familiar, and cycling is the former routine."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-58-used-to-be-used-to-student-workbook.pdf",
+        "concept-58-used-to-be-used-to-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-08",
+      "related": [
+        45,
+        14,
+        55
+      ],
+      "sources": [
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2-grammar/different-uses-of-used-to",
+        "https://learnenglish.britishcouncil.org/comment/161919",
+        "https://dictionaryblog.cambridge.org/2016/02/10/i-used-to-work-hardim-used-to-working-hard-phrases-with-used-to/"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

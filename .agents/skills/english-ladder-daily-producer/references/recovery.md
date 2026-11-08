@@ -9,7 +9,7 @@ Look at `.daily-agent/DATE/issues-LEVEL.json` and the last corresponding
 `review-result-LEVEL-*.json`. Save a concise diagnosis and the runner log for
 the next attempt. Capacity or connection failures are not editorial failures;
 resume the saved draft at review when possible. Never substitute a model or
-increase the three-attempt bound. After the final scheduled attempt the
+increase the five-attempt bound during recovery. After the final scheduled attempt the
 separate Mac monitor can record `needs_attention`; it does not generate.
 
 - **Quiz only:** The runner can replace just the quiz when the reviewer names

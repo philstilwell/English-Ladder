@@ -50,7 +50,7 @@ audio changes. The runner alone handles generation and rebuilds.
 
    Preserve saved source, approved levels, reviewed translations and matching
    illustration. A valid draft can resume at review. The runner caps lesson
-   attempts at three per level per run. After a failure, retain state and logs.
+   attempts at five per level per run. After a failure, retain state and logs.
    See [recovery guidance](references/recovery.md) for manual repairs, capacity
    errors, and credit estimates.
 

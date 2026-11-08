@@ -29,6 +29,7 @@ from vocabulary_translations import read_record, source_data
 ROOT = Path(__file__).resolve().parent
 MODEL = plan_daily.MODEL
 LEVELS = plan_daily.LEVEL_NAMES
+MAX_LESSON_ATTEMPTS = 5
 FORBIDDEN_ENV = {
     "OPENAI_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY", "GOOGLE_GENAI_API_KEY",
     "ANTHROPIC_API_KEY", "AZURE_OPENAI_API_KEY",
@@ -194,7 +195,7 @@ def create_lessons(executable: str, release: str, state: Path) -> None:
         if (state / f"approved-{level}.json").exists():
             continue
         last_error = None
-        for attempt in range(1, 4):
+        for attempt in range(1, MAX_LESSON_ATTEMPTS + 1):
             try:
                 lesson = state / f"lesson-{level}.json"
                 issues = state / f"issues-{level}.json"
@@ -216,10 +217,11 @@ def create_lessons(executable: str, release: str, state: Path) -> None:
             except (subprocess.CalledProcessError, RuntimeError, ValueError,
                     json.JSONDecodeError) as error:
                 last_error = error
-                print(f"{level} attempt {attempt}/3 did not pass; retaining state for repair.",
+                print(f"{level} attempt {attempt}/{MAX_LESSON_ATTEMPTS} did not pass; "
+                      "retaining state for repair.",
                       file=sys.stderr, flush=True)
         else:
-            raise RuntimeError(f"{level} did not pass after three bounded attempts: "
+            raise RuntimeError(f"{level} did not pass after {MAX_LESSON_ATTEMPTS} bounded attempts: "
                                f"{type(last_error).__name__}")
     run_python(release, "stage-archive", state=state)
 

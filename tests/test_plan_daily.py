@@ -303,7 +303,7 @@ class PlanDailyTests(unittest.TestCase):
             commands = [call.args[1] for call in run_python.call_args_list]
             self.assertEqual(["prepare-translation", "accept-translation-review"], commands)
 
-    def test_transient_review_failure_reuses_structurally_valid_lesson(self):
+    def test_fifth_review_attempt_reuses_structurally_valid_lesson(self):
         with tempfile.TemporaryDirectory() as directory:
             state = Path(directory)
             (state / "lesson-beginner.json").write_text("{}")
@@ -315,12 +315,24 @@ class PlanDailyTests(unittest.TestCase):
             failure = subprocess.CalledProcessError(1, ["codex"])
             with patch.object(plan_daily_runner, "LEVELS", ("beginner",)), \
                     patch.object(plan_daily_runner, "run_python", side_effect=record_run), \
-                    patch.object(plan_daily_runner, "model_json", side_effect=[failure, None]):
+                    patch.object(plan_daily_runner, "model_json", side_effect=[failure] * 4 + [None]):
                 plan_daily_runner.create_lessons("codex", "2026-10-26", state)
             self.assertNotIn("prepare-level", calls)
             self.assertNotIn("accept-draft", calls)
-            self.assertEqual(2, calls.count("prepare-review"))
+            self.assertEqual(5, calls.count("prepare-review"))
             self.assertIn("accept-review", calls)
+
+    def test_five_failed_attempts_stop_before_staging_an_edition(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            failure = subprocess.CalledProcessError(1, ["codex"])
+            with patch.object(plan_daily_runner, "LEVELS", ("beginner",)), \
+                    patch.object(plan_daily_runner, "run_python") as run_python, \
+                    patch.object(plan_daily_runner, "model_json", side_effect=failure) as model_json:
+                with self.assertRaisesRegex(RuntimeError, "beginner did not pass after 5 bounded attempts"):
+                    plan_daily_runner.create_lessons("codex", "2026-10-26", state)
+            self.assertEqual(5, model_json.call_count)
+            self.assertNotIn("stage-archive", [call.args[1] for call in run_python.call_args_list])
 
     def test_producer_lock_serializes_overlapping_attempts(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -13,7 +13,7 @@ Use the ChatGPT-authenticated Codex CLI with `gpt-6.1-sol`, high reasoning, and
 ChatGPT's built-in image generation. Use included allowance first; authorized
 existing credits may cover any shortfall, including the image.
 [Estimate credit use](references/recovery.md#usage-or-capacity) before it begins. Stop if neither can
-support the work. No API keys, Gemini, fallback publisher, purchases, resets,
+support the work. No paid API fallback, API keys, Gemini, fallback publisher, purchases, resets,
 top-ups, subscription, billing, credential, security, hosting, schedule, or
 audio changes. The runner alone handles generation and rebuilds.
 
@@ -26,8 +26,9 @@ audio changes. The runner alone handles generation and rebuilds.
    ```
 
    Wait through any early dispatch and use only the printed date as `DATE`.
-   The 22:30 and 23:30 New York starts target the next local date; 00:30
-   recovers that same edition. Keep local wall-clock times across daylight saving.
+   The opportunities are 22:30, 23:30, and 00:30 in America/New_York.
+   The two evening starts target the next local date. The 00:30 start recovers
+   that same edition. Keep local wall-clock times across daylight saving.
 
 2. Confirm the required checkout, installed dependencies, ChatGPT sign-in and
    `CODEX_THREAD_ID`. Inspect status and fetch `origin/main`. Fast-forward a
@@ -63,8 +64,9 @@ audio changes. The runner alone handles generation and rebuilds.
    For pending publication, use the reported owner (or the saved owner in
    `publication-pending.json` on the already-live path). Read only that chat
    with the supported Codex app `read_thread` tool, one recent turn and bounded
-   output. Leave active, waiting, unavailable, ambiguous and unknown owners
-   alone. A marker's age or absent producer process proves nothing. If the app
+   output. Leave active, waiting, unavailable and unknown owners alone, along
+   with any owner whose chat has an ambiguous status. Do not infer abandonment
+   from a marker's age or an absent producer process. If the app
    confirms the chat failed or ended and its last commands/tools also stopped,
    transfer ownership under the lock:
 
@@ -74,7 +76,7 @@ audio changes. The runner alone handles generation and rebuilds.
 
    Continue only on `ready_to_publish`. This checks the expected owner,
    saved completeness and archive checksum. Do not guess a missing owner,
-   delete a marker, regenerate or rebuild. If resuming the current chat's own
+   delete a marker. Never regenerate or rebuild a pending edition. If resuming the current chat's own
    handoff after an explicit retry, confirm its prior commands ended before
    continuing; no ownership transfer is needed.
 

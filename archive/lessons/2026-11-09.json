@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-09",
+  "release_iso": "2026-11-09T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Mon, 09 Nov 2026 00:56:43 GMT",
+    "retrieved_at": "2026-11-09T03:30:09.365247+00:00",
+    "title": "A glimmer of good news for Britain's sleepy dormouse",
+    "summary": "New figures suggest hazel dormice may be recovering after decades of decline, with warmer summers boosting survival.",
+    "evidence_text": "Dormouse numbers may be recovering in England and Wales after years of decline, offering a rare piece of good news for one of our best-loved mammals.\nEven during spring and summer, dormice can go into short periods of deep sleep, known as torpor, when the weather is cold and wet, or food is scarce. This helps the small rodent conserve energy.\nThe only species of dormice in the UK is the hazel dormouse. Once widespread across the country, they are now largely confined to southern England and parts of Wales. They have become much rarer as large areas of woodland are lost and so far native populations have disappeared from around 20 English counties.\nMore recently, however, there are signs that trend may be reversing. The data suggests the population increased by almost 10% between 2020 and 2025, although researchers stress there is considerable uncertainty around that estimate.\nBut he added: \"We mustn't lose sight of the bigger picture: populations remain almost 60% lower than they were in 2000.\"\nThe hazel dormouse is famous for spending much of the year asleep. It hibernates from around October to May, spending the winter in a nest on the ground.\nResearchers believe warmer summers may be reducing the need for torpor, leaving dormice with more energy for feeding and breeding.\nBut conservationists caution that many questions remain unanswered, and say protecting the woodlands and hedgerows where dormice live remains essential to their long-term survival.\nThe National Dormouse Monitoring Programme, led by the conservation charity People's Trust for Endangered Species (PTES), has been monitoring sites in England and Wales since 1998.\nIt found that since 2000, dormouse numbers have fallen by almost 60%, equivalent to an average annual decline of 3.5%.\nThe apparent improvement coincides with a period of warmer, drier-than-average springs and summers.\nThat gives the animals more opportunity to breed and build up fat reserves ahead of winter.\nDr Charlotte Armitage, an ecologist who worked on the survey, said significant uncertainties remain, including how dormice will respond to warmer, wetter winters.\nNew figures suggest hazel dormice may be recovering after decades of decline, with warmer summers boosting survival.\nThey say more research is needed to understand what longer-term impacts climate change could have on the species.",
+    "evidence_retrieved_at": "2026-11-09T03:30:09.365247+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c85ynn0p5k71o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why could this be good news when there are still fewer dormice than in 2000?",
+          "What would you do to help look after some woods? Answer as yourself or as a person in a story. Try “I would ... because ...”."
+        ],
+        "title": "Dormouse Numbers May Be Rising in England and Wales",
+        "overview": "Dormouse numbers may be going up after years of falling.",
+        "topic": "Wild animals",
+        "vocabulary": [
+          {
+            "term": "going up",
+            "part_of_speech": "verb phrase",
+            "definition": "Becoming larger in number."
+          },
+          {
+            "term": "figures",
+            "part_of_speech": "plural noun",
+            "definition": "Numbers that show what people found."
+          },
+          {
+            "term": "fewer",
+            "part_of_speech": "determiner",
+            "definition": "A smaller number of people, animals or things."
+          },
+          {
+            "term": "nests",
+            "part_of_speech": "plural noun",
+            "definition": "Places animals make to rest or have young."
+          },
+          {
+            "term": "deep sleep",
+            "part_of_speech": "noun phrase",
+            "definition": "Sleep that is hard to wake up from."
+          },
+          {
+            "term": "energy",
+            "part_of_speech": "noun",
+            "definition": "The strength to move and do things."
+          },
+          {
+            "term": "protect",
+            "part_of_speech": "verb",
+            "definition": "To keep someone or something safe."
+          }
+        ],
+        "grammar": {
+          "concept": "Using “may”",
+          "explanation": "Use “may” when something is possible and you are unsure. Put “may” after the person or thing you are talking about. Then use the verb in its basic form, as in “may spend” or “may help”.",
+          "example_quote": "Scientists think dormice may spend less time in deep sleep in warmer summers."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about dormice in England and Wales?",
+            "options": [
+              "Their numbers may be going up.",
+              "Their numbers may still be falling.",
+              "Their numbers are back to the level of 2000."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The new figures show a possible rise, but researchers are unsure about the change.",
+              "The new figures point to a possible rise from 2020 to 2025.",
+              "There are still almost 60 percent fewer dormice than in 2000."
+            ]
+          },
+          {
+            "question": "How have dormouse numbers changed since 2000?",
+            "options": [
+              "There are almost 10 percent fewer.",
+              "There are about as many as before.",
+              "There are almost 60 percent fewer."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The figure of almost 10 percent is a possible rise from 2020 to 2025.",
+              "The reading says there are far fewer dormice now than in 2000.",
+              "There are almost 60 percent fewer dormice than there were in 2000."
+            ]
+          },
+          {
+            "question": "Where do dormice sleep in winter?",
+            "options": [
+              "In nests in trees",
+              "In nests on the ground",
+              "In nests under the ground"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading puts the winter nests on the ground.",
+              "Dormice sleep through winter in nests on the ground.",
+              "The reading uses “on the ground” to tell you where the nests are."
+            ]
+          },
+          {
+            "question": "How might warmer summers help dormice?",
+            "options": [
+              "They may spend less time in deep sleep.",
+              "They may spend more time in deep sleep.",
+              "They may need less food."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Scientists think less time in deep sleep may leave dormice with more energy.",
+              "Scientists think dormice may spend less time in deep sleep when summers are warmer.",
+              "The reading says dormice may have more energy to feed, but it does not say they need less food."
+            ]
+          },
+          {
+            "question": "What does “protect” mean in the last sentence?",
+            "options": [
+              "Find new woods",
+              "Keep the woods safe",
+              "Count the trees"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The sentence is about keeping the woods where dormice already live safe.",
+              "To “protect” the woods means to keep them safe.",
+              "The last sentence says people need to keep the woods safe for dormice."
+            ]
+          },
+          {
+            "question": "Which sentence uses “may” with the basic form of the verb?",
+            "options": [
+              "A dormouse may wakes up early.",
+              "A dormouse may waking up early.",
+              "A dormouse may wake up early."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The basic form of “wakes” is “wake”. Use “wake” after “may”.",
+              "The basic form of “waking” is “wake”. Use “wake” after “may”.",
+              "“Wake” is the basic form of the verb, so “may wake” follows the rule."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Dormouse numbers in England and Wales may be going up after years of falling.",
+          "A dormouse is a small animal like a mouse.",
+          "The hazel dormouse is the only kind of dormouse in the UK.",
+          "The new figures suggest there were almost 10 percent more dormice in 2025 than in 2020.",
+          "But researchers say the real change could be quite different from what these figures show.",
+          "There are still almost 60 percent fewer dormice than in 2000.",
+          "Dormice sleep through the winter in nests on the ground.",
+          "Scientists think dormice may spend less time in deep sleep in warmer summers.",
+          "This may leave them with more energy to feed and have young.",
+          "People who work to save dormice say we still need to protect the woods where they live."
+        ],
+        "sentence_evidence": [
+          "Dormouse numbers may be recovering in England and Wales after years of decline, offering a rare piece of good news for one of our best-loved mammals.",
+          "Even during spring and summer, dormice can go into short periods of deep sleep, known as torpor, when the weather is cold and wet, or food is scarce. This helps the small rodent conserve energy.",
+          "The only species of dormice in the UK is the hazel dormouse. Once widespread across the country, they are now largely confined to southern England and parts of Wales. They have become much rarer as large areas of woodland are lost and so far native populations have disappeared from around 20 English counties.",
+          "More recently, however, there are signs that trend may be reversing. The data suggests the population increased by almost 10% between 2020 and 2025, although researchers stress there is considerable uncertainty around that estimate.",
+          "More recently, however, there are signs that trend may be reversing. The data suggests the population increased by almost 10% between 2020 and 2025, although researchers stress there is considerable uncertainty around that estimate.",
+          "But he added: \"We mustn't lose sight of the bigger picture: populations remain almost 60% lower than they were in 2000.\"",
+          "The hazel dormouse is famous for spending much of the year asleep. It hibernates from around October to May, spending the winter in a nest on the ground.",
+          "Researchers believe warmer summers may be reducing the need for torpor, leaving dormice with more energy for feeding and breeding.",
+          "Researchers believe warmer summers may be reducing the need for torpor, leaving dormice with more energy for feeding and breeding.",
+          "But conservationists caution that many questions remain unanswered, and say protecting the woodlands and hedgerows where dormice live remains essential to their long-term survival."
+        ],
+        "editorial_check": {
+          "date": "2026-11-09T03:34:28.450261+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All seven targets occur in the News Brief and have clear definitions for their use there. “Going up,” “fewer,” and “protect” are useful beyond this story."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The title and reading use neutral, direct language. Phrases such as “may be going up” and “researchers say” keep the reporting cautious and accessible."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar note uses “may spend” to show the verb pattern. The discussion offers the frame “I would ... because ...” and lets learners answer as a person in a story."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The six questions cover the main idea, distinct reading details, the meaning of “protect,” and the verb form after “may.” Each has one supported answer."
+            }
+          },
+          "content_digest": "1f8d173a71a6b593e6fa67fd4ed777cb9fa78000dd68ceaa59c5d6ab9f6fbaba"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "How might warmer summers help dormice feed and breed? Explain how torpor fits into your answer.",
+          "If you volunteered with a local wildlife group, would you rather help track dormice or look after their habitat? Explain your choice."
+        ],
+        "title": "Hazel Dormice May Be Recovering in England and Wales",
+        "overview": "Monitoring suggests that hazel dormouse numbers may be rising after years of decline, and warmer summers may help explain the change.",
+        "topic": "Wildlife conservation",
+        "vocabulary": [
+          {
+            "term": "decline",
+            "part_of_speech": "noun",
+            "definition": "A fall in the number or amount of something over time."
+          },
+          {
+            "term": "tracking",
+            "part_of_speech": "verb, -ing form",
+            "definition": "Regularly checking something to see how it changes over time."
+          },
+          {
+            "term": "estimate",
+            "part_of_speech": "noun",
+            "definition": "A number based on the information available that may differ from the exact number."
+          },
+          {
+            "term": "scarce",
+            "part_of_speech": "adjective",
+            "definition": "Hard to find or available only in small amounts."
+          },
+          {
+            "term": "breed",
+            "part_of_speech": "verb",
+            "definition": "To produce young, when talking about animals."
+          },
+          {
+            "term": "build up",
+            "part_of_speech": "phrasal verb",
+            "definition": "To gradually increase the amount of something."
+          },
+          {
+            "term": "respond to",
+            "part_of_speech": "verb phrase",
+            "definition": "To react or change when something happens."
+          },
+          {
+            "term": "hedgerows",
+            "part_of_speech": "plural noun",
+            "definition": "Long rows of bushes or small trees, often along the edges of fields."
+          },
+          {
+            "term": "long-term survival",
+            "part_of_speech": "noun phrase",
+            "definition": "The ability of a group or species to keep living for many years into the future."
+          }
+        ],
+        "grammar": {
+          "concept": "Present perfect continuous with “since”",
+          "explanation": "Use the present perfect continuous for an activity that started in the past and is still happening. Use “has” or “have” followed by “been” and the “-ing” form of the verb. Use “since” with the point in time when the activity began.",
+          "example_quote": "The National Dormouse Monitoring Programme has been tracking dormouse populations at sites in England and Wales since 1998."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best sums up the news about hazel dormice?",
+            "options": [
+              "The main finding is that a long decline began in 2020.",
+              "There are signs of a recent rise after a long decline.",
+              "The recent rise appears to have brought numbers back to their 2000 level."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The data points to a possible rise between 2020 and 2025, after years of decline.",
+              "The reading describes a possible recent improvement after years of falling numbers.",
+              "The reading reports that dormouse numbers are still almost 60% below their 2000 level."
+            ]
+          },
+          {
+            "question": "Where do hazel dormice now mainly live in the UK?",
+            "options": [
+              "In southern England and parts of Wales.",
+              "Across most of England and Wales.",
+              "In southern England alone."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading names southern England and parts of Wales as the main areas where they live.",
+              "The programme tracks dormice at sites in both countries, and the reading describes a more limited area where most dormice live.",
+              "Southern England is one of the main areas, and the reading also includes parts of Wales."
+            ]
+          },
+          {
+            "question": "What change does the reading report for the period from 2020 to 2025?",
+            "options": [
+              "A fall of almost 60%.",
+              "A fall of nearly 10%.",
+              "A possible rise of nearly 10%."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The fall of almost 60% describes the change since 2000.",
+              "Nearly 10% is the size of the estimated rise for this period.",
+              "The data points to a rise of nearly 10%, and researchers say the estimate is uncertain."
+            ]
+          },
+          {
+            "question": "Why might warmer summers help dormice feed and breed?",
+            "options": [
+              "They may cause dormice to spend more time in torpor.",
+              "They may reduce the time dormice spend in torpor.",
+              "They may make food scarcer and cause dormice to sleep more."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Researchers think warmer summers may reduce the time dormice spend in torpor, leaving more energy to feed and breed.",
+              "Researchers think that spending less time in torpor may leave dormice with more energy to feed and breed.",
+              "Scarce food is one condition that can lead to torpor, and researchers think warmer summers could reduce the time spent in torpor."
+            ]
+          },
+          {
+            "question": "What does “estimate” mean when the reading describes the rise of nearly 10%?",
+            "options": [
+              "An exact count of every dormouse.",
+              "A prediction about how many dormice will live in the UK in the future.",
+              "A calculation based on available information that may differ from the exact amount."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The researchers describe the number as uncertain.",
+              "The estimate refers to a change during the years from 2020 to 2025.",
+              "The number comes from the available data, and researchers say it is uncertain."
+            ]
+          },
+          {
+            "question": "What does “build up” mean in “build up fat reserves”?",
+            "options": [
+              "Gradually store more fat.",
+              "Keep the amount of stored fat steady.",
+              "Use stored fat for energy."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Here, “build up” means to increase the amount of fat stored over time.",
+              "The phrase describes an increase in the amount of fat stored.",
+              "Using stored fat would reduce the amount available, while “build up” describes storing more."
+            ]
+          },
+          {
+            "question": "Which question does the ecologist say is still open?",
+            "options": [
+              "Were the recent springs and summers warmer than average?",
+              "How will dormice react to warmer, wetter winters?",
+              "Are dormouse numbers lower than they were in 2000?"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes the recent springs and summers as warmer and drier than average.",
+              "The ecologist says it is still unclear how dormice will respond to warmer, wetter winters.",
+              "The monitoring programme found a fall of almost 60% since 2000."
+            ]
+          },
+          {
+            "question": "What do people working to save wildlife say is essential to the dormouse’s future?",
+            "options": [
+              "Focusing their efforts on counting dormice.",
+              "Depending on warmer summers to help dormice recover.",
+              "Looking after the woodlands and hedgerows where dormice live."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The programme tracks changes in dormouse numbers. The reading identifies care for the places where dormice live as essential to their survival.",
+              "Warmer summers may help, and people working to save wildlife stress the need to look after the places where dormice live.",
+              "The reading says that caring for these places is essential to the dormouse’s long-term survival."
+            ]
+          },
+          {
+            "question": "A wildlife group started checking hedgerows in 2022 and still checks them today. Which sentence describes this activity using the present perfect continuous?",
+            "options": [
+              "The group has been checking hedgerows since 2022.",
+              "The group has checked hedgerows since 2022.",
+              "The group checked hedgerows in 2022."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Has been checking” is the present perfect continuous, and “since 2022” shows when the activity began.",
+              "“Has checked” is the present perfect simple. The continuous form uses “has been checking”.",
+              "“Checked” is the past simple, and “in 2022” places the activity in that year."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Dormouse numbers may be recovering in England and Wales after years of decline.",
+          "The hazel dormouse is the only dormouse species in the UK, and it now lives mainly in southern England and parts of Wales.",
+          "The National Dormouse Monitoring Programme has been tracking dormouse populations at sites in England and Wales since 1998.",
+          "The programme found that dormouse numbers have fallen by almost 60% since 2000.",
+          "More recent results suggest that numbers rose by nearly 10% between 2020 and 2025, although researchers say the estimate is uncertain.",
+          "This apparent rise came during a period when springs and summers were warmer and drier than average.",
+          "In cold, wet weather or when food is scarce, dormice can enter torpor, a short period of deep sleep that saves energy.",
+          "Researchers think warmer summers may mean less time in torpor and leave dormice with more energy to feed and breed.",
+          "The animals may also have a better chance to build up fat reserves before winter.",
+          "One ecologist who worked on the survey says it is still unclear how dormice will respond to warmer, wetter winters.",
+          "People working to save wildlife say looking after the woodlands and hedgerows where dormice live is essential to their long-term survival."
+        ],
+        "sentence_evidence": [
+          "Dormouse numbers may be recovering in England and Wales after years of decline, offering a rare piece of good news for one of our best-loved mammals.",
+          "The only species of dormice in the UK is the hazel dormouse. Once widespread across the country, they are now largely confined to southern England and parts of Wales. They have become much rarer as large areas of woodland are lost and so far native populations have disappeared from around 20 English counties.",
+          "The National Dormouse Monitoring Programme, led by the conservation charity People's Trust for Endangered Species (PTES), has been monitoring sites in England and Wales since 1998.",
+          "It found that since 2000, dormouse numbers have fallen by almost 60%, equivalent to an average annual decline of 3.5%.",
+          "More recently, however, there are signs that trend may be reversing. The data suggests the population increased by almost 10% between 2020 and 2025, although researchers stress there is considerable uncertainty around that estimate.",
+          "The apparent improvement coincides with a period of warmer, drier-than-average springs and summers.",
+          "Even during spring and summer, dormice can go into short periods of deep sleep, known as torpor, when the weather is cold and wet, or food is scarce. This helps the small rodent conserve energy.",
+          "Researchers believe warmer summers may be reducing the need for torpor, leaving dormice with more energy for feeding and breeding.",
+          "That gives the animals more opportunity to breed and build up fat reserves ahead of winter.",
+          "Dr Charlotte Armitage, an ecologist who worked on the survey, said significant uncertainties remain, including how dormice will respond to warmer, wetter winters.",
+          "But conservationists caution that many questions remain unanswered, and say protecting the woodlands and hedgerows where dormice live remains essential to their long-term survival."
+        ],
+        "editorial_check": {
+          "date": "2026-11-09T03:38:35.131179+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All nine targets appear in the News Brief, have clear contextual definitions, and are distinct from the reserved vocabulary. “Estimate” and “build up” are useful B1–B2 targets, and “hedgerows” is defined in familiar language."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The news uses neutral, cautious wording such as “may be recovering” and “results suggest.” The discussion prompts use a natural conversational tone."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The reading explains “torpor” when it first appears. The grammar explanation gives the form in plain language and uses the exact News Brief sentence containing “has been tracking” and “since 1998.”"
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Learners connect warmer summers with torpor, interpret “build up fat reserves” in context, and apply the present perfect continuous to a new example about checking hedgerows."
+            }
+          },
+          "content_digest": "ebaf7e11b1ba43efe651e087c2c5679382cf649a5e41a825d7c8ef885452ae05"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Why can the recent monitoring results justify cautious optimism while habitat protection remains essential?",
+          "If you were briefing a local conservation group, which finding would you highlight first, and how would you qualify it?"
+        ],
+        "title": "Hazel dormice show signs of recovery in England and Wales",
+        "overview": "A possible rise in hazel dormouse numbers in England and Wales offers some encouragement after decades of decline, while the role of warmer summers and the species’ longer-term prospects remain uncertain.",
+        "topic": "Wildlife conservation and climate change",
+        "vocabulary": [
+          {
+            "term": "tentative",
+            "part_of_speech": "adjective",
+            "definition": "Based on evidence that suggests a possibility but still leaves room for doubt."
+          },
+          {
+            "term": "equivalent to",
+            "part_of_speech": "adjective followed by a preposition",
+            "definition": "Corresponding in value when expressed on another scale or in another form."
+          },
+          {
+            "term": "point to",
+            "part_of_speech": "prepositional verb",
+            "definition": "Suggest a conclusion on the basis of available evidence, leaving room for uncertainty."
+          },
+          {
+            "term": "upturn",
+            "part_of_speech": "noun",
+            "definition": "A shift towards improvement, especially a rise after a period of falling numbers or weaker results."
+          },
+          {
+            "term": "coincided with",
+            "part_of_speech": "prepositional verb in the past tense",
+            "definition": "Occurred during the same period as something else, with any causal relationship left open."
+          },
+          {
+            "term": "torpor",
+            "part_of_speech": "uncountable noun",
+            "definition": "A temporary state like deep sleep in which an animal becomes much less active and uses less energy."
+          },
+          {
+            "term": "conserves",
+            "part_of_speech": "verb, third-person singular present simple",
+            "definition": "Keeps more of a resource available by reducing how much is used."
+          },
+          {
+            "term": "warrant",
+            "part_of_speech": "verb",
+            "definition": "Provide sufficient reason to take an action or examine something more closely."
+          },
+          {
+            "term": "confined to",
+            "part_of_speech": "past participle followed by the preposition ‘to’",
+            "definition": "Restricted in range to a particular area or set of places."
+          },
+          {
+            "term": "safeguarding",
+            "part_of_speech": "verb in the “-ing” form",
+            "definition": "Taking steps to prevent damage or loss."
+          }
+        ],
+        "grammar": {
+          "concept": "Concession with an opening “although” clause",
+          "explanation": "An opening clause with “although” acknowledges a point that might lead readers to expect a different conclusion. A comma separates it from the main clause. In the reading, this order gives the researchers’ caution the final emphasis.",
+          "example_quote": "Although the monitoring data point to a possible increase of nearly 10 per cent between 2020 and 2025, researchers stress that there is considerable uncertainty around that estimate."
+        },
+        "quiz": [
+          {
+            "question": "Which interpretation best accounts for both the recent monitoring results and the longer record?",
+            "options": [
+              "The recent data suggest a possible rise, while numbers remain well below their 2000 level.",
+              "The recent data indicate that dormice have regained most of the ground they lost since 2000.",
+              "The researchers’ main reservation concerns the size of the decline since 2000."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The data suggest a possible rise from 2020 to 2025, while the longer record shows an overall fall of almost 60 per cent.",
+              "The possible rise of nearly 10 per cent covers 2020 to 2025. Numbers are still almost 60 per cent below their 2000 level.",
+              "The researchers express considerable uncertainty about the size of the possible rise from 2020 to 2025."
+            ]
+          },
+          {
+            "question": "How should readers interpret the average annual decline of 3.5 per cent?",
+            "options": [
+              "It gives the same measured percentage loss for each year since 2000.",
+              "It expresses the decline since 2000 as an average yearly rate.",
+              "It gives the yearly rate for the period from 2020 to 2025."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "An average describes the period as a whole and allows for variation from year to year.",
+              "The rate of 3.5 per cent expresses the longer-term fall as a yearly average.",
+              "The brief gives a separate estimate for 2020 to 2025, when the data suggest a possible increase."
+            ]
+          },
+          {
+            "question": "What does “coincided with” establish about the apparent upturn and the warmer, drier conditions?",
+            "options": [
+              "The apparent upturn began before those conditions developed.",
+              "Those conditions were the main cause of the apparent upturn.",
+              "The apparent upturn and the warmer, drier conditions overlapped in time."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Coincided with” places the two developments in the same period and leaves open which began first.",
+              "“Coincided with” describes timing. The researchers treat the effect of warmer summers as a possibility.",
+              "“Coincided with” identifies an overlap in time and leaves the causal relationship open."
+            ]
+          },
+          {
+            "question": "How does the brief distinguish torpor from hibernation?",
+            "options": [
+              "Torpor is the seasonal state that typically lasts from October to May.",
+              "Torpor can occur briefly in spring or summer, while hibernation extends through winter.",
+              "Hibernation and torpor are both described as brief reactions to cold, wet weather."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The October-to-May period refers to hibernation. Torpor can occur in short spells in spring and summer.",
+              "The brief distinguishes the two by timing and duration. Hibernation spans several months, while torpor can occur in short bouts during spring and summer.",
+              "Cold, wet weather is one possible trigger for a short bout of torpor. Hibernation follows a much longer seasonal pattern."
+            ]
+          },
+          {
+            "question": "How might warmer summers benefit dormice, according to the researchers?",
+            "options": [
+              "Dormice may rely less on torpor and have more energy for feeding and reproduction.",
+              "Dormice may conserve more energy by entering torpor more frequently.",
+              "Dormice may gain more time to feed by ending winter hibernation earlier."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Researchers suggest that a reduced need for torpor in summer could leave more energy available for feeding and reproduction.",
+              "Torpor conserves energy. The researchers suggest warmer summers may make it less necessary.",
+              "The proposed benefit concerns short bouts of torpor in summer. The hibernation dates describe the usual seasonal pattern."
+            ]
+          },
+          {
+            "question": "What does Charlotte Armitage’s observation about winters add to the account of warmer summers?",
+            "options": [
+              "It identifies warmer winters as another likely benefit for dormice.",
+              "It puts forward wetter winters as a likely explanation for the apparent upturn.",
+              "It raises a separate question about how warmer, wetter winters might affect dormice."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The potential benefit described in the brief concerns summer. Armitage leaves open how dormice might fare in warmer, wetter winters.",
+              "The brief links the timing of the apparent upturn to spring and summer conditions. Armitage raises winter conditions as an open question.",
+              "Armitage adds a seasonal qualification by emphasising that the effects of warmer, wetter winters remain uncertain."
+            ]
+          },
+          {
+            "question": "What does “largely confined to” imply about the dormouse’s current range?",
+            "options": [
+              "Its remaining range falls entirely within the areas named.",
+              "It is now found mainly in the areas named, with room for exceptions.",
+              "It remains widespread, with the areas named representing only a small part of its range."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Largely” allows for exceptions to the geographical limits described.",
+              "“Confined to” signals a restricted range, and “largely” qualifies how complete that restriction is.",
+              "The reading describes the dormouse as formerly widespread. “Largely confined to” identifies where most of its current range lies."
+            ]
+          },
+          {
+            "question": "Why do conservationists stress the need to safeguard woodlands and hedgerows?",
+            "options": [
+              "The places dormice depend on remain essential even if the possible rise is confirmed.",
+              "The apparent upturn suggests that the loss of woodland has already been reversed.",
+              "Habitat protection becomes worthwhile only once the possible rise has been confirmed."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Conservationists regard the places where dormice live as essential to the species’ long-term survival.",
+              "The apparent upturn concerns dormouse numbers. The brief describes past woodland loss and leaves recent changes in woodland cover open.",
+              "Conservationists describe habitat protection as an existing need while the recent population trend remains uncertain."
+            ]
+          },
+          {
+            "question": "In the News Brief, what does “warrant further investigation” mean?",
+            "options": [
+              "Further study is likely to confirm that climate change will benefit dormice.",
+              "The available evidence already explains the most important effects on dormice.",
+              "There is sufficient reason to examine those effects more closely."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Warrant” gives a reason to investigate and leaves the outcome open.",
+              "The phrase calls for closer study because the longer-term effects remain uncertain.",
+              "“Warrant further investigation” indicates that the question merits closer study."
+            ]
+          },
+          {
+            "question": "Which conjunction completes “... warmer summers may help dormice feed and reproduce, it remains unclear how warmer, wetter winters might affect them” so that the opening clause makes a concession?",
+            "options": [
+              "Because",
+              "Although",
+              "Provided that"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Because” would present the possible summer benefit as the reason for the uncertainty about winter.",
+              "“Although” acknowledges the possible summer benefit and gives the uncertainty about winter the final emphasis.",
+              "“Provided that” would make the possible summer benefit a condition for the uncertainty about winter."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Hazel dormouse numbers show tentative signs of recovery after decades of decline.",
+          "The National Dormouse Monitoring Programme, led by the People’s Trust for Endangered Species, has monitored sites in England and Wales since 1998.",
+          "Its data indicate that dormouse numbers have fallen by almost 60 per cent since 2000, equivalent to an average annual decline of 3.5 per cent.",
+          "Although the monitoring data point to a possible increase of nearly 10 per cent between 2020 and 2025, researchers stress that there is considerable uncertainty around that estimate.",
+          "The apparent upturn coincided with springs and summers that were warmer and drier than average.",
+          "Hazel dormice typically hibernate from around October to May, spending the winter in nests on the ground.",
+          "In spring and summer, cold, wet weather or a shortage of food can prompt dormice to enter torpor, a short spell of deep sleep that conserves energy.",
+          "Warmer summers may reduce the need for torpor and leave dormice with more energy for feeding and reproduction, researchers suggest.",
+          "Ecologist Charlotte Armitage cautioned that it remains unclear how warmer, wetter winters might affect dormice.",
+          "The researchers say the potential longer-term effects of climate change on the species warrant further investigation.",
+          "Once widespread, the hazel dormouse is now largely confined to southern England and parts of Wales.",
+          "Hazel dormice have become much rarer amid widespread woodland loss, and native populations have disappeared from around 20 English counties.",
+          "Conservationists stress that safeguarding the woodlands and hedgerows where dormice live remains essential to their long-term survival."
+        ],
+        "sentence_evidence": [
+          "New figures suggest hazel dormice may be recovering after decades of decline, with warmer summers boosting survival.",
+          "The National Dormouse Monitoring Programme, led by the conservation charity People's Trust for Endangered Species (PTES), has been monitoring sites in England and Wales since 1998.",
+          "It found that since 2000, dormouse numbers have fallen by almost 60%, equivalent to an average annual decline of 3.5%.",
+          "More recently, however, there are signs that trend may be reversing. The data suggests the population increased by almost 10% between 2020 and 2025, although researchers stress there is considerable uncertainty around that estimate.",
+          "The apparent improvement coincides with a period of warmer, drier-than-average springs and summers.",
+          "The hazel dormouse is famous for spending much of the year asleep. It hibernates from around October to May, spending the winter in a nest on the ground.",
+          "Even during spring and summer, dormice can go into short periods of deep sleep, known as torpor, when the weather is cold and wet, or food is scarce. This helps the small rodent conserve energy.",
+          "Researchers believe warmer summers may be reducing the need for torpor, leaving dormice with more energy for feeding and breeding.",
+          "Dr Charlotte Armitage, an ecologist who worked on the survey, said significant uncertainties remain, including how dormice will respond to warmer, wetter winters.",
+          "They say more research is needed to understand what longer-term impacts climate change could have on the species.",
+          "The only species of dormice in the UK is the hazel dormouse. Once widespread across the country, they are now largely confined to southern England and parts of Wales. They have become much rarer as large areas of woodland are lost and so far native populations have disappeared from around 20 English counties.",
+          "The only species of dormice in the UK is the hazel dormouse. Once widespread across the country, they are now largely confined to southern England and parts of Wales. They have become much rarer as large areas of woodland are lost and so far native populations have disappeared from around 20 English counties.",
+          "But conservationists caution that many questions remain unanswered, and say protecting the woodlands and hedgerows where dormice live remains essential to their long-term survival."
+        ],
+        "editorial_check": {
+          "date": "2026-11-09T03:57:33.674244+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All 10 targets occur in the reading and are distinct from the reserved targets. “Point to” and “coincided with” teach useful distinctions between evidence, timing and causation, and “torpor” is clearly defined."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reporting is natural and measured. “Tentative signs,” “possible increase” and “apparent upturn” preserve uncertainty, and the proposed benefit of warmer summers remains attributed to researchers."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The definitions and feedback explain how wording changes meaning. The exact “Although” example shows how the opening clause acknowledges the possible rise while the main clause gives the researchers’ caution final emphasis."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The 10 distinct quiz items test interpretation and language use, including what an annual average means, what “largely confined to” implies and which conjunction introduces a concession. Each item has one supported answer."
+            }
+          },
+          "content_digest": "c46ee8447eecc5d71cedfb3016f5d8d2fc96b9b4be9a7609b20980a9deb247b8"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

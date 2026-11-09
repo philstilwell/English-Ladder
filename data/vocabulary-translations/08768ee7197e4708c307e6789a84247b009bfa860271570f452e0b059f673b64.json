@@ -1,0 +1,155 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Dormouse numbers in England and Wales may be going up after years of falling.",
+      "A dormouse is a small animal like a mouse.",
+      "The hazel dormouse is the only kind of dormouse in the UK.",
+      "The new figures suggest there were almost 10 percent more dormice in 2025 than in 2020.",
+      "But researchers say the real change could be quite different from what these figures show.",
+      "There are still almost 60 percent fewer dormice than in 2000.",
+      "Dormice sleep through the winter in nests on the ground.",
+      "Scientists think dormice may spend less time in deep sleep in warmer summers.",
+      "This may leave them with more energy to feed and have young.",
+      "People who work to save dormice say we still need to protect the woods where they live."
+    ],
+    "vocabulary": [
+      {
+        "term": "going up",
+        "part_of_speech": "verb phrase",
+        "definition": "Becoming larger in number."
+      },
+      {
+        "term": "figures",
+        "part_of_speech": "plural noun",
+        "definition": "Numbers that show what people found."
+      },
+      {
+        "term": "fewer",
+        "part_of_speech": "determiner",
+        "definition": "A smaller number of people, animals or things."
+      },
+      {
+        "term": "nests",
+        "part_of_speech": "plural noun",
+        "definition": "Places animals make to rest or have young."
+      },
+      {
+        "term": "deep sleep",
+        "part_of_speech": "noun phrase",
+        "definition": "Sleep that is hard to wake up from."
+      },
+      {
+        "term": "energy",
+        "part_of_speech": "noun",
+        "definition": "The strength to move and do things."
+      },
+      {
+        "term": "protect",
+        "part_of_speech": "verb",
+        "definition": "To keep someone or something safe."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "数が増えていくこと。",
+      "ko": "수가 늘어나는 것.",
+      "zh-Hans": "数量在增加。",
+      "es": "Ir aumentando en número.",
+      "pt-BR": "Estar aumentando em número.",
+      "fr": "Augmenter en nombre.",
+      "de": "An Zahl zunehmen."
+    },
+    {
+      "id": 1,
+      "ja": "人が調べてわかったことを示す数字。",
+      "ko": "사람들이 알아낸 것을 보여 주는 수치.",
+      "zh-Hans": "反映人们调查结果的数字。",
+      "es": "Números que muestran lo que se averiguó.",
+      "pt-BR": "Números que mostram o que as pessoas descobriram.",
+      "fr": "Chiffres qui indiquent ce qu’on a constaté.",
+      "de": "Zahlen, die zeigen, was man herausgefunden hat."
+    },
+    {
+      "id": 2,
+      "ja": "人や動物、物の数がより少ないこと。",
+      "ko": "사람, 동물 또는 사물의 수가 더 적은 것.",
+      "zh-Hans": "人、动物或事物的数量较少。",
+      "es": "Un número menor de personas, animales o cosas.",
+      "pt-BR": "Um número menor de pessoas, animais ou coisas.",
+      "fr": "Un plus petit nombre de personnes, d’animaux ou de choses.",
+      "de": "Eine geringere Anzahl von Menschen, Tieren oder Dingen."
+    },
+    {
+      "id": 3,
+      "ja": "動物が休んだり子を産んだりするために作る場所。",
+      "ko": "동물이 쉬거나 새끼를 낳기 위해 만드는 장소.",
+      "zh-Hans": "动物为休息或繁育后代而建造的地方。",
+      "es": "Lugares que los animales construyen para descansar o tener crías.",
+      "pt-BR": "Lugares que os animais constroem para descansar ou ter filhotes.",
+      "fr": "Endroits que les animaux aménagent pour se reposer ou avoir des petits.",
+      "de": "Orte, die Tiere sich schaffen, um sich auszuruhen oder Junge zu bekommen."
+    },
+    {
+      "id": 4,
+      "ja": "なかなか目が覚めない眠り。",
+      "ko": "깨기 어려운 잠.",
+      "zh-Hans": "不容易醒来的睡眠状态。",
+      "es": "Sueño del que cuesta despertarse.",
+      "pt-BR": "Sono do qual é difícil acordar.",
+      "fr": "Sommeil dont il est difficile de se réveiller.",
+      "de": "Schlaf, aus dem man nur schwer aufwacht."
+    },
+    {
+      "id": 5,
+      "ja": "体を動かしたり、何かをしたりするための力。",
+      "ko": "몸을 움직이고 무언가를 할 수 있게 해 주는 힘.",
+      "zh-Hans": "活动身体和做事所需的力气。",
+      "es": "La fuerza para moverse y hacer cosas.",
+      "pt-BR": "A força para se mover e fazer coisas.",
+      "fr": "La force nécessaire pour bouger et faire des choses.",
+      "de": "Die Kraft, sich zu bewegen und etwas zu tun."
+    },
+    {
+      "id": 6,
+      "ja": "誰かや何かを危険から守ること。",
+      "ko": "누군가나 무언가를 위험으로부터 지키는 것.",
+      "zh-Hans": "让人或事物免受伤害。",
+      "es": "Mantener a alguien o algo a salvo.",
+      "pt-BR": "Manter alguém ou algo em segurança.",
+      "fr": "Garder quelqu’un ou quelque chose à l’abri du danger.",
+      "de": "Dafür sorgen, dass jemand oder etwas vor Gefahren geschützt ist."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-09T03:58:51.933064+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

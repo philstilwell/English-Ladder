@@ -1,0 +1,137 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "TV star Tommy Walsh died at the age of 69.",
+      "He worked as a builder before he became famous on TV.",
+      "He got his chance on TV after he fixed up a house for someone at the BBC.",
+      "He was on the BBC show Ground Force from 1997 to 2005.",
+      "The team gave people’s gardens a new look.",
+      "He joined the TV show Homes Under the Hammer in 2021.",
+      "His agent said Walsh died peacefully after a long illness, with his family around him."
+    ],
+    "vocabulary": [
+      {
+        "term": "builder",
+        "part_of_speech": "noun",
+        "definition": "A person whose job is to build or fix houses and other buildings."
+      },
+      {
+        "term": "famous",
+        "part_of_speech": "adjective",
+        "definition": "Known by many people."
+      },
+      {
+        "term": "chance",
+        "part_of_speech": "noun",
+        "definition": "A time when you can do something you want to do."
+      },
+      {
+        "term": "gardens",
+        "part_of_speech": "plural noun",
+        "definition": "Areas of land near homes, often with grass, flowers or other plants."
+      },
+      {
+        "term": "joined",
+        "part_of_speech": "past tense verb",
+        "definition": "Became part of a group or started working with it."
+      },
+      {
+        "term": "illness",
+        "part_of_speech": "noun",
+        "definition": "A health problem that makes someone feel sick."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "家やその他の建物を建てたり修理したりすることを仕事にしている人。",
+      "ko": "집이나 그 밖의 건물을 짓거나 고치는 일을 직업으로 하는 사람.",
+      "zh-Hans": "以建造或修理房屋及其他建筑物为职业的人。",
+      "es": "Persona cuyo trabajo es construir o reparar casas y otros edificios.",
+      "pt-BR": "Pessoa que trabalha construindo ou consertando casas e outros edifícios.",
+      "fr": "Personne dont le métier consiste à construire ou à réparer des maisons et d’autres bâtiments.",
+      "de": "Eine Person, die beruflich Häuser und andere Gebäude baut oder repariert."
+    },
+    {
+      "id": 1,
+      "ja": "多くの人に知られている。",
+      "ko": "많은 사람에게 알려져 있다.",
+      "zh-Hans": "很多人都知道的。",
+      "es": "Que muchas personas conocen.",
+      "pt-BR": "Que muitas pessoas conhecem.",
+      "fr": "Que beaucoup de gens connaissent.",
+      "de": "Vielen Menschen bekannt."
+    },
+    {
+      "id": 2,
+      "ja": "自分がしたいことができる機会。",
+      "ko": "하고 싶은 일을 할 수 있는 기회.",
+      "zh-Hans": "可以做自己想做的事的机会。",
+      "es": "Una ocasión en la que puedes hacer algo que quieres hacer.",
+      "pt-BR": "Um momento em que você pode fazer algo que quer fazer.",
+      "fr": "Un moment où l’on peut faire quelque chose qu’on a envie de faire.",
+      "de": "Eine Gelegenheit, bei der man etwas tun kann, was man tun möchte."
+    },
+    {
+      "id": 3,
+      "ja": "住宅の近くにある土地で、芝生や花、ほかの植物があることが多い。",
+      "ko": "집 근처에 있는 땅으로, 흔히 잔디나 꽃 또는 다른 식물이 자란다.",
+      "zh-Hans": "住宅附近的地块，通常长有草、花或其他植物。",
+      "es": "Espacios de terreno cerca de las viviendas, donde suele haber césped, flores u otras plantas.",
+      "pt-BR": "Áreas de terra perto das casas, onde muitas vezes há grama, flores ou outras plantas.",
+      "fr": "Des terrains près des habitations, où l’on trouve souvent de l’herbe, des fleurs ou d’autres plantes.",
+      "de": "Flächen in der Nähe von Wohnhäusern, auf denen oft Gras, Blumen oder andere Pflanzen wachsen."
+    },
+    {
+      "id": 4,
+      "ja": "あるグループの一員になったか、そのグループと一緒に働き始めた。",
+      "ko": "어떤 그룹의 일원이 되거나 그 그룹과 함께 일하기 시작했다.",
+      "zh-Hans": "成了某个团体的一员，或开始和这个团体一起工作。",
+      "es": "Pasó a formar parte de un grupo o empezó a trabajar con él.",
+      "pt-BR": "Passou a fazer parte de um grupo ou começou a trabalhar com ele.",
+      "fr": "A intégré un groupe ou a commencé à travailler avec lui.",
+      "de": "Wurde Teil einer Gruppe oder fing an, mit ihr zusammenzuarbeiten."
+    },
+    {
+      "id": 5,
+      "ja": "体の具合が悪いと感じさせる健康上の問題。",
+      "ko": "몸이 아프다고 느끼게 하는 건강 문제.",
+      "zh-Hans": "让人感到身体不适的健康问题。",
+      "es": "Un problema de salud que hace que una persona se sienta enferma.",
+      "pt-BR": "Um problema de saúde que faz alguém se sentir doente.",
+      "fr": "Un problème de santé qui fait qu’une personne se sent malade.",
+      "de": "Ein gesundheitliches Problem, durch das sich jemand krank fühlt."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-10T03:47:01.070477+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

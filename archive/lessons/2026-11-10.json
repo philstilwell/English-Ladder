@@ -1,0 +1,752 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-10",
+  "release_iso": "2026-11-10T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Entertainment & Arts",
+    "feed_url": "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
+    "category": "culture",
+    "published_at": "Mon, 09 Nov 2026 15:27:00 GMT",
+    "retrieved_at": "2026-11-10T03:30:10.860504+00:00",
+    "title": "Ground Force and Homes Under the Hammer star Tommy Walsh dies aged 69",
+    "summary": "The building and DIY expert also appeared on TV shows like Challenge Tommy Walsh and Clean It, Fix It.",
+    "evidence_text": "Tommy Walsh, the building and DIY expert known for starring on TV shows including Ground Force, Homes Under the Hammer and Challenge Tommy Walsh, has died at the age of 69.\nWalsh started his career as a professional builder before rising to fame alongside Alan Titchmarsh and Charlie Dimmock on the BBC's Ground Force from 1997 to 2005.\nWalsh got his big break on TV after restoring the house of a BBC producer who was working on ideas for a show that would turn into Ground Force.\nHe found a winning formula with his co-stars, who performed makeovers on gardens belonging to members of the public.\nHe went on to also front popular programmes including Clean It, Fix It, and Cowboys and Angels, and joined daytime TV favourite Homes Under the Hammer in 2021.\nWalsh's agent told BBC News he died \"peacefully after a long illness surrounded by his family\", and asked for privacy for the family.\nWalsh said he initially turned down the chance to star on the show three times - but agreed when his eight-year-old daughter told him she had made a £10 bet with a boy at school that her dad was going to be on TV.\nHis other shows included Tommy Walsh's Eco House, Tommy's DIY Survival, Trading Places, Space Invaders and Fix Your House For Free; and he published a number of DIY books.\n\"She asked me to look at a couple of pilots. One of them was the precursor to Ground Force, called Over the Garden Wall,\" he told the BBC in 2004 . \"It was like watching paint dry - it was terrible.\"\nWalsh was previously reported to have had surgery for throat cancer in 2022 and lung cancer in 2023.",
+    "evidence_retrieved_at": "2026-11-10T03:30:10.860504+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/ck0e0elq4ndpo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "The Ground Force team gave people’s gardens a new look. Why might this make someone happy?",
+          "Imagine a garden for yourself or for a person you make up. What would you change? Start with “I would change ... because ...”."
+        ],
+        "title": "TV Star Tommy Walsh Dies at 69",
+        "overview": "Tommy Walsh was a builder and TV star who died at 69.",
+        "topic": "Tommy Walsh and his work on TV",
+        "vocabulary": [
+          {
+            "term": "builder",
+            "part_of_speech": "noun",
+            "definition": "A person whose job is to build or fix houses and other buildings."
+          },
+          {
+            "term": "famous",
+            "part_of_speech": "adjective",
+            "definition": "Known by many people."
+          },
+          {
+            "term": "chance",
+            "part_of_speech": "noun",
+            "definition": "A time when you can do something you want to do."
+          },
+          {
+            "term": "gardens",
+            "part_of_speech": "plural noun",
+            "definition": "Areas of land near homes, often with grass, flowers or other plants."
+          },
+          {
+            "term": "joined",
+            "part_of_speech": "past tense verb",
+            "definition": "Became part of a group or started working with it."
+          },
+          {
+            "term": "illness",
+            "part_of_speech": "noun",
+            "definition": "A health problem that makes someone feel sick."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past with regular verbs",
+          "explanation": "Use the simple past to talk about an action that happened before now. For many verbs, add “-ed”, as in “work” and “worked”. For regular verbs that end in “e”, add only “-d”, as in “die” and “died”.",
+          "example_quote": "He worked as a builder before he became famous on TV."
+        },
+        "quiz": [
+          {
+            "question": "What is the main idea of the story?",
+            "options": [
+              "How Ground Force changed gardens",
+              "Tommy Walsh’s TV work and his death",
+              "How Homes Under the Hammer began"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The work on gardens is one part of the story. The story also tells us about Walsh’s other TV work and his death.",
+              "The story tells us about Walsh’s work on TV and says that he died at 69.",
+              "The story gives the year Walsh joined Homes Under the Hammer."
+            ]
+          },
+          {
+            "question": "What did Walsh do before he got his chance on TV?",
+            "options": [
+              "He worked on gardens with the Ground Force team.",
+              "He joined Homes Under the Hammer.",
+              "He fixed up a house."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The work with the Ground Force team came after he got his chance on TV.",
+              "He joined Homes Under the Hammer years after he started working on TV.",
+              "He got his chance on TV after he fixed up a house for someone at the BBC."
+            ]
+          },
+          {
+            "question": "What did the Ground Force team give a new look to?",
+            "options": [
+              "People’s gardens",
+              "People’s houses",
+              "The TV studio"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The team gave people’s gardens a new look.",
+              "Walsh fixed up a house before he got his chance on TV. The team worked on gardens.",
+              "The story describes the team’s work in people’s gardens."
+            ]
+          },
+          {
+            "question": "When did Walsh join Homes Under the Hammer?",
+            "options": [
+              "In 1997",
+              "In 2005",
+              "In 2021"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "1997 is the first year the story gives for Walsh’s time on Ground Force.",
+              "2005 is the last year the story gives for Walsh’s time on Ground Force.",
+              "He joined Homes Under the Hammer in 2021."
+            ]
+          },
+          {
+            "question": "What does “famous” mean when the story says Walsh became famous on TV?",
+            "options": [
+              "Good at fixing houses",
+              "Known by many people",
+              "New to working on TV"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Fixing up a house was part of Walsh’s work as a builder. “Famous” means many people knew who he was.",
+              "When Walsh became “famous”, many people knew who he was.",
+              "“Famous” tells us that many people knew who Walsh was. The story also tells us how he got his chance on TV."
+            ]
+          },
+          {
+            "question": "Which simple past form of “watch” completes “Last night, I ___ Ground Force”?",
+            "options": [
+              "watched",
+              "watch",
+              "watches"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Add “-ed” to “watch” to get “watched”. The action happened last night.",
+              "“Watch” is the simple present form with “I”. Use “watched” for the action last night.",
+              "“Watches” is the simple present form with “he”, “she” or “it”. The simple past form is “watched”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "TV star Tommy Walsh died at the age of 69.",
+          "He worked as a builder before he became famous on TV.",
+          "He got his chance on TV after he fixed up a house for someone at the BBC.",
+          "He was on the BBC show Ground Force from 1997 to 2005.",
+          "The team gave people’s gardens a new look.",
+          "He joined the TV show Homes Under the Hammer in 2021.",
+          "His agent said Walsh died peacefully after a long illness, with his family around him."
+        ],
+        "sentence_evidence": [
+          "Tommy Walsh, the building and DIY expert known for starring on TV shows including Ground Force, Homes Under the Hammer and Challenge Tommy Walsh, has died at the age of 69.",
+          "Walsh started his career as a professional builder before rising to fame alongside Alan Titchmarsh and Charlie Dimmock on the BBC's Ground Force from 1997 to 2005.",
+          "Walsh got his big break on TV after restoring the house of a BBC producer who was working on ideas for a show that would turn into Ground Force.",
+          "Walsh started his career as a professional builder before rising to fame alongside Alan Titchmarsh and Charlie Dimmock on the BBC's Ground Force from 1997 to 2005.",
+          "He found a winning formula with his co-stars, who performed makeovers on gardens belonging to members of the public.",
+          "He went on to also front popular programmes including Clean It, Fix It, and Cowboys and Angels, and joined daytime TV favourite Homes Under the Hammer in 2021.",
+          "Walsh's agent told BBC News he died \"peacefully after a long illness surrounded by his family\", and asked for privacy for the family."
+        ],
+        "editorial_check": {
+          "date": "2026-11-10T03:32:04.696792+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six targets occur in the News Brief and have clear definitions for their use in the story. “Builder,” “chance,” and “joined” are useful beyond this lesson."
+            },
+            "register": {
+              "passed": true,
+              "reason": "“TV Star Tommy Walsh Dies at 69” is direct and neutral, and the reading handles Walsh’s death respectfully."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The reading uses short clauses, the grammar explanation shows the pattern with “work” and “worked,” and the discussion offers both the frame “I would change ... because ...” and an imagined scenario."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The six quiz items cover the main idea, distinct story details, the meaning of “famous,” and a fresh use of the simple past with “watched.” Each has one clear answer."
+            }
+          },
+          "content_digest": "f6d9d92e53260e4b5df28678578f243ddb2b842e6dd9010087e09266b65b885a"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "How did Walsh go from restoring a producer’s home to appearing on Ground Force?",
+          "If you were making a home improvement show, what skill would you teach viewers first, and why?"
+        ],
+        "title": "TV presenter Tommy Walsh dies at 69",
+        "overview": "Tommy Walsh, who went from working as a builder to appearing on popular television shows, has died at the age of 69.",
+        "topic": "Television and working life",
+        "vocabulary": [
+          {
+            "term": "agent",
+            "part_of_speech": "noun",
+            "definition": "Someone who represents another person in their working life and may speak to the media for them."
+          },
+          {
+            "term": "privacy",
+            "part_of_speech": "noun",
+            "definition": "The freedom to deal with personal matters without public attention."
+          },
+          {
+            "term": "big break",
+            "part_of_speech": "noun phrase",
+            "definition": "An important opportunity that helps someone become successful in their career."
+          },
+          {
+            "term": "restoring",
+            "part_of_speech": "verb, -ing form",
+            "definition": "Repairing a building to bring it back into good condition."
+          },
+          {
+            "term": "turned down",
+            "part_of_speech": "phrasal verb, past simple",
+            "definition": "Said no to an offer or invitation."
+          },
+          {
+            "term": "bet",
+            "part_of_speech": "noun",
+            "definition": "An agreement in which someone can win or lose money depending on whether a prediction comes true."
+          },
+          {
+            "term": "makeovers",
+            "part_of_speech": "plural noun",
+            "definition": "Changes that give places a new look."
+          },
+          {
+            "term": "went on to",
+            "part_of_speech": "verb phrase, past simple",
+            "definition": "Did something else later, often as the next step in a career."
+          }
+        ],
+        "grammar": {
+          "concept": "Defining relative clauses with “who”",
+          "explanation": "A defining relative clause with “who” tells us which person or kind of person we mean. Put it directly after the noun or noun phrase it describes, without commas. In the brief, the clause after “a BBC producer” tells us what the producer was working on.",
+          "example_quote": "He got his big break after restoring the home of a BBC producer who was developing ideas for a show that later became Ground Force."
+        },
+        "quiz": [
+          {
+            "question": "Which option best sums up the whole news brief?",
+            "options": [
+              "How a television team gave gardens a new look",
+              "The death and television career of a building expert",
+              "How a BBC producer developed a garden show"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The garden makeovers are one detail in a wider story about Walsh’s career.",
+              "The brief reports Walsh’s death and looks back at how he got into television and what he did there.",
+              "The producer’s plans are part of the story of how Walsh got started. The brief also covers his later work."
+            ]
+          },
+          {
+            "question": "What did Walsh’s agent ask people to do?",
+            "options": [
+              "Wait for an explanation from Walsh’s family.",
+              "Share memories of Walsh’s television work.",
+              "Respect Walsh’s family’s privacy"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief reports a request for privacy. It does not mention a statement from the family.",
+              "The request was about giving the family privacy.",
+              "The agent asked for privacy for Walsh’s family."
+            ]
+          },
+          {
+            "question": "What brought Walsh into contact with someone developing a television show?",
+            "options": [
+              "He restored the home of a BBC producer.",
+              "He presented a show about fixing things.",
+              "He helped with a garden makeover for television."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Walsh restored the home of a producer who was working on ideas for the show that became Ground Force.",
+              "The brief describes his work as a presenter after his start on Ground Force.",
+              "Walsh’s co-stars carried out the garden makeovers on Ground Force. His earlier connection with the producer came through work on the producer’s home."
+            ]
+          },
+          {
+            "question": "What did Walsh say led him to accept the offer to appear on Ground Force?",
+            "options": [
+              "His daughter had bet that he would appear on television.",
+              "He had restored the producer’s home.",
+              "His co-stars had already started doing garden makeovers."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Walsh said he agreed after his daughter told him about her £10 bet.",
+              "Restoring the producer’s home came earlier. Walsh said he accepted the offer after hearing about the bet.",
+              "The garden makeovers were work Walsh’s co-stars did on the show. Walsh linked his decision to his daughter’s bet."
+            ]
+          },
+          {
+            "question": "What were the “makeovers” on Ground Force?",
+            "options": [
+              "Repairs that brought old houses back into good condition",
+              "Changes that gave people’s gardens a new look",
+              "Plans for gardens that viewers could build themselves"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Walsh restored a house before his television break. His co-stars carried out the “makeovers” in gardens.",
+              "Walsh’s co-stars changed the look of gardens that belonged to members of the public.",
+              "The phrase “carried out” tells us that Walsh’s co-stars made the changes in people’s gardens."
+            ]
+          },
+          {
+            "question": "When did Walsh join Homes Under the Hammer in relation to his time on Ground Force?",
+            "options": [
+              "He joined in the same year he started on Ground Force.",
+              "He joined while he was still appearing on Ground Force.",
+              "He joined years after his time on Ground Force ended."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Walsh started on Ground Force in 1997 and joined Homes Under the Hammer in 2021.",
+              "Walsh’s time on Ground Force ended in 2005, before he joined Homes Under the Hammer in 2021.",
+              "The brief gives 2005 as his last year on Ground Force and 2021 as the year he joined Homes Under the Hammer."
+            ]
+          },
+          {
+            "question": "What does “went on to” tell us about Walsh presenting shows such as Cowboys and Angels?",
+            "options": [
+              "Presenting those shows came at a later stage in his career.",
+              "He continued presenting the same show under different titles.",
+              "He planned to present those shows at some point in the future."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Went on to present” introduces work Walsh did later.",
+              "“Went on to” introduces a later step here, and the brief names other programmes Walsh presented.",
+              "“Went on to present” describes work Walsh actually did later in his career."
+            ]
+          },
+          {
+            "question": "Which sentence uses a defining relative clause with “who” to tell us which builder a producer hired?",
+            "options": [
+              "The producer asked who could repair the wall.",
+              "The producer hired a builder who had worked on old houses.",
+              "The producer, who lived nearby, hired a builder."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Who could repair the wall” gives the question the producer asked.",
+              "“Who had worked on old houses” follows “a builder” and tells us which builder the producer hired.",
+              "“Who lived nearby” has commas around it and adds extra information about the producer."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Tommy Walsh, a building and DIY expert who starred on several television shows, has died at the age of 69.",
+          "His agent told BBC News that Walsh died peacefully after a long illness, with his family around him, and asked for privacy for the family.",
+          "Walsh worked as a professional builder before becoming known to television audiences.",
+          "He got his big break after restoring the home of a BBC producer who was developing ideas for a show that later became Ground Force.",
+          "Walsh said he turned down the offer to appear on the show three times.",
+          "He said he agreed after his eight-year-old daughter told him about a £10 bet she had made with a boy at school.",
+          "She had bet that her father would appear on television.",
+          "Walsh appeared on the BBC’s Ground Force with Alan Titchmarsh and Charlie Dimmock from 1997 to 2005.",
+          "On Ground Force, Walsh’s co-stars carried out makeovers on gardens that belonged to members of the public.",
+          "He went on to present Cowboys and Angels as well as Clean It, Fix It.",
+          "In 2021, Walsh joined the daytime programme Homes Under the Hammer.",
+          "Walsh also published several books about DIY projects that people can do themselves."
+        ],
+        "sentence_evidence": [
+          "Tommy Walsh, the building and DIY expert known for starring on TV shows including Ground Force, Homes Under the Hammer and Challenge Tommy Walsh, has died at the age of 69.",
+          "Walsh's agent told BBC News he died \"peacefully after a long illness surrounded by his family\", and asked for privacy for the family.",
+          "Walsh started his career as a professional builder before rising to fame alongside Alan Titchmarsh and Charlie Dimmock on the BBC's Ground Force from 1997 to 2005.",
+          "Walsh got his big break on TV after restoring the house of a BBC producer who was working on ideas for a show that would turn into Ground Force.",
+          "Walsh said he initially turned down the chance to star on the show three times - but agreed when his eight-year-old daughter told him she had made a £10 bet with a boy at school that her dad was going to be on TV.",
+          "Walsh said he initially turned down the chance to star on the show three times - but agreed when his eight-year-old daughter told him she had made a £10 bet with a boy at school that her dad was going to be on TV.",
+          "Walsh said he initially turned down the chance to star on the show three times - but agreed when his eight-year-old daughter told him she had made a £10 bet with a boy at school that her dad was going to be on TV.",
+          "Walsh started his career as a professional builder before rising to fame alongside Alan Titchmarsh and Charlie Dimmock on the BBC's Ground Force from 1997 to 2005.",
+          "He found a winning formula with his co-stars, who performed makeovers on gardens belonging to members of the public.",
+          "He went on to also front popular programmes including Clean It, Fix It, and Cowboys and Angels, and joined daytime TV favourite Homes Under the Hammer in 2021.",
+          "He went on to also front popular programmes including Clean It, Fix It, and Cowboys and Angels, and joined daytime TV favourite Homes Under the Hammer in 2021.",
+          "His other shows included Tommy Walsh's Eco House, Tommy's DIY Survival, Trading Places, Space Invaders and Fix Your House For Free; and he published a number of DIY books."
+        ],
+        "editorial_check": {
+          "date": "2026-11-10T03:38:43.747688+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 4,
+          "repaired_sections": [
+            "quiz"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All eight targets appear in the reading and have clear contextual definitions and correct word classes. “Big break,” “turned down,” and “went on to” offer useful B1–B2 practice. None of the targets are reserved."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reporting is neutral and respectful. “Big break” fits the career story, and the questions and feedback use clear, natural language."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation shows how the “who” clause describes “a BBC producer,” and the example matches the reading exactly. The quiz feedback explains each choice using the reading or the taught grammar."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The eight quiz items cover the main idea, career events, chronology, vocabulary in context, and a fresh relative-clause example. The discussion asks learners to connect events and explain a choice."
+            }
+          },
+          "content_digest": "81d03004f4a0364990d270c6e66ad7aae9d80c08df566636a29fa668bd5d4556"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "How do you explain the contrast between Walsh’s assessment of the pilot and the later success of Ground Force?",
+          "If you were developing a television programme around a practical skill, how would you balance expert advice with entertainment?"
+        ],
+        "title": "Ground Force Star Tommy Walsh Dies at 69",
+        "overview": "Tommy Walsh, who died aged 69, built a television career on his experience in the building trade, gaining recognition on Ground Force and later appearing on Homes Under the Hammer.",
+        "topic": "British television and home improvement",
+        "vocabulary": [
+          {
+            "term": "by trade",
+            "part_of_speech": "prepositional phrase",
+            "definition": "In one’s established occupation, especially one that involves a practical skill."
+          },
+          {
+            "term": "rising to prominence",
+            "part_of_speech": "verb phrase in the -ing form",
+            "definition": "Coming to be widely known or regarded as important in a particular field."
+          },
+          {
+            "term": "forerunner",
+            "part_of_speech": "noun",
+            "definition": "An earlier version or model that helps pave the way for a later one."
+          },
+          {
+            "term": "blunt assessment",
+            "part_of_speech": "noun phrase",
+            "definition": "A judgement expressed directly, with little effort to soften any criticism."
+          },
+          {
+            "term": "likening",
+            "part_of_speech": "verb in the -ing form",
+            "definition": "Comparing one thing to another to draw attention to a quality they share."
+          },
+          {
+            "term": "relented",
+            "part_of_speech": "past-tense verb",
+            "definition": "Became willing to agree after previously resisting or refusing."
+          },
+          {
+            "term": "wagered",
+            "part_of_speech": "past-tense verb",
+            "definition": "Risked losing money if an outcome differed from what one predicted."
+          },
+          {
+            "term": "winning formula",
+            "part_of_speech": "noun phrase",
+            "definition": "A combination of elements or a repeatable approach that proves successful."
+          },
+          {
+            "term": "fronted",
+            "part_of_speech": "past-tense verb",
+            "definition": "Presented a programme as one of its main on-screen figures."
+          },
+          {
+            "term": "to his name",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Credited to him as part of his record of work or achievements."
+          }
+        ],
+        "grammar": {
+          "concept": "Future in the past with “would”",
+          "explanation": "Use “would” with the base form of a verb to look ahead from a point in the past. In “would become”, the narrator looks back on the producer’s early work and identifies what that project later developed into.",
+          "example_quote": "Walsh’s television breakthrough came after he renovated the home of a BBC producer who was developing ideas for what would become Ground Force."
+        },
+        "quiz": [
+          {
+            "question": "Which description best captures the scope of the brief?",
+            "options": [
+              "It traces the development of Ground Force from its pilot to its successful format.",
+              "It reports Walsh’s death, traces his path from building work to television and notes his books.",
+              "It examines how Walsh balanced television work with treatment for cancer."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The development of Ground Force is one episode in a broader account of Walsh’s career.",
+              "The brief reports Walsh’s death and covers his building work, television career and books.",
+              "The brief covers his television work and reported surgery separately, leaving their relationship unspecified."
+            ]
+          },
+          {
+            "question": "What link does the brief establish between Walsh’s building work and his television breakthrough?",
+            "options": [
+              "His breakthrough followed a demonstration of his building skills in a pilot.",
+              "His breakthrough followed building work he did for his future co-stars.",
+              "His breakthrough followed his renovation of the home of a BBC producer who was developing a programme."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Walsh recalled being asked to look at pilots, and the building work described was the renovation of the producer’s home.",
+              "The brief identifies Titchmarsh and Dimmock as Walsh’s co-stars and identifies a BBC producer as the person whose home he renovated.",
+              "The brief places the renovation before Walsh’s breakthrough and identifies the producer’s project as the future Ground Force."
+            ]
+          },
+          {
+            "question": "What relationship does “forerunner” establish between Over the Garden Wall and Ground Force?",
+            "options": [
+              "Over the Garden Wall was an early pilot that preceded Ground Force.",
+              "Over the Garden Wall was a spin-off developed from Ground Force.",
+              "Over the Garden Wall was a separate programme that competed with Ground Force."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief identifies Over the Garden Wall as a pilot that came before the later programme and was part of its development.",
+              "A “spin-off” grows out of an existing programme, so that interpretation reverses the order.",
+              "The brief links the two through the development of Ground Force. “Competed” would suggest they were vying for viewers."
+            ]
+          },
+          {
+            "question": "What does Walsh convey by comparing the experience of watching the pilot to “watching paint dry”?",
+            "options": [
+              "He thought the programme would appeal mainly to viewers interested in practical work.",
+              "He was amused by how closely the programme resembled an ordinary day at work.",
+              "He found the experience tedious and expressed that judgement plainly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The comparison expresses Walsh’s own reaction to the pilot and leaves its likely audience unspecified.",
+              "“Watching paint dry” suggests prolonged boredom, so the comparison is sharply critical.",
+              "The comparison makes his boredom vivid and helps explain why the brief calls it a “blunt assessment”."
+            ]
+          },
+          {
+            "question": "What does “relented” convey about Walsh’s decision to appear on Ground Force?",
+            "options": [
+              "He reconsidered after the producer offered him a different role.",
+              "He moved from repeated refusal to agreement after hearing about his daughter’s wager.",
+              "He confirmed a decision he had already made before speaking to his daughter."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Walsh linked his change of mind to what his daughter told him, and the terms of the offer are left unspecified.",
+              "“Relented” captures the shift from resisting the offer to accepting it.",
+              "Walsh’s account places the conversation with his daughter before his acceptance."
+            ]
+          },
+          {
+            "question": "What does the “winning formula” on Ground Force refer to?",
+            "options": [
+              "The co-stars’ format of transforming gardens for members of the public.",
+              "The producer’s method of asking a builder to review trial episodes.",
+              "The decision to feature Walsh on several different home improvement programmes."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief identifies the garden transformations as the format that worked for Walsh and his co-stars.",
+              "The review of trial episodes belongs to Walsh’s account of the early development of Ground Force. The “winning formula” describes what he and his co-stars did on the show.",
+              "His later presenting work shows the range of his career, while “winning formula” describes the format of Ground Force."
+            ]
+          },
+          {
+            "question": "What role does “fronted” assign to Walsh on Cowboys and Angels and Clean It, Fix It?",
+            "options": [
+              "He put up the money to get the programmes made.",
+              "He promoted the programmes through appearances on other shows.",
+              "He was a principal on-screen presenter."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Fronted” can refer to advancing money in a financial context. Here it describes Walsh’s on-screen role.",
+              "The verb places Walsh on the programmes themselves in a presenting role.",
+              "In broadcasting, to “front” a programme is to be one of the main people who present it."
+            ]
+          },
+          {
+            "question": "What does “by trade” tell us about Walsh’s experience before Ground Force?",
+            "options": [
+              "Building was his established occupation before his television career took off.",
+              "Building was a skill he picked up in preparation for his television work.",
+              "Building was a side interest that he pursued alongside an unrelated occupation."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“By trade” identifies building as his occupation, and the sentence places that work before his rise to prominence.",
+              "The phrase describes work he already did professionally. The brief leaves the circumstances of his training unspecified.",
+              "“By trade” identifies an occupation, while a “side interest” describes something pursued alongside one."
+            ]
+          },
+          {
+            "question": "What does “to his name” convey about Walsh’s do-it-yourself books?",
+            "options": [
+              "His name appeared in the titles of the books.",
+              "The books count among his professional accomplishments.",
+              "The books were adaptations of his television programmes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“To his name” concerns who receives credit for the books and leaves their titles unspecified.",
+              "“To his name” gives Walsh credit for the books as part of his body of work.",
+              "The expression credits Walsh with the books and leaves any connection to his programmes unspecified."
+            ]
+          },
+          {
+            "question": "Which statement best preserves the attribution and scope of the health information in the brief?",
+            "options": [
+              "Walsh’s agent confirmed that the earlier operations were related to his death.",
+              "Earlier reports identified one of the two cancers as the cause of his death.",
+              "Earlier reports described surgery for two cancers, and Walsh’s agent said he died after a prolonged illness."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The agent described the circumstances of Walsh’s death, while the surgery details came from earlier reports.",
+              "The earlier reports concern the operations, and the brief leaves the cause of death unspecified.",
+              "This keeps the two accounts separate and preserves the distinction between a sequence of events and a stated cause."
+            ]
+          },
+          {
+            "question": "Which sentence uses “would” to look ahead from an earlier point in Walsh’s career?",
+            "options": [
+              "Walsh’s time on Ground Force ended in 2005, and in 2021 he would begin appearing on Homes Under the Hammer.",
+              "If the pilot had been more engaging, Walsh would have liked it better.",
+              "Would you watch a programme about garden transformations?"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Would begin” looks forward from 2005 to an event that later took place in 2021.",
+              "“Would have liked” describes an imagined result of a different situation in the past.",
+              "“Would you watch” asks about someone’s willingness to watch a programme in an imagined situation."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Tommy Walsh, known for his work on Ground Force, Homes Under the Hammer and Challenge Tommy Walsh, has died aged 69.",
+          "Walsh was a builder by trade before rising to prominence alongside Alan Titchmarsh and Charlie Dimmock on the BBC’s Ground Force, where he appeared from 1997 to 2005.",
+          "Walsh’s television breakthrough came after he renovated the home of a BBC producer who was developing ideas for what would become Ground Force.",
+          "Walsh told the BBC in 2004 that the producer had asked him to look at two pilots, or trial episodes, one of which was a forerunner to Ground Force called Over the Garden Wall.",
+          "He gave a blunt assessment of that pilot, likening the experience to watching paint dry.",
+          "Walsh said he declined the offer to appear on Ground Force three times.",
+          "He said he relented when his eight-year-old daughter told him she had wagered £10 with a boy at school that her father would appear on television.",
+          "Walsh and his co-stars found a winning formula in transforming gardens for members of the public.",
+          "Walsh later fronted Cowboys and Angels as well as Clean It, Fix It.",
+          "In 2021, he began appearing on Homes Under the Hammer, a popular daytime programme.",
+          "His work extended beyond broadcasting, with several do-it-yourself books to his name.",
+          "Earlier reports said he had undergone surgery for throat cancer in 2022 and for lung cancer in 2023.",
+          "His agent told BBC News that Walsh had died peacefully after a prolonged illness, with his family around him, and asked for the family to be given privacy."
+        ],
+        "sentence_evidence": [
+          "Tommy Walsh, the building and DIY expert known for starring on TV shows including Ground Force, Homes Under the Hammer and Challenge Tommy Walsh, has died at the age of 69.",
+          "Walsh started his career as a professional builder before rising to fame alongside Alan Titchmarsh and Charlie Dimmock on the BBC's Ground Force from 1997 to 2005.",
+          "Walsh got his big break on TV after restoring the house of a BBC producer who was working on ideas for a show that would turn into Ground Force.",
+          "\"She asked me to look at a couple of pilots. One of them was the precursor to Ground Force, called Over the Garden Wall,\" he told the BBC in 2004 . \"It was like watching paint dry - it was terrible.\"",
+          "\"She asked me to look at a couple of pilots. One of them was the precursor to Ground Force, called Over the Garden Wall,\" he told the BBC in 2004 . \"It was like watching paint dry - it was terrible.\"",
+          "Walsh said he initially turned down the chance to star on the show three times - but agreed when his eight-year-old daughter told him she had made a £10 bet with a boy at school that her dad was going to be on TV.",
+          "Walsh said he initially turned down the chance to star on the show three times - but agreed when his eight-year-old daughter told him she had made a £10 bet with a boy at school that her dad was going to be on TV.",
+          "He found a winning formula with his co-stars, who performed makeovers on gardens belonging to members of the public.",
+          "He went on to also front popular programmes including Clean It, Fix It, and Cowboys and Angels, and joined daytime TV favourite Homes Under the Hammer in 2021.",
+          "He went on to also front popular programmes including Clean It, Fix It, and Cowboys and Angels, and joined daytime TV favourite Homes Under the Hammer in 2021.",
+          "His other shows included Tommy Walsh's Eco House, Tommy's DIY Survival, Trading Places, Space Invaders and Fix Your House For Free; and he published a number of DIY books.",
+          "Walsh was previously reported to have had surgery for throat cancer in 2022 and lung cancer in 2023.",
+          "Walsh's agent told BBC News he died \"peacefully after a long illness surrounded by his family\", and asked for privacy for the family."
+        ],
+        "editorial_check": {
+          "date": "2026-11-10T03:45:53.265867+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All ten targets occur in the reading, have accurate contextual definitions and word classes, and are distinct from the reserved targets. “Fronted” and “to his name” teach useful contextual meanings."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reporting is natural and measured. “Earlier reports said” and “His agent told BBC News” clearly distinguish the two accounts."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The grammar explanation uses the exact reading sentence to show how “would become” looks ahead from a past point. The quiz feedback clearly distinguishes that use from an imagined result."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz tests attribution, the difference between sequence and cause, and contextual meanings such as “relented”. The discussion asks learners to compare Walsh’s assessment of the pilot with the later programme’s success."
+            }
+          },
+          "content_digest": "0e0b5d2172b9ea6403eee58426a36d887edf3b6fa83e251e73af25e74b9783ef"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

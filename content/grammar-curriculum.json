@@ -6821,6 +6821,132 @@
         "https://learnenglish.britishcouncil.org/comment/161919",
         "https://dictionaryblog.cambridge.org/2016/02/10/i-used-to-work-hardim-used-to-working-hard-phrases-with-used-to/"
       ]
+    },
+    {
+      "number": 59,
+      "title": "Why doesn't it work? Negative question order",
+      "level": "A2–B1",
+      "category": "Sentence structure",
+      "goal": "Explain why contracted and full negative questions put not in different positions.",
+      "rules": [
+        "For an ordinary direct question with why, put the helping verb before the subject, the person or thing the question is about. Compare ‘It doesn't work’ with ‘Why doesn't it work?’ The ending n't stays attached to does, so the whole word doesn't comes before the subject it. Does marks present time and agrees with it; the main verb therefore keeps its base form, work, without an extra -s. The same pattern gives ‘Why don't they print?’ and ‘Why didn't it start?’",
+        "With the full form, not is a separate word. In ordinary contemporary question order it follows the subject: ‘Why does it not work?’ The helping verb does comes before it, while not stays after it. Both this and ‘Why doesn't it work?’ are grammatical questions about a failure. Contractions are common in conversation; a full negative form can sound more formal or put extra emphasis on the negative. This is not a simple American-versus-British distinction. Word order follows the structure, not a rule to move every negative as early as possible.",
+        "The pattern has limits. Inside ‘I wonder why it doesn't work’, the embedded question, the question contained in a larger sentence, uses subject-before-verb order. With be or a modal helping verb, no extra do is needed: ‘Why isn't it ready?’; ‘Why can't it print?’ Subject questions such as ‘Who doesn't understand?’ have their own order. Meaning and tone also matter: ‘Why don't we try another printer?’ normally makes a suggestion. Do not assume that expanding every contraction keeps exactly the same tone or conversational purpose. This lesson focuses on direct why-questions asking for reasons."
+      ],
+      "cards": [
+        {
+          "label": "CONTRACTED: KEEP N’T ATTACHED",
+          "example": "Why doesn't it work?",
+          "note": "Doesn't is one word. The negative ending stays with the helping verb, so doesn't comes before the subject it."
+        },
+        {
+          "label": "FULL FORM: NOT AFTER THE SUBJECT",
+          "example": "Why does it not work?",
+          "note": "Does comes before the subject it; the separate word not follows it. This grammatical full form can sound more formal or emphatic."
+        },
+        {
+          "label": "PLURAL SUBJECT: DON’T",
+          "example": "Why don't they print?",
+          "note": "They takes do, shortened with not to don't. The whole contracted word comes before they, and print remains in its base form."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Turn “It doesn’t work” into an ordinary direct why-question using a contraction.",
+          "options": [
+            {
+              "text": "Why it doesn't work?",
+              "correct": false,
+              "feedback": "That order belongs inside a larger sentence such as I wonder why it doesn't work. In the direct question, put doesn't before it."
+            },
+            {
+              "text": "Why doesn't it work?",
+              "correct": true,
+              "feedback": "Doesn't is the helping verb with n't attached. The whole word comes before the subject it, and work keeps its base form."
+            },
+            {
+              "text": "Why doesn't it works?",
+              "correct": false,
+              "feedback": "The question order is right, but does already marks present time and agrees with it. Use the base verb work after doesn't."
+            }
+          ]
+        },
+        {
+          "prompt": "Choose the ordinary contemporary full form of “Why doesn’t it work?”",
+          "options": [
+            {
+              "text": "Why does it not work?",
+              "correct": true,
+              "feedback": "With full not, only the helping verb does comes before it. The separate word not follows the subject."
+            },
+            {
+              "text": "Why does not it work?",
+              "correct": false,
+              "feedback": "In the ordinary contemporary full form, not follows the subject it: Why does it not work? Keep the whole word together only when using the contraction doesn’t."
+            },
+            {
+              "text": "Why it does not work?",
+              "correct": false,
+              "feedback": "This leaves the helping verb after the subject. For this direct question, does must come before it: Why does it not work?"
+            }
+          ]
+        },
+        {
+          "prompt": "Why does n’t appear before it in “Why doesn’t it work?”",
+          "options": [
+            {
+              "text": "Every negative word must come before the subject.",
+              "correct": false,
+              "feedback": "There is no such general rule. The full form Why does it not work? places the separate negative word after the subject."
+            },
+            {
+              "text": "Work already has the ending -s.",
+              "correct": false,
+              "feedback": "Work is in its base form here. The position of n’t follows from its attachment to does, not from an ending on work."
+            },
+            {
+              "text": "N’t stays attached to the helping verb does.",
+              "correct": true,
+              "feedback": "The whole contracted word doesn’t comes before the subject. With a separate not, the order changes to does it not."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You ask directly about a printer, then report your uncertainty. Choose the pair with ordinary question order.",
+        "options": [
+          {
+            "text": "Why it doesn't work? I wonder why it doesn't work.",
+            "correct": false,
+            "feedback": "The embedded question after I wonder is correct. The direct question needs doesn't before it: Why doesn't it work?"
+          },
+          {
+            "text": "Why doesn't it work? I wonder why it doesn't work.",
+            "correct": true,
+            "feedback": "The direct question puts doesn't before it. The embedded question after I wonder uses subject-before-verb order: it doesn't work."
+          },
+          {
+            "text": "Why doesn't it work? I wonder why doesn't it work.",
+            "correct": false,
+            "feedback": "The direct question is correct. Inside I wonder why, use subject-before-verb order: it doesn't work. Do not repeat the direct-question order there."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-59-negative-question-order-student-workbook.pdf",
+        "concept-59-negative-question-order-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-10",
+      "related": [
+        47,
+        51,
+        25
+      ],
+      "sources": [
+        "https://learnenglish.britishcouncil.org/comment/160226",
+        "https://dictionary.cambridge.org/grammar/british-grammar/negation_2",
+        "https://www.cambridgeenglish.org/fr/Images/682580-advanced-grammar-in-use-4-sample.pdf"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

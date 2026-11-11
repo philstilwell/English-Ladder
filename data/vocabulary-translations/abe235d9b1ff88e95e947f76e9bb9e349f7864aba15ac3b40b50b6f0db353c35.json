@@ -1,0 +1,205 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "The Gulf conflict is giving the US an opportunity to test its autonomous mine-hunting systems.",
+      "The mere prospect of sea mines can prevent a tanker fleet from sailing, even though the devices themselves need not be expensive or technically complex.",
+      "Modern seabed mines detonate in response to acoustic or magnetic signals, producing a pressure wave capable of breaking a passing vessel's keel.",
+      "Traditionally, locating mines has required dedicated vessels with crews of around 80 sailors.",
+      "To reduce human exposure to danger, an increasing share of the work is being transferred to autonomous systems monitored from shore.",
+      "These systems may require only 20 personnel working ashore in shifts, making them attractive to Nato navies facing recruitment and retention difficulties.",
+      "A Thales uncrewed surface vessel uses sonar, a sound-based sensing technology, to detect mines.",
+      "It tows a five-metre device that scans the seabed and produces a detailed three-dimensional image refined by software.",
+      "The software identifies objects resembling mines, including modern designs intended to blend into their surroundings.",
+      "Besides being cheaper than conventional minehunters, autonomous systems can be deployed by air alongside control centres housed in containers.",
+      "Robotic searches can reduce risk without proving conclusively that no mines are present.",
+      "Were the Royal Navy's proposed hybrid fleet to succeed, Prest argues, its drones and conventional warships would need to operate as a single distributed force, sharing data.",
+      "One forecast is that more vessel data will be analysed during missions rather than only after a robotic vessel returns.",
+      "Neil Roberts, who represents insurers at Lloyd's of London on marine matters, considers the psychological impact of possible mines inescapable, particularly when their number and even their presence remain uncertain.",
+      "The report states that the US says it has cleared the Omani route and believes the mine risk is being managed, with shipments at approximately 75% of pre-conflict levels."
+    ],
+    "vocabulary": [
+      {
+        "term": "mere prospect",
+        "part_of_speech": "noun phrase",
+        "definition": "The possibility alone, emphasised as sufficient to produce an effect without the event actually occurring."
+      },
+      {
+        "term": "detonate",
+        "part_of_speech": "verb",
+        "definition": "To explode when an explosive mechanism is activated."
+      },
+      {
+        "term": "acoustic",
+        "part_of_speech": "adjective",
+        "definition": "Relating to sound, particularly its detection or use as a signal."
+      },
+      {
+        "term": "keel",
+        "part_of_speech": "countable noun",
+        "definition": "The main structural backbone along the bottom of a vessel."
+      },
+      {
+        "term": "retention",
+        "part_of_speech": "uncountable noun",
+        "definition": "An organisation's ability to keep its existing employees or personnel."
+      },
+      {
+        "term": "refined",
+        "part_of_speech": "past participle",
+        "definition": "Made more precise or detailed through further processing."
+      },
+      {
+        "term": "blend into",
+        "part_of_speech": "phrasal verb",
+        "definition": "To resemble the surrounding environment closely enough to become difficult to distinguish."
+      },
+      {
+        "term": "deployed",
+        "part_of_speech": "past participle",
+        "definition": "Moved into position and made available for operational use."
+      },
+      {
+        "term": "distributed force",
+        "part_of_speech": "noun phrase",
+        "definition": "A coordinated military force whose separate units operate together through shared information."
+      },
+      {
+        "term": "inescapable",
+        "part_of_speech": "adjective",
+        "definition": "Impossible to avoid or disregard when considering a situation."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "出来事が実際に起こらなくても、その可能性があるというだけで影響を生むのに十分であることを強調する表現。",
+      "ko": "어떤 일이 실제로 일어나지 않아도 그 가능성만으로 영향을 일으키기에 충분함을 강조하는 표현.",
+      "zh-Hans": "强调仅有某件事发生的可能性就足以产生影响，而不需要那件事实际发生。",
+      "es": "La sola posibilidad, destacada como suficiente para producir un efecto sin que el hecho llegue a ocurrir.",
+      "pt-BR": "A possibilidade por si só, destacada como suficiente para produzir um efeito sem que o acontecimento de fato ocorra.",
+      "fr": "La seule possibilité, présentée comme suffisante pour produire un effet sans que l’événement se produise réellement.",
+      "de": "Die bloße Möglichkeit, die als ausreichend hervorgehoben wird, um eine Wirkung hervorzurufen, ohne dass das Ereignis tatsächlich eintritt."
+    },
+    {
+      "id": 1,
+      "ja": "起爆の仕組みが作動したときに爆発すること。",
+      "ko": "폭발 장치가 작동하면 폭발하는 것.",
+      "zh-Hans": "在起爆装置被启动时发生爆炸。",
+      "es": "Explotar cuando se activa un mecanismo explosivo.",
+      "pt-BR": "Explodir quando um mecanismo explosivo é acionado.",
+      "fr": "Exploser lorsqu’un mécanisme explosif est activé.",
+      "de": "Explodieren, wenn ein Sprengmechanismus ausgelöst wird."
+    },
+    {
+      "id": 2,
+      "ja": "音に関すること。特に、音の検知や信号としての利用に関すること。",
+      "ko": "소리와 관련된 것으로, 특히 소리를 감지하거나 신호로 사용하는 것과 관련된 것.",
+      "zh-Hans": "与声音有关的，尤其涉及声音的探测或将声音用作信号。",
+      "es": "Relacionado con el sonido, especialmente con su detección o su uso como señal.",
+      "pt-BR": "Relacionado ao som, especialmente à sua detecção ou ao seu uso como sinal.",
+      "fr": "Qui concerne le son, en particulier sa détection ou son utilisation comme signal.",
+      "de": "Den Schall betreffend, insbesondere seine Erfassung oder Verwendung als Signal."
+    },
+    {
+      "id": 3,
+      "ja": "船底に沿って延び、船の骨組みの中心となる主要な構造部材。",
+      "ko": "선박의 바닥을 따라 뻗어 있으며 선체의 중심 뼈대를 이루는 주요 구조물.",
+      "zh-Hans": "沿船底延伸、构成船体主要支撑骨架的结构。",
+      "es": "La estructura principal que sirve de columna vertebral a lo largo del fondo de una embarcación.",
+      "pt-BR": "A estrutura principal que funciona como a espinha dorsal ao longo do fundo de uma embarcação.",
+      "fr": "L’élément principal de la structure d’un navire, qui en constitue la colonne vertébrale le long du fond de la coque.",
+      "de": "Das tragende Rückgrat der Schiffskonstruktion, das entlang der Unterseite des Rumpfes verläuft."
+    },
+    {
+      "id": 4,
+      "ja": "組織が現在の従業員や所属する人員に引き続きとどまってもらう能力。",
+      "ko": "조직이 기존 직원이나 소속 인력을 계속 유지할 수 있는 능력.",
+      "zh-Hans": "一个组织留住现有员工或人员的能力。",
+      "es": "La capacidad de una organización para conservar a sus empleados o integrantes actuales.",
+      "pt-BR": "A capacidade de uma organização de manter seus funcionários ou integrantes atuais.",
+      "fr": "La capacité d’une organisation à garder ses employés ou son personnel actuel.",
+      "de": "Die Fähigkeit einer Organisation, ihre bestehenden Beschäftigten oder Angehörigen zu halten."
+    },
+    {
+      "id": 5,
+      "ja": "さらに処理を加えることで、より精密に、またはより詳しくされたこと。",
+      "ko": "추가 처리를 통해 더 정밀하거나 상세해진 상태.",
+      "zh-Hans": "经过进一步处理而变得更加精确或详细的。",
+      "es": "Hecho más preciso o detallado mediante un procesamiento adicional.",
+      "pt-BR": "Tornado mais preciso ou detalhado por meio de processamento adicional.",
+      "fr": "Rendu plus précis ou plus détaillé grâce à un traitement supplémentaire.",
+      "de": "Durch weitere Verarbeitung präziser oder detaillierter gemacht."
+    },
+    {
+      "id": 6,
+      "ja": "周囲の環境とよく似ることで、見分けにくくなること。",
+      "ko": "주변 환경과 충분히 비슷하여 구별하기 어려워지는 것.",
+      "zh-Hans": "与周围环境足够相似，以至于变得难以分辨。",
+      "es": "Parecerse lo suficiente al entorno como para resultar difícil de distinguir.",
+      "pt-BR": "Assemelhar-se ao ambiente ao redor a ponto de se tornar difícil de distinguir.",
+      "fr": "Ressembler suffisamment à l’environnement pour devenir difficile à distinguer.",
+      "de": "Der Umgebung so stark ähneln, dass man nur noch schwer von ihr zu unterscheiden ist."
+    },
+    {
+      "id": 7,
+      "ja": "運用に使えるよう、所定の位置に移されて準備が整えられたこと。",
+      "ko": "운용에 사용할 수 있도록 필요한 위치로 옮겨져 준비된 상태.",
+      "zh-Hans": "已被移至所需位置，并可供实际行动使用的。",
+      "es": "Trasladado a una posición y puesto a disposición para su uso en operaciones.",
+      "pt-BR": "Movido para uma posição e disponibilizado para uso em operações.",
+      "fr": "Déplacé vers une position et rendu disponible pour être utilisé dans des opérations.",
+      "de": "In Position gebracht und für den Einsatz verfügbar gemacht."
+    },
+    {
+      "id": 8,
+      "ja": "個々の部隊が情報を共有し、連携して行動する軍事力。",
+      "ko": "각 부대가 정보를 공유하며 함께 작전을 수행하는, 상호 조율된 군사 전력.",
+      "zh-Hans": "由各个单位通过共享信息协同行动而组成的军事力量。",
+      "es": "Una fuerza militar coordinada cuyas unidades separadas actúan juntas mediante información compartida.",
+      "pt-BR": "Uma força militar coordenada cujas unidades distintas atuam em conjunto por meio do compartilhamento de informações.",
+      "fr": "Une force militaire coordonnée dont les différentes unités opèrent ensemble grâce au partage d’informations.",
+      "de": "Eine koordinierte militärische Streitmacht, deren einzelne Einheiten durch den Austausch von Informationen gemeinsam operieren."
+    },
+    {
+      "id": 9,
+      "ja": "状況を考えるうえで、避けたり無視したりすることができないこと。",
+      "ko": "상황을 고려할 때 피하거나 무시할 수 없는 것.",
+      "zh-Hans": "在考虑某种情况时，无法避免或忽视的。",
+      "es": "Imposible de evitar o de pasar por alto al considerar una situación.",
+      "pt-BR": "Impossível de evitar ou desconsiderar ao avaliar uma situação.",
+      "fr": "Qu’il est impossible d’éviter ou d’ignorer lorsqu’on examine une situation.",
+      "de": "Bei der Betrachtung einer Situation unmöglich zu vermeiden oder außer Acht zu lassen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-11T03:49:09.816617+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

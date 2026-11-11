@@ -1,0 +1,814 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-11",
+  "release_iso": "2026-11-11T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Technology",
+    "feed_url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "category": "technology",
+    "published_at": "Wed, 11 Nov 2026 00:19:13 GMT",
+    "retrieved_at": "2026-11-11T03:31:00.691619+00:00",
+    "title": "Robot vessels take on the dangerous work of mine hunting",
+    "summary": "The conflict in the Gulf is an opportunity for the US to test its autonomous mine-hunting systems.",
+    "evidence_text": "The conflict in the Gulf is an opportunity for the US to test its autonomous mine-hunting systems.\nModern mines rest on the seabed and detonate when they detect an acoustic or magnetic signal, triggering a pressure wave that will break the keel of a passing vessel.\nFinding sea mines has traditionally been the job of specialist mine-hunting vessels, with crews of around 80 sailors.\nTo keep humans out of harm's way, an increasing amount of the work is done by systems that are autonomous and monitored from the shore.\nThey might only need 20 personnel, working in shifts on land. With the recruitment and retention challenges facing Nato navies these highly-portable robot systems are very attractive.\nThe Thales Uncrewed Surface Vehicle (USV) is packed with sensors programmed to detect mines via sonar that was developed for the oil and gas industries.\nHe says US robot minehunters can either blow up a mine or just mark the spot as somewhere to avoid.\nAutonomous systems are cheaper than conventional minehunters, plus they can be deployed, along with containerised control centres, by air.\n\"There is a bunch of ways to look for a mine using robot boats or robot subs, and while you can't prove the negative, that no mines are there, you can reduce the risk.\"\nThe technology itself is not difficult or costly, but the mere threat can stop a tanker fleet from sailing.\nIt tows a 5m long rectangular box, similar to a large torpedo, that takes a hi-resolution look at the seabed and creates a 3D picture refined by AI. The latest mines are designed to blend into their surroundings and the software spots anything that looks like a mine.\nNeil Roberts speaks for insurers at Lloyd's of London on marine matters and says the psychological impact of the mine threat is inescapable, as is the uncertainty around just how many mines, if any, are out there.\nThe Royal Navy recently announced its concept of a hybrid navy - mixing drones with conventional warships. But Prest thinks for this vision to succeed the fleet must operate as one distributed force, sharing data in what he terms a cognitive architecture.\n\"We'll see more use of autonomy but also the missions and capability will expand. And AI will be analysing data from those vessels on the spot as opposed to data being analysed when a drone returns.\"\n\"The US says it has cleared the Omani route and believes the mine threat is being managed, with shipments running at about 75% of pre-conflict levels.\"",
+    "evidence_retrieved_at": "2026-11-11T03:31:00.691619+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cj5yn24llxd6o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do people use robots to look for mines? Use “Robots help because ...”.",
+          "Would you or a person in a story choose a robot for dangerous work? Use “I think ... because ...”."
+        ],
+        "title": "Robot Boats Help Search for Sea Mines",
+        "overview": "Read about robots that help people search for dangerous sea mines.",
+        "topic": "Technology and safety at sea",
+        "vocabulary": [
+          {
+            "term": "look for",
+            "part_of_speech": "phrasal verb",
+            "definition": "Try to find something."
+          },
+          {
+            "term": "sailors",
+            "part_of_speech": "plural noun",
+            "definition": "People who work on ships."
+          },
+          {
+            "term": "land",
+            "part_of_speech": "noun",
+            "definition": "The ground, away from the sea."
+          },
+          {
+            "term": "destroy",
+            "part_of_speech": "verb",
+            "definition": "Damage something so badly that it cannot work anymore."
+          },
+          {
+            "term": "avoid",
+            "part_of_speech": "verb",
+            "definition": "Stay away from someone or something."
+          },
+          {
+            "term": "cost",
+            "part_of_speech": "verb",
+            "definition": "Have a price that people must pay."
+          }
+        ],
+        "grammar": {
+          "concept": "Can for ability",
+          "explanation": "Use “can” before a verb to say what someone or something is able to do. Use the verb without “to”, and do not add “s” after “he”, “she” or “it”. Use “cannot” to say that someone or something is not able to do something.",
+          "example_quote": "US robots can destroy a mine or mark its place so ships can avoid it."
+        },
+        "quiz": [
+          {
+            "question": "What is the main idea of the reading?",
+            "options": [
+              "Robots help search for sea mines.",
+              "Robots build ships for sailors.",
+              "Robots carry people to land."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. The reading explains how robots help find sea mines.",
+              "The reading describes robots searching for mines, not building ships.",
+              "People watch the robots from land; the reading does not say robots carry them there."
+            ]
+          },
+          {
+            "question": "About how many sailors worked on each special ship to find mines in the past?",
+            "options": [
+              "20",
+              "80",
+              "100"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Some robot systems may need only about 20 people working on land.",
+              "Yes. About 80 sailors worked on each special ship to find mines.",
+              "The reading says about 80 sailors on each special ship, not 100."
+            ]
+          },
+          {
+            "question": "Where do people watch the robots from?",
+            "options": [
+              "Under the water",
+              "On passing ships",
+              "On land"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says people watch the robots from land, not from under the water.",
+              "The reading says people watch from land, not from passing ships.",
+              "Yes. People watch the robots from land."
+            ]
+          },
+          {
+            "question": "What can US robots do when they find a mine?",
+            "options": [
+              "Destroy it or mark its place",
+              "Only take pictures of it",
+              "Make it safe for ships to touch"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. They can destroy a mine or mark its place so ships can avoid it.",
+              "The reading says they can destroy mines or mark their places.",
+              "The reading says ships can avoid a marked mine; it does not say they can safely touch it."
+            ]
+          },
+          {
+            "question": "Which costs less, according to the reading?",
+            "options": [
+              "The special ships used to find mines",
+              "The robot systems",
+              "Both cost the same"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says robot systems cost less than these ships.",
+              "Yes. Robot systems cost less than the ships used to find mines.",
+              "The reading says robot systems cost less, so the prices are not the same."
+            ]
+          },
+          {
+            "question": "What does “avoid” mean when ships avoid a mine?",
+            "options": [
+              "Search for it",
+              "Move towards it",
+              "Stay away from it"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Search for” means try to find something; “avoid” means stay away.",
+              "“Move towards” means go closer; “avoid” means stay away.",
+              "Yes. Ships avoid a mine by staying away from it."
+            ]
+          },
+          {
+            "question": "Which sentence uses “can” correctly to describe a robot's ability?",
+            "options": [
+              "A robot can work at sea.",
+              "A robot can works at sea.",
+              "A robot can to work at sea."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Use “can” followed by “work” without “to” or an added “s”.",
+              "Use “work”, not “works”, after “can”.",
+              "Use “work” without “to” after “can”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The conflict in the Gulf gives the US a chance to test robots that look for sea mines.",
+          "Sea mines are bombs in the water that can explode and badly damage passing ships.",
+          "In the past, about 80 sailors worked on each special ship to find mines.",
+          "Robots now do more of this work to keep people safer, while people watch them from land.",
+          "Some robot systems may need only about 20 people working on land.",
+          "One type of robot boat uses sound to find mines under the water.",
+          "US robots can destroy a mine or mark its place so ships can avoid it.",
+          "These robot systems cost less than the special ships used to find mines.",
+          "The article says robots can reduce danger, but they cannot show that there are no mines."
+        ],
+        "sentence_evidence": [
+          "The conflict in the Gulf is an opportunity for the US to test its autonomous mine-hunting systems.",
+          "Modern mines rest on the seabed and detonate when they detect an acoustic or magnetic signal, triggering a pressure wave that will break the keel of a passing vessel.",
+          "Finding sea mines has traditionally been the job of specialist mine-hunting vessels, with crews of around 80 sailors.",
+          "To keep humans out of harm's way, an increasing amount of the work is done by systems that are autonomous and monitored from the shore.",
+          "They might only need 20 personnel, working in shifts on land. With the recruitment and retention challenges facing Nato navies these highly-portable robot systems are very attractive.",
+          "The Thales Uncrewed Surface Vehicle (USV) is packed with sensors programmed to detect mines via sonar that was developed for the oil and gas industries.",
+          "He says US robot minehunters can either blow up a mine or just mark the spot as somewhere to avoid.",
+          "Autonomous systems are cheaper than conventional minehunters, plus they can be deployed, along with containerised control centres, by air.",
+          "\"There is a bunch of ways to look for a mine using robot boats or robot subs, and while you can't prove the negative, that no mines are there, you can reduce the risk.\""
+        ],
+        "editorial_check": {
+          "date": "2026-11-11T03:36:15.635025+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct reading targets, including “look for”, “land” and “avoid”, have clear, useful beginner definitions. No reserved targets are reused."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The news uses neutral, direct wording, and discussion frames such as “I think ... because ...” are natural and respectful."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Reading sentences are complete and accessible. The exact grammar quote demonstrates “can” followed by a verb without “to”. Discussion includes sentence frames and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct reading sentences and seven unambiguous quiz questions meet the minimums. Questions cover the main idea, separate details, contextual “avoid” and the taught “can” pattern."
+            }
+          },
+          "content_digest": "6551910905be352ce551771a02a9cc15a04157fb8bc28288165308513ae00362"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why can robot mine hunters reduce danger without removing all uncertainty about a sea route?",
+          "If you managed a shipping company, what evidence would you want before sending a ship through a risky route?"
+        ],
+        "title": "Robot Boats Help Navies Search for Sea Mines",
+        "overview": "Navies are using robot systems to find sea mines and protect people, but uncertainty about the danger remains.",
+        "topic": "Technology and safety at sea",
+        "vocabulary": [
+          {
+            "term": "conflict",
+            "part_of_speech": "noun",
+            "definition": "Fighting between countries or armed groups."
+          },
+          {
+            "term": "threat",
+            "part_of_speech": "noun",
+            "definition": "The possibility that something dangerous or harmful could happen."
+          },
+          {
+            "term": "specialist",
+            "part_of_speech": "adjective",
+            "definition": "Designed or trained for a particular kind of work."
+          },
+          {
+            "term": "autonomous",
+            "part_of_speech": "adjective",
+            "definition": "Able to operate without a person controlling every action."
+          },
+          {
+            "term": "monitored",
+            "part_of_speech": "verb, past participle",
+            "definition": "Watched or checked over time to see what is happening."
+          },
+          {
+            "term": "in shifts",
+            "part_of_speech": "adverbial phrase",
+            "definition": "In separate working periods, with different groups taking turns."
+          },
+          {
+            "term": "conventional",
+            "part_of_speech": "adjective",
+            "definition": "Following the usual or traditional way of doing something."
+          },
+          {
+            "term": "uncertainty",
+            "part_of_speech": "noun",
+            "definition": "A situation in which something is not known or certain."
+          }
+        ],
+        "grammar": {
+          "concept": "Present simple passive",
+          "explanation": "Use the present simple passive to describe a regular process when the action matters more than who does it. Form it with “am”, “is” or “are” plus a past participle. Here, “are monitored” focuses on what happens to the systems.",
+          "example_quote": "To keep people away from danger, autonomous systems that can operate on their own are monitored from shore."
+        },
+        "quiz": [
+          {
+            "question": "What is the main reason for using robot systems in mine hunting, according to the reading?",
+            "options": [
+              "To remove the need for all human workers",
+              "To keep people away from dangerous work",
+              "To prove that every sea route is safe"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "People still monitor the systems and work in shifts.",
+              "The reading explains that robot systems help keep people away from danger.",
+              "The reading says robots cannot prove that no mines are present."
+            ]
+          },
+          {
+            "question": "What can stop tankers from sailing, even without a confirmed explosion?",
+            "options": [
+              "The possibility that sea mines are present",
+              "The use of three-dimensional pictures",
+              "The transport of control centres by air"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The threat of mines can stop tankers from sailing.",
+              "The pictures help systems examine the seabed; the reading does not say they stop tankers.",
+              "Air transport is described as a way to move the systems and their control centres."
+            ]
+          },
+          {
+            "question": "What does the reading say about the number of people needed?",
+            "options": [
+              "Every robot system needs exactly 20 people.",
+              "Traditional mine-hunting ships usually carry only 20 people.",
+              "Some robot systems may need only 20 people."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading uses “may”, so 20 is a possibility, not a fixed number for every system.",
+              "The reading gives around 80 people for traditional specialist ships.",
+              "The reading says some systems may need only 20 people working in shifts."
+            ]
+          },
+          {
+            "question": "How do the sensors on the Thales robot boat detect mines?",
+            "options": [
+              "They listen for instructions from tankers.",
+              "They use sonar to find objects with sound.",
+              "They wait for mines to explode."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes sound being used to find objects, not to receive instructions from tankers.",
+              "The reading explains that sonar uses sound to find objects.",
+              "The sensors are described as detecting mines, not waiting for explosions."
+            ]
+          },
+          {
+            "question": "Which practical advantage do autonomous systems have over conventional mine-hunting ships?",
+            "options": [
+              "They are cheaper and can be transported by air.",
+              "They need no control centres or human attention.",
+              "They can guarantee that a route contains no mines."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading gives both lower expense and air transport as advantages.",
+              "The reading mentions control centres and people monitoring the systems.",
+              "The reading clearly states that robots cannot prove that no mines are present."
+            ]
+          },
+          {
+            "question": "What is the difference between reducing the risk and proving that no mines are present?",
+            "options": [
+              "Reducing the risk means every mine has been found.",
+              "Both mean that ships face no further danger.",
+              "Reducing the risk makes danger less likely without guaranteeing complete safety."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says a lower risk does not prove that no mines remain.",
+              "Neither statement in the reading guarantees that ships face no danger.",
+              "A lower risk can help ships, but it does not establish that every mine is gone."
+            ]
+          },
+          {
+            "question": "What does working “in shifts” mean in this reading?",
+            "options": [
+              "Working only when a robot returns",
+              "Taking turns during different working periods",
+              "Working together without any breaks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“In shifts” describes how working periods are shared, not when robots return.",
+              "“In shifts” means different groups take turns working.",
+              "“In shifts” means groups take turns; it does not mean everyone works continuously."
+            ]
+          },
+          {
+            "question": "What does “conventional” describe in the comparison between mine-hunting systems?",
+            "options": [
+              "Ships following the traditional approach",
+              "Systems that operate entirely on their own",
+              "Equipment that can only travel by air"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Conventional” refers to the usual or traditional approach.",
+              "“Autonomous” describes the ability to operate without constant human control.",
+              "“Conventional” does not describe a method of transport."
+            ]
+          },
+          {
+            "question": "For a new example about equipment checks, which sentence uses the present simple passive?",
+            "options": [
+              "The team checks the equipment before each trip.",
+              "The equipment was checked before the last trip.",
+              "The equipment is checked before each trip."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is grammatical, but “checks” is active: the subject performs the action.",
+              "This is grammatical, but “was checked” is past simple passive.",
+              "“Is checked” uses “is” plus a past participle to describe a regular process."
+            ]
+          },
+          {
+            "question": "Why might people still worry even when robot mine hunters are being used?",
+            "options": [
+              "Robots have made the number of mines increase.",
+              "The number of mines that may be present remains uncertain.",
+              "Marine insurers have stopped checking sea routes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not say robots increase the number of mines.",
+              "Neil Roberts links uncertainty about possible mines with how people feel.",
+              "The reading does not say insurers have stopped checking routes."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The conflict in the Gulf gives the US an opportunity to test robot systems designed to find sea mines.",
+          "Modern sea mines rest on the seabed and explode when they detect sound or magnetic signals from a passing ship.",
+          "Even the threat of these weapons can stop a group of tankers from sailing.",
+          "Traditionally, specialist mine-hunting ships have carried crews of around 80 people.",
+          "To keep people away from danger, autonomous systems that can operate on their own are monitored from shore.",
+          "Some systems may need only 20 people, who work in shifts on land.",
+          "A Thales robot boat carries sensors that detect mines using sonar, a technology that uses sound to find objects.",
+          "It pulls equipment that produces a detailed three-dimensional picture of the seabed, using artificial intelligence to improve the image.",
+          "Compared with conventional mine-hunting ships, autonomous systems are cheaper and can be transported by air with their control centres.",
+          "The report says US robot minehunters can either blow up a mine or mark its location as a place to avoid.",
+          "The report also explains that robots can reduce the risk but cannot prove that no mines are present.",
+          "Neil Roberts, who speaks for marine insurers, says uncertainty about how many mines may be present affects how people feel."
+        ],
+        "sentence_evidence": [
+          "The conflict in the Gulf is an opportunity for the US to test its autonomous mine-hunting systems.",
+          "Modern mines rest on the seabed and detonate when they detect an acoustic or magnetic signal, triggering a pressure wave that will break the keel of a passing vessel.",
+          "The technology itself is not difficult or costly, but the mere threat can stop a tanker fleet from sailing.",
+          "Finding sea mines has traditionally been the job of specialist mine-hunting vessels, with crews of around 80 sailors.",
+          "To keep humans out of harm's way, an increasing amount of the work is done by systems that are autonomous and monitored from the shore.",
+          "They might only need 20 personnel, working in shifts on land. With the recruitment and retention challenges facing Nato navies these highly-portable robot systems are very attractive.",
+          "The Thales Uncrewed Surface Vehicle (USV) is packed with sensors programmed to detect mines via sonar that was developed for the oil and gas industries.",
+          "It tows a 5m long rectangular box, similar to a large torpedo, that takes a hi-resolution look at the seabed and creates a 3D picture refined by AI. The latest mines are designed to blend into their surroundings and the software spots anything that looks like a mine.",
+          "Autonomous systems are cheaper than conventional minehunters, plus they can be deployed, along with containerised control centres, by air.",
+          "He says US robot minehunters can either blow up a mine or just mark the spot as somewhere to avoid.",
+          "\"There is a bunch of ways to look for a mine using robot boats or robot subs, and while you can't prove the negative, that no mines are there, you can reduce the risk.\"",
+          "Neil Roberts speaks for insurers at Lloyd's of London on marine matters and says the psychological impact of the mine threat is inescapable, as is the uncertainty around just how many mines, if any, are out there."
+        ],
+        "editorial_check": {
+          "date": "2026-11-11T03:38:51.364970+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct reading targets, including “threat”, “in shifts” and “conventional”, have clear contextual definitions and avoid reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting preserves qualifications through “may”, “around” and “cannot prove”, with consistent, supportive teaching language."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Manageable sentences explain “autonomous” and “sonar”; the exact grammar quotation correctly demonstrates “are monitored”."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Questions combine comprehension, staffing qualifications, risk versus certainty, contextual vocabulary and present simple passive transfer."
+            }
+          },
+          "content_digest": "5473cd9fd1bdbc4eaaf5d4d513ffea489aca7087bcbb5ba5a29255e5ac4e8283"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Why can robotic searches reduce navigational risk without establishing conclusively that no mines are present?",
+          "If you advised a shipping company, what evidence would you seek before recommending passage along the Omani route?"
+        ],
+        "title": "Robot Minehunters Confront Hidden Dangers in the Gulf",
+        "overview": "The Gulf conflict is testing robotic mine-hunting systems whose operational advantages coexist with persistent questions about safety, coordination and confidence.",
+        "topic": "Maritime security and robotic mine hunting",
+        "vocabulary": [
+          {
+            "term": "mere prospect",
+            "part_of_speech": "noun phrase",
+            "definition": "The possibility alone, emphasised as sufficient to produce an effect without the event actually occurring."
+          },
+          {
+            "term": "detonate",
+            "part_of_speech": "verb",
+            "definition": "To explode when an explosive mechanism is activated."
+          },
+          {
+            "term": "acoustic",
+            "part_of_speech": "adjective",
+            "definition": "Relating to sound, particularly its detection or use as a signal."
+          },
+          {
+            "term": "keel",
+            "part_of_speech": "countable noun",
+            "definition": "The main structural backbone along the bottom of a vessel."
+          },
+          {
+            "term": "retention",
+            "part_of_speech": "uncountable noun",
+            "definition": "An organisation's ability to keep its existing employees or personnel."
+          },
+          {
+            "term": "refined",
+            "part_of_speech": "past participle",
+            "definition": "Made more precise or detailed through further processing."
+          },
+          {
+            "term": "blend into",
+            "part_of_speech": "phrasal verb",
+            "definition": "To resemble the surrounding environment closely enough to become difficult to distinguish."
+          },
+          {
+            "term": "deployed",
+            "part_of_speech": "past participle",
+            "definition": "Moved into position and made available for operational use."
+          },
+          {
+            "term": "distributed force",
+            "part_of_speech": "noun phrase",
+            "definition": "A coordinated military force whose separate units operate together through shared information."
+          },
+          {
+            "term": "inescapable",
+            "part_of_speech": "adjective",
+            "definition": "Impossible to avoid or disregard when considering a situation."
+          }
+        ],
+        "grammar": {
+          "concept": "Conditional inversion with “were” and a to-infinitive",
+          "explanation": "Use “were + subject + to-infinitive” instead of “if + subject + were to” to frame a hypothetical future situation in a formal register. This structure does not itself indicate past time or establish how likely the outcome is.",
+          "example_quote": "Were the Royal Navy's proposed hybrid fleet to succeed, Prest argues, its drones and conventional warships would need to operate as a single distributed force, sharing data."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the central argument of the brief?",
+            "options": [
+              "Robotic mine hunting offers operational advantages while leaving questions about coordination and confidence unresolved.",
+              "Robotic mine hunting primarily addresses personnel shortages, with navigational safety playing a secondary role.",
+              "Robotic mine hunting has established that the Gulf's remaining obstacles are psychological rather than physical."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief combines reduced human exposure and easier deployment with the continuing need for coordination and confidence in safety.",
+              "Personnel pressures help explain the systems' appeal, but reducing human exposure and assessing mine risks are central to the account.",
+              "The brief does not establish that physical dangers have disappeared; it distinguishes reduced risk from proof that mines are absent."
+            ]
+          },
+          {
+            "question": "What does “mere prospect” emphasise in the account of tanker fleets?",
+            "options": [
+              "A possibility becomes commercially significant only after a mine is detected.",
+              "The possibility alone can influence behaviour without a confirmed encounter.",
+              "The anticipated disruption is too slight to affect sailing decisions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The emphasis is that a confirmed encounter is unnecessary for sailing to be disrupted.",
+              "“Mere prospect” presents the possibility itself as sufficient to prevent a fleet from sailing.",
+              "The phrase emphasises the possibility's practical significance rather than minimising its effects."
+            ]
+          },
+          {
+            "question": "Which account correctly distinguishes what activates a seabed mine from what damages a passing vessel?",
+            "options": [
+              "An acoustic or magnetic signal triggers detonation, and the resulting pressure wave can break the keel.",
+              "A pressure wave triggers detonation, after which the mine detects an acoustic or magnetic signal.",
+              "An acoustic or magnetic signal triggers detonation, but damage requires the mine to strike the keel directly."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The signal is the trigger, while the pressure wave produced by the explosion is the mechanism capable of breaking the keel.",
+              "This reverses the sequence: signal detection precedes detonation, and the pressure wave follows it.",
+              "The brief attributes the damage to a pressure wave; it does not establish direct contact as a requirement."
+            ]
+          },
+          {
+            "question": "Which interpretation of the personnel comparison is justified?",
+            "options": [
+              "Every robotic system has a fixed staffing requirement of exactly 20 people.",
+              "The figure of 20 counts people aboard each robotic vessel, excluding personnel ashore.",
+              "A possible reduction in staffing makes robotic systems attractive to navies struggling to recruit and retain personnel."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“May require only 20 personnel” describes a possibility, not a universal staffing rule.",
+              "The reading places these personnel ashore, working in shifts, rather than aboard each robotic vessel.",
+              "The brief explicitly connects potentially smaller teams with recruitment and retention difficulties."
+            ]
+          },
+          {
+            "question": "What distinction does “retention” add to the discussion of recruitment?",
+            "options": [
+              "It concerns keeping existing personnel rather than attracting new personnel.",
+              "It concerns preserving equipment rather than replacing damaged vessels.",
+              "It concerns maintaining continuous surveillance rather than assessing mine risks."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Recruitment” concerns bringing people into an organisation, whereas “retention” concerns keeping those already serving.",
+              "In this passage, “retention” refers to personnel, not the preservation of equipment.",
+              "Monitoring appears elsewhere in the brief, but it is not the contextual meaning of “retention”."
+            ]
+          },
+          {
+            "question": "Which account correctly distinguishes the functions of the Thales system's technology?",
+            "options": [
+              "Sonar establishes that suspicious objects are mines, while software only records their positions.",
+              "Sonar supports detection, while software refines seabed imagery and identifies objects resembling mines.",
+              "Sonar detects mines by their magnetic signals, while software produces the seabed image."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes identifying objects resembling mines, not conclusive identification by sonar or software limited to recording positions.",
+              "This accurately combines the stated roles of sound-based detection, image processing and recognition software.",
+              "The reading defines sonar as sound-based sensing; magnetic signals appear in its explanation of mine activation."
+            ]
+          },
+          {
+            "question": "Which practical advantage accompanies the lower price of robotic systems?",
+            "options": [
+              "Their control centres are integrated into the towed seabed-scanning device.",
+              "Their transport by air removes the need for coordination across the fleet.",
+              "They can be transported by air together with control centres housed in containers."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes the towed scanning device and container-based control centres separately; it does not place the centres inside the device.",
+              "Air transport concerns deployment; Prest's argument still requires coordinated operation and shared data.",
+              "The reading explicitly identifies air transport of both systems and control centres as an advantage."
+            ]
+          },
+          {
+            "question": "What follows from the distinction between reducing risk and proving that no mines are present?",
+            "options": [
+              "A search can provide useful reassurance without establishing complete absence.",
+              "A search that finds no mines demonstrates that its detection technology has failed.",
+              "Any remaining doubt establishes that mines are present along the route."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The distinction allows searches to improve confidence while recognising the limits of what their results establish.",
+              "The brief does not equate an absence of detections with equipment failure.",
+              "Doubt about absence is not proof of presence; the brief preserves that distinction."
+            ]
+          },
+          {
+            "question": "What does Prest's proposed “distributed force” require beyond acquiring individual robotic vessels?",
+            "options": [
+              "Replacing conventional warships before robotic vessels can contribute.",
+              "Integrating drones and conventional warships through coordinated operation and shared data.",
+              "Allowing each vessel to function independently of the wider fleet's information."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The proposed hybrid fleet explicitly combines drones with conventional warships.",
+              "The requirement concerns how the fleet operates together, particularly its sharing of data.",
+              "Operation without shared information conflicts with the coordination Prest considers necessary."
+            ]
+          },
+          {
+            "question": "Which sentence uses the specific “were + subject + to-infinitive” pattern to frame a hypothetical future expansion of analysis during missions?",
+            "options": [
+              "Had analysis during missions become more widespread, more data would have been processed before vessels returned.",
+              "Were analysis during missions more widespread, more data could be processed before vessels returned.",
+              "Were analysis during missions to become more widespread, more data could be processed before vessels returned."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is a grammatical past counterfactual using “had”, but it does not use the requested pattern.",
+              "This is a grammatical inverted conditional describing a hypothetical state, but it contains no to-infinitive after the subject.",
+              "“Were analysis during missions to become” follows the requested pattern and frames a hypothetical future development."
+            ]
+          },
+          {
+            "question": "How should the figure of approximately 75% of pre-conflict shipments be interpreted?",
+            "options": [
+              "It proves that the Omani route is entirely free of mines.",
+              "It is a reported shipping level accompanying a US assessment that the mine risk is being managed.",
+              "It measures the proportion of suspected mines that robotic systems have removed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reported shipping level does not prove complete absence of mines, even alongside the US claim that the route has been cleared.",
+              "The brief reports shipping activity alongside a US claim about clearance and an assessment of risk management.",
+              "The percentage refers to shipping activity relative to its pre-conflict level, not the number of mines removed."
+            ]
+          },
+          {
+            "question": "How does the brief distinguish anticipated analysis capabilities from the psychological impact of possible mines?",
+            "options": [
+              "More analysis during missions is forecast, while psychological concern is described as persistent.",
+              "Analysis during missions is presented as having already eliminated the concern described by Roberts.",
+              "Persistent psychological concern is offered as evidence that analysis during missions has no operational value."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief presents expanded analysis as a forecast and attributes continuing psychological concern to Roberts.",
+              "The forecast is not presented as fully achieved, and the brief does not claim that concern has disappeared.",
+              "Continuing concern does not establish that faster analysis lacks value; the brief makes no such judgment."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Gulf conflict is giving the US an opportunity to test its autonomous mine-hunting systems.",
+          "The mere prospect of sea mines can prevent a tanker fleet from sailing, even though the devices themselves need not be expensive or technically complex.",
+          "Modern seabed mines detonate in response to acoustic or magnetic signals, producing a pressure wave capable of breaking a passing vessel's keel.",
+          "Traditionally, locating mines has required dedicated vessels with crews of around 80 sailors.",
+          "To reduce human exposure to danger, an increasing share of the work is being transferred to autonomous systems monitored from shore.",
+          "These systems may require only 20 personnel working ashore in shifts, making them attractive to Nato navies facing recruitment and retention difficulties.",
+          "A Thales uncrewed surface vessel uses sonar, a sound-based sensing technology, to detect mines.",
+          "It tows a five-metre device that scans the seabed and produces a detailed three-dimensional image refined by software.",
+          "The software identifies objects resembling mines, including modern designs intended to blend into their surroundings.",
+          "Besides being cheaper than conventional minehunters, autonomous systems can be deployed by air alongside control centres housed in containers.",
+          "Robotic searches can reduce risk without proving conclusively that no mines are present.",
+          "Were the Royal Navy's proposed hybrid fleet to succeed, Prest argues, its drones and conventional warships would need to operate as a single distributed force, sharing data.",
+          "One forecast is that more vessel data will be analysed during missions rather than only after a robotic vessel returns.",
+          "Neil Roberts, who represents insurers at Lloyd's of London on marine matters, considers the psychological impact of possible mines inescapable, particularly when their number and even their presence remain uncertain.",
+          "The report states that the US says it has cleared the Omani route and believes the mine risk is being managed, with shipments at approximately 75% of pre-conflict levels."
+        ],
+        "sentence_evidence": [
+          "The conflict in the Gulf is an opportunity for the US to test its autonomous mine-hunting systems.",
+          "The technology itself is not difficult or costly, but the mere threat can stop a tanker fleet from sailing.",
+          "Modern mines rest on the seabed and detonate when they detect an acoustic or magnetic signal, triggering a pressure wave that will break the keel of a passing vessel.",
+          "Finding sea mines has traditionally been the job of specialist mine-hunting vessels, with crews of around 80 sailors.",
+          "To keep humans out of harm's way, an increasing amount of the work is done by systems that are autonomous and monitored from the shore.",
+          "They might only need 20 personnel, working in shifts on land. With the recruitment and retention challenges facing Nato navies these highly-portable robot systems are very attractive.",
+          "The Thales Uncrewed Surface Vehicle (USV) is packed with sensors programmed to detect mines via sonar that was developed for the oil and gas industries.",
+          "It tows a 5m long rectangular box, similar to a large torpedo, that takes a hi-resolution look at the seabed and creates a 3D picture refined by AI. The latest mines are designed to blend into their surroundings and the software spots anything that looks like a mine.",
+          "It tows a 5m long rectangular box, similar to a large torpedo, that takes a hi-resolution look at the seabed and creates a 3D picture refined by AI. The latest mines are designed to blend into their surroundings and the software spots anything that looks like a mine.",
+          "Autonomous systems are cheaper than conventional minehunters, plus they can be deployed, along with containerised control centres, by air.",
+          "\"There is a bunch of ways to look for a mine using robot boats or robot subs, and while you can't prove the negative, that no mines are there, you can reduce the risk.\"",
+          "The Royal Navy recently announced its concept of a hybrid navy - mixing drones with conventional warships. But Prest thinks for this vision to succeed the fleet must operate as one distributed force, sharing data in what he terms a cognitive architecture.",
+          "\"We'll see more use of autonomy but also the missions and capability will expand. And AI will be analysing data from those vessels on the spot as opposed to data being analysed when a drone returns.\"",
+          "Neil Roberts speaks for insurers at Lloyd's of London on marine matters and says the psychological impact of the mine threat is inescapable, as is the uncertainty around just how many mines, if any, are out there.",
+          "\"The US says it has cleared the Omani route and believes the mine threat is being managed, with shipments running at about 75% of pre-conflict levels.\""
+        ],
+        "editorial_check": {
+          "date": "2026-11-11T03:45:15.634477+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct reading-based targets, including “mere prospect” and “retention”, provide useful advanced distinctions without borrowing reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Natural reporting preserves attribution and qualification through “may require”, “One forecast” and “the US says”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the exact grammar quotation demonstrates the explained formal conditional inversion."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct quiz items test synthesis, qualified claims, contextual meaning and grammatical form with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "ebf2290adb619420eb4384f76856dea601862f77d3bc106b859cc2da64878a09"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

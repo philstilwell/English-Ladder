@@ -6947,6 +6947,133 @@
         "https://dictionary.cambridge.org/grammar/british-grammar/negation_2",
         "https://www.cambridgeenglish.org/fr/Images/682580-advanced-grammar-in-use-4-sample.pdf"
       ]
+    },
+    {
+      "number": 60,
+      "title": "Such as or for example? Choosing the form of an example",
+      "level": "A2–B1",
+      "category": "Connecting ideas",
+      "goal": "Choose an example phrase or an example sentence by understanding how it connects to the main idea.",
+      "rules": [
+        "Such as connects a category to examples within it: ‘I enjoy hobbies such as painting and cooking.’ Hobbies names the category; painting and cooking name two members of it. Here the -ing forms name activities. The list fits inside the sentence, so we do not put a new statement such as I paint directly after hobbies such as. For this pattern, use hobbies such as painting, not hobbies such as I paint.",
+        "For example signals that something illustrates an idea. It can introduce a complete example sentence: ‘I enjoy creative hobbies. For example, I paint.’ I is the subject and paint is the verb; together they make a statement that can stand on its own. In standard written English, use a period before this new sentence and a comma after For example. A semicolon also works: ‘I enjoy creative hobbies; for example, I paint.’ For example is a transition, not a joining word like and, so commas alone should not join these two complete statements.",
+        "These are useful patterns, not a rule that for example always needs a verb or a new sentence. It can also introduce a list: ‘I enjoy creative hobbies—for example, painting and cooking.’ It can appear inside a statement: ‘Painting, for example, helps me relax.’ Such as normally introduces examples within a sentence, often nouns or activity names. Choose punctuation to match the structure and whether the examples are essential or added information. Both phrases introduce examples rather than a complete inventory; do not assume the speaker has named every hobby."
+      ],
+      "cards": [
+        {
+          "label": "SUCH AS: CATEGORY AND EXAMPLES",
+          "example": "I enjoy hobbies such as painting and cooking.",
+          "note": "Hobbies is the category. Painting and cooking name example activities inside that category, so the list fits into the same sentence."
+        },
+        {
+          "label": "FOR EXAMPLE: A COMPLETE STATEMENT",
+          "example": "I enjoy creative hobbies. For example, I paint.",
+          "note": "The second sentence illustrates the first. I paint has its own subject and verb, so give this statement its own sentence boundary."
+        },
+        {
+          "label": "FOR EXAMPLE CAN ALSO INTRODUCE A LIST",
+          "example": "I enjoy creative hobbies—for example, painting and cooking.",
+          "note": "The words after for example name activities rather than making a new statement. A separate subject and verb are not always required."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Complete this category-and-examples pattern: “I enjoy hobbies such as ___.”",
+          "options": [
+            {
+              "text": "I paint and I cook",
+              "correct": false,
+              "feedback": "Those words make statements with their own subject and verbs. In this pattern, name example hobbies instead: painting and cooking."
+            },
+            {
+              "text": "painting and cooking",
+              "correct": true,
+              "feedback": "The -ing forms name two activities. They can be examples of the category hobbies within the same sentence."
+            },
+            {
+              "text": "paint and cook",
+              "correct": false,
+              "feedback": "Here you need activity names as examples of hobbies. Use painting and cooking; the bare verbs paint and cook do not fill this slot naturally."
+            }
+          ]
+        },
+        {
+          "prompt": "Choose the standard written version that introduces “I paint” as a complete example sentence.",
+          "options": [
+            {
+              "text": "I enjoy creative hobbies. For example, I paint.",
+              "correct": true,
+              "feedback": "I paint is a complete statement with its own subject and verb. The period gives it a sentence boundary, and for example signals how it illustrates the first idea."
+            },
+            {
+              "text": "I enjoy creative hobbies such as I paint.",
+              "correct": false,
+              "feedback": "After hobbies such as, use an example activity name such as painting. To introduce the statement I paint, use a new sentence with For example."
+            },
+            {
+              "text": "I enjoy creative hobbies, for example, I paint.",
+              "correct": false,
+              "feedback": "Both I enjoy creative hobbies and I paint can stand alone. In standard written English, for example does not let commas alone join them; use a period or semicolon before it."
+            }
+          ]
+        },
+        {
+          "prompt": "Why is “I enjoy creative hobbies—for example, painting and cooking” acceptable?",
+          "options": [
+            {
+              "text": "For example always turns the next word into a verb.",
+              "correct": false,
+              "feedback": "It does not change a word's grammatical form. Here it introduces painting and cooking as example activities."
+            },
+            {
+              "text": "For example can introduce activity names as well as a complete statement.",
+              "correct": true,
+              "feedback": "Here the examples are names of hobbies. For example signals an illustration; it does not always require a new subject and verb."
+            },
+            {
+              "text": "For example must list every hobby the speaker enjoys.",
+              "correct": false,
+              "feedback": "It introduces examples, not necessarily a complete inventory. The speaker may enjoy other hobbies too."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You want one sentence naming two examples of outdoor activities. Choose the natural category-and-examples pattern.",
+        "options": [
+          {
+            "text": "I enjoy outdoor activities. Such as hiking and cycling.",
+            "correct": false,
+            "feedback": "The second part is a fragment in this standard sentence pattern. Attach such as hiking and cycling to the category outdoor activities in the first sentence."
+          },
+          {
+            "text": "I enjoy outdoor activities such as I hike and I cycle.",
+            "correct": false,
+            "feedback": "I hike and I cycle are statements, not activity names in this slot. Name the activities with hiking and cycling, or introduce a complete example sentence with For example."
+          },
+          {
+            "text": "I enjoy outdoor activities such as hiking and cycling.",
+            "correct": true,
+            "feedback": "Outdoor activities is the category; hiking and cycling name two examples. Such as links those examples to the category within one sentence."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-60-such-as-for-example-student-workbook.pdf",
+        "concept-60-such-as-for-example-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-12",
+      "related": [
+        6,
+        42,
+        40
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/such-as",
+        "https://www.open.edu/openlearn/mod/oucontent/view.php?id=19204&section=3.2",
+        "https://owl.purdue.edu/owl/general_writing/punctuation/punctuation/index.html",
+        "https://www.dictionary.com/browse/for-example"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

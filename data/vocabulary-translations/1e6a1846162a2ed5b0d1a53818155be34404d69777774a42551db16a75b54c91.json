@@ -1,0 +1,139 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The report says Jensen Huang has left his job as the leader of Nvidia.",
+      "He left after reports about relationships with people other than his wife.",
+      "US politicians want to ask him questions about a possible Chinese spy.",
+      "A spy secretly collects information for another country.",
+      "Nvidia has promised to check all the information it can get.",
+      "The company makes computer chips, small parts that help computers work.",
+      "Colette Kress is the company's leader for now.",
+      "She called an emergency meeting to talk about the company's future.",
+      "Nvidia is looking for a new leader."
+    ],
+    "vocabulary": [
+      {
+        "term": "leader",
+        "part_of_speech": "noun",
+        "definition": "A person who tells a group or company what to do."
+      },
+      {
+        "term": "questions",
+        "part_of_speech": "plural noun",
+        "definition": "Things you ask when you want answers."
+      },
+      {
+        "term": "check",
+        "part_of_speech": "verb",
+        "definition": "To look at something carefully to learn more about it."
+      },
+      {
+        "term": "for now",
+        "part_of_speech": "adverb phrase",
+        "definition": "At this time, but this may change later."
+      },
+      {
+        "term": "emergency meeting",
+        "part_of_speech": "noun phrase",
+        "definition": "A meeting people need to have very soon because of a serious problem."
+      },
+      {
+        "term": "looking for",
+        "part_of_speech": "verb phrase, present participle",
+        "definition": "Trying to find someone or something."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "集団や会社に、何をするかを指示する人。",
+      "ko": "단체나 회사가 무엇을 해야 하는지 지시하는 사람.",
+      "zh-Hans": "告诉一个团体或公司该做什么的人。",
+      "es": "Una persona que indica a un grupo o a una empresa qué hacer.",
+      "pt-BR": "Uma pessoa que diz a um grupo ou a uma empresa o que fazer.",
+      "fr": "Une personne qui dit à un groupe ou à une entreprise ce qu’il faut faire.",
+      "de": "Eine Person, die einer Gruppe oder einem Unternehmen sagt, was zu tun ist."
+    },
+    {
+      "id": 1,
+      "ja": "答えを知りたいときに尋ねること。",
+      "ko": "답을 알고 싶을 때 물어보는 것들.",
+      "zh-Hans": "想得到回答时提出的问题。",
+      "es": "Cosas que preguntas cuando quieres obtener respuestas.",
+      "pt-BR": "Coisas que você pergunta quando quer obter respostas.",
+      "fr": "Des choses que l’on demande quand on veut obtenir des réponses.",
+      "de": "Dinge, die man fragt, wenn man Antworten haben möchte."
+    },
+    {
+      "id": 2,
+      "ja": "何かについてもっと知るために、注意深く調べること。",
+      "ko": "무언가에 대해 더 알아보기 위해 주의 깊게 살펴보는 것.",
+      "zh-Hans": "为了进一步了解某事物而仔细查看。",
+      "es": "Examinar algo con atención para saber más sobre ello.",
+      "pt-BR": "Examinar algo com atenção para saber mais sobre isso.",
+      "fr": "Examiner quelque chose attentivement pour en savoir plus à son sujet.",
+      "de": "Etwas genau ansehen, um mehr darüber zu erfahren."
+    },
+    {
+      "id": 3,
+      "ja": "今の時点ではそうだが、後で変わるかもしれないこと。",
+      "ko": "지금은 그렇지만 나중에는 달라질 수 있다는 뜻.",
+      "zh-Hans": "目前是这样，但以后可能会改变。",
+      "es": "En este momento, aunque esto puede cambiar más adelante.",
+      "pt-BR": "Neste momento, mas isso pode mudar depois.",
+      "fr": "Pour le moment, mais cela peut changer plus tard.",
+      "de": "Zum jetzigen Zeitpunkt, wobei sich dies später ändern kann."
+    },
+    {
+      "id": 4,
+      "ja": "深刻な問題があるため、すぐに開く必要がある会議。",
+      "ko": "심각한 문제 때문에 아주 빨리 열어야 하는 회의.",
+      "zh-Hans": "因为出现严重问题而需要尽快召开的会议。",
+      "es": "Una reunión que debe celebrarse muy pronto debido a un problema grave.",
+      "pt-BR": "Uma reunião que precisa acontecer muito em breve por causa de um problema sério.",
+      "fr": "Une réunion qui doit avoir lieu très rapidement en raison d’un problème grave.",
+      "de": "Ein Treffen, das wegen eines ernsten Problems sehr bald stattfinden muss."
+    },
+    {
+      "id": 5,
+      "ja": "誰かや何かを見つけようとしていること。",
+      "ko": "누군가나 무언가를 찾으려고 하는 중인 것.",
+      "zh-Hans": "正在努力找到某个人或某个事物。",
+      "es": "Estar tratando de encontrar a alguien o algo.",
+      "pt-BR": "Estar tentando encontrar alguém ou alguma coisa.",
+      "fr": "Être en train d’essayer de trouver quelqu’un ou quelque chose.",
+      "de": "Gerade versuchen, jemanden oder etwas zu finden."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-13T03:47:55.925452+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

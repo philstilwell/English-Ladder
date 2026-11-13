@@ -1,0 +1,805 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-13",
+  "release_iso": "2026-11-13T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Fri, 13 Nov 2026 02:39:00 GMT",
+    "retrieved_at": "2026-11-13T03:30:13.174278+00:00",
+    "title": "Scandal-hit Nvidia CEO Jensen Huang quits, plunging AI chipmaking giant into turmoil",
+    "summary": "US lawmakers now want to question him over whether one of his alleged relationships was with a Chinese spy.",
+    "evidence_text": "Jensen Huang has abruptly quit as chief executive of AI chipmaking giant Nvidia after revelations of alleged extramarital affairs, in a stunning fall from grace that sent shockwaves from Silicon Valley to Capitol Hill.\nNvidia is now under scrutiny from US lawmakers in Washington DC demanding Huang answer questions over whether one of his alleged relationships was with a Chinese spy.\nNvidia has said it has \"no reason to believe that either national security or Nvidia secrets were compromised\", but pledged that its independent inquiry would look at all available information.\nThe company's meteoric rise had been led by Jensen Huang, who became a major booster of the AI industry, which relies on Nvidia for the powerful computer chips it manufactures.\nNvidia is now hunting a permanent replacement for Huang. Chief Financial Officer Colette Kress was named on Thursday as interim CEO.\nNvidia's interim CEO, Colette Kress, called an emergency meeting of her executive team to discuss the company's future.\nHis alleged conduct not only potentially crossed professional boundaries, but has made Nvidia the target of questions from US politicians who have expressed concern about national security risks.\nOne of the world's most valuable companies as a result of the AI boom, Nvidia has lost $550bn (£415bn) in stock market value in just five days as the scandal dominated headlines.\nBut as AI technology evolved in the last four years into chatbots and large language models, companies building AI tools suddenly required huge numbers of the Nvidia computer chips that could process large amounts of data.\nInitially those chips were designed for computer gaming.\nMany staff have earned millions of dollars in compensation through their ability to cash out their Nvidia shares as the stock soared.\nNvidia's value makes up about 7% of the S&P 500 index. That index is offered as a popular index fund in US retirement savings accounts.\nThose account balances rise and fall with the changes of the stock market.\nAnd US Attorney General Todd Blanche said on Thursday the Department of Justice had not yet drawn any conclusions about whether Alice Huang was engaged in espionage for Beijing.\nSenators Elizabeth Warren and Chris Coons, along with other Democrats on the House Foreign Affairs Committee, publicly demanded that Huang brief Congress on the matter.\nIf he refuses to appear voluntarily before any committee that calls him, he could be subpoenaed, one Senate staff member told the BBC.\nHuang had been widely expected to weather the storm after the first affair became public, even as Nvidia announced it had launched an investigation into whether its CEO had been \"the target of a foreign intelligence effort\".\nOne current Nvidia staff member told the BBC that the initial reports of his infidelity were more or less brushed off by rank-and-file workers inside the company.\nIts market value rose by more than 470% in the past five years, peaking just a few weeks ago. It is now down by 31% against a backdrop of wider uncertainty in the tech sector.",
+    "evidence_retrieved_at": "2026-11-13T03:30:13.174278+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why is Nvidia looking for a new leader? Start with \"Nvidia needs a new leader because ...\".",
+          "What would you or an imaginary worker ask at the company meeting? Start with \"I would ask about ...\"."
+        ],
+        "title": "Report Says Jensen Huang Has Left Nvidia's Top Job",
+        "overview": "A report describes a change at Nvidia and questions about Huang's private life.",
+        "topic": "A change of leader at Nvidia",
+        "vocabulary": [
+          {
+            "term": "leader",
+            "part_of_speech": "noun",
+            "definition": "A person who tells a group or company what to do."
+          },
+          {
+            "term": "questions",
+            "part_of_speech": "plural noun",
+            "definition": "Things you ask when you want answers."
+          },
+          {
+            "term": "check",
+            "part_of_speech": "verb",
+            "definition": "To look at something carefully to learn more about it."
+          },
+          {
+            "term": "for now",
+            "part_of_speech": "adverb phrase",
+            "definition": "At this time, but this may change later."
+          },
+          {
+            "term": "emergency meeting",
+            "part_of_speech": "noun phrase",
+            "definition": "A meeting people need to have very soon because of a serious problem."
+          },
+          {
+            "term": "looking for",
+            "part_of_speech": "verb phrase, present participle",
+            "definition": "Trying to find someone or something."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple present for facts",
+          "explanation": "Use the simple present for facts. With one company, usually add \"-s\" to the verb, as in \"makes\". With \"they\" or a plural noun, use the verb without \"-s\". Use \"help\" after \"chips\" because \"chips\" is plural.",
+          "example_quote": "The company makes computer chips, small parts that help computers work."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news in the reading?",
+            "options": [
+              "Nvidia has stopped making computer chips.",
+              "Huang has left, and Nvidia needs a new leader.",
+              "Kress has left her job at Nvidia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says Nvidia makes computer chips; it does not say this has stopped.",
+              "The report says Huang has left, and Nvidia is looking for a new leader.",
+              "Huang has left his job; Kress is leading Nvidia for now."
+            ]
+          },
+          {
+            "question": "What do US politicians want to ask Huang about?",
+            "options": [
+              "A possible Chinese spy.",
+              "The design of new computer chips.",
+              "The date of the company meeting."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "They want to ask about a possible spy; the reading does not say anyone has proved this.",
+              "The reading mentions computer chips, but the politicians want to ask about a possible spy.",
+              "Kress called a meeting, but the politicians want to ask about a possible spy."
+            ]
+          },
+          {
+            "question": "What does Nvidia make?",
+            "options": [
+              "Computer screens.",
+              "Computer desks.",
+              "Computer chips."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says Nvidia makes computer chips, not screens.",
+              "The reading says Nvidia makes computer chips, not desks.",
+              "Nvidia makes chips, small parts that help computers work."
+            ]
+          },
+          {
+            "question": "What does the reading say about Colette Kress?",
+            "options": [
+              "She has left Nvidia.",
+              "She is leading Nvidia for now.",
+              "She is asking questions for US politicians."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Huang has left his job; Kress is leading the company.",
+              "She is the leader at this time while Nvidia looks for someone.",
+              "The reading says she is leading Nvidia and called a company meeting."
+            ]
+          },
+          {
+            "question": "What did Kress call a meeting to discuss?",
+            "options": [
+              "The company's future.",
+              "A new computer game.",
+              "A move to another country."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "She called the meeting to talk about the company's future.",
+              "The reading does not say the meeting was about a computer game.",
+              "The reading does not say the meeting was about moving to another country."
+            ]
+          },
+          {
+            "question": "What does \"looking for\" mean in \"Nvidia is looking for a new leader\"?",
+            "options": [
+              "Watching.",
+              "Leaving.",
+              "Trying to find."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Looking for\" means trying to find someone, not watching them.",
+              "\"Looking for\" does not mean leaving someone.",
+              "Nvidia is trying to find a new leader."
+            ]
+          },
+          {
+            "question": "Complete this new sentence in the simple present: \"Nvidia's chips ___ computers work.\"",
+            "options": [
+              "helps",
+              "help",
+              "helping"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Use \"help\" because \"chips\" is plural.",
+              "Use \"help\" with the plural noun \"chips\" in the simple present.",
+              "\"Helping\" alone does not complete this simple present sentence."
+            ]
+          },
+          {
+            "question": "What has Nvidia promised to do?",
+            "options": [
+              "Stop making computer chips.",
+              "Check all the information it can get.",
+              "End all company meetings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Nvidia has promised to check all the information it can get; it has not promised to stop making chips.",
+              "The promise covers all the information Nvidia can get; the reading does not say the check is complete.",
+              "Nvidia has promised to check all the information it can get; the reading does not say meetings will end."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The report says Jensen Huang has left his job as the leader of Nvidia.",
+          "He left after reports about relationships with people other than his wife.",
+          "US politicians want to ask him questions about a possible Chinese spy.",
+          "A spy secretly collects information for another country.",
+          "Nvidia has promised to check all the information it can get.",
+          "The company makes computer chips, small parts that help computers work.",
+          "Colette Kress is the company's leader for now.",
+          "She called an emergency meeting to talk about the company's future.",
+          "Nvidia is looking for a new leader."
+        ],
+        "sentence_evidence": [
+          "Jensen Huang has abruptly quit as chief executive of AI chipmaking giant Nvidia after revelations of alleged extramarital affairs, in a stunning fall from grace that sent shockwaves from Silicon Valley to Capitol Hill.",
+          "Jensen Huang has abruptly quit as chief executive of AI chipmaking giant Nvidia after revelations of alleged extramarital affairs, in a stunning fall from grace that sent shockwaves from Silicon Valley to Capitol Hill.",
+          "Nvidia is now under scrutiny from US lawmakers in Washington DC demanding Huang answer questions over whether one of his alleged relationships was with a Chinese spy.",
+          "Nvidia is now under scrutiny from US lawmakers in Washington DC demanding Huang answer questions over whether one of his alleged relationships was with a Chinese spy.",
+          "Nvidia has said it has \"no reason to believe that either national security or Nvidia secrets were compromised\", but pledged that its independent inquiry would look at all available information.",
+          "The company's meteoric rise had been led by Jensen Huang, who became a major booster of the AI industry, which relies on Nvidia for the powerful computer chips it manufactures.",
+          "Nvidia is now hunting a permanent replacement for Huang. Chief Financial Officer Colette Kress was named on Thursday as interim CEO.",
+          "Nvidia's interim CEO, Colette Kress, called an emergency meeting of her executive team to discuss the company's future.",
+          "Nvidia is now hunting a permanent replacement for Huang. Chief Financial Officer Colette Kress was named on Thursday as interim CEO."
+        ],
+        "editorial_check": {
+          "date": "2026-11-13T03:36:41.482771+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct targets occur in the reading; definitions of \"leader\", \"check\" and \"for now\" suit A1–A2."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and everyday wording such as \"leader for now\" suit adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences, an exact grammar quotation and clear examples support understanding. Discussion includes sentence frames and an imaginary-worker alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Eight distinct questions test the main idea, details, \"looking for\" and simple-present agreement with clear answers."
+            }
+          },
+          "content_digest": "95cfbb4b9399617b53414fd0e87e1abf45ba95e2428c0885ee22dcf841649897"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Explain how a fall in Nvidia's share price could affect people who have never worked for the company.",
+          "If you managed a company during an unexpected leadership change, what would you explain to employees first, and why?"
+        ],
+        "title": "Nvidia Faces Reported Leadership and Financial Uncertainty",
+        "overview": "Explore claims in a supplied report about Nvidia's leadership, its financial position and the possible effects on retirement savings.",
+        "topic": "Business leadership and financial uncertainty",
+        "vocabulary": [
+          {
+            "term": "stepped down",
+            "part_of_speech": "phrasal verb, past simple",
+            "definition": "Left an important job or position."
+          },
+          {
+            "term": "allegations",
+            "part_of_speech": "plural noun",
+            "definition": "Claims that someone did something wrong, which have not been proved."
+          },
+          {
+            "term": "market value",
+            "part_of_speech": "noun phrase",
+            "definition": "The total value of a company's shares at their current price."
+          },
+          {
+            "term": "interim",
+            "part_of_speech": "adjective",
+            "definition": "Serving temporarily until someone is chosen for the position permanently."
+          },
+          {
+            "term": "permanent",
+            "part_of_speech": "adjective",
+            "definition": "Intended to continue rather than last for only a short, planned period."
+          },
+          {
+            "term": "inquiry",
+            "part_of_speech": "noun",
+            "definition": "An organized process of examining information to find out what happened."
+          },
+          {
+            "term": "compromised",
+            "part_of_speech": "verb, past participle",
+            "definition": "Put at risk or made less secure."
+          },
+          {
+            "term": "shares",
+            "part_of_speech": "plural noun",
+            "definition": "Units of ownership in a company that people can buy and sell."
+          }
+        ],
+        "grammar": {
+          "concept": "Past simple passive",
+          "explanation": "Use “was” or “were” plus a past participle to form the past simple passive. In the clause about Nvidia's chips, “were originally designed” focuses on the chips and their purpose; the designer is not named.",
+          "example_quote": "The report explains that Nvidia's chips were originally designed for computer gaming."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best summarizes the supplied report?",
+            "options": [
+              "Nvidia is returning to gaming because demand for artificial intelligence tools has ended.",
+              "Nvidia faces a reported leadership change, an inquiry and a large fall in market value.",
+              "Nvidia has completed its inquiry and selected a permanent chief executive."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes demand for chips used in artificial intelligence tools; it does not say that demand has ended.",
+              "The reading connects the reported leadership change with an inquiry and financial uncertainty.",
+              "The reading describes a promised inquiry and a search for a permanent replacement."
+            ]
+          },
+          {
+            "question": "What does “allegations” tell readers about the claims concerning Huang?",
+            "options": [
+              "The claims have been proved.",
+              "The claims have been withdrawn.",
+              "The claims concern possible wrongdoing that has not been proved."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Allegations” does not mean that wrongdoing has been proved.",
+              "“Allegations” does not tell us that the claims have been withdrawn.",
+              "“Allegations” identifies claims of wrongdoing while preserving the distinction between a claim and proof."
+            ]
+          },
+          {
+            "question": "Why does the reading describe Colette Kress as an “interim” chief executive?",
+            "options": [
+              "She is serving temporarily while Nvidia searches for a permanent replacement.",
+              "She has been selected to hold the position permanently.",
+              "She has already left the position."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Interim” describes a temporary appointment during the search for a permanent replacement.",
+              "The reading says the company is still searching for a permanent replacement.",
+              "The reading identifies Kress as the person serving temporarily."
+            ]
+          },
+          {
+            "question": "What does the reported loss of $550 billion describe?",
+            "options": [
+              "Money paid to employees who sold their shares.",
+              "The cost of carrying out the independent inquiry.",
+              "A reduction in the company's total share value."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading discusses employees selling shares separately; it does not identify this figure as employee payments.",
+              "The reading gives no cost for the inquiry.",
+              "“Market value” refers to the total value of the company's shares at their current price."
+            ]
+          },
+          {
+            "question": "Which statement preserves the distinction between Nvidia's position and the promised inquiry?",
+            "options": [
+              "Nvidia said its secrets had been compromised, so the inquiry was complete.",
+              "Nvidia reported no reason to believe its secrets had been compromised, but promised to examine all available information.",
+              "Nvidia said an inquiry was unnecessary because every allegation had been disproved."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading reports no reason to believe secrets had been compromised and does not describe a completed inquiry.",
+              "This correctly connects the company's stated position with its promise to examine the available information.",
+              "The reading describes a promised inquiry and does not say every allegation had been disproved."
+            ]
+          },
+          {
+            "question": "What change in the use of Nvidia's chips does the reading describe?",
+            "options": [
+              "Chips originally designed for gaming became important for processing data in artificial intelligence tools.",
+              "Chips originally designed for artificial intelligence tools later became useful for gaming.",
+              "Companies developing artificial intelligence tools stopped using Nvidia chips to process data."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading connects the chips' original gaming purpose with later demand from companies developing artificial intelligence tools.",
+              "This reverses the order: the chips were originally designed for gaming, and demand from companies developing artificial intelligence tools came later.",
+              "The reading says companies needed Nvidia chips to process data."
+            ]
+          },
+          {
+            "question": "Which connection explains why Nvidia's share price could matter to retirement savers?",
+            "options": [
+              "Nvidia's share price can affect retirement savings only if savers buy its shares directly.",
+              "Retirement account balances stay fixed when share prices change.",
+              "Nvidia is part of an index used in retirement funds, whose balances can change with the stock market."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes a connection through an index used in retirement funds, so buying Nvidia shares directly is not the only possible connection.",
+              "The reading says retirement account balances rise and fall with the stock market.",
+              "This connects Nvidia's place in the index with the way market changes can affect retirement savings."
+            ]
+          },
+          {
+            "question": "Which sentence uses the past simple passive to describe a completed chip design project?",
+            "options": [
+              "The team designed the new chips last year.",
+              "The new chips were designed last year.",
+              "The team was designing the new chips last year."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is grammatical, but its main clause is active: the team performs the action.",
+              "“Were designed” uses “were” plus a past participle to form the past simple passive.",
+              "This is grammatical, but “was designing” is past continuous active, which presents an activity in progress."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The supplied report says Jensen Huang stepped down as Nvidia's chief executive after allegations about his personal conduct.",
+          "It says US politicians have expressed concern about possible national security risks linked to his alleged conduct.",
+          "According to the report, Nvidia lost $550 billion in market value over five days as the scandal dominated headlines.",
+          "It identifies Colette Kress as interim chief executive while the company searches for a permanent replacement for Huang.",
+          "The report says Kress called an emergency meeting of her executive team to discuss the company's future.",
+          "It also says Nvidia promised an independent inquiry that would consider all available information.",
+          "According to the report, Nvidia said it had no reason to believe national security or company secrets had been compromised.",
+          "The report says companies developing artificial intelligence tools suddenly needed large numbers of Nvidia chips to process data.",
+          "The report explains that Nvidia's chips were originally designed for computer gaming.",
+          "According to the report, many employees earned millions of dollars by selling their Nvidia shares as the price rose sharply.",
+          "It says Nvidia represents about 7 percent of the S&P 500 index, which is offered through popular US retirement investment funds.",
+          "The report explains that retirement account balances rise and fall as the stock market changes."
+        ],
+        "sentence_evidence": [
+          "Jensen Huang has abruptly quit as chief executive of AI chipmaking giant Nvidia after revelations of alleged extramarital affairs, in a stunning fall from grace that sent shockwaves from Silicon Valley to Capitol Hill.",
+          "His alleged conduct not only potentially crossed professional boundaries, but has made Nvidia the target of questions from US politicians who have expressed concern about national security risks.",
+          "One of the world's most valuable companies as a result of the AI boom, Nvidia has lost $550bn (£415bn) in stock market value in just five days as the scandal dominated headlines.",
+          "Nvidia is now hunting a permanent replacement for Huang. Chief Financial Officer Colette Kress was named on Thursday as interim CEO.",
+          "Nvidia's interim CEO, Colette Kress, called an emergency meeting of her executive team to discuss the company's future.",
+          "Nvidia has said it has \"no reason to believe that either national security or Nvidia secrets were compromised\", but pledged that its independent inquiry would look at all available information.",
+          "Nvidia has said it has \"no reason to believe that either national security or Nvidia secrets were compromised\", but pledged that its independent inquiry would look at all available information.",
+          "But as AI technology evolved in the last four years into chatbots and large language models, companies building AI tools suddenly required huge numbers of the Nvidia computer chips that could process large amounts of data.",
+          "Initially those chips were designed for computer gaming.",
+          "Many staff have earned millions of dollars in compensation through their ability to cash out their Nvidia shares as the stock soared.",
+          "Nvidia's value makes up about 7% of the S&P 500 index. That index is offered as a popular index fund in US retirement savings accounts.",
+          "Those account balances rise and fall with the changes of the stock market."
+        ],
+        "editorial_check": {
+          "date": "2026-11-13T03:40:29.767915+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "quiz"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct targets occur in the reading, including “market value,” “interim” and “inquiry.” Definitions suit B1–B2, and no reserved targets are reused."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting consistently attributes claims through wording such as “According to the report” and preserves the uncertainty of allegations."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and feedback are clear. The exact grammar quotation demonstrates “were originally designed,” accurately illustrating the past simple passive."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and eight quiz questions meet the minimums. Tasks cover summary, contextual vocabulary, qualifications, financial connections and grammar transfer."
+            }
+          },
+          "content_digest": "bd9c726f8bb29fb5c88ba0c0f40cf0faf0630a307b5164841778326dde34c59d"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "How can Nvidia’s reported assessment that it had no reason to believe national security or company secrets were compromised coexist with an ongoing investigation?",
+          "What should a company disclose during an unresolved leadership investigation to maintain confidence without overstating what it knows?"
+        ],
+        "title": "Nvidia Leadership Turmoil in an Unverified Account",
+        "overview": "Examine an unverified supplied account of a reported Nvidia leadership crisis, distinguishing institutional concerns, provisional assessments and established conclusions.",
+        "topic": "Corporate leadership, institutional scrutiny and financial uncertainty",
+        "vocabulary": [
+          {
+            "term": "professional boundaries",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Limits on workplace conduct intended to prevent personal relationships from interfering with professional responsibilities."
+          },
+          {
+            "term": "under scrutiny",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Being examined closely, especially because conduct or decisions have raised concerns."
+          },
+          {
+            "term": "brief Congress",
+            "part_of_speech": "verb phrase",
+            "definition": "Give members of Congress a focused account of relevant information about a particular matter."
+          },
+          {
+            "term": "subpoenaed",
+            "part_of_speech": "verb, past participle",
+            "definition": "Formally required by a legal order to appear or provide evidence; here, required to attend."
+          },
+          {
+            "term": "weather the storm",
+            "part_of_speech": "idiomatic verb phrase",
+            "definition": "Survive a period of serious difficulty without losing one’s position or ability to continue."
+          },
+          {
+            "term": "foreign intelligence effort",
+            "part_of_speech": "noun phrase",
+            "definition": "An organised attempt by another country’s intelligence services to obtain information or exert influence."
+          },
+          {
+            "term": "brushed off",
+            "part_of_speech": "phrasal verb, past participle",
+            "definition": "Dismissed as insufficiently important to deserve serious attention, without necessarily being disproved."
+          },
+          {
+            "term": "rank-and-file",
+            "part_of_speech": "adjective",
+            "definition": "Describing ordinary members of an organisation, as distinct from those in senior positions."
+          },
+          {
+            "term": "cash out",
+            "part_of_speech": "phrasal verb",
+            "definition": "Convert an investment into money by selling it, thereby realising its current value."
+          },
+          {
+            "term": "succession",
+            "part_of_speech": "noun",
+            "definition": "The process through which one person replaces another in a position of authority."
+          },
+          {
+            "term": "against a backdrop of",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Within a wider situation that provides relevant context without necessarily establishing a direct cause."
+          }
+        ],
+        "grammar": {
+          "concept": "Inverted future conditional with “should”",
+          "explanation": "In formal future conditionals, place “should” before the subject and use the base verb instead of an “if”-clause. This structure presents a possible condition; “could” in the main clause makes the consequence possible rather than inevitable.",
+          "example_quote": "Should the executive refuse to appear voluntarily, he could be subpoenaed, meaning formally ordered to attend, according to a Senate staff member cited in the account."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the supplied account’s overall focus while respecting its unverified status?",
+            "options": [
+              "It presents a reported leadership crisis involving institutional scrutiny and financial consequences.",
+              "It establishes that an intelligence operation caused Nvidia’s financial losses.",
+              "It demonstrates that a temporary leadership appointment resolved Nvidia’s difficulties."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading brings together the reported departure, lawmakers’ concerns and financial uncertainty without independently establishing the account’s accuracy.",
+              "The reading reports unresolved concerns and falling value; it does not establish an intelligence operation or this causal connection.",
+              "The temporary appointment forms part of a continuing search, and the reading reports no resolution of the difficulties."
+            ]
+          },
+          {
+            "question": "How should readers interpret the company’s reported security statement alongside its promised investigation?",
+            "options": [
+              "The company had completed its investigation and ruled out every possible breach.",
+              "The company offered a provisional assessment while committing to examine the available information.",
+              "The company acknowledged that confidential information had already been disclosed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Having no reason to believe security was compromised does not establish that an investigation has finished or eliminated every possibility.",
+              "The statement expresses the company’s assessment, while the promised investigation leaves room to consider further information.",
+              "The reported statement does not acknowledge a disclosure; it says the company saw no reason to believe security or secrets had been compromised."
+            ]
+          },
+          {
+            "question": "What follows from the reported statement that the Department of Justice had drawn no conclusions about whether Alice Huang had engaged in espionage for Beijing?",
+            "options": [
+              "The Department of Justice had conclusively ruled out Alice Huang’s involvement in espionage for Beijing.",
+              "The Department of Justice had confirmed Alice Huang’s involvement in espionage for Beijing but was still assessing its consequences.",
+              "The Department of Justice’s position on Alice Huang’s possible involvement in espionage for Beijing remained unresolved."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "An absence of conclusions about Alice Huang’s possible involvement does not amount to a finding that she had not engaged in espionage for Beijing.",
+              "The reported statement describes no conclusions about whether Alice Huang had engaged in espionage for Beijing, so confirmation would overstate its scope.",
+              "The statement leaves the Department of Justice’s assessment of Alice Huang’s possible involvement unresolved; it establishes neither confirmation nor definitive clearance."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses an inverted conditional with “should” to preserve a possible future refusal and a possible consequence?",
+            "options": [
+              "Should the executive decline voluntary attendance, a formal order might follow.",
+              "Should the executive declined voluntary attendance, a formal order might follow.",
+              "Had the executive declined voluntary attendance, a formal order might have followed."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Should” precedes the subject and takes the base verb “decline”, while “might” preserves uncertainty about the consequence.",
+              "After conditional “should”, use the base verb “decline”, not the past form “declined”.",
+              "This is a grammatical past hypothetical, but it changes the time reference and does not use the requested future conditional with “should”."
+            ]
+          },
+          {
+            "question": "What distinction does “rank-and-file” make in the employee’s account?",
+            "options": [
+              "It separates employees who sold stock from employees who retained it.",
+              "It distinguishes ordinary workers from people in senior positions.",
+              "It distinguishes permanent employees from temporary executives."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Rank-and-file” concerns organisational position, not an employee’s investment decisions.",
+              "The expression identifies ordinary members of the workforce, as distinct from senior figures.",
+              "The expression does not classify people by the duration of their employment or appointment."
+            ]
+          },
+          {
+            "question": "What does the claim that initial reports were “brushed off” suggest about workers’ response?",
+            "options": [
+              "They examined the reports and established that every claim was false.",
+              "They formally prohibited the reports from being circulated.",
+              "They treated the reports as insufficiently important to warrant much attention."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Brushed off” describes dismissal, not a process that establishes whether claims are true or false.",
+              "The phrase concerns an attitude towards the reports; it does not establish a formal prohibition.",
+              "The phrase conveys a dismissive response without implying that the reports were disproved."
+            ]
+          },
+          {
+            "question": "In the account of employee wealth, what does the ability to “cash out” company stock involve?",
+            "options": [
+              "Turning an investment into money by selling it.",
+              "Receiving a guaranteed future payment while retaining the investment.",
+              "Increasing the number of investments held without selling any."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Cash out” means realising an investment’s value through a sale.",
+              "The expression refers to conversion through selling, and it does not imply a guaranteed future payment.",
+              "Acquiring additional investments does not capture the sale involved in “cash out”."
+            ]
+          },
+          {
+            "question": "What does the reported appointment of Colette Kress establish about the succession process?",
+            "options": [
+              "The company had already selected its permanent replacement.",
+              "Temporary leadership had been arranged while the search for a permanent replacement continued.",
+              "The search required the company to operate without an acting chief executive."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes a temporary appointment and a continuing search, so a permanent selection had not been established.",
+              "The account distinguishes the immediate leadership arrangement from the longer-term appointment.",
+              "The temporary appointment provides acting leadership during the search."
+            ]
+          },
+          {
+            "question": "What does “against a backdrop of wider uncertainty” establish about the reported fall in Nvidia’s value?",
+            "options": [
+              "Wider uncertainty had been proved to be the sole cause of the fall.",
+              "The fall occurred independently of any wider circumstances.",
+              "The fall occurred within a broader uncertain environment, without the phrase proving causation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase supplies context; it does not identify or prove a sole cause.",
+              "The expression explicitly places the event within its wider setting, although it does not determine that setting’s causal role.",
+              "“Against a backdrop of” identifies relevant circumstances without establishing how much they caused the event."
+            ]
+          },
+          {
+            "question": "Why does the distinction between appearing voluntarily and being “subpoenaed” matter in the account?",
+            "options": [
+              "It distinguishes attendance by choice from attendance required through a formal order.",
+              "It distinguishes being questioned from being found responsible for wrongdoing.",
+              "It means that refusing voluntary attendance automatically triggers a formal order."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The account presents a formal order requiring attendance as a possible response if voluntary attendance is refused.",
+              "Neither form of attendance establishes responsibility for wrongdoing; the distinction concerns whether attendance is required.",
+              "“Could” expresses possibility, so the account does not say that a formal order would automatically follow a refusal."
+            ]
+          },
+          {
+            "question": "Which inference about retirement savings is supported by the account’s discussion of Nvidia and the S&P 500?",
+            "options": [
+              "Every US retirement account would necessarily fall by the same percentage as Nvidia.",
+              "Some retirement investments could be affected through funds connected to an index that includes Nvidia.",
+              "Nvidia’s 7% weighting in the index means that every US retirement account holds 7% of its investments directly in Nvidia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not say that every account has the same investments or that an index fund moves identically to one company.",
+              "The account links Nvidia’s index weighting to funds used in retirement accounts and explains that balances fluctuate with markets.",
+              "The 7% figure describes Nvidia’s weighting within the index; it does not establish every retirement account’s investments or a direct holding in Nvidia."
+            ]
+          },
+          {
+            "question": "How does the expectation that the executive would “weather the storm” relate to the reported departure?",
+            "options": [
+              "It shows that departure was the outcome observers had consistently predicted.",
+              "It proves that the early reports had no effect on the company.",
+              "It contrasts an earlier expectation of survival with the later outcome described in the account."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "An expectation that someone will “weather the storm” anticipates survival through difficulty, not departure.",
+              "The expression concerns an expected ability to continue; it does not establish an absence of effects on the company.",
+              "The earlier expectation was that the executive would remain through the crisis, which contrasts with the reported departure."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The supplied account reports the abrupt departure of Nvidia’s chief executive, portraying it as a severe reversal for the AI chipmaking giant.",
+          "It links the reported crisis to concerns about professional boundaries and possible national security risks.",
+          "According to the account, Nvidia has come under scrutiny from US lawmakers seeking answers about a possible connection to Chinese intelligence.",
+          "The text reports that US Attorney General Todd Blanche said the Department of Justice had not yet drawn any conclusions about whether Alice Huang had engaged in espionage for Beijing.",
+          "It also says several lawmakers demanded that the departing executive brief Congress on the matter.",
+          "Should the executive refuse to appear voluntarily, he could be subpoenaed, meaning formally ordered to attend, according to a Senate staff member cited in the account.",
+          "The account says Nvidia saw no reason to believe national security or company secrets had been compromised, while pledging that an independent investigation would consider all available information.",
+          "It reports that the executive had initially been expected to weather the storm while the company investigated whether he had been targeted by a foreign intelligence effort.",
+          "An employee cited in the text says initial reports about the executive’s private conduct were largely brushed off by rank-and-file workers.",
+          "The account notes that many employees had earned millions through their ability to cash out company stock as its value soared.",
+          "It describes a succession process in which Chief Financial Officer Colette Kress took temporary charge while Nvidia sought a permanent replacement.",
+          "According to the supplied figures, Nvidia’s value had risen by more than 470% over five years and was now down by 31% against a backdrop of wider uncertainty in the technology sector.",
+          "The account says Nvidia represents about 7% of the S&P 500 index, which is available through a popular index fund used in US retirement savings accounts.",
+          "It explains that those retirement account balances fluctuate with stock market movements."
+        ],
+        "sentence_evidence": [
+          "Jensen Huang has abruptly quit as chief executive of AI chipmaking giant Nvidia after revelations of alleged extramarital affairs, in a stunning fall from grace that sent shockwaves from Silicon Valley to Capitol Hill.",
+          "His alleged conduct not only potentially crossed professional boundaries, but has made Nvidia the target of questions from US politicians who have expressed concern about national security risks.",
+          "Nvidia is now under scrutiny from US lawmakers in Washington DC demanding Huang answer questions over whether one of his alleged relationships was with a Chinese spy.",
+          "And US Attorney General Todd Blanche said on Thursday the Department of Justice had not yet drawn any conclusions about whether Alice Huang was engaged in espionage for Beijing.",
+          "Senators Elizabeth Warren and Chris Coons, along with other Democrats on the House Foreign Affairs Committee, publicly demanded that Huang brief Congress on the matter.",
+          "If he refuses to appear voluntarily before any committee that calls him, he could be subpoenaed, one Senate staff member told the BBC.",
+          "Nvidia has said it has \"no reason to believe that either national security or Nvidia secrets were compromised\", but pledged that its independent inquiry would look at all available information.",
+          "Huang had been widely expected to weather the storm after the first affair became public, even as Nvidia announced it had launched an investigation into whether its CEO had been \"the target of a foreign intelligence effort\".",
+          "One current Nvidia staff member told the BBC that the initial reports of his infidelity were more or less brushed off by rank-and-file workers inside the company.",
+          "Many staff have earned millions of dollars in compensation through their ability to cash out their Nvidia shares as the stock soared.",
+          "Nvidia is now hunting a permanent replacement for Huang. Chief Financial Officer Colette Kress was named on Thursday as interim CEO.",
+          "Its market value rose by more than 470% in the past five years, peaking just a few weeks ago. It is now down by 31% against a backdrop of wider uncertainty in the tech sector.",
+          "Nvidia's value makes up about 7% of the S&P 500 index. That index is offered as a popular index fund in US retirement savings accounts.",
+          "Those account balances rise and fall with the changes of the stock market."
+        ],
+        "editorial_check": {
+          "date": "2026-11-13T03:47:04.253406+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eleven distinct reading-based targets, including “under scrutiny” and “against a backdrop of”, teach useful advanced meanings without reusing reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting remains measured and attributed; “could” and “had not yet drawn any conclusions” preserve uncertainty."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual distinctions, and the exact grammar quotation demonstrates “should” before its subject with a base verb."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct questions test supported inference, provisional assessments, contextual meanings and conditional grammar with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "f3b3af4450b1fa2d46d5035b89ebdc7731f6ad518106f90b2126ba7812173d5a"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

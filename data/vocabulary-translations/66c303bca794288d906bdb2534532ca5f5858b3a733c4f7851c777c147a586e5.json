@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Recent news stories raise questions about how powerful people in television treat others.",
+      "These stories follow changes that began years ago.",
+      "Reporters started looking into these stories years ago.",
+      "Their work can take a long time.",
+      "Kirsty Wark says more women speak up because they see other women doing this.",
+      "Freeman says women now feel that people will listen to them.",
+      "A workers' group says some television workers are still afraid to report problems.",
+      "Lucy Beaumont says some well-known people stay quiet because they fear losing work.",
+      "A meeting with television leaders is planned for next week to discuss keeping people safe.",
+      "People who run television companies also need to help stop people from hurting others."
+    ],
+    "vocabulary": [
+      {
+        "term": "Reporters",
+        "part_of_speech": "plural noun",
+        "definition": "People who find information and write or tell news stories."
+      },
+      {
+        "term": "speak up",
+        "part_of_speech": "verb phrase",
+        "definition": "Tell other people about a problem instead of staying quiet."
+      },
+      {
+        "term": "listen",
+        "part_of_speech": "verb",
+        "definition": "Pay attention to what someone says."
+      },
+      {
+        "term": "afraid",
+        "part_of_speech": "adjective",
+        "definition": "Worried that something bad may happen."
+      },
+      {
+        "term": "losing work",
+        "part_of_speech": "verb phrase",
+        "definition": "No longer having a job or paid work."
+      },
+      {
+        "term": "safe",
+        "part_of_speech": "adjective",
+        "definition": "Not in danger of being hurt."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "情報を集め、ニュースを文章や言葉で伝える人たち。",
+      "ko": "정보를 찾아 뉴스를 글로 쓰거나 말로 전하는 사람들.",
+      "zh-Hans": "搜集信息并撰写或讲述新闻报道的人。",
+      "es": "Personas que buscan información y escriben o cuentan noticias.",
+      "pt-BR": "Pessoas que buscam informações e escrevem ou relatam notícias.",
+      "fr": "Personnes qui recherchent des informations et présentent les nouvelles par écrit ou oralement.",
+      "de": "Menschen, die Informationen sammeln und Nachrichten schreiben oder darüber berichten."
+    },
+    {
+      "id": 1,
+      "ja": "黙っていないで、問題についてほかの人に伝えること。",
+      "ko": "침묵하지 않고 다른 사람들에게 문제에 대해 말하는 것.",
+      "zh-Hans": "把问题告诉别人，而不是保持沉默。",
+      "es": "Hablar con otras personas sobre un problema en vez de quedarse en silencio.",
+      "pt-BR": "Falar com outras pessoas sobre um problema em vez de ficar em silêncio.",
+      "fr": "Parler d’un problème aux autres au lieu de garder le silence.",
+      "de": "Anderen von einem Problem erzählen, anstatt zu schweigen."
+    },
+    {
+      "id": 2,
+      "ja": "誰かが言うことに注意を向けて聞くこと。",
+      "ko": "누군가가 하는 말에 주의를 기울이는 것.",
+      "zh-Hans": "认真听别人说的话。",
+      "es": "Prestar atención a lo que alguien dice.",
+      "pt-BR": "Prestar atenção ao que alguém diz.",
+      "fr": "Prêter attention à ce que quelqu’un dit.",
+      "de": "Auf das achten, was jemand sagt."
+    },
+    {
+      "id": 3,
+      "ja": "何か悪いことが起こるかもしれないと心配していること。",
+      "ko": "나쁜 일이 일어날까 봐 걱정하는 상태.",
+      "zh-Hans": "担心可能会发生不好的事情。",
+      "es": "Sentir preocupación porque puede pasar algo malo.",
+      "pt-BR": "Estar preocupado com a possibilidade de algo ruim acontecer.",
+      "fr": "S’inquiéter à l’idée que quelque chose de mauvais puisse arriver.",
+      "de": "Besorgt, dass etwas Schlimmes passieren könnte."
+    },
+    {
+      "id": 4,
+      "ja": "職や報酬を得られる仕事がなくなること。",
+      "ko": "직장이나 보수를 받는 일이 더 이상 없는 상태가 되는 것.",
+      "zh-Hans": "不再有职位或有报酬的工作。",
+      "es": "Dejar de tener un empleo o trabajo remunerado.",
+      "pt-BR": "Deixar de ter um emprego ou trabalho remunerado.",
+      "fr": "Ne plus avoir d’emploi ou de travail rémunéré.",
+      "de": "Keine Arbeitsstelle oder bezahlte Arbeit mehr haben."
+    },
+    {
+      "id": 5,
+      "ja": "傷つけられる危険がないこと。",
+      "ko": "해를 입을 위험이 없는 상태.",
+      "zh-Hans": "没有受到伤害的危险。",
+      "es": "No estar en peligro de sufrir daño.",
+      "pt-BR": "Não correr o risco de sofrer algum dano.",
+      "fr": "Ne pas être exposé à un danger pouvant causer du mal.",
+      "de": "Nicht in Gefahr, Schaden zu erleiden."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-14T04:09:24.974859+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

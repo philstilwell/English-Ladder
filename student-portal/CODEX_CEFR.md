@@ -2,7 +2,7 @@
 
 Owner authorization: October 25, 2026. Use GPT inside Codex and the existing allowance, with **$0 additional AI charges**. Never call Cloudflare AI, the OpenAI API, or another separately billed service. Do not buy credits, enable paid fallback, or create another publisher. Normal Codex usage limits apply; if reached, preserve work and report the limit.
 
-Run this after ordinary lesson processing in the existing **11:35 p.m. America/New_York** automation, even on nights without a new lesson. The Mac must be awake, online and running Codex. Preserve its ID, local-time recurrence, thread and daylight-saving behavior. Cloudflare remains storage/validation only: `LESSON_PROCESSOR=codex`, `CEFR_PROCESSOR=codex`, `AUTOMATION_ENABLED=false`, no AI binding.
+Run this after ordinary lesson processing in the existing **11:35 p.m. America/New_York** automation, only after the [student-updates skill](skills/english-ladder-student-updates/SKILL.md) confirms an available transcript for the New York run day. The November 13 owner instruction ends the entire scheduled run immediately on a day without available transcripts, before CEFR queue/preparation calls; preserve review dates and consume no attempt. On nights that pass this check, review due estimates even if no new lesson was published. Explicit manual review requests are unaffected. The Mac must be awake, online and running Codex. Preserve its ID, local-time recurrence, thread and daylight-saving behavior. Cloudflare remains storage/validation only: `LESSON_PROCESSOR=codex`, `CEFR_PROCESSOR=codex`, `AUTOMATION_ENABLED=false`, no AI binding.
 
 ## Schedule and sources
 

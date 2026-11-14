@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-06",
+  "revision": "2026-11-14",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -7073,6 +7073,133 @@
         "https://www.open.edu/openlearn/mod/oucontent/view.php?id=19204&section=3.2",
         "https://owl.purdue.edu/owl/general_writing/punctuation/punctuation/index.html",
         "https://www.dictionary.com/browse/for-example"
+      ]
+    },
+    {
+      "number": 61,
+      "title": "How long or how much time? Asking about duration",
+      "level": "A2–B1",
+      "category": "Place and time",
+      "goal": "Ask about duration using how long or how much time, and distinguish an amount of time from a number of occasions.",
+      "rules": [
+        "How long asks about duration—the length of time something lasts: “How long did the walk take?” Long already expresses duration in this question, and how asks for its length. The phrase works without the noun time. Do not combine the two patterns as “How long time did it take?” After did, use the base form take, not took.",
+        "How much time asks about an amount: “How much time did the walk take?” Here time is an uncountable noun: we are measuring duration, not counting separate occasions. Much goes with this uncountable meaning. Both questions about the walk can have the answer “About twenty minutes.” Minutes are countable units, so “How many minutes did it take?” is also correct.",
+        "How many times asks for a count of occasions: “How many times did you visit the museum?” An answer could be “Three times,” not a duration. Time is not always uncountable: “a long time” is a normal expression, and times can mean separate occasions. Our correction concerns the ordinary question pattern how long time, not every expression containing long and time. How long can also ask about physical length, as in “How long is the bridge?” Context tells you what is being measured."
+      ],
+      "cards": [
+        {
+          "label": "HOW LONG: DURATION",
+          "example": "How long did the walk take? About twenty minutes.",
+          "note": "Long expresses duration; how asks for its length. No noun is needed after long in this question."
+        },
+        {
+          "label": "HOW MUCH TIME: AN AMOUNT",
+          "example": "How much time did the walk take? About twenty minutes.",
+          "note": "Time names an amount here. This uncountable meaning takes much, so the question asks for the same duration."
+        },
+        {
+          "label": "HOW MANY TIMES: OCCASIONS",
+          "example": "How many times did you visit the museum? Three times.",
+          "note": "Times means separate occasions. We can count those visits, so use many rather than much."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Choose the natural question about duration using how long.",
+          "options": [
+            {
+              "text": "How long time did the walk take?",
+              "correct": false,
+              "feedback": "How long already asks for duration in this pattern. Remove time, or change the whole question phrase to how much time."
+            },
+            {
+              "text": "How long did the walk take?",
+              "correct": true,
+              "feedback": "Long expresses duration, and how asks for its length. You do not need the noun time in this question."
+            },
+            {
+              "text": "How long did the walk took?",
+              "correct": false,
+              "feedback": "Did already marks the past tense. The main verb must be the base form take, not took."
+            }
+          ]
+        },
+        {
+          "prompt": "Keep the noun time and ask about an amount: “How ___ time do we need for the activity?”",
+          "options": [
+            {
+              "text": "much",
+              "correct": true,
+              "feedback": "Time means an amount available for the activity. Use much with this uncountable meaning."
+            },
+            {
+              "text": "many",
+              "correct": false,
+              "feedback": "Many goes with plural countable nouns. You can ask how many minutes, but time here names an uncountable amount."
+            },
+            {
+              "text": "long",
+              "correct": false,
+              "feedback": "How long works without the noun time in this duration question. If you keep time, use how much time."
+            }
+          ]
+        },
+        {
+          "prompt": "Why does “How many times did you visit the museum?” ask for a number rather than a duration?",
+          "options": [
+            {
+              "text": "Time is always countable, whatever its meaning.",
+              "correct": false,
+              "feedback": "Its grammar depends on the meaning. Duration can be an uncountable amount; occasions are countable."
+            },
+            {
+              "text": "Many changes the past tense into the present tense.",
+              "correct": false,
+              "feedback": "Many concerns quantity, not tense. Did marks this question as past; times names what is being counted."
+            },
+            {
+              "text": "Times means separate occasions, which we can count.",
+              "correct": true,
+              "feedback": "The question counts visits. “Three times” gives that count; “twenty minutes” would describe duration instead."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You want to know the duration of a single walk. Which question naturally matches the answer “About twenty minutes”?",
+        "options": [
+          {
+            "text": "How many times did you take that walk?",
+            "correct": false,
+            "feedback": "This asks for a count of occasions, such as once or three times. It does not ask how long one walk lasted."
+          },
+          {
+            "text": "How much time did the walk take?",
+            "correct": true,
+            "feedback": "The question asks for an amount of time. Twenty minutes measures that duration; how long would also work."
+          },
+          {
+            "text": "What time did the walk begin?",
+            "correct": false,
+            "feedback": "This asks for a clock time, such as 9:15. Twenty minutes tells you a duration, not the starting time."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-61-how-long-how-much-time-student-workbook.pdf",
+        "concept-61-how-long-how-much-time-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-14",
+      "related": [
+        15,
+        21,
+        31
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/long",
+        "https://dictionary.cambridge.org/grammar/british-grammar/telling-the-time",
+        "https://www.oxfordlearnersdictionaries.com/grammar/online-grammar/quantifiers-much-many-a-lot-of",
+        "https://dictionary.cambridge.org/dictionary/english/time"
       ]
     }
   ],

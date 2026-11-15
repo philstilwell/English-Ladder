@@ -1,0 +1,138 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "SpaceX caught the top part of its Starship rocket for the first time.",
+      "The flight lasted twenty-two and a half hours.",
+      "The top part travelled around Earth 14 times before coming back.",
+      "The launch tower’s arms caught it when it returned to Earth.",
+      "Workers cheered as the rocket returned to the launch area in Texas.",
+      "SpaceX also wanted to catch the bottom part, but this did not happen.",
+      "The bottom part went to the ocean and exploded.",
+      "SpaceX wants to use both parts again to make flights cost less."
+    ],
+    "vocabulary": [
+      {
+        "term": "caught",
+        "part_of_speech": "verb, simple past",
+        "definition": "stopped and held something that was moving"
+      },
+      {
+        "term": "flight",
+        "part_of_speech": "noun",
+        "definition": "a journey through the air or space"
+      },
+      {
+        "term": "returned",
+        "part_of_speech": "verb, simple past",
+        "definition": "came back"
+      },
+      {
+        "term": "cheered",
+        "part_of_speech": "verb, simple past",
+        "definition": "shouted because they were happy"
+      },
+      {
+        "term": "bottom",
+        "part_of_speech": "adjective",
+        "definition": "in the lowest position"
+      },
+      {
+        "term": "again",
+        "part_of_speech": "adverb",
+        "definition": "one more time"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "動いていたものを止めて、つかまえた",
+      "ko": "움직이고 있던 것을 멈추게 하고 붙잡았다",
+      "zh-Hans": "让正在移动的东西停下来，并抓住了它",
+      "es": "detuvo y sujetó algo que se estaba moviendo",
+      "pt-BR": "parou e segurou algo que estava se movendo",
+      "fr": "a arrêté et retenu quelque chose qui était en mouvement",
+      "de": "stoppte etwas, das sich bewegte, und hielt es fest"
+    },
+    {
+      "id": 1,
+      "ja": "空中や宇宙を移動する旅",
+      "ko": "공중이나 우주를 이동하는 여행",
+      "zh-Hans": "在空中或太空中的旅行",
+      "es": "un viaje por el aire o el espacio",
+      "pt-BR": "uma viagem pelo ar ou pelo espaço",
+      "fr": "un voyage dans les airs ou dans l’espace",
+      "de": "eine Reise durch die Luft oder den Weltraum"
+    },
+    {
+      "id": 2,
+      "ja": "戻ってきた",
+      "ko": "돌아왔다",
+      "zh-Hans": "回来了",
+      "es": "volvió",
+      "pt-BR": "voltou",
+      "fr": "est revenu",
+      "de": "kam zurück"
+    },
+    {
+      "id": 3,
+      "ja": "うれしくて大声を上げた",
+      "ko": "기뻐서 소리쳤다",
+      "zh-Hans": "因为高兴而大声喊了起来",
+      "es": "gritaron porque estaban felices",
+      "pt-BR": "gritaram porque estavam felizes",
+      "fr": "ont crié parce qu’ils étaient heureux",
+      "de": "riefen laut, weil sie sich freuten"
+    },
+    {
+      "id": 4,
+      "ja": "いちばん下の位置にある",
+      "ko": "가장 아래쪽에 있는",
+      "zh-Hans": "处于最低位置的",
+      "es": "que está en la posición más baja",
+      "pt-BR": "que está na posição mais baixa",
+      "fr": "qui se trouve à la position la plus basse",
+      "de": "an der untersten Stelle"
+    },
+    {
+      "id": 5,
+      "ja": "もう一度",
+      "ko": "한 번 더",
+      "zh-Hans": "再一次",
+      "es": "una vez más",
+      "pt-BR": "mais uma vez",
+      "fr": "une fois de plus",
+      "de": "noch einmal"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-15T03:49:03.044008+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

@@ -1,0 +1,800 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-15",
+  "release_iso": "2026-11-15T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Sat, 14 Nov 2026 22:15:52 GMT",
+    "retrieved_at": "2026-11-15T03:33:36.503958+00:00",
+    "title": "SpaceX successfully catches top of huge Starship rocket for first time",
+    "summary": "The rocket stage was caught mid air using huge mechanical arms nicknamed “chopsticks”.",
+    "evidence_text": "SpaceX has successfully caught the top part of its huge Starship rocket for the first time, after a flight lasting twenty-two and a half hours.\nThe Ship completed 14 orbits around the Earth before returning to the launch tower.\nThe rocket returned to Earth and hovered near its launch tower whose mechanical arms - nicknamed chopsticks - then secured it.\nThere were loud cheers from SpaceX staff who were watching the flight as the rocket returned to the Starbase launchpad in Boca Chica, Texas.\nThe company had hoped to catch the bottom part of the rocket as well, but this was aborted a few minutes after the launch on Friday.\nBut the booster activated an automated abort, diverting instead to the ocean where it hovered above the water before exploding.\nSpaceX needs to reliably recover both parts of Starship so that it can fly repeatedly and drastically reduce costs.\nThe plan was to grab the bottom part of the rocket - the Super Heavy booster - six and a half minutes later when it returned.\nThe top part of the rocket continued its journey to space where it deployed 26 satellites, which form part of the Starlink constellation that provides high-speed internet.\nThis is the 15th test of Starship and the first that hoped to fully recover both parts of the rocket. SpaceX wants to make the top and bottom sections of Starship fully reusable.\nSpaceX has managed to catch the Super Heavy Booster on three earlier test flights.\nBefore the flight, SpaceX said it would only try to catch the Ship after carefully assessing the vehicle while it was in space.\nAny problems would have resulted in the ship being brought down in the ocean in the same way as the booster.\nBuilding a fully reusable rocket is a long-held ambition for SpaceX.\nFalcon 9 rockets now fly more than 100 times a year and the ability to reuse the bottom part of the rocket has dramatically cut the costs of launch.\nBut landing an entire Starship rocket would take spaceflight to the next level, says Prof Malcolm Macdonald, president of Royal Aeronautical Society - but it didn't happen this time.\n\"Not recovering the first stage is a setback. But they have recovered Super Heavy before and so successfully returning and recovering the Ship, is a substantial step forward. They have demonstrated the two halves of the recovery challenge, just not yet on the same flight. The next milestone would be stitching those achievements together and then proving they can do it reliably, repeatedly and economically.\"\nThe progress of Starship has direct implications for Nasa's attempt to land humans on the Moon in 2028 - a highly ambitious timeline.\nSpaceX has been given a Nasa contract to configure the Ship into a lander that will eventually take astronauts down to the lunar surface.\nStarship will need to make a lot of progress in the coming months to meet these commitments - the pace of the rocket's development has been far slower than SpaceX had intended.",
+    "evidence_retrieved_at": "2026-11-15T03:33:36.503958+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/ckregdgnl0xpo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why does SpaceX want to use both rocket parts again? Use “SpaceX wants to ... because ...”.",
+          "Would you or a person in a story use a bag or a bottle again? Use “I would use ... again because ...”."
+        ],
+        "title": "SpaceX Catches Starship’s Top Part for the First Time",
+        "overview": "Read about a rocket flight and how SpaceX caught part of the rocket.",
+        "topic": "Space travel",
+        "vocabulary": [
+          {
+            "term": "caught",
+            "part_of_speech": "verb, simple past",
+            "definition": "stopped and held something that was moving"
+          },
+          {
+            "term": "flight",
+            "part_of_speech": "noun",
+            "definition": "a journey through the air or space"
+          },
+          {
+            "term": "returned",
+            "part_of_speech": "verb, simple past",
+            "definition": "came back"
+          },
+          {
+            "term": "cheered",
+            "part_of_speech": "verb, simple past",
+            "definition": "shouted because they were happy"
+          },
+          {
+            "term": "bottom",
+            "part_of_speech": "adjective",
+            "definition": "in the lowest position"
+          },
+          {
+            "term": "again",
+            "part_of_speech": "adverb",
+            "definition": "one more time"
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past",
+          "explanation": "Use the simple past for finished events. Many verbs add “-ed”, as in “wanted”. Some verbs change their form, as in “catch” becoming “caught”. After “did not”, use the basic verb form, as in “did not happen”.",
+          "example_quote": "SpaceX caught the top part of its Starship rocket for the first time."
+        },
+        "quiz": [
+          {
+            "question": "What did SpaceX do for the first time?",
+            "options": [
+              "It caught both rocket parts.",
+              "It caught the top rocket part.",
+              "It caught the bottom rocket part."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "SpaceX wanted to catch both parts, but the bottom part went to the ocean.",
+              "Yes, SpaceX caught the top part of Starship for the first time.",
+              "SpaceX caught the top part on this flight; the bottom part went to the ocean."
+            ]
+          },
+          {
+            "question": "How long did the flight last?",
+            "options": [
+              "14 hours",
+              "26 hours",
+              "22 and a half hours"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The top part travelled around Earth 14 times; the flight lasted longer than 14 hours.",
+              "The reading says the flight lasted twenty-two and a half hours.",
+              "Yes, the flight lasted twenty-two and a half hours."
+            ]
+          },
+          {
+            "question": "Where did the arms catch the top part?",
+            "options": [
+              "At the launch tower",
+              "Above the ocean",
+              "In space"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the arms were on the launch tower.",
+              "The bottom part went to the ocean; the arms caught the top part at the tower.",
+              "The arms caught it when it returned to Earth."
+            ]
+          },
+          {
+            "question": "What happened to the bottom part?",
+            "options": [
+              "It returned to the tower.",
+              "It went to the ocean and exploded.",
+              "It stayed in space."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The top part returned to the tower; the bottom part went to the ocean.",
+              "Yes, the bottom part went to the ocean and exploded.",
+              "The reading says it went to the ocean and exploded."
+            ]
+          },
+          {
+            "question": "Why does SpaceX want to use both parts again?",
+            "options": [
+              "To make flights last longer",
+              "To make flights cost more",
+              "To make flights cost less"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says SpaceX wants flights to cost less; it does not give longer flights as the reason.",
+              "SpaceX wants flights to cost less, so this answer gives the opposite meaning.",
+              "Yes, SpaceX wants to use both parts again to make flights cost less."
+            ]
+          },
+          {
+            "question": "What does “cheered” mean in the reading?",
+            "options": [
+              "Shouted because they were happy",
+              "Came back to a place",
+              "Held something that was moving"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, “cheered” means the workers shouted because they were happy.",
+              "“Returned” means “came back”; “cheered” describes happy shouting.",
+              "“Caught” means “stopped and held something that was moving”; “cheered” describes happy shouting."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past correctly?",
+            "options": [
+              "The workers watch the rocket.",
+              "The workers watched the rocket.",
+              "The workers watching the rocket."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Watch” is a present form here; the question asks for the simple past.",
+              "Yes, “watched” adds “-ed” to describe a finished event.",
+              "“The workers watching the rocket” is not a complete sentence; use “The workers watched the rocket”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "SpaceX caught the top part of its Starship rocket for the first time.",
+          "The flight lasted twenty-two and a half hours.",
+          "The top part travelled around Earth 14 times before coming back.",
+          "The launch tower’s arms caught it when it returned to Earth.",
+          "Workers cheered as the rocket returned to the launch area in Texas.",
+          "SpaceX also wanted to catch the bottom part, but this did not happen.",
+          "The bottom part went to the ocean and exploded.",
+          "SpaceX wants to use both parts again to make flights cost less."
+        ],
+        "sentence_evidence": [
+          "SpaceX has successfully caught the top part of its huge Starship rocket for the first time, after a flight lasting twenty-two and a half hours.",
+          "SpaceX has successfully caught the top part of its huge Starship rocket for the first time, after a flight lasting twenty-two and a half hours.",
+          "The Ship completed 14 orbits around the Earth before returning to the launch tower.",
+          "The rocket returned to Earth and hovered near its launch tower whose mechanical arms - nicknamed chopsticks - then secured it.",
+          "There were loud cheers from SpaceX staff who were watching the flight as the rocket returned to the Starbase launchpad in Boca Chica, Texas.",
+          "The company had hoped to catch the bottom part of the rocket as well, but this was aborted a few minutes after the launch on Friday.",
+          "But the booster activated an automated abort, diverting instead to the ocean where it hovered above the water before exploding.",
+          "SpaceX needs to reliably recover both parts of Starship so that it can fly repeatedly and drastically reduce costs."
+        ],
+        "editorial_check": {
+          "date": "2026-11-15T03:38:33.150602+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six targets occur in the reading. Useful beginner words such as “caught”, “returned” and “again” have accurate, accessible definitions and word classes."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses neutral reporting and natural adult language, including “Workers cheered” and “make flights cost less”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences and clear examples explain the simple past. Discussion prompts include sentence frames and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct quiz questions test the main event, details, purpose, “cheered” and the simple past, with one clear answer each."
+            }
+          },
+          "content_digest": "adcb2da19ad7288c318f94d3f04482f6980cea62d13aa31699d6a449491b73b5"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why was this flight a success even though SpaceX did not recover both sections?",
+          "If you managed an expensive project, how would you decide whether a test with mixed results was worth doing?"
+        ],
+        "title": "SpaceX Catches Starship’s Upper Section for the First Time",
+        "overview": "SpaceX successfully recovered Starship’s upper section, but recovering both sections during the same flight remains a challenge.",
+        "topic": "Space travel and reusable rockets",
+        "vocabulary": [
+          {
+            "term": "secured",
+            "part_of_speech": "verb, past participle",
+            "definition": "Held something firmly in place."
+          },
+          {
+            "term": "attempt",
+            "part_of_speech": "noun",
+            "definition": "An act of trying to do something, especially something difficult."
+          },
+          {
+            "term": "deployed",
+            "part_of_speech": "verb, past simple",
+            "definition": "Released equipment into the place where it would be used."
+          },
+          {
+            "term": "orbits",
+            "part_of_speech": "plural noun",
+            "definition": "Complete journeys around a planet or another object in space."
+          },
+          {
+            "term": "reusable",
+            "part_of_speech": "adjective",
+            "definition": "Able to be used more than once."
+          },
+          {
+            "term": "reliably",
+            "part_of_speech": "adverb",
+            "definition": "In a way that can be trusted to work successfully each time."
+          },
+          {
+            "term": "reduce costs",
+            "part_of_speech": "verb phrase",
+            "definition": "Make the amount of money needed for something smaller."
+          },
+          {
+            "term": "assessing",
+            "part_of_speech": "verb, present participle",
+            "definition": "Carefully checking something to make a judgment about it."
+          }
+        ],
+        "grammar": {
+          "concept": "Past simple passive",
+          "explanation": "Use the passive to focus on what happened to something. Form the past simple passive with “was” or “were” plus a past participle. Add “by” to identify the person or thing that performed the action.",
+          "example_quote": "Near the launch tower, it was secured by mechanical arms nicknamed chopsticks."
+        },
+        "quiz": [
+          {
+            "question": "What was the main achievement of this Starship test?",
+            "options": [
+              "Both sections were recovered during one flight.",
+              "The upper section was recovered for the first time.",
+              "The booster was caught for the first time."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Only the upper section was recovered during this flight.",
+              "The reading identifies the first recovery of the upper section as the new achievement.",
+              "SpaceX had already caught the booster on three earlier test flights."
+            ]
+          },
+          {
+            "question": "What happened to the booster after it changed direction towards the ocean?",
+            "options": [
+              "It hovered above the water and then exploded.",
+              "It returned to the launch tower.",
+              "It released 26 satellites."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading gives this sequence after the booster changed direction.",
+              "The upper section returned to the tower; the booster went towards the ocean.",
+              "The upper section released the satellites."
+            ]
+          },
+          {
+            "question": "What purpose do the Starlink satellites serve?",
+            "options": [
+              "They operate the tower’s mechanical arms.",
+              "They check the booster’s condition.",
+              "They form part of a system providing high-speed internet."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes mechanical arms at the tower but does not connect their operation to the satellites.",
+              "The reading does not say the satellites check the booster.",
+              "The reading explains that Starlink provides high-speed internet."
+            ]
+          },
+          {
+            "question": "What did the upper section do before returning to the launch tower?",
+            "options": [
+              "It travelled around Earth 14 times.",
+              "It completed its journey six and a half minutes after launch.",
+              "It travelled around Earth 26 times."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explains that 14 orbits means 14 complete journeys around Earth.",
+              "Six and a half minutes was the planned return time for the lower section, not the upper section.",
+              "The upper section deployed 26 satellites but completed 14 journeys around Earth."
+            ]
+          },
+          {
+            "question": "What does “reliably” mean in the sentence about recovering both sections?",
+            "options": [
+              "Without checking their condition",
+              "With success that can be trusted each time",
+              "Only on the first attempt"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Reliably” describes dependable success, not whether checks happen.",
+              "“Reliably” means the process can be trusted to work successfully each time.",
+              "“Reliably” concerns consistent results, not success on just one occasion."
+            ]
+          },
+          {
+            "question": "According to the reading, why does SpaceX want to recover both sections reliably?",
+            "options": [
+              "To avoid putting satellites into space",
+              "To remove the need for a launch tower",
+              "To launch Starship repeatedly and reduce costs"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes satellite deployment as part of this journey, not something SpaceX wants to avoid.",
+              "The reading does not say reliable recovery would remove the need for a tower.",
+              "The reading directly connects reliable recovery with repeated launches and lower costs."
+            ]
+          },
+          {
+            "question": "Which sentence uses the past simple passive to describe a completed equipment check?",
+            "options": [
+              "The team checked the equipment before the test.",
+              "The equipment was checked before the test.",
+              "The equipment is checked before every test."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“The team checked” is active: the subject performs the action.",
+              "“Was checked” uses “was” plus a past participle to form the past simple passive.",
+              "“Is checked” is present simple passive and describes a regular procedure."
+            ]
+          },
+          {
+            "question": "What condition did SpaceX set before trying to recover the upper section?",
+            "options": [
+              "It would first carefully assess the section’s condition in space.",
+              "It would first recover the booster successfully.",
+              "It would first carefully assess the section’s condition at the launch tower."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "SpaceX said it would try only after carefully checking the upper section’s condition.",
+              "The upper section was recovered even though the booster recovery was cancelled.",
+              "The assessment was to take place in space, before the recovery attempt, rather than at the launch tower."
+            ]
+          },
+          {
+            "question": "Which statement correctly describes SpaceX’s goal of making Starship reusable?",
+            "options": [
+              "This test proved that both sections can always be recovered.",
+              "SpaceX plans to use each section only once.",
+              "SpaceX wants both sections to be suitable for future flights."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This test did not recover both sections, and it did not prove recovery would always succeed.",
+              "“Reusable” means suitable for use more than once.",
+              "The reading presents future use of both sections as SpaceX’s goal."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "SpaceX has recovered the upper section of its Starship rocket for the first time after a journey lasting twenty-two and a half hours.",
+          "Near the launch tower, it was secured by mechanical arms nicknamed chopsticks.",
+          "The company also planned to catch the lower section, but cancelled this attempt a few minutes after launch.",
+          "The lower section, called the Super Heavy booster, was due to return six and a half minutes after launch.",
+          "However, the booster automatically changed direction towards the ocean, hovered above the water and then exploded.",
+          "The upper section deployed 26 satellites that are part of Starlink, a system providing high-speed internet.",
+          "It completed 14 orbits, or full journeys around Earth, before returning to the launch tower.",
+          "SpaceX wants both sections to be reusable, meaning they can be used for future flights.",
+          "Recovering both sections reliably would allow SpaceX to launch Starship repeatedly and greatly reduce costs.",
+          "The company had already caught the booster on three earlier test flights.",
+          "Before the flight, SpaceX said it would try to catch the upper section only after carefully assessing its condition in space."
+        ],
+        "sentence_evidence": [
+          "SpaceX has successfully caught the top part of its huge Starship rocket for the first time, after a flight lasting twenty-two and a half hours.",
+          "The rocket returned to Earth and hovered near its launch tower whose mechanical arms - nicknamed chopsticks - then secured it.",
+          "The company had hoped to catch the bottom part of the rocket as well, but this was aborted a few minutes after the launch on Friday.",
+          "The plan was to grab the bottom part of the rocket - the Super Heavy booster - six and a half minutes later when it returned.",
+          "But the booster activated an automated abort, diverting instead to the ocean where it hovered above the water before exploding.",
+          "The top part of the rocket continued its journey to space where it deployed 26 satellites, which form part of the Starlink constellation that provides high-speed internet.",
+          "The Ship completed 14 orbits around the Earth before returning to the launch tower.",
+          "This is the 15th test of Starship and the first that hoped to fully recover both parts of the rocket. SpaceX wants to make the top and bottom sections of Starship fully reusable.",
+          "SpaceX needs to reliably recover both parts of Starship so that it can fly repeatedly and drastically reduce costs.",
+          "SpaceX has managed to catch the Super Heavy Booster on three earlier test flights.",
+          "Before the flight, SpaceX said it would only try to catch the Ship after carefully assessing the vehicle while it was in space."
+        ],
+        "editorial_check": {
+          "date": "2026-11-15T03:42:28.117975+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "quiz"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All eight targets occur in the reading, have clear contextual definitions, suit B1-B2, and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "“Recovered,” “deployed,” and “reduce costs” support consistent, neutral news reporting and clear teaching."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "“Orbits” and “reusable” receive accessible explanations. The passive explanation accurately describes the exact reading quotation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct quiz questions combine comprehension, “reliably” in context, causal relationships, and passive grammar transfer."
+            }
+          },
+          "content_digest": "f701734800e899264ee7ccf0147d8f4a85e8705ef94a4ce9f7fb3e2ebdc56453"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why recovering each rocket section separately represents progress without establishing that the entire recovery process is dependable.",
+          "What evidence would you require before regarding a reusable rocket system as commercially convincing, and why?"
+        ],
+        "title": "SpaceX Catches Starship’s Upper Stage in Recovery Breakthrough",
+        "overview": "SpaceX’s first capture of Starship’s upper stage advances its pursuit of full rocket reuse, although combining both recoveries remains an unresolved challenge.",
+        "topic": "Space exploration and rocket recovery",
+        "vocabulary": [
+          {
+            "term": "automated abort",
+            "part_of_speech": "noun phrase",
+            "definition": "A cancellation of a planned operation triggered by a control system rather than a direct human decision."
+          },
+          {
+            "term": "diverting",
+            "part_of_speech": "verb, present participle",
+            "definition": "Changing course towards an alternative destination instead of continuing along the intended route."
+          },
+          {
+            "term": "constellation",
+            "part_of_speech": "noun",
+            "definition": "A group of satellites organised to operate together as a system."
+          },
+          {
+            "term": "contingent on",
+            "part_of_speech": "adjective phrase",
+            "definition": "Dependent on a particular condition being satisfied before something can proceed."
+          },
+          {
+            "term": "long-held ambition",
+            "part_of_speech": "noun phrase",
+            "definition": "An important goal maintained over an extended period, without implying that it has been achieved."
+          },
+          {
+            "term": "milestone",
+            "part_of_speech": "noun",
+            "definition": "A significant achievement that marks progress towards a larger objective."
+          },
+          {
+            "term": "economically",
+            "part_of_speech": "adverb",
+            "definition": "In a way that keeps costs low enough for an activity to be financially practical."
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "Possible consequences or wider effects that a development has for another undertaking."
+          },
+          {
+            "term": "configure",
+            "part_of_speech": "verb",
+            "definition": "Arrange or adapt a vehicle’s design and equipment so that it can perform a particular function."
+          },
+          {
+            "term": "commitments",
+            "part_of_speech": "plural noun",
+            "definition": "Responsibilities or promised undertakings that an organisation is expected to fulfil."
+          }
+        ],
+        "grammar": {
+          "concept": "Inversion in past counterfactual conditionals",
+          "explanation": "To express an unreal past condition in a formal register, place “had” before the subject and omit “if”. Use “would have” plus a past participle for the imagined consequence; here, the condition concerns problems emerging before recovery.",
+          "example_quote": "Had problems emerged, the Ship would have been brought down in the ocean instead."
+        },
+        "quiz": [
+          {
+            "question": "Which assessment best captures the significance and limitation of this flight?",
+            "options": [
+              "It demonstrated recovery of both rocket sections together, leaving operating costs as the main unresolved issue.",
+              "It established an upper-stage recovery achievement, while recovery of both sections on one flight remained unproven.",
+              "It repeated an established upper-stage recovery procedure but introduced a new booster recovery method."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The upper stage was recovered, but the booster exploded, so combined recovery was not demonstrated.",
+              "The upper-stage capture was a first, whereas combining the two recovery achievements remained a future milestone.",
+              "The upper-stage capture was new; the booster had already been caught on three earlier tests."
+            ]
+          },
+          {
+            "question": "What does the account establish about the booster’s departure from its intended recovery sequence?",
+            "options": [
+              "Its own control systems initiated a cancellation before it headed towards the ocean.",
+              "A decision made after the ocean explosion cancelled its planned return.",
+              "It completed the planned tower recovery before being redirected towards the ocean."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The automated abort preceded the diversion, hovering and explosion.",
+              "The cancellation occurred before the booster diverted and exploded, rather than afterwards.",
+              "The booster diverted to the ocean and exploded; the tower recovery concerned the upper stage."
+            ]
+          },
+          {
+            "question": "What does “contingent on” convey about the proposed upper-stage recovery?",
+            "options": [
+              "The assessment would explain the recovery after it had already occurred.",
+              "The assessment was an additional task that could not affect the recovery decision.",
+              "Proceeding with the recovery effort depended on the assessment."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Contingent on” expresses a prerequisite, rather than a retrospective explanation.",
+              "The phrase makes the assessment relevant to whether the recovery effort would proceed.",
+              "“Contingent on” establishes a condition; it does not present the recovery effort as unconditional."
+            ]
+          },
+          {
+            "question": "Which sentence uses the same inverted past counterfactual pattern to imagine a combined recovery that did not occur on this flight?",
+            "options": [
+              "Were both sections recovered together, the flight would demonstrate combined recovery.",
+              "Had both sections been recovered together, the flight would have demonstrated combined recovery.",
+              "Should both sections be recovered together, the flight will demonstrate combined recovery."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Were both sections recovered” introduces a hypothetical condition, but it does not use the requested “had” plus past participle pattern.",
+              "“Had both sections been recovered” inverts a past perfect condition, and “would have demonstrated” supplies the imagined past consequence.",
+              "“Should both sections be recovered” presents an open possibility rather than the requested past counterfactual."
+            ]
+          },
+          {
+            "question": "Which reason for including Falcon 9 in the account is supported by the reading?",
+            "options": [
+              "Its reuse demonstrates that Starship has already achieved the same launch frequency.",
+              "Its operating history establishes that recovering an entire Starship will necessarily be affordable.",
+              "Its lower-stage reuse provides an example of recovery contributing to lower launch costs."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading gives Falcon 9’s launch frequency without assigning that frequency to Starship.",
+              "Falcon 9 provides supporting experience, but the reading does not guarantee Starship’s future operating costs.",
+              "The reading explicitly connects reuse of Falcon 9’s lower section with substantial launch-cost reductions."
+            ]
+          },
+          {
+            "question": "In Macdonald’s assessment, what would constitute the next “milestone”?",
+            "options": [
+              "Combining the separate recovery achievements and establishing dependable, financially practical repetition.",
+              "Repeating the upper-stage capture while leaving combined recovery for a later development programme.",
+              "Increasing satellite deployment before evaluating whether either rocket section can be recovered."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "His assessment connects combined recovery with demonstrating repeated operation at a practical cost.",
+              "Another upper-stage capture alone would not satisfy the stated goal of combining the two achievements.",
+              "The milestone concerns recovery and its repeatability, rather than the number of satellites deployed."
+            ]
+          },
+          {
+            "question": "What additional requirement does “economically” introduce alongside repeated recovery?",
+            "options": [
+              "The recovery process must occur more frequently than Falcon 9 launches.",
+              "The recovery process must be financially practical as well as technically repeatable.",
+              "The recovery process must eliminate every expense associated with launching."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Economically” concerns cost, and the reading sets no requirement to exceed Falcon 9’s launch frequency.",
+              "The word adds a financial standard to the technical requirement of repeated successful recovery.",
+              "“Economically” means financially practical; it does not mean entirely free of expense."
+            ]
+          },
+          {
+            "question": "Which conclusion about the proposed 2028 Moon landing is supported?",
+            "options": [
+              "The upper-stage capture confirms that the landing timetable will be met.",
+              "The booster’s loss establishes that the landing timetable has been abandoned.",
+              "Starship’s progress matters to the timetable, but this achievement does not guarantee it."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes an ambitious timetable and substantial remaining work, rather than a confirmed outcome.",
+              "The reading reports a failed booster recovery without reporting abandonment of the Moon-landing timetable.",
+              "The reading links Starship’s progress to the lunar ambition while preserving uncertainty about delivery."
+            ]
+          },
+          {
+            "question": "What does “configure” mean in the description of SpaceX’s Nasa contract?",
+            "options": [
+              "Adapt the Ship so that it can serve as a vehicle for landing astronauts.",
+              "Assign the Ship a destination without changing its intended function.",
+              "Assess the Ship’s condition before deciding whether to catch it."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Configure” concerns arranging or adapting the vehicle for its specified role as a lunar lander.",
+              "Choosing a destination alone does not express the functional adaptation conveyed by “configure”.",
+              "Condition assessment concerns the recovery decision; “configure” describes preparation for the lander role."
+            ]
+          },
+          {
+            "question": "What does the final sentence establish about the timing of Starship’s remaining development?",
+            "options": [
+              "All of SpaceX’s commitments must be fulfilled within the coming months.",
+              "Considerable progress is needed in the coming months to support fulfilment of its commitments.",
+              "SpaceX has postponed its commitments until development reaches its originally intended pace."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“In the coming months” specifies when progress is needed; it does not set a deadline for fulfilling every commitment.",
+              "The sentence places the timeframe on making progress and connects that progress to meeting the commitments.",
+              "Slower development creates a need for progress; the sentence does not report a postponement of commitments."
+            ]
+          },
+          {
+            "question": "What relationship does “constellation” express between the 26 satellites and Starlink?",
+            "options": [
+              "The satellites formed a complete replacement for the existing internet system.",
+              "The satellites were unrelated objects sharing the same launch vehicle.",
+              "The satellites belonged to a coordinated satellite system providing internet access."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading identifies the satellites as part of Starlink without describing complete replacement of an existing system.",
+              "“Constellation” identifies their membership in a satellite system, rather than merely a shared launch.",
+              "The contextual meaning is a group of satellites operating together, here as part of Starlink’s internet service."
+            ]
+          },
+          {
+            "question": "What does describing full rocket reuse as a “long-held ambition” establish?",
+            "options": [
+              "The objective has existed for some time, although the phrase itself does not establish its achievement.",
+              "The objective became relevant only after the latest upper-stage capture.",
+              "The objective has already been fulfilled through routine combined recoveries."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Long-held” indicates duration, while “ambition” identifies a desired objective rather than a completed result.",
+              "“Long-held” indicates that the objective predates the latest achievement.",
+              "An ambition is a goal; the reading still presents combined recovery as a milestone to be reached."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "SpaceX recovered Starship’s upper stage for the first time after a flight lasting twenty-two and a half hours.",
+          "The returning vehicle hovered beside its launch tower before enormous mechanical arms, nicknamed chopsticks, gripped it.",
+          "The booster triggered an automated abort, a cancellation initiated by its own systems, before diverting to the ocean, hovering above the water and exploding.",
+          "During its journey into space, the upper stage released 26 satellites belonging to the Starlink constellation, a satellite system providing high-speed internet.",
+          "The Ship completed fourteen circuits of Earth before returning to the launch tower.",
+          "Before launch, SpaceX said an effort to catch the Ship would be contingent on a careful assessment of the vehicle in space.",
+          "Had problems emerged, the Ship would have been brought down in the ocean instead.",
+          "Developing a fully reusable rocket remains a long-held ambition for SpaceX.",
+          "The company needs dependable recovery of both Starship sections to enable repeated flights and sharply lower costs.",
+          "Falcon 9 already illustrates the financial value of partial reuse: its rockets fly more than 100 times annually, and reusing the lower section has substantially reduced launch costs.",
+          "SpaceX had already caught the Super Heavy booster on three earlier test flights.",
+          "Prof Malcolm Macdonald, president of the Royal Aeronautical Society, said landing an entire Starship would represent a major advance in spaceflight.",
+          "In his assessment, the next milestone is to combine the two recovery achievements in one flight and demonstrate that the process works dependably, repeatedly and economically.",
+          "Starship’s progress has direct implications for Nasa’s ambition to land humans on the Moon in 2028, a highly ambitious timetable.",
+          "SpaceX’s Nasa contract requires it to configure the Ship as a lander that will eventually carry astronauts to the lunar surface.",
+          "Starship’s development has proceeded more slowly than SpaceX intended, and considerable progress in the coming months is necessary to meet its commitments."
+        ],
+        "sentence_evidence": [
+          "SpaceX has successfully caught the top part of its huge Starship rocket for the first time, after a flight lasting twenty-two and a half hours.",
+          "The rocket returned to Earth and hovered near its launch tower whose mechanical arms - nicknamed chopsticks - then secured it.",
+          "But the booster activated an automated abort, diverting instead to the ocean where it hovered above the water before exploding.",
+          "The top part of the rocket continued its journey to space where it deployed 26 satellites, which form part of the Starlink constellation that provides high-speed internet.",
+          "The Ship completed 14 orbits around the Earth before returning to the launch tower.",
+          "Before the flight, SpaceX said it would only try to catch the Ship after carefully assessing the vehicle while it was in space.",
+          "Any problems would have resulted in the ship being brought down in the ocean in the same way as the booster.",
+          "Building a fully reusable rocket is a long-held ambition for SpaceX.",
+          "SpaceX needs to reliably recover both parts of Starship so that it can fly repeatedly and drastically reduce costs.",
+          "Falcon 9 rockets now fly more than 100 times a year and the ability to reuse the bottom part of the rocket has dramatically cut the costs of launch.",
+          "SpaceX has managed to catch the Super Heavy Booster on three earlier test flights.",
+          "But landing an entire Starship rocket would take spaceflight to the next level, says Prof Malcolm Macdonald, president of Royal Aeronautical Society - but it didn't happen this time.",
+          "\"Not recovering the first stage is a setback. But they have recovered Super Heavy before and so successfully returning and recovering the Ship, is a substantial step forward. They have demonstrated the two halves of the recovery challenge, just not yet on the same flight. The next milestone would be stitching those achievements together and then proving they can do it reliably, repeatedly and economically.\"",
+          "The progress of Starship has direct implications for Nasa's attempt to land humans on the Moon in 2028 - a highly ambitious timeline.",
+          "SpaceX has been given a Nasa contract to configure the Ship into a lander that will eventually take astronauts down to the lunar surface.",
+          "Starship will need to make a lot of progress in the coming months to meet these commitments - the pace of the rocket's development has been far slower than SpaceX had intended."
+        ],
+        "editorial_check": {
+          "date": "2026-11-15T03:48:22.452006+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct reading-based targets, including “contingent on” and “economically”, teach useful advanced meanings without borrowing reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified; “In his assessment” preserves attribution, and the ambitious timetable remains uncertain."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the exact grammar quotation correctly demonstrates inversion with “Had problems emerged”."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct questions test supported inference, conditional grammar, contextual vocabulary and qualifications, including progress versus guaranteed delivery."
+            }
+          },
+          "content_digest": "22212c1fb14d09953f54903cd77abb57f0a891028df9e063074fb8dba80eb53a"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

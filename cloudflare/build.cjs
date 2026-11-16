@@ -67,6 +67,18 @@ for (const file of files.filter(f => f.endsWith('.html') && f !== '404.html')) {
   redirects.push(`/${file.slice(0, -5)} /${file} 301`);
 }
 fs.writeFileSync(path.join(out, '_redirects'), redirects.join('\n')+'\n');
+// Search Console reported query-version duplicates for these four books. Match
+// the pathname so both plain and cache-busted downloads advertise the same URL;
+// leave the PDF bytes, links, redirects, and cache policy unchanged.
+const canonicalPdfPaths = [
+  'banking-operations', 'medical-assistants', 'marketing', 'sports-medicine',
+].map(slug => `pdf/efsp/${slug}-english-book.pdf`);
+for (const file of canonicalPdfPaths) {
+  if (!present.has(file)) throw new Error(`Missing canonical PDF: ${file}`);
+}
+const canonicalPdfHeaders = canonicalPdfPaths.map(file =>
+  `/${file}\n  Link: <https://${domain}/${file}>; rel="canonical"\n`
+).join('\n');
 fs.writeFileSync(path.join(out, '_headers'), `/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -83,5 +95,6 @@ https://:version.:worker.philstilwell.workers.dev/*
 
 /404.html
   X-Robots-Tag: noindex
-`);
+
+${canonicalPdfHeaders}`);
 console.log(`Packaged ${files.length} public files (${(bytes/1024/1024).toFixed(2)} MiB), with exact URLs and checked local links.`);

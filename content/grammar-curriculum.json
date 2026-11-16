@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-14",
+  "revision": "2026-11-16",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -7200,6 +7200,133 @@
         "https://dictionary.cambridge.org/grammar/british-grammar/telling-the-time",
         "https://www.oxfordlearnersdictionaries.com/grammar/online-grammar/quantifiers-much-many-a-lot-of",
         "https://dictionary.cambridge.org/dictionary/english/time"
+      ]
+    },
+    {
+      "number": 62,
+      "title": "Actually or definitely? Facts and certainty",
+      "level": "A2–B1",
+      "category": "Word choice",
+      "goal": "Choose actually to emphasize a fact or contrast and definitely to express certainty, without treating them as interchangeable.",
+      "rules": [
+        "Actually emphasizes what is true or real, often in contrast with an expectation. If someone says “I thought it was Monday,” you can reply “Actually, it’s Tuesday.” The word introduces the fact that corrects the expectation. In this use it means in fact. It does not simply mean definitely, and it is not a general way to say how certain you are.",
+        "Definitely expresses certainty: you present the statement without doubt. “Are you sure it’s Tuesday?” “Yes, it’s definitely Tuesday.” The speaker emphasizes confidence in the answer. Definitely can also stand alone as an emphatic answer: “Will you come?” “Definitely!” The word communicates certainty; it does not provide independent evidence that a claim is true.",
+        "These are different jobs, not a rule that actually always corrects another person. It can introduce surprising information: “I actually enjoyed the film more than I expected.” It can also help soften a correction or refusal, although tone and context still matter. Both words can appear in grammatical sentences about the same situation: “The shop is actually open” highlights reality, often against an expectation; “The shop is definitely open” emphasizes certainty. Choose the meaning you intend, not a supposed percentage scale."
+      ],
+      "cards": [
+        {
+          "label": "ACTUALLY: A FACT AGAINST AN EXPECTATION",
+          "example": "“I thought it was Monday.” “Actually, it’s Tuesday.”",
+          "note": "The reply replaces the expected day with the real day. Actually introduces that contrast; it means in fact here."
+        },
+        {
+          "label": "DEFINITELY: CERTAINTY",
+          "example": "“Are you sure it’s Tuesday?” “Yes, it’s definitely Tuesday.”",
+          "note": "The day stays the same. Definitely emphasizes that the speaker is sure of the answer."
+        },
+        {
+          "label": "ACTUALLY CAN INTRODUCE A SURPRISE",
+          "example": "I actually enjoyed the film more than I expected.",
+          "note": "The result differs from the speaker’s expectation. No other person needs to have made an incorrect statement."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "In “I thought it was Monday”—“Actually, it’s Tuesday,” what does actually add?",
+          "options": [
+            {
+              "text": "It introduces a fact that corrects the expected day.",
+              "correct": true,
+              "feedback": "Monday was expected; Tuesday is the fact given in the reply. Actually highlights this contrast."
+            },
+            {
+              "text": "It means the speaker is only guessing the day.",
+              "correct": false,
+              "feedback": "Actually presents something as real or factual here. It does not mean perhaps or maybe."
+            },
+            {
+              "text": "It means exactly the same thing as without doubt.",
+              "correct": false,
+              "feedback": "Without doubt expresses certainty, the job of definitely. Actually introduces the contrasting fact in this reply."
+            }
+          ]
+        },
+        {
+          "prompt": "Which word explicitly expresses “without doubt” in “The shop is ___ open”?",
+          "options": [
+            {
+              "text": "maybe",
+              "correct": false,
+              "feedback": "Maybe expresses possibility, not certainty. A common form is “Maybe the shop is open.”"
+            },
+            {
+              "text": "actually",
+              "correct": false,
+              "feedback": "This can make a grammatical sentence, but actually emphasizes reality or contrast. It is not the word that explicitly means without doubt."
+            },
+            {
+              "text": "definitely",
+              "correct": true,
+              "feedback": "Definitely emphasizes that the speaker is sure the shop is open. That is the requested meaning, without doubt."
+            }
+          ]
+        },
+        {
+          "prompt": "Why is “I actually enjoyed the film more than I expected” natural even if nobody else said anything?",
+          "options": [
+            {
+              "text": "Actually must always refer to someone else’s mistake.",
+              "correct": false,
+              "feedback": "It is not limited to correcting other people. Here it contrasts the result with the speaker’s own expectation."
+            },
+            {
+              "text": "Actually can highlight a result that surprises the speaker.",
+              "correct": true,
+              "feedback": "Enjoying the film more than expected provides the contrast. No other person’s incorrect statement is required."
+            },
+            {
+              "text": "Actually guarantees that everyone enjoyed the film.",
+              "correct": false,
+              "feedback": "The sentence reports one speaker’s experience. Actually does not establish what everyone else thought."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "A friend thinks the museum closes at five. You have checked the sign: it closes at six. Choose the reply that states the correction, rather than guessing or repeating the mistaken time.",
+        "options": [
+          {
+            "text": "Actually, it closes at five.",
+            "correct": false,
+            "feedback": "This repeats the mistaken time. The sign in the situation gives six, so the reply must correct the time to six."
+          },
+          {
+            "text": "Maybe it closes at six.",
+            "correct": false,
+            "feedback": "Maybe presents the time as a possibility. You have checked the sign and are being asked to state the correction."
+          },
+          {
+            "text": "Actually, it closes at six.",
+            "correct": true,
+            "feedback": "Six replaces the friend’s expectation of five. Actually introduces the contrasting fact. Definitely could emphasize certainty in another suitable reply, but it is not an interchangeable meaning."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-62-actually-definitely-student-workbook.pdf",
+        "concept-62-actually-definitely-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-16",
+      "related": [
+        8,
+        48,
+        60
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/actual-and-actually",
+        "https://dictionary.cambridge.org/dictionary/english/definitely",
+        "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
+        "https://www.oxfordlearnersdictionaries.com/definition/english/certainly"
       ]
     }
   ],

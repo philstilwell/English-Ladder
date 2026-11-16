@@ -1,0 +1,808 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-16",
+  "release_iso": "2026-11-16T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Sun, 15 Nov 2026 10:49:57 GMT",
+    "retrieved_at": "2026-11-16T03:30:55.343809+00:00",
+    "title": "How to spot November's planetary parade in the pre-dawn sky",
+    "summary": "The planets of Mercury, Venus, Mars and Jupiter will align in pre-dawn sky throughout November.",
+    "evidence_text": "Stargazers are being treated to a diagonal parade of four planets in the pre-dawn sky throughout November.\nThe planets of Mercury, Venus, Mars and Jupiter will align in pre-dawn sky throughout November.\nMercury, Venus, Mars and Jupiter will all be visible to the naked eye in the south-eastern to eastern sky.\nMercury will be the hardest planet to spot in the parade.\nVenus is an easy planet to find as it is the brightest object in our night sky after the Moon. It has the highest albedo of any major planet in our solar system - that is reflects more sunlight back into space thus appearing brighter.\nIt will be higher in the sky than Mercury and visible earlier in the night in the hours before sunrise.\nMars and Jupiter will appear to be very close to each other in the sky on the 15 and 16 November.\nTo view the parade, find a spot away from light pollution with a good view of the eastern horizon and let your eyes adjust to the dark for around twenty minutes.\nThe best time to view the planetary lineup is approximately 45-60 minutes before sunrise.\nIt is only visible in twilight and never in a fully dark sky. As always it will be dim and close to the horizon.\nAbove Mercury and toward the right, you will spot Venus.\n\"They will be separated by just 1.2 degrees, or roughly the width of a finger held at arm's length,\" according to Gideon Bendavid-Walker, astronomer at the Royal Observatory Greenwich.\nThe two planets will appear close to the bright star Regulus and may even look like a triple star.\nAs the closest planet to the Sun and the smallest in our solar system, it is permanently locked in solar glare.\nTry spotting it in a wide open sky with a flat horizon and look to the south-east.\nDon't mistake it with the bright star Spica which will be close to it. Stars twinkle while planets glow steadily.\nAt a similar time before sunrise, Uranus will be setting in the west. Then Saturn and Neptune will also be visible for a time in the evening rather than the morning sky.",
+    "evidence_retrieved_at": "2026-11-16T03:30:55.343809+00:00",
+    "link": "https://www.bbc.co.uk/weather/articles/cke8rr37lrryo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why should people wait before looking for the planets? Use “They should wait because ...”.",
+          "Would you or a person in a story get up early to see the planets? Use “I think ... because ...”."
+        ],
+        "title": "Four Planets in November's Morning Sky",
+        "overview": "Find out when and how to see four planets before sunrise.",
+        "topic": "Planets in the morning sky",
+        "vocabulary": [
+          {
+            "term": "without",
+            "part_of_speech": "preposition",
+            "definition": "Not having or using something."
+          },
+          {
+            "term": "bright",
+            "part_of_speech": "adjective",
+            "definition": "Giving a lot of light."
+          },
+          {
+            "term": "higher",
+            "part_of_speech": "comparative adjective",
+            "definition": "Further up than something else."
+          },
+          {
+            "term": "close together",
+            "part_of_speech": "adverb phrase",
+            "definition": "Near each other."
+          },
+          {
+            "term": "clear",
+            "part_of_speech": "adjective",
+            "definition": "With nothing in the way to stop you seeing."
+          },
+          {
+            "term": "about",
+            "part_of_speech": "adverb",
+            "definition": "A little more or less than a number."
+          }
+        ],
+        "grammar": {
+          "concept": "Using “can” with a verb",
+          "explanation": "Use “can” to say that something is possible or that someone is able to do something. Put the verb after “can” without “to”. The form stays the same with “I”, “you”, “we” and “they”.",
+          "example_quote": "You can see these planets without a telescope."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news?",
+            "options": [
+              "Four planets will appear in the morning sky.",
+              "Four planets will appear only in the evening.",
+              "Only one planet will appear in November."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. The reading describes four planets in the sky before sunrise.",
+              "The reading says to look before sunrise, in the morning.",
+              "The reading names four planets that people can see."
+            ]
+          },
+          {
+            "question": "Which planet will be the hardest to see?",
+            "options": [
+              "Venus",
+              "Mercury",
+              "Jupiter"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Venus is bright and easy to find.",
+              "Yes. Mercury will be the hardest planet to see.",
+              "The reading says Mercury will be the hardest to see."
+            ]
+          },
+          {
+            "question": "Where will Venus be compared with Mercury?",
+            "options": [
+              "Lower in the sky",
+              "At the same height",
+              "Higher in the sky"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says Venus will be higher, so it will be further up.",
+              "The reading says Venus will be higher than Mercury.",
+              "Yes. Venus will be further up in the sky than Mercury."
+            ]
+          },
+          {
+            "question": "What will Mars and Jupiter look like on 15 and 16 November?",
+            "options": [
+              "Very far from each other",
+              "Very close together",
+              "Brighter than Venus"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says they will look very close together.",
+              "Yes. They will look near each other on these dates.",
+              "The reading does not compare their light with Venus on these dates."
+            ]
+          },
+          {
+            "question": "When is the best time to look for the planets?",
+            "options": [
+              "About an hour after sunrise",
+              "About twenty minutes after sunrise",
+              "About 45 to 60 minutes before sunrise"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says to look before sunrise.",
+              "Twenty minutes is the time to let your eyes get used to the dark.",
+              "Yes. This is the best time given in the reading."
+            ]
+          },
+          {
+            "question": "What does “about” mean in “about twenty minutes”?",
+            "options": [
+              "A little more or less than twenty minutes",
+              "Exactly twenty minutes",
+              "Always more than twenty minutes"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. “About” means the number does not need to be exact.",
+              "“About” allows a little more or less time.",
+              "“About” can mean a little less as well as a little more."
+            ]
+          },
+          {
+            "question": "Which sentence uses “can” correctly?",
+            "options": [
+              "We can to look before sunrise.",
+              "We can look before sunrise.",
+              "We can looking before sunrise."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "After “can”, use “look” without “to”.",
+              "Yes. “Can” is followed by “look” without “to”.",
+              "After “can”, use “look”, not “looking”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "In November, four planets will appear in a line in the sky before sunrise.",
+          "They are Mercury, Venus, Mars and Jupiter.",
+          "You can see these planets without a telescope.",
+          "Mercury will be the hardest planet to see.",
+          "Venus is very bright, so it is easy to find.",
+          "Venus will be higher in the sky than Mercury.",
+          "Mars and Jupiter will look very close together on 15 and 16 November.",
+          "Choose a place away from bright lights, with a clear view towards the east.",
+          "Wait about twenty minutes so your eyes can get used to the dark.",
+          "The best time to look is about 45 to 60 minutes before sunrise."
+        ],
+        "sentence_evidence": [
+          "Stargazers are being treated to a diagonal parade of four planets in the pre-dawn sky throughout November.",
+          "The planets of Mercury, Venus, Mars and Jupiter will align in pre-dawn sky throughout November.",
+          "Mercury, Venus, Mars and Jupiter will all be visible to the naked eye in the south-eastern to eastern sky.",
+          "Mercury will be the hardest planet to spot in the parade.",
+          "Venus is an easy planet to find as it is the brightest object in our night sky after the Moon. It has the highest albedo of any major planet in our solar system - that is reflects more sunlight back into space thus appearing brighter.",
+          "It will be higher in the sky than Mercury and visible earlier in the night in the hours before sunrise.",
+          "Mars and Jupiter will appear to be very close to each other in the sky on the 15 and 16 November.",
+          "To view the parade, find a spot away from light pollution with a good view of the eastern horizon and let your eyes adjust to the dark for around twenty minutes.",
+          "To view the parade, find a spot away from light pollution with a good view of the eastern horizon and let your eyes adjust to the dark for around twenty minutes.",
+          "The best time to view the planetary lineup is approximately 45-60 minutes before sunrise."
+        ],
+        "editorial_check": {
+          "date": "2026-11-16T03:32:38.748405+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct reading targets, including “without”, “bright” and “about”, have clear, useful beginner definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and natural prompts such as “I think ... because ...” suit teen and adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short reading sentences and clear “can” explanations support A1-A2 learners. Discussion includes sentence frames and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct questions appropriately test the main idea, details, “about” and “can”, with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "f554d986b36972cf42c83b35a34298e02a94c3401fd95bfa9bdded6e69888fc3"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why should viewers choose a dark location and give their eyes time to adjust before looking for the planets?",
+          "Would you get up early to watch this planetary line-up? Explain what would influence your decision."
+        ],
+        "title": "Four Planets Line Up Before Sunrise in November",
+        "overview": "Learn how to find November’s four morning planets and prepare for a better view.",
+        "topic": "Space and skywatching",
+        "vocabulary": [
+          {
+            "term": "throughout",
+            "part_of_speech": "preposition",
+            "definition": "During the whole period of time mentioned."
+          },
+          {
+            "term": "visible to the naked eye",
+            "part_of_speech": "adjective phrase",
+            "definition": "Possible to see without using a telescope or similar equipment."
+          },
+          {
+            "term": "reflects",
+            "part_of_speech": "verb, present simple",
+            "definition": "Sends light back from a surface."
+          },
+          {
+            "term": "proportion",
+            "part_of_speech": "noun",
+            "definition": "A part of a total amount, considered in relation to the whole."
+          },
+          {
+            "term": "gap",
+            "part_of_speech": "noun",
+            "definition": "The space between two things."
+          },
+          {
+            "term": "roughly",
+            "part_of_speech": "adverb",
+            "definition": "Close to a particular amount or size, but not exactly."
+          },
+          {
+            "term": "light pollution",
+            "part_of_speech": "noun phrase",
+            "definition": "Artificial light that makes objects in the night sky harder to see."
+          },
+          {
+            "term": "adjust to",
+            "part_of_speech": "verb phrase",
+            "definition": "Become used to a different condition or situation."
+          }
+        ],
+        "grammar": {
+          "concept": "Relative clauses that add extra information",
+          "explanation": "Use “which” to add extra information about a thing already identified, such as a planet. Put commas around this relative clause. The main sentence still makes sense if you remove the extra information.",
+          "example_quote": "Venus, which reflects a high proportion of sunlight, is the brightest object in the night sky after the Moon."
+        },
+        "quiz": [
+          {
+            "question": "What is the main purpose of this report?",
+            "options": [
+              "To explain how to watch four planets before sunrise",
+              "To compare telescopes for observing distant planets",
+              "To describe an evening meeting of four planets"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the report explains what viewers can see and how to prepare.",
+              "The report does not compare telescopes, and the four planets are visible to the naked eye.",
+              "The four-planet line-up appears before sunrise, rather than in the evening."
+            ]
+          },
+          {
+            "question": "Which reason does the reading give for Mercury being difficult to spot?",
+            "options": [
+              "It will appear above Venus.",
+              "It will look dim and stay near the horizon.",
+              "It will only appear after sunrise."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading places Venus above Mercury.",
+              "Correct: Mercury will give little light and appear low in the sky.",
+              "The reading describes viewing the planets before sunrise."
+            ]
+          },
+          {
+            "question": "How does the reading compare Venus with other objects in the night sky?",
+            "options": [
+              "Venus is brighter than the Moon.",
+              "Venus is less bright than Mercury.",
+              "Only the Moon is brighter than Venus."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading places the Moon ahead of Venus in brightness.",
+              "The reading describes Mercury as dim and Venus as the brightest object after the Moon.",
+              "Correct: Venus is described as the brightest object in the night sky after the Moon."
+            ]
+          },
+          {
+            "question": "What does the reading establish about Mars and Jupiter on 15 and 16 November?",
+            "options": [
+              "They will appear near each other from the viewer’s position.",
+              "They will appear near Venus, forming the group of three objects.",
+              "Their unusually close appearance will continue throughout November."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the reading describes their apparent positions in the sky.",
+              "The third object in the group is the star Regulus, not Venus.",
+              "The reading gives 15 and 16 November for their close appearance. The four-planet line-up lasts throughout November."
+            ]
+          },
+          {
+            "question": "What does “roughly” tell us about the finger-width comparison?",
+            "options": [
+              "The comparison gives an exact measurement.",
+              "The comparison gives an approximate size.",
+              "The comparison describes a sudden movement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Roughly” shows that the size is not exact.",
+              "Correct: “roughly” means close to the stated size.",
+              "“Roughly” describes the size of the gap here, not movement."
+            ]
+          },
+          {
+            "question": "What should viewers do to help their eyes “adjust to” the dark?",
+            "options": [
+              "Wait until the Sun has risen.",
+              "Look only at the brightest planet.",
+              "Allow around twenty minutes in the dark."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The recommended viewing period is before sunrise.",
+              "The reading recommends allowing time in the dark, rather than focusing on one planet.",
+              "Correct: the reading advises giving the eyes around twenty minutes to become used to the dark."
+            ]
+          },
+          {
+            "question": "Which viewing time matches the reading’s recommendation?",
+            "options": [
+              "Around fifty minutes before sunrise",
+              "Around twenty minutes after sunrise",
+              "Around fifty minutes after sunset"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: fifty minutes falls within the recommended period of 45 to 60 minutes before sunrise.",
+              "The twenty-minute period concerns allowing the eyes to adjust, and viewing is recommended before sunrise.",
+              "The recommended time is before sunrise, rather than after sunset."
+            ]
+          },
+          {
+            "question": "Which location best meets the reading’s advice for watching the four-planet line-up?",
+            "options": [
+              "A dark place with an open view of the western horizon",
+              "A dark place with an open view of the eastern horizon",
+              "A well-lit place with an open view of the eastern horizon"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A dark place meets one recommendation, but the reading advises an open view of the eastern horizon.",
+              "Correct: this location combines the recommended eastern view with a place away from artificial light.",
+              "The eastern view meets one recommendation, but artificial light can make the night sky harder to see."
+            ]
+          },
+          {
+            "question": "Which word completes the relative clause in “The viewing site, ___ is outside the town, has an open view of the sky”?",
+            "options": [
+              "who",
+              "where",
+              "which"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Use “who” for people; “the viewing site” is a place.",
+              "“Where” cannot serve as the subject of “is” in this sentence.",
+              "Correct: “which” refers to “the viewing site” and introduces extra information between commas."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Mercury, Venus, Mars and Jupiter will form a line in the sky before sunrise throughout November.",
+          "All four planets will be visible to the naked eye, so viewers will not need a telescope to see them.",
+          "Mercury will be the hardest of the four planets to spot.",
+          "It will look dim and remain near the horizon, the line where the sky appears to meet the ground.",
+          "Venus will appear above Mercury and to its right.",
+          "Venus, which reflects a high proportion of sunlight, is the brightest object in the night sky after the Moon.",
+          "On 15 and 16 November, Mars and Jupiter will appear very near each other in the sky.",
+          "According to astronomer Gideon Bendavid-Walker, the gap between them will be roughly the width of a finger held at arm’s length.",
+          "The pair will appear near the star Regulus, and the three objects may look like a group of three stars.",
+          "Viewers should choose a place away from light pollution, meaning artificial light that makes the night sky harder to see.",
+          "They should find an open view of the eastern horizon and allow around twenty minutes for their eyes to adjust to the dark.",
+          "The best viewing time is approximately 45 to 60 minutes before sunrise."
+        ],
+        "sentence_evidence": [
+          "The planets of Mercury, Venus, Mars and Jupiter will align in pre-dawn sky throughout November.",
+          "Mercury, Venus, Mars and Jupiter will all be visible to the naked eye in the south-eastern to eastern sky.",
+          "Mercury will be the hardest planet to spot in the parade.",
+          "It is only visible in twilight and never in a fully dark sky. As always it will be dim and close to the horizon.",
+          "Above Mercury and toward the right, you will spot Venus.",
+          "Venus is an easy planet to find as it is the brightest object in our night sky after the Moon. It has the highest albedo of any major planet in our solar system - that is reflects more sunlight back into space thus appearing brighter.",
+          "Mars and Jupiter will appear to be very close to each other in the sky on the 15 and 16 November.",
+          "\"They will be separated by just 1.2 degrees, or roughly the width of a finger held at arm's length,\" according to Gideon Bendavid-Walker, astronomer at the Royal Observatory Greenwich.",
+          "The two planets will appear close to the bright star Regulus and may even look like a triple star.",
+          "To view the parade, find a spot away from light pollution with a good view of the eastern horizon and let your eyes adjust to the dark for around twenty minutes.",
+          "To view the parade, find a spot away from light pollution with a good view of the eastern horizon and let your eyes adjust to the dark for around twenty minutes.",
+          "The best time to view the planetary lineup is approximately 45-60 minutes before sunrise."
+        ],
+        "editorial_check": {
+          "date": "2026-11-16T03:36:25.172293+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "quiz"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct reading-based targets, including “throughout,” “proportion” and “adjust to,” offer useful B1-B2 learning value with clear definitions and no reserved-target reuse."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting such as “will appear” and “may look like” preserves the source’s qualifications and maintains a consistent voice."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and feedback are clear. The grammar accurately explains “which,” using an exact News Brief quotation that demonstrates the pattern."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and nine valid quiz questions combine comprehension, contextual vocabulary, viewing recommendations and relative-clause application."
+            }
+          },
+          "content_digest": "cde29f8ca541089661046d779e3879ae2f8035f509fbbb9a4f4883927dfe1860"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why Mercury presents a greater observational challenge than Venus, drawing on the conditions described in the report.",
+          "How would you balance the viewing time, an unobstructed horizon and time for your eyes to acclimatise when planning an observation?"
+        ],
+        "title": "Four Planets Form November’s Pre-dawn Parade",
+        "overview": "November’s four-planet display combines striking visual arrangements with practical observational challenges, particularly Mercury’s faint appearance near the horizon.",
+        "topic": "Astronomy and skywatching",
+        "vocabulary": [
+          {
+            "term": "configuration",
+            "part_of_speech": "noun",
+            "definition": "The arrangement of several objects in relation to one another, considered as a whole."
+          },
+          {
+            "term": "discern",
+            "part_of_speech": "verb",
+            "definition": "To manage to see or recognise something that is difficult to distinguish from its surroundings."
+          },
+          {
+            "term": "solar glare",
+            "part_of_speech": "noun phrase",
+            "definition": "Intense light from the Sun that makes nearby objects difficult to see."
+          },
+          {
+            "term": "confined to",
+            "part_of_speech": "adjective phrase",
+            "definition": "Restricted to a particular situation, place or period; here, a limited lighting condition."
+          },
+          {
+            "term": "unobstructed",
+            "part_of_speech": "adjective",
+            "definition": "Having nothing in the way that blocks the view."
+          },
+          {
+            "term": "conspicuous",
+            "part_of_speech": "adjective",
+            "definition": "Readily noticeable because something stands out strongly from its surroundings."
+          },
+          {
+            "term": "reflectivity",
+            "part_of_speech": "noun",
+            "definition": "The capacity of a surface to send incoming light back rather than absorb it."
+          },
+          {
+            "term": "apparent proximity",
+            "part_of_speech": "noun phrase",
+            "definition": "Closeness as it appears to an observer, without establishing the actual distance between the objects."
+          },
+          {
+            "term": "angular separation",
+            "part_of_speech": "noun phrase",
+            "definition": "The angle between the directions in which two objects are seen, rather than the distance between them in space."
+          },
+          {
+            "term": "acclimatise",
+            "part_of_speech": "verb",
+            "definition": "To become accustomed to different surrounding conditions; here, for the eyes to become accustomed to darkness."
+          }
+        ],
+        "grammar": {
+          "concept": "Pseudo-cleft sentences for explanatory emphasis",
+          "explanation": "A pseudo-cleft uses a “what” clause followed by “be” to emphasise the information that follows. Here, the opening clause establishes what needs explaining, while the clause after “is” foregrounds the reason Venus stands out.",
+          "example_quote": "What makes Venus especially conspicuous is that only the Moon appears brighter in the night sky."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the report’s central message?",
+            "options": [
+              "November’s planetary display offers several viewing opportunities, although the planets differ in how readily they can be observed.",
+              "November’s planetary display can be observed equally well at any point during the night.",
+              "November’s planetary display is chiefly an opportunity to observe planets through optical equipment."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The report combines the viewing opportunity with distinctions involving brightness, timing and visibility.",
+              "Mercury is restricted to twilight, and the recommended viewing period is before sunrise.",
+              "The four main planets can be observed without optical equipment."
+            ]
+          },
+          {
+            "question": "What does “apparent proximity” establish about Mars and Jupiter on 15 and 16 November?",
+            "options": [
+              "They will be approximately the same distance from Earth.",
+              "They will look particularly close together from the observer’s perspective.",
+              "The physical distance between them will have fallen to 1.2 degrees."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase concerns their appearance together in the sky, not their respective distances from Earth.",
+              "“Apparent proximity” describes perceived closeness without establishing their physical separation.",
+              "Degrees express the viewing angle here, not a physical distance between planets."
+            ]
+          },
+          {
+            "question": "Which explanation for Mercury’s observational difficulty is supported by the reading?",
+            "options": [
+              "Its position near Regulus makes it resemble another star.",
+              "Its exceptional reflectivity prevents observers from distinguishing its outline.",
+              "Its exposure to solar glare makes it difficult to distinguish from the surrounding light."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The possible resemblance involving Regulus concerns Mars and Jupiter.",
+              "Exceptional reflectivity is discussed in connection with Venus’s conspicuous appearance.",
+              "The reading connects Mercury’s position nearest the Sun with persistent solar glare."
+            ]
+          },
+          {
+            "question": "What restriction does “confined to twilight” express in the account of Mercury?",
+            "options": [
+              "Mercury can be observed under twilight conditions, rather than against a fully dark sky.",
+              "Mercury remains visible through twilight and into a fully dark sky.",
+              "Mercury is easiest to observe once twilight has ended."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Confined to” establishes a limit on the conditions under which Mercury is visible.",
+              "This explicitly extends visibility into full darkness, contradicting the restriction expressed by “confined to twilight”.",
+              "The reading does not recommend waiting for full darkness; Mercury’s visibility is restricted to twilight."
+            ]
+          },
+          {
+            "question": "In the explanation of Venus, what distinction does “reflectivity” convey?",
+            "options": [
+              "Venus’s brightness comes from light that it produces independently.",
+              "Venus sends incoming sunlight back into space, contributing to its conspicuous appearance.",
+              "Venus’s reflectivity describes how much sunlight reaches it, rather than how much it sends back."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Reflectivity” concerns returning incoming light, rather than producing light independently.",
+              "The reading links Venus’s brilliance to its capacity to return sunlight.",
+              "“Reflectivity” describes the capacity to send incoming light back, not the amount of sunlight initially received."
+            ]
+          },
+          {
+            "question": "Which observation would support identifying an object near Spica as Venus?",
+            "options": [
+              "It appears to twinkle like the nearby star.",
+              "It occupies the lowest position beside Mercury.",
+              "It maintains a steady glow while the nearby star twinkles."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading uses twinkling to characterise Spica, whereas Venus glows steadily.",
+              "The reading provides a distinction based on the light’s appearance, not this positional test.",
+              "A steady glow is the identifying contrast supplied for Venus."
+            ]
+          },
+          {
+            "question": "What does the finger held at arm’s length help observers interpret?",
+            "options": [
+              "The apparent angle between Mars and Jupiter in their field of view.",
+              "The actual diameter of either planet.",
+              "The physical distance separating the two planets in space."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The comparison gives a familiar visual reference for their 1.2-degree angular separation.",
+              "The comparison concerns the interval between the planets’ apparent positions, not their diameters.",
+              "The reading describes an angular measurement, which does not establish physical separation."
+            ]
+          },
+          {
+            "question": "How should the statement that Mars, Jupiter and Regulus “may resemble a group of three stars” be interpreted?",
+            "options": [
+              "The uncertainty concerns whether Regulus will be nearby, rather than whether the group will look like three stars.",
+              "It presents a possible visual impression rather than a change in what the objects are.",
+              "It guarantees that observers will be unable to distinguish the three objects."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“May” qualifies the possible resemblance to three stars; the reading presents the planets’ apparent proximity to Regulus separately.",
+              "“May” qualifies the possibility, while “resemble” identifies a similarity in appearance.",
+              "The sentence offers a possible resemblance, not a guaranteed inability to distinguish the objects."
+            ]
+          },
+          {
+            "question": "Which plan best follows the reading’s separate recommendations about observation and preparation?",
+            "options": [
+              "Begin acclimatising 45–60 minutes before sunrise and start observing twenty minutes later.",
+              "Observe 45–60 minutes before sunrise and use that entire period as the stated minimum for eye preparation.",
+              "Observe 45–60 minutes before sunrise, allowing around twenty minutes beforehand for the eyes to acclimatise."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This shifts observation to roughly 25–40 minutes before sunrise, outside the recommended viewing period of 45–60 minutes before sunrise.",
+              "The reading gives around twenty minutes for eye preparation, separately from the recommended observation period.",
+              "This preserves the distinction between when to observe and how long to allow for eye preparation."
+            ]
+          },
+          {
+            "question": "Which account preserves the reading’s distinction between the additional planets’ viewing periods?",
+            "options": [
+              "Uranus will be setting before sunrise, whereas Saturn and Neptune will be visible for a time in the evening.",
+              "Uranus, Saturn and Neptune will all occupy the morning sky for the same period.",
+              "Saturn and Neptune will be setting in the west while Uranus appears in the evening."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading places Uranus in the pre-sunrise setting and Saturn and Neptune in an evening viewing period.",
+              "The reading explicitly distinguishes Uranus’s timing from that of Saturn and Neptune.",
+              "This reverses the timing and setting information given in the reading."
+            ]
+          },
+          {
+            "question": "What does an “unobstructed” view contribute to the recommended Mercury observation site?",
+            "options": [
+              "It guarantees that the atmosphere will remain free of cloud.",
+              "It prevents objects in the foreground from blocking the relevant part of the sky.",
+              "It ensures that Mercury will appear as conspicuous as Venus."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Unobstructed” describes a view that is not blocked; it does not guarantee particular weather.",
+              "The term concerns removing barriers to the view across the horizon.",
+              "A suitable view does not remove the contrast between Mercury’s faint appearance and Venus’s brilliance."
+            ]
+          },
+          {
+            "question": "Which grammatical pseudo-cleft emphasises the cause of Mercury’s observational difficulty while preserving the reading’s explanation?",
+            "options": [
+              "What solar glare makes difficult to spot is Mercury.",
+              "What makes Mercury difficult to spot is its exceptional reflectivity.",
+              "What makes Mercury difficult to spot is the solar glare around it."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is grammatical and consistent with the reading, but its final focus identifies the affected planet rather than the cause.",
+              "This is grammatical, but exceptional reflectivity explains Venus’s conspicuous appearance in the reading.",
+              "The opening “what” clause establishes the difficulty, and the noun phrase “the solar glare around it” after “is” emphasises its supported cause."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "November’s pre-dawn sky offers a diagonal configuration of four planets.",
+          "Mercury, Venus, Mars and Jupiter will be observable without optical equipment in the eastern to south-eastern sky.",
+          "Of these four planets, Mercury will be the hardest to discern.",
+          "As the smallest planet and the one nearest the Sun, Mercury is persistently caught in solar glare.",
+          "Its visibility is confined to twilight, and it remains faint and low on the horizon.",
+          "An unobstructed south-eastern view across a flat horizon offers the recommended setting for spotting Mercury.",
+          "What makes Venus especially conspicuous is that only the Moon appears brighter in the night sky.",
+          "Among the major planets, Venus has the greatest reflectivity, the capacity to send incoming sunlight back into space.",
+          "Observers can distinguish Venus from nearby Spica by looking for a steady glow rather than the star’s twinkling.",
+          "Mars and Jupiter will be in particularly striking apparent proximity on 15 and 16 November.",
+          "According to astronomer Gideon Bendavid-Walker at the Royal Observatory Greenwich, their angular separation, the angle between their positions in the sky, will be just 1.2 degrees.",
+          "He compares that interval with the width of a finger held at arm’s length.",
+          "Near Regulus, the two planets may resemble a group of three stars.",
+          "While Uranus will be setting in the west before sunrise, Saturn and Neptune will be visible for a time in the evening.",
+          "Observers should choose a location away from artificial skyglow with a good view of the eastern horizon, allowing around twenty minutes for their eyes to acclimatise to darkness.",
+          "The recommended viewing period for the planetary parade is approximately 45–60 minutes before sunrise."
+        ],
+        "sentence_evidence": [
+          "Stargazers are being treated to a diagonal parade of four planets in the pre-dawn sky throughout November.",
+          "Mercury, Venus, Mars and Jupiter will all be visible to the naked eye in the south-eastern to eastern sky.",
+          "Mercury will be the hardest planet to spot in the parade.",
+          "As the closest planet to the Sun and the smallest in our solar system, it is permanently locked in solar glare.",
+          "It is only visible in twilight and never in a fully dark sky. As always it will be dim and close to the horizon.",
+          "Try spotting it in a wide open sky with a flat horizon and look to the south-east.",
+          "Venus is an easy planet to find as it is the brightest object in our night sky after the Moon. It has the highest albedo of any major planet in our solar system - that is reflects more sunlight back into space thus appearing brighter.",
+          "Venus is an easy planet to find as it is the brightest object in our night sky after the Moon. It has the highest albedo of any major planet in our solar system - that is reflects more sunlight back into space thus appearing brighter.",
+          "Don't mistake it with the bright star Spica which will be close to it. Stars twinkle while planets glow steadily.",
+          "Mars and Jupiter will appear to be very close to each other in the sky on the 15 and 16 November.",
+          "\"They will be separated by just 1.2 degrees, or roughly the width of a finger held at arm's length,\" according to Gideon Bendavid-Walker, astronomer at the Royal Observatory Greenwich.",
+          "\"They will be separated by just 1.2 degrees, or roughly the width of a finger held at arm's length,\" according to Gideon Bendavid-Walker, astronomer at the Royal Observatory Greenwich.",
+          "The two planets will appear close to the bright star Regulus and may even look like a triple star.",
+          "At a similar time before sunrise, Uranus will be setting in the west. Then Saturn and Neptune will also be visible for a time in the evening rather than the morning sky.",
+          "To view the parade, find a spot away from light pollution with a good view of the eastern horizon and let your eyes adjust to the dark for around twenty minutes.",
+          "The best time to view the planetary lineup is approximately 45-60 minutes before sunrise."
+        ],
+        "editorial_check": {
+          "date": "2026-11-16T03:42:42.948424+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "quiz"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All ten targets occur in the reading, have accurate contextual definitions, and avoid reserved targets; “apparent proximity” and “discern” offer useful advanced distinctions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified: “may resemble” preserves uncertainty, and the angular measurement retains attribution."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify specialist terms, and the exact pseudo-cleft quotation demonstrates the explained emphasis. Feedback distinguishes grammatical form from factual support."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The twelve distinct questions cover interpretation, observational planning, contextual vocabulary and grammatical emphasis, with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "e6e1d8ba090b5e3356c9ecf1a4324c9ec49df55c37757823f213800252d75ae1"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

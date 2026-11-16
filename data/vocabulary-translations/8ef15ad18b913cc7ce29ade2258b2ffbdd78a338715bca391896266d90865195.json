@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "In November, four planets will appear in a line in the sky before sunrise.",
+      "They are Mercury, Venus, Mars and Jupiter.",
+      "You can see these planets without a telescope.",
+      "Mercury will be the hardest planet to see.",
+      "Venus is very bright, so it is easy to find.",
+      "Venus will be higher in the sky than Mercury.",
+      "Mars and Jupiter will look very close together on 15 and 16 November.",
+      "Choose a place away from bright lights, with a clear view towards the east.",
+      "Wait about twenty minutes so your eyes can get used to the dark.",
+      "The best time to look is about 45 to 60 minutes before sunrise."
+    ],
+    "vocabulary": [
+      {
+        "term": "without",
+        "part_of_speech": "preposition",
+        "definition": "Not having or using something."
+      },
+      {
+        "term": "bright",
+        "part_of_speech": "adjective",
+        "definition": "Giving a lot of light."
+      },
+      {
+        "term": "higher",
+        "part_of_speech": "comparative adjective",
+        "definition": "Further up than something else."
+      },
+      {
+        "term": "close together",
+        "part_of_speech": "adverb phrase",
+        "definition": "Near each other."
+      },
+      {
+        "term": "clear",
+        "part_of_speech": "adjective",
+        "definition": "With nothing in the way to stop you seeing."
+      },
+      {
+        "term": "about",
+        "part_of_speech": "adverb",
+        "definition": "A little more or less than a number."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かを持っていない、または使っていないこと。",
+      "ko": "무언가를 가지고 있지 않거나 사용하지 않는 것.",
+      "zh-Hans": "没有或不使用某样东西。",
+      "es": "Sin tener o usar algo.",
+      "pt-BR": "Sem ter ou usar algo.",
+      "fr": "Sans avoir ou utiliser quelque chose.",
+      "de": "Ohne etwas zu haben oder zu benutzen."
+    },
+    {
+      "id": 1,
+      "ja": "たくさんの光を出していること。",
+      "ko": "빛을 많이 내는 것.",
+      "zh-Hans": "发出很多光。",
+      "es": "Que da mucha luz.",
+      "pt-BR": "Que emite muita luz.",
+      "fr": "Qui émet beaucoup de lumière.",
+      "de": "Etwas, das viel Licht abgibt."
+    },
+    {
+      "id": 2,
+      "ja": "ほかのものより上にあること。",
+      "ko": "다른 것보다 더 위에 있는 것.",
+      "zh-Hans": "比另一个东西的位置更高。",
+      "es": "Que está más arriba que otra cosa.",
+      "pt-BR": "Que está mais acima do que outra coisa.",
+      "fr": "Qui se trouve plus haut qu’autre chose.",
+      "de": "Weiter oben als etwas anderes."
+    },
+    {
+      "id": 3,
+      "ja": "互いに近いところにあること。",
+      "ko": "서로 가까이 있는 것.",
+      "zh-Hans": "彼此靠近。",
+      "es": "Cerca unos de otros.",
+      "pt-BR": "Perto uns dos outros.",
+      "fr": "À proximité les uns des autres.",
+      "de": "Nahe beieinander."
+    },
+    {
+      "id": 4,
+      "ja": "見るのを妨げるものが何もないこと。",
+      "ko": "시야를 가리는 것이 없는 것.",
+      "zh-Hans": "没有任何东西挡住视线。",
+      "es": "Sin nada que impida ver.",
+      "pt-BR": "Sem nada que atrapalhe a visão.",
+      "fr": "Sans rien qui empêche de voir.",
+      "de": "Ohne etwas, das die Sicht versperrt."
+    },
+    {
+      "id": 5,
+      "ja": "ある数より少し多いか、少し少ないこと。",
+      "ko": "어떤 수보다 조금 더 많거나 적은 것.",
+      "zh-Hans": "比某个数稍多或稍少。",
+      "es": "Un poco más o un poco menos que una cifra.",
+      "pt-BR": "Um pouco mais ou um pouco menos que um número.",
+      "fr": "Un peu plus ou un peu moins qu’un nombre donné.",
+      "de": "Etwas mehr oder weniger als eine angegebene Zahl."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-16T03:43:26.184849+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

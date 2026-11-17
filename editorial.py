@@ -339,7 +339,8 @@ def build_homepage():
 <a class="path-link" href="tools.html"><span class="path-number">01 / Practice</span><h3>Build your confidence →</h3><p>Improve sentences, pronunciation, and conversation.</p></a>
 <a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>Lessons with examples, exercises, and free PDFs. New Grammar Concepts will be introduced regularly.</p></a>
 <a class="path-link" href="efsp.html"><span class="path-number">03 / Work</span><h3>Speak up at work →</h3><p>Practice meetings and conversations for your job.</p></a>
-<a class="path-link" href="us-life.html"><span class="path-number">04 / Daily life</span><h3>Feel more at home →</h3><p>Useful English for getting settled in the US.</p></a></div></section>'''
+<a class="path-link" href="us-life.html"><span class="path-number">04 / Daily life</span><h3>Feel more at home →</h3><p>Useful English for getting settled in the US.</p></a></div></section>
+<section class="reading-width home-review" aria-labelledby="grandomastery-review-heading"><div class="section-heading"><h2 id="grandomastery-review-heading">English Ladder in review</h2></div><p>Grandomastery explores how English Ladder turns daily news into lessons for different levels and brings learners together for discussion.</p><p><a href="https://www.grandomastery.com/post/when-the-news-becomes-the-lesson-english-ladder-and-the-quiet-problem-of-levelled-reality" target="_blank" rel="noopener noreferrer">Read the review on Grandomastery ↗</a></p></section>'''
     page = document("Discover a world of English", content, current="index.html")
     # A returning visitor must not run the old selector that always opened the tree story.
     page = page.replace('src="learning.js"', 'src="learning.js?v=20260906"')

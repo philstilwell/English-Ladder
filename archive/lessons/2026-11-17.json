@@ -95,7 +95,7 @@
             ]
           },
           {
-            "question": "Which year is the next Bond film planned for?",
+            "question": "Which year is the next Bond film expected in?",
             "options": [
               "2026",
               "2030",
@@ -103,9 +103,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "The film is planned for 2028, not 2026.",
-              "The reading gives 2028 as the planned year.",
-              "Correct. It is planned for 2028, but the exact release date has not been announced."
+              "The film is expected in 2028, not 2026.",
+              "The reading gives 2028 as the expected year.",
+              "Correct. It is expected in 2028, but the exact release date has not been announced."
             ]
           },
           {
@@ -156,7 +156,7 @@
           "The British actor is known for Twilight and The Batman.",
           "Amazon MGM Studios announced the news on social media on Monday.",
           "Pattinson is 40 and will be the seventh actor to play Bond.",
-          "The next Bond film is planned for 2028.",
+          "The next Bond film is expected in 2028.",
           "Denis Villeneuve will direct the film, and Steven Knight will write it.",
           "The film's title and exact release date have not been announced yet.",
           "Pattinson said he was excited to work with the team."
@@ -172,40 +172,48 @@
           "\"To say this role is a dream come true is an understatement,\" he added. \"I couldn't be more excited about this partnership and the work ahead with this fantastic team.\""
         ],
         "editorial_check": {
-          "date": "2026-11-17T03:34:06.988728+00:00",
-          "model": "gpt-6.1-sol",
-          "status": "passed",
-          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "provider": "OpenAI",
-          "surface": "Codex with ChatGPT sign-in",
-          "reviewer": {
+          "date": "2026-11-17T23:19:18.772261+00:00",
+          "status": "revised",
+          "method": "User-approved narrow editorial copyedit; no new independent model approval",
+          "changes": [
+            "Qualify 2028 as expected, not a confirmed studio schedule; align dependent exercises and conditional advanced interval."
+          ],
+          "previous_review": {
+            "date": "2026-11-17T03:34:06.988728+00:00",
             "model": "gpt-6.1-sol",
+            "status": "passed",
+            "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "provider": "OpenAI",
             "surface": "Codex with ChatGPT sign-in",
-            "separate_session": true
-          },
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "A1-A2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "Six distinct targets occur in the reading; “actor”, “title” and “team” have clear, beginner-friendly definitions."
+            "reviewer": {
+              "model": "gpt-6.1-sol",
+              "surface": "Codex with ChatGPT sign-in",
+              "separate_session": true
             },
-            "register": {
-              "passed": true,
-              "reason": "The news uses neutral, direct wording, and “I would ... because ...” supports natural discussion."
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "A1-A2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "Six distinct targets occur in the reading; “actor”, “title” and “team” have clear, beginner-friendly definitions."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The news uses neutral, direct wording, and “I would ... because ...” supports natural discussion."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Short reading sentences and examples such as “will play” explain the grammar accessibly. Discussion includes a sentence frame and an imagined alternative."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "Six distinct quiz questions test the main idea, stated details, “excited” and the verb form after “will”, with one correct answer each."
+              }
             },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Short reading sentences and examples such as “will play” explain the grammar accessibly. Discussion includes a sentence frame and an imagined alternative."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "Six distinct quiz questions test the main idea, stated details, “excited” and the verb form after “will”, with one correct answer each."
-            }
-          },
-          "content_digest": "c2be80dccb51de9a153d1f941fadbeaf85410bd99d973dbed74aeb149fc8d377"
+            "content_digest": "c2be80dccb51de9a153d1f941fadbeaf85410bd99d973dbed74aeb149fc8d377"
+          }
         }
       }
     },
@@ -219,7 +227,7 @@
           "Would you prefer an experienced star or a less familiar performer as the next hero in a film series? Explain your choice."
         ],
         "title": "Robert Pattinson confirmed as the next James Bond",
-        "overview": "Robert Pattinson will become the next James Bond, with a new film planned for 2028 and some details still unconfirmed.",
+        "overview": "Robert Pattinson will become the next James Bond, with a new film expected in 2028 and some details still unconfirmed.",
         "topic": "Film and entertainment",
         "vocabulary": [
           {
@@ -288,13 +296,13 @@
             "options": [
               "Its exact release date has been confirmed.",
               "It has already reached cinemas.",
-              "It is planned for 2028, but the exact date remains unknown."
+              "It is expected in 2028, but the exact date remains unknown."
             ],
             "correct_option_index": 2,
             "option_feedback": [
               "The reading says the exact release date remains unknown.",
-              "The film is due to be released in 2028; the reading does not describe a completed release.",
-              "Correct. The year is given as a plan, while the exact date remains unknown."
+              "The film is expected to be released in 2028; the reading does not describe a completed release.",
+              "Correct. The year is given as an expectation, while the exact date remains unknown."
             ]
           },
           {
@@ -400,7 +408,7 @@
           "Robert Pattinson, known for Twilight and The Batman, has been confirmed as the next actor to play James Bond.",
           "Amazon MGM Studios shared the news on social media on Monday, alongside a picture of Pattinson as 007.",
           "At 40, Pattinson becomes the seventh actor to take the role of the famous fictional spy.",
-          "The 26th Bond film is due to be released in 2028.",
+          "The 26th Bond film is expected to be released in 2028.",
           "Denis Villeneuve will direct the film, while Steven Knight will write it; its title and exact release date remain unknown.",
           "The choice follows years of speculation about who would take over from Daniel Craig in this closely watched role.",
           "Amazon MGM chose a household name, selecting a star widely seen as a reliable choice who could bring financial success.",
@@ -425,40 +433,48 @@
           "The next 007 film will be the first since long-term Bond producers Barbara Broccoli and Michael G Wilson stepped back and Amazon took creative control of the franchise, after acquiring the series' parent company MGM."
         ],
         "editorial_check": {
-          "date": "2026-11-17T03:36:55.001636+00:00",
-          "model": "gpt-6.1-sol",
-          "status": "passed",
-          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "provider": "OpenAI",
-          "surface": "Codex with ChatGPT sign-in",
-          "reviewer": {
+          "date": "2026-11-17T23:19:18.772261+00:00",
+          "status": "revised",
+          "method": "User-approved narrow editorial copyedit; no new independent model approval",
+          "changes": [
+            "Qualify 2028 as expected, not a confirmed studio schedule; align dependent exercises and conditional advanced interval."
+          ],
+          "previous_review": {
+            "date": "2026-11-17T03:36:55.001636+00:00",
             "model": "gpt-6.1-sol",
+            "status": "passed",
+            "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "provider": "OpenAI",
             "surface": "Codex with ChatGPT sign-in",
-            "separate_session": true
-          },
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "Eight useful B1-B2 targets, including “speculation,” “take over” and “household name,” occur in the reading, have clear definitions and avoid reserved targets."
+            "reviewer": {
+              "model": "gpt-6.1-sol",
+              "surface": "Codex with ChatGPT sign-in",
+              "separate_session": true
             },
-            "register": {
-              "passed": true,
-              "reason": "Neutral reporting consistently preserves qualifications through wording such as “Reports suggested” and “has not been officially confirmed.”"
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "Eight useful B1-B2 targets, including “speculation,” “take over” and “household name,” occur in the reading, have clear definitions and avoid reserved targets."
+              },
+              "register": {
+                "passed": true,
+                "reason": "Neutral reporting consistently preserves qualifications through wording such as “Reports suggested” and “has not been officially confirmed.”"
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Definitions and feedback are clear; the present perfect passive explanation is accurate, and its example exactly matches the reading."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "Twelve distinct reading sentences and nine quiz questions combine comprehension, contextual vocabulary, reported-versus-confirmed information and grammar transfer."
+              }
             },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Definitions and feedback are clear; the present perfect passive explanation is accurate, and its example exactly matches the reading."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "Twelve distinct reading sentences and nine quiz questions combine comprehension, contextual vocabulary, reported-versus-confirmed information and grammar transfer."
-            }
-          },
-          "content_digest": "247a839bf98caee21a8abe6c4f200a1711f8549e3f818d1cf2d63b7419a7a4be"
+            "content_digest": "247a839bf98caee21a8abe6c4f200a1711f8549e3f818d1cf2d63b7419a7a4be"
+          }
         }
       }
     },
@@ -533,8 +549,8 @@
         ],
         "grammar": {
           "concept": "Future perfect with a future time clause",
-          "explanation": "Use the future perfect, “will have” plus a past participle, to view a completed period from a future point. After “by the time”, use the present simple for that future point; here, the release marks the end of the seven-year interval.",
-          "example_quote": "By the time the next Bond film is released, seven years will have passed since No Time To Die, the longest gap in the franchise’s history."
+          "explanation": "Use the future perfect, “will have” plus a past participle, to view a completed period from a future point. After “by the time”, use the present simple for that future point. Here, the approximate seven-year interval depends on the film opening in 2028 as expected; it is not a confirmed release date.",
+          "example_quote": "If the next Bond film opens in 2028 as expected, about seven years will have passed since No Time To Die by the time it is released, making this the longest gap in the franchise’s history."
         },
         "quiz": [
           {
@@ -555,14 +571,14 @@
             "question": "Which distinction accurately describes the information available about the next film’s release?",
             "options": [
               "An exact release date is available, although the year remains provisional.",
-              "A release year is scheduled, although the exact date remains unannounced.",
+              "A release year is expected, although the exact date remains unannounced.",
               "The director has been named, although no release year has been given."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The reading gives 2028 as the scheduled year but supplies no exact date.",
-              "The year is specified as 2028, while the precise release date remains unannounced.",
-              "Both the director and a scheduled release year appear in the reading."
+              "The reading gives 2028 as the expected year but supplies no exact date.",
+              "The year is expected to be 2028, while the precise release date remains unannounced.",
+              "Both the director and an expected release year appear in the reading."
             ]
           },
           {
@@ -664,11 +680,11 @@
             ]
           },
           {
-            "question": "Which sentence uses the future perfect in the main clause and the present simple in the time clause to describe the anticipated release gap?",
+            "question": "Assuming the film opens in 2028 as expected, which sentence uses the future perfect in the main clause and the present simple in the time clause to describe the approximate release gap?",
             "options": [
-              "By the time the next Bond film opens, the series will have gone seven years without a new release.",
-              "By the time the next Bond film will open, the series will have gone seven years without a new release.",
-              "By the time the next Bond film opens, the series has gone seven years without a new release."
+              "By the time the next Bond film opens, the series will have gone about seven years without a new release.",
+              "By the time the next Bond film will open, the series will have gone about seven years without a new release.",
+              "By the time the next Bond film opens, the series has gone about seven years without a new release."
             ],
             "correct_option_index": 0,
             "option_feedback": [
@@ -692,7 +708,7 @@
             ]
           },
           {
-            "question": "What does the anticipated seven-year interval establish, without explaining its cause?",
+            "question": "If the next film opens in 2028 as expected, what would the approximate seven-year interval establish, without explaining its cause?",
             "options": [
               "The change in creative control caused the entire delay.",
               "The next Bond film has already missed its announced release date.",
@@ -701,15 +717,15 @@
             "correct_option_index": 2,
             "option_feedback": [
               "The reading places the gap and the transfer in the same story but does not establish this causal explanation.",
-              "The film is scheduled for 2028; the reading does not report a missed release date.",
-              "The reading identifies the projected gap as unprecedented in length, while leaving its causes unexplained."
+              "The film is expected in 2028; the reading does not report a missed release date.",
+              "The reading identifies this projected gap as unprecedented in length if the film opens in 2028, while leaving its causes unexplained."
             ]
           }
         ],
         "news_brief_sentences": [
           "Robert Pattinson, known for Twilight and The Batman, has been selected as the next James Bond.",
           "Amazon MGM Studios revealed the casting in a social media post accompanied by an image of Pattinson as 007.",
-          "The 40-year-old will become the seventh actor to portray Bond, with the next film scheduled for 2028.",
+          "The 40-year-old will become the seventh actor to portray Bond, with the next film expected in 2028.",
           "Denis Villeneuve will direct and Steven Knight will write the film, although its title and exact release date remain unannounced.",
           "The casting follows years of speculation surrounding one of entertainment’s most highly scrutinised roles.",
           "Amazon MGM chose an established, bankable star who is widely regarded as a safe pair of hands.",
@@ -722,7 +738,7 @@
           "The Broccoli family had controlled the series since 1962, when Sean Connery first appeared as Bond.",
           "For decades, the family protected the character’s integrity while resisting spin-offs and licensing.",
           "Some industry experts expect these forms of expansion to follow Amazon’s takeover.",
-          "By the time the next Bond film is released, seven years will have passed since No Time To Die, the longest gap in the franchise’s history."
+          "If the next Bond film opens in 2028 as expected, about seven years will have passed since No Time To Die by the time it is released, making this the longest gap in the franchise’s history."
         ],
         "sentence_evidence": [
           "Robert Pattinson, the British actor known for films such as Twilight and The Batman, has been confirmed as the next actor to play James Bond.",
@@ -743,40 +759,48 @@
           "By the time the 26th Bond film is released, it will have been seven years since the last - 2021's No Time To Die - the biggest gap in the franchise's history."
         ],
         "editorial_check": {
-          "date": "2026-11-17T03:42:04.755885+00:00",
-          "model": "gpt-6.1-sol",
-          "status": "passed",
-          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
-          "generation_attempts": 2,
-          "repaired_sections": [],
-          "provider": "OpenAI",
-          "surface": "Codex with ChatGPT sign-in",
-          "reviewer": {
+          "date": "2026-11-17T23:19:18.772261+00:00",
+          "status": "revised",
+          "method": "User-approved narrow editorial copyedit; no new independent model approval",
+          "changes": [
+            "Qualify 2028 as expected, not a confirmed studio schedule; align dependent exercises and conditional advanced interval."
+          ],
+          "previous_review": {
+            "date": "2026-11-17T03:42:04.755885+00:00",
             "model": "gpt-6.1-sol",
+            "status": "passed",
+            "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+            "generation_attempts": 2,
+            "repaired_sections": [],
+            "provider": "OpenAI",
             "surface": "Codex with ChatGPT sign-in",
-            "separate_session": true
-          },
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "Eleven distinct targets occur in the reading, avoid reserved vocabulary, and offer advanced learning through expressions such as “bankable” and “self-deprecating wit”."
+            "reviewer": {
+              "model": "gpt-6.1-sol",
+              "surface": "Codex with ChatGPT sign-in",
+              "separate_session": true
             },
-            "register": {
-              "passed": true,
-              "reason": "Reporting is natural and calibrated; “reports suggested” and “some industry experts expect” preserve uncertainty and attribution."
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "Eleven distinct targets occur in the reading, avoid reserved vocabulary, and offer advanced learning through expressions such as “bankable” and “self-deprecating wit”."
+              },
+              "register": {
+                "passed": true,
+                "reason": "Reporting is natural and calibrated; “reports suggested” and “some industry experts expect” preserve uncertainty and attribution."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Definitions clarify contextual meanings, and the grammar explanation accurately connects “will have passed” with the future reference point."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "Twelve distinct questions test comprehension, supported inference, commercial connotations, qualification, and future-perfect usage with unambiguous answers."
+              }
             },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Definitions clarify contextual meanings, and the grammar explanation accurately connects “will have passed” with the future reference point."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "Twelve distinct questions test comprehension, supported inference, commercial connotations, qualification, and future-perfect usage with unambiguous answers."
-            }
-          },
-          "content_digest": "68a41bbba40d062cdd6b9c7699b6c313c720c3c67604c19a77184d5285673f2b"
+            "content_digest": "68a41bbba40d062cdd6b9c7699b6c313c720c3c67604c19a77184d5285673f2b"
+          }
         }
       }
     }

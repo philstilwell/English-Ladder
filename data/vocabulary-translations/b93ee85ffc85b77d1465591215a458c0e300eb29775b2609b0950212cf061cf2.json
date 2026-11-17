@@ -1,0 +1,138 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Robert Pattinson will play James Bond after Daniel Craig.",
+      "The British actor is known for Twilight and The Batman.",
+      "Amazon MGM Studios announced the news on social media on Monday.",
+      "Pattinson is 40 and will be the seventh actor to play Bond.",
+      "The next Bond film is planned for 2028.",
+      "Denis Villeneuve will direct the film, and Steven Knight will write it.",
+      "The film's title and exact release date have not been announced yet.",
+      "Pattinson said he was excited to work with the team."
+    ],
+    "vocabulary": [
+      {
+        "term": "actor",
+        "part_of_speech": "noun",
+        "definition": "A person whose job is to play people in films or plays."
+      },
+      {
+        "term": "play",
+        "part_of_speech": "verb",
+        "definition": "To be someone else in a film or play."
+      },
+      {
+        "term": "announced",
+        "part_of_speech": "verb, past simple",
+        "definition": "Shared some news with many people."
+      },
+      {
+        "term": "title",
+        "part_of_speech": "noun",
+        "definition": "The name of a film, book or song."
+      },
+      {
+        "term": "excited",
+        "part_of_speech": "adjective",
+        "definition": "Very happy about something that is happening or will happen."
+      },
+      {
+        "term": "team",
+        "part_of_speech": "noun",
+        "definition": "A group of people who work together."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "映画や演劇で人物を演じることを仕事にしている人。",
+      "ko": "영화나 연극에서 인물을 연기하는 일을 직업으로 하는 사람.",
+      "zh-Hans": "以在电影或戏剧中扮演人物为职业的人。",
+      "es": "Una persona cuyo trabajo es representar a otras personas en películas u obras de teatro.",
+      "pt-BR": "Uma pessoa cujo trabalho é representar outras pessoas em filmes ou peças de teatro.",
+      "fr": "Une personne dont le métier est d’incarner des personnages dans des films ou des pièces de théâtre.",
+      "de": "Eine Person, deren Beruf es ist, Menschen in Filmen oder Theaterstücken darzustellen."
+    },
+    {
+      "id": 1,
+      "ja": "映画や演劇で別の人物を演じること。",
+      "ko": "영화나 연극에서 다른 인물을 연기하다.",
+      "zh-Hans": "在电影或戏剧中扮演另一个人。",
+      "es": "Representar a otra persona en una película u obra de teatro.",
+      "pt-BR": "Representar outra pessoa em um filme ou uma peça de teatro.",
+      "fr": "Incarner une autre personne dans un film ou une pièce de théâtre.",
+      "de": "Eine andere Person in einem Film oder Theaterstück darstellen."
+    },
+    {
+      "id": 2,
+      "ja": "ある知らせを多くの人に伝えた。",
+      "ko": "어떤 소식을 많은 사람에게 알렸다.",
+      "zh-Hans": "向许多人公布了一个消息。",
+      "es": "Comunicó una noticia a muchas personas.",
+      "pt-BR": "Comunicou uma notícia a muitas pessoas.",
+      "fr": "A communiqué une nouvelle à de nombreuses personnes.",
+      "de": "Hat vielen Menschen eine Neuigkeit mitgeteilt."
+    },
+    {
+      "id": 3,
+      "ja": "映画や本、歌の名前。",
+      "ko": "영화, 책 또는 노래의 이름.",
+      "zh-Hans": "电影、书或歌曲的名称。",
+      "es": "El nombre de una película, un libro o una canción.",
+      "pt-BR": "O nome de um filme, livro ou música.",
+      "fr": "Le nom d’un film, d’un livre ou d’une chanson.",
+      "de": "Der Name eines Films, eines Buches oder eines Liedes."
+    },
+    {
+      "id": 4,
+      "ja": "今起きていることやこれから起きることについて、とてもうれしく感じている。",
+      "ko": "지금 일어나고 있거나 앞으로 일어날 일 때문에 매우 기쁜.",
+      "zh-Hans": "对正在发生或将要发生的事情感到非常高兴。",
+      "es": "Muy feliz por algo que está sucediendo o que sucederá.",
+      "pt-BR": "Muito feliz com algo que está acontecendo ou que vai acontecer.",
+      "fr": "Très heureux de quelque chose qui se passe ou qui va se passer.",
+      "de": "Sehr glücklich über etwas, das gerade geschieht oder geschehen wird."
+    },
+    {
+      "id": 5,
+      "ja": "一緒に働く人たちの集まり。",
+      "ko": "함께 일하는 사람들의 모임.",
+      "zh-Hans": "一起工作的一群人。",
+      "es": "Un grupo de personas que trabajan juntas.",
+      "pt-BR": "Um grupo de pessoas que trabalham juntas.",
+      "fr": "Un groupe de personnes qui travaillent ensemble.",
+      "de": "Eine Gruppe von Menschen, die zusammenarbeiten."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-17T03:42:56.745569+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

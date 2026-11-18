@@ -1,0 +1,203 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "Waymo has announced a temporary withdrawal of its driverless taxis from freeways throughout the United States.",
+      "The nationwide decision followed California's prohibition on freeway operations after several traffic incidents.",
+      "In imposing the ban, California's Department of Motor Vehicles described an “imminent hazard to public safety” and pointed to several Waymo vehicles entering an active construction area on US Route 101.",
+      "The regulator identified recurring incursions into active construction areas as a safety risk, noting the presence of workers, vehicles and equipment.",
+      "Waymo said that no injuries or collisions had been reported following the Route 101 incident south of San Francisco.",
+      "Separate footage circulating widely on social media appeared to show one of its cars attempting to overtake patrol vehicles while they intentionally slowed highway traffic in San Francisco.",
+      "California's ban took effect on 11 November, with its removal contingent on Waymo demonstrating effective corrective action to address the deficiencies that precipitated it.",
+      "Waymo said its broader freeway pause was in keeping with its safety principles and was intended to allow it to assess performance in its other operating markets.",
+      "The company also said it was working diligently with state officials towards restarting freeway services.",
+      "Data on Waymo's website suggest that its vehicles are involved in 95% fewer crashes causing serious injury than human drivers.",
+      "Although Waymo operates driverless taxis in 15 US cities, freeway journeys had been available in only a few locations, including San Francisco, Los Angeles and Miami.",
+      "Its taxis remain permitted to operate on ordinary city streets.",
+      "In May, the company recalled thousands of vehicles over a software problem that could allow them to enter flooded roads."
+    ],
+    "vocabulary": [
+      {
+        "term": "withdrawal",
+        "part_of_speech": "noun",
+        "definition": "The removal of a service or operation from a particular setting, without necessarily ending it permanently."
+      },
+      {
+        "term": "imminent hazard",
+        "part_of_speech": "noun phrase",
+        "definition": "A dangerous situation considered capable of causing harm very soon."
+      },
+      {
+        "term": "recurring incursions",
+        "part_of_speech": "plural noun phrase",
+        "definition": "Repeated entries into an area where those entering should not be, suggesting a pattern rather than an isolated event."
+      },
+      {
+        "term": "overtake",
+        "part_of_speech": "verb",
+        "definition": "To move past another vehicle travelling in the same direction; an attempt to do this does not establish that the manoeuvre was completed."
+      },
+      {
+        "term": "contingent on",
+        "part_of_speech": "adjective phrase",
+        "definition": "Dependent on a particular condition being fulfilled, rather than certain to happen."
+      },
+      {
+        "term": "corrective action",
+        "part_of_speech": "noun phrase",
+        "definition": "Measures taken to remedy an identified problem or failure."
+      },
+      {
+        "term": "deficiencies",
+        "part_of_speech": "plural noun",
+        "definition": "Weaknesses or shortcomings that prevent something from meeting the required standard."
+      },
+      {
+        "term": "precipitated",
+        "part_of_speech": "verb, past simple",
+        "definition": "Brought about or triggered an event or decision, often with a suggestion of suddenness."
+      },
+      {
+        "term": "in keeping with",
+        "part_of_speech": "prepositional phrase",
+        "definition": "Consistent with a stated principle, policy or expected standard of behaviour."
+      },
+      {
+        "term": "diligently",
+        "part_of_speech": "adverb",
+        "definition": "With sustained care and effort; in a corporate statement, it emphasises a claimed commitment to handling a matter responsibly."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "特定の場所や環境でサービスや事業を取りやめること。ただし、必ずしも永久に終了することを意味しない。",
+      "ko": "특정 장소나 환경에서 서비스나 운영을 중단하는 것으로, 반드시 영구적인 종료를 뜻하지는 않는다.",
+      "zh-Hans": "从某一特定场所或环境中撤出服务或停止运营，但不一定意味着永久终止。",
+      "es": "Retirada de un servicio o una actividad de un entorno determinado, sin que ello implique necesariamente su finalización permanente.",
+      "pt-BR": "Retirada de um serviço ou de uma operação de determinado ambiente, sem que isso signifique necessariamente seu encerramento definitivo.",
+      "fr": "Retrait d’un service ou arrêt d’une activité dans un cadre particulier, sans que cela signifie nécessairement une cessation définitive.",
+      "de": "Das Einstellen einer Dienstleistung oder eines Betriebs in einem bestimmten Umfeld, ohne dass dies zwangsläufig ein dauerhaftes Ende bedeutet."
+    },
+    {
+      "id": 1,
+      "ja": "ごく近いうちに被害をもたらすおそれがあると判断される危険な状況。",
+      "ko": "아주 가까운 시일 안에 피해를 일으킬 수 있다고 판단되는 위험한 상황.",
+      "zh-Hans": "被认为可能在很短时间内造成伤害或损失的危险情况。",
+      "es": "Situación peligrosa que se considera capaz de causar daños en un plazo muy breve.",
+      "pt-BR": "Situação perigosa que se considera capaz de causar danos muito em breve.",
+      "fr": "Situation dangereuse considérée comme susceptible de causer des dommages à très brève échéance.",
+      "de": "Eine gefährliche Situation, von der angenommen wird, dass sie schon sehr bald Schaden verursachen kann."
+    },
+    {
+      "id": 2,
+      "ja": "立ち入るべきでない区域に繰り返し入ること。単発の出来事ではなく、一定の傾向があることを示唆する。",
+      "ko": "들어가서는 안 되는 구역에 반복해서 들어가는 일로, 단발적인 사건이 아니라 일정한 양상이 있음을 시사한다.",
+      "zh-Hans": "反复进入不应进入的区域，表明这可能是一种持续出现的行为模式，而非孤立事件。",
+      "es": "Entradas repetidas en una zona donde quienes entran no deberían estar, lo que sugiere un patrón y no un hecho aislado.",
+      "pt-BR": "Entradas repetidas em uma área onde quem entra não deveria estar, sugerindo um padrão em vez de um acontecimento isolado.",
+      "fr": "Entrées répétées dans une zone où les personnes ou les véhicules concernés ne devraient pas se trouver, ce qui suggère un phénomène récurrent plutôt qu’un événement isolé.",
+      "de": "Wiederholtes Eindringen in einen Bereich, in dem sich die betreffenden Personen oder Fahrzeuge nicht aufhalten sollten, was auf ein Muster statt auf einen Einzelfall hindeutet."
+    },
+    {
+      "id": 3,
+      "ja": "同じ方向に走っている別の車両を追い抜くこと。追い抜こうとしたというだけでは、その動作が完了したとは断定できない。",
+      "ko": "같은 방향으로 주행하는 다른 차량을 앞질러 가는 것. 이를 시도했다는 사실만으로 실제로 앞지르기를 완료했다고 볼 수는 없다.",
+      "zh-Hans": "超过同方向行驶的另一辆车；尝试这样做并不能证明超车已经完成。",
+      "es": "Pasar por delante de otro vehículo que circula en la misma dirección; intentarlo no demuestra que la maniobra se haya completado.",
+      "pt-BR": "Passar à frente de outro veículo que segue na mesma direção; tentar fazer isso não comprova que a manobra foi concluída.",
+      "fr": "Passer devant un autre véhicule circulant dans la même direction ; une tentative ne permet pas d’affirmer que la manœuvre a été menée à son terme.",
+      "de": "An einem anderen Fahrzeug vorbeifahren, das in dieselbe Richtung fährt; ein entsprechender Versuch belegt noch nicht, dass das Überholmanöver abgeschlossen wurde."
+    },
+    {
+      "id": 4,
+      "ja": "必ず起こると決まっているのではなく、特定の条件が満たされるかどうかに左右されること。",
+      "ko": "반드시 일어나는 것이 아니라 특정 조건이 충족되는지에 달려 있는 것.",
+      "zh-Hans": "取决于某个特定条件是否得到满足，而不是确定会发生。",
+      "es": "Que depende de que se cumpla una condición concreta, por lo que no está garantizado que ocurra.",
+      "pt-BR": "Que depende do cumprimento de uma condição específica, sem que haja certeza de que acontecerá.",
+      "fr": "Dont la réalisation dépend d’une condition précise et n’est donc pas certaine.",
+      "de": "Davon abhängig, dass eine bestimmte Bedingung erfüllt wird, und daher nicht mit Sicherheit eintretend."
+    },
+    {
+      "id": 5,
+      "ja": "特定された問題や不具合を是正するために取られる措置。",
+      "ko": "확인된 문제나 결함을 바로잡기 위해 취하는 조치.",
+      "zh-Hans": "为纠正已发现的问题或故障而采取的措施。",
+      "es": "Medidas adoptadas para solucionar un problema o fallo identificado.",
+      "pt-BR": "Medidas tomadas para corrigir um problema ou uma falha já identificados.",
+      "fr": "Mesures prises pour remédier à un problème ou à une défaillance identifiés.",
+      "de": "Maßnahmen, die ergriffen werden, um ein erkanntes Problem oder eine festgestellte Fehlfunktion zu beheben."
+    },
+    {
+      "id": 6,
+      "ja": "求められる基準を満たす妨げとなる弱点や不十分な点。",
+      "ko": "요구되는 기준을 충족하지 못하게 하는 약점이나 부족한 점.",
+      "zh-Hans": "使某事物无法达到所要求标准的弱点或不足之处。",
+      "es": "Debilidades o carencias que impiden que algo cumpla el nivel exigido.",
+      "pt-BR": "Fraquezas ou insuficiências que impedem algo de atender ao padrão exigido.",
+      "fr": "Faiblesses ou insuffisances qui empêchent quelque chose de satisfaire au niveau exigé.",
+      "de": "Schwächen oder Mängel, die verhindern, dass etwas den geforderten Standard erfüllt."
+    },
+    {
+      "id": 7,
+      "ja": "出来事や決定を引き起こした、またはそのきっかけとなったこと。多くの場合、突然起きたという含みがある。",
+      "ko": "어떤 사건이나 결정을 일으켰거나 촉발했다는 뜻으로, 갑작스럽게 일어났다는 뉘앙스를 띠는 경우가 많다.",
+      "zh-Hans": "导致或触发了某个事件或决定，通常带有突然发生的意味。",
+      "es": "Provocó o desencadenó un acontecimiento o una decisión, a menudo con la idea de que ocurrió de forma repentina.",
+      "pt-BR": "Provocou ou desencadeou um acontecimento ou uma decisão, muitas vezes sugerindo que ocorreu de forma repentina.",
+      "fr": "A provoqué ou déclenché un événement ou une décision, souvent avec une idée de soudaineté.",
+      "de": "Führte ein Ereignis oder eine Entscheidung herbei oder löste es beziehungsweise sie aus, oft mit dem Beiklang von Plötzlichkeit."
+    },
+    {
+      "id": 8,
+      "ja": "明示された原則や方針、または期待される行動基準に沿っていること。",
+      "ko": "명시된 원칙이나 방침, 또는 기대되는 행동 기준에 부합하는 것.",
+      "zh-Hans": "符合已表明的原则、方针或预期的行为标准。",
+      "es": "De manera coherente con un principio o una política expresados, o con una norma de conducta esperada.",
+      "pt-BR": "De forma coerente com um princípio ou uma política declarados, ou com um padrão de comportamento esperado.",
+      "fr": "En accord avec un principe ou une politique énoncés, ou avec une norme de comportement attendue.",
+      "de": "Im Einklang mit einem ausdrücklich genannten Grundsatz, einer erklärten Richtlinie oder einem erwarteten Verhaltensstandard."
+    },
+    {
+      "id": 9,
+      "ja": "継続して注意を払い、努力を重ねて。企業の声明では、責任を持って問題に取り組むという、企業側が表明する姿勢を強調する。",
+      "ko": "지속적으로 주의를 기울이고 노력을 들여. 기업 성명에서는 해당 사안을 책임 있게 처리하겠다고 기업이 표명하는 의지를 강조한다.",
+      "zh-Hans": "持续认真地投入精力；在企业声明中，用来强调企业所声称的、负责任地处理某事的决心。",
+      "es": "Con atención y esfuerzo sostenidos; en una declaración empresarial, enfatiza el compromiso que la empresa afirma tener de tratar un asunto de manera responsable.",
+      "pt-BR": "Com cuidado e esforço contínuos; em uma declaração empresarial, enfatiza o compromisso que a empresa afirma ter de tratar uma questão com responsabilidade.",
+      "fr": "Avec une attention et des efforts soutenus ; dans une déclaration d’entreprise, souligne l’engagement que celle-ci affirme avoir à traiter une question de manière responsable.",
+      "de": "Mit anhaltender Sorgfalt und Einsatz; in einer Unternehmenserklärung wird damit die vom Unternehmen bekundete Verpflichtung betont, sich verantwortungsvoll um eine Angelegenheit zu kümmern."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-18T03:50:49.789066+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

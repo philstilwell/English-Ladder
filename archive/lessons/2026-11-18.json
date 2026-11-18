@@ -1,0 +1,780 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-18",
+  "release_iso": "2026-11-18T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Technology",
+    "feed_url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "category": "technology",
+    "published_at": "Wed, 18 Nov 2026 03:07:22 GMT",
+    "retrieved_at": "2026-11-18T03:34:26.520099+00:00",
+    "title": "Waymo temporarily pulls driverless taxis from all US freeways",
+    "summary": "The decision comes after California banned Waymo's driverless vehicles from operating on the state's highways following a series of traffic incidents.",
+    "evidence_text": "Waymo has temporarily suspended its driverless vehicles from operating on all US freeways, the company has said.\nThe decision comes after California banned Waymo's driverless taxis from state freeways following a series of recent traffic incidents.\nCalifornia's DMV said Waymo's driverless taxis presented a risk \"due to recurring incursions by its vehicles into active construction zones where construction workers, vehicles and equipment are present\".\nWaymo said it was working with state officials \"diligently and responsibly to resume freeway operations\", adding that no injuries or collisions were reported following the incident on US Route 101 south of San Francisco.\nThe company's driverless taxis can continue to operate on regular city streets.\nCalifornia's Department of Motor Vehicles (DMV) cited an \"imminent hazard to public safety\" for the ban, noting an incident this month in which several driverless Waymo vehicles entered an active construction zone on US Route 101.\nIn another incident earlier this month, footage widely seen on social media appeared to show a Waymo car trying to overtake patrol vehicles that were deliberately slowing the pace of traffic on a San Francisco highway.\nThe California ban, which came into effect on 11 November, would remain in place until Waymo \"demonstrates to the department that it has taken effective corrective actions to address the deficiencies that precipitated the restrictions\".\nA Waymo spokesperson said: \"In alignment with our safety-first principles, we have also temporarily restricted freeway operations across our other operating markets to evaluate our performance.\"\nData on Waymo's website suggests that its cars, compared to human drivers, are involved in 95% fewer crashes resulting in serious injury.\nWaymo currently operates driverless taxis in 15 US cities, but only offered freeway rides in a handful of those locations, including San Francisco, Los Angeles and Miami.\nIn May, Waymo recalled thousands of its self-driving cars in the US over a software issue that could allow vehicles to drive into flooded roads.",
+    "evidence_retrieved_at": "2026-11-18T03:34:26.520099+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cmy86pp336qlo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why were California officials worried about the cars? Use “They were worried because ...”.",
+          "Would you or a person in a story choose a driverless taxi for a city trip? Use “I think ... because ...”."
+        ],
+        "title": "Waymo Stops US Freeway Taxi Trips for Now",
+        "overview": "Learn why Waymo has stopped some taxi trips and where its taxis can still go.",
+        "topic": "Transport and road safety",
+        "vocabulary": [
+          {
+            "term": "driverless",
+            "part_of_speech": "adjective",
+            "definition": "Without a human driver."
+          },
+          {
+            "term": "passengers",
+            "part_of_speech": "plural noun",
+            "definition": "People who travel in a car, bus or train but do not drive it."
+          },
+          {
+            "term": "freeways",
+            "part_of_speech": "plural noun",
+            "definition": "Large roads for fast traffic."
+          },
+          {
+            "term": "banned",
+            "part_of_speech": "verb, past tense",
+            "definition": "Said officially that something was not allowed."
+          },
+          {
+            "term": "entered",
+            "part_of_speech": "verb, past tense",
+            "definition": "Went into a place."
+          },
+          {
+            "term": "again",
+            "part_of_speech": "adverb",
+            "definition": "One more time."
+          }
+        ],
+        "grammar": {
+          "concept": "“Can” for permission",
+          "explanation": "Use “can” to say that someone is allowed to do something. Put the verb after “can” without “to”. Do not add “-s” or “-ing” to that verb. This pattern stays the same with one taxi or several taxis.",
+          "example_quote": "The taxis can still carry passengers on normal city streets."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about Waymo?",
+            "options": [
+              "It stopped all taxi trips.",
+              "It stopped US freeway trips for now.",
+              "It started freeway trips in California."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The taxis can still carry passengers on city streets.",
+              "Waymo has stopped its driverless taxis from using US freeways for now.",
+              "California banned the taxis from its freeways."
+            ]
+          },
+          {
+            "question": "Where did some Waymo cars go?",
+            "options": [
+              "Into areas where people were working on roads.",
+              "Only onto normal city streets.",
+              "Only onto roads with no people."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Some cars entered areas where people were working on the road.",
+              "The reading also says some cars entered road work areas.",
+              "People were working in the areas the cars entered."
+            ]
+          },
+          {
+            "question": "What did Waymo say about reports of people being hurt in the incident near San Francisco?",
+            "options": [
+              "There were reports of passengers being hurt.",
+              "There were reports of road workers being hurt.",
+              "There were no reports of anyone being hurt."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Waymo said there were no reports of anyone being hurt, including passengers.",
+              "Waymo said there were no reports of anyone being hurt, including road workers.",
+              "Waymo said there were no reports of anyone being hurt in that incident."
+            ]
+          },
+          {
+            "question": "What did Waymo say it was working with state officials to do?",
+            "options": [
+              "Build new freeways.",
+              "Start freeway trips again.",
+              "End all city taxi trips."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says Waymo was working to start freeway trips again, not build roads.",
+              "Waymo said it was working with state officials to start these trips again.",
+              "City trips can continue; Waymo said it was working to start freeway trips again."
+            ]
+          },
+          {
+            "question": "What does “banned” mean in the sentence about California?",
+            "options": [
+              "Said the taxis were not allowed on freeways.",
+              "Said the taxis were moving too slowly.",
+              "Said the taxis were ready for freeway trips."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Banned” means officially said something was not allowed.",
+              "“Banned” tells us what is allowed, not how fast the taxis move.",
+              "“Banned” means the trips were not allowed, not that the taxis were ready."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses “can” to describe an allowed Waymo taxi trip?",
+            "options": [
+              "The taxi can to carry passengers on city streets.",
+              "The taxi can carrying passengers on city streets.",
+              "The taxi can carry passengers on city streets."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Use “carry” after “can” without “to”.",
+              "Use “carry” after “can”, not “carrying”.",
+              "“Can carry” is correct, and the reading says city trips are still allowed."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Waymo has stopped its driverless taxis from using US freeways for now.",
+          "Driverless taxis carry passengers without a human driver.",
+          "Freeways are large roads for fast traffic.",
+          "California banned the taxis from its freeways after several traffic problems.",
+          "Some Waymo cars entered areas where people were working on the road.",
+          "California officials said the cars were a danger to people in these areas.",
+          "Waymo said there were no reports of anyone being hurt in the incident near San Francisco.",
+          "Waymo said it was working with state officials to start freeway trips again.",
+          "The taxis can still carry passengers on normal city streets."
+        ],
+        "sentence_evidence": [
+          "Waymo has temporarily suspended its driverless vehicles from operating on all US freeways, the company has said.",
+          "Waymo has temporarily suspended its driverless vehicles from operating on all US freeways, the company has said.",
+          "Waymo has temporarily suspended its driverless vehicles from operating on all US freeways, the company has said.",
+          "The decision comes after California banned Waymo's driverless taxis from state freeways following a series of recent traffic incidents.",
+          "California's DMV said Waymo's driverless taxis presented a risk \"due to recurring incursions by its vehicles into active construction zones where construction workers, vehicles and equipment are present\".",
+          "California's DMV said Waymo's driverless taxis presented a risk \"due to recurring incursions by its vehicles into active construction zones where construction workers, vehicles and equipment are present\".",
+          "Waymo said it was working with state officials \"diligently and responsibly to resume freeway operations\", adding that no injuries or collisions were reported following the incident on US Route 101 south of San Francisco.",
+          "Waymo said it was working with state officials \"diligently and responsibly to resume freeway operations\", adding that no injuries or collisions were reported following the incident on US Route 101 south of San Francisco.",
+          "The company's driverless taxis can continue to operate on regular city streets."
+        ],
+        "editorial_check": {
+          "date": "2026-11-18T03:39:09.549235+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six targets occur in the reading and have useful, accurate beginner definitions. “Driverless” and “freeways” are explained near first use."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reporting is neutral and direct. Discussion frames such as “I think ... because ...” are natural and suitable for adults."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations, options and feedback use accessible language. The exact grammar quotation demonstrates “can” followed by a verb without “to”. Discussion includes sentence frames and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct reading sentences, six vocabulary items and six unambiguous quiz questions meet the minimums. Questions cover the main idea, different details, contextual meaning and a useful grammar pattern."
+            }
+          },
+          "content_digest": "916811e35b5ab5cfb343cccead2240796aef25ae630608a22f8589e89eb6053e"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Explain how California's ban and Waymo's wider pause differ in the areas they cover.",
+          "If you were choosing a driverless taxi, what safety information would you want before booking a ride, and why?"
+        ],
+        "title": "Waymo Pauses Driverless Taxi Services on US Freeways",
+        "overview": "Learn why Waymo paused freeway services and how safety concerns affected its operations.",
+        "topic": "Transport and road safety",
+        "vocabulary": [
+          {
+            "term": "suspended",
+            "part_of_speech": "verb, past participle",
+            "definition": "Stopped an activity for a period of time."
+          },
+          {
+            "term": "a series of",
+            "part_of_speech": "phrase",
+            "definition": "Several similar or related things happening one after another."
+          },
+          {
+            "term": "construction zones",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Areas where roads or other structures are being built or repaired."
+          },
+          {
+            "term": "collisions",
+            "part_of_speech": "plural noun",
+            "definition": "Accidents in which vehicles hit something, such as another vehicle."
+          },
+          {
+            "term": "deliberately",
+            "part_of_speech": "adverb",
+            "definition": "With a clear intention, rather than by accident."
+          },
+          {
+            "term": "restrictions",
+            "part_of_speech": "plural noun",
+            "definition": "Rules that limit what someone or something is allowed to do."
+          },
+          {
+            "term": "evaluate",
+            "part_of_speech": "verb",
+            "definition": "Examine something carefully to judge how good or effective it is."
+          },
+          {
+            "term": "resume",
+            "part_of_speech": "verb",
+            "definition": "Start an activity after it has stopped for a time."
+          }
+        ],
+        "grammar": {
+          "concept": "Past simple passive",
+          "explanation": "Use “was” or “were” plus a past participle to form the past simple passive. It focuses on what happened rather than who did it. Here, “were reported” is passive within the information introduced by “said”.",
+          "example_quote": "Waymo said no injuries or collisions were reported after the incident on US Route 101."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best describes Waymo's decision?",
+            "options": [
+              "It paused freeway services across the United States.",
+              "It stopped all taxi services across the United States.",
+              "It paused freeway services only in California."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Waymo's freeway pause applies across the United States.",
+              "The taxis can still operate on regular city streets.",
+              "California introduced a ban, but Waymo also paused freeway services in its other markets."
+            ]
+          },
+          {
+            "question": "Which reason for California's ban is supported by the reading?",
+            "options": [
+              "The company wanted more taxis on city streets.",
+              "Its vehicles repeatedly entered construction zones where people were working.",
+              "Officials wanted vehicles to travel faster through construction zones."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not give a wish for more city taxis as a reason for the ban.",
+              "Correct. Officials said these repeated events created a safety risk.",
+              "The reading identifies a safety risk; it does not say officials wanted faster traffic."
+            ]
+          },
+          {
+            "question": "What does the reading say about injuries and collisions?",
+            "options": [
+              "Waymo said injuries were reported after the US Route 101 incident.",
+              "Waymo said no collisions had ever involved its taxis.",
+              "Waymo said no injuries or collisions were reported after the US Route 101 incident."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Waymo said no injuries or collisions were reported after that incident.",
+              "The statement concerns one incident, not the company's entire history.",
+              "Correct. The reading attributes this report to Waymo and connects it to that incident."
+            ]
+          },
+          {
+            "question": "How does the reading describe the video of the other traffic incident?",
+            "options": [
+              "It appeared to show a Waymo car trying to pass vehicles that were slowing traffic.",
+              "It proved that a Waymo car had passed every vehicle slowing traffic.",
+              "It showed a Waymo car helping other vehicles slow traffic."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading describes what the video appeared to show.",
+              "The reading describes an apparent attempt; it does not confirm a completed action.",
+              "The car appeared to be trying to pass the vehicles, not helping them slow traffic."
+            ]
+          },
+          {
+            "question": "What must happen before California's restrictions end?",
+            "options": [
+              "Waymo must stop operating on regular city streets.",
+              "Waymo must show officials that it has taken effective steps to address the problems.",
+              "Waymo must announce that it wants to resume freeway services."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says city services can continue.",
+              "Correct. Officials require evidence of effective action to deal with the problems.",
+              "Wanting to resume services does not meet the stated condition."
+            ]
+          },
+          {
+            "question": "Which journey remains allowed under the limits described in the reading?",
+            "options": [
+              "A driverless taxi journey using a California freeway.",
+              "A driverless taxi journey using freeways in another Waymo market.",
+              "A driverless taxi journey using regular city streets."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "California's ban prevents these freeway journeys.",
+              "Waymo also paused freeway services in its other markets.",
+              "Correct. The reading says the taxis can still operate on regular city streets."
+            ]
+          },
+          {
+            "question": "What does “deliberately” tell us about the vehicles slowing traffic?",
+            "options": [
+              "They slowed traffic intentionally.",
+              "They slowed traffic by accident.",
+              "They were completely unable to move."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. “Deliberately” means that the action was intended.",
+              "An accidental action is the opposite of a deliberate one.",
+              "“Deliberately” describes intention, not an inability to move."
+            ]
+          },
+          {
+            "question": "What did Waymo want to do by pausing freeway services to “evaluate” performance?",
+            "options": [
+              "Count the customers who preferred city journeys.",
+              "Judge how well its vehicles were performing.",
+              "Choose which city streets needed repairs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading connects the review to vehicle performance, not customer preferences.",
+              "Correct. “Evaluate” means to examine something and judge how well it works.",
+              "The reading describes a review of vehicle performance, not a review of road repairs."
+            ]
+          },
+          {
+            "question": "Which sentence uses the past simple passive to describe a completed check of a taxi?",
+            "options": [
+              "The taxi is checked before each journey.",
+              "The taxi will be checked before the journey.",
+              "The taxi was checked before the journey."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Is checked” is present simple passive and describes a regular activity here.",
+              "“Will be checked” is passive, but it refers to a future action.",
+              "Correct. “Was checked” uses “was” plus a past participle to describe a completed past action."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Waymo has temporarily suspended freeway services for its driverless taxis across the United States.",
+          "The decision followed a California ban after a series of traffic incidents involving the company's vehicles.",
+          "California officials said the taxis created a safety risk by repeatedly entering construction zones where people were working.",
+          "In one incident, several Waymo vehicles entered an active construction zone on US Route 101.",
+          "Waymo said no injuries or collisions were reported after the incident on US Route 101.",
+          "In another incident, video appeared to show a Waymo car trying to pass vehicles that were deliberately slowing traffic.",
+          "California's ban took effect on 11 November.",
+          "The restrictions will remain until Waymo shows state officials it has taken effective steps to deal with the problems.",
+          "Waymo said it also paused freeway services in its other markets to evaluate how its vehicles were performing.",
+          "The company said it was working with state officials to resume freeway services.",
+          "Its driverless taxis can still operate on regular city streets."
+        ],
+        "sentence_evidence": [
+          "Waymo has temporarily suspended its driverless vehicles from operating on all US freeways, the company has said.",
+          "The decision comes after California banned Waymo's driverless taxis from state freeways following a series of recent traffic incidents.",
+          "California's DMV said Waymo's driverless taxis presented a risk \"due to recurring incursions by its vehicles into active construction zones where construction workers, vehicles and equipment are present\".",
+          "California's Department of Motor Vehicles (DMV) cited an \"imminent hazard to public safety\" for the ban, noting an incident this month in which several driverless Waymo vehicles entered an active construction zone on US Route 101.",
+          "Waymo said it was working with state officials \"diligently and responsibly to resume freeway operations\", adding that no injuries or collisions were reported following the incident on US Route 101 south of San Francisco.",
+          "In another incident earlier this month, footage widely seen on social media appeared to show a Waymo car trying to overtake patrol vehicles that were deliberately slowing the pace of traffic on a San Francisco highway.",
+          "The California ban, which came into effect on 11 November, would remain in place until Waymo \"demonstrates to the department that it has taken effective corrective actions to address the deficiencies that precipitated the restrictions\".",
+          "The California ban, which came into effect on 11 November, would remain in place until Waymo \"demonstrates to the department that it has taken effective corrective actions to address the deficiencies that precipitated the restrictions\".",
+          "A Waymo spokesperson said: \"In alignment with our safety-first principles, we have also temporarily restricted freeway operations across our other operating markets to evaluate our performance.\"",
+          "Waymo said it was working with state officials \"diligently and responsibly to resume freeway operations\", adding that no injuries or collisions were reported following the incident on US Route 101 south of San Francisco.",
+          "The company's driverless taxis can continue to operate on regular city streets."
+        ],
+        "editorial_check": {
+          "date": "2026-11-18T03:41:18.987185+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct, useful B1–B2 targets, including “suspended”, “evaluate” and “resume”, occur in the reading and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting consistently preserves attribution and uncertainty through wording such as “Waymo said” and “appeared to show”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and feedback are clear; the passive explanation accurately identifies “were reported” in the exact reading quotation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson combines geographic scope, safety reasons, conditions for resuming services, contextual vocabulary and fresh passive-grammar application."
+            }
+          },
+          "content_digest": "1bf0b85c5f1c7da22c3991779bf405613b4bd861067324fcdf46b8bf4f13d0f4"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why the report that no injuries or collisions were reported after the Route 101 incident does not resolve concerns about recurring incursions.",
+          "What evidence would you require before allowing Waymo to restart freeway services, and why?"
+        ],
+        "title": "Waymo Pauses US Freeway Services After California Ban",
+        "overview": "Examine Waymo's nationwide freeway pause, the conditions attached to California's ban, and the distinctions between reported safety performance, immediate risks and corrective action.",
+        "topic": "Autonomous transport and public safety",
+        "vocabulary": [
+          {
+            "term": "withdrawal",
+            "part_of_speech": "noun",
+            "definition": "The removal of a service or operation from a particular setting, without necessarily ending it permanently."
+          },
+          {
+            "term": "imminent hazard",
+            "part_of_speech": "noun phrase",
+            "definition": "A dangerous situation considered capable of causing harm very soon."
+          },
+          {
+            "term": "recurring incursions",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Repeated entries into an area where those entering should not be, suggesting a pattern rather than an isolated event."
+          },
+          {
+            "term": "overtake",
+            "part_of_speech": "verb",
+            "definition": "To move past another vehicle travelling in the same direction; an attempt to do this does not establish that the manoeuvre was completed."
+          },
+          {
+            "term": "contingent on",
+            "part_of_speech": "adjective phrase",
+            "definition": "Dependent on a particular condition being fulfilled, rather than certain to happen."
+          },
+          {
+            "term": "corrective action",
+            "part_of_speech": "noun phrase",
+            "definition": "Measures taken to remedy an identified problem or failure."
+          },
+          {
+            "term": "deficiencies",
+            "part_of_speech": "plural noun",
+            "definition": "Weaknesses or shortcomings that prevent something from meeting the required standard."
+          },
+          {
+            "term": "precipitated",
+            "part_of_speech": "verb, past simple",
+            "definition": "Brought about or triggered an event or decision, often with a suggestion of suddenness."
+          },
+          {
+            "term": "in keeping with",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Consistent with a stated principle, policy or expected standard of behaviour."
+          },
+          {
+            "term": "diligently",
+            "part_of_speech": "adverb",
+            "definition": "With sustained care and effort; in a corporate statement, it emphasises a claimed commitment to handling a matter responsibly."
+          }
+        ],
+        "grammar": {
+          "concept": "An “-ing” clause after “contingent on”",
+          "explanation": "After “contingent on”, use a noun or an “-ing” clause to express a necessary condition. In “Waymo demonstrating”, “Waymo” identifies the subject of that clause. The construction presents effective corrective action as a condition for lifting the ban, without asserting that it has been demonstrated.",
+          "example_quote": "California's ban took effect on 11 November, with its removal contingent on Waymo demonstrating effective corrective action to address the deficiencies that precipitated it."
+        },
+        "quiz": [
+          {
+            "question": "Which account most accurately captures the relationship between California's ban and Waymo's nationwide decision?",
+            "options": [
+              "California prohibited freeway operations nationwide, and Waymo complied.",
+              "California prohibited freeway operations within the state, after which Waymo extended its pause across its other markets.",
+              "Waymo ended all driverless taxi services nationwide after California prohibited city journeys."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading limits California's prohibition to the state; Waymo announced the broader pause.",
+              "The reading distinguishes California's state ban from Waymo's subsequent decision covering its other operating markets.",
+              "The pause concerns freeway services, while ordinary city operations remain permitted."
+            ]
+          },
+          {
+            "question": "Why does Waymo's statement that no injuries or collisions were reported after the Route 101 incident leave the regulator's stated concern unresolved?",
+            "options": [
+              "Repeated entries into active construction areas can present a safety risk even when no injuries or collisions are reported.",
+              "The regulator's concern applies only to collisions resulting in serious injury.",
+              "The lack of reported injuries or collisions establishes that the vehicles entered the construction area safely."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The regulator identified recurring entries as a risk; the statement about reported outcomes does not resolve that concern.",
+              "The reading describes a risk involving workers, vehicles and equipment, rather than a concern limited to serious injuries.",
+              "A statement that no injuries or collisions were reported does not establish that the behaviour was safe."
+            ]
+          },
+          {
+            "question": "What qualification does “appeared to show” introduce into the account of the patrol vehicles?",
+            "options": [
+              "It establishes that the footage was misleading.",
+              "It confirms that the Waymo car completed the overtaking manoeuvre.",
+              "It presents an interpretation of the footage without treating the apparent behaviour as conclusively established."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase expresses caution about interpretation; it does not declare the footage misleading.",
+              "The reading describes an apparent attempt to overtake, without confirming a completed manoeuvre.",
+              "The wording preserves uncertainty about what the footage establishes."
+            ]
+          },
+          {
+            "question": "Which condition does the reading attach to lifting California's ban?",
+            "options": [
+              "Waymo must demonstrate effective action addressing the shortcomings that triggered the ban.",
+              "Waymo must announce that it intends to cooperate with state officials.",
+              "Waymo must wait until a specified period has elapsed after 11 November."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The condition requires a demonstration of effective corrective action addressing the relevant deficiencies.",
+              "An announcement of cooperation is weaker than demonstrating that effective action has been taken.",
+              "The reading gives a starting date for the ban but no fixed expiry date."
+            ]
+          },
+          {
+            "question": "Which interpretation preserves the attribution and scope of the 95% figure?",
+            "options": [
+              "The regulator verified that Waymo vehicles cause 95% fewer incidents of every kind.",
+              "Data on Waymo's website suggest fewer crashes causing serious injury compared with human drivers.",
+              "The figure establishes that freeway construction incidents cannot pose a significant risk."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The figure comes from data on Waymo's website and concerns crashes causing serious injury, not every incident.",
+              "This retains both the source of the data and the specific category of crashes being compared.",
+              "A comparison concerning serious-injury crashes does not eliminate the particular risk identified by the regulator."
+            ]
+          },
+          {
+            "question": "What distinction does the reading make between Waymo's city coverage and its freeway services?",
+            "options": [
+              "All 15 cities had freeway services, but only three had ordinary city services.",
+              "The freeway pause reduced Waymo's total operating network to three cities.",
+              "Waymo operated in 15 cities, while freeway rides had been offered in only a few locations."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading places the narrower availability on freeway rides, not ordinary city services.",
+              "The three named cities illustrate freeway availability; they do not define the remaining operating network.",
+              "The contrast separates the wider city network from the more limited availability of freeway journeys."
+            ]
+          },
+          {
+            "question": "What does the wording about the May software problem establish?",
+            "options": [
+              "The problem created a possibility that vehicles would enter flooded roads.",
+              "Thousands of vehicles were confirmed to have driven into flooded roads.",
+              "The recall proved that the construction incidents had the same cause."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The wording describes what the software problem could allow, preserving the distinction between possibility and occurrence.",
+              "The number refers to recalled vehicles; the reading does not report thousands entering flooded roads.",
+              "The reading provides no causal link between the May software problem and the construction incidents."
+            ]
+          },
+          {
+            "question": "What additional meaning does “recurring incursions” convey compared with a single entry into a construction area?",
+            "options": [
+              "It establishes that each entry resulted in a collision.",
+              "It indicates repeated unwanted entries, making a pattern central to the concern.",
+              "It indicates that the entries had been authorised by construction workers."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase identifies repeated entries, without specifying collisions as their outcome.",
+              "The phrase combines repetition with entry into an area where the vehicles should not be.",
+              "The wording presents the entries as problematic, rather than authorised."
+            ]
+          },
+          {
+            "question": "In the account of California's ban, what relationship does “precipitated” express?",
+            "options": [
+              "The deficiencies were discovered only after the ban had ended.",
+              "The ban successfully eliminated the deficiencies.",
+              "The deficiencies triggered the decision to impose the ban."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The verb expresses a triggering relationship, rather than discovery after the ban ended.",
+              "The verb does not establish that the shortcomings have been remedied.",
+              "The deficiencies are presented as bringing about the ban."
+            ]
+          },
+          {
+            "question": "Which sentence correctly applies the pattern taught with “contingent on” to a hypothetical decision about freeway services?",
+            "options": [
+              "Permission to restart freeway services is contingent on officials accepting the company's evidence.",
+              "Permission to restart freeway services is contingent on officials accept the company's evidence.",
+              "Permission to restart freeway services is contingent on officials to accept the company's evidence."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "After “on”, the clause “officials accepting the company's evidence” expresses the condition and identifies its subject.",
+              "The finite verb “accept” does not fit after “on officials” in this pattern; use “accepting”.",
+              "The infinitive “to accept” does not fit this preposition pattern; use “accepting”."
+            ]
+          },
+          {
+            "question": "What does Waymo's use of “diligently” contribute to its statement about working with officials?",
+            "options": [
+              "It confirms that officials have approved a return to freeway operations.",
+              "It emphasises the company's claimed care and effort without establishing that its objective has been achieved.",
+              "It specifies a binding deadline for restarting freeway services."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The adverb describes the company's claimed manner of working; it does not report official approval.",
+              "The wording stresses commitment and effort while leaving the outcome unresolved.",
+              "The adverb conveys care and effort, without providing a deadline."
+            ]
+          },
+          {
+            "question": "How should Waymo's statement that the wider pause was “in keeping with” its safety principles be understood?",
+            "options": [
+              "As independent confirmation that the principles had prevented every incident.",
+              "As evidence that California required the pause in every operating market.",
+              "As the company's presentation of its decision as consistent with its stated principles."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Consistency with stated principles does not establish that all incidents were prevented.",
+              "The reading attributes the broader pause to Waymo's decision, while California's ban applies within the state.",
+              "The phrase presents alignment with principles as Waymo's explanation of its own decision."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Waymo has announced a temporary withdrawal of its driverless taxis from freeways throughout the United States.",
+          "The nationwide decision followed California's prohibition on freeway operations after several traffic incidents.",
+          "In imposing the ban, California's Department of Motor Vehicles described an “imminent hazard to public safety” and pointed to several Waymo vehicles entering an active construction area on US Route 101.",
+          "The regulator identified recurring incursions into active construction areas as a safety risk, noting the presence of workers, vehicles and equipment.",
+          "Waymo said that no injuries or collisions had been reported following the Route 101 incident south of San Francisco.",
+          "Separate footage circulating widely on social media appeared to show one of its cars attempting to overtake patrol vehicles while they intentionally slowed highway traffic in San Francisco.",
+          "California's ban took effect on 11 November, with its removal contingent on Waymo demonstrating effective corrective action to address the deficiencies that precipitated it.",
+          "Waymo said its broader freeway pause was in keeping with its safety principles and was intended to allow it to assess performance in its other operating markets.",
+          "The company also said it was working diligently with state officials towards restarting freeway services.",
+          "Data on Waymo's website suggest that its vehicles are involved in 95% fewer crashes causing serious injury than human drivers.",
+          "Although Waymo operates driverless taxis in 15 US cities, freeway journeys had been available in only a few locations, including San Francisco, Los Angeles and Miami.",
+          "Its taxis remain permitted to operate on ordinary city streets.",
+          "In May, the company recalled thousands of vehicles over a software problem that could allow them to enter flooded roads."
+        ],
+        "sentence_evidence": [
+          "Waymo has temporarily suspended its driverless vehicles from operating on all US freeways, the company has said.",
+          "The decision comes after California banned Waymo's driverless taxis from state freeways following a series of recent traffic incidents.",
+          "California's Department of Motor Vehicles (DMV) cited an \"imminent hazard to public safety\" for the ban, noting an incident this month in which several driverless Waymo vehicles entered an active construction zone on US Route 101.",
+          "California's DMV said Waymo's driverless taxis presented a risk \"due to recurring incursions by its vehicles into active construction zones where construction workers, vehicles and equipment are present\".",
+          "Waymo said it was working with state officials \"diligently and responsibly to resume freeway operations\", adding that no injuries or collisions were reported following the incident on US Route 101 south of San Francisco.",
+          "In another incident earlier this month, footage widely seen on social media appeared to show a Waymo car trying to overtake patrol vehicles that were deliberately slowing the pace of traffic on a San Francisco highway.",
+          "The California ban, which came into effect on 11 November, would remain in place until Waymo \"demonstrates to the department that it has taken effective corrective actions to address the deficiencies that precipitated the restrictions\".",
+          "A Waymo spokesperson said: \"In alignment with our safety-first principles, we have also temporarily restricted freeway operations across our other operating markets to evaluate our performance.\"",
+          "Waymo said it was working with state officials \"diligently and responsibly to resume freeway operations\", adding that no injuries or collisions were reported following the incident on US Route 101 south of San Francisco.",
+          "Data on Waymo's website suggests that its cars, compared to human drivers, are involved in 95% fewer crashes resulting in serious injury.",
+          "Waymo currently operates driverless taxis in 15 US cities, but only offered freeway rides in a handful of those locations, including San Francisco, Los Angeles and Miami.",
+          "The company's driverless taxis can continue to operate on regular city streets.",
+          "In May, Waymo recalled thousands of its self-driving cars in the US over a software issue that could allow vehicles to drive into flooded roads."
+        ],
+        "editorial_check": {
+          "date": "2026-11-18T03:46:45.778956+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All 10 distinct targets occur in the reading and avoid reserved vocabulary; “contingent on” and “recurring incursions” offer useful advanced distinctions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified through “appeared to show”, “suggest” and clear attribution to Waymo."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the exact grammar quotation demonstrates the explained “contingent on” pattern."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The 12 distinct quiz items test attribution, uncertainty, conditions, risk, contextual vocabulary and grammar, with accurate answers and feedback."
+            }
+          },
+          "content_digest": "8026b8319e3b6dd4c7e0e193453a64814f2244f17039d20351c1190dff756c0c"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

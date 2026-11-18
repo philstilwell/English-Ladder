@@ -1,0 +1,139 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Waymo has stopped its driverless taxis from using US freeways for now.",
+      "Driverless taxis carry passengers without a human driver.",
+      "Freeways are large roads for fast traffic.",
+      "California banned the taxis from its freeways after several traffic problems.",
+      "Some Waymo cars entered areas where people were working on the road.",
+      "California officials said the cars were a danger to people in these areas.",
+      "Waymo said there were no reports of anyone being hurt in the incident near San Francisco.",
+      "Waymo said it was working with state officials to start freeway trips again.",
+      "The taxis can still carry passengers on normal city streets."
+    ],
+    "vocabulary": [
+      {
+        "term": "driverless",
+        "part_of_speech": "adjective",
+        "definition": "Without a human driver."
+      },
+      {
+        "term": "passengers",
+        "part_of_speech": "plural noun",
+        "definition": "People who travel in a car, bus or train but do not drive it."
+      },
+      {
+        "term": "freeways",
+        "part_of_speech": "plural noun",
+        "definition": "Large roads for fast traffic."
+      },
+      {
+        "term": "banned",
+        "part_of_speech": "verb, past tense",
+        "definition": "Said officially that something was not allowed."
+      },
+      {
+        "term": "entered",
+        "part_of_speech": "verb, past tense",
+        "definition": "Went into a place."
+      },
+      {
+        "term": "again",
+        "part_of_speech": "adverb",
+        "definition": "One more time."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人間の運転手がいない。",
+      "ko": "사람이 운전하지 않는.",
+      "zh-Hans": "没有人类驾驶员的。",
+      "es": "Sin un conductor humano.",
+      "pt-BR": "Sem um motorista humano.",
+      "fr": "Sans conducteur humain.",
+      "de": "Ohne menschlichen Fahrer."
+    },
+    {
+      "id": 1,
+      "ja": "車やバス、電車に乗って移動するが、その乗り物を運転しない人たち。",
+      "ko": "자동차, 버스 또는 기차를 타고 이동하지만 그 교통수단을 운전하지는 않는 사람들.",
+      "zh-Hans": "乘坐汽车、公共汽车或火车出行，但不驾驶这些交通工具的人。",
+      "es": "Personas que viajan en un automóvil, autobús o tren, pero no lo conducen.",
+      "pt-BR": "Pessoas que viajam de carro, ônibus ou trem, mas não conduzem esses veículos.",
+      "fr": "Personnes qui voyagent dans une voiture, un bus ou un train, mais ne conduisent pas ce véhicule.",
+      "de": "Menschen, die in einem Auto, Bus oder Zug mitfahren, das Fahrzeug aber nicht selbst fahren."
+    },
+    {
+      "id": 2,
+      "ja": "車が速く走るための大きな道路。",
+      "ko": "차량이 빠르게 다니도록 만든 큰 도로들.",
+      "zh-Hans": "供车辆快速行驶的大型道路。",
+      "es": "Carreteras grandes para que los vehículos circulen a alta velocidad.",
+      "pt-BR": "Estradas grandes para o tráfego de veículos em alta velocidade.",
+      "fr": "Grandes routes destinées à la circulation rapide des véhicules.",
+      "de": "Große Straßen für schnellen Fahrzeugverkehr."
+    },
+    {
+      "id": 3,
+      "ja": "何かが許されないと正式に表明した。",
+      "ko": "어떤 것이 허용되지 않는다고 공식적으로 밝혔다.",
+      "zh-Hans": "正式宣布某事不被允许。",
+      "es": "Declaró oficialmente que algo no estaba permitido.",
+      "pt-BR": "Declarou oficialmente que algo não era permitido.",
+      "fr": "A déclaré officiellement que quelque chose n’était pas autorisé.",
+      "de": "Erklärte offiziell, dass etwas nicht erlaubt war."
+    },
+    {
+      "id": 4,
+      "ja": "ある場所の中に入った。",
+      "ko": "어떤 장소 안으로 들어갔다.",
+      "zh-Hans": "进入了某个地方。",
+      "es": "Entró en un lugar.",
+      "pt-BR": "Entrou em um lugar.",
+      "fr": "Est entré dans un lieu.",
+      "de": "Gelangte in einen Bereich hinein."
+    },
+    {
+      "id": 5,
+      "ja": "もう一度。",
+      "ko": "한 번 더.",
+      "zh-Hans": "再一次。",
+      "es": "Una vez más.",
+      "pt-BR": "Mais uma vez.",
+      "fr": "Une fois de plus.",
+      "de": "Ein weiteres Mal."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-18T03:47:41.001876+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

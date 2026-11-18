@@ -70,7 +70,29 @@ for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["
     assert.deepEqual(panels.map(p => p.hidden), [true, true, false]);
     assert.equal(panels[2].querySelector("textarea,.note-hint"), null);
     const activities = panels[2].querySelector('.discussion-activities').textContent;
-    assert.equal(panels[2].querySelectorAll('.discussion-activities > li').length, 6);
+    if (file.startsWith('stories/')) {
+      const discussion = panels[2].querySelector('.evergreen-discussion');
+      assert.ok(discussion, 'Everyday stories should use their topic-specific speaking practice');
+      const tasks = [...discussion.querySelectorAll('.discussion-activities > li:not(.evergreen-recall)')];
+      assert.equal(tasks.length, 3, 'Three supported speaking tasks precede the final memory check');
+      for (const task of tasks) {
+        assert.ok(task.querySelector('h3')?.textContent.trim());
+        assert.ok(task.querySelector('p:not(.discussion-support)')?.textContent.trim());
+        assert.ok(task.querySelector('.discussion-support')?.textContent.trim(), 'Each task offers sentence help');
+      }
+      const recall = discussion.querySelector('.evergreen-recall');
+      assert.ok(recall?.textContent.includes('from memory'));
+      assert.equal(recall, discussion.querySelector('.discussion-activities').lastElementChild);
+      const example = discussion.querySelector('details.evergreen-example');
+      assert.ok(example?.querySelector('p')?.textContent.trim(), 'An optional model answer is available');
+      assert.equal(example.open, false);
+      example.querySelector('summary').click();
+      assert.equal(example.open, true, 'The learner can reveal the model answer');
+      example.querySelector('summary').click();
+      assert.equal(example.open, false, 'The learner can hide it for another attempt');
+    } else {
+      assert.equal(panels[2].querySelectorAll('.discussion-activities > li').length, 6);
+    }
     lesson.querySelector(".learning-flow button").click();
     lesson.querySelector(".learning-flow button:last-child").click();
     assert.equal(panels[2].querySelector('.discussion-activities').textContent, activities);

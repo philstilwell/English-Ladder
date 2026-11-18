@@ -3000,13 +3000,13 @@ body.lightbox-open {
     height: 72px;
     place-items: center;
     border-radius: 18px;
-    background: #175c74;
     box-shadow: 0 12px 24px rgba(23, 92, 116, 0.2);
 }
 
 .us-life-book-mark img {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
     object-fit: contain;
 }
 

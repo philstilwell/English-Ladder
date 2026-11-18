@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-16",
+  "revision": "2026-11-18",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -7327,6 +7327,132 @@
         "https://dictionary.cambridge.org/dictionary/english/definitely",
         "https://assets.cambridge.org/97805215/31054/sample/9780521531054ws.pdf",
         "https://www.oxfordlearnersdictionaries.com/definition/english/certainly"
+      ]
+    },
+    {
+      "number": 63,
+      "title": "Have something done: arranging a service",
+      "level": "B1",
+      "category": "Verb patterns and meaning",
+      "goal": "Distinguish doing a job yourself from arranging a service, and explain why the thing comes before a past participle.",
+      "rules": [
+        "For an ordinary service, “I repaired the bike” presents me as the person doing the repair. “I had the bike repaired” presents me as arranging the job; someone else did the repair. Have lets us talk about arranging an action without naming the worker. The bike receives the repair in both situations, but my role changes.",
+        "The service pattern is have + thing + past participle: “I had the bike repaired.” A past participle is a verb form such as repaired, cleaned, or cut. Here it names the action done to the thing, so use repaired after the bike, not repair. Change have to show time: “I had the bike repaired yesterday”; “I will have the bike repaired tomorrow.” Repaired stays the same. This is different from “I had repaired the bike before lunch”: that past-perfect sentence says I had already completed the repair myself. Notice the different word order.",
+        "Context matters: have something done does not always mean arranging a service. “I had my bag stolen” normally reports an unwanted event that affected me; it does not say I requested the theft. Use the service meaning when the situation involves arranging a job. The form alone does not prove that someone paid for, requested, or wanted the action."
+      ],
+      "cards": [
+        {
+          "label": "DO IT YOURSELF",
+          "example": "I repaired the bike.",
+          "note": "I perform the repair. The bike is the thing I work on."
+        },
+        {
+          "label": "ARRANGE A SERVICE",
+          "example": "I had the bike repaired.",
+          "note": "I arrange the repair; another person performs it. Repaired describes the action done to the bike."
+        },
+        {
+          "label": "AN UNWANTED EXPERIENCE",
+          "example": "I had my bag stolen.",
+          "note": "In the usual reading, I experience the loss. I did not arrange or ask for it."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "In a repair-shop context, what does “I had the bike repaired” normally mean?",
+          "options": [
+            {
+              "text": "I personally did the repair.",
+              "correct": false,
+              "feedback": "That is the ordinary meaning of “I repaired the bike.” In this service context, had the bike repaired gives me the role of arranging the work."
+            },
+            {
+              "text": "I arranged for someone else to repair the bike.",
+              "correct": true,
+              "feedback": "I arrange the service; someone else repairs the bike. The thing receiving the action comes before repaired."
+            },
+            {
+              "text": "The bike repaired something for me.",
+              "correct": false,
+              "feedback": "The bike receives the repair. It is not the person or thing carrying out the action."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete the service pattern: “I will have the damaged lock ___ by a locksmith.”",
+          "options": [
+            {
+              "text": "repair",
+              "correct": false,
+              "feedback": "The lock receives the action, so this pattern needs the past participle repaired after the lock, not the base form repair."
+            },
+            {
+              "text": "repairing",
+              "correct": false,
+              "feedback": "Repairing is an -ing form. Here the locksmith does the work to the lock, so choose the past participle repaired."
+            },
+            {
+              "text": "repaired",
+              "correct": true,
+              "feedback": "Have + the damaged lock + repaired describes a service done to the lock. Will have supplies future time; repaired does not change."
+            }
+          ]
+        },
+        {
+          "prompt": "A thief took my bag on the bus. I did not want or arrange this. What does “I had my bag stolen” describe here?",
+          "options": [
+            {
+              "text": "An unwanted experience that affected me.",
+              "correct": true,
+              "feedback": "This is the experience use of the pattern. Stolen describes what happened to the bag; had does not imply that I arranged it."
+            },
+            {
+              "text": "A service that I asked the thief to provide.",
+              "correct": false,
+              "feedback": "The situation explicitly says the theft was unwanted. Have something done is not limited to services we request."
+            },
+            {
+              "text": "A bag that I stole from another person.",
+              "correct": false,
+              "feedback": "My bag was taken from me. The sentence does not make me the person who stole it."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "Yesterday a tailor shortened your jacket at your request. You did none of the sewing. Choose the sentence that describes your role accurately.",
+        "options": [
+          {
+            "text": "I shortened my jacket yesterday.",
+            "correct": false,
+            "feedback": "In the ordinary meaning being practiced, this presents you as doing the sewing. The situation says a tailor did it."
+          },
+          {
+            "text": "I had my jacket shortened yesterday.",
+            "correct": true,
+            "feedback": "You arranged the work; the tailor performed it. Your jacket receives the action, so shortened follows my jacket."
+          },
+          {
+            "text": "I had my jacket shorten yesterday.",
+            "correct": false,
+            "feedback": "Shorten is the base form. The jacket receives the action in this service pattern, so use the past participle shortened."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-63-have-something-done-student-workbook.pdf",
+        "concept-63-have-something-done-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-18",
+      "related": [
+        55,
+        26,
+        29
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/have-something-done",
+        "https://learnenglish.britishcouncil.org/comment/181128",
+        "https://english-dashboard.pearson.com/CDN/ProdStore/GOLDXP/B1P/resources/10_Students_Book_Reference/Grammar_File/Gold_Exp_2e_B1P_GrammarFiles.pdf"
       ]
     }
   ],

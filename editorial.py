@@ -274,6 +274,8 @@ def decorate_page(path):
                 soup.title.string = soup.title.get_text().replace(old, new)
     from site_quality import enhance_page
     enhance_page(soup, path, prefix)
+    from evergreen import enhance_page as enhance_evergreen
+    enhance_evergreen(soup, path.relative_to(ROOT), prefix)
     path.write_text(str(soup), encoding="utf-8")
 
 

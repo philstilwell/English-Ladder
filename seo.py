@@ -232,7 +232,7 @@ def structured_data(p, soup, image):
             source = p['archive'].get('source',{})
             if source.get('link'): resource['citation'] = source['link']
         if p['kind'] == 'grammar': resource['timeRequired'] = 'PT15M'
-        if p['kind'] == 'story': resource['timeRequired'] = 'PT5M'
+        if p['kind'] == 'story': resource['timeRequired'] = 'PT15M'
         if p['kind'] == 'work':
             resource['hasPart'] = [{'@type':'LearningResource','name':m['title'],'url':url+'#'+m['id'],
                 'learningResourceType':'Workplace case lesson','teaches':m['workshop']['goal']} for m in p['track']['modules']]

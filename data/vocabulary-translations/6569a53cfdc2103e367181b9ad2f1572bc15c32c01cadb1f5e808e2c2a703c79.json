@@ -1,0 +1,139 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Anthropic makes Claude, a computer program that people can talk to.",
+      "The company started just five years ago.",
+      "Shares are small parts of a company that people can buy.",
+      "On Thursday, people will be able to buy its shares on a stock market.",
+      "Each share will cost $83 when trading starts.",
+      "The company is now worth up to $1.5 trillion.",
+      "Anthropic wants to grow, so it is looking for more money.",
+      "Some people who put money into the company worry about its future profits.",
+      "Profits are the money a business keeps after paying its costs."
+    ],
+    "vocabulary": [
+      {
+        "term": "started",
+        "part_of_speech": "verb, past tense",
+        "definition": "Began."
+      },
+      {
+        "term": "shares",
+        "part_of_speech": "plural noun",
+        "definition": "Small parts of a company that people can buy."
+      },
+      {
+        "term": "worth",
+        "part_of_speech": "adjective",
+        "definition": "Having a value of a certain amount of money."
+      },
+      {
+        "term": "grow",
+        "part_of_speech": "verb",
+        "definition": "Become bigger."
+      },
+      {
+        "term": "worry",
+        "part_of_speech": "verb",
+        "definition": "Feel that something bad may happen."
+      },
+      {
+        "term": "profits",
+        "part_of_speech": "plural noun",
+        "definition": "Money a business keeps after paying its costs."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "始まった。",
+      "ko": "시작되었다.",
+      "zh-Hans": "开始了。",
+      "es": "Comenzó.",
+      "pt-BR": "Começou.",
+      "fr": "A commencé.",
+      "de": "Begann."
+    },
+    {
+      "id": 1,
+      "ja": "人々が買うことのできる、会社の小さな持ち分。",
+      "ko": "사람들이 살 수 있는 회사의 작은 지분들.",
+      "zh-Hans": "人们可以购买的公司小份额所有权。",
+      "es": "Pequeñas partes de una empresa que las personas pueden comprar.",
+      "pt-BR": "Pequenas partes de uma empresa que as pessoas podem comprar.",
+      "fr": "Petites parts d’une entreprise que les gens peuvent acheter.",
+      "de": "Kleine Anteile an einem Unternehmen, die Menschen kaufen können."
+    },
+    {
+      "id": 2,
+      "ja": "ある金額に相当する価値があること。",
+      "ko": "특정 금액에 해당하는 가치가 있는 것.",
+      "zh-Hans": "具有相当于某个金额的价值。",
+      "es": "Que tiene un valor de una determinada cantidad de dinero.",
+      "pt-BR": "Que tem um valor correspondente a uma determinada quantia de dinheiro.",
+      "fr": "Qui a une valeur correspondant à une certaine somme d’argent.",
+      "de": "Einen Wert in Höhe eines bestimmten Geldbetrags haben."
+    },
+    {
+      "id": 3,
+      "ja": "より大きくなること。",
+      "ko": "더 커지다.",
+      "zh-Hans": "变得更大。",
+      "es": "Hacerse más grande.",
+      "pt-BR": "Ficar maior.",
+      "fr": "Devenir plus grand.",
+      "de": "Größer werden."
+    },
+    {
+      "id": 4,
+      "ja": "何か悪いことが起こるかもしれないと不安に思うこと。",
+      "ko": "나쁜 일이 일어날지도 모른다고 불안해하다.",
+      "zh-Hans": "因觉得可能会发生不好的事情而感到不安。",
+      "es": "Sentir inquietud porque puede pasar algo malo.",
+      "pt-BR": "Sentir receio de que algo ruim possa acontecer.",
+      "fr": "Ressentir de l’inquiétude à l’idée que quelque chose de mauvais puisse arriver.",
+      "de": "Sich Sorgen machen, dass etwas Schlimmes passieren könnte."
+    },
+    {
+      "id": 5,
+      "ja": "事業にかかる費用を支払った後に会社の手元に残るお金。",
+      "ko": "기업이 비용을 지불한 뒤에 남는 돈.",
+      "zh-Hans": "企业支付各项成本后剩下的钱。",
+      "es": "Dinero que una empresa conserva después de pagar sus costos.",
+      "pt-BR": "Dinheiro que uma empresa mantém depois de pagar seus custos.",
+      "fr": "Argent qu’une entreprise conserve après avoir payé ses coûts.",
+      "de": "Geld, das einem Unternehmen nach Bezahlung seiner Kosten bleibt."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-19T04:40:59.339381+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

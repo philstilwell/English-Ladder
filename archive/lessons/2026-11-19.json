@@ -1,0 +1,826 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-19",
+  "release_iso": "2026-11-19T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Business",
+    "feed_url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "category": "business",
+    "published_at": "Thu, 19 Nov 2026 02:20:15 GMT",
+    "retrieved_at": "2026-11-19T04:32:15.506956+00:00",
+    "title": "AI giant Anthropic valued at up to $1.5tn ahead of stock market debut",
+    "summary": "The firm started just five years ago and is now one of the biggest names in artificial intelligence.",
+    "evidence_text": "The artificial intelligence (AI) company behind the popular chatbot Claude said its shares will be priced at $83 each when it lists on the Nasdaq, a tech-focused stock exchange based in New York.\nThe firm started just five years ago and is now one of the biggest names in artificial intelligence.\nAnthropic has seen its value jump to as much as $1.5tn (£1.14tn) as its shares are set to start trading on the stock market on Thursday.\nNonetheless, Anthropic is looking to grow quickly and gain more access to financing through the public markets in order to do so.\nThere is excitement around Anthropic's listing, but also some concern from investors around its ability to generate revenue and profits going forward.\nAnthropic's stock market debut will make it the first US firm focused exclusively on AI to go public. It will also mark a crucial test for the fast-growing industry, which faces questions over whether the huge amounts of money being poured into the technology will be profitable.\nThe person said shares were more than 10 times oversubscribed ahead of the public listing, meaning demand for Anthropic shares exceeded the number of shares available.\nIf that turns out to be the case, Anthropic's valuation could quickly blow past its target on Thursday when trading begins.\nAs it stands, Anthropic's listing will see the firm raise more than $68bn from its initial investors. It is also expecting another $26bn from private placements. So the total amount the company will raise is expected to be $94bn.\nYang Wang, a principle financial analyst with Counterpoint Research, said the central issue for Anthropic is whether its business \"can keep pace\" as hundreds of billions of dollars in financial obligations come due in the next couple of years.\nThe company has carved itself out in the ongoing AI race as more focused on building the technology with safety top of mind.\nThe company has urged developers to slow the development of AI, arguing that advanced systems could pose \"catastrophic\" risks to humanity if they are not handled with appropriate safeguards.\nBut broader anxieties have started to grow about the AI industry's business model, which is reliant on expensive computer chips that are in short supply. The technology is also dependent on controversial data centres and funding such operations require deals with other tech companies.\nBut demand for Anthropic's stock debut - commonly referred to as its initial public offering, or IPO - is very high, according to one early investor in the company who spoke with the BBC on condition of anonymity.\n\"Nevertheless, it is not an everyday occurrence for public investors to gain direct exposure to a frontier-model developer with the potential to shape the next stage of productivity,\" Wang said.\nIt refused to comply with a demand by the US Department of Defense that Anthropic's tools be used in an essentially unrestricted way.\nNorton said Anthropic going public now, in a time of market volatility comes down to the simple fact that the company needs access to more money.\nThe Federal Reserve Bank has expressed concern about the rapid growth of AI-related debt being financed through \"complex and opaque\" structures, according to minutes from its October meeting to discuss a potential rate rise.\nA few of the meeting's participants also noted that \"AI-related exposures were becoming increasingly concentrated among a small number of firms\".",
+    "evidence_retrieved_at": "2026-11-19T04:32:15.506956+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c6742m39xgzxo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why does Anthropic want more money? Use “It wants more money because ...”.",
+          "Would you or an imaginary person buy shares in Anthropic? Use “I think ... because ...”."
+        ],
+        "title": "Anthropic Prepares to Sell Shares to the Public",
+        "overview": "Anthropic plans to sell shares to help its business grow.",
+        "topic": "Business and technology",
+        "vocabulary": [
+          {
+            "term": "started",
+            "part_of_speech": "verb, past tense",
+            "definition": "Began."
+          },
+          {
+            "term": "shares",
+            "part_of_speech": "plural noun",
+            "definition": "Small parts of a company that people can buy."
+          },
+          {
+            "term": "worth",
+            "part_of_speech": "adjective",
+            "definition": "Having a value of a certain amount of money."
+          },
+          {
+            "term": "grow",
+            "part_of_speech": "verb",
+            "definition": "Become bigger."
+          },
+          {
+            "term": "worry",
+            "part_of_speech": "verb",
+            "definition": "Feel that something bad may happen."
+          },
+          {
+            "term": "profits",
+            "part_of_speech": "plural noun",
+            "definition": "Money a business keeps after paying its costs."
+          }
+        ],
+        "grammar": {
+          "concept": "Future with “will”",
+          "explanation": "Use “will” before a verb to talk about the future. Use the verb form you see in “to buy”, but leave out “to”. For example, use “will buy”. Do not add “s” to the verb after “will”.",
+          "example_quote": "Each share will cost $83 when trading starts."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about Anthropic?",
+            "options": [
+              "It plans to sell Claude.",
+              "It will sell shares to the public.",
+              "It started five days ago."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says people can buy shares in the company.",
+              "Yes. People will be able to buy its shares on Thursday.",
+              "The company started five years ago."
+            ]
+          },
+          {
+            "question": "When did Anthropic start?",
+            "options": [
+              "Five months ago.",
+              "Fifteen years ago.",
+              "Five years ago."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says five years, not five months.",
+              "The reading says five years, not fifteen years.",
+              "Yes. The company started just five years ago."
+            ]
+          },
+          {
+            "question": "What will cost $83 when trading starts?",
+            "options": [
+              "One share.",
+              "All the company's shares.",
+              "The Claude program."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Each share will cost $83.",
+              "The price is for each share, not all the shares together.",
+              "The reading gives a price for a share, not for Claude."
+            ]
+          },
+          {
+            "question": "According to the reading, why does Anthropic want more money?",
+            "options": [
+              "It wants to close.",
+              "It wants to grow.",
+              "Its shares cost less now."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says the company wants to grow.",
+              "Yes. Anthropic is looking for more money to help it grow.",
+              "The reading does not say its shares cost less now."
+            ]
+          },
+          {
+            "question": "What do some people worry about?",
+            "options": [
+              "The company's name.",
+              "The day the company started.",
+              "The company's future profits."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says they worry about future profits.",
+              "The reading gives the company's age, but this is not their worry.",
+              "Yes. They worry about the money the company may keep after paying its costs."
+            ]
+          },
+          {
+            "question": "What are people buying when they buy Anthropic's shares?",
+            "options": [
+              "Small parts of the company.",
+              "The whole company.",
+              "A computer program."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Shares are small parts of a company.",
+              "A share is a small part, not the whole company.",
+              "Claude is a computer program, but shares are parts of the company."
+            ]
+          },
+          {
+            "question": "Which sentence uses “will” correctly?",
+            "options": [
+              "People will buys shares.",
+              "People will buy shares.",
+              "People will buying shares."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Use “buy” after “will”, without “s”.",
+              "Yes. “Will buy” uses the correct verb form.",
+              "Use “buy” after “will”, without “ing”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Anthropic makes Claude, a computer program that people can talk to.",
+          "The company started just five years ago.",
+          "Shares are small parts of a company that people can buy.",
+          "On Thursday, people will be able to buy its shares on a stock market.",
+          "Each share will cost $83 when trading starts.",
+          "The company is now worth up to $1.5 trillion.",
+          "Anthropic wants to grow, so it is looking for more money.",
+          "Some people who put money into the company worry about its future profits.",
+          "Profits are the money a business keeps after paying its costs."
+        ],
+        "sentence_evidence": [
+          "The artificial intelligence (AI) company behind the popular chatbot Claude said its shares will be priced at $83 each when it lists on the Nasdaq, a tech-focused stock exchange based in New York.",
+          "The firm started just five years ago and is now one of the biggest names in artificial intelligence.",
+          "The artificial intelligence (AI) company behind the popular chatbot Claude said its shares will be priced at $83 each when it lists on the Nasdaq, a tech-focused stock exchange based in New York.",
+          "Anthropic has seen its value jump to as much as $1.5tn (£1.14tn) as its shares are set to start trading on the stock market on Thursday.",
+          "The artificial intelligence (AI) company behind the popular chatbot Claude said its shares will be priced at $83 each when it lists on the Nasdaq, a tech-focused stock exchange based in New York.",
+          "Anthropic has seen its value jump to as much as $1.5tn (£1.14tn) as its shares are set to start trading on the stock market on Thursday.",
+          "Nonetheless, Anthropic is looking to grow quickly and gain more access to financing through the public markets in order to do so.",
+          "There is excitement around Anthropic's listing, but also some concern from investors around its ability to generate revenue and profits going forward.",
+          "There is excitement around Anthropic's listing, but also some concern from investors around its ability to generate revenue and profits going forward."
+        ],
+        "editorial_check": {
+          "date": "2026-11-19T04:34:19.099299+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct targets occur in the reading. Useful business words such as “shares” and “profits” have clear definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and everyday wording such as “wants to grow” suit adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences, clear examples of “will buy”, and discussion frames support A1-A2 learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct questions test the main news, stated details, the meaning of “shares”, and the taught “will” pattern."
+            }
+          },
+          "content_digest": "5df5ef9368e7e154ffdd20a98abe1c53fa0a82283422dc415f4d1d6151cd5c95"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why can strong demand for Anthropic's shares exist alongside doubts about its future business income?",
+          "If you managed an AI company, how would you balance spending on safety with plans to expand quickly?"
+        ],
+        "title": "Anthropic Prepares for Major Stock Market Launch",
+        "overview": "Anthropic's planned stock market launch has attracted strong interest, but questions remain about its future income and costs.",
+        "topic": "Business and artificial intelligence",
+        "vocabulary": [
+          {
+            "term": "valued at",
+            "part_of_speech": "verb phrase, past participle form",
+            "definition": "Estimated to have a particular financial value."
+          },
+          {
+            "term": "stock exchange",
+            "part_of_speech": "noun",
+            "definition": "A market where people and businesses buy and sell company shares."
+          },
+          {
+            "term": "go public",
+            "part_of_speech": "verb phrase",
+            "definition": "To offer a company's shares for people to buy on the stock market."
+          },
+          {
+            "term": "demand",
+            "part_of_speech": "uncountable noun",
+            "definition": "The amount of something that people want to buy."
+          },
+          {
+            "term": "raise",
+            "part_of_speech": "verb",
+            "definition": "To obtain money for a business or purpose."
+          },
+          {
+            "term": "revenue",
+            "part_of_speech": "uncountable noun",
+            "definition": "Money a business receives from its activities before costs are taken away."
+          },
+          {
+            "term": "keep pace",
+            "part_of_speech": "verb phrase",
+            "definition": "To develop quickly enough to meet changing needs or demands."
+          },
+          {
+            "term": "safeguards",
+            "part_of_speech": "plural noun",
+            "definition": "Measures intended to prevent harm or reduce risks."
+          },
+          {
+            "term": "in short supply",
+            "part_of_speech": "adjective phrase",
+            "definition": "Not available in large enough amounts to meet people's needs."
+          }
+        ],
+        "grammar": {
+          "concept": "Conditionals with “could” for possible future results",
+          "explanation": "Use “if” plus the present simple to describe a possible future condition. In the result clause, use “could” plus the base form of a verb to show a possible result rather than a certain prediction.",
+          "example_quote": "If demand is as high as reported, Anthropic's market value could rise above its target when trading begins."
+        },
+        "quiz": [
+          {
+            "question": "What is the main focus of the News Brief?",
+            "options": [
+              "Anthropic's decision to stop developing AI",
+              "Strong interest in Anthropic's stock market launch and questions about its business",
+              "A shortage of people interested in buying Anthropic's shares"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The company wants to expand quickly, although it has called for slower AI development.",
+              "The reading connects strong interest in the launch with concerns about income, payments and costs.",
+              "The reading reports demand far above the number of available shares."
+            ]
+          },
+          {
+            "question": "What does the planned price of $83 refer to?",
+            "options": [
+              "The price of each Anthropic share",
+              "The company's total expected income",
+              "The price of using the Claude chatbot"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Anthropic plans to price each share at $83.",
+              "The reading gives $83 as the price of one share, not total income.",
+              "The reading does not give a price for using Claude."
+            ]
+          },
+          {
+            "question": "Which detail best shows the strength of demand before the launch?",
+            "options": [
+              "Anthropic develops the Claude chatbot.",
+              "Anthropic plans to list on a New York stock exchange.",
+              "Demand was reportedly more than ten times the number of available shares."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This identifies Anthropic's product but does not measure demand for its shares.",
+              "This identifies the market but does not show how many shares buyers wanted.",
+              "The comparison shows that buyers wanted far more shares than were available."
+            ]
+          },
+          {
+            "question": "What does the expected total of $94 billion include?",
+            "options": [
+              "Money from the stock market launch and additional private investments",
+              "Income from selling Claude services alone",
+              "Money already earned after paying all business costs"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says the expected total combines these two sources of money.",
+              "The figure concerns money from investors, not income from Claude services.",
+              "The figure is money Anthropic expects to obtain from investors, not earnings after costs."
+            ]
+          },
+          {
+            "question": "What does “revenue” mean in the reading?",
+            "options": [
+              "The estimated value of the whole company",
+              "Money received from business activities before costs are taken away",
+              "Money left after all business costs have been paid"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A company's estimated value is different from its “revenue”.",
+              "“Revenue” means business income before costs are taken away.",
+              "This describes “profits”, which the reading distinguishes from “revenue”."
+            ]
+          },
+          {
+            "question": "What concern did financial analyst Yang Wang express?",
+            "options": [
+              "Whether Anthropic would be allowed to develop a chatbot",
+              "Whether Anthropic could find a stock exchange in New York",
+              "Whether its business could develop quickly enough to meet large payments"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading identifies Claude as Anthropic's existing chatbot and does not report this concern.",
+              "The reading names Nasdaq as the planned stock exchange, but this was not Wang's concern.",
+              "Wang questioned whether the business could keep up with payments due over the next two years."
+            ]
+          },
+          {
+            "question": "What does the reading suggest about Anthropic's approach to safety and expansion?",
+            "options": [
+              "It has safety concerns while also seeking money to expand quickly.",
+              "It has ended its expansion plans because of safety concerns.",
+              "It believes that advanced AI needs no safety measures."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading presents both its warnings about AI risks and its plans for quick expansion.",
+              "The reading says Anthropic still wants to expand quickly.",
+              "Anthropic warns that advanced systems could cause serious harm without suitable safeguards."
+            ]
+          },
+          {
+            "question": "What does “in short supply” tell us about the computer chips?",
+            "options": [
+              "They are becoming less important to AI companies.",
+              "There are not enough available to meet demand.",
+              "Their prices are low because there are too many."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says the industry depends on these chips.",
+              "“In short supply” means the available amount is not enough to meet demand.",
+              "The reading describes expensive chips with limited availability."
+            ]
+          },
+          {
+            "question": "Why does the reading use “could rise” when discussing Anthropic's future market value?",
+            "options": [
+              "To report an increase that has already happened after trading began",
+              "To promise that the value will rise",
+              "To describe a possible increase if demand is as high as reported"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Could rise” describes a possible future result, not a completed increase.",
+              "“Could” expresses possibility rather than a promise.",
+              "The increase is presented as possible and linked to a condition about demand."
+            ]
+          },
+          {
+            "question": "Which sentence uses “if” plus the present simple and “could” to describe a possible future result?",
+            "options": [
+              "If a company attracts investors, it could raise more money.",
+              "If a company attracted investors, it could raise more money.",
+              "If a company attracts investors, it will raise more money."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Attracts” is present simple, and “could raise” presents the result as possible.",
+              "This is grammatical, but “attracted” is past simple, so it does not use the requested pattern.",
+              "This is grammatical, but “will raise” presents a stronger prediction and does not use the requested “could” pattern."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Anthropic is valued at up to $1.5 trillion ahead of its planned stock market launch on Thursday.",
+          "Anthropic makes the artificial intelligence (AI) chatbot Claude and plans to price its shares at $83 each on Nasdaq, a New York stock exchange.",
+          "This will make Anthropic the first US company focused entirely on AI to go public, or offer shares on the stock market.",
+          "The report says demand was more than ten times the number of shares available before the public listing.",
+          "If demand is as high as reported, Anthropic's market value could rise above its target when trading begins.",
+          "Anthropic expects to raise a total of $94 billion through its stock market launch and additional private investments.",
+          "However, some investors are concerned about whether the company can generate revenue, or income from its business, and make profits.",
+          "Financial analyst Yang Wang questioned whether Anthropic's business could keep pace with large payments due over the next two years.",
+          "The company has made safety a central part of its approach to developing AI.",
+          "It has called for slower AI development, warning that advanced systems could cause serious harm without suitable safeguards, or safety measures.",
+          "Despite these concerns, Anthropic wants to expand quickly and gain access to more money through the public markets.",
+          "There are also concerns about the wider AI industry's business model, which depends on expensive computer chips that are in short supply."
+        ],
+        "sentence_evidence": [
+          "Anthropic has seen its value jump to as much as $1.5tn (£1.14tn) as its shares are set to start trading on the stock market on Thursday.",
+          "The artificial intelligence (AI) company behind the popular chatbot Claude said its shares will be priced at $83 each when it lists on the Nasdaq, a tech-focused stock exchange based in New York.",
+          "Anthropic's stock market debut will make it the first US firm focused exclusively on AI to go public. It will also mark a crucial test for the fast-growing industry, which faces questions over whether the huge amounts of money being poured into the technology will be profitable.",
+          "The person said shares were more than 10 times oversubscribed ahead of the public listing, meaning demand for Anthropic shares exceeded the number of shares available.",
+          "If that turns out to be the case, Anthropic's valuation could quickly blow past its target on Thursday when trading begins.",
+          "As it stands, Anthropic's listing will see the firm raise more than $68bn from its initial investors. It is also expecting another $26bn from private placements. So the total amount the company will raise is expected to be $94bn.",
+          "There is excitement around Anthropic's listing, but also some concern from investors around its ability to generate revenue and profits going forward.",
+          "Yang Wang, a principle financial analyst with Counterpoint Research, said the central issue for Anthropic is whether its business \"can keep pace\" as hundreds of billions of dollars in financial obligations come due in the next couple of years.",
+          "The company has carved itself out in the ongoing AI race as more focused on building the technology with safety top of mind.",
+          "The company has urged developers to slow the development of AI, arguing that advanced systems could pose \"catastrophic\" risks to humanity if they are not handled with appropriate safeguards.",
+          "Nonetheless, Anthropic is looking to grow quickly and gain more access to financing through the public markets in order to do so.",
+          "But broader anxieties have started to grow about the AI industry's business model, which is reliant on expensive computer chips that are in short supply. The technology is also dependent on controversial data centres and funding such operations require deals with other tech companies."
+        ],
+        "editorial_check": {
+          "date": "2026-11-19T04:36:06.184935+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Nine distinct reading-based targets, including “revenue” and “keep pace”, provide useful B1–B2 learning value without borrowing reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting preserves uncertainty through wording such as “could rise” and “some investors are concerned”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Clear definitions explain “revenue” and “safeguards”; the exact grammar quotation demonstrates the conditional pattern accurately."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and ten unambiguous quiz questions cover comprehension, contextual vocabulary, relationships between details and grammar transfer."
+            }
+          },
+          "content_digest": "652dd8589435a32c1b6be90d7ee2828667de6f094f73f3d4489d24ac7f84f696"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why an oversubscribed share offering does not resolve concerns about Anthropic’s future financial obligations.",
+          "If you were assessing Anthropic’s listing, how would you weigh its technological potential against its financing needs?"
+        ],
+        "title": "Anthropic’s Stock Market Debut Tests Confidence in AI",
+        "overview": "Anthropic’s planned listing combines exceptional investor interest with unresolved questions about whether its business can meet the financial commitments associated with advanced AI development.",
+        "topic": "Artificial intelligence and financial markets",
+        "vocabulary": [
+          {
+            "term": "on condition of anonymity",
+            "part_of_speech": "prepositional phrase",
+            "definition": "With the agreement that the person providing information will not be publicly identified."
+          },
+          {
+            "term": "oversubscribed",
+            "part_of_speech": "adjective",
+            "definition": "Attracting requests for more shares than are available, without necessarily indicating how those shares will perform later."
+          },
+          {
+            "term": "private placements",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Sales of shares or other investments arranged privately with selected investors rather than offered generally to the public."
+          },
+          {
+            "term": "financial obligations",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Commitments requiring a person or organisation to make payments."
+          },
+          {
+            "term": "direct exposure",
+            "part_of_speech": "noun phrase",
+            "definition": "An investment connection through which a company’s performance can directly affect an investor’s financial returns."
+          },
+          {
+            "term": "frontier-model developer",
+            "part_of_speech": "compound noun",
+            "definition": "A company or organisation developing AI models at the leading edge of current capabilities."
+          },
+          {
+            "term": "unrestricted",
+            "part_of_speech": "adjective",
+            "definition": "Not subject to limits on how something may be used."
+          },
+          {
+            "term": "catastrophic",
+            "part_of_speech": "adjective",
+            "definition": "Causing exceptionally severe and widespread harm; stronger in meaning than “serious” or “disruptive”."
+          },
+          {
+            "term": "market volatility",
+            "part_of_speech": "noun phrase",
+            "definition": "A situation in which financial market prices change substantially or unpredictably."
+          },
+          {
+            "term": "opaque",
+            "part_of_speech": "adjective",
+            "definition": "Difficult to understand or examine because the relevant arrangements are unclear."
+          },
+          {
+            "term": "concentrated",
+            "part_of_speech": "adjective",
+            "definition": "Gathered within a limited group rather than distributed across many participants."
+          }
+        ],
+        "grammar": {
+          "concept": "Conditional inversion with “should”",
+          "explanation": "In a conditional clause, place “should” before the subject and use the verb’s base form to replace a clause beginning with “if”. This formal pattern presents a possible future condition; “could” in the main clause keeps the outcome uncertain.",
+          "example_quote": "Should demand prove as strong as reported, Anthropic’s valuation could rapidly exceed its target when trading begins."
+        },
+        "quiz": [
+          {
+            "question": "Which interpretation best captures the central tension surrounding Anthropic’s listing?",
+            "options": [
+              "Investor enthusiasm is substantial, while the company’s ability to meet future financial commitments remains uncertain.",
+              "Investor interest has weakened because the company has abandoned its plans for rapid expansion.",
+              "The company’s technological potential has already established that its financial commitments are manageable."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading places exceptional interest alongside unresolved concerns about future financial obligations.",
+              "The reported interest is strong, and Anthropic is still seeking financing to expand quickly.",
+              "Technological potential is presented as an opportunity, while the financial question remains unresolved."
+            ]
+          },
+          {
+            "question": "How should readers interpret the claim that the offering was more than ten times oversubscribed?",
+            "options": [
+              "The final trading price was more than ten times the announced share price.",
+              "An early investor reported that requests substantially exceeded the available shares.",
+              "Anthropic had already received ten times its expected fundraising proceeds."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Oversubscribed” concerns requests relative to available shares, rather than a subsequent trading price.",
+              "The claim describes unusually strong interest and remains attributed to the early investor.",
+              "Requests for shares do not establish that the company received a corresponding multiple of its expected proceeds."
+            ]
+          },
+          {
+            "question": "What does the phrase “on condition of anonymity” establish about the early investor’s contribution?",
+            "options": [
+              "The investor’s identity was unknown to everyone involved.",
+              "The investor agreed that the information could not be reported.",
+              "The information was provided under an agreement that the investor would not be identified publicly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase concerns public identification; it does not establish whether the reporter knew the investor’s identity.",
+              "The information was reported, with the investor’s identity withheld.",
+              "“On condition of anonymity” specifies the protection attached to providing the information."
+            ]
+          },
+          {
+            "question": "Which distinction between the $1.5 trillion figure and the approximately $94 billion figure is supported by the reading?",
+            "options": [
+              "The first concerns the company’s reported overall value; the second concerns expected financing proceeds.",
+              "The first is the cash expected from private placements; the second is the company’s total market value.",
+              "Both describe money Anthropic has already earned from selling AI services."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The valuation has already reached as much as $1.5 trillion, whereas approximately $94 billion is the anticipated money from financing.",
+              "This reverses the distinction, and private placements account for an expected $26 billion.",
+              "Neither figure is presented as earnings from selling services."
+            ]
+          },
+          {
+            "question": "What is the specific concern attributed to Yang Wang?",
+            "options": [
+              "Whether investors will be allowed to purchase shares on the Nasdaq.",
+              "Whether Anthropic’s business can keep up as substantial payment commitments become payable.",
+              "Whether private placements will eliminate the need for public trading."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Wang’s concern relates to future financial commitments, rather than permission to purchase shares.",
+              "“Financial obligations” refers to payment commitments, and Wang questions the business’s ability to keep up with them.",
+              "The reading does not attribute this concern to Wang or suggest that private placements would replace the listing."
+            ]
+          },
+          {
+            "question": "What makes the investment opportunity unusual in Wang’s assessment?",
+            "options": [
+              "It gives investors a guarantee of returns from future productivity improvements.",
+              "It allows investors to avoid any connection between their returns and AI development.",
+              "It offers public investors direct involvement in a company developing leading-edge AI models."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes potential influence on productivity, without guaranteeing investment returns.",
+              "“Direct exposure” creates a financial connection to the company’s performance.",
+              "Wang highlights the unusual opportunity to invest directly in a frontier-model developer."
+            ]
+          },
+          {
+            "question": "Which account accurately represents Anthropic’s response to the US Department of Defense?",
+            "options": [
+              "It refused a demand for essentially unrestricted use of its tools.",
+              "It demonstrated that its tools could not function in defence settings.",
+              "It accepted unrestricted use after securing additional financing."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading describes a refusal concerning the permitted scope of use.",
+              "A refusal is a decision; it does not establish technical inability.",
+              "The reading reports refusal and provides no subsequent acceptance linked to financing."
+            ]
+          },
+          {
+            "question": "Which statement preserves the qualification in Anthropic’s warning about advanced AI?",
+            "options": [
+              "Advanced systems have already caused catastrophic harm to humanity.",
+              "Advanced systems could cause catastrophic harm if appropriate safeguards are absent.",
+              "Advanced systems will certainly cause catastrophic harm even with safeguards."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The warning concerns a possible risk, rather than harm established as having occurred.",
+              "This preserves both the possibility expressed by “could” and the condition concerning safeguards.",
+              "The reading does not establish certainty or claim that safeguards would necessarily be ineffective."
+            ]
+          },
+          {
+            "question": "According to Norton, why is Anthropic pursuing its listing during market volatility?",
+            "options": [
+              "Market volatility guarantees that its shares will increase in value.",
+              "The company no longer needs financing from investors.",
+              "The company needs access to additional money."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Norton’s explanation concerns financing needs and offers no guarantee about share performance.",
+              "This contradicts Norton’s stated explanation for the timing.",
+              "Norton attributes the decision to the company’s need for additional financing."
+            ]
+          },
+          {
+            "question": "Which distinction between “opaque” financing and “concentrated” exposure matches the reading?",
+            "options": [
+              "“Opaque” concerns difficulty understanding arrangements; “concentrated” concerns financial involvement gathering among relatively few firms.",
+              "“Opaque” means financing is unlawful; “concentrated” means exposure has disappeared.",
+              "“Opaque” concerns the number of firms; “concentrated” concerns whether their arrangements can be understood."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The terms identify different concerns: unclear arrangements and financial involvement clustered within a small group.",
+              "“Opaque” does not establish illegality, and “concentrated” does not mean absent.",
+              "This reverses the contextual meanings of the two terms."
+            ]
+          },
+          {
+            "question": "Which statement most accurately distinguishes the announced listing price, the reported valuation and the start of trading?",
+            "options": [
+              "The $83 price and the $1.5 trillion valuation both describe results recorded after public trading began.",
+              "Anthropic announced an $83 listing price, and its valuation has already risen to as much as $1.5 trillion ahead of trading.",
+              "The anonymous investor announced the $83 listing price, while the $1.5 trillion valuation is only a forecast."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Trading is still due to begin on Thursday; neither figure is presented as a result of completed public trading.",
+              "This preserves the timing: the price has been announced and the valuation has already risen, while trading has yet to begin.",
+              "The price announcement comes from Anthropic, and the reading reports a valuation already reached rather than merely forecast."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses conditional inversion with “should” to express a possible future condition affecting Anthropic’s valuation?",
+            "options": [
+              "Should demand remained strong, Anthropic’s valuation could exceed its target.",
+              "Should demand remains strong, Anthropic’s valuation could exceed its target.",
+              "Should demand remain strong, Anthropic’s valuation could exceed its target."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "After inverted conditional “should”, use the base form “remain”, rather than the past form “remained”.",
+              "The subject “demand” does not require “remains” here because “should” is followed by the base form.",
+              "“Should demand remain” correctly places “should” before the subject and uses the base form; “could” preserves uncertainty about the result."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Anthropic, the company behind Claude, announced a listing price of $83 per share on the Nasdaq, a technology-focused stock exchange in New York.",
+          "With trading due to begin on Thursday, the company’s valuation has already risen to as much as $1.5 trillion.",
+          "Its debut will make it the first US company focused exclusively on AI to enter public markets, testing confidence in an industry whose enormous investments face questions about profitability.",
+          "An early investor, speaking on condition of anonymity, described exceptionally strong interest in the initial public offering, the company’s first public offering of shares.",
+          "The investor said the offering was more than ten times oversubscribed, with requests exceeding the shares available.",
+          "Should demand prove as strong as reported, Anthropic’s valuation could rapidly exceed its target when trading begins.",
+          "Anthropic expects more than $68 billion from its listing and another $26 billion from private placements, or share sales arranged privately, bringing anticipated proceeds to approximately $94 billion.",
+          "Counterpoint Research analyst Yang Wang identified the central question as whether Anthropic’s business can keep up as hundreds of billions of dollars in financial obligations become payable over the next couple of years.",
+          "Wang also highlighted the unusual opportunity for direct exposure to a frontier-model developer, allowing public investors to invest directly in a company building leading-edge AI models with the potential to influence future productivity.",
+          "Anthropic refused a US Department of Defense demand that its tools be available for essentially unrestricted use.",
+          "The company has advocated slower AI development, arguing that advanced systems could pose catastrophic risks to humanity without appropriate safeguards.",
+          "Nevertheless, Anthropic is seeking greater access to public financing to support rapid expansion.",
+          "Norton attributed the decision to list during market volatility to Anthropic’s need for additional money.",
+          "Broader concerns surround an AI business model dependent on scarce, expensive chips, controversial data centres and financing arrangements involving other technology companies.",
+          "Minutes from the Federal Reserve Bank’s October meeting recorded concern about rapidly expanding AI-related debt financed through complex and opaque structures that are difficult to understand.",
+          "A few participants also noted that AI-related financial exposures were becoming increasingly concentrated among a small number of firms."
+        ],
+        "sentence_evidence": [
+          "The artificial intelligence (AI) company behind the popular chatbot Claude said its shares will be priced at $83 each when it lists on the Nasdaq, a tech-focused stock exchange based in New York.",
+          "Anthropic has seen its value jump to as much as $1.5tn (£1.14tn) as its shares are set to start trading on the stock market on Thursday.",
+          "Anthropic's stock market debut will make it the first US firm focused exclusively on AI to go public. It will also mark a crucial test for the fast-growing industry, which faces questions over whether the huge amounts of money being poured into the technology will be profitable.",
+          "But demand for Anthropic's stock debut - commonly referred to as its initial public offering, or IPO - is very high, according to one early investor in the company who spoke with the BBC on condition of anonymity.",
+          "The person said shares were more than 10 times oversubscribed ahead of the public listing, meaning demand for Anthropic shares exceeded the number of shares available.",
+          "If that turns out to be the case, Anthropic's valuation could quickly blow past its target on Thursday when trading begins.",
+          "As it stands, Anthropic's listing will see the firm raise more than $68bn from its initial investors. It is also expecting another $26bn from private placements. So the total amount the company will raise is expected to be $94bn.",
+          "Yang Wang, a principle financial analyst with Counterpoint Research, said the central issue for Anthropic is whether its business \"can keep pace\" as hundreds of billions of dollars in financial obligations come due in the next couple of years.",
+          "\"Nevertheless, it is not an everyday occurrence for public investors to gain direct exposure to a frontier-model developer with the potential to shape the next stage of productivity,\" Wang said.",
+          "It refused to comply with a demand by the US Department of Defense that Anthropic's tools be used in an essentially unrestricted way.",
+          "The company has urged developers to slow the development of AI, arguing that advanced systems could pose \"catastrophic\" risks to humanity if they are not handled with appropriate safeguards.",
+          "Nonetheless, Anthropic is looking to grow quickly and gain more access to financing through the public markets in order to do so.",
+          "Norton said Anthropic going public now, in a time of market volatility comes down to the simple fact that the company needs access to more money.",
+          "But broader anxieties have started to grow about the AI industry's business model, which is reliant on expensive computer chips that are in short supply. The technology is also dependent on controversial data centres and funding such operations require deals with other tech companies.",
+          "The Federal Reserve Bank has expressed concern about the rapid growth of AI-related debt being financed through \"complex and opaque\" structures, according to minutes from its October meeting to discuss a potential rate rise.",
+          "A few of the meeting's participants also noted that \"AI-related exposures were becoming increasingly concentrated among a small number of firms\"."
+        ],
+        "editorial_check": {
+          "date": "2026-11-19T04:40:20.257665+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eleven distinct targets occur in the reading, avoid reserved vocabulary, and clarify advanced contextual meanings such as “direct exposure” and “opaque”."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is polished and appropriately qualified through wording such as “could” and “as reported”, with assessments accurately attributed."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify specialist terms, and the exact grammar quotation correctly demonstrates conditional inversion with “should” before its subject."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct questions test synthesis, attribution, financial distinctions, qualification, contextual meaning and grammar, with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "32375508d673cf12d895f2d698dfb4ab60c2a7eeaf52ff022806c8f31cb9aeae"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

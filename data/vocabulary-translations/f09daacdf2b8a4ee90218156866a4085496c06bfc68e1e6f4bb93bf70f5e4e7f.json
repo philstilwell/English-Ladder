@@ -1,0 +1,221 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "Anthropic, the company behind Claude, announced a listing price of $83 per share on the Nasdaq, a technology-focused stock exchange in New York.",
+      "With trading due to begin on Thursday, the company’s valuation has already risen to as much as $1.5 trillion.",
+      "Its debut will make it the first US company focused exclusively on AI to enter public markets, testing confidence in an industry whose enormous investments face questions about profitability.",
+      "An early investor, speaking on condition of anonymity, described exceptionally strong interest in the initial public offering, the company’s first public offering of shares.",
+      "The investor said the offering was more than ten times oversubscribed, with requests exceeding the shares available.",
+      "Should demand prove as strong as reported, Anthropic’s valuation could rapidly exceed its target when trading begins.",
+      "Anthropic expects more than $68 billion from its listing and another $26 billion from private placements, or share sales arranged privately, bringing anticipated proceeds to approximately $94 billion.",
+      "Counterpoint Research analyst Yang Wang identified the central question as whether Anthropic’s business can keep up as hundreds of billions of dollars in financial obligations become payable over the next couple of years.",
+      "Wang also highlighted the unusual opportunity for direct exposure to a frontier-model developer, allowing public investors to invest directly in a company building leading-edge AI models with the potential to influence future productivity.",
+      "Anthropic refused a US Department of Defense demand that its tools be available for essentially unrestricted use.",
+      "The company has advocated slower AI development, arguing that advanced systems could pose catastrophic risks to humanity without appropriate safeguards.",
+      "Nevertheless, Anthropic is seeking greater access to public financing to support rapid expansion.",
+      "Norton attributed the decision to list during market volatility to Anthropic’s need for additional money.",
+      "Broader concerns surround an AI business model dependent on scarce, expensive chips, controversial data centres and financing arrangements involving other technology companies.",
+      "Minutes from the Federal Reserve Bank’s October meeting recorded concern about rapidly expanding AI-related debt financed through complex and opaque structures that are difficult to understand.",
+      "A few participants also noted that AI-related financial exposures were becoming increasingly concentrated among a small number of firms."
+    ],
+    "vocabulary": [
+      {
+        "term": "on condition of anonymity",
+        "part_of_speech": "prepositional phrase",
+        "definition": "With the agreement that the person providing information will not be publicly identified."
+      },
+      {
+        "term": "oversubscribed",
+        "part_of_speech": "adjective",
+        "definition": "Attracting requests for more shares than are available, without necessarily indicating how those shares will perform later."
+      },
+      {
+        "term": "private placements",
+        "part_of_speech": "plural noun phrase",
+        "definition": "Sales of shares or other investments arranged privately with selected investors rather than offered generally to the public."
+      },
+      {
+        "term": "financial obligations",
+        "part_of_speech": "plural noun phrase",
+        "definition": "Commitments requiring a person or organisation to make payments."
+      },
+      {
+        "term": "direct exposure",
+        "part_of_speech": "noun phrase",
+        "definition": "An investment connection through which a company’s performance can directly affect an investor’s financial returns."
+      },
+      {
+        "term": "frontier-model developer",
+        "part_of_speech": "compound noun",
+        "definition": "A company or organisation developing AI models at the leading edge of current capabilities."
+      },
+      {
+        "term": "unrestricted",
+        "part_of_speech": "adjective",
+        "definition": "Not subject to limits on how something may be used."
+      },
+      {
+        "term": "catastrophic",
+        "part_of_speech": "adjective",
+        "definition": "Causing exceptionally severe and widespread harm; stronger in meaning than “serious” or “disruptive”."
+      },
+      {
+        "term": "market volatility",
+        "part_of_speech": "noun phrase",
+        "definition": "A situation in which financial market prices change substantially or unpredictably."
+      },
+      {
+        "term": "opaque",
+        "part_of_speech": "adjective",
+        "definition": "Difficult to understand or examine because the relevant arrangements are unclear."
+      },
+      {
+        "term": "concentrated",
+        "part_of_speech": "adjective",
+        "definition": "Gathered within a limited group rather than distributed across many participants."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "情報を提供する人の身元を公表しないという合意のもとで。",
+      "ko": "정보를 제공하는 사람의 신원을 공개하지 않기로 합의한 상태에서.",
+      "zh-Hans": "以双方同意不公开信息提供者的身份为条件。",
+      "es": "Con el acuerdo de que no se hará pública la identidad de la persona que proporciona la información.",
+      "pt-BR": "Com o acordo de que a identidade da pessoa que fornece as informações não será divulgada publicamente.",
+      "fr": "Selon un accord prévoyant que l’identité de la personne qui fournit les informations ne sera pas rendue publique.",
+      "de": "Unter der vereinbarten Bedingung, dass die Identität der Person, die Informationen bereitstellt, nicht öffentlich bekannt gegeben wird."
+    },
+    {
+      "id": 1,
+      "ja": "購入希望の株数が売り出される株数を上回っていること。ただし、それが必ずしもその株式の将来の投資成果を示すわけではない。",
+      "ko": "매수 신청 주식 수가 공급되는 주식 수를 초과하는 상태. 다만 이것이 해당 주식의 향후 가격 움직임이나 수익성을 반드시 보여 주는 것은 아니다.",
+      "zh-Hans": "认购申请的股数超过可供出售的股数，但这并不一定能说明这些股票日后的表现。",
+      "es": "Que recibe solicitudes para comprar más acciones de las disponibles, sin que ello indique necesariamente cómo se comportarán esas acciones más adelante.",
+      "pt-BR": "Que recebe pedidos de compra de mais ações do que as disponíveis, sem que isso indique necessariamente o desempenho futuro dessas ações.",
+      "fr": "Qui fait l’objet de demandes d’achat portant sur un nombre d’actions supérieur au nombre disponible, sans que cela indique nécessairement les performances futures de ces actions.",
+      "de": "Mit Kaufanfragen für mehr Aktien, als verfügbar sind, ohne dass dies unbedingt auf die spätere Wertentwicklung dieser Aktien schließen lässt."
+    },
+    {
+      "id": 2,
+      "ja": "一般に広く募集するのではなく、選ばれた投資家との間で非公開に取り決めて行う、株式やその他の投資商品の販売。",
+      "ko": "일반 대중에게 널리 제안하는 대신, 선정된 투자자들과 비공개로 협의하여 진행하는 주식이나 기타 투자 상품의 판매.",
+      "zh-Hans": "与选定的投资者私下安排的股票或其他投资产品销售，而不是向公众普遍发售。",
+      "es": "Ventas de acciones u otros productos de inversión acordadas de forma privada con inversores seleccionados, en lugar de ofrecerse al público en general.",
+      "pt-BR": "Vendas de ações ou outros produtos de investimento negociadas de forma privada com investidores selecionados, em vez de serem oferecidas ao público em geral.",
+      "fr": "Ventes d’actions ou d’autres produits d’investissement organisées de manière privée avec des investisseurs sélectionnés, plutôt que proposées au grand public.",
+      "de": "Verkäufe von Aktien oder anderen Anlageprodukten, die privat mit ausgewählten Anlegern vereinbart werden, statt sie der breiten Öffentlichkeit anzubieten."
+    },
+    {
+      "id": 3,
+      "ja": "個人や組織に支払いを求める約束や義務。",
+      "ko": "개인이나 조직이 돈을 지급해야 하는 약속이나 의무.",
+      "zh-Hans": "要求个人或组织付款的承诺或义务。",
+      "es": "Compromisos que exigen que una persona u organización realice pagos.",
+      "pt-BR": "Compromissos que exigem que uma pessoa ou organização faça pagamentos.",
+      "fr": "Engagements qui imposent à une personne ou à une organisation d’effectuer des paiements.",
+      "de": "Verpflichtungen, aufgrund derer eine Person oder Organisation Zahlungen leisten muss."
+    },
+    {
+      "id": 4,
+      "ja": "企業の業績が投資家の金銭的な収益に直接影響しうる投資上のつながり。",
+      "ko": "기업의 실적이 투자자의 금전적 수익에 직접 영향을 줄 수 있는 투자 관계.",
+      "zh-Hans": "一种投资关系，通过这种关系，公司的业绩可以直接影响投资者的财务回报。",
+      "es": "Una relación de inversión por la que el desempeño de una empresa puede afectar directamente a los rendimientos económicos de un inversor.",
+      "pt-BR": "Uma relação de investimento pela qual o desempenho de uma empresa pode afetar diretamente os retornos financeiros de um investidor.",
+      "fr": "Un lien d’investissement par lequel les performances d’une entreprise peuvent avoir un effet direct sur les rendements financiers d’un investisseur.",
+      "de": "Eine Anlagebeziehung, durch die sich die Geschäftsentwicklung eines Unternehmens direkt auf die finanziellen Erträge eines Anlegers auswirken kann."
+    },
+    {
+      "id": 5,
+      "ja": "現時点で最も高度な能力を持つ人工知能モデルを開発する企業や組織。",
+      "ko": "현재 가장 앞선 수준의 능력을 갖춘 인공지능 모델을 개발하는 기업이나 조직.",
+      "zh-Hans": "开发能力处于当前最先进水平的人工智能模型的公司或组织。",
+      "es": "Una empresa u organización que desarrolla modelos de inteligencia artificial situados en la vanguardia de las capacidades actuales.",
+      "pt-BR": "Uma empresa ou organização que desenvolve modelos de inteligência artificial com capacidades entre as mais avançadas atualmente.",
+      "fr": "Une entreprise ou une organisation qui développe des modèles d’intelligence artificielle à la pointe des capacités actuelles.",
+      "de": "Ein Unternehmen oder eine Organisation, die Modelle künstlicher Intelligenz entwickelt, deren Fähigkeiten an der Spitze des derzeit Möglichen liegen."
+    },
+    {
+      "id": 6,
+      "ja": "何かをどのように使用できるかについて制限が設けられていないこと。",
+      "ko": "무언가를 어떻게 사용할 수 있는지에 대한 제한을 받지 않는 상태.",
+      "zh-Hans": "对某物可以如何使用没有限制。",
+      "es": "Que no está sujeto a límites sobre cómo puede utilizarse algo.",
+      "pt-BR": "Sem limites quanto à maneira como algo pode ser usado.",
+      "fr": "Qui n’est soumis à aucune limite quant à la manière dont quelque chose peut être utilisé.",
+      "de": "Ohne Einschränkungen hinsichtlich der Art und Weise, wie etwas verwendet werden darf."
+    },
+    {
+      "id": 7,
+      "ja": "極めて深刻で広範囲に及ぶ被害を引き起こすこと。「深刻な」や「混乱をもたらす」よりも強い意味を表す。",
+      "ko": "극도로 심각하고 광범위한 피해를 일으키는 것. ‘심각한’이나 ‘혼란을 초래하는’보다 의미가 더 강하다.",
+      "zh-Hans": "造成极其严重且范围广泛的危害；含义比“严重的”或“造成扰乱的”更强。",
+      "es": "Que causa daños excepcionalmente graves y extendidos; tiene un significado más fuerte que «grave» o «que causa alteraciones».",
+      "pt-BR": "Que causa danos excepcionalmente graves e generalizados; tem um sentido mais forte do que “grave” ou “que causa perturbações”.",
+      "fr": "Qui cause des dommages exceptionnellement graves et étendus ; le sens est plus fort que celui de « grave » ou de « perturbateur ».",
+      "de": "Außergewöhnlich schwere und weitreichende Schäden verursachend; in der Bedeutung stärker als „schwerwiegend“ oder „Störungen verursachend“."
+    },
+    {
+      "id": 8,
+      "ja": "金融市場の価格が大幅に、または予測できない形で変動する状況。",
+      "ko": "금융 시장의 가격이 크게 변하거나 예측하기 어렵게 변하는 상황.",
+      "zh-Hans": "金融市场价格大幅变化或出现难以预测的变化的情况。",
+      "es": "Una situación en la que los precios de los mercados financieros cambian de forma considerable o impredecible.",
+      "pt-BR": "Uma situação em que os preços nos mercados financeiros mudam de forma significativa ou imprevisível.",
+      "fr": "Une situation dans laquelle les prix sur les marchés financiers varient fortement ou de manière imprévisible.",
+      "de": "Eine Situation, in der sich die Preise an den Finanzmärkten erheblich oder unvorhersehbar verändern."
+    },
+    {
+      "id": 9,
+      "ja": "関連する仕組みや取り決めが不明確なため、理解したり詳しく調べたりするのが難しいこと。",
+      "ko": "관련된 방식이나 약정이 명확하지 않아 이해하거나 자세히 살펴보기 어려운 상태.",
+      "zh-Hans": "由于相关安排不明确而难以理解或审查的。",
+      "es": "Difícil de entender o examinar porque los acuerdos o mecanismos pertinentes no están claros.",
+      "pt-BR": "Difícil de entender ou examinar porque os acordos ou mecanismos envolvidos não são claros.",
+      "fr": "Difficile à comprendre ou à examiner parce que les dispositions ou les mécanismes concernés ne sont pas clairs.",
+      "de": "Schwer zu verstehen oder zu prüfen, weil die betreffenden Vereinbarungen oder Strukturen unklar sind."
+    },
+    {
+      "id": 10,
+      "ja": "多くの参加者に分散せず、限られた集団の中に集まっていること。",
+      "ko": "많은 참여자에게 분산되지 않고 제한된 집단 안에 모여 있는 상태.",
+      "zh-Hans": "聚集在少数参与者组成的群体内，而不是分散在众多参与者之间。",
+      "es": "Reunido en un grupo limitado en lugar de estar distribuido entre muchos participantes.",
+      "pt-BR": "Reunido em um grupo limitado, em vez de estar distribuído entre muitos participantes.",
+      "fr": "Regroupé au sein d’un groupe restreint plutôt que réparti entre de nombreux participants.",
+      "de": "Innerhalb einer begrenzten Gruppe gebündelt, statt auf viele Beteiligte verteilt."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-19T04:43:48.287816+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

@@ -49,6 +49,9 @@ def enhance_page(soup,path,prefix):
     if relative.startswith('grammar-concepts/'):
         from grammar_curriculum import remove_graphic_correction_panels
         remove_graphic_correction_panels(soup)
+    if relative == 'grammar-concepts.html':
+        from power_grammar import enhance_page as enhance_power_grammar
+        enhance_power_grammar(soup, relative, prefix)
     from reading_layout import prepare_reading_layout, finish_reading_layout
     prepare_reading_layout(soup,path,ROOT,prefix)
     if path.name == 'us-life.html':

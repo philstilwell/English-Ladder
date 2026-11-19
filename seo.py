@@ -91,7 +91,7 @@ def profile(path, soup):
         if relative == 'grammar-concepts.html':
             count = len(grammar())
             result['title'] = f'English Grammar Practice: {count} Lessons & Free PDFs'
-            result['description'] = f'Study {count} English grammar topics with clear examples, multiple-choice exercises, answer feedback, printable workbooks and teaching guides.'
+            result['description'] = f'Practice 200 Power Grammar sentence corrections with alternative answers, plus {count} grammar topics, multiple-choice exercises and free printable workbooks.'
         if relative == 'efsp.html':
             courses = list(tracks().values())
             lessons = sum(len(t['modules']) for t in courses)

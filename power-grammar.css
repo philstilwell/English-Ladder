@@ -1,0 +1,46 @@
+/* Power Grammar: the worksheet's red/blue annotation system as real text. */
+.power-grammar { margin: 2rem 0 3rem; scroll-margin-top: 6rem; }
+.pg-heading { max-width: 760px; }
+.pg-heading h2 { margin: .4rem 0 .75rem; font-size: clamp(1.8rem,4vw,2.5rem); }
+.pg-heading p, .pg-help { font-size: 1rem; line-height: 1.65; }
+.pg-help { max-width: 760px; color: #445160; }
+.pg-legend { display: flex; flex-wrap: wrap; gap: .5rem 2rem; font-size: .9375rem; line-height: 1.6; }
+.pg-caret { color: #c51b28; font-weight: 700; }
+.pg-added { color: #0874a6; }
+.pg-sets { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; margin-top: 1.5rem; }
+.pg-set { min-width: 0; margin: 0; border: 1px solid #cad5df; border-radius: .75rem; background: #fff; scroll-margin-top: 6rem; }
+.pg-set[open] { grid-column: 1 / -1; }
+.pg-set > summary { padding: 1.1rem 1.25rem; font-size: 1rem; font-weight: 650; cursor: pointer; min-height: 48px; box-sizing: border-box; }
+.pg-range { margin-left: 1rem; color: #536273; font-size: .9375rem; font-weight: 400; }
+.pg-set[open] > summary { border-bottom: 1px solid #dce3ea; background: #f1f6fb; border-radius: .75rem .75rem 0 0; }
+.pg-set-content { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+.pg-exercise { margin: 0; padding: 1.75rem 0; scroll-margin-top: 6rem; }
+.pg-exercise + .pg-exercise { border-top: 1px solid #dce3ea; }
+.pg-exercise h3 { margin: 0 0 .75rem; font-size: 1rem; color: #445160; }
+.pg-original, .pg-correction { font-family: Georgia,'Times New Roman',serif; font-size: 1.375rem; line-height: 1.8; margin: 0 0 1rem; overflow-wrap: anywhere; }
+.pg-answer { margin: 0; }
+.pg-answer > summary { padding: .75rem 0; font-size: 1rem; font-weight: 600; min-height: 48px; box-sizing: border-box; cursor: pointer; color: #203c59; }
+.pg-answer-content { padding: .75rem 0 0; }
+.pg-answer h4 { font: 650 .9375rem/1.5 system-ui,sans-serif; margin: 0 0 .5rem; color: #445160; }
+.pg-correction + h4 { margin-top: 1.5rem; }
+.pg-alternatives { margin: 0; padding-left: 1.5rem; }
+.pg-alternatives li { font-family: Georgia,'Times New Roman',serif; font-size: 1.1875rem; line-height: 1.7; margin: .6rem 0; padding-left: .25rem; }
+.pg-note { font-size: .9375rem; line-height: 1.65; margin: 1rem 0 0; color: #445160; }
+.power-grammar summary:focus-visible { outline: 3px solid #2445eb; outline-offset: 3px; border-radius: .25rem; }
+.power-grammar .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+#grammar-topics { scroll-margin-top: 6rem; }
+@media (max-width: 650px) {
+  .power-grammar, .pg-set, .pg-exercise, #grammar-topics { scroll-margin-top: 10rem; }
+  .pg-sets { grid-template-columns: minmax(0,1fr); }
+  .pg-set-content { padding: 0 1rem; }
+  .pg-set > summary { padding: 1rem; }
+  .pg-original, .pg-correction { font-size: 1.25rem; }
+  .pg-alternatives li { font-size: 1.125rem; }
+  .pg-range { margin-left: .5rem; }
+}
+@media print {
+  .pg-sets { display: block; }
+  .pg-set { border: 0; }
+  .pg-set-content, .pg-answer-content { display: block !important; }
+  .pg-exercise { break-inside: avoid; }
+}

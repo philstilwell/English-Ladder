@@ -1,0 +1,3163 @@
+{
+  "exercises": [
+    {
+      "number": 1,
+      "source": "01-01.jpg",
+      "original": "I went to shopping at London on last Friday. I spended many money for new coat.",
+      "correction": "I went ^ shopping ^ [in] London ^ last Friday. I ^ [spent] ^ [much] money ^ [on a] new coat.",
+      "alternatives": [
+        "I went shopping in London last Friday. I spent much money on a new coat.",
+        "I bought an expensive new coat last Friday while shopping in London.",
+        "While shopping in London last Friday, I splurged on an expensive coat."
+      ],
+      "source_caret_count": 6,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b5cc4d54355cd42e9db14680a9d80536edf0cc6fa438ddd670885d2ec46458ed",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 2,
+      "source": "01-02.jpg",
+      "original": "My boss want me to finish work until 9pm so he can lock door to office.",
+      "correction": "My boss want[s] me to finish work ^ [before | by] 9 pm so he can lock [the] door to [the] office.",
+      "alternatives": [
+        "My boss wants me to finish work before 9 pm so he can lock the door to the office.",
+        "My boss asked that I finish up my work by 9 pm so he can lock up the office.",
+        "I was asked by my boss to finish up before 9 pm so he can lock up the office."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "7a7376dc20a0b25e554a3d3cccc8ab3aa4d690710abf0f4e0184ca7c82d03588",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 3,
+      "source": "01-03.jpg",
+      "original": "The project take long time to finish, but now we done! We have celebrate tonight.",
+      "correction": "The project ^ [took a] long time to finish, but now we['re] done! We['ll] have [a] ^ [celebration] tonight.",
+      "alternatives": [
+        "The project took a long time to finish, but now we're done! We'll have a celebration tonight.",
+        "We've finally finished the project, so we will celebrate tonight!",
+        "It took a substantial amount of time to finish the project, but now that we're done, it's time to celebrate!"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "a97f52d6e8c6cd9af5b88728b33a2f1ffa941585cfcf3684e9a758a30cd5f876",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 4,
+      "source": "01-04.jpg",
+      "original": "My friend tell me that more peoples living in Jakarta more than London.",
+      "correction": "My friend ^ [told | tells] me that more people^ ^ [live] in Jakarta ^ than [in] London.",
+      "alternatives": [
+        "My friend told me that more people live in Jakarta than in London.",
+        "A friend tells me that the population of Jakarta is greater than the population of London.",
+        "I heard through a friend that London has fewer inhabitants than does Jakarta."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c9a3e08772046fa719717d6fbfc1735c30aecc309b30ae76ba4731f10b960fbd",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 5,
+      "source": "01-05.jpg",
+      "original": "If I having problem with my childrens, I speak my mother for helping me.",
+      "correction": "If I ^ [have a] problem with my children^, I speak [to] my mother ^ [about] helping me.",
+      "alternatives": [
+        "If I have a problem with my children, I speak to my mother about helping me.",
+        "Whenever I have a problem with my children, I ask my mother to help me.",
+        "If I were to ever have a problem with my children, I'd ask my mother to give me a hand."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "abb1e0549c854cf653ddab81b0475fd466cb01140390a5831fa80f4c89b6d46a",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 6,
+      "source": "01-06.jpg",
+      "original": "Whenever I am boring, I find more interesting thing to do for example jogging.",
+      "correction": "Whenever I am ^ [bored], I find more interesting thing[s] to do ^ [such as] jogging.",
+      "alternatives": [
+        "Whenever I am bored, I find a more interesting thing to do such as jogging.",
+        "If I were ever bored, I would take up an interesting hobby such as jogging."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "32507235679fb0107130e7b4940afe92b58fa27207bbfea31154bc8f4e24130f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 7,
+      "source": "01-07.jpg",
+      "original": "Tom and me soon go to home. We have working for more 12 hour today!",
+      "correction": "Tom and ^ [I will] soon go ^ home. We have [been] working for more [than] 12 hour[s] today!",
+      "alternatives": [
+        "Tom and I will soon go home. We have been working for more than 12 hours today!",
+        "Tom and I are headed home soon. We've been working over 12 hours!"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "45c5611f0a0e2452db2fc725ce8bab285b6228181edbb04c4ba384f9777379b5",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 8,
+      "source": "01-08.jpg",
+      "original": "I have sad. Because my dog dead. He was more old than ten year.",
+      "correction": "I ^ [am] sad^ [because] my dog ^ [died]. He was more [than ten years] old^.",
+      "alternatives": [
+        "I am sad because my dog died. He was more than ten years old.",
+        "I'm sad since my dog, who was more than ten years old, passed away."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "4994a8d635e2135f8572ea4f0362d297eaad3db7b2db68690e1d85634e31043b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 9,
+      "source": "01-09.jpg",
+      "original": "Who the man that now sit near to the door? I never see him before.",
+      "correction": "Who [is] the man ^ [who is] now sit[ting] near ^ the door? I [have] never see[n] him before.",
+      "alternatives": [
+        "Who is the man who is now sitting near the door? I have never seen him before.",
+        "Who is the man that now sits (assigned seat) near the door? I haven't seen him before.",
+        "Do you know who the man sitting near the door is? This is the first time I've seen him."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "83184c3bbaf67abfb6fed2f5a75eeaf6809da1a78fd3e247b0bea268cbc3f598",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 10,
+      "source": "01-10.jpg",
+      "original": "I am enjoying when I go to zoo at Paris. Did you ever saw a panda up close?",
+      "correction": "I ^ [enjoy myself] when[ever] I go to [the] zoo ^ [in] Paris. ^ [Have] you ever ^ [seen] a panda up close?",
+      "alternatives": [
+        "I enjoy myself whenever I go to the zoo in Paris. Have you ever seen a panda up close?",
+        "I always enjoy the Paris zoo. Have you seen a panda in person?"
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "f2651f6a7fa596a0e0e10c4bbf571f09d6c94dcdb73636489e87e702006ac308",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 11,
+      "source": "02-01.jpg",
+      "original": "I could concentrate to my work even if two staffs was noisy yesterday.",
+      "correction": "I ^ [was able to] concentrate ^ [on] my work even ^ [though] two ^ [staff members] ^ [were] noisy yesterday.",
+      "alternatives": [
+        "I was able to concentrate on my work even though two staff members were noisy yesterday.",
+        "Though there were 2 noisy staff members yesterday, I was able to do my work.",
+        "In spite of 2 disruptive staff members, I managed to complete my work yesterday."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "1afd01e8fc35e0883dc585aa389e4009a91df1fb43fd4841c10d90ac7914c826",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 12,
+      "source": "02-02.jpg",
+      "original": "The employees back home after discussing about new project yesterday night.",
+      "correction": "The employees [went] back home after discussing ^ [a | the] new project ^ [last] night.",
+      "alternatives": [
+        "The employees went back home after discussing the new project last night.",
+        "Last night, the employees went back home after discussing the new project.",
+        "Only after discussing the new project did the employees finally go home last night."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "585aaf6121f28af9013c7ec8b760e1b8c5f76be8b66b9f670a267699131740ec",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 13,
+      "source": "02-03.jpg",
+      "original": "I gave ticket for my friend to look Olympians play swimming. He enjoyed very much.",
+      "correction": "I gave [a] ticket ^ [to] my friend to ^ [watch] Olympians ^ swim^. He enjoyed [it] very much.",
+      "alternatives": [
+        "I gave a ticket to my friend to watch Olympians swim. He enjoyed it very much.",
+        "My friend very much enjoyed the ticket to watch Olympians swim (that) I gave him."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "8194a11bc5ea91ddf9ba84cf66bd6610f9b0c995afb69cc0f4d15e617b894f81",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 14,
+      "source": "02-04.jpg",
+      "original": "In my image, America is less crowding to Japan, and have many more nature.",
+      "correction": "In my ^ [imagination], America is less ^ [crowded] ^ [than] Japan^ and ^ [has] ^ [much] more nature.",
+      "alternatives": [
+        "In my imagination, America is less crowded than Japan and has much more nature.",
+        "It seems to me that America has both a lower population density and more natural scenery than Japan.",
+        "My image of America is that it is both less densely populated and less urban than Japan."
+      ],
+      "source_caret_count": 6,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "04ca90c5936631b9bdaf78f6968d61e5ec443a01ca9756244b1b56a4f4ae3b4f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 15,
+      "source": "02-05.jpg",
+      "original": "Why I said my daughter to go home is because she have many work to do in home.",
+      "correction": "^ [The reason] I ^ [told] my daughter to go home is [(that)] ^ she ^ [has | had] ^ [much] work to do ^ [at] home.",
+      "alternatives": [
+        "The reason I told my daughter to go home is that she had much work to do at home.",
+        "I told my daughter to go home because she had much housework | homework to do at home."
+      ],
+      "source_caret_count": 6,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "e71a097054fe2f0c335b0005bb772924cbfe19528df44a8ea9bbbcb28e10185d",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 16,
+      "source": "02-06.jpg",
+      "original": "I wondering what does happen if IBM merges to Apple to form larger company.",
+      "correction": "I wonder^ what ^ [would] happen if IBM [(ever)] ^ [merged] ^ [with] Apple to form [a] larger company.",
+      "alternatives": [
+        "I wonder what would happen if IBM ever merged with Apple to form a larger company.",
+        "I wonder what will happen if IBM merges with Apple to form a larger company.",
+        "I've been wondering what might happen if IBM were to ever merge with Apple."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "8b363d20756453c4d82eeca018e1d4b6900be486df906531d9037a0ee140bb7f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 17,
+      "source": "02-07.jpg",
+      "original": "I enjoying drinking at downtown. I go to there as soon I finish work tonight.",
+      "correction": "I enjoy^ drinking ^ downtown. I['ll] go ^ there as soon [as] I finish work tonight.",
+      "alternatives": [
+        "I enjoy drinking downtown. I'll go there as soon as I finish work tonight.",
+        "I've always enjoyed drinking downtown. I'll head there immediately after finishing work tonight."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "5945ac92f4dc75d66fa28512726afa9c1f093c271c8577e66b1f4387e96ef53b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 18,
+      "source": "02-08.jpg",
+      "original": "Most of peoples does not worry about danger of earthquake because strong buildings.",
+      "correction": "Most ^ people^ ^ [don't] worry about [the] danger of earthquake[s] because ^ [their] buildings [are strong].",
+      "alternatives": [
+        "Most people don't worry about the danger of earthquakes because their buildings are strong.",
+        "Few people worry about earthquakes since the buildings they occupy are sufficiently strong."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "25b85344c68c67b084bc9cbbd23b0945ef3ef653ebf43f93bb27de7940b28749",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 19,
+      "source": "02-09.jpg",
+      "original": "There is many kind of food for eating here at Paris. I getting little fat recently.",
+      "correction": "There ^ [are] many kind[s] of food ^ [to eat] here ^ [in] Paris. I['ve been] getting [a] little fat recently.",
+      "alternatives": [
+        "There are many kinds of food (to eat) here in Paris. I've been getting a little fat recently.",
+        "Due to the many kinds of food here in Paris, I've recently been putting on weight.",
+        "Because Paris is full of many types of food, I've been gaining a bit of weight since I've been here."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "2e9dc084aa4439931d46d6c9ffe9a3d28b2efe1b806b71e1fa23ffd090740e10",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 20,
+      "source": "02-10.jpg",
+      "original": "I planning to lose my weight in this summer by exercise. I wish I get slim.",
+      "correction": "I['m] planning to lose ^ weight ^ this summer ^ [through] exercise. I ^ [hope] I get slim.",
+      "alternatives": [
+        "I'm planning to lose weight this summer through exercise. I hope I get slim.",
+        "I'm planning to lose some weight this summer through exercise. I hope to get slim.",
+        "My intention this summer is to exercise to drop a few kilos. I'd like to slim down a bit."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "844b079629e8a1b8aa316652ba30c16830257459f6b4709f5f17adbce7a3846c",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 21,
+      "source": "03-01.jpg",
+      "original": "I am easy to spend money for fashion thing. Because I want look cool as Mike.",
+      "correction": "I ^ [easily] spend money ^ [on] fashion[able] thing[s]^ [because] I want [to] look [as] cool as Mike.",
+      "alternatives": [
+        "I easily spend money on fashionable things because I want to look as cool as Mike.",
+        "I don't hesitate to buy fashionable clothes since I'd like to look as stylish as Mike (does).",
+        "I freely spend money on fashion since I'm hoping to look as fashionable as Mike (does)."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "16fd48ca7b0b81cd69bb6d817275867500403a72eb4e39e473f5d5e335b198b1",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 22,
+      "source": "03-02.jpg",
+      "original": "I was worry after I lose my wallet, and I searched it all day. I find it under chair.",
+      "correction": "I was ^ [worried] after I ^ [lost] my wallet, and I searched [for] it all day. I ^ [found] it under [a] chair.",
+      "alternatives": [
+        "I was worried after I lost my wallet, and I searched for it all day. I found it under a chair.",
+        "After a worried search for my lost wallet for a full day, I finally found it under a chair."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "6a063dd6c1680ae632eb97aabe60f377c0a4f40e8e33e810d1720fe836ccfe37",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 23,
+      "source": "03-03.jpg",
+      "original": "Almost all of cats are different to dog because they are more smaller.",
+      "correction": "Almost all ^ cats are different ^ [from] dog[s] because they are ^ smaller.",
+      "alternatives": [
+        "Almost all cats are different from dogs because they are smaller.",
+        "Most cats are different from | to dogs since they are smaller.",
+        "Cats are generally different from | to dogs as they are smaller."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b97d14e5735fadbb24b646b8979c1e4ef420742307b0f848366db0de4a3c8fd0",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 24,
+      "source": "03-04.jpg",
+      "original": "I requested my boss not to guilt me about mistake of the report. He still angry to me.",
+      "correction": "I ^ [asked] my boss not to ^ [blame] me ^ [for the] mistake ^ [on | in] the report. He [is] still angry ^ [at] me.",
+      "alternatives": [
+        "I asked my boss not to blame me for the mistake on | in the report. He is still angry at me.",
+        "I asked my boss not to blame me for the error on | in the report, but he is still angry with me.",
+        "I asked the CEO to tell my boss to stop blaming me for the error in the report, but my boss is still angry."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "0841a5ec89e64f2ac6df0668bd22eb29dddbea219922526d7bbb90d0184da6ff",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 25,
+      "source": "03-05.jpg",
+      "original": "There was accident at Boston in which a man takes women's purse. Boston is danger.",
+      "correction": "There was [an] ^ [incident] ^ [in] Boston in which a man ^ [took a] ^ [woman's] purse. Boston is danger[ous].",
+      "alternatives": [
+        "There was an incident in Boston in which a man took a woman's purse. Boston is dangerous.",
+        "I feel Boston is dangerous since there was an incident in which a man stole a woman's purse."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "51ee7bcdb57d1a7df3735949c59e271f19dcd271c09a56c64075a897288a0c14",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 26,
+      "source": "03-06.jpg",
+      "original": "She was so interesting woman that I fall in love to her immediate. And also is cute.",
+      "correction": "She was ^ [such an] interesting woman that I ^ [fell] in love ^ [with] her immediate[ly]. And ^ [she] is [also] cute.",
+      "alternatives": [
+        "She was such an interesting woman that I fell in love with her immediately. And she is also cute.",
+        "The woman was so interesting that I immediately fell in love with her. Plus, she's cute."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "b377806ea63ccb97f6e8d2472d671031d11b702642360a940958d0ffb1421ba6",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 27,
+      "source": "03-07.jpg",
+      "original": "We coming to Atlanta in this weekend to negotiation with other company.",
+      "correction": "We [are] ^ [going] to Atlanta ^ this weekend to ^ [negotiate] with [an]other company.",
+      "alternatives": [
+        "We are going to Atlanta this weekend to negotiate with another company.",
+        "We are headed to negotiations this weekend with an Atlanta company."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "fb546107cbe86b1db8c99f2d6cf2eafd57422c3a528abff5b61cb4ff9c6024c6",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 28,
+      "source": "03-08.jpg",
+      "original": "I joined to my company nine years and a half ago during I was young.",
+      "correction": "I joined ^ my company nine [and a half] years ^ ago ^ [when] I was young.",
+      "alternatives": [
+        "I joined my company nine and a half years ago when I was young.",
+        "Nine and a half years ago, when I was still young, I joined this company.",
+        "It's been nine and a half years since I joined this company at a time I was still young."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "458ee6f4bca853fa752a93741e1e70e7a5318a3d545aaa588806e4a54d91d0d5",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 29,
+      "source": "03-09.jpg",
+      "original": "How do you do if you get bad condition? You had better to buying insurance.",
+      "correction": "^ [What would] you do if you [ever] ^ [got] ^ [sick]? You had better ^ buy^ insurance.",
+      "alternatives": [
+        "What would you do if you ever got sick? You'd better buy insurance.",
+        "How would you cover your hospital bills if you ever got sick? You'd better buy health insurance."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "3cc4c19dcbdfdb14082b10576faac8b09373734f3bebf2093bf174bb4142e0e3",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 30,
+      "source": "03-10.jpg",
+      "original": "I asked to them repair the broke machine until the 22nd in May. But it still not fix.",
+      "correction": "I asked ^ them [to] repair the broke[n] machine ^ [before] the 22nd ^ [of] May. But it [is] still not fix[ed].",
+      "alternatives": [
+        "I asked them to repair the broken machine before | by the 22nd of May. But it is still not fixed.",
+        "I asked them to have the broken machine fixed by May 22, but it remains broken."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "990fb5f16df85edf010950e5454eb62dec3a78acb40ea4c346200b8fb95600e7",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 31,
+      "source": "04-01.jpg",
+      "original": "The difference of new apartment and old apartment is I could now go to home by walk.",
+      "correction": "The difference ^ [between my] new apartment and [my] old apartment is I ^ [can] now go ^ home ^ [on foot].",
+      "alternatives": [
+        "The difference between my new apartment and my old apartment is I can now go home on foot.",
+        "The difference between my old and new apartments is that I can now commute on foot.",
+        "Unlike at my old apartment, I can now commute on foot to and from my new apartment."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "a408b3c1050a194d560f56d112532cc764e8a3a16ed682d63b05feeaf1551f87",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 32,
+      "source": "04-02.jpg",
+      "original": "I don't back home if I miss last train because taxi costing higher than 50 dollar.",
+      "correction": "I don't [go] back home if I miss [the] last train because [a] taxi ^ [costs] ^ [more] than 50 dollar[s].",
+      "alternatives": [
+        "I don't go back home if I miss the last train because a taxi costs more than 50 dollars.",
+        "I don't return home when missing the last train since a taxi would cost over 50 dollars.",
+        "Due to the high taxi fares, I usually don't go home after missing the last train."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e8550ec1a2b0b3c536409a6f7a43a826ee8bdba2b540264a13871c4c998145e9",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 33,
+      "source": "04-03.jpg",
+      "original": "Each children have same personality as they have when they older.",
+      "correction": "Each ^ [child] ^ [has the] same personality as they have when they [are] older.",
+      "alternatives": [
+        "Each child has the same personality as they have when they are older.",
+        "Every adult retains the personality they had as a child.",
+        "Children normally retain the same personality traits they had as children."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "1b6eb4b02a27fcefb9de144231265399c4ad56fcbbdbf37ce867bd617b96088f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 34,
+      "source": "04-04.jpg",
+      "original": "It was dark, then I thinking the park was not safety. For example, robber maybe come.",
+      "correction": "It was dark, ^ [so] I ^ [thought] the park was not safe^. For example, [I thought a] robber ^ [might] come.",
+      "alternatives": [
+        "It was dark, so I thought the park was not safe. For example, I thought a robber might come.",
+        "The unlit park looked dangerous. I imagined being robbed.",
+        "The darkness of the park terrified me since I realized I could be easily mugged."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "7b99e3ddcec2e2bffbdbf8ccaf10e79d5520e70a9c170dea80f817cbc839a995",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 35,
+      "source": "04-05.jpg",
+      "original": "In my image, Central Park is danger, so I am scary to go to there.",
+      "correction": "In my ^ [imagination], Central Park is danger[ous], so I am ^ [scared] to go ^ there.",
+      "alternatives": [
+        "In my imagination, Central Park is dangerous, so I am scared to go there.",
+        "My image of Central Park is that it's a dangerous place. I'm afraid to go there.",
+        "Central Park is dangerous from my perspective, so I fear going there."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "97884fb595f4f4cbd3693b0c73e7a84bd59d9720d5f9a49e89db0648d702f7ad",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 36,
+      "source": "04-06.jpg",
+      "original": "I explained them about many things I easy to buy when I go to shopping such as hat.",
+      "correction": "I explained [to] them ^ [the] many things I ^ [easily] buy when I go ^ shopping such as hat[s].",
+      "alternatives": [
+        "I explained to them the many things I easily buy when I go shopping such as hats.",
+        "I listed for them all the things I impulsively buy such as hats.",
+        "I explained that I buy many things impulsively such as hats."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "77a72365710b29b9a659cf17f4decb6cc22993041e5ce1a8e5105dc6ae0f1e5a",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 37,
+      "source": "04-07.jpg",
+      "original": "How should I do if I losing my wallet? Should I report to police?",
+      "correction": "^ [What] should I do if I ^ [lose] my wallet? Should I report [it] to [the] police?",
+      "alternatives": [
+        "What should I do if I lose my wallet? Should I report it to the police?",
+        "How should I respond if I ever lose my wallet? Should I contact a police officer?",
+        "Should I contact a police officer in the event that I lose my wallet?"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e260aa86dfab2bfa95a37f82e9b1a1ebf940aea2cab2f6e51e2d93190159558a",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 38,
+      "source": "04-08.jpg",
+      "original": "The woman angry rejected to listen my request. She have so bad personality.",
+      "correction": "The woman ^ [angrily] ^ [refused] to listen [to] my request. She ^ [has] ^ [such a] bad personality.",
+      "alternatives": [
+        "The woman angrily refused to listen to my request. She has such a bad personality.",
+        "The woman angrily rejected my request. She has such an unpleasant personality.",
+        "The woman angrily dismissed my request. Her personality is not the most pleasant."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b0e9cbba3961bb4588a56612af02e55b8db55c81d53ef335fd1eeab4983aab4f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 39,
+      "source": "04-09.jpg",
+      "original": "I made a trip to the Spain for sightseeing. I have tripped to there more ten times.",
+      "correction": "I made [| took] a trip to ^ Spain ^ [to] sightsee^. I have ^ [traveled] ^ there more [than] ten times.",
+      "alternatives": [
+        "I took a trip to Spain to sightsee. I have traveled there more than ten times.",
+        "I took a sightseeing trip to Spain. I've gone there over ten times."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "cc8f8dde307b2e81661fa34b18afceada24e9eece8e88102337e97e0be1e7365",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 40,
+      "source": "04-10.jpg",
+      "original": "Every of my friend is worried that storm coming in Miami in day after tomorrow.",
+      "correction": "Every [one] of my friend[s] is worried that [a] storm [is] coming ^ [to] Miami ^ [the] day after tomorrow.",
+      "alternatives": [
+        "Every one of my friends is worried that a storm is coming to Miami the day after tomorrow.",
+        "All of my friends are worried that a storm may hit Miami in two days.",
+        "My friends are all worried about the storm that is forecast to hit Miami two days from now."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "3e29717f23e6029880c80bcd96068d3be4f1bd986db6c79b3863386054055d4f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 41,
+      "source": "05-01.jpg",
+      "original": "Client which want to start to the project canceled. Because I was lately to meeting.",
+      "correction": "^ [The client] ^ [who] want[ed] to start ^ the project canceled^ [because] I was late^ to [the] meeting.",
+      "alternatives": [
+        "The client who wanted to start the project canceled because I was late for | to the meeting.",
+        "The client wanting to begin the project canceled it since I arrived late for | to the meeting.",
+        "As a result of my late arrival to the meeting, the client wanting to start the project canceled (it)."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "ae6dafd141e7e9b265cf7fdd7c316ccb3150947779cc99b54ee487499fdd520a",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 42,
+      "source": "05-02.jpg",
+      "original": "This is ending of my speech. Thank you for your listening. Are there any question?",
+      "correction": "This is [the] end^ of my speech. Thank you for ^ listening. Are there any question[s]?",
+      "alternatives": [
+        "This is the end of my speech. Thank you for listening. Are there any questions?",
+        "This is the end of my presentation. Thanks for listening. Do you have any questions?"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "note": "If your conclusion is strong, there is no need to finish your speech with “This is the end of my speech.”",
+      "source_sha256": "db5637f4bef63f735ecd1e584800c2f6dcca4fe641297dd99866eac7a4faff82",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 43,
+      "source": "05-03.jpg",
+      "original": "I was not familiar for London, so I get lost on way to clock which I often see in TV.",
+      "correction": "I was not familiar ^ [with] London, so I ^ [got] lost on [the] way to [the] clock ^ [that] I['ve] often see[n] ^ [on] TV.",
+      "alternatives": [
+        "I'm not familiar with London, so I got lost on the way to the clock that I've often seen on TV.",
+        "Because I am unfamiliar with London, I lost my way to the clock that I've often seen on TV."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "3ebaae4e58f8f277057b8b37c784a21a9f7835b8bf96c2bda546e4ab287e0a50",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 44,
+      "source": "05-04.jpg",
+      "original": "You can easy to learn new language if you making friend that speak the language.",
+      "correction": "You can ^ [easily] ^ learn [a] new language if you ^ [make] friend[s] ^ [who] speak the language.",
+      "alternatives": [
+        "You can easily learn a new language if you make friends who speak the language.",
+        "It is easy to learn a new language once you've made friends who speak the language.",
+        "Learning a new language becomes easy once you've formed friendships with those who speak the language."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b828b9a4bc5c41f9f5bfc748690ec6cb6d017a0ee2f7e70a26cb9d814d9ff7d1",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 45,
+      "source": "05-05.jpg",
+      "original": "Please considering you will join to our English class. We have enjoying time.",
+      "correction": "Please consider^ ^ join[ing] ^ our English class. We [(will)] have [an] ^ [enjoyable] time.",
+      "alternatives": [
+        "Please consider joining our English class. We will have an enjoyable time.",
+        "Please let me | us know if you'd like to join our English class. We always have a good time.",
+        "Please let me | us know whether you can join our English class. It's always fun."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c511c7620a74bf850ac889fd49f465bca5170fb3ddce71f1c6698a0e7b53c246",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 46,
+      "source": "05-06.jpg",
+      "original": "If you spend your credit card over $200, you then eligible for amazed prize.",
+      "correction": "If you spend [over $200 on] your credit card^, you [are (]then[)] eligible for [an] ^ [amazing] prize.",
+      "alternatives": [
+        "If you spend over $200 on your credit card, you are (then) eligible for an amazing prize.",
+        "Once you've spent over $200 on your credit card, you're (then) eligible to receive an amazing prize.",
+        "You'll be eligible for an amazing prize after you've spent over $200 on your credit card."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "d53f54822e6b9c6582578660289959323ed2396cdf0a2ea2b562498b837fd55b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 47,
+      "source": "05-07.jpg",
+      "original": "I applied a credit card in last year, but they refused me because I was debt.",
+      "correction": "I applied [for] a credit card ^ last year, but they refused [to issue] me [one] because I was [in] debt.",
+      "alternatives": [
+        "I applied for a credit card last year, but they refused to issue me one because I was in debt.",
+        "My application for a credit card was rejected last year because I had (much debt | many debts).",
+        "I was refused a credit card last year because I had excessive debt."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "bfc468a72fff903aa30529a7fe6ff913fa6d9112b1c545b15df1246a8b588d2f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 48,
+      "source": "05-08.jpg",
+      "original": "For each ten euro spending for this credit card, you receiving five point.",
+      "correction": "For each [| every] ten euro[s you] ^ [spend] ^ [on] this credit card, you [will] receiv[e]^ five point[s].",
+      "alternatives": [
+        "For every ten euros you spend on this credit card, you will receive five points.",
+        "You'll receive five points for every ten euros you spend on this credit card."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "7d8b7ebfd4da8d624619557d3f7b1af253db1d90f30a79cbdcb9fea5553d4b1b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 49,
+      "source": "05-09.jpg",
+      "original": "I expect you have fun time when you go India in next week. Be sure take camera.",
+      "correction": "I expect you['ll] have [a] fun time when you go [to] India ^ next week. Be sure [to] take [a] camera.",
+      "alternatives": [
+        "I expect you'll have a fun time when you go to India next week. Be sure to take a camera.",
+        "I'm sure you'll have a fun time on your trip to India next week. Make sure you take a camera.",
+        "I'm certain your trip to India next week will be fun. Don't forget to take a camera."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5bebb196d3194eb43a047c17bf956561a323f4888d716379dee135aacd923eb5",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 50,
+      "source": "05-10.jpg",
+      "original": "I recommend you to remember grammar you have mistaked on these quiz.",
+      "correction": "I recommend you ^ remember [the] grammar you ^ [missed] on ^ [this] quiz.",
+      "alternatives": [
+        "I recommend you remember the grammar you missed on this quiz.",
+        "I suggest remembering the grammar you got wrong on this quiz.",
+        "You may want to remember your grammar errors on this quiz."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "05d79c68e36b6b2de401f3d586879a017611b3a3ba0a84d9ca95141fce55fa45",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 51,
+      "source": "06-01.jpg",
+      "original": "Please consider if you buy our product. I sure you will enjoy because it is convenience.",
+      "correction": "Please consider ^ [buying] our product. I['m] sure you will enjoy ^ [its] convenience.",
+      "alternatives": [
+        "Please consider buying our product. I'm sure you will enjoy its convenience.",
+        "Your consideration of this product is greatly appreciated. You're sure to find it very convenient."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "d379e4b00bfead246644e995dba2947bdad96e74b326824db27dead75f554221",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 52,
+      "source": "06-02.jpg",
+      "original": "Now I move to next point. Most of American are lucky because they are having cars.",
+      "correction": "Now I [will] move [on] to [my] next point. Most ^ American[s] are lucky because they ^ [have] cars.",
+      "alternatives": [
+        "Now I will move on to my next point. Most Americans are lucky because they have cars.",
+        "Let's move on to my next point. Most Americans are lucky in that they own cars.",
+        "Now for my next point. Most Americans are lucky to own cars."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "08b241977ed44672e25ee49a73ef8054d739593695f2337248b000722fe855ef",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 53,
+      "source": "06-03.jpg",
+      "original": "I suggest you to trip to Australia. It have many kangaroo and other kind of animals.",
+      "correction": "I suggest you ^ [take a] trip to Australia. It ^ [has] many kangaroo[s] and other kind[s] of animals.",
+      "alternatives": [
+        "I suggest you take a trip to Australia. It has many kangaroos and other kinds of animals.",
+        "I suggest taking a trip to Australia. There you'll find many kangaroos and other types of animals.",
+        "I suggest traveling to Australia. You'll likely enjoy the many kangaroos and other kinds of animals."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "6687440f7fc027219f78704912eeba329f2fbc4c6b4402fe7f48644104763aa4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 54,
+      "source": "06-04.jpg",
+      "original": "I'd like to conclude that our shirts is better to the shirt in other clothes company.",
+      "correction": "I'd like to conclude [with the fact] that our shirts ^ [are] better ^ [than] the shirt[s] ^ [of] other ^ [clothing] ^ [companies].",
+      "alternatives": [
+        "I'd like to conclude with the fact that our shirts are better than the shirts of other clothing companies.",
+        "Let's conclude with the fact that our shirts are superior to other clothing companies' shirts.",
+        "To conclude, our shirts are of greater quality than shirts sold by other clothing companies."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "fcdf6bd8dede086cf18f0cd5b70eba07afb5ad1661b850fba5a6b5e5f50bf975",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 55,
+      "source": "06-05.jpg",
+      "original": "Today, I talk about two points to buy our shirts. It is comfort, and easy for washing.",
+      "correction": "Today, I ^ [will introduce] two ^ [reasons] to buy our shirts. ^ [They are] comfort[able]^ and easy ^ [to wash].",
+      "alternatives": [
+        "Today, I will introduce two reasons to buy our shirts. They are comfortable and easy to wash.",
+        "Today, I'll give you two reasons to buy our shirts. They provide comfort and are easily washed."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "558a05fa5db52558eab51eb95cd6cccf17b85546b33244b4996f9f42b5da544b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 56,
+      "source": "06-06.jpg",
+      "original": "I am wishing I join marketing department. I transfer there maybe in next year.",
+      "correction": "I am ^ [hoping] I [can] join [the] marketing department. I [may] transfer there ^ next year.",
+      "alternatives": [
+        "I am hoping I can join the marketing department. I may transfer there next year.",
+        "I'm hoping to join the marketing department. I may transfer there sometime next year.",
+        "I'm hoping to transfer to the marketing department, perhaps as soon as next year."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5674abc6230227d7de87e54c9a3445d8c92276383ef48f397b68bfb3bfc4a107",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 57,
+      "source": "06-07.jpg",
+      "original": "I hope I live in Portland. Because it have many nature and restaurant and sea.",
+      "correction": "I hope ^ [to] live in Portland^ [because] it ^ [has] ^ [much] nature[,] ^ [many] restaurant[s] and [the] sea.",
+      "alternatives": [
+        "I hope to live in Portland because it has much nature, many restaurants and the sea.",
+        "I'm looking to move to Portland since it has much nature, many restaurants and the sea.",
+        "I'm considering moving to Portland as it has much nature, many restaurants and the sea."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "93c3534ed3ac280413ebde432412523771ae8560d3476c13b0e3d3bab8c136d1",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 58,
+      "source": "06-08.jpg",
+      "original": "Now, I introduce you the best way for finding nice boyfriend or girlfriend.",
+      "correction": "Now, I [will] introduce ^ the best way ^ [to find] [a] nice boyfriend or girlfriend.",
+      "alternatives": [
+        "Now, I will introduce the best way to find a nice boyfriend or girlfriend.",
+        "I will now introduce the best way to find a nice romantic partner."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "bc1f1bfafe7840fa4a989c5e87d59c444459a1cc2d8d327e714dad08fa0fa0a3",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 59,
+      "source": "06-09.jpg",
+      "original": "Many peoples now driving bicycle. However risk of injury high to bicyclists.",
+      "correction": "Many people^ [are] now ^ [riding] bicycle[s]. However[,] [the] risk of injury [is] high ^ [for] ^ cyclists.",
+      "alternatives": [
+        "Many people are now riding bicycles. However, the risk of injury is high for cyclists.",
+        "Many people have recently taken up riding bicycles. However, cyclists are at high risk for | of injury."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "8c2591b5138179ffe55bbee87501a4808eb585e76ebe413935db9e6405a6eea3",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 60,
+      "source": "06-10.jpg",
+      "original": "The new sales tax have an effect on Japanese economic. I think tax should removed.",
+      "correction": "The new sales tax ^ [is having] ^ [a negative] effect on [the] Japanese ^ [economy]. I think [the] tax should [be] removed.",
+      "alternatives": [
+        "The new sales tax is having a negative effect on the Japanese economy. I think the tax should be removed.",
+        "The new sales tax is negatively affecting the Japanese economy. We should abolish the tax.",
+        "The negative effects of the new sales tax have led me to conclude it should be abolished."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "d1d172159b65217c5ba50f456c29fda5882b5d5cc39e0a2a4b0cbce7b234eb58",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 61,
+      "source": "07-01.jpg",
+      "original": "I advice you to support to your manager even he does not appreciating your works.",
+      "correction": "I ^ [advise] you to support ^ your manager even [though] he does not ^ [appreciate] your work^.",
+      "alternatives": [
+        "I advise you to support your manager even though he does not appreciate your work.",
+        "I advise you to give your manager your support even when he does not appreciate your work.",
+        "I advise you to offer your full support to your manager even if he is unappreciative of your work."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "f7297d5136ebcdf504338bb7216bb7c9fa366d068190c99eb875a326e124cef0",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 62,
+      "source": "07-02.jpg",
+      "original": "I prepared the test by a book on English grammar. I hoping to make high score.",
+      "correction": "I prepared [for] the test by [reading] a book on English grammar. I['m] hoping to ^ [get a] high score.",
+      "alternatives": [
+        "I prepared for the test by reading a book on English grammar. I'm hoping to get a high score.",
+        "I have prepared for the test with a book on English grammar. I'm hoping to score high.",
+        "I'm hoping to score high on the test I've prepared for with a book on English grammar."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "439b9fdeefb0e0557a2f564eee9b5d0ceb00f32f9bb5d367d92ee3a15bc05f11",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 63,
+      "source": "07-03.jpg",
+      "original": "When I accessed to the database Monday, I learn we are having more 500 clients.",
+      "correction": "When I accessed ^ the database Monday, I learn[ed] we ^ [have] more [than] 500 clients.",
+      "alternatives": [
+        "When I accessed the database Monday, I learned we have more than 500 clients.",
+        "After accessing the database Monday, I discovered we have more than 500 clients.",
+        "After I was granted access to the database Monday, I discovered we have over 500 clients."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "89003e06149939870f2e8b178ec3d47abb8a8042e6725e327fc74f080aae89d7",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 64,
+      "source": "07-04.jpg",
+      "original": "My 15-years-old nephew is easy to search girlfriend because he is so good-looking boy.",
+      "correction": "My 15-year^-old nephew ^ [can] ^ [easily] ^ [find a] girlfriend because he is ^ [such a] good-looking boy.",
+      "alternatives": [
+        "My 15-year-old nephew can easily find a girlfriend because he is such a good-looking boy.",
+        "It's easy for my 15-year-old nephew to find a girlfriend since he's such a good-looking boy."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "b4ce31c091b5c4497cd64aa6183918c3d70a1e7147182e551bb6184a69d4fbf9",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 65,
+      "source": "07-05.jpg",
+      "original": "I will back to my hometown in Saturday, so I packing my suitcase on next friday.",
+      "correction": "I will [go] back to my hometown ^ Saturday, so I [am] packing my suitcase ^ [Friday].",
+      "alternatives": [
+        "I will go back to my hometown Saturday, so I am packing my suitcase Friday.",
+        "Since I'll be going back to my hometown Saturday, I'm packing my suitcase Friday."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "724ead7ed5dd34d94c60d380f814df9cb2f5eff5f4da00fb3262e5b95e067582",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 66,
+      "source": "07-06.jpg",
+      "original": "I surprised from the expensive cost of furnitures in the store near to my house.",
+      "correction": "I [am | was] surprised ^ [at the high] cost of furniture^ in the store near ^ my house.",
+      "alternatives": [
+        "I am surprised at the high cost of furniture in the store near my house.",
+        "The high prices of furniture in the store near my house were quite surprising.",
+        "I found the furniture prices in the store near my house (to be) rather surprising."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "6a63e6b88d1d9fae6d82527be3877d0e0a196d56fb68640cc8370d00dc805150",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 67,
+      "source": "07-07.jpg",
+      "original": "The beach is close from my friend apartment. He suggested me to visit to his house.",
+      "correction": "The beach is close ^ [to] my friend['s] apartment. He suggested ^ [(that) I] visit ^ his house.",
+      "alternatives": [
+        "The beach is close to my friend's apartment. He suggested (that) I visit his house.",
+        "My friend lives close to the beach, and he invited me to visit him (at his house).",
+        "My friend, who lives close to the beach, asked me to visit him (at his house)."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "cf1ad6fd353cb8a50ca729b7730c1dfd04a7b3c461d14c8b6cf4151ddf924110",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 68,
+      "source": "07-08.jpg",
+      "original": "I called to my friend and tell him to take a camera when he goes here at my house.",
+      "correction": "I called ^ my friend and ^ [told] him to ^ [bring] a camera when he ^ [comes] here ^ [to] my house.",
+      "alternatives": [
+        "I called my friend and told him to bring a camera when he comes here to my house.",
+        "I told my friend over the phone to bring a camera when he comes to visit (me).",
+        "I called my friend to tell him to bring a camera when he comes over."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "a95165574c13424a54b5aaa1c722a756cc0b2abfeaf119b294ce22f08b945b9e",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 69,
+      "source": "07-09.jpg",
+      "original": "Every persons need to do a speech describing about their role in company.",
+      "correction": "Every ^ [person] need[s] to ^ [give] a speech describing ^ their role in [their | the] company.",
+      "alternatives": [
+        "Every person needs to give a speech describing their role in their company.",
+        "Every student/employee has to give a speech on their role in their company.",
+        "Everyone here must make a presentation on their role in their company."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "989e253a6bb61317a2229a38874bbe26d8a9a1622f843e5c7e90c34f4ac635e7",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 70,
+      "source": "07-10.jpg",
+      "original": "The difference of dog and cat is dog make many noise more than cat.",
+      "correction": "The difference ^ [between] dog[s] and cat[s] is [(that)] dog[s] make ^ [much more] noise ^ than cat[s].",
+      "alternatives": [
+        "The difference between dogs and cats is (that) dogs make much more noise than cats.",
+        "Dogs and cats are different in that dogs are much noisier than cats.",
+        "The advantage of cats is that they make far less noise than (do) dogs."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "a33f6963502da895fb6ccbbd5cc53e59510c2d88a17ca417e18309e968f310c8",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 71,
+      "source": "08-01.jpg",
+      "original": "The weather is a bit changed. It is certain much cold today than yesterday.",
+      "correction": "The weather ^ [has changed] a bit^. It is certain[ly] much cold[er] today than yesterday.",
+      "alternatives": [
+        "The weather has changed a bit. It is certainly much colder today than yesterday.",
+        "There has been a change in the weather. Today is certainly much colder than yesterday.",
+        "The weather today has certainly become much colder than it was yesterday."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "326d3a78b35f1fd1aa2d5ffdf8a606fedecc3df653d76082ac3a00ec3b3a556f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 72,
+      "source": "08-02.jpg",
+      "original": "I don't easily to understand the reasons why he is famous recently. I surprised.",
+      "correction": "I ^ [can't] easily ^ understand the reasons ^ he ^ [has become] famous recently. I['m] surprised.",
+      "alternatives": [
+        "I can't easily understand the reasons he has become famous recently. I'm surprised.",
+        "I don't understand the reasons he has recently become famous. It's surprising.",
+        "I don't understand why he has become famous recently. It's perplexing."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "0a9e92d9e2bb796087ee75aa712a658c89e5d4410062aedd8d310048cdfe28b4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 73,
+      "source": "08-03.jpg",
+      "original": "Most of American have same opinion to Japanese for issue of drink driving.",
+      "correction": "Most ^ American[s] have [the] same opinion ^ [as] Japanese ^ [on the] issue of drink [| drunk] driving.",
+      "alternatives": [
+        "Most Americans have the same opinion as Japanese on the issue of drink | drunk driving.",
+        "Most Americans and Japanese disapprove of drink | drunk driving.",
+        "Americans and Japanese both largely disapprove of drink | drunk driving."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "0e36598c2e174aa266f3726dcbc422c0623067d9a68a9a0102f922d0a35cfada",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 74,
+      "source": "08-04.jpg",
+      "original": "He spended many money for gambling. Then his wife have angry to him.",
+      "correction": "He ^ [spent] ^ [much] money ^ [(on)] gambling. ^ [So,] his wife ^ [became] angry ^ [at | with] him.",
+      "alternatives": [
+        "He spent much money (on) gambling. So, his wife became angry at | with him.",
+        "He spent so much money gambling that his wife became angry at | with him.",
+        "His wife became angry at | with him after | because he wasted much money on gambling."
+      ],
+      "source_caret_count": 6,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "680d6035a861d15aa058153c0e43653aae952f7971de0feda890fd63d368fb02",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 75,
+      "source": "08-05.jpg",
+      "original": "Friday I going back at Atlanta to negotiation with other company in evening.",
+      "correction": "Friday I['m] going back ^ [to] Atlanta to ^ [negotiate] with [an]other company in [the] evening.",
+      "alternatives": [
+        "(On) Friday I'm going back to Atlanta to negotiate with another company in the evening.",
+        "I'm headed back to Atlanta (on) Friday to conduct negotiations with another company.",
+        "I'll return to Atlanta (on) Friday to engage in negotiations with another company."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "03a9ffabd6ff9f2f509660ea8185cf526d39e67c4041a4ba6028f122d54ddef4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 76,
+      "source": "08-06.jpg",
+      "original": "I hoping to sky diving someday. But I afraid to do by myself. Do you come with me?",
+      "correction": "I hop[e]^ to skydiv[e]^ someday. But I [am] afraid to do [it] by myself. ^ [Will] you come with me?",
+      "alternatives": [
+        "I hope to skydive someday. But I am afraid to do it by myself. Will you come with me?",
+        "I'd like to skydive someday. However, I'm afraid to do it alone. Will you go skydiving with me?",
+        "I plan to skydive someday. But I'm too scared to go alone. How about going with me?"
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "ac260ec27d15a621e9b5823fe88ca367163129eab409246de87d78e6eab863d4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 77,
+      "source": "08-07.jpg",
+      "original": "John returned the office more late than 9pm. Because he take dinner with client.",
+      "correction": "John returned [to] the office ^ [later] than 9 pm^ [because] he ^ [had] dinner with [a] client.",
+      "alternatives": [
+        "John returned to the office later than 9 pm because he had dinner with a client.",
+        "John arrived back at the office after 9 pm since he went to dinner with a client."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "fa2ed3ea5ad7fc7acd46391808a197fd7e6c6849975b0cef59e5230840e28e24",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 78,
+      "source": "08-08.jpg",
+      "original": "How should you do if you lock your keys in car? Will you to call police for helping?",
+      "correction": "^ [What] ^ [would] you do if you lock[ed] your keys in [your] car? ^ [Would] you ^ call [the] police for help^?",
+      "alternatives": [
+        "What would you do if you locked your keys in your car? Would you call the police for help?",
+        "What would you do if you ever locked your keys in your car? Would you contact the police?",
+        "If you ever locked your keys in your car, would you ask a police officer to help you?"
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "fea2f5cf286d1e6232141fda3f206c545c494e6783f4732ee0624f876c100684",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 79,
+      "source": "08-09.jpg",
+      "original": "Many my friends enjoy to go to beach while hot summer. Some do surfing all days.",
+      "correction": "Many [of] my friends enjoy ^ [going] to [the] beach ^ [during the] hot summer. Some ^ [surf] all day^.",
+      "alternatives": [
+        "Many of my friends enjoy going to the beach during the hot summer. Some surf all day.",
+        "Many of my friends often go to the beach during the hot summer, some surfing all day."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "32553565f784f50e4915399c61f4014f7703159523363cbd3b5110c40716a2cb",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 80,
+      "source": "08-10.jpg",
+      "original": "I went to shopping for dress at Madrid, and choose blue one with comfort design.",
+      "correction": "I went ^ shopping for [a] dress ^ [in] Madrid, and ^ [chose a] blue one with [a] comfort[able] design.",
+      "alternatives": [
+        "I went shopping for a dress in Madrid, and chose a blue one with a comfortable design.",
+        "While in Madrid, I went shopping for a dress, and chose a blue, comfortable one.",
+        "I bought a blue, comfortable dress while shopping for dresses in Madrid."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "d305cb1294ae37b948948855e68c609abc1a7404e29a1d07538d100b337f6e9e",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 81,
+      "source": "09-01.jpg",
+      "original": "I'm preferring Boston better than New York in respect of universities. I like there.",
+      "correction": "^ [I] ^ [prefer] Boston ^ [to] New York in respect ^ [to] universities. I like [it] there.",
+      "alternatives": [
+        "I prefer Boston to New York in respect to universities. I like it there.",
+        "In terms of universities, Boston is better than New York. I enjoy my time in Boston.",
+        "New York is inferior to Boston in terms of universities. I like spending time in Boston."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "2674e6bb3608745d5c4d29115268e4c3217468fbb3bff893a23c3da7796778c3",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 82,
+      "source": "09-02.jpg",
+      "original": "We penciled in April 8 as tentative date for next meeting. Room is same to last time.",
+      "correction": "We penciled in April 8 as [a] tentative date for [the] next meeting. ^ [The room] is [the] same ^ [as the] last time.",
+      "alternatives": [
+        "We penciled in April 8 as a tentative date for the next meeting. The room is the same as the last time.",
+        "We tentatively agreed on the 8th of April for the next meeting. The room will be the same as before.",
+        "We tentatively agreed that we would hold our next meeting on April 8 in the same room."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5c87e2e167bbc5bb3205072c57bf40fdf866f1ee743e86e35fa1de0432578baf",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 83,
+      "source": "09-03.jpg",
+      "original": "Consumption tax went up 10%. It is now double what it was 3 year before when 5%.",
+      "correction": "^ [The consumption] tax went up [to] 10%. It is now double what it was 3 year[s] ^ [ago] when [it was] 5%.",
+      "alternatives": [
+        "The consumption tax went up to 10%. It is now double what it was 3 years ago when it was 5%.",
+        "The consumption tax was increased to 10%, double the 5% it was 3 years ago.",
+        "The consumption tax has increased 100%, from 5% to 10% within the past 3 years."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "1a5eefd395f9b8dd39e37395bcbf42817c42f32a4bc55d2f5e897dc3ec7505e6",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 84,
+      "source": "09-04.jpg",
+      "original": "He left to his hometown early morning. He have already book seat on train.",
+      "correction": "He left ^ [for] his hometown early [in the] morning. He ^ [had] already book[ed a] seat on [the] train.",
+      "alternatives": [
+        "He left for his hometown early in the morning. He had already booked a seat on the train.",
+        "He started out for his hometown in the early morning. He had already reserved his seat on the train.",
+        "He departed on the early-morning train on which he had already booked a seat."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "bd7e7895819821032404c9744098f3fc710354a8e47ba77c6a85de2d9a9880b9",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 85,
+      "source": "09-05.jpg",
+      "original": "I have yet to receive response from president Trump. But I not have my hope up.",
+      "correction": "I have yet to receive [a] response from ^ [President] Trump. But I ^ have ^ [not yet given up] hope^.",
+      "alternatives": [
+        "I have yet to receive a response from President Trump. But I have not yet given up hope.",
+        "President Trump has not yet responded to me. However, I have not yet lost hope.",
+        "I have not yet given up hope that President Trump will respond to me."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "note": "“Not having your hopes up” means you do not expect much. “Not giving up hope” means you still believe a response is possible. The alternatives here express that second meaning.",
+      "source_sha256": "426caecaf274cbb73c97ccc2877663dde7a4545c1854f9ab86c8508f5dbd67b4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 86,
+      "source": "09-06.jpg",
+      "original": "Tokyo is scaring for foreigner who never been here previous. But Tokyo is safety.",
+      "correction": "Tokyo is ^ [scary] ^ [to] foreigner[s] who [have] never been here previous[ly]. But Tokyo is safe^.",
+      "alternatives": [
+        "Tokyo is scary to foreigners who have never been here previously. But Tokyo is safe.",
+        "Tokyo is frightening to foreigners who have never visited previously. However, Tokyo is safe.",
+        "In spite of Tokyo being safe, many foreigners visiting for the first time are afraid."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "626679477325303069340d47a74c778af10c90c6c09714a0e3fb8c72c112860d",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 87,
+      "source": "09-07.jpg",
+      "original": "There was a issue with payment from client, but now is fixed. I am relief.",
+      "correction": "There was a[n] issue with [a] payment from [a] client, but now [it] is fixed. I am ^ [relieved].",
+      "alternatives": [
+        "There was an issue with a payment from a client, but now it is fixed. I am relieved.",
+        "There was a payment issue with a client, but it has now been resolved. What a relief!",
+        "I'm relieved since the payment issue with a client has been resolved."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "0917c1bcac78e60229766b2a40b79e05ea0d36c7ba1200ad46159dbd63642e51",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 88,
+      "source": "09-08.jpg",
+      "original": "Maybe a typhoon is happening since there being so much rain. Do you worry?",
+      "correction": "Maybe a typhoon is ^ [causing this heavy] rain. ^ [Are] you ^ [worried]?",
+      "alternatives": [
+        "Maybe a typhoon is causing this heavy rain. Are you worried?",
+        "Perhaps it is a typhoon that is causing this heavy rain. Are you worried?",
+        "This may be a typhoon based on all this heavy rain. Are you worried?"
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "74ca4be3a2236d6dc2acb3892ef4806147d396752793a3c6d97d8ea1a1dd9f14",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 89,
+      "source": "09-09.jpg",
+      "original": "I often thinking how it now amazing for most of world to connect each other.",
+      "correction": "I often think^ [about] how it [is] ^ amazing ^ [that] most of [the] world ^ [is now] connect[ed to] each other.",
+      "alternatives": [
+        "I often think about how it is amazing that most of the world is now connected to each other.",
+        "The fact that most of the world is now connected to each other is amazing to consider | ponder.",
+        "I often consider | ponder in amazement that most of the world is now interconnected."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "83b87cce66873938b73468b615eb8e82bbc8ca10efc4805ad6d153cd61569892",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 90,
+      "source": "09-10.jpg",
+      "original": "He damaged his arm during surfing. It pained so much he take many pain medicine.",
+      "correction": "He ^ [injured] his arm ^ [while] surfing. It ^ [hurt] so much he ^ [took] ^ [much] pain medicine.",
+      "alternatives": [
+        "He injured his arm while surfing. It hurt so much that he took much pain medicine.",
+        "He injured his arm during his day surfing, and had to take many painkillers to alleviate the pain.",
+        "He suffered an arm injury while surfing. It was so painful that he took many pain pills."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "6e99ce54eb5d59c18d8b1e08ac56ff3f92c6e1c2a9f239817e71fdd623db72e1",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 91,
+      "source": "10-01.jpg",
+      "original": "Note how much increased percentage of sales higher than previous year.",
+      "correction": "Note how much [sales] increased ^ [over the] previous year.",
+      "alternatives": [
+        "Note how much sales increased over the previous year. (2015-2016).",
+        "Note the degree to which sales have increased over last year. (last year - this year).",
+        "Note the percentage increase in sales over the past 12 months."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "8572eb13ef2beecf5720b57d47a8f550655e8d5d21bedbf0b0004167d025140f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 92,
+      "source": "10-02.jpg",
+      "original": "Please write your name on the right-bottom corner of contract and add date of today.",
+      "correction": "Please ^ [sign] your name ^ [in] the ^ [bottom-right] corner of [the] contract and add [today's] date^.",
+      "alternatives": [
+        "Please sign your name in the bottom-right corner of the contract and add today's date.",
+        "I'd like you to add your signature in the lower-right corner of the contract, plus today's date.",
+        "Could you now please add your signature and the date in the lower-right corner of the contract?"
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "612839aeeb0ecc51208ab0aac73248c087b61b1265bb788fda48fedd504c6fd9",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 93,
+      "source": "10-03.jpg",
+      "original": "I am not quite understanding reason they have many confusion about new policy.",
+      "correction": "I ^ [don't] quite understand^ [the] reason they ^ [are so confused] about [the] new policy.",
+      "alternatives": [
+        "I don't quite understand the reason they are so confused about the new policy.",
+        "I don't | can't quite understand (all) the confusion about the new policy.",
+        "Their complete confusion about the new policy perplexes me."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "2fec4434d7db73ffea70b73b7c3df68e3440adb061676b03a622cdb8dcf42c1c",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 94,
+      "source": "10-04.jpg",
+      "original": "How can I call the color circle thing in the middle of human eye? What is function?",
+      "correction": "^ [What] can I call the color[ed,] ^ [circular] thing in the middle of [the] human eye? What is [its] function?",
+      "alternatives": [
+        "What can I call the colored, circular thing in the middle of the human eye? What is its function?",
+        "What is the colored, circular thing in the center of the human eye? Does it have a function?"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "note": "This refers to the iris, the colored part of the eye. Its muscles change the size of the pupil to control how much light enters the eye.",
+      "source_sha256": "5e28b6332c7e62fd59e612c2986436b7e0ae6165ba05feed9c6b17f93734b035",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 95,
+      "source": "10-05.jpg",
+      "original": "I'd rather to have a cat to a dog. Because a dog is too loudly and needing much care.",
+      "correction": "I'd rather ^ have a cat ^ [than] a dog^ [because] ^ [dogs are] too loud^ and need^ much care.",
+      "alternatives": [
+        "I'd rather have a cat than a dog because dogs are too loud and need much care.",
+        "I prefer cats over dogs because dogs are noisy and require much attention.",
+        "Because dogs are noisy and require much attention, I prefer cats."
+      ],
+      "source_caret_count": 6,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "9c49a2a98cb34a6da0c04a7893ec7703089449af44037e6068393fd2cbc9e199",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 96,
+      "source": "10-06.jpg",
+      "original": "Learning languages require many time and efforts, but it ultimately worth the efforts.",
+      "correction": "Learning languages require[s] ^ [much] time and effort^, but it [is] ultimately worth the effort^.",
+      "alternatives": [
+        "Learning a new language requires much time and effort, but it is ultimately worth the effort.",
+        "While learning a new language requires much time and effort, it is ultimately worth the effort.",
+        "The time and effort required to learn a new language are substantial, but they are well worth it."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "65e86b64e6d1b89edabfc8351a2d04e0204b246a645f1840023bb02f7a0fb922",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 97,
+      "source": "10-07.jpg",
+      "original": "The error would been blamed to me if I didn't carefully document my expenses.",
+      "correction": "The error would [have] been blamed ^ [on] me if I ^ [hadn't] carefully document[ed] my expenses.",
+      "alternatives": [
+        "The error would have been blamed on me if I hadn't carefully documented my expenses.",
+        "I would have been blamed for the error had I not carefully documented my expenses.",
+        "I would have been accused of making the error if I hadn't taken care in the documentation of my expenses."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "11fe4cebaabeec5385fb7143075f9bfaa18f8f8851f9ec471a5f7a920220e863",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 98,
+      "source": "10-08.jpg",
+      "original": "He insisted to go home and care of his sick dog. His boss took issue on his decision.",
+      "correction": "He insisted ^ [on] go[ing] home and [taking] care of his sick dog. His boss took issue ^ [with] his decision.",
+      "alternatives": [
+        "He insisted on going home and taking care of his sick dog. His boss took issue with his decision.",
+        "He insisted on going home to take care of his sick dog. His boss strongly disapproved of his decision.",
+        "Since he was concerned about his sick dog, he insisted on going home to the disapproval of his boss."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "ebe94c8c75413cef240a6f1b2e4d64eeffdc568fdaf89809a03830b6ed3238f2",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 99,
+      "source": "10-09.jpg",
+      "original": "I'm disappointed of my inability to lost my weight. It might be related with donut.",
+      "correction": "I'm disappointed ^ [in] my inability to ^ [lose] ^ weight. It might be related ^ [to] donut[s].",
+      "alternatives": [
+        "I'm disappointed in my inability to lose weight. It might be related to donuts.",
+        "I'm discouraged about my lack of success in dieting. Donuts may be the cause.",
+        "Donuts likely have something to do with my unsuccessful dieting attempts. It's discouraging."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e5563211c35808d4007956b5c7255de1f95db0af297a620b7bb92cd59ff1470a",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 100,
+      "source": "10-10.jpg",
+      "original": "To be success, important to think optimistic and to spend enough time for relax.",
+      "correction": "To be success[ful], [it is] important to think optimistic[ally] and to spend enough time ^ [relaxing].",
+      "alternatives": [
+        "To be successful, it is important to think optimistically and to spend enough time relaxing.",
+        "Successful people are optimistic and spend sufficient time relaxing.",
+        "Success is a natural consequence of optimism and relaxation."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "946bbf6c72b44d92421792366fe2e2b4b059438530e6ef8137550a4a3ccc9b94",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 101,
+      "source": "11-01.jpg",
+      "original": "Most of rules of golf are easy to know. I want to challenge to play golf good.",
+      "correction": "Most ^ rules of golf are easy to ^ [learn]. I want to ^ [try | learn] to play golf ^ [well].",
+      "alternatives": [
+        "Most rules of golf are easy to learn. I want to try | learn to play golf well.",
+        "The rules of golf are easily learned. I want to learn to play golf well."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "dc677b5f41fe1b9ea5b21ca4875ac4664cf377eeb9f4cb3ba7fa55529c55a992",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 102,
+      "source": "11-02.jpg",
+      "original": "Since I had forgot my wallet, my friend borrowed me $50. I need to pay back soon.",
+      "correction": "Since I had forgot[ten] my wallet, my friend ^ [lent] me $50. I need to pay [it | him] back soon.",
+      "alternatives": [
+        "Since I had forgotten my wallet, my friend lent me $50. I need to pay it | him back soon.",
+        "My friend lent me $50 since I had forgotten my wallet. I'll have to pay it | him back soon.",
+        "I borrowed $50 from a friend since I had forgotten my wallet. Now I owe him $50."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e4c5480e45948432b7fffb3b0333fe5a50cae3f49292f836e64617346fec7254",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 103,
+      "source": "11-03.jpg",
+      "original": "In case of national low birthrate, I feel we should offering more of childcare center.",
+      "correction": "In [the] case of [the low] national ^ birthrate, I feel we should offer^ more ^ childcare center[s].",
+      "alternatives": [
+        "In the case of the low national birthrate, I feel we should offer more childcare centers.",
+        "Concerning the low national birthrate, I suggest we offer more childcare centers.",
+        "As a solution to the low national birthrate, I propose offering more childcare centers."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5010d6b6f5a67a139df4d8df472dbeafbb0fc9e13ed31721bd6a47469c05c232",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 104,
+      "source": "11-04.jpg",
+      "original": "How can I spend time for my family because I have working such long hours?",
+      "correction": "How can I spend time ^ [with] my family ^ [while] I['m] ^ working such long hours?",
+      "alternatives": [
+        "How can I spend time with my family while I'm working such long hours?",
+        "How is it possible for me to spend time with my family given the long hours I have to work?",
+        "How can I balance family time with work obligations while I have to work such long hours?"
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "ec29ad6e3e0b4d21304938638aa5a0121bfbbee52e5d74f220b556f69d5443cd",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 105,
+      "source": "11-05.jpg",
+      "original": "I will make a trip to Syria, but I am scary because my friend said me it is danger.",
+      "correction": "I will make [| take] a trip to Syria, but I am ^ [scared] because my friend ^ [told | tells] me it is danger[ous].",
+      "alternatives": [
+        "I will make | take a trip to Syria, but I am scared because my friend told | tells me it is dangerous.",
+        "I'm going to travel to Syria, but I'm afraid since my friend informed me of the risks.",
+        "I'm headed to Syria, but I'm a bit worried since my friend warned me about its dangers."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "3433e5c16cb49d8fe5752c327d4240b0e40435fe806bad1d684bd4f2af8bc97e",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 106,
+      "source": "11-06.jpg",
+      "original": "My father let me drive car in the condition if I come home more early than 10 pm.",
+      "correction": "My father let me drive [his] car ^ [on] the condition ^ [that] I come home ^ [earlier] than 10 pm.",
+      "alternatives": [
+        "My father let me drive his car on the condition that I come home earlier than 10 pm.",
+        "My father allowed me to use his car provided I came home before 10 pm.",
+        "My father let me take his car only if I returned home before 10 pm."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "a41f7c63656c610747311e7955d3296f4fa339deedf66eaa7eab3ea78bd72bd3",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 107,
+      "source": "11-07.jpg",
+      "original": "Two manager are discussing to replace old coffee machine with new coffee machine.",
+      "correction": "Two manager[s] are discussing ^ [replacing the] old coffee machine [(]with [a] new coffee machine[)].",
+      "alternatives": [
+        "Two managers are discussing replacing the old coffee machine (with a new coffee machine).",
+        "There is a discussion between two managers on whether to replace the old coffee machine.",
+        "The potential replacement of the old coffee machine is being discussed by two managers."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "cf798cdc0cbfd4aad591cdfc7778cef9bfc1a6f2529fbb6f5afc9d6524fdcd36",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 108,
+      "source": "11-08.jpg",
+      "original": "Welcome my presentation. I will speech about 3 points for increasing sales.",
+      "correction": "Welcome [to] my presentation. I will ^ [introduce] ^ 3 ^ [ways] ^ [to] ^ [increase] sales.",
+      "alternatives": [
+        "Welcome to my presentation. I will introduce 3 ways to increase sales.",
+        "Thanks for attending my presentation. I'll be proposing 3 ways to increase sales.",
+        "Welcome everyone. Today, I will be explaining 3 methods to increase sales."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "17aaae2be5efbc60793e51228a35b117723afdc8164ea4ae36d9b9126ac4d077",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 109,
+      "source": "11-09.jpg",
+      "original": "I have introduce about we should increasing sales. Are you having any question?",
+      "correction": "I have introduce[d] ^ [ways to increase] sales. Are ^ [there] any question[s]?",
+      "alternatives": [
+        "I have introduced ways to increase sales. Are there any questions?",
+        "I have provided an answer to how we can increase sales. Does anyone have questions?",
+        "I have proposed a strategy to increase sales. Are there any comments or questions?"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "549a897f18a689966f900cfc4b4f791bb4286420ac013567d342590977172aeb",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 110,
+      "source": "11-10.jpg",
+      "original": "Toronto is one of best place to live. Because it have many apartments which is wide.",
+      "correction": "Toronto is one of [the] best place[s] to live^ [because] it ^ [has] many [spacious] apartments^.",
+      "alternatives": [
+        "Toronto is one of the best places to live since it has many spacious apartments.",
+        "Due to its sizeable apartments, Toronto is one of the best places to live.",
+        "Owing to Toronto's spacious apartments, it is considered one of the best places to live."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "1f49cae5b2e3fd420fead9345b9e486fc09fb5763c86200c3a2baf80d1c21ff0",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 111,
+      "source": "12-01.jpg",
+      "original": "America law prohibits you to drive without license, so I attending driving school.",
+      "correction": "America[n] law prohibits ^ [driving] without [a] license, so I['m] attending driving school.",
+      "alternatives": [
+        "American law prohibits driving without a license, so I'm attending driving school.",
+        "In America, driving without a license is prohibited, so I'm enrolled in a driving school.",
+        "It is against American law to drive without a license. For that reason I'm in driving school."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "cbeacfe98789c9ef326afa8448566e6ad275f6f9ec1ea60f212fe89288d5e040",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 112,
+      "source": "12-02.jpg",
+      "original": "His car is more expensive price then mine because he earns many more money than I.",
+      "correction": "His car is more expensive ^ [than] mine because he earns ^ [much] more money than I [(do)].",
+      "alternatives": [
+        "His car is more expensive than mine because he earns much more money than I (do).",
+        "He has a more expensive car than I do since his salary is much higher.",
+        "He drives a pricier car than I do as his salary far surpasses mine."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "2557e8315498d68e3bb177af6b9145a0230f299c9ab3e88a23ffd0bbc1a361d7",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 113,
+      "source": "12-03.jpg",
+      "original": "This too expensive. I wish smaller price. How much discount can I have if pay cash?",
+      "correction": "This [is] too expensive. I['d] ^ [like a lower] price. How much [of a] discount can I have if [I] pay [in] cash?",
+      "alternatives": [
+        "This is too expensive. I'd like a lower price. How much of a discount can I have if I pay in cash?",
+        "This is too pricey. Could I have a lower price? How much can you discount this if I pay in cash?",
+        "I can't pay that much. Could I have a more reasonable price? Do you give discounts for cash?"
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "739debaf56590d8790acf2ce6173de2356efaa87b3060c5bb813a4b73680513e",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 114,
+      "source": "12-04.jpg",
+      "original": "How much percentage of children enjoy to wash dishes? Jack never enjoy it. Me too.",
+      "correction": "^ [What] percentage of children enjoy ^ [washing] dishes? Jack never enjoy[s] it. Me ^ [neither].",
+      "alternatives": [
+        "What percentage of children enjoy washing dishes? Jack never enjoys it. Me neither.",
+        "What is the percentage of children who enjoy washing dishes? Jack doesn't. Nor do I.",
+        "Do a majority of children enjoy washing dishes? Jack and I certainly don't."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c23851e8b8667286b4927a879f8e00ed469c57497633508f1f5f0a4544b78173",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 115,
+      "source": "12-05.jpg",
+      "original": "I have two sibling. Except for me, Tom and Mary is also member in my family.",
+      "correction": "I have two sibling[s]. ^ [In addition to] me, Tom and Mary ^ [are] also member[s] ^ [of] my family.",
+      "alternatives": [
+        "I have two siblings. In addition to me, Tom and Mary are also members of my family.",
+        "I've two siblings. My family also includes Tom and Mary."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "8916c2f1df9ca05ba05f3148919aae0b16ef9e4fb176fd97dc58ee3c33b2c5b1",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 116,
+      "source": "12-06.jpg",
+      "original": "I often went to Leon by flight. I visit to our office there about three time one year.",
+      "correction": "I often ^ [go] to Leon by ^ [plane]. I visit ^ our office there about three time[s] ^ [a] year.",
+      "alternatives": [
+        "I often go to Leon by plane. I visit our office there about three times a year.",
+        "I often fly to Leon. I visit our Leon office about once every four months.",
+        "I frequently visit Leon. I fly to our office there nearly three times each year."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "1b02b45238f3a9af8ba002daeeb5935f6dcce8d96d3e86e310ff037abfe7227b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 117,
+      "source": "12-07.jpg",
+      "original": "If I have more money, I could buy new car. But I having many debt to pay off.",
+      "correction": "If I ^ [had] more money, I could buy [a] new car. But I ^ [have] many debt[s] to pay off.",
+      "alternatives": [
+        "If I had more money, I could buy a new car. But I have many debts to pay off.",
+        "If only I had more cash, I'd be able to buy a new car. But I have too much debt to pay off.",
+        "I'd be able to buy a new car if only I were less in debt. I have just too many debts I need to pay off."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "dffa9d4ffbf66e40de4d679a40e74582b6215e81504c6e957538ace8c15265d4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 118,
+      "source": "12-08.jpg",
+      "original": "If they had took a camera for their trip to Africa, they have many amazing photo.",
+      "correction": "If they had ^ [taken] a camera ^ [on] their trip to Africa, they [would] have many amazing photo[s].",
+      "alternatives": [
+        "If they had taken a camera on their trip to Africa, they would have many amazing photos.",
+        "They would have many amazing photos had they taken a camera on their trip to Africa."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "48764fccf6c6547da6e69e98a5e7af53fa3822a74c939053960ea7ae64c9c329",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 119,
+      "source": "12-09.jpg",
+      "original": "My boss requested to me many thing. But I don't find enough times to do all.",
+      "correction": "My boss [has] requested ^ [that I do] many thing[s]. But I ^ [can't] find enough time^ to do [them] all.",
+      "alternatives": [
+        "My boss has requested that I do many things. But I can't find enough time to do them all.",
+        "My boss has requested many things of me. But I can't seem to find the time to do them all.",
+        "I can't manage to find the time to do all the tasks my boss has tasked me with."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "55bf59be91dd6c28f1f2c8b654522187b730254a28fdf6da75ff7f8b2b7520e5",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 120,
+      "source": "12-10.jpg",
+      "original": "When I a student, I spend many times for reading but now I'm having no time.",
+      "correction": "When I [was] a student, I spen[t]^ ^ [much] time^ ^ reading[,] but now ^ [I've] no time.",
+      "alternatives": [
+        "When I was a student, I spent much time reading, but now I've no time.",
+        "As a student, I spent much time reading, but I've little time for reading now."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "5a5045fc5e949d55818e6420919183445712e3640d5749d626e78a9344eff8ec",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 121,
+      "source": "13-01.jpg",
+      "original": "I don't mostly cook. Fortunate, my wife is making me to cook only at Friday.",
+      "correction": "I don't ^ [usually] cook. Fortunate[ly], my wife is making me ^ cook only ^ [on] Friday[s].",
+      "alternatives": [
+        "I don't usually cook. Fortunately, my wife is making me cook only on Fridays.",
+        "I seldom cook. Fortunately for me, my wife asks me to cook only on Fridays.",
+        "I don't often cook. Luckily, my wife has me cook only on Fridays."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "bf57708b0a3e9eb17472c12767f98d85d9200c5b120bb2c488dda078347220ef",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 122,
+      "source": "13-02.jpg",
+      "original": "I was used to be a police officer, but then I was tired to catch criminals, and I quitted.",
+      "correction": "I ^ used to be a police officer, but then I ^ [became] tired ^ [of] catch[ing] criminals, and I quit^.",
+      "alternatives": [
+        "I used to be a police officer, but then I became tired of catching criminals, and I quit.",
+        "I was once a police officer, but I then grew tired of catching criminals, and I resigned from the force.",
+        "Years ago, I was a police officer. But catching criminals grew old, and I quit out of boredom."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "175295c93e53cb271c64653673de053bb912a2816a91f0e085eeece21db07967",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 123,
+      "source": "13-03.jpg",
+      "original": "Shall you assist me to make dinner? I am very appreciate you if you can be helping.",
+      "correction": "^ [Will | Can] you assist me [(in)]^ [making] dinner? I['d] ^ [be] very ^ [appreciative if] you ^ can ^ help^.",
+      "alternatives": [
+        "Will | Can you assist me in making dinner? I'd be very appreciative if you can help.",
+        "Would you mind assisting me with dinner? Your help would be much appreciated.",
+        "I'd be very appreciative if you could assist me with dinner."
+      ],
+      "source_caret_count": 7,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5e353b9aa16d4a012ac9ac352cca47819094d67a06bcd44695560b4cf3d78837",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 124,
+      "source": "13-04.jpg",
+      "original": "I cut my hair at the barber shop. It costed less than 50 peso since I have a few hair.",
+      "correction": "I [had] ^ my hair [cut] at the barber shop. It cost^ less than 50 peso[s] since I have ^ [little] hair.",
+      "alternatives": [
+        "I had my hair cut at the barber shop. It cost me less than 50 pesos since I have little hair.",
+        "My haircut at the barber shop cost me less than 50 pesos since I don't have much hair."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "444faead339d34d92eaedadf25071d0044e7e0009fff8166a1e2aab80d880051",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 125,
+      "source": "13-05.jpg",
+      "original": "I tripped to countryside just for playing golf. But accident occurred, so I am 3 hour late.",
+      "correction": "I ^ [traveled] to [the] countryside just ^ [to] play^ golf. But [an] accident occurred, so I ^ [was] 3 hour[s] late.",
+      "alternatives": [
+        "I traveled to the countryside just to play golf. But an accident occurred, so I was 3 hours late.",
+        "I took a trip to the countryside to play golf, but due to a traffic accident, I was 3 hours late.",
+        "While headed to the countryside to play golf, I was delayed by 3 hours due to a traffic accident."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5f55315a89fda836db35e57f3d3f2e64e76ee1d439a1e4a1cb1b4cb47d98b831",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 126,
+      "source": "13-06.jpg",
+      "original": "How much percentage of peoples at Moscow enjoy to visit a museum do you think?",
+      "correction": "^ [What] percentage of people^ ^ [in] Moscow enjoy ^ [visiting] ^ museum[s] ^ [in your opinion]?",
+      "alternatives": [
+        "What percentage of people in Moscow enjoy visiting museums in your opinion?",
+        "In your opinion, what is the percentage of those living in Moscow who enjoy visiting museums?"
+      ],
+      "source_caret_count": 6,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "b7c83083241b74f33c53e73484e68bf89648797a8d2c0b87bda72147ad09eb20",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 127,
+      "source": "13-07.jpg",
+      "original": "My son requested to me for shopping with him to buy a piano for playing jazz musics.",
+      "correction": "My son requested ^ [(that) I shop] with him to buy a piano ^ [to play] jazz [(]music[)] ^.",
+      "alternatives": [
+        "My son requested (that) I shop with him to buy a piano to play jazz (music).",
+        "My son asked that I go shopping with him to buy a piano on which to play jazz.",
+        "My son who wants to play jazz asked me to go shopping with him for a piano."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b7766424ef512fe1f1ac9ac0ebb211aa8201abc69f0a7dcebe14953150842a50",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 128,
+      "source": "13-08.jpg",
+      "original": "I now introduce 3 reasons for why you to buy piano. Piano is fun, beauty, and excitement.",
+      "correction": "I [will] now introduce 3 reasons ^ to buy [a] piano. Piano[s] ^ [are] fun, beaut[iful]^, and ^ [exciting].",
+      "alternatives": [
+        "I will now introduce 3 reasons to buy a piano. Pianos are fun, beautiful, and exciting.",
+        "I'd like to give 3 reasons to buy a piano. Pianos provide fun, beauty, and excitement.",
+        "Three good reasons to buy a piano are the fun, beauty and excitement they offer."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "6e412887f3e78cc83995bb364637acae391cb9c08f4987b7f25f4bd6674c3e04",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 129,
+      "source": "13-09.jpg",
+      "original": "Ten year before, when I kid, I wasn't enjoy studying so now my grammar not good.",
+      "correction": "Ten year[s] ^ [ago], when I [was a] kid, I ^ [didn't] enjoy studying[,] so now my grammar [is] not good.",
+      "alternatives": [
+        "Ten years ago, when I was a kid, I didn't enjoy studying, so now my grammar is not good.",
+        "As a kid ten years ago, I didn't much enjoy studying. As a result, my grammar is poor.",
+        "My grammar is poor due to my aversion to studying as a kid ten years ago."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "2bedca3a8d5b9514036c41403b3fd6b86c21966ed94ad20d0b3280c57cfc4797",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 130,
+      "source": "13-10.jpg",
+      "original": "My father has gave me extra key to house in the case he ever might lost his own key.",
+      "correction": "My father has ^ [given] me [an] extra key to [the] house in ^ case he ever ^ [loses] his own key.",
+      "alternatives": [
+        "My father has given me an extra key to the house in case he ever loses his own key.",
+        "My father has given me an extra key to his house so he can borrow my key if he loses his own.",
+        "If my father ever loses his own key, he can borrow the extra key to his house he has given me."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "d106a3a227052cae09b9fa056dac572e20c928436001d572e4fbf3e59ee59e65",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 131,
+      "source": "14-01.jpg",
+      "original": "What is your thinking for why she don't feel good? I maybe think she ate too many cake.",
+      "correction": "^ [Why do you think] she ^ [doesn't] feel ^ [well]? I ^ think she [maybe] ate too ^ [much] cake.",
+      "alternatives": [
+        "Why do you think she doesn't feel well? I think she maybe ate too much cake.",
+        "Why do you suppose she doesn't feel well? I'm guessing she may have eaten too much cake.",
+        "Why do you think she feels ill | sick? Could it be that she's eaten too much cake?"
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "2f4c7810e0ddbc4e2c1fd56e8134861c7c95592c4ab6363fbc9d432c27146943",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 132,
+      "source": "14-02.jpg",
+      "original": "Your son acts same way you acting. He resembles you. Are you agreeing?",
+      "correction": "Your son acts [the] same way you act^. He ^ [takes after] you. ^ [Do] you agree^?",
+      "alternatives": [
+        "Your son acts the same way you act. He takes after you. Do you agree?",
+        "Would you agree that your son takes after you? He acts in exactly the same way as you.",
+        "Isn't it clear to you also that, based on the way he acts, your son takes after you?"
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c9815dcf37ecd17c83bec11402e97661aec3f4183746968aee5a68a8373abcd4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 133,
+      "source": "14-03.jpg",
+      "original": "Problem don't happen too much if being careful during driving. Please take caution.",
+      "correction": "Problem[s] ^ [won't] happen too ^ [often] if ^ [you're] careful ^ [while] driving. Please ^ [use] caution.",
+      "alternatives": [
+        "Problems won't happen too often if you're careful while driving. Please use caution.",
+        "You'll have few problems if you're careful while driving. Please drive carefully.",
+        "It's unlikely you'll have many problems if you drive carefully. Please drive safely."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5d84e477c70326ee6976c90e8f25b2db6fc8791d1061054d2bf4251f0fb22f8f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 134,
+      "source": "14-04.jpg",
+      "original": "It some days happens that there is no one in small bar except only me and friend.",
+      "correction": "^ [Some] days ^ there is no one in [the] small bar except ^ [(for)] me and friend[s].",
+      "alternatives": [
+        "Some days there is no one in the small bar except (for) me and friends.",
+        "Some days the small bar is empty apart from me and a few friends.",
+        "There have been days when I and a few friends are the only customers in the small bar."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "9e819278c991bc816e0883d119cbb1ec524e3f5a89a065313faa2dc2947171aa",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 135,
+      "source": "14-05.jpg",
+      "original": "The price of blue car was including many tax. It is annoying me to pay expensive tax.",
+      "correction": "The price of [the] blue car ^ [included] ^ [high] tax[es]. It is annoying [(to] me[)] to pay ^ [high] tax[es].",
+      "alternatives": [
+        "The price of the blue car included high taxes. It is annoying (to me) to pay high taxes.",
+        "High taxes were included in the price of the blue car. Paying such high taxes is annoying.",
+        "It annoyed me to pay the high taxes included in the price of the blue car."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e11728a930b3ddf9bbcef1fcea5fb53713878a7ba0d4f4a77669e8d7dbc2dd5f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 136,
+      "source": "14-06.jpg",
+      "original": "The possibility to win was small, so I rejected to play poker. Do you try yesterday?",
+      "correction": "The possibility ^ [of] win[ning] was small, so I ^ [refused] to play poker. ^ [Did] you try yesterday?",
+      "alternatives": [
+        "The possibility of winning was small, so I refused to play poker. Did you try yesterday?",
+        "As there was a low probability of winning, I rejected the offer to play poker. Did you play poker yesterday?",
+        "I refused to play poker since there was little chance of winning. Did you play yesterday?"
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "d40c5abb9af83a4779b0f15368ec445670f7c45506d025e9c7e7978c81e368ba",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 137,
+      "source": "14-07.jpg",
+      "original": "He winned me in game of chess. He is champion of city for chess. I envying him.",
+      "correction": "He ^ [defeated | beat] me in [a] game of chess. He is [the] champion of [the] city ^ [in] chess. I envy^ him.",
+      "alternatives": [
+        "He defeated | beat me in a game of chess. He is the champion of the city in chess. I envy him.",
+        "I lost to him in a game of chess. He is the city's chess champion. I'm envious.",
+        "He won against me in a game of chess. I'm envious that he is the city's chess champion."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e7e351e7f94877cdd1f3ba04a3f163f50e371b251042660318a528f7e042b9ea",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 138,
+      "source": "14-08.jpg",
+      "original": "His character is not good from his behavior. He does not respecting other peoples.",
+      "correction": "His character is not good ^ [based on] his behavior. He does not respect^ other people^.",
+      "alternatives": [
+        "His character is not good based on his behavior. He does not respect other people.",
+        "Based on his behavior, I've concluded he has a poor character. He does not offer respect to others.",
+        "Based on his disrespect of others, I've concluded he has a poor character."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "9c7001918ba9acab43f98821bffd1208ef457fb56c824374fd1f3a1d70c9fd03",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 139,
+      "source": "14-09.jpg",
+      "original": "The choosing was difficult, but I decided her to be my wife since she have long hairs.",
+      "correction": "The ^ [choice] was difficult, but I decided ^ [she] ^ [would] be my wife since she ^ [has] long hair^.",
+      "alternatives": [
+        "The choice was difficult, but I decided she would be my wife since she has long hair.",
+        "The choice was a difficult one, but I determined the girl with the long hair would be my wife.",
+        "It was a difficult choice, but I settled on marrying the girl with the long hair."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c01693376cae0b60d41a958ecc1bdcab865574c6628ae565d37ea5ab3a3e7a2f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 140,
+      "source": "14-10.jpg",
+      "original": "I am more old beside all students in this class. But it doesn't care since I richest.",
+      "correction": "I am ^ [older than] all [the (other)] students in this class. But it doesn't ^ [matter] since I['m the] richest.",
+      "alternatives": [
+        "I am older than all the (other) students in this class. But it doesn't matter since I'm the richest.",
+        "While I'm the oldest student in this class, I don't mind since I'm also the richest.",
+        "I may be the oldest student in this class, but being the richest makes up for it."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c3636b232b1385539f867e0542d4b826c68a8dab2b4245113986f8f9872b11fb",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 141,
+      "source": "15-01.jpg",
+      "original": "I will treat you a beer since you cheered me week ago when I was strong depression.",
+      "correction": "I will treat you [to] a beer since you cheered me [up] [a] week ago when I was ^ [deeply] ^ [depressed].",
+      "alternatives": [
+        "I will treat you to a beer since you cheered me up a week ago when I was deeply depressed.",
+        "Since you cheered me up a week ago when I was deeply depressed, I'll buy you a beer."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "baa156a9984e8ccf5c97dd6e690f9e58f2717c2c07e1791cfaf4e8407923140d",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 142,
+      "source": "15-02.jpg",
+      "original": "Womens teacher are more better than mens teachers from my opinion. What you think?",
+      "correction": "Women^ teacher[s] are ^ better than men^ teachers ^ [in] my opinion. What [do] you think?",
+      "alternatives": [
+        "Women teachers are better than men teachers in my opinion.",
+        "Men teachers are inferior to women teachers in my opinion.",
+        "I feel that women make better teachers than men."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "527a9d0a24cfe03a156b8f4f7284071cdd68a2e926d75a518983f1bc1bb3c8d7",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 143,
+      "source": "15-03.jpg",
+      "original": "The way we are grown up effects to our attitudes how should we treating others.",
+      "correction": "The way we are ^ [brought] up ^ [affects] ^ our attitudes [on] how [we] should ^ treat^ others.",
+      "alternatives": [
+        "The way we are brought up affects our attitudes on how we should treat others.",
+        "Our upbringing influences our attitudes on how we should treat others.",
+        "The way we treat others is influenced by the way we were brought up."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "00422a909220ad92dfb8a67b567ee29211469025d1343d09a06b95dafa5483d2",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 144,
+      "source": "15-04.jpg",
+      "original": "If your father of your wife want you to visit at Christmas, you had better to do it.",
+      "correction": "If ^ [the] father of your wife want[s] you to visit at [| during] Christmas, you had better ^ do it.",
+      "alternatives": [
+        "If the father of your wife wants you to visit at | during Christmas, you had better do it.",
+        "If your father-in-law wants you to visit during Christmas, it's best that you do it.",
+        "It is in your best interests to visit your father-in-law during Christmas if he (so) asks."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "3d54934f199c216922ea42aeb67dad5ccd3192c431ccec8d0e36288ea6d6b24f",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 145,
+      "source": "15-05.jpg",
+      "original": "The economic has declining over a 15 years period. This fact make me depressing.",
+      "correction": "The ^ [economy] has [been] declining over a 15[-]year^ period. This fact make[s] me ^ [depressed].",
+      "alternatives": [
+        "The economy has been declining over a 15-year period. This fact makes me depressed.",
+        "The fact that the economy has been in decline over the past 15 years makes me depressed.",
+        "It's depressing that, for the past 15 years, the economy has been declining."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "043f895704ad4ab34998403da797cc58cceb87535450683c3b15bc870014b639",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 146,
+      "source": "15-06.jpg",
+      "original": "I think is better to work less hours, and to spend many time more for my family.",
+      "correction": "I think [it] is better ^ [for me to] work ^ [fewer] hours and to spend ^ [much more] time ^ [with] my family.",
+      "alternatives": [
+        "I think it is better for me to work fewer hours and to spend much more time with my family.",
+        "I feel I ought to work fewer hours and to devote more time to my family."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "33b7906982d6620a3d669496260e2b57eea7d73c9139729b70ff63638baf9980",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 147,
+      "source": "15-07.jpg",
+      "original": "He was very damaged in the accident, but he is recovered complete by end of June.",
+      "correction": "He was ^ [severely] ^ [injured] in the accident, but he ^ recovered complete[ly] by [the] end of June.",
+      "alternatives": [
+        "He was severely injured in the accident, but he recovered completely by the end of June.",
+        "He had severe injuries from the accident, but he had completely recovered by the end of June.",
+        "By the end of June, he had completely recovered from the severe injuries caused by the accident."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "1d157f100ca1e8d7885cb1f0b2f9601ea518cdb0149edda2b391661a65b02021",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 148,
+      "source": "15-08.jpg",
+      "original": "If you are stress, you can visit to Mexico and heal by beauty you will be finding there.",
+      "correction": "If you are stress[ed], you can visit ^ Mexico and [be] heal[ed] by [enjoying the] beauty you['ll] ^ find^ there.",
+      "alternatives": [
+        "If you are stressed, you can visit Mexico and be healed by enjoying the beauty you'll find there.",
+        "If you're stressed out, try visiting Mexico. Its beauty you'll find very therapeutic.",
+        "The beauty of Mexico has a therapeutic effect on anyone feeling stressed out."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "f874ea4e3a8280ea97f55f7b260f698cd196e4ec6957378f7d9fac02850c0232",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 149,
+      "source": "15-09.jpg",
+      "original": "I'm suggest you to tell every of your friends that you appreciating their friendship.",
+      "correction": "I^ suggest you ^ tell every [one] of your friends that you ^ [appreciate] their friendship.",
+      "alternatives": [
+        "I suggest you tell every one of your friends that you appreciate their friendship.",
+        "I suggest telling each of your friends that their friendship is much appreciated.",
+        "I advise you to tell all your friends that their friendship is greatly appreciated."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "49a2a8cbd699fa447aa9346b2c23a7848fa124eb854830ce5b072597a3f88c8c",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 150,
+      "source": "15-10.jpg",
+      "original": "In holidays, it is famous for many to back to hometown and enjoy times with families.",
+      "correction": "^ [On] holidays, it is ^ [common] for many to [go] back to [their] hometown[s] and enjoy time^ with [their] families.",
+      "alternatives": [
+        "On holidays, it is common for many to go back to their hometowns and enjoy time with their families.",
+        "It's common for many to return to their hometowns on holidays to spend time with their families.",
+        "Many (people) customarily head back to their hometowns on holidays to hang out with their families."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "89a4274617f7840746758e5a9a2bfd26fb3f62b3a917816e01dc02de96a56256",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 151,
+      "source": "16-01.jpg",
+      "original": "How you can have same age as your sister if you are not born same year with she?",
+      "correction": "How ^ can ^ [you be the] same age as your sister if you ^ [were] not born [the] same year ^ [as] she [was]?",
+      "alternatives": [
+        "How can you be the same age as your sister if you were not born the same year as she was?",
+        "How is it possible you and your sister are the same age if you were not born the same year?",
+        "If you and your sister were born in different years, how can you both be the same age?"
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "cfba8a13a6dd824cbe8313cf1f1d6274163da783e7ad09dca378241c67a84097",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 152,
+      "source": "16-02.jpg",
+      "original": "Most of time, I success at completing my works in office before end of evening.",
+      "correction": "Most of [the] time, I ^ [succeed] ^ [in] completing my work^ in [the] office before [the] end of [the] evening.",
+      "alternatives": [
+        "Most of the time, I succeed in completing my work in the office before the end of the evening.",
+        "I usually successfully finish my office work by the end of the evening.",
+        "I'm normally successful in finishing my work at the office by the end of the day."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "4ac500a3bf62e8283c5e91cfdbd18e437bb9474734b60d0124d28a8b69f03f6d",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 153,
+      "source": "16-03.jpg",
+      "original": "A few of peoples in my town mentioned about big taxes having bad effects.",
+      "correction": "A few ^ people^ in my town ^ [spoke] about [how] ^ [high] taxes [are] having ^ [a negative] effect^.",
+      "alternatives": [
+        "A few people in my town spoke about how high taxes are having a negative effect.",
+        "A few people in my town have mentioned the negative effects of high taxes.",
+        "Several residents of my hometown have complained about the negative effects of high taxes."
+      ],
+      "source_caret_count": 6,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "59ecbbf937c0f64993dc83e10e69d62b996e6cb96c79de02f719452414d43abe",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 154,
+      "source": "16-04.jpg",
+      "original": "Why temperature drop so sudden yesterday? Now I have to shopping for new jacket.",
+      "correction": "Why [did the] temperature drop so sudden[ly] yesterday? Now I have to shop^ for [a] new jacket.",
+      "alternatives": [
+        "Why did the temperature drop so suddenly yesterday? Now I have to shop for a new jacket.",
+        "Why was there a drop in the temperature yesterday? I now need to go shopping for a new jacket.",
+        "The drop in temperature yesterday convinced me that I need to buy a new jacket."
+      ],
+      "source_caret_count": 1,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "fe016910cb8d2e1a99e79a8c2c4da5e3c9c1c3be57f95f6aa96d26575b57a300",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 155,
+      "source": "16-05.jpg",
+      "original": "Which do you like red or blue? I'm liking blue better because it make me feeling calm.",
+      "correction": "Which do you like [better,] red or blue? I^ ^ [like] blue better because it make[s] me feel^ calm.",
+      "alternatives": [
+        "Which do you like better, red or blue? I like blue better because it makes me feel calm.",
+        "Is your preference red or blue? I prefer blue because it calms me."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "b46136e5e99c295f541f8b0d37ff3730857b07d7ddbc99134d1fd0c00a3fd751",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 156,
+      "source": "16-06.jpg",
+      "original": "Taxes now rise for past few years. I think government not making good tax law.",
+      "correction": "Taxes [have been] ^ [rising] for [the] past few years. I think [the] government ^ [isn't] making good tax law[s].",
+      "alternatives": [
+        "Taxes have been rising for the past few years. I think the government isn't making good tax laws.",
+        "Taxes have been rising over the past few years. I feel the government's tax laws are too burdensome.",
+        "I'm opposed to the government's oppressive tax laws, which have raised taxes over the past several years."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "6fa302a631c645e8e981439f2628a00b0d49ac06dbe755a6a901de5488ca5291",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 157,
+      "source": "16-07.jpg",
+      "original": "The product was unsuccess. I wonder what company try do now. Maybe they bankrupt.",
+      "correction": "The product was unsuccess[ful]. I wonder what [the] company [will] try [to] do now. Maybe they [will go] bankrupt.",
+      "alternatives": [
+        "The product was unsuccessful. I wonder what the company will try now. Maybe they will go bankrupt.",
+        "The product failed. I'm not sure what the company will try now. Perhaps they'll go bankrupt.",
+        "The product was a failure. It's not clear what the company will try now. They may file for bankruptcy."
+      ],
+      "source_caret_count": 0,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "a1e99e26307cde095a364016348cf6e27e581ce2941000b8cce9528650af40be",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 158,
+      "source": "16-08.jpg",
+      "original": "I announced about my engagement with my girlfriend. Every my friend were surprise.",
+      "correction": "I announced ^ my engagement ^ [to] my girlfriend. Every [one of] my friend[s] ^ [was] surprise[d].",
+      "alternatives": [
+        "I announced my engagement to my girlfriend. Every one of my friends was surprised.",
+        "I announced to my friends my engagement to my girlfriend. Every one of them was surprised."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "note": "The first example can be ambiguous: “to my girlfriend” identifies whom you are engaged to, but it can also sound as though she is the person hearing the announcement. The second alternative makes the audience clear.",
+      "source_sha256": "90682fac0412ebba07a8f2f5b7ff0480b1bdbbdd93d9655009cf291a7e18d80e",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 159,
+      "source": "16-09.jpg",
+      "original": "Why does Asian like sushi but not in other part of world? Is raw fish taste bad?",
+      "correction": "Why do^ Asian[s] like sushi but not [people] in other part[s] of [the] world? ^ [Does] raw fish taste bad?",
+      "alternatives": [
+        "Why do Asians like sushi but not people in other parts of the world? Does raw fish taste bad?",
+        "Why do Asians enjoy sushi but not people elsewhere? Is the taste of raw fish horrible?",
+        "Why do only Asians enjoy sushi? Do people in other parts of the world consider sushi unappetizing?"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "5d108316290cead569e5767de88d629915ab8c1e5ab0b1f9596c44631af0fd72",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 160,
+      "source": "16-10.jpg",
+      "original": "Is your opinion that the big price of Germany cars will increasing in future?",
+      "correction": "Is [it] your opinion that the ^ [high] price of German^ cars will increas[e]^ in [the] future?",
+      "alternatives": [
+        "Is it your opinion that the high price of German cars will increase in the future?",
+        "What do you think about the possibility that German cars will become even more expensive in the future?",
+        "Do you feel there is a possibility that expensive German cars will become even pricier in the future?"
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "76917cf702bfa4a55f2b1a116551e0f19f76bd75c66bb5d49fe462078a1f1248",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 161,
+      "source": "17-01.jpg",
+      "original": "I don't worry to have enough money when retirement. I think I win lottery soon.",
+      "correction": "I don't worry ^ [about] hav[ing]^ enough money ^ [for] retirement. I think I [will] win [the] lottery soon.",
+      "alternatives": [
+        "I don't worry about having enough money for retirement. I think I will win the lottery soon.",
+        "I'm not worried about having enough money to retire. I'll probably win the lottery soon.",
+        "Since I'll likely win the lottery soon, I'm not much worried about having a comfortable retirement."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "4f404100852b1e67db40f0beb1e17304939f006ffbd7b270208c095f0545ca42",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 162,
+      "source": "17-02.jpg",
+      "original": "Many France people have habit to smoke during drinking coffee. But I don't like.",
+      "correction": "Many ^ [French] people have [the] habit ^ [of smoking] ^ [while] drinking coffee. But I don't like [it].",
+      "alternatives": [
+        "Many French people have the habit of smoking while drinking coffee. But I don't like it.",
+        "I don't like the habit of many French people of smoking while drinking coffee.",
+        "I'm not very fond of the French habit of smoking while drinking coffee."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "407734c18157d46d9d9d4c7ed0dee744ada29302106ad60d11a8fc6723cd66c6",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 163,
+      "source": "17-03.jpg",
+      "original": "I try accessed to the internet yesterday, but no success because many internet traffic.",
+      "correction": "I ^ [tried to] access^ ^ the internet yesterday, but [had] no success because [of] ^ [high] internet traffic.",
+      "alternatives": [
+        "I tried to access the internet yesterday, but had no success because of high internet traffic.",
+        "I unsuccessfully tried to access the internet yesterday. There was too much digital traffic.",
+        "Because there was excessive digital traffic yesterday, I was unable to gain access to the internet."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b6af895249e94544da31b205f1790d687cb21545bb23f70fab16eb876f2228d5",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 164,
+      "source": "17-04.jpg",
+      "original": "Do you know good place for eating dinner. Its already 8 pm, and I very much hungry.",
+      "correction": "Do you know [(of) a] good place ^ [to eat] dinner[?]^ It[']s already 8 pm, and I['m] very ^ hungry.",
+      "alternatives": [
+        "Do you know (of) a good place to eat dinner? It's already 8 pm, and I'm very hungry.",
+        "Do you have any recommendations for dinner? It's already 8 pm, and I'm starving."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "d895f5bcc3a9d432e26b6d205a1fed483e49fa261dc20f8bc9dd24a46d4966b1",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 165,
+      "source": "17-05.jpg",
+      "original": "How you do when anybody says you a name like \"stupid\"? You insult back to them?",
+      "correction": "^ [What do] you do when ^ [someone] ^ [calls] you a bad name like \"stupid\"? ^ [Do you] insult [them] back^?",
+      "alternatives": [
+        "What do you do when someone calls you a name like \"stupid\"? Do you insult them back?",
+        "When someone calls you a name such as \"stupid\", do you return the insult?"
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "4f5c161905e43429c89c9aa7df4a97b40a82f61817bfeacd46406a125176ffc2",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 166,
+      "source": "17-06.jpg",
+      "original": "What is the important matter to think on this issue? I suggest us to make clear this.",
+      "correction": "What is the important ^ [consideration | factor] on this issue? I suggest ^ [we] make [this] clear^.",
+      "alternatives": [
+        "What is the most important consideration | factor on this issue? I suggest we make this clear.",
+        "I suggest we clarify what the most important consideration | factor is on this issue.",
+        "I feel we need to clarify what considerations | factors are most important on this issue."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "63bf93124e963f5201432f18a8e59e56305189ace083a8adb244b50afea70300",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 167,
+      "source": "17-07.jpg",
+      "original": "There was case at Portland that a women prohibited her husband to leave their home.",
+      "correction": "There was [a] case ^ [in] Portland ^ [in which] a wom[a]n prohibited her husband ^ [from leaving] their home.",
+      "alternatives": [
+        "There was a case in Portland in which a woman prohibited her husband from leaving their home.",
+        "There was an incident in Portland in which a woman forbade her husband to leave their home.",
+        "In one incident in Portland, a woman refused to allow her husband to leave their home."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "145e73096ca00ca5023496365cdeb003f1438f0b8df1523b7ce4851bac66c214",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 168,
+      "source": "17-08.jpg",
+      "original": "Since you always success, I expect you to do well for the promotion of new product.",
+      "correction": "Since you [are] always success[ful], I expect you ^ [will] do well ^ [in] the promotion of [the] new product.",
+      "alternatives": [
+        "Since you are always successful, I expect you will do well in the promotion of the new product.",
+        "Since you always succeed, I anticipate (that) you'll do well promoting the new product.",
+        "Based on your past successes, I'm sure your promotion of the new product will go well."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "53b50396ce210a9ca9b7c96ba1a91f96e4076394834d4414885c2d8c9a9d982a",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 169,
+      "source": "17-09.jpg",
+      "original": "Sushi doesn't popular in German. I prefer you to don't challenge to selling sushi there.",
+      "correction": "Sushi ^ [isn't] popular in German[y]. I prefer [| suggest] you ^ [not try] selling sushi there.",
+      "alternatives": [
+        "Sushi isn't popular in Germany. I prefer | suggest you not try selling sushi there.",
+        "Sushi is unpopular among Germans. I suggest you avoid trying to sell sushi there.",
+        "Because sushi is unpopular in Germany, you may not want to try selling sushi there."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "6ad2cfcb3b7e720236f8889be3826cbc170306a944ba6cff2815a9d7be1fd570",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 170,
+      "source": "17-10.jpg",
+      "original": "They decided to promoting new product at companies which having large workforce.",
+      "correction": "They decided to ^ [promote the] new product ^ [to] companies ^ [that] hav[e]^ [a] large workforce.",
+      "alternatives": [
+        "They decided to promote the new product to companies that have a large workforce.",
+        "They decided to start promoting the new product to companies with a large workforce.",
+        "They decided to focus their promotion of the new product on companies with a large workforce."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "d1087a228837641ea65d338e3ae094f1c6a9992e2fceb2b3bb31c6cfa9bf9925",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 171,
+      "source": "18-01.jpg",
+      "original": "How do you think we make the product more success? Should we make price bigger?",
+      "correction": "How do you think we [can] make the product more [of a] success? Should we ^ [increase the] price^?",
+      "alternatives": [
+        "How do you think we can make the product more of a success? Should we increase the price?",
+        "What can we do to make the product more successful? How about increasing the price?",
+        "How might we make the product more successful? Would increasing the price work?"
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "4e7a4bc97d4c875cf4bfca37b87db644886d1c9564ea7abb48c854b2ad67553b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 172,
+      "source": "18-02.jpg",
+      "original": "I do camping when I feeling I need refresh air. I enjoying watching the stars in night.",
+      "correction": "I ^ [go] camping when[ever] I feel^ I need refresh[ing] air. I enjoy^ watching the stars ^ [at] night.",
+      "alternatives": [
+        "I go camping whenever I feel I need refreshing air. I enjoy watching the stars at night.",
+        "Whenever I feel I need refreshing air, I go camping. It's enjoyable to watch the stars at night."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "46ee00ca1943db787d5cc0f1d449b63cc676338e042bd2ad3ea0d878bdcd41c3",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 173,
+      "source": "18-03.jpg",
+      "original": "You can get your good condition if exercise every daily. I lost my weight 5 kilograms.",
+      "correction": "You can get ^ [in shape] if [you] exercise ^ daily. I lost ^ 5 kilograms [(through exercise)].",
+      "alternatives": [
+        "You can get in shape if you exercise daily. I lost 5 kilograms (through exercise).",
+        "If you exercise daily, you'll get fit. I lost 5 kilograms (by exercising).",
+        "With regular daily exercise, you'll be able to slim down. I dropped 5 kilograms by doing so."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b03f98a20a5ec67d25103924b2ef111e9c854c1699d85151ed13cfa320f44ab4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 174,
+      "source": "18-04.jpg",
+      "original": "If star fall from sky, and you are wishing, you will come true your wish, do you know?",
+      "correction": "If [a] star fall[s] from [the] sky, and you ^ [make a] wish^, ^ your wish [will come true]^ [. Did] you know [this]?",
+      "alternatives": [
+        "If a star falls from the sky, and you make a wish, your wish will come true. Did you know this?",
+        "If you see a shooting star, and you make a wish, your wish will be granted. Have you heard this?",
+        "Have you heard that, whenever you see a falling star and make a wish, your wish will come true?"
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "76c80974454bb9bf7416dde2ca0cea4858d84da892e95d1da06c1a5d8af94316",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 175,
+      "source": "18-05.jpg",
+      "original": "I absented class because having sick last week. Can you tell what homeworks is?",
+      "correction": "I [was] absent^ [from] class because ^ [I was] sick last week. Can you tell [me] what [the] homework^ is?",
+      "alternatives": [
+        "I was absent from class because I was sick last week. Can you tell me what the homework is?",
+        "Since I missed last week's class due to being sick, can you tell me the homework assignment?",
+        "Because I was sick last week, I missed our class. Could you tell me the homework assignment?"
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "17c3425df159f601f4def7bc97879f2c10fced9071e862fa1f09d059ffd6284e",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 176,
+      "source": "18-06.jpg",
+      "original": "There was case at 2015 that a employer did not pay his staffs for overwork.",
+      "correction": "There was [a] case ^ [in] 2015 ^ [in which] a[n] employer did not pay his staff^ for ^ [overtime].",
+      "alternatives": [
+        "There was a case in 2015 in which an employer did not pay his staff for overtime.",
+        "In a 2015 case, an employer failed to pay his staff for their overtime work."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "316532df630db16c37f38dc54962468111d5e2bd869ccba5e0f9e92825ca8025",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 177,
+      "source": "18-07.jpg",
+      "original": "I was considering to live at Texas then I can go to town by my horse and be cowboy.",
+      "correction": "I was considering ^ [living] ^ [in] Texas ^ [so] I [could] go to town by ^ horse and be [a] cowboy.",
+      "alternatives": [
+        "I was considering living in Texas so I could go to town by horse and be a cowboy.",
+        "I was contemplating whether I should live in Texas. I could then go to town by horse and be a cowboy.",
+        "I was pondering a move to Texas so I could travel to town on my horse and be a cowboy."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "af81edf9d916405bcd51edb25fae84986cc8e0b6287d5eeca456c67aa397d7b5",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 178,
+      "source": "18-08.jpg",
+      "original": "The tennis star have played the game so impressingly so that every his fan cheering.",
+      "correction": "The tennis star ^ [has] played the game so ^ [impressively] ^ that ^ [all of] his fan[s] [are] cheering.",
+      "alternatives": [
+        "The tennis star has played the game so impressively that all of his fans are cheering.",
+        "The tennis star has impressed his fans so much with his performance that they are all now cheering.",
+        "The performance of the tennis star has been so impressive that all of his fans are now cheering."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "0f2f66240345e3afe9cb99ed0bec445b21346e8121749be4df6a44a21fbc4505",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 179,
+      "source": "18-09.jpg",
+      "original": "Yankees winned 8 of 10 of games recently. Do you think their successing continue?",
+      "correction": "[The] Yankees ^ [have won] 8 [(out)] of 10 of [their recent] games^. Do you think their ^ [success will] continue?",
+      "alternatives": [
+        "The Yankees have won 8 (out) of 10 of their recent games. Do you think their success will continue?",
+        "With the Yankees winning 8 (out) of 10 of their most recent games, do you think they'll continue to win?",
+        "Based on the recent 8 to 2 win-loss record of the Yankees, do you think their success will continue?"
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e3b1a5831f4244138bdcd28cbbfae38c0a4b0cf059608087fcbbad149aeb3883",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 180,
+      "source": "18-10.jpg",
+      "original": "The Apple new phone is being very famous recently. I have plan of purchasing it.",
+      "correction": "The [new] Apple ^ phone ^ [has been] very ^ [popular] recently. I have [a] plan ^ [to purchase one].",
+      "alternatives": [
+        "The new Apple phone has been very popular recently. I have a plan to purchase one.",
+        "The new Apple phone has increased in popularity recently. I'm planning to purchase one.",
+        "The popularity of the new Apple phone has been recently increasing. I plan to buy one."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "47f7f7cbc9c976d97fa0119a75f075c16c8b21368c412c794ea99c814e487077",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 181,
+      "source": "19-01.jpg",
+      "original": "I'd like introduce you 3 reason for visiting to my hometown Plymouth near to Boston.",
+      "correction": "I'd like [to] introduce [(to] you[)] 3 reason[s] ^ [to visit] my hometown [(of)] Plymouth near ^ Boston.",
+      "alternatives": [
+        "I'd like to introduce (to you) 3 reasons to visit my hometown (of) Plymouth near Boston.",
+        "I'd like to present 3 reasons to visit my hometown of Plymouth, not far from Boston.",
+        "I'd like to persuade you to visit Plymouth, my hometown close to Boston. I'll give you 3 reasons."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "01bb41ab833b2e848100235a3c984be72052c83e8e5cd4017cfe3f221c55ceb3",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 182,
+      "source": "19-02.jpg",
+      "original": "You can arrive to my hometown by one hour in train. It has convenient for visit.",
+      "correction": "You can arrive ^ [at] my hometown ^ [in] one hour ^ [by] train. It ^ [is] convenient ^ [to] visit.",
+      "alternatives": [
+        "You can arrive at my hometown in one hour by train. It is convenient to visit.",
+        "You can reach my hometown in less than an hour by train. It is conveniently located.",
+        "My hometown is so conveniently located that you can reach it in less than an hour by train."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c025683e444b7aad538ee7c9cfb0cd0202226f61433c6f14964aa1bd32c0273b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 183,
+      "source": "19-03.jpg",
+      "original": "Zoo in Paris is very cheaper less than zoo in London, and there is much more animal.",
+      "correction": "^ [The zoo] in Paris is ^ [much] cheaper ^ than [the] zoo in London, and ^ [it has many] more animal[s].",
+      "alternatives": [
+        "The zoo in Paris is much cheaper than the zoo in London, and it has many more animals.",
+        "It is much less expensive to visit the zoo in Paris than the zoo in London. Plus, it has many more animals.",
+        "Not only is the Paris zoo less expensive than the London zoo, it also has many more animals."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "314bbae0fd2be616b99255fd98cb43deeede12a0fe41aba28ffe723b5df1c1a4",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 184,
+      "source": "19-04.jpg",
+      "original": "I expect you enjoy back to your hometown at holiday for visiting to your family.",
+      "correction": "I expect you['ll] enjoy [going] back to your hometown ^ [during the] holiday ^ [to visit] ^ your family.",
+      "alternatives": [
+        "I expect you'll enjoy going back to your hometown during the holiday to visit your family.",
+        "I'm sure your trip back to visit your family during the holiday will be enjoyable.",
+        "I have no doubt you'll have an enjoyable time on your trip back to visit your family during the holiday."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "86f5b17b9b49f46bce482b603e1cbed90050c30385f674b6aa57ab9d45eddd57",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 185,
+      "source": "19-05.jpg",
+      "original": "I confident you decide to visit to USA by three reason I gave in my speech.",
+      "correction": "I [am] confident you [will] decide to visit ^ [the] USA ^ [for the] three reason[s] I['ve] ^ [given] in my speech.",
+      "alternatives": [
+        "I am confident you will decide to visit the USA for the three reasons I've given in my speech.",
+        "I have confidence you'll visit the USA based on the three reasons I've presented.",
+        "Based on the three reasons I've given today, I'm sure you'll now plan a trip to the USA."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "b6afa40ebc85fc468c428f434f455998241e01e2c83058a85ea65d60358e3201",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 186,
+      "source": "19-06.jpg",
+      "original": "Next, I explain danger mountains near to my hometown that all of visitor enjoying view.",
+      "correction": "Next, I['ll] ^ [describe the] danger[ous] mountains near ^ my hometown that all ^ visitor[s] [enjoy] view[ing].",
+      "alternatives": [
+        "Next, I'll describe the dangerous mountains near my hometown that all visitors enjoy viewing.",
+        "I'll next describe the dangerous mountains near my hometown that are enjoyably viewed by all visitors."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "da4ad14552b7dc0f0f74e41ae128cc047e18582ed65b8250e98971da8f3e0240",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 187,
+      "source": "19-07.jpg",
+      "original": "There so much good place to shopping here, I am spending big moneys every time I go.",
+      "correction": "There [are] so ^ [many] good place[s at which] to shop^ here^ [.] I ^ spend^ ^ [much] money^ every time I ^ [come].",
+      "alternatives": [
+        "There are so many good places at which to shop here. I spend much money every time I come.",
+        "Here I've found so many good places at which to shop. I spend too much every time I come.",
+        "There are so many good places here at which to shop that I overspend every time I come."
+      ],
+      "source_caret_count": 8,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "77b1214d1629517788b0ddd1868289f3c7445a1471fb5e59cf0ca7fa7a23a3cc",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 188,
+      "source": "19-08.jpg",
+      "original": "I have gave you three points to visit at Tokyo. It is convenience, fun and excited.",
+      "correction": "I have ^ [given] you three ^ [reasons] to visit ^ Tokyo. It is convenien[t]^, fun and excit[ing]^.",
+      "alternatives": [
+        "I have given you three reasons to visit Tokyo. It is convenient, fun and exciting.",
+        "I have offered three reasons to visit Tokyo. Tokyo offers convenience, fun and excitement."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "09b0da584ad85ca35141eaabb66695c9f38bf286b6fe8c2262253f92be1cb51e",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 189,
+      "source": "19-09.jpg",
+      "original": "You are not needing to worry about safe in my hometown. Because it have few crime.",
+      "correction": "You ^ [do] not need^ to worry about [being] safe in my hometown^ [because] it ^ [has] few crime[s].",
+      "alternatives": [
+        "You do not need to worry about being safe in my hometown because it has few crimes.",
+        "You shouldn't worry about safety in my hometown because it has a low crime rate.",
+        "I wouldn't worry about safety in my hometown since it has little criminal activity."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "c92736960533cbea017be644d2cdaea8770ca44d0f37bfd41af17a4622825c56",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 190,
+      "source": "19-10.jpg",
+      "original": "It is difficulty to grow child in Japan because expensive. So it is very stress for parent.",
+      "correction": "It is difficult^ to ^ [raise a] child in Japan because [it's] expensive. So it is very stress[ful] for parent[s].",
+      "alternatives": [
+        "It is difficult to raise a child in Japan because it's expensive. So it is very stressful for parents.",
+        "Raising children is difficult in Japan due to child-rearing expenses. This makes parenting stressful.",
+        "Raising a child in Tokyo is difficult due to the related expenses. Japanese parents are consequently stressed out."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "1c501f7f1813f451db95cd8464cab4dadf04bae3c82901cbba748bb00f9a8e3c",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 191,
+      "source": "20-01.jpg",
+      "original": "For finding boyfriend, I suggest you to go for drinking at place having so many man.",
+      "correction": "^ [To find a] boyfriend, I suggest you ^ go ^ drinking at place[s] ^ [that have] many ^ [men].",
+      "alternatives": [
+        "To find a boyfriend, I suggest you go drinking at places that have many men.",
+        "If you're looking for a boyfriend, I suggest drinking at places in which there are many men.",
+        "The best way to find a boyfriend is to frequent places in which there are many men."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "43e22438d02227f05908e854804065682f35da866a7d2b61f6105a00d3c69339",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 192,
+      "source": "20-02.jpg",
+      "original": "These reasons are my recommendation for you should learn to talk English fluency.",
+      "correction": "These ^ are my recommendation[s] for you [to] ^ learn to ^ [speak] English fluen[tly]^.",
+      "alternatives": [
+        "These are my recommendations for you to learn to speak English fluently.",
+        "These are my suggestions that should help you learn to become fluent in English.",
+        "I'm offering these suggestions to assist you in becoming fluent in English."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "2f14d2f8a337ca4cf08fe6170f9242d4daf99ad440bb691e534f7ab7313e8549",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 193,
+      "source": "20-03.jpg",
+      "original": "You should take care about danger place overseas where there are much crowd.",
+      "correction": "You should take care ^ [to avoid] danger[ous] place[s] overseas ^ [that are very] crowd[ed].",
+      "alternatives": [
+        "You should take care to avoid dangerous places overseas that are very crowded.",
+        "I advise you to avoid dangerous places overseas in which there are large crowds."
+      ],
+      "source_caret_count": 2,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "10ce5afca01475aa8244637b6cb10021aa8efc053f8af68dec8cecc5696da84b",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 194,
+      "source": "20-04.jpg",
+      "original": "I considered measure how to not mistake when I do writing English emailing.",
+      "correction": "I considered measure[s] ^ to ^ [avoid] mistake[s] ^ [while] writing English email[s]^.",
+      "alternatives": [
+        "I considered measures to avoid mistakes while writing English emails.",
+        "I thought about ways I could avoid making mistakes when I write English emails.",
+        "I brainstormed possible methods of eliminating mistakes when I write English emails."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "e8a76d542f9097050159ac814705f4436dd12be4063afbbef5aab80363fdf4c6",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 195,
+      "source": "20-05.jpg",
+      "original": "Why I said everyone does not have a phone is because my uncle never having a phone.",
+      "correction": "^ [The reason] I said [not] everyone ^ [has] a phone is ^ [that] my uncle never ^ [had] a phone.",
+      "alternatives": [
+        "The reason I said not everyone has a phone is that my uncle never had a phone.",
+        "I claimed (that) not everyone has a phone because I know my uncle never had a phone.",
+        "Based on the fact my uncle never had a phone, I claimed not everyone has a phone."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "564c9caeb4aa030fb1acc8bc5f43a804ce7adf3162905ef2a6719b14623c0644",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 196,
+      "source": "20-06.jpg",
+      "original": "School is uneasy. Every children is challenging to do high score on every tests.",
+      "correction": "School is ^ [not easy]. Every ^ [child] is ^ [trying] to ^ [make a] high score on every test^.",
+      "alternatives": [
+        "School is not easy. Every child is trying to make a high score on every test.",
+        "School is difficult. Every student is trying to score high on every test.",
+        "School isn't easy. All students are doing their best to score high on every exam."
+      ],
+      "source_caret_count": 5,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "fd31038d6b5a0413f1ee816069aedd5650d81a779c314cefd541c93874daa055",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 197,
+      "source": "20-07.jpg",
+      "original": "It has passed 5 year since I joined to this department. I proud to being a staff here.",
+      "correction": "It has ^ [been] 5 year[s] since I joined ^ this department. I['m] proud to be^ a staff [member] here.",
+      "alternatives": [
+        "It has been 5 years since I joined this department. I'm proud to be a staff member here.",
+        "I joined this department 5 years ago. I'm proud of being a staff member here."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "note": "A staff is similar to a team or a family. It is not one person; it is a group that contains many members.",
+      "source_sha256": "73c8303fcb42c20de75acd76a4a268df7d1a4ab111439521dbb357d24ea881f8",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 198,
+      "source": "20-08.jpg",
+      "original": "While I was grow up in overseas at France, I seldom back to there because too expensive.",
+      "correction": "While I ^ [grew] up ^ overseas ^ [in] France, I seldom [go] back ^ there because [it's] too expensive.",
+      "alternatives": [
+        "While I grew up overseas in France, I seldom go back there because it's too expensive.",
+        "Though I grew up overseas in France, I rarely return because it's too expensive.",
+        "I rarely return to France, even though I grew up there, because of its high cost of living."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "ee445a6fa53e8adb0cad002efc566600779d737203ec6e111b7934b8f8c850a2",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 199,
+      "source": "20-09.jpg",
+      "original": "I doesn't matter if I absent class because I finish many homework. Teacher now happy.",
+      "correction": "I[t] doesn't matter if I ^ [miss] class because I['ve] finish[ed] ^ [much] homework. ^ [The teacher is] now happy.",
+      "alternatives": [
+        "It doesn't matter if I miss class because I've finished much homework. The teacher is now happy.",
+        "It's not a problem if I'm absent from class since I've done much homework. The teacher is satisfied."
+      ],
+      "source_caret_count": 3,
+      "source_alternative_count": 2,
+      "reviewed": true,
+      "source_sha256": "c97a1a918480610c2661acfa53cb59b33d9c6ab659ff36047aa77836da8662fd",
+      "reviewed_date": "2026-11-18"
+    },
+    {
+      "number": 200,
+      "source": "20-10.jpg",
+      "original": "I concern about I can take holiday by reason that I having too much works to finish.",
+      "correction": "I['m] concern[ed] ^ [whether] I can take [a] holiday ^ [since] I ^ [have] too much work^ to finish.",
+      "alternatives": [
+        "I'm concerned whether I can take a holiday since I have too much work to finish.",
+        "The amount of work I need to finish has me worried that I'll be unable to take a vacation.",
+        "I'm afraid I won't be able to finish all my work. I'm therefore worried I won't be able to take a holiday."
+      ],
+      "source_caret_count": 4,
+      "source_alternative_count": 3,
+      "reviewed": true,
+      "source_sha256": "75ce8de154cfa6199c9810d5ada3cd49d54624b7fa044380f66bcbd0449c6240",
+      "reviewed_date": "2026-11-18"
+    }
+  ]
+}

@@ -2,7 +2,8 @@
 
 Square brackets in correction strings identify blue additions; ^ is the red
 deletion marker used by the original worksheets. Original learner errors remain
-intentional. All alternatives are correct examples, never quiz distractors.
+intentional. The first answer is the clean corrected version; the remaining
+answers are alternatives. All are correct examples, never quiz distractors.
 """
 import html
 import json
@@ -58,19 +59,21 @@ def section_html():
         items = []
         for item in exercises[start:start+10]:
             number = item['number']
-            alternatives = ''.join(f'<li>{html.escape(text)}</li>' for text in item['alternatives'])
+            clean_version = html.escape(item['alternatives'][0])
+            alternatives = ''.join(f'<li>{html.escape(text)}</li>' for text in item['alternatives'][1:])
             note = f'<p class="pg-note">{html.escape(item["note"])}</p>' if item.get('note') else ''
             items.append(f'''<article class="pg-exercise" id="power-grammar-{number}" aria-labelledby="pg-title-{number}">
 <h3 id="pg-title-{number}">Exercise {number}</h3>
 <p class="pg-original">{html.escape(item['original'])}</p>
 <details class="pg-answer"><summary>Corrections and alternative sentences<span class="sr-only"> for exercise {number}</span></summary>
 <div class="pg-answer-content"><h4>Marked correction</h4><p class="pg-correction">{marked_text(item['correction'])}</p>
+<ul class="pg-alternatives pg-clean-version"><li><strong>{clean_version}</strong></li></ul>
 <h4>Alternative correct sentences</h4><ul class="pg-alternatives">{alternatives}</ul>{note}</div></details></article>''')
         groups.append(f'''<details class="pg-set" id="power-grammar-set-{start//10+1}"><summary><span>Set {start//10+1}</span><span class="pg-range">Exercises {start+1}–{start+10}</span></summary>
 <div class="pg-set-content">{''.join(items)}</div></details>''')
     return f'''<section id="power-grammar" class="power-grammar" aria-labelledby="power-grammar-heading">
 <div class="pg-heading"><p class="eyebrow">Find it. Fix it. Say it another way.</p><h2 id="power-grammar-heading">Power Grammar</h2>
-<p>200 sentence-correction exercises in 20 sets. Open a set, try correcting each sentence, then expand the answer to compare it with the marked correction and every alternative correct sentence.</p></div>
+<p>200 sentence-correction exercises in 20 sets. Open a set, try correcting each sentence, then expand the answer to see the marked correction, a clean corrected version in bold, and alternative correct sentences.</p></div>
 <p class="pg-legend"><span><span class="pg-caret" aria-hidden="true">^</span> Red caret: removed wording</span><span><span class="pg-added">Blue text</span>: added or replacement wording</span></p>
 <p class="pg-help">The first sentence contains deliberate errors. A vertical bar (|) separates acceptable word choices; parentheses show optional wording. Alternatives may change the emphasis or phrasing; more than one way of expressing the idea can be correct.</p>
 <div class="pg-sets">{''.join(groups)}</div></section>'''

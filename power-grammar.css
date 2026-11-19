@@ -14,8 +14,7 @@
 .pg-range { margin-left: 1rem; color: #536273; font-size: .9375rem; font-weight: 400; }
 .pg-set[open] > summary { border-bottom: 1px solid #dce3ea; background: #f1f6fb; border-radius: .75rem .75rem 0 0; }
 .pg-set-content { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
-.pg-exercise { margin: 0; padding: 1.75rem 0; scroll-margin-top: 6rem; }
-.pg-exercise + .pg-exercise { border-top: 1px solid #dce3ea; }
+.pg-exercise { margin: 1.5rem 0; padding: 1.25rem 1.25rem 1.5rem; border-left: 6px solid #8aa3bd; border-bottom: 4px solid #445160; scroll-margin-top: 6rem; }
 .pg-exercise h3 { margin: 0 0 .75rem; font-size: 1rem; color: #445160; }
 .pg-original, .pg-correction { font-family: Georgia,'Times New Roman',serif; font-size: 1.375rem; line-height: 1.8; margin: 0 0 1rem; overflow-wrap: anywhere; }
 .pg-answer { margin: 0; }
@@ -33,6 +32,7 @@
   .power-grammar, .pg-set, .pg-exercise, #grammar-topics { scroll-margin-top: 10rem; }
   .pg-sets { grid-template-columns: minmax(0,1fr); }
   .pg-set-content { padding: 0 1rem; }
+  .pg-exercise { padding: 1rem .875rem 1.25rem; }
   .pg-set > summary { padding: 1rem; }
   .pg-original, .pg-correction { font-size: 1.25rem; }
   .pg-alternatives li { font-size: 1.125rem; }

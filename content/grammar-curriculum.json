@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-18",
+  "revision": "2026-11-20",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -7453,6 +7453,132 @@
         "https://dictionary.cambridge.org/grammar/british-grammar/have-something-done",
         "https://learnenglish.britishcouncil.org/comment/181128",
         "https://english-dashboard.pearson.com/CDN/ProdStore/GOLDXP/B1P/resources/10_Students_Book_Reference/Grammar_File/Gold_Exp_2e_B1P_GrammarFiles.pdf"
+      ]
+    },
+    {
+      "number": 64,
+      "title": "Do you mind? Permission, requests, and replies",
+      "level": "B1",
+      "category": "Requests and meaning",
+      "goal": "Choose a polite mind question by who will act, and explain why a reply of no can express agreement.",
+      "rules": [
+        "Here, mind means being bothered by something. A mind question checks for an objection instead of directly demanding an action. In reply, “No, not at all” means there is no objection: it can give permission or accept a request. To decline, make the problem clear: “I'm afraid I need that chair.” A bare yes or no can be misunderstood, so add words that make your intention explicit.",
+        "Compare “Do you mind if I move this chair?” with “Would you mind moving this chair?” In the first, I is the subject of move: I want permission to act. In the second, I ask you to move it. After mind, the -ing form names the activity being considered; this verb takes moving, not to move. This is a pattern of mind, not a rule for every verb. Naming another person changes the actor: “Do you mind me moving this chair?” asks about my action.",
+        "The contrast is not a rigid do-versus-would rule. “Do you mind carrying this box?” also requests an action. “Would you mind if I moved this chair?” also asks permission; moved makes this proposed action more tentative, not past in time. Would you mind is generally a more polite request form, but tone and context still matter. Use the whole sentence to identify the actor and the intended request."
+      ],
+      "cards": [
+        {
+          "label": "I ASK PERMISSION",
+          "example": "Do you mind if I move this chair?",
+          "note": "I would move the chair. I ask whether my action would bother you."
+        },
+        {
+          "label": "I ASK YOU TO ACT",
+          "example": "Would you mind moving this chair?",
+          "note": "You would move the chair. The -ing form names the activity I ask you to do."
+        },
+        {
+          "label": "NO OBJECTION",
+          "example": "No, not at all. Go ahead.",
+          "note": "I do not mind your action. In response to a request for permission, this lets you proceed."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "In “Do you mind if I move this chair?”, who is proposing to move the chair?",
+          "options": [
+            {
+              "text": "The person being asked.",
+              "correct": false,
+              "feedback": "The question asks about your reaction, but I is the subject of move. The speaker proposes to move the chair."
+            },
+            {
+              "text": "The person speaking.",
+              "correct": true,
+              "feedback": "If I move identifies the speaker as the actor. The speaker asks whether that action would bother the listener."
+            },
+            {
+              "text": "An unnamed third person.",
+              "correct": false,
+              "feedback": "The actor is named by I. No third person is being asked to move the chair."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete the request: “Would you mind ___ these bags for a moment?”",
+          "options": [
+            {
+              "text": "to watch",
+              "correct": false,
+              "feedback": "Mind takes an -ing form for the activity: watching. A to-infinitive does not fit this verb pattern."
+            },
+            {
+              "text": "watch",
+              "correct": false,
+              "feedback": "Watch is the base form. Would is followed by mind, and the activity after mind needs the -ing form watching."
+            },
+            {
+              "text": "watching",
+              "correct": true,
+              "feedback": "Watching names the activity the listener is asked to do. The pattern is would you mind + -ing."
+            }
+          ]
+        },
+        {
+          "prompt": "You ask, “Do you mind if I use this desk?” The reply is “No, not at all. Go ahead.” What does it mean?",
+          "options": [
+            {
+              "text": "You have permission to use the desk.",
+              "correct": true,
+              "feedback": "No answers the question about an objection: the listener does not mind. Go ahead confirms permission."
+            },
+            {
+              "text": "You must not use the desk.",
+              "correct": false,
+              "feedback": "No does not reject your proposed action here. It denies having an objection, and Go ahead confirms that you may proceed."
+            },
+            {
+              "text": "You are asking the listener to use the desk.",
+              "correct": false,
+              "feedback": "If I use makes you the proposed user of the desk. The reply permits your action; it does not change the actor."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You want a nearby person to carry a box for you. Choose the grammatical request that asks that person to do the carrying.",
+        "options": [
+          {
+            "text": "Do you mind if I carry this box?",
+            "correct": false,
+            "feedback": "This is grammatical, but I carry asks permission for your own action. You want the other person to carry the box."
+          },
+          {
+            "text": "Would you mind carrying this box for me?",
+            "correct": true,
+            "feedback": "The listener is asked to carry the box. Carrying names the requested activity after mind, and would makes the request less direct."
+          },
+          {
+            "text": "Would you mind to carry this box for me?",
+            "correct": false,
+            "feedback": "The intended actor is appropriate, but mind does not take to carry in this pattern. Use carrying."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-64-do-you-mind-student-workbook.pdf",
+        "concept-64-do-you-mind-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-20",
+      "related": [
+        45,
+        51,
+        59
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/mind",
+        "https://dictionary.cambridge.org/grammar/british-grammar/requests",
+        "https://learnenglishteens.britishcouncil.org/grammar/b1-b2-grammar/can-could-would-invitations-offers-requests-permission"
       ]
     }
   ],

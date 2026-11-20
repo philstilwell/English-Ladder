@@ -1,0 +1,794 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-20",
+  "release_iso": "2026-11-20T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Thu, 19 Nov 2026 23:33:51 GMT",
+    "retrieved_at": "2026-11-20T03:34:59.346334+00:00",
+    "title": "Anthropic becomes one of world's most valuable public companies in stock market debut",
+    "summary": "Anthropic is the first purely AI company to be publicly listed, creating a test for the entire industry.",
+    "evidence_text": "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).\nIt represents a new way of using computers that has led to the rapid rise of Anthropic, which started just five years ago and is best known as the maker of the popular AI chatbot Claude.\nAnthropic's shares flew past its allocation price of $83 each , showing there was plenty of excitement around AI.\nIn just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17.\nSome investors said Anthropic's debut seemed to be a success, as shares rose roughly 17% during the day, but the broader tech market did not perform as well.\nAnthropic is the first purely AI company to be publicly listed, creating a test for the entire industry.\nThe artificial intelligence (AI) company's Thursday debut on the Nasdaq stock exchange was a crucial test for the industry, given the huge amount of money being poured into advancing the technology.\nThe buildout happening around this era of AI is among the most expensive endeavours in the history of technology, with more than $1 trillion being spent in the last year alone by a handful of major tech companies.\nThe speed at which investment has grown has led to ongoing concerns of a financial bubble.\nAs the first purely AI company to go public, Anthropic will almost certainly see significant swings in price on the stock market going forward, according to Ben Barringer, who leads technology research at Quilter Cheviot.\n\"There's no obvious peer to compare it to,\" Neil Wilson, an investor strategist at Saxo UK, said.\nOne of those things is the prospect of new laws governing the use of AI tools. In the US, where Anthropic is based, Democrats will be in many more positions of power come 2027, and several politicians have already said they will be looking to ensure AI tools are safe and have some guardrails attached.\nYet the company, which is behind AI chatbot Claude, will remain under intense scrutiny in the months ahead to answer the key question surrounding AI: is it all worth it?\nThe tech-heavy Nasdaq Composite Index closed down nearly 2.3%. Stocks fell in the largest tech firms, including Google's parent company Alphabet, which was down by 2.9%, while Amazon lost almost 3.9%.\n\"Bubbles don't burst on the day of the largest deal,\" Richard Whittle, an economist with the University of Salford said. \"They burst later, if the positive future becomes suspect.\"\nThe \"initial exuberance\" will wear off, Barringer said, pointing to what happened with SpaceX earlier this year.\nTrump reiterated his position against \"any form of robust regulation\" around the technology, adding, \"we won't allow that to happen, frankly.\"\nThe same day, however, a bipartisan group of US lawmakers formed the House AI Safety and Innovation Caucus, which will work specifically on AI regulation and safety considerations.\nA significant driver of this kind of scrutiny is Anthropic itself. Company executives, including co-founder and CEO Dario Amodei, have been outspoken in their purported fears that future AI tools will become so capable they will outsmart humans, to the point where extinction is possible.\nDespite the company's claims that the technology it is building at a rapid pace could be dangerous, Anthropic has made one of the quickest trips from start-up to IPO in history.",
+    "evidence_retrieved_at": "2026-11-20T03:34:59.346334+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "How did the share price change on the first day? Use “First, it ... Then, it ...”.",
+          "Would you like to try Claude? You can answer for a person in a story. Use “I think ... because ...”."
+        ],
+        "title": "Anthropic Starts Selling Shares on the Stock Market",
+        "overview": "People can now buy and sell shares in the company behind Claude.",
+        "topic": "Business and technology",
+        "vocabulary": [
+          {
+            "term": "shares",
+            "part_of_speech": "plural noun",
+            "definition": "Small parts of a company that people can buy and sell."
+          },
+          {
+            "term": "popular",
+            "part_of_speech": "adjective",
+            "definition": "Liked or used by many people."
+          },
+          {
+            "term": "rose",
+            "part_of_speech": "verb, simple past",
+            "definition": "Went up in price."
+          },
+          {
+            "term": "fell",
+            "part_of_speech": "verb, simple past",
+            "definition": "Went down in price."
+          },
+          {
+            "term": "success",
+            "part_of_speech": "noun",
+            "definition": "Something that goes well."
+          },
+          {
+            "term": "unsure",
+            "part_of_speech": "adjective",
+            "definition": "Not certain about something."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past",
+          "explanation": "Use the simple past for things that happened before now. Many verbs take “-ed”, as in “started”. Some change differently: “rise” becomes “rose”, and “fall” becomes “fell”. For these three verbs, use the same past form with every subject.",
+          "example_quote": "The company started just five years ago."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about Anthropic?",
+            "options": [
+              "It started making Claude five years ago.",
+              "People can now buy and sell its shares.",
+              "It stopped making computer tools."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The company started five years ago, but the reading does not say when it started making Claude.",
+              "Correct. People can now buy and sell shares in Anthropic.",
+              "The reading says Anthropic makes Claude."
+            ]
+          },
+          {
+            "question": "What is Claude?",
+            "options": [
+              "A place to buy shares",
+              "A person who buys shares",
+              "A computer tool that can talk with people"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "People buy and sell shares on the stock market.",
+              "Claude is a computer tool, not a person.",
+              "Correct. Anthropic makes this popular computer tool."
+            ]
+          },
+          {
+            "question": "What share price was set before trading began?",
+            "options": [
+              "$83",
+              "$111.53",
+              "$97.17"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The price was set at $83 before trading began.",
+              "The price rose to $111.53 after trading began.",
+              "Each share cost $97.17 at the end of the day."
+            ]
+          },
+          {
+            "question": "How did the share price change during the day?",
+            "options": [
+              "It fell and then rose.",
+              "It rose and then fell.",
+              "It stayed at $83."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The price rose first and then fell.",
+              "Correct. It rose to $111.53 and later fell.",
+              "The price changed during the day."
+            ]
+          },
+          {
+            "question": "What does “unsure” mean in the reading?",
+            "options": [
+              "Certain that AI will do well",
+              "Certain that AI will do badly",
+              "Not certain about AI's future"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Unsure” does not mean certain that things will go well.",
+              "“Unsure” does not mean certain that things will go badly.",
+              "Correct. “Unsure” means not certain about what will happen."
+            ]
+          },
+          {
+            "question": "Choose the simple past form for this practice sentence: “Yesterday, the share price ___.”",
+            "options": [
+              "rose",
+              "rises",
+              "rise"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. “Rose” is the simple past of “rise”.",
+              "“Rises” is a present form, but “yesterday” calls for the simple past here.",
+              "“Rise” is not the simple past form; use “rose”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "People can now buy and sell shares in Anthropic on the stock market.",
+          "Shares are small parts of a company.",
+          "Anthropic makes Claude, a popular artificial intelligence (AI) tool that can talk with people.",
+          "The company started just five years ago.",
+          "Its share price was set at $83 before trading began.",
+          "The price rose to $111.53, but it fell later that day.",
+          "Each share cost $97.17 at the end of the day.",
+          "Some investors, people who put money into companies, said the first day seemed to be a success.",
+          "The price changes seemed to show that investors were still unsure about the future of AI."
+        ],
+        "sentence_evidence": [
+          "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
+          "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
+          "It represents a new way of using computers that has led to the rapid rise of Anthropic, which started just five years ago and is best known as the maker of the popular AI chatbot Claude.",
+          "It represents a new way of using computers that has led to the rapid rise of Anthropic, which started just five years ago and is best known as the maker of the popular AI chatbot Claude.",
+          "Anthropic's shares flew past its allocation price of $83 each , showing there was plenty of excitement around AI.",
+          "In just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17.",
+          "In just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17.",
+          "Some investors said Anthropic's debut seemed to be a success, as shares rose roughly 17% during the day, but the broader tech market did not perform as well.",
+          "In just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17."
+        ],
+        "editorial_check": {
+          "date": "2026-11-20T03:38:08.842547+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct reading targets, including “shares”, “rose” and “unsure”, have clear, useful A1–A2 definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses neutral reporting and natural discussion frames such as “I think ... because ...”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short explanations demonstrate “started”, “rose” and “fell”; discussion includes sentence frames and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Six distinct quiz questions appropriately test the main news, details, contextual meaning and simple past, with unambiguous answers."
+            }
+          },
+          "content_digest": "2c1e512e11e1007d569e81c514dc7656a3cb8659542defaa1c0991868e6d301f"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why could Anthropic's strong first day still leave investors uncertain about the future of AI?",
+          "If you were deciding whether to invest in an AI company, what information would you want, and why?"
+        ],
+        "title": "Anthropic's Stock Market Debut Tests Confidence in AI",
+        "overview": "Anthropic's first day on the stock market attracted strong interest while raising questions about the value and future of AI.",
+        "topic": "Business and artificial intelligence",
+        "vocabulary": [
+          {
+            "term": "valuation",
+            "part_of_speech": "noun",
+            "definition": "An estimate of how much a company is worth."
+          },
+          {
+            "term": "debut",
+            "part_of_speech": "noun",
+            "definition": "A first public appearance, here a company's first day on the stock market."
+          },
+          {
+            "term": "investment",
+            "part_of_speech": "noun",
+            "definition": "Money put into a business or activity with the hope of gaining a future benefit."
+          },
+          {
+            "term": "perform",
+            "part_of_speech": "verb",
+            "definition": "To have particular results, either good or bad."
+          },
+          {
+            "term": "concerns",
+            "part_of_speech": "plural noun",
+            "definition": "Worries about a problem or something that might go wrong."
+          },
+          {
+            "term": "financial bubble",
+            "part_of_speech": "noun phrase",
+            "definition": "A situation in which prices rise beyond a reasonable value and may later drop sharply."
+          },
+          {
+            "term": "price swings",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Large changes in prices as they move up and down."
+          },
+          {
+            "term": "compare",
+            "part_of_speech": "verb",
+            "definition": "To examine things together to understand how they are similar or different."
+          }
+        ],
+        "grammar": {
+          "concept": "Relative clauses with “which”",
+          "explanation": "A relative clause with “which” adds information about a thing or company. Put commas around this extra information when the sentence already identifies the company. The main sentence still makes sense without the clause.",
+          "example_quote": "The company, which makes the AI chatbot Claude, will face close attention as people question whether AI is worth its cost."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best expresses the main idea of the News Brief?",
+            "options": [
+              "Anthropic's first trading day ended questions about the value of AI.",
+              "Anthropic attracted strong interest, but questions about AI's value remained.",
+              "Anthropic and the wider technology market both had equally strong results."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Questions remained about whether AI was worth its cost.",
+              "The reading connects strong interest in Anthropic with continuing uncertainty about AI.",
+              "Anthropic gained during the day, while the wider technology market performed less well."
+            ]
+          },
+          {
+            "question": "What happened to Anthropic's share price during its first trading day?",
+            "options": [
+              "It reached $111.53 and later ended the day at $97.17.",
+              "It ended the day at its highest price of $111.53.",
+              "It stayed at $97.17 throughout the day."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The price reached $111.53 before dropping to its closing price of $97.17.",
+              "The reading gives $97.17 as the price at the end of the day.",
+              "The price changed during the day and reached $111.53."
+            ]
+          },
+          {
+            "question": "What does “Although” connect in the sentence about the 17% gain?",
+            "options": [
+              "The reason Anthropic's shares gained and the result of that gain.",
+              "Two similar results for Anthropic and the wider technology market.",
+              "A contrast between Anthropic's gain and the wider technology market's weaker performance."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Although” introduces a contrast here; it does not explain the cause of the gain.",
+              "The results differed: Anthropic gained, while the wider market performed less well.",
+              "“Although” shows that Anthropic's result differed from the wider market's result."
+            ]
+          },
+          {
+            "question": "Which reason for concerns about a financial bubble is supported by the reading?",
+            "options": [
+              "Investment in AI has stopped growing.",
+              "Investment in AI has grown rapidly.",
+              "All AI companies have the same market value."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes rapid growth in investment.",
+              "The reading directly links rapid investment growth with concerns about a financial bubble.",
+              "The reading does not say that AI companies have equal values."
+            ]
+          },
+          {
+            "question": "How much did a few major technology companies spend on developing AI in the last year?",
+            "options": [
+              "Roughly $1.76 trillion.",
+              "Exactly $1 trillion.",
+              "More than $1 trillion."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The figure of $1.76 trillion describes Anthropic's valuation, not this spending.",
+              "The reading says the spending exceeded $1 trillion.",
+              "The reading states that these companies spent more than $1 trillion in the last year alone."
+            ]
+          },
+          {
+            "question": "How should readers understand Ben Barringer's statement about price swings?",
+            "options": [
+              "It is a prediction about possible future price movements.",
+              "It proves that Anthropic's price will fall every day.",
+              "It describes a price that remained unchanged during the first day."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Barringer expects large movements up and down; this is his view of what lies ahead.",
+              "Price swings involve movements in both directions, and his expectation is not proof of daily falls.",
+              "His statement concerns expected price movements, and the first day's price also changed."
+            ]
+          },
+          {
+            "question": "What difficulty does Neil Wilson's comment suggest for people judging Anthropic's value?",
+            "options": [
+              "They have too many nearly identical companies to examine.",
+              "They lack an obvious similar company for comparison.",
+              "They cannot find Anthropic's closing share price."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Wilson says there is no obvious similar company to use.",
+              "Without an obvious similar company, judging Anthropic against another business is harder.",
+              "The reading provides the closing price; Wilson's point concerns comparison with another company."
+            ]
+          },
+          {
+            "question": "What does “valuation” describe in the reading?",
+            "options": [
+              "The amount Anthropic spent developing AI.",
+              "The price of one Anthropic share.",
+              "The estimated total value of Anthropic."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Valuation” describes a company's worth, not its spending.",
+              "The reading distinguishes the total company value from the price of one share.",
+              "“Valuation” refers to how much the whole company is estimated to be worth."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses “which” to add extra information about a report on Anthropic?",
+            "options": [
+              "The report, which explains Anthropic's price changes, is ready.",
+              "The report, which explain Anthropic's price changes, is ready.",
+              "The report, which it explains Anthropic's price changes, is ready."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Which explains Anthropic's price changes” correctly adds information about the report.",
+              "The singular noun “report” needs “explains”, not “explain”, in this clause.",
+              "“Which” already refers to the report, so the extra subject “it” is unnecessary."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Anthropic became one of the world's most valuable public companies after its shares began trading on the stock market.",
+          "It was the first company focused entirely on artificial intelligence (AI) to become publicly listed, allowing people to buy its shares.",
+          "Its valuation, or total market value, reached roughly $1.76 trillion.",
+          "Its debut, or first appearance, on the Nasdaq stock exchange was an important test for an industry receiving huge investment.",
+          "The share price quickly reached $111.53 before dropping to $97.17 by the end of the day.",
+          "Although Anthropic's shares gained roughly 17% during the day, the wider technology market did not perform as well.",
+          "A few major technology companies spent more than $1 trillion on developing AI in the last year alone.",
+          "The rapid growth in investment has raised concerns about a financial bubble, when prices rise beyond a reasonable value.",
+          "Ben Barringer, who leads technology research at Quilter Cheviot, expects significant price swings, or large movements up and down.",
+          "Neil Wilson said there was no obvious similar company to compare Anthropic with.",
+          "In the US, several politicians have said they want rules to make sure AI tools are safe.",
+          "The company, which makes the AI chatbot Claude, will face close attention as people question whether AI is worth its cost."
+        ],
+        "sentence_evidence": [
+          "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
+          "Anthropic is the first purely AI company to be publicly listed, creating a test for the entire industry.",
+          "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
+          "The artificial intelligence (AI) company's Thursday debut on the Nasdaq stock exchange was a crucial test for the industry, given the huge amount of money being poured into advancing the technology.",
+          "In just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17.",
+          "Some investors said Anthropic's debut seemed to be a success, as shares rose roughly 17% during the day, but the broader tech market did not perform as well.",
+          "The buildout happening around this era of AI is among the most expensive endeavours in the history of technology, with more than $1 trillion being spent in the last year alone by a handful of major tech companies.",
+          "The speed at which investment has grown has led to ongoing concerns of a financial bubble.",
+          "As the first purely AI company to go public, Anthropic will almost certainly see significant swings in price on the stock market going forward, according to Ben Barringer, who leads technology research at Quilter Cheviot.",
+          "\"There's no obvious peer to compare it to,\" Neil Wilson, an investor strategist at Saxo UK, said.",
+          "One of those things is the prospect of new laws governing the use of AI tools. In the US, where Anthropic is based, Democrats will be in many more positions of power come 2027, and several politicians have already said they will be looking to ensure AI tools are safe and have some guardrails attached.",
+          "Yet the company, which is behind AI chatbot Claude, will remain under intense scrutiny in the months ahead to answer the key question surrounding AI: is it all worth it?"
+        ],
+        "editorial_check": {
+          "date": "2026-11-20T03:39:47.927426+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct reading-based targets, including “valuation”, “investment” and “price swings”, suit B1-B2 and avoid reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting such as “expects significant price swings” preserves attribution and uncertainty."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions are clear, language examples are quoted, and the exact grammar quotation demonstrates the explained extra-information clause with “which”."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and nine quiz questions provide suitable comprehension, contrast, contextual vocabulary, inference and grammar practice."
+            }
+          },
+          "content_digest": "2cd0f5f5caf6f9ce339e86a38457358ac8589e16c4c80b9cc94a4cd311875de5"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why Anthropic's strong opening performance does not settle questions about its longer-term worth.",
+          "What evidence would you want from an AI company before trusting its claims about commercial potential and safety?"
+        ],
+        "title": "Anthropic's Market Surge Tests Confidence in AI",
+        "overview": "Anthropic's stock-market arrival reveals considerable enthusiasm for AI while leaving difficult questions about its commercial prospects, regulation and safety unresolved.",
+        "topic": "AI companies, financial markets and public accountability",
+        "vocabulary": [
+          {
+            "term": "reiterated",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Stated a view or position again, often for emphasis; used especially in formal reporting."
+          },
+          {
+            "term": "intense scrutiny",
+            "part_of_speech": "noun phrase",
+            "definition": "Close, sustained examination that subjects claims or decisions to demanding questions."
+          },
+          {
+            "term": "exuberance",
+            "part_of_speech": "uncountable noun",
+            "definition": "Strong, energetic enthusiasm that, in financial reporting, can suggest optimism exceeding what the evidence warrants."
+          },
+          {
+            "term": "wear off",
+            "part_of_speech": "phrasal verb",
+            "definition": "To gradually lose strength or intensity, especially when an initial feeling or effect fades."
+          },
+          {
+            "term": "peer",
+            "part_of_speech": "countable noun",
+            "definition": "A sufficiently similar company that can provide a useful basis for assessing another company's performance or worth."
+          },
+          {
+            "term": "fluctuations",
+            "part_of_speech": "plural noun",
+            "definition": "Changes in a price, amount or level as it moves up and down rather than steadily in one direction."
+          },
+          {
+            "term": "guardrails",
+            "part_of_speech": "plural noun",
+            "definition": "Rules or limits intended to prevent harmful behaviour while allowing an activity to continue."
+          },
+          {
+            "term": "robust regulation",
+            "part_of_speech": "noun phrase",
+            "definition": "Strong, substantial rules intended to exercise meaningful control over an activity or industry."
+          },
+          {
+            "term": "bipartisan",
+            "part_of_speech": "adjective",
+            "definition": "Involving members of two political parties, indicating cooperation across a party divide."
+          },
+          {
+            "term": "outspoken",
+            "part_of_speech": "adjective",
+            "definition": "Expressing views publicly and directly, including views that may attract disagreement."
+          }
+        ],
+        "grammar": {
+          "concept": "Concession with despite and a perfect participle clause",
+          "explanation": "Use “despite” with an “-ing” clause to acknowledge a point that makes the main claim seem unexpected. The perfect form “having described” places that action before the main event; its understood subject is Anthropic, also the subject of the main clause.",
+          "example_quote": "Despite having described its rapidly developing technology as potentially dangerous, Anthropic has made an exceptionally swift transition from start-up to public listing."
+        },
+        "quiz": [
+          {
+            "question": "Which interpretation best captures the central tension in the News Brief?",
+            "options": [
+              "Strong investor enthusiasm coexists with unresolved questions about AI's commercial value and risks.",
+              "The listing establishes that AI's commercial potential outweighs its safety risks.",
+              "The wider technology market's decline demonstrates that Anthropic's listing failed."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading combines strong demand for Anthropic's shares with continuing uncertainty about its worth, oversight and safety.",
+              "Investor enthusiasm does not resolve the commercial and safety questions identified in the reading.",
+              "Anthropic's shares moved above their allocation price even as the wider index declined."
+            ]
+          },
+          {
+            "question": "What does the movement from $111.53 to a closing price of $97.17 establish?",
+            "options": [
+              "The shares finished below their allocation price.",
+              "The shares surrendered some of their earlier gains before trading ended.",
+              "The shares declined continuously from the moment trading began."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The closing price remained above the $83 allocation price.",
+              "The closing price was lower than the earlier trading price, showing that some gains were lost.",
+              "The reading explicitly states that the shares initially climbed."
+            ]
+          },
+          {
+            "question": "What inference is supported by Anthropic's performance alongside the Nasdaq Composite Index?",
+            "options": [
+              "Anthropic's gains caused the broader index to decline.",
+              "Every other technology company attracted less investor interest than Anthropic.",
+              "Enthusiasm for Anthropic did not translate into a rise in the broader index."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading reports the two movements without establishing a causal relationship.",
+              "An index's decline does not establish the performance or investor appeal of every individual company.",
+              "Anthropic traded above its allocation price while the broader index closed lower."
+            ]
+          },
+          {
+            "question": "What is the significance of Richard Whittle's warning about bubbles?",
+            "options": [
+              "A major deal can attract enthusiasm without resolving whether confidence will endure.",
+              "A major deal necessarily triggers an immediate collapse in confidence.",
+              "Anthropic's opening performance proves that a bubble has already burst."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "His warning links a later collapse to weakening confidence, so initial enthusiasm offers limited reassurance.",
+              "His point allows confidence to weaken later rather than collapse immediately.",
+              "The reading reports a warning about bubbles, not proof that one has burst."
+            ]
+          },
+          {
+            "question": "What does “allocation price” identify in the account of Anthropic's listing?",
+            "options": [
+              "The highest price reached during the first trading day.",
+              "The price used for the initial distribution of shares to investors.",
+              "The price at which the shares finished the trading day."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The shares traded at $111.53, well above the $83 allocation price.",
+              "The reading defines “allocation price” as the price set for the initial distribution of shares.",
+              "The closing price was $97.17, which was distinct from the allocation price."
+            ]
+          },
+          {
+            "question": "What does Barringer's expectation that initial “exuberance” will “wear off” imply?",
+            "options": [
+              "Trading in Anthropic's shares will eventually stop.",
+              "The company will certainly lose all commercial appeal.",
+              "The intensity of investors' early enthusiasm is likely to diminish."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Wear off” describes a feeling losing intensity, not trading coming to an end.",
+              "Reduced enthusiasm does not imply a complete loss of commercial appeal.",
+              "The phrase predicts fading enthusiasm without specifying an exact future share price."
+            ]
+          },
+          {
+            "question": "Why does the absence of an obvious “peer” complicate assessments of Anthropic's worth?",
+            "options": [
+              "Investors lack a clearly similar company to use as a benchmark.",
+              "Investors are prevented from examining Anthropic's share price.",
+              "Investors can therefore conclude that Anthropic has no commercial worth."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A sufficiently similar business could provide a reference point; Wilson identifies the absence of such a clear comparison.",
+              "The difficulty concerns interpretation and assessment, not access to the reported share price.",
+              "The absence of a benchmark creates uncertainty rather than establishing that the company is worthless."
+            ]
+          },
+          {
+            "question": "Which conclusion about AI regulation is supported by the political developments described?",
+            "options": [
+              "Trump's opposition prevented lawmakers from organising around AI safety.",
+              "There are competing political positions, alongside cooperation between lawmakers from two parties.",
+              "The new caucus has already enacted substantial restrictions on AI tools."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states that lawmakers formed a caucus despite Trump's opposition to robust regulation.",
+              "Trump's position contrasts with the formation of a bipartisan group addressing regulation and safety.",
+              "Forming a group to work on regulation does not establish that legislation has been enacted."
+            ]
+          },
+          {
+            "question": "What distinction is conveyed by the metaphor “guardrails” in this policy context?",
+            "options": [
+              "It presents restrictions as evidence that AI tools have already become safe.",
+              "It refers to a requirement to prohibit all further AI development.",
+              "It suggests protective limits within which AI tools could continue to operate."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Guardrails” expresses a protective purpose, not proof that safety has been achieved.",
+              "The term does not, by itself, imply a complete prohibition.",
+              "The metaphor combines limits intended to prevent harm with continued activity."
+            ]
+          },
+          {
+            "question": "How should the statement about AI potentially threatening humanity's survival be understood?",
+            "options": [
+              "It reports a possibility about which Anthropic executives have publicly expressed fears.",
+              "It establishes that existing AI tools have already outsmarted humans in the way described.",
+              "It presents humanity's extinction as an inevitable consequence of Anthropic's listing."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading attributes expressions of fear to executives without establishing their sincerity or confirming the predicted danger.",
+              "The statement concerns expressed fears about future tools, not an established achievement by existing tools.",
+              "Neither inevitability nor a causal link between the listing and extinction is established."
+            ]
+          },
+          {
+            "question": "Which sentence uses “despite” with a perfect participle clause to acknowledge earlier investor interest while presenting continuing uncertainty as unexpected?",
+            "options": [
+              "Because it had attracted investors, Anthropic continued to face questions about its future.",
+              "Despite having attracted investors, Anthropic continued to face questions about its future.",
+              "To attract investors, Anthropic continued to face questions about its future."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Because” presents investor interest as a cause of the questions, rather than a conceded point.",
+              "“Despite having attracted” combines concession with an earlier action whose understood subject is Anthropic.",
+              "“To attract” expresses purpose and does not acknowledge an action already completed."
+            ]
+          },
+          {
+            "question": "Which statement accurately preserves the scope of the spending figure in the News Brief?",
+            "options": [
+              "Anthropic alone spent more than $1 trillion during the previous year.",
+              "Every major technology company individually spent more than $1 trillion during the previous year.",
+              "A handful of major technology companies collectively spent more than $1 trillion during the previous year."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The figure concerns several major technology companies collectively, not Anthropic alone.",
+              "The reading gives a combined figure for a handful of companies, not an individual figure for each.",
+              "This preserves both the collective scope and the time period stated in the reading."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Anthropic began trading on the Nasdaq stock exchange on Thursday against a backdrop of enormous spending on artificial intelligence (AI).",
+          "The company reached a market value of roughly $1.76 trillion, placing it among the world's most valuable publicly traded businesses.",
+          "As the first purely AI company to be publicly listed, Anthropic created a test for the wider industry.",
+          "Its shares initially climbed to $111.53 before retreating to close at $97.17.",
+          "The shares moved above their $83 allocation price, the price set for their initial distribution to investors, signalling considerable enthusiasm for AI.",
+          "The broader Nasdaq Composite Index, however, closed nearly 2.3% lower.",
+          "Nevertheless, Anthropic, the company behind Claude, faces intense scrutiny over whether AI will justify the resources devoted to it.",
+          "A handful of major technology companies collectively spent more than $1 trillion on the AI buildout in the previous year alone.",
+          "The pace of this spending has fuelled fears that prices may be inflated by excessive optimism.",
+          "Economist Richard Whittle cautioned that bubbles burst when confidence in a positive future weakens, rather than necessarily on the day of a major deal.",
+          "Ben Barringer, who leads technology research at Quilter Cheviot, expects substantial fluctuations in Anthropic's share price.",
+          "Barringer warned that the initial exuberance, or unusually strong enthusiasm, would wear off.",
+          "Investor strategist Neil Wilson said that Anthropic lacks an obvious peer against which its worth can be assessed.",
+          "New laws governing AI tools are also a possibility.",
+          "Some US politicians have indicated that they want AI tools to be safe and subject to guardrails, meaning limits intended to prevent harmful use.",
+          "Donald Trump reiterated his opposition to robust regulation of AI, indicating resistance to substantial rules governing the technology.",
+          "A bipartisan group of US lawmakers nevertheless formed a caucus, a group organised around a shared policy interest, to address AI regulation and safety.",
+          "Anthropic executives, including co-founder Dario Amodei, have been outspoken in expressing fears that future AI could outsmart humans and potentially threaten humanity's survival.",
+          "Despite having described its rapidly developing technology as potentially dangerous, Anthropic has made an exceptionally swift transition from start-up to public listing."
+        ],
+        "sentence_evidence": [
+          "The artificial intelligence (AI) company's Thursday debut on the Nasdaq stock exchange was a crucial test for the industry, given the huge amount of money being poured into advancing the technology.",
+          "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
+          "Anthropic is the first purely AI company to be publicly listed, creating a test for the entire industry.",
+          "In just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17.",
+          "Anthropic's shares flew past its allocation price of $83 each , showing there was plenty of excitement around AI.",
+          "The tech-heavy Nasdaq Composite Index closed down nearly 2.3%. Stocks fell in the largest tech firms, including Google's parent company Alphabet, which was down by 2.9%, while Amazon lost almost 3.9%.",
+          "Yet the company, which is behind AI chatbot Claude, will remain under intense scrutiny in the months ahead to answer the key question surrounding AI: is it all worth it?",
+          "The buildout happening around this era of AI is among the most expensive endeavours in the history of technology, with more than $1 trillion being spent in the last year alone by a handful of major tech companies.",
+          "The speed at which investment has grown has led to ongoing concerns of a financial bubble.",
+          "\"Bubbles don't burst on the day of the largest deal,\" Richard Whittle, an economist with the University of Salford said. \"They burst later, if the positive future becomes suspect.\"",
+          "As the first purely AI company to go public, Anthropic will almost certainly see significant swings in price on the stock market going forward, according to Ben Barringer, who leads technology research at Quilter Cheviot.",
+          "The \"initial exuberance\" will wear off, Barringer said, pointing to what happened with SpaceX earlier this year.",
+          "\"There's no obvious peer to compare it to,\" Neil Wilson, an investor strategist at Saxo UK, said.",
+          "One of those things is the prospect of new laws governing the use of AI tools. In the US, where Anthropic is based, Democrats will be in many more positions of power come 2027, and several politicians have already said they will be looking to ensure AI tools are safe and have some guardrails attached.",
+          "One of those things is the prospect of new laws governing the use of AI tools. In the US, where Anthropic is based, Democrats will be in many more positions of power come 2027, and several politicians have already said they will be looking to ensure AI tools are safe and have some guardrails attached.",
+          "Trump reiterated his position against \"any form of robust regulation\" around the technology, adding, \"we won't allow that to happen, frankly.\"",
+          "The same day, however, a bipartisan group of US lawmakers formed the House AI Safety and Innovation Caucus, which will work specifically on AI regulation and safety considerations.",
+          "A significant driver of this kind of scrutiny is Anthropic itself. Company executives, including co-founder and CEO Dario Amodei, have been outspoken in their purported fears that future AI tools will become so capable they will outsmart humans, to the point where extinction is possible.",
+          "Despite the company's claims that the technology it is building at a rapid pace could be dangerous, Anthropic has made one of the quickest trips from start-up to IPO in history."
+        ],
+        "editorial_check": {
+          "date": "2026-11-20T03:44:31.419001+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct targets occur in the reading and avoid reserved vocabulary. “Peer,” “guardrails” and “robust regulation” teach useful contextual distinctions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Polished reporting preserves attribution and uncertainty through wording such as “potentially,” “expects” and “a possibility.”"
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify meaning and connotation. The grammar accurately explains concession and the earlier action expressed by “having described,” using an exact reading quotation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The twelve distinct questions test supported inference, collective spending, political positions, contextual meaning and concession, with accurate feedback and unambiguous answers."
+            }
+          },
+          "content_digest": "f7fb488c81bc11ca67ebc16fcc2b21e2dba2d3132778dea3e927dea37fbc1f22"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

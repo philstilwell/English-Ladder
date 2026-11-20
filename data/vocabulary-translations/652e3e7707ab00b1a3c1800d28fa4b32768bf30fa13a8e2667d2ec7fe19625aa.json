@@ -1,0 +1,139 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "People can now buy and sell shares in Anthropic on the stock market.",
+      "Shares are small parts of a company.",
+      "Anthropic makes Claude, a popular artificial intelligence (AI) tool that can talk with people.",
+      "The company started just five years ago.",
+      "Its share price was set at $83 before trading began.",
+      "The price rose to $111.53, but it fell later that day.",
+      "Each share cost $97.17 at the end of the day.",
+      "Some investors, people who put money into companies, said the first day seemed to be a success.",
+      "The price changes seemed to show that investors were still unsure about the future of AI."
+    ],
+    "vocabulary": [
+      {
+        "term": "shares",
+        "part_of_speech": "plural noun",
+        "definition": "Small parts of a company that people can buy and sell."
+      },
+      {
+        "term": "popular",
+        "part_of_speech": "adjective",
+        "definition": "Liked or used by many people."
+      },
+      {
+        "term": "rose",
+        "part_of_speech": "verb, simple past",
+        "definition": "Went up in price."
+      },
+      {
+        "term": "fell",
+        "part_of_speech": "verb, simple past",
+        "definition": "Went down in price."
+      },
+      {
+        "term": "success",
+        "part_of_speech": "noun",
+        "definition": "Something that goes well."
+      },
+      {
+        "term": "unsure",
+        "part_of_speech": "adjective",
+        "definition": "Not certain about something."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人々が売買できる、会社の小さな持ち分。",
+      "ko": "사람들이 사고팔 수 있는 회사 소유권의 작은 부분들.",
+      "zh-Hans": "人们可以买卖的公司所有权的小份额。",
+      "es": "Pequeñas partes de una empresa que las personas pueden comprar y vender.",
+      "pt-BR": "Pequenas partes de uma empresa que as pessoas podem comprar e vender.",
+      "fr": "Petites parts d’une entreprise que les gens peuvent acheter et vendre.",
+      "de": "Kleine Anteile an einem Unternehmen, die Menschen kaufen und verkaufen können."
+    },
+    {
+      "id": 1,
+      "ja": "多くの人に好まれている、または使われている。",
+      "ko": "많은 사람들이 좋아하거나 사용하는.",
+      "zh-Hans": "被许多人喜爱或使用的。",
+      "es": "Que gusta a muchas personas o que muchas personas usan.",
+      "pt-BR": "De que muitas pessoas gostam ou que muitas pessoas usam.",
+      "fr": "Que beaucoup de gens aiment ou utilisent.",
+      "de": "Von vielen Menschen gemocht oder genutzt."
+    },
+    {
+      "id": 2,
+      "ja": "価格が上がった。",
+      "ko": "가격이 올라갔다.",
+      "zh-Hans": "价格上涨了。",
+      "es": "Subió de precio.",
+      "pt-BR": "Subiu de preço.",
+      "fr": "Le prix a augmenté.",
+      "de": "Der Preis ist gestiegen."
+    },
+    {
+      "id": 3,
+      "ja": "価格が下がった。",
+      "ko": "가격이 내려갔다.",
+      "zh-Hans": "价格下降了。",
+      "es": "Bajó de precio.",
+      "pt-BR": "Caiu de preço.",
+      "fr": "Le prix a baissé.",
+      "de": "Der Preis ist gesunken."
+    },
+    {
+      "id": 4,
+      "ja": "うまくいくこと。",
+      "ko": "잘되는 일.",
+      "zh-Hans": "进展顺利的事。",
+      "es": "Algo que sale bien.",
+      "pt-BR": "Algo que dá certo.",
+      "fr": "Quelque chose qui se passe bien.",
+      "de": "Etwas, das gut läuft."
+    },
+    {
+      "id": 5,
+      "ja": "何かについて確信が持てない。",
+      "ko": "어떤 것에 대해 확신이 없는.",
+      "zh-Hans": "对某件事不确定的。",
+      "es": "Que no tiene certeza sobre algo.",
+      "pt-BR": "Que não tem certeza sobre algo.",
+      "fr": "Qui n’est pas certain de quelque chose.",
+      "de": "Sich bei etwas nicht sicher sein."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-20T03:45:10.753065+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

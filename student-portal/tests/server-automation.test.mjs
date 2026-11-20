@@ -260,6 +260,38 @@ test('nightly discovery follows every search page, resolves dates, overlaps late
   assert.equal(await storage.get('discovery-since'),checkpoint);
 });
 
+test('newest unresolved lessons retain verified meeting details when an older lookup fails', async () => {
+  const { object, storage, env } = coordinator();
+  env.LESSON_PROCESSOR = 'codex'; env.AUTOMATION_ENABLED = 'false';
+  const id = await hash('newest-note-123'), check = { runDate:'2026-11-19', checks:2, retryAt:null };
+  const checkpoint = '2026-11-17T00:00:00Z';
+  await storage.put({oauth:{userId:'owner',pmi:1234567890}, 'discovery-since':checkpoint,
+    ['job:'+id]:{noteId:'newest-note-123',status:'needs_attention',lastError:'meeting_reference_missing',codexCheck:check}});
+  const lookedUp = [];
+  object.zoom = async path => {
+    if (path === '/docs/file_search') return {files:[]};
+    if (path.startsWith('/users/me/meetings?')) return {meetings:[]};
+    if (path.endsWith('/instances')) return {meetings:[
+      {uuid:'older',start_time:'2026-10-15T00:00:00Z'},
+      {uuid:'newest',start_time:'2026-11-20T02:35:56Z'}]};
+    if (path.startsWith('/my_notes/notes?')) {
+      const uuid = new URL('https://example.test'+path).searchParams.get('meeting_id');
+      lookedUp.push(uuid);
+      if (uuid === 'older') throw Error('zoom_unavailable');
+      return {notes:[{note_id:'newest-note-123',modified_time:'2026-11-20T03:44:59Z'}]};
+    }
+    throw Error('Unexpected path');
+  };
+  await assert.rejects(object.discover(), /zoom_unavailable/);
+  assert.deepEqual(lookedUp,['newest','older']);
+  const job = await storage.get('job:'+id);
+  assert.equal(job.meetingId,'newest');
+  assert.equal(job.startedAt,'2026-11-20T02:35:56Z');
+  assert.equal(job.status,'pending');
+  assert.deepEqual(job.codexCheck,check);
+  assert.equal(await storage.get('discovery-since'),checkpoint);
+});
+
 test('unmatched student notes cannot be published under a guessed date', async () => {
   const {object,env} = coordinator(); let aiCalls = 0;
   object.zoom = async () => note; object.portal = async () => ({sourceNotes:[]}); env.AI.run = async () => { aiCalls++; };

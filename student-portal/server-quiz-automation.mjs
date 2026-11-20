@@ -241,7 +241,11 @@ export class QuizAutomation {
       if (!/^\d{9,11}$/.test(room)) throw new Error('discovery_incomplete');
       const result = await this.zoom('/past_meetings/' + room + '/instances');
       if (!Array.isArray(result.meetings)) throw new Error('discovery_incomplete');
-      for (const instance of result.meetings) {
+      // Zoom does not promise instance order. Resolve the newest lessons before
+      // an old lookup failure or the free-plan request limit interrupts the pass.
+      // Partial progress is retained; the discovery checkpoint still advances
+      // only after the entire pass succeeds, and readiness limits stay intact.
+      for (const instance of [...result.meetings].sort((a, b) => Date.parse(b.start_time) - Date.parse(a.start_time))) {
         if (!instance.uuid || !Number.isFinite(Date.parse(instance.start_time)) || Date.parse(instance.start_time) < Date.parse(cutoff)) continue;
         const notes = await this.zoom('/my_notes/notes?' + new URLSearchParams({ meeting_id: instance.uuid }));
         if (!Array.isArray(notes.notes)) throw new Error('discovery_incomplete');

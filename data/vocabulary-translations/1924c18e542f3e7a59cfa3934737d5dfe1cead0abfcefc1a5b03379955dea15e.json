@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The new Hunger Games film is called Sunrise on the Reaping.",
+      "Its story takes place 24 years before the first Hunger Games film.",
+      "The three main actors are Joseph Zada, Mckenna Grace and Whitney Peak.",
+      "They felt excited and nervous before the film came out.",
+      "Zada plays a young Haymitch, a character from the earlier films.",
+      "He watched the earlier films and made notes to prepare for his part.",
+      "Grace worked as an actor when she was a child.",
+      "Peak and Zada asked Grace for help when they felt confused while talking about the film.",
+      "One actor says they are thankful to have each other.",
+      "The film is now in cinemas."
+    ],
+    "vocabulary": [
+      {
+        "term": "nervous",
+        "part_of_speech": "adjective",
+        "definition": "Worried about what may happen."
+      },
+      {
+        "term": "character",
+        "part_of_speech": "noun",
+        "definition": "A person in a film or story."
+      },
+      {
+        "term": "notes",
+        "part_of_speech": "plural noun",
+        "definition": "Short pieces of writing that help you remember things."
+      },
+      {
+        "term": "prepare",
+        "part_of_speech": "verb",
+        "definition": "To do things before an activity so you are ready."
+      },
+      {
+        "term": "thankful",
+        "part_of_speech": "adjective",
+        "definition": "Happy that someone has helped you or that something good has happened."
+      },
+      {
+        "term": "cinemas",
+        "part_of_speech": "plural noun",
+        "definition": "Places where people go to watch films."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "これから起こるかもしれないことを心配している。",
+      "ko": "앞으로 일어날지도 모르는 일을 걱정하는 상태.",
+      "zh-Hans": "担心可能会发生的事情。",
+      "es": "Que siente preocupación por lo que pueda pasar.",
+      "pt-BR": "Que sente preocupação com o que pode acontecer.",
+      "fr": "Qui s’inquiète de ce qui pourrait arriver.",
+      "de": "Besorgt darüber, was passieren könnte."
+    },
+    {
+      "id": 1,
+      "ja": "映画や物語に登場する人物。",
+      "ko": "영화나 이야기에 나오는 인물.",
+      "zh-Hans": "电影或故事中的人物。",
+      "es": "Una persona que aparece en una película o en una historia.",
+      "pt-BR": "Uma pessoa que aparece em um filme ou em uma história.",
+      "fr": "Une personne qui apparaît dans un film ou une histoire.",
+      "de": "Eine Person in einem Film oder einer Geschichte."
+    },
+    {
+      "id": 2,
+      "ja": "物事を覚えておくのに役立つ短い記録。",
+      "ko": "무언가를 기억하는 데 도움이 되는 짧게 적은 글.",
+      "zh-Hans": "帮助你记住事情的简短记录。",
+      "es": "Textos breves que te ayudan a recordar cosas.",
+      "pt-BR": "Anotações curtas que ajudam você a lembrar das coisas.",
+      "fr": "De courts écrits qui aident à se souvenir de certaines choses.",
+      "de": "Kurze Aufzeichnungen, die helfen, sich Dinge zu merken."
+    },
+    {
+      "id": 3,
+      "ja": "活動を始める前に、必要なことをして用意を整えること。",
+      "ko": "활동을 시작하기 전에 필요한 일을 해서 준비를 갖추는 것.",
+      "zh-Hans": "在活动开始前做些事情，让自己做好准备。",
+      "es": "Hacer cosas antes de una actividad para estar listo.",
+      "pt-BR": "Fazer coisas antes de uma atividade para estar pronto.",
+      "fr": "Faire des choses avant une activité pour être prêt.",
+      "de": "Vor einer Tätigkeit Dinge tun, um dafür bereit zu sein."
+    },
+    {
+      "id": 4,
+      "ja": "誰かが助けてくれたことや、よいことが起こったことをうれしく思っている。",
+      "ko": "누군가가 도와주었거나 좋은 일이 일어나서 기쁜 상태.",
+      "zh-Hans": "因为有人帮助了自己，或有好事发生而感到高兴。",
+      "es": "Que siente alegría porque alguien le ha ayudado o porque ha ocurrido algo bueno.",
+      "pt-BR": "Que fica feliz porque alguém lhe ajudou ou porque algo bom aconteceu.",
+      "fr": "Qui est heureux que quelqu’un l’ait aidé ou que quelque chose de bien soit arrivé.",
+      "de": "Froh darüber, dass jemand einem geholfen hat oder etwas Gutes passiert ist."
+    },
+    {
+      "id": 5,
+      "ja": "人々が映画を見に行く場所。",
+      "ko": "사람들이 영화를 보러 가는 곳들.",
+      "zh-Hans": "人们去看电影的地方。",
+      "es": "Lugares a los que la gente va a ver películas.",
+      "pt-BR": "Lugares aonde as pessoas vão para assistir a filmes.",
+      "fr": "Des lieux où les gens vont regarder des films.",
+      "de": "Orte, an die Menschen gehen, um Filme anzusehen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-21T03:44:43.512169+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

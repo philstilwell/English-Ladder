@@ -400,7 +400,7 @@
         ],
         "news_brief_sentences": [
           "Anthropic became one of the world's most valuable public companies after its shares began trading on the stock market.",
-          "It was the first company focused entirely on artificial intelligence (AI) to become publicly listed, allowing people to buy its shares.",
+          "The artificial intelligence (AI) company became publicly listed, allowing people to buy its shares.",
           "Its valuation, or total market value, reached roughly $1.76 trillion.",
           "Its debut, or first appearance, on the Nasdaq stock exchange was an important test for an industry receiving huge investment.",
           "The share price quickly reached $111.53 before dropping to $97.17 by the end of the day.",
@@ -414,7 +414,7 @@
         ],
         "sentence_evidence": [
           "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
-          "Anthropic is the first purely AI company to be publicly listed, creating a test for the entire industry.",
+          "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
           "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
           "The artificial intelligence (AI) company's Thursday debut on the Nasdaq stock exchange was a crucial test for the industry, given the huge amount of money being poured into advancing the technology.",
           "In just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17.",
@@ -427,40 +427,50 @@
           "Yet the company, which is behind AI chatbot Claude, will remain under intense scrutiny in the months ahead to answer the key question surrounding AI: is it all worth it?"
         ],
         "editorial_check": {
-          "date": "2026-11-20T03:39:47.927426+00:00",
-          "model": "gpt-6.1-sol",
-          "status": "passed",
-          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "provider": "OpenAI",
-          "surface": "Codex with ChatGPT sign-in",
-          "reviewer": {
+          "date": "2026-11-22T17:46:18.321787+00:00",
+          "status": "revised",
+          "method": "User-approved Codex editorial correction; no new independent model approval",
+          "changes": [
+            "Removed the unsupported first-AI-company claim from one sentence. All quiz questions, answers and feedback were reviewed; none depends on the removed claim, so they remain unchanged."
+          ],
+          "scope": "November 20 Intermediate and Advanced only; approval received November 22, 2026.",
+          "corroborating_source": "https://www.c3.ai/news/c3-ai-announces-pricing-of-initial-public-offering",
+          "previous_review": {
+            "date": "2026-11-20T03:39:47.927426+00:00",
             "model": "gpt-6.1-sol",
+            "status": "passed",
+            "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "provider": "OpenAI",
             "surface": "Codex with ChatGPT sign-in",
-            "separate_session": true
-          },
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "Eight distinct reading-based targets, including “valuation”, “investment” and “price swings”, suit B1-B2 and avoid reserved vocabulary."
+            "reviewer": {
+              "model": "gpt-6.1-sol",
+              "surface": "Codex with ChatGPT sign-in",
+              "separate_session": true
             },
-            "register": {
-              "passed": true,
-              "reason": "Neutral reporting such as “expects significant price swings” preserves attribution and uncertainty."
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "Eight distinct reading-based targets, including “valuation”, “investment” and “price swings”, suit B1-B2 and avoid reserved vocabulary."
+              },
+              "register": {
+                "passed": true,
+                "reason": "Neutral reporting such as “expects significant price swings” preserves attribution and uncertainty."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Definitions are clear, language examples are quoted, and the exact grammar quotation demonstrates the explained extra-information clause with “which”."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "Twelve distinct reading sentences and nine quiz questions provide suitable comprehension, contrast, contextual vocabulary, inference and grammar practice."
+              }
             },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Definitions are clear, language examples are quoted, and the exact grammar quotation demonstrates the explained extra-information clause with “which”."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "Twelve distinct reading sentences and nine quiz questions provide suitable comprehension, contrast, contextual vocabulary, inference and grammar practice."
-            }
-          },
-          "content_digest": "2cd0f5f5caf6f9ce339e86a38457358ac8589e16c4c80b9cc94a4cd311875de5"
+            "content_digest": "2cd0f5f5caf6f9ce339e86a38457358ac8589e16c4c80b9cc94a4cd311875de5"
+          }
         }
       }
     },
@@ -706,7 +716,7 @@
         "news_brief_sentences": [
           "Anthropic began trading on the Nasdaq stock exchange on Thursday against a backdrop of enormous spending on artificial intelligence (AI).",
           "The company reached a market value of roughly $1.76 trillion, placing it among the world's most valuable publicly traded businesses.",
-          "As the first purely AI company to be publicly listed, Anthropic created a test for the wider industry.",
+          "Anthropic's stock market debut created a test for the wider AI industry.",
           "Its shares initially climbed to $111.53 before retreating to close at $97.17.",
           "The shares moved above their $83 allocation price, the price set for their initial distribution to investors, signalling considerable enthusiasm for AI.",
           "The broader Nasdaq Composite Index, however, closed nearly 2.3% lower.",
@@ -727,7 +737,7 @@
         "sentence_evidence": [
           "The artificial intelligence (AI) company's Thursday debut on the Nasdaq stock exchange was a crucial test for the industry, given the huge amount of money being poured into advancing the technology.",
           "Anthropic has become one of the most valuable public companies in the world after its shares began trading on the stock market, taking its valuation to roughly $1.76 trillion (£1.34 trillion).",
-          "Anthropic is the first purely AI company to be publicly listed, creating a test for the entire industry.",
+          "The artificial intelligence (AI) company's Thursday debut on the Nasdaq stock exchange was a crucial test for the industry, given the huge amount of money being poured into advancing the technology.",
           "In just a few hours of trading, Anthropic's stock seemed to show that investors remain uncertain of where exactly AI is heading. The share price rose immediately to $111.53, sending the company's market value to almost $2 trillion, before falling by the end of the day as the shares closed at $97.17.",
           "Anthropic's shares flew past its allocation price of $83 each , showing there was plenty of excitement around AI.",
           "The tech-heavy Nasdaq Composite Index closed down nearly 2.3%. Stocks fell in the largest tech firms, including Google's parent company Alphabet, which was down by 2.9%, while Amazon lost almost 3.9%.",
@@ -746,40 +756,50 @@
           "Despite the company's claims that the technology it is building at a rapid pace could be dangerous, Anthropic has made one of the quickest trips from start-up to IPO in history."
         ],
         "editorial_check": {
-          "date": "2026-11-20T03:44:31.419001+00:00",
-          "model": "gpt-6.1-sol",
-          "status": "passed",
-          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
-          "generation_attempts": 3,
-          "repaired_sections": [],
-          "provider": "OpenAI",
-          "surface": "Codex with ChatGPT sign-in",
-          "reviewer": {
+          "date": "2026-11-22T17:46:18.324904+00:00",
+          "status": "revised",
+          "method": "User-approved Codex editorial correction; no new independent model approval",
+          "changes": [
+            "Removed the unsupported first-AI-company claim from one sentence. All quiz questions, answers and feedback were reviewed; none depends on the removed claim, so they remain unchanged."
+          ],
+          "scope": "November 20 Intermediate and Advanced only; approval received November 22, 2026.",
+          "corroborating_source": "https://www.c3.ai/news/c3-ai-announces-pricing-of-initial-public-offering",
+          "previous_review": {
+            "date": "2026-11-20T03:44:31.419001+00:00",
             "model": "gpt-6.1-sol",
+            "status": "passed",
+            "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+            "generation_attempts": 3,
+            "repaired_sections": [],
+            "provider": "OpenAI",
             "surface": "Codex with ChatGPT sign-in",
-            "separate_session": true
-          },
-          "language_policy_version": "2026-10-08-teaching-quality",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "Ten distinct targets occur in the reading and avoid reserved vocabulary. “Peer,” “guardrails” and “robust regulation” teach useful contextual distinctions."
+            "reviewer": {
+              "model": "gpt-6.1-sol",
+              "surface": "Codex with ChatGPT sign-in",
+              "separate_session": true
             },
-            "register": {
-              "passed": true,
-              "reason": "Polished reporting preserves attribution and uncertainty through wording such as “potentially,” “expects” and “a possibility.”"
+            "language_policy_version": "2026-10-08-teaching-quality",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "Ten distinct targets occur in the reading and avoid reserved vocabulary. “Peer,” “guardrails” and “robust regulation” teach useful contextual distinctions."
+              },
+              "register": {
+                "passed": true,
+                "reason": "Polished reporting preserves attribution and uncertainty through wording such as “potentially,” “expects” and “a possibility.”"
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Definitions clarify meaning and connotation. The grammar accurately explains concession and the earlier action expressed by “having described,” using an exact reading quotation."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The twelve distinct questions test supported inference, collective spending, political positions, contextual meaning and concession, with accurate feedback and unambiguous answers."
+              }
             },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Definitions clarify meaning and connotation. The grammar accurately explains concession and the earlier action expressed by “having described,” using an exact reading quotation."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The twelve distinct questions test supported inference, collective spending, political positions, contextual meaning and concession, with accurate feedback and unambiguous answers."
-            }
-          },
-          "content_digest": "f7fb488c81bc11ca67ebc16fcc2b21e2dba2d3132778dea3e927dea37fbc1f22"
+            "content_digest": "f7fb488c81bc11ca67ebc16fcc2b21e2dba2d3132778dea3e927dea37fbc1f22"
+          }
         }
       }
     }

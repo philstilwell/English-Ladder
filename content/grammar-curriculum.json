@@ -1,5 +1,5 @@
 {
-  "revision": "2026-11-20",
+  "revision": "2026-11-22",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -7579,6 +7579,132 @@
         "https://dictionary.cambridge.org/grammar/british-grammar/mind",
         "https://dictionary.cambridge.org/grammar/british-grammar/requests",
         "https://learnenglishteens.britishcouncil.org/grammar/b1-b2-grammar/can-could-would-invitations-offers-requests-permission"
+      ]
+    },
+    {
+      "number": 65,
+      "title": "Put on or wear? An action and its resulting state",
+      "level": "A2",
+      "category": "Verb meaning and time",
+      "goal": "Distinguish moving clothing onto your body from having it on, and choose the verb that matches the situation.",
+      "rules": [
+        "In the clothing sense, put on describes moving an item onto your body; wear describes having it on your body. The action creates the state, meaning the situation that continues afterward. If you are sliding your arms into a coat, you are putting it on. Once it is on, you are wearing it, even while sitting still. The useful distinction is the change versus the resulting situation, not a fixed number of seconds.",
+        "Both verbs can use the present continuous, the am/is/are + -ing form: “I'm putting on my coat” describes the change in progress, while “I'm wearing my coat” describes what I have on now. The -ing ending alone does not tell you whether someone is getting dressed. English allows wearing for a current clothing situation; do not invent a rule that every state forbids -ing. For a habit, the simple present is natural: “I wear gloves in winter.”",
+        "An ordinary sequence is “I put on my coat, wore it all morning, and took it off at noon.” Put has the same form in the simple present and simple past; wore is the simple past of wear. You can put a coat on more than once in a day, and you can wear it for only a minute. These are meaning choices, not rules about morning versus afternoon or short versus long periods. This lesson covers clothing and accessories; expressions such as put on weight and wear out have different meanings."
+      ],
+      "cards": [
+        {
+          "label": "THE CHANGE",
+          "example": "I'm putting on my coat.",
+          "note": "I am moving the coat onto my body. The act of getting dressed is in progress."
+        },
+        {
+          "label": "THE RESULTING STATE",
+          "example": "I'm wearing my coat.",
+          "note": "The coat is already on my body. I can still be wearing it while sitting motionless."
+        },
+        {
+          "label": "THE SEQUENCE",
+          "example": "I put on my coat at eight and wore it until noon.",
+          "note": "Put on names the change at eight; wore describes having the coat on during the following period."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Your coat is fully on, and you are sitting still. Which sentence describes having it on now?",
+          "options": [
+            {
+              "text": "I'm putting on my coat.",
+              "correct": false,
+              "feedback": "Putting on describes moving the coat onto your body. That change has already finished in this situation."
+            },
+            {
+              "text": "I'm wearing my coat.",
+              "correct": true,
+              "feedback": "Wearing describes the state of having the coat on. It does not require any movement."
+            },
+            {
+              "text": "I'm taking off my coat.",
+              "correct": false,
+              "feedback": "Taking off describes removing the coat. The situation says you are sitting still with it on."
+            }
+          ]
+        },
+        {
+          "prompt": "You are sliding your feet into your shoes right now. Which phrase names that action?",
+          "options": [
+            {
+              "text": "wearing out your shoes",
+              "correct": false,
+              "feedback": "Wearing out means making something old or damaged through use. It does not mean moving your feet into the shoes."
+            },
+            {
+              "text": "taking off your shoes",
+              "correct": false,
+              "feedback": "Taking off reverses the change: it removes the shoes. Here you are moving your feet into them."
+            },
+            {
+              "text": "putting on your shoes",
+              "correct": true,
+              "feedback": "Putting on describes the change from not having the shoes on to having them on your feet."
+            }
+          ]
+        },
+        {
+          "prompt": "Why can both “I'm putting on my coat” and “I'm wearing my coat” be correct?",
+          "options": [
+            {
+              "text": "Both allow -ing, but the verbs describe different situations.",
+              "correct": true,
+              "feedback": "Putting on presents the change in progress. Wearing presents the current state of having the coat on. The ending does not erase that difference."
+            },
+            {
+              "text": "Both mean that my arms are still entering the sleeves.",
+              "correct": false,
+              "feedback": "Only putting on describes that change here. Wearing can describe a fully dressed person sitting still."
+            },
+            {
+              "text": "Wearing is only correct when I am moving around.",
+              "correct": false,
+              "feedback": "Wearing describes having clothing on. Walking, standing, and sitting still can all happen while you are wearing a coat."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "At eight you moved a coat onto your body. It stayed on until noon, when you removed it. Choose the sentence that clearly describes the first two stages.",
+        "options": [
+          {
+            "text": "I wore my coat at eight and put it on all morning.",
+            "correct": false,
+            "feedback": "This does not clearly match the sequence. Put on should name the initial change; wore should describe the later period when the coat stayed on."
+          },
+          {
+            "text": "I put on my coat at eight and wore it until noon.",
+            "correct": true,
+            "feedback": "Put on names the initial action; wore names the resulting period of having the coat on. Put is also the simple-past form of put."
+          },
+          {
+            "text": "I put on my coat at eight and weared it until noon.",
+            "correct": false,
+            "feedback": "The meaning is intended correctly, but the simple past of wear is wore, not weared."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-65-put-on-or-wear-student-workbook.pdf",
+        "concept-65-put-on-or-wear-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-22",
+      "related": [
+        14,
+        58,
+        63
+      ],
+      "sources": [
+        "https://downloads.bbc.co.uk/learningenglish/englishyouneed/unit_24/170721_Learners_Questions_24.pdf",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/pronouns",
+        "https://dictionary.cambridge.org/dictionary/english/wear"
       ]
     }
   ],

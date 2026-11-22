@@ -1,6 +1,6 @@
 # Quotation marks in grammar teaching
 
-When discussing a word, phrase, ending, or example sentence as language, put it in quotation marks. This applies to grammar lesson titles, comparison labels, explanations, exercise feedback, PDF guides, and their AI practice material.
+When discussing a word, phrase, ending, or example sentence as language, put it in quotation marks. This applies to future grammar graphics and Facebook captions, as well as grammar lesson titles, comparison labels, explanations, exercise feedback, PDF guides, and their AI practice material.
 
 - Mention: **“Put on” describes a change; “wear” describes a state.**
 - Ordinary use: **You can wear a coat for only a minute.**
@@ -12,3 +12,5 @@ Standalone example sentences and answer choices already presented as examples do
 Use the shared curriculum as the source for both the website and PDFs. Preserve apostrophes inside contractions. After rebuilding, check that quotation marks remain visible and searchable, that fonts are embedded, and that added punctuation has not caused clipped text or poor wrapping. Keep answer correctness and the explanation's meaning unchanged.
 
 This convention supplements the standing requirement to preserve the approved graphic layout and explain the grammatical or meaning-based logic behind each rule.
+
+Include the required quotation marks explicitly in image-editing prompts. Visually check their presence and legibility in the finished graphic, including term headings and explanatory lines. Read back the Facebook caption before posting. Both the graphic and caption must explain why the rule fits; retain the approved layout while making these wording changes.

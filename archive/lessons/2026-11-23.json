@@ -1,0 +1,802 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-23",
+  "release_iso": "2026-11-23T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Mon, 23 Nov 2026 00:50:35 GMT",
+    "retrieved_at": "2026-11-23T03:30:10.739399+00:00",
+    "title": "COP31 fails to reach major climate deal as talks expose deep divisions",
+    "summary": "Hopes for an agreement on tackling climate change collapsed after a row about mentioning fossil fuels",
+    "evidence_text": "Countries have failed to reach a major new deal to tackle climate change after deep divisions over fossil fuels and money emerged at the UN COP31 talks in Turkey.\nBut the words \"fossil fuels\" did not appear anywhere in the text. The only indirect reference to coal, oil and gas was a nod to a deal agreed at COP28 in 2023 , when countries agreed to \"transition away\" from fossil fuels in energy systems.\nNegotiations were due to finish on Friday but ran late into Sunday in search of common ground, becoming the longest UN climate conference in history.\nBut the final deal proved unacceptable to the EU, Pacific island nations and others because it failed to directly mention fossil fuels, the main cause of global warming.\nMeanwhile, many poorer countries objected to the absence of any clear financial commitments from richer nations to help them adapt to the impacts of rising temperatures.\nThe UN's climate chief, Simon Stiell, said he would seek advice on potential reform to the process, with the next conference scheduled for November 2027, COP32 in Ethiopia.\nA first draft of the deal on Monday mentioned \"fossil fuel\" or \"fossil fuels\" six times, but that was unacceptable to oil-producing nations.\nLast year at COP30 in Brazil , nations agreed to triple the finance for that purpose.\nBut this year's deal contained no reference to concrete figures, nor the baseline against which that pledge would be measured. This raised fears it would give richer nations too much wriggle room.\nAlthough the main deal fell through, some agreements were reached, including progress on a \"just transition mechanism\" - a framework to support workers and communities as economies shift towards clean energy.\nBut following the weekend's events, some have questioned whether the UN climate process - which relies on consensus - can succeed in a geopolitically divided world.\nAfter two weeks of negotiations, exhausted delegates were presented with a new, draft deal in the early hours of Sunday to try to break the deadlock.\nSaudi Arabia's delegate Mohammad Ayoub said that Arab countries \"continued to engage in good faith\" but argued that they only accounted for a small proportion of historical greenhouse gas emissions.\nRussia warned not to \"turn to slogans\" over coal, oil and gas, claiming that if countries moved away from fossil fuels too quickly it would lead to \"fuel poverty\".\nChris Bowen, Australian government minister and COP31 president of negotiations, said there were \"unbridgeable red lines\" in the discussions.\nNow, the world is likely to limit warming to about 2.8C by 2100 based on current government policies, the UN says.\nBut action has not been fast enough to meet that Paris goal, with the world likely to \"overshoot\" 1.5C of long-term warming in the next few years.\nMany countries say they are committed to eventually bringing warming back down to 1.5C, but that will require an ambitious ramping up of technologies - which do not yet exist at scale - to remove carbon dioxide from the atmosphere.",
+    "evidence_retrieved_at": "2026-11-23T03:30:10.739399+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cqwy06zrd26lo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why did some countries reject the plan? Use \"They rejected it because ...\".",
+          "What should countries discuss first: fossil fuels or money? Answer for yourself or a person in a story: \"I think ... because ...\"."
+        ],
+        "title": "Countries fail to agree on major climate plan",
+        "overview": "Countries at climate talks in Turkey could not agree on a major new plan.",
+        "topic": "Climate talks",
+        "vocabulary": [
+          {
+            "term": "climate change",
+            "part_of_speech": "noun phrase",
+            "definition": "Changes in the world's usual weather over a long time."
+          },
+          {
+            "term": "fossil fuels",
+            "part_of_speech": "plural noun",
+            "definition": "Coal, oil and gas that people burn for energy."
+          },
+          {
+            "term": "talks",
+            "part_of_speech": "plural noun",
+            "definition": "Meetings where people discuss a problem or plan."
+          },
+          {
+            "term": "rejected",
+            "part_of_speech": "verb, past simple",
+            "definition": "Decided not to accept something."
+          },
+          {
+            "term": "promises",
+            "part_of_speech": "plural noun",
+            "definition": "Things that people say they will certainly do."
+          },
+          {
+            "term": "deal with",
+            "part_of_speech": "phrasal verb",
+            "definition": "Take action to help with a problem."
+          }
+        ],
+        "grammar": {
+          "concept": "Giving reasons with because",
+          "explanation": "Use \"because\" to explain why something happens or happened. Put the reason after \"because\". The reason needs a subject and a verb. You can put the action first and the reason second.",
+          "example_quote": "Some countries rejected the plan because it did not mention fossil fuels."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about COP31?",
+            "options": [
+              "Countries agreed on a major new climate plan.",
+              "Countries could not agree on a major climate plan.",
+              "Countries agreed to stop using all fossil fuels."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The countries failed to agree on a major new plan.",
+              "The reading says the countries failed to agree on a major climate plan.",
+              "The reading does not report this agreement; the final plan did not mention fossil fuels."
+            ]
+          },
+          {
+            "question": "Until which day did the talks continue?",
+            "options": [
+              "Sunday",
+              "Friday",
+              "Monday"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The talks continued until Sunday.",
+              "Friday was the planned end, but the talks continued until Sunday.",
+              "The reading says the talks continued until Sunday."
+            ]
+          },
+          {
+            "question": "According to the reading, why did some countries reject the plan?",
+            "options": [
+              "It asked poorer countries to give money.",
+              "It ended the talks on Friday.",
+              "It did not mention fossil fuels."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Poorer countries wanted money from richer countries; the reading does not say the plan asked them to give money.",
+              "The talks continued until Sunday; the missing words about fossil fuels were the reason.",
+              "Some countries rejected the plan because it did not mention fossil fuels."
+            ]
+          },
+          {
+            "question": "What did many poorer countries want from richer countries?",
+            "options": [
+              "More coal, oil and gas",
+              "Clear promises of money",
+              "An earlier date for the talks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says they wanted clear promises of money, not more fossil fuels.",
+              "They wanted clear promises of money to help with the effects of rising temperatures.",
+              "The reading says they wanted money; it does not say they asked for an earlier date."
+            ]
+          },
+          {
+            "question": "What does \"deal with\" mean in the reading?",
+            "options": [
+              "Take action about a problem",
+              "Make a promise about money",
+              "Continue a meeting until Sunday"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Here, \"deal with\" means taking action to help with a problem.",
+              "The countries wanted promises, but \"deal with\" describes taking action about a problem.",
+              "The talks continued until Sunday, but \"deal with\" does not describe how long a meeting lasts."
+            ]
+          },
+          {
+            "question": "Which word gives a reason in \"We need help ___ temperatures are rising\"?",
+            "options": [
+              "but",
+              "and",
+              "because"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Use \"but\" to connect different or surprising ideas; it does not introduce the reason here.",
+              "Use \"and\" to add information; this question asks for a word that gives a reason.",
+              "Use \"because\" to explain why help is needed."
+            ]
+          },
+          {
+            "question": "Which three fossil fuels does the reading name?",
+            "options": [
+              "Coal, oil and money",
+              "Coal, oil and gas",
+              "Oil, gas and water"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading names gas as the third fossil fuel, not money.",
+              "The reading names coal, oil and gas as fossil fuels.",
+              "The reading names coal with oil and gas, not water."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Countries at COP31 in Turkey failed to agree on a major plan to fight climate change.",
+          "Countries disagreed about fossil fuels and money.",
+          "Fossil fuels include coal, oil and gas.",
+          "The talks were planned to end on Friday, but they continued until Sunday.",
+          "The final plan did not mention fossil fuels.",
+          "Some countries rejected the plan because it did not mention fossil fuels.",
+          "Many poorer countries wanted clear promises of money from richer countries.",
+          "They wanted help to deal with the effects of rising temperatures.",
+          "The next climate talks are planned for November 2027 in Ethiopia."
+        ],
+        "sentence_evidence": [
+          "Countries have failed to reach a major new deal to tackle climate change after deep divisions over fossil fuels and money emerged at the UN COP31 talks in Turkey.",
+          "Countries have failed to reach a major new deal to tackle climate change after deep divisions over fossil fuels and money emerged at the UN COP31 talks in Turkey.",
+          "But the words \"fossil fuels\" did not appear anywhere in the text. The only indirect reference to coal, oil and gas was a nod to a deal agreed at COP28 in 2023 , when countries agreed to \"transition away\" from fossil fuels in energy systems.",
+          "Negotiations were due to finish on Friday but ran late into Sunday in search of common ground, becoming the longest UN climate conference in history.",
+          "But the words \"fossil fuels\" did not appear anywhere in the text. The only indirect reference to coal, oil and gas was a nod to a deal agreed at COP28 in 2023 , when countries agreed to \"transition away\" from fossil fuels in energy systems.",
+          "But the final deal proved unacceptable to the EU, Pacific island nations and others because it failed to directly mention fossil fuels, the main cause of global warming.",
+          "Meanwhile, many poorer countries objected to the absence of any clear financial commitments from richer nations to help them adapt to the impacts of rising temperatures.",
+          "Meanwhile, many poorer countries objected to the absence of any clear financial commitments from richer nations to help them adapt to the impacts of rising temperatures.",
+          "The UN's climate chief, Simon Stiell, said he would seek advice on potential reform to the process, with the next conference scheduled for November 2027, COP32 in Ethiopia."
+        ],
+        "editorial_check": {
+          "date": "2026-11-23T03:32:19.542489+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct reading targets meet the minimum. Useful expressions such as “talks” and “deal with” have accessible definitions; essential climate terms are explained."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral wording such as “failed to agree” suits adult beginner news reading, with clear, supportive teaching language."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short sentences and the exact “because” example support understanding. Discussion includes simple sentence frames and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct reading sentences and seven distinct quiz questions meet the minimums. Questions appropriately test main ideas, details, vocabulary and “because”."
+            }
+          },
+          "content_digest": "6328db0d4ef3d7cbaf8b2064a15cf9125d44e7d7032e0413bb9e47050309afdd"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why did the missing financial details worry poorer countries? Explain how clearer figures could help them.",
+          "When a group strongly disagrees, what practical steps can help its members find common ground?"
+        ],
+        "title": "COP31 Climate Deal Fails Over Fuels and Funding",
+        "overview": "Explore why countries failed to agree at COP31 and how disagreements over energy and financial support shaped the result.",
+        "topic": "International climate negotiations",
+        "vocabulary": [
+          {
+            "term": "negotiations",
+            "part_of_speech": "plural noun",
+            "definition": "Formal discussions in which people or groups try to reach an agreement."
+          },
+          {
+            "term": "common ground",
+            "part_of_speech": "noun phrase",
+            "definition": "Ideas or interests that people share despite their differences."
+          },
+          {
+            "term": "unacceptable",
+            "part_of_speech": "adjective",
+            "definition": "Not good enough for someone to agree to or allow."
+          },
+          {
+            "term": "objected",
+            "part_of_speech": "verb, past simple",
+            "definition": "Expressed disagreement with something or opposition to it."
+          },
+          {
+            "term": "financial commitments",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Firm promises to provide money for a particular purpose."
+          },
+          {
+            "term": "adapt",
+            "part_of_speech": "verb",
+            "definition": "Change how people live or work to manage new conditions."
+          },
+          {
+            "term": "triple",
+            "part_of_speech": "verb",
+            "definition": "Increase something to three times its earlier amount."
+          },
+          {
+            "term": "consensus",
+            "part_of_speech": "noun",
+            "definition": "Agreement reached by the members of a group."
+          }
+        ],
+        "grammar": {
+          "concept": "Past simple passive",
+          "explanation": "Form the past simple passive with “was” or “were” and a past participle. Use it for a completed past action when the action matters more than who performed it. In the main clause, “was made” focuses on progress without naming who made it.",
+          "example_quote": "Although the main agreement failed, some progress was made on support for workers and communities moving towards clean energy."
+        },
+        "quiz": [
+          {
+            "question": "What is the main point of the News Brief?",
+            "options": [
+              "Countries agreed on a major climate plan after extending the negotiations.",
+              "Disagreements over fossil fuels and money prevented a major climate agreement.",
+              "Countries ended all cooperation on support for clean energy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The negotiations continued into Sunday, but countries still failed to reach a major agreement.",
+              "The reading identifies fossil fuels and money as the main areas of disagreement.",
+              "Some progress was made on support for workers and communities moving towards clean energy."
+            ]
+          },
+          {
+            "question": "Why did the EU and Pacific island nations find the final proposal unacceptable?",
+            "options": [
+              "It did not directly mention fossil fuels.",
+              "It mentioned fossil fuels six times.",
+              "It required all countries to stop using fossil fuels immediately."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading directly connects their opposition to the missing mention of fossil fuels.",
+              "The earlier draft mentioned fossil fuels six times; the final proposal did not directly mention them.",
+              "The reading does not describe any requirement to stop using fossil fuels immediately."
+            ]
+          },
+          {
+            "question": "What support did poorer countries want clearer commitments on?",
+            "options": [
+              "Money to extend the negotiations beyond Sunday.",
+              "Money to help oil-producing nations rewrite the proposal.",
+              "Money to help them adapt to rising temperatures."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The negotiations ran late, but extending them was not the purpose of the financial support described.",
+              "The reading does not identify rewriting the proposal as the purpose of the requested money.",
+              "Poorer countries wanted clear financial commitments to help them manage the effects of rising temperatures."
+            ]
+          },
+          {
+            "question": "Why did the missing financial figures and starting amount raise concerns?",
+            "options": [
+              "They showed that richer nations had already paid the promised money.",
+              "They could leave richer nations too much freedom in meeting their promise.",
+              "They proved that poorer countries no longer needed support."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not say that the promised money had already been paid.",
+              "Without clear amounts for measuring the increase, people worried about how richer nations would meet their promise.",
+              "Poorer countries still wanted financial support to adapt to rising temperatures."
+            ]
+          },
+          {
+            "question": "What does “common ground” mean in the sentence about the extended negotiations?",
+            "options": [
+              "Shared views that could help countries agree.",
+              "A shared building where countries could meet.",
+              "The same amount of money for every country."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Common ground” means ideas or interests that people share despite their differences.",
+              "Here, “ground” is part of an expression about agreement, rather than a physical place.",
+              "“Common ground” does not mean that every country receives an equal amount of money."
+            ]
+          },
+          {
+            "question": "If financial support increases from 10 million to 30 million, which taught verb describes that change?",
+            "options": [
+              "Adapt",
+              "Objected",
+              "Triple"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Adapt” means to change in order to manage new conditions, rather than increase an amount three times.",
+              "“Objected” describes expressing disagreement, rather than increasing money.",
+              "“Triple” means to increase something to three times its earlier amount."
+            ]
+          },
+          {
+            "question": "What progress was made despite the failure of the main agreement?",
+            "options": [
+              "Countries settled all their disagreements about fossil fuels.",
+              "Countries made progress on support for workers and communities moving towards clean energy.",
+              "Countries agreed on exact financial figures for the promised increase."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes continuing divisions over fossil fuels.",
+              "The reading identifies support during the move towards clean energy as an area of progress.",
+              "The proposal lacked exact financial figures and a starting amount."
+            ]
+          },
+          {
+            "question": "Which sentence uses the past simple passive to describe a completed action at another meeting?",
+            "options": [
+              "The plan was approved yesterday.",
+              "The group approved the plan yesterday.",
+              "The plan has been approved."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Was approved” uses “was” plus a past participle to form the past simple passive.",
+              "This sentence is grammatical, but “approved” is active: the subject performs the action.",
+              "This sentence is grammatical and passive, but “has been approved” is present perfect rather than past simple."
+            ]
+          },
+          {
+            "question": "What did Simon Stiell say he would do after the failure?",
+            "options": [
+              "Immediately replace the existing climate process.",
+              "Stop countries from discussing changes to the process.",
+              "Seek advice on possible changes to the process."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Seeking advice on possible changes does not mean that the process was immediately replaced.",
+              "He said he would seek advice, which allows discussion of possible changes.",
+              "The reading reports an intention to seek advice, rather than a completed change."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Countries at COP31 in Turkey failed to reach a major new climate agreement because of deep divisions over fossil fuels and money.",
+          "The negotiations continued from Friday into Sunday as countries searched for common ground.",
+          "The EU and Pacific island nations found the final proposal unacceptable because it did not directly mention fossil fuels.",
+          "Poorer countries also objected because richer nations made no clear financial commitments to help them adapt to rising temperatures.",
+          "An earlier draft mentioned fossil fuels six times, but oil-producing nations found this unacceptable.",
+          "At COP30 in Brazil last year, nations agreed to triple the financial support.",
+          "However, this year's proposal included neither exact financial figures nor a starting amount for measuring that increase.",
+          "This lack of detail raised concerns that richer nations would have too much freedom in how they met their promise.",
+          "Although the main agreement failed, some progress was made on support for workers and communities moving towards clean energy.",
+          "The climate process relies on consensus, which means countries must reach an agreement together.",
+          "Following the failure, some people questioned whether this process could succeed in a politically divided world.",
+          "The UN's climate chief, Simon Stiell, said he would seek advice on possible changes to the process."
+        ],
+        "sentence_evidence": [
+          "Countries have failed to reach a major new deal to tackle climate change after deep divisions over fossil fuels and money emerged at the UN COP31 talks in Turkey.",
+          "Negotiations were due to finish on Friday but ran late into Sunday in search of common ground, becoming the longest UN climate conference in history.",
+          "But the final deal proved unacceptable to the EU, Pacific island nations and others because it failed to directly mention fossil fuels, the main cause of global warming.",
+          "Meanwhile, many poorer countries objected to the absence of any clear financial commitments from richer nations to help them adapt to the impacts of rising temperatures.",
+          "A first draft of the deal on Monday mentioned \"fossil fuel\" or \"fossil fuels\" six times, but that was unacceptable to oil-producing nations.",
+          "Last year at COP30 in Brazil , nations agreed to triple the finance for that purpose.",
+          "But this year's deal contained no reference to concrete figures, nor the baseline against which that pledge would be measured. This raised fears it would give richer nations too much wriggle room.",
+          "But this year's deal contained no reference to concrete figures, nor the baseline against which that pledge would be measured. This raised fears it would give richer nations too much wriggle room.",
+          "Although the main deal fell through, some agreements were reached, including progress on a \"just transition mechanism\" - a framework to support workers and communities as economies shift towards clean energy.",
+          "But following the weekend's events, some have questioned whether the UN climate process - which relies on consensus - can succeed in a geopolitically divided world.",
+          "But following the weekend's events, some have questioned whether the UN climate process - which relies on consensus - can succeed in a geopolitically divided world.",
+          "The UN's climate chief, Simon Stiell, said he would seek advice on potential reform to the process, with the next conference scheduled for November 2027, COP32 in Ethiopia."
+        ],
+        "editorial_check": {
+          "date": "2026-11-23T03:35:37.658726+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight useful B1-B2 targets, including “negotiations,” “financial commitments” and “consensus,” occur in the reading, have clear definitions and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "“Raised concerns” and “seek advice” maintain natural, neutral news reporting; teaching feedback is clear and respectful."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations are manageable and precise. The exact grammar quotation demonstrates “was made,” and language examples are appropriately quoted."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and nine quiz questions cover comprehension, financial concerns, contextual vocabulary and passive-form transfer, meeting all minimums."
+            }
+          },
+          "content_digest": "52154cb6b8e26adf618a5cca7741dd11ad0484868cf6840ae7bbcd97a6619ffe"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why an agreement without a financial baseline might leave room for conflicting interpretations of countries' responsibilities.",
+          "Should climate conferences prioritise broad participation or stronger commitments when the two conflict? Defend your view."
+        ],
+        "title": "COP31 Deal Collapses Over Fossil Fuels and Finance",
+        "overview": "COP31's failed main agreement exposed competing priorities over energy and financial support, prompting questions about how international climate decisions are reached.",
+        "topic": "International climate diplomacy",
+        "vocabulary": [
+          {
+            "term": "protracted",
+            "part_of_speech": "adjective",
+            "definition": "Continuing longer than expected or desired, often suggesting difficulty or frustration."
+          },
+          {
+            "term": "deadlock",
+            "part_of_speech": "noun",
+            "definition": "A situation in which opposing positions prevent an agreement or further progress."
+          },
+          {
+            "term": "in good faith",
+            "part_of_speech": "adverbial phrase",
+            "definition": "With an honest intention to cooperate, rather than merely appearing to participate."
+          },
+          {
+            "term": "baseline",
+            "part_of_speech": "noun",
+            "definition": "A reference value against which a result or the fulfilment of a pledge can be measured."
+          },
+          {
+            "term": "wriggle room",
+            "part_of_speech": "noun phrase",
+            "definition": "An informal, often critical expression for freedom to avoid a firm commitment or interpret it advantageously."
+          },
+          {
+            "term": "irreconcilable",
+            "part_of_speech": "adjective",
+            "definition": "So opposed that the positions cannot be brought into agreement."
+          },
+          {
+            "term": "overshoot",
+            "part_of_speech": "verb, base form",
+            "definition": "To exceed a target or limit, without necessarily remaining above it permanently."
+          },
+          {
+            "term": "at scale",
+            "part_of_speech": "adverbial phrase",
+            "definition": "At a level of deployment large enough to address the wider problem, rather than through limited applications."
+          },
+          {
+            "term": "fell through",
+            "part_of_speech": "phrasal verb, past simple",
+            "definition": "Failed to be completed or secured after being planned or pursued."
+          },
+          {
+            "term": "procedural reform",
+            "part_of_speech": "noun phrase",
+            "definition": "Changes to the rules or methods through which a process operates and reaches decisions."
+          }
+        ],
+        "grammar": {
+          "concept": "Inversion after fronted “not only”",
+          "explanation": "When “not only” begins a clause for emphasis, put an auxiliary before the subject. In the past simple, use “did” plus the base form of the verb; the following “but it also” clause retains ordinary subject–verb order.",
+          "example_quote": "Not only did this year's deal omit concrete figures, but it also failed to specify the baseline against which the pledge would be measured."
+        },
+        "quiz": [
+          {
+            "question": "Which assessment best captures the reading's overall account of COP31?",
+            "options": [
+              "Delegates secured a political agreement but postponed its financial details.",
+              "The main agreement failed over substantive divisions, although some narrower work advanced.",
+              "Disagreement about conference procedures prevented any progress on climate policy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The main political agreement failed; its financial details were among the unresolved issues.",
+              "The reading combines failure over energy and finance with progress on support for workers and communities.",
+              "Procedural questions followed the outcome, and the reading explicitly identifies progress in one area."
+            ]
+          },
+          {
+            "question": "What does describing the discussions as “protracted” convey beyond their duration?",
+            "options": [
+              "Their extension was an agreed part of the original timetable.",
+              "Their length demonstrated that agreement was becoming more likely.",
+              "They continued beyond the expected endpoint, with a sense of difficulty."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says the discussions continued beyond their scheduled Friday finish.",
+              "“Protracted” describes an extended process; it does not establish improving prospects for agreement.",
+              "“Protracted” suggests an unwelcome or difficult extension, consistent with the missed deadline and continuing deadlock."
+            ]
+          },
+          {
+            "question": "Why did the EU and Pacific island nations find the proposed agreement unacceptable?",
+            "options": [
+              "It avoided directly naming fossil fuels despite their central role in global warming.",
+              "It explicitly cancelled the earlier agreement to move away from fossil fuels.",
+              "It required an immediate end to all coal, oil and gas use."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Their stated objection concerned the omission of a direct reference to fossil fuels.",
+              "An indirect reference to the earlier agreement does not amount to cancelling it.",
+              "The reading describes the absence of explicit wording, rather than an immediate prohibition."
+            ]
+          },
+          {
+            "question": "How should readers interpret Mohammad Ayoub's claim that Arab countries participated “in good faith”?",
+            "options": [
+              "As confirmation that other participants accepted those countries' proposals.",
+              "As his assertion of sincere participation, alongside an argument about historical emissions.",
+              "As his acknowledgement that those countries bore most historical responsibility."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A claim of sincere participation does not establish acceptance by other participants.",
+              "The reading attributes both the claim of sincerity and the argument about a small historical emissions share to Ayoub.",
+              "Ayoub argued that their historical share was small, rather than predominant."
+            ]
+          },
+          {
+            "question": "Which statement preserves the status and scope of Russia's argument in the reading?",
+            "options": [
+              "The conference established that any reduction in fossil fuel use causes unaffordable energy.",
+              "Russia warned that delaying the move away from fossil fuels would make energy unaffordable.",
+              "Russia warned that moving away from fossil fuels too quickly would make adequate energy unaffordable for some people."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading attributes a warning to Russia and specifies excessive speed, rather than any reduction.",
+              "Russia's warning concerned moving too quickly, rather than delaying the transition.",
+              "This preserves the attribution to Russia and the warning's focus on the pace of change."
+            ]
+          },
+          {
+            "question": "What role would the missing “baseline” have played in assessing the financial pledge?",
+            "options": [
+              "It would have provided a reference value against which fulfilment could be measured.",
+              "It would have stated the final amount due, replacing the need for any separate figures.",
+              "It would have shown how much finance richer nations had already provided under the pledge."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A “baseline” supplies a measurement reference; its omission makes assessment less clearly defined.",
+              "A “baseline” is a reference value, rather than necessarily the final amount due.",
+              "A measurement reference does not by itself establish what has already been provided."
+            ]
+          },
+          {
+            "question": "What attitude does “excessive wriggle room” express towards the agreement's financial wording?",
+            "options": [
+              "Approval of flexibility that guarantees fair implementation.",
+              "Concern that imprecise wording could let richer nations interpret the pledge to their advantage.",
+              "Certainty that richer nations have already broken the pledge."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Excessive wriggle room” is critical and does not suggest guaranteed fairness.",
+              "The phrase presents the missing figures and baseline as potentially allowing advantageous interpretations.",
+              "The reading reports a concern about the pledge's fulfilment, rather than an established breach."
+            ]
+          },
+          {
+            "question": "Which conclusion is justified by the expectation that warming will “overshoot” 1.5°C?",
+            "options": [
+              "The reading establishes that warming can never return to 1.5°C.",
+              "The forecast guarantees that warming will stabilise at exactly 2.8°C.",
+              "Warming is expected to exceed the goal, while bringing it down again would require substantial additional technological deployment."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Overshoot” indicates an expected exceedance, not its permanence; the reading discusses countries' stated intention to reverse it.",
+              "The 2.8°C projection is approximate and based on current policies, rather than guaranteed.",
+              "The reading distinguishes the likely exceedance from the demanding technological requirements of bringing warming down again."
+            ]
+          },
+          {
+            "question": "What limitation is conveyed by saying carbon dioxide removal technologies do not yet operate “at scale”?",
+            "options": [
+              "They have not reached the level of deployment needed for the proposed task.",
+              "No form of carbon dioxide removal technology exists.",
+              "They have already been deployed widely enough to achieve the proposed return to 1.5°C."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“At scale” concerns the extent of deployment relative to the task, rather than existence alone.",
+              "Insufficient deployment does not mean that no such technology exists.",
+              "The reading identifies a major expansion as necessary, so sufficient deployment has not been established."
+            ]
+          },
+          {
+            "question": "What distinction does the sentence beginning “Although the main agreement fell through” establish?",
+            "options": [
+              "Support for workers caused the political agreement to collapse.",
+              "Failure of the main agreement coexisted with progress on a more specific framework.",
+              "The framework had already completed the shift to clean energy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Although” establishes a concession, rather than identifying a cause of the collapse.",
+              "The sentence separates the failed main agreement from progress on support for affected workers and communities.",
+              "Progress on a support framework does not establish that the energy transition has been completed."
+            ]
+          },
+          {
+            "question": "What can be inferred from the climate chief's intention to seek advice on “procedural reform”?",
+            "options": [
+              "Countries had already agreed to replace the existing decision process.",
+              "The next conference had been postponed until new rules were adopted.",
+              "Changes to the process were to be explored, without an adopted replacement being established."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Seeking advice does not establish that countries have agreed on a replacement.",
+              "The reading gives a scheduled date for the next conference and reports no such condition.",
+              "The announced step concerns exploring possible changes, rather than confirming the adoption of new procedures."
+            ]
+          },
+          {
+            "question": "Which sentence correctly applies inversion after fronted “not only” while preserving the reading's two criticisms of the financial wording?",
+            "options": [
+              "Not only did the deal lack a measurement baseline, but it also omitted concrete figures.",
+              "Not only the deal did lack a measurement baseline, but it also omitted concrete figures.",
+              "Not only did the deal lacked a measurement baseline, but it also omitted concrete figures."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Did” precedes the subject, and “lack” remains in its base form; both omissions match the reading.",
+              "With fronted “not only”, the auxiliary “did” must precede the subject “the deal”.",
+              "After “did”, use the base form “lack”, rather than the past-tense form “lacked”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Countries failed to secure a major new climate agreement at COP31 in Turkey after divisions over fossil fuels and finance emerged.",
+          "The protracted discussions continued from their scheduled Friday finish into Sunday, making this the longest UN climate conference in history.",
+          "Exhausted delegates received a fresh draft in the early hours of Sunday in an attempt to break the deadlock.",
+          "The proposed agreement was unacceptable to the EU, Pacific island nations and others because it omitted any direct mention of fossil fuels, the main cause of global warming.",
+          "Its only indirect reference to coal, oil and gas recalled the COP28 agreement to move away from fossil fuels in energy systems.",
+          "Saudi delegate Mohammad Ayoub said Arab countries had participated in good faith, while arguing that their share of historical greenhouse gas emissions was small.",
+          "Russia warned that moving away from fossil fuels too quickly would leave people unable to afford adequate energy.",
+          "Not only did this year's deal omit concrete figures, but it also failed to specify the baseline against which the pledge would be measured.",
+          "This lack of precision raised fears that richer nations would have excessive wriggle room in fulfilling the pledge.",
+          "Chris Bowen, the Australian minister serving as COP31 president of negotiations, described delegates' red lines as irreconcilable.",
+          "According to the UN, current government policies are likely to limit warming to about 2.8°C by 2100.",
+          "Long-term warming is nevertheless likely to overshoot the Paris agreement's 1.5°C goal within the next few years.",
+          "Many countries say they are committed to eventually bringing warming back down to 1.5°C, but this would require a major expansion of carbon dioxide removal technologies that do not yet operate at scale.",
+          "Although the main agreement fell through, delegates made progress on a framework to support workers and communities as economies shift towards clean energy.",
+          "The outcome prompted questions about whether a climate process that relies on consensus can succeed amid geopolitical divisions.",
+          "UN climate chief Simon Stiell said he would seek advice on procedural reform, with the next conference scheduled for November 2027 in Ethiopia."
+        ],
+        "sentence_evidence": [
+          "Countries have failed to reach a major new deal to tackle climate change after deep divisions over fossil fuels and money emerged at the UN COP31 talks in Turkey.",
+          "Negotiations were due to finish on Friday but ran late into Sunday in search of common ground, becoming the longest UN climate conference in history.",
+          "After two weeks of negotiations, exhausted delegates were presented with a new, draft deal in the early hours of Sunday to try to break the deadlock.",
+          "But the final deal proved unacceptable to the EU, Pacific island nations and others because it failed to directly mention fossil fuels, the main cause of global warming.",
+          "But the words \"fossil fuels\" did not appear anywhere in the text. The only indirect reference to coal, oil and gas was a nod to a deal agreed at COP28 in 2023 , when countries agreed to \"transition away\" from fossil fuels in energy systems.",
+          "Saudi Arabia's delegate Mohammad Ayoub said that Arab countries \"continued to engage in good faith\" but argued that they only accounted for a small proportion of historical greenhouse gas emissions.",
+          "Russia warned not to \"turn to slogans\" over coal, oil and gas, claiming that if countries moved away from fossil fuels too quickly it would lead to \"fuel poverty\".",
+          "But this year's deal contained no reference to concrete figures, nor the baseline against which that pledge would be measured. This raised fears it would give richer nations too much wriggle room.",
+          "But this year's deal contained no reference to concrete figures, nor the baseline against which that pledge would be measured. This raised fears it would give richer nations too much wriggle room.",
+          "Chris Bowen, Australian government minister and COP31 president of negotiations, said there were \"unbridgeable red lines\" in the discussions.",
+          "Now, the world is likely to limit warming to about 2.8C by 2100 based on current government policies, the UN says.",
+          "But action has not been fast enough to meet that Paris goal, with the world likely to \"overshoot\" 1.5C of long-term warming in the next few years.",
+          "Many countries say they are committed to eventually bringing warming back down to 1.5C, but that will require an ambitious ramping up of technologies - which do not yet exist at scale - to remove carbon dioxide from the atmosphere.",
+          "Although the main deal fell through, some agreements were reached, including progress on a \"just transition mechanism\" - a framework to support workers and communities as economies shift towards clean energy.",
+          "But following the weekend's events, some have questioned whether the UN climate process - which relies on consensus - can succeed in a geopolitically divided world.",
+          "The UN's climate chief, Simon Stiell, said he would seek advice on potential reform to the process, with the next conference scheduled for November 2027, COP32 in Ethiopia."
+        ],
+        "editorial_check": {
+          "date": "2026-11-23T03:40:46.472781+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All 10 targets occur in the reading and avoid reserved targets. “Wriggle room,” “at scale” and “irreconcilable” offer useful advanced distinctions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified; Ayoub’s assertions and Russia’s warning remain attributed."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions explain contextual meanings clearly. The exact grammar quotation demonstrates auxiliary–subject inversion in “did this year's deal omit”."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The 12 distinct quiz items test attribution, qualification, contextual meaning, concession and inversion, with one defensible answer and accurate feedback each."
+            }
+          },
+          "content_digest": "94d4d7b3a3795b3319aa2846316055ba43b0de61b88cba3c78bfbf0767ebaad8"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Countries at COP31 in Turkey failed to agree on a major plan to fight climate change.",
+      "Countries disagreed about fossil fuels and money.",
+      "Fossil fuels include coal, oil and gas.",
+      "The talks were planned to end on Friday, but they continued until Sunday.",
+      "The final plan did not mention fossil fuels.",
+      "Some countries rejected the plan because it did not mention fossil fuels.",
+      "Many poorer countries wanted clear promises of money from richer countries.",
+      "They wanted help to deal with the effects of rising temperatures.",
+      "The next climate talks are planned for November 2027 in Ethiopia."
+    ],
+    "vocabulary": [
+      {
+        "term": "climate change",
+        "part_of_speech": "noun phrase",
+        "definition": "Changes in the world's usual weather over a long time."
+      },
+      {
+        "term": "fossil fuels",
+        "part_of_speech": "plural noun",
+        "definition": "Coal, oil and gas that people burn for energy."
+      },
+      {
+        "term": "talks",
+        "part_of_speech": "plural noun",
+        "definition": "Meetings where people discuss a problem or plan."
+      },
+      {
+        "term": "rejected",
+        "part_of_speech": "verb, past simple",
+        "definition": "Decided not to accept something."
+      },
+      {
+        "term": "promises",
+        "part_of_speech": "plural noun",
+        "definition": "Things that people say they will certainly do."
+      },
+      {
+        "term": "deal with",
+        "part_of_speech": "phrasal verb",
+        "definition": "Take action to help with a problem."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "長い時間をかけて起こる、世界の通常の気象の変化。",
+      "ko": "오랜 시간에 걸쳐 일어나는 세계의 평소 날씨 변화.",
+      "zh-Hans": "世界通常的天气状况在很长一段时间内发生的变化。",
+      "es": "Cambios en las condiciones habituales del tiempo en el mundo a lo largo de un período largo.",
+      "pt-BR": "Mudanças nas condições habituais do tempo no mundo ao longo de um período longo.",
+      "fr": "Des changements dans les conditions météorologiques habituelles du monde sur une longue période.",
+      "de": "Veränderungen des üblichen Wetters auf der Welt über einen langen Zeitraum."
+    },
+    {
+      "id": 1,
+      "ja": "人々がエネルギーを得るために燃やす石炭、石油、ガス。",
+      "ko": "사람들이 에너지를 얻기 위해 태우는 석탄, 석유, 가스.",
+      "zh-Hans": "人们为了获取能源而燃烧的煤、石油和天然气。",
+      "es": "Carbón, petróleo y gas que las personas queman para obtener energía.",
+      "pt-BR": "Carvão, petróleo e gás que as pessoas queimam para obter energia.",
+      "fr": "Le charbon, le pétrole et le gaz que les gens brûlent pour obtenir de l’énergie.",
+      "de": "Kohle, Erdöl und Gas, die Menschen verbrennen, um Energie zu gewinnen."
+    },
+    {
+      "id": 2,
+      "ja": "人々が問題や計画について話し合う会合。",
+      "ko": "사람들이 문제나 계획에 대해 논의하는 모임.",
+      "zh-Hans": "人们讨论问题或计划的会议。",
+      "es": "Reuniones en las que las personas hablan sobre un problema o un plan.",
+      "pt-BR": "Reuniões em que as pessoas discutem um problema ou um plano.",
+      "fr": "Des réunions où des personnes discutent d’un problème ou d’un projet.",
+      "de": "Treffen, bei denen Menschen über ein Problem oder einen Plan sprechen."
+    },
+    {
+      "id": 3,
+      "ja": "何かを受け入れないと決めた。",
+      "ko": "무언가를 받아들이지 않기로 결정했다.",
+      "zh-Hans": "作出了不接受某事物的决定。",
+      "es": "Decidieron no aceptar algo.",
+      "pt-BR": "Decidiram não aceitar algo.",
+      "fr": "Ont décidé de ne pas accepter quelque chose.",
+      "de": "Haben entschieden, etwas nicht anzunehmen."
+    },
+    {
+      "id": 4,
+      "ja": "人々が必ずすると言っていること。",
+      "ko": "사람들이 반드시 하겠다고 말하는 일들.",
+      "zh-Hans": "人们说自己一定会做的事情。",
+      "es": "Cosas que las personas dicen que harán con toda seguridad.",
+      "pt-BR": "Coisas que as pessoas dizem que com certeza vão fazer.",
+      "fr": "Des choses que les gens disent qu’ils feront à coup sûr.",
+      "de": "Dinge, von denen Menschen sagen, dass sie sie ganz sicher tun werden."
+    },
+    {
+      "id": 5,
+      "ja": "問題の解決に役立つ行動を取る。",
+      "ko": "문제를 해결하는 데 도움이 되는 행동을 하다.",
+      "zh-Hans": "采取行动，帮助解决问题。",
+      "es": "Tomar medidas para ayudar a resolver un problema.",
+      "pt-BR": "Tomar medidas para ajudar a resolver um problema.",
+      "fr": "Agir pour aider à résoudre un problème.",
+      "de": "Etwas unternehmen, um bei der Lösung eines Problems zu helfen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-23T03:41:41.575337+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

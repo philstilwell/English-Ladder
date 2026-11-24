@@ -7706,6 +7706,130 @@
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/pronouns",
         "https://dictionary.cambridge.org/dictionary/english/wear"
       ]
+    },
+    {
+      "number": 66,
+      "title": "“Very” or “the most”? Degree and rank",
+      "level": "B1",
+      "category": "Adjectives and comparison",
+      "goal": "Distinguish a high degree from the highest rank in a group, and emphasize a clear lead with an appropriate phrase.",
+      "rules": [
+        "“Very” describes a high degree of a quality: “The café is very popular” means many people like it. It does not say that the café ranks first. “The most popular café here” identifies the café with the highest popularity in the comparison group. This is a superlative: it places something at the top of a scale within a group. Degree and rank answer different questions: how much, and where in the group?",
+        "To emphasize a clear lead with a superlative formed with “most”, use “by far”: “It is by far the most popular café here.” “By far” emphasizes the gap between first place and the other members of the group. In standard English, do not use “the very most popular” for this meaning. The meaning distinction helps you choose what to say; the established combination “by far the most” supplies the conventional wording. There is no general logical ban on intensifying a superlative.",
+        "“Very” can strengthen some other superlatives, including “the very best” and forms ending in “-est”, such as “the very oldest”. Therefore, do not invent a rule that “very” can never appear before a superlative. This lesson uses ordinary noun phrases such as “the most popular café”, where “the” identifies the top-ranked member. Other structures differ: “my most useful book” uses “my”, and “most people” means the majority of people. Finally, the highest-ranked member of a weak group need not have a very high degree of the quality overall."
+      ],
+      "cards": [
+        {
+          "label": "“VERY”: DEGREE",
+          "example": "The café is very popular.",
+          "note": "This says that its popularity is high. It does not claim first place among local cafés."
+        },
+        {
+          "label": "“THE MOST”: RANK",
+          "example": "It is the most popular café here.",
+          "note": "This places the café first in popularity among the cafés being compared here."
+        },
+        {
+          "label": "“BY FAR”: A CLEAR LEAD",
+          "example": "It is by far the most popular café here.",
+          "note": "“By far” emphasizes a large gap between this café and the other cafés. The conventional phrase is “by far the most popular”, not “the very most popular”."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "You know that many people like a café, but you have no ranking of local cafés. Which statement describes only a high degree of popularity?",
+          "options": [
+            {
+              "text": "It is the most popular café here.",
+              "correct": false,
+              "feedback": "“The most popular” claims first place in the group. The information given does not establish that ranking."
+            },
+            {
+              "text": "The café is very popular.",
+              "correct": true,
+              "feedback": "“Very popular” describes a high degree of popularity without claiming first place. This matches what you know."
+            },
+            {
+              "text": "It is the least popular café here.",
+              "correct": false,
+              "feedback": "“The least popular” claims the lowest rank. You have no ranking, and this does not express the intended high degree."
+            }
+          ]
+        },
+        {
+          "prompt": "Which phrase explicitly places one chair highest for comfort within a group of three?",
+          "options": [
+            {
+              "text": "a very comfortable chair",
+              "correct": false,
+              "feedback": "“Very comfortable” expresses a high degree of comfort. It does not rank the chair above the other two."
+            },
+            {
+              "text": "a more comfortable chair",
+              "correct": false,
+              "feedback": "“More comfortable” makes a comparison, but it does not by itself identify the highest-ranked chair among all three."
+            },
+            {
+              "text": "the most comfortable chair of the three",
+              "correct": true,
+              "feedback": "“The most comfortable” is a superlative: it identifies the chair with the highest comfort in the stated group."
+            }
+          ]
+        },
+        {
+          "prompt": "A café has a large lead over all the other local cafés in popularity. Which standard phrase emphasizes that gap?",
+          "options": [
+            {
+              "text": "by far the most popular café here",
+              "correct": true,
+              "feedback": "“The most popular” establishes first place, and “by far” emphasizes the large gap. These meanings fit the situation."
+            },
+            {
+              "text": "the very most popular café here",
+              "correct": false,
+              "feedback": "Standard English does not normally place “very” before a superlative formed with “most”. Use “by far” to emphasize this clear lead. Expressions such as “the very best” have a different form and are valid."
+            },
+            {
+              "text": "the most very popular café here",
+              "correct": false,
+              "feedback": "This is not the standard way to combine these words. Use “the most popular” for first place and “by far” to emphasize the gap."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "One book is the most popular of five, with a large lead. Which sentence clearly reports both its rank and that lead?",
+        "options": [
+          {
+            "text": "This book is very popular.",
+            "correct": false,
+            "feedback": "This may be true, but it reports only a high degree of popularity. It does not state first place or a large lead over the other books."
+          },
+          {
+            "text": "This is by far the most popular book of the five.",
+            "correct": true,
+            "feedback": "“The most popular” states the highest rank, and “by far” adds the clear lead. Both parts of the information are expressed."
+          },
+          {
+            "text": "This is the very most popular book of the five.",
+            "correct": false,
+            "feedback": "The intended ranking is clear, but “the very most popular” is not the standard combination. Use “by far the most popular”. Do not extend this correction to valid phrases such as “the very best”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-66-very-or-the-most-student-workbook.pdf",
+        "concept-66-very-or-the-most-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-24",
+      "related": [
+        10,
+        43
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/very",
+        "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/comparative-superlative-adjectives"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

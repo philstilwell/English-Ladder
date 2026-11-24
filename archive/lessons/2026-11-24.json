@@ -1,0 +1,790 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-24",
+  "release_iso": "2026-11-24T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Entertainment & Arts",
+    "feed_url": "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
+    "category": "culture",
+    "published_at": "Mon, 23 Nov 2026 20:49:08 GMT",
+    "retrieved_at": "2026-11-24T03:34:19.442269+00:00",
+    "title": "US rapper postpones two arena shows after Manchester evacuation",
+    "summary": "Don Toliver's show on Sunday was evacuated after an \"unknown substance\" was released into the crowd.",
+    "evidence_text": "US rapper Don Toliver has postponed two shows in London this week, after his concert in Manchester on Sunday was evacuated when an \"unknown substance\" was released into the crowd.\nToliver was due to play The O2 on Monday and Wembley Arena on Tuesday, but Live Nation said his \"stage and production equipment remains in Manchester and cannot be moved in time\".\nThe Wembley show has been rescheduled to 14 December, while Monday night's O2 gig has been moved to 15 December.\nGreater Manchester Police (GMP) declared a major incident on Sunday and said 12,000 people were evacuated from the arena.\nOne person was taken to hospital and 89 people showed \"symptoms believed to be linked to the exposure\" after Sunday's Co-op Live arena show, police said.\nAll fans at the Manchester show will get a full refund, promoter Live Nation said.\nSome fans reported eye and respiratory symptoms, according to the North West Ambulance Service.\nPolice launched an investigation and are continuing to carry out tests on items at the venue to try to identify the substance. No arrests have been made.\nSome fans complained about security and a lack of searches as people went into the Manchester concert.\nIt said the arena used a \"frictionless security screening that detects prohibited items without you needing to empty your pockets\".\nA statement said: \"We are sorry to everyone affected by last night's events in Manchester and full refunds for that show will be automatically processed to ticket holders.\"\nIn his post on Monday, the rapper said: \"I just wanna make sure everyone is safe and the next show goes on properly. My heart and prayers are with everyone that was injured last night.\"\nA further 88 people \"underwent dry decontamination at the scene and were subsequently accommodated within the Etihad Stadium while the incident was managed\", according to GMP.\nFans described \"distressing scenes\" with people \"choking\", \"screaming\" and \"coughing up blood\" because of the effects of a substance, which police initially believed to be tear gas.\nAssistant Chief Constable Tom Harding said: \"Enquiries remain ongoing to establish the nature of the substance, where it came from and any associated risk. Testing will take place throughout the day as the investigation into the cause of this incident progresses.\n\"We are trying to establish whether any criminality has occurred in relation to this incident.\"\n\"A lot of the big venues use mass screening technology, where you don't even know you've been checked,\" she told the BBC. They also have staff observing CCTV, security guards and plain-clothed officers on site.\nMurray said that while the current technology is \"good enough\", it needed improvement over the next few years to become \"more sophisticated\".\nVenues are currently focused on keeping out items – such as explosives – that could cause mass casualties, she added.",
+    "evidence_retrieved_at": "2026-11-24T03:34:19.442269+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/ck3rgp4gv9pxo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why must fans wait longer for the London shows? Use “The shows must wait because ...”.",
+          "If your show moved, would you want your money back or a new date? Answer for yourself or a fan in a story: “I would like ... because ...”."
+        ],
+        "title": "Don Toliver Moves Two London Shows to Later Dates",
+        "overview": "Two London concerts have new dates after people had to leave a Manchester concert.",
+        "topic": "Music and concert plans",
+        "vocabulary": [
+          {
+            "term": "later",
+            "part_of_speech": "adjective",
+            "definition": "After the day or time first planned."
+          },
+          {
+            "term": "crowd",
+            "part_of_speech": "noun",
+            "definition": "A large group of people in one place."
+          },
+          {
+            "term": "had to",
+            "part_of_speech": "verb phrase",
+            "definition": "Needed to do something."
+          },
+          {
+            "term": "equipment",
+            "part_of_speech": "uncountable noun",
+            "definition": "The things people need to do a job."
+          },
+          {
+            "term": "in time",
+            "part_of_speech": "adverb phrase",
+            "definition": "Early enough to do something."
+          },
+          {
+            "term": "ticket",
+            "part_of_speech": "noun",
+            "definition": "A paper or phone message that shows you can enter an event."
+          }
+        ],
+        "grammar": {
+          "concept": "Past need with “had to”",
+          "explanation": "Use “had to” when someone needed to do something in the past. Put the basic verb after “had to”, as in “had to leave”. This verb stays the same for one person or many people. Here, people needed to leave the concert.",
+          "example_quote": "The people at the concert had to leave on Sunday."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about Don Toliver's London shows?",
+            "options": [
+              "They have moved to Manchester.",
+              "They will happen on later dates.",
+              "They will happen this week."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says the equipment is in Manchester, but the two shows are in London.",
+              "The two London shows now have dates in December.",
+              "The reading says the equipment cannot reach London in time for this week's shows."
+            ]
+          },
+          {
+            "question": "Why can the equipment not be ready in London for this week's shows?",
+            "options": [
+              "It is still in Manchester.",
+              "It has arrived at the wrong London arena.",
+              "It is already at Wembley."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The equipment is still in Manchester and cannot reach London in time.",
+              "The reading says the equipment is still in Manchester, not at an arena in London.",
+              "The reading says the equipment is still in Manchester."
+            ]
+          },
+          {
+            "question": "Which show will now be on 15 December?",
+            "options": [
+              "The Wembley show",
+              "The Manchester show",
+              "The O2 show"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The Wembley show will be on 14 December.",
+              "The reading gives 15 December as the new date for The O2 show.",
+              "The reading says The O2 show will now be on 15 December."
+            ]
+          },
+          {
+            "question": "How many people went to hospital?",
+            "options": [
+              "89 people",
+              "One person",
+              "12,000 people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Police said 89 people had signs of illness; the reading says one person went to hospital.",
+              "The reading says one person went to hospital.",
+              "Police said 12,000 people had to leave the arena; this is not the hospital number."
+            ]
+          },
+          {
+            "question": "What will fans at the Manchester show get back?",
+            "options": [
+              "All their ticket money",
+              "Half their ticket money",
+              "None of their ticket money"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says these fans will get all their ticket money back.",
+              "The reading says all the money, not half.",
+              "The reading says these fans will get their ticket money back."
+            ]
+          },
+          {
+            "question": "What does “in time” mean in the sentence about the equipment?",
+            "options": [
+              "At any time in December",
+              "At the same time every day",
+              "Early enough for the shows"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“In time” means early enough for something, not any time in a month.",
+              "“In time” does not mean at the same time each day.",
+              "The equipment cannot arrive early enough for this week's shows."
+            ]
+          },
+          {
+            "question": "Which sentence uses the correct verb form after “had to”?",
+            "options": [
+              "A fan had to changed his plans.",
+              "A fan had to change his plans.",
+              "A fan had to changing his plans."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Use the basic verb “change” after “had to”, not “changed”.",
+              "The basic verb “change” follows “had to”.",
+              "Use the basic verb “change” after “had to”, not “changing”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "US rapper Don Toliver has moved two London shows to later dates.",
+          "An unknown substance, or type of material, was released into the crowd at his Manchester concert.",
+          "The people at the concert had to leave on Sunday.",
+          "The equipment is still in Manchester and cannot reach London in time for this week's shows.",
+          "The Wembley show will now be on 14 December.",
+          "The O2 show will now be on 15 December.",
+          "Police said 12,000 people had to leave the arena, a large building for events.",
+          "One person went to hospital.",
+          "Police said 89 people had signs of illness after the concert.",
+          "Fans at the Manchester show will get all their ticket money back."
+        ],
+        "sentence_evidence": [
+          "US rapper Don Toliver has postponed two shows in London this week, after his concert in Manchester on Sunday was evacuated when an \"unknown substance\" was released into the crowd.",
+          "US rapper Don Toliver has postponed two shows in London this week, after his concert in Manchester on Sunday was evacuated when an \"unknown substance\" was released into the crowd.",
+          "US rapper Don Toliver has postponed two shows in London this week, after his concert in Manchester on Sunday was evacuated when an \"unknown substance\" was released into the crowd.",
+          "Toliver was due to play The O2 on Monday and Wembley Arena on Tuesday, but Live Nation said his \"stage and production equipment remains in Manchester and cannot be moved in time\".",
+          "The Wembley show has been rescheduled to 14 December, while Monday night's O2 gig has been moved to 15 December.",
+          "The Wembley show has been rescheduled to 14 December, while Monday night's O2 gig has been moved to 15 December.",
+          "Greater Manchester Police (GMP) declared a major incident on Sunday and said 12,000 people were evacuated from the arena.",
+          "One person was taken to hospital and 89 people showed \"symptoms believed to be linked to the exposure\" after Sunday's Co-op Live arena show, police said.",
+          "One person was taken to hospital and 89 people showed \"symptoms believed to be linked to the exposure\" after Sunday's Co-op Live arena show, police said.",
+          "All fans at the Manchester show will get a full refund, promoter Live Nation said."
+        ],
+        "editorial_check": {
+          "date": "2026-11-24T03:37:18.018598+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "quiz"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct, useful reading targets, including “crowd” and “in time”, have accurate, accessible definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The news uses neutral reporting, and prompts such as “I would like ... because ...” support natural conversation."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short explanations teach “had to” accurately using an exact reading quotation. Discussion includes a sentence frame and hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct quiz items test the main idea, details, vocabulary and taught grammar, with one clear answer each."
+            }
+          },
+          "content_digest": "438b7742df504b2838b7b7ba187855e9a17978731af816506d5d3f6c19be8a89"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Explain how the Manchester incident affected concerts in another city.",
+          "What information would you want from a concert organiser after an evacuation, and why?"
+        ],
+        "title": "Don Toliver postpones London shows after Manchester evacuation",
+        "overview": "Don Toliver’s London shows have been postponed while police investigate an unknown substance released at his Manchester concert.",
+        "topic": "Concert safety and changes to events",
+        "vocabulary": [
+          {
+            "term": "postponed",
+            "part_of_speech": "verb, past participle",
+            "definition": "Changed an event so that it will happen later than originally planned."
+          },
+          {
+            "term": "rescheduled",
+            "part_of_speech": "verb, past participle",
+            "definition": "Arranged for an event to happen at a different time or date."
+          },
+          {
+            "term": "evacuated",
+            "part_of_speech": "verb, past participle",
+            "definition": "Moved out of a place to keep people safe from possible danger."
+          },
+          {
+            "term": "symptoms",
+            "part_of_speech": "plural noun",
+            "definition": "Physical changes or problems that can show someone is ill or affected by something."
+          },
+          {
+            "term": "exposure",
+            "part_of_speech": "uncountable noun",
+            "definition": "Contact with something that may affect your health."
+          },
+          {
+            "term": "identify",
+            "part_of_speech": "verb, base form",
+            "definition": "Find out exactly what something is."
+          },
+          {
+            "term": "venue",
+            "part_of_speech": "countable noun",
+            "definition": "A place where an organised event happens."
+          },
+          {
+            "term": "refund",
+            "part_of_speech": "countable noun",
+            "definition": "Money returned to someone who paid for a product or service."
+          }
+        ],
+        "grammar": {
+          "concept": "Past simple passive",
+          "explanation": "Use \"was\" or \"were\" followed by a past participle to describe a completed past action affecting someone or something. In \"were evacuated\", the focus is on the people who were moved; the sentence does not name who moved them.",
+          "example_quote": "Police said 12,000 people were evacuated, meaning they were moved out of the arena for safety."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best summarises the News Brief?",
+            "options": [
+              "An incident in Manchester was followed by changes to two London concerts.",
+              "An incident at a London concert caused a Manchester show to move.",
+              "Two London shows went ahead while a Manchester concert was postponed."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The Manchester concert was evacuated, and two London shows were postponed.",
+              "The incident happened in Manchester, and the changed shows were in London.",
+              "The reading says the two London shows were postponed."
+            ]
+          },
+          {
+            "question": "Which reason does the reading give for why the London shows could not happen as planned?",
+            "options": [
+              "The London arenas required a different security system.",
+              "The stage equipment could not be moved from Manchester in time.",
+              "Refund payments needed to finish before the equipment could move."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes security in Manchester but gives no such requirement for London.",
+              "Live Nation said the equipment remained in Manchester and could not be moved in time.",
+              "The reading mentions refunds but does not connect them to moving the equipment."
+            ]
+          },
+          {
+            "question": "Which pair of new concert dates matches the reading?",
+            "options": [
+              "The O2 on 14 December and Wembley Arena on 15 December.",
+              "Both Wembley Arena and The O2 on 15 December.",
+              "Wembley Arena on 14 December and The O2 on 15 December."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "These dates are reversed: Wembley Arena comes first.",
+              "Only The O2 show is scheduled for 15 December.",
+              "The Wembley Arena performance is on 14 December, followed by The O2 on 15 December."
+            ]
+          },
+          {
+            "question": "What does the reading show about the substance released in Manchester?",
+            "options": [
+              "Police were still working to find out exactly what it was.",
+              "Police had identified it because fans reported breathing problems.",
+              "The absence of arrests proved that the substance was harmless."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Police were testing items to identify the substance.",
+              "Reported breathing problems do not establish the substance’s identity, and testing was continuing.",
+              "The reading reports no arrests, but this does not prove that the substance was harmless."
+            ]
+          },
+          {
+            "question": "What does \"exposure\" mean in the report about people’s symptoms?",
+            "options": [
+              "Public attention following the concert.",
+              "Contact with the substance.",
+              "Time spent waiting outside the arena."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Here, \"exposure\" concerns health rather than public attention.",
+              "Here, \"exposure\" means contact with something that may affect health.",
+              "The reading does not use \"exposure\" to describe waiting outside."
+            ]
+          },
+          {
+            "question": "What can readers conclude from the description of the security system?",
+            "options": [
+              "Its technology guaranteed that no banned items could enter.",
+              "The fans’ complaints proved that the system was not used.",
+              "It used technology that did not require people to empty their pockets."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading describes how the system checked for items but gives no guarantee that it would detect every banned item.",
+              "The complaints describe concerns about checks; they do not establish whether the system was used.",
+              "The reported system detected banned items without requiring people to empty their pockets."
+            ]
+          },
+          {
+            "question": "What did the statement say about refunds for the Manchester concert?",
+            "options": [
+              "Ticket holders would automatically receive all their money back.",
+              "Only people who reported symptoms would receive their money back.",
+              "Ticket holders would receive their money back after attending a London show."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The statement promised a full refund automatically to everyone with a ticket for that show.",
+              "The refund promise covered everyone with a ticket, including those who did not report symptoms.",
+              "The reading gives no requirement to attend another show."
+            ]
+          },
+          {
+            "question": "At another concert, staff moved fans outside: which sentence correctly expresses this using the past simple passive?",
+            "options": [
+              "Fans were move outside by staff.",
+              "Fans were moved outside by staff.",
+              "Fans was moved outside by staff."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "After \"were\", the passive needs the past participle \"moved\", rather than \"move\".",
+              "\"Were moved\" correctly combines \"were\" with a past participle for the plural subject \"fans\".",
+              "The plural subject \"fans\" needs \"were\", rather than \"was\"."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "US rapper Don Toliver has postponed two London shows after an unknown substance was released at his Manchester concert on Sunday.",
+          "Live Nation said his stage equipment remained in Manchester and could not be moved in time for the London shows.",
+          "The Wembley Arena performance has been rescheduled for 14 December, while The O2 show will take place on 15 December.",
+          "Police said 12,000 people were evacuated, meaning they were moved out of the arena for safety.",
+          "According to police, one person was taken to hospital and 89 people showed symptoms believed to be linked to exposure.",
+          "Some fans reported problems with their eyes and breathing, according to the ambulance service.",
+          "Police are testing items from the venue to identify the substance, and no arrests have been made.",
+          "Some fans complained about security and a lack of searches as people entered the Manchester concert.",
+          "The reported security system used technology to detect banned items without requiring people to empty their pockets.",
+          "A statement said everyone with a ticket for the Manchester show would receive a full refund automatically.",
+          "Toliver said he wanted to make sure everyone was safe and that the next show went ahead properly."
+        ],
+        "sentence_evidence": [
+          "US rapper Don Toliver has postponed two shows in London this week, after his concert in Manchester on Sunday was evacuated when an \"unknown substance\" was released into the crowd.",
+          "Toliver was due to play The O2 on Monday and Wembley Arena on Tuesday, but Live Nation said his \"stage and production equipment remains in Manchester and cannot be moved in time\".",
+          "The Wembley show has been rescheduled to 14 December, while Monday night's O2 gig has been moved to 15 December.",
+          "Greater Manchester Police (GMP) declared a major incident on Sunday and said 12,000 people were evacuated from the arena.",
+          "One person was taken to hospital and 89 people showed \"symptoms believed to be linked to the exposure\" after Sunday's Co-op Live arena show, police said.",
+          "Some fans reported eye and respiratory symptoms, according to the North West Ambulance Service.",
+          "Police launched an investigation and are continuing to carry out tests on items at the venue to try to identify the substance. No arrests have been made.",
+          "Some fans complained about security and a lack of searches as people went into the Manchester concert.",
+          "It said the arena used a \"frictionless security screening that detects prohibited items without you needing to empty your pockets\".",
+          "A statement said: \"We are sorry to everyone affected by last night's events in Manchester and full refunds for that show will be automatically processed to ticket holders.\"",
+          "In his post on Monday, the rapper said: \"I just wanna make sure everyone is safe and the next show goes on properly. My heart and prayers are with everyone that was injured last night.\""
+        ],
+        "editorial_check": {
+          "date": "2026-11-24T03:40:29.598834+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct targets occur in the reading, including “rescheduled,” “exposure” and “refund”; definitions are clear and no reserved targets are reused."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting such as “According to police” preserves attribution and uncertainty; teaching language remains natural and supportive."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The exact grammar quotation demonstrates “were evacuated”; explanations, questions and feedback are clear and accurate."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Eleven distinct reading sentences and eight quiz questions cover summary, causes, dates, uncertainty, contextual vocabulary and passive grammar transfer."
+            }
+          },
+          "content_digest": "2e0f53497aec137ed3498038e470c15a20dff9bfeb10628bf5bab3dbb58d7c30"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why complaints about limited visible searches do not, by themselves, establish that security screening was absent or ineffective.",
+          "How should an arena explain largely invisible security measures while acknowledging concertgoers' concerns?"
+        ],
+        "title": "Don Toliver delays London shows after Manchester arena evacuation",
+        "overview": "Don Toliver's Manchester concert evacuation disrupted subsequent London performances while an investigation into an unidentified substance raised questions about public safety and security screening.",
+        "topic": "Public safety, event disruption and security screening",
+        "vocabulary": [
+          {
+            "term": "logistical constraint",
+            "part_of_speech": "noun phrase",
+            "definition": "A practical limitation involving the organisation or movement of people or resources."
+          },
+          {
+            "term": "dry decontamination",
+            "part_of_speech": "noun phrase",
+            "definition": "A procedure for removing potentially harmful material from a person without using water."
+          },
+          {
+            "term": "accommodated",
+            "part_of_speech": "verb, past participle",
+            "definition": "Provided with a place to stay temporarily, without necessarily being given overnight lodging."
+          },
+          {
+            "term": "associated risk",
+            "part_of_speech": "noun phrase",
+            "definition": "The possibility of harm connected with the substance or circumstances being investigated."
+          },
+          {
+            "term": "criminality",
+            "part_of_speech": "uncountable noun",
+            "definition": "Conduct that constitutes a criminal offence, rather than merely causing concern or disruption."
+          },
+          {
+            "term": "frictionless screening",
+            "part_of_speech": "noun phrase",
+            "definition": "Security checking designed to minimise interruptions or actions required from people passing through."
+          },
+          {
+            "term": "prohibited items",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Objects that the applicable rules forbid people from bringing into a particular place."
+          },
+          {
+            "term": "plain-clothed officers",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Police officers wearing ordinary clothes rather than uniforms."
+          },
+          {
+            "term": "sophisticated",
+            "part_of_speech": "adjective",
+            "definition": "Technologically advanced and capable of performing more complex or precise tasks."
+          },
+          {
+            "term": "mass casualties",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Large numbers of people killed or injured in an incident."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced passive relative clauses with reporting verbs",
+          "explanation": "A past-participle phrase can replace a passive relative clause: \"symptoms believed to be linked\" means \"symptoms that were believed to be linked\". This compresses the report while preserving uncertainty about the connection.",
+          "example_quote": "Police said 89 people displayed symptoms believed to be linked to contact with the substance, and one person was taken to hospital."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the relationship between the Manchester incident and the London postponements?",
+            "options": [
+              "The investigation established a threat at both London arenas, prompting their closure.",
+              "The Manchester incident disrupted the movement of production resources needed for the London performances.",
+              "The London performances were postponed because their security screening had been suspended."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief reports no established threat at either London arena or decision to close them.",
+              "Live Nation said the production resources remained in Manchester and could not reach London in time.",
+              "The brief gives a transport-related explanation, with no report that London screening had been suspended."
+            ]
+          },
+          {
+            "question": "What does \"logistical constraint\" specifically refer to in the brief?",
+            "options": [
+              "The inability to move the stage and production resources within the available time.",
+              "A decision to wait until investigators had established whether a crime had occurred.",
+              "A requirement to reimburse Manchester concertgoers before performing in London."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The limitation concerned moving the resources needed to stage the London shows.",
+              "The investigation was ongoing, but the brief does not identify waiting for its outcome as the reason.",
+              "Refunds were announced separately; the brief does not make them a condition for further performances."
+            ]
+          },
+          {
+            "question": "Which interpretation accurately preserves the qualification in the police account of the 89 people?",
+            "options": [
+              "Their symptoms established exactly which substance had been released.",
+              "Their symptoms were judged unrelated to the substance.",
+              "Their symptoms were thought to be connected with the substance, although that connection was not presented as proven."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The substance remained unidentified, and the reported symptoms did not establish its identity.",
+              "The police account suggested a connection rather than dismissing one.",
+              "The wording \"believed to be linked\" reports an assessment without presenting the connection as certain."
+            ]
+          },
+          {
+            "question": "Which statement correctly distinguishes the revised London schedule from the original one?",
+            "options": [
+              "The O2 performance remained before the Wembley performance, with both moved to December.",
+              "The Wembley performance was moved to 14 December, placing it before The O2 performance on 15 December.",
+              "Both performances were consolidated into a single Wembley show on 15 December."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Originally The O2 was scheduled first, but the replacement dates put Wembley first.",
+              "The revised dates reverse the original order of the two London performances.",
+              "The brief describes two separate replacement dates, not a combined performance."
+            ]
+          },
+          {
+            "question": "What does \"accommodated\" communicate about the 88 people at the Etihad Stadium?",
+            "options": [
+              "They were provided with somewhere to remain while the incident was managed.",
+              "They were admitted there for hospital treatment.",
+              "They were guaranteed overnight accommodation there."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Here, \"accommodated\" means provided with a temporary place to stay during the response.",
+              "The brief distinguishes the stadium arrangements from the separate hospital admission.",
+              "The word \"accommodated\" does not establish that they stayed overnight."
+            ]
+          },
+          {
+            "question": "What is the most defensible conclusion about the initial suspicion of tear gas?",
+            "options": [
+              "It was confirmed by the later testing described in the brief.",
+              "It was withdrawn because no arrests had been made.",
+              "It remained a provisional explanation because the substance was still being investigated."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief reports continuing tests, without giving a confirmed identification.",
+              "The absence of arrests does not establish that police withdrew their suspicion.",
+              "The initial suspicion and the continuing effort to determine the substance's identity must be kept distinct."
+            ]
+          },
+          {
+            "question": "Why is the wording \"whether any criminality had occurred\" significant?",
+            "options": [
+              "It establishes that an offence occurred but leaves the offender unidentified.",
+              "It leaves open the question of whether the incident involved a criminal offence.",
+              "It establishes that investigators had no evidence to examine."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The wording does not establish that an offence occurred.",
+              "The word \"whether\" presents criminal conduct as a question under investigation.",
+              "An unresolved question about criminal conduct does not mean there is no evidence."
+            ]
+          },
+          {
+            "question": "Which assessment best reconciles fans' observations with the reported description of screening?",
+            "options": [
+              "Limited visible searches do not establish that screening was absent, while the reported description does not prove that every prohibited item was detected.",
+              "The complaints establish that no screening occurred, regardless of the technology described.",
+              "The reported description establishes that no prohibited item could have entered."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The accounts concern different aspects of screening: what fans observed and how the system was described as working.",
+              "The brief describes screening that does not require people to empty their pockets, so visible searches are not the only possible check.",
+              "A description of the system's function does not establish that it detected every prohibited item."
+            ]
+          },
+          {
+            "question": "Which statement most accurately represents Murray's assessment of screening technology?",
+            "options": [
+              "Existing technology was inadequate and should immediately be abandoned.",
+              "Existing technology was sufficiently advanced to make further development unnecessary.",
+              "Existing technology was adequate, although greater technical capability would be needed over the coming years."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Murray considered the current technology adequate; the brief does not report a call to abandon it.",
+              "Her call for more \"sophisticated\" technology explicitly supports further development.",
+              "Her position combines acceptance of current capability with an argument for improvement."
+            ]
+          },
+          {
+            "question": "What distinction matters in the reported focus on items capable of causing \"mass casualties\"?",
+            "options": [
+              "It describes a security priority without establishing that all other threats were excluded from consideration.",
+              "It confirms that explosives caused the Manchester incident.",
+              "It establishes that only incidents involving deaths required security intervention."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Concentrating on particularly destructive items describes a priority rather than an exclusive concern.",
+              "Explosives were given as an example of a security concern, not identified as the cause of this incident.",
+              "\"Mass casualties\" includes injuries as well as deaths, and the brief does not describe such a threshold for intervention."
+            ]
+          },
+          {
+            "question": "Which hypothetical investigation update uses a reduced passive relative clause to express a provisional assessment?",
+            "options": [
+              "Items confirmed as relevant were retained for further testing.",
+              "Items believed to be relevant were retained for further testing.",
+              "Investigators believed that the retained items were relevant."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Confirmed as relevant\" is a reduced passive relative clause, but it presents relevance as established rather than provisional.",
+              "\"Believed to be relevant\" reduces \"that were believed to be relevant\" and preserves the provisional assessment.",
+              "This sentence expresses a belief through a complete clause after \"believed\"; it does not use a reduced passive relative clause."
+            ]
+          },
+          {
+            "question": "Which statement correctly separates the arrangements announced for Manchester and London?",
+            "options": [
+              "Manchester concertgoers were offered replacement London dates instead of refunds.",
+              "Refunds were announced for all three performances, with replacement dates still undecided.",
+              "Manchester concertgoers were to receive automatic full refunds, while the London performances received replacement dates."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The Manchester announcement concerned full refunds, not transfers to London performances.",
+              "The refund announcement applied to Manchester, and the brief supplies revised London dates.",
+              "The brief distinguishes reimbursement for Manchester from rescheduling the two London shows."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Don Toliver postponed two London performances after his Manchester concert was evacuated on Sunday following the release of an unidentified substance into the audience.",
+          "Live Nation attributed the London disruption to a logistical constraint: the stage and production equipment remained in Manchester and could not be moved in time for Monday's O2 performance or Tuesday's Wembley Arena show.",
+          "Wembley Arena's replacement date is 14 December, while The O2 performance has been moved to 15 December.",
+          "Police said 89 people displayed symptoms believed to be linked to contact with the substance, and one person was taken to hospital.",
+          "Greater Manchester Police declared a major incident and said 12,000 people were evacuated from the arena.",
+          "A further 88 people underwent dry decontamination, a procedure for removing contamination without water, and were subsequently accommodated at the Etihad Stadium while the incident was managed, police said.",
+          "Fans described distressing scenes, while police initially suspected that the substance was tear gas.",
+          "Police were continuing to test items at the arena to identify the substance, and no arrests had been made.",
+          "Investigators were seeking to establish the substance's nature, its origin and any associated risk, according to Assistant Chief Constable Tom Harding.",
+          "The question of whether any criminality had occurred was also under investigation.",
+          "Some fans questioned security arrangements, complaining about a lack of searches as people entered the Manchester concert.",
+          "The arena was said to use frictionless screening that detected prohibited items without requiring people to empty their pockets.",
+          "Murray said many large venues used mass screening technology, and the report also described camera monitoring, security guards and plain-clothed officers at such venues.",
+          "Murray considered current technology adequate but argued that it needed to become more sophisticated over the next few years.",
+          "Venues were said to be concentrating on excluding items, such as explosives, that could cause mass casualties.",
+          "A statement said full refunds for the Manchester show would be processed automatically."
+        ],
+        "sentence_evidence": [
+          "US rapper Don Toliver has postponed two shows in London this week, after his concert in Manchester on Sunday was evacuated when an \"unknown substance\" was released into the crowd.",
+          "Toliver was due to play The O2 on Monday and Wembley Arena on Tuesday, but Live Nation said his \"stage and production equipment remains in Manchester and cannot be moved in time\".",
+          "The Wembley show has been rescheduled to 14 December, while Monday night's O2 gig has been moved to 15 December.",
+          "One person was taken to hospital and 89 people showed \"symptoms believed to be linked to the exposure\" after Sunday's Co-op Live arena show, police said.",
+          "Greater Manchester Police (GMP) declared a major incident on Sunday and said 12,000 people were evacuated from the arena.",
+          "A further 88 people \"underwent dry decontamination at the scene and were subsequently accommodated within the Etihad Stadium while the incident was managed\", according to GMP.",
+          "Fans described \"distressing scenes\" with people \"choking\", \"screaming\" and \"coughing up blood\" because of the effects of a substance, which police initially believed to be tear gas.",
+          "Police launched an investigation and are continuing to carry out tests on items at the venue to try to identify the substance. No arrests have been made.",
+          "Assistant Chief Constable Tom Harding said: \"Enquiries remain ongoing to establish the nature of the substance, where it came from and any associated risk. Testing will take place throughout the day as the investigation into the cause of this incident progresses.",
+          "\"We are trying to establish whether any criminality has occurred in relation to this incident.\"",
+          "Some fans complained about security and a lack of searches as people went into the Manchester concert.",
+          "It said the arena used a \"frictionless security screening that detects prohibited items without you needing to empty your pockets\".",
+          "\"A lot of the big venues use mass screening technology, where you don't even know you've been checked,\" she told the BBC. They also have staff observing CCTV, security guards and plain-clothed officers on site.",
+          "Murray said that while the current technology is \"good enough\", it needed improvement over the next few years to become \"more sophisticated\".",
+          "Venues are currently focused on keeping out items – such as explosives – that could cause mass casualties, she added.",
+          "A statement said: \"We are sorry to everyone affected by last night's events in Manchester and full refunds for that show will be automatically processed to ticket holders.\""
+        ],
+        "editorial_check": {
+          "date": "2026-11-24T03:45:13.809524+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct targets occur in the reading, avoid reserved vocabulary, and teach useful advanced meanings, including \"logistical constraint\" and \"criminality\"."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified through wording such as \"initially suspected\" and \"believed to be linked\"."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the grammar explanation accurately shows how \"symptoms believed to be linked\" compresses a passive relative clause while retaining uncertainty."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The twelve distinct quiz items test supported inference, scheduling, contextual vocabulary, qualification and grammar; the screening discussion develops evidence-based reasoning."
+            }
+          },
+          "content_digest": "96c4dccaac9725b1d866ba7e573d169e7a6f41050a6791edcbb36bbea9772423"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

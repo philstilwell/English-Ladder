@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "US rapper Don Toliver has moved two London shows to later dates.",
+      "An unknown substance, or type of material, was released into the crowd at his Manchester concert.",
+      "The people at the concert had to leave on Sunday.",
+      "The equipment is still in Manchester and cannot reach London in time for this week's shows.",
+      "The Wembley show will now be on 14 December.",
+      "The O2 show will now be on 15 December.",
+      "Police said 12,000 people had to leave the arena, a large building for events.",
+      "One person went to hospital.",
+      "Police said 89 people had signs of illness after the concert.",
+      "Fans at the Manchester show will get all their ticket money back."
+    ],
+    "vocabulary": [
+      {
+        "term": "later",
+        "part_of_speech": "adjective",
+        "definition": "After the day or time first planned."
+      },
+      {
+        "term": "crowd",
+        "part_of_speech": "noun",
+        "definition": "A large group of people in one place."
+      },
+      {
+        "term": "had to",
+        "part_of_speech": "verb phrase",
+        "definition": "Needed to do something."
+      },
+      {
+        "term": "equipment",
+        "part_of_speech": "uncountable noun",
+        "definition": "The things people need to do a job."
+      },
+      {
+        "term": "in time",
+        "part_of_speech": "adverb phrase",
+        "definition": "Early enough to do something."
+      },
+      {
+        "term": "ticket",
+        "part_of_speech": "noun",
+        "definition": "A paper or phone message that shows you can enter an event."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "最初に予定されていた日や時刻より後。",
+      "ko": "처음 계획한 날이나 시간보다 뒤에.",
+      "zh-Hans": "在原先计划的日期或时间之后。",
+      "es": "Después del día o la hora previstos inicialmente.",
+      "pt-BR": "Depois do dia ou horário planejado inicialmente.",
+      "fr": "Après le jour ou l’heure prévus au départ.",
+      "de": "Nach dem ursprünglich geplanten Tag oder Zeitpunkt."
+    },
+    {
+      "id": 1,
+      "ja": "一つの場所に集まっている大勢の人々。",
+      "ko": "한곳에 모여 있는 많은 사람들.",
+      "zh-Hans": "聚集在一个地方的一大群人。",
+      "es": "Un grupo grande de personas en un mismo lugar.",
+      "pt-BR": "Um grande grupo de pessoas em um mesmo lugar.",
+      "fr": "Un grand groupe de personnes réunies au même endroit.",
+      "de": "Eine große Gruppe von Menschen an einem Ort."
+    },
+    {
+      "id": 2,
+      "ja": "何かをする必要があったということ。",
+      "ko": "어떤 일을 해야 할 필요가 있었다는 뜻.",
+      "zh-Hans": "当时有必要做某事。",
+      "es": "Fue necesario hacer algo.",
+      "pt-BR": "Foi necessário fazer algo.",
+      "fr": "Il était nécessaire de faire quelque chose.",
+      "de": "Es war nötig, etwas zu tun."
+    },
+    {
+      "id": 3,
+      "ja": "仕事をするために必要な物。",
+      "ko": "일을 하는 데 필요한 물건들.",
+      "zh-Hans": "人们做一项工作所需的物品。",
+      "es": "Las cosas que se necesitan para hacer un trabajo.",
+      "pt-BR": "As coisas de que as pessoas precisam para fazer um trabalho.",
+      "fr": "Les choses dont les gens ont besoin pour faire un travail.",
+      "de": "Die Dinge, die Menschen brauchen, um eine Arbeit zu erledigen."
+    },
+    {
+      "id": 4,
+      "ja": "何かをするのに間に合うように。",
+      "ko": "어떤 일을 할 수 있을 만큼 충분히 일찍.",
+      "zh-Hans": "足够早，来得及做某事。",
+      "es": "Lo suficientemente temprano como para poder hacer algo.",
+      "pt-BR": "Cedo o suficiente para fazer algo.",
+      "fr": "Assez tôt pour pouvoir faire quelque chose.",
+      "de": "Früh genug, um etwas tun zu können."
+    },
+    {
+      "id": 5,
+      "ja": "イベントへの入場が認められていることを示す紙や携帯電話のメッセージ。",
+      "ko": "행사에 입장할 수 있음을 보여 주는 종이나 휴대전화 메시지.",
+      "zh-Hans": "表明你可以进入某个活动现场的纸张或手机信息。",
+      "es": "Un papel o un mensaje en el teléfono que muestra que puedes entrar a un evento.",
+      "pt-BR": "Um papel ou uma mensagem no celular que mostra que você pode entrar em um evento.",
+      "fr": "Un papier ou un message sur un téléphone qui indique que vous pouvez accéder à un événement.",
+      "de": "Ein Stück Papier oder eine Nachricht auf dem Handy als Nachweis, dass man zu einer Veranstaltung eingelassen werden darf."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-24T03:45:59.714102+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}

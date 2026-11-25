@@ -1,0 +1,786 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-25",
+  "release_iso": "2026-11-25T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Technology",
+    "feed_url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "category": "technology",
+    "published_at": "Wed, 25 Nov 2026 03:44:07 GMT",
+    "retrieved_at": "2026-11-25T04:11:13.036465+00:00",
+    "title": "US attorney general dodges questions about Nvidia investigation",
+    "summary": "Nvidia's share price have fallen 7% as lawmakers demand answers about President Donald Trump's involvement in Huang's reinstatement.",
+    "evidence_text": "US Attorney General Todd Blanche has backed Nvidia as a \"good corporate citizen\" while refusing to comment on whether the AI chipmaker was under federal investigation.\nBlanche said he had no information about newly reinstated CEO Jensen Huang's security clearance status, as lawmakers demand answers about President Donald Trump's involvement in Huang's comeback.\nOn Monday, Trump said he spoke to the company's directors and convinced them to bring back Huang .\nHuang is still set to appear before Congress next week, where he will be questioned about national security concerns over his relationship with an alleged China spy who led Megaspeed, a Singapore-based corporate customer of Nvidia.\nHuang reportedly apologised to Nvidia employees on Tuesday, the day after returning to the company as chief executive, saying he made \"terrible mistakes\" and is now in therapy for 90 minutes per day.\nHuang was given his job back less than two weeks after being forced to resign over revelations of extramarital affairs, including one with an alleged Chinese spy.\nThe US commerce department has also announced it was preparing to blacklist the tech company Megaspeed, which has been suspected of helping to divert advanced chips to China.\nIn a joint statement last week, the commerce and justice departments said they began investigating Megaspeed in 2024 \"for potential export control violations\" .\nThe board said it had received input from senior levels of the US government and was confident that Huang's reinstatement posed no national security risk.\nThe company's board reinstated Huang on Monday in a shock U-turn. Harvey Jones, chairman of Nvidia's board, said Huang's return was in the \"best interests of our stockholders, employees, partners and customers\".\nThe company's share price closed down nearly 6% - still well above where it ended last week. On Monday, Nvidia stock rocketed more than 31% following news of Huang's return.\nBut speaking to reporters on Tuesday, Blanche said the latter department has \"hundreds, if not more\" export investigations occurring at any one time.\nRepublican Senator Pete Ricketts said Huang's behaviour \"doesn't absolve Nvidia of answering for national security concerns and unaccounted-for chips\".\nDemocratic congressman Robert Garcia, the incoming chairman of the House oversight committee, said Trump's \"direct involvement\" with Nvidia's decision \"raises serious national security and corruption questions\".\nDemocratic Senator Ruben Gallego said Congress needed to \"investigate what stock positions took place before the announcement\".\nTrump has said he would consider pardoning Huang for any potential criminal activity, though he does not think it will come to that.",
+    "evidence_retrieved_at": "2026-11-25T04:11:13.036465+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Explain what Trump said about helping Huang get his job back.",
+          "Should a worker get a second chance after mistakes? Think about yourself or an imaginary worker. Use \"I think ... because ...\"."
+        ],
+        "title": "US Government Lawyer Avoids Questions About Nvidia",
+        "overview": "A US government lawyer does not answer some questions about Nvidia.",
+        "topic": "Business and government",
+        "vocabulary": [
+          {
+            "term": "questions",
+            "part_of_speech": "plural noun",
+            "definition": "Things people ask when they want to know something."
+          },
+          {
+            "term": "checking",
+            "part_of_speech": "verb, -ing form",
+            "definition": "Looking carefully to find out whether something is wrong."
+          },
+          {
+            "term": "leader",
+            "part_of_speech": "noun",
+            "definition": "The person who guides a group or company."
+          },
+          {
+            "term": "job",
+            "part_of_speech": "noun",
+            "definition": "Work that someone does to earn money."
+          },
+          {
+            "term": "return",
+            "part_of_speech": "noun",
+            "definition": "The act of coming back."
+          },
+          {
+            "term": "mistakes",
+            "part_of_speech": "plural noun",
+            "definition": "Things someone does wrong."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple past with \"did not\"",
+          "explanation": "Use \"did not\" before a verb to say that something did not happen in the past. After \"did not\", use the verb's basic form, such as \"say\", not \"said\". The short form of \"did not\" is \"didn't\".",
+          "example_quote": "He did not say whether the government was checking the company."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news about Todd Blanche?",
+            "options": [
+              "He did not answer some questions about Nvidia.",
+              "He said Huang could not return to Nvidia.",
+              "He said Huang must leave Nvidia next week."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says he did not answer some questions about Nvidia.",
+              "The reading says Huang is back as Nvidia's leader.",
+              "The reading says Huang is expected to answer questions next week."
+            ]
+          },
+          {
+            "question": "Who said he helped Huang get his job back?",
+            "options": [
+              "Todd Blanche",
+              "Trump",
+              "Huang"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Blanche did not answer some questions about Nvidia.",
+              "Trump said he helped Huang get his job back.",
+              "Huang said sorry to workers, but Trump said he helped Huang."
+            ]
+          },
+          {
+            "question": "According to reports, when did Huang say sorry to workers?",
+            "options": [
+              "Next week",
+              "After answering lawmakers' questions",
+              "On Tuesday"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Next week is when Huang is expected to answer lawmakers' questions.",
+              "The reading does not say he said sorry after answering lawmakers' questions.",
+              "The reading says Huang said sorry on Tuesday, according to reports."
+            ]
+          },
+          {
+            "question": "What is Huang expected to do next week?",
+            "options": [
+              "Answer lawmakers' questions",
+              "Help Trump get a job",
+              "Say sorry to workers for the first time"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "He is expected to answer lawmakers' questions next week.",
+              "Trump said he helped Huang get his job back.",
+              "Reports say Huang already said sorry to workers on Tuesday."
+            ]
+          },
+          {
+            "question": "What does \"mistakes\" mean in this reading?",
+            "options": [
+              "Questions people ask",
+              "Things someone does wrong",
+              "Jobs someone wants"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Questions\" are things people ask to learn something.",
+              "\"Mistakes\" are things someone does wrong.",
+              "\"Mistakes\" does not mean jobs someone wants."
+            ]
+          },
+          {
+            "question": "Complete this practice sentence: \"The reporter did not ___ a question about Nvidia.\"",
+            "options": [
+              "asked",
+              "asking",
+              "ask"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "After \"did not\", use \"ask\", not the past form \"asked\".",
+              "After \"did not\", use \"ask\", not \"asking\".",
+              "Use the basic form \"ask\" after \"did not\"."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Todd Blanche, a top US government lawyer, did not answer some questions about Nvidia.",
+          "He did not say whether the government was checking the company.",
+          "Jensen Huang is back as Nvidia's leader.",
+          "Trump said he helped Huang get his job back.",
+          "Some US lawmakers, who make laws, want answers about Trump's part in Huang's return.",
+          "Huang is still expected to answer lawmakers' questions next week.",
+          "Huang said sorry to Nvidia workers on Tuesday, according to reports.",
+          "He said his mistakes were very bad."
+        ],
+        "sentence_evidence": [
+          "US Attorney General Todd Blanche has backed Nvidia as a \"good corporate citizen\" while refusing to comment on whether the AI chipmaker was under federal investigation.",
+          "US Attorney General Todd Blanche has backed Nvidia as a \"good corporate citizen\" while refusing to comment on whether the AI chipmaker was under federal investigation.",
+          "Blanche said he had no information about newly reinstated CEO Jensen Huang's security clearance status, as lawmakers demand answers about President Donald Trump's involvement in Huang's comeback.",
+          "On Monday, Trump said he spoke to the company's directors and convinced them to bring back Huang .",
+          "Blanche said he had no information about newly reinstated CEO Jensen Huang's security clearance status, as lawmakers demand answers about President Donald Trump's involvement in Huang's comeback.",
+          "Huang is still set to appear before Congress next week, where he will be questioned about national security concerns over his relationship with an alleged China spy who led Megaspeed, a Singapore-based corporate customer of Nvidia.",
+          "Huang reportedly apologised to Nvidia employees on Tuesday, the day after returning to the company as chief executive, saying he made \"terrible mistakes\" and is now in therapy for 90 minutes per day.",
+          "Huang reportedly apologised to Nvidia employees on Tuesday, the day after returning to the company as chief executive, saying he made \"terrible mistakes\" and is now in therapy for 90 minutes per day."
+        ],
+        "editorial_check": {
+          "date": "2026-11-25T04:14:01.304176+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct reading words meet the minimum; targets such as “checking,” “return” and “mistakes” have clear, useful A1-A2 definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and everyday expressions such as “get his job back” and “said sorry” suit adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Short reading sentences and examples clearly explain “did not.” Discussion includes “I think ... because ...” and an imaginary-worker alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Six distinct quiz questions test the main idea, stated details, contextual vocabulary and “did not” with one clear answer each."
+            }
+          },
+          "content_digest": "8e3fda35ff0c42cead45b3f6dbc9c0493f559410af56996d5d85be90ad1884f8"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why might Congress still want answers even though Nvidia's board said Huang's reinstatement posed no national security risk?",
+          "What should a company explain to employees and customers when it brings back a senior manager after a serious problem?"
+        ],
+        "title": "US Attorney General Avoids Questions About Nvidia Investigation",
+        "overview": "The US attorney general declined to confirm an investigation into Nvidia while Congress prepared to question Huang about security concerns.",
+        "topic": "Business and government",
+        "vocabulary": [
+          {
+            "term": "reinstated",
+            "part_of_speech": "verb, past participle",
+            "definition": "Given back a position that someone had previously lost."
+          },
+          {
+            "term": "alleged",
+            "part_of_speech": "adjective",
+            "definition": "Described as having done something wrong, although this has not been proved."
+          },
+          {
+            "term": "restrictions",
+            "part_of_speech": "plural noun",
+            "definition": "Official limits on what a person or company is allowed to do."
+          },
+          {
+            "term": "violations",
+            "part_of_speech": "plural noun",
+            "definition": "Actions that break rules or laws."
+          },
+          {
+            "term": "confident",
+            "part_of_speech": "adjective",
+            "definition": "Feeling sure that something is true or will happen."
+          },
+          {
+            "term": "convinced",
+            "part_of_speech": "verb, past tense",
+            "definition": "Successfully persuaded someone to believe something or take an action."
+          },
+          {
+            "term": "share price",
+            "part_of_speech": "noun phrase",
+            "definition": "The amount someone pays to buy one unit of ownership in a company."
+          },
+          {
+            "term": "apologised",
+            "part_of_speech": "verb, past tense",
+            "definition": "Said sorry for something done wrong."
+          }
+        ],
+        "grammar": {
+          "concept": "Past simple passive",
+          "explanation": "Use \"was\" or \"were\" followed by a past participle to describe a completed past action when the receiver is the focus. In \"was reinstated\", Huang receives the action. We can leave out who performed it when that information is not the focus.",
+          "example_quote": "Huang was reinstated less than two weeks after being forced to resign."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best describes Blanche's response to questions about Nvidia?",
+            "options": [
+              "He confirmed that Nvidia was under investigation.",
+              "He praised Nvidia but did not confirm whether it was under investigation.",
+              "He announced that an investigation had cleared Nvidia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Blanche refused to say whether the company was under investigation.",
+              "He praised the company while refusing to confirm whether it was under investigation.",
+              "The reading does not report that an investigation cleared Nvidia."
+            ]
+          },
+          {
+            "question": "How long after being forced to resign was Huang reinstated?",
+            "options": [
+              "Less than two weeks later.",
+              "At the end of the following year.",
+              "After his appearance before Congress."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says Huang was reinstated less than two weeks after being forced to resign.",
+              "The reading gives a period of less than two weeks.",
+              "His appearance before Congress was still expected to happen the following week."
+            ]
+          },
+          {
+            "question": "What does \"alleged\" tell readers about the person described as a Chinese spy?",
+            "options": [
+              "The accusation has been proved.",
+              "The accusation has been withdrawn.",
+              "The accusation has not been proved."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Alleged\" does not mean that an accusation has been proved.",
+              "\"Alleged\" does not tell us that anyone has withdrawn the accusation.",
+              "\"Alleged\" presents the description as an accusation rather than a proved fact."
+            ]
+          },
+          {
+            "question": "According to the departments, what was the reason for investigating Megaspeed?",
+            "options": [
+              "A fall in Nvidia's share price.",
+              "Possible violations of rules limiting chip exports.",
+              "Huang's apology to Nvidia employees."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The departments linked the investigation to possible export rule violations, not a share price movement.",
+              "The reading says the investigation concerned possible violations of rules limiting chip exports.",
+              "The reading does not connect Huang's apology to the reason for investigating Megaspeed."
+            ]
+          },
+          {
+            "question": "How does the board's position compare with the planned questioning in Congress?",
+            "options": [
+              "The board expressed confidence, while Congress still planned to examine security concerns.",
+              "The board confirmed a security risk, while Congress said there were no concerns.",
+              "Both the board and Congress had completed investigations and reached the same conclusion."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The board expressed confidence that reinstating Huang posed no security risk, but he still faced questions in Congress.",
+              "The board said it was confident that reinstating Huang posed no national security risk.",
+              "The reading describes the board's view and a future appearance before Congress, not two completed investigations."
+            ]
+          },
+          {
+            "question": "What did Trump say about his role in Huang's reinstatement?",
+            "options": [
+              "He said Nvidia's directors had refused to speak to him.",
+              "He said he had learned about the decision after it happened.",
+              "He said he had persuaded Nvidia's directors to bring Huang back."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Trump said he had spoken to the directors.",
+              "Trump described speaking to the directors and influencing their decision.",
+              "The reading attributes this account of persuading the directors to Trump."
+            ]
+          },
+          {
+            "question": "Which statement correctly compares the reported share price figures?",
+            "options": [
+              "Monday's rise was nearly 6%, and the reported closing fall was more than 31%.",
+              "Monday's rise exceeded 31%, and the reported closing fall was nearly 6%, with the price still above the previous week's closing level.",
+              "Monday's rise exceeded 31%, and the reported closing fall left the price below the previous week's closing level."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The figures are reversed: Monday's rise exceeded 31%, while the reported closing fall was nearly 6%.",
+              "These figures match the reading, which also says the price remained above the previous week's closing level.",
+              "The reading says the price remained above its level at the end of the previous week."
+            ]
+          },
+          {
+            "question": "What does placing Megaspeed under \"restrictions\" mean in the reading?",
+            "options": [
+              "Officially limiting what the company is allowed to do.",
+              "Giving the company a new chief executive.",
+              "Announcing that the company has been proved to have broken the law."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "\"Restrictions\" are official limits on permitted activities.",
+              "\"Restrictions\" concern limits on activities, not a change of manager.",
+              "Placing a company under \"restrictions\" does not itself mean that wrongdoing has been proved."
+            ]
+          },
+          {
+            "question": "Imagine Nvidia moves a staff meeting to Friday: which sentence uses the past simple passive to make the meeting the focus?",
+            "options": [
+              "Nvidia moved the staff meeting to Friday.",
+              "The staff meeting was move to Friday.",
+              "The staff meeting was moved to Friday."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is grammatical, but it uses the active form and makes Nvidia the focus.",
+              "After \"was\", the passive needs the past participle \"moved\", not \"move\".",
+              "\"Was moved\" uses \"was\" and a past participle, with the meeting receiving the action."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "US Attorney General Todd Blanche praised Nvidia but refused to say whether the company was under federal investigation.",
+          "Huang was reinstated less than two weeks after being forced to resign.",
+          "Huang is due to appear before Congress next week to answer questions about national security concerns.",
+          "These concerns involve his relationship with an alleged Chinese spy who led Megaspeed, a customer of Nvidia based in Singapore.",
+          "The US commerce department said it was preparing to blacklist Megaspeed, meaning it planned to place the company under official restrictions.",
+          "The commerce and justice departments said they began investigating Megaspeed in 2024 over possible violations of rules limiting chip exports.",
+          "Nvidia's board said it was confident that giving Huang his position back posed no national security risk.",
+          "Trump said he had spoken to Nvidia's directors and convinced them to bring Huang back.",
+          "The board said its decision served the best interests of shareholders, employees, partners and customers.",
+          "Nvidia's share price rose more than 31% on Monday after the news that Huang would lead the company again.",
+          "The share price closed down nearly 6%, although it remained above its level at the end of the previous week.",
+          "Huang reportedly apologised to Nvidia employees on Tuesday and said he had made serious mistakes."
+        ],
+        "sentence_evidence": [
+          "US Attorney General Todd Blanche has backed Nvidia as a \"good corporate citizen\" while refusing to comment on whether the AI chipmaker was under federal investigation.",
+          "Huang was given his job back less than two weeks after being forced to resign over revelations of extramarital affairs, including one with an alleged Chinese spy.",
+          "Huang is still set to appear before Congress next week, where he will be questioned about national security concerns over his relationship with an alleged China spy who led Megaspeed, a Singapore-based corporate customer of Nvidia.",
+          "Huang is still set to appear before Congress next week, where he will be questioned about national security concerns over his relationship with an alleged China spy who led Megaspeed, a Singapore-based corporate customer of Nvidia.",
+          "The US commerce department has also announced it was preparing to blacklist the tech company Megaspeed, which has been suspected of helping to divert advanced chips to China.",
+          "In a joint statement last week, the commerce and justice departments said they began investigating Megaspeed in 2024 \"for potential export control violations\" .",
+          "The board said it had received input from senior levels of the US government and was confident that Huang's reinstatement posed no national security risk.",
+          "On Monday, Trump said he spoke to the company's directors and convinced them to bring back Huang .",
+          "The company's board reinstated Huang on Monday in a shock U-turn. Harvey Jones, chairman of Nvidia's board, said Huang's return was in the \"best interests of our stockholders, employees, partners and customers\".",
+          "The company's share price closed down nearly 6% - still well above where it ended last week. On Monday, Nvidia stock rocketed more than 31% following news of Huang's return.",
+          "The company's share price closed down nearly 6% - still well above where it ended last week. On Monday, Nvidia stock rocketed more than 31% following news of Huang's return.",
+          "Huang reportedly apologised to Nvidia employees on Tuesday, the day after returning to the company as chief executive, saying he made \"terrible mistakes\" and is now in therapy for 90 minutes per day."
+        ],
+        "editorial_check": {
+          "date": "2026-11-25T04:17:41.300700+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct reading targets, including “reinstated,” “violations” and “share price,” have clear contextual definitions and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting preserves qualifications through “alleged,” “possible” and “reportedly”; teaching feedback stays clear and supportive."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The exact reading quotation demonstrates the accurately explained past simple passive; definitions, questions and feedback are manageable for B1–B2."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and nine quiz questions combine comprehension, comparison, contextual vocabulary and passive-form transfer."
+            }
+          },
+          "content_digest": "a79e32c533036717e8da8860ec974726e4e88a93c819a9b5714bbd8a913fa20f"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why Blanche’s endorsement of Nvidia does not resolve the uncertainty surrounding a possible investigation.",
+          "What evidence would you require before accepting a company board’s assurance that a leadership appointment poses no national security risk?"
+        ],
+        "title": "US Attorney General Sidesteps Questions About Possible Nvidia Investigation",
+        "overview": "Blanche’s defence of Nvidia leaves unresolved questions about a possible investigation, while Huang’s reappointment draws political scrutiny and sharp movements in the company’s stock.",
+        "topic": "Corporate accountability, political influence and national security",
+        "vocabulary": [
+          {
+            "term": "corporate citizen",
+            "part_of_speech": "countable noun phrase",
+            "definition": "A company viewed in terms of its responsibilities towards society and its conduct under the law."
+          },
+          {
+            "term": "declined to clarify",
+            "part_of_speech": "verb phrase, past tense",
+            "definition": "Chose not to provide an explanation that would make an uncertain matter clearer; a restrained expression often used in formal reporting."
+          },
+          {
+            "term": "security clearance",
+            "part_of_speech": "noun phrase",
+            "definition": "Official authorisation allowing someone access to particular sensitive information."
+          },
+          {
+            "term": "scrutiny",
+            "part_of_speech": "uncountable noun",
+            "definition": "Close, critical examination intended to assess conduct, decisions or possible problems."
+          },
+          {
+            "term": "divert",
+            "part_of_speech": "verb, base form",
+            "definition": "To redirect goods away from their intended destination or route."
+          },
+          {
+            "term": "export controls",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Government rules governing which goods or technologies may be sent abroad and under what conditions."
+          },
+          {
+            "term": "reversal",
+            "part_of_speech": "countable noun",
+            "definition": "A change that replaces an earlier decision or position with its opposite."
+          },
+          {
+            "term": "absolve",
+            "part_of_speech": "verb, base form",
+            "definition": "To release someone from blame or responsibility; here, from an obligation to explain the company’s conduct."
+          },
+          {
+            "term": "unaccounted-for",
+            "part_of_speech": "adjective",
+            "definition": "Not satisfactorily explained in terms of location, use or what happened."
+          },
+          {
+            "term": "stock positions",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Investors’ holdings in company shares at a particular time."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced concessive clauses with “while”",
+          "explanation": "A reduced clause beginning with “while” and an “-ing” form can express concession when its understood subject matches the main-clause subject. Here, “while describing” contrasts Blanche’s endorsement with his refusal to clarify the investigation’s status.",
+          "example_quote": "While describing Nvidia as a “good corporate citizen”, US Attorney General Todd Blanche declined to clarify whether the chipmaker was under federal investigation."
+        },
+        "quiz": [
+          {
+            "question": "Which interpretation best captures the central tension in the brief?",
+            "options": [
+              "Official support for Nvidia coexists with unresolved demands for accountability.",
+              "The board’s assurances have brought congressional concern to an end.",
+              "The movements in Nvidia’s stock establish whether the company committed an offence."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Blanche endorsed Nvidia, but lawmakers continued to seek explanations about security concerns and political involvement.",
+              "The brief describes continuing scrutiny despite the board’s assurances.",
+              "Stock movements indicate changes in market value; the brief does not present them as proof of criminal conduct."
+            ]
+          },
+          {
+            "question": "What can reasonably be concluded from Blanche’s response about a possible federal investigation into Nvidia?",
+            "options": [
+              "He confirmed that an investigation had ended without charges.",
+              "He left the existence of such an investigation unclear.",
+              "He established that Nvidia had never been investigated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief reports no confirmation that an investigation had ended.",
+              "His refusal to clarify the matter leaves its status unresolved.",
+              "Declining to answer does not establish that no investigation has ever existed."
+            ]
+          },
+          {
+            "question": "Which statement preserves the distinction between suspicion and established fact concerning Megaspeed?",
+            "options": [
+              "Megaspeed was suspected of redirecting chips to China, and an investigation concerned potential breaches of export rules.",
+              "Megaspeed had been convicted of redirecting chips to China before the investigation began.",
+              "The investigation established that Nvidia knowingly arranged the suspected diversion."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief describes suspected diversion and potential breaches, preserving uncertainty about wrongdoing.",
+              "An investigation into potential breaches does not establish a conviction.",
+              "The brief does not establish that Nvidia knowingly arranged any diversion."
+            ]
+          },
+          {
+            "question": "How should the board’s statement about national security be understood?",
+            "options": [
+              "It establishes that Congress had withdrawn its concerns.",
+              "It demonstrates that government officials ordered the appointment.",
+              "It reports the board’s assessment after receiving senior government input."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief describes continuing congressional concern.",
+              "Receiving government input does not establish that the board was ordered to act.",
+              "The assessment is attributed to the board rather than presented as an independently established conclusion."
+            ]
+          },
+          {
+            "question": "What does “absolve Nvidia of its responsibility” convey in Ricketts’s argument?",
+            "options": [
+              "Nvidia’s responsibility has been transferred entirely to Huang.",
+              "Huang’s conduct does not release Nvidia from having to address the concerns.",
+              "Nvidia has already been found legally responsible for missing chips."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Ricketts’s point is that Nvidia retains a responsibility to answer, rather than transferring it entirely to Huang.",
+              "Here, “absolve” concerns release from an obligation, which Ricketts argues still applies.",
+              "A demand for answers does not establish a finding of legal responsibility."
+            ]
+          },
+          {
+            "question": "How can the reported decline coexist with shares remaining above their level at the end of the previous week?",
+            "options": [
+              "The two comparisons use different reference points.",
+              "The decline necessarily means Monday’s increase was completely erased.",
+              "The brief uses the same reference point for both comparisons."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reported decline and the comparison with the end of the previous week use different reference points.",
+              "The brief explicitly says the shares remained above their level at the end of the previous week.",
+              "A reported closing decline and a comparison with the previous week measure changes from different starting points."
+            ]
+          },
+          {
+            "question": "What was the focus of Gallego’s proposed investigation?",
+            "options": [
+              "Whether the board had formally withdrawn its security assessment.",
+              "Which investors held shares before the reappointment announcement.",
+              "Whether Huang’s security clearance had been restored."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief associates Gallego’s demand with investors’ holdings, not withdrawal of the board’s assessment.",
+              "The phrase “stock positions” identifies holdings that existed before the announcement.",
+              "Blanche’s lack of information about clearance is a separate issue in the brief."
+            ]
+          },
+          {
+            "question": "What does Blanche’s statement about Huang’s security clearance establish?",
+            "options": [
+              "Huang’s clearance had definitely been withdrawn.",
+              "Huang’s clearance had definitely been renewed.",
+              "Blanche said he lacked information about its status."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "A stated lack of information does not establish withdrawal.",
+              "The brief provides no confirmation of renewal.",
+              "The statement concerns Blanche’s knowledge, leaving the underlying status unresolved."
+            ]
+          },
+          {
+            "question": "What does “divert” contribute to the account of the suspected chip shipments?",
+            "options": [
+              "It describes redirecting the chips away from their intended destination or route.",
+              "It indicates that the chips were destroyed before shipment.",
+              "It establishes that every shipment to China breached export rules."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The contextual meaning of “divert” concerns redirection; the suspicion of wrongdoing remains separately qualified.",
+              "“Divert” concerns a change of destination or route, not destruction.",
+              "The word does not establish the legal status of every shipment, and the brief describes suspected conduct."
+            ]
+          },
+          {
+            "question": "Which hypothetical sentence uses a reduced concessive “while” clause with the senator as the subject of both actions?",
+            "options": [
+              "While acknowledging the board’s assurances, further evidence was demanded by the senator.",
+              "While acknowledging the board’s assurances, the senator demanded further evidence.",
+              "While acknowledging the board’s assurances, the directors faced further demands from the senator."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The main-clause subject is “further evidence”, which cannot perform the action of acknowledging.",
+              "The senator both acknowledges the assurances and demands evidence, creating the intended concession.",
+              "This construction makes “the directors” the understood subject of “acknowledging”, so it does not meet the requested meaning."
+            ]
+          },
+          {
+            "question": "Which account most accurately represents Trump’s reported role in Huang’s reappointment?",
+            "options": [
+              "Trump said he persuaded Nvidia’s directors to bring Huang back.",
+              "Trump said Congress had required the directors to bring Huang back.",
+              "Trump said he personally replaced the directors before appointing Huang."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief attributes to Trump the claim that he spoke to the directors and persuaded them.",
+              "The brief reports persuasion by Trump, not a requirement imposed by Congress.",
+              "The brief does not describe any replacement of the directors."
+            ]
+          },
+          {
+            "question": "How does Trump’s reported position on a possible pardon qualify his willingness to consider one?",
+            "options": [
+              "He said a pardon had already been granted.",
+              "He ruled out considering a pardon under any circumstances.",
+              "He left a pardon open as a possibility while saying he did not expect it to be necessary."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Willingness to consider a pardon does not mean one has been granted.",
+              "The brief says he would consider one, so the possibility was not ruled out.",
+              "His statement combines openness to a possible action with an expectation that it would not be needed."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "While describing Nvidia as a “good corporate citizen”, US Attorney General Todd Blanche declined to clarify whether the chipmaker was under federal investigation.",
+          "Blanche said he had no information about newly reinstated chief executive Jensen Huang’s security clearance.",
+          "Huang regained his position less than two weeks after being forced to resign following revelations of extramarital affairs, including one with an alleged Chinese spy.",
+          "Huang is due to face congressional scrutiny next week over national security concerns about his relationship with an alleged Chinese spy who led Megaspeed, a Singapore-based Nvidia customer.",
+          "The commerce department announced that it was preparing to blacklist Megaspeed, which was suspected of helping to divert advanced chips to China.",
+          "In a joint statement, the commerce and justice departments said they had begun investigating Megaspeed in 2024 over potential breaches of export controls, rules governing which goods may be sent abroad.",
+          "Blanche emphasised that the justice department had hundreds of export investigations under way at any given time.",
+          "Nvidia’s board defended its abrupt reversal on Huang’s leadership as serving the interests of shareholders, employees, partners and customers.",
+          "The board said it had received input from senior government officials and was confident that Huang’s reappointment posed no national security risk.",
+          "Trump said he had spoken to Nvidia’s directors and persuaded them to bring Huang back.",
+          "Senator Pete Ricketts argued that Huang’s conduct did not absolve Nvidia of its responsibility to answer concerns about national security and unaccounted-for chips.",
+          "Congressman Robert Garcia said Trump’s direct involvement in the decision raised serious questions about national security and corruption.",
+          "Senator Ruben Gallego called for an investigation into stock positions held before the reappointment announcement.",
+          "Although Nvidia shares closed nearly 6% lower, they remained above their level at the end of the previous week.",
+          "Monday’s increase had exceeded 31% following news of Huang’s return.",
+          "Trump said he would consider pardoning Huang for any potential criminal activity, while indicating that he did not expect a pardon to be needed."
+        ],
+        "sentence_evidence": [
+          "US Attorney General Todd Blanche has backed Nvidia as a \"good corporate citizen\" while refusing to comment on whether the AI chipmaker was under federal investigation.",
+          "Blanche said he had no information about newly reinstated CEO Jensen Huang's security clearance status, as lawmakers demand answers about President Donald Trump's involvement in Huang's comeback.",
+          "Huang was given his job back less than two weeks after being forced to resign over revelations of extramarital affairs, including one with an alleged Chinese spy.",
+          "Huang is still set to appear before Congress next week, where he will be questioned about national security concerns over his relationship with an alleged China spy who led Megaspeed, a Singapore-based corporate customer of Nvidia.",
+          "The US commerce department has also announced it was preparing to blacklist the tech company Megaspeed, which has been suspected of helping to divert advanced chips to China.",
+          "In a joint statement last week, the commerce and justice departments said they began investigating Megaspeed in 2024 \"for potential export control violations\" .",
+          "But speaking to reporters on Tuesday, Blanche said the latter department has \"hundreds, if not more\" export investigations occurring at any one time.",
+          "The company's board reinstated Huang on Monday in a shock U-turn. Harvey Jones, chairman of Nvidia's board, said Huang's return was in the \"best interests of our stockholders, employees, partners and customers\".",
+          "The board said it had received input from senior levels of the US government and was confident that Huang's reinstatement posed no national security risk.",
+          "On Monday, Trump said he spoke to the company's directors and convinced them to bring back Huang .",
+          "Republican Senator Pete Ricketts said Huang's behaviour \"doesn't absolve Nvidia of answering for national security concerns and unaccounted-for chips\".",
+          "Democratic congressman Robert Garcia, the incoming chairman of the House oversight committee, said Trump's \"direct involvement\" with Nvidia's decision \"raises serious national security and corruption questions\".",
+          "Democratic Senator Ruben Gallego said Congress needed to \"investigate what stock positions took place before the announcement\".",
+          "The company's share price closed down nearly 6% - still well above where it ended last week. On Monday, Nvidia stock rocketed more than 31% following news of Huang's return.",
+          "The company's share price closed down nearly 6% - still well above where it ended last week. On Monday, Nvidia stock rocketed more than 31% following news of Huang's return.",
+          "Trump has said he would consider pardoning Huang for any potential criminal activity, though he does not think it will come to that."
+        ],
+        "editorial_check": {
+          "date": "2026-11-25T04:22:10.228866+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct reading-based targets, including “absolve” and “scrutiny”, offer useful advanced meanings without borrowing reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Natural reporting preserves attribution and uncertainty through wording such as “suspected”, “potential breaches” and “the board said”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the grammar accurately explains concession and shared subjects in “while describing”."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct questions test attribution, qualified claims, financial reference points, contextual vocabulary and concessive grammar with accurate feedback."
+            }
+          },
+          "content_digest": "b38a2199f602ff424032148e35a5116a7a25559a314788e5d33a13aa26c6de76"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

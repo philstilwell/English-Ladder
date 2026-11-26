@@ -1,0 +1,792 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-26",
+  "release_iso": "2026-11-26T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Business",
+    "feed_url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "category": "business",
+    "published_at": "Thu, 26 Nov 2026 02:13:00 GMT",
+    "retrieved_at": "2026-11-26T03:30:22.454666+00:00",
+    "title": "UK government set to publish new treaties agreed with EU",
+    "summary": "The BBC understands the treaties contain a 10-year termination clause to reimburse costs of any need to rebuild border checks infrastructure.",
+    "evidence_text": "The government and the EU is set to publish the texts of two treaties on Thursday afternoon that were agreed last week as part of a new deal with the EU, as well as the UK legislation to enact the bulk of the deal.\nUnder the deal, food exporters will be significant beneficiaries from the scrapping of considerable red tape and checks, and dismantling of border facilities. An internal analysis forecasts a 16% boost to agricultural exports.\nThe industry and government hope the reduction in costs for food producers and sellers will be passed on to customers, but there may be no clear visible impact at the checkout.\nThe BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal.\nTwo of the three legal texts will be released on Thursday, covering the food trade and emissions trading scheme deals, alongside the government's cost-cutting bill to enact the deal.\nThe Brexit reset deal has already sparked debate about its benefits, its costs, and a wider discussion on the long-term UK-EU relationship.\nOpposition leader Kemi Badenoch and Reform UK's Nigel Farage have suggested they would refuse to pay.\nThe deal covers British food exports, emissions trading and a youth experience scheme.\nThe treaties will also have an impact on the UK aviation and maritime industries in terms of their alignment with EU emissions schemes.\nPrivately, industry insiders told the BBC earlier this week that there are too many moving parts in the world economy, especially given the energy price shock resulting from war in the Middle East.\nThe treaty text will also contain the fine detail of how the UK will observe, shape but not vote on relevant EU rules.\nPlans to use secondary legislation, including granting direct so-called \"Henry VIII powers\" to ministers to align UK and EU laws will also be detailed in the legislation.",
+    "evidence_retrieved_at": "2026-11-26T03:30:22.454666+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "How could the deal help food customers? Use “It could help because ...”.",
+          "Which food price matters most to you or an imaginary shopper? Use “I think ... because ...”."
+        ],
+        "title": "UK and EU Plan to Publish New Agreements",
+        "overview": "New agreements could make selling food between the UK and EU easier.",
+        "topic": "UK and EU food trade",
+        "vocabulary": [
+          {
+            "term": "publish",
+            "part_of_speech": "verb",
+            "definition": "To make information available for people to read."
+          },
+          {
+            "term": "agreements",
+            "part_of_speech": "plural noun",
+            "definition": "Plans or rules that two sides accept."
+          },
+          {
+            "term": "checks",
+            "part_of_speech": "plural noun",
+            "definition": "Careful looks at things to see if they follow the rules."
+          },
+          {
+            "term": "paperwork",
+            "part_of_speech": "uncountable noun",
+            "definition": "Forms and other papers that people need to complete for work."
+          },
+          {
+            "term": "customers",
+            "part_of_speech": "plural noun",
+            "definition": "People who buy things from a shop or business."
+          },
+          {
+            "term": "lower",
+            "part_of_speech": "comparative adjective",
+            "definition": "Less than before."
+          }
+        ],
+        "grammar": {
+          "concept": "“Will” for the future",
+          "explanation": "Use “will” and a verb to talk about the future. The verb stays in its basic form, as in “will reduce”. Use the same form with “I”, “they” and other subjects. To make a negative, use “will not” and a verb.",
+          "example_quote": "The new deal will reduce checks on food moving between the UK and the EU."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news?",
+            "options": [
+              "The UK and EU plan to publish new agreements.",
+              "Food prices have already fallen.",
+              "The UK and EU have ended their deal."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. They plan to publish two agreements.",
+              "The reading says customers may not see lower prices.",
+              "The reading describes a rule about ending the deal, but does not say it has ended."
+            ]
+          },
+          {
+            "question": "When do the UK government and EU plan to publish the agreements?",
+            "options": [
+              "Last week",
+              "On Thursday",
+              "In ten years"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "They agreed on the plans last week.",
+              "Yes. They plan to publish the agreements on Thursday.",
+              "The ten years are part of the rule about ending the deal."
+            ]
+          },
+          {
+            "question": "What will change for food moving between the UK and EU?",
+            "options": [
+              "There will be more checks.",
+              "All food will cost less.",
+              "There will be fewer checks."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says the deal will reduce checks.",
+              "The government hopes customers will pay less, but this is not certain.",
+              "Yes. The deal will reduce checks on food."
+            ]
+          },
+          {
+            "question": "What does the reading say about food prices in shops?",
+            "options": [
+              "Customers may not see lower prices.",
+              "Prices have already fallen.",
+              "Prices will certainly fall."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes. Lower prices are possible, but customers may not see them.",
+              "The reading describes a hope for the future, not a change that has already happened.",
+              "The government hopes for lower prices, but the reading does not promise them."
+            ]
+          },
+          {
+            "question": "According to the BBC, who would pay if one side ended the deal within ten years?",
+            "options": [
+              "Only food customers",
+              "The side that ends the deal",
+              "Both sides every year"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The rule says the side that ends the deal would pay.",
+              "Yes. That side would pay to rebuild the buildings and other things needed for border checks.",
+              "The rule is about a side ending the deal, not payments every year."
+            ]
+          },
+          {
+            "question": "What does “publish” mean in this reading?",
+            "options": [
+              "To end an agreement",
+              "To complete some forms",
+              "To make information available for people to read"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Publish” means making information available for people to read, not ending an agreement.",
+              "Completing forms is part of “paperwork”; “publish” means making information available for people to read.",
+              "Yes. “Publish” means making information available for people to read."
+            ]
+          },
+          {
+            "question": "Which sentence uses “will” correctly to talk about a food shop's future?",
+            "options": [
+              "The shop will sells food.",
+              "The shop will sell food.",
+              "The shop will selling food."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "After “will”, use the basic form “sell”.",
+              "Yes. “Will” is followed by the basic form “sell”.",
+              "Use “will sell” for the pattern taught here."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The UK government and the EU plan to publish two agreements on Thursday.",
+          "They agreed on these plans last week.",
+          "The new deal will reduce checks on food moving between the UK and the EU.",
+          "UK businesses selling food to the EU will also have less paperwork, such as forms to complete.",
+          "The government hopes these changes will help customers pay less for food.",
+          "But customers may not see lower prices in shops.",
+          "The BBC says the agreements include a special rule for the first ten years.",
+          "Under this rule, the side ending the deal would pay to rebuild border infrastructure.",
+          "This means buildings and other things needed for border checks."
+        ],
+        "sentence_evidence": [
+          "The government and the EU is set to publish the texts of two treaties on Thursday afternoon that were agreed last week as part of a new deal with the EU, as well as the UK legislation to enact the bulk of the deal.",
+          "The government and the EU is set to publish the texts of two treaties on Thursday afternoon that were agreed last week as part of a new deal with the EU, as well as the UK legislation to enact the bulk of the deal.",
+          "Under the deal, food exporters will be significant beneficiaries from the scrapping of considerable red tape and checks, and dismantling of border facilities. An internal analysis forecasts a 16% boost to agricultural exports.",
+          "Under the deal, food exporters will be significant beneficiaries from the scrapping of considerable red tape and checks, and dismantling of border facilities. An internal analysis forecasts a 16% boost to agricultural exports.",
+          "The industry and government hope the reduction in costs for food producers and sellers will be passed on to customers, but there may be no clear visible impact at the checkout.",
+          "The industry and government hope the reduction in costs for food producers and sellers will be passed on to customers, but there may be no clear visible impact at the checkout.",
+          "The BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal.",
+          "The BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal.",
+          "The BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal."
+        ],
+        "editorial_check": {
+          "date": "2026-11-26T03:34:41.303393+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All six targets occur in the reading and suit A1-A2. “Infrastructure” is explained immediately afterward."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and natural prompts such as “I think ... because ...” suit adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and feedback are accessible. The exact grammar quotation demonstrates “will” followed by a basic verb."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct reading sentences and seven distinct quiz questions meet the minimums and test suitable comprehension, vocabulary and grammar."
+            }
+          },
+          "content_digest": "6b975368c58dac7878b4433f919c258c3ac37796f40730314932bb6040d10e3b"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why might the cost of rebuilding border facilities affect a future decision to end the deal?",
+          "If a business saved money through simpler trade rules, how should it use those savings? Explain your view."
+        ],
+        "title": "UK to Release EU Treaties With Possible Exit Costs",
+        "overview": "The UK plans to release details of EU treaties that could simplify trade but require payments if either side ends the deal within ten years.",
+        "topic": "UK-EU trade and the possible costs of ending a deal",
+        "vocabulary": [
+          {
+            "term": "treaties",
+            "part_of_speech": "plural noun",
+            "definition": "Formal written agreements between governments."
+          },
+          {
+            "term": "clause",
+            "part_of_speech": "countable noun",
+            "definition": "A part of a legal document that gives a particular rule or condition."
+          },
+          {
+            "term": "scaled back",
+            "part_of_speech": "phrasal verb, past participle",
+            "definition": "Reduced in size or amount."
+          },
+          {
+            "term": "exporters",
+            "part_of_speech": "plural noun",
+            "definition": "People or businesses that sell goods to other countries."
+          },
+          {
+            "term": "red tape",
+            "part_of_speech": "uncountable noun phrase",
+            "definition": "Official rules and procedures that make an activity slower or more difficult."
+          },
+          {
+            "term": "forecasts",
+            "part_of_speech": "verb, present simple",
+            "definition": "Predicts what is likely to happen using available information."
+          },
+          {
+            "term": "passed on",
+            "part_of_speech": "phrasal verb, past participle",
+            "definition": "Shared with someone else, here by giving customers the benefit of business savings."
+          },
+          {
+            "term": "sparked debate",
+            "part_of_speech": "verb phrase, past participle",
+            "definition": "Started discussion in which people express different opinions."
+          }
+        ],
+        "grammar": {
+          "concept": "Second conditional",
+          "explanation": "Use the second conditional to imagine a possible future situation and its result. Put the past simple after “if” and “would” before the base form of the result verb. The past form here describes an imagined situation, not a past event.",
+          "example_quote": "If either side ended the deal during that period, it would have to pay to rebuild border facilities."
+        },
+        "quiz": [
+          {
+            "question": "What is the main focus of the News Brief?",
+            "options": [
+              "New UK-EU treaties and their possible benefits and exit costs.",
+              "A completed decision by the UK to end its EU deal.",
+              "A promise that the deal will reduce every shopper's food bill."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading describes the treaties, expected trade benefits and possible costs of ending the deal.",
+              "The reading describes what would happen if either side ended the deal, not a decision to end it.",
+              "Lower shopping bills are a hope, and the reading says a clear price difference might not appear."
+            ]
+          },
+          {
+            "question": "According to the BBC's information, when would either side have to pay to rebuild border facilities?",
+            "options": [
+              "Whenever agricultural exports increased.",
+              "As soon as the treaty texts were released.",
+              "If it ended the deal within the ten-year period."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The export forecast is separate from the condition requiring payment.",
+              "Releasing the texts is not the condition requiring payment.",
+              "Correct. The reported clause connects payment to ending the deal during that period."
+            ]
+          },
+          {
+            "question": "What would happen to border facilities under the deal?",
+            "options": [
+              "They would immediately be rebuilt.",
+              "They would be reduced in size or amount.",
+              "They would be expanded to support more checks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Rebuilding is described as a possible consequence of ending the deal.",
+              "Correct. “Scaled back” means reduced in size or amount.",
+              "The reading describes a reduction, rather than an expansion."
+            ]
+          },
+          {
+            "question": "How should readers understand the predicted 16% rise in agricultural exports?",
+            "options": [
+              "It is an estimate from an internal analysis.",
+              "It is an increase that has already happened.",
+              "It is a result that the government has guaranteed."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. “Forecasts” shows that the figure is a prediction.",
+              "The reading presents a future prediction, not a measured increase.",
+              "A forecast is not a guarantee that the result will happen."
+            ]
+          },
+          {
+            "question": "What does the reading suggest about the effect on shoppers?",
+            "options": [
+              "Every shopper will clearly notice cheaper food.",
+              "Businesses have already shared all their savings.",
+              "Savings may benefit shoppers, but a clear price change is uncertain."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says shoppers might not notice a clear difference.",
+              "The reading describes a hope about sharing savings, not a completed result.",
+              "Correct. It separates the hoped-for benefit from what shoppers might actually notice."
+            ]
+          },
+          {
+            "question": "What does “red tape” mean in the description of food trade?",
+            "options": [
+              "The money needed to rebuild border facilities.",
+              "Official rules and procedures that make trade more difficult.",
+              "The goods that businesses sell to other countries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The rebuilding costs are a separate part of the deal.",
+              "Correct. “Red tape” refers to official procedures that can slow activities down.",
+              "Goods sold abroad are exports; “red tape” refers to procedures."
+            ]
+          },
+          {
+            "question": "If business savings are “passed on” to customers, what does that mean here?",
+            "options": [
+              "Customers receive some benefit from the savings.",
+              "Customers must repay the savings to the government.",
+              "Businesses keep all the savings for themselves."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Customers would share the benefit of reduced business costs.",
+              "“Passed on” does not mean customers must repay money in this sentence.",
+              "Keeping all the savings would not share their benefit with customers."
+            ]
+          },
+          {
+            "question": "Which sentence uses the second conditional to imagine a future rise in a supplier's fees?",
+            "options": [
+              "If the supplier increases its fees, the shop will look for another supplier.",
+              "If the supplier increased its fees, the shop looked for another supplier.",
+              "If the supplier increased its fees, the shop would look for another supplier."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is grammatical, but it uses the first conditional with “increases” and “will look”.",
+              "This uses past forms in both parts; it does not use “would” to express the imagined result.",
+              "Correct. It uses the past simple after “if” and “would” before the base form “look”."
+            ]
+          },
+          {
+            "question": "Which contrast in the reading helps explain why the deal has sparked debate?",
+            "options": [
+              "The treaty texts are planned for Thursday, while exports have already risen.",
+              "The deal may help trade, while ending it within ten years could require payment to rebuild border facilities.",
+              "Businesses expect more procedures, while shoppers expect fewer exports."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading gives an export forecast; it does not say exports have already risen.",
+              "Correct. Expected trade benefits and possible rebuilding payments if the deal ends within ten years give people different points to consider.",
+              "The reading describes fewer procedures and a predicted rise in agricultural exports."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The UK government and the EU plan to release two treaties, or formal agreements between governments, on Thursday afternoon.",
+          "The treaties cover food trade and emissions trading, a system for buying and selling permission to release gases that warm the planet.",
+          "The BBC understands that the treaties contain a clause, or rule, about ending the deal within ten years.",
+          "If either side ended the deal during that period, it would have to pay to rebuild border facilities.",
+          "These border facilities would be significantly scaled back as part of the deal.",
+          "Food exporters are expected to benefit from fewer border checks and less red tape, meaning difficult official procedures.",
+          "An internal analysis forecasts a 16% increase in agricultural exports as a result of the changes.",
+          "The government and industry hope that savings for food businesses will be passed on to customers.",
+          "However, shoppers might not notice a clear difference in prices at the checkout.",
+          "The deal has already sparked debate about its benefits, costs and the future relationship between the UK and the EU.",
+          "Opposition leader Kemi Badenoch and Reform UK's Nigel Farage have suggested they would refuse to pay the costs of ending the deal."
+        ],
+        "sentence_evidence": [
+          "The government and the EU is set to publish the texts of two treaties on Thursday afternoon that were agreed last week as part of a new deal with the EU, as well as the UK legislation to enact the bulk of the deal.",
+          "Two of the three legal texts will be released on Thursday, covering the food trade and emissions trading scheme deals, alongside the government's cost-cutting bill to enact the deal.",
+          "The BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal.",
+          "The BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal.",
+          "The BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal.",
+          "Under the deal, food exporters will be significant beneficiaries from the scrapping of considerable red tape and checks, and dismantling of border facilities. An internal analysis forecasts a 16% boost to agricultural exports.",
+          "Under the deal, food exporters will be significant beneficiaries from the scrapping of considerable red tape and checks, and dismantling of border facilities. An internal analysis forecasts a 16% boost to agricultural exports.",
+          "The industry and government hope the reduction in costs for food producers and sellers will be passed on to customers, but there may be no clear visible impact at the checkout.",
+          "The industry and government hope the reduction in costs for food producers and sellers will be passed on to customers, but there may be no clear visible impact at the checkout.",
+          "The Brexit reset deal has already sparked debate about its benefits, its costs, and a wider discussion on the long-term UK-EU relationship.",
+          "Opposition leader Kemi Badenoch and Reform UK's Nigel Farage have suggested they would refuse to pay."
+        ],
+        "editorial_check": {
+          "date": "2026-11-26T03:37:49.991479+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct targets occur in the reading, including “red tape”, “forecasts” and “passed on”. Definitions suit B1-B2, and no reserved targets are reused."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting uses appropriate qualifications such as “are expected to”, “hope” and “might not”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings. The second conditional explanation is accurate, and its example exactly matches the reading."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Nine distinct quiz items cover comprehension, forecast uncertainty, contextual vocabulary, relationships between details and grammar transfer. Discussion prompts require developed answers."
+            }
+          },
+          "content_digest": "c31875223f3cfd55a15f4a483558740845c731e569dd407b0fe7bd578b3d264e"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain how the reported termination provision could affect a future government's assessment of whether to withdraw.",
+          "How would you weigh reduced trading costs against following rules your country can influence but cannot vote on?"
+        ],
+        "title": "UK to Publish EU Treaties With Potential Exit Costs",
+        "overview": "The expected publication of new UK–EU treaties highlights potential trade benefits alongside reported withdrawal costs and questions about Britain's influence over relevant EU rules.",
+        "topic": "UK–EU trade relations and the implications of withdrawal",
+        "vocabulary": [
+          {
+            "term": "enact",
+            "part_of_speech": "verb",
+            "definition": "To give a policy or agreement legal effect by passing legislation."
+          },
+          {
+            "term": "terminate",
+            "part_of_speech": "verb",
+            "definition": "To formally bring an agreement to an end, with any consequences its terms require."
+          },
+          {
+            "term": "re-establish",
+            "part_of_speech": "verb",
+            "definition": "To restore something that previously existed after it has been removed or reduced."
+          },
+          {
+            "term": "emissions trading",
+            "part_of_speech": "noun phrase",
+            "definition": "A system in which participants buy and sell allowances permitting specified quantities of greenhouse gas emissions."
+          },
+          {
+            "term": "alignment",
+            "part_of_speech": "noun",
+            "definition": "The process or state of bringing rules or systems into agreement so that they operate consistently."
+          },
+          {
+            "term": "beneficiaries",
+            "part_of_speech": "plural noun",
+            "definition": "People or organisations that gain an advantage from a particular arrangement or change."
+          },
+          {
+            "term": "dismantling",
+            "part_of_speech": "noun",
+            "definition": "The process of taking facilities apart and removing them from use."
+          },
+          {
+            "term": "moving parts",
+            "part_of_speech": "plural noun phrase",
+            "definition": "Interacting factors that can change independently, making an overall outcome difficult to predict."
+          },
+          {
+            "term": "observe",
+            "part_of_speech": "verb",
+            "definition": "To comply with a rule or requirement, rather than merely watch what happens."
+          },
+          {
+            "term": "secondary legislation",
+            "part_of_speech": "noun phrase",
+            "definition": "Rules made using authority granted by an existing Act, rather than by passing a new Act."
+          }
+        ],
+        "grammar": {
+          "concept": "Conditional inversion with “were” and a to-infinitive",
+          "explanation": "Use “were + subject + to-infinitive” instead of “if + subject + past simple” for a formal hypothetical future condition. The main clause uses “would + infinitive” for its consequence; the structure does not establish that withdrawal is likely.",
+          "example_quote": "According to the BBC, were either party to terminate the agreement within the first ten years, it would have to pay to re-establish border infrastructure that is to be substantially reduced under the deal."
+        },
+        "quiz": [
+          {
+            "question": "Which summary best captures the central tension presented in the brief?",
+            "options": [
+              "The deal offers potential trading benefits while raising questions about withdrawal costs and influence over rules.",
+              "The deal guarantees cheaper groceries while allowing Britain to vote on the EU rules it follows.",
+              "The deal makes withdrawal unavailable while giving exporters an assured increase in sales."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief combines expected trading advantages with reported financial consequences of withdrawal and limits on Britain's formal voting role.",
+              "Neither guaranteed consumer savings nor a British vote on the relevant rules is supported by the brief.",
+              "A potential obligation to pay does not make withdrawal unavailable, and the export increase is a forecast."
+            ]
+          },
+          {
+            "question": "What is the most defensible inference about the reported ten-year provision?",
+            "options": [
+              "It would require either party to obtain the other's permission before withdrawing.",
+              "It would prevent either party from withdrawing until the period had expired.",
+              "It could make withdrawal financially consequential without making it impossible."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief describes a potential payment obligation, not a requirement to obtain permission.",
+              "The conditional sentence explicitly contemplates withdrawal during the period.",
+              "The reported consequence is paying to restore border infrastructure, which could influence a withdrawal decision."
+            ]
+          },
+          {
+            "question": "What does the reporting of Badenoch's and Farage's positions establish?",
+            "options": [
+              "They have demonstrated that the reported payment obligation has no legal effect.",
+              "They have indicated that they would refuse to pay, without establishing that any obligation would disappear.",
+              "They have already withdrawn from the agreement and declined a request for payment."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A stated intention to refuse payment does not establish the legal effect of the treaty terms.",
+              "The brief reports their proposed response, while leaving the consequences of such a refusal unresolved.",
+              "Their positions concern what they would do; the brief does not report completed withdrawal or non-payment."
+            ]
+          },
+          {
+            "question": "Which interpretation preserves the status of the projected 16% increase in agricultural exports?",
+            "options": [
+              "An internal analysis estimates a future gain, rather than documenting an increase already achieved.",
+              "The treaties require agricultural exports to increase by that proportion.",
+              "Export businesses have already recorded that increase following the removal of border facilities."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The figure is presented as a projection from an internal analysis, so its realisation remains uncertain.",
+              "An analytical estimate is not a treaty requirement or a guaranteed outcome.",
+              "The brief gives no evidence that the projected increase has already occurred."
+            ]
+          },
+          {
+            "question": "Why does the brief qualify expectations of visible savings for shoppers?",
+            "options": [
+              "The industry insiders say that food businesses have decided to retain every saving.",
+              "The export projection measures consumer prices directly and predicts no change.",
+              "The hoped-for transfer of savings remains uncertain amid interacting economic pressures."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief does not attribute such a decision to food businesses.",
+              "The projection concerns agricultural exports, not a direct measurement of consumer prices.",
+              "The brief distinguishes hopes about consumer savings from the uncertainty described by industry insiders."
+            ]
+          },
+          {
+            "question": "What does “moving parts” convey in the insiders' assessment?",
+            "options": [
+              "The physical components of border facilities that must be transported elsewhere.",
+              "Multiple changing economic factors whose combined effects complicate predictions.",
+              "Separate treaty documents whose publication dates have become uncertain."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Here, “moving parts” is figurative and refers to the economy, not pieces of infrastructure.",
+              "The expression highlights the difficulty of isolating the deal's effects when other economic conditions are changing.",
+              "The insiders' comment concerns economic uncertainty rather than the timing of publication."
+            ]
+          },
+          {
+            "question": "In the sentence about relevant EU rules, what does “observe” mean?",
+            "options": [
+              "Watch how the rules operate without accepting any requirement to follow them.",
+              "Formally approve the rules through participation in a vote.",
+              "Comply with the rules while retaining the described opportunity to help shape them."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Although “observe” can mean watch, its regulatory sense here is to comply with requirements.",
+              "The sentence explicitly distinguishes helping shape rules from having a vote on them.",
+              "This meaning preserves both compliance and the limited influence described in the brief."
+            ]
+          },
+          {
+            "question": "Which conclusion about Britain's role in relevant EU rules is supported?",
+            "options": [
+              "The absence of a vote does not, by itself, mean the absence of any influence.",
+              "Helping shape the rules gives Britain the same formal voting role as the EU.",
+              "Following the rules requires Britain to withdraw from all discussions about their content."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The brief expressly combines helping shape the rules with having no vote on them.",
+              "Influencing the content of rules and formally voting on them are distinct forms of participation.",
+              "The opportunity to help shape rules contradicts the claim that Britain must withdraw from all discussion."
+            ]
+          },
+          {
+            "question": "Why are food businesses described as potential “beneficiaries”?",
+            "options": [
+              "They would gain control over the EU emissions schemes affecting transport.",
+              "They are expected to gain from reduced administrative requirements and the removal of border facilities.",
+              "They would receive the payments owed whenever either party terminated the agreement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not connect food businesses' expected benefits with control over emissions schemes.",
+              "The reading identifies these reductions as the basis of the expected advantage.",
+              "The brief does not identify food businesses as recipients of withdrawal-related payments."
+            ]
+          },
+          {
+            "question": "What distinction does the brief make between the treaties and the accompanying UK legislation?",
+            "options": [
+              "The treaties record export gains already achieved, while the legislation predicts future gains.",
+              "The legislation replaces the treaties by removing the need for international commitments.",
+              "The treaties contain agreed international terms, while UK legislation is intended to give much of the deal legal effect."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The export figure comes from an internal analysis, not from a contrast between treaty records and legislative forecasts.",
+              "The texts are presented as accompanying one another, not as eliminating the need for international agreements.",
+              "This distinction reflects the treaties' agreed terms and the stated purpose of legislation to enact most of the deal."
+            ]
+          },
+          {
+            "question": "Which sentence uses “were + subject + to-infinitive” to present a hypothetical future withdrawal and its future consequence?",
+            "options": [
+              "Had the EU ended the agreement during that period, it would have faced rebuilding costs.",
+              "Were the EU to end the agreement during that period, it would face rebuilding costs.",
+              "Should the EU end the agreement during that period, it would face rebuilding costs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Had the EU ended” presents an unreal past condition, rather than using the requested hypothetical future pattern.",
+              "“Were the EU to end” uses the specified inversion, and “would face” expresses the hypothetical future consequence.",
+              "“Should the EU end” is a grammatical conditional inversion, but it does not use the requested pattern with “were” and a to-infinitive."
+            ]
+          },
+          {
+            "question": "Which interpretation of the planned use of “secondary legislation” matches the brief?",
+            "options": [
+              "Existing legal powers would be used to make rules intended to align UK and EU law.",
+              "The term refers to informal guidance that businesses could choose whether to follow.",
+              "The term means that the proposed alignment has already been fully enacted."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading defines the mechanism as making rules under powers granted by an existing Act and identifies alignment as its intended purpose.",
+              "“Secondary legislation” refers to rules made under legal authority, not merely optional guidance.",
+              "A plan to use this mechanism does not establish that alignment has already been completed."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The UK government and the EU are expected to publish two treaty texts on Thursday, following agreements reached the previous week as part of a broader deal.",
+          "UK legislation intended to enact most of the deal is due to appear alongside the treaty texts.",
+          "According to the BBC, were either party to terminate the agreement within the first ten years, it would have to pay to re-establish border infrastructure that is to be substantially reduced under the deal.",
+          "Opposition leader Kemi Badenoch and Reform UK's Nigel Farage have indicated that they would refuse to make such payments.",
+          "The broader deal covers British food exports, emissions trading and a youth experience scheme.",
+          "Britain's aviation and maritime industries would also be affected by alignment with EU emissions schemes.",
+          "Food businesses exporting to the EU are expected to be major beneficiaries of fewer administrative requirements and the dismantling of border facilities.",
+          "An internal analysis projects a 16% increase in agricultural exports, a forecast rather than an established gain.",
+          "Industry and government hope that savings for food producers and sellers will reach consumers, although shoppers may see no discernible reduction at the checkout.",
+          "Industry insiders privately told the BBC that the global economy has too many moving parts to make the outcome clear, particularly amid the energy price shock resulting from war in the Middle East.",
+          "The treaty text is also expected to specify how the UK will observe and help shape relevant EU rules without having a vote on them.",
+          "The accompanying legislation is expected to detail plans to align UK and EU law through secondary legislation, meaning rules made under powers granted by an existing Act."
+        ],
+        "sentence_evidence": [
+          "The government and the EU is set to publish the texts of two treaties on Thursday afternoon that were agreed last week as part of a new deal with the EU, as well as the UK legislation to enact the bulk of the deal.",
+          "The government and the EU is set to publish the texts of two treaties on Thursday afternoon that were agreed last week as part of a new deal with the EU, as well as the UK legislation to enact the bulk of the deal.",
+          "The BBC understands the treaties contain a 10-year termination clause that would mean if one party ended the agreement in that time they would have to pay to rebuild border checks infrastructure, which will be significantly scaled back as part of the new deal.",
+          "Opposition leader Kemi Badenoch and Reform UK's Nigel Farage have suggested they would refuse to pay.",
+          "The deal covers British food exports, emissions trading and a youth experience scheme.",
+          "The treaties will also have an impact on the UK aviation and maritime industries in terms of their alignment with EU emissions schemes.",
+          "Under the deal, food exporters will be significant beneficiaries from the scrapping of considerable red tape and checks, and dismantling of border facilities. An internal analysis forecasts a 16% boost to agricultural exports.",
+          "Under the deal, food exporters will be significant beneficiaries from the scrapping of considerable red tape and checks, and dismantling of border facilities. An internal analysis forecasts a 16% boost to agricultural exports.",
+          "The industry and government hope the reduction in costs for food producers and sellers will be passed on to customers, but there may be no clear visible impact at the checkout.",
+          "Privately, industry insiders told the BBC earlier this week that there are too many moving parts in the world economy, especially given the energy price shock resulting from war in the Middle East.",
+          "The treaty text will also contain the fine detail of how the UK will observe, shape but not vote on relevant EU rules.",
+          "Plans to use secondary legislation, including granting direct so-called \"Henry VIII powers\" to ministers to align UK and EU laws will also be detailed in the legislation."
+        ],
+        "editorial_check": {
+          "date": "2026-11-26T03:40:12.997595+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All 10 targets occur in the reading, avoid reserved targets, and offer useful advanced distinctions, including regulatory “observe” and figurative “moving parts”."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified through wording such as “According to the BBC”, “projects” and “may see no discernible reduction”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings. The exact grammar quotation demonstrates conditional inversion, and feedback distinguishes grammatical alternatives from the requested pattern."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The 12 distinct questions test supported inference, projections versus achieved outcomes, influence versus voting rights, contextual meanings and conditional form."
+            }
+          },
+          "content_digest": "8f2bc1c12a17403bdde083f8a8a670f74f58d6b2885e3e1867bd2491fa3ee8c1"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

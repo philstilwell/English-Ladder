@@ -22,7 +22,7 @@ import sys
 
 import plan_daily
 from daily_schedule import scheduled_release_date
-from daily_publication import check_publication, saved_edition_status
+from daily_publication import check_publication, completion_record, saved_edition_status
 from vocabulary_translations import read_record, source_data
 
 
@@ -85,6 +85,7 @@ def finish_publication(release: str, state: Path) -> None:
     published, reason = check_publication(ROOT, release)
     if not published:
         raise RuntimeError(reason)
+    plan_daily.atomic_json(state / "publication-complete.json", completion_record(ROOT, release))
     publication_marker(state).unlink(missing_ok=True)
 
 

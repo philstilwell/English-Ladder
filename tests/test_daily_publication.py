@@ -74,6 +74,49 @@ class DailyPublicationTests(unittest.TestCase):
                              side_effect=lambda path: str(path) == "/scheduled/node"):
             self.assertEqual("/scheduled/node", publication.node_executable())
 
+    def save_completion(self):
+        self.write(f".daily-agent/{DATE}/publication-complete.json",
+                   publication.completion_record(self.root, DATE))
+
+    def test_completed_only_exits_without_git_or_live_checks(self):
+        self.save_completion()
+        with patch.object(publication, "ROOT", self.root), \
+                patch.object(publication.subprocess, "check_output") as git, \
+                patch.object(publication, "check_publication") as live, \
+                contextlib.redirect_stdout(io.StringIO()) as output:
+            self.assertEqual(0, publication.main(["--date", DATE, "--completed-only"]))
+        self.assertTrue(json.loads(output.getvalue())["already_published"])
+        git.assert_not_called()
+        live.assert_not_called()
+
+    def test_missing_invalid_wrong_date_and_pending_receipts_do_not_skip_recovery(self):
+        name = f".daily-agent/{DATE}/publication-complete.json"
+        self.assertFalse(publication.completed_publication_status(self.root, DATE)[0])
+        for value in ("invalid json", [], {"version": 1, "release_date": "2026-10-19"}):
+            self.write(name, json.dumps(value))
+            self.assertFalse(publication.completed_publication_status(self.root, DATE)[0])
+        self.save_completion()
+        self.write(f".daily-agent/{DATE}/publication-pending.json", {})
+        self.assertFalse(publication.completed_publication_status(self.root, DATE)[0])
+
+    def test_changed_or_missing_edition_files_invalidate_completion(self):
+        self.save_completion()
+        record = publication.completion_record(self.root, DATE)
+        for relative in record["files"]:
+            with self.subTest(file=relative):
+                path = self.root / relative
+                original = path.read_bytes()
+                path.write_bytes(b"changed")
+                self.assertFalse(publication.completed_publication_status(self.root, DATE)[0])
+                path.unlink()
+                self.assertFalse(publication.completed_publication_status(self.root, DATE)[0])
+                path.write_bytes(original)
+        self.assertTrue(publication.completed_publication_status(self.root, DATE)[0])
+
+    def test_receipt_for_previous_date_does_not_skip_next_edition(self):
+        self.save_completion()
+        self.assertFalse(publication.completed_publication_status(self.root, "2026-10-21")[0])
+
     def test_missing_edition_does_not_probe_network_or_claim_success(self):
         (self.root / f"archive/lessons/{DATE}.json").unlink()
         run = Mock()

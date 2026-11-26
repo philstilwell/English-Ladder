@@ -6,20 +6,58 @@ An incomplete edition or an inconclusive network check leaves recovery enabled.
 from __future__ import annotations
 
 import argparse
-from datetime import date
+from datetime import date, datetime, timezone
+import hashlib
 import json
 import os
 from pathlib import Path
 import shutil
 import subprocess
 
-from daily_images import image_for_lesson
+from daily_images import image_for_lesson, image_paths
 from daily_schedule import scheduled_release_date
-from vocabulary_translations import read_record, source_data
+from vocabulary_translations import read_record, source_data, source_key
 
 ROOT = Path(__file__).resolve().parent
 LEVELS = ("beginner", "intermediate", "advanced")
 CHATGPT_NODE = Path("/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node")
+
+
+def edition_fingerprint(root, release_date):
+    """Bind a completion receipt to the actual lesson, page and supporting bytes."""
+    root = Path(root)
+    archive = root / "archive/lessons" / f"{release_date}.json"
+    edition = json.loads(archive.read_text())
+    paths = [archive, *image_paths(edition, root)]
+    for level in LEVELS:
+        paths.append(root / "news" / release_date / f"{level}.html")
+        source = source_data(edition["levels"][level]["lesson"], level)
+        paths.append(root / "data/vocabulary-translations" / f"{source_key(source)}.json")
+    return {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in paths}
+
+
+def completion_record(root, release_date):
+    """Called by finish_publication only after the full live checks pass."""
+    return {"version": 1, "release_date": release_date,
+            "verified_at": datetime.now(timezone.utc).isoformat(),
+            "files": edition_fingerprint(root, release_date)}
+
+
+def completed_publication_status(root, release_date):
+    """Local-only shortcut; uncertain or pending publications must use recovery."""
+    state = Path(root) / ".daily-agent" / release_date
+    try:
+        if (state / "publication-pending.json").exists():
+            return False, "Publication handoff still needs its owning chat."
+        record = json.loads((state / "publication-complete.json").read_text())
+        if (record.get("version") == 1 and record.get("release_date") == release_date
+                and record.get("verified_at")
+                and record.get("files") == edition_fingerprint(root, release_date)):
+            return True, "Edition already fully verified; local completion record matches."
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        pass
+    return False, "No matching completion record; continue normal publication checks."
 
 
 def node_executable():
@@ -86,9 +124,16 @@ def main(argv=None):
     parser.add_argument("--date", default="")
     parser.add_argument("--require-published", action="store_true",
                         help="Fail without doing recovery if the edition is not verified live.")
+    parser.add_argument("--completed-only", action="store_true",
+                        help="Check the saved completion record only, without network or Git checks.")
     args = parser.parse_args(argv)
     release_date = (date.fromisoformat(args.date).isoformat()
                     if args.date else scheduled_release_date().isoformat())
+    if args.completed_only:
+        published, reason = completed_publication_status(ROOT, release_date)
+        print(json.dumps({"release_date": release_date, "already_published": published,
+                          "reason": reason}))
+        return int(not published)
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     # Save the target date before the network check, including on a failed probe.
     output = os.environ.get("GITHUB_OUTPUT")

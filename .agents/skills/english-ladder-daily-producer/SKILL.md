@@ -30,13 +30,26 @@ audio changes. The runner alone handles generation and rebuilds.
    The two evening starts target the next local date. The 00:30 start recovers
    that same edition. Keep local wall-clock times across daylight saving.
 
-2. Confirm the required checkout, installed dependencies, ChatGPT sign-in and
+2. In the required checkout, check the local completion record first:
+
+   ```bash
+   .venv/bin/python daily_publication.py --date "$DATE" --completed-only
+   ```
+
+   If successful, exit immediately. This matches the saved edition files to a
+   receipt written after full live verification and requires no pending handoff.
+   Skip repository fetches, dependency/sign-in checks, live probes, browser checks,
+   generation, tests and rebuilds on this path. A missing, invalid or changed
+   receipt, or a pending handoff, continues through the normal checks below;
+   it does not authorize regeneration or handoff clearing.
+
+3. Confirm the required checkout, installed dependencies, ChatGPT sign-in and
    `CODEX_THREAD_ID`. Inspect status and fetch `origin/main`. Fast-forward a
    clean checkout as needed. Preserve only recognized artifacts for this date
    backed by `.daily-agent/DATE/`; stop on unrelated changes, a checkout you
    cannot safely synchronize, or an unavailable prerequisite.
 
-3. Check for a completed edition:
+4. Check for a completed edition:
 
    ```bash
    .venv/bin/python daily_publication.py --date "$DATE" --require-published
@@ -55,7 +68,7 @@ audio changes. The runner alone handles generation and rebuilds.
    See [recovery guidance](references/recovery.md) for manual repairs, capacity
    errors, and credit estimates.
 
-4. Follow the runner's final status:
+5. Follow the runner's final status:
 
    - `already_running`: exit immediately.
    - `ready_to_publish`: this chat owns the durable publication handoff.
@@ -123,3 +136,7 @@ audio changes. The runner alone handles generation and rebuilds.
 
    Report the edition, commit and offline workflow link, or the failing stage
    and next action. If publication cannot be verified, retain the handoff.
+
+   Finishing writes `publication-complete.json` under the producer lock before
+   clearing the handoff. Later opportunities use this receipt for the local-only
+   exit. Do not create receipts from memory, marker age, or incomplete checks.

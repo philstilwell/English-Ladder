@@ -391,9 +391,22 @@ class PlanDailyTests(unittest.TestCase):
                     plan_daily_runner.finish_publication("2026-10-26", state)
             self.assertTrue(marker.exists())
             with patch.object(plan_daily_runner, "check_publication",
-                              return_value=(True, "verified")):
+                              return_value=(True, "verified")), \
+                    patch.object(plan_daily_runner, "completion_record", return_value={"verified": True}):
                 plan_daily_runner.finish_publication("2026-10-26", state)
             self.assertFalse(marker.exists())
+            self.assertEqual({"verified": True}, json.loads((state / "publication-complete.json").read_text()))
+
+    def test_completion_record_failure_preserves_publication_handoff(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory)
+            marker = plan_daily_runner.publication_marker(state)
+            plan_daily.atomic_json(marker, {"release_date": "2026-10-26"})
+            with patch.object(plan_daily_runner, "check_publication", return_value=(True, "verified")), \
+                    patch.object(plan_daily_runner, "completion_record", side_effect=OSError("unreadable")):
+                with self.assertRaises(OSError):
+                    plan_daily_runner.finish_publication("2026-10-26", state)
+            self.assertTrue(marker.exists())
 
     def publication_fixture(self, root):
         state = root / 'state'

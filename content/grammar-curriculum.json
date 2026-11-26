@@ -7830,6 +7830,126 @@
         "https://dictionary.cambridge.org/grammar/british-grammar/very",
         "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/comparative-superlative-adjectives"
       ]
+    },
+    {
+      "number": 67,
+      "title": "“Rained” or “could rain”?",
+      "level": "A2",
+      "category": "Verb meaning and time",
+      "goal": "Talk about something that happened and something that might happen.",
+      "rules": [
+        "It rained yesterday. The ending “-ed” in “rained” helps tell us that the rain happened in the past. “Yesterday” tells us which day.",
+        "It could rain tomorrow. “Could” says that rain is possible. The word after “could” just names the action, so we use “rain”, the form you find in a dictionary. “Tomorrow” tells us when it might happen.",
+        "Try the same pattern with another action. The bus could arrive early. After “could”, use “arrive”. You can add a time phrase, as in “The bus could arrive early tomorrow”."
+      ],
+      "cards": [
+        {
+          "label": "IT HAPPENED",
+          "example": "It rained yesterday.",
+          "note": "“Rained” tells us what happened."
+        },
+        {
+          "label": "IT MIGHT HAPPEN",
+          "example": "It could rain tomorrow.",
+          "note": "“Could” says it is possible. “Tomorrow” tells us when."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "The forecast says rain is possible tomorrow. What can you say?",
+          "options": [
+            {
+              "text": "It could rain tomorrow.",
+              "correct": true,
+              "feedback": "“Could” shows that rain is possible. Use “rain” after it."
+            },
+            {
+              "text": "It could rained tomorrow.",
+              "correct": false,
+              "feedback": "Use “rain” after “could”. Leave off “-ed”."
+            },
+            {
+              "text": "It rained yesterday.",
+              "correct": false,
+              "feedback": "“Rained yesterday” describes weather that has already happened."
+            }
+          ]
+        },
+        {
+          "prompt": "You saw rain yesterday. Which sentence reports what happened?",
+          "options": [
+            {
+              "text": "It could rain tomorrow.",
+              "correct": false,
+              "feedback": "“Could rain tomorrow” describes a chance of rain on the next day."
+            },
+            {
+              "text": "It rained yesterday.",
+              "correct": true,
+              "feedback": "“Rained” reports the past event. “Yesterday” gives the day."
+            },
+            {
+              "text": "It rain yesterday.",
+              "correct": false,
+              "feedback": "Use “rained” to report the past event in this sentence."
+            }
+          ]
+        },
+        {
+          "prompt": "The bus could arrive early tomorrow. Which word tells you when?",
+          "options": [
+            {
+              "text": "Could.",
+              "correct": false,
+              "feedback": "“Could” tells you that an early arrival is possible."
+            },
+            {
+              "text": "Arrive.",
+              "correct": false,
+              "feedback": "“Arrive” names the action."
+            },
+            {
+              "text": "Tomorrow.",
+              "correct": true,
+              "feedback": "“Tomorrow” gives the day of the possible arrival."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "A friend asks if it is a good day for a picnic tomorrow. The forecast shows a chance of snow. What can you say?",
+        "options": [
+          {
+            "text": "It snowed yesterday.",
+            "correct": false,
+            "feedback": "“Snowed yesterday” describes a past event."
+          },
+          {
+            "text": "It could snow tomorrow.",
+            "correct": true,
+            "feedback": "“Could” describes the chance of snow. Use “snow” after it."
+          },
+          {
+            "text": "It could snowed tomorrow.",
+            "correct": false,
+            "feedback": "After “could”, use “snow” and leave off “-ed”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-67-could-rain-student-workbook.pdf",
+        "concept-67-could-rain-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-11-26",
+      "related": [
+        8,
+        35,
+        48
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/modality-forms",
+        "https://dictionary.cambridge.org/grammar/british-grammar/could"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

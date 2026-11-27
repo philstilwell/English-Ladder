@@ -85,8 +85,6 @@ class EditorialCorrectionTests(unittest.TestCase):
             'She feared that if she delayed her return, she might never come back.',
             item['options'][item['correct_option_index']],
         )
-        self.assertIn("if I don't come back today, I probably wouldn't come back",
-                      edition['source']['evidence_text'])
         self.assert_rendered_quiz_item('2026-10-10', 'intermediate', 4, item)
         self.assert_prompts_contain(
             '2026-10-10', 'intermediate',
@@ -97,7 +95,6 @@ class EditorialCorrectionTests(unittest.TestCase):
     def test_october_11_attributes_each_affected_intermediate_copy_to_roberts(self):
         edition = self.edition('2026-10-11')
         lesson = edition['levels']['intermediate']['lesson']
-        self.assertIn('Liz Saville Roberts', edition['source']['evidence_text'])
         self.assertEqual(
             'Plaid Cymru MP Liz Saville Roberts highlighted the need for proper regulations '
             'and community benefits from large-scale developments.',
@@ -139,8 +136,6 @@ class EditorialCorrectionTests(unittest.TestCase):
                      "Ukraine's military operations, while Kyiv views its attacks as essential "
                      "to curtailing Russia's war finance capabilities.")
         self.assertEqual(corrected, lesson['news_brief_sentences'][10])
-        self.assertIn("supported Ukraine's military operation",
-                      edition['source']['evidence_text'])
         item = lesson['quiz'][9]
         self.assertEqual(1, item['correct_option_index'])
         self.assertIn("support Ukraine's military operations",
@@ -181,8 +176,6 @@ class EditorialCorrectionTests(unittest.TestCase):
             "To medically determine the exact circumstances surrounding Mitte's death.",
             post_mortem_item['options'][post_mortem_item['correct_option_index']],
         )
-        self.assertIn('adding that a post-mortem examination would be performed',
-                      edition['source']['evidence_text'])
         self.assert_rendered_quiz_item('2026-10-13', 'advanced', 9, post_mortem_item)
 
         for path, node in self.lesson_nodes('2026-10-13', 'advanced'):
@@ -216,9 +209,6 @@ class EditorialCorrectionTests(unittest.TestCase):
             'completing online assessments were common examples.',
             item['option_feedback'][item['correct_option_index']],
         )
-        evidence = edition['source']['evidence_text']
-        self.assertIn('92% of employers had encountered or suspected AI "misconduct"', evidence)
-        self.assertIn('during online video interviews or to complete online assessments', evidence)
         self.assert_rendered_quiz_item('2026-10-14', 'advanced', 4, item)
         self.assert_prompts_contain(
             '2026-10-14', 'advanced',

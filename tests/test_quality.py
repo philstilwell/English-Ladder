@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
+from archive_privacy import require_public_archive
 import news_quality
 import update_site
 import publish_snapshot
@@ -16,13 +17,13 @@ class QualityTests(unittest.TestCase):
         self.data=json.loads((ROOT/'tests/fixtures/reviewed-edition.json').read_text())
         self.lesson=copy.deepcopy(self.data['levels']['beginner']['lesson'])
         self.source=self.data['source']
-    def test_current_reviewed_news_has_valid_evidence_and_structure(self):
-        for path in sorted((ROOT/'archive/lessons').glob('*.json'))[-7:]:
+    def test_public_reviewed_news_has_valid_structure_and_no_private_evidence(self):
+        for path in sorted((ROOT/'archive/lessons').glob('*.json')):
             data=json.loads(path.read_text())
+            require_public_archive(data, path.name)
             for config in update_site.LEVELS:
                 lesson=data['levels'][config['name'].lower()]['lesson']
                 self.assertEqual([],update_site.validate_lesson_data(lesson,config))
-                self.assertEqual([],news_quality.validate_evidence(lesson,data['source']))
     def test_new_quantity_and_fabricated_evidence_are_rejected(self):
         self.lesson['news_brief_sentences'][0]='Exactly 8472 planes changed routes.'
         self.assertTrue(any('8472' in issue for issue in news_quality.validate_evidence(self.lesson,self.source)))
@@ -65,6 +66,22 @@ class QualityTests(unittest.TestCase):
             with patch.object(publish_snapshot,'ROOT',root):
                 with self.assertRaisesRegex(RuntimeError,'Concurrent source edit'):publish_snapshot.restore(snap)
             self.assertEqual(b'new editorial correction',current.read_bytes())
+    def test_snapshot_rejects_old_archive_with_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / 'repo'
+            snap = Path(directory) / 'snapshot'
+            name = 'archive/lessons/2030-01-01.json'
+            incoming = snap / name
+            incoming.parent.mkdir(parents=True)
+            data = b'{"source": {"evidence_text": "not public"}}'
+            incoming.write_bytes(data)
+            (snap / 'manifest.json').write_text(json.dumps([
+                {'path': name, 'baseline': None, 'incoming': publish_snapshot.digest(data)}]))
+            with patch.object(publish_snapshot, 'ROOT', root):
+                with self.assertRaisesRegex(ValueError, 'private editorial evidence'):
+                    publish_snapshot.restore(snap)
+            self.assertFalse((root / name).exists())
+
     def test_snapshot_will_not_restore_html(self):
         self.assertFalse(publish_snapshot.allowed('beginner.html'))
         self.assertFalse(publish_snapshot.allowed('archive/lessons/../../tools.js'))

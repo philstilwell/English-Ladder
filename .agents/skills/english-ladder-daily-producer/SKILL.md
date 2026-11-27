@@ -98,6 +98,10 @@ audio changes. The runner alone handles generation and rebuilds.
 1. For an unpushed edition, inspect the changed files, illustration and
    provenance, and run `git diff --check`. Stage only expected generated
    publication files; keep state, usage logs, secrets and audio out of Git.
+   Source excerpts and per-sentence evidence are verified before archiving
+   and kept in the ignored producer state as `editorial-evidence.json`.
+   Never copy that record or approved drafts into Git, snapshots, or hosted
+   archives. The public archive keeps the attribution and reviewed lesson.
    Once the runner has returned `ready_to_publish` and writes have stopped,
    run all three checks (they may run in parallel):
 

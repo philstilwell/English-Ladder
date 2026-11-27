@@ -1508,7 +1508,9 @@ def generate_lesson_html(client, news_item, level, release_dt):
     return lesson_html
 
 
-def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCHIVE_DIR):
+def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCHIVE_DIR,
+                          *, evidence_dir=None):
+    from archive_privacy import public_archive, write_archive_json
     from lesson_evidence import archive_evidence
     overlap_issues = validate_edition_vocabulary(level_lessons)
     if overlap_issues:
@@ -1546,7 +1548,7 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
             "retrieved_at": news_item.get("retrieved_at", ""),
             "title": normalize_text(news_item.get("title", "")),
             "summary": normalize_text(news_item.get("summary", "")),
-            # Retain excerpts and the source passages supporting reviewed quantities.
+            # Retain excerpts and quantity support in the private review record.
             "evidence_text": archive_evidence(news_item, level_lessons),
             "evidence_retrieved_at": news_item.get("evidence_retrieved_at", ""),
             "link": normalize_text(news_item.get("link", "")),
@@ -1565,10 +1567,23 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
             if issues:
                 raise ValueError(f"Refusing to archive unsupported {key} lesson: " + "; ".join(issues))
 
+    public_data = public_archive(archive_data)
+    if archive_data != public_data:
+        private_directory = (Path(evidence_dir) if evidence_dir is not None else
+                             Path(__file__).resolve().parent / ".daily-agent" / release_date)
+        evidence_path = private_directory / "editorial-evidence.json"
+        # Only ignored state may hold evidence inside the checkout. Also reject
+        # public archive destinations outside the checkout (e.g. an export).
+        repo = Path(__file__).resolve().parent
+        resolved = evidence_path.resolve()
+        if (resolved.is_relative_to(archive_dir.resolve())
+                or (resolved.is_relative_to(repo) and
+                    not resolved.is_relative_to(repo / ".daily-agent"))):
+            raise ValueError("Private evidence must not be written in the public site.")
+        write_archive_json(evidence_path, archive_data, private=True)
+
     archive_path = archive_path_for_release_dt(release_dt, archive_dir=archive_dir)
-    with archive_path.open("w", encoding="utf-8") as file:
-        json.dump(archive_data, file, ensure_ascii=False, indent=2)
-        file.write("\n")
+    write_archive_json(archive_path, public_data)
 
     return archive_path
 

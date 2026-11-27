@@ -4,6 +4,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from archive_privacy import require_public_archive
 ROOT=Path(__file__).resolve().parent
 SOURCE_FOLDERS = ['archive/lessons', 'assets/news', 'data/vocabulary-translations']
 
@@ -17,6 +18,10 @@ def allowed(path):
     p=Path(path)
     return not p.is_absolute() and '..' not in p.parts and any(path.startswith(folder + '/') for folder in SOURCE_FOLDERS)
 
+def check_source_data(name, data):
+    if name.startswith('archive/lessons/') and name.endswith('.json'):
+        require_public_archive(json.loads(data), name)
+
 def capture(destination):
     destination=Path(destination);destination.mkdir(parents=True,exist_ok=True);manifest=[]
     for folder in SOURCE_FOLDERS:
@@ -24,6 +29,7 @@ def capture(destination):
             if not file.is_file():continue
             name=file.relative_to(ROOT).as_posix();data=file.read_bytes();baseline=tracked_version(name)
             if data==baseline:continue
+            check_source_data(name, data)
             target=destination/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
             manifest.append({'path':name,'baseline':digest(baseline),'incoming':digest(data)})
     (destination/'manifest.json').write_text(json.dumps(manifest))
@@ -39,6 +45,7 @@ def restore(destination):
         current=digest(file.read_bytes() if file.exists() else None)
         if current not in [item['baseline'],item['incoming']]:
             raise RuntimeError('Concurrent source edit requires review; refusing to overwrite '+name)
+        check_source_data(name, data)
         writes.append((file,data))
     for file,data in writes:file.parent.mkdir(parents=True,exist_ok=True);file.write_bytes(data)
     print('Restored source data; public pages must now be rebuilt with the current templates.')

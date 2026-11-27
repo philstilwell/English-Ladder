@@ -72,8 +72,8 @@ def review_lesson(client,news,lesson,level,model,review_record=None,return_reque
     """A separate call; retain its level assessments only after every gate passes."""
     from teaching_typography import GUIDANCE
     from lesson_evidence import archive_evidence
-    # Review the same evidence that will survive archiving, rather than approve
-    # claims using article passages that publication later discards.
+    # Review the same evidence that will be retained privately, rather than approve
+    # claims using article passages that the private record would discard.
     news = dict(news, evidence_text=archive_evidence(news, {'lesson': lesson}))
     retained_issues = validate_evidence(lesson, news)
     if retained_issues:

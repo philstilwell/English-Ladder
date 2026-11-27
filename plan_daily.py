@@ -327,7 +327,8 @@ def stage_archive(release_date: str, state: Path) -> Path:
     source = load_json(source_path(state))
     lessons = {name: load_json(state / f"approved-{name}.json") for name in LEVEL_NAMES}
     archive = update_site.archive_daily_lessons(
-        source, lessons, update_site.release_datetime_from_date(release_date)
+        source, lessons, update_site.release_datetime_from_date(release_date),
+        evidence_dir=state,
     )
     record = load_json(archive)
     record["model"] = MODEL

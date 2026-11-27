@@ -81,10 +81,11 @@ def audit():
                 if identifiers is not None and find_identifier(identifiers,url.fragment,encoded=True) is None:failures.append(f'{path.name}: missing fragment {value}')
     from grammar_curriculum import load_curriculum
     from update_site import validate_lesson_data,validate_daily_minimums,validate_edition_vocabulary,normalize_text,LEVELS
-    from news_quality import validate_evidence
+    from archive_privacy import require_public_archive
     load_curriculum()
     for path in sorted((ROOT/'archive/lessons').glob('*.json')):
         data=json.loads(path.read_text())
+        require_public_archive(data, path.name)
         failures.extend(f'{path.name}: {issue}' for issue in validate_edition_vocabulary({key:value['lesson'] for key,value in data['levels'].items()}))
         for config in LEVELS:
             level=config['name'].lower();lesson=data['levels'][level]['lesson']
@@ -114,7 +115,7 @@ def audit():
         if not data.get('editorial_review') and not all(v['lesson'].get('editorial_check') for v in data['levels'].values()):continue
         for config in LEVELS:
             lesson=data['levels'][config['name'].lower()]['lesson']
-            failures.extend(f'{path.name}/{config["name"]}: {issue}' for issue in [*validate_lesson_data(lesson,config),*validate_evidence(lesson,data['source'])])
+            failures.extend(f'{path.name}/{config["name"]}: {issue}' for issue in validate_lesson_data(lesson,config))
     # This is the complete site AND search gate; callers must not repeat it
     # with a second audit_seo.py process before uploading the same files.
     from audit_seo import audit as audit_search

@@ -7,6 +7,11 @@ const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const out = path.join(root, '.cf-site');
 const domain = fs.readFileSync(path.join(root, 'CNAME'), 'utf8').trim();
+const privateEvidenceFields = new Set(['evidence_text', 'sentence_evidence', 'evidence_retrieved_at']);
+function hasPrivateEvidence(value) {
+  return value !== null && typeof value === 'object' &&
+    Object.entries(value).some(([key, child]) => privateEvidenceFields.has(key) || hasPrivateEvidence(child));
+}
 const publicDirs = new Set(['assets', 'pdf', 'prompts', 'news', 'stories', 'grammar-concepts', 'english-for-work', 'sitemaps', 'archive', 'data']);
 const extensions = new Set(['.html', '.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.pdf', '.txt', '.json', '.xml', '.woff', '.woff2', '.ttf', '.mp3']);
 const paths = cp.execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {cwd: root, encoding: 'utf8'}).split('\0').filter(Boolean);
@@ -33,6 +38,10 @@ for (const file of files) {
   const source = path.join(root, file);
   if (!fs.lstatSync(source).isFile()) throw new Error(`Public asset is not a regular file: ${file}`);
   const data = fs.readFileSync(source);
+  if (file.startsWith('archive/lessons/') && file.endsWith('.json') &&
+      hasPrivateEvidence(JSON.parse(data.toString('utf8')))) {
+    throw new Error(`Private editorial evidence in public archive: ${file}`);
+  }
   if (data.length > 25 * 1024 * 1024) throw new Error(`Cloudflare file limit exceeded: ${file}`);
   const dest = path.join(out, file);
   fs.mkdirSync(path.dirname(dest), {recursive:true});

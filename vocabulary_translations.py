@@ -13,7 +13,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CACHE_DIR = ROOT / 'data/vocabulary-translations'
 POLICY = '2026-09-08-context-definitions-v1'
-MODEL = 'gemini-2.5-flash'
+MODEL = 'gemini-3.5-flash-lite'
+# Standard rates, including audio input and reasoning output:
+# https://aistudio.google.com/docs/whats-new-gemini-3.6#pricing-gemini-3.5-flash-lite
+INPUT_USD_PER_MILLION = .30
+OUTPUT_USD_PER_MILLION = 2.50
 LANGUAGES = {'ja': 'Japanese', 'ko': 'Korean', 'zh-Hans': 'Simplified Chinese',
              'es': 'Spanish', 'pt-BR': 'Brazilian Portuguese', 'fr': 'French', 'de': 'German'}
 OUTPUT_TOKENS = 12288
@@ -118,24 +122,25 @@ class Budget:
     def spent(self):
         return sum(item['usd'] for item in self.data['requests'])
 
-    def request(self, client, prompt, schema, thinking):
+    def request(self, client, prompt, schema, thinking_level):
         request_input = len(json.dumps({'prompt': prompt, 'schema': schema}, ensure_ascii=False).encode()) + 2048
-        reserved = (request_input * .30 + OUTPUT_TOKENS * 2.50) / 1_000_000
+        reserved = (request_input * INPUT_USD_PER_MILLION + OUTPUT_TOKENS * OUTPUT_USD_PER_MILLION) / 1_000_000
         with self.lock:
             if self.spent + reserved > self.limit:
                 raise RuntimeError('Translation spending limit reached; keep English and resume later.')
-            record = {'usd': reserved, 'usage': 'reserved', 'time': datetime.now(timezone.utc).isoformat()}
+            record = {'usd': reserved, 'usage': 'reserved', 'model': MODEL,
+                      'time': datetime.now(timezone.utc).isoformat()}
             self.data['requests'].append(record)
             atomic_json(self.path, self.data)
         response = client.models.generate_content(model=MODEL, contents=prompt, config={
             'response_mime_type': 'application/json', 'response_json_schema': schema,
-            'max_output_tokens': OUTPUT_TOKENS, 'thinking_config': {'thinking_budget': thinking}})
+            'max_output_tokens': OUTPUT_TOKENS, 'thinking_config': {'thinking_level': thinking_level}})
         usage = getattr(response, 'usage_metadata', None)
         if usage is not None and getattr(usage, 'prompt_token_count', None) is not None and getattr(usage, 'candidates_token_count', None) is not None:
             inputs = usage.prompt_token_count
             outputs = usage.candidates_token_count + (getattr(usage, 'thoughts_token_count', 0) or 0)
             with self.lock:
-                record.update(usd=(inputs * .30 + outputs * 2.50) / 1_000_000,
+                record.update(usd=(inputs * INPUT_USD_PER_MILLION + outputs * OUTPUT_USD_PER_MILLION) / 1_000_000,
                               usage='reported', input_tokens=inputs, output_tokens=outputs)
                 atomic_json(self.path, self.data)
         return json.loads(response.text)
@@ -187,12 +192,12 @@ def translate_lesson(client, source, budget, directory=None):
     for attempt in range(2):
         try:
             if draft is None:
-                raw = budget.request(client, instructions + '\nLESSON:\n' + json.dumps(source, ensure_ascii=False), schema, 1024)
+                raw = budget.request(client, instructions + '\nLESSON:\n' + json.dumps(source, ensure_ascii=False), schema, 'medium')
                 draft = validate_entries(raw['entries'], source, missing)
                 atomic_json(draft_path, {'source': source, 'entries': draft})
             prompt = (instructions + '\nINDEPENDENT REVIEW: Check every supplied translation against its English definition and story context. Correct any mistranslation, omitted qualification, wrong sense, unnatural phrasing, wrong script or regional variant. Retain correct wording. Return the complete final corrected entries, not a review report.\nLESSON AND DRAFT:\n'
                       + json.dumps({'lesson': source, 'draft': draft}, ensure_ascii=False))
-            raw = budget.request(client, prompt, schema, 2048)
+            raw = budget.request(client, prompt, schema, 'medium')
             additions = validate_entries(raw['entries'], source, missing)
             final = validate_entries([{**(previous['entries'][index] if previous else {}), **entry}
                                       for index, entry in enumerate(additions)], source)

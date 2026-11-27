@@ -9,9 +9,10 @@ from datetime import datetime, timezone
 
 from us_life_audio import AudioBudget, RECORDS, valid_record
 from us_life_content import ROOT, terms
-from vocabulary_translations import atomic_json
+from vocabulary_translations import (INPUT_USD_PER_MILLION, MODEL,
+                                     OUTPUT_USD_PER_MILLION, atomic_json)
 
-MODEL = 'gemini-2.5-flash'
+OUTPUT_TOKENS = 2048
 POLICY = 'blind-pronunciation-transcription-v1'
 # A blind transcript cannot distinguish these identical pronunciations.
 # Keep this narrow: missing words, changed endings, and near-matches still fail.
@@ -51,24 +52,26 @@ def transcribe(client, entries, budget):
                              'clear_speech': {'type': 'boolean'}, 'extra_speech': {'type': 'boolean'}},
               'required': ['id', 'text', 'clear_speech', 'extra_speech'], 'additionalProperties': False}}},
               'required': ['transcripts'], 'additionalProperties': False}
-    # Budget input at the more expensive audio rate, including text/schema overhead.
-    reserve = ((len(prompt.encode()) + len(json.dumps(schema)) + 2048 +
-                sum(math.ceil(r['seconds'] * 32) + 256 for _, r in entries)) + 2048 * 2.5) / 1_000_000
+    # Text and audio share this model's input rate. Reserve conservatively for
+    # input overhead and the full output limit, which includes reasoning tokens.
+    request_input = (len(prompt.encode()) + len(json.dumps(schema).encode()) + 2048 +
+                     sum(math.ceil(r['seconds'] * 32) + 256 for _, r in entries))
+    reserve = (request_input * INPUT_USD_PER_MILLION + OUTPUT_TOKENS * OUTPUT_USD_PER_MILLION) / 1_000_000
     with budget.lock:
         if budget.spent + reserve > budget.limit:
             raise RuntimeError('Combined pronunciation generation/review cap reached.')
-        row = {'phase': 'independent-audio-review', 'usd': reserve, 'usage': 'reserved',
+        row = {'phase': 'independent-audio-review', 'model': MODEL, 'usd': reserve, 'usage': 'reserved',
                'time': datetime.now(timezone.utc).isoformat()}
         budget.data['requests'].append(row); atomic_json(budget.path, budget.data)
     response = client.models.generate_content(model=MODEL, contents=parts, config={
         'response_mime_type': 'application/json', 'response_json_schema': schema,
-        'max_output_tokens': 2048, 'thinking_config': {'thinking_budget': 0}})
-    usage = response.usage_metadata
-    if usage and usage.prompt_token_count is not None and usage.candidates_token_count is not None:
+        'max_output_tokens': OUTPUT_TOKENS, 'thinking_config': {'thinking_level': 'minimal'}})
+    usage = getattr(response, 'usage_metadata', None)
+    if usage and getattr(usage, 'prompt_token_count', None) is not None and getattr(usage, 'candidates_token_count', None) is not None:
+        outputs = usage.candidates_token_count + (getattr(usage, 'thoughts_token_count', 0) or 0)
         with budget.lock:
-            row.update(usd=(usage.prompt_token_count + usage.candidates_token_count * 2.5) / 1_000_000,
-                       usage='reported-tokens-conservative-input-rate', input_tokens=usage.prompt_token_count,
-                       output_tokens=usage.candidates_token_count)
+            row.update(usd=(usage.prompt_token_count * INPUT_USD_PER_MILLION + outputs * OUTPUT_USD_PER_MILLION) / 1_000_000,
+                       usage='reported', input_tokens=usage.prompt_token_count, output_tokens=outputs)
             atomic_json(budget.path, budget.data)
     results = json.loads(response.text)['transcripts']
     if len(results) != len(entries) or {r['id'] for r in results} != set(range(len(entries))):

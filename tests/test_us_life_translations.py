@@ -59,7 +59,8 @@ class EverydayTranslationTests(unittest.TestCase):
         values = self.values
         class Budget:
             def __init__(self, fail=False): self.prompts = []; self.fail = fail
-            def request(self, client, prompt, schema, thinking):
+            def request(self, client, prompt, schema, thinking_level):
+                if thinking_level != 'medium': raise AssertionError('Translation review needs medium reasoning.')
                 self.prompts.append(prompt)
                 if self.fail and 'INDEPENDENT REVIEW:' in prompt: raise ValueError('Temporary problem')
                 return {'translations': values}
@@ -73,7 +74,7 @@ class EverydayTranslationTests(unittest.TestCase):
         self.assertIn('INDEPENDENT REVIEW:', recovery.prompts[0])
         self.assertEqual('cached', translations.translate(None, self.source, recovery, self.directory))
         self.assertEqual(1, len(recovery.prompts))
-        self.assertEqual('gemini-2.5-flash', translations.read_record(self.source, self.directory)['review']['model'])
+        self.assertEqual('gemini-3.5-flash-lite', translations.read_record(self.source, self.directory)['review']['model'])
 
     def test_published_page_embeds_all_reviewed_languages_without_changing_english_content(self):
         from us_life_language_ui import enhance_page
@@ -104,7 +105,8 @@ class EverydayTranslationTests(unittest.TestCase):
 
         class ExtensionBudget:
             def __init__(self, fail=False): self.calls = []; self.fail = fail
-            def request(self, client, prompt, schema, thinking):
+            def request(self, client, prompt, schema, thinking_level):
+                if thinking_level != 'medium': raise AssertionError('Translation review needs medium reasoning.')
                 self.calls.append((prompt, schema))
                 if self.fail and 'INDEPENDENT REVIEW:' in prompt:
                     raise ValueError('Temporary review failure')

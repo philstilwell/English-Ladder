@@ -74,7 +74,8 @@ class VocabularyTranslationTests(unittest.TestCase):
     def test_separate_review_and_retry_reuse_saved_draft(self):
         class FakeBudget:
             def __init__(self, entries, fail_review): self.calls = []; self.entries = entries; self.fail_review = fail_review
-            def request(self, client, prompt, schema, thinking):
+            def request(self, client, prompt, schema, thinking_level):
+                if thinking_level != 'medium': raise AssertionError('Translation review needs medium reasoning.')
                 self.calls.append(prompt)
                 if 'INDEPENDENT REVIEW:' in prompt and self.fail_review: raise ValueError('temporary review failure')
                 return {'entries': self.entries}
@@ -96,10 +97,10 @@ class VocabularyTranslationTests(unittest.TestCase):
         def fail(**kwargs): calls.append(kwargs); raise TimeoutError()
         client = SimpleNamespace(models=SimpleNamespace(generate_content=fail))
         budget = translations.Budget(self.directory / '.usage-test.json', .04)
-        with self.assertRaises(TimeoutError): budget.request(client, 'Translate.', {}, 0)
+        with self.assertRaises(TimeoutError): budget.request(client, 'Translate.', {}, 'medium')
         restarted = translations.Budget(budget.path, .04)
         self.assertGreater(restarted.spent, 0)
-        with self.assertRaisesRegex(RuntimeError, 'spending limit'): restarted.request(client, 'Translate.', {}, 0)
+        with self.assertRaisesRegex(RuntimeError, 'spending limit'): restarted.request(client, 'Translate.', {}, 'medium')
         self.assertEqual(1, len(calls))
 
     def test_new_languages_preserve_reviewed_definitions_and_resume_only_their_review(self):
@@ -115,7 +116,8 @@ class VocabularyTranslationTests(unittest.TestCase):
 
         class ExtensionBudget:
             def __init__(self, fail=False): self.calls = []; self.fail = fail
-            def request(self, client, prompt, schema, thinking):
+            def request(self, client, prompt, schema, thinking_level):
+                if thinking_level != 'medium': raise AssertionError('Translation review needs medium reasoning.')
                 self.calls.append((prompt, schema))
                 if self.fail and 'INDEPENDENT REVIEW:' in prompt:
                     raise ValueError('Review temporarily unavailable')

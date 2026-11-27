@@ -111,11 +111,11 @@ def translate(client, source, budget, directory=None):
     for _ in range(2):
         try:
             if draft is None:
-                response = budget.request(client, instructions + '\nSOURCE:\n' + json.dumps(source, ensure_ascii=False), response_schema, 1024)
+                response = budget.request(client, instructions + '\nSOURCE:\n' + json.dumps(source, ensure_ascii=False), response_schema, 'medium')
                 draft = validate(response['translations'], source, missing)
                 atomic_json(draft_path, {'source': source, 'translations': draft})
             prompt = instructions + '\nINDEPENDENT REVIEW: Check every translation against the Japanese source and English context. Correct omissions, mistranslations, unnatural wording, incorrect script or regional usage, and altered qualifications. Keep the source meaning and return the complete corrected translations, not a report.\nSOURCE AND DRAFT:\n'
-            response = budget.request(client, prompt + json.dumps({'source': source, 'draft': draft}, ensure_ascii=False), response_schema, 2048)
+            response = budget.request(client, prompt + json.dumps({'source': source, 'draft': draft}, ensure_ascii=False), response_schema, 'medium')
             additions = validate(response['translations'], source, missing)
             final = validate({**(previous['translations'] if previous else {}), **additions}, source)
             atomic_json(directory / (key + '.json'), {'source': source, 'translations': final,

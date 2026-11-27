@@ -1,0 +1,799 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-27",
+  "release_iso": "2026-11-27T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Thu, 26 Nov 2026 22:49:27 GMT",
+    "retrieved_at": "2026-11-27T03:30:28.825142+00:00",
+    "title": "US too focused on Middle East and not pushing Russia hard enough, Zelensky tells BBC",
+    "summary": "Ukraine's president voices frustration with US and says it is \"strange\" Trump has described Vladimir Putin as a friend.",
+    "evidence_text": "In an interview with the BBC at his central Kyiv office, Ukraine's president also said it was \"strange\" that Donald Trump had posted a picture of himself embracing Vladimir Putin as \"my friend\".\n\"It's a pity they made a focus on Middle East and they help them more… It's a pity. We have huge questions with this,\" Zelensky said.\nVolodymyr Zelensky has voiced deep frustration with the US, saying that delays in delivering vital anti-ballistic missiles are costing Ukrainian lives and complaining that the US is not pushing Russia hard enough during peace talks.\nTrump's two envoys have been trying to negotiate a peace deal between Russia and Ukraine - to end the huge loss of life. But they often seem more in tune with Moscow's position, than that of Kyiv.\nThe latest round of peace talks, mediated in Abu Dhabi earlier this month, made no obvious progress: \"The more we know, the more problems\", is how Zelensky described it.\nHe said talks were expected to resume in December.\nSome residents have already left town for the winter and businesses closed, as power cuts and strikes on logistics networks have pushed operating costs unmanageably high.\n\"People can go, but we will try to defend our capital in any way. We need our capital. Without a capital, you don't have a country.\"\nSo Zelensky called for \"real helpful allies, who can push Russia\" to achieve results and urged the US to live up to its reputation as a strong country with \"power and respect\".\nThe US argues that it is neutral: in the complex search for a peace deal between the two sides that can hold.\nBut there is a \"very, very big\" deficit of interceptors to stop ballistic missiles and he said the Amercians were delaying deliveries of its Patriot systems.\nRussian strikes across the country have been growing more frequent and more deadly: the number of civilians being killed is at an all-time high.\nBut he acknowledged that Ukraine was bracing for a difficult and dangerous winter.\nSince a bruising encounter with Trump in the Oval Office in 2025, Zelensky has been careful how he handles relations with the United States.\nBut from its public statements, Russia appears to have regressed to its initial, hardline negotiating positions – on everything.\nAnd Zelensky revealed that it was not clear whether European negotiators would be at the table, as the US envoys had announced .\nZelensky said the military here are now able to destroy about 70% of Russia's fastest drones, a statistic he said was improving.\nHe also confirmed that the US satellite communications system, Starlink – and its military version, Starshield – were still being restricted in occupied areas of Ukraine.\nUkrainian drone units have described their problems to the BBC, as their interceptor drones can no longer catch up with Russian Shaheds. It means those weapons then fly deeper into Ukraine, unhindered.\nUkraine's own long-range strikes against Russian targets have increased in recent weeks, including oil refineries and ships carrying weapons or fuel.\nHe accepted that such strikes were \"very dangerous\" but said Ukraine's forces \"never attack\" without co-ordinating with its partners.",
+    "evidence_retrieved_at": "2026-11-27T03:30:28.825142+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why have some businesses in Kyiv closed? Explain one problem they face.",
+          "What can you, or an imaginary person, do during a power cut? Use \"I can ... because ...\"."
+        ],
+        "title": "Zelensky Wants More US Help for Ukraine",
+        "overview": "Zelensky wants more US help to bring peace to Ukraine.",
+        "topic": "World news",
+        "vocabulary": [
+          {
+            "term": "attention",
+            "part_of_speech": "noun",
+            "definition": "Careful thought about someone or something."
+          },
+          {
+            "term": "peace talks",
+            "part_of_speech": "plural noun",
+            "definition": "Meetings where people try to agree on ending a war."
+          },
+          {
+            "term": "start again",
+            "part_of_speech": "verb phrase",
+            "definition": "Begin one more time after stopping."
+          },
+          {
+            "term": "power cuts",
+            "part_of_speech": "plural noun",
+            "definition": "Times when homes and other buildings have no electricity."
+          },
+          {
+            "term": "closed",
+            "part_of_speech": "verb, past participle",
+            "definition": "Stopped being open for business."
+          },
+          {
+            "term": "capital",
+            "part_of_speech": "noun",
+            "definition": "The city where a country's government works."
+          }
+        ],
+        "grammar": {
+          "concept": "Giving a reason with \"because\"",
+          "explanation": "Use \"because\" to give a reason. Put it before the part of the sentence that explains why something happens. The other part gives the result. You can use \"because\" with present or past verbs.",
+          "example_quote": "Some businesses in Kyiv have closed because power cuts and attacks have made their costs too high."
+        },
+        "quiz": [
+          {
+            "question": "What does Zelensky want the US to do?",
+            "options": [
+              "Push Russia harder during peace talks.",
+              "Give the Middle East more attention.",
+              "Stop the peace talks."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. He wants the US to push Russia harder during peace talks.",
+              "He says the US is already giving the Middle East too much attention.",
+              "He wants the US to push Russia harder during the talks, not stop them."
+            ]
+          },
+          {
+            "question": "What is the aim of the peace talks?",
+            "options": [
+              "To help businesses move to another city.",
+              "To end the war between Russia and Ukraine.",
+              "To choose a new capital."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading connects the talks with ending the war, not moving businesses.",
+              "Correct. The talks aim to end the war between Russia and Ukraine.",
+              "The reading does not say the talks are about choosing a capital."
+            ]
+          },
+          {
+            "question": "When did Zelensky expect the talks to start again?",
+            "options": [
+              "The reading gives no month.",
+              "After the winter.",
+              "In December."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading names December as the expected month.",
+              "The reading says December, not after the winter.",
+              "Correct. He expected talks in December, but the reading does not say they had started."
+            ]
+          },
+          {
+            "question": "According to the reading, why have some businesses in Kyiv closed?",
+            "options": [
+              "Their costs became too high.",
+              "The peace talks ended the war.",
+              "They were waiting for the December talks."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Power cuts and attacks have made their costs too high.",
+              "The reading does not say the peace talks ended the war.",
+              "December is about the expected talks, not the reason businesses closed."
+            ]
+          },
+          {
+            "question": "What does \"capital\" mean in this story?",
+            "options": [
+              "A meeting between two countries.",
+              "A city where a country's government works.",
+              "A time when buildings have no electricity."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A \"capital\" is a city, not a meeting.",
+              "Correct. A \"capital\" is the city where a country's government works.",
+              "That describes \"power cuts\", not a \"capital\"."
+            ]
+          },
+          {
+            "question": "Which word introduces the reason in \"A shop closes ___ it cannot pay its costs\"?",
+            "options": [
+              "but",
+              "after",
+              "because"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"But\" joins different or surprising ideas; it does not introduce the reason here.",
+              "\"After\" tells us when something happens; this question asks for a reason.",
+              "Correct. \"Because\" explains why the shop closes."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Ukraine's president, Volodymyr Zelensky, spoke to the BBC in Kyiv.",
+          "He said the US was paying too much attention to the Middle East.",
+          "He wants the US to push Russia harder during peace talks.",
+          "The aim of these talks is to end the war between Russia and Ukraine.",
+          "The latest peace talks made no clear progress.",
+          "Zelensky said he expected talks to start again in December.",
+          "Some businesses in Kyiv have closed because power cuts and attacks have made their costs too high.",
+          "Some people have already left the city for the winter.",
+          "Zelensky said Ukraine would try to defend its capital."
+        ],
+        "sentence_evidence": [
+          "In an interview with the BBC at his central Kyiv office, Ukraine's president also said it was \"strange\" that Donald Trump had posted a picture of himself embracing Vladimir Putin as \"my friend\".",
+          "\"It's a pity they made a focus on Middle East and they help them more… It's a pity. We have huge questions with this,\" Zelensky said.",
+          "Volodymyr Zelensky has voiced deep frustration with the US, saying that delays in delivering vital anti-ballistic missiles are costing Ukrainian lives and complaining that the US is not pushing Russia hard enough during peace talks.",
+          "Trump's two envoys have been trying to negotiate a peace deal between Russia and Ukraine - to end the huge loss of life. But they often seem more in tune with Moscow's position, than that of Kyiv.",
+          "The latest round of peace talks, mediated in Abu Dhabi earlier this month, made no obvious progress: \"The more we know, the more problems\", is how Zelensky described it.",
+          "He said talks were expected to resume in December.",
+          "Some residents have already left town for the winter and businesses closed, as power cuts and strikes on logistics networks have pushed operating costs unmanageably high.",
+          "Some residents have already left town for the winter and businesses closed, as power cuts and strikes on logistics networks have pushed operating costs unmanageably high.",
+          "\"People can go, but we will try to defend our capital in any way. We need our capital. Without a capital, you don't have a country.\""
+        ],
+        "editorial_check": {
+          "date": "2026-11-27T03:32:34.167483+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct reading terms, including “attention” and “power cuts”, have accurate, accessible definitions."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting and direct wording such as “start again” suit adult beginners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The explanation of “because” is clear, its quotation is exact, and discussion includes “I can ... because ...” and an imaginary-person alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Six distinct questions test stated details, contextual “capital”, and reasons with “because”; each has one clear answer and accurate feedback."
+            }
+          },
+          "content_digest": "e88fa981012760484f5ef1a9c50305175345bda270a2cf6db06d4ebd136eb021"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why does Zelensky want the US to put more pressure on Russia, and how does this differ from the US position?",
+          "How could a business prepare for power cuts and rising operating costs? Explain which action you would prioritise."
+        ],
+        "title": "Zelensky Calls for More US Pressure on Russia",
+        "overview": "Zelensky criticises US support for Ukraine as missile deliveries face delays and negotiations show little progress.",
+        "topic": "International relations and the war in Ukraine",
+        "vocabulary": [
+          {
+            "term": "frustration",
+            "part_of_speech": "uncountable noun",
+            "definition": "The feeling of being upset because a problem continues or something prevents progress."
+          },
+          {
+            "term": "delays",
+            "part_of_speech": "plural noun",
+            "definition": "Situations in which something happens later than expected or needed."
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "plural noun",
+            "definition": "Discussions in which people try to reach an agreement."
+          },
+          {
+            "term": "resume",
+            "part_of_speech": "verb",
+            "definition": "To continue an activity after a pause."
+          },
+          {
+            "term": "allies",
+            "part_of_speech": "plural noun",
+            "definition": "Countries or groups that support and help one another."
+          },
+          {
+            "term": "neutral",
+            "part_of_speech": "adjective",
+            "definition": "Not supporting either side in a disagreement or conflict."
+          },
+          {
+            "term": "shortage",
+            "part_of_speech": "countable noun",
+            "definition": "A situation in which there is less of something than people need."
+          },
+          {
+            "term": "operating costs",
+            "part_of_speech": "plural noun phrase",
+            "definition": "The money needed to keep a business running."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive reporting with “was/were expected to”",
+          "explanation": "Use “was/were expected to” followed by the base form of a verb to report what people thought would happen later. This passive structure leaves out who held the expectation. It reports an expectation, so it does not confirm that the event happened.",
+          "example_quote": "The talks were expected to resume in December, according to Zelensky."
+        },
+        "quiz": [
+          {
+            "question": "What is the main concern Zelensky expresses in the reading?",
+            "options": [
+              "The US is not doing enough to help Ukraine and pressure Russia.",
+              "The US is putting too much pressure on Russia.",
+              "The US has stopped seeking a peace agreement."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. He criticises delays in military support and wants more pressure on Russia.",
+              "He wants the US to increase pressure on Russia.",
+              "The reading says the US is seeking an agreement that can last."
+            ]
+          },
+          {
+            "question": "What comparison does Zelensky make about US support?",
+            "options": [
+              "He says Ukraine receives more help than the Middle East.",
+              "He says the US provides more help to the Middle East.",
+              "He says the US provides equal help to both."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This reverses his complaint about where the US provides more help.",
+              "Correct. He complains that the US focuses on the Middle East and helps it more.",
+              "His complaint describes a difference in support, not equal support."
+            ]
+          },
+          {
+            "question": "What result does the reading report from the latest negotiations in Abu Dhabi?",
+            "options": [
+              "A peace agreement was completed.",
+              "The participants agreed to end all future discussions.",
+              "There was no clear progress."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading reports no clear progress, rather than a completed agreement.",
+              "Further talks were expected in December, so this choice is unsupported.",
+              "Correct. The latest negotiations did not produce clear progress."
+            ]
+          },
+          {
+            "question": "How does the US description of its role differ from Zelensky's request?",
+            "options": [
+              "The US describes itself as neutral, while Zelensky wants it to pressure Russia.",
+              "The US wants more pressure on Russia, while Zelensky asks it to remain neutral.",
+              "Both say the US should avoid trying to reach an agreement."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. These are the two different positions presented in the reading.",
+              "This reverses the positions described in the reading.",
+              "The US says it is seeking an agreement, while Zelensky wants it to put pressure on Russia."
+            ]
+          },
+          {
+            "question": "What does “shortage” mean in the report about defensive missiles?",
+            "options": [
+              "There are more missiles than Ukraine needs.",
+              "There are fewer missiles than Ukraine needs.",
+              "The missiles are no longer needed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A “shortage” means there is too little of something, not too much.",
+              "Correct. The available supply does not meet the need.",
+              "A “shortage” concerns an unmet need; it does not mean the need has disappeared."
+            ]
+          },
+          {
+            "question": "Which reason for some businesses shutting is supported by the reading?",
+            "options": [
+              "The negotiations required businesses to shut.",
+              "Businesses were waiting for the December talks.",
+              "Power cuts and attacks made running businesses too expensive."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading does not connect business closures to a requirement from negotiations.",
+              "The reading does not give waiting for talks as a reason.",
+              "Correct. It links the closures to sharply increased operating costs."
+            ]
+          },
+          {
+            "question": "What does “resume” tell us about the talks expected in December?",
+            "options": [
+              "They would continue after a pause.",
+              "They would take place for the first time.",
+              "They would certainly produce an agreement."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. “Resume” means to continue an activity after a pause.",
+              "“Resume” refers to an activity that has already begun.",
+              "“Resume” describes continuing, without promising a successful result."
+            ]
+          },
+          {
+            "question": "What does “were expected to resume” establish about the December talks?",
+            "options": [
+              "They had already taken place.",
+              "People thought they would continue, but this wording does not confirm they did.",
+              "They could not take place."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The structure reports an expectation about a later event, not a completed event.",
+              "Correct. An expectation is different from confirmation that something happened.",
+              "The structure expresses an expectation, not an inability to act."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses “was expected to” to describe an expectation about a delivery?",
+            "options": [
+              "The delivery was expected arrive on Friday.",
+              "The delivery expected to arrive on Friday.",
+              "The delivery was expected to arrive on Friday."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The pattern needs “to” before the base form “arrive”.",
+              "The passive reporting pattern needs “was” before “expected”.",
+              "Correct. “Was expected to” is followed by the base form “arrive”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Ukraine's president, Volodymyr Zelensky, expressed frustration with the US, saying it was not putting enough pressure on Russia during negotiations.",
+          "He said delays in receiving missiles used to stop other missiles were costing Ukrainian lives.",
+          "He also complained that the US was focusing on the Middle East and providing more help there.",
+          "Zelensky said it was strange that Donald Trump had posted a picture showing himself embracing Vladimir Putin and describing him as a friend.",
+          "The latest negotiations, held with help from a third party in Abu Dhabi, made no clear progress.",
+          "The talks were expected to resume in December, according to Zelensky.",
+          "He called for support from allies, countries that help Ukraine, and urged the US to put pressure on Russia.",
+          "The US says it is neutral, meaning it does not take either side, while seeking a peace agreement that can last.",
+          "Zelensky reported a serious shortage of defensive missiles and said the US was delaying deliveries of Patriot air defence systems.",
+          "Russian attacks have become more frequent and deadly, and the number of civilians killed has reached its highest level.",
+          "Power cuts and attacks on transport networks have raised operating costs so much that some businesses have shut.",
+          "Zelensky acknowledged that Ukraine was preparing for a difficult and dangerous winter."
+        ],
+        "sentence_evidence": [
+          "Volodymyr Zelensky has voiced deep frustration with the US, saying that delays in delivering vital anti-ballistic missiles are costing Ukrainian lives and complaining that the US is not pushing Russia hard enough during peace talks.",
+          "Volodymyr Zelensky has voiced deep frustration with the US, saying that delays in delivering vital anti-ballistic missiles are costing Ukrainian lives and complaining that the US is not pushing Russia hard enough during peace talks.",
+          "\"It's a pity they made a focus on Middle East and they help them more… It's a pity. We have huge questions with this,\" Zelensky said.",
+          "In an interview with the BBC at his central Kyiv office, Ukraine's president also said it was \"strange\" that Donald Trump had posted a picture of himself embracing Vladimir Putin as \"my friend\".",
+          "The latest round of peace talks, mediated in Abu Dhabi earlier this month, made no obvious progress: \"The more we know, the more problems\", is how Zelensky described it.",
+          "He said talks were expected to resume in December.",
+          "So Zelensky called for \"real helpful allies, who can push Russia\" to achieve results and urged the US to live up to its reputation as a strong country with \"power and respect\".",
+          "The US argues that it is neutral: in the complex search for a peace deal between the two sides that can hold.",
+          "But there is a \"very, very big\" deficit of interceptors to stop ballistic missiles and he said the Amercians were delaying deliveries of its Patriot systems.",
+          "Russian strikes across the country have been growing more frequent and more deadly: the number of civilians being killed is at an all-time high.",
+          "Some residents have already left town for the winter and businesses closed, as power cuts and strikes on logistics networks have pushed operating costs unmanageably high.",
+          "But he acknowledged that Ukraine was bracing for a difficult and dangerous winter."
+        ],
+        "editorial_check": {
+          "date": "2026-11-27T03:35:20.017434+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight useful B1–B2 targets, including “negotiations”, “shortage” and “operating costs”, occur in the reading, have clear definitions and avoid reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting consistently attributes Zelensky’s complaints and the US claim of being “neutral”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations are clear and manageable. The exact grammar quotation demonstrates “were expected to” and correctly distinguishes expectation from confirmation."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and nine quiz questions cover comprehension, contrasting positions, contextual vocabulary and grammar transfer, with unambiguous answers."
+            }
+          },
+          "content_digest": "b80ac3df9d5c1216e5217b70a703db6d4965a206cc623db48e45fb6dd9013f78"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain how Zelensky's demand for stronger pressure on Russia challenges the US account of its diplomatic role.",
+          "In your view, how should a mediator balance maintaining dialogue with both sides against responding to threats to civilians?"
+        ],
+        "title": "Zelensky Urges Stronger US Pressure as Ukraine's Defences Strain",
+        "overview": "Examine Zelensky's criticism of US priorities while distinguishing diplomatic positioning, reported military constraints and uncertainty over further talks.",
+        "topic": "Diplomacy and Ukraine's defence",
+        "vocabulary": [
+          {
+            "term": "in tune with",
+            "part_of_speech": "idiomatic phrase",
+            "definition": "Broadly aligned with someone's views or priorities, without necessarily having a formal agreement."
+          },
+          {
+            "term": "mediated",
+            "part_of_speech": "verb, past participle",
+            "definition": "Conducted with a third party helping opposing sides seek an agreement."
+          },
+          {
+            "term": "regressed",
+            "part_of_speech": "verb, past participle",
+            "definition": "Returned to an earlier, less constructive position after apparent movement away from it."
+          },
+          {
+            "term": "hardline",
+            "part_of_speech": "adjective",
+            "definition": "Unwilling to soften demands or make substantial compromises."
+          },
+          {
+            "term": "at the table",
+            "part_of_speech": "idiomatic phrase",
+            "definition": "Participating directly in discussions where decisions or agreements are being negotiated."
+          },
+          {
+            "term": "live up to",
+            "part_of_speech": "phrasal verb",
+            "definition": "Meet the expectations created by a reputation, promise or stated standard."
+          },
+          {
+            "term": "deficit",
+            "part_of_speech": "noun",
+            "definition": "The amount by which what is available falls short of what is required."
+          },
+          {
+            "term": "interceptors",
+            "part_of_speech": "plural noun",
+            "definition": "Defensive missiles intended to destroy incoming missiles before they reach their targets."
+          },
+          {
+            "term": "unhindered",
+            "part_of_speech": "adjective",
+            "definition": "Free from obstruction or interference that would prevent further progress."
+          },
+          {
+            "term": "bracing for",
+            "part_of_speech": "verb phrase, present participle",
+            "definition": "Preparing mentally or practically for something expected to be difficult or unpleasant."
+          },
+          {
+            "term": "unmanageably high",
+            "part_of_speech": "adjective phrase",
+            "definition": "So high that those affected cannot cope with the financial burden."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced concessive clauses with “while”",
+          "explanation": "Use “while” followed by an “-ing” form to acknowledge a contrasting consideration without making it a cause. The understood subject must match the main-clause subject; here, Zelensky acknowledges danger while asserting coordination with partners.",
+          "example_quote": "While acknowledging that such strikes were highly dangerous, Zelensky said Ukrainian forces never conducted them without coordinating with partners."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the central tension in the report?",
+            "options": [
+              "Zelensky wants stronger US pressure and military support, while the US presents itself as a neutral mediator.",
+              "Zelensky wants the US to withdraw from diplomacy so that Ukraine can negotiate without outside involvement.",
+              "The US and Ukraine agree that defensive missile deliveries should await a completed peace agreement."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the reading contrasts Zelensky's demands for pressure and defensive support with the US explanation of its neutrality.",
+              "The reading reports criticism of US conduct, but no demand that the US withdraw from diplomacy.",
+              "The reading describes urgent criticism of delivery delays, not agreement to postpone deliveries until peace is secured."
+            ]
+          },
+          {
+            "question": "What does the assessment that the US envoys appear more “in tune with” Moscow imply?",
+            "options": [
+              "They have formally accepted every Russian demand.",
+              "Their apparent outlook is closer to Moscow's position than Kyiv's.",
+              "They have ended their efforts to reach an agreement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“In tune with” suggests alignment of outlook; it does not establish formal acceptance of every demand.",
+              "Correct: the phrase describes apparent similarity in views or priorities, while preserving uncertainty.",
+              "The reading still describes the envoys as seeking a peace deal."
+            ]
+          },
+          {
+            "question": "What does “regressed” contribute to the description of Russia's negotiating stance?",
+            "options": [
+              "It indicates that Russia has offered a substantially new compromise.",
+              "It establishes that Russia has formally withdrawn from all discussions.",
+              "It suggests a return to earlier, less flexible demands."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "A new compromise would suggest movement towards agreement, whereas “regressed” signals movement backwards.",
+              "Returning to earlier positions does not establish withdrawal from discussions.",
+              "Correct: “regressed” presents the apparent return to initial hardline positions as a setback."
+            ]
+          },
+          {
+            "question": "What remains uncertain when Zelensky questions whether Europeans will be “at the table”?",
+            "options": [
+              "Whether European negotiators will participate directly.",
+              "Whether European negotiators have already endorsed the final agreement.",
+              "Whether European negotiators have rejected mediation as a principle."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: “at the table” concerns direct participation in the talks.",
+              "Participation and endorsement are different matters, and the reading describes no final agreement.",
+              "The uncertainty concerns participation, not a stated rejection of mediation."
+            ]
+          },
+          {
+            "question": "Which account accurately preserves the scope of Zelensky's statement about Starlink and Starshield?",
+            "options": [
+              "Restrictions on both systems had been lifted throughout occupied Ukrainian territory.",
+              "Both systems remained restricted in occupied Ukrainian territory.",
+              "Both systems were entirely unavailable throughout Ukraine."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says the restrictions remained; it does not report that they had been lifted.",
+              "Correct: this retains both the continuing restrictions and the geographical scope of the statement.",
+              "Restrictions in occupied territory do not establish complete unavailability throughout the country."
+            ]
+          },
+          {
+            "question": "Which interpretation preserves the scope of Zelensky's reported 70% figure?",
+            "options": [
+              "Ukraine destroys approximately 70% of all incoming Russian weapons.",
+              "Ukraine destroys approximately 70% of incoming ballistic missiles.",
+              "Ukraine can destroy approximately 70% of Russia's fastest drones."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reported figure concerns a particular category of drones, not all weapons.",
+              "The reading distinguishes the drone figure from the deficit of missiles used against ballistic attacks.",
+              "Correct: this retains both the approximate figure and the specific category to which it applies."
+            ]
+          },
+          {
+            "question": "In the passage about defensive missiles, what does “deficit” identify?",
+            "options": [
+              "The amount by which the available interceptors fall short of requirements.",
+              "The total number of interceptors currently available for use.",
+              "The number of interceptors already used against incoming missiles."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: “deficit” identifies the shortfall between available supply and requirements.",
+              "The available stock is one side of the comparison; “deficit” names the amount missing.",
+              "“Deficit” describes an unmet requirement, not the quantity already used."
+            ]
+          },
+          {
+            "question": "What can be inferred from the report that some Russian drones travelled farther “unhindered”?",
+            "options": [
+              "Russian drones no longer encounter any Ukrainian resistance anywhere.",
+              "Those drones continued because the interceptor drones described could not catch them.",
+              "Ukraine had deliberately stopped attempting to intercept Russian drones."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Unhindered” describes the progress of the drones discussed; it does not justify a claim about every location.",
+              "Correct: the reading connects their continued progress with interceptor drones being unable to catch them.",
+              "An inability to catch particular drones does not establish a decision to stop interception attempts."
+            ]
+          },
+          {
+            "question": "Which distinction does Zelensky's statement about coordination preserve?",
+            "options": [
+              "Coordination with partners proves that the strikes carry no danger.",
+              "Acknowledging danger means that Ukraine has suspended such strikes.",
+              "He acknowledges the danger while maintaining that such strikes are coordinated with partners."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading presents coordination and danger together; coordination does not eliminate the acknowledged risk.",
+              "The reading contains no claim that acknowledging danger led to a suspension.",
+              "Correct: his account combines an admission of risk with a claim about how the strikes are conducted."
+            ]
+          },
+          {
+            "question": "Which interpretation of the business closures is supported by the reading?",
+            "options": [
+              "Electricity and logistics disruption had raised operating costs beyond what affected businesses could manage.",
+              "Businesses closed as a precaution against expected winter disruption while their current costs remained manageable.",
+              "The closures show that electricity and logistics disruption had forced every business in the town to stop trading."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct: the reading links closures to disruption that had already made operating costs unmanageably high.",
+              "This shifts the explanation from existing financial pressure to anticipated disruption and contradicts the description of costs.",
+              "The reading reports business closures without stating that every business had closed."
+            ]
+          },
+          {
+            "question": "Which rewrite preserves the concessive meaning and understood subject of the clause beginning “While acknowledging”?",
+            "options": [
+              "Because he acknowledged that the strikes were dangerous, Zelensky said his forces never conducted them without coordinating with partners.",
+              "Although he acknowledged that the strikes were dangerous, Zelensky said his forces never conducted them without coordinating with partners.",
+              "Until he acknowledged that the strikes were dangerous, Zelensky said his forces never conducted them without coordinating with partners."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "“Because” introduces a reason; the original clause acknowledges a contrasting consideration without establishing that causal link.",
+              "Correct: “although” makes the concession explicit, and “he” refers to Zelensky, the subject of the main clause.",
+              "“Until” introduces a time boundary that the original concessive clause does not express."
+            ]
+          },
+          {
+            "question": "What does “bracing for” reveal about Zelensky's description of the coming winter?",
+            "options": [
+              "He regards the difficult period as already over.",
+              "He guarantees a particular outcome for Ukraine's defence.",
+              "Ukraine anticipates difficulty and is preparing for it."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "“Bracing for” points towards an anticipated challenge, not a completed one.",
+              "The expression conveys preparation and expectation, not certainty about a specific outcome.",
+              "Correct: the phrase combines anticipation of hardship with preparation to face it."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Volodymyr Zelensky has accused the US of applying insufficient pressure on Russia and said delays in delivering essential defensive missiles were costing Ukrainian lives.",
+          "He also criticised Washington's emphasis on the Middle East, arguing that countries there were receiving greater assistance.",
+          "Zelensky expressed unease over Donald Trump's portrayal of Vladimir Putin as a friend in a post showing the two men embracing.",
+          "His criticism comes after a period of caution in managing US relations following a bruising Oval Office encounter with Trump in 2025.",
+          "The report describes the two US envoys seeking a peace deal as appearing more in tune with Moscow's position than Kyiv's.",
+          "The latest talks, mediated in Abu Dhabi, produced no obvious progress, according to the report.",
+          "Russia appears to have regressed to its initial hardline positions across the negotiating agenda, judging by its public statements.",
+          "Zelensky said it remained unclear whether European negotiators would be at the table, despite the US envoys having announced their participation.",
+          "He urged the US to live up to its reputation for strength and use its influence to push Russia towards results.",
+          "The US presents its neutrality as part of an effort to secure a peace agreement that can hold.",
+          "Zelensky said Ukraine could now destroy about 70% of Russia's fastest drones and that the proportion was improving.",
+          "He described a severe deficit of interceptors, missiles used to stop incoming ballistic missiles, and accused the US of delaying deliveries of Patriot systems.",
+          "Zelensky also confirmed that the US satellite communications systems Starlink and Starshield remained restricted in occupied Ukrainian territory.",
+          "Ukrainian drone units reported that some Russian drones were travelling farther into Ukraine unhindered because their interceptor drones could no longer catch them.",
+          "Ukraine has increased its long-range strikes on Russian targets, including oil refineries and ships carrying weapons or fuel.",
+          "While acknowledging that such strikes were highly dangerous, Zelensky said Ukrainian forces never conducted them without coordinating with partners.",
+          "Zelensky acknowledged that Ukraine was bracing for a difficult and dangerous winter.",
+          "Some residents had already left town for the winter and businesses had closed as power cuts and attacks on logistics networks pushed operating costs unmanageably high."
+        ],
+        "sentence_evidence": [
+          "Volodymyr Zelensky has voiced deep frustration with the US, saying that delays in delivering vital anti-ballistic missiles are costing Ukrainian lives and complaining that the US is not pushing Russia hard enough during peace talks.",
+          "\"It's a pity they made a focus on Middle East and they help them more… It's a pity. We have huge questions with this,\" Zelensky said.",
+          "In an interview with the BBC at his central Kyiv office, Ukraine's president also said it was \"strange\" that Donald Trump had posted a picture of himself embracing Vladimir Putin as \"my friend\".",
+          "Since a bruising encounter with Trump in the Oval Office in 2025, Zelensky has been careful how he handles relations with the United States.",
+          "Trump's two envoys have been trying to negotiate a peace deal between Russia and Ukraine - to end the huge loss of life. But they often seem more in tune with Moscow's position, than that of Kyiv.",
+          "The latest round of peace talks, mediated in Abu Dhabi earlier this month, made no obvious progress: \"The more we know, the more problems\", is how Zelensky described it.",
+          "But from its public statements, Russia appears to have regressed to its initial, hardline negotiating positions – on everything.",
+          "And Zelensky revealed that it was not clear whether European negotiators would be at the table, as the US envoys had announced .",
+          "So Zelensky called for \"real helpful allies, who can push Russia\" to achieve results and urged the US to live up to its reputation as a strong country with \"power and respect\".",
+          "The US argues that it is neutral: in the complex search for a peace deal between the two sides that can hold.",
+          "Zelensky said the military here are now able to destroy about 70% of Russia's fastest drones, a statistic he said was improving.",
+          "But there is a \"very, very big\" deficit of interceptors to stop ballistic missiles and he said the Amercians were delaying deliveries of its Patriot systems.",
+          "He also confirmed that the US satellite communications system, Starlink – and its military version, Starshield – were still being restricted in occupied areas of Ukraine.",
+          "Ukrainian drone units have described their problems to the BBC, as their interceptor drones can no longer catch up with Russian Shaheds. It means those weapons then fly deeper into Ukraine, unhindered.",
+          "Ukraine's own long-range strikes against Russian targets have increased in recent weeks, including oil refineries and ships carrying weapons or fuel.",
+          "He accepted that such strikes were \"very dangerous\" but said Ukraine's forces \"never attack\" without co-ordinating with its partners.",
+          "But he acknowledged that Ukraine was bracing for a difficult and dangerous winter.",
+          "Some residents have already left town for the winter and businesses closed, as power cuts and strikes on logistics networks have pushed operating costs unmanageably high."
+        ],
+        "editorial_check": {
+          "date": "2026-11-27T03:41:28.081921+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [
+            "quiz"
+          ],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eleven distinct reading-based targets, including “regressed” and “in tune with”, offer useful advanced meanings without borrowing reserved targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Reporting is natural and appropriately qualified through wording such as “appears” and “according to the report”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the exact grammar quotation correctly demonstrates the concessive use of “while”."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct quiz items test attribution, scope, contextual meaning and concession, with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "7c8ca528bdb56e5e06fb118c46ade5ae65f2cc26a9b65ae8166f5708a367f09e"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

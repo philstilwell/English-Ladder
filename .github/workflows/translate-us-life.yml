@@ -3,6 +3,11 @@ name: Translate Everyday English explanations
 on:
   workflow_dispatch:
     inputs:
+      migration_test_only:
+        description: 'Authorized live pilot only: one sidebar plus two saved recordings, $0.15 total cap; no publication'
+        required: false
+        type: boolean
+        default: false
       include_audio:
         description: 'Generate missing Everyday English pronunciation files using Google cloud speech (up to $2)'
         required: false
@@ -47,7 +52,39 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  migration_test:
+    if: github.event.inputs.migration_test_only == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Prevent reruns from resetting the authorized spending ledger
+        env:
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: test "$RUN_ATTEMPT" = 1
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install existing project dependencies
+        run: pip install -r requirements.txt
+      - name: Run only the bounded maintenance pilot
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -u gemini_maintenance_pilot.py --run-paid --output-dir .daily-agent/maintenance-pilot
+      - name: Preserve test results and spending record
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: maintenance-pilot-${{ github.run_id }}
+          path: .daily-agent/maintenance-pilot/
+          include-hidden-files: true
+          retention-days: 30
   translate:
+    if: github.event.inputs.migration_test_only != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:

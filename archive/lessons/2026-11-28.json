@@ -1,0 +1,743 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-11-28",
+  "release_iso": "2026-11-28T05:30:00Z",
+  "model": "gpt-6.1-sol",
+  "source": {
+    "name": "BBC Entertainment & Arts",
+    "feed_url": "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
+    "category": "culture",
+    "published_at": "Fri, 27 Nov 2026 14:33:10 GMT",
+    "retrieved_at": "2026-11-28T03:30:22.143901+00:00",
+    "title": "'We have no interest in hearing from Huw Edwards', Downing Street says",
+    "summary": "There has been a backlash against new interviews with the disgraced former BBC News presenter.",
+    "link": "https://www.bbc.co.uk/news/articles/c60mdl2y2w3do?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Explain what the prime minister's office wants television companies to think about.",
+          "Think about yourself or a person in a story: would you watch this programme? Use “I would ... because ...”."
+        ],
+        "title": "New Huw Edwards Interviews Make People Angry",
+        "overview": "Some people are angry about new interviews with Huw Edwards, who once read the news for the BBC.",
+        "topic": "News and television",
+        "vocabulary": [
+          {
+            "term": "interviews",
+            "part_of_speech": "plural noun",
+            "definition": "Conversations where someone asks a person questions to learn about their life or ideas."
+          },
+          {
+            "term": "angry",
+            "part_of_speech": "adjective",
+            "definition": "Feeling very unhappy about something and wanting to shout or complain."
+          },
+          {
+            "term": "guilty",
+            "part_of_speech": "adjective",
+            "definition": "Having done something against the law, as decided by a court."
+          },
+          {
+            "term": "views",
+            "part_of_speech": "plural noun",
+            "definition": "What someone thinks about something."
+          },
+          {
+            "term": "carefully",
+            "part_of_speech": "adverb",
+            "definition": "With time and thought, so you can avoid mistakes."
+          },
+          {
+            "term": "questions",
+            "part_of_speech": "plural noun",
+            "definition": "Things you ask when you want to know something."
+          }
+        ],
+        "grammar": {
+          "concept": "Using “should” for advice",
+          "explanation": "Use “should” to say what you think is a good thing to do. Put the basic verb after “should”, without “to”. For example, use “should think”, not “should thinks”. The form stays the same with “he”, “she” and “they”.",
+          "example_quote": "It said television companies should think carefully about the people watching their programmes."
+        },
+        "quiz": [
+          {
+            "question": "What is the main news in this reading?",
+            "options": [
+              "Edwards is returning to his old news job.",
+              "New interviews with Edwards have made some people angry.",
+              "Channel 4 is stopping all its interviews."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says he used to read the news for the BBC, but gives no plan for his return.",
+              "The reading describes anger about his new interviews.",
+              "The reading describes interviews with Edwards, not a plan to stop all interviews."
+            ]
+          },
+          {
+            "question": "What happened to Edwards in 2024?",
+            "options": [
+              "A court found him guilty.",
+              "He started reading news for the BBC.",
+              "He released these new interviews."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says a court found him guilty in 2024.",
+              "The reading does not say he started his BBC work in 2024.",
+              "The reading says these interviews are due to come out on Tuesday."
+            ]
+          },
+          {
+            "question": "What did the prime minister's office say about Edwards's views?",
+            "options": [
+              "It wanted a longer interview.",
+              "It wanted him to read the news again.",
+              "It did not want to hear them."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The office said it did not want to hear his views.",
+              "The reading gives no request for him to read the news again.",
+              "The reading says the office did not want to hear his views."
+            ]
+          },
+          {
+            "question": "What did Channel 4 say about the programme?",
+            "options": [
+              "It only discussed his old news job.",
+              "Edwards answered questions about his crimes.",
+              "There was no interview with Edwards."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Channel 4 said the programme included questions about his crimes.",
+              "This is Channel 4's explanation in the reading.",
+              "The reading says Edwards gave an interview for the documentary."
+            ]
+          },
+          {
+            "question": "What does “views” mean in this reading?",
+            "options": [
+              "What Edwards thinks",
+              "The people watching Edwards",
+              "The programmes Edwards watches"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Here, “views” means what someone thinks about something.",
+              "Here, “views” means ideas, not people watching.",
+              "Here, “views” means what Edwards thinks, not what he watches."
+            ]
+          },
+          {
+            "question": "When are the documentary and podcast due to come out?",
+            "options": [
+              "Sunday",
+              "Thursday",
+              "Tuesday"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading gives Tuesday as the planned day for both programmes.",
+              "The reading gives Tuesday as the planned day for both programmes.",
+              "Both programmes are due to come out on Tuesday."
+            ]
+          },
+          {
+            "question": "Which sentence uses “should” correctly to give advice about a news programme?",
+            "options": [
+              "The company should checks the questions.",
+              "The company should check the questions.",
+              "The company should to check the questions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Use the basic verb “check” after “should”, not “checks”.",
+              "The basic verb “check” follows “should” without “to”.",
+              "Do not put “to” between “should” and “check”."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Huw Edwards used to read the news for the BBC.",
+          "Some people are angry about new interviews with him.",
+          "In 2024, a court found him guilty of crimes involving sexual images of children.",
+          "He gave an interview for a Channel 4 documentary, a programme about real people or events.",
+          "There is also an interview for a podcast, an audio programme people can listen to online.",
+          "The prime minister's office said it did not want to hear Edwards's views.",
+          "It said television companies should think carefully about the people watching their programmes.",
+          "Channel 4 said Edwards answered questions about his crimes in the programme.",
+          "One government minister said Channel 4's plan made her feel sick.",
+          "The documentary and podcast are due to come out on Tuesday."
+        ],
+        "editorial_check": {
+          "date": "2026-11-28T03:32:07.997502+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Six distinct reading words have clear contextual definitions; “documentary” and “podcast” are explained near first use."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The reporting is neutral and direct, with accessible wording such as “Some people are angry”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The “should” explanation is clear and accurate. Discussion includes the frame “I would ... because ...” and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Seven distinct questions appropriately test the main idea, stated details, the meaning of “views”, and advice with “should”."
+            }
+          },
+          "content_digest": "8798c18d94d3add7cacadb4f391d67c0d7093cef30fa9407ab4d3a585c0b0ad3"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do critics believe broadcasters should consider victims when deciding whether to show interviews with Edwards?",
+          "What steps should a broadcaster take before showing an interview with someone convicted of a serious crime?"
+        ],
+        "title": "Huw Edwards Interviews Raise Concerns About Media Responsibility",
+        "overview": "Explore why new interviews with Huw Edwards have caused criticism and raised concerns about broadcasters' responsibilities.",
+        "topic": "Media responsibility",
+        "vocabulary": [
+          {
+            "term": "backlash",
+            "part_of_speech": "noun",
+            "definition": "A strong negative reaction from a group of people."
+          },
+          {
+            "term": "convicted",
+            "part_of_speech": "verb, past participle",
+            "definition": "Officially found by a court to have committed a crime."
+          },
+          {
+            "term": "audiences",
+            "part_of_speech": "plural noun",
+            "definition": "The people who watch or listen to programmes."
+          },
+          {
+            "term": "independent",
+            "part_of_speech": "adjective",
+            "definition": "Able to make its own decisions about its programmes."
+          },
+          {
+            "term": "defended",
+            "part_of_speech": "verb, past simple",
+            "definition": "Gave reasons to support something after other people criticised it."
+          },
+          {
+            "term": "challenge",
+            "part_of_speech": "verb, base form",
+            "definition": "Ask difficult questions about someone's actions instead of simply accepting their explanation."
+          },
+          {
+            "term": "consequences",
+            "part_of_speech": "plural noun",
+            "definition": "The results of someone's actions, especially unpleasant ones."
+          },
+          {
+            "term": "rehabilitation",
+            "part_of_speech": "noun",
+            "definition": "The process of helping someone change their behaviour after committing a crime."
+          }
+        ],
+        "grammar": {
+          "concept": "Past simple passive",
+          "explanation": "Use \"was\" or \"were\" plus a past participle to form the past simple passive. This structure focuses on the person or thing affected by a completed past action. Add \"by\" when you need to name who performed the action.",
+          "example_quote": "In 2024, Edwards was convicted of offences involving sexual images of children."
+        },
+        "quiz": [
+          {
+            "question": "What is the main issue in the reading?",
+            "options": [
+              "Whether Edwards should return to presenting BBC News",
+              "Whether broadcasters are acting responsibly by showing new interviews with Edwards",
+              "Whether the government should produce its own documentary about Edwards"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading discusses new interviews, not a return to presenting BBC News.",
+              "Correct. The reading presents concerns about victims alongside broadcasters' programme decisions.",
+              "The reading does not describe a government plan to produce a documentary."
+            ]
+          },
+          {
+            "question": "What did the prime minister's spokesperson say about Channel 4's programme decisions?",
+            "options": [
+              "Channel 4 could make its own decisions about individual programmes.",
+              "The government had approved the documentary.",
+              "Channel 4 had agreed to let the government choose its programmes."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The spokesperson described Channel 4 as independent.",
+              "Recognising Channel 4's independence does not mean the government approved the documentary.",
+              "The spokesperson said Channel 4 could make its own programme decisions."
+            ]
+          },
+          {
+            "question": "How did Channel 4 defend the documentary?",
+            "options": [
+              "It said Edwards avoided discussing his actions.",
+              "It said the director discussed only agreed topics.",
+              "It said the director challenged Edwards and placed no limits on discussion topics."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Channel 4 said the director challenged Edwards about his actions.",
+              "Channel 4 said there were no limits on the topics discussed.",
+              "Correct. Channel 4 said the director challenged Edwards about his actions without limiting the topics."
+            ]
+          },
+          {
+            "question": "Which statement best describes Duncan Craig's position?",
+            "options": [
+              "He rejected the idea of helping people change after committing crimes.",
+              "He supported rehabilitation but did not think these programmes offered it.",
+              "He believed these programmes had already helped Edwards change."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Craig said he believed in rehabilitation.",
+              "Correct. He supported the general idea but questioned these particular programmes.",
+              "The reading reports no successful change, and Craig doubted that the programmes offered rehabilitation."
+            ]
+          },
+          {
+            "question": "What does \"backlash\" mean in the reading?",
+            "options": [
+              "A strong negative public reaction",
+              "A decision about a programme's release date",
+              "A detailed explanation of someone's behaviour"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Backlash\" describes the strong criticism following the new interviews.",
+              "\"Backlash\" describes a reaction, not a scheduling decision.",
+              "\"Backlash\" means a negative reaction, not an explanation."
+            ]
+          },
+          {
+            "question": "In \"face the consequences of their actions\", what does \"consequences\" mean?",
+            "options": [
+              "The reasons people give for their actions",
+              "The results people must deal with after their actions",
+              "The opinions people held before their actions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Consequences\" are results, not reasons.",
+              "Correct. \"Face the consequences\" means dealing with the results of what someone has done.",
+              "\"Consequences\" follow actions; they are not earlier opinions."
+            ]
+          },
+          {
+            "question": "Which sentence uses the past simple passive to describe a completed review of a documentary?",
+            "options": [
+              "The editors reviewed the documentary.",
+              "The documentary is reviewed by the editors.",
+              "The documentary was reviewed by the editors."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is grammatical, but its main clause is active: the editors perform the action.",
+              "This sentence is grammatical, but \"is reviewed\" is present simple passive.",
+              "Correct. \"Was reviewed\" uses \"was\" plus a past participle and describes a completed past action."
+            ]
+          },
+          {
+            "question": "What does the reading say about the release schedule?",
+            "options": [
+              "Both programmes are due on Tuesday, with some Observer material expected on Sunday.",
+              "Both programmes have already been released, and the Observer material is due on Tuesday.",
+              "The documentary is due on Sunday, while the podcast is due on Tuesday."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading presents these as expected releases, not completed events.",
+              "The reading says the programmes are due to be released; it does not say they are already available.",
+              "Sunday refers to some Observer material, while both programmes are due on Tuesday."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "New interviews with former BBC News presenter Huw Edwards have caused a backlash, meaning a strong negative public reaction.",
+          "In 2024, Edwards was convicted of offences involving sexual images of children.",
+          "He has been interviewed for a Channel 4 documentary and a podcast by the Observer and Tortoise Media.",
+          "The prime minister's spokesperson said broadcasters should act responsibly and consider their audiences when deciding what to show.",
+          "The spokesperson said victims of child sexual abuse should come first and expressed no interest in hearing Edwards' account.",
+          "However, the spokesperson said Channel 4 was independent and could make its own decisions about individual programmes.",
+          "Channel 4 defended the documentary, saying its director challenged Edwards about his actions and placed no limits on the topics discussed.",
+          "A comment in the report said any programme featuring Edwards needed to challenge his past actions and raise unanswered questions.",
+          "A statement in the report said people convicted of these serious crimes must face the consequences of their actions.",
+          "Duncan Craig, who leads an organisation supporting male survivors of sexual abuse, said media companies seemed to be ignoring the victims.",
+          "Craig said he believed in rehabilitation, or helping people change after committing crimes, but did not think these programmes offered it.",
+          "The documentary and podcast are due to be released on Tuesday, with some material expected from the Observer on Sunday."
+        ],
+        "editorial_check": {
+          "date": "2026-11-28T03:35:00.752950+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Eight distinct targets occur in the reading. Terms including “backlash” and “consequences” suit B1-B2; “rehabilitation” is clearly explained. No reserved targets are reused."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Neutral reporting consistently attributes positions through wording such as “Channel 4 defended” and “Craig said”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions and feedback are clear. The exact quotation containing “was convicted” correctly demonstrates the explained past simple passive."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct reading sentences and eight quiz questions combine comprehension, contrasting positions, contextual vocabulary and grammar transfer. Discussion prompts invite developed answers."
+            }
+          },
+          "content_digest": "c7bbfe3964719a03b96600f3bc0474ba6f1b6ab1547ea41835b7133c2255ed66"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "How does Channel 4's defence address the distinction between giving someone publicity and holding them to account?",
+          "What safeguards would you expect a broadcaster to use when interviewing a convicted offender, and why?"
+        ],
+        "title": "Huw Edwards Interviews Draw Criticism Over Media Responsibility",
+        "overview": "Interviews with Huw Edwards have prompted debate over broadcasters' editorial freedom, their responsibility towards victims and whether critical examination can become reputational repair.",
+        "topic": "Media responsibility and public accountability",
+        "vocabulary": [
+          {
+            "term": "editorial autonomy",
+            "part_of_speech": "noun phrase",
+            "definition": "Freedom to decide what to publish or broadcast and how to present it, without those decisions being directed by an outside authority."
+          },
+          {
+            "term": "scrutiny",
+            "part_of_speech": "uncountable noun",
+            "definition": "Close, critical examination intended to identify weaknesses, inconsistencies or matters requiring explanation."
+          },
+          {
+            "term": "off limits",
+            "part_of_speech": "adjective phrase",
+            "definition": "Excluded from what people are permitted to discuss or investigate."
+          },
+          {
+            "term": "platform",
+            "part_of_speech": "countable noun",
+            "definition": "An opportunity to reach a public audience and present an account or viewpoint, without necessarily receiving the publisher's endorsement."
+          },
+          {
+            "term": "reputational repair",
+            "part_of_speech": "noun phrase",
+            "definition": "An effort to improve how someone is publicly regarded after their conduct has damaged their standing."
+          },
+          {
+            "term": "reckoning",
+            "part_of_speech": "singular countable noun",
+            "definition": "A period when past wrongdoing receives sustained attention and prompts demands for those responsible to answer for their actions."
+          },
+          {
+            "term": "in principle",
+            "part_of_speech": "adverbial phrase",
+            "definition": "As a general position or belief, without necessarily supporting a particular practical instance."
+          },
+          {
+            "term": "prominence",
+            "part_of_speech": "uncountable noun",
+            "definition": "The state of being widely recognised and occupying a position that attracts public attention."
+          },
+          {
+            "term": "characterisation",
+            "part_of_speech": "countable noun",
+            "definition": "A description that presents something in a particular way and may reflect the speaker's interpretation."
+          },
+          {
+            "term": "constitute",
+            "part_of_speech": "verb, base form",
+            "definition": "To qualify as something or have the essential features that make that description applicable."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced passive adverbial clauses",
+          "explanation": "A reduced passive opening omits its subject and a form of “be”, leaving a past participle. Its understood subject must match the main-clause subject: “Pressed” presents the spokesperson as receiving pressure, while “Pressing” would make them exert it.",
+          "example_quote": "Pressed on whether Channel 4 had acted irresponsibly, the spokesperson affirmed the broadcaster's editorial autonomy in choosing programmes and contributors."
+        },
+        "quiz": [
+          {
+            "question": "Which statement best captures the central dispute in the reading?",
+            "options": [
+              "Whether a criminal conviction removes a broadcaster's authority to choose contributors.",
+              "Whether interviewing an offender provides accountability or helps restore his public standing.",
+              "Whether the interviews contain enough evidence to establish Edwards' criminal responsibility."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The spokesperson acknowledged editorial autonomy; the reading does not describe a rule removing it after a conviction.",
+              "Channel 4 emphasised scrutiny, while critics questioned the platform and its potential reputational effects.",
+              "The reading presents the conviction as established; the dispute concerns the subsequent interviews."
+            ]
+          },
+          {
+            "question": "What distinction does the spokesperson's response preserve when pressed about Channel 4?",
+            "options": [
+              "Broadcasters can be expected to act responsibly while retaining authority over editorial decisions.",
+              "Editorial autonomy establishes that a broadcaster has acted responsibly in a particular case.",
+              "Government disapproval transfers responsibility for programme decisions to the government."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The spokesperson expressed an expectation of responsibility while affirming the broadcaster's authority over its choices.",
+              "Acknowledging authority over a decision does not establish that the decision was responsible.",
+              "The spokesperson located programme decisions with the broadcaster despite the government's stated position."
+            ]
+          },
+          {
+            "question": "How should a reader interpret Channel 4's account of the director's approach?",
+            "options": [
+              "As confirmation that critics accepted the documentary's treatment of Edwards.",
+              "As evidence that the documentary had already resolved the concerns raised by victims' supporters.",
+              "As the broadcaster's defence of its approach, rather than an independently established assessment of its success."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading reports continuing criticism and does not say critics accepted Channel 4's defence.",
+              "Describing an approach does not establish that it resolved the concerns raised.",
+              "The wording attributes the claim about scrutiny to Channel 4 and does not certify its effectiveness."
+            ]
+          },
+          {
+            "question": "What remains unresolved in Dinenage's concern about the BBC payment?",
+            "options": [
+              "Whether the BBC payment occurred before Edwards became a presenter.",
+              "Whether Edwards would return more than £200,000 paid after his first arrest.",
+              "Whether a repayment had already satisfied the critics."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Her concern concerns money paid after his first arrest, not the beginning of his presenting career.",
+              "The reading presents repayment as a question requiring examination, without reporting an outcome.",
+              "No completed repayment or acceptance of one is reported."
+            ]
+          },
+          {
+            "question": "What is clarified by describing the anonymous person as unconnected to the criminal case?",
+            "options": [
+              "Their interpretation had been rejected during the criminal proceedings.",
+              "Their lack of connection cast doubt on the conviction itself.",
+              "Their interpretation should not be mistaken for an account from someone involved in that case."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading establishes the person's lack of connection, without reporting any court assessment of their interpretation.",
+              "The qualification concerns the person's connection to the case; the conviction is presented as established.",
+              "The description distinguishes the person's interpretation of the appearances from involvement in the criminal proceedings."
+            ]
+          },
+          {
+            "question": "Which conclusion is justified by Craig's position on rehabilitation?",
+            "options": [
+              "He supported rehabilitation generally but doubted whether these programmes qualified as it.",
+              "He regarded any public interview with an offender as sufficient evidence of rehabilitation.",
+              "He rejected rehabilitation because he objected to these particular programmes."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "His general support and his reservation about these programmes are explicitly distinguished.",
+              "He questioned whether these programmes amounted to rehabilitation rather than treating an interview as sufficient.",
+              "Opposition to a particular example does not cancel the general support expressed in the reading."
+            ]
+          },
+          {
+            "question": "What does “prominence” contribute to the account of Thomas's curiosity?",
+            "options": [
+              "It establishes that Edwards' professional standing excused his conduct.",
+              "It identifies Edwards' public standing as part of what Thomas found striking about his downfall.",
+              "It indicates that Thomas was uncertain whether Edwards was publicly recognised."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Public standing is presented as a focus of curiosity, not as an excuse.",
+              "“Prominence” connects Edwards' high public profile with Thomas's curiosity about his disastrous position.",
+              "“Prominence” conveys substantial public recognition rather than uncertainty about recognition."
+            ]
+          },
+          {
+            "question": "What is the scope of Bacon's disagreement with Myska?",
+            "options": [
+              "He disputed whether Edwards had been convicted.",
+              "He argued that documentary subjects must deserve public admiration.",
+              "He disputed the assumption that making a documentary necessarily amounts to rehabilitation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "His response concerns the interpretation of the documentary, not the conviction.",
+              "The reading gives no claim that appearing in a documentary requires public admiration.",
+              "He questioned Myska's characterisation of the documentary as an exercise in restoring Edwards' reputation."
+            ]
+          },
+          {
+            "question": "What does Craig's description of a period of “reckoning” imply about his objection to the timing?",
+            "options": [
+              "He saw the programmes as arriving during heightened attention to abuse and accountability in the media.",
+              "He believed the media had finished addressing abuse and no longer needed public scrutiny.",
+              "He objected because the documentary's release date had not been announced."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Reckoning” presents an ongoing confrontation with wrongdoing, which explains the significance he attached to the timing.",
+              "The term suggests active examination of wrongdoing, not a completed process.",
+              "The reading connects his objection to the wider attention to abuse, not uncertainty about a release date."
+            ]
+          },
+          {
+            "question": "In Channel 4's defence, what does treating no questions as “off limits” claim about the interview?",
+            "options": [
+              "Every answer Edwards gave was accepted as reliable.",
+              "No question was excluded from being put to him.",
+              "The interview had no editorial purpose or structure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Permission to ask questions does not establish the reliability of the answers.",
+              "“Off limits” concerns restrictions on what may be raised; Channel 4 claimed there were no such exclusions.",
+              "The expression concerns permitted subject matter, not whether an interview has a purpose or structure."
+            ]
+          },
+          {
+            "question": "What does the reading's phrase “reputational repair” convey about the anonymous person's interpretation of the appearances?",
+            "options": [
+              "They regarded the appearances as proof that Edwards had completed rehabilitation.",
+              "They believed the appearances would necessarily improve his public standing.",
+              "They interpreted the appearances as an attempt to improve his public standing, without establishing that it would succeed."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "An attempt to improve public perception does not establish rehabilitation.",
+              "The reading attributes an interpretation of purpose to the anonymous person, not a certain prediction of success.",
+              "The reading's phrase identifies the perceived purpose while leaving the outcome unestablished."
+            ]
+          },
+          {
+            "question": "Which sentence uses a reduced passive opening whose understood subject is Channel 4, presenting the broadcaster as the recipient of criticism?",
+            "options": [
+              "Criticised for the programme, Channel 4 defended its editorial decision.",
+              "Criticising the programme, Channel 4 defended its editorial decision.",
+              "Criticised for the programme, the editorial decision was defended by Channel 4."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "“Criticised” is passive, and its understood subject is the main-clause subject, “Channel 4”.",
+              "“Criticising” is active and presents Channel 4 as doing the criticising; it does not express the requested relationship.",
+              "The main-clause subject is “the editorial decision”, so the reduced opening makes that decision the recipient of criticism."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The prime minister's spokesperson urged broadcasters to act responsibly while expressing no interest in hearing Edwards' account following criticism of new interviews.",
+          "Edwards, who was convicted in 2024 of offences involving indecent images of children, has been interviewed for a Channel 4 documentary and a podcast by the Observer and Tortoise Media.",
+          "A Downing Street spokesperson placed the interests of victims of child sexual abuse and exploitation at the forefront of the government's response.",
+          "Pressed on whether Channel 4 had acted irresponsibly, the spokesperson affirmed the broadcaster's editorial autonomy in choosing programmes and contributors.",
+          "Channel 4 defended the documentary, saying its director had subjected Edwards' account to scrutiny without treating any questions as off limits.",
+          "Dame Caroline Dinenage, chair of the House of Commons culture and media select committee, warned that media outlets should not merely provide a platform for Edwards.",
+          "She also called for examination of whether Edwards would return more than £200,000 paid by the BBC after his first arrest.",
+          "Three people who had previously spoken to BBC News about allegations of inappropriate behaviour by Edwards also criticised the interviews.",
+          "An anonymous person unconnected to the criminal case interpreted the appearances as an attempt at reputational repair.",
+          "Duncan Craig, head of We Are Survivors, said the companies appeared to be overlooking victims' interests.",
+          "He also objected to the timing, describing the media as being in a period of reckoning over abuse.",
+          "Although Craig endorsed rehabilitation in principle, he questioned whether these programmes amounted to it.",
+          "In a promotional clip, interviewer Ceri Thomas expressed curiosity about how a man of Edwards' prominence had reached such a disastrous position.",
+          "Journalist Sangita Myska condemned the documentary as an exercise in restoring Edwards' reputation.",
+          "Broadcaster Richard Bacon disputed that characterisation, arguing that making a documentary about someone did not, in itself, constitute rehabilitation."
+        ],
+        "editorial_check": {
+          "date": "2026-11-28T03:39:04.055202+00:00",
+          "model": "gpt-6.1-sol",
+          "status": "passed",
+          "method": "separate ChatGPT-plan evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "provider": "OpenAI",
+          "surface": "Codex with ChatGPT sign-in",
+          "reviewer": {
+            "model": "gpt-6.1-sol",
+            "surface": "Codex with ChatGPT sign-in",
+            "separate_session": true
+          },
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Ten distinct reading-based targets, including “editorial autonomy” and “constitute”, offer useful C1 distinctions with clear definitions and no reserved-target overlap."
+            },
+            "register": {
+              "passed": true,
+              "reason": "Polished reporting preserves attribution and uncertainty through wording such as “interpreted”, “appeared” and “questioned whether”."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions clarify contextual meanings, and the exact “Pressed” quotation accurately demonstrates a reduced passive opening and its subject relationship."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "Twelve distinct questions test attribution, editorial responsibility, qualification, contextual meaning and grammar, with unambiguous answers and accurate feedback."
+            }
+          },
+          "content_digest": "386ba97f74c7704d3e6d3de3fd0ef7ca30bf00652637c662d2dff31eb0abad08"
+        }
+      }
+    }
+  },
+  "generation": {
+    "provider": "OpenAI",
+    "surface": "Codex with ChatGPT sign-in",
+    "model": "gpt-6.1-sol",
+    "review_model": "gpt-6.1-sol",
+    "separate_review_sessions": true
+  }
+}

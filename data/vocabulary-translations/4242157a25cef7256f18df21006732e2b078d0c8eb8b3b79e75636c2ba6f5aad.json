@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Huw Edwards used to read the news for the BBC.",
+      "Some people are angry about new interviews with him.",
+      "In 2024, a court found him guilty of crimes involving sexual images of children.",
+      "He gave an interview for a Channel 4 documentary, a programme about real people or events.",
+      "There is also an interview for a podcast, an audio programme people can listen to online.",
+      "The prime minister's office said it did not want to hear Edwards's views.",
+      "It said television companies should think carefully about the people watching their programmes.",
+      "Channel 4 said Edwards answered questions about his crimes in the programme.",
+      "One government minister said Channel 4's plan made her feel sick.",
+      "The documentary and podcast are due to come out on Tuesday."
+    ],
+    "vocabulary": [
+      {
+        "term": "interviews",
+        "part_of_speech": "plural noun",
+        "definition": "Conversations where someone asks a person questions to learn about their life or ideas."
+      },
+      {
+        "term": "angry",
+        "part_of_speech": "adjective",
+        "definition": "Feeling very unhappy about something and wanting to shout or complain."
+      },
+      {
+        "term": "guilty",
+        "part_of_speech": "adjective",
+        "definition": "Having done something against the law, as decided by a court."
+      },
+      {
+        "term": "views",
+        "part_of_speech": "plural noun",
+        "definition": "What someone thinks about something."
+      },
+      {
+        "term": "carefully",
+        "part_of_speech": "adverb",
+        "definition": "With time and thought, so you can avoid mistakes."
+      },
+      {
+        "term": "questions",
+        "part_of_speech": "plural noun",
+        "definition": "Things you ask when you want to know something."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "ある人の生活や考えを知るために、その人に質問をする会話。",
+      "ko": "어떤 사람의 삶이나 생각을 알아보기 위해 그 사람에게 질문하는 대화.",
+      "zh-Hans": "为了了解一个人的生活或想法而向这个人提问的交谈。",
+      "es": "Conversaciones en las que alguien hace preguntas a una persona para conocer su vida o sus ideas.",
+      "pt-BR": "Conversas em que alguém faz perguntas a uma pessoa para conhecer sua vida ou suas ideias.",
+      "fr": "Conversations dans lesquelles quelqu’un pose des questions à une personne pour connaître sa vie ou ses idées.",
+      "de": "Gespräche, in denen jemand einer Person Fragen stellt, um etwas über ihr Leben oder ihre Gedanken zu erfahren."
+    },
+    {
+      "id": 1,
+      "ja": "何かに対してとても不満を感じ、大声を出したり文句を言ったりしたい気持ち。",
+      "ko": "어떤 일에 매우 불만을 느껴 소리를 지르거나 불평하고 싶은 상태.",
+      "zh-Hans": "对某件事感到很不满，想要大喊或抱怨。",
+      "es": "Sentir un gran descontento por algo y tener ganas de gritar o quejarse.",
+      "pt-BR": "Sentir muito descontentamento com alguma coisa e ter vontade de gritar ou reclamar.",
+      "fr": "Éprouver un grand mécontentement à propos de quelque chose et avoir envie de crier ou de se plaindre.",
+      "de": "Über etwas sehr unzufrieden sein und schreien oder sich beschweren wollen."
+    },
+    {
+      "id": 2,
+      "ja": "法律に違反することをしたと裁判所に判断された状態。",
+      "ko": "법을 어기는 일을 했다고 법원이 판단한 상태.",
+      "zh-Hans": "经法院认定做了违法的事。",
+      "es": "Haber hecho algo contra la ley, según lo decidido por un tribunal.",
+      "pt-BR": "Ter feito algo contra a lei, conforme decidido por um tribunal.",
+      "fr": "Avoir fait quelque chose de contraire à la loi, selon la décision d’un tribunal.",
+      "de": "Laut dem Urteil eines Gerichts etwas getan haben, das gegen das Gesetz verstößt."
+    },
+    {
+      "id": 3,
+      "ja": "ある物事について、その人が考えていること。",
+      "ko": "어떤 것에 대해 누군가가 생각하는 내용.",
+      "zh-Hans": "一个人对某件事的想法。",
+      "es": "Lo que una persona piensa sobre algo.",
+      "pt-BR": "O que uma pessoa pensa sobre alguma coisa.",
+      "fr": "Ce qu’une personne pense de quelque chose.",
+      "de": "Was jemand über etwas denkt."
+    },
+    {
+      "id": 4,
+      "ja": "間違いを避けられるように、時間をかけてよく考えながら。",
+      "ko": "실수를 피할 수 있도록 시간을 들여 잘 생각하며.",
+      "zh-Hans": "花时间认真思考，以便避免出错。",
+      "es": "Tomándose tiempo y pensando bien para poder evitar errores.",
+      "pt-BR": "Dedicando tempo e pensando bem para poder evitar erros.",
+      "fr": "En prenant le temps de bien réfléchir pour pouvoir éviter les erreurs.",
+      "de": "Indem man sich Zeit nimmt und gut nachdenkt, um Fehler vermeiden zu können."
+    },
+    {
+      "id": 5,
+      "ja": "何かを知りたいときに尋ねること。",
+      "ko": "무언가를 알고 싶을 때 묻는 말.",
+      "zh-Hans": "想知道某件事时提出的问题。",
+      "es": "Cosas que preguntas cuando quieres saber algo.",
+      "pt-BR": "Coisas que você pergunta quando quer saber algo.",
+      "fr": "Ce qu’on demande quand on veut savoir quelque chose.",
+      "de": "Das, was man fragt, wenn man etwas wissen möchte."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate ChatGPT plan translation and independent editing sessions",
+    "model": "gpt-6.1-sol",
+    "date": "2026-11-28T03:39:50.976245+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "generator": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "translation"
+    },
+    "reviewer": {
+      "provider": "OpenAI",
+      "surface": "Codex with ChatGPT sign-in",
+      "model": "gpt-6.1-sol",
+      "phase": "independent multilingual editing",
+      "separate_session": true
+    }
+  }
+}
